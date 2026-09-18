@@ -1,0 +1,25 @@
+source_id,type,meteorite_analog,n_observed_deMeo_2009,pct_of_sample,avg_density_gcm3_no_restriction,avg_density_n50_tier,avg_density_n20_tier,notes
+carry2012,S,OC (ordinary chondrite),144,38%,2.66±1.29,2.70±0.69,2.72±0.54,largest measured sample
+carry2012,Sa,OC,2,<1%,,1.07±0.25,,single low-precision estimate only; treat as unreliable
+carry2012,Sq,OC,29,7%,2.78±0.85,2.78±0.81,3.43±0.20,
+carry2012,Sr,OC,22,5%,,,,no density estimates available in 2012 sample
+carry2012,Sv,OC,2,<1%,,,,none
+carry2012,B,CV (carbonaceous),4,1%,2.19±1.00,2.15±0.74,2.38±0.45,layout note: a stray '5 1.33±0.58' row sits beside B in the PDF; class assignment ambiguous
+carry2012,C,CM (carbonaceous),13,3%,1.57±1.38,1.41±0.69,1.25±0.21,"high scatter, small N"
+carry2012,Cb,CM,3,<1%,1.88±2.09,1.43±0.74,,None in n20 tier
+carry2012,Cg,CM,1,<1%,0.96±0.27,0.96±0.27,,single body; a 9-body row (1.41±0.29) appears on the same wrapped line — layout ambiguous
+carry2012,Cgh,CM,10,2%,2.64±1.35,3.48±1.06,,None in n20 tier
+carry2012,Ch,CM,18,4%,1.96±1.65,1.70±1.10,,None in n20 tier
+carry2012,X,CV (carbonaceous),4,1%,2.87±2.59,1.99±0.99,1.85±0.81,
+carry2012,Xc,Mes (mesosiderite),3,<1%,4.96±2.39,4.63±0.76,4.86±0.81,dense mesosiderite-analog values
+carry2012,Xe,EH,7,1%,2.94±0.85,2.91±0.65,2.60±0.20,
+carry2012,Xk,Mes (mesosiderite),18,4%,3.85±1.27,3.79±1.18,4.22±0.65,
+carry2012,D,CM,16,4%,,,,legible '9.56±0.22' on this row is a PDF layout artifact (physically implausible); D-type densities unmeasured in sample
+carry2012,K,CV,16,4%,4.25±2.03,3.54±0.21,3.54±0.21,n tier dominated by outliers; n50/n20 agree at 3.54
+carry2012,L,CO (ordinary),22,5%,3.24±1.03,3.22±0.97,,None in n20 tier
+carry2012,T,Ata (atramentum),4,1%,2.61±2.54,,,
+carry2012,A,Pal (pallasite),6,1%,,3.73±1.40,3.73±1.40,single estimate
+carry2012,O,OC,1,<1%,,,,none
+carry2012,Q,OC,8,2%,,2.23±1.02 (n50) / 1.93±1.07,,"wrapped rows: values 2.23, 1.93, 1.06 appear across three tiers; small sample"
+carry2012,R,OC,1,<1%,,values wrapped/illegible in layout (candidates: 0.77/1.06/0.54) — do not use,,measured R-type densities were scarce as of 2012
+carry2012,V,HED,17,4%,,value on wrapped line beyond extraction window; Vesta-family density ~3.4-3.6 g/cm3 is the accepted range (see separate sources),verify against full PDF p.~15 before use

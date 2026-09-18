@@ -1,0 +1,10 @@
+source_id,element,ci_chondrite_ppm_bulk_rock,location_in_source,notes
+lodders_palme2009,Ru,0.686,Table 1 of the abstract PDF,
+lodders_palme2009,Rh,0.139,Table 1 of the abstract PDF,
+lodders_palme2009,Pd,0.558,Table 1 of the abstract PDF,
+lodders_palme2009,Ag,0.201,Table 1 of the abstract PDF,
+lodders_palme2009,Os,0.493,Table 1 of the abstract PDF,
+lodders_palme2009,Ir,0.469,Table 1 of the abstract PDF,
+lodders_palme2009,Pt,0.947,Table 1 of the abstract PDF,
+lodders_palme2009,Au,0.146,Table 1 of the abstract PDF,
+lodders_palme2009,PGM_total (Ru+Rh+Pd+Os+Ir+Pt),3.29,,sum computed from Table 1 values above
