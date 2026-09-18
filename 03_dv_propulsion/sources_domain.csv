@@ -1,0 +1,3 @@
+id,tier,short_title,journal_or_series,year,doi_or_url,authors_short,access_status,pipeline_mapping
+elvis2011,T1,Ultra-Low Delta-v Objects and the Human Exploration of Asteroids (arXiv),A&A / arXiv:1105.4152,2011,https://arxiv.org/abs/1105.4152,Elvis M.; McDowell J.; Hoffman J.A.; Binzel R.P.,full_text_hosted,easy-NEA segment (<4.5 km/s) AGREEMENT; source for average-NEA 6.65 peak (fixes ieva citation); hydrolox Isp cross-check
+ieva2014,T1,Low Delta-V NEAs: A survey of suitable targets (arXiv),A&A / arXiv:1406.5027,2014,https://arxiv.org/abs/1406.5027,Ieva S.; Dotto E.; Perna D.; Barucci M.A.; et al.,full_text_hosted,"currently MIS-CITED on average-NEA row (it's a 13-object survey, no median); valid for easy-NEA class <10.5 km/s"

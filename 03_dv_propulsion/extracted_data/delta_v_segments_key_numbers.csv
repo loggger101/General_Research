@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+elvis2011,ultra-low-Δv NEO threshold (LEO→NEO rendezvous),<4.5,km/s,Abstract + Sec 4; Fig 1 distribution,65 of 6699 known NEOs (Mar 2010) fall below this = ~1%. Our 'easy NEA' segment at 4500 m/s sits exactly on this boundary — AGREEMENT
+elvis2011,"NEO LEO→Δv population peak (Benner 2010 compilation, Shoemaker-Helin formalism)",6.65,km/s,"Sec 3 'Value of Payload Gain', Fig 1 caption","THE anchor for our 'average NEA' segment: we carry 6500 m/s but cite arXiv:1406.5027 — the value actually comes from this Elvis/Benner distribution peak, not that paper"
+elvis2011,effective exhaust velocity used (RL-10 / J-2X LH2-LOX),4.4,km/s (Isp*g ~ 449 s),Sec 3 + Fig 2 caption,matches our hydrolox Isp row; their payload-gain formula e^(Δv−<Δv>)/v_ex is the same rocket-equation logic Module 4 uses
+ieva2014,sample size of 'low-Δv' survey,13 objects (9 first-time classified),—,Abstract + Sec 3,"all Δv < 10.5 km/s; S-complex dominated (11/13) — a small targeted sample, NOT a population median"
+ieva2014,upper bound of surveyed Δv range,<10.5,km/s,Abstract ('well below solar-system escape 12.3'),consistent with our 'hard NEA' segment at 8500 m/s being upper-decile but still < main-belt
