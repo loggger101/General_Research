@@ -79,6 +79,7 @@ _Backings: `spacecost/delta_v_segments.csv`, Isp rows of `propellants.csv`._
 | boddy_1980 | T2 | Boddy (Rockwell Int'l), "Solar Rocket System Concept Analysis" — AFRPL TR-79-7g final report, NTRS 19800022964 full text hosted + extracted on this machine | full_text_hosted | **Measured anchor** for the Solar thermal row: AFRPL test program achieved Isp of 680 s with hydrogen; obtainable range 500-1100 s documented — our ~800 s design value sits above demonstrated performance |
 | cuffe_jacobs_1970 | T2 | Cuffe & Jacobs (NASA MSC), 'Apollo Spacecraft Engine Specific Impulse' D2-I17060-1 — measured Isp methodology for all four Apollo hypergolic engines; injector-level data ~1-4 s below rated, 0.2 s allocated uncertainty | NTRS 19700026467 (public domain) | full_text_hosted |
 | boyce_aj10_oral_history | T2 | Boyce (Aerojet), 'Remembering the Giants' AJ10-137 chapter — SPS engine rated Isp 314.5 s, A-50/NTO, AR 62.5:1; first-person configuration anchor for Aerozine-50/NTO row | NTRS 20100027319 (public domain) | full_text_hosted |
+| spores_2013 | T1 | Spores et al. (Aerojet Rocketdyne/Ball), 'GPIM AF-M315E Propulsion System' — GR-1 vacuum Isp 235 s EXACT match to Green monoprop row; full GPIM flight system documented | NTRS 20140012587 (AIAA JPC) | full_text_hosted |
 ## Domain 4 — Launch cost per kg (history, projections)
 
 _Backings: price rows of `spacecost/launch_vehicles.csv`; the Stage 4 cost cascade._
