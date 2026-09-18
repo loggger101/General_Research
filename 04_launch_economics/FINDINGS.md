@@ -85,3 +85,18 @@ The source itself has been in this domain since round 3, but only its headline (
 
 - **yun_2023** (T1, KSPE 27(2):45-59, CC-BY-NC; koreascience.or.kr direct PDF route verified live — same proven route as kim_2013) is now hosted in full_texts/ and registered. It carries a comprehensive table of reusable launch vehicles worldwide with engine configuration / total thrust / fuel: Starship CH4 7,342 kN (Raptor x33 booster + x6 ship), New Glenn BE-4 x7 methalox, Falcon Heavy side-core landing, plus reusability plans (New Glenn first stage up to 25 flights after an initial 100-flight plan; Starship full reuse via grid fins + landing gear). Scope note: the paper does NOT tabulate payload mass or $/kg — those columns of our rows remain vendor-announced values. The cost-per-kg side is already anchored by jones2018 (hosted, ICES-2018-81): Shuttle 54,500 vs Falcon 9 ~2,720 $/kg LEO in current dollars — the factor-of-20 trend behind our cost-cascade context.
 - Duplicate-download note: my round-16 ThinkTech bitstream copy of jones2018 (sha f98a5d65) differs from the repo's NTRS-hosted copy (sha 20f015ba, different scan source); the existing hosted item stands and the duplicate was discarded.
+
+## Round-32 addition — SLS Block 1B (Cargo) row gets official NASA payload anchors, incl. an EXACT match on the LEO figure (two hosted)
+
+**Target:** `launch_vehicles.csv` "SLS Block 1B (Cargo)" at 105 t LEO / $39,048 per kg. The $/kg side was already covered by jones2018 + hf_dataset; this round anchors the PAYLOAD-MASS side with official NASA documents — and gets an exact match on the headline number.
+
+**Anchors added:**
+1. `askins_2021_sls_janaff_update` (T2, NTRS 20210016306, hosted) — Askins (SLS Program Infrastructure Manager), JANAFF briefing "The Power of SLS and Orion" (June 8, 2021). Official capability table verified verbatim in the extracted text:
+   - **Payload to LEO = 105 t (231.4k lbs) for Block 1B Cargo — EXACT match** to our row's `payload_leo_kg=105000`. Same figure for Block 1B Crew; ladder continues B1C/B1 C+Cr = 95 t, B2 Cargo/Crew = 130 t.
+   - The defining footnote is captured verbatim: *"Low Earth Orbit (LEO) represents a typical 200 km circular orbit at 28.5 degrees inclination"* — i.e., our row's LEO figure inherits this exact mission definition, which matters because SLS was never intended for routine LEO missions ("no such missions are planned" per the companion guide).
+   - TLI column (B1B Cargo >46 t / 42 t; B1C >27 t) cross-checks our `payload_escape_kg` context.
+2. `nasa_esd30000_sls_mission_planners_guide` (T2, ESD-30000 Version A, NTRS 20190000736, hosted) — the official SLS Mission Planner's Guide (Dec 19, 2018 release). Section 4.2 defines the mass-delivery methodology behind every SLS number; body text verified: Block 1 LEO capability "more than 209,439 lbm (95 t)"; *"SLS Block 1B will utilize a new Exploration Upper Stage (EUS) to provide up to 88,185 lbm (40 t) of payload delivery to lunar vicinity."* This is the source document that defines what "payload" means for SLS rows (useful PSM vs. gross), so our row's numbers are traceable to a single official definition rather than vendor marketing.
+
+**Scope notes:**
+- Both documents predate Block 1B flight hardware; they state DESIGN capability, which is exactly the right anchor class for a configuration that had not yet flown as of their publication. The 105 t LEO figure has been stable across NASA's public materials from at least Dec 2018 (ESD-30000) through June 2021 (JANAFF).
+- $/kg side of the row ($39,048) remains anchored by jones2018 (peer-reviewed ICES table) + hf_dataset (63-vehicle structured dataset), as before — this round does not re-anchor cost.
