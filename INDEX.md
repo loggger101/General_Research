@@ -74,6 +74,7 @@ _Backings: `spacecost/delta_v_segments.csv`, Isp rows of `propellants.csv`._
 | morren_curran_1991 | T2 | Morren & Curran (NASA Lewis), "Preliminary Performance and Life Evaluations of a 2-kW Arcjet" — NASA TM-105149 / AIAA-91-2228 (NTRS direct PDF route verified live; public domain) | full text hosted | **Isp anchor** for the Hydrazine arcjet row: measured stable operation at exactly 550 s / 2.0 kW over 300 h, program goal = our row's 600 s @ 2 kW spec (MR-510 class) |
 | borowski_2012 | T1 | Borowski, McCurdy & Packard (NASA), "NTP: A proven growth technology for human NEO/Mars exploration" — IEEE Aerospace (NTRS direct PDF route verified live; public domain) | full text hosted | **Isp anchor** for the Nuclear thermal row: NTR achieves ~900 s or more, DRA 5.0 band 875-950 s, MCNP range 894-940 s — our exactly-900-s value sits at its center |
 | robbins_1991 | T2 | Robbins & Finger (NASA Lewis), "An Historical Perspective of the NERVA Nuclear Rocket Engine Technology Program" — NASA CR-187154 / AIAA-91-3451 (NTRS direct PDF route verified live; public domain) | full text hosted | **Historical anchor** for the Nuclear thermal row: 20 rocket reactors ground-tested 1955-1972, flight-baseline engine defined at 825 s Isp / 75 klbf — what was actually demonstrated vs our ~900 s design value |
+| schoenman_1992 | T2 | Schoenman (NASA Lewis), "Test experience, 490 N high performance (321 sec Isp) engine" — AIAA-92-3800 (NTRS record + abstract verified live; full text metadata-only on NTRS) | open_not_pulled (abstract-level anchor) | **Family benchmark** for the UDMH/NTO row: measured 309 s @ AR 44:1 and 321 lbf-s/lbm @ AR 286:1 on NTO/MMH — our 318 s sits just below, as expected (UDMH heavier than MMH) |
 ## Domain 4 — Launch cost per kg (history, projections)
 
 _Backings: price rows of `spacecost/launch_vehicles.csv`; the Stage 4 cost cascade._
@@ -110,6 +111,7 @@ _Backings: `storage_systems.csv`, `operational_costs.csv`, environment penalties
 ---
 ## Research log
 
+- **Round 24** (2026-09-18): domain 3 deepened; 1 new item → total now 64: T1×37, T2×24, T3×3. No full text hosted this round (NTRS metadata-only).
 - **Round 23** (2026-09-18): domain 3 deepened; 2 new items → total now 63: T1×37, T2×23, T3×3. Two full texts hosted this round.
 - **Round 22** (2026-09-18): domain 3 deepened; 1 new item → total now 61: T1×36, T2×22, T3×3. One full text hosted this round.
 - **Round 21** (2026-09-18): domain 3 deepened; 1 new item → total now 60: T1×36, T2×21, T3×3. One full text hosted this round.
