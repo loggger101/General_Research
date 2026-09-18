@@ -137,3 +137,38 @@ Domain 3 is now complete at both ends AND in the middle: easy NEA boundary (elvi
 - **komurasaki_aquarius_ground_2018** (T1): Komurasaki, Asakawa et al., JAXA — 'Fundamental Ground Experiment of a Water Resistojet Propulsion System: AQUARIUS', Trans. JSASS Aerospace Tech. Japan Vol. 16 No. 5 pp. 427-431 (2018), open access via J-STAGE, hosted in full_texts/. Ground-test companion: design point ~2 mN at **~70 s Isp** for the CubeSat-class unit; evaporation-rate and heat-budget methodology for water as propellant.
 
 - Also this round (registry hygiene): root `sources.csv` was stale — it had not been updated since Round 15 (54 rows) while per-domain registries held 69. Regenerated it as the aggregate of all five domain files: now **71 rows**, matching the union exactly.
+
+## Round-29 addition — HTP / RP-1 (peroxide bipropellant) row gets peer-reviewed anchors, incl. a near-exact engine match (two hosted)
+
+Target: propellants.csv row 'HTP / RP-1 (peroxide biprop)' at ~320 s vacuum Isp with O/F 7:1 — the last unanchored
+workhorse-class chemical row after Round 28. Two independent peer-reviewed sources now bracket it, both hosted in full_texts/:
+
+### krishnan_2010_h2o2_rp1_upper_stage (T1, AIAA JPC proceedings)
+S. Krishnan (Universiti Teknologi Malaysia), 'Hydrogen Peroxide / Kerosene, Liquid-Oxygen / Kerosene, and
+Liquid-Oxygen / Liquid Methane for Upper Stage Propulsion'. PDF created 25 Jul 2010 (embedded metadata); the paper's own
+AIAA number is not recoverable from the text layer (all AIAA-number hits in the document are references to other papers),
+so it is deliberately omitted rather than guessed. Author-hosted copy downloaded and extracted on this machine.
+
+Verified numbers (regex-checked against extracted text):
+- Table 3, RD-161P engine: H2O2(~0.97)/RP-1, Phi = 5.9, vacuum Isp **3128 N-s/kg (~319 s)** — NEAR-EXACT match to our ~320 s row value (within 0.4%).
+- Table 3, Gamma-2: H2O2(~0.83)/RP-1, Phi = 8.23, vacuum Isp 2599 N-s/kg (~265 s) — this is the Black Arrow flight engine; confirms our row's O/F ~7:1 sits between the historical low-concentration (Gamma-2) and high-concentration (RD-161P) designs.
+- Table 3, BA-44 / BA-810 at Phi = 7.5: 2941 / 2765 N-s/kg (~299 s / ~282 s).
+- Table 2 (theoretical): H2O2-RP1 maximum equilibrium Isp occurs at equivalence ratio 1; first column (Phi = 7.38) gives ~3268 N-s/kg (~333 s), bracketing our row from above under frozen-flow conditions the paper also tabulates.
+- Paper recommends eta_sI ~0.90 for HTP/RP-1 upper-stage engines — a defensible efficiency factor if we ever want to derive engine-level Isp from theoretical values in this class.
+
+### pietrobon_1999_h2o2_kero_shuttle_boosters (T1, JBIS vol. 52 pp. 163-168)
+Steven S. Pietrobon, 'High Density Liquid Rocket Boosters for the Space Shuttle'. Published in the Journal of the British
+Interplanetary Society May/June 1999; author-hosted copy downloaded and extracted on this machine.
+
+Verified numbers: Table 1 — **98% H2O2/Kero at MR (O:F) = 7.30 gives ve = 3017 m/s (~308 s)** with density impulse
+Id = 3940 Ns/l, versus LOX/Kero at MR 2.60 giving ve = 3305 m/s but Id only 3388 Ns/l — an independent peer-reviewed
+confirmation of the ~310-320 s class value for our row's O/F ~7:1, plus the density rationale that historically favored
+peroxide/kerosene over LOX/kerosene.
+
+### Scope note
+Our 320 s row is a class-level design point at O/F 7:1 with high-concentration HTP (~98%). Krishnan's RD-161P entry
+(~319 s, Phi 5.9) is the closest real-engine match; Pietrobon's theoretical ~308 s (Phi 7.30) and Krishnan's theoretical
+~333 s bracket it from below/above respectively. The row now has a measured-class anchor plus two independent peer-reviewed
+theoretical confirmations — same anchoring standard as the other workhorse rows.
+
+Remaining unanchored propellant rows after this round: ALICE metal/water and CO/LOX ISRU (both exotic/niche; next-round candidates).
