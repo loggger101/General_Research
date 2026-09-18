@@ -135,3 +135,19 @@ peer-reviewed magnitude of exactly that gradient:
 - Paired with `usgs_pp1802n`: Vesta *has* a large metal core (this paper) AND its crust is ~0.5 ppb Pt (`usgs_pp1802n`) —
   together they justify the full differentiated-body model our pipeline prices on for X/V/A/R/O types.
 
+
+## Round-3 addition — measured volatile inventory of a real B-type sample
+
+### bennu_volatiles_2025 [T1] — "Abundant ammonia and nitrogen-rich soluble organic matter in samples from asteroid (101955) Bennu", Nature Astronomy 9:199–210 (Feb 2025), DOI 10.1038/s41550-024-02472-9
+- **Full text hosted**: `full_texts/bennu_volatiles_nature_astronomy_2025_s41550-024-02472-9_CC-BY.pdf` (8.4 MB, 20 pp; verified live from this machine: HTTP 200 application/pdf via nature.com direct PDF route — the one publisher that did NOT bot-block in round 3). CC-BY per OpenAlex license record.
+- **What it is**: first lab analysis of OSIRIS-REx returned Bennu material (B-type, hydrated) for total C/N and free ammonia/amine/amino-acid inventory, benchmarked against CI–CY chondrites AND the Ryugu samples — i.e. a head-to-head volatile comparison between our two best-studied C-complex targets.
+- **Key numbers** → `extracted_data/bennu_volatiles_key_numbers.csv`: total C 4.5–4.7 wt%, total N 0.23–0.25 wt% (aggregate samples, Ext Data Table 1); ammonia ≈ 40% of total N in the hot-water extract; regional aliphatic/aromatic carbon up to ~2.5 wt%; headline: Bennu is MORE volatile-rich than Ryugu and most meteorites.
+
+### Comparison against pipeline `TAXONOMY_COMPOSITION`
+| field (B row) | our value | peer-reviewed measurement | verdict |
+|---|---|---|---|
+| carbon_fraction | 0.30 | total C = 4.5–4.7 wt% in a real B-type sample | **DISCREPANCY — ours is ~6-7x low IF we intend elemental carbon.** Caveat: our `carbon_fraction` prices *free/bulk* carbon at the $/kg commodity rate; the paper's figure includes organics locked in phyllosilicates and soluble N-C species. The honest reading: our B-row volatile mass is under-modelled, but part of the gap is "not extractable as a commodity". Flag for user decision — do NOT silently raise 0.30 |
+| ice_fraction (as water proxy) | 0.20 | not directly measured here (this paper reports C/N/NH3, not H2O wt%) | no verdict this round; the 40%-of-N-as-ammonia result is a NEW volatile class we don't model at all — candidate commodity row for `mineral_value.py` if ammonia ever has an in-space price anchor |
+| (C-complex rows) | carbon_fraction 0.20–0.28 | CI/CM/CY comparison values in Ext Data Table 1 (~1–3 wt% total C, "rare instances up to ~5 wt%" per the paper's own meteorite baseline sentence) | same caveat as B: measured TOTAL carbon is an order of magnitude above our priced fraction; directionally supports raising the volatile mass for hydrated types, but only after deciding what fraction is commodity-extractable (cf. ssap_2021 yields in domain 5 — that paper's per-type extraction numbers are the right bridge between "measured total" and "sellable") |
+
+- **Why this matters**: rounds 1–2 anchored *density* and *metal/PGM* content of C-complex bodies; nothing had ever pinned down their VOLATILE inventory against returned material. This paper does, for both Bennu (B) and Ryugu (C), with a common lab protocol — the cleanest possible per-type volatile anchor we will get without flying another sample mission.

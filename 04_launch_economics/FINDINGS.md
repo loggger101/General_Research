@@ -49,3 +49,22 @@ the *same* name+payload carries an 83% spread between sources; that row should a
 `launch_vehicles.csv`, and the comparison surfaced one row that needs range-bands (Long March 5) plus config-mismatch labels
 on four more. No launch-price errors found in our table — every divergence traces to documented assumptions or source spread.
 
+
+## Round-3 additions — the forward-looking half of launch economics
+
+### terzi_nicoli_2026 [T1] — Terzi & Nicoli, "From Sputnik to Starship: Estimating the experience curve of space launch technology", PNAS Nexus 5(7):pgag217 (2026), DOI 10.1093/pnasnexus/pgag217
+- **Full text hosted**: `full_texts/terzi_nicoli_2026_from_sputnik_to_starship_experience_curve_PNAS_Nexus_pgag217_CC-BY.pdf` (586 KB, 10 pp; verified live from this machine via the Cambridge University repository bitstream — PMC's direct PDF route returned a stub and AEA/Elsevier-style endpoints were not involved; CC-BY per OpenAlex).
+- **What it is**: the largest standardized launch-cost dataset to date (4,400+ launches, 1960–2025, 16 spacefaring entities) fit with a Wright's-law experience curve — i.e. not just history but a *forecasting model* for $/kg-to-LEO. This is the piece domain 4 was missing: rounds 1–2 anchored where launch cost HAS BEEN (jones2018, hf_dataset); this anchors where it is projected to GO.
+- **Key numbers** → `extracted_data/terzi_nicoli_experience_curve_key_numbers.csv`: fleet average $87,023/kg (1960) → $3,868/kg (2025), all in 2024 USD; learning rate −21.2% per doubling of cumulative payload overall, ~−44%/doubling post-Cold-War vs ~−17% earlier; central-scenario forecast **$1,600/kg by 2030 and $300/kg by 2040**; steeper than solar PV (−20.2%) or steamship freight (−15.5%).
+
+### What this settles
+- Our Stage-4 cost cascade prices launches at today's per-vehicle list prices with `reference_year` tags but carries **no forward projection** — the "launch no longer dominates" claim in economicspace's README rests on jones2018's historical factor-of-~20. This paper supplies the peer-reviewed slope: if the fleet average keeps its 21%/doubling rate, our Falcon-9 row ($4,253/kg LEO, 2026) is *above* their 2025 fleet mean and will be ~2x above it by 2030 in their central case. That is a citable basis for either (a) discounting launch cost in long-horizon mission cells or (b) stating the assumption explicitly — user's call, recorded here rather than applied silently.
+- The post-Cold-War acceleration (44% vs 17%) matters more than the headline number: it says the curve is getting STEEPER, so any flat extrapolation of current prices understates future declines for exactly the reusable-launch class our launch table now leans on.
+
+### weinzierl2018 [T1] — Weinzierl (Harvard), "Space, the Final Economic Frontier", Journal of Economic Perspectives 32(2):173–192
+- **Access**: open access per OpenAlex/AEA, but BOTH PDF routes bot-block this machine (aeaweb.org/articles/pdf → 403; Harvard DASH bitstream download endpoint → 405). Recorded `open_not_pulled`; pullable from a normal browser. Abstract + key figure recovered via the AEA/Harvard landing-page record:
+- **Key number (as published, retrieved from the OA landing page)**: NASA's COTS cost breakdown — all-in cargo delivery to ISS ≈ **$89,000/kg via SpaceX** and $135,000/kg via Orbital Sciences, vs ~$272,000/kg estimated for Shuttle (citing Zapata 2017). This is the peer-reviewed economics-journal anchor for the commercial-vs-government price gap that our launch table's operator split implicitly assumes.
+- **Why it matters here**: JEP is a top economics journal — this is the strongest *economics* (not engineering) source in the repo: market structure, COTS policy effects and cost trajectories written for an economist audience. Pairs with terzi_nicoli_2026 as theory + data.
+
+## Round-3 status (domain 4)
+Domain now spans history (jones2018), current per-vehicle prices (hf_dataset row-comparison), a peer-reviewed experience curve WITH forecasts (terzi_nicoli_2026, hosted), and the economics-journal framing of COTS price gaps (weinzierl2018, OA-pending). The launch term in Stage 4 can now cite a forward projection instead of only a historical trend.
