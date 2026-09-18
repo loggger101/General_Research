@@ -151,3 +151,27 @@ peer-reviewed magnitude of exactly that gradient:
 | (C-complex rows) | carbon_fraction 0.20–0.28 | CI/CM/CY comparison values in Ext Data Table 1 (~1–3 wt% total C, "rare instances up to ~5 wt%" per the paper's own meteorite baseline sentence) | same caveat as B: measured TOTAL carbon is an order of magnitude above our priced fraction; directionally supports raising the volatile mass for hydrated types, but only after deciding what fraction is commodity-extractable (cf. ssap_2021 yields in domain 5 — that paper's per-type extraction numbers are the right bridge between "measured total" and "sellable") |
 
 - **Why this matters**: rounds 1–2 anchored *density* and *metal/PGM* content of C-complex bodies; nothing had ever pinned down their VOLATILE inventory against returned material. This paper does, for both Bennu (B) and Ryugu (C), with a common lab protocol — the cleanest possible per-type volatile anchor we will get without flying another sample mission.
+
+## Round-4 additions — C-type hydration measured, and the spectral-bias it implies
+
+### ryugu_hydrated_2023 [T1] — "A dehydrated space-weathered skin cloaking the hydrated interior of Ryugu", Nature Astronomy 7:170–181 (Feb 2023), DOI 10.1038/s41550-022-01841-6
+- **Full text hosted**: `full_texts/ryugu_dehydrated_skin_hydrated_interior_nature_astronomy_2023_s41550-022-01841-6_CC-BY.pdf` (7.2 MB; verified live from this machine via nature.com direct PDF — same route that worked for bennu_volatiles_2025). CC-BY per OpenAlex license record.
+- **What it is**: lab study of Hayabusa2 Ryugu grains showing the C-type surface carries a dehydrated, space-weathered skin (dehydroxylation of saponite/serpentine) over an interior that still retains structural –OH — i.e. the bulk body IS hydrated even where spectra look dry.
+- **Key numbers** → `extracted_data/ryugu_hydrated_interior_key_numbers.csv`: ~66% (4/6) of examined grains show weathering; dehydration extends ≥1.5 µm below the surface; pristine-grain O/cation ratios confirm interlayer H₂O largely lost but structural –OH retained, consistent with thermogravimetric analysis of Ryugu grains.
+
+### What this settles for `TAXONOMY_COMPOSITION`
+- **The ice_fraction rows carry a systematic bias we can now name**: our per-type water fractions are inferred from spectral/physical properties of the *surface* (albedo bands, thermal inertia), but this paper shows C-complex surfaces dehydrate by exactly the same dehydroxylation process our `Water liberation energy` row prices. A weak 2.7 µm band can mean weathered skin rather than bulk dryness — so **spectral-based volatile estimates for C-types are biased LOW**, and our ice_fraction values (0.10–0.20) should be read as *surface-representative lower bounds*, not bulk means.
+- This is the C-type companion to bennu_volatiles_2025's B-type result: between the two, both of our best-studied hydrated types now have returned-sample evidence that their interiors hold more volatiles than their surfaces advertise. No table change applied — this changes how the existing numbers should be *interpreted* (and possibly nudged up), which is a user decision like round 3's carbon_fraction flag.
+
+### ryugu_soluble_organics_2023 [T1] — "Soluble organic molecules in samples of the carbonaceous asteroid (162173) Ryugu", Science (2023), DOI 10.1126/science.abn9033
+- **Access**: OA per OpenAlex, but both HAL mirror routes bot-block this machine (Anubis challenge page returned instead of PDF — verified). Recorded `open_not_pulled`; pullable from a normal browser.
+- **Abstract (as published via OpenAlex)**: Hayabusa2 Ryugu surface samples analyzed for organics; identified CHNOS molecules formed by methylation, hydration, hydroxylation and sulfurization reactions — amino acids, aliphatic amines, carboxylic acids, PAHs and N-heterocycles with properties consistent with abiotic origin.
+- **Pipeline mapping**: the C-type organic-inventory companion to bennu_volatiles_2025's B-type numbers; together they bracket what "carbon_fraction" means for both of our hydrated reference types (B vs C).
+
+### ryugu_macromolecular_om_2023 [T1] — "Macromolecular organic matter in samples of the asteroid (162173) Ryugu", Science (2023), DOI 10.1126/science.abn9057
+- **Access**: OA per OpenAlex; CNRS HAL mirror bot-blocked from this machine (same Anubis challenge). Recorded `open_not_pulled`.
+- **Abstract (as published via OpenAlex)**: Ryugu macromolecular organic matter contains aromatic + aliphatic carbon, ketone and carboxyl groups; spectroscopic features consistent with chemically primitive CCs that experienced parent-body aqueous alteration; morphology = nanoglobules + diffuse carbon associated with phyllosilicate and carbonate minerals; D/N-15 enrichments indicate formation in the early Solar System.
+- **Pipeline mapping**: confirms Ryugu's organic carbon is *aqueously altered* — direct sample-level support for treating C-type bodies as hydrated parent-body fragments (the premise behind `ice_fraction` > 0 on every C-complex row).
+
+## Round-4 status (domain 2)
+Both reference types now have returned-sample volatile/organic anchors: B = bennu_volatiles_2025 + ryugu_hydrated_2023's comparison data; C = ryugu_hydrated_2023 + the two Science organic papers (OA-pending). The domain-2 question "what does a spectral type actually contain" now has measured answers for both ends of the hydrated range, with one systematic bias (surface weathering) explicitly named.
