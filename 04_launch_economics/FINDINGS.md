@@ -68,3 +68,12 @@ on four more. No launch-price errors found in our table — every divergence tra
 
 ## Round-3 status (domain 4)
 Domain now spans history (jones2018), current per-vehicle prices (hf_dataset row-comparison), a peer-reviewed experience curve WITH forecasts (terzi_nicoli_2026, hosted), and the economics-journal framing of COTS price gaps (weinzierl2018, OA-pending). The launch term in Stage 4 can now cite a forward projection instead of only a historical trend.
+
+## Round-6 addition — jones2018's numbers extracted (source was already registered; the key figures were not)
+
+### jones2018 [T2] — re-extraction pass
+The source itself has been in this domain since round 3, but only its headline (Shuttle $54.5k/kg → commercial ~$2.7–3.9k/kg, factor of ~20) was recorded. This round the full text was re-pulled from NTRS (`ntrs_2020_recent_large_reduction_in_space_launch_cost.pdf`, public domain — already hosted; a second copy I downloaded this round was verified identical in content and removed as redundant) and its numbers extracted into `extracted_data/jones2018_launch_cost_key_numbers.csv`:
+- **ISS cargo: $105.8k/kg Shuttle → $25k/kg Falcon 9+Dragon — only a ~4× factor**, versus the ~20× for LEO, because Dragon's payload fraction to ISS is small (6,000 kg vs 16,050 kg). This is the quantitative reason our model prices LEO and ISS separately; any "launch cost dropped 20×" claim applied to ISS-bound missions overstates it ~5×.
+- **Historical baseline 1970–2000: $18.5k/kg average (range $10–32k)** across 22 systems, with the sub-$10k systems all Soviet/Chinese and possibly subsidized — a caveat for any "cost floor" argument built on that era's data.
+- **Falcon Heavy at $1.4k/kg** (2018$) — the low end of our launch-cost range.
+- **The reusability-economics finding**: reusable rockets carry HIGHER development costs and a landing-fuel payload penalty; the shuttle is the counterexample to "reused = cheap"; as of 2018 Falcon 9's reuse savings were still projected, not realized. For any future Starship-class projection in our model: peer-reviewed position is that reuse lowers MARGINAL cost while raising DEVELOPMENT cost — a projection must carry both terms or it will misprice the early flights exactly when they matter most (the first decade of a new vehicle's life).
