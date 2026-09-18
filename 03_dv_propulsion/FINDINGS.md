@@ -77,3 +77,7 @@ Domain now anchored at all three rungs: easy NEA (elvis2011, hosted), average/ha
 
 ## Round-5 status (domain 3)
 Domain 3 is now complete at both ends AND in the middle: easy NEA boundary (elvis2011), population Δv root + belt contrast (shoemaker_helin_1978), main-belt per-object map recorded paywalled (taylor2018, open item), and propulsion performance anchored to flight articles for both thruster head (this round) and PPU (round 4).
+
+## Round-12 addition — the cislunar rows get their first peer-reviewed anchor (sanna_2024, hosted)
+
+**sanna_2024 (T1, full text hosted)**: minimum-fuel bi-impulsive Gateway(NRHO)->LLO transfers, <=48 h ToF, high-fidelity model. Results by target inclination: **648 m/s** (free RAAN/LTO) up to ~1253 m/s (i=20 deg); polar LLO optimum **666 m/s**, consistent with Bucchioni & Innocenti 661 / Lu et al. 650 under CR3BP. Our `delta_v_segments.csv` row "NRHO -> low lunar orbit = 730" sits mid-range of the peer-reviewed envelope — AGREE, and it can now cite this paper (polar-orbit case) instead of an uncited planning number. Hosted via the Sapienza IRIS institutional copy because MDPI's pdfdirect route 403s from this machine; CC-BY per publisher.
