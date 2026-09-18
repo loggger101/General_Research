@@ -96,3 +96,18 @@ All three new items hosted and access-verified from this machine. Domain now cov
 
 ## Round-4 status (domain 5)
 The electric-propulsion rows now rest on the flight article itself: kg/kW confirmed to the digit against NEXT-C's own design-build-test report, and the efficiency chain bounded by its measured PPU figure. Domain 5 coverage after this round: boil-off (r1), transfer loss (r1), ISRU yields + plant decomposition (r1/r3), volatiles-loss physics (r3), EP performance (r4 — new).
+
+## Round-6 addition — RTG rows get a peer-reviewed anchor (and the Pu-238 ceiling gets its citation)
+
+### ambrosi_2019 [T1] — Ambrosi, Williams, Watkinson et al. (ESA + UK partners), "European Radioisotope Thermoelectric Generators (RTGs) and Radioisotope Heater Units (RHUs) for Space Science and Exploration", Space Sci Rev 215:55 (2019), DOI 10.1007/s11214-019-0623-9
+- **Full text hosted**: `full_texts/ambrosi_et_al_2019_european_RTG_RHU_space_science_exploration_spacescirev_215-55_CC-BY4.0.pdf` (6.2 MB, 41 pp; verified live from this machine: Springer direct OA PDF + CC-BY 4.0 license statement on p.1).
+- **Key numbers** → `extracted_data/european_rtg_review_2019_key_numbers.csv`: GPHS/MMRTG flight heritage documented (Cassini/New Horizons/Galileo = GPHS-RTG; MMRTG for planetary surface); Pu-238 constant-rate production restart targeting **~1.5 kg/yr by 2025**; specific power across RTG classes from ~2.1 W/kg down to 1.3 W/kg (small units and stacked configurations — i.e. BELOW even the MMRTG's 2.4); skutterudite + zintl thermoelectrics named as the next-generation efficiency path.
+
+### What this settles
+- The `RTG specific power` row in `operational_costs.csv` previously cited "flight records" without a citable document — that flight record (290 We/56 kg GPHS-RTG; 110 We/45 kg MMRTG) is now confirmed by a peer-reviewed journal review.
+- **The Pu-238 supply constraint hard-coded in `calc.py` (:544, :2923 — the ~1.5 kg/yr ceiling that makes RTGs an allocation problem rather than a money problem) had no citable source; it now does.** This was one of the two numbers in the model with the strongest operational consequence and the weakest documentation chain.
+- The W/kg range across classes (1.3–2.1 for small/stacked designs) validates how our row is set: 5.0 = deep-space-only qualification, 2.4 = atmosphere-qualified MMRTG floor — deep-space-only design genuinely buys ~2× the specific power of a surface-rated unit, and stacked/small configurations can't reach even the floor.
+- Watch item for future data: skutterudite/zintl conversion-efficiency progress is the stated path to higher W/kg; if it matures past lab stage our 6–8% efficiency assumption (in the $/W row) becomes the first number to update.
+
+## Round-6 status (domain 5)
+Domain 5's power-system rows are now fully anchored: electric chain = nextc_ppu_2020 + nextc_protoflight_2021 (rounds 4–5, flight articles); nuclear chain = ambrosi_2019 (this round). The solar row remains the one power figure without a dedicated peer-reviewed anchor — it is priced from $/W market data rather than performance physics, which is arguably correct for a cost model.
