@@ -63,3 +63,17 @@ we've now anchored at both ends.
 
 ## Round-3 status (domain 3)
 Domain now anchored at all three rungs: easy NEA (elvis2011, hosted), average/hard NEA + belt contrast (shoemaker_helin_1978, hosted — new this round), and the main-belt map itself (taylor2018, paywalled-pending). The one remaining citation correction from round 1 (average-NEA row → elvis2011) is now *reinforced* rather than contradicted by its true root source.
+
+## Round-5 addition — the flight-thruster half of the electric-propulsion chain
+
+### nextc_protoflight_2021 [T2] — Monheiser, Goodfellow, Aubuchon et al. (Aerojet Rocketdyne / NASA Glenn), "A Summary of the NEXT-C Flight Thruster Proto-Flight Testing", NTRS 20210018563
+- **Full text hosted**: `full_texts/monheiser_goodfellow_aubuchon_2021_NEXT-C_flight_thruster_proto-flight_test_ntrs_20210018563_publicdomain.pdf` (2.5 MB, 18 pp; verified live from this machine: NTRS API record + PDF download OK). Public domain as a US-government work.
+- **Key numbers** → `extracted_data/nextc_flight_thruster_key_numbers.csv`: flight thruster SN001 designed for Isp **1400–4160 s**, thrust **25–235 mN** at up to 6.85 kW; proto-flight sequence = performance characterization interleaved with vibration + TVAC, then DART-tailored SIT; delivered to APL for the DART mission.
+
+### What this settles
+- Our `Xenon (Hall / ion)` row carries **isp_vac_s = 3000** and its notes name NEXT-C as heritage — that number is now confirmed as a *mid-envelope throttle level* of hardware that actually flew, not an aspiration from a brochure. The full measured range (1400–4160 s) also bounds the row's implicit assumption: any mission Module 4 sizes at Isp outside ~2500-3500 s is extrapolating past the tested core of this article class.
+- Pairs with nextc_ppu_2020 (round 4, domain 5): between the two hosted reports, **both halves** of our electric-propulsion chain — thruster head (kg/N, Isp) and power processing unit (kg/kW, η) — now rest on flight-article test documentation. The EP rows are the best-sourced performance numbers in `propellants.csv` after this round.
+- Thrust range 25–235 mN at ~7 kW is also the quantitative reason our low-thrust trip times run to years: a cargo tug sized by Module 4's rocket equation gets ~0.1-0.2 N of acceleration authority, and that number now has its source committed here.
+
+## Round-5 status (domain 3)
+Domain 3 is now complete at both ends AND in the middle: easy NEA boundary (elvis2011), population Δv root + belt contrast (shoemaker_helin_1978), main-belt per-object map recorded paywalled (taylor2018, open item), and propulsion performance anchored to flight articles for both thruster head (this round) and PPU (round 4).
