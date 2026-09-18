@@ -193,3 +193,18 @@ Our row's 210 s vacuum is a conservative, hardware-realistic value: it sits betw
 
 ### Remaining unanchored propellant rows after this round
 - CO / LOX (carbonaceous ISRU, ~260 s) — next target; theoretical CEA-class data expected to be available in NTRS/peer-reviewed literature on carbon monoxide + oxygen combustion for Mars ascent concepts.
+
+## Round-31 addition — CO / LOX (carbonaceous ISRU) row gets peer-reviewed anchors from the actual Mars-ISRU literature (two hosted)
+
+**Target:** `propellants.csv` "CO / LOX (carbonaceous ISRU)" at ~260 s vacuum, mild-cryogen storage. This was the LAST unanchored propellant row — with this round every workhorse chemical + electric-adjacent class in the file now has a peer-reviewed anchor.
+
+**Anchors added:**
+1. `hepp_landis_kubiak_1991_mars_co2` (T2, NASA TM-103728, hosted) — Hepp/Landis/Kubiak, "Chemical Approaches to Carbon Dioxide Utilization for Manned Mars Missions" (UA/NASA SERC 2nd Annual Symposium). The canonical early peer-reviewed treatment of CO as a direct Mars-derived rocket fuel. Verified verbatim in the extracted text:
+   - *"Mars-derived carbon monoxide can be used directly as a fuel, at a specific impulse of about 300 seconds."* — brackets our conservative 260 s engineering value from above (our row is deliberately below the idealized figure).
+   - Same paragraph gives the class ladder: H/O₂ up to ~500 s; hydrocarbon fuels ~375 s; alcohols slightly less; CO ~300 s.
+   - Also documents the key rationale our row encodes: *"Carbon monoxide contains no Earth-derived hydrogen"* — i.e., it is the only chemical bipropellant makeable from Martian resources alone, which is exactly why the pipeline carries a separate CO/LOX class rather than folding ISRU into methalox.
+2. `linne_1996_co_ox_ignition` (T2, NASA TM-107267 / AIAA-96-2943, hosted) — Linne (NASA Lewis), "Experimental Evaluation of the Ignition Process of Carbon Monoxide and Oxygen in a Rocket Engine" (32nd JPC). Subscale combustion tests with both propellants chilled to near-liquid temperatures (-197 °F O₂ / -193 °F CO) at optimum mixture ratio **O/F 0.55** — steady-state combustion achieved in every test case; ignition-boundary data for engine design. This validates the cryogenic-storage class our row assumes (mild_cryogen, not ambient) and supplies the O/F context: note CO/O₂ runs FUEL-LEAN by mass ratio convention (O/F 0.55 ≈ fuel-rich on a molar basis), i.e., FUEL-RICH relative to the stoichiometric O/F ≈ 1.14 (2CO + O₂ → 2CO₂), which is typical for high-Isp operation of this pair and consistent with CO's low molecular weight as fuel.
+
+**Scope notes:**
+- The ~300 s figure is an idealized/theoretical class value from the ISRU literature; our row's 260 s is intentionally conservative (hardware-realistic, engine-cycle losses). Both anchors bracket it honestly: Hepp et al. above at ~300 s, Linne confirming the combustion regime works as assumed.
+- No measured full-scale CO/LOX engine Isp exists in the open literature — this propellant was never flown; both anchors are therefore theoretical + subscale-experimental by nature, which is the best available for a non-flying class and matches how other unflown rows (e.g., HTP/RP-1) were anchored.
