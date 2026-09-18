@@ -70,6 +70,7 @@ _Backings: `spacecost/delta_v_segments.csv`, Isp rows of `propellants.csv`._
 | thiokol_sts33r_1990 | T2 | Thiokol, "Flight Motor Set 360L007 (STS-33R) Final Report" — TWR-17546-1 (NTRS direct PDF route verified live; public domain) | full text hosted | **measured flight Isp anchor** for the Solid (APCP) row: reconstructed vacuum Isp 268.2 s LH / 267.6 s RH at 71 deg F, within 0.3% of predicted 268.5 — RSRM-class APCP; matches thapa_2023 table entry exactly (independent cross-check) |
 | yim_2014 | T2 | Yim, Sibé & Lerardo (NASA), "Plume Impingement Analysis for the European Service Module Propulsion System" — AIAA JPC 50th Joint Propulsion Conf. 2014-3883 (NTRS direct PDF route verified live; public domain) | full text hosted | **configuration anchor** for the MMH/NTO row: Orion ESM = common pressure-regulated MMH/NTO feed, Shuttle-heritage 26.7 kN OMS-E (55:1 AR) + 8x R-4D 490 N aux + 24x 220 N RCS; no Isp table — the row's 336 s stays datasheet-sourced |
 | jpl_1968 | T2 | JPL TR 32-7227, "Status of Technology — The Monopropellant Hydrazine" (NTRS direct PDF route verified live; public domain) | full text hosted | **measured-Isp anchor** for the Hydrazine (monoprop) row: catalytic-bed reactor Isp 235 s (~97% theoretical, AR 44:1); Fig. 3 = theoretical vacuum Isp vs % ammonia dissociated — our ~220 s sits on that curve |
+| hitt_2001 | T1 | Hitt, Zakrzwski & Thomas (NASA), "MEMS-based satellite micropropulsion via catalyzed hydrogen peroxide decomposition" — Smart Mater. Struct. 10(6) (NTRS direct PDF route verified live; public domain) | full text hosted | **Isp anchor** for the HTP row: theoretical max vacuum Isp ~185 s at adiabatic flame temp, empirical band down to ~140 s @ 80% efficiency — our ~165 s sits inside it |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -107,6 +108,7 @@ _Backings: `storage_systems.csv`, `operational_costs.csv`, environment penalties
 ---
 ## Research log
 
+- **Round 21** (2026-09-18): domain 3 deepened; 1 new item → total now 60: T1×36, T2×21, T3×3. One full text hosted this round.
 - **Round 20** (2026-09-18): domain 3 deepened; 1 new item → total now 59: T1×35, T2×21, T3×3. One full text hosted this round.
 - **Round 19** (2026-09-18): domain 3 deepened; 1 new item → total now 58: T1×35, T2×20, T3×3. One full text hosted this round.
 - **Round 18** (2026-09-18): domain 3 deepened; 1 new item → total now 57: T1×35, T2×19, T3×3. One full text hosted this round.
