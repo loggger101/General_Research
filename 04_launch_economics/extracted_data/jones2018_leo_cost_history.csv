@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+jones2018,Space Shuttle cost per kg to LEO (historical baseline),54500,USD/kg,"Abstract ($1.5B / 27,500 kg)",the 'before' anchor of the ~20x reduction
+jones2018,Falcon 9 advertised cost per kg to LEO (2018 era),2720,USD/kg,"Abstract ($62M / 22,800 kg expendable config)","NOTE: this is the EXPENDABLE-adjacent figure; our table prices reusable F9 at 4,253 — different configs, both defensible"
+jones2018,total LEO cost reduction factor (Shuttle -> commercial),~20,x,Abstract ('reduced the cost to LEO by a factor of 20'),the headline number; useful for README context on why launch is no longer the binding constraint in our cascade

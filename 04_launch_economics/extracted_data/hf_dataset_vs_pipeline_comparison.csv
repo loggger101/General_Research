@@ -1,0 +1,17 @@
+our_vehicle,pipeline_usd_per_kg_leo,hf_vehicle,hf_usd_per_kg_leo,pct_diff_pipeline_vs_hf,pipeline_reference_year,hf_source,note
+Falcon 9 (reusable),4253.0,Falcon 9 (reusable),3851.0,10.4,2026,"SpaceX website (2024), reduced LEO for reuse margin",exact
+Falcon Heavy (reusable side cores),1702.0,Falcon Heavy (reusable),1940.0,-12.3,2026,"SpaceX website (2024), reduced LEO for reuse",variant: HF says LEO reduced for reuse margin; ours 'side cores' config
+Starship (projected),900.0,Starship (target),67.0,1243.3,2026,"SpaceX stated goal, Elon Musk presentations","DIFFERENT ASSUMPTIONS — theirs = Musk's $10M/150t aspirational target, not an engineering estimate"
+Atlas V 551,8117.0,Atlas V 551,8117.0,0.0,2026,"ULA pricing, FAA/AST Compendium",exact
+Vulcan Centaur VC6,4044.0,Vulcan Centaur,4044.0,0.0,2026,"ULA/Tory Bruno statements, estimated",config variant (VC6)
+New Glenn,1511.0,New Glenn,1511.0,0.0,2026,"Blue Origin estimates, industry analysis",exact
+Electron,23438.0,Electron (Neutron kick stage),23438.0,0.0,2026,Rocket Lab published pricing,HF row is Electron+Neutron; ours bare Electron — check our notes field for which config we priced
+Soyuz-2.1b,5843.0,Soyuz-2.1b,6098.0,-4.2,2026,Roscosmos / Starsem published pricing,exact
+Long March 5,4400.0,Long March 5,2400.0,83.3,2026,CASC / industry estimates,"exact-name but value differs: ours 4,400 vs HF 2,400 — investigate (HF cites 'CASC/industry estimates')"
+H3 (24L),3091.0,H3,3846.0,-19.6,2026,JAXA target pricing,config variant; theirs JAXA target pricing
+Vega C,11212.0,Vega-C,19565.0,-42.7,2026,Arianespace published pricing,"exact-name but value differs: ours 11,212 vs HF 19,565 — investigate"
+PSLV-XL,8158.0,PSLV,4615.0,76.8,2026,ISRO published cost,ours XLC config? check notes; theirs 'ISRO published cost'
+Alpha,14563.0,Firefly Alpha,14563.0,0.0,2026,Firefly published pricing,exact
+Delta IV Heavy,15283.0,Delta IV Heavy,13894.0,10.0,2026,"ULA published pricing, GAO reports","exact-name but value differs: ours 15,283 vs HF 13,894 (ULA/GAO)"
+H-IIA 204,6000.0,H-IIA,9000.0,-33.3,2026,JAXA / MHI published pricing,config variant; theirs JAXA/MHI published pricing
+Terran R,2090.0,Terran R,2750.0,-24.0,2026,Relativity Space public statements,"exact-name but value differs: ours 2,090 vs HF 2,750 (Relativity public statements)"
