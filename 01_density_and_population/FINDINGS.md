@@ -152,3 +152,9 @@ factors remain uncited.
 ## Round-11 addition — S-type density: meteorite-side anchor (wilkinson_robinson_2000)
 
 82 samples / 72 ordinary chondrites, modified Archimedes method at ~1% accuracy: **H=3.44±0.19, L=3.40±0.15, LL=3.29±0.17 g/cm^3** (1-sigma); intra-group spread 3.0–3.8 g/cm^3 at near-invariant bulk composition — density tracks porosity/texture more than chemistry within a group. Meteorite-side anchor for our S row: hand samples ~3.3–3.4 vs carry2012's asteroid-scale S median 2.70 → the gap is km-scale macro-porosity/rubble structure, exactly what `TAXONOMY_COMPOSITION` encodes (S=2.70). Wiley bot-blocks from this machine; no preprint found — recorded open_not_pulled with abstract captured via OpenAlex. Full write-up also in domain 2's FINDINGS.md (round-11 block) since it pairs with the PGM-differentiation anchor there.
+
+## Round-12 addition — M-type density gets TWO independent peer-reviewed anchors (one hosted)
+
+**siltala_granvik_2021 (T1, full text hosted)**: arXiv:2103.01707 preprint of the ApJL paper. Bulk density of 16 Psyche = **3.88±0.25 g/cm^3** — mass from their method validated against Dawn's Ceres/Vesta masses, volume from latest shape estimates. Explicitly RULES OUT an exposed solid iron core; consistent with ferrovolcanism / metal-silicate mix. This is the measurement our `TAXONOMY_COMPOSITION["M"]` already cites (v1.0.8 revision: density 3.90, metal_fraction 0.50) — now hosted and verifiable in-repo.
+
+**farnocchia_2024 (T1, open_not_pulled)**: JPL team (Farnocchia et al., Astron J, CC-BY but IOP bot-blocks + no other PDF route found). Independent method: GM = 1.601±0.017 km^3/s^2 from least-squares astrometry on asteroids passing within 0.05 au (incl. Gaia FPR); occultation/radar volume => **4.17±0.15 g/cm^3**. Our M-row value of 3.90 sits at the LOW end of this independent pair — defensible, but flagged for re-check if Psyche mission data revises either estimate.
