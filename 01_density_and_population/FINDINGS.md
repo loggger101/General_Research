@@ -127,3 +127,17 @@ below both independent anchors — strongest candidates for a `TAXONOMY_COMPOSIT
 the two sources (N≤4 either way); (d) the 37 ppm PGM baseline now has a traceable derivation chain but per-type enrichment
 factors remain uncited.
 
+
+## Round-3 additions — NEA population statistics (the size/completeness backbone of any ranking)
+
+### harris2015 [T1] — Harris & D'Abramo, "The population of near-Earth asteroids", Icarus 257:302–312
+- **Access**: paywalled; ScienceDirect bot-blocks this machine (verified 403 on the article page). Recorded `open_not_pulled` with abstract.
+- **Abstract (as published, retrieved via search snippet of the ADS record)**: "We describe a methodology of estimating the size-frequency distribution (SFD) of near-Earth asteroids (NEAs). We estimate the completion versus size of present surveys based on the re-detection ratio, that is, the fraction of all detections over a recent period that are re-detections of already discovered objects rather than new discoveries. The re-detection ratio is a robust measure of …"
+- **Why it matters here**: this is the peer-reviewed basis for *how complete* the SBDB/SsODNet catalogs actually are by size — i.e. whether our Stage-1 population (and therefore every per-type density/PGM average in domain 1) is biased toward large bodies. The re-detection-ratio method is exactly what a ranking pipeline needs to state as an assumption: "catalog completeness at D < X km is Y%".
+- **Caveat recorded by the authors' own follow-up**: the H-magnitude rounding issue (below) affected this paper's numbers — cite 2021, not 2015, for any population figure.
+
+### harris_dabramo_2021 [T1] — Harris & D'Abramo, "The population of near-earth asteroids revisited and updated", Icarus (2021)
+- **Access**: open access per OpenAlex (`is_oa: true`, DOI 10.1016/j.icarus.2021.114452), but the Elsevier PDF endpoint bot-blocks this machine (verified: pdfft route → 403, HTML challenge). Recorded `open_not_pulled` — pullable from a normal interactive browser like `dziadura2023`.
+- **Abstract (retrieved via search snippet)**: "In this paper we update, extend, and improve upon the recent paper on Near-Earth Asteroid (NEA) population by Harris and D'Abramo (2015). We update the population estimate taking into account discoveries to August 3, 2020. Shortly after the previous paper was published, we identified a problem in our previous studies due to rounding off of absolute magnitude H by the Minor Planet Center to 0.1 …"
+- **Why it matters here**: this is the CORRECTED population estimate — the 2015 numbers are known-bad (MPC rounds H to 0.1 mag, which distorts size-frequency inference). Any completeness claim our pipeline makes should cite THIS paper. It also gives us a dated census boundary (discoveries through 2020-08-03) to pair with `catalog_date` on every output CSV — the same discipline this repo already applies to prices.
+- **Pipeline mapping**: backs the *population-statistics* half of domain 1 that rounds 1–2 left open: our ranking quality depends on knowing what fraction of each size class is actually in the catalog, and these two papers are the only peer-reviewed SFD-completeness method for NEAs. No numbers extracted this round (text not accessible) — recorded as context with abstracts so a later browser pull can fill `extracted_data/`.

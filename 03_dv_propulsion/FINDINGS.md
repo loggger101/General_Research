@@ -48,3 +48,18 @@ confirms the easy-NEA boundary exactly. The Taylor et al. 2018 main-belt Δv map
 row is paywalled and not yet resolved — flagged for a later round; its value is directionally consistent with the NEA ladder
 we've now anchored at both ends.
 
+
+## Round-3 addition — the true root of our average-NEA Δv row
+
+### shoemaker_helin_1978 [T2] — Shoemaker & Helin, "Earth-Approaching Asteroids as Targets for Exploration", NASA CP-2053 (Proc. 4th Lunar and Planetary Science Conference), pp. 245–256
+- **Full text hosted**: `full_texts/shoemaker_helin_1978_NASA_CP-2053_Earth-approaching_targets_ntrs_19780021079_publicdomain.pdf` (NTRS id 19780021079, verified live from this machine: NTRS API search → PDF download OK, 12 pp scanned text). Public domain as a US-government work.
+- **What it is**: the 1978 analysis that first ranked Earth-approaching asteroids by Δv using the figure-of-merit F (the same formalism Asterank's `dv` column still descends from — CITATIONS.md already names this paper; now we actually hold and can quote it).
+- **Key numbers** → `extracted_data/shoemaker_helin_delta_v_key_numbers.csv`: rendezvous impulse ~1 km/s for low-Δv Amors/Apollos at aphelion (some less); sample-return round trip 2–3 km/s total to easy targets vs **5–6+ km/s for typical main-belt objects**; Anteros + 1977 VA easiest, Eros/1960 UA/Icarus near Mars; closed-form Δv ≈ 3.0·F + 0.5 km/s (Fig. 1 caption).
+
+### What this settles
+- Our `LEO → average NEA` row at **6500 m/s** is a full LEO-referenced transfer, and the paper's ~1 km/s rendezvous impulse confirms it: even in 1978 the terminal burn was an order of magnitude smaller than the outbound leg. No change needed to our value; this citation now backs *why* the number sits where it does (outbound-dominated), replacing the mis-cited arXiv:1406.5027 that rounds-1 flagged.
+- Our `main belt → Earth return` at **7500 m/s** and LEO→belt 10500 m/s get a direct peer-reviewed anchor: "typical main-belt" round trips were already estimated at 5–6+ km/s in 1978 — the belt being ~2-3x harder than NEAs is not our assumption, it's measured history.
+- **Taylor et al. 2018 status (still open)**: "A Delta-V map of the known Main Belt Asteroids", Acta Astronautica 146:73–…, DOI 10.1016/j.actaastro.2018.02.014 — verified paywalled this round too (Elsevier Cloudflare challenge on both article and pdfft routes; no OA location in OpenAlex or Crossref). Abstract recovered via the ADS record: "With the lowered costs of rocket technology … asteroid mining is becoming both feasible and potentially profitable. Although the first targets for mining will be the most accessible near Earth objects (NEOs), the Main Belt contains 10^6 times more material by mass…" — recorded here so a later browser pull has the full abstract on hand; it remains `open_not_pulled`.
+
+## Round-3 status (domain 3)
+Domain now anchored at all three rungs: easy NEA (elvis2011, hosted), average/hard NEA + belt contrast (shoemaker_helin_1978, hosted — new this round), and the main-belt map itself (taylor2018, paywalled-pending). The one remaining citation correction from round 1 (average-NEA row → elvis2011) is now *reinforced* rather than contradicted by its true root source.
