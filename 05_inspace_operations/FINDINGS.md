@@ -111,3 +111,17 @@ The electric-propulsion rows now rest on the flight article itself: kg/kW confir
 
 ## Round-6 status (domain 5)
 Domain 5's power-system rows are now fully anchored: electric chain = nextc_ppu_2020 + nextc_protoflight_2021 (rounds 4–5, flight articles); nuclear chain = ambrosi_2019 (this round). The solar row remains the one power figure without a dedicated peer-reviewed anchor — it is priced from $/W market data rather than performance physics, which is arguably correct for a cost model.
+
+## Round-7 addition — the solar row gets its first peer-reviewed W/kg anchor, in our exact mission class
+
+### hoffman_2000 [T2] — Hoffman, Kerslake & Hepp (NASA Glenn), Jacobs (SAIC) & Ponnusamy (Spectrum Astro), "Thin-Film Photovoltaic Solar Array Parametric Assessment", NASA/TM--2000-210342 = AIAA-2000-2919
+- **Full text hosted**: `full_texts/hoffman_kerslake_hepp_jacobs_ponnusamy_2000_thin-film_PV_solar_array_parametric_assessment_NASA_TM-2000-210342_AIAA-2000-2919_publicdomain.pdf` (1.0 MB, 16 pp; verified live from this machine: NTRS API + PDF download OK). Public domain as a US-government work.
+- **Key numbers** → `extracted_data/hoffman_2000_pv_array_key_numbers.csv`. The study parametrically assesses eight missions across the solar system, and one of them is a **Main Belt Asteroid Tour at 1.5 AU using solar electric propulsion — our exact mission class**: 7.5 kW EOL power requirement, total array mass 121 kg (4-junction GaAs case), total array cost $14.1M (2000$).
+
+### What this settles
+- **The `Power system specific mass` row (60 W/kg @ 1 AU, SYSTEM-level) now has an independent peer-reviewed cross-check.** The MBAT's fully ancillied array works out to ~62 W/kg in its flight environment (EOL at 1.5 AU). Converting the same hardware to a 1-AU basis — ×(1.5)² ≈ **~140 W/kg ARRAY-ONLY** — and comparing with our SYSTEM figure of 60 W/kg @ 1 AU gives an array-to-system ratio of ~2×, which independently corroborates the row's own internal logic ("batteries, regulation and structure roughly halve that at the system level"). The two figures are consistent, not contradictory: one is array-only in a dim environment, the other is system-level at 1 AU. That reconciliation is now recorded explicitly instead of left to inference.
+- **The $/W side**: ~$1880/W array-level (2000$, derived from the stated $14.1M / 7.5 kW) versus cell-level costs in the same study ($400/W 4-j GaAs, $220/W thin-Si, ~$60/W CIS film) — ancillaries roughly quadruple cell cost at array level. Useful context when any solar pricing row is updated.
+- **The blanket-vs-system divergence quantified**: total-array specific power grows much less rapidly with cell efficiency than blanket-level does (mechanisms + SADA + structure dominate mass at low film efficiencies). This is the technical reason our row stays SYSTEM-level, and it bounds how far a future wing-only figure (e.g. ROSA's ~150 W/kg) can be pushed before de-rating: below ~12% thin-film efficiency, lightweight substrate alone does not win on mass — that 12% breakpoint is the quantitative basis behind roll-out wings generally.
+
+## Round-7 status (domain 5)
+All three power chains are now anchored by peer-reviewed or public-domain flight/parametric sources: electric = nextc_ppu_2020 + nextc_protoflight_2021; nuclear = ambrosi_2019; solar = hoffman_2000 (this round). The domain's remaining unsourced item is the eclipse-baseline row, which is a model-internal bookkeeping figure rather than a physical measurement — no external anchor exists for it by construction.
