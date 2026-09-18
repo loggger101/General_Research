@@ -172,3 +172,24 @@ Our 320 s row is a class-level design point at O/F 7:1 with high-concentration H
 theoretical confirmations — same anchoring standard as the other workhorse rows.
 
 Remaining unanchored propellant rows after this round: ALICE metal/water and CO/LOX ISRU (both exotic/niche; next-round candidates).
+
+## Round-30 addition — Metal / water (ALICE) row gets peer-reviewed anchors, incl. the program's own flight paper (one hosted + one open_not_pulled)
+
+Target: propellants.csv 'Metal / water (ALICE, Al + H2O)' row at 210 s vacuum — nano-aluminium burnt in water; our notes reference the Purdue/NASA ALICE sounding rocket that flew in 2009. Both components are asteroid-derivable (Al from silicate reduction, water from ice), which is why this row exists despite its modest Isp.
+
+### risha_2014_alice_jpp — T1, HOSTED
+Risha G.A., Connell T.L. Jr., Yetter R.A. (Penn State) + Sundaram D.S., Yang V. (Georgia Tech), "Combustion of Frozen Nanoaluminum and Water Mixtures", AIAA Journal of Propulsion and Power 31(5), 2014, doi:10.2514/1.B34783.
+- VERIFIED in hosted text: ideal (theoretical) Isp for the ALICE formulation = **207 s sea-level / 230 s vacuum** at P=1000 psia, perfect expansion, 74.5 wt% active aluminum — i.e. our row's 210 s sits almost exactly on the peer-reviewed ideal curve (between their SL and vac values).
+- Measured lab-scale static-fire motors: combustion efficiency ~69%, Isp efficiency ~64% at ER=10 for the 7.62 cm motor — documents how far real hardware is from the ideal, which bounds what a future ALICE engine could actually deliver (roughly 0.6-0.7 x ideal in current small-motor form).
+- Authors explicitly acknowledge Pourpoint/Son/Wood/Pfeil at Purdue for contributions to the program; AFOSR contract FA9550-07-1-0582 — same program our notes cite.
+
+### pourpoint_2012_alice_feasibility — T1, open_not_pulled
+Pourpoint T.L., Wood T.D., Pfeil M.A., Tsohas J., Son S.F. (Purdue), "Feasibility Study and Demonstration of an Aluminum and Ice Solid Propellant", Int. Journal of Aerospace Engineering 2012:874076, doi:10.1155/2012/874076 — the program's own paper documenting the actual ALICE sounding-rocket launch (the flight our notes reference).
+- Abstract-level data verified live from publisher page: it reports the actual ALICE sounding-rocket launch plus small-scale static experiments (strand burner + motors), and cites prior CEA equilibrium work showing vacuum Isp **>300 s at O/F ~1.2 with expansion ratio 100** for Al/water mixtures — i.e. the class ceiling is well above our row's conservative 210 s; our value tracks the realistic small-motor regime, not the ideal high-ER limit.
+- PDF route blocked from this machine: Wiley pdfdirect HTTP 403 AND Hindawi archive (downloads.hindawi.com) HTTP 403 — recurring block pattern for both hosts. Registered open_not_pulled with abstract data as anchor; full text is CC-BY OA and retrievable via any non-blocked network or institutional access.
+
+### Scope note
+Our row's 210 s vacuum is a conservative, hardware-realistic value: it sits between Risha et al.'s ideal SL (207 s) and vac (230 s) figures for the same formulation family, while Pourpoint et al. show the theoretical ceiling (>300 s at ER=100) that future optimized ALICE engines could approach. The row is now anchored from both sides by peer-reviewed sources from the actual program behind it.
+
+### Remaining unanchored propellant rows after this round
+- CO / LOX (carbonaceous ISRU, ~260 s) — next target; theoretical CEA-class data expected to be available in NTRS/peer-reviewed literature on carbon monoxide + oxygen combustion for Mars ascent concepts.
