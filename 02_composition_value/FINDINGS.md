@@ -175,3 +175,24 @@ peer-reviewed magnitude of exactly that gradient:
 
 ## Round-4 status (domain 2)
 Both reference types now have returned-sample volatile/organic anchors: B = bennu_volatiles_2025 + ryugu_hydrated_2023's comparison data; C = ryugu_hydrated_2023 + the two Science organic papers (OA-pending). The domain-2 question "what does a spectral type actually contain" now has measured answers for both ends of the hydrated range, with one systematic bias (surface weathering) explicitly named.
+
+## Round-8 addition — per-class carbon anchor + the C/CI endmember of our volatile range (both returned samples)
+
+### glavin_2018 [T2] — Glavin, Alexander, Aponte, Dworkin, Elsila & Yabuta, "The Origin and Evolution of Organic Matter in Carbonaceous Chondrites and Links to Their Parent Bodies" (NASA chapter; NTRS 20180004493)
+- **Full text hosted**: `full_texts/glavin_et_al_2018_origin_evolution_organic_matter_carbonaceous_chondrites_NTRS_20180004493_publicdomain.pdf` (2.1 MB, 67 pp; verified live from this machine: NTRS API + PDF download OK). Public domain as a US-government work.
+- **Key numbers** → `extracted_data/glavin_2018_chondrite_volatiles_key_numbers.csv`: carbon abundance across C-types runs **~0.1 wt% (CK) up to ~5 wt% (CI)**; IDPs average ~12 wt% C (~half organic); per-class hydration mineralogy table (serpentine/saponite/smectite present in CI, CM, CR + Tagish Lake; tochilinite concentrated in CM2s).
+
+### What this settles
+- **The `carbon_fraction` rows now have their first measured per-class anchor — and it shows the defaults encode a different definition than bulk elemental carbon.** TAXONOMY_COMPOSITION carries 22–30% carbon for B/C-complex; the most carbon-rich real C-type (CI) is ~5 wt%. That 4–6× gap means our fractions must be read as 'carbon-bearing material' (organics + inorganic carbonates + fine-grained dust), not elemental C. This round's data gives any future re-calibration a measured starting point per class instead of the current defaults.
+- **The `ice_fraction` rows get their mineralogical grounding**: for C-types, 'ice' is actually phyllosilicate-bound water (serpentine/saponite/smectite) — real and class-specific, with the hydration gradient CI > CM > CV matching our B-row-sits-above-C-rows ordering.
+
+### ryugu_ivuna_2023 [T1] — Yokoyama et al., "Samples returned from the asteroid Ryugu are similar to Ivuna-type carbonaceous meteorites", Science 379(6634):786 (DOI 10.1126/science.abn7850)
+- **Access**: full text verified live this round via Hokudai's HUSCAP institutional repository (the HAL route was Anubis-blocked in round 4 — a different, working path). BUT the repository copy is explicitly an **author's version posted "by permission of AAAS for personal use, not for redistribution"** → recorded `open_not_pulled` with metadata + key findings; NOT hosted (hosting would violate the stated rights).
+- **Key findings** → `extracted_data/ryugu_ivuna_2023_key_findings.csv`: Ryugu = Ivuna-type CI1 endmember; structural water similar to CI chondrites, but **interlayer/free water is largely absent — lost to space**; samples stayed below ~100 °C from alteration to present.
+
+### What this settles
+- **Both ends of our volatile range now rest on returned samples**: B = bennu_volatiles_2025 (round 3), C/CI = ryugu_ivuna_2023 + the two Ryugu organics papers (rounds 4, recorded OA-pending).
+- **The critical caveat for `ice_fraction` pricing**: returned C-type samples contain essentially no free ice. Any value priced at the $2500/kg in-space water proxy overstates what is extractable from a C-complex body without structural-water liberation processing (the kleinhenz_2016/2018 energy chain, domain 5). The pipeline's `ice_fraction` should be read as 'hydrated-mineral content', with the recoverable fraction gated by that processing step — this round makes that distinction explicit and sourced.
+
+## Round-8 status (domain 2)
+Domain 2 is now anchored at both ends of its volatile range (B + C/CI returned samples), has a measured per-class carbon baseline, AND names the exact mineralogy behind `ice_fraction`. Remaining open items in this domain are unchanged: epsc2022_context (Copernicus login wall) and the PGM-enrichment differentiation argument still rests on usgs_pp1802n alone.
