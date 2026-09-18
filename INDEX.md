@@ -75,6 +75,8 @@ _Backings: `spacecost/delta_v_segments.csv`, Isp rows of `propellants.csv`._
 | borowski_2012 | T1 | Borowski, McCurdy & Packard (NASA), "NTP: A proven growth technology for human NEO/Mars exploration" — IEEE Aerospace (NTRS direct PDF route verified live; public domain) | full text hosted | **Isp anchor** for the Nuclear thermal row: NTR achieves ~900 s or more, DRA 5.0 band 875-950 s, MCNP range 894-940 s — our exactly-900-s value sits at its center |
 | robbins_1991 | T2 | Robbins & Finger (NASA Lewis), "An Historical Perspective of the NERVA Nuclear Rocket Engine Technology Program" — NASA CR-187154 / AIAA-91-3451 (NTRS direct PDF route verified live; public domain) | full text hosted | **Historical anchor** for the Nuclear thermal row: 20 rocket reactors ground-tested 1955-1972, flight-baseline engine defined at 825 s Isp / 75 klbf — what was actually demonstrated vs our ~900 s design value |
 | schoenman_1992 | T2 | Schoenman (NASA Lewis), "Test experience, 490 N high performance (321 sec Isp) engine" — AIAA-92-3800 (NTRS record + abstract verified live; full text metadata-only on NTRS) | open_not_pulled (abstract-level anchor) | **Family benchmark** for the UDMH/NTO row: measured 309 s @ AR 44:1 and 321 lbf-s/lbm @ AR 286:1 on NTO/MMH — our 318 s sits just below, as expected (UDMH heavier than MMH) |
+| woodcock_byers_2003 | T2 | Woodcock & Byers (SAIC/Gray Research), "Results of Evaluation of Solar Thermal Propulsion" — NTRS 20030068437 full text hosted + extracted on this machine | full_text_hosted | **Primary anchor** for the Solar thermal row: H2 at 2500-3000 K delivers Isp in excess of 800 s; design case 811 s (2800 K cavity / 2700 K wall) — our ~800 s value is exactly this class |
+| boddy_1980 | T2 | Boddy (Rockwell Int'l), "Solar Rocket System Concept Analysis" — AFRPL TR-79-7g final report, NTRS 19800022964 full text hosted + extracted on this machine | full_text_hosted | **Measured anchor** for the Solar thermal row: AFRPL test program achieved Isp of 680 s with hydrogen; obtainable range 500-1100 s documented — our ~800 s design value sits above demonstrated performance |
 ## Domain 4 — Launch cost per kg (history, projections)
 
 _Backings: price rows of `spacecost/launch_vehicles.csv`; the Stage 4 cost cascade._
@@ -111,6 +113,7 @@ _Backings: `storage_systems.csv`, `operational_costs.csv`, environment penalties
 ---
 ## Research log
 
+- **Round 25** (2026-09-18): domain 3 deepened; 2 new items → total now 66: T1×37, T2×26, T3×3. Both full texts hosted.
 - **Round 24** (2026-09-18): domain 3 deepened; 1 new item → total now 64: T1×37, T2×24, T3×3. No full text hosted this round (NTRS metadata-only).
 - **Round 23** (2026-09-18): domain 3 deepened; 2 new items → total now 63: T1×37, T2×23, T3×3. Two full texts hosted this round.
 - **Round 22** (2026-09-18): domain 3 deepened; 1 new item → total now 61: T1×36, T2×22, T3×3. One full text hosted this round.
