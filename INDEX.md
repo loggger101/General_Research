@@ -80,6 +80,8 @@ _Backings: `spacecost/delta_v_segments.csv`, Isp rows of `propellants.csv`._
 | cuffe_jacobs_1970 | T2 | Cuffe & Jacobs (NASA MSC), 'Apollo Spacecraft Engine Specific Impulse' D2-I17060-1 — measured Isp methodology for all four Apollo hypergolic engines; injector-level data ~1-4 s below rated, 0.2 s allocated uncertainty | NTRS 19700026467 (public domain) | full_text_hosted |
 | boyce_aj10_oral_history | T2 | Boyce (Aerojet), 'Remembering the Giants' AJ10-137 chapter — SPS engine rated Isp 314.5 s, A-50/NTO, AR 62.5:1; first-person configuration anchor for Aerozine-50/NTO row | NTRS 20100027319 (public domain) | full_text_hosted |
 | spores_2013 | T1 | Spores et al. (Aerojet Rocketdyne/Ball), 'GPIM AF-M315E Propulsion System' — GR-1 vacuum Isp 235 s EXACT match to Green monoprop row; full GPIM flight system documented | NTRS 20140012587 (AIAA JPC) | full_text_hosted |
+| asakawa_aquarius_onorbit_2024 | T1 | Asakawa et al. (JAXA), AQUARIUS on-orbit water-resistojet performance, Trans. JSASS 67(5) 2024 — J-STAGE open access hosted; MEASURED Isp ~91 s at <14 W (low-power end of the Water row band) |
+| komurasaki_aquarius_ground_2018 | T1 | Komurasaki et al. (JAXA), AQUARIUS ground experiment, Trans. JSASS ATJ 16(5):427-431 2018 — J-STAGE open access hosted; design point ~2 mN / ~70 s Isp |
 ## Domain 4 — Launch cost per kg (history, projections)
 
 _Backings: price rows of `spacecost/launch_vehicles.csv`; the Stage 4 cost cascade._
