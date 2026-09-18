@@ -64,6 +64,8 @@ _Backings: `spacecost/delta_v_segments.csv`, Isp rows of `propellants.csv`._
 | bowles_dawson_2004 | T2 | Bowles & Dawson, "Taming Liquid Hydrogen: The Centaur Upper Stage Rocket 1958-2002" — NASA SP-4176 (NTRS 20050070711) | full text hosted (public domain US-government work; NTRS API + PDF verified live) | **hydrolox claim anchor**: published confirmation that LOX/LH2 is the highest-Isp chemical propellant + why the expander cycle made RL-10 so efficient — anchors our hydrolox row at the CLAIM level (datasheets still own the 452 s number; SP-4176 is a narrative, not an Isp table) |
 | tirila_2023 | T1 | Tirila, Demairé & Ryan, "Review of alternative propellants in Hall thrusters" — Acta Astronautica 212:284-306 | open not pulled (Soton ePrints PDF HTTP 401 from this machine; Elsevier bot-blocked) | **electric-row anchor**: comprehensive database of experimentally measured Hall thruster performance across xenon/argon/krypton/iodine/water — the comparison table our electric propellant rows need once browser-pulled |
 | kim_2013 | T1 | Kim, Jung & Kim, "State of the Art in the Development of Methane/Oxygen Liquid-bipropellant Rocket Engine" — KSPE 17(6):120 | full text hosted (koreascience.or.kr direct PDF route verified live) | **methalox Isp anchor**: Raptor = 380 s vac at 2940 kN (exact match to our row); RD-192 methane 356 s vs RD-191 kerosene 337 s same-manufacturer comparison quantifies the +~19 s / +5.6% methane advantage |
+| jue_2003 | T2 | Jue (Boeing/Rocketdyne), "Space Shuttle Main Engine: Thirty Years of Innovation" — AIAA JPC paper (NTRS 20020046693) | full text hosted (public domain; NTRS API + PDF verified live) | **kerolox Isp anchor**: RS-25 spec table w/ vacuum Isp 452 s / sea-level 366 s — exact match to our row; world-engine Isp comparison chart included |
+| ssme_rs25_adaptation_2015 | T2 | "SSME to RS-25: Challenges of Adapting a Heritage Engine to a New Vehicle Architecture" — AIAA paper (NTRS 20150016499) | full text hosted (public domain; NTRS API + PDF verified live) | context anchor for the RS-25 row: why 452 s vac is stable across Shuttle+SLS service (~3000 ground tests, >1M s hot-fire time); integration narrative, no Isp table — pairs with jue_2003 |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -99,6 +101,10 @@ _Backings: `storage_systems.csv`, `operational_costs.csv`, environment penalties
 
 ---
 ## Research log
+
+- **Round 15** (2026-09-18): domain 3 deepened; 2 new items → total now 54: T1×33, T2×18, T3×3. Two full texts hosted this round.
+  - **jue_2003** (T2, HOSTED NTRS): AIAA JPC SSME history — RS-25 spec table w/ vacuum Isp 452 s exact match to our kerolox row + world-engine comparison chart.
+  - **ssme_rs25_adaptation_2015** (T2, HOSTED NTRS): SSME→RS-25 SLS adaptation context — why the number is stable across both programs; no Isp table itself.
 
 - **Round 14** (2026-09-18): domain 3 deepened; 1 new item → total now 52: T1×33, T2×16, T3×3. One full text hosted this round.
   - **kim_2013** (T1, HOSTED koreascience.or.kr): KSPE methalox state-of-the-art review — Raptor 380 s vac exact match to our row + RD-192/RD-191 same-manufacturer methane-vs-kerosene Isp comparison.
