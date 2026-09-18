@@ -61,6 +61,8 @@ _Backings: `spacecost/delta_v_segments.csv`, Isp rows of `propellants.csv`._
 | taylor2018 | T1 | Taylor, McDowell & Elvis, "A Delta-V map of the known Main Belt Asteroids" (Acta Astronautica 146:73) | open not pulled (Elsevier Cloudflare challenge on article + pdfft routes; no OA location in OpenAlex/Crossref — abstract recorded via ADS) | backs our LEO→main-belt 10500 m/s and main-belt-return rows with a per-object Δv map of the known MBA population; pull from a normal browser to extract distribution statistics (round-3 open item, same class as dziadura2023) |
 | nextc_protoflight_2021 | T2 | Monheiser et al., "A Summary of the NEXT-C Flight Thruster Proto-Flight Testing" (NASA Glenn / Aerojet Rocketdyne, NTRS 20210018563) | full text hosted (NTRS API + PDF verified live from this machine; public domain) | **flight-thruster anchor for our xenon-ion row**: SN001 (delivered to APL for DART) measured Isp 1400–4160 s / thrust 25–235 mN at ≤6.85 kW — our isp_vac_s=3000 is a mid-envelope throttle level of hardware that flew; pairs with nextc_ppu_2020 (domain 5) so both EP halves rest on flight articles |
 | sanna_2024 | T1 | Sanna et al. (Sapienza), "Optimal Impulsive Orbit Transfers from Gateway to Low Lunar Orbit" — Aerospace 11(6):460, CC-BY | full text hosted (Sapienza IRIS institutional copy; MDPI pdfdirect 403s this machine) | **First peer-reviewed anchor for the cislunar rows**: minimum-fuel bi-impulsive Gateway(NRHO)->LLO at <=48 h ToF = 648 m/s (free RAAN/LTO) to ~1253 m/s (i=20 deg), polar LLO optimum 666 m/s; our "NRHO -> low lunar orbit = 730" sits mid-envelope — AGREE, row can now cite this paper |
+| bowles_dawson_2004 | T2 | Bowles & Dawson, "Taming Liquid Hydrogen: The Centaur Upper Stage Rocket 1958-2002" — NASA SP-4176 (NTRS 20050070711) | full text hosted (public domain US-government work; NTRS API + PDF verified live) | **hydrolox claim anchor**: published confirmation that LOX/LH2 is the highest-Isp chemical propellant + why the expander cycle made RL-10 so efficient — anchors our hydrolox row at the CLAIM level (datasheets still own the 452 s number; SP-4176 is a narrative, not an Isp table) |
+| tirila_2023 | T1 | Tirila, Demairé & Ryan, "Review of alternative propellants in Hall thrusters" — Acta Astronautica 212:284-306 | open not pulled (Soton ePrints PDF HTTP 401 from this machine; Elsevier bot-blocked) | **electric-row anchor**: comprehensive database of experimentally measured Hall thruster performance across xenon/argon/krypton/iodine/water — the comparison table our electric propellant rows need once browser-pulled |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -96,6 +98,10 @@ _Backings: `storage_systems.csv`, `operational_costs.csv`, environment penalties
 
 ---
 ## Research log
+
+- **Round 13** (2026-09-18): domain 3 deepened; 2 new items → total now 51: T1×32, T2×16, T3×3. One full text hosted this round (access-verified live), one recorded with abstract only.
+  - **bowles_dawson_2004** (T2, HOSTED NTRS): NASA SP-4176 public-domain Centaur/RL-10 history — hydrolox claim anchor + expander-cycle efficiency story; narrative not Isp-table.
+  - **tirila_2023** (T1, open_not_pulled): experimentally-measured Hall thruster performance database across alternative propellants — the electric-row comparison table we need (Soton PDF 401s this machine).
 
 - **Round 12** (2026-09-18): domains 1, 3 + 4 deepened; 4 new items → total now 49: T1×31, T2×15, T3×3. Two full texts hosted this round (access-verified live), two recorded with metadata/abstract only.
   - **siltala_granvik_2021** (T1, HOSTED arXiv preprint): Psyche bulk density 3.88+/-0.25 g/cm^3 — the measurement behind our M-row revision; rules out exposed iron core.
