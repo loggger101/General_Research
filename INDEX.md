@@ -67,6 +67,7 @@ _Backings: `spacecost/delta_v_segments.csv`, Isp rows of `propellants.csv`._
 | jue_2003 | T2 | Jue (Boeing/Rocketdyne), "Space Shuttle Main Engine: Thirty Years of Innovation" — AIAA JPC paper (NTRS 20020046693) | full text hosted (public domain; NTRS API + PDF verified live) | **kerolox Isp anchor**: RS-25 spec table w/ vacuum Isp 452 s / sea-level 366 s — exact match to our row; world-engine Isp comparison chart included |
 | ssme_rs25_adaptation_2015 | T2 | "SSME to RS-25: Challenges of Adapting a Heritage Engine to a New Vehicle Architecture" — AIAA paper (NTRS 20150016499) | full text hosted (public domain; NTRS API + PDF verified live) | context anchor for the RS-25 row: why 452 s vac is stable across Shuttle+SLS service (~3000 ground tests, >1M s hot-fire time); integration narrative, no Isp table — pairs with jue_2003 |
 | thapa_2023 | T1 | Thapa, "Evolution in Propellant of the Rocket Engine" — JMPC 11(1):8-21 (pubs.sciepub.com direct PDF route verified live) | full text hosted | **cross-check Isp table** for propellants.csv: Shuttle LOX/LH2 = 453 s vs our hydrolox row 452 s (near-exact); Saturn V Stage-1 kerolox 304 s, OMS MMH/NTO 313 s, SRB APCP 268 s — family anchors for the lower bounds of those rows |
+| thiokol_sts33r_1990 | T2 | Thiokol, "Flight Motor Set 360L007 (STS-33R) Final Report" — TWR-17546-1 (NTRS direct PDF route verified live; public domain) | full text hosted | **measured flight Isp anchor** for the Solid (APCP) row: reconstructed vacuum Isp 268.2 s LH / 267.6 s RH at 71 deg F, within 0.3% of predicted 268.5 — RSRM-class APCP; matches thapa_2023 table entry exactly (independent cross-check) |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -104,6 +105,7 @@ _Backings: `storage_systems.csv`, `operational_costs.csv`, environment penalties
 ---
 ## Research log
 
+- **Round 18** (2026-09-18): domain 3 deepened; 1 new item → total now 57: T1×35, T2×19, T3×3. One full text hosted this round.
 - **Round 17** (2026-09-18): domain 3 deepened; 1 new item → total now 56: T1×35, T2×18, T3×3. One full text hosted this round.
 - **Round 16** (2026-09-18): domain 4 deepened; 1 new item → total now 55: T1×34, T2×18, T3×3. One full text hosted this round.
 - **Round 15** (2026-09-18): domain 3 deepened; 2 new items → total now 54: T1×33, T2×18, T3×3. Two full texts hosted this round.
