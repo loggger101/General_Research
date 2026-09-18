@@ -66,6 +66,7 @@ _Backings: `spacecost/delta_v_segments.csv`, Isp rows of `propellants.csv`._
 | kim_2013 | T1 | Kim, Jung & Kim, "State of the Art in the Development of Methane/Oxygen Liquid-bipropellant Rocket Engine" — KSPE 17(6):120 | full text hosted (koreascience.or.kr direct PDF route verified live) | **methalox Isp anchor**: Raptor = 380 s vac at 2940 kN (exact match to our row); RD-192 methane 356 s vs RD-191 kerosene 337 s same-manufacturer comparison quantifies the +~19 s / +5.6% methane advantage |
 | jue_2003 | T2 | Jue (Boeing/Rocketdyne), "Space Shuttle Main Engine: Thirty Years of Innovation" — AIAA JPC paper (NTRS 20020046693) | full text hosted (public domain; NTRS API + PDF verified live) | **kerolox Isp anchor**: RS-25 spec table w/ vacuum Isp 452 s / sea-level 366 s — exact match to our row; world-engine Isp comparison chart included |
 | ssme_rs25_adaptation_2015 | T2 | "SSME to RS-25: Challenges of Adapting a Heritage Engine to a New Vehicle Architecture" — AIAA paper (NTRS 20150016499) | full text hosted (public domain; NTRS API + PDF verified live) | context anchor for the RS-25 row: why 452 s vac is stable across Shuttle+SLS service (~3000 ground tests, >1M s hot-fire time); integration narrative, no Isp table — pairs with jue_2003 |
+| thapa_2023 | T1 | Thapa, "Evolution in Propellant of the Rocket Engine" — JMPC 11(1):8-21 (pubs.sciepub.com direct PDF route verified live) | full text hosted | **cross-check Isp table** for propellants.csv: Shuttle LOX/LH2 = 453 s vs our hydrolox row 452 s (near-exact); Saturn V Stage-1 kerolox 304 s, OMS MMH/NTO 313 s, SRB APCP 268 s — family anchors for the lower bounds of those rows |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -103,6 +104,7 @@ _Backings: `storage_systems.csv`, `operational_costs.csv`, environment penalties
 ---
 ## Research log
 
+- **Round 17** (2026-09-18): domain 3 deepened; 1 new item → total now 56: T1×35, T2×18, T3×3. One full text hosted this round.
 - **Round 16** (2026-09-18): domain 4 deepened; 1 new item → total now 55: T1×34, T2×18, T3×3. One full text hosted this round.
 - **Round 15** (2026-09-18): domain 3 deepened; 2 new items → total now 54: T1×33, T2×18, T3×3. Two full texts hosted this round.
   - **jue_2003** (T2, HOSTED NTRS): AIAA JPC SSME history — RS-25 spec table w/ vacuum Isp 452 s exact match to our kerolox row + world-engine comparison chart.
