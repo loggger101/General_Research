@@ -75,3 +75,12 @@ A candidate must satisfy all of:
 Research rounds are logged at the bottom of `INDEX.md` (round number, date,
 what was added). Extraction scripts live next to their domain so any number can
 be re-derived from the committed full text.
+
+## License
+
+MIT, see [`LICENSE`](LICENSE). That covers this repository's own work: the
+index, the `sources*.csv` tables, the `FINDINGS.md` write-ups and the records
+in `extracted_data/`. It does not cover the documents committed under
+`full_texts/`. Those are third-party papers and reports redistributed under
+the terms set out in "Access rules" above, and each keeps the license its row
+in `sources.csv` identifies.
