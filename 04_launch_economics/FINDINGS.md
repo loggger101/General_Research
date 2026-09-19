@@ -116,3 +116,28 @@ The source itself has been in this domain since round 3, but only its headline (
 
 **Scope note:** neither paper tabulates Falcon 9 LEO payload mass, so the `payload_leo_kg` column of that row remains vendor-announced (SpaceX's own published figure) — same status as before this round. The cost side is now anchored by two independent peer-reviewed sources instead of one dataset + one ICES paper.
 
+## Round-34 addition — launch_vehicles.csv payload-mass side gets an official NASA capability anchor (zapata_2017_state_of_play_us_space_systems, NTRS 20170009967)
+
+**Source**: Edgar Zapata (NASA Kennedy Space Center), "The State of Play US Space Systems Competitiveness: Prices, Productivity, and Other Measures of Launchers & Spacecraft", presentation to the Future In-Space Operations (FISO) Seminar, October 11, 2017. NTRS record 20170009967; full text hosted in `full_texts/` (NTRS = public domain). Tier T2 (NASA technical report / seminar presentation — same tier as the two Round-33 papers and askins_2021).
+
+**What it anchors**: page 15 ("Launch Systems – Multiple Measures") is a per-launcher capability chart whose header states the orbit convention verbatim: *"Maximum Payload Capability of Launcher, kg to LEO, 200km/28.5 circ."* — identical to our `launch_vehicles.csv` LEO definition (the same footnote SLS documents use). Values verified from PDF word coordinates (page 15), not flat text; each value was mapped to its column label by x-position:
+
+| Vehicle in chart | Max payload to LEO (kg) | Our CSV row (`payload_leo_kg`) | Match quality |
+|---|---|---|---|
+| Delta IV Heavy, NRO | **28,790** | delta_iv_heavy `28790` | EXACT |
+| Atlas V 551, Private Sector Customer | **18,856** | atlas_v_551 `18850` | near-exact (Δ = 6 kg / 0.03%; our value is the rounded figure) |
+| Falcon 9 (all four customer classes: private, NASA ISS, DoD GPS, NASA LSP Class-C) | **22,800** each | falcon_9_reusable `17400` | family ceiling — see note |
+| Falcon Heavy, Private Sector Customer | **63,800** | falcon_heavy (reusable side cores) `57000` | expendable rating vs our derated reusable-cores figure — consistent, not a pin |
+
+Also on the same page: per-launcher $/kg and price-per-launch in 2017$ (Falcon 9 private ~$2,719–$4,232/kg; Delta IV Heavy $8,644/kg; SLS no-EUS $54,627/kg) — a second independent cost-side cross-check alongside jones2018 and zapata_2017_cots_crs.
+
+**Honest scoping of the two "ceiling" rows**:
+- **Falcon 9 (reusable)**: the chart's 22,800 kg is Falcon 9's *rated maximum* LEO capability across customer classes; our reusable row carries 17,400 kg, which sits below it as expected for a reusability-derated rating. This source anchors the F9 family ceiling and confirms 17.4 t is physically consistent (not an overclaim), but does not pin the exact reusable figure — that remains vendor-rated.
+- **Falcon Heavy (reusable side cores)**: the chart's 63,800 kg is the expendable-side-core rating; our row carries 57,000 kg for the reusability-derated configuration. Same relationship: ceiling anchor + consistency check, not an exact pin.
+
+**Net effect on launch_vehicles.csv anchoring**:
+- **delta_iv_heavy**: payload mass now EXACTLY anchored (28,790 kg); cost side = hf_dataset + this chart's $/kg.
+- **atlas_v_551**: payload mass now near-exactly anchored (18,856 vs 18,850 — within rounding); cost side still vendor-listed.
+- **falcon_9_reusable** / **falcon_heavy (reusable cores)**: family ceilings + consistency anchors added; exact reusable figures remain vendor-rated.
+
+**Remaining unanchored in launch_vehicles.csv**: Vulcan Centaur 27 t LEO and New Glenn ~45 t LEO — both postdate this 2017 document; need their own peer-reviewed anchors (Vulcan: ULA design papers / AIAA ICES; New Glenn: Blue Origin program documents).
