@@ -206,3 +206,38 @@ Domain 2 is now anchored at both ends of its volatile range (B + C/CI returned s
 ## Round-12 addition — second M-type density (farnocchia_2024) + ISRU economics anchor
 
 **farnocchia_2024**: see domain 1's round-12 block for the full write-up; it is registered here too because M-row composition/density feeds both domains.
+
+## Round-36 addition — per-type MATERIAL anchors (criterion #3: "asteroid composition and the materials we can find in each type, plus its ratios")
+
+**The gap this round closed.** Densities per spectral class were already anchored (carry2012 Table 3 + simda2024 medians), but `TAXONOMY_COMPOSITION`'s *material* content — the metal/silicate/carbon/ice mass fractions and the minerals lists for ~30 types — had no citable source anywhere in this repo. The three items below change that, each verified from full text on this machine (page citations in `extracted_data/r36_per_type_materials_key_numbers.csv`, 18 rows).
+
+### elkins_tanton_2020_psyche_preflight — JGR Planets 125:e2019JE006296 [T1, open_not_pulled]
+- **Why it matters first**: `catalog.py`'s M-row note already cites "Elkins-Tanton et al. 2020" for the claim that Psyche's metal content is "roughly 30–60%" — but this paper was never registered in General_Research, so a load-bearing citation pointed at nothing verifiable here. Registered now; gap closed.
+- **Access**: CC-BY-**NC** license (verified in PDF front matter) + AGU landing page 403s from this machine ⇒ `open_not_pulled` per the repo legend (same class as cannon2023). Analyzed from the author mirror https://benweiss.mit.edu/s/Elkins-Tanton_2020_JGR.pdf — HTTP 200, application/pdf, 4.4 MB, verified live this round; NTRS search returned no index entry for it.
+- **Key extracted numbers** (all verbatim from the full text):
+  - p10 (Sec 2.5): Psyche predicted **"between ~25 vol% metal and ~60 vol% metal"**; Point D = ~25 vol% metal + ~55 vol% magnesian pyroxene + ~20% pore space.
+  - **Comparison against pipeline**: our M-row mass fractions (metal 0.50 / silicate 0.45) convert to ≈34 vol% metal at ρ_metal≈7.8 vs ρ_sil≈3.6 g/cm³ → **INSIDE the peer-reviewed band; row AGREEs.** Note: catalog.py paraphrases "30–60%" but the paper's verbatim band is ~25–60 vol% — a future spacecost edit could quote it exactly (read-only for this process).
+  - Surface endmembers, p9: 90 wt.% metal / 10 wt.% opx (Hardersen) → only 6 wt.% opx (Sanchez) → strictly metal powder (Fornasier); pairs with nat_dms2023's 85/15 surface figure as the high end of the *surface* range.
+  - Retained silicate veneer scenario, p13: **25–80 km** of silicate rock on a stripped core (Johnson et al., 2019).
+  - Meteorite-analog density table, p10: iron 7,000–8,000 / pallasite 4,100–7,800 / mesosiderite 3,100–7,200 kg/m³ vs Psyche ~4,000 (range 3,400–4,100) — the density argument that rules out a solid-metal M-type; pallasites = Fe-Ni metal + olivine Fa11-20 at **~65 vol% olivine** with Ni ~9–12 wt% (p11).
+  - CB chondrites, pp11–12: **~60 vol% metal**, skeletal olivine Fa2-4 + cryptocrystalline pyroxene Fs2 — the high-metal carbonaceous endmember relevant to our Xc/Cb rows (our Cb row carries only 1% metal; flagged as a candidate revision, not applied).
+
+### reddy_asteroids_iv_mineralogy — Asteroids IV chapter, UAPress 2015 pp.43–63 [T1, full_text_hosted]
+- **What it is**: the definitive review of asteroid mineralogical interpretation (Reddy, Dunn, Thomas, Moskovitz & Burbine; book DOI 10.2458/azu_uapress_9780816532131). Hosted copy = arXiv:1502.05008v1 author preprint (arXiv comment field verbatim: "Chapter to appear in the Space Science Series Book: Asteroids IV, 51 pages"); abs-page metadata verified live this round.
+- **Key extracted numbers** — first per-type material anchors for `TAXONOMY_COMPOSITION`:
+  - A-types = **monomineralic olivine Fo85–93**, p8 (RMS 5 mol% calibration) → anchors our A-row minerals list [olivine] + metal_fraction=0.05 (monomineralic ⇒ essentially no free metal).
+  - R chondrites carry **65–78% olivine by volume** ("higher abundances of olivine than the ordinary chondrites"), p9 → anchor for A/R silicate-dominant rows (our A/R: silicate_fraction=0.90 — consistent).
+  - HED/V-type pyroxene range **Fs23–56 / Wo2–14**, Burbine et al. 2007 calibrations accurate to within 3 mol% Fs and 1 mol% Wo, p7 → anchor for V-row minerals [pyroxene, plagioclase, olivine].
+  - S/Q = ordinary-chondrite analogs via Dunn et al. 2010b Fa/Fs calibrations (<2 mol% error) built on ~50 measured OC powders (PSD-XRD modes down to 1 wt%), pp7–9 → anchor for S-row minerals [olivine, pyroxene, nickel-iron].
+  - **Ground truth**: Itokawa = LL chondrite with Shkuratov model ol/(ol + low-Ca pyx) = **76%** (Fig.5 caption p26; Hayabusa sample-confirmed); Eros plots in the L/LL zone with identical Fs/Fa from NEAR NIS and ground-based spectra (Fig.6 captions pp26–27). Two spacecraft verifications of "S-row = ordinary chondrite".
+  - Context, p8: A/S/Q/V meteorite analogs constitute **91% of the terrestrial meteorite collection** — i.e., our table is anchored where most ground truth exists; rows without such coverage (D/T/P/Xc) legitimately remain approximate.
+
+### lodders_2010_solar_abundances — Kodaikanal lecture notes [T2, full_text_hosted]
+- **What it is**: Lodders' solar-system abundance compilation with the complete CI-chondrite composition table (Orgueil as representative CI). Hosted copy = arXiv:1010.2746v1 (marked "2010 Preprint" on p.1; published in Astrophys. Space Sci. Proc. 57:379–417, Springer 2010) — preprint of a peer-reviewed proceedings volume ⇒ T2 per repo convention.
+- **Key extracted numbers** (Table 2, pp8–10): total C = **34,800 ppm = 3.48 wt%**; Fe/Mg/Si/O/S = 185,000/95,800/107,000/459,000/53,500 ppm (18.5/9.6/10.7/45.9/5.35 wt%); PGM suite Ru 0.686 + Rh 0.139 + Pd 0.558 + Os 0.493 + Ir 0.469 + Pt 0.947 = **exactly 3.29 ppm** CI bulk.
+- **Comparison against pipeline**: (a) our B/C-complex carbon_fraction defaults of 0.25–0.30 are ~7–9× bulk *elemental* C — independently confirms the glavin_2018 flag that those fractions encode a broader "carbon-bearing material" definition, not elemental C; (b) Fe/Mg/Si cross-checks Cannon et al.'s Table 3 CI values (Fe 18.88 / Mg 9.54 / Si 10.70 from Palme et al. 2014) — two independent compilations agree to <2%; (c) the PGM sum independently reproduces the lodders_palme2009 baseline in domain 1 that anchors `PGM_ENRICHMENT_BY_TYPE` calibration — the whole PGM chain now has a second, element-by-element verifiable leg.
+
+### Open items after R36
+- Xc/Cb metal fractions: CB-chondrite ~60 vol% metal endmember (above) vs our Cb=0.01/Xc=0.25 — candidate revision when spacecost is editable; not applied silently.
+- M-row paraphrase "30–60%" → verbatim "~25–60 vol%" quote available for a future edit.
+- D/T/P rows remain unanchored at material level (no comparable ground truth exists in the hosted literature set) — honest gap, recorded rather than papered over.
