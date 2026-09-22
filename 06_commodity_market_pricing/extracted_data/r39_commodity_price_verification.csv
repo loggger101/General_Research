@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+worldbank_cmo_pink_sheet,Dataset coverage (headline),71 commodities monthly 1960M01-2026M08,-,Monthly Prices sheet header rows + last data row,institutional primary source; nominal USD only for monthly series; file updated 2026-09-02
+worldbank_cmo_pink_sheet,Gold (Au) latest price,4411.0,$/troy oz = $141817/kg,"Monthly Prices sheet col Gold, row 2026M08",our ref_price_usd_per_kg=150000 matches WB Apr-2026 (best ratio 0.988 at 2026M04) - CURRENT
+worldbank_cmo_pink_sheet,Nickel (Ni) latest price,16751,$/mt = $16.75/kg,"Monthly Prices sheet col Nickel, row 2026M08",our ref=16.5 matches WB Jul-2026 within 1% - CURRENT
+worldbank_cmo_pink_sheet,Silver (Ag) latest price,65.4,$/troy oz = $2103/kg,"Monthly Prices sheet col Silver, row 2026M08",our ref=950 matches NO month since Jan-2024; closest WB value within our range is ~Jan-2025 (977). STALENESS FLAG: ours is ~55% below current market
+worldbank_cmo_pink_sheet,Copper (Cu) latest price,14326,$/mt = $14.3/kg,"Monthly Prices sheet col Copper, row 2026M08",our ref=8.8 last matched WB ~Jan-2025; STALENESS FLAG: ours is ~39% below current market
+worldbank_cmo_pink_sheet,Platinum (Pt) latest price,1780,$/troy oz = $57228/kg,"Monthly Prices sheet col Platinum, row 2026M08",our ref=45000 last matched WB ~Jul-2025; STALENESS FLAG: ours is ~21% below current market
+worldbank_cmo_pink_sheet,Palladium (Pd) - NOT in dataset,-,-,whole file,Pink Sheet carries no Pd series; our ref=48000 remains on yfinance/LBMA path only. Same for Rh/Ir/Os/Ru minor PGMs.
