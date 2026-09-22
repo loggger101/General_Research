@@ -274,3 +274,19 @@ Figs 8 (2033 MO) and 10 (2041 MO) are also fully vector; extracted all chemical 
 - All extracted numbers → `extracted_data/r37_mars_per_burn_key_numbers.csv` (**70 rows**, csv.writer-generated with guaranteed quoting — the R36 lesson applied up front; plain UTF-8 no BOM; every value page-cited, vector-extraction precision stated as ~±0.03 km/s for bar heights).
 - No new source IDs: this round deepens three already-registered items (registry stays 89: T1×46/T2×40/T3×3); `sources.csv` untouched and re-verified field-intact.
 - Vision-model analysis timed out repeatedly from this machine again; it was not needed — direct vector extraction superseded both vision and OCR for every figure in scope, with self-validation against the documents' own text-level numbers.
+
+
+## Round-40 addition — kim_2013 propellant-comparison tables fully mined: PROPELLANTS_REFERENCE Isp column gets peer-reviewed anchors for all four operational biprop/monoprop blends (no new source ID)
+
+**Deepening of the already-hosted `kim_2013` T1 row** (KSPE 17(6):120-130). R40 extracts the paper's three comparison tables in full — Table 1 (theoretical performance), Table 2 (propellant characteristics across N2H4 / MMH-NTO / LH2-LOX / LCH4-LOX) and Table 3 (flown CH4/LOX engines) — via word-coordinate reconstruction of the positioned table cells. → `extracted_data/r40_kim2013_propellant_isp_cost_key_numbers.csv` (**8 rows**).
+**Headline — first peer-reviewed anchor for `PROPELLANTS_REFERENCE`'s Isp column.** The table sets every rocket-equation mass ratio in spacecost and previously cited only "RocketCEA / Astronautix" (unregistered). Kim Table 2 vs our rows:
+
+| Blend | Kim Isp [s] | our isp_vac_s | delta |
+|---|---|---|---|
+| N2H4 monoprop | 240 | 220 | in-band (Astronautix cat-bed value) |
+| MMH/NTO | 323 | 336 | +4% (datasheet vs generic table) |
+| LH2/LOX hydrolox | **455** | 452 | **-0.7%, near-exact** |
+| LCH4/LOX methalox | 364 (generic) / **380 = Raptor 2nd gen, Table 3, at 2940 kNvac** | 380 | **EXACT match on the engine our row cites** |
+**Cost row (Table 2, order-of-magnitude per the table's own '~' marks — exponents verified at character level)**: N2H4 ~$10^3 / MMH-NTO ~$10^3 / LH2-LOX ~$10^1 / LCH4-LOX <$10^1 $/kg. Our component-based combined costs agree within an order of magnitude for the cryo blends (hydrolox $1.60/kg, methalox $0.243/kg); the hypergolic figures carry toxicity/handling overhead and are not directly comparable to DOD FY20 raw-material pricing — recorded as a sanity check only, no revision candidate.
+
+**Table 1 (theoretical performance at Pc = 6.89 MPa, expansion ratio 40:1)**: kerosene/LOX O/F 2.77 → Tc 3701 K, C* 1783 m/s, max Isp **358.2 s**; CH4/LOX O/F 3.45 → Tc 3563 K, C* 1838 m/s, max Isp **368.9 s** — the ~+10.7 s / +55 m/s C* methane advantage at equal chamber pressure, peer-reviewed and consistent with our methalox-over-kerolox ranking in `PROPELLANTS_REFERENCE`.
