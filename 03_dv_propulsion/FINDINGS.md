@@ -235,3 +235,42 @@ Our row's 210 s vacuum is a conservative, hardware-realistic value: it sits betw
 - All four NTRS handles were verified live by **exact title match** this round (fetched each `/citations/<id>` page and read the `<title>`). Note: `api.ntrs.nasa.gov` was DNS-down mid-round, so I used the search-page HTML route + citation pages instead — worth re-checking the API host next round.
 - Every extracted number is recorded in `extracted_data/r35_cislunar_mars_delta_v_key_numbers.csv` (30 rows) with page citations and ft/s→m/s conversions, so each claim above is traceable to a specific table row.
 - **Net effect on the pipeline:** the cislunar TLI + LOI rows are now solidly anchored by flight data; the Mars rows have a verifiable total-level anchor (with per-burn split honestly flagged as figure-dependent); and we found one real discrepancy (powered-descent 1,870 → measured ~2.05 km/s) that should be corrected in spacecost when it is next editable. No changes were made to spacecost or economicspace — this process only writes to General_Research.
+
+## Round-37 addition — R35's two open items CLOSED: DRA Fig 4-2 per-burn split extracted (it was vector all along) + MOI v∞=2.65 km/s verified as a misattribution with correct first-principles anchor; AAS tables/figures fully mined
+
+**Target:** the two R35 caveats on `spacecost/reference/delta_v_segments.csv`'s Mars rows, plus criterion #2 completeness mining of the three already-registered domain-3 trajectory sources (no new source IDs this round — everything below comes from `dra5_2009_human_exploration_of_mars`, `qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization`, and `chai_merrill_pfrang_qu_aas19_226_landing_site_accessibility`, all registered in R35; registry count unchanged at 89).
+
+**Finding 1 — DRA Figure 4-2 is VECTOR, not raster: the per-burn split is now extractable and self-validating.**
+R35 recorded that Fig 4-2's "extractable text layer carries only axis ticks" and that vision/pixel-trace were inconclusive. This round I inspected the PDF drawing objects directly (`page.get_drawings()`, item-level rectangles) and found the chart is fully vector: every bar is a filled rectangle with exact coordinates, on an exactly uniform 0.5 km/s tick grid (all ten left-panel ticks verify to <0.1 pt of linear). Extracted all **51 bars** (24 crew + 27 cargo):
+
+| panel | years | TMI range | MOI range | TEI |
+|---|---|---|---|---|
+| LEFT — All-propulsive Crew Mission | 2031–2046 | 3.95 (2031) – 4.10 km/s, most years ≈4.08 | **0.97 (2035) – 1.79 (2031)** km/s | constant 1.56 |
+
+| panel | years | TMI range | MOI (propulsive capture) range |
+|---|---|---|---|
+| RIGHT — Propulsive-or-Aerobrake Cargo | 2028–2045 | ≈3.55 – 4.01 km/s (aero vs prop-MOI series nearly identical by design) | **0.82 (2039/2041) – 1.35 (2030)** km/s |
+
+**Self-validation of the extraction (two independent checks, both pass):**
+- Crew per-year totals = TMI+MOI+TEI range **6.27–7.38 km/s, mean 7.17**, vs DRA's own p62 verbatim "the average total delta-V was approximately 7 km/s ± 1 km/s" — inside the stated band exactly as expected for a correct bar reading (a wrong calibration would have shifted all totals off-band).
+- Crew TEI is constant at 1.563 across every year, and TMI dips specifically in **2031/2035** — matching p36 verbatim "all TMI maneuvers are designed to achieve the maximum allowed Earth departure V∞, except for the 2031 and 2035 opportunities … the maximum allowed Mars arrival V∞ is exceeded with slightly lower values." The geometry reproduces the document's own narrative.
+
+**Effect on spacecost rows:** our MOI row (900 m/s) now has a per-burn peer context: DRA's *all-propulsive* crew MOI spans 0.97–1.79 km/s across opportunities and its cargo propulsive-capture MOI spans 0.82–1.35 — our 0.9 sits at the low (minimum-energy) end, consistent with the row's stated lower-bound design intent. R35's "per-burn split remains figure-dependent" caveat is **retired**.
+
+**Finding 2 — MOI sub-claim "arrival v∞ of 2.65 km/s (NASA DRA 5.0)" = VERIFIED NEGATIVE + correct anchor supplied.**
+Full-document text search of SP-2009-566: the string "2.65" occurs only as a thousands separator ("2,650"); V∞ is discussed qualitatively at p36 with **no numeric Mars-arrival value anywhere** in the extractable layer (Fig 4-2's bars are ΔV per burn, not arrival energy). So spacecost line 29's citation "(NASA DRA 5.0)" for that specific number is a **misattribution**. The number itself is correct and I re-derived it from first principles this round:
+- Hohmann Earth→Mars (r₁=1 AU, r₂=1.523679 AU): v_transfer@aphelion = 21.480 km/s vs Mars circular 24.129 km/s ⇒ **V∞ = 2.6489 ≈ 2.65 km/s** — exact match to the row's value.
+- MOI ΔV into a 250×33,793 km orbit at that V∞ (periapsis burn): √(v_esc²+v∞²) − v_ell = **0.918 ≈ 0.9 km/s** — matches the row's 900 m/s to within rounding.
+
+Correction candidate for spacecost when editable: reword the note from "(NASA DRA 5.0)" to a two-body Hohmann derivation (the value is computed, not sourced); keep DRA as context via Fig 4-2 now that its per-burn values are registered below. **Not applied** — target repo read-only for this process.
+
+**Finding 3 — AAS 19-225 Tables fully mined (text layer; criterion #2).**
+The paper's four tables carry exact peer-reviewed per-maneuver ΔV in the text layer: Table 3 (2035 mission): MOI **121.31/122.04 m/s** (closure/E2E), TEI **121.37/127.21**, outbound SEP **3624.05/3615.80**, WSB transfer actual 145.56 out / 54.30 in vs 75 budgeted, LDHEO maintenance 84.29/56.76; Table 4 (2039 mission at **50° latitude**): MOI **367.72/368.16**, apotwist reorientation via SEP **135.27/127.11 m/s** over 11 revs of ~4°/rev plane changes, TEI **279.35/281.16**. Key structural fact: in this hybrid architecture the chemical MOI is only ~0.1–0.4 km/s because SEP does the heliocentric leg — so these are *context* anchors for a different mission design than spacecost's pure-chemical rows (noted as such on every CSV row, to prevent future conflation). The high-latitude case shows MOI tripling (122→368 m/s) purely from inclination — the peer-reviewed quantification of the latitude penalty.
+
+**Finding 4 — AAS 19-226 Figs 8/10 vector-extracted + remaining quantitative content pulled.**
+Figs 8 (2033 MO) and 10 (2041 MO) are also fully vector; extracted all chemical per-burn rows by landing-site latitude: at |lat|≈50° the Mars-side chemical budget is **MOI ≈ 0.33–0.39 + Reorient ≈ 0.07–0.11 + TEI ≈ 0.08–0.24 km/s** (chemical TMI ≈ 0 in every row — SEP+LGA do Earth departure), with Reorient vanishing near the equator and MOI growing monotonically with |latitude|. Completeness sweep of everything else quantitative: hybrid vehicle total propellant tank capacity **58 t** ("no solutions required that cumulative limit"); Table 1 HPS age/degradation assumptions (0/7.5/15% array degradation; power at TMI 675/624/574 kW for 0/5/10-year vehicles); MSCT campaign dates (Table 1, crew EDs 2035/2039/2043/2048).
+
+**Scope notes:**
+- All extracted numbers → `extracted_data/r37_mars_per_burn_key_numbers.csv` (**70 rows**, csv.writer-generated with guaranteed quoting — the R36 lesson applied up front; plain UTF-8 no BOM; every value page-cited, vector-extraction precision stated as ~±0.03 km/s for bar heights).
+- No new source IDs: this round deepens three already-registered items (registry stays 89: T1×46/T2×40/T3×3); `sources.csv` untouched and re-verified field-intact.
+- Vision-model analysis timed out repeatedly from this machine again; it was not needed — direct vector extraction superseded both vision and OCR for every figure in scope, with self-validation against the documents' own text-level numbers.
