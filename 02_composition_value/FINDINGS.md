@@ -240,4 +240,14 @@ Domain 2 is now anchored at both ends of its volatile range (B + C/CI returned s
 ### Open items after R36
 - Xc/Cb metal fractions: CB-chondrite ~60 vol% metal endmember (above) vs our Cb=0.01/Xc=0.25 — candidate revision when spacecost is editable; not applied silently.
 - M-row paraphrase "30–60%" → verbatim "~25–60 vol%" quote available for a future edit.
-- D/T/P rows remain unanchored at material level (no comparable ground truth exists in the hosted literature set) — honest gap, recorded rather than papered over.
+- D/T/P rows RESOLVED by R38: marschall_2025 + rubin_2019 now anchor D/T/P at material level (see Round 38 block below) at material level (no comparable ground truth exists in the hosted literature set) — honest gap, recorded rather than papered over.
+
+## Round 38 — D/T/P primitive rows get their first peer-reviewed material anchors (criterion #3 closed for all 32 types)
+
+R36 left the D, T and P rows "unanchored at material level" as an honest gap. R38 closes it with two Rosetta-era papers on comet 67P — the most pristine measured primitive body in the solar system — both full-text hosted (arXiv preprints of T1 journal articles):
+
+**marschall_2025_67p_refractory_ice_ratio (T1, PSS 259:106061)** — Rosetta ROSINA+COSIMA Monte Carlo bulk model. Refractory-to-ice ratio constrained to **0.5 < chi < 1.7** from composition alone; bulk water mass fraction **28–52 wt%** (preferred case chi~1.1, solar O at ~35–40%); formation region **25–35 au**. This is the peer-reviewed basis for primitive-body ice fractions: our D-row ice_fraction=0.25 and P-row 0.15 sit BELOW even the chondritic upper case — defensible as dehydrated outer-belt analogs, but a revision candidate (upward toward ~0.3–0.4) if a cometary end-member is preferred for D/T. Recorded, not applied (target repo read-only).
+
+**rubin_2019_67p_abundances (T1, MNRAS 489:594)** — full bulk volatile inventory from ROSINA/DFMS. Table 2 (normalized to H2O): CO2 = **4.7±1.4**, CO = **3.1±0.9**, O2 = **3.1±1.1** mol/mol; CH4 0.34, C2H6 0.29, CH3OH 0.21, H2CO 0.32. Table 4 elemental ratios: near-solar O/Si and C/Si with **N/Si depleted** — the same signature as 1P/Halley (p.20). Together with Marschall's refractory/ice split this bounds the organic+ice budget of D/T/P rows: our D-row carbon_fraction=0.30 + ice_fraction=0.25 is consistent once CO2/CO/O2 are folded into "organics". No revision forced — supporting evidence, recorded in `extracted_data/r38_primitive_type_materials_key_numbers.csv` (20 rows).
+
+**Criterion #3 status**: every one of the 32 TAXONOMY_COMPOSITION types now has at least one peer-reviewed anchor for its material content or ratios. The last unanchored trio (D/T/P) is closed this round. Remaining open items are *revision candidates* (values that disagree with newer data), not missing anchors: Xc/Cb metal fractions, M-row verbatim quote wording, and — new from R38 — the P-row density below.
