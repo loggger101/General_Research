@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+source_id,item,value,unit,location_in_source,notes
+chesley_2014_bennu_orbit_bulk_density,Bennu bulk density (headline),1260 +/- 70,kg/m^3,p.1 abstract + Table 7 p.56,"= 1.26 g/cm^3; implies macroporosity 40+/-10% for likely analog meteorites"
+chesley_2014_bennu_orbit_bulk_density,Bennu mass,7.8 +/- 0.9 x 10^10,kg,Table 7 p.56,"our environments.csv carries 7.329e10 kg = -0.8 sigma INSIDE the paper's error bars; independent pre-mission (2014) check of our best-characterized body"
+chesley_2014_bennu_orbit_bulk_density,Bennu GM,5.2 +/- 0.6,m^3/s^2,Table 7 p.56,"gravitational parameter; consistent with M above (GM = G*M within stated uncertainties)"
+chesley_2014_bennu_orbit_bulk_density,Bennu area-to-mass ratio,"2.4 +/- 0.1 x 10^-6",m^2/kg,Table 7 p.56,"drives Yarkovsky acceleration model; paper uses 2.59e-6 for the Nolan shape-model case (p.10)"
+chesley_2014_bennu_orbit_bulk_density,Yarkovsky drift rate da/dt,-19.0 +/- 0.1 x 10^-4,au/Myr,p.1 abstract,"= 284 +/- 1.5 m/yr semimajor-axis drift from optical astrometry 1999-2013 + Arecibo radar delay (1999/2005/2011)"
+chesley_2014_bennu_orbit_bulk_density,Our environments.csv implied density vs paper,~1197 kg/m^3 vs 1260 +/- 70,kg/m^3,"computed: M = 7.329e10 / (4/3 pi r^3), r = 244.5 m","our value sits ~6% below the paper's central estimate and INSIDE its +1 sigma band; no revision needed — recorded as agreement evidence"
