@@ -1,0 +1,19 @@
+item,value,units_or_note
+zeng_2007_jsc1a_density,1680,kg/m3 — 'Soil Density (ρ): 1680 kg/m3' verbatim; JSC-1a lunar simulant used in all model runs
+zeng_2007_cohesion,170,N/m2 — 'Soil Cohesion (c): 170 N/m2'; low-cohesion surface soil regime our row's ≲50 Wh/kg end assumes
+zeng_2007_soil_tool_adhesion,1930,N/m2 — 'Soil-Tool Adhesion (ca) 1930 N/m2' verbatim
+zeng_2007_internal_friction_angle,35,"deg — 'Internal Friction Angle (φ) 35 deg'; external friction angle β=10 deg, soil-blade δ=20 deg, shear failure θ=30 deg, K0=0.573"
+zeng_2007_jsc1a_specific_gravity,2.85,'specific gravity of the JSC1a fines is 2.85' — typical for silt/clay particles (hydrometer test)
+zeng_2007_tool_params,w=1 m; d up to 1 m; v=0.1–1.63 m/s; g_moon,tool width/depth/velocity and lunar gravity as modeled; surcharge q: 0.5-1 kg/m2
+zeng_2007_key_finding,force ∝ cohesion (strong),"'rapid increase in the required drawbar force as cohesion increases, having the lowest values for cohesionless soil but the highest values for very cohesive soil' — basis of our loose-vs-consolidated energy split; model also uniquely handles acceleration terms"
+proctor_apex_2019_load_cell,"Fx,Fy ≤1300 N; Fz ≤3900 N; T≤203 N-m","Yokogawa power meter w/ 50 A shunt on the DC actuator bus (325 VDC / 100 A); uncertainty ≤1.25% Fx/Fy/T, ≤2% Fz"
+proctor_apex_2019_bucket,"21.6 cm wide; 15,600 cm3 volume; 30 deg blade angle",aluminum bucket + 25.4 cm steel leading edge; optional three teeth extending 5.1 cm
+proctor_apex_2019_soil_bin,"GRC-3B fill 1,587 kg (~10 cm headspace)",welded carbon-steel bin 76.2x183x76 H cm; shaker-table compaction for repeatable tests
+proctor_apex_2019_method,"tare subtraction: power+forces in air AND simulant, identical trajectory",the measurement chain that yields per-test excavation Wh/kg — the institutional basis of our row's median 200 Wh/kg (loose-regolith regime)
+zeitlin_asteroid_excavation_target_env,"C-type meteorite minerals + hydrated minerals, variable ice content, vacuum + cryogenic",the only registered excavation source aimed at ASTEROID regolith (our pipeline's target); penetration/excavation/capture devices; TRL 3→5
+just_2019_rassor_bucket_drum_specific_energy,0.761 (context-only),Wh/kg — 'Bucket drum (RASSOR) | 90 kg per trip c | – | 67 kg d | 0.761 Wh/kg' from the publisher's indexed snippet of Table 4; footnote: average specific power WITHOUT auger transport
+just_2019_pneumatic_digger_specific_energy,2 (context-only),"Wh/kg — 'Pneumatic | 6 kg/h a | … | 20 W / 2 Wh/kg' in GRC-1, Ames K10 platform, vacuum-chamber tested (Zacny et al. 2008b/2009/2012)"
+just_2019_impeller_power,~115–130 W at 6–30 kg/h (context-only),"continuous impeller class, Radulescu et al. 2011 — same snippet; no Wh/kg printed for this row in the indexed text"
+just_2019_bucket_ladder_power,<200 W at 800–2400 kg/h (context-only),"van Susante & Dreyer 2010, 76 kg system — same snippet; high-throughput continuous class"
+our_operational_costs_row,median 200 Wh/kg; range 50–500,"spacecost/reference/operational_costs.csv 'Drilling / excavation energy' (v1.15.0, catalog_date 2026-09-07); notes cite 'Zacny et al. NIAC studies — loose regolith ≲50 Wh/kg, consolidated rock ≳500 Wh/kg'"
+r43_comparison_finding,"measured specific energies sit at/below the LOW end of our range; median 200 likely prices duty cycle + transport, not cutting alone","RASSOR 0.761 and pneumatic ~2 Wh/kg are per-kg CUTTING figures for loose simulant (footnote: RASSOR value excludes auger transport). Our 50–500 range brackets them at the low end; the 200 median is defensible only if it includes hauling/duty-cycle — flag as a revision-candidate note, NOT applied (target repo read-only)"
