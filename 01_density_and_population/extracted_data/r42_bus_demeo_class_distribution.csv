@@ -1,0 +1,28 @@
+item,value,units_or_note
+total_classified_bodies,371,"demeotax.tab, parsed live this round; sum check exact"
+class_A_count,6,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_B_count,4,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_C_count,13,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Cb_count,3,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Cg_count,1,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Cgh_count,10,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Ch_count,18,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_D_count,16,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_K_count,16,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_L_count,22,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_O_count,1,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Q_count,8,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_R_count,1,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_S_count,144,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Sa_count,2,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Sq_count,29,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Sr_count,22,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Sv_count,2,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_T_count,4,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_V_count,17,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Xc_count,3,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Xe_count,7,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_Xk_count,18,base class (w-slope and :-questionable suffixes stripped per PDS docinfo)
+class_X_count,4,'X' entries present in demeotax.tab though not a DeMeo et al. 2009 base class; sum check incl. X = 371
+bundle_files_pulled_live,demeotax.tab (21147 B) / meanspectra.tab (12095 B) / demeorefs.tab (4000 B) / pcscores.tab (24857 B) / classdesc.asc (4294 B) / taxocard.pdf (10302 B),"sbnarchive.psi.edu PDS3 volume EAR-A-VARGBDET-5-BUSDEMEOTAX-V1_0, all HTTP 200 this round; sha256(16): 70f7f4da8a522c01 / 97e2fe973691d95a / 355b06b93f8a6965 / e92e41d77f88a9aa / ea577407a30fdf90 / 786f66ad5815f70f"
+coverage_vs_our_32_types,"ground truth exists for 24 of our 31 named types — every Bus-DeMeo class present among the 371 (B,C,Cb,Cg,Cgh,Ch,S,Sa,Sq,Sr,Sv,Xc,Xe,Xk,A,D,K,L,O,Q,R,T,V + bare X); NO members in this bundle for Sk and Sl (S/K and S/L transitionals) nor for Tholen-only rows M,E,P,F,G",

@@ -290,3 +290,27 @@ Figs 8 (2033 MO) and 10 (2041 MO) are also fully vector; extracted all chemical 
 **Cost row (Table 2, order-of-magnitude per the table's own '~' marks — exponents verified at character level)**: N2H4 ~$10^3 / MMH-NTO ~$10^3 / LH2-LOX ~$10^1 / LCH4-LOX <$10^1 $/kg. Our component-based combined costs agree within an order of magnitude for the cryo blends (hydrolox $1.60/kg, methalox $0.243/kg); the hypergolic figures carry toxicity/handling overhead and are not directly comparable to DOD FY20 raw-material pricing — recorded as a sanity check only, no revision candidate.
 
 **Table 1 (theoretical performance at Pc = 6.89 MPa, expansion ratio 40:1)**: kerosene/LOX O/F 2.77 → Tc 3701 K, C* 1783 m/s, max Isp **358.2 s**; CH4/LOX O/F 3.45 → Tc 3563 K, C* 1838 m/s, max Isp **368.9 s** — the ~+10.7 s / +55 m/s C* methane advantage at equal chamber pressure, peer-reviewed and consistent with our methalox-over-kerolox ranking in `PROPELLANTS_REFERENCE`.
+
+## Round-42 addition — ssoBFT per-body delta_v mined live: population anchor for the approach/transfer rows + Bennu/Hermes identity anomaly resolved (no new source ID)
+
+**Target:** R41's carried open item "ssoBFT's per-body `delta_v` column = future anchor candidate for spacecost approach/transfer rows." No new source ID — the data is `berthier_2023_ssodnet` (domain 1, registered R41); this block records the mining.
+
+**Official definition** (SsODNet service docs, ssp.imcce.fr/webservices/ssodnet/api/ssobft/, fetched live): `delta_v.delta_v` = "Best total velocity range (Delta-V) that a spacecraft must undergo from Earth orbit to match orbit and rendezvous with a target" [km/s]; companion columns `transfer_time` [days] and `n_burns`. It is an **Earth-orbit-to-rendezvous** budget — the same frame as our LEO→NEA rows, not a point-intercept figure.
+
+**Population statistics** (parsed live from the R41 parquet; q = a(1−e) from orbital_elements):
+
+| population | n | p05 | median | mean | p95 | max |
+|---|---|---|---|---|---|---|
+| whole table | 1,563,628 | — | **10.156** | 10.293 | — | 37.582 (min 3.459) |
+| NEA (q<1.3 au) | 42,379 | 5.539 | **8.877** | 10.071 | 18.334 | — |
+| MBA (1.6≤a≤3.4, q≥1.6) | 1,467,308 | 8.492 | **10.129** | 10.249 | 12.506 | — |
+| other (Trojans/JFC/high-ecc) | 53,941 | 8.213 | 11.797 | 11.656 | 14.915 | — |
+
+**Comparison to `spacecost/reference/delta_v_segments.csv`:**
+- "LEO → main-belt asteroid = **10,500 m/s**" (cites Taylor et al. 2018): the ssoBFT MBA population median is **10.13 km/s**, p75=10.89 — our row sits just above the population median / inside its interquartile range → **AGREE as a representative main-belt target**. Taylor's per-object map remains the cited source; this adds an independent 1.47M-body distribution behind it.
+- "LEO → easy NEA = 4,500" / "average NEA = 6,500": ssoBFT NEA p05=**5.539**, median **8.877**. Only **0.219% (93 of 42,379)** sit below 4 km/s; 2.2% below 5; 9.1% below 6 → our easy/average rows price the *accessible tail* (Elvis et al.'s low-Δv class), not the population mean — consistent with their stated intent ("bottom decile of accessibility"), but now explicit: a random NEA costs ~9 km/s, and only about 2% are sub-5-km-s.
+- Headline bodies (joined by MPC number verified via JPL sbdb.api this round): **Bennu 7.368 / Ryugu 6.985 / Eros 7.643 / Didymos 6.139 km/s**, transfer times 233–382 days (n_burns 2–3).
+
+**Identity anomaly caught and resolved:** my first join on number=69230 returned the row named "Hermes" — ssoBFT's `number` column is authoritative: **(69230) = Hermes**, an Apollo NEA (dv 9.699 km/s). The true Bennu row carries name="Bennu", number=**101955**, dv **7.368 km/s** — matching R41's recorded value exactly, confirming the earlier cross-check was correct and that any future per-body join must key on `number` (JPL sbdb.api?sstr=Bennu → fullname "101955 Bennu (1999 RQ36)" settles it).
+
+All numbers in `extracted_data/r42_sso_bft_delta_v_key_numbers.csv` (29 rows, every value with population context; the official column definition quoted verbatim at the foot of the file).
