@@ -1,0 +1,5 @@
+metal,our_ref_price_usd_per_kg,ref_price_date_stamp,lbma_fixing_at_2026-05-29_usd_per_kg,pct_diff_vs_lbma_same_day,lbma_latest_usd_per_kg_2026-09-22,status
+gold,150000.0,2026-05-29,145506.2,3.1,138671.0,current (fine)
+platinum,45000.0,2026-05-29,61472.2,-26.8,57628.6,STALE - underpriced ~27% (revision candidate)
+palladium,48000.0,2026-05-29,43853.6,9.5,41644.9,near-current (mildly high)
+silver,950.0,2026-05-29,2436.5,-61.0,2110.2,STALE - underpriced ~61% (revision candidate)
