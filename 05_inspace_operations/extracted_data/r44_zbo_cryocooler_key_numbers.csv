@@ -1,0 +1,24 @@
+item,value,units_or_note
+nugent_soa_lift_capacity,1,W at 20K — previous state-of-art before this hardware
+nugent_soa_specific_power,370,W/W thermal/electrical at the SOA point (Ref. [1] in paper)
+nugent_soa_specific_mass,18.7,kg/Wthermal at the SOA point
+nugent_threshold_lift_capacity,17,W — program threshold value
+nugent_project_goal_lift_capacity,20,W — 'capable of removing 20 Watts (W) of heat at 20 Kelvin'
+nugent_tested_lift_capacity,19.2,W tested; max lift demonstrated = 22.46 W at Test Point 2 ('with a lift of 22.46 W')
+nugent_projected_lift_capacity,20.4,W — projected to 270 K heat rejection (tested values only achievable at 285 K reject)
+nugent_threshold_specific_power,80,W/W — program threshold; = our row median EXACTLY
+nugent_project_goal_specific_power,60,W/W — project goal (not yet achieved by tested hardware)
+nugent_tested_specific_power,91.6,W/W at 285 K heat rejection; per-test-point sweep spans 78.7-281.2 W/W across the matrix
+nugent_projected_specific_power,86.3,W/W projected to 270 K reject — inside our row's 50-150 range (upper half)
+nugent_tested_specific_mass,5.5,kg/W flight-like projection; per-test-point sweep 4.7-35.5 kg/W
+nugent_project_goal_specific_mass,4.4,kg/W — project goal
+nugent_system_mass,336.9 test / 106.3 flight-like,"kg — 'The mass of the system is 336.9 kg, with a flight-like projection of 106.3 kg' (includes BAC simulator network in test config)"
+nugent_carnot_efficiency_tested,7.1-8.2,% — per-test-point Carnot refrigeration efficiency at the design point (COP_Carnot 5.0-15.6%)
+hastings_gb37_rated_capacity,30 W at 20 K; first stage 50 W at 80 K,'The cryocooler rated capacity is 30 W at 20 K ... The first stage provides 50 W of cooling at 80 K' — Cryomech GB37 two-stage Gifford-McMahon
+hastings_gb37_specific_power,350 W/W at 4% Carnot efficiency,'requires 350 W of power input per watt of cooling for a 4% Carnot cycle efficiency' — the LEGACY-GM baseline our RTB row brackets from below (RTB tested ~92 vs GM 350)
+hastings_demo_scale,"MHTB large-scale LH2 tank, ground demonstration",passive insulation + propellant recirculation + pressure control subsystems; automated heater/pressure steady-state algorithm — the full ZBO architecture proven on a tank article (in-space storage relevance stated in title)
+plachta_flight_cryocooler_ceiling,<1 W at 20K; ~20 W at 90K,"'the largest has less than 1W of cooling at 20K and just 20W at 90K' (flight cryocoolers, Ref. 19) — confirms our rows' status=development / TRL-5: nothing ZBO-scale has flown"
+plachta_lh2_tank_heat_leak,hundreds of W without a 90 K shield,'an 8.4 m diameter LH2 tank heat leak will probably be in the hundreds of watts' — sizing context for why the cryocooler row matters at real tank scale
+our_zbo_cryocooler_row,median 80 W/W; range 50-150; status development TRL 5,"notes field: 'Carnot at 20 K against a 300 K reject is 14 W/W and real machines run 15-25% of Carnot, so 50-150 W/W ... nothing has flown on a propellant tank'"
+our_specific_mass_row,median 5.0 kg/W; range 2-15,"'a tank leaking 20 W needs ~100 kg of machine and ~1.6 kW of electrical power to hold it at zero boil-off' — arithmetic consistent with tested 5.5 kg/W x 91.6 W/W (≈108 kg, ≈1.83 kW for a 20 W leak)"
+r44_comparison_finding,AGREE on both rows; anchor upgraded from Carnot estimate to test data — NO revision applied,"median 80 = NASA program threshold exactly; tested hardware 91.6/86.3 inside range upper half (conservative median justified); specific mass 5.0 vs tested flight-like 5.5 within range and consistent with the row's own worked example. If the project goal of 60 W/W is met in future characterization testing, that becomes a revision candidate — not before"
