@@ -1,0 +1,8 @@
+Industry Name,Number of Firms,Beta,Cost of Equity,E/(D+E),Std Dev in Stock,Cost of Debt,Tax Rate,After-tax Cost of Debt,D/(D+E),Cost of Capital,our_wacc_value,delta_bps_vs_ours_computed,pct_vs_ours_computed,range_low_delta_bps_computed
+Aerospace/Defense,79,0.95,8.17%,86.53%,46.45%,5.29%,11.58%,3.97%,13.47%,7.60%,0.100,+240.0,+31.6%,-10.0
+Metals & Mining,73,1.04,8.60%,90.10%,77.56%,6.02%,2.52%,4.51%,9.90%,8.20%,0.100,+180.0,+22.0%,-70.0
+Precious Metals,56,0.84,7.68%,93.21%,69.95%,6.02%,5.97%,4.51%,6.79%,7.47%,0.100,+253.0,+33.9%,+3.0
+Steel,19,1.06,8.69%,80.96%,38.51%,5.07%,9.28%,3.80%,19.04%,7.76%,0.100,+224.0,+28.9%,-26.0
+Oil/Gas (Integrated),4,0.30,5.29%,87.84%,20.27%,4.73%,28.24%,3.55%,12.16%,5.07%,0.100,+493.0,+97.2%,+243.0
+Total Market,5994,0.91,8.02%,73.98%,48.07%,5.29%,8.30%,3.97%,26.02%,6.96%,0.100,+304.0,+43.7%,+54.0
+Total Market (without financials),4822,0.99,8.37%,85.26%,52.76%,5.29%,7.10%,3.97%,14.74%,7.72%,0.100,+228.0,+29.5%,-22.0

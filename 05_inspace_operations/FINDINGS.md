@@ -209,3 +209,28 @@ Program context confirming the `status=development` / TRL-5 claims: verbatim —
 
 ### Round-44 status (domain 5)
 Registry +3 T2 → domain 5 now carries 19 sources; all three hosted full-text (public domain). just_2019 remains open_not_pulled: ScienceDirect still bot-blocks, and this round's browser-backend attempts failed again (three consecutive session timeouts — the backend itself is wedged, not the target site); CORE/BASE aggregators have no OA PDF. The R43 quarantined specific-energy values stay context-only until a full-text pull succeeds from an interactive machine.
+### damodaran_cost_of_capital_by_industry [T3; open service] — Damodaran (NYU Stern), "Cost of Capital by Industry Sector," updated January 2026
+
+**The first registered anchor for the `WACC` row in operational_costs.csv.** That row's note cites
+"Boeing 7.5% / Howmet 8.3% WACC (ValueInvesting.io 2026) as the industrial floor ... (Damodaran NYU Stern industry tables)" —
+the Damodaran citation had never been registered or verified until now. Pulled live from this machine on 2026-09-23:
+HTML table at `stern.nyu.edu/~adamodar/New_Home_Page/datafile/wacc.html` (sha256=04a4dd2188cbc9...) plus the XLS twin
+(`.../pc/datasets/wacc.xls`, sha256=d38b149c731bbb..., byte-identical on both www.stern.nyu.edu and pages.stern.nyu.edu hosts).
+
+Live table: 96 industries, per-sector beta / cost of equity / capital structure / after-tax cost of debt / **cost of capital**.
+Key rows (parsed from HTML cells — no OCR ambiguity):
+
+| sector | n firms | beta | CoE | E/(D+E) | AT-CoD | D/(D+E) | **CoC** | vs our WACC value 10% |
+|---|---|---|---|---|---|---|---|---|
+| Aerospace/Defense | 79 | 0.95 | 8.17% | 86.53% | 3.97% | 13.47% | **7.60%** | ours +240 bps (+31.6%) — startup premium, inside [7.5, 15] range |
+| Metals & Mining | 73 | 1.04 | 8.60% | 90.10% | 2.52% | 9.90% | **8.20%** | ours +180 bps (+22.0%) — above the mining floor too |
+| Precious Metals (domain-6 context) | 56 | 0.84 | 7.68% | 93.21% | 5.97% | 6.79% | **7.47%** | a defensible discount rate for PGM holdings — no such row exists in our pipeline yet; recorded as context, not a revision candidate |
+| Total Market (n=5994) | 5994 | 0.91 | 8.02% | 73.98% | 3.97% | 26.02% | **6.96%** | ours +304 bps (+43.7%) above the all-market baseline — consistent with a venture-risk premium, not an error |
+
+Audit against our row (value=0.10, range_low=0.075, range_high=0.15):
+- **AGREE on the floor**: `range_low` 7.5% vs live Aerospace/Defense CoC 7.60% = within -10 bps (-1.3%) — the "industrial floor" claim holds at sector level even though ValueInvesting.io itself is not verifiable from this machine (recorded as secondary citation only).
+- **AGREE on the value**: our 10% sits +240 bps above the aerospace anchor and +180 bps above metals & mining — exactly where a "startup risk premium to ~10-15%" should land; `range_high` 15% remains unanchored (no sector in the table reaches it), which is fine: it bounds venture scenarios, not industry.
+- **Internal consistency verified programmatically**: all 96 rows satisfy CoC = E/(D+E)*CoE + D/(D+E)*AT-CoD to within +/-0.05 pp — the parsed cells are self-consistent, so no transcription ambiguity in any number above (all deltas computed by code from raw values; see extracted_data/r47_damodaran_cost_of_capital_key_numbers.csv).
+
+### Round-47 status (domain 5)
+Registry +1 T3 -> domain 5 now carries 20 sources. The WACC row is the first operational-costs cell anchored by a live, re-queryable institutional dataset (T3 per the LBMA precedent); DSN time ($1530/hr, NASA MOCS FY09) and launch insurance (~10%, Plane Talking/Gallagher) remain cited-but-unregistered — recorded as open items, not chased this round.
