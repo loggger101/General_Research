@@ -1,0 +1,16 @@
+table,orbit_or_item,dv_m_per_s,delta_t,source_cell_location,verified
+Table 3 Surface Access Costs,NRO (Polar),730,0.5 days,"page 4, NRO(Pol.) row To/From LLO dV + Total columns — EXACT match to our delta_v_segments.csv 'NRHO → low lunar orbit' dv_m_per_s=730",coordinate-re-extracted this round
+Table 3 Surface Access Costs,NRO (Equatorial),898,0.5 days,"page 4, NRO(Eq.) row",coordinate-re-extracted this round
+Table 3 Surface Access Costs,ELO (0 deg PC),515,7 hrs,"page 4, ELO(0PC) row",coordinate-re-extracted this round
+Table 3 Surface Access Costs,PCO (Polar),700,5 hrs,"page 4, PCO(Pol.) row",coordinate-re-extracted this round
+Table 3 Surface Access Costs,Frozen (Polar),808,6 hrs (incl 252 plane-change),"page 4, Frozen(Pol.) row",coordinate-re-extracted this round
+Table 3 Surface Access Costs,Frozen (Equatorial),964,6 hrs (incl 408 plane-change),"page 4, Frozen(Eq.) row",coordinate-re-extracted this round
+Table 3 Surface Access Costs,EM-L2 Halo (Polar),800,3 days,"page 4, EM-L2(Pol.) row",coordinate-re-extracted this round
+Table 3 Surface Access Costs,DRO (Polar),830,4 days,"page 4, DRO(Pol.) row",coordinate-re-extracted this round
+Table 6 Staging Orbit Summary,NRO — Lunar Access (to Polar LLO),730,∆T = .5 day,"page 8, NRO row x232-296 band: '∆V = 730 m/s,' + '∆T = .5 day'",coordinate-re-extracted this round
+Table 6 Staging Orbit Summary,NRO — Earth Access,Feasible (qualitative),—,"page 8, NRO row x164-198: feasibility label only; NO one-way numeric cell for TLI→NRO exists in this paper → our dv=450 row is a consistency anchor from this source, not an exact pin",coordinate-re-extracted this round
+Table 6 Staging Orbit Summary,LLO — Earth Access,"Infeasible (∆V=0 m/s, ∆T=0)",—,"page 8, LLO row: 'Infeasible' + Lunar-Access col shows the reason",coordinate-re-extracted this round
+Table 2 Round Trip Sample Missions,NRO 21-day mission (total ∆V),840,stay time 10.9 d,"body/Table-2 region: 'For a 7 day NRO, the total cost for an opportunity in February 2021 was found to be 840 m/s' + Table 2 row",coordinate-re-extracted this round
+Table 2 Round Trip Sample Missions,NRO 60-day mission (total ∆V),751,stay time 37.6 d,body: 'a 60 day mission ... can be completed within 751 m/s',coordinate-re-extracted this round
+Body text,NRO access if transfer time free to be several months,"<100 (total, both ways)",—,page ~3-4: 'the Earth-Moon libration point halos and NRO orbits require very small ∆Vs in the 10's of m/s easily less than 100 m/s total if transfer time is free to be several months',coordinate-re-extracted this round
+Body text,NRO stationkeeping,<10 per year,m/s/yr,page 8 Table 6 NRO row Stationkeeping col + body: 'total cost around 5 m/s for a year' (predicted),coordinate-re-extracted this round
