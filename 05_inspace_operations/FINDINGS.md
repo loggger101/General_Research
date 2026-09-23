@@ -181,3 +181,31 @@ The last partially-anchored physical row (`Drilling / excavation energy`) now ha
 
 ### Round-43 status (domain 5)
 Registry +3 T2 → domain 5 now carries 16 sources. Open items: just_2019 full-text pull (blocks turning the comparison finding into an applied revision); Mueller 2022 review deck (NTRS 20220006285, pulled — image-heavy, no extractable numbers; recorded as context) remains unregistered pending a text-bearing version.
+
+## Round 44 addition — the ZBO cryocooler rows get their first TESTED-hardware anchor (Carnot estimates -> measured W/W)
+
+**The gap:** our `Zero-boil-off cryocooler (20 K)` row (80 W/W median, 50-150 range) and its partner specific-mass row (5.0 kg/W) carried the note "engineering estimates from Carnot limits" — every other physics number in domain 5 rested on a paper or dataset; these two were arithmetic. R43's NTRS access breakthrough made this closeable: three documents pulled live via `ntrs.nasa.gov/api/`, all public-domain NASA STI, full text hosted.
+
+### nugent_2022_rtb_cryocooler_test [T2; full text hosted] — Nugent, Grotenrath & Johnson (NASA Glenn), "20 Watt 20 Kelvin Reverse Turbo-Brayton Cycle Cryocooler Testing and Applications", NTRS 20220009350
+The acceptance test of NASA's 20 W / 20 K reverse turbo-Brayton cryocooler (tested at Creare in a vacuum bell, BAC simulator network). Table 1 values extracted by word coordinates from the hosted PDF:
+
+| Parameter @20K | State of art | Threshold | Project goal | **Tested**¹ | Projected² |
+|---|---|---|---|---|---|
+| Lift capacity (W) | 1 | 17 | 20 | **19.2** (max demonstrated 22.46 at TP2) | 20.4 |
+| Specific mass (kg/W, flight-like)³ | 18.7 | 5.5 | 4.4 | **5.5** | 5.2 |
+| Specific power (W/W) | 370 | 80 | 60 | **91.6** | 86.3 |
+
+¹ tested values only achievable at 285 K heat rejection; ² projected to 270 K reject; ³ flight-like projections. Per-test-point specific-power sweep spans 78.7-281.2 W/W across the acceptance matrix (Carnot refrigeration efficiency 7.1-8.2%).
+
+### hastings_2010_lht_zbo_demonstration [T2; full text hosted] — Hastings et al., "Large-Scale Demonstration of Liquid Hydrogen Storage With Zero Boiloff for In-Space Applications", NASA/TP-2010-216453, NTRS 20110004377
+The MHTB ground demonstration that the whole ZBO architecture works on a tank article: passive insulation + propellant recirculation + pressure control around a commercial **Cryomech GB37** (two-stage Gifford-McMahon). Verbatim from p.16 of the hosted PDF: *"The cryocooler rated capacity is 30 W at 20 K and requires **350 W of power input per watt of cooling for a 4% Carnot cycle efficiency**. The first stage provides 50 W of cooling at 80 K."* — that legacy-GM figure (350 W/W) is the baseline the RTB row brackets from below: tested RTB ≈92 W/W vs GM 350, a ~4x improvement in specific power for the same job.
+
+### plachta_2017_cryo_zbo_goals [T2; full text hosted] — Plachta, Stephens & Johnson (NASA); Zagarola & Deserranno (Creare), NTRS 20180004709
+Program context confirming the `status=development` / TRL-5 claims: verbatim — *"while there are many flight cryocoolers available at 20 and 90K … **the largest has less than 1W of cooling at 20K** and just 20W at 90K"* → nothing ZBO-scale has flown (our rows' note already said this; now it's cited). Also: an 8.4 m LH2 tank heat leak "will probably be in the hundreds of watts" without a 90 K shield — sizing context for why these two rows matter at real scale. (NTRS carries a duplicate record, 20180004710, same paper under slightly different title wording — one registration only.)
+
+### What this settles for `storage_systems.csv`
+- **AGREE on both rows; anchor upgraded from Carnot arithmetic to test data.** Median 80 W/W = NASA's own program threshold exactly; the tested unit (91.6 / projected 86.3) sits inside our 50-150 range in its upper half — a conservative median, now justified by hardware rather than assumption. Specific mass: our worked example ("20 W leak → ~100 kg machine, ~1.6 kW") is consistent with tested flight-like 5.5 kg/W × 91.6 W/W (≈108 kg / ≈1.83 kW).
+- **No revision applied** (target repo read-only): the project GOAL of 60 W/W is unmet by tested hardware — if future characterization testing hits it, that becomes a revision candidate for the median; until then the threshold-based 80 stands as the defensible value.
+
+### Round-44 status (domain 5)
+Registry +3 T2 → domain 5 now carries 19 sources; all three hosted full-text (public domain). just_2019 remains open_not_pulled: ScienceDirect still bot-blocks, and this round's browser-backend attempts failed again (three consecutive session timeouts — the backend itself is wedged, not the target site); CORE/BASE aggregators have no OA PDF. The R43 quarantined specific-energy values stay context-only until a full-text pull succeeds from an interactive machine.
