@@ -234,3 +234,35 @@ Audit against our row (value=0.10, range_low=0.075, range_high=0.15):
 
 ### Round-47 status (domain 5)
 Registry +1 T3 -> domain 5 now carries 20 sources. The WACC row is the first operational-costs cell anchored by a live, re-queryable institutional dataset (T3 per the LBMA precedent); DSN time ($1530/hr, NASA MOCS FY09) and launch insurance (~10%, Plane Talking/Gallagher) remain cited-but-unregistered — recorded as open items, not chased this round.
+### jpl_dsn_services_catalog_820_100 [T2; full text hosted] — JPL DSN Services Catalog 820-100 Rev H (Jun 6, 2022)
+
+**The named-but-unregistered source behind the 'Deep Space Network time' row.** The note itself says "Authoritative current
+rates: dse.jpl.nasa.gov/ext/ calculator" — this round I pulled both halves of that route. The calculator is a client-side JS app
+(dse.jpl.nasa.gov/ext/) whose rate engine lives server-side (`apertureFeeTool/cost/<mission>/<costMethod>/<fiscalYear>/...` POST with the
+full scenario payload; `api/reference` exposes only antenna metadata, 77 assets — no rates). So the verifiable anchor is JPL's official
+DSN Services Catalog (public NASA PDF, hosted here):
+
+- **p65 eq. 6-1: AF = RB * AW * MW** where RB = "hourly rate, adjusted annually"; AW = aperture weighting (1.0 single 34-m; 2.0 two-station
+  array + 2-station Delta DOR; 3.0 three-array OR any combination including a 70-meter station; 4.0 four-array); MW = MSPA factor (1.0, or 0.5 downlink-only).
+- **p66: "At the time of publication ... the DSN contact dependent hourly rate (RB) was $1,792"** — i.e. ~$1,792/hr per weighted aperture-hour as of June 2022; passes >8h are segmented at 8h for setup/teardown overhead.
+
+Audit against our row (`Deep Space Network time`, value **$1,530/hr** single 34-m dish, range [1000-4000], note: "MOCS cited $1057/hr in FY09; CPI-adjusted to 2026 ≈ $1530/hr. 70-m apertures ~$4k/hr"):
+- **Rev H official RB → current dollars (BLS CPI-U actuals pulled from data.bls.gov):** H1-2022 avg = 288.347; latest actual Aug-2026 = 334.980 (x1.1617); 2026 YTD avg x1.1502. Computed **34-m rate ≈ $2,082/hr** → our $1,530 is **−26.5% LOW**. Our range [1000-4000] DOES bracket the computed rate (the value is stale-low).
+- **70-m:** AW=3.0 → computed ≈ **$6,245/hr**; note's "~$4k/hr" is **−36% LOW**.
+- **Our number vs its own stated method:** FY09 $1,057 x World-Bank annual-inflation chain 2009..2024 (x1.4570) = **$1,540** → −0.65%, i.e. internally consistent — but the FY09 MOCS rate is superseded by Rev H's official $1,792 RB. The row should track the catalog + CPI route instead.
+- Cross-validation: BLS level ratio Dec-2016→Dec-2024 (x1.3072) vs WB chain 2017..2024 (x1.3070) — agree to **0.02%**, so both inflation chains are trusted for this derivation.
+- REVISION CANDIDATES recorded (target repo read-only): value $1,530 → ~$2,080 (−26.5%); 70-m note figure ~$4k → ~$6.2k.
+
+### gallagher_plane_talking_space_market_updates [T3; open service, extraction-only] — Gallagher Specialty "Plane Talking" Space Market Update series
+
+**The cited-but-unregistered source behind the 'Launch insurance' row.** The note says: "Market rate per Plane Talking (Gallagher) Q1 2024 —
+premiums rose from ~6% (early 2023) to ~10% post-Intelsat 33e loss. First-of-kind vehicles at upper end." Pulled live this round: the index page,
+the **Q1-2024 Space Market Update** (the cited document), Q4-2023, and current issues through Q2-2026 — all open HTML on specialty.ajg.com, no auth.
+
+What the cited Q1-2024 issue actually says:
+- 2023 underwriting result: **loss of circa USD900mn against premium income of circa USD550mn** (plus a further USD230mn loss in Dec 2022).
+- "Looking back over both a three-year and five-year period, with loss ratios on average between 100% and 110%, **insurers are suggesting that premium rating needs to increase significantly.**"
+
+Audit against our row (`Launch insurance`, value **10%** of launch+payload value, range [5-15]):
+- **Direction + magnitude corroborated** (a hard loss year followed by explicit rate increases is exactly the ~6%→~10% move described), but **no issue pulled contains an explicit launch-premium-% figure** — so our 10% is registered as DIRECTIONALLY corroborated, NOT numerically pinned. The "~6% early-2023" baseline likewise has no verbatim source cell in the issues I could reach (honest gap; Q4-2023 notes insurers' internal edicts of "at least 15%" increases entering 2023 that did not fully stick, and buyers "generally experiencing premium increases below 5%" by end-2023 for non-loss-active risks).
+- **FACTUAL ERROR FOUND in the note:** "post-Intelsat 33e loss". Plane Talking Q4-2023 attributes the H2-2023 rating reset to claims of ~USD826m where ">85% of the 2023 loses (including the two standout large losses from **Viasat-3 and Inmarsat 6-F2**) have stemmed from post-separation spacecraft issues, rather than launch failures." IS-33e itself broke up IN GEO on **Oct 19, 2024** (US Space Forces/SpaceTrack alert: ~20 tracked pieces; Boeing-built bird launched Aug 2016) — after the Q1-2024 issue and not a launch loss. The note's causal attribution is wrong even if its resulting market read (~10% post-loss-year rates) happens to be right.
