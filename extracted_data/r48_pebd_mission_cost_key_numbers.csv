@@ -1,0 +1,14 @@
+item,value_or_delta_computed,source_location,our_row_affected,match_quality
+OSIRIS-REx official LCC,1057.3 $M,PEBD sheet 'OSIRIS-REx' cell A2 (Official LCC),-,reference
+OSIRIS-REx dev excl LV through launch FY2016,588.5 $M  (= sum Total Cost FY2011-FY2016 955.5 minus Launch Vehicle 183.5),PEBD sheet 'OSIRIS-REx' per-year rows + Totals row,Spacecraft development (NRE),EXACT — our note's $588.5M anchor = this figure to the decimal (+0.00%)
+OSIRIS-REx Formulation total,140.9 $M,PEBD sheet 'OSIRIS-REx' Totals row,-,reference
+OSIRIS-REx Implementation (incl LV) total,644.4 $M,PEBD sheet 'OSIRIS-REx' Totals row,-,reference
+OSIRIS-REx Launch Vehicle total,183.5 $M,PEBD sheet 'OSIRIS-REx' Totals row (Launch Vehicle column),-,EXACT — our note's '$183.5M launch vehicle' = this figure to the decimal
+OSIRIS-REx Operations obligations FY2017-FY2026,232.2 $M,PEBD sheet 'OSIRIS-REx' Totals row (Operations column),Sample recovery operations,our note's '$283M/9yr envelope' was a pre-return projection; final obligated ops = +21.9% vs that projection
+OSIRIS-REx Mission Costs summary (dev+launch / ops / total),811.5 / 153.1 / 1017.5 $M,PEBD sheet 'Mission Costs' OSIRIS-REx column,-,reference
+Mars Perseverance official LCC,2725.8 $M,PEBD sheet 'Mars Perseverance' cell A2 (Official LCC),Autonomous mining control & AI (NRE),context — program scale anchor for the '~$2.4B program' claim
+Mars Perseverance dev+launch (Formulation + Implementation incl LV),2462.6 $M,PEBD sheet 'Mars Perseverance' Totals row,Autonomous mining control & AI (NRE),our note's '~$2.4B program' = -2.5% vs this figure — AGREE
+Mars Perseverance operations through FY2026,517.1 $M,PEBD sheet 'Mars Perseverance' Totals row (Operations column),-,reference
+Mars Perseverance Mission Costs summary (dev+launch / ops / total),2462.6 / 517.1 / 3047.6 $M,PEBD sheet 'Mission Costs' Mars Perseverance column,-,reference
+autonomy-stack subset (~$150M of MSL/Perseverance),"NOT IN PEBD — dataset is mission-level (Formulation/Implementation/Launch/Ops only), no software NRE breakdown",verified by sheet-structure inspection + Introduction methodology text,Autonomous mining control & AI (NRE),our $150M figure remains a secondary citation; the program-total anchor it rests on IS now verified
+recovery-ops standalone cost (UTTR landing Sept 2023),NOT IN PEBD — no mission carries a sample-recovery line item,verified by sheet-structure inspection + our row's own note ('NASA has not published a standalone recovery-ops figure'),Sample recovery operations,our $15M/recovery OOM estimate stands; the ops envelope it derives from is now anchored to final obligations
