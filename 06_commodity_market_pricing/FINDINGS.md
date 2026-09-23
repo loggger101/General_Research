@@ -52,3 +52,49 @@ Conversion is $/troy-oz / 0.0311034768 (verified against gold's known magnitude:
 | palladium | 9,217  | 1990-04-02 | 2026-09-22 | 78.75   | 3,339    |
 
 Minor PGMs **Rh/Ir/Os/Ru are still not carried by LBMA** (no JSON series) — they remain on the yfinance/USGS path and stay out of scope for this anchor.
+
+## Round 46 -> base-metals audit quantified + JM PGM market report (minor-PGM anchor)
+
+**Two additions this round:** (1) the R39/R45 precious-metals staleness finding is now **quantified for every priced element we can compare**, using the committed World Bank xlsx at our own stamp month; (2) a new T2 source — `jm_pgm_market_report_2026` — closes the minor-PGM gap that neither LBMA nor WB covers.
+
+### Base-metals audit vs World Bank CMO monthly (same-month comparison, 2026M05 = our stamp month)
+| element | our ref $/kg (stamp 2026-05-29) | WB May-2026 ($/mt -> $/kg) | diff vs same month | status |
+|---|---|---|---|---|
+| copper  | 8.80   | **13.543** (from $13,543/mt) | **-35.0% LOW** | STALE — R39's "~Jan-2025 match" confirmed; worst base metal |
+| nickel  | 16.50  | **18.806** (from $18,806/mt) | **-12.3% LOW** | mildly stale (R39 called it "current"; same-month view says ~12% low) |
+| iron    | 0.50   | n/a — WB series is *ore* ($108.6/dmtu, cfr spot), not refined Fe | context only | unit/product mismatch; our row prices element Fe at a refined-metal price |
+
+Aluminum & zinc are carried by the WB sheet but have **no priced row in our catalog** (not tradable elements here) — no comparison needed. Cobalt is priced in our catalog ($33/kg) but appears in neither WB nor JM datasets → recorded as an unanchorable-by-these-sources gap alongside osmium.
+
+### Cross-check: World Bank monthly vs LBMA daily at 2026-05 (independent sources, same month)
+| metal | WB May-2026 $/oz troy | LBMA @ 2026-05-29 $/oz troy | diff |
+|---|---|---|---|
+| gold      | 4,587 | 4,525.75 | +1.35% |
+| platinum  | 1,998 | 1,912.00 | +4.50% |
+| silver    | 78    | 75.78    | +2.93% |
+
+Two independent institutional series agreeing within ≤4.5% for the same month = high confidence in both anchors (and in our conversion factor).
+
+### New anchor — `jm_pgm_market_report_2026` [T2; full text pulled, NOT hosted]
+Johnson Matthey's annual PGM market report (May 2026 edition, 36 pp), the industry-standard institutional source: base-price narrative for Pt/Pd/Rh/Ir/Ru plus complete supply & demand tables in troy oz **and** tonnes (primary production by region + secondary/recycling + industrial demand, 2021–2026). Pulled live this round from matthey.com; **not committed to full_texts/** because JM's terms state the prices "are the property of Johnson Matthey Plc" and prohibit use without consent — extraction-only registration (all numbers below verbatim from the pulled PDF).
+
+**Price audit vs our static `ref_price_usd_per_kg`** (JM quotes are Q1-2026 levels; report covers through March 2026, so these bracket rather than pin our May-29 stamp):
+| metal | JM quote (verbatim basis) | ≈ $/kg | ours $/kg | diff | status |
+|---|---|---|---|---|---|
+| rhodium   | "spiking above **$9,000** during the final days of December" [2025] | ~289,357 | 320,000 | **+10.6%** high | mildly stale (JM: peaked $12,000 late Feb-26, retreated "towards $10,000") |
+| iridium   | "new all-time highs of **$8,000** and $1,750" [Q1-2026; Ir listed first] | ~257,206 | 160,000 | **-37.8% LOW** | STALE — revision candidate |
+| ruthenium | same sentence (Ru second) **$1,750** [Q1-2026 ATH]; end-2025 "then all-time record of **$1,275**" | ~56,263 (ATH); ~40,992 (end-25 record) | 16,000 | **-71.6% LOW** vs ATH / -61.0% vs end-25 record | STALE — worst PGM gap; revision candidate |
+| platinum  | "falling to **$1,908** and $1,448, respectively [Pt/Pd], at the end of March" [2026] | ~61,343 | 45,000 | **-26.6%** low | corroborates R45's LBMA finding (-26.8%) independently |
+| palladium | same sentence (**$1,448**) | ~46,554 | 48,000 | +3.1% high | fine at Q1 levels (R45: +9.5% vs May-29 LBMA) |
+
+**Production estimate audit** — our `mineral_value.py` annual-production comments vs JM primary supply **2025**:
+| metal | ours (~t/yr, code comment) | JM 2025 primary (tonnes table) | verdict |
+|---|---|---|---|
+| rhodium   | ~23 t    | **17.6** | **ours +30.7% high — revision candidate** |
+| iridium   | ~7.5 t   | **7.1**  | AGREE (within 6%) |
+| ruthenium | ~30 t    | **30.2** | AGREE (exact) |
+
+(Platinum/palladium have no production rows in our catalog — nothing to compare.)
+
+### Osmium & cobalt gap (recorded, uncloseable by these sources)
+Osmium: NO published reference price series exists at LBMA or JM and the JM report contains **no osmium table** (verified by full-text scan) → our $13k/kg row (~1 t/yr basis) remains anchored to nothing registered; it is the only precious-metal row with no institutional price source reachable from this machine. Cobalt: priced in our catalog ($33/kg) but absent from both WB's 71-commodity sheet and JM's report → same status. Both recorded as standing gaps, not errors.
