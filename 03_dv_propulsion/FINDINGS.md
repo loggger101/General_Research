@@ -314,3 +314,33 @@ Figs 8 (2033 MO) and 10 (2041 MO) are also fully vector; extracted all chemical 
 **Identity anomaly caught and resolved:** my first join on number=69230 returned the row named "Hermes" — ssoBFT's `number` column is authoritative: **(69230) = Hermes**, an Apollo NEA (dv 9.699 km/s). The true Bennu row carries name="Bennu", number=**101955**, dv **7.368 km/s** — matching R41's recorded value exactly, confirming the earlier cross-check was correct and that any future per-body join must key on `number` (JPL sbdb.api?sstr=Bennu → fullname "101955 Bennu (1999 RQ36)" settles it).
 
 All numbers in `extracted_data/r42_sso_bft_delta_v_key_numbers.csv` (29 rows, every value with population context; the official column definition quoted verbatim at the foot of the file).
+### whitley_martinez_2015_nro_staging_orbits [T1; full text hosted] — Martinez & Whitley (NASA JSC), "Options for Staging Orbits in Cis-Lunar Space," IEEE Aerospace Conference 2015 (NTRS 20150019648, public domain)
+
+**The cited-but-unregistered source behind both cislunar depot Δv rows.** `delta_v_segments.csv` cites "Whitley & Martinez" for the
+TLI→NRHO insertion and the Gateway-to-LLO transfer; neither was registered or verified until now. Pulled live from NTRS this round (PDF 4.65 MB,
+sha256=9a1e79821407...; public domain — determinationType GOV_PUBLIC_USE_PERMITTED + in-text "Government work not protected by U.S. copyright").
+Duplicate abstract-only record 20150013825 noted (one registration only).
+
+Word-coordinate-verified values (all re-extracted from the PDF this round; see extracted_data/r49_whitley_martinez_nro_staging_orbits_key_numbers.csv):
+
+**Table 3 "Surface Access Costs from Various Orbits" (p4)** — one-way staging-orbit → LLO transfer costs:
+| orbit | ∆V to LLO (m/s) | ∆T | total incl. plane change |
+|---|---|---|---|
+| **NRO (Polar)** | **730** | 0.5 days | 730 |
+| NRO (Equatorial) | 898 | 0.5 days | 898 |
+| ELO (0° PC) | 515 | 7 hrs | 515 |
+| PCO (Polar) | 700 | 5 hrs | 700 |
+| Frozen (Polar) | 556 + 252 pc | 6 hrs | 808 |
+| Frozen (Equatorial) | 556 + 408 pc | 6 hrs | 964 |
+| EM-L2 Halo (Polar) | 800 | 3 days | 800 |
+| DRO (Polar) | 830 | 4 days | 830 |
+
+**Table 6 "Staging Orbit Summary Comparison" (p8)** — NRO row: Earth Access = **"Feasible"** (qualitative label only), Lunar Access (to Polar LLO) = **∆V = 730 m/s, ∆T = .5 day**, Stationkeeping <10 m/s/yr; LLO row: Infeasible.
+**Table 2 "Round Trip Sample Missions"**: NRO 21-day total **840 m/s** (stay 10.9 d); NRO 60-day total **751 m/s** (stay 37.6 d). Body: "the Earth-Moon libration point halos and NRO orbits require very small ∆Vs in the 10's of m/s, easily less than 100 m/s total if transfer time is free to be several months"; predicted stationkeeping ~5 m/s/yr.
+
+Audit against our rows:
+- **`NRHO → low lunar orbit` (dv_m_per_s=730) — EXACT MATCH, true pin.** Table 3 NRO(Polar) one-way = 730 m/s and Table 6's Lunar Access cell repeats it verbatim. This is the load-bearing row: it sets Module-2's cislunar sale price (the Δv a kg of asteroid material AVOIDS lifting through). Now anchored by its own cited source, word-coordinate-verified.
+- **`TLI → NRHO insertion` (dv_m_per_s=450) — consistency anchor ONLY.** The paper has NO single one-way Earth→NRO cell: Table 6's NRO Earth-Access entry is the qualitative label "Feasible"; its round-trip sample missions total ≈840 m/s (21-day) / 751 m/s (60-day), and the body says access can be "<100 m/s TOTAL" given months of transfer time. Our 450 m/s one-way figure is plausible against those bounds but NOT pinned by this source — registered as a consistency anchor per convention, with both numbers stated. The note's "~0.4-0.45 km/s (NASA Gateway NRHO trade studies)" remains the row's own citation; Whitley & Martinez corroborates the order of magnitude and the "cheapest usefully-stable cislunar depot orbit" claim (NRO is the paper's headline recommendation).
+
+### Round-49 status (domain 3)
+Registry +1 T1 → domain 3 now carries 38 sources. Both NRHO-cited Δv rows are now registered against a live, hosted public-domain source; one row pinned exactly, one honestly scoped as consistency-only.
