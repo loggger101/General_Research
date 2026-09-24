@@ -1,0 +1,15 @@
+metric,value,unit,source_artifact,note
+NHATS population count,7092,bodies,nhats_full.json (live pull R53),JPL NHATS full-table scan; repo probe reported 7033 at its run date — service is live/refreshing
+NHATS round-trip dv median,9.367,km/s,min_dv.dv over all bodies,reproduces economicspace SECOND-PASS.md F6 'NHATS round-trip (JPL) median : 9.367' to 3dp
+NHATS round-trip dv p10,5.99,km/s,min_dv.dv,lower-decile accessibility
+NHATS round-trip dv p90,11.55,km/s,min_dv.dv,upper-decile (inclined/eccentric)
+NHATS round-trip dv min / max,3.39 / 12.00,km/s,min_dv.dv,bounded population — JPL only lists bodies with a viable crewed trajectory
+NHATS <5 km/s share,4.0%,% of bodies,"bucket [0,5)",ultra-low-dV class (our 'easy NEA' tier)
+NHATS 5-8 km/s share,26.5%,% of bodies,"bucket [5,8)",low-mid accessibility
+NHATS 8-10 km/s share,29.8%,% of bodies,"bucket [8,10)"
+NHATS >=10 km/s share,39.7%,% of bodies,"bucket [10,99)",upper-decile; approaches main-belt territory
+NHATS mission duration median (min_dur),178,days,min_dur.dur,at the dv that minimizes total time
+Asterank NEA sample size,1000,rows,"asterank_nea_1000.json (live pull R53, limit=1000)",Shoemaker-Helin closed-form 'dv' column; full population ~600k per Asterank docs — pulled a 1000-row NEA-filtered sample this round
+S-H dv median (sample),8.140,km/s,asterank 'dv' over 1000 NEAs,reproduces SECOND-PASS.md F6 'Shoemaker-Helin median : 8.140' to 3dp
+S-H dv p10 / p90,6.15 / 14.44,km/s,asterank 'dv'
+"econ_columns_degenerate_nonzero_share (profit, first 200)",49.5%,% nonzero,Asterank public endpoint,confirms repo claim that economic columns return degenerate values through the public API — use dv column only
