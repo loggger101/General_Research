@@ -1,0 +1,15 @@
+metric,value,unit,source_artifact,note
+MSL (Curiosity) entry-interface mass,3153,kg,Edquist 2022 Table 3 'Entry mass' MSL BET column (word-coordinate extracted),JPL/NASA AIAA SciTech 2022; NTRS 20210024709
+Mars 2020 entry-interface mass — BET,3369,kg,Edquist Table 3 'Entry mass' Mars 2020 BET column,best-estimate trajectory
+Mars 2020 entry-interface mass — TPS design case,3436,kg,Edquist Table 3 (19-TPS-01 / 19-TPS-02 identical),both TPS cases equal
+MSL Curiosity rover (landed) mass,899,kg,JPL MSL fact sheet 'in Earth gravity' line (live pull R54),https://mars.nasa.gov/msl/factsheet/
+Perseverance rover (landed) mass,1026,kg,Mars 2020 flight-mech p1 verbatim: At 1026 kg Perseverance is the largest,NTRS 20210024480
+MSL landed-fraction (rover/entry),28.51,%,computed: 899/3153,lower edge of institutional band
+Perseverance landed-fraction — BET,30.45,%,computed: 1026/3369,upper edge of institutional band
+Institutional landed-fraction band,"[28.51, 30.45]",%,min/max over MSL + Perseverance BET,the measured range our constant must sit in
+our MARS_LANDED_MASS_FRACTION (delivery.py),0.30,-,spacecost/delivery.py constant (read live R54),sets the published mars_surface delivered price
+ours vs institutional band,IN BAND,-,computed,"AGREE — 0.30 lies within [28.51, 30.45]"
+ours vs MSL fraction,+5.22,% (rel),computed: 0.30 vs 28.51%,"we sit at the optimistic edge, above MSL"
+ours vs Perseverance BET fraction,-1.49,% (rel),computed: 0.30 vs 30.45%,we sit just below the best-case Mars value
+NOTE DISCREPANCY — repo MSL entry mass,+3.30,% (rel),computed: delivery.py note 3257 kg vs JPL BET 3153,revision candidate: supporting number in the code comment is high; constant unaffected
+NOTE DISCREPANCY — repo Perseverance rover mass,-0.097,% (rel),computed: note 1025 kg vs institutional 1026,negligible; no action
