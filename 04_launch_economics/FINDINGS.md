@@ -141,3 +141,40 @@ Also on the same page: per-launcher $/kg and price-per-launch in 2017$ (Falcon 9
 - **falcon_9_reusable** / **falcon_heavy (reusable cores)**: family ceilings + consistency anchors added; exact reusable figures remain vendor-rated.
 
 **Remaining unanchored in launch_vehicles.csv**: Vulcan Centaur 27 t LEO and New Glenn ~45 t LEO — both postdate this 2017 document; need their own peer-reviewed anchors (Vulcan: ULA design papers / AIAA ICES; New Glenn: Blue Origin program documents).
+
+## nasa_oig_2021_ig-22-003_artemis_missions + nasa_oig_2023_ig-24-001_sls_epoc_transition - NASA OIG SLS cost audits (T2, full text hosted)
+
+**Why these two**: the `launch_vehicles.csv` SLS rows cite "NASA OIG" numbers in their notes without a report ID or registry entry. Both underlying audits are now registered + hosted; every quote below was re-read verbatim from the pulled PDFs this round (hash-verified against canonical oig.nasa.gov URLs).
+
+### IG-22-003 - NASA's Management of the Artemis Missions (Nov 15, 2021)
+Hosted: `full_texts/nasa_oig_2021_ig-22-003_artemis_missions.pdf` (9,941,240 bytes; sha256 dc885a69ef128063...; canonical URL https://oig.nasa.gov/docs/IG-22-003.pdf)
+
+Verbatim anchors (sliced programmatically from the hosted PDF this round):
+- we estimate the single-use SLS will cost $2.2 billion to produce, including two rocket stages, two solid rocket boosters, four RS-25 engines, and two stage adapters.
+- KSC ground systems (VAB, Crawler-Transporter, Mobile Launcher 1, Launch Pad, LCC): $568 million per year due to the large support structure that must be maintained.
+- production and operations cost of a single SLS/Orion system at $4.1 billion per launch for Artemis I through IV, although the Agency’s ongoing initiatives aimed at increasing affordability seek to reduce that cost.
+- 47 Building and launching one Orion capsule costs approximately $1 billion, with an additional $300 million for the Service Module supplied by the ESA through a barter agreement in exchange for ESA’s responsibility for ISS common system operating costs, transportation costs to the ISS, and other ISS supporting services.
+
+Verdicts (SLS Block 1 row):
+- Note's "~$4.1B ... per Artemis flight and includes Orion and its service module" = **EXACT pin (+0.00%)** - scope matches exactly (rocket + ground ops + Orion), which is why the note correctly warns it is NOT a launch price. Also backs the SLS Block 1B row's historical "$4.1B" price tag (same figure, same report).
+- Note's "$2.2B SLS production + $568M ground systems per launch (IG-22-003)" = **verbatim match on both components**.
+
+### IG-24-001 - NASA's Transition of the Space Launch System to a Commercial Services Contract (Oct 12, 2023)
+Hosted: `full_texts/nasa_oig_2023_ig-24-001_sls_epoc_transition.pdf` (1,849,898 bytes; sha256 c943d8da528561e3...; canonical URL https://oig.nasa.gov/wp-content/uploads/2023/10/ig-24-001.pdf)
+
+Verbatim anchors (sliced programmatically from the hosted PDF this round):
+- Our analysis shows a single SLS Block 1B will cost at least $2.5 billion to produce—not including Systems Engineering and Integration costs—and NASA’s aspirational goal to achieve a cost savings of 50 percent is highly unrealistic.
+- Footnote 20: the price has increased to $2.5 billion, an amount that reflects only costs of the major SLS contracts and does not include anticipated SE&I costs. The $2.5 billion reflects only the production costs for the Artemis IV mission and not the billions spent in development costs.
+- a single SLS will cost more than $2 billion through the first 10 SLS rockets produced under EPOC.
+
+Verdicts (SLS Block 1 row):
+- Note's "'at least $2.5B' recurring (Oct 2023)" = **true pin (+0.00%) with honest scope label**: the audit figure is a Block 1B/EPOC *production* cost floor excluding SE&I - our note already carries that qualifier ("recurring"), so no correction needed; recorded for precision.
+- Our launch-only band ($2.5-2.8B) vs OIG's own trajectory: low end +13.6% above the Nov-'21 $2.2B production figure, high end +12.0% above the Oct-'23 >=$2.5B floor - **consistency anchor** (scope and dollar-year differ between our band and each audit figure; NOT presented as an exact match).
+
+### Space Shuttle row - citation-integrity check on "(Pielke & Byerly)"
+- The note attributes ~$1.5B/flight (2011 dollars) + $54,500/kg to "Pielke & Byerly" without a venue. Their Shuttle-cost work is: **Nature 472:38, 'Shuttle programme lifetime cost', R.A. Pielke Jr. & Radford Byerly, published Apr 6 2011** (DOI 10.1038/472038d) - a News & Views piece; landing page verified live this round (abstract + citation metadata). The abstract cites their earlier Shuttle cost analysis as "Space Policy Alternatives Ch. 14, pp. 223-245; 1992" - the true primary source for the per-flight/per-kg methodology.
+- **No Pielke/Byerly Shuttle paper exists in Environmental Science & Policy vol 14 issue 5** (or anywhere in that journal's entire 2011 volume): full TOC pulled via Crossref ISSN 1462-9011 for all of 2011 - 122 items across issues 1-8; the only Pielke hit is an Australian emissions-policy paper. If the citation was intended as ESP, it is a misattribution (revision candidate).
+- The $54,500/kg figure itself holds independently: already-registered **jones2018** (T2) states "Shuttle $54.5k/kg" - **EXACT cross-anchor (+0.00%)**.
+- Full text of the Nature N&V is paywalled and unreachable from this machine (browser daemon down all session; web.archive.org DNS-blocked here) -> **honest gap: full text not pulled**; number stands on jones2018 + abstract-level verification only.
+
+**Revision candidates recorded (target repos read-only)**: Space Shuttle row citation should name Nature 472:38 / Space Policy Alternatives Ch.14 instead of bare "(Pielke & Byerly)". No value changes - all SLS numbers verified as cited.
