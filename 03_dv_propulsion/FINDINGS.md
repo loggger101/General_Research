@@ -344,3 +344,24 @@ Audit against our rows:
 
 ### Round-49 status (domain 3)
 Registry +1 T1 → domain 3 now carries 38 sources. Both NRHO-cited Δv rows are now registered against a live, hosted public-domain source; one row pinned exactly, one honestly scoped as consistency-only.
+
+## Round-55 addition — SP-4029 deepening pass: Apollo LM descent-stage mass data anchors delivery.py's LANDER_DRY_MASS_FRAC (no new source ID)
+
+`sp4029_apollo_by_the_numbers` was registered in R35 for its TLI/LOI tables. This round mines the same hosted PDF's spacecraft-mass statistical tables to anchor a load-bearing constant that economicspace CITATIONS.md §7 flags as an "engineering judgement" with no citation: **spacecost/delivery.py `LANDER_DRY_MASS_FRAC = 0.20`** — the stage dry mass / (dry + propellant) used for every powered-descent leg in the delivery chains, and its supporting comment *"Apollo LM descent stage flew 2,134 kg dry on 8,200 kg of propellant = 0.21"*.
+
+**What SP-4029 actually says (verbatim from the hosted PDF):**
+- p305 table header: "LM Descent Stage Propellant StatusJs Weight (" — caption: *"Compiled from mission reports."*
+- p287 footnote under the dry-weight rows: *"LM ascent and descent stages, LRV and CM dry weights are as published in mission press kits. All other weights are actual "as flown:' Statistica"* (i.e. LM stage dry weights are as published in mission press kits; all other weights actual as-flown)
+
+**Extracted data** (`extracted_data/r55_sp4029_lm_stage_mass_key_numbers.csv`, 32 rows): descent-stage **dry weight** per mission (p287, reading-order text layer — the scan's OCR splits some digits across tokens; every clean cell asserted against its column) and descent-stage propellant **Loaded / Consumed totals** for all nine LM flights (p305, fuel+oxidizer reconciles to total within 0.1 lb on every row), plus ascent-stage loaded totals for the eight missions that flew an ascent burn (p306). Garbled scan cells A14/A15/A17 dry weights are recorded as such and excluded from the band — not guessed.
+
+**Anchor verdicts (all deltas computed in code):**
+- **The comment's numbers ARE Apollo 10, essentially exact.** SP-4029 A10 descent stage: dry 4703 lb = **2133.2 kg** vs the cited 2,134 kg (**+0.04%**, i.e. a rounding); propellant loaded total 18218.7 lb = **8263.9 kg** vs the cited 8,200 kg (**-0.77%**). A10 was the dress-rehearsal flight — it "flew" this load exactly.
+- **The comment's ratio is a slight over-round.** From its own numbers: 2134/(2134+8200) = **0.2065**; the stated "0.21" is +1.69% above that. Against SP-4029's as-flown A10 pair, measured δ = **0.2052** — the comment's 0.21 sits +2.35% high.
+- **Fleet band: [0.1912, 0.2372], median 0.2033.** δ = dry/(dry+prop) per mission (six clean dry cells): A9=0.1912, A10=0.2052, A11=0.1978, A12=0.2092, A13=0.2014, A16=0.2372. The later LMs flew heavier stages with ~8% more descent propellant than A9 (+8.4%), pushing δ up to 0.2372.
+- **`LANDER_DRY_MASS_FRAC = 0.20`: AGREE — inside the measured Apollo LM descent-stage band** (-2.52% vs A10's as-flown 0.2052; between band edges; median 0.2033). The constant sits just below the band centre — a defensible reading of six as-flown descent stages whose dry weights survived this scan, not an unanchored judgement.
+
+**Scope notes (honest gaps):**
+- `TUG_DRY_MASS_FRAC = 0.10` remains **unanchored**: SP-4029's Key Facts table lists S-IVB dimensions/thrust but no stage dry weight, and its propellant-usage tables give burn totals only — δ cannot be computed from this document (checked p285–p306).
+- The descent-stage dry weights are *press-kit* values per the p287 footnote; the propellant loads are as-flown. Mixed provenance is fine for a band estimate and noted here rather than silently mixed.
+- A13's δ uses its loaded (not consumed) total — it aborted before landing, so consumption data would be meaningless there anyway.
