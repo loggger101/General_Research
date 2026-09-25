@@ -1,0 +1,7 @@
+line_item,page,fy2025_enacted,fy2026_enacted,fy2027_request_usd_mn,fy2028,fy2029,fy2030,fy2031,verification
+International Space Station (program line incl. visiting-vehicle berthing/ops),60,--,--,921.2,921.2,921.3,921.3,921.3,"structural parse: label+7 values, count==1; sha-verified hosted doc"
+Commercial LEO Development,60,--,--,299.7,299.8,599.8,599.8,"1,577.2",same method
+Space Transportation,60,--,--,"1,152.5","1,152.4","1,152.3","1,152.3",174.7,same method
+Space and Flight Support (SFS),60,--,--,673.8,673.8,673.8,673.8,674.0,same method
+"WFTC – ISS Operations (mandatory, PL 119-21; maintenance+research+cargo flights)",60,250.0,250.0,250.0,250.0,250.0,--,--,same method
+COMPUTED: our row-5 centre vs FY2027 ISS program line,,percent of annual program envelope,"0.217% (ours is a tiny fraction of the whole institutional envelope -> order-of-magnitude consistency anchor, no revision forced)",,,,,,computed in code: 2.0/921.2*100
