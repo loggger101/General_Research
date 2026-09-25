@@ -1,0 +1,7 @@
+line_item,page,fy2025_enacted,fy2026_enacted,fy2027_request_usd_mn,fy2028,fy2029,fy2030,fy2031,verification
+Astromaterial Curation (incl. '(4) recovery and transport of returned materials'),158,--,--,16.3,17.2,17.1,17.1,17.6,"word-coordinate band extraction; value bands FY2027-31, ~41pt pitch, all 5 filled exactly once"
+Total Budget — Other Missions and Data Analysis (section),158,--,--,165.3,182.8,189.2,190.7,194.8,same method
+Psyche,186,--,--,35.8,37.4,47.5,46.9,41.9,same method; p186
+Europa Clipper,206,--,--,89.2,112.2,140.1,172.3,187.7,same method; p206
+COMPUTED: our row-33 centre vs FY2027 curation line,,percent of institutional line,"-8.0% (ours below the annual envelope; inside [5-30] band -> consistency anchor, no revision forced)",,,,,,computed in code: (15.0 - 16.3)/16.3*100
+COMPUTED: curation line as share of section FY2027 total,,percent,9.9%,,,,,,computed in code: 16.3/165.3*100

@@ -1,4 +1,4 @@
-# Domain 7 — Mission program-cost benchmarks
+﻿# Domain 7 — Mission program-cost benchmarks
 
 _NRE / development anchors for the `operational_costs.csv` rows that cite real NASA program costs._
 
@@ -56,3 +56,34 @@ Domain 7 established with its first T3 anchor — the mission-cost side of the p
 **Row-33 status re-checked**: IG-24-008 scanned end-to-end for any per-Earth-recovery figure — none exists in it (its cost discussion is program-level). The $15M OOM estimate therefore stands as written. Standing gap now spans ALL THREE institutional sources scanned to date: PEBD, IG-20-023, IG-24-008.
 
 **Verdict**: no registered number changes. d7 now carries the complete institutional set for sample-return program economics (completed-mission LCCs + an in-formulation program's cost trajectory and its scope caveats). The per-Earth-recovery figure remains a standing gap.
+
+## Round 62 addition — NASA FY 2027 Budget Estimates registered (+1 T2, hosted sha-verified): first institutional budget line whose stated scope includes sample recovery & transport; closes the row-33 'no published figure' gap at envelope level
+
+**Source**: NASA HQ, *FY 2027 BUDGET ESTIMATES* (released Apr 2026), 384 pp., public-domain government work — hosted in full_texts/, sha-verified against two independent fresh pulls of the canonical nasa.gov URL and its ?emrc= variant (byte-identical, 19304ffc1317c018...).
+
+**Why this source**: R59/R60 scanned PEBD, IG-20-023 and IG-24-008 end-to-end — none carries a per-recovery figure; row 33's note said 'NASA has not published a standalone recovery-ops figure'. This document is NASA's own budget justification: it funds, as an ENUMERATED activity of the Astromaterials Acquisition and Curation Office, exactly that operation.
+
+**Verbatim scope statement (p159, count==1)** — from 'Activities conducted by the Curation office include:':
+> SA control. Curation is an integral part of sample return missions. Activities conducted by the Curation office include: (1) research into advanced curation techniques to support future missions; (2) sample return mission planning; (3) archiving of witness, engineering, and reference materials related to sample return missions; (4) recovery and transport of returned materials; (5) initial characterization of newly 
+
+**The funding line** (p158 table *Other Missions and Data Analysis*, Planetary Science Research section; header verbatim: 'Budget Authority (in $ millions)', columns FY2025..FY2031 with the two leftmost marked Enacted): extracted by word-coordinate column verification — value bands evenly spaced ~41pt, every row fills all five request-year bands exactly once:
+
+| line | FY2027 req | FY2028 | FY2029 | FY2030 | FY2031 |
+|---|---|---|---|---|---|
+| **Astromaterial Curation** | **16.3** | 17.2 | 17.1 | 17.1 | 17.6 |
+| Total Budget (section) | 165.3 | 182.8 | 189.2 | 190.7 | 194.8 |
+
+(FY2025/FY2026 cells are '--' = enacted, no data for this forward-looking line. Curation is 9.9% of its parent section's FY2027 request — computed in code.)
+
+**Timing context (p160, count==1)**:
+> With the OSIRIS-REx mission ending in 2026, the Astromaterials Acquisition and Curation Office will complete the processing of returned samples from the Sample Analysis Team and continue global distribution of this precious material to the scientific community, expandin
+— i.e. this line is POST-recovery: the Sept 2023 UTTR event that row 33 models has already happened; FY2027 funds ongoing curation including any future recovery/transport events (MSR capsule, MMX).
+
+**Comparison vs our row 33 (`Sample recovery operations`, USD per recovery, centre $15M, range [5-30]M)**:
+- Institutional FY2027 line = **$16.3M/yr**; our one-time event centre of $15M sits **-8.0% BELOW** the annual institutional line (computed in code), inside our [5-30] band.
+- Verdict: **CONSISTENCY ANCHOR, not an exact pin** — anchor-honesty rule applied twice: NASA's scope is broader than a single recovery event (the line also funds curation labs, sample distribution and cleanroom storage across ten collections) and it is RECURRING budget authority rather than per-event cost. But the institutional number brackets our centre from above by only ~8% — directionally validated; **no revision forced**.
+- The standing gap 'no published figure anywhere' (spanning PEBD + IG-20-023 + IG-24-008 after R59/R60) is now closed at ENVELOPE level: any future Earth-recovery event will draw on this line or its successor, and our $15M OOM centre sits inside it.
+
+**Negative probe (criterion #2 completeness)**: 'APEX' count = **0** across all 384 pages; 'OSIRIS-' appears only in narrative — no OSIRIS-APEX extended-ops mission line item exists anywhere in this document, so the curation envelope cannot be conflated with an APEX budget.
+
+**Mission-line context (same verified extraction method, d7 program-level reference)**: Psyche FY2027 $35.8M -> $41.9M (FY2031); Europa Clipper FY2027 $89.2M -> $187.7M (FY2031, operations ramp-up). Not anchors for existing rows — recorded so future d7 work has the full program table on file.
