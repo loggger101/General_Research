@@ -1,4 +1,4 @@
-# Domain 5 Findings — in-space storage / cryogenic boil-off, ISRU, operational costs
+﻿# Domain 5 Findings — in-space storage / cryogenic boil-off, ISRU, operational costs
 
 ## lac_bac_2024 — "Local Area Cooling versus Broad Area Cooling for Boil-Off Reduction in Large-Scale Liquid Hydrogen Storage" [T1]
 
@@ -308,3 +308,27 @@ The 'Expendable upper stage recurring cost' row ($4,800/kg; band 1,750-13,400) i
 
 ### just_2019 route re-sweep (still quarantined; R43-R57)
 Re-verified every non-browser open-access route: Unpaywall 422; Semantic Scholar and OpenAlex both confirm CC-BY but point ONLY at the ScienceDirect PDF (`sciencedirect.com/science/article/pii/S003206331930162X/pdf`) which is Cloudflare-blocked from this machine (403 with browser headers + cookie jar); BASE API IP-denied; UCL Discovery 403; CORE 403; MRM Manchester DNS-fail. **The full text exists on exactly one host — ScienceDirect — and needs a working browser daemon** (still down, R43-R57). The quarantined context-only specific-energy values from the publisher's indexed snippet stay as recorded until a pull succeeds.
+
+## Round 63 addition — FY2027 Budget Estimates deep-mined for in-space ops: Space Operations table gives row 5 its first institutional ENVELOPE (source already registered+hosted R62; registry unchanged at 128)
+
+**Source**: the same hosted document as Round 62 (*NASA FY 2027 BUDGET ESTIMATES*, Apr 2026, 384 pp) — re-pulled fresh this round and sha-verified byte-identical to the hosted copy (19304ffc1317c018...). Cross-domain use: d5 row anchoring from a d7-hosted source (no registry change; R52 deepening convention).
+
+**p60 table *Space Operations* (SO-2), Budget Authority in $ millions, FY2025..FY2031** — extracted structurally (label line + exactly 7 value lines per row; every label count==1):
+
+| line | FY2025 | FY2026 | **FY2027 req** | FY2028 | FY2029 | FY2030 | FY2031 |
+|---|---|---|---|---|---|---|---|
+| Commercial LEO Development | -- | -- | 299.7 | 299.8 | 599.8 | 599.8 | 1,577.2 |
+| **International Space Station** | -- | -- | **921.2** | 921.2 | 921.3 | 921.3 | 921.3 |
+| Space Transportation | -- | -- | 1,152.5 | 1,152.4 | 1,152.3 | 1,152.3 | 174.7 |
+| Space and Flight Support (SFS) | -- | -- | 673.8 | 673.8 | 673.8 | 673.8 | 674.0 |
+
+(FY2025/FY2026 = enacted, '--' in the request columns; verbatim footnote p60: 'FY 2025 reflects the funding amount specified in Public Law 119-4...'.)
+
+**Plus a second table on p60** (Planned Obligations): WFTC – ISS Operations **$250.0M/yr FY2027-31** — mandatory funding from the Working Families Tax Cut Act (PL 119-21) that 'will support ... ISS operations, which includes maintenance, research, and cargo flights to support crew presence on ISS' (verbatim p60). Cargo-flight money is thus ring-fenced separately from the base program line.
+
+**Comparison vs our row 5 (`Depot berthing & handover operations`, USD per delivery, centre $2M, range [0.5-8]M)**:
+- Our note says the estimate was 'Scaled from ISS visiting-vehicle berthing ops'. This table is exactly that institutional reference: NASA's ENTIRE annual ISS program line (ops + cargo flights + maintenance) = **$921.2M/yr** FY2027, of which WFTC ring-fences $250M specifically for the cargo/maintenance side.
+- Our one-time per-delivery centre of $2M is **0.217% OF THE ENTIRE ANNUAL PROGRAM LINE** (computed in code: 2.0/921.2x100) — i.e. even a generous multi-event berthing/handover year would consume only a fraction of the institutional envelope.
+- Verdict: **ENVELOPE / order-of-magnitude consistency anchor, not a pin** (same honesty class as R62's curation line): no per-berthing figure is published anywhere in this document either — NASA funds the program, not the event. Row 5 stays an ESTIMATE but now has its first institutional upper bound on file; **no revision forced**.
+
+**Negative probe (criterion #2)**: 'depot' count = **0** across all 384 pages — commercial depots are NOT yet funded in FY2027, confirming row 5's note ('no commercial depot exists yet'). Closest forward-looking line: p63 verbatim '$1.0 billion to CLDP to support the procurement of commercial space station services...' (Commercial LEO Development $1B for FUTURE commercial space station services — context only, not an ops anchor).
