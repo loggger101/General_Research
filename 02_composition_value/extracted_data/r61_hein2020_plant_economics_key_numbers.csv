@@ -1,0 +1,15 @@
+parameter,unit,conservative_water,optimistic_water,pt_case,source
+specific production cost,USD/kg processed material,1000000,10000,1000000 / 10000 (same columns),Table 1/2 verbatim
+specific transportation cost to/from asteroid,USD/kg,35000,35000,35000,Table 1/2 verbatim
+price of water,USD/kg,20000,20000,,Table 1 verbatim
+price of platinum,USD/kg,,,70000,Table 2 verbatim
+operation cost per mission,USD,5700000,100000,5700000 / 100000 (same columns),Table 1/2 verbatim
+specific development cost,USD/kg dry mass,5453333,500000,5453333 / 500000 (same columns),Table 1/2 verbatim
+mining duration,s (days),8640000 (100 days),8640000 (100 days),8640000 (100 days),Table 1/2 verbatim
+ratio refined resources vs processed material,kg/kg,0.05,0.05,1e-5 (Blair [35]),Table 1/2 + p7 verbatim ('rather conservative value for C-type asteroids')
+throughput rate f (paper's own typo 'Throuput'),kg/s per kg equipment,2.3e-4,2.3e-4,0.35,Table 1/2 + p6/p7 prose verbatim
+spacecraft mass,kg dry,150,150,150,Table 1/2 verbatim; 'A small spacecraft with a mass of 150 kg is assumed' (p6)
+material processed per mission,kg,42944,1868,6e7 / 2.7e6 (cons/opt),Table 1/2 verbatim
+years to breakeven,yr,5.9,0.26,5.5 / 0.25 (cons/opt),Table 1/2 verbatim
+COMPUTED: water-case throughput per year,kg processed / yr per kg dry mass,7258.25,same,11045160.0,computed in code: f x 31557600 s/yr
+COMPUTED: vs our plant row centre (100 kg/yr/kg),percent of ours,"+7158.25% (~73x; DISCREPANCY recorded — his value is a BREAKEVEN requirement EXCEEDING even the top of our 20-500 band; scope caveat: his denominator = whole craft dry mass, ours = plant only)",,"~110452x ours (viability threshold at 1e-5 grade — different regime by orders of magnitude, recorded not revised)",computed in code
