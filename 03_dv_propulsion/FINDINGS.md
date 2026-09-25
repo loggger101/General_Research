@@ -362,6 +362,24 @@ Registry +1 T1 → domain 3 now carries 38 sources. Both NRHO-cited Δv rows are
 - **`LANDER_DRY_MASS_FRAC = 0.20`: AGREE — inside the measured Apollo LM descent-stage band** (-2.52% vs A10's as-flown 0.2052; between band edges; median 0.2033). The constant sits just below the band centre — a defensible reading of six as-flown descent stages whose dry weights survived this scan, not an unanchored judgement.
 
 **Scope notes (honest gaps):**
-- `TUG_DRY_MASS_FRAC = 0.10` remains **unanchored**: SP-4029's Key Facts table lists S-IVB dimensions/thrust but no stage dry weight, and its propellant-usage tables give burn totals only — δ cannot be computed from this document (checked p285–p306).
+- `TUG_DRY_MASS_FRAC = 0.10` — **correction (R56)**: the S-IVB stage dry weights DO exist in SP-4029, at p294 'Ground Ignition Weights' (the R35/R55 scan only checked the p286 Key Facts table and the propellant-usage tables — a false negative). The constant is now anchored below in the Round 56 block: as-flown fleet δ incl. stage hardware = [0.0908, 0.1044] across all eleven missions; our 0.10 sits inside at -2.01% vs median.
 - The descent-stage dry weights are *press-kit* values per the p287 footnote; the propellant loads are as-flown. Mixed provenance is fine for a band estimate and noted here rather than silently mixed.
 - A13's δ uses its loaded (not consumed) total — it aborted before landing, so consumption data would be meaningless there anyway.
+
+## Round 56 addition — SP-4029 p294 'Ground Ignition Weights' S-IVB stage block anchors TUG_DRY_MASS_FRAC; R55 false negative corrected (no new source ID)
+
+**Target:** `spacecost/delivery.py` `TUG_DRY_MASS_FRAC = 0.10` — "mid-range for a cryogenic upper stage (Centaur V ~0.08, DCSS ~0.11), stage dry mass / (dry + propellant)". R35 and R55 both recorded this as an honest gap because SP-4029's Key Facts table (p286) lists S-IVB dimensions/thrust but no weight row — that statement was a **false negative**: the same document carries per-mission stage weights at p294, 'Ground Ignition Weights' ("Actual weights at S-IC stage ignition, compiled from Saturn launch vehicle flight evaluation reports"), which this round mined via word-coordinate extraction on the rotated scan (columns pinned to the mission header band; every component row reconciled against the table's own total row).
+
+**Extracted (→ `extracted_data/r56_sp4029_sivb_stage_mass_key_numbers.csv`, 11 missions A7–A17):** S-IVB stage dry weight, LH2 fuel load, LOX oxidizer load and 'other' (non-propellant hardware) per mission. Self-validation: for 9 of 11 missions the four component cells sum to the table's own total within <0.5 lb; A11/A12 total cells are OCR-garbled in this scan (split digits), so their totals are left blank with a note — components complete, and both sums sit exactly inside fleet range.
+
+**Fleet δ = dry/(dry+prop) per mission:**
+- structure-only ('other' excluded): [0.0857, 0.0989], median 0.0963 — A7 (first S-IVB flight) is the low end at 0.0857 with a lighter stage (21852 lb dry vs fleet median ~25089);
+- incl. 'other' hardware: [0.0908, 0.1044], median 0.1021 — this is the quantity delivery.py's definition actually computes (stage mass / total).
+
+**Verdicts (all deltas computed in code):**
+- **`TUG_DRY_MASS_FRAC = 0.10`: AGREE — inside the as-flown S-IVB band [0.0908, 0.1044]** (+10.17% vs low edge, -4.26% vs high edge, -2.01% vs median). The constant is now a defensible reading of eleven flown cryogenic upper stages rather than an unanchored judgement; it also lands exactly where delivery.py's own comment places it (between Centaur V ~0.08 and DCSS ~0.11) — the S-IVB fleet corroborates that framing with flight data.
+- **R55 correction:** the scope bullet above is rewritten in place; R35/R55's "no S-IVB dry weight" referred only to p286 Key Facts and was wrong for the document as a whole.
+
+**Scope notes (honest gaps):**
+- The 'other' row (~1432–1873 lb) is stage hardware not counted with propellant; both δ variants are reported so the convention choice stays visible.
+- p294 weights are *at S-IC ignition* (ground), i.e. full loads — exactly what a delivery-chain tug leg starts from.
