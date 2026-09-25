@@ -24,3 +24,18 @@ Audit against the three NRE rows:
 ### Round-48 status (domain 7)
 Domain 7 established with its first T3 anchor — the mission-cost side of the pipeline, previously unanchored. The three NRE rows are now grounded in a live institutional dataset; two honest gaps recorded (no autonomy-stack line, no recovery-ops line in PEBD).
 
+## Round 59 addition — IG-20-023 registered (+1 T2, hosted sha-verified): independent institutional cross-validation of the PEBD mission-cost anchors
+
+**Context**: d7's only source was the Planetary Society PEBD (T3 live service). NASA OIG audit **IG-20-023** ('NASA's Planetary Science Portfolio', Sep 16, 2020) carries Table 2 — per-mission cost-cap basis + life-cycle costs for seven missions — giving every d7 anchor a second institutional source.
+
+**Mars 2020/Perseverance — EXACT cross-validation.** Table 2 (p15, verbatim): "Mars 2020/Perseverance rover n/a b **2,725.8**" vs PEBD's Official LCC $2,725.8M — two independent institutional sources agree to the decimal. The R46/R49 Perseverance anchors (dev+launch 2,462.6; "~$2.4B" note) are now double-sourced.
+
+**OSIRIS-REx — +6.1% between sources.** Table 2 verbatim: "OSIRIS-REx **622.0** (cap basis) / **1,121.4** (life-cycle)" vs PEBD Official LCC $1,057.3M → OIG is +6.1% HIGHER. Both are pre-return snapshots from different vintages (OIG Sep-2020; PEBD updated FY rows); the spread brackets our row's envelope anchor ($283M/9yr ops = pre-return projection). No registered number changes.
+
+**MSL/Curiosity — $2,476.3M LCC** (Table 2 verbatim: "Mars Science Laboratory/Curiosity rover n/a b **2,476.3**") — program-scale context for the MARS_LANDED_MASS_FRACTION domain's mission; not a per-kg anchor.
+
+**Cost-cap scope note (affects NRE-row comparability).** Verbatim: "these cost caps do not reflect the total costs of those missions because they do not include launch vehicle and operations costs, which can add hundreds of millions of dollars to each program" — i.e. Discovery's $500M / New Frontiers' $1B caps are DEVELOPMENT-only by construction; our NRE rows (development cost) compare against the cap-basis column, while LCC-based anchors include LV+ops. Table 2 carries both columns: InSight **$593.9/$828.9**, Lucy **505.7/981.1**, Psyche **626.3/996.4** (all three Discovery missions EXCEED their $500M cap on the development basis — reported as a program-level finding), Dragonfly **n/a / 1,800–2,200**, Europa Clipper **n/a / 4,250.0**.
+
+**'Sample recovery operations' row (operational_costs.csv row 33) re-checked**: the report was scanned end-to-end for any standalone sample-return/recovery-ops figure — none exists in it (its cost discussion is program-level only). The $15M OOM estimate therefore stands as written, but its envelope anchor ($283M/9yr OSIRIS-REx ops) now has a second institutional source behind the mission's total scale. Status: still an ESTIMATE — no published per-recovery figure anywhere reachable (standing gap).
+
+**Verdict**: PEBD anchors CONFIRMED by an independent agency audit (Mars 2020 exact; OSIRIS-REx +6.1% spread documented as vintage difference). No registered number changes.
