@@ -280,3 +280,31 @@ Audit against our row (`Launch insurance`, value **10%** of launch+payload value
 - "PICA‐X virgin and char have higher density than Stardust era PICA"
 
 **Effect on our row:** the $50k/kg figure stays an engineering estimate (the note says exactly that, and no per-kg PICA-X cost is published anywhere reachable — checked NTRS + web this round), but its *heritage* claim now rests on a registered source: PICA was the enabling TPS for Stardust (2006 re-entry) and the baseline forebody TPS for MSL & OSIRIS-REx; SpaceX's PICA-X variant flew Dragon COTS Demo Flight 1 (2010); post-flight analysis found both materials performed well with no unusual ablation, with PICA-X virgin/char denser than Stardust-era PICA. The row can now cite a real document for its material class instead of an unregistered handle.
+
+## Round 57 addition — Plane Talking series extended through Q2-2026; launch-insurance row re-checked against the full issue run (+ honest-gap status on the upper-stage row and just_2019)
+
+**Target:** `spacecost/reference/operational_costs.csv` 'Launch insurance' (value = 10% of launch+payload value, band 5-15%) — its cited source is already registered (`gallagher_plane_talking_space_market_updates`, T3). This round pulls the REMAINING issues in that series so criterion #2 holds for this row: **7 issues now read live** (Q4-2023, Q1-2024 [the cited document], + Q4-2024 / Q1-2025 / Q2-2025 / Q1-2026 / Q2-2026 this round).
+
+**Verbatim from the newly pulled issues (each re-fetched live at verify time; slices extracted programmatically, not hand-typed):**
+- [Q4-2024] "circa. USD2bn of claims being notified within 18 months."
+- [Q1-2025] "Total 2024 Working Capacity – USD 550m Total 2025 Working Capacity – USD 502m"
+- [Q2-2025] "finally shown signs of having turned the corner with competition for attractive risks starting to exert pressure on premium rates."
+- [Q2-2025] "As the market became increasingly competitive from 2012 to 2018, market premium declined by over 50%."
+- [Q1-2026] "Market capacity for 2026 showed an encouraging increase of approximately USD100m year on year,"
+- [Q1-2026] "notice of potential loss for SpainSat NG-2, insured for over USD400m. With a total loss now apparently confirmed , this shifts the 2025 space insurance market underwriting loss ratio from circa 15% to circa 75%"
+- [Q1-2026] "premium rate reductions remain available on prime in-orbit business and launch pricing continues to improve."
+- [Q2-2026] "over USD 70 million of theoretical capacity has been added to the market in 2026."
+- [Q2-2026] "The only significant claim reported since SpainSat in December 2025 has been AST SpaceMobile’s BlueBird 7 satellite, following Blue Origin’s unsuccessful launch in April 2026 – insured for circa. USD30m."
+- [Q2-2026] "we continue to see increased competition for heritage in-orbit and launch risks, which could drive premium rate reductions in the second half of 2026."
+
+**Finding — rate direction (the substantive new information):** the series shows a full hardening->softening cycle. 2023 underwriting loss ~USD900mn -> Q1-2024 'premium rating needs to increase significantly' (the cited document, i.e. the era our value was calibrated against) -> Q2-2025 'finally shown signs of having turned the corner ... pressure on premium rates' -> Q1-2026 rate reductions available and launch pricing improving despite the SpainSat NG-2 total loss (>USD400m insured; 2025 underwriting loss ratio ~15% -> ~75%, +60 pp) -> Q2-2026 further easing expected into H2. **Our ~10% value was calibrated to a hardening-era snapshot and may sit slightly high against the easing 2026 market — still DIRECTIONALLY corroborated.**
+
+**Honest gap (unchanged, now verified across the whole run):** NO issue in all 7 publishes an explicit launch-premium-% figure. A %-sweep of every issue found only capacity/loss-ratio percentages ('over 15% more theoretical capacity' Q1-2026; 'declined by over 50%' historical). The row therefore remains directionally corroborated, NOT numerically pinned — same verdict as R50, now with the full evidence base.
+
+**Provenance correction (in place):** R50's registry cell claimed '(+ Q4-2023, **Q2-2026 issues pulled this round**)'. That was premature: R50's own extracted CSV carries only Q4-2023/Q1-2024 figures. The series is now ACTUALLY covered through Q2-2026 (this round); the cell has been corrected in `sources.csv` + `05_inspace_operations/sources_domain.csv`.
+
+### Upper-stage row institutional-gap status (criterion #2; no new source)
+The 'Expendable upper stage recurring cost' row ($4,800/kg; band 1,750-13,400) is built from two estimates in its note: F9 second stage ~$10M on ~4,000 kg dry (low end $1,750-2,500/kg) and Centaur III ~$30M on ~2,250 kg dry (high end ~$13,400/kg). R57 re-swept both hosted OIG audits for EUS/Centaur unit pricing AND the 308-page SP-4176 'Taming Liquid Hydrogen' Centaur history: **no per-unit stage price anywhere reachable.** IG-24-001 Table 1 gives only 'Exploration Upper Stage for Artemis IV — $482M', which is a Block-1B launch scope (the whole EUS deliverable under the Stages contract), not a unit cost; SP-4176 is historical narrative with program-level costs (R&D FY59-FY61 $4m->$36.6m->$62.6m; program totals $600-700m era) and no modern per-stage figure. **The ~$30M Centaur III number remains an honest gap** — the row's high end is unanchored by any institutional source reachable from this machine.
+
+### just_2019 route re-sweep (still quarantined; R43-R57)
+Re-verified every non-browser open-access route: Unpaywall 422; Semantic Scholar and OpenAlex both confirm CC-BY but point ONLY at the ScienceDirect PDF (`sciencedirect.com/science/article/pii/S003206331930162X/pdf`) which is Cloudflare-blocked from this machine (403 with browser headers + cookie jar); BASE API IP-denied; UCL Discovery 403; CORE 403; MRM Manchester DNS-fail. **The full text exists on exactly one host — ScienceDirect — and needs a working browser daemon** (still down, R43-R57). The quarantined context-only specific-energy values from the publisher's indexed snippet stay as recorded until a pull succeeds.
