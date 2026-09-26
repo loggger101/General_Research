@@ -60,3 +60,14 @@
 
 **R64 defect repair (same round).** R64's programmatic token slice cut the RL10 uncertainty at '±2' instead of '±2.5' (PDF p9 raw token = `444.4` + U+F0B1 + `2.5`, three font spans). All 5 committed occurrences repaired to `444.4±2.5 sec`: FINDINGS x3, extracted CSV x1, INDEX x1 (the R64 log line already carried the correct '±2.5' — now consistent everywhere). The delta is unaffected: it uses 444.4 only (+1.71%).
 
+
+## R66 — Domain 10 deepening attempt: BE-4 / Raptor institutional sweep (NEGATIVE)
+
+Per criterion #2 the methalox row in `spacecost/reference/propellants.csv` cites 'SpaceX Raptor public data' for both engine variants. Full NTRS discovery sweep this round: single-word queries BE-4 (13 hits), Raptor, Blue Origin (48), Commercial Propulsion Development (68), methalox (2) — every candidate record pulled and title-screened:
+
+- All 13 'BE-4' NTRS hits are false positives: legacy rocket designations (e.g. Boeing X-20 / early booster studies) whose text incidentally contains the token; none is Blue Origin's BE-4.
+- The single 'Raptor' hit matching an engine context was a coding-theory paper ('Protograph-Based Raptor-Like Codes') — false positive.
+- 'methalox' (2 hits): in-situ propellant production at KSC, not an engine test record.
+- Blue Origin's only NTRS presence is the de-orbit descent/landing program final report (20210026314) — no propulsion data relevant to our rows.
+
+**Verdict**: neither BE-4 nor Raptor has ever flown a NASA-funded test campaign, so NTRS carries no institutional performance records for either engine. The methalox row's 'per SpaceX Raptor public data' citation remains secondary-sourced by construction — recorded as a standing gap (R67+ candidates: AIAA/peer-reviewed hot-fire reports outside NTRS, Blue Origin published test summaries). Registry unchanged this round for domain 10.
