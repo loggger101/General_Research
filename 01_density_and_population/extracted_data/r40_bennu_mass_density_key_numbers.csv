@@ -1,5 +1,4 @@
 source_id,item,value,unit,location_in_source,notes
-source_id,item,value,unit,location_in_source,notes
 chesley_2014_bennu_orbit_bulk_density,Bennu bulk density (headline),1260 +/- 70,kg/m^3,p.1 abstract + Table 7 p.56,"= 1.26 g/cm^3; implies macroporosity 40+/-10% for likely analog meteorites"
 chesley_2014_bennu_orbit_bulk_density,Bennu mass,7.8 +/- 0.9 x 10^10,kg,Table 7 p.56,"our environments.csv carries 7.329e10 kg = -0.8 sigma INSIDE the paper's error bars; independent pre-mission (2014) check of our best-characterized body"
 chesley_2014_bennu_orbit_bulk_density,Bennu GM,5.2 +/- 0.6,m^3/s^2,Table 7 p.56,"gravitational parameter; consistent with M above (GM = G*M within stated uncertainties)"
