@@ -29,3 +29,20 @@ Institutional ground truth for the power + EP rows of `spacecost/reference/opera
 - p8 verbatim (Lucy Ultra-Flex array spec): "Areal power density at 1 AU, W/m2 415 Specific power at 1 AU, W/kg 184" with 32% conversion efficiency.
 - **Anchors**: 'RTG specific power' row value 5.0 is +13.6% above the best PROJECTED current-gen unit (NextGen-M1 4.4) and matches GPHS-class hardware per the NETS-2022 companion record's historical "BOL specific power of 5.3 W/kg" -> consistency anchor, no revision forced. Note-level: our 'MMRTG ... = 2.4' computes 2.44 vs institutional 2.7 (ours -9.5% low). 'Power system specific mass' note cites ROSA ~150 at the wing; current-gen Lucy arrays reach **184 W/kg** (+22.7%) — our citation is conservative, no revision forced.
 - Negative probe: NO per-W cost data anywhere in either RPS version (no $ figures extracted) -> 'RTG (radioisotope power)' row's Pu-238 fuel-cost note stays secondary-sourced; institutional envelope for that cell still absent from all registered sources.
+
+## R67 — RTG cost + Pu-238 production anchors (+2 T2 OIG docs)
+
+**Targets** (re-read fresh from spacecost/reference/operational_costs.csv this round): 'RTG (radioisotope power)' $500k/W-electric [200k-1M] (note: Pu-238 supply-constrained, NASA/DOE target 1.5 kg/yr by 2026 — cited Space.com/NASA NIAC; Russian Pu-238 ~$2.5M/kg); 'RTG specific power' note cites GPHS 5.2 + MMRTG 110 We at 45 kg = 2.4 W/kg.
+
+### nasa_oig_2017_ig-17-009_mars2020_project — Mars 2020 Project audit (Jan 30 2017)
+- p14 verbatim (Table 3, 'Real Year Dollars in Millions'): "Multi-Mission Radioisotope Thermoelectric Generator 66 66 70" under columns Mission Concept Review / KDP-A / KDP-C.
+- **Anchor**: institutional MMRTG project line item $66-70M at 110 We BODL = **$600-$636k per W-electric** if the full line is one unit (Table 3 does not distinguish unit count — envelope, not pin). Our row centre $500k/W sits 16.7%-21.4% below that single-unit reading and inside band [$200k, $1M] -> consistency anchor, no revision forced. First institutional $ figure for this cell (the note's Pu-238 fuel-cost arithmetic — Russian ~$2.5M/kg + 6-8% conversion — stays secondary-sourced).
+
+### nasa_oig_2023_ig-23-010_rps_program_management — RPS Program audit (Mar 20 2023)
+- p13 verbatim (Table 1 rows): "MMRTG Multi-Mission RTG 4.8 32 110 63 44" and "Next-Gen Mod-1 Next-Generation RTG— Mod-1 9.6 64 245 177 56" — columns: Pu-238 Required (kg) / Fueled Clads / BODL Watts / EODL Watts / System Mass (kg).
+- p27 verbatim: "DOE plans to steadily increase Pu-238 production until reaching an annual CRP goal of 1.5 kg per year by 2026." and "although DOE planned to produce a total of 1.5 kg from 2018 through 2021, they produced only 0.77 kg—about half the projected amount".
+- p3 verbatim: "NASA has not produced a viable new RPS technology since the Program began in 2010 despite an average investment of $40 million per year." (context; ~$500M total allocated to new RPS tech development since 2010).
+- **Anchors**: 'RTG specific power' note: institutional MMRTG system mass = **44 kg** at 110 We BODL -> our note's '45 kg' is +2.3% high (implied SP 2.44 vs institutional 2.5 W/kg, -2.22% low) — NOTE-level revision candidate only; target repo read-only. Our RTG row value 5.0 W/kg stands on GPHS-class hardware and the NETS companion's historical 5.3 (R66), unaffected by this MMRTG note fix.
+- **Anchors**: 'RTG (radioisotope power)' note: our production-target citation '(NASA / DOE target 1.5 kg/yr production by 2026)' is now the p27 institutional sentence verbatim — upgraded from secondary to anchored; actuals context recorded (0.77 kg produced vs 1.5 planned, 2018-2021) = supply-constraint claim corroborated.
+- Cross-check: Table 1 MMRTG BODL 110 We AGREES exactly with schmitz_2023's RPS table (also 110); NextGen-M1 mass 56 kg @ 245 We = 4.38 W/kg vs Schmitz's projected 4.4 -> AGREE; DRPS system mass range 150-200 kg recorded for future reference.
+- Negative probe: NO per-W or program $ cost data in either doc beyond the Mars 2020 line item + RPS-program budget context — Pu-238 fuel unit price still absent from all registered sources (standing gap).
