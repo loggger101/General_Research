@@ -378,3 +378,41 @@ Sources the upstream repos cite that this registry did not have, found by readin
 - `space_com_pu238_rtg_cost_reporting` (T4): operational_costs.csv "RTG (radioisotope power)" Pu-238 cost context.
 
 **Citation that does not support its row (rc-048).** spacecost `operational_costs.csv` "Beneficiation / on-site processing energy" cites "Lunar / asteroid ISRU literature (NASA Money-Mass-ematics 2023)". The only NASA document of that name is a four-page SCaN classroom worksheet for grades 7-8, "Ratios and Percentages with Laser Communications" (read in full, sha256 a4fab83f…). It is about launch cost per kilogram and the ILLUMA-T laser terminal and says nothing about beneficiation or processing energy, so the row's 500 Wh/kg (range 100-2,000 Wh/kg of refined product) has no source. The row keeps its value; the candidate asks for a real ISRU citation or an "estimate" label.
+
+## R76 - Gap recorded from the second domain pass (2026-09-27; registry unchanged)
+
+Found while looking for new domains in economicspace@1f470d4 and spacecost@e831245; no source was sought. One depot row in this domain's scope has no registry source:
+
+| cell | current value | upstream's stated basis |
+|---|---|---|
+| `storage_systems.csv` `Depot refuelling flights to escape`, carried as Starship's `tanker_flights_for_escape` in `launch_vehicles.csv` | 12 [8, 16] tanker launches per fully fuelled departure | "SpaceX's own range for filling a Starship in LEO before a high-energy departure"; no registry row maps to it |
+
+What a source has to supply: the propellant a departing Starship-class vehicle needs in LEO and the propellant each tanker flight delivers, from the operator or an independent analysis.
+
+## R77 - Sources moved to domains 16-21 (2026-09-27; registry unchanged at 267)
+
+These rows moved to the domain that now holds the cells they back. The blocks above stay as written, so their relative paths to the files below no longer resolve from this folder; the files are at the paths given here.
+
+| id | moved to | earlier blocks here | files now at |
+|---|---|---|---|
+| `mil_hdbk_189c_reliability_growth_management` | 16 | R74 | none (no files) |
+| `duane_1964_learning_curve_reliability_monitoring` | 16 | R74 | none (no files) |
+| `damodaran_cost_of_capital_by_industry` | 17 | Round 44 addition | `17_cost_of_capital_contingency_insurance/extracted_data/r47_damodaran_cost_of_capital_key_numbers.csv`, `17_cost_of_capital_contingency_insurance/extracted_data/r47_damodaran_cost_of_capital_full_table_96_industries.csv` |
+| `valueinvesting_io_2026_boeing_howmet_wacc` | 17 | R74 | none (no files) |
+| `gallagher_plane_talking_space_market_updates` | 17 | Round 44 addition; Round 57 addition | `17_cost_of_capital_contingency_insurance/extracted_data/r57_plane_talking_series_key_numbers.csv` |
+| `faa_14_cfr_part_450_launch_reentry_licensing` | 18 | R74 | none (no files) |
+| `crs_r48582_commercial_launch_reentry_regulations` | 18 | R74 | none (no files) |
+| `nasa_money_mass_ematics_2023_worksheet` | 19 | R74 | none (no files) |
+| `just_2019` | 19 | Round-9 status; Round-10 addition; Round 43 addition; Round 44 addition; Round 57 addition | `19_asteroid_excavation_beneficiation/extracted_data/r43_excavation_energy_key_numbers.csv` |
+| `zeng_2007` | 19 | Round 43 addition | `19_asteroid_excavation_beneficiation/extracted_data/r70_zeng_2007.csv`, `19_asteroid_excavation_beneficiation/full_texts/zeng_2007_excavation_force.pdf` |
+| `proctor_apex_2019` | 19 | Round 43 addition; R71 | `19_asteroid_excavation_beneficiation/extracted_data/r71_proctor_apex_2019_key_numbers.csv` |
+| `zeitlin_asteroid_excavation_project` | 19 | Round 43 addition | `19_asteroid_excavation_beneficiation/extracted_data/r71_zeitlin_asteroid_excavation_project_key_numbers.csv` |
+| `ssap_2021` | 19 | the `ssap_2021` block; Round-3 additions; Round-3 status; Maintenance; R71 | `19_asteroid_excavation_beneficiation/extracted_data/ssap_2021_table3_theoretical_yields.csv`, `19_asteroid_excavation_beneficiation/extracted_data/r71_ssap_2021_key_numbers.csv`, `19_asteroid_excavation_beneficiation/extracted_data/r71_ssap_2021_reactions_energetics.csv` |
+| `jpl_dsn_services_catalog_820_100` | 20 | Round 44 addition; Maintenance; R71 | `20_mission_operations_communications/extracted_data/r71_jpl_dsn_820_100_key_numbers.csv`, `20_mission_operations_communications/extracted_data/r71_jpl_dsn_820_100_table5_1_station_rf_capabilities.csv` |
+| `stackpoole_2013_pica_pica_x_postflight_eval` | 21 | Round 56 addition | `21_mass_cost_estimating_relationships/extracted_data/r70_stackpoole_2013_pica_pica_x_postflight_eval.csv`, `21_mass_cost_estimating_relationships/full_texts/pica_pica_x_stardust_dragon_postflight_eval_ntrs_20140005558_publicdomain.pdf` |
+
+Shared CSVs that cite a moved source and stay here: `extracted_data/r50_dsn_rates_and_launch_insurance_key_numbers.csv` (`gallagher_plane_talking_space_market_updates`, `jpl_dsn_services_catalog_820_100`); `extracted_data/storage_isru_key_numbers.csv` (`ssap_2021`); `extracted_data/unhosted_sources_key_numbers.csv` (`jpl_dsn_services_catalog_820_100`). Where a moved row names one of them, the path now includes this folder.
+
+Revision candidates written up here keep `domain_dir` 05: rc-026 (open, Drilling / excavation energy), rc-027 (blocked, Drilling / excavation energy), rc-030 (open, Deep Space Network time), rc-031 (open, Launch insurance), rc-048 (open, Beneficiation / on-site processing energy).
+
+`metzger_zacny_2020` stays here. Its row maps to the drilling-energy row, but the paper is about thermal extraction of volatiles, which this domain keeps; domain 19 refers to it by id.

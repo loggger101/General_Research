@@ -18,7 +18,14 @@ missing:
 
 Domains 1–5 were ranked by how weakly sourced their cells were; 6–11 were
 added later, in the order the research rounds found the next gap; 12–14 were
-added in Round 74 for upstream citations no earlier domain covered.
+added in Round 74 for upstream citations no earlier domain covered; 15–22 were
+added in Round 75 for upstream cells no domain covered, most of which upstream
+itself labels as judgement rather than measurement; 23–25 were added in Round
+76 by a second pass over the same code. Each of their FINDINGS.md files lists
+its target cells, their current values and what a source has to supply.
+Round 77 moved 20 sources into domains 16–22 from domains 2, 4, 5 and 7,
+where they had been filed before a domain for their cells existed; domains
+15, 23, 24 and 25 are still empty.
 
 | # | domain | pipeline cell(s) it could back or replace |
 |---|---|---|
@@ -26,7 +33,7 @@ added in Round 74 for upstream citations no earlier domain covered.
 | 2 | Composition → commodity value mapping (what an S/C/X/K/Q body actually contains) | `taxonomy_composition.csv` material fractions, `mineral_value.py` mineralogy |
 | 3 | Δv budgets and propulsion performance tables | `spacecost/reference/delta_v_segments.csv`, `propellants.csv` Isp rows |
 | 4 | Launch $/kg to LEO/GTO — history and projections | `spacecost/reference/launch_vehicles.csv` price rows, cost cascade |
-| 5 | In-space storage (boil-off), ISRU, operational costs | `storage_systems.csv`, `operational_costs.csv`, environment penalties |
+| 5 | In-space storage (boil-off), ISRU, operational costs | `storage_systems.csv`; the volatile-ISRU, power and electric-propulsion rows of `operational_costs.csv` (power and EP overlap domain 11; the sources for its finance, licensing, operations, mining and hardware-rate rows moved to 16–21 in Round 77); environment penalties |
 | 6 | Commodity market prices (the value side) | `mineral_value.py` `ref_price_usd_per_kg`, which feeds every profitability row |
 | 7 | Mission program-cost benchmarks (NRE / development) | `operational_costs.csv` NRE rows (spacecraft development, autonomous mining control), sample-recovery ops envelope |
 | 8 | NEA accessibility oracles (round-trip Δv ground truth) | distribution/rank reference for the NEA rows of `delta_v_segments.csv` (economicspace `probe_nhats.py`) |
@@ -36,6 +43,17 @@ added in Round 74 for upstream citations no earlier domain covered.
 | 12 | Destination environments & physical constants | spacecost `environments.csv` (flux, gravity, escape velocity, light time, eclipse) and `units.py` constants |
 | 13 | Astrodynamics methods, ephemerides & audited software | economicspace `research/starred-repos/` (Lambert and Kepler solvers, ephemeris oracles, the 17-repository licence audit) |
 | 14 | Propellant & consumable prices | `propellants.csv` `ref_cost_usd_per_kg` and its component prices |
+| 15 | In-space demand & market absorption | economicspace `mineral_value.py` in-space utility, annual-demand and class-share tables; `calc.py` `demand_elasticity`, `surplus_price_fraction` |
+| 16 | Reliability, learning curves & hardware service life | `operational_costs.csv` launch reliability, spacecraft MTBF, mining success and growth, rig life, trips and salvage rows; `calc.py` `learning_curve_rate` |
+| 17 | Cost of capital, contingency & insurance | `operational_costs.csv` WACC, contingency, launch and third-party insurance rows; `calc.py` `contingency_fraction` |
+| 18 | Licensing, planetary protection & space-resource law | `operational_costs.csv` FAA Part 450 licensing rows and the MPL behind third-party liability; the Earth-return and right-to-sell premises (context-only) |
+| 19 | Asteroid excavation throughput & beneficiation | `calc.py` mining rate, rig mass, beneficiation recovery and concentration cap; `operational_costs.csv` drilling and beneficiation energy, plant throughput; `mineral_value.py` in-space refining energy |
+| 20 | Mission operations, communications & ground segment | `operational_costs.csv` mission operations, DSN time, downlink and depot berthing rows |
+| 21 | Spacecraft mass & recurring-cost estimating relationships | `operational_costs.csv` recurring $/kg rows by hardware class; `calc.py` return-structure and heat-shield fractions, NRE/recurring overlap |
+| 22 | Prior-art techno-economic benchmarks | economicspace's headline answer (`campaign/results.csv` `best_obj`, `winner`): an external oracle for profitability, as domain 8 is for Δv |
+| 23 | Cost indices, dollar years & exchange rates | the `reference_year` of every spacecost table, the CPI factors in row notes, and the exchange rates behind non-US prices |
+| 24 | Aerocapture & aerobraking | `calc.py` aero-assisted returns (LEO/Mars trim, GEO aerocapture, fallback saving); `delta_v_segments.csv` aerocapture and aerobraked rows |
+| 25 | Net smelter return: refining charges & payable terms | `calc.py` `_mineral_implied_value` (100% of contained metal at refined prices) and the refined-metal basis of element prices |
 
 ## Layout
 
@@ -62,6 +80,17 @@ tools/                                   build_registry.py (regenerate derived f
 12_destination_environments_physical_constants/ Domain 12: destination environments & physical constants
 13_astrodynamics_methods_ephemerides_software/  Domain 13: astrodynamics methods, ephemerides & audited software
 14_propellant_consumable_prices/          Domain 14: propellant & consumable prices
+15_inspace_demand_market_absorption/      Domain 15: in-space demand & market absorption
+16_reliability_learning_service_life/     Domain 16: reliability, learning curves & hardware service life
+17_cost_of_capital_contingency_insurance/ Domain 17: cost of capital, contingency & insurance
+18_licensing_planetary_protection_space_law/ Domain 18: licensing, planetary protection & space-resource law
+19_asteroid_excavation_beneficiation/     Domain 19: asteroid excavation throughput & beneficiation
+20_mission_operations_communications/     Domain 20: mission operations, communications & ground segment
+21_mass_cost_estimating_relationships/    Domain 21: spacecraft mass & recurring-cost estimating relationships
+22_prior_art_techno_economic_benchmarks/   Domain 22: prior-art techno-economic benchmarks
+23_cost_indices_dollar_years/             Domain 23: cost indices, dollar years & exchange rates
+24_aerocapture_aerobraking/               Domain 24: aerocapture & aerobraking
+25_net_smelter_return_refining_terms/     Domain 25: net smelter return: refining charges & payable terms
 
 <domain>/sources_domain.csv              The registry rows for that domain (the file you edit)
 <domain>/FINDINGS.md                     Prose write-ups and per-number comparisons, one block per round
@@ -129,6 +158,45 @@ A candidate must satisfy all of:
 A `registered_not_pulled` row is the one exception to 2 and 3: it records
 that an upstream cell cites the source, and it moves to one of the other
 classes when an extraction round reads it.
+
+## Adding a domain
+
+Open a domain when upstream cells have no domain behind them, not for a topic.
+A new domain needs:
+
+1. A folder `NN_short_name/` (the next two-digit number; lowercase letters,
+   digits and underscores) with `sources_domain.csv` holding only the header
+   line, and `FINDINGS.md` holding a title, a `Backings:` line naming the
+   upstream files and cells, and a first block that tables those cells with
+   their current values and the upstream commit they were read from.
+2. A `## Domain N — title` section in INDEX.md, above `## Research log`, with a
+   `_Backings:_` line and the five-column table header and separator. A table
+   with no rows is valid until a round registers a source.
+3. A row in the domain table at the top of this file and a line in "Layout"
+   (`validate.py` fails if a domain folder is not mentioned in this file).
+4. A research-log entry for the round.
+
+A source already registered in another domain moves to the new one when the
+cells it backs are the new domain's (next section); otherwise the new domain's
+FINDINGS.md refers to it by id.
+
+## Moving a source between domains
+
+Move a source when the cells its `pipeline_mapping` names belong to another
+domain. Its id never changes. Round 77 set the procedure:
+
+1. Move its row from one `sources_domain.csv` to the other, and its INDEX row
+   to the end of the new domain's table.
+2. `git mv` its hosted files (and change `domain_dir` in
+   `full_texts_manifest.csv`) and every extracted-data CSV that cites only this
+   source. A CSV that also cites sources staying behind stays where it is; if
+   the moved row names it, write the path with the old domain's folder.
+3. Append a block to the old domain's FINDINGS.md listing each moved id and
+   the new paths of its files, and one to the new domain's saying what arrived
+   and which old blocks hold its history. Older blocks and the research log
+   stay as written, even where their relative paths no longer resolve.
+4. Leave `domain_dir` in `revision_candidates.csv` alone: it names the
+   FINDINGS.md that holds the write-up.
 
 ## Revision candidates
 
