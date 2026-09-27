@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+ieva2014,Known NEAs and share physically characterised (2014),"~11,000 discovered; > 85% with unknown physical properties",,PDF p2 abstract; Sec.1,R71 (PDF restored from git 5dd58d5)
+ieva2014,Survey delta-v cut,< 10.5 km/s (solar-system escape 12.3 km/s),km/s,PDF p2 abstract,"13 objects; 11 S-complex, 2 C-complex; 9 classified for the first time. R71 (PDF restored from git 5dd58d5)"

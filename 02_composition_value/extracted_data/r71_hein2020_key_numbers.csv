@@ -1,0 +1,15 @@
+source_id,item,value,unit,location_in_source,notes
+hein2020,Table 1 water mining: profit,139 (conservative) / 293 (optimistic),M$,PDF p6 Table 1,row not in the r61 extraction. R71 (PDF restored from git 5dd58d5)
+hein2020,Table 1 water mining: bootstrapping factor,14.3 (conservative) / 0.62 (optimistic),,PDF p6 Table 1,total mass of water delivered divided by spacecraft mass; row not in the r61 extraction. R71 (PDF restored from git 5dd58d5)
+hein2020,Table 2 platinum mining: profit,149 (conservative) / 303 (optimistic),M$,PDF p8 Table 2 (continued),row not in the r61 extraction. R71 (PDF restored from git 5dd58d5)
+hein2020,Table 2 platinum mining: bootstrapping factor,4 (conservative) / 0.2 (optimistic),,PDF p8 Table 2 (continued),row not in the r61 extraction. R71 (PDF restored from git 5dd58d5)
+hein2020,Platinum case: time to process own mass at 0.35 kg/s/kg,about 3,s,PDF p7 Sec.4.1,throughput needs to be about two orders of magnitude above the water case; optimistic scenario could cut it by one order. R71 (PDF restored from git 5dd58d5)
+hein2020,Return-to-Earth cost treatment for platinum,launch cost multiplied by a factor of two,,PDF p7 Sec.4.1,rough estimate of transporting platinum to the Earth surface. R71 (PDF restored from git 5dd58d5)
+hein2020,Multiple-spacecraft case,10 spacecraft of 15 kg per mission,,PDF p7 Sec.4.1,sensitivity cases: throughput or spacecraft mass reduced by 50%. R71 (PDF restored from git 5dd58d5)
+hein2020,Mission duration assumed for scenarios,about one year (100 days mining + several hundred days transfer),,PDF p6 Sec.4.1,R71 (PDF restored from git 5dd58d5)
+hein2020,Realistic upper bound on mining duration,less than 5 years,,PDF p3 Sec.3.1,R71 (PDF restored from git 5dd58d5)
+hein2020,"Platinum case at $30,000/kg",conservative: only 10 small spacecraft per mission breaks even within 10 years; optimistic: all but the 50%-throughput case break even in year 1,,PDF p8 Sec.4.1,R71 (PDF restored from git 5dd58d5)
+hein2020,Loan interest on development cost in supply-demand model,"10% fixed per year, principal not repaid",,PDF p6 Sec.3.3,R71 (PDF restored from git 5dd58d5)
+hein2020,Platinum demand shares 2013-2017,automotive 41% of global demand; diesel autocatalyst 39%; USA 11% of demand; South Africa 53% of global supply (mined + recycled),,PDF p6 Sec.3.3; p10 Sec.4.1,World Platinum Investment Council [34]. R71 (PDF restored from git 5dd58d5)
+hein2020,Likely ranges of supply-demand levers,"k not above 0.9, perhaps 0.6 or 0.4; elasticity not below 0.25",,PDF p9 Sec.4.1,"k = 1 is profitable and breaks even in a year for any elasticity, an unlikely corner case. R71 (PDF restored from git 5dd58d5)"
+hein2020,Sample architecture,26U CubeSats: laser heating spacecraft plus volatile-capture spacecraft with cold-trap funnels; electric or solar sail transport; asteroid de-spun first,,PDF p9 Sec.4,R71 (PDF restored from git 5dd58d5)

@@ -1,0 +1,8 @@
+source_id,location,optimistic_market_100pct_yr,moderate_market_10pct_yr,pessimistic_market_1pct_yr,location_in_source,notes
+metzger_2023,LS,1,1,1,PDF p26 Table 1,baseline technology parameters; SEP delivery below LLO; years of operation until lunar LOX/LH2 is cheaper than Earth-launched. R71 (arXiv:2303.09011 downloaded 2026-09-27; extract only)
+metzger_2023,LLO,1,1,1,PDF p26 Table 1,baseline technology parameters; SEP delivery below LLO; years of operation until lunar LOX/LH2 is cheaper than Earth-launched. R71 (arXiv:2303.09011 downloaded 2026-09-27; extract only)
+metzger_2023,EML1,1,1,1,PDF p26 Table 1,baseline technology parameters; SEP delivery below LLO; years of operation until lunar LOX/LH2 is cheaper than Earth-launched. R71 (arXiv:2303.09011 downloaded 2026-09-27; extract only)
+metzger_2023,GEO,2,2,2,PDF p26 Table 1,baseline technology parameters; SEP delivery below LLO; years of operation until lunar LOX/LH2 is cheaper than Earth-launched. R71 (arXiv:2303.09011 downloaded 2026-09-27; extract only)
+metzger_2023,DRO,3,3,3,PDF p26 Table 1,baseline technology parameters; SEP delivery below LLO; years of operation until lunar LOX/LH2 is cheaper than Earth-launched. R71 (arXiv:2303.09011 downloaded 2026-09-27; extract only)
+metzger_2023,GTO,6,7,7,PDF p26 Table 1,baseline technology parameters; SEP delivery below LLO; years of operation until lunar LOX/LH2 is cheaper than Earth-launched. R71 (arXiv:2303.09011 downloaded 2026-09-27; extract only)
+metzger_2023,LEO,19,21,23,PDF p26 Table 1,baseline technology parameters; SEP delivery below LLO; years of operation until lunar LOX/LH2 is cheaper than Earth-launched. R71 (arXiv:2303.09011 downloaded 2026-09-27; extract only)

@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+zeitlin_asteroid_excavation_project,Technology readiness,"TRL 3 at start, 5 at end (applied research to development/demo & test)",TRL,p1 Technology Maturity,"R71 (NTRS 20150016080 TechPort record printed 7/28/2015, downloaded 2026-09-27; extract only)"
+zeitlin_asteroid_excavation_project,Project status and funding line,"active 2015-2016; KSC Center IRAD with the Science Mission Directorate; PM Nancy Zeitlin, PI James Mantovani, co-Is Adam Swanger, Ivan Townsend",,p1-p2,R71
+zeitlin_asteroid_excavation_project,Predecessor rig,"FY14 project tested icy regolith on a 1/8-scale setup and built a full-scale Regolith Excavation and Soil Mechanics Test System, reused here for penetration, excavation and sample-capture forces",,p2-p3,"no force, power or energy values are given in this record. R71"
+zeitlin_asteroid_excavation_project,Simulants and environment,"icy mixtures made under vacuum at cryogenic temperature in a KSC chamber; simulants include BP-1 and asteroid (C-type, hydrated-mineral) simulants developed with UCF CLASS (SSERVI)",,p2-p3,R71
+zeitlin_asteroid_excavation_project,Technology areas,primary TA 7.1 ISRU / 7.1.2 Resource Acquisition; also TA 8.3 in-situ instruments,,p2,R71

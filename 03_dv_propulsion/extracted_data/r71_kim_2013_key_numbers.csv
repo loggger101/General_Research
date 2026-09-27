@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+kim_2013,Table 1 kerosene vs methane cost,kerosene costs about 3x methane,,PDF p2 Table 1,text: methane more than 3 times cheaper than kerosene. R71 (PDF restored from git 5dd58d5)
+kim_2013,Table 2 toxicity (TLV),N2H4 toxic (0.01 ppm); MMH/NTO toxic (3/0.2 ppm); LH2/LOX and LCH4/LOX non-toxic,ppm,PDF p2 Table 2,rows not in the r40 extraction. R71 (PDF restored from git 5dd58d5)
+kim_2013,Table 2 ISRU compatibility,N2H4 no; MMH/NTO no; LH2/LOX yes; LCH4/LOX yes,,PDF p2 Table 2,R71 (PDF restored from git 5dd58d5)
+kim_2013,Table 2 space storability without active cooling,N2H4 yes (heaters); MMH/NTO yes (heaters); LH2/LOX no; LCH4/LOX yes (6 months-1 year),,PDF p2 Table 2,R71 (PDF restored from git 5dd58d5)
+kim_2013,Table 4 Aerojet LCH4/LOX orbital-manoeuvring-engine-class thrust chamber,successful hot fire at 870 lbf (2005),lbf,PDF p6 Table 4,"also 2006 igniter and RCE pulsing thruster work, 2003 booster configuration. R71 (PDF restored from git 5dd58d5)"
+kim_2013,Northrop Grumman 450 N LCH4/LOX engine Isp,331 s achieved vs 317 s target,s,PDF p6 Sec.3.1.4,R71 (PDF restored from git 5dd58d5)
+kim_2013,XCOR methalox tests,"XR-3M9: 22 firings at Mojave, 65 s total, 7 s max burn (2005); XR-5M15: 43 performance tests, completed 2007",,PDF p6-7 Sec.3.1.5,R71 (PDF restored from git 5dd58d5)
+kim_2013,Armadillo/NASA 6.7 kN methalox tests,10 vacuum-environment tests at WSTF,,PDF p7 Sec.3.1.7,R71 (PDF restored from git 5dd58d5)
+kim_2013,Energomash methane engine programme,"started 1981; thrust classes 10 N to 2,000 kN (Riksha family)",,PDF p7 Sec.3.2,R71 (PDF restored from git 5dd58d5)

@@ -1,0 +1,12 @@
+source_id,date_tdb,nominal_distance_au,min_distance_3sigma_au,max_distance_3sigma_au,time_uncertainty_1sigma_s,zeta_uncertainty_1sigma_km,location_in_source,notes
+chesley_2014_bennu_orbit_bulk_density,1654 Sep 17.89194,0.022033,0.010586,0.035240,49590,816253,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,1788 Sep 20.56364,0.009771,0.009304,0.010254,2237,32739,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,1848 Sep 21.91904,0.007915,0.007892,0.007938,105,1573,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,1911 Sep 22.88762,0.014178,0.014177,0.014179,2.4,38,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,1970 Sep 27.10790,0.021403,0.021403,0.021403,1.6,16,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,1999 Sep 22.76422,0.014686,0.014686,0.014686,<<1,1.1,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,2005 Sep 20.44528,0.033130,0.033130,0.033130,<<1,1.2,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,2054 Sep 30.04163,0.039299,0.039299,0.039299,1.6,11,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,2060 Sep 23.02530,0.005008,0.005008,0.005008,1.0,15,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,2080 Sep 22.02378,0.015560,0.015427,0.015693,360,7318,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"
+chesley_2014_bennu_orbit_bulk_density,2135 Sep 25.40942,0.002009,0.000819,0.003549,4746,79674,PDF p57 Table 8,"deterministic Earth approaches closer than 0.05 au, JPL solution 76. R71 (PDF restored from git 5dd58d5)"

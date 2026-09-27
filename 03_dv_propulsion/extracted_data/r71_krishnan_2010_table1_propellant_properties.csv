@@ -1,0 +1,5 @@
+source_id,propellant,density_kg_m3,freezing_point_C,boiling_point_C,specification,heat_of_formation_kJ_kg,location_in_source,notes
+krishnan_2010_h2o2_rp1_upper_stage,LOX,1149,-219,-183,MIL-P-25508,-405.6,PDF p3 Table 1,R71 (PDF restored from git 5dd58d5)
+krishnan_2010_h2o2_rp1_upper_stage,H2O2,1443,1,150,MIL-H-16005,-5520.3,PDF p3 Table 1,R71 (PDF restored from git 5dd58d5)
+krishnan_2010_h2o2_rp1_upper_stage,RP1 (CH1.9423),773,-73,147,MIL-R-25576,-1626.8,PDF p3 Table 1,R71 (PDF restored from git 5dd58d5)
+krishnan_2010_h2o2_rp1_upper_stage,LCH4,421,-184,-162,,-5562.5,PDF p3 Table 1,R71 (PDF restored from git 5dd58d5)

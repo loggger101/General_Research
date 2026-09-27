@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+ssap_2021,Sulfur abundance in feedstocks,ordinary and carbonaceous chondrites ~2.5 wt% (troilite in OCs; pyrrhotite and pentlandite in CCs); Martian dust ~2.5 wt%; lunar troilite < 0.5 wt%; lunar polar SO2 ice up to ~1 wt%,wt%,PDF p2 Sec.1.1,R71 (PDF restored from git 5dd58d5)
+ssap_2021,Silicate share of feedstocks,Moon > 70 vol%; Mars ~80 wt%; C-types (CM/CI-like) 75-95 wt%; S-types 75-90 wt%,,PDF p2-3 Sec.1.2,R71 (PDF restored from git 5dd58d5)
+ssap_2021,Pre-processing temperatures,lunar icy regolith heated to 150 C to sublimate ice; hydrated sulfates dehydrated at 100 C under vacuum,C,PDF p5 Sec.2.1; p7 Sec.2.3,R71 (PDF restored from git 5dd58d5)
+ssap_2021,Fused quartz from SSAP silica,melting ~1650 C under vacuum or inert gas,C,PDF p3 Sec.1.2,R71 (PDF restored from git 5dd58d5)
+ssap_2021,Comparison with other ISRU routes,SSAP peak ~950 C (molten salt electrolysis holds ~950 C throughout); vapour-phase pyrolysis > 2000 C; hydrogen reduction releases ~5 wt% O (mostly from ilmenite),,PDF p13 Sec.3.3,total SSAP energy not calculable yet (hydrate states and vacuum power unknown). R71 (PDF restored from git 5dd58d5)
+ssap_2021,Best feedstock,CM-like C-type asteroids (most Fe and O2; water incidental); S-types benefit most relative to their other resources,,PDF p11 Sec.3.1,R71 (PDF restored from git 5dd58d5)

@@ -1,0 +1,19 @@
+source_id,reaction,equation,energy,conditions,location_in_source,notes
+ssap_2021,R7 Fayalite,Fe2SiO4 + 2 H2SO4 -> 2 H2O + SiO2 + 2 FeSO4,"dG -292 kJ/mol (20 C, 1 bar)",,PDF p7 Table 1,"Olivine end-member; exothermic, proceeds at standard conditions. R71 (PDF restored from git 5dd58d5)"
+ssap_2021,R7 Forsterite,Mg2SiO4 + 2 H2SO4 -> 2 H2O + SiO2 + 2 MgSO4,"dG -258 kJ/mol (20 C, 1 bar)",,PDF p7 Table 1,"Olivine end-member; exothermic, proceeds at standard conditions. R71 (PDF restored from git 5dd58d5)"
+ssap_2021,R7 Ferrosilite,Fe2Si2O6 + 2 H2SO4 -> 2 H2O + 2 SiO2 + 2 FeSO4,"dG -1220 kJ/mol (20 C, 1 bar)",,PDF p7 Table 1,"Pyroxene end-member; exothermic, proceeds at standard conditions. R71 (PDF restored from git 5dd58d5)"
+ssap_2021,R7 Enstatite,Mg2Si2O6 + 2 H2SO4 -> 2 H2O + 2 SiO2 + 2 MgSO4,"dG -270 kJ/mol (20 C, 1 bar)",,PDF p7 Table 1,"Pyroxene end-member; exothermic, proceeds at standard conditions. R71 (PDF restored from git 5dd58d5)"
+ssap_2021,R7 Wollastonite,Ca2Si2O6 + 2 H2SO4 -> 2 H2O + 2 SiO2 + 2 CaSO4,"dG -2080 kJ/mol (20 C, 1 bar)",,PDF p7 Table 1,"Pyroxene end-member; exothermic, proceeds at standard conditions. R71 (PDF restored from git 5dd58d5)"
+ssap_2021,R7 Anorthite,"CaAl2Si2O8 + 4 H2SO4 -> 4 H2O + 2 SiO2 + CaSO4, Al2(SO4)3","dG -2250 kJ/mol (20 C, 1 bar)",,PDF p7 Table 1,"Plagioclase end-member; exothermic, proceeds at standard conditions. R71 (PDF restored from git 5dd58d5)"
+ssap_2021,R1,2 FeS(s) -> 2 Fe(s) + S2(g),+284 kJ/mol absorbed,~1250 C in vacuum,PDF p5-6 Sec.2.2,troilite decomposition; CM chondrites outgas sulfur weakly at ~550 C and strongly at ~1200 C. R71 (PDF restored from git 5dd58d5)
+ssap_2021,R2,S2(g) + 2 O2(g) -> 2 SO2(g),680 kJ/mol released,,PDF p5 Sec.2.2,R71 (PDF restored from git 5dd58d5)
+ssap_2021,R3,2 SO2(g) + O2(g) -> 2 SO3(g),142 kJ/mol released,400-620 C over a reusable vanadium oxide catalyst,PDF p6 Sec.2.2,wet sulfuric acid (WSA) process. R71 (PDF restored from git 5dd58d5)
+ssap_2021,R4,2 H2O(l) + 2 SO3(g) -> 2 H2SO4(aq),90 kJ/mol released,,PDF p6 Sec.2.2,R71 (PDF restored from git 5dd58d5)
+ssap_2021,R5,FeS(s) + H2SO4(aq) -> FeSO4(s) + H2S(g),103 kJ/mol released,,PDF p6 Sec.2.2,alternative route without separating sulfides from silicates. R71 (PDF restored from git 5dd58d5)
+ssap_2021,R6,H2S(g) + 3/2 O2(g) -> H2O(g) + SO2(g),504 kJ/mol released,,PDF p6 Sec.2.2,R71 (PDF restored from git 5dd58d5)
+ssap_2021,R8 FeSO4,2 FeSO4 -> 2 SO2 + 1/2 O2 + Fe2O3,"dG +306 kJ/mol (20 C, 1 bar)",lower temperatures under vacuum (Fig.2),PDF p8 Table 2,R71 (PDF restored from git 5dd58d5)
+ssap_2021,R8 MgSO4,2 MgSO4 -> 2 SO2 + O2 + MgO,dG +557 kJ/mol,,PDF p8 Table 2,as printed; the product should be 2 MgO. R71 (PDF restored from git 5dd58d5)
+ssap_2021,R8 CaSO4,2 CaSO4 -> 2 SO2 + O2 + CaO,dG +868 kJ/mol,,PDF p8 Table 2,as printed; the product should be 2 CaO. R71 (PDF restored from git 5dd58d5)
+ssap_2021,R8 Al2(SO4)3,Al2(SO4)3 -> 3 SO2 + 3/2 O2 + Al2O3,dG +621 kJ/mol,,PDF p8 Table 2,R71 (PDF restored from git 5dd58d5)
+ssap_2021,R9,Fe2O3(s) + 3 CO(g) -> 2 Fe(s) + 3 CO2(g),28 kJ/mol released,,PDF p8 Sec.2.4,R71 (PDF restored from git 5dd58d5)
+ssap_2021,R10,3 CO2(g) -> 3 CO(g) + 3/2 O2(g),+772 kJ/mol absorbed (likely an overestimate; catalyst ignored),~500 C electrolysis over CeO2 catalyst,PDF p8-9 Sec.2.4,net 1 mol O2 per 2 mol Fe. R71 (PDF restored from git 5dd58d5)

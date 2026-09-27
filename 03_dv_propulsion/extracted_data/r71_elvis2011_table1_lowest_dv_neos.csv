@@ -1,0 +1,7 @@
+source_id,designation,leo_to_neo_rendezvous_dv_km_s,H_mag,a_au,e,i_deg,days_observed,location_in_source,notes
+elvis2011,2006 RH120,3.813,29.5,1.033,0.025,0.6,281,PDF p6 Table 1,"Benner (2010) list, Shoemaker-Helin formalism; H = 22 is ~140 m, H = 27 ~14 m for a typical albedo. R71 (PDF restored from git 5dd58d5)"
+elvis2011,2007 UN12,3.823,28.7,1.054,0.060,0.2,25,PDF p6 Table 1,"Benner (2010) list, Shoemaker-Helin formalism; H = 22 is ~140 m, H = 27 ~14 m for a typical albedo. R71 (PDF restored from git 5dd58d5)"
+elvis2011,2008 HU4,3.927,28.2,1.093,0.073,1.3,41,PDF p6 Table 1,"Benner (2010) list, Shoemaker-Helin formalism; H = 22 is ~140 m, H = 27 ~14 m for a typical albedo. R71 (PDF restored from git 5dd58d5)"
+elvis2011,2008 EA9,3.962,27.7,1.059,0.080,0.4,36,PDF p6 Table 1,"Benner (2010) list, Shoemaker-Helin formalism; H = 22 is ~140 m, H = 27 ~14 m for a typical albedo. R71 (PDF restored from git 5dd58d5)"
+elvis2011,1991 VG,3.998,28.5,1.027,0.049,1.4,173,PDF p6 Table 1,"Benner (2010) list, Shoemaker-Helin formalism; H = 22 is ~140 m, H = 27 ~14 m for a typical albedo. R71 (PDF restored from git 5dd58d5)"
+elvis2011,2008 UA202,4.029,29.4,1.033,0.068,0.3,6,PDF p6 Table 1,"Benner (2010) list, Shoemaker-Helin formalism; H = 22 is ~140 m, H = 27 ~14 m for a typical albedo. R71 (PDF restored from git 5dd58d5)"

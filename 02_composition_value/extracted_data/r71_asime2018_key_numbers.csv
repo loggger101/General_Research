@@ -1,0 +1,22 @@
+source_id,item,value,unit,location_in_source,notes
+asime2018,NEO population by size (Tricarico 2016),"D > 1 km: ~1000; D > 100 m: 35,000; D > 10 m: ~5 million",objects,PDF p7 Sec.I,R71 (PDF restored from git 5dd58d5)
+asime2018,"NEO population by size (Elvis, ASIME 2016)","~20,000 NEOs > 100 m (NEOWISE); ~20 million > 20 m (bolide, infrasound)",objects,PDF p7 Sec.I,shape of the number-size curve in this range is not known. R71
+asime2018,Asteroids with spectra / spectrophotometry,"~2,500 with visible spectra (many fewer IR); ~60,000 with 3-8 band spectrophotometry",asteroids,PDF p8 Sec.I,R71
+asime2018,Gaia limiting magnitude and spectral resolution,"V ~20 (real threshold ~20.5); ~30 independent bands, visible only; low-res visible spectra of ~150,000 asteroids",,PDF p8; p16,R71
+asime2018,Expected Ch-class fraction of NEOs,3-12%,fraction,PDF p10 (Rivkin 2018),NEO delivery models give 10x more Ch asteroids than meteorite falls suggest; at least 75 known asteroids > 100 m should be Ch and more accessible than the lunar surface. R71
+asime2018,Known NEAs and potential mining targets (2018),"> 18,000 discovered; > 1,000 potential targets; > 50% smaller than 140 m",,PDF p10 (Green 2018),"accessible targets have low delta-v: low e, i, a ~1 AU. R71"
+asime2018,SDSS Moving Object Catalog,"471,569 entries; 220,101 linked to known objects; 104,449 unique asteroids",,PDF p11 Fig.5 (Carry 2018),R71
+asime2018,NEA discovery and characterisation rates (Galache et al. 2015),"~1,000/yr total; large (H <= 22) NEAs stable at ~365/yr; < 10% of NEAs well characterised; > 60% have U >= 4",,PDF p17,at current follow-up rates characterising the known population takes about a century. R71
+asime2018,Recommended target size range for follow-up,"30-100 m (30 m borderline, 10 m too small to characterise)",m,PDF p16; p60,Sercel: a 10 m object might hold 100 tons of ice. R71
+asime2018,Surface water-ice stability temperatures,surface ~110 K; shallow burial ~140 K; km-scale burial ~170 K,K,"PDF p21 (Rivkin 2016, 2018)","NEO temperatures are far higher: 7% albedo at 1 AU Tavg ~280 K, at 1.5 AU ~230 K; Tmax > 350 K near the Sun. R71"
+asime2018,Buried-ice survival at 2-3 AU,~10^9 years within the top few metres,yr,PDF p23 (Schorghofer 2008),R71
+asime2018,Ice retreat rates on NEOs,~1 km/My at 300 K even under 1 km dry layer; ~330 m/My at 280 K beneath 1 km; 3 m/My at 230 K; 60 m/My at 230 K beneath 50 m,,"PDF p23 (Rivkin 2016, 2018)",workshop consensus: mining companies should not count on ice in low-delta-v NEOs. R71
+asime2018,Photometric taxonomy success rate,~50% success identifying rare D-types in the main belt from survey photometry,,PDF p25 (Carry 2018),R71
+asime2018,Hydration diagnostic bands,0.7 um Fe2+/Fe3+ (easiest; always with 3.1 um OH but only in a fraction of cases); 3.1 um OH; 2.4 um X-OH very weak; ~6.5 um bound H2O (spacecraft); 8-12 um silicate/phyllosilicate CF,,PDF p28-29,3.1 um data exist mostly for main-belt and large objects; near 1 AU thermal emission dominates. R71
+asime2018,Meteorite-collection gaps,six asteroid types (~2/3 of the main-belt mass) absent from meteorite collections; carbonaceous chondrites ~5% of the collection,,PDF p33 (Barucci 2018),Tagish Lake is one of only two D-type analogues. R71
+asime2018,DLR Complex Irradiation Facility conditions,"~10^-10 mbar; p+ and e- at 1-100 keV, 1 nA-100 uA; UV/vis/NIR 40-2500 nm; sample -193 to +450 C",,PDF p33,R71
+asime2018,Solar-wind space-weathering timescale,10^4-10^6,yr,PDF p36 (Brunetto et al. 2015),C-complex asteroids redden and darken with weathering (Kaluna et al. 2016). R71
+asime2018,Neutron-spectrometer penetration depth for hydrogen,about 1,m,PDF p43,radar suggested for subsurface ice. R71
+asime2018,Clay hydroxyl release temperature in vacuum,~400-500,C,PDF p49,clays at or below the surface should stay hydrated unless the body got hot enough. R71
+asime2018,Asteroid simulant characteristics,"65 characteristics identified; workshop chose to replicate 12-13 (lunar programme: ~30 identified, 2-3 simulated)",,PDF p46-47,organics can be approximated with kerogen or sub-bituminous coal. R71
+asime2018,Space-based NEO finder example (DLR AsteroidFinder),"~150 kg spacecraft, 25 cm telescope; an agile < 200 kg craft could do it",,PDF p32,R71

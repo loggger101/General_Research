@@ -1,0 +1,18 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_pp1802n,Pt in CI chondrite (Orgueil),0.947,ppm,PDF p16 (printed N4) Geochemistry,"confirms the existing backfill rows' context; iron meteorites 2.4-16 ppm, upper mantle 2-5 ppb and upper crust 0.5 ppb verified on the same page. R71 (full report downloaded 2026-09-27)"
+usgs_pp1802n,Average PGE grade of ores mined primarily for PGEs,5 to 15,ppm (g/t),PDF p13 abstract; p16,hand-picked specimens tens to hundreds of ppm. R71
+usgs_pp1802n,US net import reliance for PGEs,about 90% of apparent consumption,,PDF p13 abstract; p14,R71
+usgs_pp1802n,Cumulative world PGE production,"~14,200 t in 1900-2011, ~13,500 t (95%) since 1960",t,PDF p13; p40 (printed N28),"~90% from South Africa and Russia; Canada 5%, United States 2%, Zimbabwe 1%. R71"
+usgs_pp1802n,Recycled share of supply (2011),~24% of platinum and palladium; ~27% of rhodium,,PDF p40-41 (printed N28-N29),Butler 2012; recycling rises with price. R71
+usgs_pp1802n,World PGE mine production and use (2012),production ~450 t; usage ~615 t; net consumption ~460 t,t/yr,PDF p41-42 (printed N29-N30),Loferski 2013b; Platinum Today 2013c. R71
+usgs_pp1802n,Identified PGE (+ minor Au) resources,"~100,000 t (Table N4); ~104,000 t in the abstract and Table N5 total; Mudd (2012) 91,000 t",t,PDF p13 abstract; p41 Table N4; p88 Table N5,R71
+usgs_pp1802n,Concentration of PGE resources in few deposits,10% of PGE deposits hold > 80% of resources; bottom 50% < 1%; 30% hold > 97% (porphyry Cu: 10% hold ~60%),,PDF p42 (printed N30),R71
+usgs_pp1802n,Resource shares by region and type,"Bushveld 72%; Noril'sk-Talnakh 10%; Great Dyke 8%; 14 intrusions > 97%; reef 69%, contact 20%, conduit 11%",,PDF p44 (printed N32),"text says Stillwater (Alaska); Stillwater is in Montana, a source slip. R71"
+usgs_pp1802n,Undiscovered PGE extensions,"Merensky + UG2 to 3 km: +33,000 t Pt and +32,000 t Pd; Platreef to 1 km: ~1,100 t Pt and ~1,400 t Pd; Great Dyke up to 6,900 t Pt+Pd+Rh",t,PDF p44-45 (printed N32-N33),Zientek and others 2014. R71
+usgs_pp1802n,Stillwater (Montana) production and resources,"~305 t Pt+Pd mined since 1986; ~2,200 t drilled; 1,000-6,200 t more possible at depth; mined to 1,800 m",t,PDF p14; p45 (printed N33),R71
+usgs_pp1802n,Greenhouse-gas intensity of South African PGE mining,2002: ~20-40 t CO2 per kg PGE; 2008: ~30-65 t CO2 per kg PGE,t CO2/kg PGE,PDF p54 (printed N42),Glaister and Mudd 2010; rises as ore grades fall. A terrestrial baseline for the carbon comparison of asteroid PGE. R71
+usgs_pp1802n,Depth limit set by rock temperature,"virgin rock 70 C at 2,176 m (Northam); 75 C taken as the mining limit (Anglo American Platinum); Talnakh mines 27-47 C",C,PDF p55 (printed N43),Bushveld reefs traced to 6 km by seismic. R71
+usgs_pp1802n,Bushveld reserves vs platinum demand,sufficient to meet global platinum demand until 2040 at 2%/yr growth,,PDF p55 (printed N43),R71
+usgs_pp1802n,PGE concentrations in seawater,Rh 0.082 ppt; Pd 0.062 ppt; Pt 0.026 ppt; Os 0.005 ppt; Ru and Ir well below 1 ppt,ppt,PDF p50 (printed N38),"Pt in surface water 0.22-78,000 ppt, groundwater 3-38 ppt. R71"
+usgs_pp1802n,Platinum melting point,"1,769",C,PDF p16 (printed N4),R71
+usgs_pp1802n,Tables not extracted,"N1 (mineral formulas), N6 (areal extent of layered intrusions), N8 (water chemistry), N9 (acid-base accounting)",,PDF p18; pp89-93,terrestrial geology and environmental baselines with no pipeline use. R71

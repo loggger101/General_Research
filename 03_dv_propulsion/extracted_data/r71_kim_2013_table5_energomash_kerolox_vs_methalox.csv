@@ -1,0 +1,5 @@
+source_id,engine,fuel,vacuum_thrust_kN,isp_vac_s,mixture_ratio,wet_mass_kg,thrust_to_weight_computed,location_in_source,notes
+kim_2013,RD-191,kerosene,2079,337,2.6,3230,66,PDF p7 Table 5,"thrust-to-weight = vacuum thrust (low end) / (wet mass x g0), computed here; R71 (PDF restored from git 5dd58d5)"
+kim_2013,RD-192,methane,2138,356,3.5,3300,66,PDF p7 Table 5,"thrust-to-weight = vacuum thrust (low end) / (wet mass x g0), computed here; R71 (PDF restored from git 5dd58d5)"
+kim_2013,RD-120K,kerosene,794-873,334-336,2.6,1433,57,PDF p7 Table 5,"range from throat diameter and chamber pressure options; thrust-to-weight = vacuum thrust (low end) / (wet mass x g0), computed here; R71 (PDF restored from git 5dd58d5)"
+kim_2013,RD-182,methane,814-902,351-353,3.4,1500,55,PDF p7 Table 5,"range from throat diameter and chamber pressure options; thrust-to-weight = vacuum thrust (low end) / (wet mass x g0), computed here; R71 (PDF restored from git 5dd58d5)"

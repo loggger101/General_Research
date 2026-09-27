@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+nextc_ppu_2020,DART flight operating range vs design capability,"input 80-125 V (design 80-160); max TL29 (TL40); 3.7 kW (7.0 kW); beam 1179 V (1800 V), 2.7 A (3.52 A)",,PDF p11 Table 3,R71 (PDF restored from git 5dd58d5)
+nextc_ppu_2020,Flight PPU heat rejection and hours,< 332 W to coldplate; > 590 h operation in test; 300-h burn-in,,PDF p12 Sec.III.E,beam supply ~87% of output; prototype rejected < 460 W at 7 kW (p10). R71 (PDF restored from git 5dd58d5)
+nextc_ppu_2020,Throttle table,40 throttle levels plus 30 extended; beam supply 1800-275 V (6.5:1) and 6.34-0.275 kW (23:1); 53 of 70 levels use fewer than six beam modules (built-in redundancy),,PDF p3; p8,six parallel beam modules of 600 mA at 1800 V. R71 (PDF restored from git 5dd58d5)
+nextc_ppu_2020,Beam telemetry accuracy achieved,"current 0.16%, voltage 0.26% (spec 1% of full scale)",%,PDF p9 Sec.III.B,R71 (PDF restored from git 5dd58d5)
+nextc_ppu_2020,Custom magnetics,heritage NEXT PPU 33 unique / 133 total; NEXT-C 24 unique / 88 total; Group B qualification > $10K and 4-6 months per line item,,PDF p9 Sec.III.C,R71 (PDF restored from git 5dd58d5)
+nextc_ppu_2020,PPU complexity and schedule,"6 DC-DC converters, 44 circuit cards, 88 custom magnetics; prototype designed 2015-2016, tested 2017-2019; flight unit built and delivered 2019-2020 (< 6 months to deliver)",,PDF p14 Sec.IV,NEXT thruster life-tested eight years; earlier NEXT PPU stalled at TRL 4 (p2). R71 (PDF restored from git 5dd58d5)

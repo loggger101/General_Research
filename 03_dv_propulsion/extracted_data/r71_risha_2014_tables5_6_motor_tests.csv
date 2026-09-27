@@ -1,0 +1,7 @@
+source_id,item,motor_diameter,value,unit,location_in_source,notes
+risha_2014_alice_jpp,Mass retained in chamber after firing,1.91 cm,20.28 +/- 14.69,%,PDF p8 Table 6,typical residual 20-43% (alumina slag). R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Mass retained in chamber after firing,3.81 cm,29.44 +/- 3.65,%,PDF p8 Table 6,typical residual 20-43% (alumina slag). R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Mass retained in chamber after firing,7.62 cm,43.15 +/- 1.06,%,PDF p8 Table 6,typical residual 20-43% (alumina slag). R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Igniter ESTES A10-PT: peak thrust / peak pressure / nozzle throat / share of motor peak thrust,1.91 cm,<2.20 N / 356 kPa / 0.457 cm / ~2.5%,,PDF p6 Table 5,R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Igniter ESTES D12-0: peak thrust / peak pressure / nozzle throat / share of motor peak thrust,3.81 cm,<2.2 N / 343 kPa / 0.635 cm / ~1%,,PDF p6 Table 5,R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Igniter Aerotek G-80: peak thrust / peak pressure / nozzle throat / share of motor peak thrust,7.62 cm,~45 N / 494 kPa / 0.899 cm / ~8.5%,,PDF p6 Table 5,R71 (PDF restored from git 5dd58d5)
