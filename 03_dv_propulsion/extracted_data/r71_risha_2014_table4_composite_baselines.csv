@@ -1,0 +1,8 @@
+source_id,ingredient_type,ingredient,nonaluminized_wt_pct,aluminized_wt_pct,location_in_source,notes
+risha_2014_alice_jpp,Oxidizer,Ammonium perchlorate (200 um),74.00,70.89,PDF p4 Table 4,solids loading 75.25% (nonaluminized) and 82.03% (aluminized); densities 1.55 and 1.65 g/cm3. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Binder/fuel,R45-M resin (HTPB),14.00,10.13,PDF p4 Table 4,solids loading 75.25% (nonaluminized) and 82.03% (aluminized); densities 1.55 and 1.65 g/cm3. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Metal fuel,Aluminum (20 um),0.00,10.13,PDF p4 Table 4,solids loading 75.25% (nonaluminized) and 82.03% (aluminized); densities 1.55 and 1.65 g/cm3. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Plasticizer,2-ethylhexyl acrylate (EHA),6.50,5.06,PDF p4 Table 4,solids loading 75.25% (nonaluminized) and 82.03% (aluminized); densities 1.55 and 1.65 g/cm3. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Catalyst,Ferric oxide (Fe2O3),1.25,1.01,PDF p4 Table 4,solids loading 75.25% (nonaluminized) and 82.03% (aluminized); densities 1.55 and 1.65 g/cm3. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Bonding agent,HX-878 (tepanol),0.75,0.76,PDF p4 Table 4,solids loading 75.25% (nonaluminized) and 82.03% (aluminized); densities 1.55 and 1.65 g/cm3. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Curing agent,Isonate 143-L (MDI),3.50,2.03,PDF p4 Table 4,solids loading 75.25% (nonaluminized) and 82.03% (aluminized); densities 1.55 and 1.65 g/cm3. R71 (PDF restored from git 5dd58d5)

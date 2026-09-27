@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+elvis2011,Ultra-low delta-v NEO orbits,"mean inclination 2.3 deg, none above 7 deg (all NEOs: mean ~14.1 deg, up to > 40 deg)",deg,PDF p5 Sec.5,synodic periods of 20 years or more. R71 (PDF restored from git 5dd58d5)
+elvis2011,Ultra-low delta-v NEO sizes,"H 20-30, mean 25.9 (all NEOs 21.1); almost all < 140 m",mag,PDF p5 Sec.5,R71 (PDF restored from git 5dd58d5)
+elvis2011,Large NEOs with ultra-low delta-v,2 of 4247 objects with H < 22 have delta-v < 4.5 km/s,,PDF p7 Sec.6,"Harris (2007): ~100,000 NEOs >= 140 m and ~10^7 with H < 27 (the text layer prints 107; the exponent is lost). R71 (PDF restored from git 5dd58d5)"
+elvis2011,"Payload gain, simple rocket equation","gain = exp((dv - <dv>)/v_ex), v_ex = 4.4 km/s; ~factor 2 from the 4.5 km/s tail to the 6.65 km/s peak",,PDF p2 Sec.2; p4 Sec.4,the 6.65 km/s peak is in Sec.4 p4 (text cites 'Figure 1'; the distribution is captioned Figure 3). R71 (PDF restored from git 5dd58d5)
+elvis2011,Payload gain with separate burns,Apollo 17 (10% inert upper stage): 2.0; MRO/Atlas V (22% inert): 4.4,,PDF p3 Sec.2,"cryogenic first burn, bipropellant second. R71 (PDF restored from git 5dd58d5)"
+elvis2011,Launch-to-escape capacity with in-orbit refuelling,"30 t without, 90 t with refuelling (Crawley & Mindell 2010)",t,PDF p3 Sec.3,R71 (PDF restored from git 5dd58d5)
+elvis2011,Asteroid spin limits,"above ~250 m periods >= ~2 h (tensile strength); about half of 100-250 m asteroids spin faster, down to a few minutes",,PDF p8 Sec.7,R71 (PDF restored from git 5dd58d5)
+elvis2011,Binary NEO fraction,about 1/6,fraction,PDF p8 Sec.7,Walsh & Richardson 2008. R71 (PDF restored from git 5dd58d5)
+elvis2011,Human-mission window and entry constraints,launch window 3-6 months; Earth return entry < 12 km/s; stay of about a month,,PDF p8 Sec.8,"Abell et al. (2009): 12 opportunities from 1200 candidates, 2020-2035. R71 (PDF restored from git 5dd58d5)"
+elvis2011,Survey requirement for target selection by 2020,"~10,000 discoveries/yr (10x the 2010 rate); Venus-like orbit survey, 3 synodic passes = 4.8 yr",,PDF p9 Sec.9,"LSST: 80% of NEOs > 140 m in 10 yr, 90% after 12 yr; ~20,000 objects/sq deg at R = 22.5 (p5). R71 (PDF restored from git 5dd58d5)"

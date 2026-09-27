@@ -1,0 +1,4 @@
+source_id,engine,vacuum_exhaust_speed_m_s,vacuum_thrust_kN,sea_level_thrust_kN,propellant_density_kg_l,mixture_ratio_mass,mixture_ratio_volume,location_in_source,notes
+pietrobon_1999_h2o2_kero_shuttle_boosters,RD-170,3305,7911,7259,1.025,2.60,1.81,PDF p4 Table 2,LOX/kerosene; RD-17X keeps RD-170 chamber pressure 25 MPa and expansion ratio 37; Isp = v/9.80665. R71 (PDF restored from git 5dd58d5)
+pietrobon_1999_h2o2_kero_shuttle_boosters,RD-17X,3016,9192,8545,1.306,7.30,4.08,PDF p4 Table 2,98% H2O2/kerosene (hypothetical RD-170 derivative); RD-17X keeps RD-170 chamber pressure 25 MPa and expansion ratio 37; Isp = v/9.80665. R71 (PDF restored from git 5dd58d5)
+pietrobon_1999_h2o2_kero_shuttle_boosters,SSME,4444,2091,1668,0.361,6.00,1/2.69,PDF p4 Table 2,LOX/LH2; RD-17X keeps RD-170 chamber pressure 25 MPa and expansion ratio 37; Isp = v/9.80665. R71 (PDF restored from git 5dd58d5)

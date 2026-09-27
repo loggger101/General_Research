@@ -1,0 +1,41 @@
+source_id,item,value,unit,location_in_source,notes
+carry2012,Density estimates by dynamical class,17 NEAs; 230 main-belt and Trojan asteroids; 12 comets; 28 TNOs (287 total),bodies,PDF p3 Sec.4; p13 Sec.7,Table 1 as parsed here has exactly these counts. R71 (PDF restored from git 5dd58d5)
+carry2012,Mass estimates compiled,994 for 267 small bodies (text),estimates,PDF p3 Sec.4; p27 Appendix A,Table A.1 as printed has 981 rows covering 279 designations; the stated 994 is not reproduced. R71
+carry2012,Diameter estimates compiled,1454 from 15 methods,estimates,PDF p5 Sec.4.2; p78 Table B.1,"Table B.1 as printed has 1454 rows, matching the text. R71"
+carry2012,Indirect density estimates,24 objects,estimates,PDF p3 Sec.4; p162 Table C.1,Table C.1 prints 33 rows for 25 distinct designations. R71
+carry2012,Mass estimates from orbit deflection during close encounters,547,estimates,PDF p4 Sec.4.1 item 1,about a third have uncertainties cruder than 100%. R71
+carry2012,Planetary-ephemeris mass accuracy,"mean 45%, up to 100%",relative uncertainty,PDF p4 Sec.4.1 item 2,R71
+carry2012,Spacecraft-tracking mass accuracy,a couple of percent (four bodies to date),relative uncertainty,PDF p4 Sec.4.1 item 3,R71
+carry2012,Satellite-orbit (binary) mass estimates,"68 (28 TNOs, 17 NEAs mostly radar, 26 MBAs optical)",estimates,PDF p4 Sec.4.1 item 4,typical accuracy about 10-15%. R71
+carry2012,Share of mass estimates discarded by selection,about 20%,fraction,PDF p4 Sec.4.1,Table A.1 marks 197 of 981 rows rejected (20.1%). R71
+carry2012,Share of diameter estimates discarded by selection,about 15%,fraction,PDF p6 Sec.4.2,Table B.1 marks 230 of 1454 rows rejected (15.8%). R71
+carry2012,Mass estimates more accurate than 20% / 50%,about half / no more than 70%,fraction,PDF p5 Sec.4.1,R71
+carry2012,Diameter from absolute magnitude,phi (km) = 1329 p^-0.5 10^(-0.2H),,PDF p5 Sec.4.2 item 1,used for 29 bodies with no other estimate (mostly TNOs). R71
+carry2012,Diameter estimates from thermal modelling,1233 of 1454 (about 85%),estimates,PDF p6 Sec.4.2 item 2,typical quoted uncertainty a few percent; realistic accuracy about 10% (Lim et al. 2010). R71
+carry2012,Single-geometry (occultation or imaging) diameter accuracy,typical 5% (may be optimistic),relative uncertainty,PDF p6 Sec.4.2 item 3,R71
+carry2012,Density uncertainty propagation,drho/rho = sqrt((dM/M)^2 + 9 (dphi/phi)^2),,PDF p6 Eq.1,R71
+carry2012,Limiting factor for density uncertainty (all estimates),"mass for 61% of objects, contributing about 72% of the density uncertainty",,PDF p6 Sec.4.2,"for estimates better than 20%, diameter limits 75% of objects (about 68% of the uncertainty). R71"
+carry2012,Rank definitions,A: better than 20% and >5 mass and >5 diameter estimates or a spacecraft encounter; B: <20%; C: 20-50%; D: 50-100%; E: cruder than 100%; cross: unrealistic,,PDF p7 Sec.4.3,"Table 1 has A 15, B 44, C 86, D 46, E 31 and 65 crossed. R71"
+carry2012,Macroporosity definition,"P (%) = 100 (1 - rho / rho_m), rho_m = analog meteorite bulk density (Table 2)",,PDF p7 Eq.2,meteorite association can shift P by 30-40%. R71
+carry2012,(16) Psyche macroporosity,about 18% here vs about 70-75% in Britt et al. 2002 and Consolmagno et al. 2008,%,PDF p7 Sec.4.3,iron-meteorite link; Table 1 prints 15 +/- 34 with analog Ata. R71
+carry2012,Density estimates per complex,C 109; S 50; X 50; end-members 15,estimates,PDF p7 Sec.5,end-members are about 20% of asteroids. R71
+carry2012,B-type vs other C-complex density,about 2.4 vs about 1.4,g/cm3,PDF p8 Sec.5 bullets; Sec.5.1,only (2) Pallas and (704) Interamnia are better than 20%. R71
+carry2012,X-complex density range,Xc about 4.9; X about 1.8; Xe about 2.6; Xc and Xk above 4,g/cm3,PDF p8 Sec.5; p10 Sec.5.3,R71
+carry2012,Silicate grain fracture pressure,about 10^7,Pa,PDF p8 Sec.5.1,reached within the first few km of large bodies; bodies below about 10^20 kg never reach it. R71
+carry2012,C-complex density-diameter correlation,"68% (18 asteroids better than 20%, without Ceres); S-complex 51% (13 asteroids)",correlation coefficient,PDF p8 Sec.5.1; p11 Fig.9 caption,R71
+carry2012,C-complex NEA vs MBA density,about 1.2 (7 NEAs) vs about 2 (53 MBAs),g/cm3,PDF p8 Sec.5.1,R71
+carry2012,D-type densities,"about 9 (three bodies), discarded",g/cm3,PDF p9 Sec.5.1,uncertainty range does not overlap any meteorite. R71
+carry2012,S-complex density range and macroporosity,about 2 to 3; macroporosity generally below 30%,g/cm3; %,PDF p9 Sec.5.2,"coherent, not rubble piles. R71"
+carry2012,A-type (354) Eleonora density,3.7 +/- 1.4,g/cm3,PDF p9 Sec.5.2,R71
+carry2012,V-type densities,"average about 1.9: (4) Vesta 3.6, (809) Lundia 1.6, (854) Frostia 0.9",g/cm3,PDF p9 Sec.5.2,Lundia and Frostia macroporosity above 50%. R71
+carry2012,Bodies more massive than 10^20 kg,"8 (Ceres, Pallas, Vesta, Quaoar, Orcus, Pluto, Haumea, Eris); densities 2 to 4; P about 0",,PDF p10 Sec.5.4,R71
+carry2012,Main-belt and Trojan bodies of 10^17 to 10^20 kg,75% of sample; diameters 50-400 km; densities 0.9-5.8; macroporosity up to 70%,,PDF p10 Sec.5.4,from (90) Antiope (most porous) to (46) Hestia (most compact). R71
+carry2012,Share of asteroids with density lower than 4 (all vs better than 20%),56% -> 16%,fraction,PDF p11 Sec.5.4,"printed as 'lower than 4'; the argument that follows is about densities above 4, so this is probably a typo for 'higher'. Recorded as printed. R71"
+carry2012,Densest NEA,"(433) Eros, about 3",g/cm3,PDF p11 Sec.5.4,NEAs are 6% of the sample. R71
+carry2012,TNO diameter sources,11 from apparent magnitude; 7 from an assumed density of 1.0; 10 direct,bodies,PDF p11 Sec.5.5,"5 better than 20%: 1999 TC36, Typhon, Orcus, Pluto, Eris. R71"
+carry2012,TNO densities by size,5 TNOs > about 1000 km: above 1.5; 5 other 100-km TNOs: about 0.5 (P >= 50%),g/cm3,PDF p11 Sec.5.5,R71
+carry2012,Comet mass range (text),10^14 to 10^17,kg,PDF p12 Sec.5.6,"read from the page image. Table 1's comet masses run from 1.9e11 (45P) to 3.5e14 (10P), so the printed range does not match the table. R71"
+carry2012,Comet densities,9 of 12 below 1; weighted average 0.47 +/- 0.25,g/cm3,PDF p12 Sec.5.6,below the 0.6 limit from rotation properties. R71
+carry2012,Gaia expected asteroid mass determinations,"about 50 asteroids better than 10%; about 350,000 small bodies observed, 50-60 epochs each",,PDF p12 Sec.6.2,R71
+carry2012,Volume precision needed to exploit a mass determination,below 10-15% (diameter to a few percent),relative uncertainty,PDF p12 Sec.6.3,(21) Lutetia's pre-flyby KOALA diameter was accurate to 2%. R71
+carry2012,Table 1 mass vs weighted mean of kept Table A.1 estimates,within 2% for 199 of 279 bodies,,computed here from Table A.1 and Table 1,"inverse-variance mean of non-daggered rows; the paper does not state its exact weighting, so use Table 1's value. R71"

@@ -1,0 +1,13 @@
+source_id,item,value,unit,location_in_source,notes
+lodders_2010_solar_abundances,Table 1 observed CI falls: Alais,"15 March 1806, France, 6 kg preserved",,PDF p6 Table 1,R71 (PDF restored from git 5dd58d5)
+lodders_2010_solar_abundances,Table 1 observed CI falls: Orgueil,"14 May 1868, France, 14 kg preserved",,PDF p6 Table 1,one of the best-analysed rocks; representative CI in Table 2. R71 (PDF restored from git 5dd58d5)
+lodders_2010_solar_abundances,Table 1 observed CI falls: Tonk,"22 Jan 1911, India, 10 g preserved",,PDF p6 Table 1,R71 (PDF restored from git 5dd58d5)
+lodders_2010_solar_abundances,Table 1 observed CI falls: Ivuna,"16 Dec 1938, Tanzania, 0.7 kg preserved",,PDF p6 Table 1,R71 (PDF restored from git 5dd58d5)
+lodders_2010_solar_abundances,Table 1 observed CI falls: Revelstoke,"31 March 1965, Canada, < 1 g preserved",,PDF p6 Table 1,only three falls have enough mass for study. R71 (PDF restored from git 5dd58d5)
+lodders_2010_solar_abundances,Table 4 present-day solar mass fractions (this work),Z/X 0.0191; X 0.7390; Y 0.2469; Z 0.0141; A(He) 10.925,,PDF p28 Table 4,"A05/G07: 0.0165, 0.7383, 0.2495, 0.0122, 10.93; GS98: 0.0231, 0.7347, 0.2483, 0.0169, 10.93. R71 (PDF restored from git 5dd58d5)"
+lodders_2010_solar_abundances,"Table 5 present-day solar composition, mass % (this work)",H 73.90; He 24.69; O 0.63; C 0.22; Ne 0.17; Fe 0.12; N 0.07; Si 0.07; Mg 0.06; S 0.03; all others 0.04; Z 1.41,mass %,PDF p29 Table 5,A05/G07 Z 1.22; GS98 Z 1.69; about half of Z is O. R71 (PDF restored from git 5dd58d5)
+lodders_2010_solar_abundances,Table 7 protosolar mass fractions (this work),Z0/X0 0.0215; X0 0.7112; Y0 0.2735; Z0 0.0153; A(He)0 10.986,,PDF p33 Table 7,"A05/G07 0.0185, 0.7133, 0.2735, 0.0132, 10.985; GS98 0.0231, 0.7086, 0.2750, 0.0163, 10.99; AG89 0.0267, 0.7068, 0.2743, 0.0189, 10.99. R71 (PDF restored from git 5dd58d5)"
+lodders_2010_solar_abundances,Present-day to protosolar conversion,A(He)0 = A(He) + 0.061; A(X)0 = A(X) + 0.053 = log N(X) + 1.586 for heavier elements,dex,PDF p30 Sec.5,settling lowered heavy elements ~13% and He ~15% over the Sun's life. R71 (PDF restored from git 5dd58d5)
+lodders_2010_solar_abundances,Astronomical-cosmochemical scale conversion constant,1.533,dex,"PDF p20-21, p24",present-day scale; the protosolar constant is 1.586. R71 (PDF restored from git 5dd58d5)
+lodders_2010_solar_abundances,Hydrogen mass fraction adopted,X = 0.739 (Basu & Antia 2004: 0.7389 +/- 0.0034),,PDF p28 Sec.4,R71 (PDF restored from git 5dd58d5)
+lodders_2010_solar_abundances,Table 8 check,atom% sums to 100 for every element; isotope N sums match Table 6 within 2% (Tb within rounding),,computed here from Tables 6 and 8,287 nuclides. R71 (PDF restored from git 5dd58d5)

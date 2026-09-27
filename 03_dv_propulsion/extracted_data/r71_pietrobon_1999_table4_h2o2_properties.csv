@@ -1,0 +1,9 @@
+source_id,property,value,unit,location_in_source,notes
+pietrobon_1999_h2o2_kero_shuttle_boosters,Molecular weight,34.016,,PDF p8 Table 4,"pure H2O2 at 20 C, 1 atm; R71 (PDF restored from git 5dd58d5)"
+pietrobon_1999_h2o2_kero_shuttle_boosters,Freezing point,-0.4,C,PDF p8 Table 4,"pure H2O2 at 20 C, 1 atm; R71 (PDF restored from git 5dd58d5)"
+pietrobon_1999_h2o2_kero_shuttle_boosters,Boiling point,150.2,C,PDF p8 Table 4,"pure H2O2 at 20 C, 1 atm; R71 (PDF restored from git 5dd58d5)"
+pietrobon_1999_h2o2_kero_shuttle_boosters,Density,1.4425,kg/l,PDF p8 Table 4,"pure H2O2 at 20 C, 1 atm; R71 (PDF restored from git 5dd58d5)"
+pietrobon_1999_h2o2_kero_shuttle_boosters,Heat of formation,-187.8,kJ/mol,PDF p8 Table 4,"pure H2O2 at 20 C, 1 atm; R71 (PDF restored from git 5dd58d5)"
+pietrobon_1999_h2o2_kero_shuttle_boosters,Heat capacity,2.63,kJ/kg K,PDF p8 Table 4,"pure H2O2 at 20 C, 1 atm; R71 (PDF restored from git 5dd58d5)"
+pietrobon_1999_h2o2_kero_shuttle_boosters,Thermal conductivity,569.4,W/K m (as printed),PDF p8 Table 4,"pure H2O2 at 20 C, 1 atm; printed unit W/Km is presumably mW/(m K): pure H2O2 conducts about 0.57 W/(m K); R71 (PDF restored from git 5dd58d5)"
+pietrobon_1999_h2o2_kero_shuttle_boosters,Viscosity,1.249,mPa s,PDF p8 Table 4,"pure H2O2 at 20 C, 1 atm; R71 (PDF restored from git 5dd58d5)"

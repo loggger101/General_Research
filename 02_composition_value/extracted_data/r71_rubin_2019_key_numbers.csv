@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+rubin_2019_67p_abundances,Whole-mission relative losses (Lauter et al. 2019),CO2/H2O (5.9 +/- 3.0)e-2; CO/H2O (2.3 +/- 1.0)e-2; O2/H2O (1.6 +/- 0.7)e-2,ratio,PDF p14 Sec.3,"DSMC (Combi et al. in prep.): 7.4e-2, 2.7e-2, 1.6e-2; whole-mission CO2/H2O about 25% higher than May 2015. R71 (PDF restored from git 5dd58d5)"
+rubin_2019_67p_abundances,"S/O from H2O, CO2, CO, O2 only (Calmonte et al. 2016)",1.47e-2,ratio,PDF p16 Sec.3,Table 3 uses all O-bearing molecules: 1.55e-2. R71 (PDF restored from git 5dd58d5)
+rubin_2019_67p_abundances,COSIMA dust matter similar to insoluble organic matter,45% by weight,fraction,PDF p16 Sec.3,Fray et al. 2016. R71 (PDF restored from git 5dd58d5)
+rubin_2019_67p_abundances,Dust-to-gas ratio in the coma,about 1 (ROSINA); (D/I =) D/G = 4 +/- 2 (Rotundi et al. 2015),,PDF p18 Sec.4,1P/Halley analysis assumed D/G = D/I = 0.5. R71 (PDF restored from git 5dd58d5)
+rubin_2019_67p_abundances,1P/Halley CO relative to water,> 10%,,PDF p20 Sec.4,67P has less CO. R71 (PDF restored from git 5dd58d5)
+rubin_2019_67p_abundances,Bulk elemental pattern,near-solar O/Si and C/Si; H and N depleted vs solar; C and N mostly in refractories,,PDF p1 abstract; p19-20,Table 1 (DFMS calibration factors) not extracted: instrument sensitivities with no pipeline use. R71 (PDF restored from git 5dd58d5)

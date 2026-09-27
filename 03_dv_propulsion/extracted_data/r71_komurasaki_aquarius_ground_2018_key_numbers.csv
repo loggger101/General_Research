@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+komurasaki_aquarius_ground_2018,AQUARIUS heating specification,+100,K,PDF p2 Table 1,superheat added to the water vapour; rest of Table 1 already in unhosted_sources_key_numbers. R71 (PDF restored from git 5dd58d5)
+komurasaki_aquarius_ground_2018,AQUARIUS thruster heads,2 delta-V heads and 4 RCS heads,,PDF p2 Sec.2,"bladder tank, pressurant gas < 100 kPa (EM nominal < 60 kPa). R71"
+komurasaki_aquarius_ground_2018,Engineering-model tank + vaporization chamber dry mass,1.2,kg,PDF p4 Sec.5.1,eight thruster valves in the vaporization chamber. R71
+komurasaki_aquarius_ground_2018,Nozzle throat diameters,1.2 mm (RCS); 2.6 mm (delta-V),mm,PDF p4 Sec.5.2,"BBM vaporization-chamber nozzle: 1.2 mm throat, expansion ratio 4.0 (p2). R71"
+komurasaki_aquarius_ground_2018,Pre-heater flow path,"4 mm diameter, ~130 mm long, 3D-printed aluminium",,PDF p4 Sec.5.2,pre-heater held at ~100 C in the BBM test. R71
+komurasaki_aquarius_ground_2018,BBM vaporization-chamber endurance,stable for more than a couple of hours without freezing,,PDF p3 Sec.4.1,vaporization chamber 40 mm diameter x 30 mm deep. R71
+komurasaki_aquarius_ground_2018,Thrust-stand sensitivity,10,uN,PDF p3 Sec.3.2.1,vacuum chamber 1.0 m diameter x 1.7 m. R71
+komurasaki_aquarius_ground_2018,High-pressure gas share of MIPS propulsion system mass,45% of a 10 kg system,,PDF p1 Sec.1,motivation for a sub-100 kPa water system. R71
+komurasaki_aquarius_ground_2018,Cost of using toxic propellant on small satellites,"more than $1M (hardware, operations, ground support, transport)",USD,PDF p1 Sec.1,R71

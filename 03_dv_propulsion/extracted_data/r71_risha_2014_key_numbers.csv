@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+risha_2014_alice_jpp,ALICE linear burning rate law (phi = 0.71),r_b [cm/s] = 0.602 P[MPa]^0.785,,PDF p5 Fig.6,4.8 cm/s at 10.7 MPa (abstract); hand- and machine-mixed agree. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Composite propellant burning rate laws,"AP/HTPB: 0.66 P^0.25; AP/Al/HTPB: 0.48 P^0.44 (cm/s, MPa)",,PDF p5 Fig.7,R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,nAl/ice (phi 0.943) vs nAl/liquid water (phi 1.0) burning rate,"0.992 P^0.405 vs 1.2 P^0.27 (cm/s, MPa)",,PDF p5 Fig.8,exponent 0.41 -> 0.27 when water is liquid. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,ALICE propellant density,1.44 +/- 0.03 (hand mixed); 1.48 (acoustic mixer),g/cm3,PDF p3-5,stored at -30 C; no degradation after months frozen. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Active aluminium content,77-79% as received; 74.5% after >= 48 h air passivation,%,PDF p2-3 Sec.II.A,"80 nm particles ~3 g/cm3 incl. oxide; BET 26.6 m2/g as received, 22.8 m2/g after > 200 h. R71 (PDF restored from git 5dd58d5)"
+risha_2014_alice_jpp,Equivalence-ratio choice,Isp at phi 0.71 is 3% higher than at 0.943 (theory); experiments (Connell et al.) favour 0.943,,PDF p5; p9,R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Ignition threshold,chamber pressure above ~2-3 atm (40 psig) plus sufficient heating; otherwise a low-pressure hydrogen generator,,PDF p6 Sec.III.B.1,"end-burner average burning rate 1.7 cm/s at 3.97 MPa, ~6% below strand value. R71 (PDF restored from git 5dd58d5)"
+risha_2014_alice_jpp,Thrust scaling,F ~ a D^n with n = 1.4 (ideal 1); total impulse ~25 N s (1.91 cm) rising ~22x at 7.62 cm,,PDF p8 Sec.III.B.3,"average peak thrust 142, 307 and 992 N (Fig.16); Table 7 lists 908 N for the 7.62 cm motor, and the abstract says 'above 992 N'. R71 (PDF restored from git 5dd58d5)"
+risha_2014_alice_jpp,Previous refrigerated solid propellant (Franson et al.),"13% chamber residue, 17% of Al unburned; 2 MPa achieved",,PDF p1 Sec.I,water 60-70% of the mixture. R71 (PDF restored from git 5dd58d5)
+risha_2014_alice_jpp,Conclusion on viability,ALICE in its current form is not viable for practical propulsion,,PDF p9 Sec.IV,AP-HTPB motors reach ~90% efficiency at the same scale. R71 (PDF restored from git 5dd58d5)

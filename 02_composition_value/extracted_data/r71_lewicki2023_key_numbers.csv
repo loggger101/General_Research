@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+lewicki2023,Main-belt iron relative to known terrestrial resources,about 10 million times,ratio,PDF p2 (Asteroid Resources),citing Lewis 1996 and Elvis & Milligan 2019. R71 (PDF restored from git 5dd58d5)
+lewicki2023,Share of NEOs rich in hydrated minerals,only a few percent,fraction,PDF p4 SKG 1,citing Rivkin & DeMeo 2018 (JGR Planets). R71
+lewicki2023,Resource-confidence ladder applied to asteroids,Inferred -> Indicated -> Measured; feasibility Order of Magnitude -> Preliminary -> Detailed; asteroid resources mostly at Order of Magnitude,,PDF p4 SKG 2; p1 cover figure,"virtually all off-Earth resources are only Inferred or Indicated, insufficient for economic viability estimates. R71"
+lewicki2023,Technology development horizon,"> 5 years, too long for most investors",yr,PDF p2,near-term hurdles are mostly financial. R71
+lewicki2023,Current small-body visit rate,about one small body every two years,,PDF p5 Sec.IV,smallsats could enable NEO missions by the dozen in the 2030s. R71
+lewicki2023,NEO discovery completeness expected by 2032,essentially complete down to ~50 m diameter (NEOSM + Vera Rubin Observatory),m,PDF p6 [2],R71
+lewicki2023,Geoscientists supported by economic geology,up to 95%,fraction,PDF p5 Sec.IV,US Bureau of Labor Statistics. R71
