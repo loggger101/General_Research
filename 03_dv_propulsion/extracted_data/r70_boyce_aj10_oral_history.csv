@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+boyce_aj10_oral_history,SPS injector inlet pressure / required injector drop,165 psia / at least 40 psi,,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+boyce_aj10_oral_history,SPS nozzle materials,"columbium to ~40:1 area ratio, titanium to the 62:1 exit; radiation cooling from ~6:1",,PDF p8; p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+boyce_aj10_oral_history,SPS restart gas capacity,nitrogen for about eighty restarts,,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+boyce_aj10_oral_history,SPS stability development,240-250 bomb tests; five-baffle injector,,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+boyce_aj10_oral_history,SPS combustion efficiency target,~98%,,PDF p12,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+boyce_aj10_oral_history,SPS development and qualification hot-fire total,about twenty-eight hours,,PDF p12,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; most-started engines: 8 starts each, 6,000 s total on three engines (p11)"
+boyce_aj10_oral_history,Specified failure rate for a component,one failure in 5 million starts,,PDF p12,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

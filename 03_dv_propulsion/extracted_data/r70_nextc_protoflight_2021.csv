@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+nextc_protoflight_2021,"NEXT-C post-environmental repeatability, TL29 / TL28 / ETL2.7A / TL05 (average of PaT and two FuTs)",Isp 3347 / 3128 / 3031 / 2443 s; thrust 146.7 / 136.4 / 130.7 / 48.9 mN; power 3.627 / 3.213 / 2.991 / 1.127 kW,,PDF p9 Table 5,R70: read from the rendered page image of the hosted PDF 2026-09-26 (scan or table without a usable text layer); each value checked against its row label; CoV <= 1.42% on every parameter: vibration and TVAC did not change performance
+nextc_protoflight_2021,NEXT-C discharge losses at TL29 / TL28 / ETL2.7A / TL05 (PaT),145.1 / 150.7 / 153.2 / 214.0,W/A,PDF p9 Table 6,R70: read from the rendered page image of the hosted PDF 2026-09-26 (scan or table without a usable text layer); each value checked against its row label
+nextc_protoflight_2021,NEXT-C thruster first three fundamental frequencies,211 / 248 / 366,Hz,PDF p12,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+nextc_protoflight_2021,DART spacecraft mass at impact (as stated pre-launch),>300,kg,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+nextc_protoflight_2021,NEXT program heritage power range requirement,5 to 10,kW,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

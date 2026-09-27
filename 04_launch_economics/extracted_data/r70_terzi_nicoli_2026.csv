@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+terzi_nicoli_2026,Wright-law fit of launch cost vs cumulative payload,R2 0.791 overall; 0.953 since 2000; elasticity 0.34% cost fall per 1% more cumulative payload,,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; = 21.2% per doubling"
+terzi_nicoli_2026,Moore-law (time) fit,"R2 0.739 overall, 0.914 this century; average cost fall 2.9% per year",,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+terzi_nicoli_2026,Within-rocket-family learning rate,~6% per doubling of family cumulative payload; ~8% post-Cold War,,PDF p5 Table S2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; most of the decline since the 1990s is reallocation to cheaper rockets, not within-family learning"
+terzi_nicoli_2026,Cost per kg after the 1960s Moon race,"~20,000",USD/kg (2024 USD),PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+terzi_nicoli_2026,Comparison experience curves,solar PV 130 USD/W (1975) to 0.31 USD/W (2023); 19th-century cotton/wheat freight 15.5% per doubling (R2 0.559),,PDF p5-6,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+terzi_nicoli_2026,Conservative (ETS) scenario,cost 45% below current by 2030 and 75% below by 2040,,PDF p6,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+terzi_nicoli_2026,Payload-to-orbit growth,31% per year since 2020 vs 4% per year 2000-2019,,PDF p7,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+terzi_nicoli_2026,Central-scenario launch capacity in 2030,"9,100 t/yr to LEO (~80 Starship flights)",t/yr,PDF p7,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+terzi_nicoli_2026,Starship expected day-one cost with full reuse,"~1,000",USD/kg,PDF p7,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+terzi_nicoli_2026,"Space economy size, 2024",over 600,billion USD,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

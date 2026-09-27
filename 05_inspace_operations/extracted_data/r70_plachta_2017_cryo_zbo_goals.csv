@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+plachta_2017_cryo_zbo_goals,90 K broad-area-cooled shield on an LH2 tank (reduced boil-off test),MLI heat reduced 55%; boil-off reduced 67% where penetration straps were cooled; 60% overall boil-off reduction,%,PDF p7,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+plachta_2017_cryo_zbo_goals,90 K-class cryocooler lift requirement,100-150 W (worst-case Mars surface heat loads just under 100 W per tank for ascent and descent stages),W,PDF p9,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+plachta_2017_cryo_zbo_goals,Mars ISRU oxygen liquefaction requirement,"just under 2.2 kg/hr O2, ~250 W of cryocooler lift",,PDF p9,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+plachta_2017_cryo_zbo_goals,20 K-20 W cryocooler compressor efficiency,60% net vs 40% legacy induction-motor compressors (33% less input power),%,PDF p10,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+plachta_2017_cryo_zbo_goals,Propellant normal boiling points at 25 psi,LO2 95.6 K; LCH4 118.4 K; LH2 22.3 K,K,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+plachta_2017_cryo_zbo_goals,Test tank for RBO/ZBO integration,~7 m2 surface area; vacuum chamber with cryoshroud,,PDF p6; p8,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

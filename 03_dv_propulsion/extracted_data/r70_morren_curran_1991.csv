@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+morren_curran_1991,Arcjet performance test matrix limits,anode housing would exceed 1400 C at 3e-5 kg/s above 1.5 kW; arc voltage would exceed 130 Vdc at 5e-5 kg/s below 1.5 kW,,PDF p15 Table I,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+morren_curran_1991,Hydrazine arcjet Isp demonstrated before this work,450 to 500,s,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; program goal 600 s at 2-5 kW (p3)"
+morren_curran_1991,Arcjet electrode material,2% thoriated tungsten cathode and anode,,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

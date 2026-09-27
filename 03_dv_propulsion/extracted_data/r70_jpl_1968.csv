@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+jpl_1968,Hydrazine density,1.0045 at 25 C,g/cm3,PDF p11 Table 1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jpl_1968,Hydrazine melting / boiling point,+34.7 / +236,deg F at 1 atm,PDF p11 Table 1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; the high freezing point is its main disadvantage (p12)"
+jpl_1968,Hydrazine heat of formation / heat of vaporization,12.05 kcal/mol / 54.0 Btu/lbm at 236 F,,PDF p11 Table 1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jpl_1968,Delivered hydrazine monopropellant Isp at 50:1 area ratio,230-235,lbf-s/lbm (s),PDF p19,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; minimum 95% of theoretical is achievable"
+jpl_1968,Shell 405 catalyst iridium content,slightly over 30,wt% of catalyst,PDF p12,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; production ~100 lbm/yr, iridium supply for ~1000 lbm/yr (p13)"
+jpl_1968,Hydrazine thruster size range (1968),0.5 lbf (continuous lower limit) to 300 lbf built; 1500 lbf designs,lbf,PDF p17,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; throttled 10:1 (50 to 5 lbf); chamber pressure mostly < 300 psia"
+jpl_1968,Pulse-mode life demonstrated,"several hundred thousand pulses, ~50,000 s (14 h) total on-time",,PDF p21,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jpl_1968,Uncooled chamber wall temperature,1700-2000,deg F,PDF p21,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; decomposition gas ~1800 F (p15)"
+jpl_1968,Start response with warm bed,10-20,ms,PDF p20,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jpl_1968,Practical minimum ammonia dissociation,~40,%,PDF p15,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; Shell 405 reactors ~55% minimum for smooth operation (p19)"
+jpl_1968,Ranger-Mariner midcourse engine,"50 lbf, nominal 100 s run at 190 psia",,PDF p24-25,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

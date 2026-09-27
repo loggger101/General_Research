@@ -1,0 +1,4 @@
+source_id,generator,status,gphs_modules,converter,bol_power_W,eodl_power_17yr_W,bol_efficiency_pct,degradation_pct_per_yr,bol_specific_power_W_per_kg,waste_heat_W,mmod_tolerance,location_in_source,notes
+schmitz_2023_rps_vs_solar_array_comparison,MMRTG,available,8,PbTe,124,70,6.2,3.8,2.7,1876,Low,PDF p4 table,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+schmitz_2023_rps_vs_solar_array_comparison,NextGen RTG Mod-1,projected (small deviation from GPHS-RTG),16,SiGe,245,177,6.1,1.9,4.4,3755,High,PDF p4 table,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+schmitz_2023_rps_vs_solar_array_comparison,DRPS,projected (new converters),6,Stirling,351,283,23.4,1.2,3.7,1149,Medium,PDF p4 table,"R70 full-extraction pass, read from the hosted PDF 2026-09-27; the p12 chart legend uses MMRTG 2.5 W/kg, DRPS 3.7, NextGen Mod-1 4.1 W/kg"

@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+ryugu_hydrated_2023,Ryugu grain average microporosity (synchrotron nanotomography),~28,%,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; Itokawa grains 1.9%"
+ryugu_hydrated_2023,Calculated dry / wet solidus of Ryugu material at ~1e5 Pa,862 / 867,deg C,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+ryugu_hydrated_2023,"Grains (<100 um) with space-weathering features, TD1 / TD2",~6 / ~7,%,PDF p2; p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; vs ~66% (4 of 6) of millimetre-sized grains"
+ryugu_hydrated_2023,"Frothy (impact-melt) layers, TD1 / TD2 grains",~1 / ~2,%,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+ryugu_hydrated_2023,Smooth (solar-wind) layer thickness,seldom exceeds ~100,nm,PDF p2-4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; present on ~5% (TD1) and ~3% (TD2) of grains"
+ryugu_hydrated_2023,2.7 um OH band depth inside the TD2 artificial crater vs surface standard,~5% stronger,,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; subsurface retains more -OH"
+ryugu_hydrated_2023,C-type asteroids lacking the 2.7 um band,~40,%,PDF p6,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; authors attribute this at least partly to space-weathering dehydration, so remote spectra can understate water"
+ryugu_hydrated_2023,Solar-heating dehydration depth that would be needed,10 to 100,cm,PDF p6,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; not observed, so heating is excluded"

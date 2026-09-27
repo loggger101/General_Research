@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2023_ig-24-001_sls_epoc_transition,NASA strategy to cut SLS production/operations/maintenance cost per flight,"50% per flight via affordability initiatives, 2 flights/yr under DST, and a commercial-services contract",,PDF p22 (printed p16) Table 2,"R70: read from the rendered page image of the hosted PDF 2026-09-26; OIG: major contracts still cost-plus, no customers outside NASA, sole-source leverage"
+nasa_oig_2023_ig-24-001_sls_epoc_transition,Artemis I cost increase from 4 years of delays (cost-reimbursable development),$4.3 billion,USD,PDF p17,R70: read from the rendered page image of the hosted PDF 2026-09-26
+nasa_oig_2023_ig-24-001_sls_epoc_transition,SLS upper stage configuration,ICPS with one RL10 for Artemis I-III; EUS with four RL10s from Block 1B,,PDF p5 text,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+stackpoole_2013_pica_pica_x_postflight_eval,Stardust PICA forebody heatshield peak heat flux / peak heat load,1000 W/cm2 / 28 kJ/cm2,,PDF p1 table,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; single-piece heatshield, peak at stagnation point"
+stackpoole_2013_pica_pica_x_postflight_eval,Dragon-1 PICA-X peak heat flux,"~50 W/cm2 (windward shoulder, tiled)",W/cm2,PDF p1 table,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; Earth-orbit entry vs Stardust 12.9 km/s return"
+stackpoole_2013_pica_pica_x_postflight_eval,Salt contamination of Dragon-1 outer char after ocean landing,~25% of surface char mass,%,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; after correcting for salt the density profile matches Stardust PICA"

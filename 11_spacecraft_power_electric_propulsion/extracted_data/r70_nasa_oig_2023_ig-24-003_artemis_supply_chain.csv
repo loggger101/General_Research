@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2023_ig-24-003_artemis_supply_chain,Artemis obligations FY2012-2022,"~40 B USD to 860 contractors (nearly 6 B in FY2022); 17 major primes hold 23 contracts; 11 cost-reimbursement, 12 fixed-price",,PDF p7; p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+nasa_oig_2023_ig-24-003_artemis_supply_chain,Critical At-Risk Industrial Technology List (CARITL),"63 items (e.g. valves, helium, liquid hydrogen)",items,PDF p10,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+nasa_oig_2023_ig-24-003_artemis_supply_chain,SLS Block 1B payload gain,40% more payload to the Moon than Block 1,%,PDF p8,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"

@@ -1,0 +1,372 @@
+source_id,asteroid_number,name,provisional_designation,bus_demeo_class,observation_date,ref_code,location_in_source
+bus_demeo_2020_pds_taxonomy_bundle,1,Ceres,,C,2005-05-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2,Pallas,,B,2001-03-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3,Juno,,Sq,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4,Vesta,,V,2000-10-09,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5,Astraea,,S,2004-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,7,Iris,,S,2004-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,8,Flora,,Sw,2002-09-16,b,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,10,Hygiea,,C,2004-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,11,Parthenope,,Sq,2005-11-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,13,Egeria,,Ch,2005-05-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,14,Irene,,S,2001-05-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,15,Eunomia,,K,2004-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,16,Psyche,,Xk,2000-10-09,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,17,Thetis,,S,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,18,Melpomene,,S,2001-06-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,19,Fortuna,,Ch,2006-01-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,20,Massalia,,S,2001-06-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,21,Lutetia,,Xc,2004-09-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,22,Kalliope,,X,2006-10-25,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,24,Themis,,C,2005-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,25,Phocaea,,S,2001-01-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,26,Proserpina,,S,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,27,Euterpe,,S,2004-09-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,28,Bellona,,S,2002-01-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,29,Amphitrite,,S,2001-01-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,30,Urania,,S,2000-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,32,Pomona,,Sw,2001-01-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,33,Polyhymnia,,S,2002-03-06,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,34,Circe,,Ch,2004-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,37,Fides,,S,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,38,Leda,,Cgh,2003-07-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,39,Laetitia,,Sqw,2001-08-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,40,Harmonia,,S,2004-10-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,41,Daphne,,Ch,2008-05-10,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,42,Isis,,K,2001-06-21,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,43,Ariadne,,Sq,2005-11-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,48,Doris,,Ch,2005-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,49,Pales,,Ch,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,50,Virginia,,Ch,2003-07-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,51,Nemausa,,Cgh,2004-06-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,52,Europa,,C,2006-06-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,54,Alexandra,,Cgh,2002-10-27,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,55,Pandora,,Xk,2006-01-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,56,Melete,,Xk,2004-09-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,57,Mnemosyne,,S,2002-06-01,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,58,Concordia,,Ch,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,61,Danae,,S,2000-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,63,Ausonia,,Sw,2003-09-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,64,Angelina,,Xe,2001-01-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,65,Cybele,,Xk,2003-09-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,66,Maja,,Ch,2005-11-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,67,Asia,,S,2004-06-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,69,Hesperia,,Xk,2005-05-11,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,70,Panopaea,,Cgh,2002-09-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,73,Klytia,,S,2003-10-16,"b,c",bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,76,Freia,,C,2005-09-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,77,Frigga,,Xe,2006-10-25,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,78,Diana,,Ch,2005-10-31,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,82,Alkmene,,S,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,84,Klio,,Ch,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,85,Io,,C,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,87,Sylvia,,X,2005-09-04,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,90,Antiope,,C,2005-09-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,92,Undina,,Xk,2000-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,93,Minerva,,C,2003-04-27,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,96,Aegle,,T,2006-01-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,97,Klotho,,Xc,2005-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,99,Dike,,Xk,2005-11-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,101,Helena,,S,2006-12-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,103,Hera,,S,2001-08-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,105,Artemis,,Ch,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,106,Dione,,Cgh,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,108,Hecuba,,Sw,2002-03-06,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,110,Lydia,,Xk,2001-01-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,111,Ate,,Ch,2004-09-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,114,Kassandra,,K,2006-06-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,115,Thyra,,S,2002-03-06,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,119,Althaea,,S,2001-06-21,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,128,Nemesis,,C,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,130,Elektra,,Ch,2001-03-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,131,Vala,,K,2006-07-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,132,Aethra,,Xe,2005-09-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,133,Cyrene,,S,2001-06-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,147,Protogeneia,,C,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,150,Nuwa,,C,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,151,Abundantia,,Sw,2005-11-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,153,Hilda,,X,2005-05-10,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,158,Koronis,,S,2003-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,160,Una,,Xk,2003-07-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,170,Maria,,S,2001-06-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,175,Andromache,,Cg,2005-11-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,180,Garumna,,Sr,2002-09-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,181,Eucharis,,Xk,2003-09-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,188,Menippe,,S,2002-04-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,191,Kolga,,Cb,2005-04-12,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,192,Nausikaa,,Sw,2006-04-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,199,Byblis,,D,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,201,Penelope,,Xk,2004-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,205,Martha,,Ch,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,210,Isabella,,Cb,2005-11-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,214,Aschera,,Cgh,2004-10-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,216,Kleopatra,,Xe,2002-06-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,221,Eos,,K,2000-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,226,Weringia,,S,2002-03-06,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,233,Asterope,,Xk,2002-09-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,234,Barbara,,L,2006-12-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,236,Honoria,,L,2006-05-01,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,237,Coelestina,,Sr,2002-04-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,243,Ida,,Sw,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,244,Sita,,Sw,2001-03-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,246,Asporina,,A,2005-03-09,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,250,Bettina,,Xk,2003-10-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,258,Tyche,,S,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,264,Libussa,,S,2005-05-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,266,Aline,,Ch,2005-09-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,267,Tirza,,D,2003-08-02,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,269,Justitia,,D,2005-05-11,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,278,Paulina,,S,2002-05-31,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,279,Thule,,D,2005-01-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,288,Glauke,,S,2002-09-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,289,Nenetta,,A,2000-09-04,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,295,Theresia,,Sw,2002-09-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,308,Polyxo,,T,2005-04-18,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,322,Phaeo,,D,2002-09-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,337,Devosa,,Xk,2002-09-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,345,Tercidina,,Ch,2005-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,346,Hermentaria,,S,2002-05-31,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,349,Dembowska,,R,2001-06-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,352,Gisela,,Sw,2001-06-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,354,Eleonora,,A,2002-04-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,359,Georgia,,Xk,2001-01-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,371,Bohemia,,S,2001-08-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,378,Holmia,,S,2002-04-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,387,Aquitania,,L,2003-04-27,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,389,Industria,,S,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,402,Chloe,,L,2001-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,403,Cyane,,S,2003-04-27,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,433,Eros,,Sw,2002-08-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,434,Hungaria,,Xe,2001-08-23,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,444,Gyptis,,C,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,446,Aeternitas,,A,2001-08-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,453,Tea,,Sw,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,456,Abnoba,,S,2002-06-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,460,Scania,,L,2002-06-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,485,Genua,,S,2002-03-06,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,512,Taurinensis,,Sqw,2004-10-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,513,Centesima,,K,2001-03-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,532,Herculina,,S,2001-06-21,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,570,Kythera,,D,2004-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,579,Sidonia,,K,2001-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,596,Scheila,,T,2002-06-01,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,599,Luisa,,L,2001-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,606,Brangane,,L,2002-09-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,625,Xenia,,Sw,2001-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,631,Philippina,,S,2002-09-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,653,Berenike,,K,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,661,Cloelia,,K,2003-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,670,Ottegebe,,S,2002-09-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,673,Edda,,L,2001-06-21,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,675,Ludmilla,,Sw,2002-04-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,679,Pax,,L,2001-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,688,Melanie,,C,2002-09-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,699,Hela,,S,2005-01-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,706,Hirundo,,Cgh,2006-01-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,716,Berkeley,,S,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,719,Albert,,S,2001-08-23,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,720,Bohlinia,,Sq,2000-10-09,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,729,Watsonia,,L,2001-08-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,739,Mandeville,,Xc,2002-09-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,742,Edisona,,K,2003-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,773,Irmintraud,,T,2004-09-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,776,Berbericia,,Cgh,2005-04-12,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,782,Montefiore,,Sw,2001-06-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,785,Zwetana,,Cb,2005-05-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,789,Lena,,Xk,2002-08-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,793,Arizona,,S,2002-09-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,808,Merxia,,Sr,2001-08-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,824,Anastasia,,L,2001-08-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,832,Karin,,S,2003-07-05,e,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,847,Agnia,,S,2001-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,863,Benkoela,,A,2002-01-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,908,Buda,,D,2006-07-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,913,Otila,,Sw,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,925,Alphonsina,,S,2002-09-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,929,Algunde,,S,2001-06-21,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,944,Hidalgo,,D,2004-09-22,e,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,984,Gretia,,Sa,2002-09-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,985,Rosina,,S,2005-05-11,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1011,Laodamia,,Sw,2002-01-12,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1020,Arcadia,,Sr,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1036,Ganymed,,S,2005-03-09,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1065,Amundsenia,,S,2005-03-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1094,Siberia,,Xk,2003-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1126,Otero,,Sw,2001-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1131,Porzia,,S,2005-05-11,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1139,Atami,,Sw,2005-09-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1143,Odysseus,,D,2005-06-10,b,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1147,Stavropolis,,Sw,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1148,Rarahu,,K,2001-03-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1198,Atlantis,,Sw,2002-10-28,b,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1204,Renzia,,Sw,2005-03-10,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1228,Scabiosa,,Sr,2003-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1300,Marcelle,,Cgh,2006-10-25,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1329,Eliane,,Sqw,2002-08-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1332,Marconia,,L,2005-06-10,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1350,Rosselia,,S,2001-06-21,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1374,Isora,,Sq,2004-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1433,Geramtina,,S,2002-08-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1459,Magnya,,Vw,2001-02-20,b,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1471,Tornio,,D,2005-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1494,Savo,,Sqw,2006-10-25,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1508,Kemi,,B,2004-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1542,Schalen,,D,2005-04-18,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1565,Lemaitre,,S,2005-03-03,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1620,Geographos,,S,2001-01-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1640,Nemo,,S,2005-03-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1642,Hill,,S,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1658,Innes,,Sw,2001-01-30,c,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1659,Punkaharju,,S,2002-03-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1660,Wood,,S,2005-03-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1662,Hoffmann,,Sr,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1667,Pels,,Sw,2002-10-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1685,Toro,,Sq,2002-05-08,h,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1751,Herget,,S,2001-06-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1807,Slovakia,,Sqw,2004-09-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1839,Ragazza,,S,2001-03-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1848,Delvaux,,S,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1858,Lobachevskij,,S,2002-04-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1862,Apollo,,Q,2005-11-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1864,Daedalus,,Sq,2001-03-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1866,Sisyphus,,Sw,2006-11-21,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1903,Adzhimushkaj,,K,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1904,Massevitch,,V,2000-09-04,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1916,Boreas,,Sw,2001-08-14,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1929,Kollaa,,V,2001-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1943,Anteros,,Sw,2002-01-12,"g,h",bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,1980,Tezcatlipoca,,Sw,2006-10-25,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2035,Stearns,,Xe,2002-10-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2042,Sitarski,,Sr,2001-08-23,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2045,Peking,,V,2002-01-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2063,Bacchus,,Sq,2005-05-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2064,Thomsen,,Sqw,2006-06-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2074,Shoemaker,,Sw,2003-09-30,b,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2085,Henan,,L,2002-04-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2099,Opik,,Ch,2005-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2107,Ilmari,,Sw,2006-01-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2157,Ashbrook,,S,2003-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2246,Bowell,,D,2005-04-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2335,James,,S,2005-10-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2353,Alva,,S,2002-05-31,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2354,Lavrov,,L,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2378,Pannekoek,,Cgh,2005-05-11,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2386,Nikonov,,S,2002-06-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2396,Kochi,,S,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2401,Aehlita,,S,2002-08-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2442,Corbett,,V,2002-09-15,c,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2448,Sholokhov,,L,2003-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2501,Lohja,,A,2002-01-12,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2504,Gaviola,,Sr,2003-04-27,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2521,Heidi,,S,2002-01-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2566,Kirghizia,,V,2002-09-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2579,Spartacus,,V,2000-10-10,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2715,Mielikki,,Sw,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2732,Witt,,L,2001-08-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2851,Harbin,,V,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2873,Binzel,,Sq,2002-01-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2875,Lagerkvist,,S,2002-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2911,Miahelena,,Sw,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2912,Lapalma,,V,2001-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2957,Tatsuo,,K,2003-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2965,Surikov,,Sv,2005-05-10,b,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,2977,Chivilikhin,,S,2002-09-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3028,Zangguoxi,,K,2002-09-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3102,Krok,,Sqw,2000-10-09,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3103,Eger,,Xe,2001-06-21,i,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3122,Florence,,Sqw,2004-01-26,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3155,Lee,,V,2001-06-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3198,Wallonia,,Sqw,2005-05-10,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3199,Nefertiti,,K,2005-03-03,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3200,Phaethon,,B,2004-12-10,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3248,Farinella,,D,2005-04-18,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3255,Tholen,,S,2002-09-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3317,Paris,,D,2006-05-01,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3363,Bowen,,Sr,2002-04-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3395,Jitka,,S,2001-02-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3402,Wisdom,,S,2003-09-30,e,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3430,Bradfield,,S,2002-06-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3491,Fridolin,,S,2002-06-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3511,Tsvetaeva,,Srw,2002-04-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3628,Boznemcova,,O,2006-04-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3635,Kreutz,,Srw,2005-11-12,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3701,Purkyne,,S,2001-08-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3734,Waland,,L,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3753,Cruithne,,Q,2005-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3788,Steyaert,,S,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3844,Lujiaxi,,L,2003-04-27,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3858,Dorchester,,Srw,2004-02-20,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3873,Roddy,,Sw,2002-10-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3903,Kliment Ohridski,,S,2002-09-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3908,Nyx,,V,2004-09-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3910,Liszt,,S,2002-08-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3920,Aubignan,,Sqw,2002-09-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,3949,Mach,,Sq,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4038,Kristina,,Vw,2002-10-28,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4055,Magellan,,V,2005-04-11,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4179,Toutatis,,Sq,2004-09-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4188,Kitezh,,V,2001-08-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4197,,1982 TA,Sq,2003-09-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4352,Kyoto,,S,2002-06-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4407,Taihaku,,Sqw,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4417,Lecar,,Sw,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4451,Grieve,,Svw,2002-01-14,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4558,Janesick,,Sr,2004-06-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4570,Runcorn,,Sw,2001-06-21,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4688,,1980 WF,Q,2001-01-29,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4713,Steel,,Sw,2002-04-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4737,Kiladze,,L,2002-06-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,4995,Griffin,,S,2002-10-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5013,Suzhousanzhong,,Sw,2002-01-14,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5111,Jacliff,,V,2005-09-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5143,Heracles,,Q,2006-10-25,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5230,Asahina,,S,2005-09-05,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5261,Eureka,,Sa,2005-05-19,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5379,Abehiroshi,,Sr,2006-06-03,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5401,Minamioda,,Sw,2003-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5407,,1992 AX,S,2002-01-13,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5587,,1990 SB,Sr,2001-03-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5604,,1992 FE,V,2001-03-29,f,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5641,McCleese,,Sw,2005-04-12,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5660,,1974 MA,Q,2093-08-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5685,Sanenobufukui,,S,2001-03-29,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5817,Robertfrazer,,Sr,2004-09-22,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,5840,Raybrown,,L,2001-08-24,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,6047,,1991 TB1,S,2005-10-08,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,6239,Minos,,Sqw,2004-01-26,e,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,6386,Keithnoll,,S,2005-03-03,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,6411,Tamaga,,B,2004-02-20,e,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,6455,,1992 HE,Srw,2002-10-28,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,6585,O'Keefe,,S,2006-10-25,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,7341,,1991 VK,Q,2002-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,7763,Crabeels,,L,2002-06-01,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,8334,,1984 CF,S,2003-03-17,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,8444,Popovich,,S,2003-09-30,e,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,17274,,2000 LC16,D,2000-10-10,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,18736,,1998 NU,Sw,2001-01-30,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,19127,Olegefremov,,Srw,2003-09-30,e,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,19356,,1997 GH3,Sq,2001-01-30,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,20786,,2000 RG62,Sq:,2003-09-01,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,20790,,2000 SE45,S,2001-01-29,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,22771,,1999 CU3,S,2003-10-16,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,24475,,2000 VN2,Sw,2001-03-29,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,25330,,1999 KV4,Xk:,2002-10-27,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,35107,,1991 VH,Sq,2002-12-27,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,36284,,2000 DM8,K,2002-03-16,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,53435,,1999 VM40,Srw,2006-10-25,g,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,54690,,2001 EB,S,2001-03-28,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,66146,,1998 TU3,Q,2003-09-01,e,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,86450,,2000 CK33,L,2001-01-29,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,86819,,2000 GK137,Sq,2000-10-09,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,89355,,2001 VS78,Sr,2002-03-16,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,98943,,2001 CC21,Sw,2004-10-24,f,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,99907,,1989 VA,Sr,2002-10-27,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,137062,,1998 WM,Sr,2002-10-27,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,138258,,2000 GD2,Sq,2003-10-16,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,162058,,1997 AE12,Q,2002-03-15,a,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,162781,,2000 XL44,S,2001-01-29,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,0,,2000 PG3,D,2000-09-04,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,0,,2001 TX16,X,2002-03-15,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,0,,2001 XN254,S,2002-04-14,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,0,,2002 AA,S,2002-01-13,d,bus_demeo/demeotax.tab in the hosted zip
+bus_demeo_2020_pds_taxonomy_bundle,0,,2002 AV,S,2002-01-13,d,bus_demeo/demeotax.tab in the hosted zip

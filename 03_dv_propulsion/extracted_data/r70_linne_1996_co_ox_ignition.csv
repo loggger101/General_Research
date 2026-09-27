@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+linne_1996_co_ox_ignition,"CO/O2 ignition mixture-ratio range, both propellants at room temperature",0.50 to 1.44,O/F,PDF p10 Conclusions,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+linne_1996_co_ox_ignition,"CO/O2 ignition range, propellants chilled near liquid (O2 -253 F, CO -219 F)",2.42 to 3.10,O/F,PDF p3; p7,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; lower boundary depends mainly on O2 temperature"
+linne_1996_co_ox_ignition,Optimum operating mixture ratio (steady combustion in every test),0.55,O/F,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; ignition by other means; start transients 1.5-2.5 s"
+linne_1996_co_ox_ignition,Target engine for the igniter,2200 N (500 lbf) Mars sample-return engine,,PDF p10,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; igniter class used for 110 N-70,000 N engines"
+linne_1996_co_ox_ignition,Landed-mass reduction from Mars ISRU propellant,40 to 60,%,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; Mars atmosphere 96% CO2"
+linne_1996_co_ox_ignition,Saturation temperatures at 517 kPa (75 psia),O2 -263 F; CO ~-282 F,deg F,PDF p6,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

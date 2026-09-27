@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+hoffman_2000,"Solar cell assumptions (area density, cost)","4-junction GaAs 35% BOL, 1.1 kg/m2, $400/W; thin Si 20%, 0.55 kg/m2, $220/W; CIS2 thin film 6-20%, 0.16 kg/m2, $60/W",,PDF p9,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; state of the art then: ~25% MJ GaAs and 17% thin Si (AM0, 1 sun)"
+hoffman_2000,Array mass scaling rules in the ADAM model,SADA 1.5 kg/kW (BOL); wiring 1.2 kg/kW; stowage and tensioning 25% of boom + canister + blanket + wiring mass,,PDF p8,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+hoffman_2000,Array cost rules,non-recurring 50% of hardware; assembly/integration/test labour $500/W; spacecraft AI&T 15% of subsystem total; ~75% heritage credit,,PDF p8,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+hoffman_2000,Flexible array specific power attainable,approaching 300 W/kg at 1-2 kg/m2; flight state of the art ~50 W/kg,W/kg,PDF p5; p11 Fig.,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+hoffman_2000,Thin-film efficiency thresholds found by other studies,>= 12.6% to compete in GEO; 9-12.6% competitive on area-adjusted cost in LEO; > 10% needed to compare favourably in Aerospace Corp. study,%,PDF p6,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+hoffman_2000,MBAT reference spacecraft,7.5 kW EOL at 1.5 AU; 6-year life; dry 560 kg; wet 956 kg,,PDF p9,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

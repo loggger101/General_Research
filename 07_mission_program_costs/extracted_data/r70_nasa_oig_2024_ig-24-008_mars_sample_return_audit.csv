@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,MSR life-cycle cost at Mission Concept Review (Oct 2020),3.6,B USD,PDF p28,"R70 full-extraction pass, read from the hosted PDF 2026-09-27; between the $2.5-3B of July 2020 and $6.2B at KDP-B"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,KDP-B preliminary life-cycle cost range (Sep 2022),5.9-6.2,B USD,PDF p8; p18,"R70 full-extraction pass, read from the hosted PDF 2026-09-27; $7.4B (Jun 2023) is almost 20% above the top of this range"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,Decadal Survey MSR cost level,"5.3 B USD (2023-2032 Decadal period only, 2% inflation assumed); augmentation trigger at >= 20% above it or > ~35% of the PSD budget in any year",,PDF p9; p18; p45 fn c,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,Senate FY2024 recommendation for MSR,not less than 300,M USD,PDF p18,"R70 full-extraction pass, read from the hosted PDF 2026-09-27; against the $949.3M request (+15.4% over FY2023)"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,CCRS PDR slip cost,~200 M USD and one year of schedule,,PDF p3; p24,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,Cost margins requested at PDR,CCRS 38%; SRL 33%,% cost reserve,PDF p28,"R70 full-extraction pass, read from the hosted PDF 2026-09-27; higher than typical Center guidelines"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,ESA contribution (ERO + Sample Transfer Arm),"15-20% of NASA KDP-B LCC, i.e. 900-1,200 M USD",M USD,PDF p29,"R70 full-extraction pass, read from the hosted PDF 2026-09-27; not included in NASA LCC"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,CCRS mass allocation from ESA,500 -> 625 kg (+25%) before PDR-1,kg,PDF p31,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,ERO mass margin going into CDR,5.6% vs 10% recommended,%,PDF p31,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,Formulation-phase schedule slip,at least 7 months (KDP-C no earlier than March 2024 vs August 2023),months,PDF p25,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,Inflation assumed vs actual,2% assumed in the Decadal estimate vs 5 to almost 9% actual mid-2021 to early 2023,%,PDF p18,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
