@@ -46,3 +46,22 @@ Found while looking for new domains in economicspace@1f470d4 and spacecost@e8312
 | economicspace `mineral_value.py` `_INSPACE_PLANT_LIFE_YR` | 15 yr, over which the refinery is amortised | none stated; the same figure as `Mining rig service life` (domain 16) |
 
 What a source has to supply: specific energies of reducing, melting and forming iron-nickel metal and of sintering silicates, measured or designed for space or for small terrestrial plants.
+
+## R77 - Sources moved in (2026-09-27; registry unchanged at 267)
+
+These rows were registered in other domains before this one existed; they moved here because the cells they back are this domain's. Their earlier write-ups stay in the old domain's FINDINGS.md under the blocks named.
+
+| id | from | earlier write-ups | files moved here |
+|---|---|---|---|
+| `nasa_money_mass_ematics_2023_worksheet` | domain 5 | `05_inspace_operations/FINDINGS.md`: R74 | none |
+| `just_2019` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round-9 status; Round-10 addition; Round 43 addition; Round 44 addition; Round 57 addition | `extracted_data/r43_excavation_energy_key_numbers.csv` |
+| `zeng_2007` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 43 addition | `extracted_data/r70_zeng_2007.csv`, `full_texts/zeng_2007_excavation_force.pdf` |
+| `proctor_apex_2019` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 43 addition; R71 | `extracted_data/r71_proctor_apex_2019_key_numbers.csv` |
+| `zeitlin_asteroid_excavation_project` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 43 addition | `extracted_data/r71_zeitlin_asteroid_excavation_project_key_numbers.csv` |
+| `ssap_2021` | domain 5 | `05_inspace_operations/FINDINGS.md`: the `ssap_2021` block; Round-3 additions; Round-3 status; Maintenance; R71 | `extracted_data/ssap_2021_table3_theoretical_yields.csv`, `extracted_data/r71_ssap_2021_key_numbers.csv`, `extracted_data/r71_ssap_2021_reactions_energetics.csv` |
+
+Revision candidates on these sources, written up in their old domains: rc-026 (open, Drilling / excavation energy), rc-027 (blocked, Drilling / excavation energy), rc-048 (open, Beneficiation / on-site processing energy).
+
+The cross-references to `zeng_2007`, `just_2019`, `nasa_money_mass_ematics_2023_worksheet` in the opening block are now rows of this domain. `hein2020`, listed in the opening block under domain 2, is now in domain 22.
+
+`metzger_zacny_2020` stays in domain 5: its row maps to the drilling-energy row, but the paper is about thermal extraction of volatiles, which domain 5 keeps.

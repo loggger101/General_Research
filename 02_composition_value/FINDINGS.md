@@ -317,3 +317,13 @@ Sources the upstream repos cite that this registry did not have, found by readin
 - `lodders_2003_solar_abundances_condensation_temperatures` (T1): economicspace mineral_value.py nickel-iron yields: trace PGM abundances in the iron-meteorite analogue.
 - `wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals` (T3): economicspace mineral_value.py nickel-iron yields: siderite total-PGM concentration.
 - `nichiporuk_brown_1965_pt_pd_iron_meteorites` (T1): economicspace mineral_value.py nickel-iron yields: siderite total-PGM concentration.
+
+## R77 - Sources moved to domain 22 (2026-09-27; registry unchanged at 267)
+
+These rows moved to the domain that now holds the cells they back. The blocks above stay as written, so their relative paths to the files below no longer resolve from this folder; the files are at the paths given here.
+
+| id | moved to | earlier blocks here | files now at |
+|---|---|---|---|
+| `hein2020` | 22 | the `hein2020` block; Round-1 status; Round 61 addition; Maintenance; R71; R72 | `22_prior_art_techno_economic_benchmarks/extracted_data/r61_hein2020_plant_economics_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_hein2020_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_hein2020_table3_pt_supply_demand_profitability.csv` |
+
+Shared CSVs that cite a moved source and stay here: `extracted_data/composition_value_key_numbers.csv` (`hein2020`); `extracted_data/unhosted_sources_key_numbers.csv` (`hein2020`). Where a moved row names one of them, the path now includes this folder.

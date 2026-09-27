@@ -32,3 +32,7 @@ Every row of the four spacecost tables says `reference_year` 2026, and the only 
 - `jpl_dsn_services_catalog_820_100` (domain 5): the DSN rate R50 re-escalated with CPI-U.
 
 **Boundary.** The dollar values stay with their own domains (launch prices in 4, programme costs in 7, operations in 20, hardware rates in 21); this domain holds the indices, the exchange rates and the rule for applying them. Commodity spot prices (domain 6) are dated quotes, not escalated costs.
+
+## R77 - Cross-references updated (2026-09-27; registry unchanged at 267)
+
+`jpl_dsn_services_catalog_820_100`, listed in the opening block under domain 5, is now in domain 20.

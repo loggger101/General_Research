@@ -34,3 +34,7 @@ Upstream labels every in-space number here as judgement ("the single biggest sof
 - `dra5_2009_human_exploration_of_mars` (domain 3): the propellant-per-opportunity basis of the mars_orbit ceiling.
 
 **Boundary.** Domain 6 holds the prices and the terrestrial annual-production ceilings (`ANNUAL_WORLD_PRODUCTION_KG`). This domain covers how much sells, and at what discount, once a delivery is a sizeable share of a ceiling, and the in-space ceilings, which have no source at all.
+
+## R77 - Cross-references updated (2026-09-27; registry unchanged at 267)
+
+`hein2020`, listed in the opening block under domain 2, is now in domain 22.

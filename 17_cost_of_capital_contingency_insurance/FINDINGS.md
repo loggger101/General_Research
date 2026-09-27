@@ -31,3 +31,17 @@ These are the financing and risk-transfer lines of the cost cascade. Their three
 - `gallagher_plane_talking_space_market_updates` (domain 5): the launch-insurance rate.
 
 **Boundary.** Domain 18 holds the regulatory requirement (the licence and how the MPL is set); this domain holds what the cover and the capital cost. Reliability, which insurance does not replace, is domain 16.
+
+## R77 - Sources moved in (2026-09-27; registry unchanged at 267)
+
+These rows were registered in other domains before this one existed; they moved here because the cells they back are this domain's. Their earlier write-ups stay in the old domain's FINDINGS.md under the blocks named.
+
+| id | from | earlier write-ups | files moved here |
+|---|---|---|---|
+| `damodaran_cost_of_capital_by_industry` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 44 addition | `extracted_data/r47_damodaran_cost_of_capital_key_numbers.csv`, `extracted_data/r47_damodaran_cost_of_capital_full_table_96_industries.csv` |
+| `valueinvesting_io_2026_boeing_howmet_wacc` | domain 5 | `05_inspace_operations/FINDINGS.md`: R74 | none |
+| `gallagher_plane_talking_space_market_updates` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 44 addition; Round 57 addition | `extracted_data/r57_plane_talking_series_key_numbers.csv` |
+
+Revision candidates on these sources, written up in their old domains: rc-031 (open, Launch insurance).
+
+The cross-references to `damodaran_cost_of_capital_by_industry`, `valueinvesting_io_2026_boeing_howmet_wacc`, `gallagher_plane_talking_space_market_updates` in the opening block are now rows of this domain.
