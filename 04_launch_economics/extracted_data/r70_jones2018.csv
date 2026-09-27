@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+jones2018,Table A2 Saturn V: kg to LEO / cost per launch / cost per kg,"140,000 kg / 728 M 2018$ / 5.20 k$/kg",,PDF p8 Table A2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; Williams 2016"
+jones2018,Table A2 Space shuttle: kg to LEO / cost per launch / cost per kg,"27,500 kg / 1,697 M 2018$ / 61.72 k$/kg",,PDF p8 Table A2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; Pielke & Byerly 2011 lifetime cost; the abstract figure of ~54.5 k$/kg uses $1.5B"
+jones2018,Table A2 Falcon 9: kg to LEO / cost per launch / cost per kg,"22,800 kg / 62 M 2018$ / 2.72 k$/kg",,PDF p8 Table A2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jones2018,Table A2 Falcon Heavy: kg to LEO / cost per launch / cost per kg,"63,800 kg / 90 M 2018$ / 1.41 k$/kg",,PDF p8 Table A2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jones2018,Shuttle to Falcon 9 cost reduction factor (Table A2 basis),~23,x,PDF p8,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jones2018,Shuttle payload to ISS vs LEO,"16,050 kg vs 27,500 kg; 105.8 k$/kg to ISS",,PDF p9 App. B,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jones2018,CRS-1 contract,$1.6B (2008) for 12 flights = $149M per flight in 2018$; CRS extension estimated $140-150M per flight ($144-154M 2018$),USD,PDF p9 App. B,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jones2018,Dragon cargo to ISS cost,"$150M / 6,000 kg = 25 k$/kg (24% of Shuttle; 4.2x reduction); contract minimum 2,273 kg",,PDF p9 App. B,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

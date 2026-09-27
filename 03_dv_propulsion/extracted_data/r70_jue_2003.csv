@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+jue_2003,SSME design life before overhaul,"55 missions / 27,000 s (7.5 h)",,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jue_2003,SSME nominal chamber pressure,20,MPa,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; about 5x the J-2"
+jue_2003,SSME throttle range,50% to 109%,rated power level,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; 1983 test failures showed the basic engine lacked margin for continuous 109%; recertified to 104% (p2)"
+jue_2003,Shuttle flights and engines used as of STS-110 (April 2002),109 flights using 41 engines,,PDF p2-3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; flight fleet leader engine 2019 flown 19 times"
+jue_2003,SSME demonstrated single-engine reliability,in excess of 0.9995,,PDF p4,R70: read from the rendered page image of the hosted PDF 2026-09-26 (scan or table without a usable text layer); each value checked against its row label
+jue_2003,SSME ascent risk after AHMS Phase I+II (QRAS),"1 in 2,123 flights (>40% reduction)",,PDF p4-5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jue_2003,Block II vs Phase II SSME safety,twice as safe,,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jue_2003,Engine turnaround manpower reduction with Block II turbopumps,57%,,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jue_2003,Two-duct powerhead cost reduction vs three-duct,40%,,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+jue_2003,HPFTP overhaul goal,10 missions between overhauls,,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; 150,843 s of test at first flight"
+jue_2003,SSME accumulated hot-fire,projected 1 million s by early 2003,s,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

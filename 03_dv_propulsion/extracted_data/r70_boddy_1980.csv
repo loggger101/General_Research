@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+boddy_1980,LEO-GEO dV: high-thrust chemical vs continuous low-thrust burn,"~14,000 vs 19,200",ft/s,PDF p2-3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; 4.27 vs 5.85 km/s; low-T/W solar rocket trip > 10 days"
+boddy_1980,LEO-GEO dV vs trip time (solar rocket),"19,200 ft/s at 14 days; 16,500 ft/s at 30 days (Isp 727 s); 15,750 ft/s at 40 days",ft/s,PDF p8; p23,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+boddy_1980,"Isp needed for a solar rocket to beat LO2/LH2 at 19,200 ft/s",in excess of 800,s,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+boddy_1980,"Heat-exchanger cavity absorber, H2 at 5000 R, two thrusters","Isp 861 s; thrust 43 lbf; 0.025 lb/s each; two 100 ft collectors at 80% efficiency, 1/4 deg surface error; 71% overall absorber efficiency",,PDF p13,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+boddy_1980,Particulate (H2/carbon) absorber at 7000 R,Isp 1041 s; thrust 14 lbf,,PDF p15,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; collector mass eats the Isp gain"
+boddy_1980,Theoretical Isp comparison at equal gas temperature,H2 about 2x NH3 or N2H4 and ~77% above CH4; CH4 14-24% above NH3,,PDF p12,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; CH4 cokes above 1760 R so was dropped"
+boddy_1980,Area ratio 100 -> 400 effect on H2 Isp at 7000 R,~6,%,PDF p12,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+boddy_1980,Solar rocket LEO-GEO payload per Shuttle launch,"22,000-27,000 lb (5000 R); +20% with 7000 R; 15,000-20,000 lb for payload-down missions",lb,PDF p23,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; 40-day trip example 29,000 lb (p9)"
+boddy_1980,Liquid hydrogen density used,4.4,lb/ft3,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; Shuttle separation weight 62,000 lb"

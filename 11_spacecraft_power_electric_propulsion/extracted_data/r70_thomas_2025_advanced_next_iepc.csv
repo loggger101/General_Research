@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+thomas_2025_advanced_next_iepc,NEXT thruster wear test (heritage),"51,184",hr,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+thomas_2025_advanced_next_iepc,AdvNEXT design point (throttle 2B),"6.0 A beam, 1200 V; 8.2 kW; ~3,400 s; ~330 mN; 40 mN/kW",,PDF p4; p12,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+thomas_2025_advanced_next_iepc,AdvNEXT thrust vs heritage NEXT-C,+40,%,PDF p12; p15,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+thomas_2025_advanced_next_iepc,Discharge losses,150-170,W/A,PDF p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-27; consistent with NEXT-C"
+thomas_2025_advanced_next_iepc,PPU architecture,six interconnected DC-DC converters; beam supply processes up to 88% of output power; 92-95% efficiency across the ten throttle levels,,PDF p8; p13,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+thomas_2025_advanced_next_iepc,Discharge cathode change,orifice sized for up to 80% larger discharge currents,%,PDF p6,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"

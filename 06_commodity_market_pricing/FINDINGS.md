@@ -98,3 +98,10 @@ Johnson Matthey's annual PGM market report (May 2026 edition, 36 pp), the indust
 
 ### Osmium & cobalt gap (recorded, uncloseable by these sources)
 Osmium: NO published reference price series exists at LBMA or JM and the JM report contains **no osmium table** (verified by full-text scan) → our $13k/kg row (~1 t/yr basis) remains anchored to nothing registered; it is the only precious-metal row with no institutional price source reachable from this machine. Cobalt: priced in our catalog ($33/kg) but absent from both WB's 71-commodity sheet and JM's report → same status. Both recorded as standing gaps, not errors.
+
+## R70 - Full-extraction pass of the hosted sources (2026-09-27; registry unchanged)
+
+Every hosted full text in this domain was re-read end to end for pipeline-useful numbers; tables were read by word coordinates (or from rendered page images where the text layer fails) and checked against their printed totals. New files (all in `extracted_data/`, every row carries `source_id` and a page location): `r70_worldbank_pink_sheet_annual_means_2016_2025.csv` (240); `r70_worldbank_pink_sheet_monthly_energy_fertilizer_metals.csv` (800); `r70_worldbank_pink_sheet_sept2026_report_summary_table.csv` (81).
+
+- **Pink Sheet monthly series**: 800 months (1960M01-2026M08) x 24 energy, fertiliser, base-metal and precious-metal series in one CSV, plus 2016-2025 annual means computed here (240 rows).
+- **September 2026 report summary table**: 64 commodities and 17 indexes x 11 periods (2023-2025 annual, four quarters, June-August 2026). The published 2025 annual averages match the means computed from the xlsx (copper 9,947 vs 9,947.42 $/mt; platinum 1,278 vs 1,278.33 $/toz).

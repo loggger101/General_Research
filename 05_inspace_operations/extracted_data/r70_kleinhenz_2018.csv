@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+kleinhenz_2018,"Average water loss during drill sampling (5 years of RP tests, 43 samples)",~30% for 5 wt% beds; ~80% for 0.8 wt% beds,% of sample water,PDF p13,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; drier soil loses a larger fraction for the same exposure"
+kleinhenz_2018,Where the water is lost,majority during brushing when the sample is agitated on delivery to the crucible (mass spectrometer),,PDF p17,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+kleinhenz_2018,Test conditions,"pressure 1.5e-6 to 2e-5 Torr (median 3e-6); soil -80 to -160 C; moisture 0.8-5 wt%; sample mass 3.3-20.7 g (median 14 g); ~15 min to retrieve, 5 min to fill crucible",,PDF p12,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+kleinhenz_2018,VF-13 facility,"6.35 m3 dirty thermal-vacuum chamber, 80 K cold wall, up to 1 t of simulant (1 m3 bin holds 800 kg)",,PDF p4-5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

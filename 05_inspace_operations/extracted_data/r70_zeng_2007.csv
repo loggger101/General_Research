@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+zeng_2007,JSC-1a very-fines particle size (hydrometer),"D30 ~3 um, D60 ~6 um; ~6% finer than 1 um; about 50% silt / 50% clay",,PDF p3 Fig.1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+zeng_2007,"JSC-1a fines particle size, second sample","D30 ~12 um, D60 ~21 um; ~2% finer than 1 um",,PDF p3-4 Fig.2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+zeng_2007,Gill cut resistance index used,1000,N/m,PDF p8 parameter table,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+robbins_1991,NERVA-era mission requirement,"Isp > 800 s; thrust >= 200,000 lb; vehicle 1.5-3 million lb",,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+robbins_1991,Reactor power requirement for the NERVA engine,somewhat in excess of 1000,MW,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; similar to KIWI-B design"
+robbins_1991,NRX/EST engine system test,"nearly two hours operation, 28 minutes at full power",,PDF p9,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; reactor ~2300 K, initial lifetime goal one hour (p8)"
+robbins_1991,XE engine test totals,"115 minutes run time, 28 starts to power",,PDF p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+robbins_1991,KIWI-B4E final KIWI reactor,~2000 K for eleven minutes,,PDF p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+robbins_1991,NRX series demonstrated temperature / extrapolated reactor life,in excess of 2200 K / 2-3 hours,,PDF p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+robbins_1991,"Research reactors (Phoebus, Pewee, Nuclear Furnace) peak power",4000,MW,PDF p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+robbins_1991,Rover/NERVA accumulated operating time,"17 hours, six hours above 2000 K",,PDF p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; twenty reactor tests and two engine tests"
+robbins_1991,NERVA engine height,22,ft,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

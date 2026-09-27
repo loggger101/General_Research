@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization,"2035 hybrid mission mass timeline, high-fidelity model",leave NRHO 115.19 t; Earth departure 111.67; Mars arrival 96.43; Mars departure 78.85; Earth arrival 67.83; NRHO insert 61.06,t,PDF p8 Table 2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; mid-fidelity closure 114.76 / 111.67 / 95.87 / 78.72 / 67.53 / 59.15"
+qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization,"Inbound SEP dV (2035), closure vs high fidelity",3642.58 / 3834.09,m/s,PDF p8 Table 3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization,"HEO maintenance and WSB dV, departure / return",HEO maintenance 84.29 / 56.76 (budget 90); WSB 145.56 / 54.30 (budget 75),m/s,PDF p8-9 Table 3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization,Mars parking orbit maintenance dV,21.63 (budget 20),m/s,PDF p8 Table 3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

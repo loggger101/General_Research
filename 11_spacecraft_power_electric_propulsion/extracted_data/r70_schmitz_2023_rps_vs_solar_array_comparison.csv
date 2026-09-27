@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+schmitz_2023_rps_vs_solar_array_comparison,RPS mass to provide 100 W continuous (p12 lines),MMRTG ~38-40 kg; DRPS ~27 kg; NextGen RTG Mod-1 ~24 kg (100 W / specific power),kg,PDF p12 chart,"R70: read from the rendered page image of the hosted PDF 2026-09-27; computed as 100/2.5, 100/3.7, 100/4.1"
+schmitz_2023_rps_vs_solar_array_comparison,Li-ion battery SOA,175 Wh/kg; 194 Wh/L; 80% depth of discharge; 90% charge/discharge efficiency,,PDF p8 Table 3,"R70 full-extraction pass, read from the hosted PDF 2026-09-27; the p12 legend gives ""194 W-h/kg"", which matches the Table 3 volumetric value (194 Wh/L) rather than the 175 Wh/kg specific energy"
+schmitz_2023_rps_vs_solar_array_comparison,Solar flux attenuation,Titan surface ~1.5 W/m2 (10-fold atmospheric reduction); Mars optical depth 0.4 clear to 5.0 global storm (> 9 in 2018),,PDF p8,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+schmitz_2023_rps_vs_solar_array_comparison,Curiosity MMRTG output over a sol,109-119,W,PDF p6,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+schmitz_2023_rps_vs_solar_array_comparison,Mercury darkness period,1408,h,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"

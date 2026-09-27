@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+asakawa_aquarius_onorbit_2024,"Measured nozzle thrust coefficient on orbit, DVT1 / DVT2",1.53 +/- 0.03 / 1.51 +/- 0.02,,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; printed with colons as decimal points (1:53, 1:51)"
+asakawa_aquarius_onorbit_2024,EQUULEUS 6U CubeSat mass incl. water propellant,~10.3 kg incl. 1.2 kg water,kg,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+asakawa_aquarius_onorbit_2024,"AQUARIUS steady-state power, DV1 / TCM1 operations",~9.2 / ~14.8,W,PDF p6,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; vaporization heater averages 7.9 / 13.7 W; latent heat of water 2.25 kJ/g"
+asakawa_aquarius_onorbit_2024,AQUARIUS operating set points,tank ~50 kPa argon-pressurized bladder; vaporization chamber ~31 C; DVT nozzles ~70 C,,PDF p2-5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+asakawa_aquarius_onorbit_2024,"Pulse cycle time, DV1 / TCM1",75.7 +/- 2.9 / 89.1 +/- 3.1,s,PDF p5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; tuned to exceed the 4 mN time-averaged mission requirement"
+asakawa_aquarius_onorbit_2024,Thrust-to-power sensitivity to thermal state,~2 C change in T_comm - T_vap changed F/P by >= 50%,,PDF p7,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
