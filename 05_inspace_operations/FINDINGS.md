@@ -364,3 +364,17 @@ This round's container reached only package registries (arXiv, NTRS, JPL, Google
 - **ambrosi_2019 Tables 1-10** (re-entry ballistics and heating, Bi-Te module properties over 10,000 h, FE and RHU thermal results). The text measures 9.1-9.3 We from a 200 Wth source and a 9.4 kg 10 We system, i.e. **~1 W/kg specific power as built**, about half the ~2.1 W/kg design figure R70 recorded. spacecost's `RTG specific power` (5.0 W/kg) is a GPHS/Pu-238 figure, so the americium unit is context only.
 - **metzger_zacny_2020 vs spacecost `Water liberation energy`**: the row's arithmetic assumes a flat c_p of 800 J/kg K from 200 to 700 K. The paper's lunar-soil fit averages 763 J/kg K over 200-400 K (4.7% below, consistent), but the quartic diverges above ~400 K (6,724 J/kg K at 700 K), so it cannot check the rest of the range. No candidate.
 - **plachta_2017 Table 1** (circulator characteristics): the hosted PDF prints the caption with no table body; nothing to extract.
+
+## R74 - Upstream citations registered (2026-09-27; +7 sources, T1x1, T3x3, T4x3; nothing extracted)
+
+Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
+
+- `faa_14_cfr_part_450_launch_reentry_licensing` (T3): operational_costs.csv "FAA Part 450 licensing compliance", "(launch only)" and "Third-party liability insurance" rows.
+- `crs_r48582_commercial_launch_reentry_regulations` (T3): operational_costs.csv "FAA Part 450 licensing compliance" row.
+- `mil_hdbk_189c_reliability_growth_management` (T3): operational_costs.csv "Mining reliability growth exponent" (Duane alpha band for an active growth programme).
+- `duane_1964_learning_curve_reliability_monitoring` (T1): operational_costs.csv "Mining reliability growth exponent" (the model it parameterises).
+- `valueinvesting_io_2026_boeing_howmet_wacc` (T4): operational_costs.csv "Cost of capital (WACC)" industrial floor.
+- `nasa_money_mass_ematics_2023_worksheet` (T4): operational_costs.csv "Beneficiation / on-site processing energy" row cites it; see R74 note on what the document is.
+- `space_com_pu238_rtg_cost_reporting` (T4): operational_costs.csv "RTG (radioisotope power)" Pu-238 cost context.
+
+**Citation that does not support its row (rc-048).** spacecost `operational_costs.csv` "Beneficiation / on-site processing energy" cites "Lunar / asteroid ISRU literature (NASA Money-Mass-ematics 2023)". The only NASA document of that name is a four-page SCaN classroom worksheet for grades 7-8, "Ratios and Percentages with Laser Communications" (read in full, sha256 a4fab83f…). It is about launch cost per kilogram and the ILLUMA-T laser terminal and says nothing about beneficiation or processing energy, so the row's 500 Wh/kg (range 100-2,000 Wh/kg of refined product) has no source. The row keeps its value; the candidate asks for a real ISRU citation or an "estimate" label.
