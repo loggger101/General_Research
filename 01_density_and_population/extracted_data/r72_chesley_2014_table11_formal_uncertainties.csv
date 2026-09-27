@@ -1,0 +1,9 @@
+source_id,quantity,unit,reference_1sigma,with_simulated_osiris_rex_ranging_1sigma,location_in_source,notes
+chesley_2014_bennu_orbit_bulk_density,Yarkovsky transverse acceleration A_T,1e-16 au/d,2.52,0.38,PDF p60 Table 11,formal 1-sigma; right column adds simulated OSIRIS-REx pseudo-range measurements as described in the text; R72
+chesley_2014_bennu_orbit_bulk_density,"2020-Jan-04 position, radial",km,1.539,0.008,PDF p60 Table 11,formal 1-sigma; right column adds simulated OSIRIS-REx pseudo-range measurements as described in the text; R72
+chesley_2014_bennu_orbit_bulk_density,"2020-Jan-04 position, transverse",km,0.855,0.033,PDF p60 Table 11,formal 1-sigma; right column adds simulated OSIRIS-REx pseudo-range measurements as described in the text; R72
+chesley_2014_bennu_orbit_bulk_density,"2020-Jan-04 position, normal",km,2.461,0.098,PDF p60 Table 11,formal 1-sigma; right column adds simulated OSIRIS-REx pseudo-range measurements as described in the text; R72
+chesley_2014_bennu_orbit_bulk_density,"2020-Jan-04 velocity, radial",mm/s,0.662,0.005,PDF p60 Table 11,formal 1-sigma; right column adds simulated OSIRIS-REx pseudo-range measurements as described in the text; R72
+chesley_2014_bennu_orbit_bulk_density,"2020-Jan-04 velocity, transverse",mm/s,0.4,0.002,PDF p60 Table 11,formal 1-sigma; right column adds simulated OSIRIS-REx pseudo-range measurements as described in the text; R72
+chesley_2014_bennu_orbit_bulk_density,"2020-Jan-04 velocity, normal",mm/s,1.388,0.029,PDF p60 Table 11,formal 1-sigma; right column adds simulated OSIRIS-REx pseudo-range measurements as described in the text; R72
+chesley_2014_bennu_orbit_bulk_density,zeta2135 b-plane coordinate,km,58000,1000,PDF p60 Table 11,formal 1-sigma; right column adds simulated OSIRIS-REx pseudo-range measurements as described in the text; R72
