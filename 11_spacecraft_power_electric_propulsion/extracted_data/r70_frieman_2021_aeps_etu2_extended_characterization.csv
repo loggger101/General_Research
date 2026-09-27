@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+frieman_2021_aeps_etu2_extended_characterization,Test facility,GRC VF-5: ~700 kl/s xenon pumping; ~4 uTorr at 12.5 kW; inverted-pendulum thrust stand +/-0.8%,,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"
+frieman_2021_aeps_etu2_extended_characterization,Measurement uncertainty,flow 0.6-1.3 sccm; voltage +/-0.06 V; current +/-0.03 A,,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-27"

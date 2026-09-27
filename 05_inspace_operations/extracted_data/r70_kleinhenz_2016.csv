@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+kleinhenz_2016,Volatile-loss finding by sampling tool (Deltion),"push tube (65 g, long exposure) lost 88.9%; coring-auger samples (avg ~115 g) lost 23-59%; auger flights captured < 15 g and lost 86-100%",% of available water,PDF p23,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; corrects the older row that attributed 88% to coring"
+kleinhenz_2016,Test conditions (2015 series),shroud -53 to -175 C; soil -80 to -115 C; 1e-6 to 5e-6 Torr; simulant moisture 0.5-5 wt% (stratified or uniform),,PDF p14 test summary,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+kleinhenz_2016,Deltion DESTIN drill characteristics,"TRL 6 at 1e-6 torr and 100 K; < 50 W incl. heaters for a 1 m sample, < 40 W to auger; nominal thrust 100 N; 1 m core capture",,PDF p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+kleinhenz_2016,Honeybee lunar prospector drill,"100 cm long, 2.5 cm diameter auger; 10 cm bite sampling; sample capture mechanisms seal 10 cc in 18 ml crucibles with 100 lbf clamp",,PDF p7; p9,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+kleinhenz_2016,Lunar polar PSR water content (LCROSS),~5,wt%,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

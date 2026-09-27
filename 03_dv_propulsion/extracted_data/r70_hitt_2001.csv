@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+hitt_2001,Nanosat micropropulsion targets (Table 1),thrust 1-1000 uN; impulse bit 1-100 uN-s; Isp 160 s; mass < 0.1 kg; power < 1 W; volume < 1 cm3; operating temperature < 1700 K,,PDF p32 Table 1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; the text layer drops the micro sign: thrust is in microNewtons and flow in micrograms/s"
+hitt_2001,HTP MEMS micro-thruster nozzle design point (Table 3),thrust 500 uN; max Isp 180 s; Isp efficiency 80%; mass flow 400 ug/s; exit Mach 3.3; throat Re 450,,PDF p34 Table 3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; the text layer drops the micro sign: thrust is in microNewtons and flow in micrograms/s"
+hitt_2001,"H2O2 decomposition vs catalyst chamber length (90% HTP, ~400 ug/s)",1.0 mm 70%; 1.5 mm 75%; 2.5 mm 85%,% decomposed,PDF p34 Table 4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; the text layer drops the micro sign: thrust is in microNewtons and flow in micrograms/s"
+hitt_2001,85% HTP heat of decomposition / adiabatic flame temperature,586 cal/g at 25 C / ~613 C,,PDF p9,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+hitt_2001,HTP auto-decomposition in storage,"~1% per year at room temperature, doubling per +15 F",,PDF p21,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; CPIA 1984 cited"
+hitt_2001,Nanosat mass class,10-100 kg (nano < 10 kg in p3 definition),kg,PDF p2-3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

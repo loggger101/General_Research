@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+spores_2013,GR-1 / GR-22 predicted performance (Table 1),"thrust 0.4-1.1 / 8-25 N; feed 6.8-27.6 bar; area ratio 100:1 / 50:1; valve power 12 / 28 W; preheat power 10 / 30 W; Isp 235 / 250 s; total impulse 23,000 / 74,000 N-s; minimum impulse bit 8.0 / 116 mN-s",,PDF p6 Table 1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+spores_2013,AF-M315E vs hydrazine: theoretical Isp / density,257 vs 235 s (+12%) / 1.47 vs 1.00 g/cc (+45%),,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; ~50% higher density-Isp"
+spores_2013,GPIM demonstration payload impulse vs packaged hydrazine,50% more impulse,,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+spores_2013,AF-M315E catalyst bed preheat for general operation,> 285 C (nominal ~315 C),deg C,PDF p7; p9,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+spores_2013,GR-1 pulse repeatability at 20/180 ms on/off,< 0.6% RMS impulse-bit variation,,PDF p9,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+spores_2013,LCH-240 catalyst life gain,over 15x prior state of the art,,PDF p4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; AF-M315E thrusters tested up to 670 N (150 lbf)"
+spores_2013,"Ground-fuelling cost reduction, HAN monoprop replacing hydrazine on Centaur RCS",two-thirds,,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

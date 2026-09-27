@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+zero_bo_off_2025,"Large LH2 storage tank boil-off rate (onshore 50,000 m3 / seaborne 45,000 m3)",0.05%/day (8 kW / 7.5 kW heat ingress); uncertainty range 0.045-0.123 and 0.046-0.127 %/day,%/day,PDF p3 Tables 2-3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; ambient 298 K, LH2 density 70.8 kg/m3 used in the BOR formula"
+zero_bo_off_2025,"Total boil-off gas for a 160,000 m3 (11,248 t) LH2 transfer",split-range variable-speed pump 3.9-8.6 t; fixed-speed pump 85.5-119.7 t,t,PDF p5 Table 4,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; pump shaft energy 2.3-3.6 MWh vs 12.9-18.1 MWh"
+zero_bo_off_2025,Insulated LH2 transfer pipe heat ingress,8.5 W/m nominal (5.5-12 W/m range) for a 16-inch line; BOG return line 1 W/m,W/m,"PDF p3 Tables 1, 3","R70 full-extraction pass, read from the hosted PDF 2026-09-26; 2 x 1100 m pipes per train"
+zero_bo_off_2025,Transfer pump efficiency range assumed,50-70% (60% nominal; efficiency approaching 70% is the dominant lever),%,PDF p1; p3 Table 3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+zero_bo_off_2025,Transfer losses by method (cited literature),pressure-differential transfer ~20% vented; pump transfer 0-16%; LH2 trailer offload 2-18% depending on receiver pressure,%,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+zero_bo_off_2025,Projected seaborne clean-hydrogen trade 2050,20 Mt/yr of 200 Mt/yr (10%),Mt/yr,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

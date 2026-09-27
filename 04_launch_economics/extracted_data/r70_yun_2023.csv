@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+yun_2023,"Nuri (expendable) vs K-RLV cumulative cost, 10 launches",800 vs 332 M$ (41.5%),million USD,PDF p3 Table 1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+yun_2023,"Nuri vs K-RLV cumulative cost, 30 launches","2,400 vs 892 M$ (37.2%)",million USD,PDF p3 Table 1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+yun_2023,"Nuri vs K-RLV cumulative cost, 100 launches","8,000 vs 2,852 M$ (35.6%)",million USD,PDF p3 Table 1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+yun_2023,Falcon 9 first stage reused 10x without part replacement (cited study),stage cost to 1/3; total launch cost to 58%,,PDF p3 ref [8],"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+yun_2023,SpaceX claim on first-stage refuel and refurbishment saving,~30%,,PDF p3 ref [7],"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+yun_2023,ULA SMART engine-recovery claim,first-stage propellant cost -90%; first-stage total cost to 65%,,PDF p7 ref [2],"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+yun_2023,"RLV status survey (Table 3, 20 vehicles)","propellant: methane 13 (65%), kerosene 5 (25%), hydrogen 2 (10%); 3D-printed engines 11 (55%); vertical landing 17 (85%)",vehicles,PDF p11 Table 3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+yun_2023,Satellite industry size,"176 billion USD (2011) to 271 billion USD (2020), +53%",USD,PDF p3,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; Korean text"

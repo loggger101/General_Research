@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+yim_2014,Previous Orion Main Engine (replaced by OMS-E on ESM),"33.4 kN (7500 lbf), 150:1 area ratio",,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+yim_2014,ESM auxiliary engine nozzle,HTV-heritage 300:1 extension (vs 164:1),,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; RCS 220 N replaces 110 N"
+yim_2014,"Peak plume heat flux on stowed solar panel face, by model",RAYJET 412; IEMC 410; RAMP2/PLIMP 736; HAP 373,W/m2,PDF p4 Table 1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+yim_2014,RCS burn limits used in the analysis,"abort: <= 5 s continuous, <= 10% duty cycle, <= 100 ms pulses; roll control during main-engine burns up to 80 s continuous",,PDF p4-5,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

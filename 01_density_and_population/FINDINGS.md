@@ -207,3 +207,11 @@ factors remain uncited.
 - **Citation**: Carry (2012) is Planetary and Space Science 73:98-118, DOI 10.1016/j.pss.2012.03.009. The registry DOI pointed at an unrelated A&A paper and the heading said 60(7):537-552; both corrected.
 - simda2024 re-classed `open_service` (the live SiMDA export is what was used; derived statistics are committed).
 - New rows in `extracted_data/backfill_2026-09-26_key_numbers.csv`: siltala_granvik_2021 and kretlow_2022 (page-located in the hosted PDFs); dziadura2023, harris_dabramo_2021, wilkinson_robinson_2000 (abstract-level, not re-checkable here); mp3c (live-service values). epsc2022_context, harris2015, adam_2017, demeo_2009_bus_taxonomy_near_ir and mpc_mpcorb are marked context-only in the registry, with reasons.
+
+## R70 - Full-extraction pass of the hosted sources (2026-09-27; registry unchanged)
+
+Every hosted full text in this domain was re-read end to end for pipeline-useful numbers; tables were read by word coordinates (or from rendered page images where the text layer fails) and checked against their printed totals. New files (all in `extracted_data/`, every row carries `source_id` and a page location): `r70_berthier_2023_ssodnet.csv` (16); `r70_berthier_2023_ssodnet_table_c8_class_complex.csv` (19); `r70_bus_demeo_2020_pds_taxonomy_bundle_per_body_classes.csv` (371); `r70_fowler_chillemi_1992_iras_mps_diameter_formula.csv` (13); `r70_kretlow_2022_rosa_mass_density.csv` (10); `r70_mainzer_2019_neowise_v2.csv` (14); `r70_siltala_granvik_2021.csv` (13).
+
+- **Fowler & Chillemi C = 1329 km now read directly.** The p27 page image prints Eq.(31) as D = 10^(3.1236 - 0.2H - 0.5 log10 <pH>); 10^3.1236 = 1329.2. R41 recorded the constant as confirmed only by fitting because the text layer garbles the equation; the r41 row is right and needs no edit.
+- **NEOWISE v2 statistics computed from the hosted bundle**: NEO fitted pV median 0.135 (p25-p75 0.046-0.252; n = 1,509); 41.7% of NEOs have pV < 0.1 and 18.4% pV > 0.3; median NEATM beaming 1.40.
+- **Bus-DeMeo classes for 371 bodies** parsed from the hosted PDS bundle (demeotax.tab), so a per-body class lookup no longer needs the live service.

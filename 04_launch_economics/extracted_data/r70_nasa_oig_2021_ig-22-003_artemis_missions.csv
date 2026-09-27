@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2021_ig-22-003_artemis_missions,Estimated per-launch cost split (Figure 7),total $4.1B = SLS $2.2B + Orion $1.0B + ESA service module $300M + Exploration Ground Systems $568M,USD,PDF p30 (printed p24) Fig.7,R70: read from the rendered page image of the hosted PDF 2026-09-26
+nasa_oig_2021_ig-22-003_artemis_missions,Near-term launch vehicle comparison (Figure 8): upmass to LEO / TLI,Vulcan Centaur heavy 27 t / 12 t; New Glenn 45 t / n.a.; Falcon Heavy 64 t / 16 t; SLS Block 1 70 t / 27 t; SLS Block 1B 105 t / 37 t; Starship 100+ t / 100+ t (with refuelling),t,PDF p33 (printed p27) Fig.8,R70: read from the rendered page image of the hosted PDF 2026-09-26; New Glenn first stage designed for a minimum of 25 reuses
+nasa_oig_2021_ig-22-003_artemis_missions,Artemis Plan cost to land by 2024,nearly $28 billion FY2021-2025 (Phase 1 only),USD,PDF p26,R70: read from the rendered page image of the hosted PDF 2026-09-26

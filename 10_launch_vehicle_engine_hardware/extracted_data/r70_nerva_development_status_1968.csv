@@ -1,0 +1,21 @@
+source_id,item,value,unit,location_in_source,notes
+nerva_development_status_1968,Power starts: KIWI B4D,1,starts,PDF p5 Fig.2 table,R70: read from the rendered page image of the hosted PDF 2026-09-27; test date May 1964
+nerva_development_status_1968,Power starts: KIWI B4E,2,starts,PDF p5 Fig.2 table,R70: read from the rendered page image of the hosted PDF 2026-09-27; test date Aug-Sept 1964
+nerva_development_status_1968,Power starts: NRX A2,2,starts,PDF p5 Fig.2 table,R70: read from the rendered page image of the hosted PDF 2026-09-27; test date Sept-Oct 1964
+nerva_development_status_1968,Power starts: NRX A3,3,starts,PDF p5 Fig.2 table,R70: read from the rendered page image of the hosted PDF 2026-09-27; test date April-May 1965
+nerva_development_status_1968,Power starts: PHOEBUS 1A,1,starts,PDF p5 Fig.2 table,R70: read from the rendered page image of the hosted PDF 2026-09-27; test date June 1965
+nerva_development_status_1968,Power starts: NRX/EST,10,starts,PDF p5 Fig.2 table,R70: read from the rendered page image of the hosted PDF 2026-09-27; test date Dec 1965-March 1966
+nerva_development_status_1968,Power starts: NRX A5,2,starts,PDF p5 Fig.2 table,R70: read from the rendered page image of the hosted PDF 2026-09-27; test date June 1966
+nerva_development_status_1968,Power starts: PHOEBUS 1B,2,starts,PDF p5 Fig.2 table,R70: read from the rendered page image of the hosted PDF 2026-09-27; test date Feb 1967
+nerva_development_status_1968,Power starts: NRX A6,1,starts,PDF p5 Fig.2 table,R70: read from the rendered page image of the hosted PDF 2026-09-27; test date Dec 1967
+nerva_development_status_1968,Power starts total,24 in the Fig.2 table; 25 in the p6 text,starts,PDF p5 Fig.2; p6 (printed p8),R70: read from the rendered page image of the hosted PDF 2026-09-27; the text lists 2 starts on NRX-A6 where the table lists 1
+nerva_development_status_1968,"Cumulative time at nominal full power (all Rover/NERVA reactors, to Dec 1967)",~195,min,PDF p6 (printed p7); Fig.2,R70: read from the rendered page image of the hosted PDF 2026-09-27
+nerva_development_status_1968,NERVA engine design point,"~75,000 lbf thrust; Isp 825 lbf-s/lbm; reactor 1575 MW; LH2 pumped to 1000 psia at ~91 lb/s; gas > 4000 R at the chamber",,PDF p4 (printed p3),"R70: read from the rendered page image of the hosted PDF 2026-09-27; 75,000/91 = 824 s (computed here), consistent with 825 s"
+nerva_development_status_1968,Required engine operating times (mission studies),"Mars 20-30 min nominal (up to 40 min); lunar 10 min for a 200-250 klbf engine, 20 min for a 55 klbf engine",min,PDF p4 (printed p4),R70: read from the rendered page image of the hosted PDF 2026-09-27
+nerva_development_status_1968,NRX-A6 endurance run (15 Dec 1967),60 min in one run at 4090 R and 1120 MW; > 70 min total at power,min,PDF p6 (printed p7),R70: read from the rendered page image of the hosted PDF 2026-09-27
+nerva_development_status_1968,NRX/EST total operating time at power,116 min (~28 min at full power),min,PDF p6 (printed p7),R70: read from the rendered page image of the hosted PDF 2026-09-27
+nerva_development_status_1968,Phoebus 1A / 1B,1A: 10.5 min (25 June 1965); 1B: 30 min at nominal 1500 MW (Feb 1967),min,PDF p6 (printed p7),R70: read from the rendered page image of the hosted PDF 2026-09-27
+nerva_development_status_1968,NRX-A3 first run,"3.5 min, scrammed by facility fault; 16.3 min total at or near full power",min,PDF p6 (printed p7),R70: read from the rendered page image of the hosted PDF 2026-09-27
+nerva_development_status_1968,Startup 0.1% to full power (NRX/EST EP-IVA),~140 s; 1 MW to 1100 MW in ~55 s; then ~800 s steady state,s,PDF p7 (printed p10),"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+nerva_development_status_1968,Fixed-drum startup (NRX-A5),"870 MW reached with drums fixed, then trimmed to full power",MW,PDF p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+nerva_development_status_1968,Optimum single engine size for 1980s missions (study),"200,000",lbf,PDF p11,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+toplis2014,Vesta diameter,520,km,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+toplis2014,Vesta upper-silicate-layer density from Dawn bulk density + J2 (2-layer model),3050-3140,kg/m3,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+toplis2014,Core metal fraction (relative to sulphide) across chondritic bulk compositions,~20% (CM) to almost 100% (CH),% metal in core,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; no thermodynamic solution for CI and LL"
+toplis2014,Best-fit bulk composition of Vesta,"Na-depleted H chondrite, possibly with ~25% CM-like component",,PDF p2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; carbonaceous chondrites give mantle Fe/Mn well above eucrite values"
+toplis2014,Chondrite groups tested,"12: CI, CV, CO, CM, CK, CR, CH, H, L, LL, EH, EL",,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+toplis2014,Average core density axis range in Fig.1,5000-7000,kg/m3,PDF p2 Fig.1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; per-group values plotted only, not tabulated"

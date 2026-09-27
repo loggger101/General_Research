@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+sp4029_apollo_by_the_numbers,S-IC stage performance summary,"7.650 million lbf at liftoff; vehicle to ~7,880 ft/s and ~58 n mi in ~2.5 min",,PDF p283 (printed p273),"R70 full-extraction pass, read from the hosted PDF text layer 2026-09-26"
+sp4029_apollo_by_the_numbers,S-II stage performance summary,"~7,880 to ~22,850 ft/s in ~370 s; ~101 n mi",,PDF p283,"R70 full-extraction pass, text layer"
+sp4029_apollo_by_the_numbers,S-IVB performance summary,"orbit insertion 22,850 -> 25,568 ft/s in 154 s; TLI to ~35,500 ft/s",,PDF p283,"R70 full-extraction pass, text layer; Apollo 7 S-IVB 7,620 -> 25,553 ft/s in 470 s"
+sp4029_apollo_by_the_numbers,S-IB stage summary (Apollo 7),"1.640 million lbf at liftoff; ~7,620 ft/s; ~33 n mi in ~2.5 min",,PDF p283,"R70 full-extraction pass, text layer"

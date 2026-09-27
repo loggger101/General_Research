@@ -38,6 +38,7 @@ INDEX.md                                 Master index: every source → tier, ac
 sources.csv                              Machine-readable registry, one row per source (GENERATED — see "Tools")
 full_texts_manifest.csv                  Every hosted file → its source id, size, sha256 and licence
 revision_candidates.csv                  Upstream cells the evidence says should change, with current status
+DOWNLOADS.md                             Checklist of the non-hosted sources still to fetch for a full extraction, with exact links
 AGENTS.md                                Working rules for agents running research rounds here
 tools/                                   build_registry.py (regenerate derived files) and validate.py (consistency checks)
 01_density_and_population/               Domain 1: density by spectral type, PGM factors, population stats

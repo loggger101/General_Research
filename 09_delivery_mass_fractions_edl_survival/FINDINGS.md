@@ -28,3 +28,10 @@ Re-scan of the two hosted Mars EDL papers for data beyond R54's entry-mass Table
 - **Flight-mech p2 (as-flown parachute phase, Mars 2020):** "Parachute Deploy E+4:01 Peak inflation load: 34.2 kips Updated parachute load predication approach was accurate Deceleration: 5.3 Earth g’s Altitude: 12.2 km Mach at Peak Inflation: 1.76 Dynamic Pressure: 504 Pa Velocity: 433 m/s" — peak-inflation load/deceleration context for the separately-carried parachute mass in delivery.py's edl leg; no per-unit price exists anywhere reachable, so nothing is pinned here.
 
 No registry change: both sources were registered and hosted in R54 (registry stays at 123 after item (b) of this round).
+
+## R70 - Full-extraction pass of the hosted sources (2026-09-27; registry unchanged)
+
+Every hosted full text in this domain was re-read end to end for pipeline-useful numbers; tables were read by word coordinates (or from rendered page images where the text layer fails) and checked against their printed totals. New files (all in `extracted_data/`, every row carries `source_id` and a page location): `r70_edquist_2022_mars2020_aerothermal_entry_masses.csv` (6); `r70_edquist_2022_table3_entry_trajectories.csv` (4); `r70_edquist_2022_table4_mars2020_bet_conditions.csv` (14); `r70_mars2020_flight_mech_table7_gnc_reconstructed_events.csv` (20); `r70_nasa_mars2020_flight_mech_edl_simulation.csv` (13).
+
+- **Edquist 2022**: Table 3 entry states (MSL BET, two Mars 2020 design cases, Mars 2020 BET) and Table 4 BET conditions (14 rows; 0.5 rho V^2 checked against the printed dynamic pressure on every row). PICA 1.25 in (31.75 mm) heatshield thickness; reconstructed heatshield peak ~68 W/cm2 (chart-read).
+- **Mars 2020 flight mechanics**: GNC-reconstructed event table (20 events from entry to touchdown). The p2 figure gives **298 kg descent-stage propellant used to touchdown and 77 kg left at flyaway impact** for a 1,026 kg rover, parachute deploy at 433 m/s / Mach 1.76 / 504 Pa, and peak deceleration 10.7 g.

@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+ssme_rs25_adaptation_2015,RS-25 vacuum thrust,2279,kN,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; staged-combustion LOX/LH2"
+ssme_rs25_adaptation_2015,RS-25 heritage,"135 missions; almost 3,000 ground tests; >1 million s hot-fire",,PDF p1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+ssme_rs25_adaptation_2015,RS-25 certified service life,"55 starts and 27,000 s",,PDF p1; p7,"R70 full-extraction pass, read from the hosted PDF 2026-09-26; SLS plans consider lowering it to gain structural margin"
+ssme_rs25_adaptation_2015,STS-era engine count,74 development engines and 83 flight engines,,PDF p1-2,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+ssme_rs25_adaptation_2015,Shuttle-surplus engines for SLS,16 flight engines + 2 development engines (first four SLS flights),,PDF p1; p7,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+ssme_rs25_adaptation_2015,RS-25 production lead time,about five years per engine,,PDF p6,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"

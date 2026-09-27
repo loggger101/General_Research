@@ -272,3 +272,9 @@ R36 left the D, T and P rows "unanchored at material level" as an honest gap. R3
 - **hein2020, round 1's comparison table**: "throughput 150 kg/s/kg-equipment" misreads the paper. 150 kg is the spacecraft dry mass; the breakeven throughput is 2.3 x 10^-4 kg/s per kg (p6), as R61 already extracted. The line's conclusion (our beneficiation cost line is light) does not depend on it.
 - Page numbers added to the hein2020, asime2018 and lewicki2023 rows of `composition_value_key_numbers.csv`.
 - New rows: toplis2014 (core radius 90-120 km, p2); usgs_pp1802n, mandler_elkins_tanton_2013 and farnocchia_2024 (abstract/excerpt level, not re-checkable here). cannon2023 and the two Ryugu organics papers are marked context-only.
+
+## R70 - Full-extraction pass of the hosted sources (2026-09-27; registry unchanged)
+
+Every hosted full text in this domain was re-read end to end for pipeline-useful numbers; tables were read by word coordinates (or from rendered page images where the text layer fails) and checked against their printed totals. New files (all in `extracted_data/`, every row carries `source_id` and a page location): `r70_bennu_volatiles_2025.csv` (15); `r70_bennu_volatiles_2025_ed_table1_CNH.csv` (13); `r70_glavin_2018.csv` (17); `r70_marschall_2025_67p_refractory_ice_ratio.csv` (95); `r70_nat_dms2023.csv` (15); `r70_ryugu_hydrated_2023.csv` (8); `r70_toplis2014.csv` (6).
+
+- Bennu Extended Data Table 1 (C, N, H by sample: 13 rows), Marschall 2025 67P refractory/ice ratios (Tables 1-4: 95 rows) and the Glavin 2018, Toplis 2014, Ryugu hydrated-phase and DMS key numbers are now machine-readable.

@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_esd30000_sls_mission_planners_guide,SLS delivery to lunar vicinity by block,"Block 1 >= 26 t (57,320 lbm); Block 1B 34-40 t (up to 88,185 lbm); Block 2 >= 45 t (99,208 lbm)",,PDF p13,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+nasa_esd30000_sls_mission_planners_guide,"Co-manifested payload (CPL) goals, Block 1B / Block 2",first 1B flight 8.0 t CPL with 36.3 t total to cis-lunar; later 1B flights 9.0 t CPL with 37.3 t total; Block 2 > 15 t CPL,t,PDF p36,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+nasa_esd30000_sls_mission_planners_guide,Europa mission trajectory comparison,"SLS direct C3 = 82 km2/s2, 1.9 years; with Earth/Venus flybys C3 = 15, 6.4 years (up to 70% shorter transit)",,PDF p12 Fig.3-1,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
+nasa_esd30000_sls_mission_planners_guide,Payload fairings,"Block 1: 5.1 m x 19.1 m; Block 1B/2: 8.4 m diameter, 19.1-27.4 m long; 10 m fairing also shown",,PDF p13; p35,"R70 full-extraction pass, read from the hosted PDF 2026-09-26"
