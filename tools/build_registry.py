@@ -5,9 +5,10 @@
 
 - sources.csv is rebuilt from every <domain>/sources_domain.csv (domain order,
   then file order), with `domain_dir` prepended. Never edit it by hand.
-- full_texts_manifest.csv keeps its hand-written (domain_dir, id, file) mapping;
-  this fills in `bytes` and `sha256` from disk. To register a new hosted file,
-  add a row with those three columns and leave the last two empty.
+- full_texts_manifest.csv keeps its hand-written (domain_dir, id, file, license)
+  columns; this fills in `bytes` and `sha256` from disk. To register a new
+  hosted file, write `domain_dir,id,file,,,license` (see LICENSE_CLASSES in
+  common.py for the license's first word).
 """
 import argparse
 import sys
@@ -25,12 +26,14 @@ def build_manifest():
     if header != MANIFEST_COLS:
         sys.exit(f'{MANIFEST.name}: header must be {",".join(MANIFEST_COLS)}')
     out = []
-    for domain, sid, fname, *_ in rows:
+    for row in rows:
+        domain, sid, fname = row[:3]
+        license = row[5] if len(row) > 5 else ''
         path = ROOT / domain / 'full_texts' / fname
         if not path.is_file():
             sys.exit(f'{MANIFEST.name}: {domain}/full_texts/{fname} (id {sid}) does not exist')
         size, digest = file_digest(path)
-        out.append([domain, sid, fname, size, digest])
+        out.append([domain, sid, fname, size, digest, license])
     return to_csv_text(MANIFEST_COLS, out, line_terminator(MANIFEST))
 
 

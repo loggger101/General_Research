@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+carry2012,bodies with mass and volume estimates compiled,287,"bodies (asteroids, comets, TNOs)","Abstract, p1","read from the hosted PDF on 2026-09-26, before it was un-hosted"
+carry2012,share of density estimates more precise than 20%,about one third,,"Abstract, p1","read from the hosted PDF on 2026-09-26, before it was un-hosted"
+carry2012,macroporosity trend with size,dwarf planets ~no macroporosity; bodies <400 km can have large voids; C- and S-complex density rises with diameter,,"Abstract, p1","read from the hosted PDF on 2026-09-26, before it was un-hosted"

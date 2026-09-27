@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+lac_bac_2024,perlite tank with LAC / BAC (liquid-nitrogen coolant): boil-off,0.011 / 0.004,% per day (from 0.04 baseline),"Abstract, p1","read from the hosted PDF on 2026-09-26, before it was un-hosted"
+lac_bac_2024,perlite tank with LAC / BAC (CO2 refrigeration): boil-off,0.031 / 0.028,% per day,"Abstract, p1","read from the hosted PDF on 2026-09-26, before it was un-hosted"
+lac_bac_2024,HePUR tank with LAC / BAC: boil-off,0.17 / 0.04,% per day (from 0.24 baseline),"Abstract, p1","read from the hosted PDF on 2026-09-26, before it was un-hosted"
+lac_bac_2024,direct hydrogen cooling (DHC) specific energy,9.7,kWh per kg,p20,"about double the 5 kWh/kg reliquefaction figure it cites. read from the hosted PDF on 2026-09-26, before it was un-hosted"
+nextc_ppu_2020,Flight PPU efficiency at 55 C baseplate and 125 V input,91.8,%,p12,"nominal 93.9% at 100 V / 25 C. read from the hosted PDF on 2026-09-26, before it was un-hosted"
+nextc_ppu_2020,Beam Supply rating,3.52 A at 1800 VDC (6.34 kW),,p3,"read from the hosted PDF on 2026-09-26, before it was un-hosted"
+nextc_ppu_2020,PPU envelope,"50.80 x 40.89 x 13.97 cm (29,019 cm3)",,"p2, p5","same envelope and mounting pattern as the heritage NEXT PPU. read from the hosted PDF on 2026-09-26, before it was un-hosted"
+jpl_dsn_services_catalog_820_100,DSN contact-dependent hourly rate RB at publication,1792,USD per hour,"Sec 6, p66","Rev H, June 2022. read from the hosted PDF on 2026-09-26, before it was un-hosted"
+jpl_dsn_services_catalog_820_100,aperture fee equation,AF = RB x AW x MW,,"Eq. 6-1, p65","AW 1.0 single 34-m; 2.0 two-station array or 2-station Delta-DOR; 3.0 three-station array or any combination including a 70-m; 4.0 four-station array. MW 1.0, or 0.5 downlink-only (MSPA). read from the hosted PDF on 2026-09-26, before it was un-hosted"

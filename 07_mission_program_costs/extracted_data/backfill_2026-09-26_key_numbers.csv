@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2020_ig-20-023_planetary_science_portfolio,Mars 2020 / Perseverance life-cycle cost,"2,725.8",M USD,"Table 2, PDF p21","cost caps exclude launch vehicle and operations. page located by matching the values in the hosted PDF, 2026-09-26"
+nasa_oig_2020_ig-20-023_planetary_science_portfolio,OSIRIS-REx cost-cap basis / life-cycle cost,"622.0 / 1,121.4",M USD,"Table 2, PDF p21","cost caps exclude launch vehicle and operations. page located by matching the values in the hosted PDF, 2026-09-26"
+nasa_oig_2020_ig-20-023_planetary_science_portfolio,MSL / Curiosity life-cycle cost,"2,476.3",M USD,"Table 2, PDF p21","cost caps exclude launch vehicle and operations. page located by matching the values in the hosted PDF, 2026-09-26"
+nasa_oig_2020_ig-20-023_planetary_science_portfolio,InSight cap basis / LCC,593.9 / 828.9,M USD,"Table 2, PDF p21","cost caps exclude launch vehicle and operations. page located by matching the values in the hosted PDF, 2026-09-26"
+nasa_oig_2020_ig-20-023_planetary_science_portfolio,Lucy cap basis / LCC,505.7 / 981.1,M USD,"Table 2, PDF p21","cost caps exclude launch vehicle and operations. page located by matching the values in the hosted PDF, 2026-09-26"
+nasa_oig_2020_ig-20-023_planetary_science_portfolio,Psyche cap basis / LCC,626.3 / 996.4,M USD,"Table 2, PDF p21","cost caps exclude launch vehicle and operations. page located by matching the values in the hosted PDF, 2026-09-26"
+nasa_oig_2020_ig-20-023_planetary_science_portfolio,Europa Clipper LCC,"4,250.0",M USD,"Table 2, PDF p21","cost caps exclude launch vehicle and operations. page located by matching the values in the hosted PDF, 2026-09-26"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,MSR life-cycle cost trajectory,"2.5-3 (Jul 2020) -> 6.2 (KDP-B, Sep 2022) -> 7.4 (unofficial, Jun 2023)",B USD,"PDF p4, p28","excludes ESA investment and the sample receiving facility. page located by matching the values in the hosted PDF, 2026-09-26"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,Independent Review Board alternative architectures,8 to 11,B USD,PDF p8,"page located by matching the values in the hosted PDF, 2026-09-26"
+nasa_oig_2024_ig-24-008_mars_sample_return_audit,FY2024 MSR budget request,949.3,M USD,"PDF p18, p45","page located by matching the values in the hosted PDF, 2026-09-26"

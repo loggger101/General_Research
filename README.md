@@ -36,7 +36,7 @@ added later, in the order the research rounds found the next gap.
 README.md                                This file: what it is and how to read it
 INDEX.md                                 Master index: every source → tier, access, pipeline mapping; research log at the bottom
 sources.csv                              Machine-readable registry, one row per source (GENERATED — see "Tools")
-full_texts_manifest.csv                  Every hosted file → its source id, size and sha256
+full_texts_manifest.csv                  Every hosted file → its source id, size, sha256 and licence
 revision_candidates.csv                  Upstream cells the evidence says should change, with current status
 AGENTS.md                                Working rules for agents running research rounds here
 tools/                                   build_registry.py (regenerate derived files) and validate.py (consistency checks)
@@ -85,7 +85,13 @@ says how it was verified or why it could not be.
 1. Full texts are committed **only when legally redistributable**: arXiv
    preprints under their licenses, NASA/ESA documents in the public domain or
    CC-licensed, and journal articles that are genuinely open access with a
-   license permitting redistribution.
+   license permitting redistribution. Each hosted file's licence is recorded
+   in the `license` column of `full_texts_manifest.csv`, read from the file
+   or its record (PDF licence statement, NTRS copyright determination, arXiv
+   abs page). arXiv's default licence (`nonexclusive-distrib/1.0`) lets arXiv
+   distribute a paper but does not let anyone else, so only CC-licensed arXiv
+   versions qualify. `validate.py` warns on every hosted file whose licence
+   does not permit redistribution.
 2. Paywalled items get: full metadata, abstract (as published), and any key
    tables/numbers extractable from the accessible portion — recorded in
    `extracted_data/` with page/table references so they can be verified later.
@@ -111,7 +117,8 @@ This repo never edits the pipeline repos. When a source contradicts a cell in
 spacecost, AsteroidCatalog or economicspace, the finding goes into that
 domain's `FINDINGS.md` and a row in `revision_candidates.csv`: target file and
 row, current value, proposed change, evidence and status (`open`, `applied`,
-`declined`, `superseded`, `blocked`). Each row records the upstream commit its
+`declined`, `superseded`, `blocked`, or `withdrawn` when this repo's own
+evidence turns out to be wrong). Each row records the upstream commit its
 current value was read from, so a stale status is visible. Re-check the open
 rows against the upstream repos whenever they release.
 
@@ -126,9 +133,13 @@ python tools/validate.py                # consistency checks; exit 1 on any erro
 `validate.py` checks that `sources.csv` matches the per-domain files, that each
 INDEX.md table lists exactly its domain's sources in registry order with five
 cells per row, that the research log runs from Round 0 to the latest with no
-gaps, that every hosted file is in the manifest with the right hash, that every
-extracted-data CSV is rectangular and cites registered ids, and that
-`revision_candidates.csv` uses known statuses and sources. Standard library
+gaps, that every hosted file is in the manifest with the right hash and a
+licence, that every extracted-data CSV is rectangular and cites registered
+ids, that `revision_candidates.csv` uses known statuses and sources, and that
+no CSV or Markdown file has doubled carriage returns (which make git treat it
+as binary). It also warns, without failing, on hosted files whose licence does
+not permit redistribution, extracted-data CSVs with no `source_id` column, and
+sources that no extracted-data CSV in their domain cites. Standard library
 only; Python 3.8+.
 
 ## Provenance of this process

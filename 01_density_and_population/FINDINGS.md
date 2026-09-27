@@ -1,6 +1,6 @@
 # Domain 1 Findings — density by spectral type, PGM factors, population statistics
 
-## carry2012 — Carry (2012), "Density of asteroids", Planetary and Space Science 60(7):537-552 [T1]
+## carry2012 — Carry (2012), "Density of asteroids", Planetary and Space Science 73:98-118 [T1]
 
 - **Full text hosted**: `full_texts/carry2012_density_of_asteroids_arxiv1203.4336v1.pdf`
   (arXiv:1203.4336v1 preprint of the PSS paper, DOI 10.1016/j.pss.2012.03.009 — single author B. Carry, ESA ESAC; verified live from this machine: HTTP 200, application/pdf, 5.7 MB).
@@ -198,3 +198,12 @@ factors remain uncited.
 **bus_demeo_2020_pds_taxonomy_bundle [T3; full text hosted]**: **closes R41's carried open item "Bus–DeMeo PDS bundle pull."** All six files of the PDS SBN release (urn:nasa:pds:ast.bus-demeo.taxonomy::1.0, DOI 10.26033/089p-c283; public-domain NASA data) pulled live from sbnarchive.psi.edu this round — demeotax.tab / meanspectra.tab / demeorefs.tab / pcscores.tab / classdesc.asc / taxocard.pdf (per-file sha256(16) in the extracted CSV), committed as `full_texts/bus_demeo_2020_pds_bundle.zip`. **demeotax.tab parsed: 371 classified bodies, base-class distribution exact-summed** → `extracted_data/r42_bus_demeo_class_distribution.csv` (S=144 dominates; L=22, Xk=18, V=17, Ch/D/K/Cgh ~10–16 each … T=4). Coverage against our TAXONOMY_COMPOSITION: **24 of 31 named types have ground-truth members**; Sk and Sl (S/K, S/L transitionals) have none in the reference set, as do Tholen-only rows M/E/P/F/G by construction. classdesc.asc = per-class spectral description + member count from Table 5 of DeMeo et al. 2009 — the "what these letters mean" companion to `demeo_2009_bus_taxonomy_near_ir` (which remains open_not_pulled for the paper text itself).
 
 **R41's three carried items, disposition**: ssoBFT delta_v → anchored in domain 3 this round; Bus–DeMeo PDS bundle pull → closed above; SBDB per-object query reliability → RESOLVED: the working endpoint is `ssd-api.jpl.nasa.gov/sbdb.api?sstr=<name>` (verified live, used to resolve the Bennu/Hermes identity anomaly in domain 3's mining); R41's "per-object 400s" were a wrong parameter on the bulk-only `sbdb_query.api`. The jpl_sbdb registry row was updated accordingly.
+
+## Maintenance (2026-09-26) — carry2012 Table 3 re-read; three files un-hosted; citation fixes
+
+- **Un-hosted**: carry2012 and chesley_2014_bennu_orbit_bulk_density (arXiv default licence), lodders_palme2009 (LPI abstract, no licence). Un-hosted on 2026-09-26 because the licence does not permit redistribution (details in each registry row); every number this file quotes from them was checked against the PDF first and is in `extracted_data/`.
+- **carry2012 Table 3, re-read by word coordinates** (`extracted_data/carry2012_density_by_type.csv`, rewritten with the N of every tier). Round 1's extraction mixed values between wrapped rows: C's 20% tier is 1.33 ± 0.58 (not 1.25), Cb's is 1.25 ± 0.21, Ch's is 1.41 ± 0.29; Q has no density estimate at any tier (the "2.23 / 1.93" were the R and V rows); R = 2.23 ± 1.02 (N=1); V = 1.93 ± 1.07 (3 V-type bodies, not Vesta). The K value 3.54 ± 0.21 in both precision tiers is one body.
+- **Effect on the comparison table above**: the B-row "stray 1.33" ambiguity resolves to C; the Q "possible discrepancy" has no basis, so rc-006 is withdrawn; the K discrepancy rests on a single body (rc-001 evidence corrected). C (1.33-1.57 vs ours 1.50) still agrees.
+- **Citation**: Carry (2012) is Planetary and Space Science 73:98-118, DOI 10.1016/j.pss.2012.03.009. The registry DOI pointed at an unrelated A&A paper and the heading said 60(7):537-552; both corrected.
+- simda2024 re-classed `open_service` (the live SiMDA export is what was used; derived statistics are committed).
+- New rows in `extracted_data/backfill_2026-09-26_key_numbers.csv`: siltala_granvik_2021 and kretlow_2022 (page-located in the hosted PDFs); dziadura2023, harris_dabramo_2021, wilkinson_robinson_2000 (abstract-level, not re-checkable here); mp3c (live-service values). epsc2022_context, harris2015, adam_2017, demeo_2009_bus_taxonomy_near_ir and mpc_mpcorb are marked context-only in the registry, with reasons.

@@ -20,7 +20,14 @@ python tools/validate.py         # must exit 0
   classes", followed by how it was verified (write `open_service`, not
   `open service`; a pulled-but-unhostable full text is `verified_live_not_pulled`). `full_text_hosted` needs the file
   in `full_texts/` *and* a row in `full_texts_manifest.csv` (write
-  `domain_dir,id,file` and let the build fill `bytes,sha256`).
+  `domain_dir,id,file,,,license` and let the build fill `bytes,sha256`).
+- **Read the licence off the file or its record**: the PDF's own licence
+  statement, the NTRS `copyright.determinationType`, or the arXiv abs page.
+  Don't take it from the journal's general policy or from where the copy came
+  from. arXiv's default licence, an author-homepage copy and "free to read" grant
+  no right to redistribute. The 2026-09-26 audit found 20 hosted files hosted
+  on those grounds, including one recorded as "CC BY per journal policy" whose
+  PDF says "All rights reserved".
 - **INDEX.md domain tables list the same ids in the same order as
   `sources_domain.csv`**: a new source is appended to both. Every table uses
   the header `| id | tier | source (short) | access | backs / could replace |`,
@@ -41,6 +48,18 @@ python tools/validate.py         # must exit 0
   `newline=''`**, never by joining strings: ten older files had unquoted commas
   that shifted cells, and R53's file had doubled carriage returns. Keep the
   `source_id,item,value,unit,location_in_source,notes` columns where they fit.
+  Every extracted-data CSV needs a `source_id` column. Leave it blank only for
+  the pipeline's own value or a comparison computed here, and write `a;b` for a
+  row derived from two sources. A source that no CSV cites needs "Context-only:
+  <reason>" in its registry row.
+- **Read tables by word coordinates, then check what you read.** Taking numbers
+  from the text stream mixed values between wrapped rows of carry2012 Table 3
+  (a revision candidate, rc-006, was built on one and later withdrawn) and
+  swapped the two insulation cases in lac_bac_2024. Check each value against its
+  row label, and where a table has totals, check that they add up.
+- **Before un-hosting a file, extract every number the repo uses from it**, with
+  page locations, and record the removed copy's size and sha256 in its
+  `access_status`. After removal nothing can be re-checked.
 - **Record revision candidates.** When a source contradicts an upstream cell,
   add a `revision_candidates.csv` row (next `rc-NNN`, status `open`) with the
   current upstream value and the commit you read it from. When you re-check
