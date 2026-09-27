@@ -11,13 +11,13 @@ import sys
 from collections import Counter, defaultdict
 
 from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_STATUSES, CANDIDATES,
-                    DOMAIN_COLS, INDEX, LICENSE_CLASSES, MANIFEST, MANIFEST_COLS, NOT_REDISTRIBUTABLE, README,
+                    DOMAIN_COLS, INDEX, LICENSE_CLASSES, MANIFEST, MANIFEST_COLS, NOT_REDISTRIBUTABLE, PENDING_ACCESS, README,
                     REGISTRY, REGISTRY_COLS, ROOT, TIERS, access_class, aggregate_rows, domain_dirs, file_digest,
                     read_csv, read_dicts)
 
 INDEX_HEADER = ['id', 'tier', 'source (short)', 'access', 'backs / could replace']
 ACCESS_WORDS = re.compile(r'(full[_ ]text[_ ]hosted|open[_ ]not[_ ]pulled|verified[_ ]live|open[_ ]service|'
-                          r'public[_ ]domain[_ ]excerpt|skipped)\b', re.I)
+                          r'public[_ ]domain[_ ]excerpt|registered[_ ]not[_ ]pulled|skipped)\b', re.I)
 GITHUB_HARD_LIMIT = 100 * 1024 * 1024
 GITHUB_WARN_LIMIT = 50 * 1024 * 1024
 
@@ -287,11 +287,13 @@ def check_extracted(rep, reg):
                 if unknown:
                     rep.error(f'{name}: source_id not in sources.csv: {", ".join(unknown)}')
     # README "How an item earns a place" #3: numbers extracted into a CSV, or the row says context-only.
+    # A registered_not_pulled row has not been read yet, so it cannot be either; it is counted in the summary instead.
     if no_source_col:
         rep.warn(f'{len(no_source_col)} CSVs have no source_id column, so their rows are not traceable to a '
                  f'registry id: {", ".join(no_source_col)}')
     uncovered = Counter(r['domain_dir'] for sid, r in reg.items()
                         if sid not in cited[r['domain_dir']]
+                        and access_class(r['access_status']) not in PENDING_ACCESS
                         and not re.search(r'context[- ]only', r['access_status'] + r['pipeline_mapping'], re.I))
     if uncovered:
         rep.warn(f'{sum(uncovered.values())} sources are not cited by id in any extracted-data CSV of their domain '
@@ -363,8 +365,9 @@ def main():
     for line in rep.lines:
         print(line)
     tiers = Counter(r['tier'] for r in reg.values())
-    print(f'{len(reg)} sources ({", ".join(f"{t}x{tiers[t]}" for t in sorted(tiers))}) in {len(domain_dirs())} domains '
-          f'— {rep.errors} error(s), {rep.warnings} warning(s)')
+    pending = sum(access_class(r['access_status']) in PENDING_ACCESS for r in reg.values())
+    print(f'{len(reg)} sources ({", ".join(f"{t}x{tiers[t]}" for t in sorted(tiers))}) in {len(domain_dirs())} domains, '
+          f'{pending} registered but not yet pulled — {rep.errors} error(s), {rep.warnings} warning(s)')
     sys.exit(1 if rep.errors else 0)
 
 

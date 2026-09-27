@@ -16,11 +16,13 @@ python tools/validate.py         # must exit 0
 
 - **Edit `<domain>/sources_domain.csv`, never `sources.csv`.** The aggregate is
   generated; hand-appended rows landed outside their domain block in R42.
-- **`access_status` starts with one of the six classes** in README "Access
+- **`access_status` starts with one of the seven classes** in README "Access
   classes", followed by how it was verified (write `open_service`, not
   `open service`; a pulled-but-unhostable full text is `verified_live_not_pulled`). `full_text_hosted` needs the file
   in `full_texts/` *and* a row in `full_texts_manifest.csv` (write
   `domain_dir,id,file,,,license` and let the build fill `bytes,sha256`).
+  A `registered_not_pulled` row (R74) records an upstream citation that has not
+  been read; when you pull it, re-class it and say what you read.
 - **Read the licence off the file or its record**: the PDF's own licence
   statement, the NTRS `copyright.determinationType`, or the arXiv abs page.
   Don't take it from the journal's general policy or from where the copy came
