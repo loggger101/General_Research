@@ -2,6 +2,8 @@
 
 Round 70 (2026-09-27) extracted every file hosted in this repo. The 58 sources below are not hosted, so their extraction is limited to what earlier rounds read live. This file lists exactly what to fetch to finish the job. Tick each box as you go.
 
+**Status after Round 72 (2026-09-27):** Round 71 (branch `side-deepening`) extracted all 20 section-A files and seven section-B downloads (ticked below), and Round 72 checked them. Still to fetch: `planetary_society_pebd_mission_costs` and the full `jpl_nhats_nea_dv_oracle` per-body table (section B), and every item in sections C and D. Round 72's cloud container could reach only package registries, not these hosts, so those downloads still need your machine (or a container whose network settings allow the hosts).
+
 ## How to use this list
 
 1. **Save everything to a folder outside the repo**: `C:\Users\Loggg\OneDrive\Documents\GitHub\General_Research_incoming\` (a sibling of this repo). The repo is public and most of these files may not be redistributed. Do not put them in `<domain>/full_texts/`.
@@ -45,26 +47,26 @@ Check them with `sha256sum ../General_Research_incoming/*.pdf` against this tabl
 
 | ☐ | Save as | Bytes | sha256 | Rows now |
 |---|---|---|---|---|
-| ☐ | `carry2012.pdf` | 5,680,004 | `1e863e5ffb1c193705a77e821df7a010bfc8f2cf4711a191cea26de682066117` | 29 (per-class Table 3 only; no per-asteroid densities extracted) |
-| ☐ | `lodders_palme2009.pdf` | 15,554 | `3444e51aa3fef3c529bc95ac4735b439e31ead8421d182b532878c0b6fe88dd6` | 9 |
-| ☐ | `chesley_2014_bennu_orbit_bulk_density.pdf` | 1,231,590 | `55a96542ba2f2116a54f3f2c01eedbdfe2237b51a0f55e325b721608dc1ee7ba` | 6 |
-| ☐ | `hein2020.pdf` | 430,126 | `ed8d373c3384f49d0ef2f0fe13b0d6c49f24c079fe681c51219380dc026b5ba0` | 19 |
-| ☐ | `asime2018.pdf` | 2,377,086 | `c43015b864f3752413ce1e8ce273f63b75979b5eda64950b411f515c0eb211d7` | 3 |
-| ☐ | `lewicki2023.pdf` | 257,123 | `6dde606baf15004c07eb6689669c2c701470c34d09037ecb9944b595b2ab0fda` | 1 |
-| ☐ | `reddy_asteroids_iv_mineralogy.pdf` | 2,446,918 | `7e79fa0d1240b571f0b42480ba319e77385147f26ab758d0bc3815c45a1b44a2` | 7 |
-| ☐ | `lodders_2010_solar_abundances.pdf` | 248,156 | `2f76d28cbcbb21f28ff104513d56c5cb6c6fbfb2819b0861ae1f551ef88af88a` | 87 |
-| ☐ | `rubin_2019_67p_abundances.pdf` | 942,055 | `f40280c2822ece2823ca689e042012853c04e36816077b4e65a1fff8c53acd53` | 20 |
-| ☐ | `elvis2011.pdf` | 607,711 | `b4518f4bc18c3a2b888972fd1229f1ec6eeec0f38307d1af407245e927a64ca5` | 3 |
-| ☐ | `ieva2014.pdf` | 554,905 | `5f2781cf3f310a2a82feeefe4f30ff2077beafd71bbca6e3f9b7993e359b617d` | 3 |
-| ☐ | `kim_2013.pdf` | 1,329,091 | `418173a3aba5ea050402c3f5ee200f1fde11f41f29eee5958b11f102529c097a` | 8 |
-| ☐ | `komurasaki_aquarius_ground_2018.pdf` | 2,328,887 | `d94e1e3ab0500c408e3f1ca4d4adbacd070af4d88202df78a5a752c3c90c9478` | 4 |
-| ☐ | `krishnan_2010_h2o2_rp1_upper_stage.pdf` | 268,620 | `0641a5e90f7beef229d25b87a1cf031d961ba55483987c82d563c0090fa93d5c` | 7 |
-| ☐ | `pietrobon_1999_h2o2_kero_shuttle_boosters.pdf` | 89,348 | `31e72bb5120fb1f97642ad3a5f03ccdf332ac37ec8f2ace23388f1d79c7eb6ca` | 4 |
-| ☐ | `risha_2014_alice_jpp.pdf` | 3,108,555 | `fb5eb59116d755b4c9037f71f661c852122cb4951cfecd0713f913c867bc2178` | 3 |
-| ☐ | `lac_bac_2024.pdf` | 2,084,796 | `8193ca8eee5292b0416a94292470248fea42cc0d3548a9a8f86fb891ace5411f` | 8 |
-| ☐ | `ssap_2021.pdf` | 317,152 | `b0ae503c9a59d10f5b983e3afef5e37dfa7d6558d01292852750e878c3e4436d` | 13 |
-| ☐ | `nextc_ppu_2020.pdf` | 7,393,690 | `450c737c6c340735234c4d8c5c72edf12d0892954aad6f905e5f08931ea691e1` | 7 |
-| ☐ | `jpl_dsn_services_catalog_820_100.pdf` | 1,543,820 | `48bdf613fb4bbf4291980c135dc5742ae311d7ba21df2383ec3d9c05d3383b6c` | 9 |
+| ☑ | `carry2012.pdf` | 5,680,004 | `1e863e5ffb1c193705a77e821df7a010bfc8f2cf4711a191cea26de682066117` | 29 (per-class Table 3 only; no per-asteroid densities extracted) |
+| ☑ | `lodders_palme2009.pdf` | 15,554 | `3444e51aa3fef3c529bc95ac4735b439e31ead8421d182b532878c0b6fe88dd6` | 9 |
+| ☑ | `chesley_2014_bennu_orbit_bulk_density.pdf` | 1,231,590 | `55a96542ba2f2116a54f3f2c01eedbdfe2237b51a0f55e325b721608dc1ee7ba` | 6 |
+| ☑ | `hein2020.pdf` | 430,126 | `ed8d373c3384f49d0ef2f0fe13b0d6c49f24c079fe681c51219380dc026b5ba0` | 19 |
+| ☑ | `asime2018.pdf` | 2,377,086 | `c43015b864f3752413ce1e8ce273f63b75979b5eda64950b411f515c0eb211d7` | 3 |
+| ☑ | `lewicki2023.pdf` | 257,123 | `6dde606baf15004c07eb6689669c2c701470c34d09037ecb9944b595b2ab0fda` | 1 |
+| ☑ | `reddy_asteroids_iv_mineralogy.pdf` | 2,446,918 | `7e79fa0d1240b571f0b42480ba319e77385147f26ab758d0bc3815c45a1b44a2` | 7 |
+| ☑ | `lodders_2010_solar_abundances.pdf` | 248,156 | `2f76d28cbcbb21f28ff104513d56c5cb6c6fbfb2819b0861ae1f551ef88af88a` | 87 |
+| ☑ | `rubin_2019_67p_abundances.pdf` | 942,055 | `f40280c2822ece2823ca689e042012853c04e36816077b4e65a1fff8c53acd53` | 20 |
+| ☑ | `elvis2011.pdf` | 607,711 | `b4518f4bc18c3a2b888972fd1229f1ec6eeec0f38307d1af407245e927a64ca5` | 3 |
+| ☑ | `ieva2014.pdf` | 554,905 | `5f2781cf3f310a2a82feeefe4f30ff2077beafd71bbca6e3f9b7993e359b617d` | 3 |
+| ☑ | `kim_2013.pdf` | 1,329,091 | `418173a3aba5ea050402c3f5ee200f1fde11f41f29eee5958b11f102529c097a` | 8 |
+| ☑ | `komurasaki_aquarius_ground_2018.pdf` | 2,328,887 | `d94e1e3ab0500c408e3f1ca4d4adbacd070af4d88202df78a5a752c3c90c9478` | 4 |
+| ☑ | `krishnan_2010_h2o2_rp1_upper_stage.pdf` | 268,620 | `0641a5e90f7beef229d25b87a1cf031d961ba55483987c82d563c0090fa93d5c` | 7 |
+| ☑ | `pietrobon_1999_h2o2_kero_shuttle_boosters.pdf` | 89,348 | `31e72bb5120fb1f97642ad3a5f03ccdf332ac37ec8f2ace23388f1d79c7eb6ca` | 4 |
+| ☑ | `risha_2014_alice_jpp.pdf` | 3,108,555 | `fb5eb59116d755b4c9037f71f661c852122cb4951cfecd0713f913c867bc2178` | 3 |
+| ☑ | `lac_bac_2024.pdf` | 2,084,796 | `8193ca8eee5292b0416a94292470248fea42cc0d3548a9a8f86fb891ace5411f` | 8 |
+| ☑ | `ssap_2021.pdf` | 317,152 | `b0ae503c9a59d10f5b983e3afef5e37dfa7d6558d01292852750e878c3e4436d` | 13 |
+| ☑ | `nextc_ppu_2020.pdf` | 7,393,690 | `450c737c6c340735234c4d8c5c72edf12d0892954aad6f905e5f08931ea691e1` | 7 |
+| ☑ | `jpl_dsn_services_catalog_820_100.pdf` | 1,543,820 | `48bdf613fb4bbf4291980c135dc5742ae311d7ba21df2383ec3d9c05d3383b6c` | 9 |
 
 None of these 20 may be hosted again; each was un-hosted for its licence.
 
@@ -75,28 +77,28 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
 - [ ] **planetary_society_pebd_mission_costs** (13) — **highest value**: NASA planetary-mission costs by development, launch and operations for every mission, at fiscal-year resolution (80 sheets). Only a summary has been extracted.
   Get: https://docs.google.com/spreadsheets/d/12frTU01gfT1CXGWFimN3whf4348F_r3XolTqBt02OyM/export?format=xlsx
   Save as `planetary_society_pebd_mission_costs.xlsx`. The dataset terms require attribution to The Planetary Society; extract only.
-- [ ] **adam_2017** (0) — volumes and bulk densities of 40 asteroids. The arXiv preprint works from here.
+- [x] **adam_2017** (extracted in R71) (0) — volumes and bulk densities of 40 asteroids. The arXiv preprint works from here.
   Get: https://arxiv.org/pdf/1702.01996 (published version: https://www.aanda.org/articles/aa/pdf/2017/05/aa29956-16.pdf, which needs a browser)
   Save as `adam_2017.pdf`. arXiv default licence, so extract only.
-- [ ] **metzger_2023** (0) — economics of lunar-derived propellant (Acta Astronautica 2023). Registered but never extracted.
+- [x] **metzger_2023** (extracted in R71) (0) — economics of lunar-derived propellant (Acta Astronautica 2023). Registered but never extracted.
   Get: https://arxiv.org/pdf/2303.09011
   Save as `metzger_2023.pdf`. Extract only.
-- [ ] **metzger_zacny_2020** (5) — thermal extraction of volatiles from regolith.
+- [x] **metzger_zacny_2020** (extracted in R71) (5) — thermal extraction of volatiles from regolith.
   Get: https://arxiv.org/pdf/2306.03776
   Save as `metzger_zacny_2020.pdf`. Extract only.
-- [ ] **proctor_apex_2019** (4) — NASA Glenn regolith-excavation power and force facility (2.7 MB).
+- [x] **proctor_apex_2019** (extracted in R71) (4) — NASA Glenn regolith-excavation power and force facility (2.7 MB).
   Get: https://ntrs.nasa.gov/api/citations/20190027268/downloads/20190027268.pdf
   Save as `proctor_apex_2019.pdf`. The registry records the NTRS copy as public domain, so it may be hostable after an NTRS copyright check.
-- [ ] **zeitlin_asteroid_excavation_project** (1) — asteroid icy-regolith excavation and volatile capture (396 KB).
+- [x] **zeitlin_asteroid_excavation_project** (extracted in R71) (1) — asteroid icy-regolith excavation and volatile capture (396 KB).
   Get: https://ntrs.nasa.gov/api/citations/20150016080/downloads/20150016080.pdf
   Save as `zeitlin_asteroid_excavation_project.pdf`. May be hostable after an NTRS copyright check.
 - [ ] **jpl_nhats_nea_dv_oracle** (10) — round-trip Δv and duration for every NHATS-accessible NEA. Only statistics are extracted so far; the per-body table (~7,100 bodies) is not.
   Get: https://ssd-api.jpl.nasa.gov/nhats.api
   Save as `jpl_nhats_nea_dv_oracle.json`.
-- [ ] **usgs_pp1802n** (3) — the full USGS Professional Paper 1802-N (platinum-group elements). Only an excerpt is hosted now.
+- [x] **usgs_pp1802n** (extracted in R71) (3) — the full USGS Professional Paper 1802-N (platinum-group elements). Only an excerpt is hosted now.
   Get: https://pubs.usgs.gov/pp/1802/n/pp1802n.pdf
   Save as `usgs_pp1802n.pdf`. USGS public domain, so it may be hosted if under 50 MB.
-- [ ] **jm_pgm_market_report_2026** (10) — Johnson Matthey PGM market report, May 2026: full supply and demand tables.
+- [x] **jm_pgm_market_report_2026** (extracted in R71) (10) — Johnson Matthey PGM market report, May 2026: full supply and demand tables.
   Get: https://matthey.com/documents/161599/509428/pgm-market-report-26.pdf/a2d115af-bf7c-f589-29e9-6beacf8a4452
   Save as `jm_pgm_market_report_2026.pdf`. JM terms forbid reuse without consent, so extract only; never host.
 
