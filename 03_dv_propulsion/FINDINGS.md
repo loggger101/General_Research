@@ -110,7 +110,7 @@ Domain 3 is now complete at both ends AND in the middle: easy NEA boundary (elvi
 - **morren_curran_1991** (T2, NASA TM-105149 / AIAA-91-2228; NTRS citation 19910020938 direct PDF route verified live — US-government work, public domain) is now hosted in full_texts/ and registered. This IS the NASA program that expanded low-power arcjets beyond state-of-the-art (~530 s mission-average at 1.6 kW hydrazine) toward **600 s and 2-5 kW** — measured stable operation for a total of 300 h (three continuous 100-h sessions) at exactly **550 s / 2.0 kW** on H2:N2 simulating hydrazine decomposition products, with no measurable performance degradation; the report's stated goal is precisely our row's 'Aerojet MR-510, 600 s vac on 2 kW' spec.
 ## Round-23 addition — Nuclear thermal (LH2) row gets peer-reviewed Isp anchors (two hosted)
 
-- **borowski_2012** (T1, IEEE Aerospace; NTRS citation 20120003776 direct PDF route verified live — US-government work, public domain): PRIMARY anchor. Peer-reviewed statement that 'the NTR can achieve specific impulse values of ~900 seconds or more — twice that of today's best chemical rockets'; DRA 5.0 selected the NTR specifically for Isp ~875-950 s; MCNP core modeling shows an achievable range of ~894-940 s by varying fuel-element length and U-235 loading. Our row's exactly-900-s value sits at the center of that band.
+- **borowski_2012** (T2 — conference paper, IEEE Aerospace; NTRS citation 20120003776 direct PDF route verified live — US-government work, public domain): PRIMARY anchor. Peer-reviewed statement that 'the NTR can achieve specific impulse values of ~900 seconds or more — twice that of today's best chemical rockets'; DRA 5.0 selected the NTR specifically for Isp ~875-950 s; MCNP core modeling shows an achievable range of ~894-940 s by varying fuel-element length and U-235 loading. Our row's exactly-900-s value sits at the center of that band.
 - **robbins_1991** (T2, NASA CR-187154 / AIAA-91-3451 by Robbins & Finger for NASA Lewis; NTRS citation 19910017902 direct PDF route verified live — public domain): historical anchor. Documents that from 1955-1972 twenty rocket reactors were designed, built and ground tested in the Rover/NERVA programs, with a single flight-baseline engine defined at 75,000 lbf thrust and **825 s specific impulse** — what was actually demonstrated on the ground vs our row's ~900 s design value (the difference is fuel-temperature growth path).
 ## Round-24 addition — UDMH / NTO row gets a family-level measured-Isp anchor (abstract-only item)
 
@@ -127,7 +127,7 @@ Domain 3 is now complete at both ends AND in the middle: easy NEA boundary (elvi
 **Net effect:** every chemical + nuclear thermal + solar thermal workhorse row in `propellants.csv` now has at least one access-verified anchor. Remaining unanchored rows are minor variants (e.g. other electric-propellant species) already covered by the tirila_2023 open_not_pulled item.
 ## Round-27 addition — Green monopropellant row gets an EXACT-MATCH peer-reviewed anchor (one hosted)
 
-- **spores_2013** (T1, AIAA 50th Joint Propulsion Conference via NTRS 20140012587): Spores, Masse, Kimbrel & McLean — 'GPIM AF-M315E Propulsion System'. Verified from extracted text: Table 1 gives GR-1 (AF-M315E HAN-based) vacuum Isp = **235 s** — identical to our row's value; acceptance hot-fire data independently yields an estimated maximum steady-state Isp approximating the predicted 235 sec. Also documents the full GPIM flight system (GR-1 0.4–1.1 N, GR-22 8–25 N, catalyst preheat >285 C) — the first on-orbit green-monoprop demonstration.
+- **spores_2013** (T2, AIAA 50th Joint Propulsion Conference, 2014, via NTRS 20140012587): Spores, Masse, Kimbrel & McLean — 'GPIM AF-M315E Propulsion System'. Verified from extracted text: Table 1 gives GR-1 (AF-M315E HAN-based) vacuum Isp = **235 s** — identical to our row's value; acceptance hot-fire data independently yields an estimated maximum steady-state Isp approximating the predicted 235 sec. Also documents the full GPIM flight system (GR-1 0.4–1.1 N, GR-22 8–25 N, catalyst preheat >285 C) — the first on-orbit green-monoprop demonstration.
 
 **Net effect:** Green monoprop row now exact-matched. Remaining unanchored rows are exotic/concept-class (HTP/RP-1 biprop, water resistojet/ion, ALICE metal/water, CO/LOX ISRU, VASIMR, MPD, nuclear pulse/fusion/antimatter concepts) — most already covered at family level by tirila_2023 or the NTP anchors; will continue with the highest-value of these next.
 
@@ -143,7 +143,7 @@ Domain 3 is now complete at both ends AND in the middle: easy NEA boundary (elvi
 Target: propellants.csv row 'HTP / RP-1 (peroxide biprop)' at ~320 s vacuum Isp with O/F 7:1 — the last unanchored
 workhorse-class chemical row after Round 28. Two independent peer-reviewed sources now bracket it, both hosted in full_texts/:
 
-### krishnan_2010_h2o2_rp1_upper_stage (T1, AIAA JPC proceedings)
+### krishnan_2010_h2o2_rp1_upper_stage (T2, AIAA JPC proceedings)
 S. Krishnan (Universiti Teknologi Malaysia), 'Hydrogen Peroxide / Kerosene, Liquid-Oxygen / Kerosene, and
 Liquid-Oxygen / Liquid Methane for Upper Stage Propulsion'. PDF created 25 Jul 2010 (embedded metadata); the paper's own
 AIAA number is not recoverable from the text layer (all AIAA-number hits in the document are references to other papers),
@@ -178,7 +178,7 @@ Remaining unanchored propellant rows after this round: ALICE metal/water and CO/
 Target: propellants.csv 'Metal / water (ALICE, Al + H2O)' row at 210 s vacuum — nano-aluminium burnt in water; our notes reference the Purdue/NASA ALICE sounding rocket that flew in 2009. Both components are asteroid-derivable (Al from silicate reduction, water from ice), which is why this row exists despite its modest Isp.
 
 ### risha_2014_alice_jpp — T1, HOSTED
-Risha G.A., Connell T.L. Jr., Yetter R.A. (Penn State) + Sundaram D.S., Yang V. (Georgia Tech), "Combustion of Frozen Nanoaluminum and Water Mixtures", AIAA Journal of Propulsion and Power 31(5), 2014, doi:10.2514/1.B34783.
+Risha G.A., Connell T.L. Jr., Yetter R.A. (Penn State) + Sundaram D.S., Yang V. (Georgia Tech), "Combustion of Frozen Nanoaluminum and Water Mixtures", AIAA Journal of Propulsion and Power 30(1):133-142 (2014), doi:10.2514/1.B34783.
 - VERIFIED in hosted text: ideal (theoretical) Isp for the ALICE formulation = **207 s sea-level / 230 s vacuum** at P=1000 psia, perfect expansion, 74.5 wt% active aluminum — i.e. our row's 210 s sits almost exactly on the peer-reviewed ideal curve (between their SL and vac values).
 - Measured lab-scale static-fire motors: combustion efficiency ~69%, Isp efficiency ~64% at ER=10 for the 7.62 cm motor — documents how far real hardware is from the ideal, which bounds what a future ALICE engine could actually deliver (roughly 0.6-0.7 x ideal in current small-motor form).
 - Authors explicitly acknowledge Pourpoint/Son/Wood/Pfeil at Purdue for contributions to the program; AFOSR contract FA9550-07-1-0582 — same program our notes cite.
@@ -314,7 +314,7 @@ Figs 8 (2033 MO) and 10 (2041 MO) are also fully vector; extracted all chemical 
 **Identity anomaly caught and resolved:** my first join on number=69230 returned the row named "Hermes" — ssoBFT's `number` column is authoritative: **(69230) = Hermes**, an Apollo NEA (dv 9.699 km/s). The true Bennu row carries name="Bennu", number=**101955**, dv **7.368 km/s** — matching R41's recorded value exactly, confirming the earlier cross-check was correct and that any future per-body join must key on `number` (JPL sbdb.api?sstr=Bennu → fullname "101955 Bennu (1999 RQ36)" settles it).
 
 All numbers in `extracted_data/r42_sso_bft_delta_v_key_numbers.csv` (29 rows, every value with population context; the official column definition quoted verbatim at the foot of the file).
-### whitley_martinez_2015_nro_staging_orbits [T1; full text hosted] — Martinez & Whitley (NASA JSC), "Options for Staging Orbits in Cis-Lunar Space," IEEE Aerospace Conference 2015 (NTRS 20150019648, public domain)
+### whitley_martinez_2015_nro_staging_orbits [T2 (IEEE Aerospace conference paper); full text hosted] — Martinez & Whitley (NASA JSC), "Options for Staging Orbits in Cis-Lunar Space," IEEE Aerospace Conference 2015 (NTRS 20150019648, public domain)
 
 **The cited-but-unregistered source behind both cislunar depot Δv rows.** `delta_v_segments.csv` cites "Whitley & Martinez" for the
 TLI→NRHO insertion and the Gateway-to-LLO transfer; neither was registered or verified until now. Pulled live from NTRS this round (PDF 4.65 MB,
@@ -383,3 +383,15 @@ Registry +1 T1 → domain 3 now carries 38 sources. Both NRHO-cited Δv rows are
 **Scope notes (honest gaps):**
 - The 'other' row (~1432–1873 lb) is stage hardware not counted with propellant; both δ variants are reported so the convention choice stays visible.
 - p294 weights are *at S-IC ignition* (ground), i.e. full loads — exactly what a delivery-chain tug leg starts from.
+
+## Maintenance (2026-09-26) — seven files un-hosted; five tiers corrected; extraction and attribution fixes
+
+- **Un-hosted**: elvis2011, ieva2014 (arXiv default licence); kim_2013 (no licence statement); komurasaki_aquarius_ground_2018 (JSASS, all rights reserved — the registry had said CC BY); krishnan_2010, pietrobon_1999, risha_2014_alice_jpp (publisher copyright). Un-hosted on 2026-09-26 because the licence does not permit redistribution (details in each registry row); every number this file quotes from them was checked against the PDF first and is in `extracted_data/`.
+- **Tiers**: krishnan_2010, spores_2013, borowski_2012 and whitley_martinez_2015_nro_staging_orbits are conference papers, so T2 (README: AIAA/IAC proceedings are T2). Labels above corrected in place.
+- **Venues**: elvis2011 is Planetary and Space Science 59(13):1408-1412 (registry said A&A); ieva2014 is A&A 569:A59; risha_2014 is JPP 30(1):133-142 (round 30 said 31(5)); spores_2013 was presented at the 50th JPC, Cleveland, in 2014, not 2013.
+- **krishnan_2010 Table 2** (round 29): 3268 N-s/kg is the maximum *frozen* Isp, at O/F 6.26. The O/F 7.38 column gives 3407 (equilibrium) and 3236 (frozen). The paper reports Isp efficiencies of 0.90-0.94; it does not recommend 0.90. Bracketing from above still holds.
+- **asakawa_aquarius_onorbit_2024** (round 28): Table 3 gives Isp 91.7 ± 1.0 s (DV1) and 90.3 ± 3.0 s (TCM1), ground test 68.5 ± 5.5 s; the abstract gives ~6.0 mN and 91.0 s. The 91.1 / 92.0 / 89.4 s and "CF = 1.53/1.51" above are not in the paper's text layer. The conclusion (~91 s at < 14 W) holds.
+- **komurasaki_2018**: the design is 4.0 mN (delta-V thruster) / 2.0 mN (RCS) at 70 s; the ground test measured 1.6 mN on the RCS head.
+- **jue_2003** backs the HYDROLOX row: the RS-25 burns LOX/LH2. The round-15 block and the registry called it the kerolox row.
+- **robbins_1991**: 825 s is the flight-baseline engine *rating* ('was defined with', p5), and the paper counts twenty reactor tests and two engine tests (p11), not twenty reactors built. Same correction as domain 10's R65 NERVA reversal.
+- New rows: 44 page-located rows for 20 hosted sources in `extracted_data/backfill_2026-09-26_key_numbers.csv`, plus schoenman_1992 and pourpoint_2012 at abstract level. taylor2018 and tirila_2023 are marked context-only.

@@ -1,0 +1,10 @@
+source_id,body,Fe (metal)_kg_per_1000kg_silicate,O2_kg_per_1000kg_silicate,SiO2_kg_per_1000kg_silicate,Al2O3_kg_per_1000kg_silicate,MgO_kg_per_1000kg_silicate,CaO_kg_per_1000kg_silicate,H2O_kg_per_1000kg_silicate,TiO2_kg_per_1000kg_silicate,paper_reference,location_in_source
+ssap_2021,"Moon, mare",143,31,492,143,100,123,,46,28,"Table 3, p10"
+ssap_2021,"Moon, highlands",53,13,475,237,85,142,,8,28,"Table 3, p10"
+ssap_2021,Mars,121,35,514,124,77,96,,,29,"Table 3, p10"
+ssap_2021,C-type (CI-Orgueil mineralogy),65,3,430,,436,,118,,22,"Table 3, p10"
+ssap_2021,C-type (CM-Murchison mineralogy),375,125,260,,174,,87,,22,"Table 3, p10"
+ssap_2021,C-type (CV-Allende mineralogy),267,53,393,4,359,2,,,22,"Table 3, p10"
+ssap_2021,S-type (H chondrite mineralogy),132,27,509,25,323,20,,,"30,49,50,51","Table 3, p10"
+ssap_2021,S-type (L chondrite mineralogy),170,35,490,22,308,20,,,"30,49,50,51","Table 3, p11"
+ssap_2021,S-type (LL chondrite mineralogy),164,40,473,21,304,18,,,"30,49,50,51","Table 3, p11"

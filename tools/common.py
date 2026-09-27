@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DOMAIN_COLS = ['id', 'tier', 'short_title', 'journal_or_series', 'year', 'doi_or_url',
                'authors_short', 'access_status', 'pipeline_mapping']
 REGISTRY_COLS = ['domain_dir'] + DOMAIN_COLS
-MANIFEST_COLS = ['domain_dir', 'id', 'file', 'bytes', 'sha256']
+MANIFEST_COLS = ['domain_dir', 'id', 'file', 'bytes', 'sha256', 'license']
 CANDIDATE_COLS = ['id', 'status', 'kind', 'domain_dir', 'source_ids', 'found_round', 'target_repo',
                   'target_file', 'target_row', 'field', 'current_value', 'proposed', 'evidence',
                   'checked_against', 'checked_date']
@@ -29,7 +29,20 @@ ACCESS_CLASSES = {
     'open_service',                  # live database / API, verified from this machine
     'skipped',                       # deliberately not hosted (user decision recorded)
 }
-CANDIDATE_STATUSES = {'open', 'applied', 'declined', 'superseded', 'blocked'}
+# First token of a manifest `license`; the rest says where it was read (PDF page, NTRS record, arXiv abs page).
+LICENSE_CLASSES = {
+    'public-domain',               # US government work, NASA PDS archive data
+    'ntrs-public-use',             # NTRS determinationType PUBLIC_USE_PERMITTED / GOV_PUBLIC_USE_PERMITTED / GOV_PERMITTED
+    'cc-by', 'cc-by-sa', 'cc-by-nc', 'cc-by-nc-sa',
+    # None of these grants redistribution, so README access rule 1 is not met while the file stays hosted:
+    'arxiv-nonexclusive',          # arXiv's default licence grants arXiv, not third parties, the right to distribute
+    'ntrs-may-include-copyright',  # NTRS determinationType MAY_INCLUDE_COPYRIGHT_MATERIAL
+    'copyright',                   # publisher / institution copyright, no licence granted
+    'unknown',                     # no licence statement found
+}
+NOT_REDISTRIBUTABLE = {'arxiv-nonexclusive', 'ntrs-may-include-copyright', 'copyright', 'unknown'}
+# withdrawn = this repo's own evidence turned out wrong (distinct from declined, which is the upstream owner's call).
+CANDIDATE_STATUSES = {'open', 'applied', 'declined', 'superseded', 'blocked', 'withdrawn'}
 CANDIDATE_KINDS = {'value', 'citation', 'wording', 'range', 'method'}
 
 REGISTRY = ROOT / 'sources.csv'
