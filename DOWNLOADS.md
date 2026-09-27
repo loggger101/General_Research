@@ -173,4 +173,10 @@ These are live services or datasets already pulled and used. Re-pull them only t
 
 ---
 
-*Written 2026-09-27 after Round 70; updated after Rounds 72 and 73. When a file has been extracted, its box is ticked and a research-log entry records the round.*
+## F. Registered in Round 74, not yet sought (123 sources)
+
+Round 74 registered every source the three upstream repos cite that this registry lacked. None has been fetched, so none is listed item by item here yet: the queue is every row of `sources.csv` whose `access_status` starts with `registered_not_pulled`, and each row already records its DOI or landing URL and what answered from this machine (Crossref metadata, HTTP status, or a bot block). 42 are T1 journal articles (Icarus, Nature, Science, A&A, MAPS) that will mostly land in section C or D; 55 are T4 grey sources (company pages, news, Wikipedia, vendor posts, software), which usually need no download, only a dated read of the page.
+
+---
+
+*Written 2026-09-27 after Round 70; updated after Rounds 72, 73 and 74. When a file has been extracted, its box is ticked and a research-log entry records the round.*

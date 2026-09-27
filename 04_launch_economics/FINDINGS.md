@@ -267,3 +267,33 @@ New files: `r73_weinzierl2018_figure2_space_sector_revenue.csv` (55); `r73_weinz
 - **weinzierl2018** (Harvard DASH author copy via the DSpace REST content endpoint). DOWNLOADS.md called the DASH copy CC BY, following OpenAlex; the PDF's cover page says it is posted under DASH 'Other Posted Material (LAA)' terms, so it is extract only. The COTS figures recorded from the landing page in the backfill row are confirmed on journal p181: ~$89,000/kg (SpaceX), $135,000 (Orbital Sciences), $272,000 (Shuttle estimate), citing zapata_2017, which R72 already extracted in full.
 - **Figure 2** carries data labels for four stacked series, 2005-2015 (The Space Report). Series were assigned from the stacking order read by word coordinates (satellite commercial at the bottom, then non-satellite commercial, US government, non-US government), which matches the legend; the totals rise from $176B (2005) to $330B (2014) and $322B (2015), matching the text's 'under $200 billion' to 'more than $300 billion'. Non-satellite commercial revenue is $0.0-0.4B throughout.
 - **Table 1**: 37 New Space companies with year founded, 2016 FTEs and FTE source; sector groups checked on the rendered page.
+
+## R74 - Upstream citations registered (2026-09-27; +25 sources, T1x3, T2x1, T3x2, T4x19; nothing extracted)
+
+Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
+
+- `pielke_byerly_2011_shuttle_programme_lifetime_cost` (T1): launch_vehicles.csv Space Shuttle row: whole-programme cost per flight (high end of the band).
+- `nasa_oig_2024_ig-24-015_sls_block_1b` (T2): launch_vehicles.csv SLS Block 1B (Cargo) row context and the operations table header anchor list.
+- `satbase_2026_spacex_falcon9_price_increase` (T4): launch_vehicles.csv Falcon 9 list price and the rise used to carry Falcon Heavy quotes forward (feeds the LEO anchor price in delivery.py).
+- `voyager_technologies_10k_2026_starship_contract` (T4): launch_vehicles.csv Starship (projected) price low end.
+- `spacex_falcon_payload_users_guide` (T4): launch_vehicles.csv Falcon 9 payload figures.
+- `ula_rocketbuilder_and_published_pricing` (T4): launch_vehicles.csv Atlas V 551 and Vulcan Centaur VC2/VC4/VC6 prices.
+- `blue_origin_new_glenn` (T4): launch_vehicles.csv New Glenn price band and payloads; New Glenn 9x4 configuration.
+- `rocket_lab_form_10q_fy2026_q1` (T4): launch_vehicles.csv Electron price and capacity.
+- `glavkosmos_tass_2018_soyuz_price` (T4): launch_vehicles.csv Soyuz-2.1b price (and the 2.1a estimate anchored to it).
+- `isro_nsil_launch_pricing_and_user_manuals` (T4): launch_vehicles.csv LVM3, PSLV-XL and SSLV prices and payloads.
+- `cas_space_2026_kinetica2_price_per_kg` (T4): launch_vehicles.csv Kinetica-2 price, the only published Chinese per-kg rate.
+- `esa_ariane6_overview` (T3): launch_vehicles.csv Ariane 6 A62 and A64 prices.
+- `jaxa_h3_launch_vehicle` (T3): launch_vehicles.csv H3 price target and payloads.
+- `firefly_alpha_published_price` (T4): launch_vehicles.csv Alpha price.
+- `isar_aerospace_spectrum_price_target` (T4): launch_vehicles.csv Spectrum price.
+- `wikipedia_launch_vehicle_articles` (T4): launch_vehicles.csv payload masses by configuration and orbit, and the price of every row whose notes say "Source: Wikipedia".
+- `spacenews_launch_reporting_2024_2026` (T4): launch_vehicles.csv Atlas V mission-assurance adder, Artemis restructuring, and 2025-2026 flight outcomes.
+- `spaceflight_now_launch_reporting_2025_2026` (T4): launch_vehicles.csv New Glenn flight record, Neutron schedule and price, 2025-2026 flight outcomes.
+- `nasaspaceflight_launch_reporting_2025_2026` (T4): launch_vehicles.csv Zhuque-3, Long March 10B, Tianlong-3, Pallas-1 and Soyuz-5 flight outcomes.
+- `satnews_2026_artemis_restructuring` (T4): launch_vehicles.csv SLS Block 1 and Block 1B (Cargo) status.
+- `the_week_2026_isro_pslv_reporting` (T4): launch_vehicles.csv PSLV, LVM3, GSLV and SSLV pricing and PSLV failure record.
+- `casc_long_march_9_10_disclosures` (T4): launch_vehicles.csv Long March 10 and Long March 9 payload targets.
+- `musk_2018_falcon9_upper_stage_cost_statement` (T4): operational_costs.csv "Expendable upper stage recurring cost" low end.
+- `pearson_1979_anchored_lunar_satellites` (T1): launch_vehicles.csv "Lunar space elevator" concept row: required specific strength within existing fibres.
+- `eubanks_radley_2016_lunar_elevator_scientific_return` (T1): launch_vehicles.csv "Lunar space elevator" concept row.

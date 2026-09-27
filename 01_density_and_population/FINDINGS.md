@@ -242,3 +242,30 @@ This container's network was widened, so the DOWNLOADS.md sections B-D were retr
 - **Meteorite vs asteroid density**: the paper's own bound puts 433 Eros at 21-33% bulk porosity (average OC 3.40 against Eros 2.67 +/- 0.03). Upstream S 2.7 against LL/L meteorites at 3.29/3.40 implies ~20% macroporosity, consistent with that bound.
 - **epsc2022_context**: the Copernicus page now shows the full abstract without login (CC BY 4.0). It gives the chondritic Ru/Ir ratio 1.51 +/- 0.05 and projectile fractions in large-crater melts, but no absolute PGE concentrations, so the iron-meteorite PGE gap noted in R72 stays open. The 'Context-only' note in its registry row is replaced.
 - **Still blocked**: harris_dabramo_2021 (ScienceDirect Cloudflare), demeo_2009_bus_taxonomy_near_ir (HAL Anubis; TCD 403), harris2015 (closed). Their registry rows record what was tried.
+
+## R74 - Upstream citations registered (2026-09-27; +22 sources, T1x20, T3x1, T4x1; nothing extracted)
+
+Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
+
+- `pravec_harris_2007_binary_angular_momentum` (T1): AsteroidCatalog D-from-H formula: Appendix A derives the 1329 km constant from V_sun; backs every H-derived diameter (derived_diameter_is_estimate rows).
+- `campins_1985_absolute_calibration_1_5um` (T1): AsteroidCatalog D-from-H formula: the solar V magnitude (-26.762) behind the 1329 km constant; the ~1% diameter systematic.
+- `mainzer_2011_neowise_thermal_model_calibration` (T1): AsteroidCatalog merge.py cross-source agreement tolerances for diameter and albedo (radar/spacecraft calibration of NEOWISE).
+- `pravec_2012_absolute_magnitudes_wise_albedos` (T1): AsteroidCatalog H-magnitude tolerance in merge.py and the catalog-H offset near H~14 (README section 4 albedo offset).
+- `buratti_2004_ds1_borrelly_photometry` (T1): AsteroidCatalog physics.py ALBEDO_FLOOR: darkest measured whole-body geometric albedo.
+- `ferrais_2022_kalliope_tiny_mercury` (T1): AsteroidCatalog density ceiling (5.0 g/cm3) and the M/Xk DENSITY_EVIDENCE entry for 22 Kalliope.
+- `consolmagno_2008_meteorite_density_porosity` (T1): AsteroidCatalog physics.py carbonaceous-class density ceiling (3.6 g/cm3) from meteorite grain densities.
+- `macke_2011_carbonaceous_chondrite_density_porosity` (T1): AsteroidCatalog physics.py carbonaceous-class density ceiling (CI to CB grain densities).
+- `macke_2010_enstatite_chondrite_density_porosity` (T1): taxonomy_composition.csv Xe row density_est_gcm3 (enstatite-chondrite bulk density less macroporosity).
+- `patzold_2016_67p_homogeneous_nucleus_gravity` (T1): AsteroidCatalog physics.py density floor (comet-nucleus density).
+- `thomas_2013_tempel1_nucleus_two_flybys` (T1): AsteroidCatalog physics.py density floor (second comet-nucleus density).
+- `lauretta_2019_bennu_unexpected_surface` (T1): taxonomy_composition.csv B-row density (Bennu) and spacecost environments.csv 101955 Bennu mass and mean radius.
+- `fujiwara_2006_itokawa_rubble_pile` (T1): taxonomy_composition.csv Sq-row density note (small S-types are rubble piles).
+- `pravec_harris_2000_fast_slow_rotation` (T1): AsteroidCatalog physics.py breakup (spin-barrier) rotation period as a function of density.
+- `holsapple_2007_spin_limits` (T1): AsteroidCatalog physics.py: size above which gravity rather than strength sets the spin limit.
+- `emery_2011_trojan_nir_two_groups` (T1): AsteroidCatalog default taxonomy for unclassified Jupiter Trojans (D-type majority).
+- `gil_hutton_brunini_2008_hilda_sdss_colors` (T1): AsteroidCatalog default taxonomy for unclassified Hildas (P/D bimodality).
+- `mahlke_2022_asteroid_taxonomy_spectra_albedo` (T1): taxonomy_composition.csv Z row (Mahlke Z class mapped to D composition).
+- `tholen_1984_asteroid_taxonomy_dissertation` (T4): taxonomy_composition.csv Tholen rows (M, E, P, F, G) mapped onto Bus-DeMeo classes.
+- `hasselmann_2012_sdss_taxonomy_v1_1_pds` (T3): economicspace second-pass taxonomy check: independent SDSS class per numbered asteroid (research probe, not a stage input).
+- `carvano_2010_sdss_taxonomy_main_belt` (T1): method paper for the SDSS taxonomy table economicspace commits (hasselmann_2012_sdss_taxonomy_v1_1_pds).
+- `ivezic_2001_sdss_solar_system_objects` (T1): underlying survey of the SDSS taxonomy table economicspace commits.
