@@ -426,3 +426,14 @@ This round's container reached only package registries (arXiv, NTRS, JPL, Google
 - **Correction to Round 30 (this file, ALICE block)**: it called the `Metal / water (ALICE)` row's 210 s 'a conservative, hardware-realistic value'. risha_2014 Table 7 (extracted R71) shows motor-scale delivered Isp of 56 / 83 / 133 s in 1.91 / 3.81 / 7.62 cm motors (27-64% Isp efficiency); 210 s is near the ideal (207 s sea level / 230 s vacuum). The row is gated out of runs and its value is not wrong as an ideal figure, so this is a note change only: **rc-044** (wording).
 - **RSRM vs spacecost `Solid (APCP)`**: the row is anchored to kick motors (case 6.9% of grain, Isp 285 s); the RSRM's inerts are 13.5% of propellant and its delivered Isp 268 s. That is a recoverable steel-case booster, a different class, so this is context only.
 - **Skipped with reasons**: SLS Mission Planner's Guide Tables 5-x/6-x/7-x (payload environments and ground facilities; Table 4-1 performance was taken in R70); DRA 5.0 Tables 3-x/6-x, spores_2013 Table 2, baumeister Table 6 (qualitative); hitt_2001 Table 2 (survey list); asakawa Tables 1-2 (operations sequence and telemetry list).
+
+## R74 - Upstream citations registered (2026-09-27; +6 sources, T1x1, T2x2, T4x3; nothing extracted)
+
+Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
+
+- `nasa_sp125_huzel_huang_design_liquid_rocket_engines` (T2): delta_v_segments.csv "surface -> LEO ascent" textbook value including gravity and drag losses.
+- `curtis_orbital_mechanics_engineering_students` (T4): delta_v_segments.csv ascent and textbook segment values.
+- `rafalskyi_2021_iodine_ep_in_orbit` (T1): propellants.csv "Iodine (Hall / gridded)" row: first iodine EP flown (NPT30-I2).
+- `astronautix_encyclopedia_propellant_engine_pages` (T4): propellants.csv vacuum Isp for kerolox, MMH/NTO, hydrazine, UDMH/NTO, Aerozine-50; LOX component price.
+- `rocketcea_nasa_cea_python_wrapper` (T4): propellants.csv kerolox vacuum Isp.
+- `nasa_std_5019_fracture_control_spaceflight_hardware` (T2): storage_systems.csv "COPV burst performance factor" and every supercritical-gas tank_kg_per_L in propellants.csv.

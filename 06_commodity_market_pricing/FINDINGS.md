@@ -119,3 +119,15 @@ This round's container reached only package registries (arXiv, NTRS, JPL, Google
 
 - **R71's JM tables verified**: every total equals the sum of its rows in both units; combined supply = primary + secondary; balance = supply - demand; and each ounce row converts to its tonne row within 0.14 t (JM rounds each table separately).
 - **Upstream market sizes** (`ANNUAL_WORLD_PRODUCTION_KG`, economicspace@1f470d4): platinum 180 t vs JM 2025 primary supply 172.9 t (+4.1%); palladium 210 t vs 205.0 t (+2.4%). Both agree; no candidate.
+
+## R74 - Upstream citations registered (2026-09-27; +7 sources, T3x3, T4x4; nothing extracted)
+
+Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
+
+- `usgs_mineral_commodity_summaries_2026` (T3): mineral_value.py curated fallback prices for metals yfinance lacks, and every terrestrial market depth in ANNUAL_WORLD_PRODUCTION_KG.
+- `lme_official_reference_prices` (T3): mineral_value.py ref_price_usd_per_kg for nickel and cobalt (and the other LME base metals).
+- `cme_comex_nymex_futures` (T3): mineral_value.py live price basis for Au/Ag/Cu/Pt/Pd; spacecost live RP-1 and methane price proxies.
+- `yahoo_finance_yfinance` (T4): mineral_value.py live futures prices; spacecost optional live propellant price proxies.
+- `metals_dev_api` (T4): mineral_value.py optional live LME and precious-metal quotes.
+- `heraeus_2026_precious_metals_forecast` (T4): mineral_value.py platinum ref_price_usd_per_kg (midpoint of the 2026 forecast range).
+- `reuters_2026_gold_analyst_consensus` (T4): mineral_value.py gold ref_price_usd_per_kg context.

@@ -5,6 +5,9 @@ asteroid-mining profitability pipeline, its Stage 3 reference package
 **spacecost**, and the Stage 1 package **AsteroidCatalog**. Every source here
 is one that can actually be *accessed and analyzed*: full text where legally
 redistributable, otherwise metadata, abstract and extracted key tables.
+Since Round 74 the registry also lists every source those three repos cite,
+including the grey ones (tier T4), so each upstream dependency is visible
+even before it has been read.
 
 ## Why this repo exists
 
@@ -14,7 +17,8 @@ weakest-sourced cells of the model are exactly where peer-reviewed backing is
 missing:
 
 Domains 1–5 were ranked by how weakly sourced their cells were; 6–11 were
-added later, in the order the research rounds found the next gap.
+added later, in the order the research rounds found the next gap; 12–14 were
+added in Round 74 for upstream citations no earlier domain covered.
 
 | # | domain | pipeline cell(s) it could back or replace |
 |---|---|---|
@@ -29,6 +33,9 @@ added later, in the order the research rounds found the next gap.
 | 9 | In-space delivery mass fractions & EDL survival | spacecost `delivery.py` constants such as `MARS_LANDED_MASS_FRACTION` |
 | 10 | Launch vehicle & engine hardware / propellant performance | engine-level ground truth for `propellants.csv` and `launch_vehicles.csv` |
 | 11 | Spacecraft power & electric propulsion | power and electric-propulsion rows of `operational_costs.csv` |
+| 12 | Destination environments & physical constants | spacecost `environments.csv` (flux, gravity, escape velocity, light time, eclipse) and `units.py` constants |
+| 13 | Astrodynamics methods, ephemerides & audited software | economicspace `research/starred-repos/` (Lambert and Kepler solvers, ephemeris oracles, the 17-repository licence audit) |
+| 14 | Propellant & consumable prices | `propellants.csv` `ref_cost_usd_per_kg` and its component prices |
 
 ## Layout
 
@@ -52,6 +59,9 @@ tools/                                   build_registry.py (regenerate derived f
 09_delivery_mass_fractions_edl_survival/ Domain 9: in-space delivery mass fractions & EDL survival
 10_launch_vehicle_engine_hardware/       Domain 10: launch vehicle & engine hardware / propellant performance
 11_spacecraft_power_electric_propulsion/ Domain 11: spacecraft power & electric propulsion
+12_destination_environments_physical_constants/ Domain 12: destination environments & physical constants
+13_astrodynamics_methods_ephemerides_software/  Domain 13: astrodynamics methods, ephemerides & audited software
+14_propellant_consumable_prices/          Domain 14: propellant & consumable prices
 
 <domain>/sources_domain.csv              The registry rows for that domain (the file you edit)
 <domain>/FINDINGS.md                     Prose write-ups and per-number comparisons, one block per round
@@ -64,6 +74,9 @@ tools/                                   build_registry.py (regenerate derived f
 - **T1** — Peer-reviewed journal articles.
 - **T2** — NASA / ESA technical reports and AIAA / IAC proceedings (institutionally reviewed, not peer-reviewed in the journal sense).
 - **T3** — Authoritative government or dataset publications with a DOI (e.g., USGS MCS, PDS releases, NEOWISE V2.0).
+- **T4** — Secondary / grey sources that upstream rows cite: company documents and price pages, news reporting,
+  encyclopedias, vendor or market-research posts, textbooks, software and market-data APIs (added in Round 74).
+  A T4 row marks a cell whose evidence is weak; replacing it with a T1–T3 source is the usual next step.
 
 Each row of `sources.csv` carries its tier label explicitly.
 
@@ -80,6 +93,7 @@ says how it was verified or why it could not be.
 | `open_not_pulled` | open access, but the publisher blocks this machine or the licence forbids hosting; metadata + abstract recorded |
 | `open_service` | a live database or API, verified from this machine; derived numbers committed, not the service itself |
 | `skipped` | deliberately not hosted; the user decision is recorded in the row |
+| `registered_not_pulled` | an upstream citation registered so the dependency is visible; its DOI was checked against Crossref or its landing page against a live request, but the full text has not been sought and nothing is extracted. Re-class the row when it is pulled |
 
 ## Access rules (this repo is public)
 
@@ -112,6 +126,10 @@ A candidate must satisfy all of:
 3. The numbers it carries were extracted into a CSV, or the item is recorded
    as context-only with the reason stated in `sources.csv`.
 
+A `registered_not_pulled` row is the one exception to 2 and 3: it records
+that an upstream cell cites the source, and it moves to one of the other
+classes when an extraction round reads it.
+
 ## Revision candidates
 
 This repo never edits the pipeline repos. When a source contradicts a cell in
@@ -140,8 +158,9 @@ ids, that `revision_candidates.csv` uses known statuses and sources, and that
 no CSV or Markdown file has doubled carriage returns (which make git treat it
 as binary). It also warns, without failing, on hosted files whose licence does
 not permit redistribution, extracted-data CSVs with no `source_id` column, and
-sources that no extracted-data CSV in their domain cites. Standard library
-only; Python 3.8+.
+sources that no extracted-data CSV in their domain cites (except
+`registered_not_pulled` rows, which it counts in its summary line instead).
+Standard library only; Python 3.8+.
 
 ## Provenance of this process
 

@@ -19,7 +19,9 @@ CANDIDATE_COLS = ['id', 'status', 'kind', 'domain_dir', 'source_ids', 'found_rou
                   'target_file', 'target_row', 'field', 'current_value', 'proposed', 'evidence',
                   'checked_against', 'checked_date']
 
-TIERS = {'T1', 'T2', 'T3'}
+# T4 (R74): secondary / grey sources the upstream rows cite: company documents and price pages, news, encyclopedias,
+# vendor or market-research posts, textbooks, software, market-data APIs.
+TIERS = {'T1', 'T2', 'T3', 'T4'}
 # First token of access_status. `full_text_hosted` requires a manifest entry.
 ACCESS_CLASSES = {
     'full_text_hosted',              # full text committed under <domain>/full_texts/
@@ -28,7 +30,10 @@ ACCESS_CLASSES = {
     'open_not_pulled',               # open access, but blocked here or licence forbids hosting
     'open_service',                  # live database / API, verified from this machine
     'skipped',                       # deliberately not hosted (user decision recorded)
+    'registered_not_pulled',         # upstream citation registered; metadata or landing page checked, full text not sought
 }
+# Rows still waiting for a first pull; exempt from the "no extracted-data CSV cites it" warning until re-classed.
+PENDING_ACCESS = {'registered_not_pulled'}
 # First token of a manifest `license`; the rest says where it was read (PDF page, NTRS record, arXiv abs page).
 LICENSE_CLASSES = {
     'public-domain',               # US government work, NASA PDS archive data
