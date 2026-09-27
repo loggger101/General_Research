@@ -1,0 +1,16 @@
+source_id,item,value,unit,location_in_source,notes
+weinzierl2018,NASA budget share of GDP,more than 0.7% in the mid-1960s; around 0.1% today,% of GDP,"journal p173, Figure 1",R73.
+weinzierl2018,Space sector annual revenue,$300 billion,USD,journal p173; p179 Figure 2,R73.
+weinzierl2018,Valuations: SpaceX / Orbital ATK; startup funding 2016,$21 billion / $7.8 billion; $2.8 billion,USD,journal p173-174,R73.
+weinzierl2018,Space Shuttle cost,roughly two-thirds of NASA human spaceflight budget; around $220 billion (2017 dollars); missed more than half of planned annual flights,,journal p176,R73.
+weinzierl2018,Outside investment in start-up New Space firms,under $500 million/yr 2001-2008; about $2 billion/yr 2009-2011; about $2.5 billion/yr 2015-2016 (venture capital above $1.5 billion each year),USD per year,journal p177 and footnote 1,"R73. citing Bryce Space and Technology (2017); 2013-14 acquisitions: Climate Corporation $930M, TerraBella $478M, O3b $730M"
+weinzierl2018,Low Earth orbit altitude band used,"160-2,000",km,journal p177,R73.
+weinzierl2018,Small-satellite Earth-observation revenue forecast,$22 billion over the next decade,USD,journal p179,R73. citing Henry (2016)
+weinzierl2018,Luxury travel / luxury experiences market,$460 billion / $1.8 trillion,USD,journal p179,"R73. citing Abtan et al. (2014), BCG"
+weinzierl2018,COTS initial funding (2005),$500 million (less than 1% of NASA five-year budget),USD,journal p180,R73.
+weinzierl2018,Cost per kg of cargo to the ISS: SpaceX / Orbital Sciences / Space Shuttle estimate,"~$89,000 / $135,000 / $272,000",USD per kg,journal p181,R73. citing Zapata (2017); matches the backfill row recorded from the landing page
+weinzierl2018,CRS contracts (2008),20 flights valued at $3.5 billion to SpaceX and Orbital Sciences,USD,journal p181,R73.
+weinzierl2018,Commercial Crew Development awards by round,6 / 4 (plus 3 unfunded) / 3 / 2 companies,companies,journal p185,R73. citing NASA (2014)
+weinzierl2018,Reusability cost claim (Musk),cost of access reduced by as much as a factor of a hundred,,journal p182,R73. as quoted in SpaceX (2015)
+weinzierl2018,Orbital debris population in LEO,"23,000 objects >10 cm; 500,000 of 1-10 cm; over 100 million <1 cm",objects,journal p186,R73.
+weinzierl2018,Debris events,"Iridium 33 / Kosmos 2251 (2009): 2,200 trackable objects; Fengyun-1C ASAT test (2007): over 2,000 trackable pieces and ~150,000 smaller fragments; kill vehicle ~18,000 mph",,journal p186-187,R73. quoting Weinzierl and Acocella (2016b)

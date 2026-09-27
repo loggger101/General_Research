@@ -1,0 +1,33 @@
+source_id,item,value,unit,location_in_source,notes
+jpl_nhats_nea_dv_oracle,NHATS bodies (default constraints),7094,bodies,nhats.api count,"R53 (2026-09-24) counted 7092; +2 since. R73; nhats.api summary mode, default constraints (dv<=12 km/s, dur<=450 d, stay>=8 d, launch 2020-2045), pulled 2026-09-27, API v1.3"
+jpl_nhats_nea_dv_oracle,min_dv total dv median,9.367,km/s,min_dv.dv over all bodies,R53: 9.367 (economicspace SECOND-PASS F6 9.367)
+jpl_nhats_nea_dv_oracle,min_dv total dv p10,5.992,km/s,min_dv.dv over all bodies,linear-interpolated percentile
+jpl_nhats_nea_dv_oracle,min_dv total dv p25,7.542,km/s,min_dv.dv over all bodies,linear-interpolated percentile
+jpl_nhats_nea_dv_oracle,min_dv total dv p75,10.809,km/s,min_dv.dv over all bodies,linear-interpolated percentile
+jpl_nhats_nea_dv_oracle,min_dv total dv p90,11.549,km/s,min_dv.dv over all bodies,linear-interpolated percentile
+jpl_nhats_nea_dv_oracle,min_dv total dv min / max,3.389 / 11.999,km/s,min_dv.dv,bounded by the 12 km/s default cap
+jpl_nhats_nea_dv_oracle,share of bodies with min_dv <4 km/s,0.5% (38),% of bodies,min_dv.dv,
+jpl_nhats_nea_dv_oracle,share of bodies with min_dv 4-5 km/s,3.4% (243),% of bodies,min_dv.dv,
+jpl_nhats_nea_dv_oracle,share of bodies with min_dv <5 km/s,4.0% (281),% of bodies,min_dv.dv,"R53 shares: <5 4.0%, 5-8 26.5%, 8-10 29.8%, >=10 39.7%"
+jpl_nhats_nea_dv_oracle,share of bodies with min_dv 5-6 km/s,6.1% (433),% of bodies,min_dv.dv,
+jpl_nhats_nea_dv_oracle,share of bodies with min_dv 6-7 km/s,9.2% (652),% of bodies,min_dv.dv,
+jpl_nhats_nea_dv_oracle,share of bodies with min_dv 7-8 km/s,11.2% (795),% of bodies,min_dv.dv,
+jpl_nhats_nea_dv_oracle,share of bodies with min_dv 5-8 km/s,26.5% (1880),% of bodies,min_dv.dv,"R53 shares: <5 4.0%, 5-8 26.5%, 8-10 29.8%, >=10 39.7%"
+jpl_nhats_nea_dv_oracle,share of bodies with min_dv 8-10 km/s,29.8% (2114),% of bodies,min_dv.dv,"R53 shares: <5 4.0%, 5-8 26.5%, 8-10 29.8%, >=10 39.7%"
+jpl_nhats_nea_dv_oracle,share of bodies with min_dv >=10 km/s,39.7% (2819),% of bodies,min_dv.dv,"R53 shares: <5 4.0%, 5-8 26.5%, 8-10 29.8%, >=10 39.7%"
+jpl_nhats_nea_dv_oracle,min_dur mission duration median,178,days,min_dur.dur,R53: 178
+jpl_nhats_nea_dv_oracle,"duration at the minimum-dv trajectory, median",370,days,min_dv.dur,
+jpl_nhats_nea_dv_oracle,bodies with orbit condition code 0-2 (well-determined orbits),968,bodies,occ,of 7094 with an OCC
+jpl_nhats_nea_dv_oracle,H magnitude median / min / max,26.2 / 15.7 / 34.1,mag,h,
+jpl_nhats_nea_dv_oracle,bodies with a measured size (size field),69,bodies,size,others carry only the min_size-max_size range from H
+jpl_nhats_nea_dv_oracle,bodies with max_size >= 140 m,696,bodies,max_size,
+jpl_nhats_nea_dv_oracle,ten lowest min_dv bodies,2021 GM1 3.389; 2023 FY3 3.413; 2022 RD2 3.516; 2022 OB5 3.517; 2000 SG344 3.549; 2020 CD3 3.571; 2021 LF6 3.610; 2024 PT5 3.611; 2022 NX1 3.613; 2020 GE 3.641,km/s,min_dv.dv,see r73_jpl_nhats_per_body_table.csv for all fields
+jpl_nhats_nea_dv_oracle,NHATS bodies with a trajectory at dv <= 4 km/s,38,bodies,nhats.api?dv=4 count,R73 live query; bodies whose min_dv <= 4 in the default table: 38
+jpl_nhats_nea_dv_oracle,NHATS bodies with a trajectory at dv <= 5 km/s,281,bodies,nhats.api?dv=5 count,R73 live query; bodies whose min_dv <= 5 in the default table: 281
+jpl_nhats_nea_dv_oracle,NHATS bodies with a trajectory at dv <= 6 km/s,717,bodies,nhats.api?dv=6 count,R73 live query; bodies whose min_dv <= 6 in the default table: 717
+jpl_nhats_nea_dv_oracle,NHATS bodies with a trajectory at dv <= 7 km/s,1367,bodies,nhats.api?dv=7 count,R73 live query; bodies whose min_dv <= 7 in the default table: 1367
+jpl_nhats_nea_dv_oracle,NHATS bodies with a trajectory at dv <= 8 km/s,2163,bodies,nhats.api?dv=8 count,R73 live query; bodies whose min_dv <= 8 in the default table: 2163
+jpl_nhats_nea_dv_oracle,NHATS bodies with a trajectory at dv <= 9 km/s,3131,bodies,nhats.api?dv=9 count,R73 live query; bodies whose min_dv <= 9 in the default table: 3131
+jpl_nhats_nea_dv_oracle,NHATS bodies with a trajectory at dv <= 10 km/s,4277,bodies,nhats.api?dv=10 count,R73 live query; bodies whose min_dv <= 10 in the default table: 4277
+jpl_nhats_nea_dv_oracle,NHATS bodies with a trajectory at dv <= 11 km/s,5562,bodies,nhats.api?dv=11 count,R73 live query; bodies whose min_dv <= 11 in the default table: 5562
+jpl_nhats_nea_dv_oracle,NHATS bodies with a trajectory at dv <= 12 km/s,7094,bodies,nhats.api?dv=12 count,R73 live query; bodies whose min_dv <= 12 in the default table: 7094
