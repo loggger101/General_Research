@@ -2,7 +2,7 @@
 
 Round 70 (2026-09-27) extracted every file hosted in this repo. The 58 sources below are not hosted, so their extraction is limited to what earlier rounds read live. This file lists exactly what to fetch to finish the job. Tick each box as you go.
 
-**Status after Round 72 (2026-09-27):** Round 71 (branch `side-deepening`) extracted all 20 section-A files and seven section-B downloads (ticked below), and Round 72 checked them. Still to fetch: `planetary_society_pebd_mission_costs` and the full `jpl_nhats_nea_dv_oracle` per-body table (section B), and every item in sections C and D. Round 72's cloud container could reach only package registries, not these hosts, so those downloads still need your machine (or a container whose network settings allow the hosts).
+**Status after Round 73 (2026-09-27):** Round 71 (branch `side-deepening`) extracted all 20 section-A files and seven section-B downloads, and Round 72 checked them. Round 73 ran in a container with open network access and fetched and extracted the rest of section B (the Planetary Society workbook and the full NHATS table) and six section-C items from open copies (ticked below, with the route used). **Still to fetch, all needing a normal browser or library access:** harris_dabramo_2021, cannon2023, just_2019, tirila_2023, farnocchia_2024, mandler_elkins_tanton_2013, pourpoint_2012_alice_feasibility, demeo_2009_bus_taxonomy_near_ir, ryugu_soluble_organics_2023, ryugu_macromolecular_om_2023 (section C), and all of section D. From a server these hosts answer with bot challenges (Cloudflare, DataDome, Radware, Anubis) even with open network access; Round 73 did not try to get around them. Also wanted: the Ryugu supplementary data files (Data S2-S8 xlsx) from https://www.science.org/doi/10.1126/science.abn7850 (Supplementary Materials), which hold the per-element bulk chemistry.
 
 ## How to use this list
 
@@ -74,7 +74,7 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
 
 ## B. Direct links that work from any machine, including Claude's (no browser needed)
 
-- [ ] **planetary_society_pebd_mission_costs** (13) — **highest value**: NASA planetary-mission costs by development, launch and operations for every mission, at fiscal-year resolution (80 sheets). Only a summary has been extracted.
+- [x] **planetary_society_pebd_mission_costs** (extracted in R73: all 137 sheets, ~15,800 cells) (13) — **highest value**: NASA planetary-mission costs by development, launch and operations for every mission, at fiscal-year resolution (80 sheets). Only a summary has been extracted.
   Get: https://docs.google.com/spreadsheets/d/12frTU01gfT1CXGWFimN3whf4348F_r3XolTqBt02OyM/export?format=xlsx
   Save as `planetary_society_pebd_mission_costs.xlsx`. The dataset terms require attribution to The Planetary Society; extract only.
 - [x] **adam_2017** (extracted in R71) (0) — volumes and bulk densities of 40 asteroids. The arXiv preprint works from here.
@@ -92,7 +92,7 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
 - [x] **zeitlin_asteroid_excavation_project** (extracted in R71) (1) — asteroid icy-regolith excavation and volatile capture (396 KB).
   Get: https://ntrs.nasa.gov/api/citations/20150016080/downloads/20150016080.pdf
   Save as `zeitlin_asteroid_excavation_project.pdf`. May be hostable after an NTRS copyright check.
-- [ ] **jpl_nhats_nea_dv_oracle** (10) — round-trip Δv and duration for every NHATS-accessible NEA. Only statistics are extracted so far; the per-body table (~7,100 bodies) is not.
+- [x] **jpl_nhats_nea_dv_oracle** (extracted in R73: 7,094 bodies) (10) — round-trip Δv and duration for every NHATS-accessible NEA. Only statistics are extracted so far; the per-body table (~7,100 bodies) is not.
   Get: https://ssd-api.jpl.nasa.gov/nhats.api
   Save as `jpl_nhats_nea_dv_oracle.json`.
 - [x] **usgs_pp1802n** (extracted in R71) (3) — the full USGS Professional Paper 1802-N (platinum-group elements). Only an excerpt is hosted now.
@@ -108,13 +108,13 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
 
 Open the link, use the site's own "Download PDF" button, and save under the name given.
 
-- [ ] **dziadura2023** (1) — NEA bulk densities from the Yarkovsky effect (Gaia DR3), A&A 680 A77.
+- [x] **dziadura2023** (extracted in R73 from the publisher PDF in the Universidad de Alicante repository, https://rua.ua.es/server/api/core/bitstreams/4a71f48e-3b3d-4e8f-a0e7-f4e37baa1de5/content) (1) — NEA bulk densities from the Yarkovsky effect (Gaia DR3), A&A 680 A77.
   Get: https://www.aanda.org/articles/aa/pdf/2023/12/aa47342-23.pdf
   Save as `dziadura2023.pdf`. CC-BY, so it may be hosted.
 - [ ] **harris_dabramo_2021** (1) — NEA population revisited (size-frequency, completeness), Icarus 2021. Free to read on ScienceDirect.
   Get: https://doi.org/10.1016/j.icarus.2021.114452
   Save as `harris_dabramo_2021.pdf`. No licence stated, so extract only.
-- [ ] **wilkinson_robinson_2000** (1) — bulk densities of ordinary-chondrite meteorites (MAPS 35).
+- [x] **wilkinson_robinson_2000** (extracted in R73 from the NASA ADS scan, https://articles.adsabs.harvard.edu/pdf/2000M%26PS...35.1203W; the paper is M&PS 35:1203-1213) (1) — bulk densities of ordinary-chondrite meteorites (MAPS 35).
   Get: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1945-5100.2000.tb01509.x
   Save as `wilkinson_robinson_2000.pdf`. Free to read, no licence, so extract only.
 - [ ] **cannon2023** (0) — precious and structural metals on asteroids (per-class recoverable metal), PSS 215.
@@ -125,7 +125,7 @@ Open the link, use the site's own "Download PDF" button, and save under the name
   Save as `just_2019.pdf`. CC-BY, so it may be hosted.
 - [ ] **tirila_2023** (0) — review of alternative propellants for Hall thrusters, Acta Astronautica 212.
   Get: https://eprints.soton.ac.uk/483809/2/1_s2.0_S0094576523003983_main.pdf (or https://doi.org/10.1016/j.actaastro.2023.07.047)
-  Save as `tirila_2023.pdf`. CC-BY, so it may be hosted.
+  Save as `tirila_2023.pdf`. CC-BY per OpenAlex; the Soton file is the submitted version, so check the licence on the PDF before hosting.
 - [ ] **farnocchia_2024** (2) — mass, density and radius of 16 Psyche, AJ 168:57.
   Get: https://doi.org/10.3847/1538-3881/ad50ca (then the PDF link)
   Save as `farnocchia_2024.pdf`. CC-BY, so it may be hosted.
@@ -134,8 +134,8 @@ Open the link, use the site's own "Download PDF" button, and save under the name
   Save as `mandler_elkins_tanton_2013.pdf`. CC-BY, so it may be hosted.
 - [ ] **pourpoint_2012_alice_feasibility** (1) — ALICE aluminium-ice propellant flight demonstration.
   Get: https://downloads.hindawi.com/journals/ijae/2012/874076.pdf
-  Save as `pourpoint_2012_alice_feasibility.pdf`. CC-BY, so it may be hosted.
-- [ ] **elkins_tanton_2020_psyche_preflight** (7) — pre-flight composition assessment of 16 Psyche, JGR Planets (4.4 MB).
+  Save as `pourpoint_2012_alice_feasibility.pdf`. CC-BY, so it may be hosted. Alternative copy (also Cloudflare-protected): https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1009&context=perc_articles
+- [x] **elkins_tanton_2020_psyche_preflight** (extracted in R73 from the benweiss.mit.edu author mirror) (7) — pre-flight composition assessment of 16 Psyche, JGR Planets (4.4 MB).
   Get: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7375145/ (or https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2019JE006296)
   Save as `elkins_tanton_2020_psyche_preflight.pdf`. CC-BY-NC, so extract only.
 - [ ] **demeo_2009_bus_taxonomy_near_ir** (0) — Bus-DeMeo taxonomy definitions, Icarus 202. HAL author version.
@@ -143,11 +143,11 @@ Open the link, use the site's own "Download PDF" button, and save under the name
   Save as `demeo_2009_bus_taxonomy_near_ir.pdf`. Extract only.
 - [ ] **ryugu_soluble_organics_2023** (0) — Get: https://hal.science/hal-04208565/document — save as `ryugu_soluble_organics_2023.pdf`. Extract only.
 - [ ] **ryugu_macromolecular_om_2023** (0) — Get: https://cnrs.hal.science/hal-04034418/document — save as `ryugu_macromolecular_om_2023.pdf`. Extract only.
-- [ ] **ryugu_ivuna_2023** (4) — Get: https://eprints.lib.hokudai.ac.jp/dspace/bitstream/2115/90313/1/Science.pdf — save as `ryugu_ivuna_2023.pdf`. AAAS author copy, personal use only; never host.
-- [ ] **weinzierl2018** (1) — "Space, the Final Economic Frontier", JEP 32(2).
+- [x] **ryugu_ivuna_2023** (extracted in R73 from the Hokudai copy; supplementary xlsx still wanted, see status note) (4) — Get: https://eprints.lib.hokudai.ac.jp/dspace/bitstream/2115/90313/1/Science.pdf — save as `ryugu_ivuna_2023.pdf`. AAAS author copy, personal use only; never host.
+- [x] **weinzierl2018** (extracted in R73 from Harvard DASH via https://dash.harvard.edu/server/api/core/bitstreams/2ba7bfe5-bb7a-491c-9a77-878ad3191b30/content) (1) — "Space, the Final Economic Frontier", JEP 32(2).
   Get: https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.32.2.173
-  Save as `weinzierl2018.pdf`. Free from AEA; the Harvard DASH copy is CC-BY.
-- [ ] **epsc2022_context** (0, context-only) — Get: https://doi.org/10.5194/epsc2022-106 — save as `epsc2022_context.pdf`. CC-BY abstract; low value.
+  Save as `weinzierl2018.pdf`. Free from AEA. R73: the DASH copy's cover page says it is posted under DASH 'Other Posted Material (LAA)' terms, not CC BY, so extract only.
+- [x] **epsc2022_context** (extracted in R73: the HTML abstract page is now readable without login) (0, context-only) — Get: https://doi.org/10.5194/epsc2022-106 — save as `epsc2022_context.pdf`. CC-BY abstract; low value.
 
 ---
 
@@ -160,7 +160,7 @@ Open the link, use the site's own "Download PDF" button, and save under the name
   Get: https://doi.org/10.1016/j.icarus.2015.05.004
 - [ ] **schoenman_1992** (2) — AIAA-92-3800, 490 N engine test experience. NTRS has the abstract only; buy from AIAA. Optional.
   Get: https://arc.aiaa.org/ (search "AIAA-92-3800")
-- [ ] **next_highpower_2025** (0) — JANNAF 2025 NEXT high-power paper. NTRS has a one-page abstract; the full paper comes from JANNAF or the authors. Optional.
+- [ ] **next_highpower_2025** (0) — JANNAF 2025 NEXT high-power paper. NTRS has a one-page abstract (re-checked R73: still `NEXTDischargeJANNAFvF3.pdf`, one page, no numbers); the full paper comes from JANNAF or the authors. Optional.
   Record: https://ntrs.nasa.gov/citations/20250006541
 
 ---
@@ -173,4 +173,4 @@ These are live services or datasets already pulled and used. Re-pull them only t
 
 ---
 
-*Written 2026-09-27 after Round 70. When a file has been extracted, its box is ticked and a research-log entry records the round.*
+*Written 2026-09-27 after Round 70; updated after Rounds 72 and 73. When a file has been extracted, its box is ticked and a research-log entry records the round.*
