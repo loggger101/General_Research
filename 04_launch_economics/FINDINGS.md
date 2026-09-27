@@ -297,3 +297,12 @@ Sources the upstream repos cite that this registry did not have, found by readin
 - `musk_2018_falcon9_upper_stage_cost_statement` (T4): operational_costs.csv "Expendable upper stage recurring cost" low end.
 - `pearson_1979_anchored_lunar_satellites` (T1): launch_vehicles.csv "Lunar space elevator" concept row: required specific strength within existing fibres.
 - `eubanks_radley_2016_lunar_elevator_scientific_return` (T1): launch_vehicles.csv "Lunar space elevator" concept row.
+
+## R77 - Sources moved to domains 21-22 (2026-09-27; registry unchanged at 267)
+
+These rows moved to the domain that now holds the cells they back. The blocks above stay as written, so their relative paths to the files below no longer resolve from this folder; the files are at the paths given here.
+
+| id | moved to | earlier blocks here | files now at |
+|---|---|---|---|
+| `musk_2018_falcon9_upper_stage_cost_statement` | 21 | R74 | none (no files) |
+| `metzger_2023` | 22 | Round-12 addition; Maintenance; R71 | `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_table1_years_to_absolute_advantage.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_table2_production_mass_ratio_phi.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_table3_cost_elasticities.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_tableA1_lunar_propellant_tea_parameters.csv` |
