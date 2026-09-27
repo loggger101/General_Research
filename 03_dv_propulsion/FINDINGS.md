@@ -437,3 +437,14 @@ Sources the upstream repos cite that this registry did not have, found by readin
 - `astronautix_encyclopedia_propellant_engine_pages` (T4): propellants.csv vacuum Isp for kerolox, MMH/NTO, hydrazine, UDMH/NTO, Aerozine-50; LOX component price.
 - `rocketcea_nasa_cea_python_wrapper` (T4): propellants.csv kerolox vacuum Isp.
 - `nasa_std_5019_fracture_control_spaceflight_hardware` (T2): storage_systems.csv "COPV burst performance factor" and every supercritical-gas tank_kg_per_L in propellants.csv.
+
+## R76 - Gaps recorded from the second domain pass (2026-09-27; registry unchanged)
+
+Found while looking for new domains in economicspace@1f470d4 and spacecost@e831245; no source was sought. Two low-thrust cells in this domain's scope have no registry source. (Thruster-head kg/N is not one of them: the NEXT-C documents above already back it.)
+
+| cell | current value | upstream's stated basis |
+|---|---|---|
+| spacecost `propellants.py` `_LOW_THRUST_DV_PENALTY`, carried as `propellants.csv` `dv_penalty_factor` on every electric row | 1.5 x the impulsive mission delta-v | "1.5 is a mid-range figure": spiralling out of LEO ~7 km/s against ~3.2 km/s impulsive, interplanetary low-thrust transfers "~1.3-2× the impulsive Δv depending on thrust-to-mass"; no source |
+| economicspace `calc.py` `ep_target_thrust_yr` | 3.0 yr of thrusting the electric stage is sized for | none stated |
+
+What a source has to supply: low-thrust against impulsive delta-v for the transfers the pipeline flies (LEO spiral, NEA rendezvous and return) as a function of thrust-to-mass, and the thrusting durations flown or designed for electric-propulsion missions.

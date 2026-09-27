@@ -1,6 +1,6 @@
 # Domain 19 — Asteroid excavation throughput & beneficiation
 
-Backings: economicspace `modules/calc.py` mining and beneficiation fields (`mining_rate_kg_per_day_per_kg_rig`, `mining_hardware_kg`, `max_mining_duration_yr`, `station_keeping_floor_yr`, `beneficiation_recovery`, `max_concentration_ratio`) and spacecost `reference/operational_costs.csv` rows `Drilling / excavation energy`, `Beneficiation / on-site processing energy` and `In-space processing plant throughput`.
+Backings: economicspace `modules/calc.py` mining and beneficiation fields (`mining_rate_kg_per_day_per_kg_rig`, `mining_hardware_kg`, `max_mining_duration_yr`, `station_keeping_floor_yr`, `beneficiation_recovery`, `max_concentration_ratio`) and spacecost `reference/operational_costs.csv` rows `Drilling / excavation energy`, `Beneficiation / on-site processing energy` and `In-space processing plant throughput`; since R76 also economicspace `modules/mineral_value.py` `IN_SPACE_PROCESSING_KWH_PER_KG` (in-space refining energy).
 
 Created in Round 75 (2026-09-27). Blocks are appended one per round, newest last.
 
@@ -16,7 +16,7 @@ These fields size the haul, and upstream calls the mining rate "an engineering a
 | `calc.py` `beneficiation_recovery` | 0.90 | "Terrestrial PGM / sulphide flotation circuits run 85-95%"; no source, and no microgravity heritage |
 | `calc.py` `max_concentration_ratio` | 50:1 feed to concentrate | "Terrestrial mills run 100:1 to 1000:1 on PGM ores"; no source |
 | `Drilling / excavation energy` | 200 Wh/kg [50, 500] of regolith extracted | "Zacny et al. (NIAC studies ...)", not identifiable (R74) |
-| `Beneficiation / on-site processing energy` | 500 Wh/kg [100, 2000] of refined product | NASA "Money Mass-ematics 2023", a grades 7-8 worksheet (rc-048, open) |
+| `Beneficiation / on-site processing energy` | 500 Wh/kg [100, 2000] of refined product | "NASA Money-Mass-ematics 2023", a grades 7-8 worksheet (rc-048, open) |
 | `In-space processing plant throughput` | 100 kg/yr per kg of plant [20, 500] | "Terrestrial smelters run 1,000x their own mass per year", derated tenfold by judgement |
 
 **What a source has to supply.**
@@ -35,3 +35,14 @@ These fields size the haul, and upstream calls the mining rate "an engineering a
 - `hein2020` (domain 2): beneficiation cost structure; R61 recorded a plant-throughput discrepancy against the row.
 
 **Boundary.** Domain 5 keeps volatile extraction (water-liberation energy, volatile recovery), ISRU propellant processing (`isru_processing_usd_per_kg`) and storage; domain 2 keeps what the body contains. This domain covers getting ore out of the body and concentrating it.
+
+## R76 - Scope extended to in-space refining energy (2026-09-27; registry unchanged)
+
+Found while looking for new domains in economicspace@1f470d4 and spacecost@e831245; no source was sought. The energy to turn raw feedstock into a usable in-space product sits next to this domain's plant-throughput row (the same code reads both), so it joins this domain rather than opening its own:
+
+| cell | current value | upstream's stated basis |
+|---|---|---|
+| economicspace `mineral_value.py` `IN_SPACE_PROCESSING_KWH_PER_KG` | kWh per kg of feedstock: Fe, Ni, Co, Cu, nickel-iron, awaruite 5.0; magnetite 7.0; troilite 4.0; carbon, organics 2.0; silicates 1.0; water 0.5 | metals: "Terrestrial electric-arc / direct-reduction steelmaking runs 4-5 kWh/kg; electrowinning iron is similar"; no source |
+| economicspace `mineral_value.py` `_INSPACE_PLANT_LIFE_YR` | 15 yr, over which the refinery is amortised | none stated; the same figure as `Mining rig service life` (domain 16) |
+
+What a source has to supply: specific energies of reducing, melting and forming iron-nickel metal and of sintering silicates, measured or designed for space or for small terrestrial plants.
