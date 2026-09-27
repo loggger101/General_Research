@@ -1,0 +1,5 @@
+source_id,table,item,value,unit,location_in_source,notes
+nasa_oig_2017_ig-17-009_mars2020_project,Table 6 design readiness metrics,actual mass margin vs planned,4% actual vs 3% required,,PDF p34 Table 6,"mass 3,393 kg against a 3,540 kg allocation for cruise stage + EDL system + landed mass; read from the hosted PDF (text layer); R72"
+nasa_oig_2017_ig-17-009_mars2020_project,Table 6 design readiness metrics,critical technologies at TRL 6 by PDR (Feb 4 2016),5 of 7 below TRL 6 at Nov 2016; all 7 updated to TRL 6 in Dec 2016,,PDF p34 Table 6,read from the hosted PDF (text layer); R72
+nasa_oig_2017_ig-17-009_mars2020_project,Table 6 design readiness metrics,mission success criteria defined,8,,PDF p34 Table 6,read from the hosted PDF (text layer); R72
+nasa_oig_2017_ig-17-009_mars2020_project,Table 2 technology type by instrument,new-technology instruments / modified / heritage systems,"new: MOXIE, PIXL, RIMFAX, SHERLOC, sampling system; modified: Mastcam-Z, MEDA, SuperCam; heritage: aeroshell, cruise stage, descent stage, rover chassis (TRN added)",,PDF p11 Table 2,read from the hosted PDF (text layer); R72

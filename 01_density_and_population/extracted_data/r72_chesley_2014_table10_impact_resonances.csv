@@ -1,0 +1,9 @@
+source_id,impact_year,zeta2135_km,post_2135_period_yr,resonance,resonant_period_yr,delta_P_yr,location_in_source,notes
+chesley_2014_bennu_orbit_bulk_density,2193,186415,1.2342,58 yr/47 rev,1.2340,+0.0002,PDF p59 Table 10,resonance for each of the eight impacts with IP > 1e-5 (Table 9); Delta-P = post-2135 period - resonant period (checked); R72
+chesley_2014_bennu_orbit_bulk_density,2185,278479,1.2215,50 yr/41 rev,1.2195,+0.0020,PDF p59 Table 10,resonance for each of the eight impacts with IP > 1e-5 (Table 9); Delta-P = post-2135 period - resonant period (checked); R72
+chesley_2014_bennu_orbit_bulk_density,2196,279590,1.2213,61 yr/50 rev,1.2200,+0.0013,PDF p59 Table 10,resonance for each of the eight impacts with IP > 1e-5 (Table 9); Delta-P = post-2135 period - resonant period (checked); R72
+chesley_2014_bennu_orbit_bulk_density,2196,281070,1.2211,61 yr/50 rev,1.2200,+0.0011,PDF p59 Table 10,resonance for each of the eight impacts with IP > 1e-5 (Table 9); Delta-P = post-2135 period - resonant period (checked); R72
+chesley_2014_bennu_orbit_bulk_density,2185,295318,1.2194,50 yr/41 rev,1.2195,-0.0001,PDF p59 Table 10,resonance for each of the eight impacts with IP > 1e-5 (Table 9); Delta-P = post-2135 period - resonant period (checked); R72
+chesley_2014_bennu_orbit_bulk_density,2180,316352,1.2169,45 yr/37 rev,1.2162,+0.0007,PDF p59 Table 10,resonance for each of the eight impacts with IP > 1e-5 (Table 9); Delta-P = post-2135 period - resonant period (checked); R72
+chesley_2014_bennu_orbit_bulk_density,2180,339506,1.2144,45 yr/37 rev,1.2162,-0.0018,PDF p59 Table 10,resonance for each of the eight impacts with IP > 1e-5 (Table 9); Delta-P = post-2135 period - resonant period (checked); R72
+chesley_2014_bennu_orbit_bulk_density,2175,368877,1.2116,40 yr/33 rev,1.2121,-0.0005,PDF p59 Table 10,resonance for each of the eight impacts with IP > 1e-5 (Table 9); Delta-P = post-2135 period - resonant period (checked); R72
