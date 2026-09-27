@@ -30,3 +30,14 @@ The licensing rows cite FAA.gov and CRS R48582 (registered, not read), so it is 
 - `crs_r48582_commercial_launch_reentry_regulations` (domain 5): the CRS overview the licensing rows cite.
 
 **Boundary.** Domain 17 prices the insurance the MPL requires; domain 7 holds the sample-recovery operations envelope that a planetary-protection category would change.
+
+## R77 - Sources moved in (2026-09-27; registry unchanged at 267)
+
+These rows were registered in other domains before this one existed; they moved here because the cells they back are this domain's. Their earlier write-ups stay in the old domain's FINDINGS.md under the blocks named.
+
+| id | from | earlier write-ups | files moved here |
+|---|---|---|---|
+| `faa_14_cfr_part_450_launch_reentry_licensing` | domain 5 | `05_inspace_operations/FINDINGS.md`: R74 | none |
+| `crs_r48582_commercial_launch_reentry_regulations` | domain 5 | `05_inspace_operations/FINDINGS.md`: R74 | none |
+
+The cross-references to `faa_14_cfr_part_450_launch_reentry_licensing`, `crs_r48582_commercial_launch_reentry_regulations` in the opening block are now rows of this domain.

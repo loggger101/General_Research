@@ -26,3 +26,14 @@ Domain 8 is an external oracle for delta-v; nothing plays that role for the prof
 - `lewicki2023` (domain 2): valuation framework.
 
 **Boundary.** Input cells stay with their own domains (a benchmark model's price goes to domain 6, its throughput to 19); this domain holds whole-model comparisons.
+
+## R77 - Sources moved in (2026-09-27; registry unchanged at 267)
+
+These rows were registered in other domains before this one existed; they moved here because the cells they back are this domain's. Their earlier write-ups stay in the old domain's FINDINGS.md under the blocks named.
+
+| id | from | earlier write-ups | files moved here |
+|---|---|---|---|
+| `hein2020` | domain 2 | `02_composition_value/FINDINGS.md`: the `hein2020` block; Round-1 status; Round 61 addition; Maintenance; R71; R72 | `extracted_data/r61_hein2020_plant_economics_key_numbers.csv`, `extracted_data/r71_hein2020_key_numbers.csv`, `extracted_data/r71_hein2020_table3_pt_supply_demand_profitability.csv` |
+| `metzger_2023` | domain 4 | `04_launch_economics/FINDINGS.md`: Round-12 addition; Maintenance; R71 | `extracted_data/r71_metzger_2023_key_numbers.csv`, `extracted_data/r71_metzger_2023_table1_years_to_absolute_advantage.csv`, `extracted_data/r71_metzger_2023_table2_production_mass_ratio_phi.csv`, `extracted_data/r71_metzger_2023_table3_cost_elasticities.csv`, `extracted_data/r71_metzger_2023_tableA1_lunar_propellant_tea_parameters.csv` |
+
+The cross-reference to `hein2020` in the opening block is now a row of this domain.

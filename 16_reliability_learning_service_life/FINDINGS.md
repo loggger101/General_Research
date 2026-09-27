@@ -34,3 +34,14 @@ These rows set the probability that a mission earns anything and how many missio
 - `duane_1964_learning_curve_reliability_monitoring` (domain 5): the Duane growth model.
 
 **Boundary.** Domain 10 holds engine-level certified life (`ballard_2017_rs25_nextgen_sls`), which bears on reusability rather than on these probabilities. Insurance, which replaces hardware but not revenue, is domain 17.
+
+## R77 - Sources moved in (2026-09-27; registry unchanged at 267)
+
+These rows were registered in other domains before this one existed; they moved here because the cells they back are this domain's. Their earlier write-ups stay in the old domain's FINDINGS.md under the blocks named.
+
+| id | from | earlier write-ups | files moved here |
+|---|---|---|---|
+| `mil_hdbk_189c_reliability_growth_management` | domain 5 | `05_inspace_operations/FINDINGS.md`: R74 | none |
+| `duane_1964_learning_curve_reliability_monitoring` | domain 5 | `05_inspace_operations/FINDINGS.md`: R74 | none |
+
+The cross-references to `mil_hdbk_189c_reliability_growth_management`, `duane_1964_learning_curve_reliability_monitoring` in the opening block are now rows of this domain.

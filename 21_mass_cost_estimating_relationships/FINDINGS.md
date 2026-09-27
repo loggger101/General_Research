@@ -38,3 +38,16 @@ Every hardware kilogram in the cascade is priced by one of these rates and sized
 - `nasa_oig_2020_ig-20-012_sls_program_costs_contracts` (domain 4): an ICPS unit price.
 
 **Boundary.** Domain 7 holds programme totals and NRE; domain 9 holds the delivery-chain mass fractions in `spacecost/delivery.py`; domain 11 holds power and electric-propulsion $/W and kg/kW. This domain holds per-kg rates by hardware class and the structure and TPS sizing fractions.
+
+## R77 - Sources moved in (2026-09-27; registry unchanged at 267)
+
+These rows were registered in other domains before this one existed; they moved here because the cells they back are this domain's. Their earlier write-ups stay in the old domain's FINDINGS.md under the blocks named.
+
+| id | from | earlier write-ups | files moved here |
+|---|---|---|---|
+| `aerospace_corp_small_satellite_cost_model` | domain 7 | `07_mission_program_costs/FINDINGS.md`: R74 | none |
+| `nasa_instrument_cost_model_nicm` | domain 7 | `07_mission_program_costs/FINDINGS.md`: R74 | none |
+| `musk_2018_falcon9_upper_stage_cost_statement` | domain 4 | `04_launch_economics/FINDINGS.md`: R74 | none |
+| `stackpoole_2013_pica_pica_x_postflight_eval` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 56 addition | `extracted_data/r70_stackpoole_2013_pica_pica_x_postflight_eval.csv`, `full_texts/pica_pica_x_stardust_dragon_postflight_eval_ntrs_20140005558_publicdomain.pdf` |
+
+The cross-references to `aerospace_corp_small_satellite_cost_model`, `nasa_instrument_cost_model_nicm`, `stackpoole_2013_pica_pica_x_postflight_eval`, `musk_2018_falcon9_upper_stage_cost_statement` in the opening block are now rows of this domain.

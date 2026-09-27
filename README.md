@@ -21,9 +21,11 @@ added later, in the order the research rounds found the next gap; 12–14 were
 added in Round 74 for upstream citations no earlier domain covered; 15–22 were
 added in Round 75 for upstream cells no domain covered, most of which upstream
 itself labels as judgement rather than measurement; 23–25 were added in Round
-76 by a second pass over the same code. Domains 15–25 hold no sources yet:
-each FINDINGS.md lists its target cells, their current values and what a
-source has to supply.
+76 by a second pass over the same code. Each of their FINDINGS.md files lists
+its target cells, their current values and what a source has to supply.
+Round 77 moved 20 sources into domains 16–22 from domains 2, 4, 5 and 7,
+where they had been filed before a domain for their cells existed; domains
+15, 23, 24 and 25 are still empty.
 
 | # | domain | pipeline cell(s) it could back or replace |
 |---|---|---|
@@ -31,7 +33,7 @@ source has to supply.
 | 2 | Composition → commodity value mapping (what an S/C/X/K/Q body actually contains) | `taxonomy_composition.csv` material fractions, `mineral_value.py` mineralogy |
 | 3 | Δv budgets and propulsion performance tables | `spacecost/reference/delta_v_segments.csv`, `propellants.csv` Isp rows |
 | 4 | Launch $/kg to LEO/GTO — history and projections | `spacecost/reference/launch_vehicles.csv` price rows, cost cascade |
-| 5 | In-space storage (boil-off), ISRU, operational costs | `storage_systems.csv`, `operational_costs.csv`, environment penalties |
+| 5 | In-space storage (boil-off), ISRU, operational costs | `storage_systems.csv`; the volatile-ISRU, power and electric-propulsion rows of `operational_costs.csv` (power and EP overlap domain 11; the sources for its finance, licensing, operations, mining and hardware-rate rows moved to 16–21 in Round 77); environment penalties |
 | 6 | Commodity market prices (the value side) | `mineral_value.py` `ref_price_usd_per_kg`, which feeds every profitability row |
 | 7 | Mission program-cost benchmarks (NRE / development) | `operational_costs.csv` NRE rows (spacecraft development, autonomous mining control), sample-recovery ops envelope |
 | 8 | NEA accessibility oracles (round-trip Δv ground truth) | distribution/rank reference for the NEA rows of `delta_v_segments.csv` (economicspace `probe_nhats.py`) |
@@ -174,8 +176,27 @@ A new domain needs:
    (`validate.py` fails if a domain folder is not mentioned in this file).
 4. A research-log entry for the round.
 
-A source already registered in another domain stays there; the new domain's
+A source already registered in another domain moves to the new one when the
+cells it backs are the new domain's (next section); otherwise the new domain's
 FINDINGS.md refers to it by id.
+
+## Moving a source between domains
+
+Move a source when the cells its `pipeline_mapping` names belong to another
+domain. Its id never changes. Round 77 set the procedure:
+
+1. Move its row from one `sources_domain.csv` to the other, and its INDEX row
+   to the end of the new domain's table.
+2. `git mv` its hosted files (and change `domain_dir` in
+   `full_texts_manifest.csv`) and every extracted-data CSV that cites only this
+   source. A CSV that also cites sources staying behind stays where it is; if
+   the moved row names it, write the path with the old domain's folder.
+3. Append a block to the old domain's FINDINGS.md listing each moved id and
+   the new paths of its files, and one to the new domain's saying what arrived
+   and which old blocks hold its history. Older blocks and the research log
+   stay as written, even where their relative paths no longer resolve.
+4. Leave `domain_dir` in `revision_candidates.csv` alone: it names the
+   FINDINGS.md that holds the write-up.
 
 ## Revision candidates
 

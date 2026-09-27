@@ -31,3 +31,7 @@ Aero-assisted returns are offered at earth_surface, LEO, GEO, Mars orbit and Mar
 - `edquist_2022_mars2020_aerothermal_entry_masses` (domain 9): Mars entry aerothermal environments.
 
 **Boundary.** Domain 3 holds the delta-v table as a whole and the propulsive alternatives; domain 9 holds the delivery-chain mass fractions and Mars EDL survival; domain 21 prices and sizes the heat shield. This domain holds whether the aero-assist works at the speeds and masses the pipeline assumes, and what delta-v and time it saves.
+
+## R77 - Cross-references updated (2026-09-27; registry unchanged at 267)
+
+`stackpoole_2013_pica_pica_x_postflight_eval`, listed in the opening block under domain 5, is now in domain 21.

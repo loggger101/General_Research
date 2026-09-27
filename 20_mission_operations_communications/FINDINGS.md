@@ -28,3 +28,15 @@ Mission operations is charged for every year of every mission, and no registry r
 - `jpl_dsn_services_catalog_820_100` (domain 5): DSN aperture pricing.
 
 **Boundary.** Domain 7 holds one-time costs, including the autonomy-software NRE and the sample-recovery envelope; this domain holds the recurring cost per mission-year or per delivery.
+
+## R77 - Sources moved in (2026-09-27; registry unchanged at 267)
+
+These rows were registered in other domains before this one existed; they moved here because the cells they back are this domain's. Their earlier write-ups stay in the old domain's FINDINGS.md under the blocks named.
+
+| id | from | earlier write-ups | files moved here |
+|---|---|---|---|
+| `jpl_dsn_services_catalog_820_100` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 44 addition; Maintenance; R71 | `extracted_data/r71_jpl_dsn_820_100_key_numbers.csv`, `extracted_data/r71_jpl_dsn_820_100_table5_1_station_rf_capabilities.csv` |
+
+Revision candidates on these sources, written up in their old domains: rc-030 (open, Deep Space Network time).
+
+The cross-reference to `jpl_dsn_services_catalog_820_100` in the opening block is now a row of this domain.

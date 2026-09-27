@@ -121,3 +121,12 @@ Sources the upstream repos cite that this registry did not have, found by readin
 
 - `aerospace_corp_small_satellite_cost_model` (T2): operational_costs.csv recurring deep-space hardware $/kg bracket (mining payload, berthing adapter).
 - `nasa_instrument_cost_model_nicm` (T2): operational_costs.csv recurring deep-space hardware $/kg bracket (mining payload, berthing adapter).
+
+## R77 - Sources moved to domain 21 (2026-09-27; registry unchanged at 267)
+
+These rows moved to the domain that now holds the cells they back. The blocks above stay as written, so their relative paths to the files below no longer resolve from this folder; the files are at the paths given here.
+
+| id | moved to | earlier blocks here | files now at |
+|---|---|---|---|
+| `aerospace_corp_small_satellite_cost_model` | 21 | R74 | none (no files) |
+| `nasa_instrument_cost_model_nicm` | 21 | R74 | none (no files) |
