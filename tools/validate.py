@@ -11,10 +11,13 @@ import sys
 from collections import Counter, defaultdict
 
 from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_STATUSES, CANDIDATES,
-                    DOMAIN_COLS, INDEX, MANIFEST, MANIFEST_COLS, README, REGISTRY, REGISTRY_COLS, ROOT,
-                    TIERS, access_class, aggregate_rows, domain_dirs, file_digest, read_csv, read_dicts)
+                    DOMAIN_COLS, INDEX, LICENSE_CLASSES, MANIFEST, MANIFEST_COLS, NOT_REDISTRIBUTABLE, README,
+                    REGISTRY, REGISTRY_COLS, ROOT, TIERS, access_class, aggregate_rows, domain_dirs, file_digest,
+                    read_csv, read_dicts)
 
 INDEX_HEADER = ['id', 'tier', 'source (short)', 'access', 'backs / could replace']
+ACCESS_WORDS = re.compile(r'(full[_ ]text[_ ]hosted|open[_ ]not[_ ]pulled|verified[_ ]live|open[_ ]service|'
+                          r'public[_ ]domain[_ ]excerpt|skipped)\b', re.I)
 GITHUB_HARD_LIMIT = 100 * 1024 * 1024
 GITHUB_WARN_LIMIT = 50 * 1024 * 1024
 
@@ -46,9 +49,11 @@ def check_registry(rep):
         for part in ('sources_domain.csv', 'FINDINGS.md'):
             if not (ROOT / d / part).exists():
                 rep.error(f'{d}/{part} is missing')
-        header, _ = read_csv(ROOT / d / 'sources_domain.csv')
+        header, rows = read_csv(ROOT / d / 'sources_domain.csv')
         if header != DOMAIN_COLS:
             rep.error(f'{d}/sources_domain.csv header is {header}, expected {DOMAIN_COLS}')
+        if any(not r for r in rows):
+            rep.error(f'{d}/sources_domain.csv has blank lines')
 
     header, rows = read_csv(REGISTRY)
     if header != REGISTRY_COLS:
@@ -121,6 +126,15 @@ def check_index(rep, reg):
                 rep.error(f'Domain {num}: {sid} is registered under {reg[sid]["domain_dir"]}')
             elif len(cells) > 1 and cells[1] != reg[sid]['tier']:
                 rep.error(f'Domain {num}: {sid} tier {cells[1]} here vs {reg[sid]["tier"]} in sources.csv')
+            if len(cells) == 5 and sid in reg:
+                # R26-R27 wrote three rows as id | tier | source | venue | access; the cell count still matched.
+                if ACCESS_WORDS.match(cells[4]):
+                    rep.error(f'Domain {num}: {sid} has its access in the last cell — order is {" | ".join(INDEX_HEADER)}')
+                hosted = access_class(reg[sid]['access_status']) == 'full_text_hosted'
+                says_hosted = 'hosted' in cells[3].lower() and 'not hosted' not in cells[3].lower()
+                if hosted != says_hosted:
+                    rep.error(f'Domain {num}: {sid} access cell "{cells[3][:40]}" disagrees with access_status '
+                              f'{access_class(reg[sid]["access_status"])!r}')
         expected = [sid for sid, r in reg.items() if r['domain_dir'] == d]
         missing = [s for s in expected if s not in ids]
         if missing:
@@ -185,11 +199,17 @@ def check_manifest(rep, reg):
         return
     by_id = defaultdict(list)
     listed = set()
+    restricted = []
     for row in rows:
         if len(row) != len(MANIFEST_COLS):
             rep.error(f'row {row[:3]} has {len(row)} cells')
             continue
-        d, sid, fname, size, digest = row
+        d, sid, fname, size, digest, license = row
+        lic = license.split(' ', 1)[0]
+        if lic not in LICENSE_CLASSES:
+            rep.error(f'{fname}: license {lic!r} must start with one of {sorted(LICENSE_CLASSES)}')
+        elif lic in NOT_REDISTRIBUTABLE:
+            restricted.append(f'{sid} ({lic})')
         if (d, fname) in listed:
             rep.error(f'{d}/full_texts/{fname} listed twice')
         listed.add((d, fname))
@@ -209,6 +229,9 @@ def check_manifest(rep, reg):
         elif actual_size > GITHUB_WARN_LIMIT:
             rep.warn(f'{fname} is {actual_size / 2**20:.0f} MB — GitHub warns above 50 MB')
         by_id[sid].append(actual_digest)
+    # A warning, not an error: taking a file down is the owner's decision (README access rule 1).
+    if restricted:
+        rep.warn(f'{len(restricted)} hosted files have no licence that permits redistribution: {", ".join(restricted)}')
 
     for d in domain_dirs():
         folder = ROOT / d / 'full_texts'
@@ -233,6 +256,8 @@ def check_extracted(rep, reg):
     stray = ROOT / 'extracted_data'
     if stray.is_dir() and any(stray.iterdir()):
         rep.error('extracted_data/ at the repo root: move each file into <domain>/extracted_data/')
+    no_source_col = []
+    cited = defaultdict(str)  # domain -> text of its extracted CSVs, to find which ids they cite
     for d in domain_dirs():
         folder = ROOT / d / 'extracted_data'
         for path in sorted(folder.glob('*.csv')) if folder.exists() else []:
@@ -242,6 +267,9 @@ def check_extracted(rep, reg):
             except UnicodeDecodeError as e:
                 rep.error(f'{name}: not UTF-8 ({e})')
                 continue
+            cited[d] += path.read_text(encoding='utf-8-sig')
+            if header and 'source_id' not in header:
+                no_source_col.append(name)
             if not header:
                 rep.error(f'{name}: empty file')
                 continue
@@ -253,9 +281,22 @@ def check_extracted(rep, reg):
             rows = [r for r in rows if r != header]
             if 'source_id' in header:
                 col = header.index('source_id')
-                unknown = sorted({row[col] for row in rows if len(row) > col and row[col] and row[col] not in reg})
+                # A row derived from two sources lists both, joined by ';'.
+                unknown = sorted({sid for row in rows if len(row) > col for sid in row[col].split(';')
+                                  if sid and sid not in reg})
                 if unknown:
                     rep.error(f'{name}: source_id not in sources.csv: {", ".join(unknown)}')
+    # README "How an item earns a place" #3: numbers extracted into a CSV, or the row says context-only.
+    if no_source_col:
+        rep.warn(f'{len(no_source_col)} CSVs have no source_id column, so their rows are not traceable to a '
+                 f'registry id: {", ".join(no_source_col)}')
+    uncovered = Counter(r['domain_dir'] for sid, r in reg.items()
+                        if sid not in cited[r['domain_dir']]
+                        and not re.search(r'context[- ]only', r['access_status'] + r['pipeline_mapping'], re.I))
+    if uncovered:
+        rep.warn(f'{sum(uncovered.values())} sources are not cited by id in any extracted-data CSV of their domain '
+                 f'and are not marked context-only: '
+                 + ', '.join(f'{d[:2]}x{n}' for d, n in sorted(uncovered.items())))
 
 
 def check_candidates(rep, reg):
@@ -290,6 +331,16 @@ def check_candidates(rep, reg):
             rep.error(f'{cid}: target_repo and target_file are required')
 
 
+def check_line_endings(rep):
+    rep.start('line endings')
+    for path in sorted(ROOT.rglob('*')):
+        if path.suffix not in ('.csv', '.md', '.py') or {'.git', 'full_texts'} & set(path.parts):
+            continue
+        if b'\r\r' in path.read_bytes():
+            rep.error(f'{path.relative_to(ROOT).as_posix()}: doubled carriage returns — git treats the file as binary '
+                      f'and shows no diffs; write CSVs with csv.writer on a file opened with newline=""')
+
+
 def check_readme(rep):
     rep.start('README.md')
     text = README.read_text(encoding='utf-8')
@@ -307,6 +358,7 @@ def main():
     check_manifest(rep, reg)
     check_extracted(rep, reg)
     check_candidates(rep, reg)
+    check_line_endings(rep)
     check_readme(rep)
     for line in rep.lines:
         print(line)

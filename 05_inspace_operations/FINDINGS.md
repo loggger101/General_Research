@@ -13,7 +13,7 @@
 | hydrolox passive boil-off (charged by Module 4) | **0.05 %/day** | best-insulation case (HePUR): **0.04 %/day**; cheap-perlite case: **0.24 %/day** | **AGREEMENT at the top of a peer-reviewed range.** Our single figure is defensible as "good MLI, no active cooling" — but the paper shows the spread across insulation quality is ~6x, and our `storage_systems` MLI row (1.2 kg/m²) carries that assumption invisibly |
 | ZBO cryocooler rows (80 W/W electrical @ 20 K; 5 kg/W specific mass — flagged "NOT flown on a propellant tank") | engineering estimates from Carnot limits | reliquefaction specific energy **5 kWh/kg** (Kim et al., cited in-paper) + LAC architecture: order-of-magnitude smaller cooling system when heat ingress is concentrated | the paper doesn't give W/W for 20 K cryocoolers directly, but it validates the *architecture* our ZBO row assumes and supplies the energy-per-kg figure that converts boil-off into a $/kWh cost. Our Carnot-derived range (50–150 W/W) remains unanchored by flight data — still flagged as such |
 
-## zero_bo_off_2025 — "Strategies for Zero Boil-Off Liquid Hydrogen Transfer: an export terminal case-study" [T1]
+## zero_bo_off_2025 — "Strategies for Zero Boil-Off Liquid Hydrogen Transfer: an export terminal case-study" [T2 — preprint, not peer-reviewed]
 
 - **Full text hosted**: `full_texts/zero_boil_off_LH2_transfer_strategies_arxiv2512.04609.pdf`
   (arXiv:2512.04609; verified live HTTP 200, application/pdf). Uncertainty analysis of LH₂ transfer between large tanks using centrifugal pumps with/without variable-speed drives.
@@ -332,3 +332,11 @@ Re-verified every non-browser open-access route: Unpaywall 422; Semantic Scholar
 - Verdict: **ENVELOPE / order-of-magnitude consistency anchor, not a pin** (same honesty class as R62's curation line): no per-berthing figure is published anywhere in this document either — NASA funds the program, not the event. Row 5 stays an ESTIMATE but now has its first institutional upper bound on file; **no revision forced**.
 
 **Negative probe (criterion #2)**: 'depot' count = **0** across all 384 pages — commercial depots are NOT yet funded in FY2027, confirming row 5's note ('no commercial depot exists yet'). Closest forward-looking line: p63 verbatim '$1.0 billion to CLDP to support the procurement of commercial space station services...' (Commercial LEO Development $1B for FUTURE commercial space station services — context only, not an ops anchor).
+
+## Maintenance (2026-09-26) — four files un-hosted; lac_bac insulation labels corrected; full SSAP table
+
+- **Un-hosted**: lac_bac_2024 and ssap_2021 (arXiv default licence); nextc_ppu_2020 (NTRS: may include copyrighted material); jpl_dsn_services_catalog_820_100 (copyright Caltech, recorded as public domain). Un-hosted on 2026-09-26 because the licence does not permit redistribution (details in each registry row); every number this file quotes from them was checked against the PDF first and is in `extracted_data/`.
+- **lac_bac_2024, round 1: the insulation labels were swapped.** The paper (p7) gives perlite 5905 W ≈ 0.04 %/day (the better stack) and HePUR 35 350 W ≈ 0.24 %/day. The table above and the CSV had it the other way round, and "35 W" was a truncation of 35 350 W. Our hydrolox 0.05 %/day still sits next to the best case; what changes is which insulation that case is. Abstract figures for LAC/BAC with each stack are now extracted.
+- **ssap_2021**: round 1 called Table 3 fully extracted, but only 3 of its 9 bodies were. The full table (Moon mare/highlands, Mars, three C-type and three S-type mineralogies, 8 products) is in `extracted_data/ssap_2021_table3_theoretical_yields.csv`.
+- **zero_bo_off_2025** is an arXiv preprint with no journal version: re-tiered T2, and "peer-reviewed lower bound" corrected in the registry, INDEX and rc-028. lac_bac_2024 (Cryogenics 148:104065, 2025) and ssap_2021 (Acta Astronautica 188:57-63, 2021) were published, so they stay T1.
+- Page numbers added to the nextc_ppu_2020 rows; the DSN and insurance CSVs gained `source_id`. stackpoole_2013 and next_highpower_2025 are marked context-only.

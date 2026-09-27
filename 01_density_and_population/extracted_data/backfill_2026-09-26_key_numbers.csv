@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+siltala_granvik_2021,(16) Psyche bulk density,3.88 +/- 0.25,g/cm3,"PDF p1, p5","page located by matching the values in the hosted PDF, 2026-09-26"
+kretlow_2022_rosa_mass_density,"(223) Rosa mass, weighted mean of two encounters",(3.62 +/- 1.25) x 10^17,kg,"PDF p1, p3","page located by matching the values in the hosted PDF, 2026-09-26"
+kretlow_2022_rosa_mass_density,(223) Rosa bulk density,1.2 +/- 0.5,g/cm3,"PDF p1, p3","diameter 83 +/- 8 km. page located by matching the values in the hosted PDF, 2026-09-26"
+dziadura2023,bodies with detected Yarkovsky drift: NEAs / of which PHAs / inner main-belt,"446 / 93 / 54,094",bodies,abstract (Crossref metadata),"recorded from the abstract in round 1; no full text on this machine, so not re-checked on 2026-09-26"
+harris_dabramo_2021,population-estimate census boundary,discoveries to 2020-08-03,date,abstract,"recorded from the abstract in round 3; no full text on this machine, so not re-checked on 2026-09-26"
+wilkinson_robinson_2000,ordinary-chondrite bulk density H / L / LL (1 sigma),3.44 +/- 0.19 / 3.40 +/- 0.15 / 3.29 +/- 0.17,g/cm3,abstract (OpenAlex),"82 samples of 72 ordinary chondrites, modified Archimedes method, ~1% accuracy; intra-group spread 3.0-3.8. recorded from the abstract in round 11; no full text on this machine, so not re-checked on 2026-09-26"
+mp3c_minor_planet_physical_properties_catalogue,"(433) Eros mass, MP3C best value",6.69e15,kg,"live TAP query (dachs.oca.eu), round 41","database v3.2.0-beta.1, created 2024-02-13; a live-service value, not a publication"
+mp3c_minor_planet_physical_properties_catalogue,"(101955) Bennu diameter, MP3C best value",0.492,km,"live TAP query, round 41",same query
+mp3c_minor_planet_physical_properties_catalogue,bodies in mp3c_main.best,"1,335,502",bodies,"live TAP query, round 41",same query
