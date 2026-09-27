@@ -378,3 +378,13 @@ Sources the upstream repos cite that this registry did not have, found by readin
 - `space_com_pu238_rtg_cost_reporting` (T4): operational_costs.csv "RTG (radioisotope power)" Pu-238 cost context.
 
 **Citation that does not support its row (rc-048).** spacecost `operational_costs.csv` "Beneficiation / on-site processing energy" cites "Lunar / asteroid ISRU literature (NASA Money-Mass-ematics 2023)". The only NASA document of that name is a four-page SCaN classroom worksheet for grades 7-8, "Ratios and Percentages with Laser Communications" (read in full, sha256 a4fab83f…). It is about launch cost per kilogram and the ILLUMA-T laser terminal and says nothing about beneficiation or processing energy, so the row's 500 Wh/kg (range 100-2,000 Wh/kg of refined product) has no source. The row keeps its value; the candidate asks for a real ISRU citation or an "estimate" label.
+
+## R76 - Gap recorded from the second domain pass (2026-09-27; registry unchanged)
+
+Found while looking for new domains in economicspace@1f470d4 and spacecost@e831245; no source was sought. One depot row in this domain's scope has no registry source:
+
+| cell | current value | upstream's stated basis |
+|---|---|---|
+| `storage_systems.csv` `Depot refuelling flights to escape`, carried as Starship's `tanker_flights_for_escape` in `launch_vehicles.csv` | 12 [8, 16] tanker launches per fully fuelled departure | "SpaceX's own range for filling a Starship in LEO before a high-energy departure"; no registry row maps to it |
+
+What a source has to supply: the propellant a departing Starship-class vehicle needs in LEO and the propellant each tanker flight delivers, from the operator or an independent analysis.
