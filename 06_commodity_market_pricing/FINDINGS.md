@@ -105,3 +105,17 @@ Every hosted full text in this domain was re-read end to end for pipeline-useful
 
 - **Pink Sheet monthly series**: 800 months (1960M01-2026M08) x 24 energy, fertiliser, base-metal and precious-metal series in one CSV, plus 2016-2025 annual means computed here (240 rows).
 - **September 2026 report summary table**: 64 commodities and 17 indexes x 11 periods (2023-2025 annual, four quarters, June-August 2026). The published 2025 annual averages match the means computed from the xlsx (copper 9,947 vs 9,947.42 $/mt; platinum 1,278 vs 1,278.33 $/toz).
+
+## R71 - Side-deepening extraction round (2026-09-27; logged in R72; registry unchanged)
+
+Branch `side-deepening`, commit 0729c2d, merged into this branch in R72. It gave the 20 PDFs un-hosted on 2026-09-26 (restored byte for byte from git `5dd58d5`, sha256 matched against `DOWNLOADS.md`) their first full pass, and read seven non-hosted sources from copies the owner downloaded (DOWNLOADS.md section B). The commit wrote no FINDINGS block or log entry; this block and the R71 log entry were written in R72 from the commit and the files themselves. R72 then re-checked every R71 file whose PDF is restorable: every numeric cell was searched for in the PDF text (0 values missing outside cells the R71 notes say were read from page images), the image-read cells were compared against rendered pages, and large tables were checked row by row. New files: `r71_jm_pgm_2026_key_numbers.csv` (14); `r71_jm_pgm_2026_supply_demand_tables.csv` (148).
+
+- **jm_pgm_market_report_2026**: full supply and demand tables (primary supply by region, secondary supply, demand by sector, balance) for Pt, Pd, Rh, Ru and Ir, 2021-2026f, in both troy ounces and tonnes.
+- **Correction and withdrawal (R71)**: R46's rhodium supply figure of 17.6 t was the South Africa row of the p32 table. Total primary supply is 21.8 t in 2025, so economicspace's 23 t is 5.5% high, the margin R46 accepted for iridium. **rc-038 is withdrawn**, and `r46_price_audit_key_numbers.csv` was corrected in place.
+
+## R72 - Tables R70/R71 skipped, verification of R71, upstream re-check (2026-09-27; registry unchanged)
+
+This round's container reached only package registries (arXiv, NTRS, JPL, Google Docs and every publisher returned 403), so nothing new could be fetched; the work used the hosted PDFs and the 20 restored from git `5dd58d5`. Each hosted and restored PDF's table captions were listed and matched against the extracted CSVs; tables no CSV cited were read by word coordinates (columns assigned from header or fully populated rows, so blank cells stay blank) or from rendered page images, and checked against printed totals. Upstream heads re-read: spacecost@e831245, AsteroidCatalog@852bf69, economicspace@1f470d4 (unchanged since 2026-09-26). no new files in this domain.
+
+- **R71's JM tables verified**: every total equals the sum of its rows in both units; combined supply = primary + secondary; balance = supply - demand; and each ounce row converts to its tonne row within 0.14 t (JM rounds each table separately).
+- **Upstream market sizes** (`ANNUAL_WORLD_PRODUCTION_KG`, economicspace@1f470d4): platinum 180 t vs JM 2025 primary supply 172.9 t (+4.1%); palladium 210 t vs 205.0 t (+2.4%). Both agree; no candidate.
