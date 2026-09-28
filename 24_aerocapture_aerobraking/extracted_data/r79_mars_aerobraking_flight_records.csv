@@ -1,0 +1,26 @@
+source_id,item,value,unit,location_in_source,notes
+long_2007_mro_aerobraking_daily_ops,"MRO date range, all phases",3/30/06-8/30/06,,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,"MRO duration, all phases",154,days,Table 1 p2 (word coords),walkin 15 d + main 131 d + walkout 8 d
+long_2007_mro_aerobraking_daily_ops,MRO total orbits aerobraked,431,orbits,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,"ODY date range, all phases",10/27/01-01/11/02,,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,"ODY duration, all phases",76.1,days,Table 1 p2 (word coords),~2.5 months
+long_2007_mro_aerobraking_daily_ops,ODY total orbits aerobraked,332,orbits,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,"MGS date range, all phases",09/15/97-02/04/99,,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,"MGS duration, all phases",299,days,Table 1 p2 (word coords),as printed; calendar span is ~498 days — the phase included pauses (Lyons documents the mid-campaign redesign after a solar-panel yoke broke)
+long_2007_mro_aerobraking_daily_ops,MGS total orbits aerobraked,891,orbits,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,"ABM delta-v, MRO all phases",19.1,m/s,Table 1 p2 (word coords),aerobraking-maneuver propulsive cost only — NOT the drag-removed total
+long_2007_mro_aerobraking_daily_ops,"ABM delta-v, ODY all phases",26.6,m/s,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,"ABM delta-v, MGS all phases",32.3,m/s,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,"MRO periapsis altitude range, main phase",97.4-108.7,km,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,ODY periapsis altitude range,95-158,km,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,MGS periapsis altitude range,100-149,km,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,"median heat rate, MRO all phases",0.12,W/cm^2,Table 1 p2 (word coords),
+long_2007_mro_aerobraking_daily_ops,MRO MOI burn,1,km/s,p1 verbatim,'performed a Mars orbit insertion maneuver of 1 km/s to enter into a large elliptical orbit'
+long_2007_mro_aerobraking_daily_ops,"MRO aerobraking termination (ABX) burn, Aug 30 2006",25,m/s,p1 verbatim,
+lyons_1999_magellan_mgs_aerobraking_comparison,"drag-removed delta-v, Magellan AND MGS each",~1200,m/s,p2 verbatim,'atmospheric drag was used to remove about 1200 m/s from the orbits of both MGS and Magellan'
+lyons_1999_magellan_mgs_aerobraking_comparison,"MGS orbit period, capture -> end of aerobraking",45 h -> 1.89 h,,p2 verbatim,
+lyons_1999_magellan_mgs_aerobraking_comparison,"Magellan orbit period, start -> end of aerobraking",3.26 h -> 1.5 h,,p2 verbatim,
+prince_striepe_2007_mro_aerobraking_phase_assessment,MRO aerobraking phase duration,"April 4 - August 30, 2006 (~5 months)",,p1 verbatim,
+prince_striepe_2007_mro_aerobraking_phase_assessment,MRO pre-aerobraking mass,~1400,kg,p1 word coords,"'with a 37.5 m2 drag area, 13.6m wingspan, and pre-aerobraking mass of approximately 1400kg'"
+prince_striepe_2007_mro_aerobraking_phase_assessment,MRO aerobraking drag area,37.5,m^2,p1 word coords,
+prince_striepe_2007_mro_aerobraking_phase_assessment,final science orbit after aerobraking,320 x 225 km sun-synchronous,,p2 verbatim,'designed to aerobrade for six months before transition'
