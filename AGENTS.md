@@ -61,12 +61,21 @@ python tools/validate.py         # must exit 0
   row label, and where a table has totals, check that they add up.
 - **Before un-hosting a file, extract every number the repo uses from it**, with
   page locations, and record the removed copy's size and sha256 in its
-  `access_status`. After removal nothing can be re-checked.
+  `access_status`. After removal nothing can be re-checked. (A rejected
+  source is the exception: its data is deleted, not kept.)
+- **A rejected source keeps one record: its row in INDEX.md "Rejected
+  sources"** (`id`, `source`, `link`, `reason`). Only the owner rejects a
+  source. Rejecting it deletes its domain and INDEX rows, hosted files,
+  extracted data, FINDINGS write-ups, DOWNLOADS entry and any revision
+  candidate that rests on it alone. Past research-log entries stay as written.
+  README "Rejecting a source" lists the steps, and `validate.py` fails if the
+  id is named anywhere else.
 - **Record revision candidates.** When a source contradicts an upstream cell,
   add a `revision_candidates.csv` row (next `rc-NNN`, status `open`) with the
   current upstream value and the commit you read it from. When you re-check
   upstream and find it changed, update `status`, `checked_against` and
   `checked_date` rather than adding a new row.
-- **IDs are permanent.** Use the registry id everywhere (INDEX, extracted-data
-  `source_id`, candidates); do not abbreviate it in INDEX (`krishnan_2010` for
+- **IDs are permanent**, and a rejected source's id is never reused. Use the
+  registry id everywhere (INDEX, extracted-data `source_id`, candidates); do
+  not abbreviate it in INDEX (`krishnan_2010` for
   `krishnan_2010_h2o2_rp1_upper_stage` broke the cross-reference).

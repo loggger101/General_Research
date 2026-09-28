@@ -7,7 +7,8 @@ is one that can actually be *accessed and analyzed*: full text where legally
 redistributable, otherwise metadata, abstract and extracted key tables.
 Since Round 74 the registry also lists every source those three repos cite,
 including the grey ones (tier T4), so each upstream dependency is visible
-even before it has been read.
+even before it has been read. The exceptions are sources the owner has
+rejected, which are listed only under INDEX.md "Rejected sources".
 
 ## Why this repo exists
 
@@ -59,7 +60,7 @@ where they had been filed before a domain for their cells existed; domains
 
 ```
 README.md                                This file: what it is and how to read it
-INDEX.md                                 Master index: every source → tier, access, pipeline mapping; research log at the bottom
+INDEX.md                                 Master index: every source → tier, access, pipeline mapping; rejected sources and research log at the bottom
 sources.csv                              Machine-readable registry, one row per source (GENERATED — see "Tools")
 full_texts_manifest.csv                  Every hosted file → its source id, size, sha256 and licence
 revision_candidates.csv                  Upstream cells the evidence says should change, with current status
@@ -169,7 +170,7 @@ A new domain needs:
    line, and `FINDINGS.md` holding a title, a `Backings:` line naming the
    upstream files and cells, and a first block that tables those cells with
    their current values and the upstream commit they were read from.
-2. A `## Domain N — title` section in INDEX.md, above `## Research log`, with a
+2. A `## Domain N — title` section in INDEX.md, above `## Rejected sources`, with a
    `_Backings:_` line and the five-column table header and separator. A table
    with no rows is valid until a round registers a source.
 3. A row in the domain table at the top of this file and a line in "Layout"
@@ -198,6 +199,34 @@ domain. Its id never changes. Round 77 set the procedure:
 4. Leave `domain_dir` in `revision_candidates.csv` alone: it names the
    FINDINGS.md that holds the write-up.
 
+## Rejecting a source
+
+The owner decides which sources are rejected. A rejected source leaves the
+registry, and a row in INDEX.md "Rejected sources" becomes its only record:
+`id`, `source` (authors, year, title), `link` (DOI or URL) and `reason` (why,
+and in which round). No data from it is kept. The procedure, set 2026-09-28:
+
+1. Add its row to "Rejected sources". The id stays reserved, so no new source
+   may reuse it.
+2. Delete its row from `<domain>/sources_domain.csv` and from its INDEX domain
+   table.
+3. `git rm` its hosted files and delete their `full_texts_manifest.csv` rows.
+   The rule on extracting every number before un-hosting a file does not apply.
+4. Delete every extracted-data CSV that cites only this source, and in CSVs
+   shared with other sources delete each row that cites it, `a;b` rows
+   included.
+5. Delete its FINDINGS.md write-ups, its DOWNLOADS.md entry, and each mention
+   of its id in other sources' registry rows and FINDINGS blocks. This is the
+   one case where older FINDINGS blocks are edited.
+6. Delete each revision candidate whose `source_ids` is this source alone. For
+   one that also cites others, remove the id from `source_ids` and rewrite
+   the evidence without it. A deleted `rc-NNN` number is not reused.
+7. Leave past research-log entries as written, and add one naming the rejected
+   id, the reason and any deleted `rc-NNN`.
+
+`validate.py` fails if a rejected id is still registered, or if any file path
+or any CSV or Markdown file other than the research log names it.
+
 ## Revision candidates
 
 This repo never edits the pipeline repos. When a source contradicts a cell in
@@ -222,8 +251,9 @@ INDEX.md table lists exactly its domain's sources in registry order with five
 cells per row, that the research log runs from Round 0 to the latest with no
 gaps, that every hosted file is in the manifest with the right hash and a
 licence, that every extracted-data CSV is rectangular and cites registered
-ids, that `revision_candidates.csv` uses known statuses and sources, and that
-no CSV or Markdown file has doubled carriage returns (which make git treat it
+ids, that `revision_candidates.csv` uses known statuses and sources, that no
+rejected source is still registered or named anywhere but the research log,
+and that no CSV or Markdown file has doubled carriage returns (which make git treat it
 as binary). It also warns, without failing, on hosted files whose licence does
 not permit redistribution, extracted-data CSVs with no `source_id` column, and
 sources that no extracted-data CSV in their domain cites (except

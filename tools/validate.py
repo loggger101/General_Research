@@ -16,6 +16,7 @@ from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_S
                     read_csv, read_dicts)
 
 INDEX_HEADER = ['id', 'tier', 'source (short)', 'access', 'backs / could replace']
+REJECTED_HEADER = ['id', 'source', 'link', 'reason']
 ACCESS_WORDS = re.compile(r'(full[_ ]text[_ ]hosted|open[_ ]not[_ ]pulled|verified[_ ]live|open[_ ]service|'
                           r'public[_ ]domain[_ ]excerpt|registered[_ ]not[_ ]pulled|skipped)\b', re.I)
 GITHUB_HARD_LIMIT = 100 * 1024 * 1024
@@ -188,6 +189,62 @@ def check_log(rep, text):
         rep.error('entry dates are not newest-first')
 
 
+def check_rejected(rep, reg):
+    """README "Rejecting a source": the INDEX.md table is a rejected source's only record outside the research log."""
+    rep.start('rejected sources')
+    text = INDEX.read_text(encoding='utf-8')
+    m = re.search(r'^## Rejected sources\n(.*?)(?=^## |\Z)', text, flags=re.M | re.S)
+    if not m:
+        rep.error('INDEX.md has no "## Rejected sources" section (it goes directly above "## Research log")')
+        return {}
+    if not text[m.end():].startswith('## Research log\n'):
+        rep.error('"## Rejected sources" must be directly above "## Research log"')
+    lines = m.group(1).split('\n')
+    table = [i for i, l in enumerate(lines) if l.startswith('|')]
+    if not table:
+        rep.error('no table — keep the header and separator even while it has no rows')
+        return {}
+    if table != list(range(table[0], table[0] + len(table))):
+        rep.error('table is split by a blank line or text — rows after the break do not render as table rows')
+    if table_cells(lines[table[0]]) != REJECTED_HEADER:
+        rep.error(f'table header must be "| {" | ".join(REJECTED_HEADER)} |"')
+    if len(table) < 2 or table_cells(lines[table[1]]) != ['---'] * len(REJECTED_HEADER):
+        rep.error('second table line must be the 4-column "|---|...|" separator')
+    rejected = {}
+    for i in table[2:]:
+        line = lines[i]
+        cells = table_cells(line)
+        if not line.rstrip().endswith('|') or len(cells) != len(REJECTED_HEADER):
+            rep.error(f'row "{line[:50]}..." has {len(cells)} cells, expected {len(REJECTED_HEADER)} (and a closing "|")')
+            continue
+        sid = cells[0]
+        if sid in rejected:
+            rep.error(f'{sid} is listed twice')
+        rejected[sid] = cells
+        if any(not c for c in cells):
+            rep.error(f'{sid or line[:50]}: every row needs an id, source, link and reason')
+        if sid in reg:
+            rep.error(f'{sid} is rejected but still registered in {reg[sid]["domain_dir"]}/sources_domain.csv '
+                      f'(ids stay reserved, so a rejected id cannot be reused)')
+    if not rejected:
+        return rejected
+    # Nothing but the research log may name a rejected id: not a file path, not a CSV cell, not a FINDINGS block.
+    token = re.compile(r'(?<![A-Za-z0-9_-])(' + '|'.join(map(re.escape, rejected)) + r')(?![A-Za-z0-9_-])')
+    before_log = text[:m.start()] + re.split(r'^## Research log\n', text[m.end():], maxsplit=1, flags=re.M)[0]
+    for path in sorted(ROOT.rglob('*')):
+        if '.git' in path.parts or not path.is_file():
+            continue
+        rel = path.relative_to(ROOT).as_posix()
+        hits = set(token.findall(rel))
+        if path == INDEX:
+            hits |= set(token.findall(before_log))
+        elif path.suffix in ('.csv', '.md'):
+            hits |= set(token.findall(path.read_text(encoding='utf-8-sig', errors='replace')))
+        for sid in sorted(hits):
+            rep.error(f'{rel} still names rejected source {sid} — its only record is the "Rejected sources" row')
+    return rejected
+
+
 def check_manifest(rep, reg):
     rep.start('manifest')
     if not MANIFEST.exists():
@@ -357,6 +414,7 @@ def main():
     rep = Report()
     reg = check_registry(rep)
     check_index(rep, reg)
+    rejected = check_rejected(rep, reg)
     check_manifest(rep, reg)
     check_extracted(rep, reg)
     check_candidates(rep, reg)
@@ -367,7 +425,7 @@ def main():
     tiers = Counter(r['tier'] for r in reg.values())
     pending = sum(access_class(r['access_status']) in PENDING_ACCESS for r in reg.values())
     print(f'{len(reg)} sources ({", ".join(f"{t}x{tiers[t]}" for t in sorted(tiers))}) in {len(domain_dirs())} domains, '
-          f'{pending} registered but not yet pulled — {rep.errors} error(s), {rep.warnings} warning(s)')
+          f'{pending} registered but not yet pulled, {len(rejected)} rejected — {rep.errors} error(s), {rep.warnings} warning(s)')
     sys.exit(1 if rep.errors else 0)
 
 
