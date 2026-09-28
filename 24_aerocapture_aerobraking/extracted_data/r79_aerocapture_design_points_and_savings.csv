@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+morgan_2026_arrival_earth_aerocapture_tps,"ARRIVAL entry velocity, lunar-return option (Earth)",10.8,km/s,p4 verbatim,'enters Earth's atmosphere with an atmosphere-relative velocity of 10.8 km/s'
+morgan_2026_arrival_earth_aerocapture_tps,"ARRIVAL entry velocity, GTO option (Earth)",~9.9,km/s,p4 verbatim,
+morgan_2026_arrival_earth_aerocapture_tps,"ARRIVAL target exit velocity, both options",~7.5,km/s,p4 verbatim,'Both options target an exit velocity approaching 7.5 km/s' — i.e. ~3.3-3.4 km/s removed in ONE pass at Earth
+morgan_2026_arrival_earth_aerocapture_tps,ARRIVAL vehicle+payload maximum permissible value (MPV),255,kg,p4 verbatim,'the maximum permissible value (MPV) of the vehicle and payload was set at 255 kg'
+morgan_2026_arrival_earth_aerocapture_tps,ARRIVAL aeroshell shape / diameter,"70-deg sphere-cone, 1.1 m",,p4 verbatim,
+morgan_2026_arrival_earth_aerocapture_tps,C-PICA frontbody thickness at nose (design-driving body point),4.8 cm GTO / 5.4 cm lunar return,,p14 verbatim,"'the vehicle nose which would need 4.8 cm and 5.4 cm for the GTO and lunar return missions, respectively'"
+morgan_2026_arrival_earth_aerocapture_tps,aftbody TPS areal density by material,MERINO 2.55 / C-PICA 6.5 (kg/m^2),,p17 verbatim,"'MERINO ... 2.55 kg/m2, next comes SLA-561V, then C-PICA at 6.5 kg/m2' — total TPS MASS not stated in the paper; only thickness/areal density"
+lugo_2023_smallsat_venus_aerocapture_performance,notional smallsat aerocapture vehicle (Venus),"1 m diameter, 150 kg mass, 60-deg sphere-cone heat shield",,Table 1 p3 verbatim,
+lugo_2023_smallsat_venus_aerocapture_performance,entry conditions at Venus,"11 km/s, FPA -5 deg, altitude 150 km",,Table 3 p3 verbatim,
+lugo_2023_smallsat_venus_aerocapture_performance,target apoapsis after aerocapture,500,km,Table 1 p3 verbatim,
+hanna_autonomous_aerobraking_mars_preprint,"post-MOI fuel saving from aerobraking, 1000 kg class on Delta-class booster",~90%,% of post-MOI circularization fuel,abstract verbatim,"'A launch of a 1000 kg class spacecraft on a Delta class booster saves 90% of the post-MOI fuel otherwise required to circularize the orbit' — preprint, not peer-reviewed"
