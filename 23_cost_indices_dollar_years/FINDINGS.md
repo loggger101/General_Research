@@ -36,3 +36,16 @@ Every row of the four spacecost tables says `reference_year` 2026, and the only 
 ## R77 - Cross-references updated (2026-09-27; registry unchanged at 267)
 
 `jpl_dsn_services_catalog_820_100`, listed in the opening block under domain 5, is now in domain 20.
+## R78 - First sources registered (2026-09-27; registry 267 -> 270)
+
+The four index and exchange-rate services the upstream notes rely on were pulled live from this machine, verified against every written escalation factor, and registered as T3 `open_service` rows. The BLS publicAPI v2 endpoint is keyless-broken from here ('Invalid Series' for CPIAUCSL in both GET and POST forms); FRED's fredgraph.csv serves the same series with full history (1947..Aug-2026) and reproduces R50's data.bls.gov values within ~0.1% vintage drift, so it is now the canonical route to CPI-U.
+
+**Registered.** `fred_cpiuacsl_monthly_usd_series` (FRED/BLS monthly index), `world_bank_usa_annual_cpi_inflation` (WDI FP.CPI.TOTL.ZG, per-year actuals through 2024; the id PC.PIX.FACD from earlier notes is rejected by the current API) and `world_bank_official_fx_averages_deu_ind` (IFS PA.NUS.FCRF for DEU + IND). Key factors committed in `extracted_data/r78_index_factors_and_fx_averages.csv`.
+
+**The written factors, re-derived.** The World Bank annual chain reproduces every factor upstream has written down: 2009..2024 = x1.4570 (R50's DSN factor, exact), 2010..2024 = x1.4622 (Minotaur IV note ~x1.45) and 2011..2024 = x1.4386 (Shuttle note ~x1.44). The notes' method is thus identified — a World Bank annual-inflation chain read through Dec-2024, not CPI-U to the present.
+
+**What changes when the same method runs to Aug-2026.** Minotaur IV: x1.5155 (CPI-U) vs the note's 1.45 — under-escalated by ~4% (**rc-050**). Atlas V 551 and Pegasus XL carry earlier-year quotes with NO escalation at all despite `reference_year` 2026: $153M (2016) -> ~$211M x1.3771 (**rc-051**), $40M (2017) -> ~$54M x1.3484 (**rc-052**). Saturn V's 'carried to 2026 dollars' names no factor; Dec-avg(1970..73)->Aug-2026 = x~7.88, i.e. $185M -> ~$1,457M (no candidate: the row already carries a mixed-year band and its low end is explicitly a 2020-dollar figure). The DSN note's own FY09->CPI method stays internally consistent at -0.65% vs R50; rc-030 remains open on supersession by Rev H's official $1,792 rate.
+
+**Exchange rates.** PSLV-XL's 'Rs 130-200 crore ($16-24M, 2023)' implies INR/USD 81.25-83.33 and matches the official 2023 period average (82.60) — consistent with its stated year. Ariane 5 ECA's $ band on a EUR 150-190M cost implies USD/EUR 1.100-1.158; the row states no date, and official averages were >=1.10 only pre-2022 (last: 2021 x1.183) and again from 2025 (x1.130), with 2023 = 1.081 and 2024 = 1.082 — the band is plausible for several years but pinned to none of them.
+
+**Still open in this domain.** Which index suits which cost class (PEBD's NNSI-for-development / employment-index-for-operations split is extracted under `planetary_society_pebd_mission_costs`, domain 7, and remains the only guidance registered); NASA New Start Inflation Index as a standalone series; escalation of the OSIRIS-REx 'actual' figures in operational_costs.csv (no dollar year stated upstream).
