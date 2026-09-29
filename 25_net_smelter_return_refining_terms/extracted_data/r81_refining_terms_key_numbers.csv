@@ -1,0 +1,14 @@
+source_id,item,value,unit,location_in_source,notes
+cowen_agnello_petit_2012_npsr_pge,PGE payability,90,% of contained metal value paid to miner,Table IV 'Payability' block (p. 585),
+cowen_agnello_petit_2012_npsr_pge,Ni payability,85,% of contained Ni value,Table IV 'Payability' block (p. 585),
+cowen_agnello_petit_2012_npsr_pge,Cu payability,85,% of contained Cu value,Table IV 'Payability' block (p. 585),
+cowen_agnello_petit_2012_npsr_pge,Treatment charge TC (smelter),250,USD per ton concentrate,"Table IV 'Treatment charge' (p. 585); text: smelting cost US$200-250/t, refining US$250-300/t from 2011/12 PGE company statements",
+cowen_agnello_petit_2012_npsr_pge,Refining charge Pt / Pd,25; 25,USD per ounce,Table IV 'Refining charge' (p. 585),
+cowen_agnello_petit_2012_npsr_pge,Refining charge Rh / Au,75; 10,USD per ounce,Table IV 'Refining charge' (p. 585),
+cowen_agnello_petit_2012_npsr_pge,Refining charge Ni / Cu,80; 20,US cents per pound,Table IV 'Refining charge' (p. 585),
+cowen_agnello_petit_2012_npsr_pge,Chromite penalty basis: max Cr before penalty,1.50,% Cr in concentrate,"Table IV 'Penalty basis' (p. 585); above this, penalty = base TC per %Cr step (proxy assumption by the authors - no public SA ranges found)",
+cowen_agnello_petit_2012_npsr_pge,PGE smelting recovery,92-95,% of contained metal recovered in smelting,'Metal recovery in PGE smelting is typically reported to be between 92-95 per cent.' (p. 583),
+cowen_agnello_petit_2012_npsr_pge,PGE refining recovery,>99,% of contained metal recovered in refining,"'and in refining over 99 per cent' (same sentence, p. 583)",
+cowen_agnello_petit_2012_npsr_pge,Worked example: 10% deduction on contained value at those recoveries,processor receives 1-6 % of contained metal value,,'A deduction of 10 per cent (or 90 per cent payability) ... would result in the processor receiving between 1-6 per cent' (p. 583),
+cowen_agnello_petit_2012_npsr_pge,Cu concentrate unit deduction convention,1.0-1.5 grade units deducted; e.g. 28% Cu paid as 26.9% (= effective 96% payability); minimum-deduction floor can cap payability at 95%,,'copper concentrates typically deduct 1.0-1.5 units (grade percentage points)' + worked example (p. 582),
+,"Upstream model comparison: _mineral_implied_value credits 100% of contained metal value - no payable fraction, no TC/RC, no penalty, no refinery-recovery term",,,pipeline-derived (economicspace@e3b3897 modules/calc.py + mineral_value.py),the gap this domain exists to document; Cowen's terms are the terrestrial benchmark for what a real sale would deduct

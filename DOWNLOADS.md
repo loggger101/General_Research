@@ -98,6 +98,9 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
 - [x] **usgs_pp1802n** (extracted in R71) (3) — the full USGS Professional Paper 1802-N (platinum-group elements). Only an excerpt is hosted now.
   Get: https://pubs.usgs.gov/pp/1802/n/pp1802n.pdf
   Save as `usgs_pp1802n.pdf`. USGS public domain, so it may be hosted if under 50 MB.
+- [x] **cowen_agnello_petit_2012_npsr_pge** (extracted in R81: full 16-page paper, terms table + recovery rates) - net-smelter-return mechanics for the South African PGE industry; registered in domain 25.
+  Get: https://saimm.co.za/Conferences/Pt2012/577-592_Cowen.pdf
+  Save as `cowen_agnello_petit_2012_npsr_pge.pdf`. No licence statement anywhere in the PDF (Camera Press watermark only), so extract only; never host.
 - [x] **jm_pgm_market_report_2026** (extracted in R71) (10) — Johnson Matthey PGM market report, May 2026: full supply and demand tables.
   Get: https://matthey.com/documents/161599/509428/pgm-market-report-26.pdf/a2d115af-bf7c-f589-29e9-6beacf8a4452
   Save as `jm_pgm_market_report_2026.pdf`. JM terms forbid reuse without consent, so extract only; never host.
@@ -173,7 +176,10 @@ These are live services or datasets already pulled and used. Re-pull them only t
 
 ---
 
-## F. Registered in Round 74, not yet sought (123 sources)
+## F. Registered in Round 74, not yet sought (queue now 123 after R81)
+
+R81 pulled one row out of this queue: `usgs_mineral_commodity_summaries_2026` is now full_text_hosted (pubs.usgs.gov reachable from this machine; full report + four chapters committed).
+
 
 Round 74 registered every source the three upstream repos cite that this registry lacked. None has been fetched, so none is listed item by item here yet: the queue is every row of `sources.csv` whose `access_status` starts with `registered_not_pulled`, and each row already records its DOI or landing URL and what answered from this machine (Crossref metadata, HTTP status, or a bot block). 42 are T1 journal articles (Icarus, Nature, Science, A&A, MAPS) that will mostly land in section C or D; 55 are T4 grey sources (company pages, news, Wikipedia, vendor posts, software), which usually need no download, only a dated read of the page.
 
