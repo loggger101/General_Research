@@ -448,3 +448,22 @@ Found while looking for new domains in economicspace@1f470d4 and spacecost@e8312
 | economicspace `calc.py` `ep_target_thrust_yr` | 3.0 yr of thrusting the electric stage is sized for | none stated |
 
 What a source has to supply: low-thrust against impulsive delta-v for the transfers the pipeline flies (LEO spiral, NEA rendezvous and return) as a function of thrust-to-mass, and the thrusting durations flown or designed for electric-propulsion missions.
+
+## R82 - First sources for the two low-thrust cells recorded as gaps in R76 (2026-09-29; +3 T2 hosted)
+
+The three NTRS-hosted full texts anchor both cells of R76's gap table. All quoted fragments below are verbatim slices of the committed PDFs (whitespace/ligature-normalized).
+
+**dv_penalty_factor = 1.5** (spacecost `propellants.py` `_LOW_THRUST_DV_PENALTY`) - verdict AGREE, bracketed from both sides by woodcock_dankanich_2006:
+- Spiral capture to lunar orbit: 'SEP delta V to spiral down to a given lunar orbit altitude was estimated as 40% more than the chemical lunar orbit insertion.' -> ~1.4x (below our 1.5)
+- Exchange rate: 'a unit of launch vehicle delta V was "worth" 70% more than a unit of SEP delta V.' -> 1.7x (above our 1.5)
+- Perigee-hold spirals cost even more dV and time ('There is no tradeoff of transfer time versus delta V.'); an apogee-gap strategy recovers 'a few hundred m/s' for ~15 days - the penalty is partially recoverable, a ceiling on how much higher 1.5 should go
+- GEO: 'a 35 kWe SEP starting from a 400 x 10,000 orbit could deliver 3600 kg to GEO in about 130 days' vs 'about half that for all-chemical propulsion' - the trip-time penalty is real but bounded
+
+**ep_target_thrust_yr = 3.0** (economicspace `calc.py`) - verdict AGREE as a sizing target, with quantified trip time:
+- sjauw_mcguire_freeh_2016 designs HAT EMC Mars cargo at fixed SEP power: 'The Earth-to-Mars (E-M) transfer starts at an Earth escape condition defined as having a C3 = +2.0 km2/sec2 and ends at Mars with an incoming Vinf = 5.2 km/sec.'
+- Representative case: 'E-M trip= 975 days' - the interplanetary leg alone consumes ~89% of the 3-yr thrusting budget; adding EEO spiral-out + capture exceeds it, so upstream's 3 yr is a reasonable sizing target but real Mars SEP transfers run longer
+- johnson_castillo_rogez_dervan_mcnutt_2017 (NEA Scout): 'two year-long cruise' at continuous low thrust - the NEA rendezvous class spacecost's sail row models; that row's dv_penalty_factor = 1.0 is right in dV terms, and this paper quantifies what it does not capture: ~2 yr of trip time
+
+**Still unanchored (recorded)**: Dawn flight records (actual spiral durations/dVs) - every NTRS Dawn record has determinationType OTHER with zero downloadable files; the EPAG handbook domain is DNS-dead from this machine. No revision candidate opened: both cells are bracketed, not contradicted.
+
+Numbers in `extracted_data/r82_low_thrust_dv_penalty_and_duration.csv` (9 rows).
