@@ -327,3 +327,19 @@ These rows moved to the domain that now holds the cells they back. The blocks ab
 | `hein2020` | 22 | the `hein2020` block; Round-1 status; Round 61 addition; Maintenance; R71; R72 | `22_prior_art_techno_economic_benchmarks/extracted_data/r61_hein2020_plant_economics_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_hein2020_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_hein2020_table3_pt_supply_demand_profitability.csv` |
 
 Shared CSVs that cite a moved source and stay here: `extracted_data/composition_value_key_numbers.csv` (`hein2020`); `extracted_data/unhosted_sources_key_numbers.csv` (`hein2020`). Where a moved row names one of them, the path now includes this folder.
+## R83 - comp_phases_detailed and nickel-iron trace-metal citations registered (2026-09-30; +11 T1 rows in this domain, all registered_not_pulled)
+
+AsteroidCatalog data contracts 1.7.0/1.8.x resolved the four coarse fractions into `comp_phases` / `comp_phases_detailed`, and economicspace v1.40.0 prices those phases - so every class split now carries a meteorite-analogue citation in the header block of AsteroidCatalog@6a2cfbc asteroid_catalog/mineralogy.py, with the iron-meteorite trace metals cited in economicspace@7d99662 CITATIONS.md section 1 ('Mineral composition'). The registry had none of them; eleven T1 rows were registered this round from that block. Every DOI was checked against Crossref live from this machine (title, first author and year all match the row).
+
+- `scott_wasson_1975_classification_properties_iron_meteorites` - order-of-magnitude mean trace metals (Ga/Ge/Mo/W/Re) over the common iron meteorite groups behind modules/mineral_value.py nickel-iron yields.
+- `dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites` - L/LL XRD modal abundances: the S/Sq/Q silicate split (olivine ~0.58 / orthopyroxene ~0.24 / pyroxene ~0.06 / plagioclase ~0.12) + troilite and chromite body fractions.
+- `king_schofield_2015_ci_modal_mineralogy_xrd` - CI (C/B/Cb/F) phase split from Orgueil and Ivuna XRD: phyllosilicate ~81-84 wt%, magnetite, sulfide, carbonate.
+- `howard_alexander_2015_hydrous_meteorite_phyllosilicate_classification` - CM (Cg/Ch/G) phase split: phyllosilicate 70-90 wt%.
+- `alexander_fogel_2007_macromolecular_organic_matter_chondrites` - carbon (C complex) IOM:soluble split 0.70:0.30; IOM is 70-99% of CI/CM organic carbon, the low end so the cheaper row is not over-credited.
+- `mittelfehldt_2015_hed_clan_vesta` - HED (V) phase detail: eucrite pyroxene/plagioclase near-equal, chromite and ilmenite ~1 wt% each; eucrite metal nearly Ni-free.
+- `sunshine_connolly_2008_ancient_asteroids_refractory_inclusions` - CV/CO (K/L): L-types need the highest CAI content of any spectrum, so L carries the most spinel the residual allows.
+- `hiro_i_zolensky_2001_tagish_lake_possible_d_type_sample` - D/Z/P accessories via the Tagish Lake analogue: magnetite ~5, sulfide ~3, carbonate ~3 wt%.
+- `keil_1968_mineralogical_chemical_enstatite_chondrites` + `keil_2010_aubrites_and_their_asteroidal_parent_bodies` - enstatite-chondrite (Xe) sulfide split (troilite ~5 / niningerite ~2 / oldhamite ~0.7 / daubreelite ~0.3 wt%) and aubrite (E); both metals low-Ni kamacite alone.
+- `jones_mccubbin_2014_phosphate_minerals_ll_chondrites` - S/Sq/Q phosphates: merrillite ~0.4 and chlorapatite ~0.2 wt% in LL chondrites.
+
+Already registered, matched rather than duplicated: `rubin_2019_67p_abundances` (the ices H2O:CO2:NH3 mix), `jarosewich_1990_meteorite_chemical_analyses` and `adam_2017` (= Hanuš et al. 2017, A&A 601 A114 - the ADAM density paper; verified_live_not_pulled with r71 extractions). No number was extracted from any of the eleven new rows: they are registered so the dependency is visible and readable later (full texts mostly behind publisher paywalls or bot blocks from this machine).

@@ -176,9 +176,9 @@ These are live services or datasets already pulled and used. Re-pull them only t
 
 ---
 
-## F. Registered in Round 74, not yet sought (queue now 123 after R81)
+## F. Registered in Round 74 and later, not yet sought (queue now 134 after R83)
 
-R81 pulled one row out of this queue: `usgs_mineral_commodity_summaries_2026` is now full_text_hosted (pubs.usgs.gov reachable from this machine; full report + four chapters committed).
+R81 pulled one row out of this queue: `usgs_mineral_commodity_summaries_2026` is now full_text_hosted (pubs.usgs.gov reachable from this machine; full report + four chapters committed). R83 added eleven more rows to the queue (the domain-2 mineralogy citations, all Crossref-checked) and pulled `usgs_mineral_commodity_summaries_2025` out of it into full_text_hosted.
 
 
 Round 74 registered every source the three upstream repos cite that this registry lacked. None has been fetched, so none is listed item by item here yet: the queue is every row of `sources.csv` whose `access_status` starts with `registered_not_pulled`, and each row already records its DOI or landing URL and what answered from this machine (Crossref metadata, HTTP status, or a bot block). 42 are T1 journal articles (Icarus, Nature, Science, A&A, MAPS) that will mostly land in section C or D; 55 are T4 grey sources (company pages, news, Wikipedia, vendor posts, software), which usually need no download, only a dated read of the page.
