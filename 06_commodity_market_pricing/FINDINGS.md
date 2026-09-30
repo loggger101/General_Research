@@ -131,3 +131,15 @@ Sources the upstream repos cite that this registry did not have, found by readin
 - `metals_dev_api` (T4): mineral_value.py optional live LME and precious-metal quotes.
 - `heraeus_2026_precious_metals_forecast` (T4): mineral_value.py platinum ref_price_usd_per_kg (midpoint of the 2026 forecast range).
 - `reuters_2026_gold_analyst_consensus` (T4): mineral_value.py gold ref_price_usd_per_kg context.
+## R83 - USGS Mineral Commodity Summaries 2025 registered + hosted, world-production audit (2026-09-30; +1 T3 row)
+
+economicspace@7d99662 CITATIONS.md names *Mineral Commodity Summaries 2025* as the source of "the order of the 2024 prices and world production behind the rows mineral_value 1.11.0 added (sulfur, chromium, titanium, gallium, germanium, rhenium, tungsten, molybdenum, ammonia)" - a citation this registry did not have (the 2026 edition is registered as `usgs_mineral_commodity_summaries_2026`). The full report v1.2 (March-2025, 216 p., 10.4 MB) was pulled live from pubs.usgs.gov this machine and committed under `full_texts/` with its manifest row; USGS public domain.
+
+World-production tables read by word coordinates (chromium p62, gallium p78, germanium pp83-84, molybdenum p126, nitrogen-fixed-ammonia pp131-132, phosphate rock p138, rhenium p150, sulfur p176, titanium p190, tungsten p194) and audited against `ANNUAL_WORLD_PRODUCTION_KG` at economicspace@7d99662 - full rows in `extracted_data/r83_mcs2025_world_production_key_numbers.csv`:
+
+- EXACT: gallium 760,000 kg (primary), molybdenum 260,000 t, rhenium 62,000 kg, tungsten 81,000 t W-content; phosphate rock 240 Mt matches the phosphorus row's own comment.
+- Within '~rounded' tolerance (consistency notes only): chromium world mine production 47,000 kt vs our 4.4e10 kg (-6.4%); sulfur 85,000 kt vs our 8.3e10 kg (-2.4%); titanium sponge '320,000^8' (footnote: excludes U.S.) vs our 3.0e8 kg (-6.2%).
+- **rc-055 opened**: ammonia cell 1.8e11 kg N is +20% above the chapter's world plant production of 150,000 kt (2024e) AND contradicts its own inline comment '~150 Mt N as ammonia'.
+- Gap: germanium carries no published world table in the chapter ('global production data were limited' - prose only), so our 1.4e5 kg refinery row stays unanchored by MCS.
+
+Edition check: v1.0 and v1.1 (both pulled this round) carry identical values on every audited total, so none of the discrepancies is edition drift; the hosted copy is v1.2 as printed in CITATIONS.md's publication date window.
