@@ -105,3 +105,18 @@ This round's container reached only package registries (arXiv, NTRS, JPL, Google
 - **FY 2025 MPAR summary table** (p774; 16 projects, FY 2024 estimates): wrapped labels re-joined from the word grid; each whole-percent cost change recomputes. Against the FY 2027 table: Orion rises from $9,622.4M (+3%) to $10,174.4M (+9.4%) on the same baseline, and SEP holds at $203.2M to $223.2M (+10%, Oct 2028 to Jan 2029).
 - **shastry_2024 Table 1** (AEPS QM1 acceptance hot-fire): 444-586 mN and 2,605-2,736 s at 600 V, 9-12 kW. The implied thrust efficiency T x Isp x g0 / 2P is 0.630-0.655 on discharge power, inside the ~0.51-0.69 band rc-040 proposes; no new candidate.
 - **IG-17-009 Table 6**: Mars 2020 mass 3,393 kg against a 3,540 kg allocation (4% margin, 3% required); five of seven critical technologies were below TRL 6 in November 2016.
+
+
+## R84 - FY 2026 budget documents close the PPE line-item gap (2026-09-30; +2 rows -> registry 305)
+
+The standing 'PPE element line items' gap (flagged since ~R70: NEXT-C per-string $ absent from every registered source, next route = OIG Gateway follow-up audits / FY26 budget justification) is closed by the **FY 2026 Budget Technical Supplement** (May 2025; pulled live from nasa.gov this machine and hosted) plus its enacted companion, the **FY 2026 Spending Plan for PL 119-74** (Jul 2026). Both are US government work.
+
+Key facts read by word coordinates from the hosted PDFs:
+- **SEP is now a standalone Space Transportation project** (moved out of Technology Demonstration in the FY26 restructure): BA $8.5M (FY24) / request $7.7 -> 6.6 -> 5.7 -> 1.7 -> $0 by FY30; **dev-cost estimate $223.2M current-year, JCL 70%, +9.8%** vs the 2022 base of $203.2M (the same $203.2->223.2 step R72 recorded in the FY25 MPAR table - now with its own project page).
+- **Gateway Initial Capability is being shut down**: 'This budget funds the orderly shutdown of the Gateway program, with the opportunity to potentially transfer already produced components to other users.' Lines: $447.5M (FY24) / request $267.3 + $212.9 (FY27), zero after; enacted plan carries a **$150.0M** Gateway close-out line inside Moon To Mars Systems Development ($3,465.9M).
+- The PPE is described as combining **12 kW and 6 kW SEP thrusters** that 'leveraged Space Technology Mission Directorate investments in advanced electric propulsion systems' - i.e. the AEPS HCT this domain already hosts (shastry_2024, frieman_2021). So the FY25 CJ's $402.5M LCC was for PPE + that shared investment; its successor numbers are the SEP project lines above.
+- **NTP/NEP terminated**: 'This budget provides no funding for Nuclear Thermal Propulsion and Nuclear Electric Propulsion projects ... The nuclear propulsion projects are terminated to achieve cost savings.' DRACO cancelled by its partner. Context only - no d11 row uses NTP/NEP prices.
+- RPS (PS-54): $175.5M -> request $139.0M; Pu-238 production continues with DoE (MMRTG for Dragonfly to be completed at Aerojet Rocketdyne, delivered to INL); NextGen RTG industry sustainment terminated - relevant context for rc-043's production-rate claim (still not a price).
+- SEP milestones: QSAR-1 Jun 2024 -> **Feb 2026** (test-facility recertification), QSAR-2 Jun 2025 -> Jun 2027 (cathode welding); life qual test report Oct 2028 -> Jan 2029 (+3 months).
+
+Extracted data: `extracted_data/r84_fy2026_sep_gateway_budget_lines.csv` (10 rows, both documents).

@@ -107,6 +107,10 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
 
 ---
 
+- [x] **kornuta_2019_commercial_lunar_propellant_architecture** (read in full R84) - Commercial Lunar Propellant Architecture, REACH 13:100026. The co-authors' own copy works from any machine; the publisher copy is TDM-only and ScienceDirect bot-blocks this machine.
+Get: http://publish.illinois.edu/kokiholab/files/2018/11/Commercial-Lunar-Propellant-Architecture.pdf
+Save as `kornuta_2019_clpa.pdf`. No redistribution licence on either copy, so extract only.
+
 ## C. Needs a normal web browser (the publisher blocks automated downloads from this machine)
 
 Open the link, use the site's own "Download PDF" button, and save under the name given.

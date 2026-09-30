@@ -1,0 +1,25 @@
+source_id,quantity,value,unit,basis_or_scenario,location_in_source,notes
+kornuta_2019_commercial_lunar_propellant_architecture,near_term_annual_demand_lunar_derived_propellant,450,MT/yr,executive summary (all-customer near term),p.3 executive summary; restated in Demand section,"= 2,450 MT processed lunar water -> $2.4B revenue annually"
+kornuta_2019_commercial_lunar_propellant_architecture,early_need_on_lunar_surface,1640,MT/yr,customer input (all customers),p.3 study methodology; scenario 7 table p.~125-126,"'nearly 1,640 Metric Tons (MT) of propellant per year on the lunar surface'"
+kornuta_2019_commercial_lunar_propellant_architecture,scenario_1_demand_moon_only,100,MT/yr,Moon customer (surface + NRHO cycler),"Scenario 1 block, p.~124-125","price $7,500/kg on lunar surface"
+kornuta_2019_commercial_lunar_propellant_architecture,scenario_2_demand_eml1_only,280,MT/yr,EML1 customer (Mars cycler refuel),Scenario 2 block,"price $3,750/kg on lunar surface"
+kornuta_2019_commercial_lunar_propellant_architecture,scenario_3_demand_leo_only,1260,MT/yr,LEO customer (second-stage refuel for GEO/beyond),Scenario 3 block,price $500/kg on lunar surface
+kornuta_2019_commercial_lunar_propellant_architecture,scenario_4_demand_leo_plus_moon,1360,MT/yr,LEO + Moon customers (demand-weighted average price),Scenario 4 block; summary table p.~125-126,"average price $1,015/kg"
+kornuta_2019_commercial_lunar_propellant_architecture,scenario_5_demand_eml1_plus_leo,1540,MT/yr,EML1 + LEO customers,Scenario 5 block; summary table,"average price $1,091/kg"
+kornuta_2019_commercial_lunar_propellant_architecture,scenario_6_demand_moon_plus_eml1,380,MT/yr,Moon + EML1 customers (reusable lander),Scenario 6 block; summary table,"average price $4,737/kg"
+kornuta_2019_commercial_lunar_propellant_architecture,scenario_7_demand_all_customers,1640,MT/yr,Moon + EML1 + LEO (all customers),Scenario 7 block; summary table p.~125-126,"average price $1,482/kg"
+kornuta_2019_commercial_lunar_propellant_architecture,electrolysis_energy_per_kg_propellant,4.41,kWh/kg propellant (LOX+LH2 from water),Requirements section p.~34,'approximately 4.41 kWh/kg [50]',
+kornuta_2019_commercial_lunar_propellant_architecture,initial_investment_isru_plant,4,$B,"Business case, launch to lunar surface at $35,000/kg; processing costs $100,000/kg (double the Mine Sizing rate)",p.~124 business-case setup,annual ops ~$20M + 800 kg replacement parts/yr; mine hardware lifespan 10 yr
+kornuta_2019_commercial_lunar_propellant_architecture,npv_discount_rate,10,%,Business case NPV calculation,p.~124-125,'many of the scenarios have positive NPV with a 10% discount rate'; every multi-customer scenario positive
+northrop_grumman_2024_luna10_lunar_rail_network,fuel_for_deep_space_per_trip,100,MT/trip,LunA-10 demand slide (Mission A: fuel for deep space),p.~5 LSIC overview slides,Starship price assumption $300-$600/kg LEO
+northrop_grumman_2024_luna10_lunar_rail_network,refueling_in_geo_annual,>300,MT/yr,LunA-10 demand slide (Mission A),p.~5 LSIC overview slides,'Refueling in GEO: 300MT+'
+northrop_grumman_2024_luna10_lunar_rail_network,projected_construction_mass,100,MTs one-time,LunA-10 demand slide (Mission A),p.~5 LSIC overview slides,'Projected Construction: 100MT's'
+northrop_grumman_2024_luna10_lunar_rail_network,projected_annual_market_value_propellant,1600,"$M/yr (= $1.6B-$8B for 500-2,500 MT)",LunA-10 demand slide (Mission A),p.~5 LSIC overview slides,
+northrop_grumman_2024_luna10_lunar_rail_network,price_to_geo_under_starship,1400,"$-$2,600/kg to GEO (~4x LEO)",LunA-10 price slide,p.~5 LSIC overview slides,
+northrop_grumman_2024_luna10_lunar_rail_network,price_to_moon_under_starship,2000,"$-$3,800/kg to Moon (>6x LEO)",LunA-10 price slide,p.~5 LSIC overview slides,
+northrop_grumman_2024_luna10_lunar_rail_network,annual_economic_activity_by_2035,2,$B-$13B/yr (large mass transport may be key),LunA-10 summary slide,p.~6,
+birch_2026_roxy_pilot_plant_economics,roxy_oxygen_capacity,>1,t O2/yr,abstract + results,p.1 abstract; results section,
+birch_2026_roxy_pilot_plant_economics,max_irr_selling_oxygen_and_metals,47.4,"% IRR (near-term scenario, higher transportation costs)",results: 'achieving a positive IIR of up to 47.4%' - as printed 'IRR',p.1 abstract + results,
+steinert_2024_lunar_depot_flight_cost_location,delta_v_surface_to_nrho_min,2414.35,m/s,"scenario definition: specific NRHO, 9:2 lunar synodic",Sec 2.2.x 'in the present analysis',
+steinert_2024_lunar_depot_flight_cost_location,delta_v_surface_to_nrho_max,2985.65,m/s,same scenario definition,as above,
+steinert_2024_lunar_depot_flight_cost_location,base_configuration_oxygen_production,23.9,t O2/yr (ilmenite reduction),Fig 4 caption: base configuration of the ISRU hardware mass cost map,Sec 2 / Fig 4,
