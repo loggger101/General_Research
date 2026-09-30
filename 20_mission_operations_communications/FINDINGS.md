@@ -40,3 +40,19 @@ These rows were registered in other domains before this one existed; they moved 
 Revision candidates on these sources, written up in their old domains: rc-030 (open, Deep Space Network time).
 
 The cross-reference to `jpl_dsn_services_catalog_820_100` in the opening block is now a row of this domain.
+## R85 - First operating-cost anchors (2026-09-30; registry 309 -> 311)
+
+Two NASA OIG audits, both pulled live from oig.nasa.gov this round and hosted under `full_texts/` (US government work, public domain - the same precedent as the twelve other hosted OIG rows in domains 4-7):
+
+- **nasa_oig_2023_ig-23-016_dsn_audit** [T2] - Audit of NASA's Deep Space Network (Jul 12 2023): DSN oversubscribed (demand exceeds supply by as much as 40 percent; ~60 missions supported); DAEP life-cycle cost **$419M (2010) -> $706M (+68%)** by end FY2022; committed $363.2M FY2010-FY2022 ($184M DSN wedge + $179.2M Construction of Facilities); Phase 1 planned $173.2M (Sep-2018) vs actual partial completion at $120.8M (Table 2, p21).
+- **nasa_oig_2015_ig-15-013_dsn_management** [T2] - NASA's Management of the Deep Space Network (Mar 26 2015): **FY2014 DSN budget = $210M** (operations + maintenance + upgrades, JPL Project Office); CSIRO Canberra site ops $19M FY2014 (~100 staff); SCaN cut -$101.3M for FYs 2013-2019 with a $91.7M offset plan (Table 4, p18) and $18.6M inflation exposure; updated DAEP life-cycle cost through FY2025 = **$393.1M** (+$30.7M vs the 2009 estimate, p21); NASA missions do not pay for DSN use unless a unique technology is added (p12).
+
+What they supply this domain's cells:
+
+| cell | anchor |
+|---|---|
+| `Mission operations` ($31.4M/yr OSIRIS-REx) | IG-15-013 p8: FY2014 DSN budget $210M = the network-wide ops+maintenance+upgrades figure; per-mission share of it is what a chargeable 'mission operations' line approximates - no per-mission breakdown exists in either audit |
+| `Deep Space Network time` ($1,530/hr) | IG-23-016: the 40-percent oversubscription explains why DSN time is priced and scarce; **neither audit contains a per-hour aperture fee**, so rc-030's route stays the 820-100 Rev H rate base ($1,792/hr at publication) + BLS CPI-U chain |
+| (context) | IG-15-013 p12: NASA missions do not pay for DSN use unless a unique technology is added - the chargeable line applies to non-NASA/unique-tech cases, which is exactly the commercial context of this repo's rows |
+
+Extracted data: `extracted_data/r85_dsn_oig_audits_key_numbers.csv` (12 rows). No revision candidate opened or closed by this round.

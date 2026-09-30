@@ -65,3 +65,6 @@ Revision candidates on these sources, written up in their old domains: rc-026 (o
 The cross-references to `zeng_2007`, `just_2019`, `nasa_money_mass_ematics_2023_worksheet` in the opening block are now rows of this domain. `hein2020`, listed in the opening block under domain 2, is now in domain 22.
 
 `metzger_zacny_2020` stays in domain 5: its row maps to the drilling-energy row, but the paper is about thermal extraction of volatiles, which domain 5 keeps.
+## R85 - just_2019 retry (2026-09-30; registry unchanged by this note)
+
+Retried the three routes that could host `just_2019`: OpenAlex best_oa_location (= the ScienceDirect PDF route itself, Cloudflare challenge still blocks this machine), UoM Research Explorer publication record (page 404 / no file behind it) and a USRA Lunar ISRU workshop proceedings copy of the conference version (1-page abstract only - not the full text and without the specific-energy tables rc-027 needs). Status unchanged: open_not_pulled; **rc-027 remains blocked**.
