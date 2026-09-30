@@ -45,3 +45,18 @@ These rows were registered in other domains before this one existed; they moved 
 | `duane_1964_learning_curve_reliability_monitoring` | domain 5 | `05_inspace_operations/FINDINGS.md`: R74 | none |
 
 The cross-references to `mil_hdbk_189c_reliability_growth_management`, `duane_1964_learning_curve_reliability_monitoring` in the opening block are now rows of this domain.
+## R86 - First empirical launch-reliability anchors (2026-09-30; registry 311 -> 313)
+
+Two NTRS-hosted conference presentations, both pulled live from ntrs.nasa.gov this round and hosted under `full_texts/` (NTRS copyright determination PUBLIC_USE_PERMITTED for each - same precedent as the R82 d3 rows):
+
+- **cross_vesely_2018_lv_first_flight_failure_probability** [T2] - PSAM 2018 (JSC): builds a database of ALL US+foreign launches 1980-2017 by model type, then computes an assumed new-vehicle design from every failure on the first two flights of each model -> **first-flight failure probability = 0.134 (success ~0.866)**; with assurance-program credit for heritage elements (equivalent of 5 flights: solid propulsion, upper-stage engines, TVC) the total drops to **0.0898 (~success 0.910**). Element rates per element-launch: upper-stage liquid engines 2.03E-02 (highest), avionics 1.32E-02, stage separation 1.36E-02, TVC 1.95E-03 (lowest). Conclusion p11 verbatim: new vehicles have 'significantly higher average failure probability than mature launch vehicles' and PRA 'do[es] not adequately assess their failure probability'.
+- **al_hassan_novack_2015_bayesian_reliability_data_applicability** [T2] - Huntsville SRE RAM VIII 2015 (MSFC): the METHOD for exactly this domain's small-sample problem. A new vehicle is heritage + new hardware; its failure rate is estimated with lognormal priors per reliability block, each weighted by a subjective data-APPLICABILITY heuristic over generic sources (NPRD/EPRD/NUCLARR, MIL-HDBK-217F part-count), then correlated and Monte-Carlo'd. 'Higher data applicability improves certainty of estimates' (p16).
+
+What they supply this domain's cells:
+
+| cell | anchor |
+|---|---|
+| `Launch vehicle reliability` (0.97; band 0.9-0.99) | Cross & Vesely: upstream's own note ('a first-flight or low-cadence vehicle sits near 0.90') now has an empirical figure - raw first flight ~0.866, with assurance credit ~0.910; the fleet-representative 0.97 is consistent with (not computed from) this paper's per-model series, which separates new vs mature vehicles explicitly (p4 chart). No re-pin proposed: value and band unchanged |
+| `Mining reliability growth exponent` + rig rows | Al Hassan & Novack supplies the method for combining heritage data with little flight experience - the machinery any small-sample reliability estimate in this domain should use; no numeric pin |
+
+Extracted data: `extracted_data/r86_launch_reliability_key_numbers.csv` (11 rows). No revision candidate opened or closed by this round. Still unbacked cells: spacecraft MTBF / lifetime distribution, mechanism success rates by type, measured learning-curve slopes for production runs, regolith-abrasion wear life and used-equipment residual value - the rest of the opening brief.
