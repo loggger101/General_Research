@@ -1,0 +1,11 @@
+source_id,program,line_item,FY2024_usd_mn,FY2025_usd_mn,FY2026_request_or_enacted_usd_mn,FY2027_usd_mn,FY2028_usd_mn,FY2029_usd_mn,FY2030_usd_mn,location_in_source,notes
+nasa_fy2026_budget_request_technical_supplement,Space Transportation (GO),Solar Electric Propulsion,8.5,--,7.7,6.6,5.7,1.7,0.0,ST-8 p.~101 Budget Authority table,SEP moved from Technology Demonstration to Space Transportation in the FY26 structure; '--' = no FY25 line as printed
+nasa_fy2026_budget_request_technical_supplement,Space Transportation (GO),DRACO,0.0,--,0.0,0.0,0.0,0.0,0.0,ST-8 p.~101 Budget Authority table,cancelled by partner
+nasa_fy2026_budget_request_technical_supplement,Space Transportation (GO),Total Budget,70.0,--,46.6,53.7,53.7,53.7,53.7,ST-8 p.~101,
+nasa_fy2026_budget_request_technical_supplement,SEP project (standalone),Total Budget,8.5,--,7.7,6.6,5.7,1.7,0.0,ST-10 p.~103,
+nasa_fy2026_budget_request_technical_supplement,Gateway Initial Capability (EXP-24),Total Budget,447.5,--,267.3,212.9,0.0,0.0,0.0,EXP-24 p.~50; 'This budget funds the orderly shutdown of the Gateway program',
+nasa_fy2026_budget_request_technical_supplement,Gateway (parent),Total Budget,854.5,--,304.2,212.9,0.0,0.0,0.0,Moon To Mars Systems Development front table p.~47,
+nasa_fy2026_budget_request_technical_supplement,Radioisotope Power (PS-54),Total Budget,175.5,--,139.0,21.0,19.1,0.0,0.0,PS-54 p.~245; Pu-238 production continues with DoE; NextGen RTG industry sustainment terminated,
+nasa_fy2026_spending_plan_pl11974,Space Technology (enacted),Solar Electric Propulsion (SEP),,,7.2,,,,,p.~3-4 enacted table,vs $7.7M request; Space Transportation (GO) total 232.6
+nasa_fy2026_spending_plan_pl11974,Moon To Mars Systems Development (enacted),Gateway,,,150.0,,,,,p.~3-4 enacted table,"parent line Moon To Mars Systems Development = 3,465.9"
+nasa_fy2026_spending_plan_pl11974,Space Technology (enacted),Total,,,920.5,,,,,p.~3-4 enacted table,SBIR and STTR 212.8; Space Transportation (GO) 232.6

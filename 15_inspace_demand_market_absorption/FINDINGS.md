@@ -52,3 +52,16 @@ Five T2 rows, four NTRS-hosted full texts pulled live this machine (sha256 in th
 - `tiffin_friz_rosenthal_2022_space_superhighway_cost_analysis` (AIAA ASCEND 2022, doi 10.2514/6.2022-4254): **the $/kg price side** — the cost-analysis companion of the systems paper above; both NTRS copies carry copyright determinationType=MAY_INCLUDE_COPYRIGHT_MATERIAL (not hostable) and arc.aiaa.org returns HTTP 403 from this machine, so it is `registered_not_pulled` until a legal copy is obtained.
 
 **Still open in this domain.** Utility factors by commodity/destination remain judgement — no source prices delivered material relative to launch cost; demand elasticity (eps=0.5) and the 0.5 surplus-price fraction have no registered basis; Figure-2 category percentages await a vision-capable pass or an OCR install.
+
+
+## R84 - First demand-forecast sources for the JUDGEMENT cells (2026-09-30; +4 rows -> registry 309)
+
+The `IN_SPACE_ANNUAL_DEMAND_KG` and utility-factor cells labelled 'JUDGEMENT, not measurement' got their first external anchors - four new sources, two hosted CC BY full texts (Birch et al. 2026 ROXY economics; Steinert et al. 2024 lunar-depot flight cost), one DARPA LunA-10 study hosted on its public-release distribution statement A, and the Kornuta et al. 2019 collaborative study read in full from a co-author-hosted copy (publisher copy is TDM-only; ScienceDirect bot-blocks this machine).
+
+Against upstream's cells:
+- **Kornuta et al. 2019** (REACH, Crossref-checked): near-term annual demand of lunar-derived propellant **450 MT/yr** (= 2,450 MT water -> $2.4B revenue) vs our cislunar row 1e5 kg = ~4.5x; customer-input early need ~**1,640 MT/yr**; Moon-only scenario starts at 100 MT/yr (2x the lunar_surface row). Seven scenarios with demand and price per customer mix ($7,500/kg Moon-only down to $1,482/kg all-customers average); electrolysis 4.41 kWh/kg propellant; NPV positive in every multi-customer scenario at a 10% discount rate; ~$4B initial investment at $35k/kg launch to the surface.
+- **LunA-10** (T4 grey): projected annual market value $1.6B-$8B = **500-2,500 MT/yr** of cislunar propellant transport under an explicit Starship price ladder ($300-600/kg LEO -> ~$1,400-2,600/kg GEO -> ~$2,000-3,800/kg Moon); deep-space fuel 100 MT/trip; GEO refueling >300 MT/yr.
+- **Steinert et al. 2024** (Frontiers in Space Technologies): the first per-kg flight-cost anchor for cislunar/lunar transport - location-dependent mass cost of ilmenite-reduction O2 to a specific NRHO depot, delta-v band 2,414.35-2,985.65 m/s, base configuration 23.9 t O2/yr, Argonaut reference launcher (closes the standing 'd15 per-kg $ anchors for cislunar/lunar transport' gap at least in kind).
+- **Birch et al. 2026** (Aerospace): a ~1 t O2/yr ISRU pilot plant is viable with IRR up to +47.4% when oxygen AND metals are sold - i.e. early lunar-surface demand (life support) precedes propellant scale-up, supporting the shape of the `lunar_surface` utility profile rather than any single cell value.
+
+No re-pin proposed: upstream labels the block judgement and 'no such market exists', so **rc-056 is opened as a note** recording these anchors for whenever the owner revisits the JUDGEMENT block. Extracted data: `extracted_data/r84_cislunar_demand_forecasts_key_numbers.csv` (24 rows).
