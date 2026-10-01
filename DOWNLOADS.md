@@ -116,6 +116,15 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
 - [x] **kornuta_2019_commercial_lunar_propellant_architecture** (read in full R84) - Commercial Lunar Propellant Architecture, REACH 13:100026. The co-authors' own copy works from any machine; the publisher copy is TDM-only and ScienceDirect bot-blocks this machine.
 Get: http://publish.illinois.edu/kokiholab/files/2018/11/Commercial-Lunar-Propellant-Architecture.pdf
 Save as `kornuta_2019_clpa.pdf`. No redistribution licence on either copy, so extract only.
+- [ ] **sukumaran_et_al_2024_ti_hbn_wear_neutron_shielding_sct** (extracted in R94: full 16-page paper read live; NOT hostable - "copyright 2024 Elsevier B.V. All rights are reserved" printed on p.1) - Ti-hBN coating sliding wear with JSC-1A third-body abrasion, 90-95% lower wear rate than uncoated substrate; registered in domain 16.
+  Get: https://ntrs.nasa.gov/api/citations/20240011143/downloads/ECI%202_Ti-hBN%20SCT.pdf (publisher copy behind Elsevier paywall)
+  Save as `sukumaran_et_al_2024_ti_hbn_wear_neutron_shielding_sct.pdf`. Elsevier all-rights-reserved in-file, so extract only; never host. DOI: https://doi.org/10.1016/j.surfcoat.2024.131185
+- [ ] **stein_et_al_2025_icacc_abrasive_effects_of_lunar_regolith_on_material_wear** (extracted in R94: full 15-page deck read live; NOT hostable - NTRS determinationType=MAY_INCLUDE_COPYRIGHT_MATERIAL + no licence statement) - Taber abrasion wear indices with LMS-1 regolith wheels vs standard CS-17 media; registered in domain 16.
+  Get: https://ntrs.nasa.gov/api/citations/20250000687/downloads/ICACC2025_WearResistance_Stein_v3.pdf
+  Save as `stein_et_al_2025_icacc_abrasive_effects_of_lunar_regolith_on_material_wear.pdf`. Extract only; never host.
+- [ ] **mas_2007_nber13138_labor_unrest_equipment_resale_market** (extracted in R94: full 50-page working paper read live; NOT hostable - "copyright 2007 by Alexandre Mas. All rights reserved") - >48,000 used construction-equipment auction sales with condition-indexed pricing; the terrestrial analogue for `Rig salvage fraction`; registered in domain 16.
+  Get: https://www.nber.org/system/files/working_papers/w13138/w13138.pdf
+  Save as `mas_2007_nber13138_labor_unrest_equipment_resale_market.pdf`. Extract only; never host.
 
 ## C. Needs a normal web browser (the publisher blocks automated downloads from this machine)
 
