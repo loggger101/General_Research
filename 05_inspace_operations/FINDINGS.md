@@ -416,3 +416,23 @@ Shared CSVs that cite a moved source and stay here: `extracted_data/r50_dsn_rate
 Revision candidates written up here keep `domain_dir` 05: rc-026 (open, Drilling / excavation energy), rc-027 (blocked, Drilling / excavation energy), rc-030 (open, Deep Space Network time), rc-031 (open, Launch insurance), rc-048 (open, Beneficiation / on-site processing energy).
 
 `metzger_zacny_2020` stays here. Its row maps to the drilling-energy row, but the paper is about thermal extraction of volatiles, which this domain keeps; domain 19 refers to it by id.
+## R97 - The Pu-238 unit-price gap closes: first institutional per-kg figures (2026-10-01; +1 row -> registry 339)
+
+The standing d5/d14 gap since the GR-R74 era: *'Pu-238 unit price gap remains'* - upstream's `operational_costs.csv` RTG note carries 'Historical Russian Pu-238 ~$2.5M/kg' citing Space.com (T4), and no registered T1-T3 source anywhere in the repo carried a per-kg figure for the isotope itself (rc-043 covers production RATE, not price). This round closes it with one hosted NIAC report.
+
+**Howe et al., 'Economical Production of Pu-238' - NASA NIAC Phase I final report** [T2, full text hosted; NTRS 20160010587 PUBLIC_USE_PERMITTED]: USRA Center for Space Nuclear Research (PI Steven D. Howe) with University of Utah co-I Terry Ring; grant NNX11AR30G. The study's economic core is exactly the missing number - prices per kg of Pu-238 charged to the government, by reactor size and return-on-investment target:
+
+| scenario | price/kg (verbatim p.32) | production rate |
+|---|---|---|
+| 5 MW reactor, 20% ROI | $7.8 M | 2.25 kg/yr |
+| 5 MW reactor, 0% ROI | $3.5 M | 2.25 kg/yr |
+| 10 MW reactor, 20% ROI | $4.3 M | 6.25 kg/yr (optimal) |
+| 10 MW reactor, 0% ROI | **$1.6 M** - the floor of the range | 6.25 kg/yr |
+
+p.37 adds a second cost basis for the INL-reactor project: capital $35.7M ($35.2M reactor + CAT.-1 fence extension), process cost **$3.2M +/- 50% per kg** against 'the sale price of $6,000,000' (a DOE-era purchase-price reference - the only explicit Pu-238 SALE PRICE in any registered source), ROI 4%/yr with a 5.3-yr pay-back; and if an existing facility's neutron flux can be used instead of building a reactor, processing cost drops to **$0.56M/kg**.
+
+**Verdict vs our row.** Upstream's '~$2.5M/kg historical Russian Pu-238' now has institutional context: it sits INSIDE the NIAC range ($1.6-$7.8 M/kg by reactor size and ROI target, with a $0.56M/kg processing floor and a $6M/kg sale-price reference) - so the note's figure is plausible as printed; **consistency anchor, no re-pin** (the same verdict pattern as R95's Shapiro deployment statistics: different populations measure different things). The RTG row's own $/W cell ($200k-$1M per W-electric at 6-8% conversion) is unaffected - it prices the finished generator, not the fuel.
+
+**Inconsistency kept as printed (p.37):** 'The costs for this process on a per kg of Pu-238 are $3.2 million (±50%) which is substantially above the sale price of $6,000,000' - arithmetically $3.2M is below $6M; recorded verbatim with the flag in `extracted_data/r97_pu238_unit_price_key_numbers.csv` (repo convention: keep source inconsistencies as printed). No revision candidate opened: nothing here contradicts an upstream cell value, and rc-043 already covers the production-rate wording.
+
+**Domain 5 status after R97:** both Pu-238 rows in this domain now have T1-T3 support - ambrosi_2019 (T1) for the flight record + supply constraint, Howe et al. (this round) for unit prices; space_com_pu238_rtg_cost_reporting stays as the T4 marker of what upstream actually cited.
