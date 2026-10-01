@@ -208,3 +208,9 @@ Round 74 registered every source the three upstream repos cite that this registr
 ---
 
 *Written 2026-09-27 after Round 70; updated after Rounds 72, 73 and 74. When a file has been extracted, its box is ticked and a research-log entry records the round.*
+
+## R96 - Domain 10 methalox anchors (registered 2026-10-01; all full texts NOT sought this round)
+
+- [ ] **ueda_et_al_2013_methane_fueled_engine_altitude_hot_fire_jpc** - AIAA JPC 49th proceedings, DOI 10.2514/6.2013-4056 (paywalled). If obtained: extract the altitude-condition thrust/Isp table for a LOX/methane engine; save as `ueda_et_al_2013_methane_fueled_engine_altitude_hot_fire_jpc.pdf`.
+- [ ] **judd_et_al_2006_lox_methane_combustion_performance_stability_durability** - AIAA SciTech 44th proceedings, DOI 10.2514/6.2006-1533 (paywalled). If obtained: extract the performance/stability/durability trade-off figures; save as `judd_et_al_2006_lox_methane_combustion_performance_stability_durability.pdf`.
+- [ ] **engelen_souverein_twigt_deimos_methane_oxygen_engine_test_results_jbis** - JBIS 62:211-218 (2009), BIS refcode 2009.62.211, ~GBP 5 per copy at https://www.bis-space.com/shop/product/deimos-methane-oxygen-rocket-engine-test-results/ . If obtained: extract the measured thrust/chamber-pressure/mass-flow tables + reusability assessment; save as `engelen_souverein_twigt_deimos_methane_oxygen_engine_test_results_jbis.pdf`.
