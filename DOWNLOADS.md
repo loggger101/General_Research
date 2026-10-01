@@ -125,6 +125,9 @@ Save as `kornuta_2019_clpa.pdf`. No redistribution licence on either copy, so ex
 - [ ] **mas_2007_nber13138_labor_unrest_equipment_resale_market** (extracted in R94: full 50-page working paper read live; NOT hostable - "copyright 2007 by Alexandre Mas. All rights reserved") - >48,000 used construction-equipment auction sales with condition-indexed pricing; the terrestrial analogue for `Rig salvage fraction`; registered in domain 16.
   Get: https://www.nber.org/system/files/working_papers/w13138/w13138.pdf
   Save as `mas_2007_nber13138_labor_unrest_equipment_resale_market.pdf`. Extract only; never host.
+- [ ] **kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams** (extracted in R95: full 14-page paper read live; NOT hostable - "copyright 2022. California Institute of Technology" printed on p.1) - Curiosity drill-feed in-flight failure + recovery, the drilling component of d16's mechanism tally; registered in domain 16.
+  Get: https://esmats.eu/amspapers/pastpapers/pdfs/2022/kinnett.pdf (NTRS record 20230005798 is a preprint with no downloadable file)
+  Save as `kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams.pdf`. Caltech copyright in-file, so extract only; never host.
 
 ## C. Needs a normal web browser (the publisher blocks automated downloads from this machine)
 
