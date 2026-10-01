@@ -104,6 +104,9 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
   Save as `dreisinger_2000_hydrometallurgical_treatment_pgm_sulfide_concentrates.pdf`. No licence statement anywhere in the PDF, so extract only; never host.
   Get: https://saimm.co.za/Conferences/Pt2012/577-592_Cowen.pdf
   Save as `cowen_agnello_petit_2012_npsr_pge.pdf`. No licence statement anywhere in the PDF (Camera Press watermark only), so extract only; never host.
+- [ ] **mc_dowell_2025_space_activities_gcat** (extracted in R92: full 70-page report read live; NOT hostable - no licence statement anywhere) - GCAT Rev 1.2 GEO population table (Table 22): 613 active payloads GPZ+/-100 km / 638 total as of Jan 2026, anchoring upstream's '~550 geostationary satellites'; registered in domain 15.
+  Get: https://planet4589.org/space/papers/space25.1.2.pdf
+  Save as `mc_dowell_2025_space_activities_gcat_rev1.2.pdf`. No licence statement anywhere in the PDF, so extract only; never host.
 - [x] **jm_pgm_market_report_2026** (extracted in R71) (10) — Johnson Matthey PGM market report, May 2026: full supply and demand tables.
   Get: https://matthey.com/documents/161599/509428/pgm-market-report-26.pdf/a2d115af-bf7c-f589-29e9-6beacf8a4452
   Save as `jm_pgm_market_report_2026.pdf`. JM terms forbid reuse without consent, so extract only; never host.
