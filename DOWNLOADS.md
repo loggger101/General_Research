@@ -99,6 +99,9 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
   Get: https://pubs.usgs.gov/pp/1802/n/pp1802n.pdf
   Save as `usgs_pp1802n.pdf`. USGS public domain, so it may be hosted if under 50 MB.
 - [x] **cowen_agnello_petit_2012_npsr_pge** (extracted in R81: full 16-page paper, terms table + recovery rates) - net-smelter-return mechanics for the South African PGE industry; registered in domain 25.
+- [ ] **dreisinger_2000_hydrometallurgical_treatment_pgm_sulfide_concentrates** (extracted in R91: full 25-page deck read live; NOT hostable - no licence statement, PolyMet data under permission) - measured flotation + pressure-leach recoveries for an iron-rich Cu-Ni-PGM feed (Northmet); registered in domain 25.
+  Get: https://propertyfile.gov.bc.ca/reports/PF700051.pdf
+  Save as `dreisinger_2000_hydrometallurgical_treatment_pgm_sulfide_concentrates.pdf`. No licence statement anywhere in the PDF, so extract only; never host.
   Get: https://saimm.co.za/Conferences/Pt2012/577-592_Cowen.pdf
   Save as `cowen_agnello_petit_2012_npsr_pge.pdf`. No licence statement anywhere in the PDF (Camera Press watermark only), so extract only; never host.
 - [x] **jm_pgm_market_report_2026** (extracted in R71) (10) — Johnson Matthey PGM market report, May 2026: full supply and demand tables.
