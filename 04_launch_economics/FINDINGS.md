@@ -306,3 +306,49 @@ These rows moved to the domain that now holds the cells they back. The blocks ab
 |---|---|---|---|
 | `musk_2018_falcon9_upper_stage_cost_statement` | 21 | R74 | none (no files) |
 | `metzger_2023` | 22 | Round-12 addition; Maintenance; R71 | `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_table1_years_to_absolute_advantage.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_table2_production_mass_ratio_phi.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_table3_cost_elasticities.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_metzger_2023_tableA1_lunar_propellant_tea_parameters.csv` |
+## R99 - spacecost v0.5.0 fairing-source sweep (2026-10-02; +31 sources: T2x1, T4x30; 1 hosted)
+
+spacecost v0.5.0 (@77c6e11) added `fairings.py`: ~28 manufacturer-guide citations backing the
+42 populated `fairing_volume_m3` cells of `reference/launch_vehicles.csv`. None of the specific
+guide documents were registered here (only six generic R74 rows overlapped; SLS ESD 30000 was
+already hosted). This round registers all ~31 distinct source documents, verifies every one that
+is reachable from this machine by reading its PDF text layer for the exact figure upstream cites,
+and hosts the single legally redistributable copy found.
+
+### Hosted (legally redistributable)
+
+- **atlas_v_launch_services_users_guide_rev11_mar2010** — 28,226,765 B from ulalaunch.com; p2 verbatim: "The information included in this document has been cleared for public release under OSR approval 10-S-0689, date: 16 February 2010 and has been placed in the public domain." -> license class `public-domain`. Fig. 6-4 (5-m Short static payload envelope) verified present; s2.5.2.2 performance context read.
+
+### Verified live this machine — figure caption / stamp evidence (not committed: manufacturer copyright or mirror provenance)
+
+| source | verification detail |
+|---|---|
+| vulcan_launch_systems_users_guide_oct2023 | Fig. 4.3.1-1 caption verbatim p44 ("Vulcan Centaur 15.5-m (51-ft.) PLF Simplified Static P[ayload Envelope]"); "Approved for Public Release October 16, 2023" clearance printed but ULA copyright |
+| ariane6_users_manual_issue2_rev0_feb2021 | internal stamp FEBRUARY 2021 p1 = upstream's "(Feb 2021)" although the download filename says March-2021; Fig. 5.3.1a/5.3.1b + "payload usable volume" pp83-84 |
+| vega_c_users_manual_issue0_rev0_may2018 | stamp MAY 2018 p1; VAMPIRE 937 adapter defined pp23-24; s5.3.1 "Payload usable volume definition" |
+| minotaur_iv_v_vi_user_guide_release_2p5_nov2025 | "Release 2.5" + "November 2025" stamps pp2-9 = upstream's "(Nov 2025)"; s5.1.1 "92-inch Standard Minotaur Fairing" p57; Fig 5.1.1.1 in TOC |
+| pegasus_user_guide_release_8p2_sep2020 | "Release 8.2" + "September 2020" stamps pp3-9 = upstream's "(Sep 2020)"; Figure 5-2 caption verbatim p41 ("Payload Fairing Dynamic Envelope with 97 cm (38 in.) Diameter Payload") |
+| mhi_hii_users_manual_yet04001_ver4_feb2015 | cover stamp "YET04001 Ver. 4.0 February 2015" p1 exact; Fig. 4.5-2 "Usable volume of Model 4S" p110; Table 2.1-1 H2A204 standard GTO 5,950 kg quoted with the Model 4S fairing pp43/48 |
+| soyuz_csg_users_manual_issue2_rev0_mar2012 | MIRROR (georing.biz) — original arianespace.com URL dead (404 migrated / 410 legacy); "Arianespace©, March 2012" + Fig. 5.3.1a caption verbatim p88: "ST Fairing volume" |
+| ariane5_users_manual_issue5_rev1_jul2011 | MIRROR (georing.biz) — arianespace.com paths dead; "Issue 5 Revision 1" + July 2011 pp1-3; Annex 5 referenced in body p84; Fig. A5.1 caption verbatim p207: "Usable volume beneath the payload fairing" |
+| boeing_delta_iv_technical_summary_payload_fairing_envelopes | MIRROR (matthewwturner.com) — Boeing removed it from its site; "Delta IV Payload Fairing Envelopes" figure p3 incl. Heavy 5-m row (1194-5 PAF, 62.7'/19.1 m) = upstream's SLS Block 1 reference configuration |
+| starship_users_guide_rev1p0_mar2020 | MIRROR (spacex.com.pl) — spacex.com/assets/files/ URL dead; "March 2020" stamp p1; Fig. 4 caption verbatim p3: "Starship payload volume (dimensions in m)", "8 m diameter payload dynamic envelope" |
+| new_glenn_payload_users_guide_rev_c_oct2018 | MIRROR (yellowdragonblog) — blueorigin.com answers HTTP 429 to this machine; "OCTOBER 2018" stamps throughout; Fig. 5-2 caption verbatim p59: "Standard capacity standard payload volume"; body text p58 floor "at least 450 m3 (16,000 ft3)" vs upstream's figure-read **458 m3** — the drawing itself carries the value; discrepancy recorded |
+| electron_payload_users_guide | live copy is v8.0 Sep-2025 at rocketlabcorp.com/assets/ (v7.0 file 404); v8.0 version history lists "Jun 2022 7.0 Updated Release" = upstream's cited edition; p26 STANDARD FAIRING envelope matches upstream's profile station-for-station (566.1 / 717.0 / 868.0 ... mm) -> geometry unchanged between editions |
+| neutron_payload_users_guide_v1p0_jan2025 | official URL; "Version 1.0 | Jan 2025" p1; Fig. 13 caption verbatim p23: "Payload Accommodation Within Neutron's Fairing"; document marked PROPRIETARY AND CONFIDENTIAL — verified only, must never be committed |
+| alpha_payload_users_guide_v2p0_aug2019 | MIRROR (sky-brokers) — fireflyspace.com path dead; revision history p3 verbatim "August 2019 2.0 Updated Release"; Fig. 8 fairing dimensions p12 (2.2 m dia x 5 m height) |
+| khi_h3_payload_fairings_page | product page live; table verbatim: short(S) 10.4 m / long(L) 16.4 m, both 5.2 m diameter = upstream's two H3 outer-only cells |
+| mhi_technical_review_vol58_no4_h3_development_status_dec2021 | PDF read; p2: fairing size W "total length of approximately 16.4 m ... the diameter has been expanded from 5.2 m to 5.4 m" — institutional corroboration + documents the wider W fairing upstream does not carry |
+
+### Upgrades to existing rows
+
+- **spacex_falcon_payload_users_guide** registered -> verified_live_not_pulled: the live PDF at the R74 URL is **Rev 8 (March 2025)** per its own change log p11 ("Version ... 7 September 2021 Updated Release / 8 March 2025 Updated Release") — a NEWER edition than upstream's Sep-2021 citation of the same document. Fig 12-5's static-envelope dimensions (4,572.5 / 6,818.9 / 11,363.5 mm) are vector graphics and do not appear in the extractable text layer; SpaceX copyright page p1 -> not committed.
+- **nasa_esd30000_sls_mission_planners_guide** mapping extended: p59 table (Fig 6-7 family) gives the 8.4 m PLF Short "Available Volume" = 21,930 ft3 = **621 m3** — exact match to upstream's stated Block 1B value; s6.2.1 confirms a Block 1 cargo flight takes the COTS 5-m-class composite PLF ("shown for reference only", never flown on SLS).
+
+### Registered, not pulled (full text not sought this round)
+
+NSTS-21492 Shuttle Payload Bay PUG [T2 — no NTRS record found from this machine under "NSTS-21492", bare "21492" or the title phrases]; Douglas SM-47274 Saturn V Payload Planner's Guide Nov-1965 (no NTRS record; archive.org item files DNS-unreachable in three R99 attempts); Vega UM Issue 4 Apr-2014 (original 410 Gone, migrated path 404, web.archive.org unreachable from this machine); ISRO GSLV MkIII spec page ("PLF Usable Volume 110m3"; isro.gov.in blocked/timed out for every path variant tried); Orienspace Gravity-1 "100 cubic metres" via Tencent News 2023-11-22 (no stable URL upstream; upstream itself flags the figure as ~1.6x the median guide envelope for a fairing of that size); RussianSpaceWeb Angara A5 14S746 fairing first-flight report by A. Zak (site live, article not located via its search endpoint); CALT LM-2C UM Issue 1999 ch. 4 Fig 4-2a (caltaerospace.com unreachable; customer-only Chinese manual); CGWIC LM-3A Series UM Issue 2011 Fig 4-5b + LM-2D technical data (customer-only, no open copy found); Galactic Energy Ceres-1 / Pallas-1 manuals 2023 (company site live but serves no public download); Sohu report on the LM-5 standard fairing quoted from CALT's design office 2024-05-06 + Tencent News report on the LM-10B short fairing 2026-07-13 (no stable URLs upstream); Reaction Engines SKYLON Users' Manual Rev 1 Fig 13 (reactionengines.co.uk refused connections from this machine).
+
+### Scope notes
+
+economicspace v1.39/v1.40 re-checked against the last sweep: refinery cost parameter changes in `modules/calc.py` + a new cislunar catalog CSV only — no new institutional citations to register. AsteroidCatalog 1.8.x was already swept at R83; its DOI tokens were re-verified unchanged. No revision candidates opened this round (every fairing cell is anchored to the document that draws it; the New Glenn 450-vs-458 m3 and Falcon edition-drift items are recorded as verification notes, not contradictions).
