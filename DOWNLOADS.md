@@ -250,3 +250,14 @@ Pulled + committed to `14_propellant_consumable_prices/full_texts/` (queue uncha
 - [x] **nasa_cr_159163_economics_hydrogen_production_liquefaction_updated_1980** - NASA CR 159163, Economics of Hydrogen Production and Liquefaction Updated to 1980 (Nov 1979), pulled from NTRS record 19800002991; determination GOV_PUBLIC_USE_PERMITTED -> hosted.
 
 Documented negative finding this round: the 'commercial $75.8/kg (AIAA 2024)' hydrazine citation in spacecost's propellants.csv resolves to no indexed paper anywhere reachable from this machine (Crossref AIAA JPC sweep + NTRS searches) - nothing to download until a specific DOI is identified; the DLA FY20 row above remains the only institutional anchor for that cell.
+## R102 - Domain 12 first hosted sources (registered 2026-10-02; eight rows pulled and committed this round incl. one NEW source, queue 149 -> 142)
+
+Pulled + committed to `12_destination_environments_physical_constants/full_texts/`:
+- [x] **iau_2012_resolution_b2_astronomical_unit** - IAU Resolution B2 PDF (syrte.obspm.fr mirror of the official text).
+- [x] **bipm_si_brochure_9th_edition** - SI Brochure 9th edition, English (BIPM; CC BY 4.0 statement on p.2 of the file).
+- [x] **nasa_nssdca_moon_fact_sheet** / **nasa_nssdca_mars_fact_sheet** / **nasa_iss_facts_and_figures** - HTML snapshots of the live US Government pages at the exact URLs upstream cites.
+- [x] **appelbaum_flood_1989_tm102299_solar_radiation_mars** - NASA TM-102299 from NTRS record 19890018252 (GOV_PUBLIC_USE_PERMITTED).
+- [x] **daly_2023_dart_kinetic_impact** - Nature 616:443 PDF via the publisher's own article link (in-file CC BY 4.0 statement p.5).
+- [x] **thomas_2023_dimorphos_orbital_period_change** (NEW source registered this round) - Nature 616:448 companion paper, PDF via the publisher's own article link (in-file CC BY 4.0 statement p.4); carries the measured −33.0 min orbital-period change upstream's Didymos row points at.
+
+Still blocked from this machine after R102 re-checks (routes recorded per row in the domain CSV): science.org PDFs HTTP 403 x3; Elsevier no-open-copy x3; Kopp & Lean TSI - AGU legacy 403 + Wiley pdfdirect bot-blocked despite OpenAlex OA flag; CODATA RMP APS paywall + NIST CUU Cloudflare challenge; ITU-R S.1003 free-download endpoints all failing (landing page live).
