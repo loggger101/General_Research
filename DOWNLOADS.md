@@ -243,3 +243,10 @@ Still blocked / dead this round:
 - [ ] **dla_energy_aerospace_standard_prices_fy2020** - FY20/FY24/FY25 PDF URLs and the landing page all answer HTTP 403 from this machine (bot protection, not worked around); web.archive.org is DNS-blocked here. Would anchor hydrazine $30.5/kg, MMH/NTO in one document.
 - [ ] **aqua_calc_lox_bulk_price** - still answers HTTP 403 from this machine.
 - [x] **evonik_peroxide_propulsion_htp_quotes_2024** (dead source, nothing to download) - peroxidepropulsion.com has been hijacked and now serves casino/baby-products spam; the original Evonik HTP ~$5/kg quote is gone. Upstream's citation points at a dead URL; re-source from an active supplier before this row can back anything.
+## R101 - Domain 14 LH2 production-cost anchors (registered 2026-10-02; both full texts pulled and hosted this round)
+
+Pulled + committed to `14_propellant_consumable_prices/full_texts/` (queue unchanged at 149 after R101):
+- [x] **nasa_cr_73226_study_cost_system_analysis_lh2_production** - NASA CR 73226, Study/Cost/System Analysis of Liquid Hydrogen Production (June 1968), pulled from NTRS record 19680018755; determination GOV_PUBLIC_USE_PERMITTED -> hosted.
+- [x] **nasa_cr_159163_economics_hydrogen_production_liquefaction_updated_1980** - NASA CR 159163, Economics of Hydrogen Production and Liquefaction Updated to 1980 (Nov 1979), pulled from NTRS record 19800002991; determination GOV_PUBLIC_USE_PERMITTED -> hosted.
+
+Documented negative finding this round: the 'commercial $75.8/kg (AIAA 2024)' hydrazine citation in spacecost's propellants.csv resolves to no indexed paper anywhere reachable from this machine (Crossref AIAA JPC sweep + NTRS searches) - nothing to download until a specific DOI is identified; the DLA FY20 row above remains the only institutional anchor for that cell.
