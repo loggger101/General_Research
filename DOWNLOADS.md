@@ -297,3 +297,13 @@ Pulled + committed to `26_spacecraft_storage_energy_properties/full_texts/` (all
 - [x] **nasa_tm_2005_rev1_effects_lunar_dust_eva_systems_apollo** - 732,267 B (NASA/TM-2005-213610/REV1, Apr 2007); Apollo EVA dust-contamination record.
 
 No blocked routes this round: all eight NTRS download endpoints answered from this machine and every PDF verified as valid (`%PDF` magic + SHA-256).
+
+## R106 - Domain 21 deepened: first hosted sources for the recurring $/kg brief (registered 2026-10-03; three full texts pulled and hosted, one extraction-only)
+
+Pulled + committed to `21_mass_cost_estimating_relationships/full_texts/` (all NTRS):
+- [x] **foreman_lemoine_deweck_2016_cer_survey_distributed_spacecraft_missions** - 792,734 B (catalog 2016-09-13); AIAA survey; its p.6 model table documents SSCM + NICM/NICM-E scope, versions and access routes.
+- [x] **koenig_stewart_2019_orion_tps_manufacturability_em1** - 744,038 B (catalog 2019-03-02); KSC; EM-1 Avcoat-block producibility -> cost/schedule/weight savings vs EFT-1.
+- [x] **clark_pensado_jones_grande_judd_2021_lander_function_allocation_propellant** - 3,060,088 B (catalog 2021-01-29); AMa + NASA LaRC; lunar lander/transport inert-mass-fraction sizing inputs (Tables 7/9).
+- [ ] **borner_venkatapathy_2024_low_cost_tps_materials** - extraction-only, NOT hosted: NTRS determination MAY_INCLUDE_COPYRIGHT_MATERIAL with no in-file redistribution licence; read in full on 2026-10-03 (4,047,347 B PDF kept out of the repo per the licence rule).
+
+NICM/SSCM queue re-checks: NTRS holds NICM VI / NICM-E / NICM 8.5 but all three carry determination OTHER with no public download files (access-restricted via the NASA ONCE portal); JPL's landing page still answers HTTP 200 while the OCFO URL in the row now returns HTTP 404; SSCM's landing page still bot-blocks this machine -> both rows stay registered_not_pulled.
