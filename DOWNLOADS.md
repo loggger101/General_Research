@@ -271,3 +271,16 @@ Read live but NOT committed:
 - [ ] **nasa_sp125_huzel_huang_design_liquid_rocket_engines** (d3) - full 469-page NTRS scan fetched and read this machine (GOV_PUBLIC_USE_PERMITTED); 47,789,998 B exceeds the repo's ~36 MB max-committed-file cap -> hash-recorded in the domain CSV instead (sha256=471e590a…). Content check: engine-design chapters only - see rc-060.
 
 Still blocked after R103 re-check: vega_users_manual_issue4_apr2014 original URL still HTTP 410 Gone (migrated path 404, web.archive.org DNS-unreachable from this machine).
+## R104 - Domain 26 opened: spacecraft storage & energy-system physical properties (registered 2026-10-02; eight full texts pulled and hosted)
+
+Pulled + committed to `26_spacecraft_storage_energy_properties/full_texts/` (all NTRS, Public Use Permitted; Context-only pending extraction):
+- [x] **nasa_tm_2026_copv_stress_rupture_mechanics_carbon_fiber** - 451,515 B, NASA/TM-20260002192 (Mar 2026); carbon-fiber COPV stress-rupture mechanics.
+- [x] **ntrs_2010_copv_stress_rupture_testing** - 5,699,336 B, NASA Technical Reports Series (catalog 2010-05-19); measured COPV stress-rupture / proof-test data.
+- [x] **ntrs_2011_copv_flight_rationale_shuttle_program** - 2,030,784 B (catalog 2011-09-27); flight rationale behind the PV/W margin on every supercritical-gas tank.
+- [x] **ntrs_2020_kilopower_krusty_fission_power_experiment_missions** - 5,163,636 B (catalog 2020-06-04); KRUSTY fission-power experiment + potential missions.
+- [x] **ntrs_2020_krusty_reactor_design** - 3,820,631 B (catalog 2020-06-04); KRUSTY reactor thermal/electrical design basis.
+- [x] **nasa_tm_2025_rtg_power_performance_histories** - 705,240 B, NASA/TM-20250004743 (Jul 2025); measured GPHS/MMRTG performance histories.
+- [x] **nasa_tm_2011_long_term_cryogenic_storage_microgravity** - 3,801,225 B, NASA/TM-2011-215988 (Oct 2011); long-duration microgravity cryo storage & boil-off physics.
+- [x] **ntrs_2014_cryogenic_boiloff_reduction_system_testing** - 833,238 B (catalog 2014-07-28); measured MLI / vapor-cooled-shield boil-off reduction.
+
+No blocked routes this round: all eight NTRS download endpoints answered from this machine and every PDF verified as valid (`%PDF` magic + SHA-256).
