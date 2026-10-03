@@ -261,3 +261,13 @@ Pulled + committed to `12_destination_environments_physical_constants/full_texts
 - [x] **thomas_2023_dimorphos_orbital_period_change** (NEW source registered this round) - Nature 616:448 companion paper, PDF via the publisher's own article link (in-file CC BY 4.0 statement p.4); carries the measured −33.0 min orbital-period change upstream's Didymos row points at.
 
 Still blocked from this machine after R102 re-checks (routes recorded per row in the domain CSV): science.org PDFs HTTP 403 x3; Elsevier no-open-copy x3; Kopp & Lean TSI - AGU legacy 403 + Wiley pdfdirect bot-blocked despite OpenAlex OA flag; CODATA RMP APS paywall + NIST CUU Cloudflare challenge; ITU-R S.1003 free-download endpoints all failing (landing page live).
+## R103 - Domains 3+4 institutional queue work (registered 2026-10-02; two full texts pulled and hosted, one large scan read live but not committed)
+
+Pulled + committed to `full_texts/`:
+- [x] **nasa_oig_2024_ig-24-015_sls_block_1b** (d4) - 6.0 MB PDF from oig.nasa.gov; US government work. OIG projects SLS Block 1B development cost ~$5.7 billion before first flight on Artemis IV (2028).
+- [x] **nasa_std_5019_fracture_control_spaceflight_hardware** (d3) - current revision NASA-STD-5019A w/Change 4 revalidated 2025-09-05 from standards.nasa.gov; US government work.
+
+Read live but NOT committed:
+- [ ] **nasa_sp125_huzel_huang_design_liquid_rocket_engines** (d3) - full 469-page NTRS scan fetched and read this machine (GOV_PUBLIC_USE_PERMITTED); 47,789,998 B exceeds the repo's ~36 MB max-committed-file cap -> hash-recorded in the domain CSV instead (sha256=471e590a…). Content check: engine-design chapters only - see rc-060.
+
+Still blocked after R103 re-check: vega_users_manual_issue4_apr2014 original URL still HTTP 410 Gone (migrated path 404, web.archive.org DNS-unreachable from this machine).
