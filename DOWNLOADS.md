@@ -336,3 +336,12 @@ NOT committed (size cap ~36 MB; URL + recorded size/date in extracted_data/):
 - [ ] sb441-n373.bsp - 14.13 GB, https://ssd.jpl.nasa.gov/ftp/eph/small_bodies/asteroids_de441/sb441-n373.bsp (2021-03-31)
 
 Blocked this round: newton.spacedys.com/neodys/ serves an anti-bot interstitial ('Making sure you're not a bot!') from this machine - the NEODyS covariance service stays registered_not_pulled until it answers again.
+
+## R110 - Domain 14 peroxide deepening: dead Evonik HTP citation + three institutional NTRS docs (registered 2026-10-03; all three pulled and committed)
+
+Pulled + committed to `14_propellant_consumable_prices/full_texts/`:
+- [x] **nasa_hydrogen_peroxide_propulsion_perspective_ungers_draft** - nasa_hydrogen_peroxide_propulsion_perspective_ungers_draft.pdf, 567,878 B; NTRS 20020092187 (GOV_PUBLIC_USE_PERMITTED; no in-file copyright). Undated DRAFT deck referencing the 1997 time frame.
+- [x] **anderson_et_al_1999_peroxide_propulsion_turn_of_the_century** - anderson_et_al_peroxide_propulsion_turn_of_the_century.pdf, 3,698,448 B; NTRS 20000033615 (GOV_PUBLIC_USE_PERMITTED). In-file dates Aug-Oct 1999.
+- [x] **mcneal_anderson_1999_the_peroxide_pathway** - mcneal_anderson_the_peroxide_pathway.pdf, 507,395 B; NTRS 20000002829 (GOV_PUBLIC_USE_PERMITTED). In-file date February 17 1999.
+
+Dead source documented in rc-061: peroxidepropulsion.com (Evonik / Peroxide Propulsion HTP ~$5/kg quote) is hijacked - R110 re-check shows unrelated product pages; web.archive.org DNS-blocked from this machine so the original page is unrecoverable here.
