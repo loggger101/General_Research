@@ -19,3 +19,17 @@ Cells and their current upstream values (spacecost @77c6e11, `storage_systems.cs
 | Orbital propellant depot (cryogenic) | % stored mass lost/day | 0.03 (0.01-0.1) | development / 5 | nasa_tm_2011_long_term_cryogenic_storage_microgravity; ntrs_2014_cryogenic_boiloff_reduction_system_testing |
 
 Already registered in other domains and relevant here (referenced by id, not moved): `nugent_2022_rtb_cryocooler_test` + `plachta_2017_cryo_zbo_goals` (domain 5) back the two cryocooler rows; `nasa_std_5019_fracture_control_spaceflight_hardware` (domain 3, §7.2.2 Fracture-Critical COPVs + ANSI/AIAA S-081) is the standards chain behind the same COPV burst factor. No revision candidate opened: these are new backing for currently unbacked judgement cells, not corrections to an existing value. See `full_texts/` (8 PDFs).
+
+## R105 - Domain extended to the remaining storage_systems.csv cells (2026-10-03; +8 sources, all T2 full_text_hosted)
+
+Round 104 left four cell groups of `storage_systems.csv` without institutional backing (noted at the end of the R104 block). This round closes them: every source was pulled live from ntrs.nasa.gov on this machine, verified as a valid PDF (`%PDF` magic + SHA-256 in the manifest) and read with PyMuPDF before registration. All NTRS Public Use Permitted -> `ntrs-public-use`; all Context-only (gathering over extracting).
+
+| cell | unit | value (low-high) | status/TRL | backed by (R105 id) |
+|---|---|---|---|---|
+| Li-ion battery (system level) | Wh/kg | 130 (90-200) | operational / 9 | ntrs_2016_orion_small_cell_battery_design_support |
+| Flywheel energy storage | Wh/kg | 100 (40-180) | development / 6 | ntrs_2006_g2_flywheel_module_design; ntrs_2002_energy_storage_flywheels_on_spacecraft |
+| Regenerative fuel cell | Wh/kg | 400 (250-700) | development / 5 | ntrs_2020_analysis_100w_regenerative_fuel_cell_demonstration; nasa_cr_1984_regenerative_hydrogen_oxygen_fuel_cell_electrolyzer |
+| Sintered / consolidated cargo | Wh/kg ore consolidated | 350 (150-800) | concept / 3 | ntrs_2023_vacuum_sintering_highland_simulant; ntrs_2020_microwave_sintering_lunar_landing_pads |
+| Dust mitigation and seals | kg per kg mining hardware | 0.08 (0.03-0.2) | development / 5 | nasa_tm_2005_rev1_effects_lunar_dust_eva_systems_apollo |
+
+Notes: the Orion battery document is a JSC workshop presentation with a partial OCR text layer (title page + section headings intact; body figures not yet machine-readable - extraction follow-up). The MSCC microwave-sintering item is NTRS's PDF render of a .pptx. With R105, every propellant-storage and energy-storage cell group in `storage_systems.csv` now has at least one institutional source behind it; the cargo cells' *containment-mass* figures (Bulk ore restraint 0.15 kg/kg, Volatile cargo containment 0.05 kg/kg) remain upstream judgement rows - no institutional mass-per-kg figure located yet. No revision candidate opened: new backing for currently-unbacked cells, not corrections.

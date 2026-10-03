@@ -284,3 +284,16 @@ Pulled + committed to `26_spacecraft_storage_energy_properties/full_texts/` (all
 - [x] **ntrs_2014_cryogenic_boiloff_reduction_system_testing** - 833,238 B (catalog 2014-07-28); measured MLI / vapor-cooled-shield boil-off reduction.
 
 No blocked routes this round: all eight NTRS download endpoints answered from this machine and every PDF verified as valid (`%PDF` magic + SHA-256).
+## R105 - Domain 26 extended to the remaining storage_systems.csv cells (registered 2026-10-03; eight full texts pulled and hosted)
+
+Pulled + committed to `26_spacecraft_storage_energy_properties/full_texts/` (all NTRS, Public Use Permitted; Context-only pending extraction):
+- [x] **ntrs_2016_orion_small_cell_battery_design_support** - 3,412,099 B, JSC Battery Aerospace Workshop presentation (catalog 2016-11-15); Orion small-cell Li-ion design basis. Partial OCR text layer noted.
+- [x] **ntrs_2006_g2_flywheel_module_design** - 919,275 B (catalog 2006-08-01); ISS G2 flywheel module design.
+- [x] **ntrs_2002_energy_storage_flywheels_on_spacecraft** - 1,413,274 B (catalog 2002-01-01); NASA assessment of flywheel ESS for spacecraft power systems.
+- [x] **ntrs_2020_analysis_100w_regenerative_fuel_cell_demonstration** - 1,562,928 B (catalog 2020-08-01); measured 100-W regenerative FC demonstration.
+- [x] **nasa_cr_1984_regenerative_hydrogen_oxygen_fuel_cell_electrolyzer** - 803,371 B (catalog 1984-09-01); NASA CR orbital RFECS design report.
+- [x] **ntrs_2023_vacuum_sintering_highland_simulant** - 1,489,501 B (NTRS distribution 2023-06-12; no publicationDate field in the record); vacuum sintering of CSM-LHT-1G highland simulant.
+- [x] **ntrs_2020_microwave_sintering_lunar_landing_pads** - 666,699 B (NTRS distribution 2020-12-14); MSCC Moon Village workshop; NTRS PDF render of a .pptx.
+- [x] **nasa_tm_2005_rev1_effects_lunar_dust_eva_systems_apollo** - 732,267 B (NASA/TM-2005-213610/REV1, Apr 2007); Apollo EVA dust-contamination record.
+
+No blocked routes this round: all eight NTRS download endpoints answered from this machine and every PDF verified as valid (`%PDF` magic + SHA-256).
