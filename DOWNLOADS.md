@@ -315,3 +315,12 @@ Pulled + committed to `18_licensing_planetary_protection_space_law/full_texts/` 
 - [x] **faa_14_cfr_part_440_liability_insurance_requirements** - 59,237 B cleaned plain text of the current eCFR Part 440 (full part through Appendix A, §§ 440.1-440.19). NEW source: the direct regulatory home of the MPL caps behind 'Third-party liability insurance'.
 
 Both parts re-pullable at their canonical eCFR URLs (recorded in the rows); snapshots are point-in-time copies as of 2026-10-03. No blocked routes this round.
+
+
+## R108 - Domain 17 deepened: contingency + venture financing (registered 2026-10-03; two NTRS PDFs pulled and committed)
+
+Pulled + committed to `17_cost_of_capital_contingency_insurance/full_texts/` (ntrs.nasa.gov, HTTP 200 from this machine):
+- [x] **whitley_shinn_2012_economics_nasa_mission_cost_reserves** - 413,028 B PDF; NTRS copyright determination PUBLIC_USE_PERMITTED + no in-file licence statement -> hostable (ntrs-public-use). First empirical source for the 'Contingency reserve' cell.
+- [x] **scottoline_coleman_1999_loan_guarantees_tax_incentives_launch_ventures** - 618,692 B PDF; determination GOV_PUBLIC_USE_PERMITTED + no in-file licence statement -> hostable (ntrs-public-use). First institutional source for the venture cost-of-capital bracket behind 'Cost of capital (WACC)'.
+
+Both read in full; key findings quoted verbatim into FINDINGS.md's R108 block. No blocked routes this round.
