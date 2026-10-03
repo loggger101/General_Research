@@ -324,3 +324,15 @@ Pulled + committed to `17_cost_of_capital_contingency_insurance/full_texts/` (nt
 - [x] **scottoline_coleman_1999_loan_guarantees_tax_incentives_launch_ventures** - 618,692 B PDF; determination GOV_PUBLIC_USE_PERMITTED + no in-file licence statement -> hostable (ntrs-public-use). First institutional source for the venture cost-of-capital bracket behind 'Cost of capital (WACC)'.
 
 Both read in full; key findings quoted verbatim into FINDINGS.md's R108 block. No blocked routes this round.
+
+## R109 - Domain 13 deepened: JPL astrodynamics services re-classified (registered 2026-10-03; IOM manual pulled and committed, .bsp kernels URL'd)
+
+Pulled + committed to `13_astrodynamics_methods_ephemerides_software/`:
+- [x] **jpl_sb441_iom_perturber_manual** (I/O manual for jpl_de441_small_body_perturber_kernels) - full_texts/sb441_iom392r-21-005_perturbers_nasa-jpl.pdf, 993,300 B; JPL interoffice memorandum IOM 392R-21-005 (Farnocchia) published at nasa.gov, no in-file copyright statement -> public-domain. extracted_data/: r109_horizons_mars_observer_ephemeris.json (39,202 B), r109_horizons_bennu_101955_vectors_ephemeris.json (8,709 B) and r109_jpl_astrodynamics_services_key_numbers.csv.
+
+NOT committed (size cap ~36 MB; URL + recorded size/date in extracted_data/):
+- [ ] sb441-n16.bsp - 615.8 MB, https://ssd.jpl.nasa.gov/ftp/eph/small_bodies/asteroids_de441/sb441-n16.bsp (2021-03-31)
+- [ ] sb441-n373s.bsp - 936.6 MB, https://ssd.jpl.nasa.gov/ftp/eph/small_bodies/asteroids_de441/sb441-n373s.bsp (2021-09-02)
+- [ ] sb441-n373.bsp - 14.13 GB, https://ssd.jpl.nasa.gov/ftp/eph/small_bodies/asteroids_de441/sb441-n373.bsp (2021-03-31)
+
+Blocked this round: newton.spacedys.com/neodys/ serves an anti-bot interstitial ('Making sure you're not a bot!') from this machine - the NEODyS covariance service stays registered_not_pulled until it answers again.

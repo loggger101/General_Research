@@ -33,3 +33,15 @@ Sources the upstream repos cite that this registry did not have, found by readin
 - `github_celestia` (T4): economicspace repository audit: nothing taken.
 
 **Dead endpoint in economicspace CITATIONS.md (rc-049).** The Horizons API is listed as `https://ssd-api.jpl.nasa.gov/horizons.api`, which answers 404 with or without query parameters. The live endpoint is `https://ssd.jpl.nasa.gov/api/horizons.api` (an OBJ_DATA query for Mars returned JSON on 2026-09-27). Nothing in the pipeline calls it yet, so only the reference changes.
+
+## R109 - The three JPL service rows get live re-classified + the SB441 I/O manual registered (2026-10-03; registry 399 -> 400)
+
+R74 registered the services upstream's probes recommend but never use, all as `registered_not_pulled`. This round each was re-checked from this machine and moved to its true access class:
+
+| row | R109 result |
+|---|---|
+| jpl_horizons_api | **open_service** - Horizons API v1.3 at https://ssd.jpl.nasa.gov/api/horizons.api answered live JSON for a Mars OBSERVER ephemeris (PHYSICAL DATA: radius 3389.92+-0.04 km, density 3.933 g/cm^3) and a Bennu VECTORS query (osc elements A=1.12639 au / EC=.20375 at EPOCH 2455562.5; the exact shape upstream's F4 Lambert-oracle probe would issue). Evidence snapshots: extracted_data/r109_horizons_mars_observer_ephemeris.json + r109_horizons_bennu_101955_vectors_ephemeris.json, key numbers in r109_jpl_astrodynamics_services_key_numbers.csv. **v1.3 breaking change (2025 June): parameter `EPH_TYPE` renamed `EPHEM_TYPE`** - pre-2025 query examples now 400 with 'one or more query parameter was not recognized'. rc-049 re-checked: upstream's dead URL (ssd-api.jpl.nasa.gov/horizons.api) still HTTP 404; the corrected endpoint is now live-proven twice.
+| jpl_de441_small_body_perturber_kernels | **open_service** - kernel directory re-pulled live: sb441-n16.bsp 615.8 MB / sb441-n373s.bsp 936.6 MB / sb441-n373.bsp 14.13 GB, all beyond the ~36 MB repo cap -> URL'd + size/date-recorded in extracted_data/, not committed. The I/O manual SB441_IOM392R-21-005 (Farnocchia, JPL interoffice memorandum, 2021-03-30) pulled live and **hosted** under full_texts/ as its own registry row `jpl_sb441_iom_perturber_manual` [T2, public-domain; no in-file copyright statement].
+| neodys_orbit_covariance_service | stays **registered_not_pulled** - newton.spacedys.com/neodys/ now serves an anti-bot interstitial ('Making sure you're not a bot!', 3,629 B challenge page) from this machine instead of the JS app shell recorded in R74; no API surface reachable without solving it.
+
+No revision candidate opened or closed by this round (rc-049 stays open - upstream's CITATIONS.md is read-only and still carries the dead URL; its evidence column now records both re-checks).
