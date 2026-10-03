@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_std_5019_fracture_control_spaceflight_hardware,Governing standard for composite-overwrapped pressure vessels (COPVs),"ANSI/AIAA S-081-2000, Space Systems – Composite Overwrapped Pressure Vessels (COPVs)",,PDF p15,R103: STD-5019A defers COPV detail to AIAA S-081; this is the institutional chain behind storage_systems.csv 'COPV burst performance factor'
+nasa_std_5019_fracture_control_spaceflight_hardware,Fracture-critical COPV requirement section,7.2.2 Fracture Critical COPVs and Composite Overwrapped Pressurized Fluid Containers,,PDF p6,R103: the specific clause governing COPV burst/fracture control; backs the supercritical-gas tank cells

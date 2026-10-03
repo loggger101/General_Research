@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2024_ig-24-015_sls_block_1b,OIG projection of total SLS Block 1B development cost before first flight (Artemis IV),We project SLS Block 1B costs will reach approximately $5.7 billion before the system is scheduled to launch in 2028,USD,PDF p4,R103: OIG's own projection; $700M above NASA's Dec-2023 Agency Baseline Commitment of ~$5B
+nasa_oig_2024_ig-24-015_sls_block_1b,SLS Block 1B first-flight mission (after EUS slip),Block 1B's first flight was moved to Artemis IV,,PDF p3,R103: explains why the row is concept/cancelled-adjacent; upstream marks it CANCELLED Feb 2026
+nasa_oig_2024_ig-24-015_sls_block_1b,"Boeing Exploration Upper Stage (EUS) contract growth, initial -> through 2025",grown from $962 million to over $2 billion through 2025,USD,PDF p3,R103: EUS is the Block 1B upper stage; >half of Block 1B dev cost
+nasa_oig_2024_ig-24-015_sls_block_1b,"EUS development cost estimate, initial (2017) -> projected (through 2028)",initially agreed-upon cost of $962 million in 2017,USD,PDF p21,"R103: paired with 'nearly $2.8 billion through 2028, roughly three times'"
+nasa_oig_2024_ig-24-015_sls_block_1b,NASA Block 1B spend to date without a formal cost/schedule baseline (since FY2014),spending over $3 billion since 2014,USD,PDF p24,R103: accountability finding; no ABC until Dec-2023
+nasa_oig_2024_ig-24-015_sls_block_1b,"Boeing average monthly EUS burn rate, Feb-Aug 2023",spent on average $26 million a month on its EUS workforce,USD/month,PDF p23,R103: run-rate context for the ongoing overrun

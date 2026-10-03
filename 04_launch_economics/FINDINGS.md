@@ -352,3 +352,9 @@ NSTS-21492 Shuttle Payload Bay PUG [T2 — no NTRS record found from this machin
 ### Scope notes
 
 economicspace v1.39/v1.40 re-checked against the last sweep: refinery cost parameter changes in `modules/calc.py` + a new cislunar catalog CSV only — no new institutional citations to register. AsteroidCatalog 1.8.x was already swept at R83; its DOI tokens were re-verified unchanged. No revision candidates opened this round (every fairing cell is anchored to the document that draws it; the New Glenn 450-vs-458 m3 and Falcon edition-drift items are recorded as verification notes, not contradictions).
+
+## Round 103 - SLS Block 1B OIG anchor (2026-10-02)
+
+[nasa_oig_2024_ig-24-015_sls_block_1b] is now full_text_hosted: the audit upstream's operations.py header names as a representative anchor. Key figures (all verbatim, to r103 CSV): OIG projects SLS Block 1B development costs of ~$5.7 billion before first flight on Artemis IV (scheduled 2028) - $700 million above the Dec-2023 Agency Baseline Commitment (~$5 billion); Boeing's EUS contract grown from $962 million (2017) to over $2 billion through 2025, projected ~$2.8 billion by 2028; >$3 billion spent since FY2014 without a formal cost/schedule baseline; average $26M/month EUS burn Feb-Aug 2023.
+
+Relation to upstream: the launch_vehicles.csv 'SLS Block 1B (Cargo)' row is marked CANCELLED Feb 2026 along with the Exploration Upper Stage and never flew; IG-24-015 predates that decision and documents why the cost kept climbing - it anchors the pre-cancellation context of that row, not a live price. No re-pin: upstream carries no Block 1B development-cost cell.
