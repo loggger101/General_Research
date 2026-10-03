@@ -307,3 +307,11 @@ Pulled + committed to `21_mass_cost_estimating_relationships/full_texts/` (all N
 - [ ] **borner_venkatapathy_2024_low_cost_tps_materials** - extraction-only, NOT hosted: NTRS determination MAY_INCLUDE_COPYRIGHT_MATERIAL with no in-file redistribution licence; read in full on 2026-10-03 (4,047,347 B PDF kept out of the repo per the licence rule).
 
 NICM/SSCM queue re-checks: NTRS holds NICM VI / NICM-E / NICM 8.5 but all three carry determination OTHER with no public download files (access-restricted via the NASA ONCE portal); JPL's landing page still answers HTTP 200 while the OCFO URL in the row now returns HTTP 404; SSCM's landing page still bot-blocks this machine -> both rows stay registered_not_pulled.
+
+## R107 - Domain 18 deepened: primary regulatory text hosted (registered 2026-10-03; two eCFR parts pulled and committed as cleaned plain-text snapshots)
+
+Pulled + committed to `18_licensing_planetary_protection_space_law/full_texts/` (ecfr.gov, HTTP 200 from this machine; US government work -> public-domain):
+- [x] **faa_14_cfr_part_450_launch_reentry_licensing** - 140,412 B cleaned plain text of the current eCFR Part 450 (full part through Appendix A, §§ 450.1-450.219). R74's recorded URL pointed at a wrong chapter/subchapter path and hit a bot 'unblock' page; the corrected canonical URL is now in the row.
+- [x] **faa_14_cfr_part_440_liability_insurance_requirements** - 59,237 B cleaned plain text of the current eCFR Part 440 (full part through Appendix A, §§ 440.1-440.19). NEW source: the direct regulatory home of the MPL caps behind 'Third-party liability insurance'.
+
+Both parts re-pullable at their canonical eCFR URLs (recorded in the rows); snapshots are point-in-time copies as of 2026-10-03. No blocked routes this round.
