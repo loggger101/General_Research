@@ -55,6 +55,7 @@ where they had been filed before a domain for their cells existed; domains
 | 23 | Cost indices, dollar years & exchange rates | the `reference_year` of every spacecost table, the CPI factors in row notes, and the exchange rates behind non-US prices |
 | 24 | Aerocapture & aerobraking | `calc.py` aero-assisted returns (LEO/Mars trim, GEO aerocapture, fallback saving); `delta_v_segments.csv` aerocapture and aerobraked rows |
 | 25 | Net smelter return: refining charges & payable terms | `calc.py` `_mineral_implied_value` (100% of contained metal at refined prices) and the refined-metal basis of element prices |
+| 26 | Spacecraft storage & energy-system physical properties (propellant tankage / COPV / MLI / cryocooler; RTG / fission surface power) | `storage_systems.csv` propellant-storage + energy-storage cells (COPV burst performance factor, MLI passive, orbital-depot boil-off, RTG specific power, Kilopower-class fission W-elec/kg); the cargo-containment cells stay upstream judgement rows for now |
 
 ## Layout
 
@@ -92,6 +93,7 @@ tools/                                   build_registry.py (regenerate derived f
 23_cost_indices_dollar_years/             Domain 23: cost indices, dollar years & exchange rates
 24_aerocapture_aerobraking/               Domain 24: aerocapture & aerobraking
 25_net_smelter_return_refining_terms/     Domain 25: net smelter return: refining charges & payable terms
+26_spacecraft_storage_energy_properties/     Domain 26: spacecraft storage & energy-system physical properties
 
 <domain>/sources_domain.csv              The registry rows for that domain (the file you edit)
 <domain>/FINDINGS.md                     Prose write-ups and per-number comparisons, one block per round
