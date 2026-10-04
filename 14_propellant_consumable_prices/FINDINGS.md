@@ -13,7 +13,6 @@ Sources the upstream repos cite that this registry did not have, found by readin
 - `mobius_2024_fueling_starships_methane` (T4): propellants.csv LCH4 component price behind the methalox row.
 - `haltermann_solutions_rp1` (T4): propellants.csv RP-1 component price behind the kerolox row.
 - `spaceinsider_rp1_price` (T4): propellants.csv RP-1 component price behind the kerolox row.
-- `evonik_peroxide_propulsion_htp_quotes_2024` (T4): propellants.csv HTP and HTP/RP-1 ref_cost.
 - `efc_gases_xenon_krypton_space_propulsion` (T4): propellants.csv xenon ref_cost ($10k/kg "2023 EFC reference").
 - `aqua_calc_lox_bulk_price` (T4): propellants.csv LOX component price behind every LOX bipropellant row.
 ## R100 - First institutional anchors for propellant & consumable prices (2026-10-02; +2 sources T2x1/T3x1, both hosted; 1 extraction CSV; rc-059 opened)
@@ -41,7 +40,7 @@ All three upstream repos were re-swept at their current HEADs first and carried 
 
 ## R110 - Peroxide (HTP) institutional context for d14's dead Evonik citation + rc-061 opened (2026-10-03; +3 sources T2x3, all hosted)
 
-R74 registered `evonik_peroxide_propulsion_htp_quotes_2024` [T4] from upstream's HTP ~$5/kg comment and R100 recorded that peroxidepropulsion.com has since been HIJACKED (casino / baby-products spam) - the original Evonik quote is gone. This round re-checked the dead URL live again (still HTTP 200 serving unrelated Indonesian-language product pages, `lang="id"`) and confirmed web.archive.org remains DNS-blocked from this machine (archive.org resolves but its web host does not), so the original quote page is unrecoverable here. Instead of leaving d14's HTP rows with only a dead T4 citation, three institutional NTRS documents on NASA's peroxide propulsion program were pulled live and hosted - all determinationType GOV_PUBLIC_USE_PERMITTED with no in-file copyright statement:
+Upstream's HTP ~$5/kg comment cited 2024 Evonik / Peroxide Propulsion quotes, and R100 recorded that peroxidepropulsion.com has since been HIJACKED (casino / baby-products spam) - the original Evonik quote is gone. This round re-checked the dead URL live again (still HTTP 200 serving unrelated Indonesian-language product pages, `lang="id"`) and confirmed web.archive.org remains DNS-blocked from this machine (archive.org resolves but its web host does not), so the original quote page is unrecoverable here. Instead of leaving d14's HTP rows with only a dead T4 citation, three institutional NTRS documents on NASA's peroxide propulsion program were pulled live and hosted - all determinationType GOV_PUBLIC_USE_PERMITTED with no in-file copyright statement:
 
 | row | what it supplies for the HTP cells |
 |---|---|
@@ -52,3 +51,9 @@ R74 registered `evonik_peroxide_propulsion_htp_quotes_2024` [T4] from upstream's
 None of the three carries a per-kg HTP price - that remains upstream's unverified ~$5/kg judgement row until a live institutional quote or procurement record surfaces. All three rows carry Context-only markers (no extracted-data CSV this round; extraction is the follow-up step if/when pricing appears).
 
 **rc-061 opened** (citation): spacecost `spacecost/propellants.py` L376 + `reference/propellants.csv` HTP rows cite "Bulk ~$5/kg (Evonik / Peroxide Propulsion propellant-grade quotes 2024)" pointing at peroxidepropulsion.com, which no longer serves that content. Proposal: re-source with a live institutional quote or mark the cell unverified-pending-re-sourcing; see rc-061 evidence for both R100 and R110 dead-URL checks.
+
+## R112 - HTP price citation withdrawn upstream; dead source rejected (2026-10-04; registry -1)
+
+spacecost 0.5.1 (data contract 1.17.1, tag `v0.5.1`, merge commit `85da36c`) applied rc-061: the `HTP-98` component comment in `spacecost/propellants.py` and the notes of the `HTP  (98% peroxide monoprop)` and `HTP / RP-1  (peroxide bipropellant)` rows now say the ~$5/kg price is unsourced and awaits re-sourcing, instead of citing the 2024 Evonik / Peroxide Propulsion quotes on the hijacked peroxidepropulsion.com. No value moved: `ref_cost_usd_per_kg` stays 5.0 and 4.6875. rc-061 is `applied`.
+
+The source the old citation pointed to was rejected by owner decision (INDEX.md "Rejected sources"), and its row, its R74 bullet and its DOWNLOADS entry were removed. The three NASA peroxide-program rows registered in R110 stay as institutional context. The HTP cells still have no price source: what one has to supply is a dated $/kg for propellant-grade (>=90%) hydrogen peroxide from a supplier, a procurement record or an institutional study.
