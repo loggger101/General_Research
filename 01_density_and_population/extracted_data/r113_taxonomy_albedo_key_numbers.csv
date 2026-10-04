@@ -1,0 +1,21 @@
+source_id,item,value,unit,location_in_source,notes
+popescu_2018_movis_nir_taxonomy,asteroids classified from MOVIS NIR colours,18265,asteroids,PDF p1,arXiv 1807.00713v1 abstract
+popescu_2018_movis_nir_taxonomy,asteroids with a final (kNN and probabilistic agree) class,6496,asteroids,PDF p1,
+popescu_2018_movis_nir_taxonomy,S(ni) WISE albedo peak,0.26 +/- 0.10,pV,PDF p10,"1,882 S(ni) bodies with WISE albedo"
+popescu_2018_movis_nir_taxonomy,V(ni) WISE albedo centre,0.352 +/- 0.121,pV,PDF p10,broad distribution
+popescu_2018_movis_nir_taxonomy,low-albedo D(ni)s WISE albedo,0.08 +/- 0.03,pV,PDF p9,176 of 302 D candidates with pV < 0.15
+,upstream S median albedo,0.2340,pV,AsteroidCatalog@6a2cfbc asteroid_catalog/derive.py ALBEDO_BY_SPECTRAL_TYPE,"n=20,057; within Popescu's 0.26 +/- 0.10"
+,upstream V median albedo,0.3355,pV,AsteroidCatalog@6a2cfbc asteroid_catalog/derive.py ALBEDO_BY_SPECTRAL_TYPE,"n=2,038; within Popescu's 0.352 +/- 0.121"
+,upstream D median albedo,0.0820,pV,AsteroidCatalog@6a2cfbc asteroid_catalog/derive.py ALBEDO_BY_SPECTRAL_TYPE,"n=2,127; matches Popescu's low-albedo D 0.08 +/- 0.03"
+tinaut_ruano_2026_gaia_dr3_taxonomy,asteroids with Gaia DR3 reflectance spectra,60518,asteroids,PDF p1,
+tinaut_ruano_2026_gaia_dr3_taxonomy,asteroids classified,14042,asteroids,PDF p1,"classes A, B, C, D, E, F, G, K, L, M, P, S, V"
+masiero_2021_albedo_uncertainties_thermal_modeling,albedo uncertainty from sigma(H_V) = 0.3 mag with a 10% IR diameter,32-36,%,PDF p5,arXiv 2101.02728v1
+masiero_2021_albedo_uncertainties_thermal_modeling,albedo uncertainty from ~1 mag H_V error (Earth-like orbits),~70,%,PDF p5,
+masiero_2021_albedo_uncertainties_thermal_modeling,diameter uncertainty from H_V (1 mag) and an assumed albedo,~42,%,PDF p5,
+myhrvold_2022_four_band_wise_asteroids,four-band WISE observations analysed,82548,observations,PDF p4,"4,420 asteroids; arXiv 2110.12098v2"
+myhrvold_2022_four_band_wise_asteroids,median diameter error vs 24 stellar occultations,9.3,%,PDF p13,maximum 37.7%
+masiero_2021_neowise_reactivation_years_6_7,Year 6 thermal fits,199 NEOs; 5851 MBAs,objects,PDF p6,arXiv 2107.07481v1
+masiero_2021_neowise_reactivation_years_6_7,Year 7 thermal fits,175 NEOs; 5861 MBAs,objects,PDF p22,
+masiero_2021_neowise_reactivation_years_6_7,Reactivation vs cryogenic NEO diameter relative uncertainty,~30,%,PDF p1,
+murray_2023_neural_network_main_belt_albedos,reduction in average albedo error vs adopting a mean albedo,~37,%,PDF p10,arXiv 2305.16392v1
+murray_2023_neural_network_main_belt_albedos,main-belt asteroids in the predicted-albedo catalogue,585174,asteroids,PDF p11,

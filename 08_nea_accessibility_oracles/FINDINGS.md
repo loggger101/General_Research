@@ -17,3 +17,13 @@ The nhats.api summary table was re-pulled with the default constraints (confirme
 - **R53 reproduced**: 7,094 bodies (R53: 7,092). The minimum-Δv median is still 9.367 km/s, matching economicspace SECOND-PASS F6 (economicspace@1f470d4) to 3 dp, and the shares are unchanged: under 5 km/s 4.0%, 5-8 26.5%, 8-10 29.8%, 10 or more 39.7%; minimum-duration median 178 d.
 - **Accessibility ladder from live queries**: bodies with a trajectory at Δv caps of 4, 5, ..., 12 km/s number 38, 281, 717, 1,367, 2,163, 3,131, 4,277, 5,562 and 7,094. Each count equals the number of table rows with minimum Δv at or below the cap, so the per-body table and the service agree.
 - **Other fields**: 968 bodies have orbit condition code 0-2, 69 carry a measured size, and 696 have a maximum size of 140 m or more. The lowest minimum Δv is 2021 GM1 at 3.389 km/s; (2000 SG344) is fifth at 3.549. The API's per-body trajectory detail (object mode) was not pulled; it would take one call per body.
+
+## R113 - The NHATS filter, and a mining-specific accessibility database (2026-10-04; +2 sources, T2x1, T1x1)
+
+From the owner's link list.
+
+**`barbee_mink_adamo_2011_nhats_methodology`** (hosted, NTRS public use) defines the filter that `jpl_nhats_nea_dv_oracle` applies: Earth departure 2015-2040, round trip <=450 days, stay >=8 days, departure C3 <=60 km2/s2, total delta-v <=12 km/s including departure from a 400 km circular parking orbit, entry speed <=12 km/s, and size >=30 m (H <=26.5 at an assumed albedo of 0.05). Phase II: of 7,665 NEAs in SBDB on 2011-02-03, 765 passed the trajectory filter with 79,157,604 trajectory solutions, and 590 also passed the size cut. The oracle's round-trip delta-v therefore always carries these limits; its 12 km/s ceiling and 450-day duration are the constraints to state when its median is compared with economicspace's one-way legs.
+
+**`xie_bennett_dempster_2021_nea_mining_target_evaluation`** (registered; abstract read via Semantic Scholar; Elsevier paywall; the volume is 181, not 178 as the list had it) builds a database of 6,373 accessible NEA mining missions of up to 6 years in 2030-2065, finds that ~55% of accessible NEAs allow a stay of more than 4 years in a 6-year mission, and estimates retrievable water, PGM and silicate mass per asteroid under C and non-C assumptions. It is the closest published counterpart to economicspace's ranking and the next oracle to pull.
+
+Extracted data: `extracted_data/r113_nhats_methodology_key_numbers.csv` (4 rows).

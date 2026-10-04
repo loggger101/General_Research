@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+barbee_mink_adamo_2011_nhats_methodology,NHATS Phase II total mission dv limit,12,km/s,PDF p1,"incl. departure from a 400 km circular parking orbit; round trip <=450 d, stay >=8 d, C3 <=60 km2/s2, entry <=12 km/s, departure 2015-2040"
+barbee_mink_adamo_2011_nhats_methodology,NEAs in SBDB at 2011-02-03,7665,NEAs,PDF p1,
+barbee_mink_adamo_2011_nhats_methodology,NEAs passing the trajectory filter,765,NEAs,PDF p1,"79,157,604 trajectory solutions"
+barbee_mink_adamo_2011_nhats_methodology,NEAs also passing the >=30 m size cut,590,NEAs,PDF p1,size >=30 m = H <=26.5 at albedo 0.05
