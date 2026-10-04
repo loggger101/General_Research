@@ -120,3 +120,14 @@ Key facts read by word coordinates from the hosted PDFs:
 - SEP milestones: QSAR-1 Jun 2024 -> **Feb 2026** (test-facility recertification), QSAR-2 Jun 2025 -> Jun 2027 (cathode welding); life qual test report Oct 2028 -> Jan 2029 (+3 months).
 
 Extracted data: `extracted_data/r84_fy2026_sep_gateway_budget_lines.csv` (10 rows, both documents).
+
+## R113 - Nuclear electric propulsion: the specific mass the NEP row is missing (2026-10-04; +2 sources, T2x2)
+
+spacecost `reference/propellants.csv` row `Nuclear electric  (NEP, xenon)` (TRL 4, Isp 5000 s, read at spacecost@85da36c) is gated out because Module 4 sizes electric power off the photovoltaic row; its note says MW-class flight units are TRL 3-4. Nothing in the registry gave the power-system mass a nuclear power model would need.
+
+- **`polzin_et_al_2026_nep_technology_maturation_plan`** (NASA/TP, SNP-PLAN-0043 Rev 1.1, 16 Feb 2026; NTRS 20260001499; hosted, 19.9 MB). Table 2.1 sets the power-system specific mass at **24 kg/kWe threshold and 13 kg/kWe target** (41.7 and 76.9 We/kg), for 2-4 MWe of electric-propulsion power, and states that an opposition-class crewed Mars mission closes for 13-24 kg/kWe at a nominal 2 MWe. Its review of NESC findings puts most key NEP technologies at or below TRL 4, which matches the row.
+- **`nasa_sr1_freedom_mission_page`** (read live, not hosted). Space Reactor-1 Freedom, the first planned fission-electric spacecraft: about 12,000 kg, a 20 kWe HALEU closed-Brayton reactor, a 48 kW Power and Propulsion Element bus, 12-kW Hall thrusters, launch late 2028 to Mars. 20 kWe on 12 t is 1.67 We/kg for the whole vehicle (not the power system).
+
+The two sit at different scales: SR-1 is a 20 kWe demonstrator, the plan's KPPs are for MW-class cargo and crew vehicles. A nuclear power model for the NEP row would take the plan's 13-24 kg/kWe for MW-class systems. No revision candidate: the row is gated, not wrong.
+
+Extracted data: `extracted_data/r113_nep_key_numbers.csv` (10 rows).

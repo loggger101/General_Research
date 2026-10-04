@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+sanders_kleinhenz_2024_isru_space_mining_unoosa,production per lander mission,30-60,t,PDF p3,NASA vision; 'not currently funded or approved'
+sanders_kleinhenz_2024_isru_space_mining_unoosa,cislunar production scale,100s-1000s,t/yr,PDF p3,
+sanders_kleinhenz_2024_isru_space_mining_unoosa,human Mars transportation scale,100s,t/yr,PDF p3,
+sanders_kleinhenz_2024_isru_space_mining_unoosa,initial commercial commodity goal,10s,t/yr,PDF p3,
+araghi_2022_nasa_lunar_isru_technology_overview,"regolith oxygen extraction, minimum",10,t O2/yr,PDF p19,"3 years nominal, minimal maintenance"
+araghi_2022_nasa_lunar_isru_technology_overview,"icy regolith processing, minimum",15000,kg/yr,PDF p19,lunar PSR conditions; 3 years nominal
+araghi_2022_nasa_lunar_isru_technology_overview,regenerative oxygen and product-gas clean-up,10000,kg/yr,PDF p19,
+araghi_2022_nasa_lunar_isru_technology_overview,industrial-scale water electrolysis,10s,t/yr,PDF p19,
+,upstream IN_SPACE_ANNUAL_DEMAND_KG cislunar,100000,kg/yr,economicspace@29a0309 modules/mineral_value.py L943-950,JUDGEMENT; bottom of NASA's 100s-1000s t/yr band
+,upstream IN_SPACE_ANNUAL_DEMAND_KG lunar_surface,50000,kg/yr,economicspace@29a0309 modules/mineral_value.py L943-950,JUDGEMENT; matches NASA's '10s of t/yr' initial goal
+,upstream IN_SPACE_ANNUAL_DEMAND_KG mars_orbit + mars_surface,80000,kg/yr,economicspace@29a0309 modules/mineral_value.py L943-950,"60,000 + 20,000; below NASA's '100s t/yr for human Mars transportation'"

@@ -263,3 +263,25 @@ Sources the upstream repos cite that this registry did not have, found by readin
 - `hasselmann_2012_sdss_taxonomy_v1_1_pds` (T3): economicspace second-pass taxonomy check: independent SDSS class per numbered asteroid (research probe, not a stage input).
 - `carvano_2010_sdss_taxonomy_main_belt` (T1): method paper for the SDSS taxonomy table economicspace commits (hasselmann_2012_sdss_taxonomy_v1_1_pds).
 - `ivezic_2001_sdss_solar_system_objects` (T1): underlying survey of the SDSS taxonomy table economicspace commits.
+
+## R113 - Taxonomy and albedo lineage: nine sources from the owner's link list (2026-10-04; +9 sources, T1x9)
+
+The owner supplied a list of candidate sources for domain 1. Each was checked against the registry, its DOI resolved on Crossref and its text read where this machine could reach it. Three entries in the list carried wrong metadata: the A&A 665:A26 taxonomy paper is Mahlke, Carry & Mattei (already registered as `mahlke_2022_asteroid_taxonomy_spectra_albedo`, which backs the `Z` row), A&A 580:A98 is Carvano & Davalos, and the Icarus PII listed as an LSST/NEOSM phase-curve paper is Mahlke, Carry & Denneau (2021), Icarus 354:114094. Items that back no cell were rejected; they are listed in INDEX.md "Rejected sources" and the Round 113 log entry.
+
+Upstream read at AsteroidCatalog@6a2cfbc. The catalog takes its class from JPL `spec_B` (Bus/SMASSII letters), then `spec_T` (Tholen), and from SsODNet `taxonomy.class`; it derives diameter from H and the geometric albedo, using a measured albedo where one exists and otherwise `ALBEDO_BY_SPECTRAL_TYPE`, then `ALBEDO_BY_SEMI_MAJOR_AXIS_AU` (`_NEO` for near-Earth objects), then a fallback.
+
+| id | access | what it supplies |
+|---|---|---|
+| `bus_binzel_2002_smass2_feature_based_taxonomy` | registered, not pulled | The Bus (SMASSII) classes that JPL serves as `spec_B`, the catalog's primary class. Not read: Elsevier paywall and a ScienceDirect CAPTCHA. |
+| `popescu_2018_movis_nir_taxonomy` | read live (arXiv) | Classes for 18,265 MOVIS asteroids (6,496 final). Its NIR notation is where the catalog's `Ad`, `Bk`, `Cgx`, `Ds`, `Kl` and `Xt` keys come from. WISE-albedo peaks per class: S 0.26 +/- 0.10, V 0.352 +/- 0.121, low-albedo D 0.08 +/- 0.03. |
+| `tinaut_ruano_2026_gaia_dr3_taxonomy` | hosted (CC BY 4.0) | 14,042 asteroids in 13 classes from Gaia DR3 spectra (of 60,518 with spectra); near-UV separates B and F within the C-complex. A newer homogeneous class source than the catalog's inputs carry. |
+| `masiero_2021_albedo_uncertainties_thermal_modeling` | read live (arXiv) | Albedo error is dominated by H: 0.3 mag in H with a 10% infrared diameter gives 32-36% in albedo; ~1 mag on Earth-like orbits gives ~70% in albedo and ~42% in a diameter computed from H and an assumed albedo (p5). |
+| `myhrvold_2022_four_band_wise_asteroids` | read live (arXiv) | Re-fit of 4,420 asteroids from 82,548 WISE observations: median diameter error 9.3% (max 37.7%) against 24 occultations, about twice as close as NEOWISE, and a size-dependent NEOWISE diameter bias. |
+| `masiero_2021_neowise_reactivation_years_6_7` | read live (arXiv) | Thermal fits for 199 NEOs + 5,851 MBAs (year 6) and 175 NEOs + 5,861 MBAs (year 7), newer than NEOWISE V2.0; Reactivation NEO diameters carry ~30% relative uncertainty. |
+| `murray_2023_neural_network_main_belt_albedos` | read live (arXiv) | Neural-network albedos from proper elements, ~37% lower average error than a mean albedo; predictions for 585,174 main-belt asteroids. Could replace the semi-major-axis bins for main-belt bodies. |
+| `wang_2026_nea_albedo_from_orbital_elements` | registered, abstract read | NEA albedo distributions from main-belt source regions; could replace `ALBEDO_BY_SEMI_MAJOR_AXIS_AU_NEO`. |
+| `mahlke_carry_denneau_2021_atlas_phase_curves` | registered, abstract read | H, G1, G2 for 94,777 asteroids from ATLAS; could replace the H that Masiero shows dominates the albedo error. |
+
+**Checks against upstream.** The catalog's derived medians agree with Popescu's independent WISE-albedo peaks within the stated spreads: S 0.2340 against 0.26 +/- 0.10, V 0.3355 against 0.352 +/- 0.121, D 0.0820 against 0.08 +/- 0.03. Masiero's figures put a number on derive.py's warning that a 2x albedo error is a 2.8x mass error: for a typical NEA with a ~1 mag H error the albedo alone is uncertain by ~70%. No revision candidate: nothing contradicts a cell.
+
+Extracted data: `extracted_data/r113_taxonomy_albedo_key_numbers.csv` (20 rows, PDF pages of the arXiv versions).

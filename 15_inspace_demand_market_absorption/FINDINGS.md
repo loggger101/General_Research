@@ -75,3 +75,14 @@ Upstream's `geo` row of IN_SPACE_ANNUAL_DEMAND_KG is "the only row here anchored
 - **McDowell 'Space Activities in 2025'** (GCAT Rev 1.2; T3 dataset publication - verified live not pulled: no licence statement anywhere so the copy is recorded by size + sha256 only): anchors the FLEET-COUNT half of the row. Table 22 GEO population as of Jan 2026: active payloads **below GPZ 7 / GPZ+/-100 km 613 / graveyard 18 = total 638** (dead 779, debris 510). Upstream's "~550" is therefore now low by **+11.4%** (in-orbit operational band) to **+16.0%** (all active); at upstream's own implicit per-satellite figure of 72.7 kg/yr (= 40,000 / 550), the row would be ~44,600-46,400 kg/yr.
 
 **rc-057 is opened (kind=value) proposing a re-pin**: update the fleet count in the comment and set `geo` to ~44,600-46,400 kg/yr at upstream's own per-satellite figure; no contradiction on the mass side - every institutional N/S-only figure found this round (17.3-44.3 kg/sat/yr) sits below the total-station-keeping ~70 as it should. Extracted data: `extracted_data/r92_geo_stationkeeping_propellant_key_numbers.csv` (16 rows).
+
+## R113 - NASA's stated ISRU production scale against the demand judgements (2026-10-04; +2 sources, T2x2)
+
+economicspace `modules/mineral_value.py` `IN_SPACE_ANNUAL_DEMAND_KG` (read at economicspace@29a0309): cislunar 100,000, lunar_surface 50,000, mars_orbit 60,000, mars_surface 20,000 kg/yr, labelled JUDGEMENT. R80 anchored the cislunar row on Kornuta et al. (2019)'s 450 t/yr lunar-propellant forecast.
+
+- **`sanders_kleinhenz_2024_isru_space_mining_unoosa`** (NASA JSC, UNOOSA policy symposium; read live, not hosted because NTRS marks it may include copyright material). NASA's space-resources vision (p3; "not currently funded or approved"): 30-60 t per lander mission, 100s-1000s t/yr for cislunar space, 100s t/yr for human Mars transportation, and 10s of t/yr of commodities as the initial commercial goal.
+- **`araghi_2022_nasa_lunar_isru_technology_overview`** (NASA JSC, hosted). Capability-gap targets for a first lunar plant (p19): at least 10 t O2/yr from regolith, 15,000 kg/yr of icy-regolith processing, 10,000 kg/yr of oxygen clean-up, electrolysis at 10s of t/yr, each for 3 years.
+
+Against upstream: the cislunar 100 t/yr sits at the bottom of NASA's 100s-1000s t/yr band (and below Kornuta's 450 t/yr), the lunar_surface 50 t/yr matches "10s of t/yr" and five first plants at Araghi's oxygen target, and mars_orbit + mars_surface (80 t/yr) is below "100s of t/yr for human Mars transportation". These are agency vision and plant targets, not market forecasts, so they bracket the judgement cells without pinning them. No revision candidate.
+
+Extracted data: `extracted_data/r113_isru_production_targets.csv` (11 rows).
