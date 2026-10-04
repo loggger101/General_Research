@@ -56,3 +56,13 @@ What they supply this domain's cells:
 | (context) | IG-15-013 p12: NASA missions do not pay for DSN use unless a unique technology is added - the chargeable line applies to non-NASA/unique-tech cases, which is exactly the commercial context of this repo's rows |
 
 Extracted data: `extracted_data/r85_dsn_oig_audits_key_numbers.csv` (12 rows). No revision candidate opened or closed by this round.
+
+## R113 - A commercial antenna price for the downlink row (2026-10-04; +1 source, T4x1)
+
+spacecost `reference/operational_costs.csv` `Communications relay & data downlink` is $50 per Mbit [10, 200] with no source (read at spacecost@85da36c).
+
+**`aws_ground_station_price_list`**: the AWS Ground Station pricing page loads its figures by script, so the public AWS Price List API offer file was pulled live (publicationDate 2026-09-11, 47 products). On-demand antenna time is **$10 per minute narrowband** (<40 MHz instantaneous bandwidth) and **$22 per minute wideband** at most sites, $15 and $25 at Dubbo (Sydney region); reserved pricing is by contract.
+
+Two limits. AWS serves LEO/MEO spacecraft, not deep space, so it prices only near-Earth phases (delivery to LEO or a GEO depot); the cruise and proximity-operations downlink still rests on DSN pricing (`jpl_dsn_services_catalog_820_100`). And the price list gives no data rate, so converting $/minute to the row's $/Mbit needs a link-rate assumption this repo does not make. Two secondary GSaaS price guides on the owner's list were rejected in favour of this primary price list (Round 113 log entry). No revision candidate.
+
+Extracted data: `extracted_data/r113_aws_ground_station_prices.csv` (22 on-demand rates + the upstream cell).

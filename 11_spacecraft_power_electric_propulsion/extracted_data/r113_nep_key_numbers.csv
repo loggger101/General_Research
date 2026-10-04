@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+polzin_et_al_2026_nep_technology_maturation_plan,"power system specific mass KPP, threshold",24,kg/kWe,PDF p51,"Table 2.1; CTEs 1, 2, 3 and 5; = 41.7 We/kg"
+polzin_et_al_2026_nep_technology_maturation_plan,"power system specific mass KPP, target",13,kg/kWe,PDF p51,Table 2.1; = 76.9 We/kg
+polzin_et_al_2026_nep_technology_maturation_plan,total electric propulsion power KPP,2-4,MWe,PDF p51,Table 2.1
+polzin_et_al_2026_nep_technology_maturation_plan,alpha range closing an opposition-class crewed Mars mission,13-24,kg/kWe,PDF p38,nominal 2 MWe
+nasa_sr1_freedom_mission_page,spacecraft mass,12000,kg,"nasa.gov/mission/space-reactor-1-freedom (fetched 2026-10-04), 'Powering SR-1 Freedom'","'About 26,455 pounds (12,000 kilograms)'"
+nasa_sr1_freedom_mission_page,"reactor electric power (HALEU, closed Brayton)",20,kWe,"nasa.gov/mission/space-reactor-1-freedom (fetched 2026-10-04), 'Powering SR-1 Freedom'",
+nasa_sr1_freedom_mission_page,Power and Propulsion Element bus power,48,kW,"nasa.gov/mission/space-reactor-1-freedom (fetched 2026-10-04), 'Powering SR-1 Freedom'",
+nasa_sr1_freedom_mission_page,Hall thruster (AEPS) power,12,kW,"nasa.gov/mission/space-reactor-1-freedom (fetched 2026-10-04), 'Powering SR-1 Freedom'",
+nasa_sr1_freedom_mission_page,launch,late 2028,,"nasa.gov/mission/space-reactor-1-freedom (fetched 2026-10-04), 'Powering SR-1 Freedom'",Mars flyby; arrival 2029
+nasa_sr1_freedom_mission_page,reactor power per vehicle mass,1.67,We/kg,computed,"whole vehicle, not the power system; computed here"

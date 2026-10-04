@@ -72,3 +72,12 @@ Retried the three routes that could host `just_2019`: OpenAlex best_oa_location 
 spacecost 0.5.1 (data contract 1.17.1, tag `v0.5.1`, merge commit `85da36c`) applied rc-048: the `Beneficiation / on-site processing energy` row of `operational_costs.csv` no longer cites "NASA Money-Mass-ematics 2023" and now calls its 500 Wh/kg [100, 2000] of refined product an unsourced engineering estimate. No value moved.
 
 The worksheet was rejected by owner decision (INDEX.md "Rejected sources"). rc-048 rested on it alone, so it was deleted with the rejection, as README "Rejecting a source" step 6 requires; its number is not reused. The cell is unchanged in this domain's brief: it still needs a measured or designed specific energy for magnetic, electrostatic or thermal concentration, per kg of concentrate.
+
+## R113 - Two unread candidates for the excavation and beneficiation cells (2026-10-04; +2 sources, T1x2)
+
+From the owner's list. Both DOIs were verified on Crossref; ScienceDirect serves a CAPTCHA to this machine and both are paywalled, so neither abstract nor full text was read and both are `registered_not_pulled`.
+
+- `tang_et_al_2023_asteroid_rock_mechanical_properties` (Engineering Geology 321:107154): by its title, mineral make-up and macroscale strength of asteroid rock, the property the `Drilling / excavation energy` row (200 Wh/kg, its NIAC citation unidentifiable since R74) and `mining_rate_kg_per_day_per_kg_rig` lack.
+- `liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum` (Chemical Engineering Research and Design 233:150-161): the owner's list marked it unverified and doubted its relevance; the Crossref title shows laser processing of asteroid simulants with Fe-Ni enrichment in cryogenic vacuum, the in-space concentration step behind `beneficiation_recovery` (0.90) and `max_concentration_ratio` (50:1).
+
+What each supplies is unknown until read; both are on DOWNLOADS.md.

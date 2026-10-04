@@ -343,3 +343,17 @@ AsteroidCatalog data contracts 1.7.0/1.8.x resolved the four coarse fractions in
 - `jones_mccubbin_2014_phosphate_minerals_ll_chondrites` - S/Sq/Q phosphates: merrillite ~0.4 and chlorapatite ~0.2 wt% in LL chondrites.
 
 Already registered, matched rather than duplicated: `rubin_2019_67p_abundances` (the ices H2O:CO2:NH3 mix), `jarosewich_1990_meteorite_chemical_analyses` and `adam_2017` (= Hanuš et al. 2017, A&A 601 A114 - the ADAM density paper; verified_live_not_pulled with r71 extractions). No number was extracted from any of the eleven new rows: they are registered so the dependency is visible and readable later (full texts mostly behind publisher paywalls or bot blocks from this machine).
+
+## R113 - The class-to-meteorite mapping: two tests and two unread candidates (2026-10-04; +4 sources, T1x3, T4x1)
+
+From the owner's link list. The first two are CC BY 4.0 in PSJ, but iopscience.iop.org serves a bot-validation page to this machine and neither has an arXiv copy, so they are registered `open_not_pulled` from their Crossref abstracts and marked context-only.
+
+- `burbine_2024_testing_bus_demeo_with_meteorite_spectra`: about 1,500 meteorite spectra classified in Bus-DeMeo. HED meteorites fall in V, ordinary chondrites in the S-complex or Q, D- and X-types mostly in CM chondrites with many iron-meteorite matches, and C, B, L and Xc each mix meteorites of very different mineralogy. For the `composition` notes in AsteroidCatalog `reference/taxonomy_composition.csv` this means a class sets the analogue well for V and S/Q and poorly for the featureless classes, where albedo is needed to separate them.
+- `de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: JWST MIRI 5-28 um spectra of five spinel-rich L-types show Mg-rich crystalline olivine plus spinel or amorphous olivine and little hydration, and resemble the CV3 chondrite Allende (possibly CO3). This supports the `L` row (minerals spinel, olivine, pyroxene; note "possibly CV3 chondrite") as written.
+
+Two more are registered but unread (`registered_not_pulled`):
+
+- `mahlke_2022_phd_thesis_asteroid_taxonomy` (T4): its taxonomy is the paper already registered in domain 1, but its HAL abstract adds an application to asteroid-meteorite spectral matching, the same link the `composition` notes rest on. HAL serves a bot check to this machine, so only the abstract (via the HAL API) was read.
+- `lebofsky_et_al_1990_low_albedo_3um_photometry`: by its title, 3-um hydration photometry of low-albedo asteroids, which bears on which rows list hydrated silicates (phyllosilicates in the C-complex rows, none in P and D). No abstract is deposited anywhere this machine can reach and ScienceDirect serves a CAPTCHA.
+
+All four are qualitative or unread, so nothing is extracted. Upstream read at AsteroidCatalog@6a2cfbc.
