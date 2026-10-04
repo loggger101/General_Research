@@ -130,17 +130,11 @@ factors remain uncited.
 
 ## Round-3 additions — NEA population statistics (the size/completeness backbone of any ranking)
 
-### harris2015 [T1] — Harris & D'Abramo, "The population of near-Earth asteroids", Icarus 257:302–312
-- **Access**: paywalled; ScienceDirect bot-blocks this machine (verified 403 on the article page). Recorded `open_not_pulled` with abstract.
-- **Abstract (as published, retrieved via search snippet of the ADS record)**: "We describe a methodology of estimating the size-frequency distribution (SFD) of near-Earth asteroids (NEAs). We estimate the completion versus size of present surveys based on the re-detection ratio, that is, the fraction of all detections over a recent period that are re-detections of already discovered objects rather than new discoveries. The re-detection ratio is a robust measure of …"
-- **Why it matters here**: this is the peer-reviewed basis for *how complete* the SBDB/SsODNet catalogs actually are by size — i.e. whether our Stage-1 population (and therefore every per-type density/PGM average in domain 1) is biased toward large bodies. The re-detection-ratio method is exactly what a ranking pipeline needs to state as an assumption: "catalog completeness at D < X km is Y%".
-- **Caveat recorded by the authors' own follow-up**: the H-magnitude rounding issue (below) affected this paper's numbers — cite 2021, not 2015, for any population figure.
-
 ### harris_dabramo_2021 [T1] — Harris & D'Abramo, "The population of near-earth asteroids revisited and updated", Icarus (2021)
 - **Access**: open access per OpenAlex (`is_oa: true`, DOI 10.1016/j.icarus.2021.114452), but the Elsevier PDF endpoint bot-blocks this machine (verified: pdfft route → 403, HTML challenge). Recorded `open_not_pulled` — pullable from a normal interactive browser like `dziadura2023`.
 - **Abstract (retrieved via search snippet)**: "In this paper we update, extend, and improve upon the recent paper on Near-Earth Asteroid (NEA) population by Harris and D'Abramo (2015). We update the population estimate taking into account discoveries to August 3, 2020. Shortly after the previous paper was published, we identified a problem in our previous studies due to rounding off of absolute magnitude H by the Minor Planet Center to 0.1 …"
 - **Why it matters here**: this is the CORRECTED population estimate — the 2015 numbers are known-bad (MPC rounds H to 0.1 mag, which distorts size-frequency inference). Any completeness claim our pipeline makes should cite THIS paper. It also gives us a dated census boundary (discoveries through 2020-08-03) to pair with `catalog_date` on every output CSV — the same discipline this repo already applies to prices.
-- **Pipeline mapping**: backs the *population-statistics* half of domain 1 that rounds 1–2 left open: our ranking quality depends on knowing what fraction of each size class is actually in the catalog, and these two papers are the only peer-reviewed SFD-completeness method for NEAs. No numbers extracted this round (text not accessible) — recorded as context with abstracts so a later browser pull can fill `extracted_data/`.
+- **Pipeline mapping**: backs the *population-statistics* half of domain 1 that rounds 1–2 left open: our ranking quality depends on knowing what fraction of each size class is actually in the catalog, and this paper is the peer-reviewed SFD-completeness method for NEAs. No numbers extracted this round (text not accessible) — recorded as context with abstracts so a later browser pull can fill `extracted_data/`.
 
 ## Round-5 addition — a second independent per-body density sample (OA-pending)
 
@@ -206,7 +200,7 @@ factors remain uncited.
 - **Effect on the comparison table above**: the B-row "stray 1.33" ambiguity resolves to C; the Q "possible discrepancy" has no basis, so rc-006 is withdrawn; the K discrepancy rests on a single body (rc-001 evidence corrected). C (1.33-1.57 vs ours 1.50) still agrees.
 - **Citation**: Carry (2012) is Planetary and Space Science 73:98-118, DOI 10.1016/j.pss.2012.03.009. The registry DOI pointed at an unrelated A&A paper and the heading said 60(7):537-552; both corrected.
 - simda2024 re-classed `open_service` (the live SiMDA export is what was used; derived statistics are committed).
-- New rows in `extracted_data/backfill_2026-09-26_key_numbers.csv`: siltala_granvik_2021 and kretlow_2022 (page-located in the hosted PDFs); dziadura2023, harris_dabramo_2021, wilkinson_robinson_2000 (abstract-level, not re-checkable here); mp3c (live-service values). epsc2022_context, harris2015, adam_2017, demeo_2009_bus_taxonomy_near_ir and mpc_mpcorb are marked context-only in the registry, with reasons.
+- New rows in `extracted_data/backfill_2026-09-26_key_numbers.csv`: siltala_granvik_2021 and kretlow_2022 (page-located in the hosted PDFs); dziadura2023, harris_dabramo_2021, wilkinson_robinson_2000 (abstract-level, not re-checkable here); mp3c (live-service values). epsc2022_context, adam_2017, demeo_2009_bus_taxonomy_near_ir and mpc_mpcorb are marked context-only in the registry, with reasons.
 
 ## R70 - Full-extraction pass of the hosted sources (2026-09-27; registry unchanged)
 
@@ -241,7 +235,7 @@ This container's network was widened, so the DOWNLOADS.md sections B-D were retr
 - **wilkinson_robinson_2000** (NASA ADS scan, read from page images). All 82 samples of Tables 2-3 pass two checks: % error = SD / mean within rounding, and low <= median, mean <= high. The group means recompute from the samples to the printed Table 4 values (H 3.44 +/- 0.19, n = 42; L 3.40 +/- 0.15, n = 30; LL 3.29 +/- 0.17, n = 9; H4 counts Dhajala H3-4). In Appendix 1, 40 of 42 rows satisfy Fe(T) = Fe(M) + 0.7773 FeO + 0.6353 FeS within 0.3 wt%; Conquista and Macau differ by about 4.2 wt% as printed. The appendix lists 39 of this study's meteorites where the text says 40. The registry citation 35(6):1479-1488 was wrong; the paper is M&PS 35:1203-1213.
 - **Meteorite vs asteroid density**: the paper's own bound puts 433 Eros at 21-33% bulk porosity (average OC 3.40 against Eros 2.67 +/- 0.03). Upstream S 2.7 against LL/L meteorites at 3.29/3.40 implies ~20% macroporosity, consistent with that bound.
 - **epsc2022_context**: the Copernicus page now shows the full abstract without login (CC BY 4.0). It gives the chondritic Ru/Ir ratio 1.51 +/- 0.05 and projectile fractions in large-crater melts, but no absolute PGE concentrations, so the iron-meteorite PGE gap noted in R72 stays open. The 'Context-only' note in its registry row is replaced.
-- **Still blocked**: harris_dabramo_2021 (ScienceDirect Cloudflare), demeo_2009_bus_taxonomy_near_ir (HAL Anubis; TCD 403), harris2015 (closed). Their registry rows record what was tried.
+- **Still blocked**: harris_dabramo_2021 (ScienceDirect Cloudflare), demeo_2009_bus_taxonomy_near_ir (HAL Anubis; TCD 403). Their registry rows record what was tried.
 
 ## R74 - Upstream citations registered (2026-09-27; +22 sources, T1x20, T3x1, T4x1; nothing extracted)
 

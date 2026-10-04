@@ -89,11 +89,6 @@ All three new items hosted and access-verified from this machine. Domain now cov
 - Our `Electric propulsion efficiency` row carries total η = 0.60 (anode × mass-utilisation × PPU). This paper anchors the **PPU half at ~0.94** — which bounds the product: with the PPU at 0.94, the anode+mass terms together must be ≈0.64 for our total to hold, consistent with published gridded-ion figures (NEXT-class anode efficiency ~0.7-0.8). The row's range (0.45–0.72) is therefore defensible at its top end by a flight article.
 - This also retroactively validates the v1.6.0 split of the old combined 8 kg/kW thruster+PPU row: the PPU alone is ~34.5 kg and scales with POWER, exactly as the notes field argues — now with the underlying test report committed here.
 
-### next_highpower_2025 [T2] — Obenchain, Cretel, Wirz & Thomas (Oregon State / NASA Glenn), "NEXT Discharge and Performance Characterization for High Power Operation", JANNAF 2025
-- **Access**: NTRS record 20250006541 carries only a one-page abstract PDF from this machine (the full paper sits behind the conference link). Recorded `open_not_pulled` with the full abstract.
-- **Abstract (as published, retrieved live)**: combines recent NEXT test data and DC-ION multi-fidelity simulations across power levels; characterizes discharge plasma near centerline/exit plane, neutral ingestion in ground tests vs space extrapolation, grid erosion, chamber geometry sensitivity — "to inform life and performance analyses".
-- **Pipeline mapping**: context anchor for the high-power end of our electric rows: it is exactly the peer-reviewed work stream behind scaling NEXT-class performance to multi-kW (and beyond) operation — relevant whenever Module 4 sizes a mission above ~7 kW, where we are extrapolating past every flown article. No numbers extracted this round (abstract only).
-
 ## Round-4 status (domain 5)
 The electric-propulsion rows now rest on the flight article itself: kg/kW confirmed to the digit against NEXT-C's own design-build-test report, and the efficiency chain bounded by its measured PPU figure. Domain 5 coverage after this round: boil-off (r1), transfer loss (r1), ISRU yields + plant decomposition (r1/r3), volatiles-loss physics (r3), EP performance (r4 — new).
 
@@ -339,7 +334,7 @@ Re-verified every non-browser open-access route: Unpaywall 422; Semantic Scholar
 - **lac_bac_2024, round 1: the insulation labels were swapped.** The paper (p7) gives perlite 5905 W ≈ 0.04 %/day (the better stack) and HePUR 35 350 W ≈ 0.24 %/day. The table above and the CSV had it the other way round, and "35 W" was a truncation of 35 350 W. Our hydrolox 0.05 %/day still sits next to the best case; what changes is which insulation that case is. Abstract figures for LAC/BAC with each stack are now extracted.
 - **ssap_2021**: round 1 called Table 3 fully extracted, but only 3 of its 9 bodies were. The full table (Moon mare/highlands, Mars, three C-type and three S-type mineralogies, 8 products) is in `extracted_data/ssap_2021_table3_theoretical_yields.csv`.
 - **zero_bo_off_2025** is an arXiv preprint with no journal version: re-tiered T2, and "peer-reviewed lower bound" corrected in the registry, INDEX and rc-028. lac_bac_2024 (Cryogenics 148:104065, 2025) and ssap_2021 (Acta Astronautica 188:57-63, 2021) were published, so they stay T1.
-- Page numbers added to the nextc_ppu_2020 rows; the DSN and insurance CSVs gained `source_id`. stackpoole_2013 and next_highpower_2025 are marked context-only.
+- Page numbers added to the nextc_ppu_2020 rows; the DSN and insurance CSVs gained `source_id`. stackpoole_2013 is marked context-only.
 
 ## R70 - Full-extraction pass of the hosted sources (2026-09-27; registry unchanged)
 

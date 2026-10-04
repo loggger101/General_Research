@@ -181,12 +181,8 @@ Open the link, use the site's own "Download PDF" button, and save under the name
 - [ ] **taylor2018** (0) — Δv map of the known main-belt asteroids, Acta Astronautica 146:73. Closed access; no preprint on arXiv.
   Get: https://doi.org/10.1016/j.actaastro.2018.02.014 (institutional login)
   Save as `taylor2018.pdf`. Extract only. **High value for the main-belt Δv rows.**
-- [ ] **harris2015** (0, context-only) — Icarus 257, closed, and superseded by harris_dabramo_2021. Optional.
-  Get: https://doi.org/10.1016/j.icarus.2015.05.004
 - [ ] **schoenman_1992** (2) — AIAA-92-3800, 490 N engine test experience. NTRS has the abstract only; buy from AIAA. Optional.
   Get: https://arc.aiaa.org/ (search "AIAA-92-3800")
-- [ ] **next_highpower_2025** (0) — JANNAF 2025 NEXT high-power paper. NTRS has a one-page abstract (re-checked R73: still `NEXTDischargeJANNAFvF3.pdf`, one page, no numbers); the full paper comes from JANNAF or the authors. Optional.
-  Record: https://ntrs.nasa.gov/citations/20250006541
 
 ---
 
