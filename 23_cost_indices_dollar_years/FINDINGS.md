@@ -49,3 +49,15 @@ The four index and exchange-rate services the upstream notes rely on were pulled
 **Exchange rates.** PSLV-XL's 'Rs 130-200 crore ($16-24M, 2023)' implies INR/USD 81.25-83.33 and matches the official 2023 period average (82.60) — consistent with its stated year. Ariane 5 ECA's $ band on a EUR 150-190M cost implies USD/EUR 1.100-1.158; the row states no date, and official averages were >=1.10 only pre-2022 (last: 2021 x1.183) and again from 2025 (x1.130), with 2023 = 1.081 and 2024 = 1.082 — the band is plausible for several years but pinned to none of them.
 
 **Still open in this domain.** Which index suits which cost class (PEBD's NNSI-for-development / employment-index-for-operations split is extracted under `planetary_society_pebd_mission_costs`, domain 7, and remains the only guidance registered); NASA New Start Inflation Index as a standalone series; escalation of the OSIRIS-REx 'actual' figures in operational_costs.csv (no dollar year stated upstream).
+
+## R113 - The NASA New Start Inflation Index as a standalone series (2026-10-04; +1 source, T3x1)
+
+The opening block names NNSI as the missing index; until now it was available here only as PEBD's copy (`r73_pebd_reference_indices.csv`).
+
+**`nasa_new_start_inflation_index_fy26`**: NASA OCFO's workbook (FY25 tables for use in FY26, actuals through September 2025), linked from the PP&C Models & Tools page and hosted. Annual rates: FY2024 3.25%, FY2025 3.79%, FY2026 3.21% (projected), FY2027 2.47%. Cumulative factors: FY2009 to FY2024 x1.4261; to FY2026 from FY2009 x1.5278, FY2010 x1.5071, FY2011 x1.4832; FY1969 to FY2026 x11.0714.
+
+Against the escalations upstream writes into row notes: R78 showed they follow a World Bank CPI chain read through 2024 (2009..2024 x1.4570). Over that span NNSI gives x1.4261, **2.1% lower** than CPI. The larger difference is the end year: every row claims 2026 dollars, and NNSI carries FY2009 to FY2026 at x1.5278, 4.9% above the CPI-to-2024 factor upstream used. Which index suits which cost class (NNSI for development, an employment-cost index for operations, as PEBD does) is still the open question in this domain; no revision candidate until upstream picks an index.
+
+The FY2018 NNSI table on the owner's list was rejected as superseded by this release (Round 113 log entry).
+
+Extracted data: `extracted_data/r113_nasa_nnsi_fy26_factors.csv` (13 rows; the CPI comparison row is computed here).

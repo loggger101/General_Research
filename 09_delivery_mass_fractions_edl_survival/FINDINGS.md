@@ -41,3 +41,15 @@ Every hosted full text in this domain was re-read end to end for pipeline-useful
 This round's container reached only package registries (arXiv, NTRS, JPL, Google Docs and every publisher returned 403), so nothing new could be fetched; the work used the hosted PDFs and the 20 restored from git `5dd58d5`. Each hosted and restored PDF's table captions were listed and matched against the extracted CSVs; tables no CSV cited were read by word coordinates (columns assigned from header or fully populated rows, so blank cells stay blank) or from rendered page images, and checked against printed totals. Upstream heads re-read: spacecost@e831245, AsteroidCatalog@852bf69, economicspace@1f470d4 (unchanged since 2026-09-26). New files: `r72_mars2020_edl_sim_vs_flight_summaries.csv` (16); `r72_mars2020_edl_table10_newstep_trajectory.csv` (36); `r72_mars2020_edl_table13_atmosphere.csv` (31).
 
 - **Mars 2020 NewSTEP reconstruction, Tables 10 and 13** (R70 took Table 7, the GNC conditions): trajectory at 36 events (time, MOLA and AGL altitude, relative and air-relative velocity, FPA, Mach, dynamic pressure) and atmosphere at 31 events. The two cross-check: air-relative velocity / sound speed reproduces every printed Mach, and 0.5 rho v^2 reproduces the printed dynamic pressure except at range control, where Table 13 prints density to one significant figure (0.00004; 511.09 Pa implies 3.53e-5 kg/m3). Summary Tables 3, 5, 9 and 12 give the quantile counts, each summing to its total.
+
+## R113 - A lander dry-mass fraction with a table behind it (2026-10-04; +1 source, T2x1)
+
+spacecost delivery.py sets `LANDER_DRY_MASS_FRAC` = 0.20 as dry / (dry + propellant) with "no table row", from the Apollo LM descent stage (2,134 kg dry on 8,200 kg of propellant, 0.21); read at spacecost@85da36c, L254-258. `TUG_DRY_MASS_FRAC` (0.10) is unchanged by this round.
+
+**`kennedy_2019_nasa_lunar_lander_reference_design`** (NASA/TP, NTRS 20190033128, hosted) is NASA's robotic pallet lander for a ~300 kg payload to the lunar poles. Figure 2 (PDF p25): dry basic mass 1,053.77 kg, dry growth 234.26 kg, 8% dry margin 84.30 kg, 3% customer reserve 127.5 kg, and 2,753.62 kg of solid plus liquid propellant, ~4,250 kg at launch. Dry / (dry + propellant) is **0.333** with the reserve left out and **0.353** with it.
+
+This does not contradict 0.20. A small robotic lander with a solid braking motor and a fixed avionics and power floor carries more dry mass per kg of propellant than a large one, so 0.33 is an upper bound for small landers, and Apollo's 0.21 remains the large-lander anchor. What the cell still lacks is a lander in the pipeline's cargo class (tonnes delivered) with a published mass table. No revision candidate.
+
+The owner's list also offered a 2007 Langley structural study and a 2015 overview of this same pallet lander; neither has a dry/propellant split, so both were rejected (Round 113 log entry).
+
+Extracted data: `extracted_data/r113_lunar_lander_mass_breakdown.csv` (9 rows; the two fractions are computed here).

@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+cospar_2026_planetary_protection_policy,"outbound category, undifferentiated metamorphosed asteroids",I,category,PDF p9,"category table, section 6"
+cospar_2026_planetary_protection_policy,"outbound category, carbonaceous-chondrite asteroids",II,category,PDF p9,category table
+cospar_2026_planetary_protection_policy,"Earth return from small Solar System bodies, default",V unrestricted,category,PDF p9,restricted only if all six questions of 6.5.2 are answered 'no' or 'uncertain'
+cospar_2026_planetary_protection_policy,framework for the small-body return determination,NRC 1998 SSB framework,,PDF p3,section 6.5.2
+pl_114_90_hr2262_enrolled_space_act,sec. 403 disclaimer of extraterritorial sovereignty,"no assertion of sovereignty, exclusive rights, jurisdiction or ownership over any celestial body",,PDF p19,sense of Congress; not codified in 51 U.S.C. ch. 513
+pl_114_90_hr2262_enrolled_space_act,"sec. 102(d) launch-liability indemnification date, 51 U.S.C. 50915(f)","September 30, 2025",date,PDF p3,"replaced December 31, 2016; later extensions not checked here"
+pl_114_90_hr2262_enrolled_space_act,sec. 402 text of 51 U.S.C. 51301-51303,identical to the codified chapter,,PDF p17,"word-for-word comparison with the govinfo USCODE-2023 chapter, done here"
+usc_title51_chapter513_space_resource_utilization,"51 U.S.C. 51303 right to possess, own, transport, use and sell",US citizens engaged in commercial recovery,,PDF p2,"added by Pub. L. 114-90, title IV, sec. 402(a), Nov. 25, 2015, 129 Stat. 721"

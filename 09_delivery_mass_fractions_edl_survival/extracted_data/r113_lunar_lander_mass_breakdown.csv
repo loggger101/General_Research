@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+kennedy_2019_nasa_lunar_lander_reference_design,dry basic mass,1053.77,kg,PDF p25,Figure 2 (doc p9)
+kennedy_2019_nasa_lunar_lander_reference_design,dry growth mass,234.26,kg,PDF p25,
+kennedy_2019_nasa_lunar_lander_reference_design,8% dry mass margin,84.30,kg,PDF p25,
+kennedy_2019_nasa_lunar_lander_reference_design,3% customer reserve,127.5,kg,PDF p25,
+kennedy_2019_nasa_lunar_lander_reference_design,propellant mass (solid + liquid),2753.62,kg,PDF p25,
+kennedy_2019_nasa_lunar_lander_reference_design,launch mass,~4250,kg,PDF p24,doc p8; text gives propellant mass fraction at launch 0.61 under AIAA S-120A margins
+kennedy_2019_nasa_lunar_lander_reference_design,"dry/(dry+propellant), dry = basic + growth + margin",0.3326,fraction,computed from Figure 2,computed here
+kennedy_2019_nasa_lunar_lander_reference_design,"dry/(dry+propellant), dry also carrying the customer reserve",0.3526,fraction,computed from Figure 2,computed here
+,upstream LANDER_DRY_MASS_FRAC,0.20,fraction,spacecost@85da36c spacecost/delivery.py L258,"set from the Apollo LM descent stage, 2,134 kg dry on 8,200 kg propellant = 0.21 (comment L255-257)"

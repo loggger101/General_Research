@@ -340,3 +340,27 @@ Pulled + committed to `14_propellant_consumable_prices/full_texts/`:
 - [x] **mcneal_anderson_1999_the_peroxide_pathway** - mcneal_anderson_the_peroxide_pathway.pdf, 507,395 B; NTRS 20000002829 (GOV_PUBLIC_USE_PERMITTED). In-file date February 17 1999.
 
 Dead source documented in rc-061: peroxidepropulsion.com (Evonik / Peroxide Propulsion HTP ~$5/kg quote) is hijacked - R110 re-check shows unrelated product pages; web.archive.org DNS-blocked from this machine so the original page is unrecoverable here.
+
+## R113 - Owner's link list (registered 2026-10-04; eight files committed, the rest below)
+
+Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
+
+- [ ] **bus_binzel_2002_smass2_feature_based_taxonomy** - https://doi.org/10.1006/icar.2002.6856 - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host.
+- [ ] **popescu_2018_movis_nir_taxonomy** - https://doi.org/10.1051/0004-6361/201833023 - Read from arXiv. aanda.org returns 403 here; the A&A version carries EDP copyright, so extraction only.
+- [ ] **masiero_2021_albedo_uncertainties_thermal_modeling** - https://doi.org/10.3847/PSJ/abda4d - Read from arXiv. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
+- [ ] **myhrvold_2022_four_band_wise_asteroids** - https://doi.org/10.3847/PSJ/ac3232 - Read from arXiv. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
+- [ ] **masiero_2021_neowise_reactivation_years_6_7** - https://doi.org/10.3847/PSJ/ac15fb - Read from arXiv. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
+- [ ] **murray_2023_neural_network_main_belt_albedos** - https://doi.org/10.3847/PSJ/acd381 - Read from arXiv. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
+- [ ] **wang_2026_nea_albedo_from_orbital_elements** - https://doi.org/10.1088/1674-4527/ae37ed - IOP standard licence (not CC) and bot-walled here: save the PDF for extraction only.
+- [ ] **mahlke_carry_denneau_2021_atlas_phase_curves** - https://doi.org/10.1016/j.icarus.2020.114094 - Icarus version is CC BY-NC-ND 4.0 but ScienceDirect gets a CAPTCHA here: save the publisher PDF; it may be hosted under that licence.
+- [ ] **burbine_2024_testing_bus_demeo_with_meteorite_spectra** - https://doi.org/10.3847/PSJ/ad57b6 - Abstract only so far. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
+- [ ] **de_kleer_2026_jwst_spinel_rich_l_type_mineralogy** - https://doi.org/10.3847/PSJ/ae374e - Abstract only so far. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
+- [ ] **xie_bennett_dempster_2021_nea_mining_target_evaluation** - https://doi.org/10.1016/j.actaastro.2021.01.011 - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host. Its target tables are the d8 comparison to extract.
+- [ ] **nasa_sr1_freedom_mission_page** - https://www.nasa.gov/mission/space-reactor-1-freedom/ - Read live; a web page, nothing to download.
+- [ ] **sanders_kleinhenz_2024_isru_space_mining_unoosa** - https://ntrs.nasa.gov/citations/20240002713 - Read live; NTRS marks it may include copyright material, so it stays unhosted.
+- [ ] **cospar_2026_planetary_protection_policy** - https://cosparhq.cnes.fr/assets/uploads/2026/01/SRT_224_Editorial_PPP-Nov-2025.pdf - Read live; no licence on the file, so it stays unhosted.
+- [ ] **tang_et_al_2023_asteroid_rock_mechanical_properties** - https://doi.org/10.1016/j.enggeo.2023.107154 - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host. Not yet read at all.
+- [ ] **liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum** - https://doi.org/10.1016/j.cherd.2026.08.007 - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host. Not yet read at all.
+- [ ] **paulson_balchanos_mavris_2026_isru_economic_environmental_tradeoffs** - https://doi.org/10.2514/6.2026-2788 - AIAA paywall (abstract read). Save a copy for extraction only; do not host.
+- [ ] **mahlke_2022_phd_thesis_asteroid_taxonomy** - https://theses.hal.science/tel-03850762/ - HAL serves a bot check here: save tel-03850762 (2022COAZ4051.pdf) from theses.hal.science; HAL licence is not CC, so extraction only.
+- [ ] **lebofsky_et_al_1990_low_albedo_3um_photometry** - https://doi.org/10.1016/0019-1035(90)90003-R - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host. Not yet read at all.

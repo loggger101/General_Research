@@ -1,0 +1,14 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_new_start_inflation_index_fy26,annual inflation rate FY2024,3.25,%,"sheet 'Inflation Table' (actuals thru September 2025), row INFL.RATE",actual
+nasa_new_start_inflation_index_fy26,annual inflation rate FY2025,3.79,%,"sheet 'Inflation Table' (actuals thru September 2025), row INFL.RATE",actual
+nasa_new_start_inflation_index_fy26,annual inflation rate FY2026,3.21,%,"sheet 'Inflation Table' (actuals thru September 2025), row INFL.RATE",projected
+nasa_new_start_inflation_index_fy26,annual inflation rate FY2027,2.47,%,"sheet 'Inflation Table' (actuals thru September 2025), row INFL.RATE",projected
+nasa_new_start_inflation_index_fy26,cumulative factor FY2009 -> FY2024,1.4261,ratio,"sheet 'Inflation Table' (actuals thru September 2025), row FROM 2009",
+nasa_new_start_inflation_index_fy26,cumulative factor FY2009 -> FY2026,1.5278,ratio,"sheet 'Inflation Table' (actuals thru September 2025), row FROM 2009",
+nasa_new_start_inflation_index_fy26,cumulative factor FY2010 -> FY2026,1.5071,ratio,"sheet 'Inflation Table' (actuals thru September 2025), row FROM 2010",
+nasa_new_start_inflation_index_fy26,cumulative factor FY2011 -> FY2026,1.4832,ratio,"sheet 'Inflation Table' (actuals thru September 2025), row FROM 2011",
+nasa_new_start_inflation_index_fy26,cumulative factor FY2016 -> FY2026,1.3734,ratio,"sheet 'Inflation Table' (actuals thru September 2025), row FROM 2016",
+nasa_new_start_inflation_index_fy26,cumulative factor FY2017 -> FY2026,1.3448,ratio,"sheet 'Inflation Table' (actuals thru September 2025), row FROM 2017",
+nasa_new_start_inflation_index_fy26,cumulative factor FY1969 -> FY2026,11.0714,ratio,"sheet 'Inflation Table' (actuals thru September 2025), row FROM 1969",
+world_bank_usa_annual_cpi_inflation,World Bank CPI chain 2009 -> 2024 (R78),1.4570,ratio,23_cost_indices_dollar_years/extracted_data/r78_index_factors_and_fx_averages.csv,the factor behind the upstream DSN note
+nasa_new_start_inflation_index_fy26;world_bank_usa_annual_cpi_inflation,"NNSI vs CPI chain, 2009 -> 2024",-2.1,%,computed,computed here; negative = NNSI lower
