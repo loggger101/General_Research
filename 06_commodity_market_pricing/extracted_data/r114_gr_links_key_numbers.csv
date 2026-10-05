@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+ipa_sfa_2026_osmium_pgm_factsheet,osmium price benchmark,"none: 'There is no exchange-traded benchmark price, and there is no market transparency, with only small industrial quantities traded'",,PDF p5 (PRICE & PRICE VOLATILITY),Osmium is priced at each transaction between seller and buyer; customs codes group Os with Ir and Ru
+ipa_sfa_2026_osmium_pgm_factsheet,historical osmium price,300-400,USD/troy oz,PDF p5,'fixed in the 300-400$/oz range since the 2000's'; Engelhard (now BASF) once quoted osmium in its Industrial Bullion sheet
+ipa_sfa_2026_osmium_pgm_factsheet,historical osmium price (computed here),9645-12860,USD/kg,computed from PDF p5,300 and 400 USD/oz x 32.1507 oz/kg
+ipa_sfa_2026_osmium_pgm_factsheet,upstream osmium price (computed here),404,USD/oz,computed,"economicspace $13,000/kg (see this domain's FINDINGS) / 32.1507 oz/kg; a hair above the top of the band"
+ipa_sfa_2026_osmium_pgm_factsheet,"osmium sponge price chart, 2019-2025",axis 200-500,USD/oz,PDF p5 chart,"'Osmium average sponge price $/oz', collated by SFA (Oxford) from TradeDataPro trade data; no values printed"
+ipa_sfa_2026_osmium_pgm_factsheet,global osmium production,hundreds of kilograms per year,,PDF p5,mined only as a by-product of PGM or nickel mining; only a small part of what is mined is recovered

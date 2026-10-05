@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+edwards_gabriel_1993_propellant_selection_uk25_ion_thruster_missions,xenon unit cost assumed,2400,USD/kg,PDF p3,'Approximate values for propellant unit costs were assumed'; source is the paper's ref. 15; year not stated
+edwards_gabriel_1993_propellant_selection_uk25_ion_thruster_missions,krypton unit cost assumed,450,USD/kg,PDF p3,same sentence
+edwards_gabriel_1993_propellant_selection_uk25_ion_thruster_missions,1:4 Xe/Kr mixture unit cost assumed,840,USD/kg,PDF p3,the average of the xenon and krypton values in the 1:4 ratio
+edwards_gabriel_1993_propellant_selection_uk25_ion_thruster_missions,launch cost assumed,6800,USD/kg,PDF p3,"launch to LEO by Ariane IV, 'from 1990 data'"
+edwards_gabriel_1993_propellant_selection_uk25_ion_thruster_missions,krypton / xenon price ratio (computed here),0.1875,ratio,computed from PDF p3,"450 / 2400; upstream's krypton $300/kg over xenon $10,000/kg is 0.03"
+edwards_gabriel_1993_propellant_selection_uk25_ion_thruster_missions,mission cost saving claimed,up to $2 million with krypton and up to $2 million with 1:4 Xe/Kr,,PDF p5,"propellant plus launch cost, for a baseline spacecraft modelled on Ulysses, if longer thrusting time is acceptable"

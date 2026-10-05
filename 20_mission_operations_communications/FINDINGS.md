@@ -66,3 +66,11 @@ spacecost `reference/operational_costs.csv` `Communications relay & data downlin
 Two limits. AWS serves LEO/MEO spacecraft, not deep space, so it prices only near-Earth phases (delivery to LEO or a GEO depot); the cruise and proximity-operations downlink still rests on DSN pricing (`jpl_dsn_services_catalog_820_100`). And the price list gives no data rate, so converting $/minute to the row's $/Mbit needs a link-rate assumption this repo does not make. Two secondary GSaaS price guides on the owner's list were rejected in favour of this primary price list (Round 113 log entry). No revision candidate.
 
 Extracted data: `extracted_data/r113_aws_ground_station_prices.csv` (22 on-demand rates + the upstream cell).
+
+## R114 - DSN aperture-fee history and two mission-level DSN bills (2026-10-04; +4 sources, T1x1, T2x3)
+
+rc-030 (`Deep Space Network time`, $1,530/hr, 26.5% below the Rev H-based $2,082) is unchanged. `nasa_mocs_2014_dsn_aperture_fee_algorithm` supplies the document upstream's note cites: AF = RB [AW (0.9 + FC/10)] with RB '$1057/hr. for FY09' and AW 0.80 (34 m high-speed beam waveguide), 1.00 (other 34 m), 4.00 (70 m or a four-dish array) (p17). At one contact a week the fee is RB x AW, so a standard 34 m hour was $1,057 in FY09; with the registered Rev H base of $1,792 (2022) that is a 70% rise over thirteen years (computed here). Two NASA concept studies carry mission-level bills from the JPL tool: `nasa_2021_uranus_orbiter_and_probe_decadal_mission_concept_study` ($21.3M of Phase E DSN charges) and `clark_2023_compass_jupiter_heliophysics_mission_concept_study` ($28.5M for a 5.5-year cruise with three 8-hour passes a week). Both describe the pass pattern in prose, so no hourly rate can be backed out of them.
+
+`remer_1992_modeling_dsn_costs_future_space_missions_major_cost_drivers` is registered from its record (probably a capital-cost model). Undecided: the PERSEUS Uranus mission paper (Springer challenge), two yumpu copies of the Rev C/E catalogs (bot check). Rejected: the DSN 'fees' page (it now serves the home page), the mission-documents landing page, the Stack Exchange answer that restates the MOCS formula, and two satellite-price pages (Round 114 log entry).
+
+Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
