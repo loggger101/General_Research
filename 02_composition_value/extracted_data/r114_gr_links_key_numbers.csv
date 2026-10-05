@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites,"CI chondrite Orgueil: Mg, Si, Fe",15.32; 24.12; 25.93,wt%,PDF p14 Table A1,ICP-MS
+trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites,"CI chondrite Orgueil: Co, Ni, Cu",420.88; 7719.25; 97.44,ppm,PDF p15 Table A2,ICP-MS
+trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites,Fe in the CM chondrites analysed (six),25.50 to 30.65,wt%,PDF p14 Table A1,range computed here from the table rows
+trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites,Ni in the CM chondrites analysed (six),6328 to 9319,ppm,PDF p15 Table A2,range computed here from the table rows
+trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites,Ni in the CO chondrites analysed (six),2779 to 14035,ppm,PDF p15 Table A2,"range computed here from the table rows; MIL11118.5 lowest, MIL090010.61 highest"
+trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites,"Ni in the CV chondrites analysed (seven, incl. Allende)",6133 to 15469,ppm,PDF p15 Table A2,range computed here from the table rows; Allende 13026
+trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites,Ni in the CR chondrites analysed (four),5956 to 8879,ppm,PDF p15 Table A2,range computed here from the table rows

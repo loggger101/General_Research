@@ -285,3 +285,11 @@ Upstream read at AsteroidCatalog@6a2cfbc. The catalog takes its class from JPL `
 **Checks against upstream.** The catalog's derived medians agree with Popescu's independent WISE-albedo peaks within the stated spreads: S 0.2340 against 0.26 +/- 0.10, V 0.3355 against 0.352 +/- 0.121, D 0.0820 against 0.08 +/- 0.03. Masiero's figures put a number on derive.py's warning that a 2x albedo error is a 2.8x mass error: for a typical NEA with a ~1 mag H error the albedo alone is uncertain by ~70%. No revision candidate: nothing contradicts a cell.
 
 Extracted data: `extracted_data/r113_taxonomy_albedo_key_numbers.csv` (20 rows, PDF pages of the arXiv versions).
+
+## R114 - PDS density and taxonomy tables, and a second Gaia DR3 class source (2026-10-04; +3 sources, T1x1, T3x2)
+
+The owner's rewritten link list (GR_links.txt, 197 URLs across most domains) opened with a domain 1 block of 16 URLs. Registered: `britt_2002_pds_asteroid_densities` (the PDS table behind Britt's Asteroids III chapter: 23 bodies with a best bulk density and class; the two M-types are Psyche 2.00 +/- 0.60 and Kalliope 2.50 +/- 0.30 g/cm3), `neese_2010_pds_asteroid_taxonomy_v3_0` (1,198 bodies with Tholen, Barucci, Tedesco, Howell and Xu classes; 985 carry a Tholen class, most commonly S 338; C 139; X 52; M 38; D 35; P 33; F 28; XC 23) and `pentikainen_2026_gaia_dr3_asteroid_characterization` (abstract only: a second Gaia DR3 class source with a Ch-class focus, beside `tinaut_ruano_2026_gaia_dr3_taxonomy`).
+
+The NASA Open Data records on the list for the first two say 'This dataset has no data'; the data are in the PDS archive at sbnarchive.psi.edu and were read there. LCDB V3.0 on the list is the PDS release of the lightcurve database registered as `warner_harris_pravec_2009_asteroid_lightcurve_database` (domain 12), so it was not registered a second time. The two 2001 Kaasalainen lightcurve-inversion papers have no abstract in Crossref, OpenAlex or Semantic Scholar and ScienceDirect blocks this machine; a retry found their abstracts through ADS and Semantic Scholar summaries, and both were rejected as spin and shape methods (Round 114 log entry). The remaining entries were rejected (Round 114 log entry). No revision candidate.
+
+Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.

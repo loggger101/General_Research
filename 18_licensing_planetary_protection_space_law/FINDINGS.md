@@ -75,3 +75,11 @@ The opening block left two cells with nothing upstream: the planetary-protection
 The owner's list also offered the 2020 and 2021 policy texts and ESA's ECSS-U-ST-20C; all three were rejected as superseded by the 2026 COSPAR text (Round 113 log entry). No revision candidate.
 
 Extracted data: `extracted_data/r113_space_law_and_planetary_protection.csv` (8 rows).
+
+## R114 - The FAA 2026 user fee, a CRS overview and planetary-protection cost (2026-10-04; +3 sources, T1x1, T3x2)
+
+`faa_2026_launch_reentry_licensing_user_fees_policy_statement` (91 FR 21591, 22 April 2026): from 2026 each licensed or permitted launch or reentry owes the user fee Congress created in Pub. L. 119-21 (51 U.S.C. 50924), the lesser of a per-pound payload schedule and a maximum schedule; payload weight is reported 60 days ahead and payment is due 30 days after notification. The notice gives no dollar rate; a secondary article on the owner's list reports $0.25 per pound with a $30,000 cap for 2026, and those figures are in the statute, which was not read. The licensing rows of `operational_costs.csv` ($2.5M and $1.2M per programme, 'FAA does not charge an application fee') are unaffected in order of magnitude. The public-inspection PDF and the govinfo HTML on the list are the same document; FAA Order 8800.4 answered 403 and was not read.
+
+`crs_r48144_2024_space_resource_extraction_overview_and_issues_for_congress` (24 pages, read) is registered as context for the right-to-sell premise: the Outer Space Treaty has over 100 signatories and is read both ways on extraction. `sinibaldi_haldemann_2026_planetary_protection_is_expensive_esa_perspective` (abstract) gives the planetary-protection cost share from ESA missions: none for category I-II, under 1% for category III orbiters, up to about 5% for category IV Mars landers, and category V Earth return an integral part of the mission. The 2015 edition of 51 U.S.C. chapter 513 on the list is an older codification of the registered chapter. Rejected: a House committee report, an environmental-impact framework and impact-assessment principles, none with a number (Round 114 log entry). No revision candidate.
+
+Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.

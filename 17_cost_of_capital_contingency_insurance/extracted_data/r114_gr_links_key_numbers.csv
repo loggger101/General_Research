@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+mckeown_2024_hurdle_rate_commercial_space_resource_projects,appropriate hurdle rate for commercial space resource projects,in the range of 25,%,abstract (OpenAlex),"depending on the project's perceived risk, assuming a suitable legal/regulatory regime"
+mckeown_2024_hurdle_rate_commercial_space_resource_projects,proposed standard industry discount rate,10,%,abstract (OpenAlex),"based on the US oil and gas reporting convention, to make project-to-project valuations comparable"
+nrc_2010_controlling_cost_growth_nasa_earth_and_space_science_missions,average cost growth in prior studies,23 to 77,%,Summary chapter text,different studies examine different mission sets and calculate growth on different criteria
+nrc_2010_controlling_cost_growth_nasa_earth_and_space_science_missions,share of total cost growth from a few missions,92,% of total growth (dollars),Summary chapter text,"for one large set of 40 missions, 'caused by only' a small number of them"
+nrc_2010_controlling_cost_growth_nasa_earth_and_space_science_missions,timing of cost growth,most after critical design review,,Summary chapter text,implies cost reserves remain substantial even late in development

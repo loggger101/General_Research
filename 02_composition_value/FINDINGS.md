@@ -357,3 +357,11 @@ Two more are registered but unread (`registered_not_pulled`):
 - `lebofsky_et_al_1990_low_albedo_3um_photometry`: by its title, 3-um hydration photometry of low-albedo asteroids, which bears on which rows list hydrated silicates (phyllosilicates in the C-complex rows, none in P and D). No abstract is deposited anywhere this machine can reach and ScienceDirect serves a CAPTCHA.
 
 All four are qualitative or unread, so nothing is extracted. Upstream read at AsteroidCatalog@6a2cfbc.
+
+## R114 - Carbonaceous-chondrite bulk composition and a PGM-extraction paper (2026-10-04; +2 sources, T1x2)
+
+The owner's list pointed at a Royal Astronomical Society press release; its study is Trigo-Rodriguez et al. (MNRAS 2025, arXiv:2510.27373), now registered as `trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites`. Its appendix tables give ICP-MS bulk composition for CI, CM, CR, CO, CV and CK chondrites and a ureilite: CI Orgueil is Fe 25.93 wt% and Ni 7,719 ppm, and Ni runs from 2,779 to 15,469 ppm across the CO and CV specimens (ranges computed from Table A2). The tables stop at La and have no platinum-group columns, so the paper backs the iron and base-metal fractions of the carbonaceous rows, not their PGM content.
+
+`schubert_2025_economical_extraction_platinum_main_belt_asteroids` is registered from its Crossref record only: no abstract exists in Crossref, OpenAlex or Semantic Scholar and ScienceDirect blocks this machine. The owner's list says it gives 20-100 ppm PGM for metallic M-class bodies; that is unchecked. The list's PGM-concentration section also cited a Cannon et al. 2023 critique (already registered as `cannon2023`, from two URLs) and an arXiv paper whose different, higher range (100-187 ppm) is recorded in domain 22. No revision candidate.
+
+Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
