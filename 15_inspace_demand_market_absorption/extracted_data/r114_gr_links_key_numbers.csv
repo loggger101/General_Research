@@ -1,0 +1,31 @@
+source_id,item,value,unit,location_in_source,notes
+sovey_pidgeon_1990_advanced_propulsion_leo_geo_platforms,arcjet and ion stationkeeping propellant as a share of the hydrazine baseline,51% and 25%,,PDF p10,"GEO platform with N/S stationkeeping; the owner's list read '51%' as a share of platform mass, which it is not"
+sovey_pidgeon_1990_advanced_propulsion_leo_geo_platforms,electric-propulsion mass saving on the GEO platform,15-18,% of beginning-of-life platform mass,PDF p10,"about 1,304 kg with the arcjet system and 1,572 kg with the ion system"
+sovey_pidgeon_1990_advanced_propulsion_leo_geo_platforms,platform class and life,"8,000 kg class; ten-year GEO life",,PDF p3 abstract; p10,
+sovey_pidgeon_1990_advanced_propulsion_leo_geo_platforms,hydrazine throughput per active arcjet over ten years,"about 176 kg (four active arcjets), about 1,080 hours operating time",,PDF p10,
+sovey_pidgeon_1990_advanced_propulsion_leo_geo_platforms,implied chemical N/S stationkeeping propellant (computed here),about 138,kg/yr,computed from PDF p10,"4 arcjets x 176 kg = 704 kg arcjet propellant, divided by 0.51 and by 10 years; a 1990 large platform, not a typical GEO satellite"
+lamorte_2020_geostationary_satellite_electric_propulsion_master_thesis,"fuel mass consumption, Hall-effect thrusters",11.1,kg/yr,PDF p35 Table 14,one-year simulated scenario for a geostationary satellite
+lamorte_2020_geostationary_satellite_electric_propulsion_master_thesis,"fuel mass consumption, chemical bi-propellant",65.3,kg/yr,PDF p35 Table 14,same scenario
+lamorte_2020_geostationary_satellite_electric_propulsion_master_thesis,chemical figure against upstream 70 kg/yr (computed here),-6.7,%,computed,(65.3 - 70) / 70
+oleson_1995_advanced_propulsion_geo_insertion_nssk,assumed specific impulse,600 s advanced arcjet; 650 s advanced+ arcjet; 1600 s Hall; 3160 s ion,s,PDF p5,
+oleson_1995_advanced_propulsion_geo_insertion_nssk,tankage fraction,0.07 arcjets; 0.15 Hall and ion,fraction,PDF p5,
+oleson_1995_advanced_propulsion_geo_insertion_nssk,north/south stationkeeping life,15,years,PDF p5-6,"performed by four thrusters, one pair per N/S face"
+oleson_1995_advanced_propulsion_geo_insertion_nssk,specific mass of the thruster/PPU systems,9 kg/kW Hall; 9.10 kg/kW ion; 6.08 kg/kW advanced arcjet,kg/kW,PDF p5,the text layer interleaves two columns; the arcjet figure for the 'advanced+' case is not separable
+snyder_2001_iepc_172_dual_mode_spt_geosynchronous_satellites,mission assumptions,15-year life; spacecraft dry mass 3500 kg,,PDF p3,
+snyder_2001_iepc_172_dual_mode_spt_geosynchronous_satellites,average yearly north-south stationkeeping delta-v,48.5,m/s per year,PDF p3,thruster cant angle 42.5 deg; PPU efficiency 95%
+snyder_2001_iepc_172_dual_mode_spt_geosynchronous_satellites,"xenon mass for stationkeeping, baseline SPT-140",244,kg,PDF p4 Table 1,a marginal 12 kg saving at 6.0 kW
+snyder_2001_iepc_172_dual_mode_spt_geosynchronous_satellites,xenon per year (computed here),16.3,kg/yr,computed from PDF p4,244 kg / 15 years
+bogmans_2024_power_of_prices_commodity_supply_demand_elasticities,mineral commodities,'particularly inelastic demand and supply'; most inelastic of all commodity groups; elasticities rise over longer horizons for minerals and energy,,abstract page text,"agricultural commodities are the most elastic, energy in between"
+bogmans_2024_power_of_prices_commodity_supply_demand_elasticities,copper and zinc demand elasticity,close to zero,,page text (results paragraph),
+bogmans_2024_power_of_prices_commodity_supply_demand_elasticities,crude oil and coal demand elasticity,below 0.2,,page text,
+bogmans_2024_power_of_prices_commodity_supply_demand_elasticities,"tea, cotton and wheat demand elasticity",above 0.4,,page text,
+bogmans_2024_power_of_prices_commodity_supply_demand_elasticities,upstream demand_elasticity (context),0.5,,this domain's FINDINGS,"P/P0 = (1 + Q/Q_market)^(-1/eps), so Q = Q_market gives P/P0 = 0.25"
+sanders_2010_iac_lunar_isru_isecg_reference_architecture,ISRU demonstration unit oxygen production,approximately 250,kg/yr,PDF p9,'sized to produce and store'; small enough for a small cargo lander with its power and excavation elements
+esa_2019_space_resources_strategy,"market revenues from space resources, 2018-2045",73-170,EUR billion (cumulative),PDF p5 (Economics),"from the Luxembourg-commissioned study 'Opportunities for space utilisation: future markets and value chains' (2018), supporting 845 thousand to 1.8 million full-time employee years"
+esa_2019_space_resources_strategy,exploration cost savings to end-users,54-135,EUR billion,PDF p5,'or equivalent cost of activities that would otherwise not have been undertaken'
+esa_2019_space_resources_strategy,technology and knowledge spill-overs,about 2.5,EUR billion over 50 years,PDF p5,which the strategy considers possibly conservative
+esa_2019_space_resources_strategy,average annual revenue (computed here),2.7-6.3,EUR billion per year,computed from PDF p5,73 and 170 divided by the 27 years 2018-2045
+esa_2019_space_resources_strategy,scope limit stated by the strategy,"the study does not account for oxygen or metal powder as propellant sources, or for PGMs on the Moon from asteroid impacts",,PDF p5,
+vertier_2025_banque_de_france_eco_notepad_419_price_elasticity_critical_mineral_supply,"average price elasticity of mine-level supply, 8 critical minerals",about 0.5 (production about 0.5% higher over the following five years per 1% price rise),,"PDF p1, p3 (Chart 1)","cobalt, copper, lead, molybdenum, nickel, platinum-group metals, silver, zinc; effect fluctuates between 0.2% and 1% over the 0-5 year horizon"
+vertier_2025_banque_de_france_eco_notepad_419_price_elasticity_critical_mineral_supply,sample,"318 mines in 43 countries, 2000-2019",,PDF p3,"price movements restricted to those caused by mineral-specific demand shocks (structural VAR, sign restrictions, 1912-2019)"
+vertier_2025_banque_de_france_eco_notepad_419_price_elasticity_critical_mineral_supply,heterogeneity,"strongest for silver (about 1% one year after a 1% price rise), copper and nickel; weaker near conflict zones and where production is concentrated in fewer mines",,PDF p4-5,

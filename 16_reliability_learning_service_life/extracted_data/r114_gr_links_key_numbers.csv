@@ -1,0 +1,16 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2014_ig-14-031_iss_operational_life_extension,designed and tested life span of the ISS,15,years,PDF p3,"'Originally designed and tested for a 15-year life span, the ISS may now operate for 26 years'"
+nasa_oig_2014_ig-14-031_iss_operational_life_extension,US investment in the ISS to 2014,almost 75,USD billion,PDF p3,"construction, operating costs and transportation"
+nasa_oig_2014_ig-14-031_iss_operational_life_extension,annual cost to operate the Station,3-4,USD billion per year,PDF p3,
+rivera_stewart_2021_study_of_spacecraft_deployables_failures,"deployment failures or anomalies, 1961-2020",approximately one per year,,PDF p2,mostly US spacecraft; non-US data 'not located or not published'
+rivera_stewart_2021_study_of_spacecraft_deployables_failures,"deployment failures or anomalies, last 20 years",one every two years on average,,PDF p2,
+rivera_stewart_2021_study_of_spacecraft_deployables_failures,insurance claim after a failed antenna deployment,146 (59.6% of the 245 policy),USD million,PDF p2,about half the transponders locked out
+rivera_stewart_2021_study_of_spacecraft_deployables_failures,revenue recoverable by releasing a stuck deployment,50-100,% of revenue at risk,PDF p2,failures that occur before the start of revenue life
+nasa_cr_3349_1980_sps_salvage_and_disposal_alternatives,average salvage value of an SPS satellite,5-10,% of satellite capital cost,PDF p20,'or about $500 million to $1 billion'; some specific uses may be significantly higher but for only a few satellites
+nasa_cr_3349_1980_sps_salvage_and_disposal_alternatives,salvage value of the demonstration satellite,60-90,% of its on-orbit cost,PDF p43,depends on transportation cost achieved and the time interval from demonstration-satellite operation
+nasa_cr_3349_1980_sps_salvage_and_disposal_alternatives,salvage value of a life extension,2-3% of satellite cost for one extra year; 17% for ten,,PDF p58,at a real discount rate of 4 percent
+nasa_cr_3349_1980_sps_salvage_and_disposal_alternatives,disposal options and approximate costs,"supra-GEO 1.75 km/s, $66M; L4 or L5 3.23 km/s, $93M; lunar impact 3.23 km/s, $93M; heliocentric orbit about 5 km/s, $125M; Earth reentry 8.03 km/s, $179M",,PDF p19 Table 1.3,delta-v taken as twice the impulsive requirement to approximate continuous low thrust; the report calls the costs probably somewhat conservative
+katzberg_garrison_1995_selv_based_in_space_operations_workshop,replace success rate / repair success rate,85% (historical data) / 80% (estimate),,PDF p18,typical example: replacement $150M over 3 years; revenues $100M/yr over 10 years; discount rate 7%; repair time one year
+katzberg_garrison_1995_selv_based_in_space_operations_workshop,NPV of the replace option; break-even repair mission cost,356; 140,USD million,PDF p18,
+katzberg_garrison_1995_selv_based_in_space_operations_workshop,spacecraft failures worldwide,"about 2.3 per year; about 36 launches a year, about 15 commercial",,PDF p18-19,historical data to 1993
+katzberg_garrison_1995_selv_based_in_space_operations_workshop,median spacecraft cost,31.6 commercially insured; 160 uninsured; 150-200 civil and DoD,USD million,PDF p19,comments by the KPMG Peat Marwick speaker

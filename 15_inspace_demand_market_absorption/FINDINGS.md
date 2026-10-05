@@ -86,3 +86,21 @@ economicspace `modules/mineral_value.py` `IN_SPACE_ANNUAL_DEMAND_KG` (read at ec
 Against upstream: the cislunar 100 t/yr sits at the bottom of NASA's 100s-1000s t/yr band (and below Kornuta's 450 t/yr), the lunar_surface 50 t/yr matches "10s of t/yr" and five first plants at Araghi's oxygen target, and mars_orbit + mars_surface (80 t/yr) is below "100s of t/yr for human Mars transportation". These are agency vision and plant targets, not market forecasts, so they bracket the judgement cells without pinning them. No revision candidate.
 
 Extracted data: `extracted_data/r113_isru_production_targets.csv` (11 rows).
+
+## R114 - GEO stationkeeping propellant and commodity elasticities (2026-10-04; +9 sources, T1x1, T2x7, T4x1)
+
+The GEO row of `IN_SPACE_ANNUAL_DEMAND_KG` rests on about 550 satellites at about 70 kg/yr of station-keeping propellant, with no source. The owner's list supplied five studies; read against that figure:
+
+| source | stationkeeping propellant | note |
+|---|---|---|
+| `lamorte_2020_geostationary_satellite_electric_propulsion_master_thesis` (T4) | 65.3 kg/yr chemical; 11.1 kg/yr Hall | one-year simulation, one satellite; chemical is 6.7% below 70 |
+| `snyder_2001_iepc_172_dual_mode_spt_geosynchronous_satellites` | 244 kg xenon over 15 years (about 16 kg/yr) | 3,500 kg dry mass, 48.5 m/s per year of north-south delta-v |
+| `sovey_pidgeon_1990_advanced_propulsion_leo_geo_platforms` | arcjet 51% and ion 25% of the hydrazine baseline; about 138 kg/yr chemical implied (computed) | 8,000 kg-class 1990 platform; the owner's list misread 51% as a share of platform mass |
+| `oleson_1995_advanced_propulsion_geo_insertion_nssk` | assumptions only (Isp 600-3,160 s, tankage 0.07-0.15) | 15-year NSSK model |
+| `zhang_2016_xips_station_keeping_failure_mode_eclipse_constraints` | none in the abstract | optimisation method, unread |
+
+Chemical stationkeeping is therefore consistent with 70 kg/yr (65 to about 138 kg/yr by satellite size), but electric propulsion cuts the figure to roughly 11-16 kg/yr, and the row does not say which fleet it assumes. That is a clarification for the owner, not a revision candidate.
+
+`bogmans_2024_power_of_prices_commodity_supply_demand_elasticities` (IMF WP 2024/077) is the first institutional elasticity source for `demand_elasticity` (0.5): minerals are 'particularly inelastic', copper and zinc demand near zero, crude oil and coal below 0.2, and elasticities rise at longer horizons. It does not cover PGMs. `vertier_2025_banque_de_france_eco_notepad_419_price_elasticity_critical_mineral_supply` (found at a new URL after the listed one returned 404) is the first source that includes PGMs: for eight critical minerals a 1% demand-driven price rise raises mine output by about 0.5% over five years (0.2-1% across the horizon). That is a supply elasticity, so the match with `demand_elasticity` 0.5 is in magnitude only. `sanders_2010_iac_lunar_isru_isecg_reference_architecture` adds a demonstration-scale figure (about 250 kg of oxygen a year), and `esa_2019_space_resources_strategy` quotes a 2018 Luxembourg study that expects EUR 73-170B of space-resources revenue over 2018-2045 (EUR 2.7-6.3B a year, computed), for a product mix that excludes propellant oxygen and asteroid PGMs, so it is context for the top-down demand cells, not a check on them. Rejected: a learning-curve explainer built on the solar example (Round 114 log entry). Undecided: a USITC trade-shifts page (Akamai 403) and an AFIT paper (it downloads as a file the app browser would not open). No revision candidate.
+
+Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.

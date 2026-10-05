@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+dowling_2022_capital_efficient_upgrading_of_pgm_concentrates,flowsheet recoveries,Pt 98; Pd 98; Au 98; Rh 98; Cu 97; Ni 97,%,PDF p12 Table VII,design recoveries for the proposed Platreef concentrate flowsheet
+dowling_2022_capital_efficient_upgrading_of_pgm_concentrates,metal price basis,Pt 950 and Pd 2000 and Au 1600 and Rh 5000 USD/oz; Cu 7500 and Ni 15000 USD/t,,PDF p12,"'From Ivanhoe, 2022'"
+dowling_2022_capital_efficient_upgrading_of_pgm_concentrates,feed,about 100 g/t PGM concentrate upgraded to a high-grade concentrate of at least 50% PGM through a Ni-Cu matte,,PDF p3,
+dowling_2022_capital_efficient_upgrading_of_pgm_concentrates,Albion Process cost claim,capital cost 20% lower and operating cost 30% lower than other technology options,,PDF p2,"citing Aylemore and Jaffer (2015), for the Albion leach, not the whole flowsheet"
+usitc_hts_7502_20_00_00_nickel_alloys_duty_rates,"general (column 1) duty, nickel alloys",Free,,HTS REST record 7502.20.00.00,units: kg
+usitc_hts_7502_20_00_00_nickel_alloys_duty_rates,"other (column 2) duty, nickel alloys",6.6,cents per kg,HTS REST record 7502.20.00.00,
+usitc_hts_7502_20_00_00_nickel_alloys_duty_rates,endnote on the record,See 9903.90.08,,HTS REST record 7502.20.00.00,Chapter 99 additional-duty provision; its content was not read

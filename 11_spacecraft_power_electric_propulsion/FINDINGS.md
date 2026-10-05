@@ -131,3 +131,9 @@ spacecost `reference/propellants.csv` row `Nuclear electric  (NEP, xenon)` (TRL 
 The two sit at different scales: SR-1 is a 20 kWe demonstrator, the plan's KPPs are for MW-class cargo and crew vehicles. A nuclear power model for the NEP row would take the plan's 13-24 kg/kWe for MW-class systems. No revision candidate: the row is gated, not wrong.
 
 Extracted data: `extracted_data/r113_nep_key_numbers.csv` (10 rows).
+
+## R114 - Nuclear-thermal key performance parameters (2026-10-04; +1 source, T2x1)
+
+`burns_2022_inl_subscale_maturation_ntp_reactor_testing` (INL/RPT-22-65557) states the Space Nuclear Propulsion programme's key performance parameters: exhaust exit temperature above 2,700 K, 10,000-15,000 lbf, 900 s Isp, reactor mass below 3,500 kg, more than 2 hours cumulative burn and more than 2 restarts (p13). That is the origin of a 900 s figure like the `isp_vac_s = 900` cell of the nuclear-thermal row in `propellants.csv`, as a requirement; the demonstrated record remains the NERVA documents registered in domain 10. A company press release, an encyclopedia page and a Stack Exchange answer on the owner's list were rejected (Round 114 log entry). No revision candidate.
+
+Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.

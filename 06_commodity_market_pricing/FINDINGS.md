@@ -143,3 +143,11 @@ World-production tables read by word coordinates (chromium p62, gallium p78, ger
 - Gap: germanium carries no published world table in the chapter ('global production data were limited' - prose only), so our 1.4e5 kg refinery row stays unanchored by MCS.
 
 Edition check: v1.0 and v1.1 (both pulled this round) carry identical values on every audited total, so none of the discrepancies is edition drift; the hosted copy is v1.2 as printed in CITATIONS.md's publication date window.
+
+## R114 - A source for the osmium price (2026-10-04; +1 source, T2x1)
+
+The owner's list added an osmium block: two dealer price pages, two dead price-tracker sites, and the IPA/SFA (Oxford) osmium factsheet of May 2026, registered as `ipa_sfa_2026_osmium_pgm_factsheet`. It closes the 'Osmium & cobalt gap' recorded in this domain's FINDINGS above, for osmium: p5 says osmium has no exchange-traded benchmark and no market transparency, is priced at each transaction, and has been 'fixed in the 300-400$/oz range since the 2000's' (about $9,600-12,900/kg); global output is hundreds of kilograms a year. The economicspace osmium row of $13,000/kg is $404/oz, a hair above that band; no revision candidate. The cobalt gap stays open.
+
+The two dealer pages quote EUR 2,351.81 per gram (about 200 times the factsheet's band) for 99.9995% crystalline bars, a retail price for a fabricated product from one vendor network, and were rejected (Round 114 log entry). The three price-tracker URLs (platinumbased.co.uk, dailyplatinum.com, dailypl.com) are dead and stay undecided.
+
+Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
