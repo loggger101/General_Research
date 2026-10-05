@@ -293,3 +293,9 @@ The owner's rewritten link list (GR_links.txt, 197 URLs across most domains) ope
 The NASA Open Data records on the list for the first two say 'This dataset has no data'; the data are in the PDS archive at sbnarchive.psi.edu and were read there. LCDB V3.0 on the list is the PDS release of the lightcurve database registered as `warner_harris_pravec_2009_asteroid_lightcurve_database` (domain 12), so it was not registered a second time. The two 2001 Kaasalainen lightcurve-inversion papers have no abstract in Crossref, OpenAlex or Semantic Scholar and ScienceDirect blocks this machine; a retry found their abstracts through ADS and Semantic Scholar summaries, and both were rejected as spin and shape methods (Round 114 log entry). The remaining entries were rejected (Round 114 log entry). No revision candidate.
 
 Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+
+## R115 - One note figure in the Xe row against Carry's Table 2 (2026-10-04; registry unchanged)
+
+The Xe row's note says enstatite chondrites average 3.55 g/cm3 in bulk (Macke et al. 2010). Carry (2012) Table 2, which cites Macke 2010 for both groups, has EH 3.47 +/- 0.21 and EL 3.46 +/- 0.32, mean 3.465. rc-077 records the 2.4% difference as a wording candidate; the Xe density cell (2.90) does not move on it. Macke's own paper is not in the registry.
+
+Extracted data: `extracted_data/r115_xe_enstatite_bulk_density_check.csv` (3 rows).

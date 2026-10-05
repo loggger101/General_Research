@@ -151,3 +151,16 @@ The owner's list added an osmium block: two dealer price pages, two dead price-t
 The two dealer pages quote EUR 2,351.81 per gram (about 200 times the factsheet's band) for 99.9995% crystalline bars, a retail price for a fabricated product from one vendor network, and were rejected (Round 114 log entry). The three price-tracker URLs (platinumbased.co.uk, dailyplatinum.com, dailypl.com) are dead and stay undecided.
 
 Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+
+## R115 - Prices and a production cell checked against the hosted USGS summaries; five new candidates (2026-10-04; registry unchanged)
+
+Both Mineral Commodity Summaries editions were already hosted (R83, R81) but R83 compared only the world-production figures of the v1.11.0 rows. This round read their price lines against economicspace@29a0309 `modules/mineral_value.py`, which stamps the ten v1.11.0 elements 2025-01-31 and cites 'USGS MCS 2025' for each.
+
+- **titanium (rc-062)**: the cited table's sponge price is the landed duty-paid import value, $10.60-13/kg over 2020-2024e; the cell is $9 and the note says $7-10. All five years are above the note's ceiling.
+- **tungsten (rc-063)**: MCS 2025 withholds the price ('W') in every year and quotes no APT figure; the $340/mtu is not in the cited edition. MCS 2026 reports APT at $331 rising to $675 per mtu through 2025 ($41.7 to $85.1 per kg W), so the cell is about 47% below the end-2025 level.
+- **gallium (rc-064)**: 2024e high-purity import value is $500 (range $450-625 over five years); the cell is $600 and the note's '$500-700' upper end is not printed.
+- **ammonia (rc-065)**: $440 per SHORT ton is read as $450 per metric ton (it is $485/t).
+- **cobalt world production (rc-066)**: 2.3e8 kg against 3.10e8 for 2025e (-25.8%); it equals Congo's output alone. R81 had recorded the gap without a row.
+- Agreeing with their notes, so no row: chromium metal $5.60/lb = $12.35/kg against $10-12; rhenium pellets $1,370 against $1,200-1,600; molybdenum $47/kg against $44; germanium $2,100 against $2,000-3,000; sulfur Tampa contract $69-116 per long ton against $80-100/t.
+
+Extracted data: `extracted_data/r115_usgs_new_element_prices_cobalt_production.csv` (13 rows, page-located; percentages computed in code).
