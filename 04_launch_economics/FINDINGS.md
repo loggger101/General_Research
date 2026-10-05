@@ -372,3 +372,15 @@ The Pegasus XL row in spacecost@85da36c carries $40M with the note '$40M (2017)'
 Checked and agreeing: Delta IV Heavy for the NRO at $336M (2017 dollars, service plus ELC) is $453M at rc-052's CPI factor, against the row's $440M (-2.9%).
 
 Extracted data: `extracted_data/r115_zapata_pegasus_price_check.csv` (3 rows).
+
+## R117 - Ariane 6 / H3 price-citation re-sourcing: ESA overview proven price-free, JAXA bot-walled (2026-10-05; +1 source T3x1)
+
+The two d04 institutional rows upstream cites for live launch prices were checked against their actual pages.
+
+**esa_ariane6_overview [T3]** - re-classed registered_not_pulled -> verified_live_not_pulled. Full HTML pulled live (36,901 B sha256=6d6a27...) and read in its entirety: the page states payload capacities only - “Ariane 62 can launch payloads of approximately 4.5 tonnes into geostationary transfer orbit or 10.3 tonnes into low Earth orbit” and “Ariane 64 ... 11.5 tonnes into GTO and 21.6 tonnes into LEO” (both match upstream's A62/A64 payload cells) - but contains **zero price figures** (raw-HTML token scan: no euro/USD/million-euros tokens; the only “million” is the mobile gantry's 8,000 t = over 8 million kilograms). Upstream notes attribute “price €100M (2024 est.)” to A62 and “€115M (2018 est.)” to A64 with “Source: ESA Ariane 6 overview”: the cited page states no price at all, so that attribution does not hold - same misattribution class as rc-079. Not hostable: esa.int Terms_and_conditions (“All material published on the ESA website is protected by copyright and owned or controlled by ESA...”; no reproduction without prior written authorisation) -> hash-recorded only per R113 precedent.
+
+**jaxa_h3_launch_vehicle [T3]** - stays registered_not_pulled; re-check this round found global.jaxa.jp bot-walled from this machine (HTTP 403 to urllib and curl under two browser UAs over http+https), web.archive.org DNS-blocked locally (the wayback availability API confirms a 2026-08-22 snapshot exists but it cannot be fetched). The ¥5B H3-30 target upstream cites therefore remains unverified from this machine.
+
+**NEW arianespace_ariane6_vehicle_page [T3]** - the launch service provider's own Ariane 6 page, pulled live (97,543 B sha256=d697d578baaf3c...) and read in full: marketing copy only (“Ariane 6 is a competitive launch solution, designed to meet the economic requirements of today’s space market”), **no list price published** - Arianespace prices are contract-negotiated. Registered as rc-080 evidence; hash-recorded only (no licence statement, R113 precedent).
+
+CNES press releases for Ariane 6 commercial missions 2/3/4 were scanned for a price anchor: none carry one either. Extracted data: `extracted_data/r117_esas_ariane6_price_check.csv` (5 rows). rc-080 opened [open/citation] on spacecost vehicles.py Ariane 6 A62/A64 notes + list-price cells.
