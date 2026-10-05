@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+zapata_2017_state_of_play_us_space_systems,"Pegasus XL, NASA LSP science (ICON): price / maximum LEO payload / $ per kg","56 / 443 / 127,088",USD million (2017$); kg; 2017$ per kg,PDF p16 chart data labels (r70_zapata_2017_state_of_play_launch_prices.csv),"upstream Pegasus XL list_price_usd 40,000,000 -> -28.6% against 56 (rc-078)"
+fred_cpiuacsl_monthly_usd_series,CPI-U factor Dec-2017 -> Aug-2026 (334.131 / 247.805),1.3484,multiplier,r78_index_factors_and_fx_averages.csv (as used in rc-052),"56 x factor = 75.5 million (2026$), computed here"
+zapata_2017_state_of_play_us_space_systems;fred_cpiuacsl_monthly_usd_series,"Delta IV Heavy, NRO (service + ELC) 336 (2017$) carried to 2026$ against the row's 440",453.0 vs 440,USD million (2026$),PDF p16 chart data labels; computed here,"-2.9%: agrees, no candidate"

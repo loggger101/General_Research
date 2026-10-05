@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+carry2012,EH enstatite chondrite bulk density (Macke et al. 2010),"3.47 +/- 0.21 (16 samples, 9 meteorites)",g/cm3,"Table 2, PDF p7 (r71_carry2012_table2_meteorite_bulk_density.csv)",
+carry2012,EL enstatite chondrite bulk density (Macke et al. 2010),"3.46 +/- 0.32 (25 samples, 14 meteorites)",g/cm3,"Table 2, PDF p7",
+carry2012,mean of the two groups against upstream's 'enstatite chondrites average 3.55 in bulk (Macke et al. 2010)',3.465 vs 3.55,g/cm3,computed here,3.55 is +2.5% above the mean (rc-077); Macke's own paper is not in the registry

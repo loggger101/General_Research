@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+bennu_volatiles_2025,Tagish Lake (5b) powder <0.2 mm: total carbon,4.11 +/- 0.12,wt% C,"Extended Data Table 1, PDF p15 (r70_bennu_volatiles_2025_ed_table1_CNH.csv)","Tagish Lake is upstream's D/Z/P analogue (mineralogy.py header, Hiroi et al. 2001)"
+bennu_volatiles_2025,Tagish Lake (11h) powder <0.2 mm: total carbon,4.13 +/- 0.12,wt% C,"Extended Data Table 1, PDF p15",
+bennu_volatiles_2025,upstream D and Z carbon_fraction / T and P carbon_fraction against mean Tagish Lake carbon 4.12 wt%,0.30 and 0.25,mass fraction,reference/taxonomy_composition.csv @6a2cfbc,computed here: 7.3x and 6.1x the Tagish Lake mean (rc-075)
+glavin_2018,carbon abundance range across carbonaceous chondrites; IDPs,~0.1 (CK) to ~5 (CI); ~12,wt% C,r70_glavin_2018 / glavin_2018_chondrite_volatiles_key_numbers.csv,context for rc-075
+rubin_2019_67p_abundances,COSIMA 67P dust matter similar to insoluble organic matter,45% by weight,,r71_rubin_2019_key_numbers.csv (Fray et al. 2016),the cometary end-member that keeps 0.25-0.30 defensible for a comet-like D-type (rc-075)
+ryugu_ivuna_2023,Ryugu sample anhydrous silicate grains and metal,very rare; discrete grains < ~10 um; no metal grains; no CAIs or chondrules,,PDF p8 (r73_ryugu_ivuna_2023_key_numbers.csv),"upstream B, C, Cb and F carry metal_fraction 0.01 and a nickel-iron phase (rc-076)"
