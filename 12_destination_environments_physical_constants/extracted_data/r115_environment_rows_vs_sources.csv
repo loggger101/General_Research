@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+daly_2023_dart_kinetic_impact,Mass of the Didymos system,(5.6 +/- 0.5) x 10^11,kg,"Table 1, PDF p3 (word coordinates)",upstream 65803 Didymos mass_kg = 5.28e+11 -> -5.7% (rc-067)
+daly_2023_dart_kinetic_impact,Inferred mass of Dimorphos,4.3 x 10^9,kg,"Table 1, PDF p3",Didymos alone = 5.6e11 - 4.3e9 = 5.56e11 (computed here)
+daly_2023_dart_kinetic_impact,Diameter of volume-equivalent sphere for Didymos,761 +/- 26,m,"Table 1, PDF p3",radius 380.5 m; upstream mean_radius_m = 390.0 -> +2.5% (rc-067)
+daly_2023_dart_kinetic_impact,Density of Didymos system,"2,400 +/- 300",kg/m3,"Table 1, PDF p3",context
+daly_2023_dart_kinetic_impact,surface gravity / escape velocity recomputed at Didymos-alone mass and radius 380.5 m (G = 6.6743e-11),2.5618e-04 m/s2; 0.4415 m/s,,computed here,upstream 2.3169e-04 and 0.4251 -> -9.6% and -3.7% (rc-067)
+siltala_granvik_2021,(16) Psyche gravitational parameter GM,1.482 +/- 0.052,km3/s2,"Sec.4, PDF p4 (r70_siltala_granvik_2021.csv)",mass = GM/G = 2.22e19 kg (computed here)
+siltala_granvik_2021,(16) Psyche volume-equivalent diameter adopted (Ferrais et al. 2020),222 +/- 4,km,"Sec.4, PDF p5","radius 111 km, as upstream"
+siltala_granvik_2021,Psyche upstream mass_kg vs GM/G; surface gravity,2.29e19 vs 2.22e19; 0.12405 vs 0.12028 m/s2,,computed here,"mass +3.1%, gravity +3.1% (rc-068)"
+kretlow_2022_rosa_mass_density,Psyche mass in the Kretlow (2020) SiMDA perturber set,2.29e19,kg,"r70_kretlow_2022_rosa_mass_density.csv, 'Dynamical-model perturber masses' row",the figure upstream attributes to Siltala & Granvik 2021 (rc-068)
+nasa_iss_facts_and_figures,orbital period; sunrises and sunsets per day,"about every 90 minutes; 16 orbits, 16 sunrises and sunsets in 24 hours",,article body of the hosted page,no 92.7-minute period and no shadow duration anywhere on the page; upstream LEO note attributes both to it (rc-069)

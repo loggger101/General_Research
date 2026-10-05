@@ -473,3 +473,15 @@ Numbers in `extracted_data/r82_low_thrust_dv_penalty_and_duration.csv` (9 rows).
 [nasa_std_5019_fracture_control_spaceflight_hardware] is now full_text_hosted at the CURRENT revision: NASA-STD-5019A w/Change 4, approved 2024-07-29, revalidated 2025-09-05 (the registered row cited the interim standard; this supersedes it). §7.2.2 'Fracture Critical COPVs and Composite Overwrapped Pressurized Fluid Containers' is the specific clause behind storage_systems.csv's 'COPV burst performance factor', with STD-5019A deferring detailed COPV requirements to ANSI/AIAA S-081-2000 (both read verbatim to r103 CSV). Context anchor only: upstream's 392 kJ/kg figure is a material property, not a standard requirement - no re-pin.
 
 [nasa_sp125_huzel_huang_design_liquid_rocket_engines] read live (469-page NTRS scan, GOV_PUBLIC_USE_PERMITTED) but NOT committed: 47.8 MB exceeds the repo's ~36 MB cap; sha recorded in the domain CSV. Content check for rc-060: chapters I-X are all engine design - Introduction / Design Implements / Sample Calculations / Thrust Chambers / Pressurized-Gas Feed Systems / Turbopump Feed Systems / Controls & Valves / Propellant Tanks / Interconnecting Components / Engine Systems Integration. A full-text keyword sweep found no orbital-mechanics, ascent-profile or delta-v content; the only 'orbit' mention is a rhetorical aside on p44 ('weight of payload flown over a distance, or placed into orbit'). Edition note: title page reads 'Second Edition' but NTRS metadata and the title-page OCR both date this record 1967.
+
+## R115 - DRA 5.0 read against five more Mars rows; five new candidates (2026-10-04; registry unchanged)
+
+R37 compared DRA 5.0's Fig 4-2 bars with the Mars injection and capture rows. This round compared the remaining Mars rows in spacecost@85da36c `reference/delta_v_segments.csv` with the hosted SP-2009-566 and the registry's own extraction of it (all cells verified unchanged since e831245; only the notes of the HTP and beneficiation rows moved).
+
+- **1-sol Mars orbit to Earth (rc-070)**: 900 m/s ('symmetric with MOI'). DRA's TEI is 1.563 km/s in all eight crew opportunities, from the same 1-sol orbit (p36), with a 12 km/s entry limit (p45). No DRA opportunity reaches 900. Design intent is a lower bound, so this is an owner decision; the MOI row, by contrast, sits inside DRA's range.
+- **TMI range (rc-071)**: the note says 3.6-4.3 km/s (DRA 5.0); the 26 bars run 3.545-4.103.
+- **Mars entry to surface (rc-072)**: 800 m/s against DRA Table 4-3's descent 595 m/s plus 15 m/s deorbit; bracketed by the row's own 0.5-1.0 km/s, so recorded for a decision.
+- **Low Mars orbit to Earth, 2,100 (rc-073) and surface to low Mars orbit, 4,100 (rc-074)**: both cite DRA 5.0, which gives neither (verified negative on the hosted copy; the Addendum was not read). 2,100 is the repo's own circularisation arithmetic.
+- Checked and agreeing: Apollo TLI 3.04-3.20 km/s and LOI 0.89-0.92 km/s (SP-4029, R35); NRO to polar LLO 730 m/s (Whitley and Martinez Table 3, exact).
+
+Extracted data: `extracted_data/r115_dra5_vs_spacecost_mars_rows.csv` (7 rows).

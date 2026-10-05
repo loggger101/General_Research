@@ -364,3 +364,11 @@ Relation to upstream: the launch_vehicles.csv 'SLS Block 1B (Cargo)' row is mark
 A news article on the owner's list reported NASA OIG audit IG-26-004 (10 March 2026); the audit itself was found and read, and is registered as `nasa_oig_2026_ig-26-004_hls_contracts`. NASA had obligated $6.9B for HLS since 2019 and estimated $18.3B through fiscal 2030 (pp 3, 7). SpaceX's Appendix H contract was a firm-fixed-price award of about $3B (July 2021) plus a roughly $1B option (November 2022), about $4.3B in all, and has grown 6%; Blue Origin's Appendix P award was about $3.1B (May 2023) and has grown under 1% (pp 3, 9-10). These are development-contract values, not launch prices, so they join the other OIG audits of this domain as Artemis cost context; no revision candidate. The list's other lunar-delivery items (blogs, a newsletter, CLPS explainers) were rejected as secondary or unsourced (Round 114 log entry).
 
 Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+
+## R115 - Pegasus XL price against Zapata's NASA LSP figure; one new candidate (2026-10-04; registry unchanged)
+
+The Pegasus XL row in spacecost@85da36c carries $40M with the note '$40M (2017)' and no source. Zapata (2017), already hosted and extracted in R70, prices Pegasus XL for NASA LSP science (ICON) at $56M in 2017 dollars over a 443 kg maximum payload ($127,088/kg). rc-078 records the 28.6% gap (before any escalation; rc-052 separately flags the unescalated dollar year). Zapata's figure is a NASA mission price, so the cell may be a list price; the candidate says so.
+
+Checked and agreeing: Delta IV Heavy for the NRO at $336M (2017 dollars, service plus ELC) is $453M at rc-052's CPI factor, against the row's $440M (-2.9%).
+
+Extracted data: `extracted_data/r115_zapata_pegasus_price_check.csv` (3 rows).

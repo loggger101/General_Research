@@ -365,3 +365,14 @@ The owner's list pointed at a Royal Astronomical Society press release; its stud
 `schubert_2025_economical_extraction_platinum_main_belt_asteroids` is registered from its Crossref record only: no abstract exists in Crossref, OpenAlex or Semantic Scholar and ScienceDirect blocks this machine. The owner's list says it gives 20-100 ppm PGM for metallic M-class bodies; that is unchecked. The list's PGM-concentration section also cited a Cannon et al. 2023 critique (already registered as `cannon2023`, from two URLs) and an arXiv paper whose different, higher range (100-187 ppm) is recorded in domain 22. No revision candidate.
 
 Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+
+## R115 - Carbon and metal in the primitive classes against Tagish Lake and Ryugu; two new candidates, and the AsteroidCatalog rows re-checked at 6a2cfbc (2026-10-04; registry unchanged)
+
+AsteroidCatalog moved from 852bf69 to 6a2cfbc (data contracts 1.5.0-1.8.1: densities held to a second route, the X complex split by albedo, mineral phases added). The rows below were compared with registry evidence that was already extracted.
+
+- **D, Z, T, P carbon (rc-075)**: v1.5.0 cut the C-complex carbon fraction from 0.20-0.30 to 0.04 on CI, Bennu and Ryugu carbon (rc-010) but left D and Z at 0.30 and T and P at 0.25. Upstream's own mineralogy module takes Tagish Lake as the D, Z and P analogue, and the registry's bennu_volatiles_2025 table gives Tagish Lake 4.11 and 4.13 wt% C: the cells are 7.3x and 6.1x that. The counter-evidence is 67P dust at ~45 wt% insoluble-organic-like matter, so the choice of end-member is the owner's, as for ice (rc-013).
+- **CI-like metal (rc-076)**: B, C, Cb and F carry 0.01 metal and a nickel-iron phase; Ryugu has 'no metal grains' and upstream's own CI source lists none. 0.01 is a ceiling.
+- Status of earlier rows: rc-007 (P density 1.2), rc-045 (S note) and rc-046 (Q density 2.7 and note) are applied; rc-001 (K) is declined with the reason in taxonomy.py's DENSITY_EVIDENCE; rc-002, rc-012, rc-013 and rc-014 stay open (Xc metal moved 0.25 to 0.32 as an albedo mixture, not on the CB-chondrite evidence).
+- Checked and agreeing: every body in DENSITY_EVIDENCE with a Carry (2012) value matches Carry's Table 1 (Ceres 2.13, Pallas 2.86, Interamnia 1.96, Mathilde 1.32, Pulcova 1.00, Daphne 2.03, Hermione 1.27, Elektra 1.84, Eugenia 1.34, Antiope 0.86, Lundia 1.64, Frostia 0.88, Klotho 4.16, Hestia 5.81, Eunomia 3.54, Juno 3.68, Parthenope 3.27, Ostro 2.59, Kleopatra 4.27, Lutetia 3.44, Sylvia 1.31, Camilla 2.28, Psyche 3.38, Patroclus 0.88); CV and CO bulk densities 2.79 and 3.03 (Carry Table 2); the 67P ice ratios 100 : 4.7 : 0.67 (Rubin Table 2).
+
+Extracted data: `extracted_data/r115_taxonomy_carbon_metal_checks.csv` (6 rows).
