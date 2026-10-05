@@ -752,3 +752,11 @@ Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
 
 - **mathar_2021_kepler_equation_first_estimates** [T4] - https://export.arxiv.org/pdf/2108.03215v3 - pulled + read in full R119; NOT hostable (default non-exclusive licence only, no CC). Hash: 403,121 B sha256=cd99051b11f04c489fd3c282bbcc4a0e38766f1f86ed71d8d604653d6cd2aae2.
 - **hayhurst_2016_historical_mass_power_schedule_cost_growth_nasa_spacecraft** [T2] - https://ntrs.nasa.gov/citations/20160003121 - re-checked R119: NTRS determinationType OTHER, no downloadable file in the citation API. Stays in queue; IEEE Aerospace Conference copy paywalled.
+
+## R120 - OpenAlex sweep of queued DOIs: 6 hosted, 3 read-not-hostable (2026-10-05)
+
+- **mahlke_carry_denneau_2021_atlas_phase_curves** [T1] - https://export.arxiv.org/pdf/2009.05129v1 - pulled + read in full R120; NOT hostable (default non-exclusive licence only, no CC). Hash: 3,329,286 B sha256=dffc30f6896944654e00f18fb7088a627492270f43d16f7699a4a5c81319a02f.
+- **kafi_2026_spiral_cavity_wheel_excavator_lunar_isru** [T2] - https://export.arxiv.org/pdf/2609.25724 - pulled + read in full R120; NOT hostable (default non-exclusive licence only). Hash: 10,103,383 B sha256=3a8ed7620d7e8f381a3b1108b43944985a7000f17ea8f03c1d4c15da81fa0e42.
+- **eubanks_radley_2016_lunar_elevator_scientific_return** [T1] - https://export.arxiv.org/pdf/1609.00709v1 (green-OA copy of Space Policy 37:97-102) - pulled + read in full R120; NOT hostable (default non-exclusive licence only). Hash: 281,229 B sha256=e552fed53701ee70bc62d896017673ed2a46b0a5bdc1662d83a9d90fe0ae95fc.
+- **ricardo_2026** journal version https://doi.org/10.1007/s44461-026-00015-w - pulls live but in-file CC BY-NC-ND 4.0 (Crossref cc-by tag disagrees) -> preprint hosted instead; see d19 FINDINGS.
+- Still blocked this round: lodders_2003 (IOP Radware captcha), sinibaldi_haldemann_2026 (Royal Society 403 on all routes), kabemba_2025 (MDPI 403), lauretta_2024_bennu_in_the_laboratory + king_schofield_2015 (Wiley/ORO 403), watanabe_2019 (DLR elib fulltext routes 404, HAL API empty), consolmagno_2008/macke_2010/sercel_2018 (UCF Stars landing pages carry no PDF link).

@@ -485,3 +485,6 @@ R37 compared DRA 5.0's Fig 4-2 bars with the Mars injection and capture rows. Th
 - Checked and agreeing: Apollo TLI 3.04-3.20 km/s and LOI 0.89-0.92 km/s (SP-4029, R35); NRO to polar LLO 730 m/s (Whitley and Martinez Table 3, exact).
 
 Extracted data: `extracted_data/r115_dra5_vs_spacecost_mars_rows.csv` (7 rows).
+## R120 - rafalskyi_2021 Nature iodine EP hosted, CC BY 4.0 in-file (2026-10-05; queue -1)
+
+**rafalskyi_2021_iodine_ep_in_orbit [T1]** - re-classed registered_not_pulled -> full_text_hosted. Pulled live from nature.com/articles/s41586-021-04015-y.pdf and committed to full_texts/rafalskyi_et_al_2021_in_orbit_demonstration_of_an_iodine_electric_propulsion_system_nature599_ccby.pdf (11,467,518 B sha256=866b8b9318cbd7243e710f7c588b02cad6c3ec1bcf5c2a0bf308389134b9fbbf). Nature 599:411-415; in-file 'Open Access - Creative Commons Attribution 4.0 International License'. Verbatim title: "In-orbit demonstration of an iodine electric propulsion system. The NPT30-I2 iodine EP flight demonstration is the source behind propellants.csv's iodine (Hall/gridded) row - first flown iodine EP; performance numbers are extraction follow-up.

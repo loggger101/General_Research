@@ -125,3 +125,6 @@ Six sources. `nasa_oig_2014_ig-14-031_iss_operational_life_extension`: the ISS w
 The owner's list quoted '97-99% success, $800M claims' for deployments and a '$150M AMC-14 payout'; neither figure appears in the pages read. Rejected: encyclopedia and AI-written pages, a marketplace sales page, a news item and a calculator (Round 114 log entry). No revision candidate.
 
 Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+## R120 - nakamura_2025 SSR sample-return review hosted, CC BY 4.0 in-file (2026-10-05; queue -1)
+
+**nakamura_2025_sample_return_missions_rosetta_stones_small_bodies [T1]** - re-classed registered_not_pulled -> full_text_hosted. The Springer content PDF now pulls live via link.springer.com/content/pdf/10.1007/s11214-025-01168-4.pdf (the client challenge recorded in R114 no longer fires from this machine); committed to full_texts/nakamura_et_al_2025_sample_return_missions_rossetta_stones_small_bodies_ssr22144_ccby.pdf (6,075,837 B sha256=6af19ac31c26ab551f9451d49fbf01bbf2998a570cc0b690ef447d0597cd0e57). Space Science Reviews 221:44 (39 pages), in-file '© The Author(s) 2025' + Open Access CC statement. Verbatim: "It is now possible to bring back samples from planetary bodies of the Solar System - the review behind d16's sample-return context rows.
