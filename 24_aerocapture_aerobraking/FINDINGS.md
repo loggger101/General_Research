@@ -57,3 +57,7 @@ Six sources. `munk_kremic_2008_aerocapture_summary_and_risk_discussion_opag`: th
 The NTRS 20000102372 record and its PDF on the list are one source, and NTRS 20110014670 (Woodcock & Dankanich, JPC 2006) is a second record of an already registered paper. The Delta-v budget Wikipedia page was rejected (Round 114 log entry). No revision candidate.
 
 Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+
+## R119 - girija_2023 pulled live from arXiv and hosted, CC BY-SA 4.0 (2026-10-05; queue -1)
+
+**girija_2023_aerocapture_design_reference_missions_venus_to_neptune [T2]** - re-classed registered_not_pulled -> full_text_hosted. PDF pulled live via export.arxiv.org/pdf/2308.10384v1; committed to full_texts/girija_2023_aerocapture_design_reference_missions_arxiv2308.10384.pdf (1,617,130 B sha256=d2e4a37e0908361e12f3f6c92df9652af16fa14dcd8b9fc15ae592160e3d87c3). 12 pages, no in-file copyright statement so the abs-page CC BY-SA 4.0 governs (checked live). Verbatim: "Aerocapture is applicable to all atmosphere-bearing destinations with the exception of Jupiter and Saturn, whose extreme entry conditions make aerocapture infeasible." - the design reference missions at Venus/Earth/Mars/Titan/Uranus/Neptune compiled with AMAT now sit behind d24's aerocapture context rows (no numeric re-pin).

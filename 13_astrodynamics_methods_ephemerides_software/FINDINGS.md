@@ -45,3 +45,7 @@ R74 registered the services upstream's probes recommend but never use, all as `r
 | neodys_orbit_covariance_service | stays **registered_not_pulled** - newton.spacedys.com/neodys/ now serves an anti-bot interstitial ('Making sure you're not a bot!', 3,629 B challenge page) from this machine instead of the JS app shell recorded in R74; no API surface reachable without solving it.
 
 No revision candidate opened or closed by this round (rc-049 stays open - upstream's CITATIONS.md is read-only and still carries the dead URL; its evidence column now records both re-checks).
+
+## R119 - mathar_2021 read in full, not hostable (2026-10-05; queue -1)
+
+**mathar_2021_kepler_equation_first_estimates [T4]** - re-classed registered_not_pulled -> verified_live_not_pulled. Full text pulled live via export.arxiv.org/pdf/2108.03215v3 (latest version; dated 30 Jun 2025) and read in full from this machine, but NOT hostable: the arXiv abs page carries only the default non-exclusive distribution licence with no Creative Commons licence, so redistribution into GR is barred by the R70 audit lesson / R113 precedent. v3 hash recorded in access_status (403,121 B sha256=cd99051b11f04c489fd3c282bbcc4a0e38766f1f86ed71d8d604653d6cd2aae2); no file committed. Content confirmed: a novel starting guess for Kepler's equation E given e and M - exactly the starter orbital.py kepler_E cites; backs that row as context (no numeric re-pin).

@@ -748,3 +748,7 @@ Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
 
 - **hasselmann_2012_sdss_taxonomy_v1_1_pds** [T3] - https://sbnarchive.psi.edu/pds3/non_mission/EAR_A_I0035_5_SDSSTAX_V1_1/data/sdsstax_obs_table.tab (12,895,920 B sha256=d4cd330578ae03...) - OPTIONAL follow-up only: raw SDSS observational spectra, not needed by the pipeline; the ast_table classification is already committed.
 - **tholen_1984_asteroid_taxonomy_dissertation** [T4] - https://repository.arizona.edu/handle/10150/187738 - still HTTP 403 to urllib and curl under browser headers from this machine (re-checked R118). Stays in the queue.
+## R119 - queue re-classifications: 3 hosted, 1 not hostable, 1 still blocked (2026-10-05)
+
+- **mathar_2021_kepler_equation_first_estimates** [T4] - https://export.arxiv.org/pdf/2108.03215v3 - pulled + read in full R119; NOT hostable (default non-exclusive licence only, no CC). Hash: 403,121 B sha256=cd99051b11f04c489fd3c282bbcc4a0e38766f1f86ed71d8d604653d6cd2aae2.
+- **hayhurst_2016_historical_mass_power_schedule_cost_growth_nasa_spacecraft** [T2] - https://ntrs.nasa.gov/citations/20160003121 - re-checked R119: NTRS determinationType OTHER, no downloadable file in the citation API. Stays in queue; IEEE Aerospace Conference copy paywalled.
