@@ -1,0 +1,41 @@
+source_id,item,value,unit,location_in_source,notes
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 1 Ceres",2.12,g/cm3,densbest.tab (PDS archive),"+0.04/-0.04 g/cm3; class G; refs 1, 2"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 2 Pallas",2.71,g/cm3,densbest.tab (PDS archive),"+0.11/-0.11 g/cm3; class B; refs 1,15"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 4 Vesta",3.44,g/cm3,densbest.tab (PDS archive),"+0.12/-0.12 g/cm3; class V; refs 1,18"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 10 Hygiea",2.76,g/cm3,densbest.tab (PDS archive),"+1.20/-1.20 g/cm3; class C; refs 20,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 11 Parthenope",2.72,g/cm3,densbest.tab (PDS archive),"+0.12/-0.12 g/cm3; class S; refs 22,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 15 Eunomia",0.96,g/cm3,densbest.tab (PDS archive),"+0.30/-0.30 g/cm3; class S; refs 23,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 16 Psyche",2.00,g/cm3,densbest.tab (PDS archive),"+0.60/-0.60 g/cm3; class M; refs 24,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 20 Massalia",3.26,g/cm3,densbest.tab (PDS archive),+0.60/-0.60 g/cm3; class S; refs 25
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 22 Kalliope",2.50,g/cm3,densbest.tab (PDS archive),+0.30/-0.30 g/cm3; class M; refs 26
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 24 Themis",not given,g/cm3,densbest.tab (PDS archive),class C; refs 27
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 45 Eugenia",1.20,g/cm3,densbest.tab (PDS archive),+0.60/-0.20 g/cm3; class F; refs 28
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 87 Sylvia",1.62,g/cm3,densbest.tab (PDS archive),"+0.30/-0.30 g/cm3; class P; refs 29,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 90 Antiope",1.30,g/cm3,densbest.tab (PDS archive),"+-.99/--.99 g/cm3; class C; refs 30,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 121 Hermione",1.96,g/cm3,densbest.tab (PDS archive),"+0.34/-0.34 g/cm3; class C; refs 24,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 243 Ida",2.60,g/cm3,densbest.tab (PDS archive),+0.50/-0.50 g/cm3; class S; refs 31
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 253 Mathilde",1.30,g/cm3,densbest.tab (PDS archive),+0.20/-0.20 g/cm3; class C; refs 32
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 433 Eros",2.67,g/cm3,densbest.tab (PDS archive),+0.03/-0.03 g/cm3; class S; refs 33
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 704 Interamnia",4.40,g/cm3,densbest.tab (PDS archive),"+2.10/-2.10 g/cm3; class F; refs 34,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 762 Pulcova",1.80,g/cm3,densbest.tab (PDS archive),"+0.80/-0.80 g/cm3; class F; refs 35,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 804 Hispania",4.90,g/cm3,densbest.tab (PDS archive),"+3.90/-3.90 g/cm3; class P; refs 34,13"
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 1999 KW4",2.39,g/cm3,densbest.tab (PDS archive),+0.90/-0.90 g/cm3; class not given; refs 29
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 2000 DP107",1.62,g/cm3,densbest.tab (PDS archive),+1.20/-0.90 g/cm3; class C; refs 29
+britt_2002_pds_asteroid_densities,"bulk density, best estimate: 2000 UG11",1.47,g/cm3,densbest.tab (PDS archive),+0.60/-1.30 g/cm3; class not given; refs 29
+neese_2010_pds_asteroid_taxonomy_v3_0,rows in taxonomy.tab,1199,bodies,taxonomy.tab (PDS archive),"64-byte fixed-width records; one row per body; classes from Tholen (1984, 1989), Barucci et al. (1987), Tedesco et al. (1989), Howell et al. (1994) and Xu et al. (1995)"
+neese_2010_pds_asteroid_taxonomy_v3_0,bodies with a Tholen class,985,bodies,taxonomy.tab bytes 17-22,counted here
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class S,338,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class C,139,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class M,38,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class E,12,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class P,33,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class D,35,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class F,28,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class G,9,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class B,9,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class X,52,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class Q,1,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class V,4,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class A,5,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class R,1,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"
+neese_2010_pds_asteroid_taxonomy_v3_0,Tholen class T,6,bodies,taxonomy.tab bytes 17-22,"counted here; exact class code, so composite codes (for example SC or CX) are counted apart"

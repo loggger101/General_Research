@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2026_ig-26-004_hls_contracts,HLS development funding obligated since 2019,6.9,USD billion,"PDF p3, p7",'NASA has obligated $6.9 billion for HLS development and estimates it will spend $18.3 billion through fiscal year 2030'
+nasa_oig_2026_ig-26-004_hls_contracts,HLS estimated spend through FY2030,18.3,USD billion,"PDF p3, p7",
+nasa_oig_2026_ig-26-004_hls_contracts,"SpaceX Appendix H contract, potential value",about 4.3 (about 3 in July 2021 plus about 1 for Option B in November 2022),USD billion,PDF p9-10,firm-fixed-price; contract growth about 6% (p3)
+nasa_oig_2026_ig-26-004_hls_contracts,Blue Origin Appendix P contract,about 3.1,USD billion,PDF p10,awarded May 2023 for the Artemis V lander; growth under 1% (p3)
+nasa_oig_2026_ig-26-004_hls_contracts,contract growth,SpaceX 6%; Blue Origin less than 1%,%,PDF p3,'due in part to NASA negotiating mutually beneficial contract changes at no cost to the government'

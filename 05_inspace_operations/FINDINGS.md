@@ -175,7 +175,7 @@ The last partially-anchored physical row (`Drilling / excavation energy`) now ha
 4. **Comparison finding (revision candidate, NOT applied):** just_2019's indexed table shows measured specific energies far below our median for loose simulant — RASSOR bucket-drum **0.761 Wh/kg** (footnote: excludes auger transport), pneumatic digger **~2 Wh/kg**, impeller ~115–130 W at 6–30 kg/h, bucket ladder <200 W at up to 2400 kg/h. These are *cutting-only* figures for loose material; our median of 200 is defensible only if it prices duty cycle + on-body transport (which the RASSOR footnote explicitly excludes). Recorded in `extracted_data/r43_excavation_energy_key_numbers.csv` — **context-only until just_2019's full text is pulled** (ScienceDirect still bot-blocks; browser backend was down this round, so no pull attempt succeeded — stays open_not_pulled with the snippet values quarantined as context).
 
 ### Round-43 status (domain 5)
-Registry +3 T2 → domain 5 now carries 16 sources. Open items: just_2019 full-text pull (blocks turning the comparison finding into an applied revision); Mueller 2022 review deck (NTRS 20220006285, pulled — image-heavy, no extractable numbers; recorded as context) remains unregistered pending a text-bearing version.
+Registry +3 T2 → domain 5 now carries 16 sources. Open items: just_2019 full-text pull (blocks turning the comparison finding into an applied revision).
 
 ## Round 44 addition — the ZBO cryocooler rows get their first TESTED-hardware anchor (Carnot estimates -> measured W/W)
 
