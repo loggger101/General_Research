@@ -93,3 +93,6 @@ Thirteen sources from the owner's excavation and beneficiation blocks. **Excavat
 Rejected: a 16-page slide deck with no numbers, a press release, a trade explainer, a personal blog, a model-only conference abstract and an off-topic lightcurve paper (Round 114 log entry). Undecided: a J-STAGE paper (connection reset), a dead blog URL and an unresolved 2016 Sercel programme paper. The list's Just 2019 and Zeng 2007 entries are already registered.
 
 Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+## R116 - just_2019 retry (2026-10-04; registry unchanged by this note)
+
+Retried the routes that could host `just_2019`: the Elsevier TDM API (`api.elsevier.com/content/article/PII:S003206331930162X?httpAccept=text/plain&view=fulltext` -> HTTP 401 AUTHENTICATION_ERROR - a registered API key is required and none exists on this machine), UCL Discovery (intermittent: one search query returned a results page but no `just_2019` record; all subsequent queries now get an HTTP 403 Cloudflare challenge, and the EPrints REST endpoint `/cgi/rest` answers 404 - the eprint route is dead from this machine) and Manchester Pure (publication URL still HTTP 404). Status unchanged: open_not_pulled; **rc-027 remains blocked**.

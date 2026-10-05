@@ -364,3 +364,7 @@ Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
 - [ ] **paulson_balchanos_mavris_2026_isru_economic_environmental_tradeoffs** - https://doi.org/10.2514/6.2026-2788 - AIAA paywall (abstract read). Save a copy for extraction only; do not host.
 - [ ] **mahlke_2022_phd_thesis_asteroid_taxonomy** - https://theses.hal.science/tel-03850762/ - HAL serves a bot check here: save tel-03850762 (2022COAZ4051.pdf) from theses.hal.science; HAL licence is not CC, so extraction only.
 - [ ] **lebofsky_et_al_1990_low_albedo_3um_photometry** - https://doi.org/10.1016/0019-1035(90)90003-R - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host. Not yet read at all.
+## R116 - GEO eclipse-seasons citation re-sourced: two documents read live, both hash-recorded only (2026-10-04; nothing to download)
+
+- **itu_r_s1003_geostationary_orbit** [T3] - https://www.itu.int/rec/recommendation.asp?lang=en&parent=R-REC-S.1003-2-201012-I (English PDF: /dms_pubrec/itu-r/rec/s/R-REC-S.1003-2-201012-I!!PDF-E.pdf) - Read live in full R116; NOT hostable (© ITU 2011 all rights reserved). Hash: 1340810 B sha256=6e69d438c50fa3bf27aece8c9bdb59cfd1ff70a96bb8e358521266abb776df2e.
+- **ecss_e_hb_31_01_part15a_existing_satellites** [T3] - https://ecss.nl/wp-content/uploads/handbooks/ecss-e-hb/ECSS-E-HB-31-01_Part15A.pdf - Read live in full R116; NOT hostable (no licence statement anywhere in the file). Hash: 1781591 B sha256=a070293c9134359bfecb0ff80382a63f4cbf01a23513656fa2e09548b69b98ff.
