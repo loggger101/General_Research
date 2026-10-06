@@ -791,3 +791,11 @@ Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
 - **valueinvesting_io_2026_boeing_howmet_wacc** [d17 T4] - https://valueinvesting.io/BA/valuation/wacc - tables in server-side JSON R124; WACC 7.5% selected / 6.3%-8.6% band verbatim.
 - Retry notes only (stay registered_not_pulled): ULA rocket pages live w/o $ figures; firefly Alpha page JS-rendered, no $ in static HTML; NSIL /launch-services has vehicle names but no prices; pypi yfinance now serves a 'Client Challenge' bot page.
 - Crossref `link`-field sweep of all 64 queued DOIs: six publisher-registered direct PDF URLs found (pielke_byerly_2011 + patzold_2016 Nature, sinibaldi_haldemann_2026 Royal Society, lauretta_2024 Wiley, smith_stanley_2021 AIAA, wang_2026 IOP) - ALL bot-walled from this machine (cookie-wall / Cloudflare 'Just a moment' / Radware captcha). Negative finding; rows stay registered_not_pulled.
+## R125 (2026-10-06) - CC-BY queue sweep: arXiv copies read + institutional routes walled
+
+- lauretta_2024_bennu_in_the_laboratory: READ IN FULL via export.arxiv.org/pdf/2404.12536v1 (73 pp, 13,807,665 B). NOT hostable - arXiv abs page carries CC BY-NC-ND 4.0 (journal version is CC BY 4.0 per Crossref; the copy on file here would be the restricted one). Re-classed verified_live_not_pulled + Context-only.
+- mainzer_2011_neowise_thermal_model_calibration: READ IN FULL via export.arxiv.org/pdf/1105.0975v1 (27 pp, 505,302 B). NOT hostable - default non-exclusive arXiv licence (no CC link on abs page). Re-classed verified_live_not_pulled + Context-only.
+- king_schofield_2015_ci_modal_mineralogy_xrd: OA copy at oro.open.ac.uk/69573/1/69573.pdf (Open University ORA; CC BY 4.0 in-file per record-page snippet) - Cloudflare 'Just a moment' on all direct fetches from this machine. NOT pulled.
+- sinibaldi_haldemann_2026: ORA record oro.open.ac.uk/108579 live-verified via web_extract; Royal Society PDF + ORA bitstream both Cloudflare-walled. NOT pulled.
+- broslav_2025 (thesis): repository.mines.edu item abed9ab3-8bf3-4cac-aafa-b81d379ee4d2, DSpace 7 REST anonymous for metadata but HTTP 401 on bitstreams. NOT pulled.
+- ferrais_2022 / pentikainen_2026: CC BY 4.0 per Crossref; no arXiv copies exist (exact-title searches empty); EDP aanda.org bot-checks every route incl. DOI resolution. NOT pulled.
