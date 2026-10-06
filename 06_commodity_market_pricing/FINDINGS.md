@@ -164,3 +164,7 @@ Both Mineral Commodity Summaries editions were already hosted (R83, R81) but R83
 - Agreeing with their notes, so no row: chromium metal $5.60/lb = $12.35/kg against $10-12; rhenium pellets $1,370 against $1,200-1,600; molybdenum $47/kg against $44; germanium $2,100 against $2,000-3,000; sulfur Tampa contract $69-116 per long ton against $80-100/t.
 
 Extracted data: `extracted_data/r115_usgs_new_element_prices_cobalt_production.csv` (13 rows, page-located; percentages computed in code).
+
+**heraeus_2026_precious_metals_forecast [T4]** - re-classed registered_not_pulled -> verified_live_not_pulled. Forecast page read live; verbatim table rows "Platinum $1,300 – $1,800", "Gold $3,750 – $5,000", "Silver $43 – $62", "Palladium $950 – $1,500", "Rhodium $6,000 – $9,000" (per ounce). First institutional per-ounce precious-metals forecast range in d06 - the platinum row is cited upstream by economicspace's mineral_value.py.
+**metals_dev_api [T4]** - re-classed registered_not_pulled -> verified_live_not_pulled. metals.dev docs read live; verbatim "Live Feed of Gold, Silver, Platinum & Palladium Spot Prices. Real-time prices from leading Authorities & Markets like LBMA , LME , MCX" + free-tier line "Get started for free. No credit card required." with endpoint GET api.metals.dev/v1/latest shown on-page.
+**yahoo_finance_yfinance [T4]** - retry note only. pypi.org/project/yfinance/ now serves a 'Client Challenge' bot page from this machine instead of the package page - stays registered_not_pulled.

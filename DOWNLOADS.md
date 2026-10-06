@@ -781,3 +781,13 @@ Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
 - **astronautix_encyclopedia_propellant_engine_pages** [T4] - http://www.astronautix.com/ (letter-index paths /m/mmh.html etc.) - re-checked live R123; web encyclopedia, no redistribution grant; nothing extracted yet.
 - **rocketcea_nasa_cea_python_wrapper** [T4] - https://rocketcea.readthedocs.io/en/latest/ + github.com/sonofeft/RocketCEA (GPL-3.0) - re-checked live R123; open-source docs, nothing extracted yet.
 - Still blocked this round (retry notes only): ueda_2013 NII record HTTP 406 x all routes; watanabe_2019 JAXA dspace HTTP 406 + science.org unchanged; S2 oa_pdf re-probes: mainzer IOP Radware captcha, macke x2 Wiley 403, ferrais/carvano aanda 403.
+
+## R124 (2026-10-05) - T4 live-read batch + Crossref link-field sweep
+- **satbase_2026_spacex_falcon9_price_increase** [d04 T4] - https://satbase.com/articles/spacex-falcon-9-price-increase-2026 - read in full R124; $74M F9 + $7,000/kg rideshare verbatim (Published Feb 28, 2026).
+- **cas_space_2026_kinetica2_price_per_kg** [d04 T4] - https://satnews.com/2026-04-02/cas-space-successfully-launches-kinetica-2-aiming-for-global-cost-leadership/ - read in full R124; ~$7,000-$11,000/kg medium-lift benchmark verbatim.
+- **wikipedia_launch_vehicle_articles** [d04 T4] - https://en.wikipedia.org/wiki/Comparison_of_orbital_launch_systems - table renders server-side with payload figures (F9 reusable 22,800 kg LEO); NO price/cost column header found R124.
+- **heraeus_2026_precious_metals_forecast** [d06 T4] - https://www.heraeus-precious-metals.com/en/company/press-and-news/heraeus-precious-metals-forecast-2026/ - read in full R124; Pt $1,300-$1,800/oz + Gold/Silver/Pd/Rh ranges verbatim.
+- **metals_dev_api** [d06 T4] - https://metals.dev/ - docs read live R124; free-tier endpoint GET api.metals.dev/v1/latest shown on-page.
+- **valueinvesting_io_2026_boeing_howmet_wacc** [d17 T4] - https://valueinvesting.io/BA/valuation/wacc - tables in server-side JSON R124; WACC 7.5% selected / 6.3%-8.6% band verbatim.
+- Retry notes only (stay registered_not_pulled): ULA rocket pages live w/o $ figures; firefly Alpha page JS-rendered, no $ in static HTML; NSIL /launch-services has vehicle names but no prices; pypi yfinance now serves a 'Client Challenge' bot page.
+- Crossref `link`-field sweep of all 64 queued DOIs: six publisher-registered direct PDF URLs found (pielke_byerly_2011 + patzold_2016 Nature, sinibaldi_haldemann_2026 Royal Society, lauretta_2024 Wiley, smith_stanley_2021 AIAA, wang_2026 IOP) - ALL bot-walled from this machine (cookie-wall / Cloudflare 'Just a moment' / Radware captcha). Negative finding; rows stay registered_not_pulled.
