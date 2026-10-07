@@ -1,0 +1,7 @@
+source_id,quantity,value_as_printed_ft_s,converted_m_per_s,mission_and_burn,location_in_source,match_vs_upstream_note
+sp4029_apollo_by_the_numbers,lm_descent_dv_a15,"6,813",2076.9,Apollo 15 LM powered descent cutoff (burn 739 s),p.213 lunar-orbit phase table,exact
+sp4029_apollo_by_the_numbers,lm_descent_dv_a16,"6,703",2043.0,Apollo 16 LM powered descent cutoff (burn 734 s),p.241 lunar-orbit phase table,exact
+sp4029_apollo_by_the_numbers,lm_descent_dv_a17,"6,698",2041.5,Apollo 17 LM powered descent cutoff (burn 721 s),p.267 lunar-orbit phase table,exact
+sp4029_apollo_by_the_numbers,lm_ascent_dv_a14,"6,066.1",1848.9,Apollo 14 LM ascent orbit cutoff (burn 432 s),p.185 lunar-orbit phase table,exact
+sp4029_apollo_by_the_numbers,lm_ascent_dv_a15,"6,059",1846.7,Apollo 15 LM ascent orbit cutoff (burn 431 s),p.213 lunar-orbit phase table,exact
+sp4029_apollo_by_the_numbers,lm_ascent_dv_a17,"6,075.7",1852.1,Apollo 17 LM ascent orbit cutoff (burn 441 s),p.267 lunar-orbit phase table,"upstream note prints 6,076 (rounding of 6,075.7)"
