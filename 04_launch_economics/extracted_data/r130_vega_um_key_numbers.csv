@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+vega_users_manual_issue4_apr2014,payload fairing diameter,2.600 m,m,"Fig 1.5.1a (p.1-6), PAYLOAD FAIRING block","verbatim: ""Diameter: 2.600 m"""
+vega_users_manual_issue4_apr2014,fairing structure,-,—,§5.3.1 Nose fairing description,"verbatim: ""two-half-shell carbon-fiber reinforced plastic (CFRP) sandwich with aluminum honeycomb structure. The total thickness is approximately 20 mm"""
+vega_users_manual_issue4_apr2014,AVUM upper stage size / dry mass,Ø 2.18 m x 2.04 m; 688 kg (dry) / 540 kg (mass); propellant 381/196 kg NTO-UDMH,-,"Fig 1.5.1a, AVUM UPPER STAGE block","verbatim: ""Size: 2.18-m diameter × 2.04-m height"", ""Dry mass: 688 kg"""
+vega_users_manual_issue4_apr2014,AVUM MEA engine vacuum Isp / thrust,314.6 s; 2.45 kN,-,"Fig 1.5.1a, AVUM propulsion block","verbatim: ""Isp 314.6 s – Vacuum"", ""Thrust 2.45 kN – Vacuum"""
+vega_users_manual_issue4_apr2014,"reference polar orbit payload (700 km, inc 90°, incl adapter)",1430 kg,kg,§2.4.2 Reference polar mission,"verbatim: ""The Vega LV performance for the design reference polar orbit (altitude 700 km ; inclination 90°) is 1430 kg (including adapter)"""
+vega_users_manual_issue4_apr2014,usable volume inside fairing (Fig 5.3.2a),DEFERRED,-,"§5.3.2, Fig 5.3.2a (p.5-4)",figure is image-only in the mirror copy (no text layer); vision backend down R130 - dimension labels to be read when vision recovers; upstream fairing_volume_m3=20.0 cell stays on its existing basis until then

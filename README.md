@@ -94,6 +94,7 @@ tools/                                   build_registry.py (regenerate derived f
 24_aerocapture_aerobraking/               Domain 24: aerocapture & aerobraking
 25_net_smelter_return_refining_terms/     Domain 25: net smelter return: refining charges & payable terms
 26_spacecraft_storage_energy_properties/     Domain 26: spacecraft storage & energy-system physical properties
+27_orbital_debris_collision_risk/          Domain 27: orbital debris & collision risk
 
 <domain>/sources_domain.csv              The registry rows for that domain (the file you edit)
 <domain>/FINDINGS.md                     Prose write-ups and per-number comparisons, one block per round

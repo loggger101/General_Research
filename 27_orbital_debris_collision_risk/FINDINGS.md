@@ -1,0 +1,18 @@
+# Domain 27 — Orbital debris & collision risk
+
+## R130 (2026-10-06) - Domain opened: criterion #1 pivot to a related domain; three sources fetched + read in full, none hostable on licence grounds
+
+**Why this domain exists.** All 25 original domains plus the R74-era additions (d12-d14) and later extensions are populated (26 domains at bdd44de), so per the owner's mid-loop criterion #1 ('if you think youve found all relevent sources for the domains then start thinking of other related domains to begin searching for'), R130 pivoted to an adjacent domain with no home: the orbital debris environment and its economics. It is load-bearing for both upstream repos in ways that were previously only grey-sourced or unbacked judgement: (i) spacecost `operational_costs.csv` 'Launch insurance' / 'Third-party liability insurance' cells cite market-rate news (Gallagher Plane Talking, T4) with no institutional driver of the premium; collision risk is that driver. (ii) economicspace satellite-lifetime and end-of-life/disposal assumptions have had no debris-environment reference at all. (iii) d26's depot/boil-off mission-duration cells implicitly assume a survivable on-orbit environment.
+
+**Sources (all three fetched live this round and read in full; none committed — licence):**
+- **esa_2026_space_environment_report_issue_10** [T3] - the annual ESA Space Debris Office report, Issue 10 Rev 1 (file stamp 2026-09-08), 8,271,884 B from sdo.esoc.esa.int. Every page is stamped 'ESA UNCLASSIFIED - Releasable to the Public', but the copyright notice says commercial use requires authorisation and forbids reproduction without prior written permission -> extraction-only.
+- **nasa_otps_2023_cost_benefit_analysis_orbital_debris_remediation** [T2] - NASA OTPS report (Colvin/Karcz/Wusk, 147 pp), NTRS 20230002817. determinationType MAY_INCLUDE_COPYRIGHT_MATERIAL (third-party figures; license NO) -> extraction-only per the R94 rule.
+- **colvin_2024_sustainability_cba_iac** [T2] - IAC-24-A6.8-E9.1.2,x88555 (12 pp), NTRS 20240011637, GOV_PUBLIC_USE_PERMITTED but in-file 'Copyright ©2024 by the International Astronautical Federation (IAF). All rights reserved.' -> extraction-only.
+
+**Key numbers** (verbatim quotes in `extracted_data/r130_debris_environment_key_numbers.csv`):
+- Environment population, MASTER reference epoch 2026-02-01: '68,450 space objects greater than 10 cm (including approximately 11,300 active payloads)', '1.5 million ... from 1 cm to 10 cm', '230 million ... from 1 mm to 1 cm' — the current-generation successor of the 36,500/>1cm/130M figures quoted in R89-era EU documents.
+- GEO protected region end-of-life compliance (last decade): 'Between 85% and 100% ... attempt to comply', 'Between 70% and 90% do so successfully' — direct evidence for the disposal-mission share of a satellite's lifetime cost.
+- OTPS CBA: removing the Top-50 most concerning debris objects is worth 'around $3.5 million in the first year after removal'; a small-debris cluster 'approximately $23 million' — first institutional $/yr values for risk reduction from any source class.
+- IAC CBA: moving to a 15-year deorbit rule gives benefits '20–750 times the costs', up to '$6 billion in net benefits'; 'Moving all the way to a 0-year rule can result in nearly $9B in net benefits'; shielding against 3-mm debris shows ratios up to ~1,000x.
+
+**No re-pin / no rc opened this round.** No upstream cell carries an absolute debris figure that these contradict — the cells they back are premium-rate and lifetime assumptions currently sourced from T4 news or left as judgement. The first revision candidate (if any) should come after a pin is actually proposed against them.
