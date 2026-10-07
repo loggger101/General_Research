@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+dla_energy_aerospace_standard_prices_fy2025,"MMH (cylinder), NSN 9135000822455/9135016660625",$225.40 per LB (= ~$496.9/kg),USD/LB,"Listing of Standard Prices, FY2025 effective Oct 1 2024","verbatim: ""PROPELLANT,MONOMETHYL HYDRAZINE (MMH) CYL LB $225.40"""
+dla_energy_aerospace_standard_prices_fy2025,"MMH (bulk), NSN 9135016979015",$225.40 per LB (= ~$496.9/kg),USD/LB,same listing,"verbatim: ""PROPELLANT,MONOMETHYL HYDRAZINE LB $225.40"""
+dla_energy_aerospace_standard_prices_fy2025,"Hydrazine H70-water, NSN 9135010499592/9135016661107",$165.75 per LB (= ~$365.4/kg),USD/LB,same listing,"verbatim: ""PROPELLANT,HYDRAZINE-H70-WATER LB $165.75"""
+dla_energy_aerospace_standard_prices_fy2025,"Hydrazine HPH (cylinder), NSN 9135012321852/9135016660593",$165.75 per LB (= ~$365.4/kg),USD/LB,same listing,"verbatim: ""PROPELLANT,HYDRAZINE. HPH CYL LB $165.75"""
+dla_energy_aerospace_standard_prices_fy2025,"NTO MON-3 (cylinder), NSN 9135011465135/9135016659301",$106.42 per LB (= ~$234.6/kg),USD/LB,same listing,"verbatim: ""NITROGEN TETROXIDE, MON-3 CYL LB $106.42"""
+dla_energy_aerospace_standard_prices_fy2025,"NTO MON-3UL (cylinder), NSN 9135015459491/9135016659314",$106.42 per LB (= ~$234.6/kg),USD/LB,same listing,"verbatim: ""NITROGEN TETROXIDE, MON-3UL CYL LB $106.42"""
+dla_energy_aerospace_standard_prices_fy2025,"NTO MON-10 (cylinder), NSN 9135010577408/9135016659185",$132.48 per LB (= ~$292.1/kg),USD/LB,same listing,"verbatim: ""NITROGEN TETROXIDE, MON-10 CYL LB $132.48"""
+dla_energy_aerospace_standard_prices_fy2025,"NTO MON-15 (cylinder), NSN 9135015194787/9135016659189",$262.40 per LB (= ~$578.5/kg),USD/LB,same listing,"verbatim: ""NITROGEN TETROXIDE, MON-15 CYL LB $262.40"""
+dla_energy_aerospace_standard_prices_fy2025,"NTO MON-25 (cylinder), NSN 9135013838173/9135016659209","$545.48 per LB (= ~$1,202.5/kg)",USD/LB,same listing,"verbatim: ""NITROGEN TETROXIDE, MON-25 CYL LB $545.48"""
+dla_energy_aerospace_standard_prices_fy2025,"Liquid hydrogen (context - hydrolox row cites NASA contracts, not DLA), NSN 9135006111347/9135016661259",$10.69 per LB (= ~$23.6/kg),USD/LB,same listing,"verbatim: ""PROPELLANT,HYDROGEN LB $ 10.69"" - brackets upstream's ""~$10/kg with handling"" from above; no rc (different citation basis)"
+dla_energy_aerospace_standard_prices_fy2025,"Liquid oxygen tank price (context), NSN 9135009652527/9135016653259",$335.89 per TN (= ~$0.37/kg),USD/TN,same listing,"verbatim: ""PROPELLANT,OXYGEN TN $335.89"" (second NSN 9135005595287/9135016653235 at ""$322.28"")"

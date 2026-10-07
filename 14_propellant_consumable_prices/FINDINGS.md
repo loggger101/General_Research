@@ -66,3 +66,15 @@ Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
 ## R127 (2026-10-06) - RP-1 price anchor: the cited SpaceInsider article located and read live
 
 - **spaceinsider_rp1_price** [T4]: RE-CLASS registered_not_pulled -> verified_live_not_pulled. spaceinsider.tech/2023-06-13/how-much-does-rocket-fuel-cost ('How Much Does Rocket Fuel Really Cost?', June 13, 2023), HTTP 200 from this machine. Verbatim (whitespace-normalized): 'RP-1 presents a cheaper option at $2.3/kg' against LH2 '$6.1 a kilogram', CH4 '$8.8/kg', LOX '$0.27/kg' - attributed in the article to moving-average US defense prices with the Defense Working Capital Fund as standard-price reference; worked example Falcon 9 propellant (312,200 kg LOX + 186,006 kg RP-1) = ~$512,108 per launch. No copyright statement on page -> not hostable under any licence token; hash-recorded + URL'd. This is the first T4 anchor for d14's RP-1 component price behind upstream's kerolox row.
+## R131 (2026-10-07) - current DLA aerospace standard prices read live; rc-083 opened against upstream's stale 'DOD FY20' component prices (+1 source T3, verified_live_not_pulled)
+
+The d14 queue row `dla_energy_aerospace_standard_prices_fy2020` (the FY2019 letter spacecost cites as "DOD FY20 standards") has been unreachable every round since R74. This round its **current successor** was located via search index and read live through server-side extraction: the DLA Energy standard-price letter `E_2024Oct1AerospaceStandardPrices` (FY2025 prices, effective Oct 1 2024). Direct fetch of dla.mil is still Akamai-blocked from this machine, so the bytes could not be committed despite US-government-work status — registered as new row `dla_energy_aerospace_standard_prices_fy2025` [T3; verified_live_not_pulled]. Verbatim propellant rows in `extracted_data/r131_dla_fy2025_aerospace_prices.csv`:
+
+- MMH: **$225.40/LB = ~$496.9/kg** (verbatim "PROPELLANT,MONOMETHYL HYDRAZINE (MMH) CYL LB $225.40")
+- Hydrazine HPH / H70-WATER: **$165.75/LB = ~$365.4/kg**
+- NTO MON-3 (= N2O4): **$106.42/LB = ~$234.6/kg** (MON-10 $132.48, MON-15 $262.40, MON-25 $545.48 per LB)
+- Context: liquid hydrogen **$10.69/LB ≈ $23.6/kg**; LOX tank price ~$322-336/tonne
+
+**rc-083 opened (value)** against spacecost@cd66898 `reference/propellants.csv`: the MMH/NTO row's components are MMH $100/kg + N2O4 $35/kg under a note reading verbatim "Pricing from DOD FY20 standards." — ~5x below current DLA standard prices; the hydrazine row reads verbatim "DOD FY20 standard $30.5/kg, commercial $75.8/kg (AIAA 2024). Used $75/kg conservative for aerospace." and sits ~5x below the current HPH price. The cited FY2019 file itself appears in no search index anymore, so its original figures cannot be re-verified from this machine — the rc proposes re-pinning to the FY2025 letter (or at minimum updating the notes). A further successor letter effective Oct 1 2025 is live but its propellant table was not read this round (server-side quota burned after ~2 calls); retry next round.
+
+Also this round: d17 GAO-18-57 direct fetch re-tested — still HTTP 403 (Akamai), stays registered.
