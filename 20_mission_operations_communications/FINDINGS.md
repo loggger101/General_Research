@@ -74,3 +74,16 @@ rc-030 (`Deep Space Network time`, $1,530/hr, 26.5% below the Rev H-based $2,082
 `remer_1992_modeling_dsn_costs_future_space_missions_major_cost_drivers` is registered from its record (probably a capital-cost model). Undecided: the PERSEUS Uranus mission paper (Springer challenge), two yumpu copies of the Rev C/E catalogs (bot check). Rejected: the DSN 'fees' page (it now serves the home page), the mission-documents landing page, the Stack Exchange answer that restates the MOCS formula, and two satellite-price pages (Round 114 log entry).
 
 Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+
+## R137 - DSN per-mission preparation-cost anchor from SpaceOps 1992 (2026-10-09)
+
+Domain 20's DSN cost line had an OIG audit pair (program budgets: $419M->$706M LCC growth; FY2014 budget $210M) and the 820-100 Rev H rate basis, but NO source for what it actually COSTS to prepare the DSN for an individual mission - the per-mission number a future asteroid-mission cost model needs. The queued remer_1992_modeling_dsn_costs_future_space_missions_major_cost_drivers row (NTRS 19930068625) turned out to be METADATA_ONLY with no file, but the same search surfaced its SISTER paper: Remer/Sherif/Buchanan at SpaceOps 1992 (JPL), NTRS 19940019495 - a 6-page conference paper on DSN MODIFICATION/ENHANCEMENT preparation costs, GOV_PUBLIC_USE_PERMITTED with zero in-file copyright statements -> hosted under ntrs-public-use.
+
+The model is built from eight major mission cost drivers and derived from actual cost data of three missions: Voyager (Uranus), Voyager (Neptune) and Magellan; it is then tested against two INDEPENDENT missions, Viking and Mariner Jupiter/Saturn (MJS). Verbatim (p1): "This paper develops a cost model to do long range planning cost estimates for Deep Space Network (DSN) support of future space missions."
+
+Key numbers (word-coordinate read; the tables sit in a two-column layout so each column was extracted separately and rows re-assembled by y-band - see r137_dsn_modification_costs_key_numbers.csv):
+- Table 6 actual preparation costs per mission: Voyager(U) $35.9M / Voyager(N) $36.0M / Magellan $32.5M (all 1987$); Model B predictions bracket them within +17.5%/-22.5%, average error -3.4%.
+- Table 7: a five-year modification program incurring all nine cost drivers = $56,079K actual vs $55,573K model (-1%).
+- Independent checks (p5 right column): MJS ten-year program "The total actual cost for MJS was 97.5 ($M)" vs Model B's two-phase prediction of 111.15 (~14% high); Viking five years "as compared to the actual cost of 49.7 ($M) [7]. The difference is 3.8%".
+
+Match quality: these are EXACT per-mission preparation-cost measurements for real NASA missions - a ceiling-anchor class source (the DSN prep budget a mission must fund on top of its own spacecraft/ops line), not a pin for any single upstream cell; the operational_costs.csv DSN rows price recurring service, which this paper does not cover. The companion 1992 journal version stays queued with an R137 retry note pointing here.
