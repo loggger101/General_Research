@@ -439,3 +439,10 @@ Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
 - garner_rayman_2016_jpc_lamo: AIAA JPC paper 6.2016-4539 (DOI 10.2514/6.2016-4539). NTRS twin 20190002063 is determinationType OTHER with zero files (re-probed R148).
 - garner_rayman_2018_jpc_final_orb: AIAA JPC paper 6.2018-4641 (DOI 10.2514/6.2018-4641; Crossref title prints a typo, 'Dwn'). NTRS twin 20210008613 is determinationType OTHER with zero files (re-probed R148).
 - File hygiene: removed an older duplicate snapshot of this file's own preamble + sections A-F/R96-R116 that had been concatenated ahead of the current copy; section-by-section diff verified zero unique content lost (2026-10-10).
+
+## Round 149 - d27 foundational queue
+
+- **kessler_cour_palais_1978_collision_frequency_debris_belt** [T1] - Kessler & Cour-Palais, "Collision frequency of artificial satellites: The creation of a debris belt", JGR Space Physics 83(A6):2637-2646 (DOI `10.1029/ja083ia06p02637`, Crossref-verified live R149). THE canonical collision-frequency / debris-belt model behind d27's premise and the Kessler-syndrome literature.
+  - NTRS record **19780057167**: determinationType=GOV_PUBLIC_USE_PERMITTED but **zero downloadable files** (probed R149).
+  - AGU/Wiley: `https://doi.org/10.1029/ja083ia06p02637` and `.../agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/JA083iA06P02637` both **HTTP 403** from this machine (probed R149).
+  - Route: institutional/library pull, or an AGU archive-access session; the paper is also cited verbatim in the now-hosted NASA CP-2360 reference list.
