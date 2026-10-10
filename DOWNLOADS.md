@@ -446,3 +446,16 @@ Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
   - NTRS record **19780057167**: determinationType=GOV_PUBLIC_USE_PERMITTED but **zero downloadable files** (probed R149).
   - AGU/Wiley: `https://doi.org/10.1029/ja083ia06p02637` and `.../agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/JA083iA06P02637` both **HTTP 403** from this machine (probed R149).
   - Route: institutional/library pull, or an AGU archive-access session; the paper is also cited verbatim in the now-hosted NASA CP-2360 reference list.
+
+## Round 151 - d15 cislunar-economics queue
+
+- **bennett_xie_dempster_2022_moon_neas_cislunar_propellant** [T1] - Acta Astronautica 190:409-412 (DOI `10.1016/j.actaastro.2021.10.038`, Crossref-verified live R151). Moon vs NEA cislunar propellant sourcing cost - the delivered-material-value source for d15's utility-factor item.
+  - Elsevier licence field = TDM-only (no redistribution); OpenAlex isOA=False; Semantic Scholar isOpenAccess=False, no open PDF; NTRS title/author search zero records; doi.org -> linkinghub.elsevier.com stub HTTP 200 with no file (all probed R151).
+- **entrena_2017_emerging_cislunar_economy_framework** [T1] - Acta Astronautica 141:209-218 (DOI `10.1016/j.actaastro.2017.10.005`, Crossref-verified live R151). Framework for studying the emerging cislunar economy.
+  - Canonical PII **S0094576516311717** (from Crossref link field); ScienceDirect PDF route HTTP 403 from this machine; OpenAlex isOA=False; Semantic Scholar isOpenAccess=False, no open PDF (all probed R151).
+- **keravala_tietz_stone_2013_shackleton_propellant_depot_architecture** [T1] - New Space 1(2):91-100 (DOI `10.1089/space.2013.0014`, Crossref-verified live R151). First commercial propellant-depot business case: per-kg delivered-fuel pricing + depot demand.
+  - Publisher route via doi.org HTTP 403 from this machine; OpenAlex isOA=False; Semantic Scholar isOpenAccess=False, no open PDF (all probed R151).
+- **kutter_sowers_2016_cislunar1000_self_sustaining_space_economy** [T2] - AIAA SPACE 2016 (DOI `10.2514/6.2016-5491`, Crossref-verified live R151). Transportation demand supporting a self-sustaining cislunar economy.
+  - NTRS title search zero records (no NASA-hosted twin); OpenAlex isOA=False; Semantic Scholar isOpenAccess=False, no open PDF (all probed R151).
+
+Route for all four: institutional/library pull or an Elsevier/Liebert/AIAA archive-access session. Re-probe publisher routes at least once per few rounds - WAF walls are not permanent (R144 GAO precedent).
