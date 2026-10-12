@@ -4,12 +4,14 @@ build_template(parent) writes, under `parent`:
     General_Research/   two domains, one hosted file, extracted CSV + JSON, INDEX.md with a rejected source and a
                         research log, README layout, revision candidates and an upstream commit map; the tools are
                         copied in from this checkout, and sources.csv and the manifest hashes come from its own
-                        build_registry.py. It is a git repository (validate.py lists files with git).
+                        build_registry.py. It is a git repository with the template committed (validate.py lists
+                        files with git and compares the research log with HEAD).
     spacecost/, AsteroidCatalog/, economicspace/
                         upstream clones with an origin/main ref, for `validate.py --upstream`.
 It returns the upstream commit ids the tests need. Each test copies the template and plants one defect.
 """
 import csv
+import hashlib
 import io
 import os
 import shutil
@@ -25,9 +27,11 @@ GIT_ID = ['-c', 'user.name=fixture', '-c', 'user.email=fixture@example.invalid',
 
 DOMAIN_HEADER = ['id', 'tier', 'short_title', 'journal_or_series', 'year', 'doi_or_url', 'authors_short',
                  'access_status', 'pipeline_mapping']
+PDF = b'%PDF-1.4 fixture\n'
 ALPHA = [
+    # The sha256 prefix matches the hosted file, so the access-sha check runs and passes.
     ['src_hosted', 'T1', 'Hosted paper', 'J. Fixture 1:1', '2020', 'https://doi.org/10.1/fixture', 'Doe',
-     'full_text_hosted - read from the fixture PDF', 'the alpha cell'],
+     f'full_text_hosted - read from the fixture PDF (sha256={hashlib.sha256(PDF).hexdigest()[:12]})', 'the alpha cell'],
     ['src_pending', 'T2', 'Pending report', 'NASA TM', 'n.d.', 'https://ntrs.example/1', 'Roe',
      'registered_not_pulled - an upstream citation, not yet read', 'the beta cell'],
 ]
@@ -64,6 +68,7 @@ INDEX_MD = """# Fixture index
 ## Research log
 - **Round 1** (2026-01-02): second round; rej_one rejected.
 - **Round 0** (2026-01-01): first round.
+  - detail: the fixture's two domains were set up.
 """
 
 README_MD = """# Fixture
@@ -91,9 +96,6 @@ tools/                    the tools
 ```
 """
 
-PDF = b'%PDF-1.4 fixture\n'
-
-
 def csv_text(header, rows):
     buf = io.StringIO()
     w = csv.writer(buf, lineterminator='\n')
@@ -116,7 +118,8 @@ def git(cwd, *args):
 
 
 def make_upstream(parent):
-    """spacecost: main = M0 -> M1; O has M1's tree but is off main (a rewritten copy); O2 has M0's tree, off main."""
+    """spacecost: main = M0 -> M1; O has M1's tree and subject but is off main (a rewritten copy of M1); O2 has M0's
+    tree and is off main, unmapped. AsteroidCatalog and economicspace: main = their own M0 (A0, E0)."""
     shas = {}
     for name in ('spacecost', 'AsteroidCatalog', 'economicspace'):
         repo = parent / name
@@ -132,11 +135,13 @@ def make_upstream(parent):
             m1 = git(repo, 'rev-parse', 'HEAD')
             tree1 = git(repo, 'rev-parse', 'HEAD^{tree}')
             tree0 = git(repo, 'rev-parse', 'HEAD~1^{tree}')
-            shas.update(M0=m0, M1=m1, tree1=tree1,
-                        O=git(repo, 'commit-tree', tree1, '-m', 'M1 before the history rewrite'),
+            shas.update(M0=m0, M1=m1, tree0=tree0, tree1=tree1,
+                        # No parent, unlike M1, so it cannot hash to M1's id even within the same second.
+                        O=git(repo, 'commit-tree', tree1, '-m', 'M1'),
                         O2=git(repo, 'commit-tree', tree0, '-m', 'an unmapped commit'))
             git(repo, 'update-ref', 'refs/remotes/origin/main', m1)
         else:
+            shas['A0' if name == 'AsteroidCatalog' else 'E0'] = m0
             git(repo, 'update-ref', 'refs/remotes/origin/main', m0)
     return shas
 
@@ -170,14 +175,23 @@ def build_template(parent):
          'the hosted paper gives 2', f'spacecost@{shas["M1"]}', '2026-01-02'],
         ['rc-002', 'applied', 'citation', '02_beta', 'src_live', 'R0', 'spacecost', 'reference.csv', 'x', 'notes',
          'none', 'cite src_live', 'upstream applied it', f'spacecost@{shas["O"]}', '2026-01-01'],
+        # Closed, and resolved in another repo than its target's: its file is checked on AsteroidCatalog's main.
+        ['rc-003', 'applied', 'value', '01_alpha', 'src_hosted', 'R1', 'AsteroidCatalog', 'reference.csv (+ notes)', 'y',
+         'x', '0', '3', 'resolved by a spacecost change', f'spacecost@{shas["M0"]}', '2026-01-02'],
+        # A method candidate may name a model stage instead of a file.
+        ['rc-004', 'declined', 'method', '01_alpha', 'src_hosted;src_pending', 'R1', 'spacecost', 'the mission timeline',
+         '-', 'timeline', 'not modelled', 'model it', 'owner declined', f'spacecost@{shas["M0"]}', '2026-01-02'],
     ]))
     write(root / 'upstream_commit_map.csv', csv_text(MAP_HEADER, [
-        ['spacecost', shas['O'], shas['M1'], shas['tree1'], 'M1 before the history rewrite', 'rc-002']]))
+        ['spacecost', shas['O'], shas['M1'], shas['tree1'][:12], 'M1', 'rc-002']]))
     write(root / 'sources.csv', '')
     proc = subprocess.run([sys.executable, str(root / 'tools' / 'build_registry.py')], capture_output=True, text=True)
     if proc.returncode != 0:
         raise RuntimeError(f'fixture build failed:\n{proc.stdout}{proc.stderr}')
     git(root, 'init', '-q')
+    # A committed HEAD: validate.py compares the research log with the last commit.
+    git(root, 'add', '-A')
+    git(root, 'commit', '-q', '-m', 'fixture')
     return shas
 
 

@@ -6,6 +6,7 @@ import contextlib
 import hashlib
 import importlib
 import io
+import os
 import re
 import subprocess
 import sys
@@ -15,9 +16,9 @@ from fixture import TOOLS
 from test_validate import BETA_CSV, BOM, MAN, FixtureCase, delete, duplicate_first_row, edit, put
 
 
-def build(root, *args):
+def build(root, *args, env=None, cwd=None):
     proc = subprocess.run([sys.executable, str(root / 'tools' / 'build_registry.py'), *args], capture_output=True,
-                          text=True, encoding='utf-8')
+                          text=True, encoding='utf-8', env=dict(os.environ, **(env or {})), cwd=cwd)
     return proc.returncode, proc.stdout + proc.stderr
 
 
@@ -40,6 +41,9 @@ BUILD_CASES = [
     ('manifest-license-empty', lambda r: edit(r, MAN, 'cc-by 4.0 (statement on PDF p1)', '')),
     ('manifest-duplicate', lambda r: duplicate_first_row(r, MAN)),
     ('manifest-file-missing', lambda r: edit(r, MAN, 'hosted.pdf', 'gone.pdf')),
+    # the manifest itself unreadable, and a derived file that is not UTF-8 (it cannot be compared, so nothing is written)
+    ('text-bom', lambda r: put(r, MAN, BOM + (r / MAN).read_bytes())),
+    ('text-not-utf8', lambda r: put(r, 'sources.csv', (r / 'sources.csv').read_bytes() + b'caf\xe9\n')),
 ]
 
 
@@ -49,7 +53,7 @@ def build_codes_in_source():
     appended = set(re.findall(r"errors\.append\(\(\s*'([a-z0-9-]+)'", src))
     printed = set(re.findall(r"print\(f?'ERROR ([a-z0-9-]+):", src))
     # common.py's codes that the build's readers can raise (not the git file listing, which only validate.py uses)
-    raised = set(re.findall(r"DataError\(\s*'([a-z0-9-]+)'", common)) - {'git-ls-files'}
+    raised = set(re.findall(r"DataError\(\s*'([a-z0-9-]+)'", common + src)) - {'git-ls-files'}
     return appended | printed | raised
 
 
@@ -100,6 +104,33 @@ class TestBuildRegistry(FixtureCase):
         data = (root / 'sources.csv').read_bytes()
         self.assertEqual(data.count(b'\r\n'), data.count(b'\n'), 'line endings changed')
 
+    def test_runs_from_any_directory_on_an_ascii_console(self):
+        root = self.copy()
+        edit(root, BETA_CSV, 'Live dataset', 'Live service')
+        rc, out = build(root, env={'PYTHONIOENCODING': 'ascii'}, cwd=str(root.parent))
+        self.assertEqual(rc, 0, out)
+        self.assertIn('wrote       sources.csv', out)
+
+    def test_missing_derived_files_are_created(self):
+        root = self.copy()
+        before = (root / 'sources.csv').read_bytes()
+        delete(root, 'sources.csv')
+        rc, out = build(root, '--check')
+        self.assertEqual(rc, 1, out)
+        self.assertIn('STALE       sources.csv', out)
+        rc, out = build(root)
+        self.assertEqual(rc, 0, out)
+        self.assertEqual((root / 'sources.csv').read_bytes(), before)
+
+    def test_a_bom_in_a_derived_file_is_rebuilt_away(self):
+        """sources.csv is generated, so a BOM there is fixed by regenerating it, not reported as an input error."""
+        root = self.copy()
+        put(root, 'sources.csv', BOM + (root / 'sources.csv').read_bytes())
+        self.assertEqual(build(root, '--check')[0], 1, 'a BOM in sources.csv was not reported stale')
+        rc, out = build(root)
+        self.assertEqual(rc, 0, out)
+        self.assertFalse((root / 'sources.csv').read_bytes().startswith(BOM))
+
     def test_every_code_has_a_case(self):
         planted = {c for c, _ in BUILD_CASES} | {'write-mismatch'}  # write-mismatch: test_write_mismatch
         self.assertEqual(build_codes_in_source() - planted, set(), 'codes build_registry can report but no case plants')
@@ -139,16 +170,20 @@ class TestBuildRegistry(FixtureCase):
                 text = real(path)
                 return text + 'corrupted' if len(calls) > 1 and text is not None else text
             b.normalized = flaky
-            buf = io.StringIO()
-            with contextlib.redirect_stdout(buf):
+            # A real text stream, as a console is: main() reconfigures stdout to UTF-8.
+            raw = io.BytesIO()
+            stream = io.TextIOWrapper(raw, encoding='cp1252')
+            with contextlib.redirect_stdout(stream):
                 rc = b.main([])
+            stream.flush()
+            out = raw.getvalue().decode('utf-8')
         finally:
             sys.path.remove(tools)
             for m in ('common', 'validate', 'build_registry'):
                 sys.modules.pop(m, None)
             sys.modules.update(saved)
-        self.assertEqual(rc, 1, buf.getvalue())
-        self.assertIn('ERROR write-mismatch: sources.csv', buf.getvalue())
+        self.assertEqual(rc, 1, out)
+        self.assertIn('ERROR write-mismatch: sources.csv', out)
 
 
 if __name__ == '__main__':

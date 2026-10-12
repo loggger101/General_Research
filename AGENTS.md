@@ -15,8 +15,14 @@ python tools/validate.py         # must exit 0
 When a round re-checks revision candidates, also run `python tools/validate.py --upstream`
 (it needs the sibling clones fetched). When you change anything under `tools/`, run
 `python -m unittest discover -s tools/tests` and give every new report code a planted-defect
-case: the suite fails on a code without one. Fix a failing check's cause; do not add a
-fallback, a skip or an exception that lets the run pass around it.
+case: the suite fails on a code without one. Then run `python tools/tests/measure_coverage.py`:
+it fails unless every line and branch of the tools is reached by a test, so a new place that
+reports an existing code needs its own case too. `python tools/tests/debug_case.py CODE --keep`
+shows a case's full report and keeps its planted repo. Fix a failing check's cause; do not add a
+fallback, a skip or an exception that lets the run pass around it. When a new check fails on
+the data, decide whether the data or the check is wrong: a stray-log-line check (2026-10-12)
+failed on Round 40's second paragraph, which Markdown renders as part of the entry, so the
+check was narrowed rather than the old entry rewritten.
 
 ## Rules (each one exists because it broke in a past round)
 
