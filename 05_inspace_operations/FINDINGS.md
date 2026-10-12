@@ -430,3 +430,32 @@ p.37 adds a second cost basis for the INL-reactor project: capital $35.7M ($35.2
 ## R127 (2026-10-06) - Pu-238 supply claim: the cited Space.com article located and read live
 
 - **space_com_pu238_rtg_cost_reporting** [T4]: RE-CLASS registered_not_pulled -> verified_live_not_pulled. space.com/15184-plutonium238-spacecraft-fuel-production.html ('Plutonium Production May Avert Spacecraft Fuel Shortage', published 2012-04-06), HTTP 200 from this machine. Verbatim (whitespace-normalized): 'The goal is to eventually produce between 3.3 pounds and 4.4 pounds (1.5 to 2 kg) of plutonium-238 per year, which should be enough to support NASA's robotic planetary science missions' - backs the SUPPLY clause ('NASA / DOE target 1.5 kg/yr production') of upstream operational_costs.csv's RTG note; the ~$2.5M/kg historical Russian price in that same note is NOT from this article (it traces to the R97-registered NASA NIAC report). Page carries a copyright statement -> not hostable; hash-recorded + URL'd.
+
+## R154 (2026-10-12) - RTG institutional cost + program-status class (+2 T2 / +1 T3 -> registry 571)
+
+Domain 5's two Pu-238/RTG rows had flight-record and unit-price anchors but no *institutional finished-unit cost* figure anywhere in the corpus - upstream's `operational_costs.csv`
+'RTG (radioisotope power)' $/W cell ($200k-$1M) carried only Space.com (T4) context. This round adds three sources:
+
+- **hamley_2016_rps_program_overview_focus_users** [T2, full_text_hosted; NTRS 20160009220 GOV_PUBLIC_USE_PERMITTED, zero in-file copyright]: NASA GRC's RPS Program status deck
+  (Hamley/McCallum/Sandifer/Sutliff/Zakrajsek). Key content: the Pu-238 Supply Project 'originally intended to reach the full production rate of 1.5 kg/yr in 2021' but now phases in
+  lower-rate production earlier, 'possibly as early as 2019'; MMRTG F2/F3 flight units built and held in bonded storage (F3 = Mars 2020 baseline); ASRG termination + EU2 disposition;
+  NPAS findings. The only dollar figure is the program-average budget - McCallum's bio: 'The RPS Program has averaged approximately $75M/year' (verbatim, count==1).
+
+- **zakrajsek_et_al_2017_rps_status_expectations_aiaa** [T2, full_text_hosted; NTRS 20170009572 GOV_PUBLIC_USE_PERMITTED, zero in-file copyright]: AIAA conference paper
+  (GRC-E-DAA-TN39410), NASA GRC + DOE authors. Carries the **institutional constant-rate-production statement** verbatim: 'the short-term goal being to average 400 g/year by 2019, and a
+  long-term goal to obtain an average rate of 1,500 g/year by 2025' (count==1). This is the dated production-rate ladder that IG-23-010's '1.5 kg/yr by 2026' goal and upstream's
+  supply note both descend from - a consistency anchor, not a contradiction (2025 target vs 2026 goal: same rate, different vintages).
+
+- **gao_2017_pu238_rps_production_planning** [T3, registered_not_pulled; GAO-17-673 'Space Exploration: DOE Could Improve Planning and Communication Related to Plutonium-238 and
+  Radioisotope Power Systems Production Challenges', Sep 2017]: gao.gov WAF-blocked from this machine again (HTTP 403 on /assets/690/688254.pdf AND the alternate canonical
+  /assets/gao-17-673.pdf, full browser headers via urllib and curl; product page also 403) - registered per R89/R153 precedent with key figures extracted verbatim from GAO's own
+  published text: 'the use of one MMRTG—the current RPS design—would cost $77 million, two MMRTGs would cost $94 million, and three MMRTGs would cost $117 million. With an
+  $850 million development cost cap, one MMRTG would account for 9 percent of the New Frontiers budget...'; plus 'about 120 watts of electrical power at the beginning of its life—a
+  6 percent power conversion efficiency' and 'One MMRTG contains 32 general purpose heat source (GPHS) fuel clads'.
+
+**Verdict vs upstream.** $77M per ~110-We BODL unit = **~$700k/W**, which sits in the upper region of the row's own band ($200k-$1M per W-electric): institutional confirmation that
+the finished-unit cost is real money, with no re-pin (band already brackets it). The Pu-238 *fuel* price gap remains closed by R97 (Howe et al. NIAC: $1.6-$7.8 M/kg; this round's GAO
+figures cover the finished generator - a different cost base, same pattern as R95's Shapiro deployment statistics). No revision candidate opened: nothing contradicts an upstream value.
+
+**Key numbers** -> `extracted_data/r154_rtg_program_cost_key_numbers.csv` (9 rows; locally-verifiable spans count==1 against the hosted PDFs pre-write; GAO spans verbatim from
+GAO's own published text - provenance class R89/R153).

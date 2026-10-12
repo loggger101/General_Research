@@ -239,3 +239,8 @@ Route for all four: institutional/library pull or an Elsevier/Liebert/AIAA archi
   - Save as: gao-17-366.pdf; route https://www.gao.gov/assets/690/683915.pdf (HTTP 403 Akamai WAF from this machine R153); product page https://www.gao.gov/products/GAO-17-366 also HTTP 403. Licence: public-domain (work of the U.S. government) - hostable once pulled.
 
 Route for both: institutional/library pull, or re-probe gao.gov when its WAF opens (R144 precedent shows the block is transient in both directions).
+
+## R154 addition (2026-10-12)
+- **gao_2017_pu238_rps_production_planning** [T3] - GAO-17-673 "Space Exploration: DOE Could Improve Planning and Communication Related to Plutonium-238 and Radioisotope Power Systems Production Challenges" (Sep 2017). FIRST institutional per-unit MMRTG costs in d05 ($77M/$94M/$117M vs $850M New Frontiers cap; ~$700k/W at BODL) + CRP-era production context.
+  - Save as: gao-17-673.pdf; routes https://www.gao.gov/assets/690/688254.pdf AND the alternate canonical https://www.gao.gov/assets/gao-17-673.pdf (both HTTP 403 Akamai WAF from this machine R154, full browser headers via urllib and curl); product page https://www.gao.gov/products/GAO-17-673 also HTTP 403. Key figures already extracted verbatim from GAO's own published text (search-index capture of gao.gov pages) per the R89/R153 precedent.
+  - Route: institutional pull, or a future round when gao.gov unblocks (R144 showed an unblock can be transient). Licence: public-domain (work of the U.S. government) - hostable once pulled.
