@@ -12,6 +12,12 @@ python tools/build_registry.py   # regenerates sources.csv, fills manifest hashe
 python tools/validate.py         # must exit 0
 ```
 
+When a round re-checks revision candidates, also run `python tools/validate.py --upstream`
+(it needs the sibling clones fetched). When you change anything under `tools/`, run
+`python -m unittest discover -s tools/tests` and give every new report code a planted-defect
+case: the suite fails on a code without one. Fix a failing check's cause; do not add a
+fallback, a skip or an exception that lets the run pass around it.
+
 ## Rules (each one exists because it broke in a past round)
 
 - **Edit `<domain>/sources_domain.csv`, never `sources.csv`.** The aggregate is

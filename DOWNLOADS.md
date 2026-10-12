@@ -1,8 +1,6 @@
 # What still has to be downloaded
 
-Round 70 (2026-09-27) extracted every file hosted in this repo. The 58 sources below are not hosted, so their extraction is limited to what earlier rounds read live. This file lists exactly what to fetch to finish the job. Tick each box as you go.
-
-**Status after Round 73 (2026-09-27):** Round 71 (branch `side-deepening`) extracted all 20 section-A files and seven section-B downloads, and Round 72 checked them. Round 73 ran in a container with open network access and fetched and extracted the rest of section B (the Planetary Society workbook and the full NHATS table) and six section-C items from open copies (ticked below, with the route used). **Still to fetch, all needing a normal browser or library access:** harris_dabramo_2021, cannon2023, just_2019, tirila_2023, farnocchia_2024, mandler_elkins_tanton_2013, pourpoint_2012_alice_feasibility, demeo_2009_bus_taxonomy_near_ir, ryugu_soluble_organics_2023, ryugu_macromolecular_om_2023 (section C), and all of section D. From a server these hosts answer with bot challenges (Cloudflare, DataDome, Radware, Anubis) even with open network access; Round 73 did not try to get around them. Also wanted: the Ryugu supplementary data files (Data S2-S8 xlsx) from https://www.science.org/doi/10.1126/science.abn7850 (Supplementary Materials), which hold the per-element bulk chemistry.
+The sources below still need a file fetched by hand: through a browser where a publisher blocks this machine, through library access, or as a publisher copy that could then be hosted. What has already been read, and how, is recorded in each source's `access_status` in its domain's `sources_domain.csv`; this file lists only what is left. Remove an item when it is done (Round 152 removed the finished ones; earlier versions are in git history). The rest of the queue is every registry row whose `access_status` starts with `registered_not_pulled`; `python tools/validate.py` counts them in its summary line.
 
 ## How to use this list
 
@@ -72,76 +70,13 @@ None of these 20 may be hosted again; each was un-hosted for its licence.
 
 ---
 
-## B. Direct links that work from any machine, including Claude's (no browser needed)
-
-- [x] **planetary_society_pebd_mission_costs** (extracted in R73: all 137 sheets, ~15,800 cells) (13) — **highest value**: NASA planetary-mission costs by development, launch and operations for every mission, at fiscal-year resolution (80 sheets). Only a summary has been extracted.
-  Get: https://docs.google.com/spreadsheets/d/12frTU01gfT1CXGWFimN3whf4348F_r3XolTqBt02OyM/export?format=xlsx
-  Save as `planetary_society_pebd_mission_costs.xlsx`. The dataset terms require attribution to The Planetary Society; extract only.
-- [x] **adam_2017** (extracted in R71) (0) — volumes and bulk densities of 40 asteroids. The arXiv preprint works from here.
-  Get: https://arxiv.org/pdf/1702.01996 (published version: https://www.aanda.org/articles/aa/pdf/2017/05/aa29956-16.pdf, which needs a browser)
-  Save as `adam_2017.pdf`. arXiv default licence, so extract only.
-- [x] **metzger_2023** (extracted in R71) (0) — economics of lunar-derived propellant (Acta Astronautica 2023). Registered but never extracted.
-  Get: https://arxiv.org/pdf/2303.09011
-  Save as `metzger_2023.pdf`. Extract only.
-- [x] **metzger_zacny_2020** (extracted in R71) (5) — thermal extraction of volatiles from regolith.
-  Get: https://arxiv.org/pdf/2306.03776
-  Save as `metzger_zacny_2020.pdf`. Extract only.
-- [x] **proctor_apex_2019** (extracted in R71) (4) — NASA Glenn regolith-excavation power and force facility (2.7 MB).
-  Get: https://ntrs.nasa.gov/api/citations/20190027268/downloads/20190027268.pdf
-  Save as `proctor_apex_2019.pdf`. The registry records the NTRS copy as public domain, so it may be hostable after an NTRS copyright check.
-- [x] **zeitlin_asteroid_excavation_project** (extracted in R71) (1) — asteroid icy-regolith excavation and volatile capture (396 KB).
-  Get: https://ntrs.nasa.gov/api/citations/20150016080/downloads/20150016080.pdf
-  Save as `zeitlin_asteroid_excavation_project.pdf`. May be hostable after an NTRS copyright check.
-- [x] **jpl_nhats_nea_dv_oracle** (extracted in R73: 7,094 bodies) (10) — round-trip Δv and duration for every NHATS-accessible NEA. Only statistics are extracted so far; the per-body table (~7,100 bodies) is not.
-  Get: https://ssd-api.jpl.nasa.gov/nhats.api
-  Save as `jpl_nhats_nea_dv_oracle.json`.
-- [x] **usgs_pp1802n** (extracted in R71) (3) — the full USGS Professional Paper 1802-N (platinum-group elements). Only an excerpt is hosted now.
-  Get: https://pubs.usgs.gov/pp/1802/n/pp1802n.pdf
-  Save as `usgs_pp1802n.pdf`. USGS public domain, so it may be hosted if under 50 MB.
-- [x] **cowen_agnello_petit_2012_npsr_pge** (extracted in R81: full 16-page paper, terms table + recovery rates) - net-smelter-return mechanics for the South African PGE industry; registered in domain 25.
-- [ ] **dreisinger_2000_hydrometallurgical_treatment_pgm_sulfide_concentrates** (extracted in R91: full 25-page deck read live; NOT hostable - no licence statement, PolyMet data under permission) - measured flotation + pressure-leach recoveries for an iron-rich Cu-Ni-PGM feed (Northmet); registered in domain 25.
-  Get: https://propertyfile.gov.bc.ca/reports/PF700051.pdf
-  Save as `dreisinger_2000_hydrometallurgical_treatment_pgm_sulfide_concentrates.pdf`. No licence statement anywhere in the PDF, so extract only; never host.
-  Get: https://saimm.co.za/Conferences/Pt2012/577-592_Cowen.pdf
-  Save as `cowen_agnello_petit_2012_npsr_pge.pdf`. No licence statement anywhere in the PDF (Camera Press watermark only), so extract only; never host.
-- [ ] **mc_dowell_2025_space_activities_gcat** (extracted in R92: full 70-page report read live; NOT hostable - no licence statement anywhere) - GCAT Rev 1.2 GEO population table (Table 22): 613 active payloads GPZ+/-100 km / 638 total as of Jan 2026, anchoring upstream's '~550 geostationary satellites'; registered in domain 15.
-  Get: https://planet4589.org/space/papers/space25.1.2.pdf
-  Save as `mc_dowell_2025_space_activities_gcat_rev1.2.pdf`. No licence statement anywhere in the PDF, so extract only; never host.
-- [x] **jm_pgm_market_report_2026** (extracted in R71) (10) — Johnson Matthey PGM market report, May 2026: full supply and demand tables.
-  Get: https://matthey.com/documents/161599/509428/pgm-market-report-26.pdf/a2d115af-bf7c-f589-29e9-6beacf8a4452
-  Save as `jm_pgm_market_report_2026.pdf`. JM terms forbid reuse without consent, so extract only; never host.
-
----
-
-- [x] **kornuta_2019_commercial_lunar_propellant_architecture** (read in full R84) - Commercial Lunar Propellant Architecture, REACH 13:100026. The co-authors' own copy works from any machine; the publisher copy is TDM-only and ScienceDirect bot-blocks this machine.
-Get: http://publish.illinois.edu/kokiholab/files/2018/11/Commercial-Lunar-Propellant-Architecture.pdf
-Save as `kornuta_2019_clpa.pdf`. No redistribution licence on either copy, so extract only.
-- [ ] **sukumaran_et_al_2024_ti_hbn_wear_neutron_shielding_sct** (extracted in R94: full 16-page paper read live; NOT hostable - "copyright 2024 Elsevier B.V. All rights are reserved" printed on p.1) - Ti-hBN coating sliding wear with JSC-1A third-body abrasion, 90-95% lower wear rate than uncoated substrate; registered in domain 16.
-  Get: https://ntrs.nasa.gov/api/citations/20240011143/downloads/ECI%202_Ti-hBN%20SCT.pdf (publisher copy behind Elsevier paywall)
-  Save as `sukumaran_et_al_2024_ti_hbn_wear_neutron_shielding_sct.pdf`. Elsevier all-rights-reserved in-file, so extract only; never host. DOI: https://doi.org/10.1016/j.surfcoat.2024.131185
-- [ ] **stein_et_al_2025_icacc_abrasive_effects_of_lunar_regolith_on_material_wear** (extracted in R94: full 15-page deck read live; NOT hostable - NTRS determinationType=MAY_INCLUDE_COPYRIGHT_MATERIAL + no licence statement) - Taber abrasion wear indices with LMS-1 regolith wheels vs standard CS-17 media; registered in domain 16.
-  Get: https://ntrs.nasa.gov/api/citations/20250000687/downloads/ICACC2025_WearResistance_Stein_v3.pdf
-  Save as `stein_et_al_2025_icacc_abrasive_effects_of_lunar_regolith_on_material_wear.pdf`. Extract only; never host.
-- [ ] **mas_2007_nber13138_labor_unrest_equipment_resale_market** (extracted in R94: full 50-page working paper read live; NOT hostable - "copyright 2007 by Alexandre Mas. All rights reserved") - >48,000 used construction-equipment auction sales with condition-indexed pricing; the terrestrial analogue for `Rig salvage fraction`; registered in domain 16.
-  Get: https://www.nber.org/system/files/working_papers/w13138/w13138.pdf
-  Save as `mas_2007_nber13138_labor_unrest_equipment_resale_market.pdf`. Extract only; never host.
-- [ ] **kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams** (extracted in R95: full 14-page paper read live; NOT hostable - "copyright 2022. California Institute of Technology" printed on p.1) - Curiosity drill-feed in-flight failure + recovery, the drilling component of d16's mechanism tally; registered in domain 16.
-  Get: https://esmats.eu/amspapers/pastpapers/pdfs/2022/kinnett.pdf (NTRS record 20230005798 is a preprint with no downloadable file)
-  Save as `kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams.pdf`. Caltech copyright in-file, so extract only; never host.
-
 ## C. Needs a normal web browser (the publisher blocks automated downloads from this machine)
 
 Open the link, use the site's own "Download PDF" button, and save under the name given.
 
-- [x] **dziadura2023** (extracted in R73 from the publisher PDF in the Universidad de Alicante repository, https://rua.ua.es/server/api/core/bitstreams/4a71f48e-3b3d-4e8f-a0e7-f4e37baa1de5/content) (1) — NEA bulk densities from the Yarkovsky effect (Gaia DR3), A&A 680 A77.
-  Get: https://www.aanda.org/articles/aa/pdf/2023/12/aa47342-23.pdf
-  Save as `dziadura2023.pdf`. CC-BY, so it may be hosted.
 - [ ] **harris_dabramo_2021** (1) — NEA population revisited (size-frequency, completeness), Icarus 2021. Free to read on ScienceDirect.
   Get: https://doi.org/10.1016/j.icarus.2021.114452
   Save as `harris_dabramo_2021.pdf`. No licence stated, so extract only.
-- [x] **wilkinson_robinson_2000** (extracted in R73 from the NASA ADS scan, https://articles.adsabs.harvard.edu/pdf/2000M%26PS...35.1203W; the paper is M&PS 35:1203-1213) (1) — bulk densities of ordinary-chondrite meteorites (MAPS 35).
-  Get: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1945-5100.2000.tb01509.x
-  Save as `wilkinson_robinson_2000.pdf`. Free to read, no licence, so extract only.
 - [ ] **cannon2023** (0) — precious and structural metals on asteroids (per-class recoverable metal), PSS 215.
   Get: https://www.sciencedirect.com/science/article/pii/S0032063322001945/pdf
   Save as `cannon2023.pdf`. CC-BY-NC-ND; per your 2026-09-17 decision, extract numbers only and never host.
@@ -160,19 +95,11 @@ Open the link, use the site's own "Download PDF" button, and save under the name
 - [ ] **pourpoint_2012_alice_feasibility** (1) — ALICE aluminium-ice propellant flight demonstration.
   Get: https://downloads.hindawi.com/journals/ijae/2012/874076.pdf
   Save as `pourpoint_2012_alice_feasibility.pdf`. CC-BY, so it may be hosted. Alternative copy (also Cloudflare-protected): https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1009&context=perc_articles
-- [x] **elkins_tanton_2020_psyche_preflight** (extracted in R73 from the benweiss.mit.edu author mirror) (7) — pre-flight composition assessment of 16 Psyche, JGR Planets (4.4 MB).
-  Get: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7375145/ (or https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2019JE006296)
-  Save as `elkins_tanton_2020_psyche_preflight.pdf`. CC-BY-NC, so extract only.
 - [ ] **demeo_2009_bus_taxonomy_near_ir** (0) — Bus-DeMeo taxonomy definitions, Icarus 202. HAL author version.
   Get: https://hal.science/hal-00545286
   Save as `demeo_2009_bus_taxonomy_near_ir.pdf`. Extract only.
 - [ ] **ryugu_soluble_organics_2023** (0) — Get: https://hal.science/hal-04208565/document — save as `ryugu_soluble_organics_2023.pdf`. Extract only.
 - [ ] **ryugu_macromolecular_om_2023** (0) — Get: https://cnrs.hal.science/hal-04034418/document — save as `ryugu_macromolecular_om_2023.pdf`. Extract only.
-- [x] **ryugu_ivuna_2023** (extracted in R73 from the Hokudai copy; supplementary xlsx still wanted, see status note) (4) — Get: https://eprints.lib.hokudai.ac.jp/dspace/bitstream/2115/90313/1/Science.pdf — save as `ryugu_ivuna_2023.pdf`. AAAS author copy, personal use only; never host.
-- [x] **weinzierl2018** (extracted in R73 from Harvard DASH via https://dash.harvard.edu/server/api/core/bitstreams/2ba7bfe5-bb7a-491c-9a77-878ad3191b30/content) (1) — "Space, the Final Economic Frontier", JEP 32(2).
-  Get: https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.32.2.173
-  Save as `weinzierl2018.pdf`. Free from AEA. R73: the DASH copy's cover page says it is posted under DASH 'Other Posted Material (LAA)' terms, not CC BY, so extract only.
-- [x] **epsc2022_context** (extracted in R73: the HTML abstract page is now readable without login) (0, context-only) — Get: https://doi.org/10.5194/epsc2022-106 — save as `epsc2022_context.pdf`. CC-BY abstract; low value.
 
 ---
 
@@ -186,25 +113,6 @@ Open the link, use the site's own "Download PDF" button, and save under the name
 
 ---
 
-## E. Nothing to download
-
-These are live services or datasets already pulled and used. Re-pull them only to refresh values.
-
-`simda2024`, `jpl_sbdb_small_body_database`, `mp3c_minor_planet_physical_properties_catalogue`, `mpc_mpcorb_extended_designation_links` (182 MB, used only for designation links), `damodaran_cost_of_capital_by_industry` (103 rows), `gallagher_plane_talking_space_market_updates`, `lbma_precious_metals_fixings`, `asterank_neo_service_shoemaker_helin`, `jpl_msl_factsheet_curiosity_mass`.
-
----
-
-## F. Registered in Round 74 and later, not yet sought (queue now 134 after R83)
-
-R81 pulled one row out of this queue: `usgs_mineral_commodity_summaries_2026` is now full_text_hosted (pubs.usgs.gov reachable from this machine; full report + four chapters committed). R83 added eleven more rows to the queue (the domain-2 mineralogy citations, all Crossref-checked) and pulled `usgs_mineral_commodity_summaries_2025` out of it into full_text_hosted.
-
-
-Round 74 registered every source the three upstream repos cite that this registry lacked. None has been fetched, so none is listed item by item here yet: the queue is every row of `sources.csv` whose `access_status` starts with `registered_not_pulled`, and each row already records its DOI or landing URL and what answered from this machine (Crossref metadata, HTTP status, or a bot block). 42 are T1 journal articles (Icarus, Nature, Science, A&A, MAPS) that will mostly land in section C or D; 55 are T4 grey sources (company pages, news, Wikipedia, vendor posts, software), which usually need no download, only a dated read of the page.
-
----
-
-*Written 2026-09-27 after Round 70; updated after Rounds 72, 73 and 74. When a file has been extracted, its box is ticked and a research-log entry records the round.*
-
 ## R96 - Domain 10 methalox anchors (registered 2026-10-01; all full texts NOT sought this round)
 
 - [ ] **ueda_et_al_2013_methane_fueled_engine_altitude_hot_fire_jpc** - AIAA JPC 49th proceedings, DOI 10.2514/6.2013-4056 (paywalled). If obtained: extract the altitude-condition thrust/Isp table for a LOX/methane engine; save as `ueda_et_al_2013_methane_fueled_engine_altitude_hot_fire_jpc.pdf`.
@@ -215,9 +123,7 @@ Round 74 registered every source the three upstream repos cite that this registr
 
 The 31 sources registered for spacecost v0.5.0's fairing cells: one is now hosted (Atlas V UG Rev 11, public-domain statement in file), sixteen were verified live and read from their PDF text layers but not committed (manufacturer copyright or third-party mirror provenance — see the R99 FINDINGS block for exact figure evidence). The fourteen below still need a normal browser or library access:
 
-- [ ] **nasa_nsts_21492_space_shuttle_payload_bay_users_guide** - NASA program document NSTS 21492 (Space Shuttle Program Payload Bay Payload User's Guide, s4.0: max payload dimensions 720 in x 180 in, "a volume of 10,600 cubic feet"). Not located via NTRS search from this machine under the document number or title phrases tried; try a NASA history office / shuttle program library route. If obtained: extract s4.0 verbatim incl. the metric conversions upstream flags as self-inconsistent; save as `nasa_nsts_21492_space_shuttle_payload_bay_users_guide.pdf`.
 - [ ] **douglas_sm47274_saturn_v_payload_planners_guide_nov1965** - Douglas SM-47274 (Nov 1965), prime payload configuration A "about 3,230 cubic feet". archive.org item `SaturnVPayloadPlannersGuide` exists but its files DNS-failed from this machine in three attempts; retry the item's file list or use a NASA history office copy. If obtained: extract the configuration-A volume statement + fairing dimensions; save as `douglas_sm47274_saturn_v_payload_planners_guide_nov1965.pdf`.
-- [ ] **vega_users_manual_issue4_apr2014** - Arianespace Vega User's Manual Issue 4 (Apr 2014), Fig 5.3.2a usable volume inside the Vega fairing. Original URL now HTTP 410 Gone; post-migration ariane.group path 404; web.archive.org unreachable from this machine — try from any other network or an Arianespace document request. If obtained: extract Fig 5.3.2a dimensions; save as `vega_users_manual_issue4_apr2014.pdf`.
 - [ ] **isro_vssc_gslv_mkiii_vehicle_specifications_plf_volume** - ISRO/VSSC GSLV MkIII vehicle specifications page ("Heat Shield (Payload Fairing) Diameter 5.0 m, PLF Usable Volume 110m3"). isro.gov.in blocks/times out automated requests from this machine; open in a normal browser and screenshot or save the spec table. If obtained: extract the fairing spec line verbatim; save as `isro_vssc_gslv_mkiii_vehicle_specifications_plf_volume.png` (or .pdf if printable).
 - [ ] **orienspace_gravity1_fairing_100m3_tencent_news_2023** - Tencent News report 2023-11-22 quoting Orienspace: the Gravity-1 4.2 m fairing "has 100 cubic metres of payload space". No stable URL in the upstream citation; locate via a Chinese search engine (tencent news archive). If obtained: extract the quoted sentence + date verbatim; save as `orienspace_gravity1_fairing_100m3_tencent_news_2023.html`.
 - [ ] **russianspaceweb_angara_a5_14s746_fairing_zak** - RussianSpaceWeb (A. Zak) Angara-5 article: 14S746 fairing first flown 2025-09-19, 17.705 m long x 4.35 m diameter; no usable envelope published. Site is live but its search endpoint did not surface the article from this machine; browse russianspaceweb.com's Angara section directly. If obtained: extract the fairing dimensions + first-flight date verbatim; save as `russianspaceweb_angara_a5_14s746_fairing_zak.html`.
@@ -231,99 +137,10 @@ The 31 sources registered for spacecost v0.5.0's fairing cells: one is now hoste
 - [ ] **reaction_engines_skylon_users_manual_rev1** - Reaction Engines SKYLON Users' Manual Rev 1, Fig 13 payload envelope (2,350 mm maximum radius, 13,000 mm long with 799 mm end clearances). reactionengines.co.uk refused connections from this machine on every attempt; retry later or via a normal browser. If obtained: extract Fig 13 dimensions verbatim; save as `reaction_engines_skylon_users_manual_rev1.pdf`.
 ## R100 - Domain 14 propellant & consumable prices (registered 2026-10-02; two full texts pulled and hosted this round)
 
-Pulled + committed to `14_propellant_consumable_prices/full_texts/` (queue now 149 after R100):
-- [x] **inl_rpt_23_75203_krypton_xenon_recovery_cost_benefit** - INL/RPT-23-75203, Cost-Benefit Assessment of Krypton and Xenon Recovery from Aqueous Reprocessing (Sept 2023), pulled from inldigitallibrary.inl.gov via the OSTI record osti.gov/biblio/2377416. U.S.-government-work disclaimer on p.2 -> public domain, hosted.
-- [x] **iea_global_hydrogen_review_2024** - IEA Global Hydrogen Review 2024 (published 02 October 2024), pulled from iea.blob.core.windows.net via the official landing page; 'IEA. CC BY 4.0.' on every page -> hosted, context-only for now (cost figures are vector charts).
-
 Still blocked / dead this round:
 - [ ] **dla_energy_aerospace_standard_prices_fy2020** - FY20/FY24/FY25 PDF URLs and the landing page all answer HTTP 403 from this machine (bot protection, not worked around); web.archive.org is DNS-blocked here. Would anchor hydrazine $30.5/kg, MMH/NTO in one document.
 - [ ] **aqua_calc_lox_bulk_price** - still answers HTTP 403 from this machine.
-## R101 - Domain 14 LH2 production-cost anchors (registered 2026-10-02; both full texts pulled and hosted this round)
-
-Pulled + committed to `14_propellant_consumable_prices/full_texts/` (queue unchanged at 149 after R101):
-- [x] **nasa_cr_73226_study_cost_system_analysis_lh2_production** - NASA CR 73226, Study/Cost/System Analysis of Liquid Hydrogen Production (June 1968), pulled from NTRS record 19680018755; determination GOV_PUBLIC_USE_PERMITTED -> hosted.
-- [x] **nasa_cr_159163_economics_hydrogen_production_liquefaction_updated_1980** - NASA CR 159163, Economics of Hydrogen Production and Liquefaction Updated to 1980 (Nov 1979), pulled from NTRS record 19800002991; determination GOV_PUBLIC_USE_PERMITTED -> hosted.
-
-Documented negative finding this round: the 'commercial $75.8/kg (AIAA 2024)' hydrazine citation in spacecost's propellants.csv resolves to no indexed paper anywhere reachable from this machine (Crossref AIAA JPC sweep + NTRS searches) - nothing to download until a specific DOI is identified; the DLA FY20 row above remains the only institutional anchor for that cell.
-## R102 - Domain 12 first hosted sources (registered 2026-10-02; eight rows pulled and committed this round incl. one NEW source, queue 149 -> 142)
-
-Pulled + committed to `12_destination_environments_physical_constants/full_texts/`:
-- [x] **iau_2012_resolution_b2_astronomical_unit** - IAU Resolution B2 PDF (syrte.obspm.fr mirror of the official text).
-- [x] **bipm_si_brochure_9th_edition** - SI Brochure 9th edition, English (BIPM; CC BY 4.0 statement on p.2 of the file).
-- [x] **nasa_nssdca_moon_fact_sheet** / **nasa_nssdca_mars_fact_sheet** / **nasa_iss_facts_and_figures** - HTML snapshots of the live US Government pages at the exact URLs upstream cites.
-- [x] **appelbaum_flood_1989_tm102299_solar_radiation_mars** - NASA TM-102299 from NTRS record 19890018252 (GOV_PUBLIC_USE_PERMITTED).
-- [x] **daly_2023_dart_kinetic_impact** - Nature 616:443 PDF via the publisher's own article link (in-file CC BY 4.0 statement p.5).
-- [x] **thomas_2023_dimorphos_orbital_period_change** (NEW source registered this round) - Nature 616:448 companion paper, PDF via the publisher's own article link (in-file CC BY 4.0 statement p.4); carries the measured −33.0 min orbital-period change upstream's Didymos row points at.
-
-Still blocked from this machine after R102 re-checks (routes recorded per row in the domain CSV): science.org PDFs HTTP 403 x3; Elsevier no-open-copy x3; Kopp & Lean TSI - AGU legacy 403 + Wiley pdfdirect bot-blocked despite OpenAlex OA flag; CODATA RMP APS paywall + NIST CUU Cloudflare challenge; ITU-R S.1003 free-download endpoints all failing (landing page live).
-## R103 - Domains 3+4 institutional queue work (registered 2026-10-02; two full texts pulled and hosted, one large scan read live but not committed)
-
-Pulled + committed to `full_texts/`:
-- [x] **nasa_oig_2024_ig-24-015_sls_block_1b** (d4) - 6.0 MB PDF from oig.nasa.gov; US government work. OIG projects SLS Block 1B development cost ~$5.7 billion before first flight on Artemis IV (2028).
-- [x] **nasa_std_5019_fracture_control_spaceflight_hardware** (d3) - current revision NASA-STD-5019A w/Change 4 revalidated 2025-09-05 from standards.nasa.gov; US government work.
-
-Read live but NOT committed:
-- [ ] **nasa_sp125_huzel_huang_design_liquid_rocket_engines** (d3) - full 469-page NTRS scan fetched and read this machine (GOV_PUBLIC_USE_PERMITTED); 47,789,998 B exceeds the repo's ~36 MB max-committed-file cap -> hash-recorded in the domain CSV instead (sha256=471e590a…). Content check: engine-design chapters only - see rc-060.
-
-Still blocked after R103 re-check: vega_users_manual_issue4_apr2014 original URL still HTTP 410 Gone (migrated path 404, web.archive.org DNS-unreachable from this machine).
-## R104 - Domain 26 opened: spacecraft storage & energy-system physical properties (registered 2026-10-02; eight full texts pulled and hosted)
-
-Pulled + committed to `26_spacecraft_storage_energy_properties/full_texts/` (all NTRS, Public Use Permitted; Context-only pending extraction):
-- [x] **nasa_tm_2026_copv_stress_rupture_mechanics_carbon_fiber** - 451,515 B, NASA/TM-20260002192 (Mar 2026); carbon-fiber COPV stress-rupture mechanics.
-- [x] **ntrs_2010_copv_stress_rupture_testing** - 5,699,336 B, NASA Technical Reports Series (catalog 2010-05-19); measured COPV stress-rupture / proof-test data.
-- [x] **ntrs_2011_copv_flight_rationale_shuttle_program** - 2,030,784 B (catalog 2011-09-27); flight rationale behind the PV/W margin on every supercritical-gas tank.
-- [x] **ntrs_2020_kilopower_krusty_fission_power_experiment_missions** - 5,163,636 B (catalog 2020-06-04); KRUSTY fission-power experiment + potential missions.
-- [x] **ntrs_2020_krusty_reactor_design** - 3,820,631 B (catalog 2020-06-04); KRUSTY reactor thermal/electrical design basis.
-- [x] **nasa_tm_2025_rtg_power_performance_histories** - 705,240 B, NASA/TM-20250004743 (Jul 2025); measured GPHS/MMRTG performance histories.
-- [x] **nasa_tm_2011_long_term_cryogenic_storage_microgravity** - 3,801,225 B, NASA/TM-2011-215988 (Oct 2011); long-duration microgravity cryo storage & boil-off physics.
-- [x] **ntrs_2014_cryogenic_boiloff_reduction_system_testing** - 833,238 B (catalog 2014-07-28); measured MLI / vapor-cooled-shield boil-off reduction.
-
-No blocked routes this round: all eight NTRS download endpoints answered from this machine and every PDF verified as valid (`%PDF` magic + SHA-256).
-## R105 - Domain 26 extended to the remaining storage_systems.csv cells (registered 2026-10-03; eight full texts pulled and hosted)
-
-Pulled + committed to `26_spacecraft_storage_energy_properties/full_texts/` (all NTRS, Public Use Permitted; Context-only pending extraction):
-- [x] **ntrs_2016_orion_small_cell_battery_design_support** - 3,412,099 B, JSC Battery Aerospace Workshop presentation (catalog 2016-11-15); Orion small-cell Li-ion design basis. Partial OCR text layer noted.
-- [x] **ntrs_2006_g2_flywheel_module_design** - 919,275 B (catalog 2006-08-01); ISS G2 flywheel module design.
-- [x] **ntrs_2002_energy_storage_flywheels_on_spacecraft** - 1,413,274 B (catalog 2002-01-01); NASA assessment of flywheel ESS for spacecraft power systems.
-- [x] **ntrs_2020_analysis_100w_regenerative_fuel_cell_demonstration** - 1,562,928 B (catalog 2020-08-01); measured 100-W regenerative FC demonstration.
-- [x] **nasa_cr_1984_regenerative_hydrogen_oxygen_fuel_cell_electrolyzer** - 803,371 B (catalog 1984-09-01); NASA CR orbital RFECS design report.
-- [x] **ntrs_2023_vacuum_sintering_highland_simulant** - 1,489,501 B (NTRS distribution 2023-06-12; no publicationDate field in the record); vacuum sintering of CSM-LHT-1G highland simulant.
-- [x] **ntrs_2020_microwave_sintering_lunar_landing_pads** - 666,699 B (NTRS distribution 2020-12-14); MSCC Moon Village workshop; NTRS PDF render of a .pptx.
-- [x] **nasa_tm_2005_rev1_effects_lunar_dust_eva_systems_apollo** - 732,267 B (NASA/TM-2005-213610/REV1, Apr 2007); Apollo EVA dust-contamination record.
-
-No blocked routes this round: all eight NTRS download endpoints answered from this machine and every PDF verified as valid (`%PDF` magic + SHA-256).
-
-## R106 - Domain 21 deepened: first hosted sources for the recurring $/kg brief (registered 2026-10-03; three full texts pulled and hosted, one extraction-only)
-
-Pulled + committed to `21_mass_cost_estimating_relationships/full_texts/` (all NTRS):
-- [x] **foreman_lemoine_deweck_2016_cer_survey_distributed_spacecraft_missions** - 792,734 B (catalog 2016-09-13); AIAA survey; its p.6 model table documents SSCM + NICM/NICM-E scope, versions and access routes.
-- [x] **koenig_stewart_2019_orion_tps_manufacturability_em1** - 744,038 B (catalog 2019-03-02); KSC; EM-1 Avcoat-block producibility -> cost/schedule/weight savings vs EFT-1.
-- [x] **clark_pensado_jones_grande_judd_2021_lander_function_allocation_propellant** - 3,060,088 B (catalog 2021-01-29); AMa + NASA LaRC; lunar lander/transport inert-mass-fraction sizing inputs (Tables 7/9).
-- [ ] **borner_venkatapathy_2024_low_cost_tps_materials** - extraction-only, NOT hosted: NTRS determination MAY_INCLUDE_COPYRIGHT_MATERIAL with no in-file redistribution licence; read in full on 2026-10-03 (4,047,347 B PDF kept out of the repo per the licence rule).
-
-NICM/SSCM queue re-checks: NTRS holds NICM VI / NICM-E / NICM 8.5 but all three carry determination OTHER with no public download files (access-restricted via the NASA ONCE portal); JPL's landing page still answers HTTP 200 while the OCFO URL in the row now returns HTTP 404; SSCM's landing page still bot-blocks this machine -> both rows stay registered_not_pulled.
-
-## R107 - Domain 18 deepened: primary regulatory text hosted (registered 2026-10-03; two eCFR parts pulled and committed as cleaned plain-text snapshots)
-
-Pulled + committed to `18_licensing_planetary_protection_space_law/full_texts/` (ecfr.gov, HTTP 200 from this machine; US government work -> public-domain):
-- [x] **faa_14_cfr_part_450_launch_reentry_licensing** - 140,412 B cleaned plain text of the current eCFR Part 450 (full part through Appendix A, §§ 450.1-450.219). R74's recorded URL pointed at a wrong chapter/subchapter path and hit a bot 'unblock' page; the corrected canonical URL is now in the row.
-- [x] **faa_14_cfr_part_440_liability_insurance_requirements** - 59,237 B cleaned plain text of the current eCFR Part 440 (full part through Appendix A, §§ 440.1-440.19). NEW source: the direct regulatory home of the MPL caps behind 'Third-party liability insurance'.
-
-Both parts re-pullable at their canonical eCFR URLs (recorded in the rows); snapshots are point-in-time copies as of 2026-10-03. No blocked routes this round.
-
-
-## R108 - Domain 17 deepened: contingency + venture financing (registered 2026-10-03; two NTRS PDFs pulled and committed)
-
-Pulled + committed to `17_cost_of_capital_contingency_insurance/full_texts/` (ntrs.nasa.gov, HTTP 200 from this machine):
-- [x] **whitley_shinn_2012_economics_nasa_mission_cost_reserves** - 413,028 B PDF; NTRS copyright determination PUBLIC_USE_PERMITTED + no in-file licence statement -> hostable (ntrs-public-use). First empirical source for the 'Contingency reserve' cell.
-- [x] **scottoline_coleman_1999_loan_guarantees_tax_incentives_launch_ventures** - 618,692 B PDF; determination GOV_PUBLIC_USE_PERMITTED + no in-file licence statement -> hostable (ntrs-public-use). First institutional source for the venture cost-of-capital bracket behind 'Cost of capital (WACC)'.
-
-Both read in full; key findings quoted verbatim into FINDINGS.md's R108 block. No blocked routes this round.
-
 ## R109 - Domain 13 deepened: JPL astrodynamics services re-classified (registered 2026-10-03; IOM manual pulled and committed, .bsp kernels URL'd)
-
-Pulled + committed to `13_astrodynamics_methods_ephemerides_software/`:
-- [x] **jpl_sb441_iom_perturber_manual** (I/O manual for jpl_de441_small_body_perturber_kernels) - full_texts/sb441_iom392r-21-005_perturbers_nasa-jpl.pdf, 993,300 B; JPL interoffice memorandum IOM 392R-21-005 (Farnocchia) published at nasa.gov, no in-file copyright statement -> public-domain. extracted_data/: r109_horizons_mars_observer_ephemeris.json (39,202 B), r109_horizons_bennu_101955_vectors_ephemeris.json (8,709 B) and r109_jpl_astrodynamics_services_key_numbers.csv.
 
 NOT committed (size cap ~36 MB; URL + recorded size/date in extracted_data/):
 - [ ] sb441-n16.bsp - 615.8 MB, https://ssd.jpl.nasa.gov/ftp/eph/small_bodies/asteroids_de441/sb441-n16.bsp (2021-03-31)
@@ -332,99 +149,55 @@ NOT committed (size cap ~36 MB; URL + recorded size/date in extracted_data/):
 
 Blocked this round: newton.spacedys.com/neodys/ serves an anti-bot interstitial ('Making sure you're not a bot!') from this machine - the NEODyS covariance service stays registered_not_pulled until it answers again.
 
-## R110 - Domain 14 peroxide deepening: dead Evonik HTP citation + three institutional NTRS docs (registered 2026-10-03; all three pulled and committed)
-
-Pulled + committed to `14_propellant_consumable_prices/full_texts/`:
-- [x] **nasa_hydrogen_peroxide_propulsion_perspective_ungers_draft** - nasa_hydrogen_peroxide_propulsion_perspective_ungers_draft.pdf, 567,878 B; NTRS 20020092187 (GOV_PUBLIC_USE_PERMITTED; no in-file copyright). Undated DRAFT deck referencing the 1997 time frame.
-- [x] **anderson_et_al_1999_peroxide_propulsion_turn_of_the_century** - anderson_et_al_peroxide_propulsion_turn_of_the_century.pdf, 3,698,448 B; NTRS 20000033615 (GOV_PUBLIC_USE_PERMITTED). In-file dates Aug-Oct 1999.
-- [x] **mcneal_anderson_1999_the_peroxide_pathway** - mcneal_anderson_the_peroxide_pathway.pdf, 507,395 B; NTRS 20000002829 (GOV_PUBLIC_USE_PERMITTED). In-file date February 17 1999.
-
-Dead source documented in rc-061: peroxidepropulsion.com (Evonik / Peroxide Propulsion HTP ~$5/kg quote) is hijacked - R110 re-check shows unrelated product pages; web.archive.org DNS-blocked from this machine so the original page is unrecoverable here.
-
 ## R113 - Owner's link list (registered 2026-10-04; eight files committed, the rest below)
 
 Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
 
 - [ ] **bus_binzel_2002_smass2_feature_based_taxonomy** - https://doi.org/10.1006/icar.2002.6856 - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host.
-- [ ] **popescu_2018_movis_nir_taxonomy** - https://doi.org/10.1051/0004-6361/201833023 - Read from arXiv. aanda.org returns 403 here; the A&A version carries EDP copyright, so extraction only.
 - [ ] **masiero_2021_albedo_uncertainties_thermal_modeling** - https://doi.org/10.3847/PSJ/abda4d - Read from arXiv. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
 - [ ] **myhrvold_2022_four_band_wise_asteroids** - https://doi.org/10.3847/PSJ/ac3232 - Read from arXiv. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
 - [ ] **masiero_2021_neowise_reactivation_years_6_7** - https://doi.org/10.3847/PSJ/ac15fb - Read from arXiv. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
 - [ ] **murray_2023_neural_network_main_belt_albedos** - https://doi.org/10.3847/PSJ/acd381 - Read from arXiv. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
 - [ ] **wang_2026_nea_albedo_from_orbital_elements** - https://doi.org/10.1088/1674-4527/ae37ed - IOP standard licence (not CC) and bot-walled here: save the PDF for extraction only.
 - [ ] **mahlke_carry_denneau_2021_atlas_phase_curves** - https://doi.org/10.1016/j.icarus.2020.114094 - Icarus version is CC BY-NC-ND 4.0 but ScienceDirect gets a CAPTCHA here: save the publisher PDF; it may be hosted under that licence.
-- [ ] **burbine_2024_testing_bus_demeo_with_meteorite_spectra** - https://doi.org/10.3847/PSJ/ad57b6 - Abstract only so far. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
 - [ ] **de_kleer_2026_jwst_spinel_rich_l_type_mineralogy** - https://doi.org/10.3847/PSJ/ae374e - Abstract only so far. Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
+- [ ] **wong_2024_jwst_lucy_trojans_oh_organics_co2** - https://doi.org/10.3847/PSJ/ad2fc3 - Read from arXiv (R152). Published version is CC BY 4.0 but iopscience.iop.org bot-walls this machine: save the publisher PDF; it may then be hosted (check the licence on the PDF).
 - [ ] **xie_bennett_dempster_2021_nea_mining_target_evaluation** - https://doi.org/10.1016/j.actaastro.2021.01.011 - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host. Its target tables are the d8 comparison to extract.
-- [ ] **nasa_sr1_freedom_mission_page** - https://www.nasa.gov/mission/space-reactor-1-freedom/ - Read live; a web page, nothing to download.
-- [ ] **sanders_kleinhenz_2024_isru_space_mining_unoosa** - https://ntrs.nasa.gov/citations/20240002713 - Read live; NTRS marks it may include copyright material, so it stays unhosted.
-- [ ] **cospar_2026_planetary_protection_policy** - https://cosparhq.cnes.fr/assets/uploads/2026/01/SRT_224_Editorial_PPP-Nov-2025.pdf - Read live; no licence on the file, so it stays unhosted.
 - [ ] **tang_et_al_2023_asteroid_rock_mechanical_properties** - https://doi.org/10.1016/j.enggeo.2023.107154 - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host. Not yet read at all.
 - [ ] **liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum** - https://doi.org/10.1016/j.cherd.2026.08.007 - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host. Not yet read at all.
 - [ ] **paulson_balchanos_mavris_2026_isru_economic_environmental_tradeoffs** - https://doi.org/10.2514/6.2026-2788 - AIAA paywall (abstract read). Save a copy for extraction only; do not host.
 - [ ] **mahlke_2022_phd_thesis_asteroid_taxonomy** - https://theses.hal.science/tel-03850762/ - HAL serves a bot check here: save tel-03850762 (2022COAZ4051.pdf) from theses.hal.science; HAL licence is not CC, so extraction only.
 - [ ] **lebofsky_et_al_1990_low_albedo_3um_photometry** - https://doi.org/10.1016/0019-1035(90)90003-R - Paywalled; this machine gets a CAPTCHA. Save a library copy for extraction only; do not host. Not yet read at all.
-## R116 - GEO eclipse-seasons citation re-sourced: two documents read live, both hash-recorded only (2026-10-04; nothing to download)
-
-- **itu_r_s1003_geostationary_orbit** [T3] - https://www.itu.int/rec/recommendation.asp?lang=en&parent=R-REC-S.1003-2-201012-I (English PDF: /dms_pubrec/itu-r/rec/s/R-REC-S.1003-2-201012-I!!PDF-E.pdf) - Read live in full R116; NOT hostable (© ITU 2011 all rights reserved). Hash: 1340810 B sha256=6e69d438c50fa3bf27aece8c9bdb59cfd1ff70a96bb8e358521266abb776df2e.
-- **ecss_e_hb_31_01_part15a_existing_satellites** [T3] - https://ecss.nl/wp-content/uploads/handbooks/ecss-e-hb/ECSS-E-HB-31-01_Part15A.pdf - Read live in full R116; NOT hostable (no licence statement anywhere in the file). Hash: 1781591 B sha256=a070293c9134359bfecb0ff80382a63f4cbf01a23513656fa2e09548b69b98ff.
-
 ## R117 - Ariane 6 / H3 price-citation re-sourcing: ESA + Arianespace pages hash-recorded, JAXA unreachable (2026-10-05)
 
-- **esa_ariane6_overview** [T3] - https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_6_overview - Read live in full R117; NOT hostable (ESA Terms_and_conditions: all material copyright ESA, no reproduction without prior written authorisation). Hash: 36901 B sha256=6d6a27aec71f958d49c76d6ccdaacfe06c5ec5b2d154c2c3b6500be2701a162b.
-- **arianespace_ariane6_vehicle_page** [T3] - https://www.arianespace.com/our-launchers/ariane-6/ - Read live in full R117; no licence statement -> hash-recorded only (R113 precedent). Hash: 97543 B sha256=d697d578baaf3ccdad6452e91e78d469320a3a5936e5bca8754cdb3f6d55e879.
 - **jaxa_h3_launch_vehicle** [T3] - https://global.jaxa.jp/projects/rockets/h3/ - NOT reachable from this machine R117 (HTTP 403 bot-wall on every route; web.archive.org DNS-blocked locally). Nothing to download here.
 ## R118 - d01 queue work: both pulled items hosted; one optional follow-up + one blocked item (2026-10-05)
 
-- **hasselmann_2012_sdss_taxonomy_v1_1_pds** [T3] - https://sbnarchive.psi.edu/pds3/non_mission/EAR_A_I0035_5_SDSSTAX_V1_1/data/sdsstax_obs_table.tab (12,895,920 B sha256=d4cd330578ae03...) - OPTIONAL follow-up only: raw SDSS observational spectra, not needed by the pipeline; the ast_table classification is already committed.
 - **tholen_1984_asteroid_taxonomy_dissertation** [T4] - https://repository.arizona.edu/handle/10150/187738 - still HTTP 403 to urllib and curl under browser headers from this machine (re-checked R118). Stays in the queue.
 ## R119 - queue re-classifications: 3 hosted, 1 not hostable, 1 still blocked (2026-10-05)
 
-- **mathar_2021_kepler_equation_first_estimates** [T4] - https://export.arxiv.org/pdf/2108.03215v3 - pulled + read in full R119; NOT hostable (default non-exclusive licence only, no CC). Hash: 403,121 B sha256=cd99051b11f04c489fd3c282bbcc4a0e38766f1f86ed71d8d604653d6cd2aae2.
 - **hayhurst_2016_historical_mass_power_schedule_cost_growth_nasa_spacecraft** [T2] - https://ntrs.nasa.gov/citations/20160003121 - re-checked R119: NTRS determinationType OTHER, no downloadable file in the citation API. Stays in queue; IEEE Aerospace Conference copy paywalled.
 
 ## R120 - OpenAlex sweep of queued DOIs: 6 hosted, 3 read-not-hostable (2026-10-05)
 
-- **mahlke_carry_denneau_2021_atlas_phase_curves** [T1] - https://export.arxiv.org/pdf/2009.05129v1 - pulled + read in full R120; NOT hostable (default non-exclusive licence only, no CC). Hash: 3,329,286 B sha256=dffc30f6896944654e00f18fb7088a627492270f43d16f7699a4a5c81319a02f.
-- **kafi_2026_spiral_cavity_wheel_excavator_lunar_isru** [T2] - https://export.arxiv.org/pdf/2609.25724 - pulled + read in full R120; NOT hostable (default non-exclusive licence only). Hash: 10,103,383 B sha256=3a8ed7620d7e8f381a3b1108b43944985a7000f17ea8f03c1d4c15da81fa0e42.
-- **eubanks_radley_2016_lunar_elevator_scientific_return** [T1] - https://export.arxiv.org/pdf/1609.00709v1 (green-OA copy of Space Policy 37:97-102) - pulled + read in full R120; NOT hostable (default non-exclusive licence only). Hash: 281,229 B sha256=e552fed53701ee70bc62d896017673ed2a46b0a5bdc1662d83a9d90fe0ae95fc.
 - **ricardo_2026** journal version https://doi.org/10.1007/s44461-026-00015-w - pulls live but in-file CC BY-NC-ND 4.0 (Crossref cc-by tag disagrees) -> preprint hosted instead; see d19 FINDINGS.
 - Still blocked this round: lodders_2003 (IOP Radware captcha), sinibaldi_haldemann_2026 (Royal Society 403 on all routes), kabemba_2025 (MDPI 403), lauretta_2024_bennu_in_the_laboratory + king_schofield_2015 (Wiley/ORO 403), watanabe_2019 (DLR elib fulltext routes 404, HAL API empty), consolmagno_2008/macke_2010/sercel_2018 (UCF Stars landing pages carry no PDF link).
 
 ## R121 - Semantic Scholar + Unpaywall sweep of queued DOIs: 1 hosted, 5 read-not-hostable, 2 retry notes (2026-10-05)
 
-- **izzo_2015_revisiting_lamberts_problem** [T1] - https://export.arxiv.org/pdf/1403.2705v2 - pulled + committed to d13 full_texts (CC0 public domain dedication on the arXiv abs page; no in-file copyright statement). Hash: 859,375 B sha256=0db5671f894283789e27a42cfdb14dcb2922225b17261a45ee79a708b2a737b7.
-- **lauretta_2019_bennu_unexpected_surface** [T1] - https://lirias.kuleuven.be/retrieve/b8116d52-d8c6-418e-8bbe-463d9dbc2d30 (KU Leuven accepted manuscript of Nature 568:55-60) - pulled + read in full R121; NOT hostable (Nature 'Conditions of use' statement in file). Hash: 2,521,238 B sha256=6dc7da045f28362fdf9f178db32a653db99bab966b5d1a9de68ed1d8441101d0.
-- **fornasier_2010_m_type_spectroscopic_survey** [T1] - https://export.arxiv.org/pdf/1007.2582v1 (Icarus 210:655-673) - pulled + read in full R121; NOT hostable (default non-exclusive licence only, no CC). Hash: 1,023,459 B sha256=eb1b65c550c86b93ca2b1ed5764a363341091a9756d185f10a935a498d028804.
-- **jones_mccubbin_2014_phosphate_minerals_ll_chondrites** [T1] - https://authors.library.caltech.edu/records/g5568-y1282/files/mmc1.pdf?download=1 (electronic appendix only: figures EA1-EA5) - pulled + read in full R121; NOT hostable (no licence statement in file; journal article paywalled). Hash: 732,853 B sha256=0310c078227c267fc198e45ab9422b10b347687e1399ac13074494dec8f4c9a7.
-- **tiesinga_2021_codata_2018_constants** [T1] - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9890581 (RMP 93:025010) - full text read in full R121 via article page + efetch XML; NOT hostable (PMC statement allows text mining / fair use only; no stable PDF route from this machine). No hash recorded (no single fetch artifact).
-- **willner_2014_phobos_shape_topography** [T1] - https://elib.dlr.de/92240/1/Willner%2C%20Shi%2C%20Oberst%20-%202014%20-%20Phobos%27%20shape%20and%20topography%20models.pdf (PSS 102:51-59) - pulled + read in full R121; NOT hostable ((c) 2013 Elsevier Ltd. All rights reserved in file). Hash: 4,338,083 B sha256=585ee39427b404e6c4afb66c951347392f326082a1fbb03cc6fb9fb27ec5893f.
 - Still blocked this round (retry notes only): ueda_et_al_2013 (NII record id.nii.ac.jp/1696/00038623 answers HTTP 406 on all routes; AIAA paywall), watanabe_2019_hayabusa2_ryugu_spinning_top (JAXA dspace item page repository.exst.jaxa.jp/dspace/handle/a-is/928996 answers HTTP 406 on all routes; science.org still HTTP 403).
 ## R122 (2026-10-05) - no-DOI queue sweep
-- **kabemba_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm** [T1] - https://mdpi-res.com/d_attachment/minerals/minerals-15-00701/article_deploy/minerals-15-00701.pdf (Minerals 15:701, DOI 10.3390/min15070701) - pulled + read in full R122; HOSTED (IN-FILE CC BY 4.0). Hash: 3,460,221 B sha256=c9134eda1333bcd6f441854b74ecad9b4693b0118736fc20f885351536e49bcb.
 - d13 github_* batch (astroquery, brahe, CamPyRoS, Celestia, mesa, nyx, OpenSCvx, pds4_tools, polars, pygmo2, pymc, Pyomo, python-skyfield, space-datasets, space-map, spacekit, z3) [T4 x17] - each re-verified live via api.github.com/repos/<owner>/<repo> (public; license + last-push recorded in access_status); nothing extracted.
 - Still blocked this round (retry notes only): ferrais_2022_kalliope_tiny_mercury (aanda.org HTTP 403 x2, ORO bitstream refused with record page live, HAL bot-challenge), lme_official_reference_prices + cme_comex_nymex_futures (pages live/403 but no usable figures in static HTML; CME still 403) - LME market data is JS-rendered so a T3 landing-page row cannot carry values from this machine, nasa_instrument_cost_model_nicm (JPL page has zero PDF links; docs stay NTRS-only per R106), pearson_1979_anchored_lunar_satellites (no Crossref record in the JAS vol-27 1978/80 window; ADS bot-walled), douglas_sm47274_saturn_v_payload_planners_guide_nov1965 (item page + metadata live (2 PDFs listed, main 62,769,084 B on storage host ia601604.us.archive.org) but every archive.org file/storage host is DNS-blocked from this machine (getaddrinfo failed)), gao_2018_commercial_space_launch_insurance_mpl_methodology (HTTP 429).
 
 ## R123 (2026-10-05) - S2 DOI->arXiv sweep of all queued DOIs
-- **emery_2011_trojan_nir_two_groups** [T1] - https://export.arxiv.org/pdf/1012.1284 (AJ 141:25, DOI 10.1088/0004-6256/141/1/25) - pulled + read in full R123; NOT hostable (arXiv default non-exclusive licence). Digest: 2,402,893 B fd1a5fe61061.
-- **ivezic_2001_sdss_solar_system_objects** [T1] - https://export.arxiv.org/pdf/astro-ph/0105511 (AJ 122:2749, DOI 10.1086/323452) - pulled + read in full R123; NOT hostable (arXiv assumed pre-2004 non-exclusive licence). Digest: 1,497,611 B 6479a8e925fc.
-- **astronautix_encyclopedia_propellant_engine_pages** [T4] - http://www.astronautix.com/ (letter-index paths /m/mmh.html etc.) - re-checked live R123; web encyclopedia, no redistribution grant; nothing extracted yet.
-- **rocketcea_nasa_cea_python_wrapper** [T4] - https://rocketcea.readthedocs.io/en/latest/ + github.com/sonofeft/RocketCEA (GPL-3.0) - re-checked live R123; open-source docs, nothing extracted yet.
 - Still blocked this round (retry notes only): ueda_2013 NII record HTTP 406 x all routes; watanabe_2019 JAXA dspace HTTP 406 + science.org unchanged; S2 oa_pdf re-probes: mainzer IOP Radware captcha, macke x2 Wiley 403, ferrais/carvano aanda 403.
 
 ## R124 (2026-10-05) - T4 live-read batch + Crossref link-field sweep
-- **satbase_2026_spacex_falcon9_price_increase** [d04 T4] - https://satbase.com/articles/spacex-falcon-9-price-increase-2026 - read in full R124; $74M F9 + $7,000/kg rideshare verbatim (Published Feb 28, 2026).
-- **cas_space_2026_kinetica2_price_per_kg** [d04 T4] - https://satnews.com/2026-04-02/cas-space-successfully-launches-kinetica-2-aiming-for-global-cost-leadership/ - read in full R124; ~$7,000-$11,000/kg medium-lift benchmark verbatim.
-- **wikipedia_launch_vehicle_articles** [d04 T4] - https://en.wikipedia.org/wiki/Comparison_of_orbital_launch_systems - table renders server-side with payload figures (F9 reusable 22,800 kg LEO); NO price/cost column header found R124.
-- **heraeus_2026_precious_metals_forecast** [d06 T4] - https://www.heraeus-precious-metals.com/en/company/press-and-news/heraeus-precious-metals-forecast-2026/ - read in full R124; Pt $1,300-$1,800/oz + Gold/Silver/Pd/Rh ranges verbatim.
-- **metals_dev_api** [d06 T4] - https://metals.dev/ - docs read live R124; free-tier endpoint GET api.metals.dev/v1/latest shown on-page.
-- **valueinvesting_io_2026_boeing_howmet_wacc** [d17 T4] - https://valueinvesting.io/BA/valuation/wacc - tables in server-side JSON R124; WACC 7.5% selected / 6.3%-8.6% band verbatim.
 - Retry notes only (stay registered_not_pulled): ULA rocket pages live w/o $ figures; firefly Alpha page JS-rendered, no $ in static HTML; NSIL /launch-services has vehicle names but no prices; pypi yfinance now serves a 'Client Challenge' bot page.
 - Crossref `link`-field sweep of all 64 queued DOIs: six publisher-registered direct PDF URLs found (pielke_byerly_2011 + patzold_2016 Nature, sinibaldi_haldemann_2026 Royal Society, lauretta_2024 Wiley, smith_stanley_2021 AIAA, wang_2026 IOP) - ALL bot-walled from this machine (cookie-wall / Cloudflare 'Just a moment' / Radware captcha). Negative finding; rows stay registered_not_pulled.
 ## R125 (2026-10-06) - CC-BY queue sweep: arXiv copies read + institutional routes walled
 
-- lauretta_2024_bennu_in_the_laboratory: READ IN FULL via export.arxiv.org/pdf/2404.12536v1 (73 pp, 13,807,665 B). NOT hostable - arXiv abs page carries CC BY-NC-ND 4.0 (journal version is CC BY 4.0 per Crossref; the copy on file here would be the restricted one). Re-classed verified_live_not_pulled + Context-only.
-- mainzer_2011_neowise_thermal_model_calibration: READ IN FULL via export.arxiv.org/pdf/1105.0975v1 (27 pp, 505,302 B). NOT hostable - default non-exclusive arXiv licence (no CC link on abs page). Re-classed verified_live_not_pulled + Context-only.
 - king_schofield_2015_ci_modal_mineralogy_xrd: OA copy at oro.open.ac.uk/69573/1/69573.pdf (Open University ORA; CC BY 4.0 in-file per record-page snippet) - Cloudflare 'Just a moment' on all direct fetches from this machine. NOT pulled.
 - sinibaldi_haldemann_2026: ORA record oro.open.ac.uk/108579 live-verified via web_extract; Royal Society PDF + ORA bitstream both Cloudflare-walled. NOT pulled.
 - broslav_2025 (thesis): repository.mines.edu item abed9ab3-8bf3-4cac-aafa-b81d379ee4d2, DSpace 7 REST anonymous for metadata but HTTP 401 on bitstreams. NOT pulled.
@@ -438,7 +211,6 @@ Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
 - garner_rayman_2015_jpc_orbit_ops: AIAA JPC paper 6.2015-3717 (DOI 10.2514/6.2015-3717). No NTRS twin located in the R148 searches; sister papers of the series are all det=OTHER with zero files.
 - garner_rayman_2016_jpc_lamo: AIAA JPC paper 6.2016-4539 (DOI 10.2514/6.2016-4539). NTRS twin 20190002063 is determinationType OTHER with zero files (re-probed R148).
 - garner_rayman_2018_jpc_final_orb: AIAA JPC paper 6.2018-4641 (DOI 10.2514/6.2018-4641; Crossref title prints a typo, 'Dwn'). NTRS twin 20210008613 is determinationType OTHER with zero files (re-probed R148).
-- File hygiene: removed an older duplicate snapshot of this file's own preamble + sections A-F/R96-R116 that had been concatenated ahead of the current copy; section-by-section diff verified zero unique content lost (2026-10-10).
 
 ## Round 149 - d27 foundational queue
 

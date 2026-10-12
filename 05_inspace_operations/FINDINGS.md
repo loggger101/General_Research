@@ -1,4 +1,4 @@
-﻿# Domain 5 Findings — in-space storage / cryogenic boil-off, ISRU, operational costs
+# Domain 5 Findings — in-space storage / cryogenic boil-off, ISRU, operational costs
 
 ## lac_bac_2024 — "Local Area Cooling versus Broad Area Cooling for Boil-Off Reduction in Large-Scale Liquid Hydrogen Storage" [T1]
 

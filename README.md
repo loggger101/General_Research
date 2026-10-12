@@ -13,20 +13,12 @@ rejected, which are listed only under INDEX.md "Rejected sources".
 ## Why this repo exists
 
 `economicspace/CITATIONS.md` records what the pipeline already cites (SBDB,
-ssoBFT, NEOWISE V2.0, USGS/LME/yfinance prices, Izzo 2015 for Lambert). The
-weakest-sourced cells of the model are exactly where peer-reviewed backing is
-missing:
-
-Domains 1–5 were ranked by how weakly sourced their cells were; 6–11 were
-added later, in the order the research rounds found the next gap; 12–14 were
-added in Round 74 for upstream citations no earlier domain covered; 15–22 were
-added in Round 75 for upstream cells no domain covered, most of which upstream
-itself labels as judgement rather than measurement; 23–25 were added in Round
-76 by a second pass over the same code. Each of their FINDINGS.md files lists
-its target cells, their current values and what a source has to supply.
-Round 77 moved 20 sources into domains 16–22 from domains 2, 4, 5 and 7,
-where they had been filed before a domain for their cells existed; domains
-15, 23, 24 and 25 are still empty.
+ssoBFT, NEOWISE V2.0, USGS/LME/yfinance prices, Izzo 2015 for Lambert). This
+repo backs the cells that citation list leaves weakly sourced, one domain per
+group of cells. Domains 1–5 were the weakest-sourced; the rest were added as
+research rounds found cells no domain covered (the research log records
+when). Each domain's FINDINGS.md lists its target cells, their current values
+and what a source has to supply.
 
 | # | domain | pipeline cell(s) it could back or replace |
 |---|---|---|
@@ -56,6 +48,7 @@ where they had been filed before a domain for their cells existed; domains
 | 24 | Aerocapture & aerobraking | `calc.py` aero-assisted returns (LEO/Mars trim, GEO aerocapture, fallback saving); `delta_v_segments.csv` aerocapture and aerobraked rows |
 | 25 | Net smelter return: refining charges & payable terms | `calc.py` `_mineral_implied_value` (100% of contained metal at refined prices) and the refined-metal basis of element prices |
 | 26 | Spacecraft storage & energy-system physical properties (propellant tankage / COPV / MLI / cryocooler; RTG / fission surface power) | `storage_systems.csv` propellant-storage + energy-storage cells (COPV burst performance factor, MLI passive, orbital-depot boil-off, RTG specific power, Kilopower-class fission W-elec/kg); the cargo-containment cells stay upstream judgement rows for now |
+| 27 | Orbital debris & collision risk | the debris environment behind `operational_costs.csv` launch-insurance premium drivers (domain 17), economicspace's satellite-lifetime and disposal assumptions, and the depot mission durations of domain 26 |
 
 ## Layout
 
@@ -65,9 +58,10 @@ INDEX.md                                 Master index: every source → tier, ac
 sources.csv                              Machine-readable registry, one row per source (GENERATED — see "Tools")
 full_texts_manifest.csv                  Every hosted file → its source id, size, sha256 and licence
 revision_candidates.csv                  Upstream cells the evidence says should change, with current status
+upstream_commit_map.csv                  Upstream commits cited by checked_against that a history rewrite took off main, mapped to their main equivalents
 DOWNLOADS.md                             Checklist of the non-hosted sources still to fetch for a full extraction, with exact links
 AGENTS.md                                Working rules for agents running research rounds here
-tools/                                   build_registry.py (regenerate derived files) and validate.py (consistency checks)
+tools/                                   build_registry.py (regenerate derived files), validate.py (consistency checks) and tests/ (planted-defect tests of both)
 01_density_and_population/               Domain 1: density by spectral type, PGM factors, population stats
 02_composition_value/                    Domain 2: composition → commodity value mapping
 03_dv_propulsion/                        Domain 3: Δv budgets, propulsion performance tables
@@ -247,21 +241,39 @@ rows against the upstream repos whenever they release.
 python tools/build_registry.py          # regenerate sources.csv; fill manifest sizes + hashes
 python tools/build_registry.py --check  # fail if either is out of date
 python tools/validate.py                # consistency checks; exit 1 on any error
+python tools/validate.py --strict       # exit 1 on warnings too
+python tools/validate.py --verbose      # also print how many items each check examined
+python tools/validate.py --upstream     # also check cited commits in the sibling upstream clones
+python -m unittest discover -s tools/tests   # the tools' own tests
 ```
 
-`validate.py` checks that `sources.csv` matches the per-domain files, that each
-INDEX.md table lists exactly its domain's sources in registry order with five
-cells per row, that the research log runs from Round 0 to the latest with no
-gaps, that every hosted file is in the manifest with the right hash and a
-licence, that every extracted-data CSV is rectangular and cites registered
-ids, that `revision_candidates.csv` uses known statuses and sources, that no
-rejected source is still registered or named anywhere but the research log,
-and that no CSV or Markdown file has doubled carriage returns (which make git treat it
-as binary). It also warns, without failing, on hosted files whose licence does
-not permit redistribution, extracted-data CSVs with no `source_id` column, and
-sources that no extracted-data CSV in their domain cites (except
+`validate.py` checks:
+
+- that every CSV, Markdown, JSON and Python file is UTF-8 with no byte-order mark, no stray carriage returns and a final newline;
+- that the root and the domain folders hold only what "Layout" lists, and that domains are numbered 01..N with no gap or repeat;
+- that every `sources_domain.csv` is rectangular with no empty or padded cell and a well-formed year, and that `sources.csv` matches them;
+- that each INDEX.md table lists exactly its domain's sources in registry order, with five non-empty cells per row;
+- that the research log runs from Round 0 to the latest with no gaps, real dates and no mislabelled entries;
+- that every hosted file is in the manifest with the right hash and a licence;
+- that every extracted-data CSV is rectangular and cites registered ids, and that every JSON file parses;
+- that `revision_candidates.csv` uses known statuses, sources, repos and dates, and that `upstream_commit_map.csv` agrees with it;
+- that no rejected source is still registered or named anywhere but the research log.
+
+It also warns, without failing, on hosted files whose licence does not permit
+redistribution, extracted-data CSVs with no `source_id` column, and sources
+that no extracted-data file in their domain cites (except
 `registered_not_pulled` rows, which it counts in its summary line instead).
-Standard library only; Python 3.8+.
+`--upstream` reads the clones of AsteroidCatalog, spacecost and economicspace
+next to this repo. It checks that every commit a candidate cites exists, that
+open and blocked candidates were checked against `origin/main`, and that an
+off-main commit on a closed candidate has an identical-tree row in
+`upstream_commit_map.csv`.
+
+Nothing fails silently. The readers stop on a malformed file instead of reading
+around it. A check that crashes is reported as `check-crashed`, and one that
+examined nothing is reported as `nothing-checked`. Every finding carries a code.
+`tools/tests` plants a defect for every code, in a throwaway fixture repository,
+and fails if a code has no test. Standard library and git only; Python 3.8+.
 
 ## Provenance of this process
 

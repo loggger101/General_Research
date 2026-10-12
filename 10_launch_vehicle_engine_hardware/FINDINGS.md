@@ -1,4 +1,4 @@
-﻿# Domain 10 — Launch vehicle & engine hardware / propellant performance (R64)
+# Domain 10 — Launch vehicle & engine hardware / propellant performance (R64)
 
 **Scope.** New domain per user criterion #2: all gatherable information on the rockets themselves + fuel/propellant performance data, anchored against `spacecost/reference/launch_vehicles.csv` and `spacecost/reference/propellants.csv`. Round 64 registers three NTRS-hosted NASA documents carrying engine-level MEASURED / TESTED numbers that no previously registered source carried. All three pulled fresh from NTRS this round, sha-verified byte-identical to the hosted copies below.
 
