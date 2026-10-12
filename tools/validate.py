@@ -402,41 +402,72 @@ def log_lines(index_text):
     return index_text.split('\n## Research log\n', 1)[1].rstrip('\n').split('\n')
 
 
+def committed_log(rep, rev, label):
+    """The research log's lines in `rev`'s INDEX.md; reports log-no-baseline and returns None if it has none."""
+    rc, blob = git_raw(ROOT, 'show', f'{rev}:INDEX.md')
+    if rc != 0:
+        rep.error('log-no-baseline', f'{label} has no INDEX.md to compare the research log with')
+        return None
+    try:
+        text = blob.decode('utf-8').replace('\r\n', '\n')
+    except UnicodeDecodeError as e:
+        rep.error('log-no-baseline', f'{label}\'s INDEX.md is not UTF-8 ({e}), so the research log cannot be compared')
+        return None
+    lines = log_lines(text)
+    if lines is None:
+        rep.error('log-no-baseline', f'{label}\'s INDEX.md has no "## Research log" section to compare with')
+    return lines
+
+
 def check_log_history(rep, ctx):
     """AGENTS.md: the log is append-at-top only. The committed log must survive, unchanged, as the working log's tail.
 
     R43's rewrite deleted Rounds 0-41 and R46's deleted R45; a rewrite that keeps every round number would pass
     check_log, so this compares the text with the last commit. It catches a rewrite before it is committed.
+
+    During a merge both sides have added entries at the top since they split, so neither side's log can be the
+    merged log's tail (R153 and a maintenance entry, 2026-10-12). Then the log at their merge base must be the tail,
+    and every line either side committed must still be in the merged log, in whichever order the entries are put.
     """
     rep.start('research log history')
     rc, _ = git(ROOT, 'rev-parse', '--verify', '--quiet', 'HEAD^{commit}')
     if rc != 0:
         rep.error('log-no-baseline', 'the repository has no commit to compare the research log with')
         return
-    rc, blob = git_raw(ROOT, 'show', 'HEAD:INDEX.md')
-    if rc != 0:
-        rep.error('log-no-baseline', 'HEAD has no INDEX.md to compare the research log with')
-        return
-    try:
-        committed_text = blob.decode('utf-8').replace('\r\n', '\n')
-    except UnicodeDecodeError as e:
-        rep.error('log-no-baseline', f'HEAD:INDEX.md is not UTF-8 ({e}), so the research log cannot be compared')
-        return
-    committed = log_lines(committed_text)
-    if committed is None:
-        rep.error('log-no-baseline', 'HEAD:INDEX.md has no "## Research log" section to compare with')
-        return
     current = log_lines(read_text(INDEX))
     if current is None:
         rep.error('log-missing', 'INDEX.md has no "## Research log" section to compare with the committed one')
         return
-    rep.count('committed log lines', len(committed))
-    if len(current) >= len(committed) and current[len(current) - len(committed):] == committed:
+    rc, merging = git(ROOT, 'rev-parse', '--verify', '--quiet', 'MERGE_HEAD^{commit}')
+    if rc == 0:
+        rc, base = git(ROOT, 'merge-base', 'HEAD', merging)
+        if rc != 0:
+            rep.error('log-no-baseline', f'HEAD and MERGE_HEAD {merging[:7]} share no history, so the merged research '
+                                         f'log has no common log to keep')
+            return
+        tail_rev, tail_label, sides = base, f'the merge base {base[:7]}', [('HEAD', 'HEAD'), (merging, 'MERGE_HEAD')]
+    else:
+        tail_rev, tail_label, sides = 'HEAD', 'HEAD', []
+    committed = committed_log(rep, tail_rev, tail_label)
+    if committed is None:
         return
-    # Name the first committed line, from the oldest end, that is changed or gone (one must be, or the tail matched).
-    line = next(committed[-k] for k in range(1, len(committed) + 1) if k > len(current) or current[-k] != committed[-k])
-    rep.error('log-rewritten', f'the committed log line "{line[:60]}" is changed, moved or gone — the log is '
-                               f'append-at-top only; restore the older entries from git show HEAD:INDEX.md')
+    rep.count('committed log lines', len(committed))
+    if not (len(current) >= len(committed) and current[len(current) - len(committed):] == committed):
+        # Name the first committed line, from the oldest end, that is changed or gone (one must be: the tail differs).
+        line = next(committed[-k] for k in range(1, len(committed) + 1)
+                    if k > len(current) or current[-k] != committed[-k])
+        rep.error('log-rewritten', f'{tail_label}\'s log line "{line[:60]}" is changed, moved or gone — the log is '
+                                   f'append-at-top only; restore the older entries from git show {tail_rev[:7]}:INDEX.md')
+    kept = set(current)
+    for rev, label in sides:
+        lines = committed_log(rep, rev, label)
+        if lines is None:
+            continue
+        rep.count('merged-side log lines', len(lines))
+        lost = [line for line in lines if line not in kept]
+        if lost:
+            rep.error('log-merge-lost', f'{len(lost)} line(s) of {label}\'s log are not in the merged log, first '
+                                        f'"{lost[0][:60]}" — a merge keeps both sides\' entries')
 
 
 def check_rejected(rep, ctx):

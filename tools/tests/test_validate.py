@@ -17,6 +17,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -85,6 +86,39 @@ def commit_head_index(root, data):
         fixture.git(root, 'add', 'INDEX.md')
     fixture.git(root, 'commit', '-q', '-m', 'planted HEAD:INDEX.md')
     path.write_bytes(working)
+
+
+SIDE_B = '- **Round 2** (2026-01-03): the other branch\'s round.\n'
+SIDE_A = '- **Maintenance** (2026-01-03): this branch\'s fix.\n'
+
+
+def start_merge(root, merged=None, side_b_index=None):
+    """A merge in progress, as `git merge` leaves it after an INDEX.md conflict.
+
+    Side B (MERGE_HEAD) commits SIDE_B at the top of the log, or `side_b_index` as INDEX.md; HEAD, from the same base,
+    commits SIDE_A. The working INDEX.md is then `merged`, a list of the entries to put on top, in order.
+    Returns MERGE_HEAD's id.
+    """
+    path = root / 'INDEX.md'
+    base = path.read_text(encoding='utf-8')
+    path.write_text(side_b_index if side_b_index is not None else base.replace(LOG1, SIDE_B + LOG1), encoding='utf-8',
+                    newline='')
+    fixture.git(root, 'commit', '-q', '-am', 'side B')
+    side_b = fixture.git(root, 'rev-parse', 'HEAD')
+    fixture.git(root, 'reset', '-q', '--hard', 'HEAD~1')
+    path.write_text(base.replace(LOG1, SIDE_A + LOG1), encoding='utf-8', newline='')
+    fixture.git(root, 'commit', '-q', '-am', 'side A')
+    (root / '.git' / 'MERGE_HEAD').write_text(side_b + '\n', encoding='utf-8')
+    path.write_text(base.replace(LOG1, ''.join(merged if merged is not None else [SIDE_B, SIDE_A]) + LOG1),
+                    encoding='utf-8', newline='')
+    return side_b
+
+
+def merge_with_unrelated_history(root):
+    """MERGE_HEAD is a commit with no parent, so it shares no history with HEAD."""
+    tree = fixture.git(root, 'rev-parse', 'HEAD^{tree}')
+    orphan = fixture.git(root, 'commit-tree', tree, '-m', 'unrelated')
+    (root / '.git' / 'MERGE_HEAD').write_text(orphan + '\n', encoding='utf-8')
 
 
 def reinit_without_commit(root):
@@ -229,6 +263,11 @@ CASES = [
     ('log-no-baseline', 'error', [], lambda r, s: commit_head_index(r, None)),
     ('log-no-baseline', 'error', [], lambda r, s: commit_head_index(r, b'# caf\xe9\n')),
     ('log-no-baseline', 'error', [], lambda r, s: commit_head_index(r, b'# Fixture index\n\n## Log\n')),
+    # a merge in progress (the 2026-10-12 R153 merge): the base log is the tail and both sides' lines are kept
+    ('log-merge-lost', 'error', [], lambda r, s: start_merge(r, merged=[SIDE_A])),
+    ('log-rewritten', 'error', [], lambda r, s: (start_merge(r), edit(r, 'INDEX.md', 'first round.', 'first round, reworded.'))),
+    ('log-no-baseline', 'error', [], lambda r, s: merge_with_unrelated_history(r)),
+    ('log-no-baseline', 'error', [], lambda r, s: start_merge(r, merged=[SIDE_A], side_b_index='# Fixture index\n\n## Log\n')),
     # check_rejected
     ('rejected-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Rejected sources\n', '')),
     ('rejected-position', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Research log', '## Notes\n\ntext\n\n## Research log')),
@@ -403,6 +442,8 @@ ACCEPTED = [
                                                                       + ',our rate,3,kg/h,calc,\n')),
     ('a year with a note after it', lambda r: domain_edit(r, ALPHA_CSV, ',2020,', ',2020 (online 2019),')),
     ('a __pycache__ file, the one thing .gitignore may hide', lambda r: put(r, 'tools/__pycache__/common.pyc', b'\0')),
+    ("a merge in progress with the other side's entry on top", lambda r: start_merge(r, merged=[SIDE_B, SIDE_A])),
+    ("a merge in progress with this side's entry on top", lambda r: start_merge(r, merged=[SIDE_A, SIDE_B])),
 ]
 
 
@@ -484,13 +525,14 @@ class TestValidate(FixtureCase):
         def debug(*args):
             proc = subprocess.run(script + list(args), capture_output=True, text=True, encoding='utf-8')
             return proc.returncode, proc.stdout + proc.stderr
+        n_cases = Counter(c[0] for c in CASES)
         rc, out = debug('log-rewritten')
         self.assertEqual(rc, 0, out)
-        self.assertEqual(out.count('PASS'), 2, out)
+        self.assertEqual(out.count(', PASS'), n_cases['log-rewritten'], out)
         self.assertRegex(out, r'(?m)^ERROR \[research log history\] log-rewritten: ')
         rc, out = debug('--list')
         self.assertEqual(rc, 0, out)
-        self.assertRegex(out, r'(?m)^log-no-baseline +4 case\(s\)$')
+        self.assertRegex(out, rf'(?m)^log-no-baseline +{n_cases["log-no-baseline"]} case\(s\)$')
         rc, out = debug('no-such-code')
         self.assertEqual(rc, 1, out)
         self.assertIn('ERROR unknown-code', out)
