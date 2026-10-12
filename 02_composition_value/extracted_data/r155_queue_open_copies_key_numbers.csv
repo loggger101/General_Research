@@ -1,0 +1,45 @@
+source_id,item,value,unit,location_in_source,notes
+hiro_i_zolensky_2001_tagish_lake_possible_d_type_sample,Tagish Lake carbon content,4 to 5,wt%,p1 abstract and text (Science Express),
+hiro_i_zolensky_2001_tagish_lake_possible_d_type_sample,Tagish Lake powder reflectivity,2-4,%,p1,
+hiro_i_zolensky_2001_tagish_lake_possible_d_type_sample,magnetite / sulfide / carbonate abundances,not given,,whole paper,carbonates named ('Ca-Fe-Mg carbonate minerals') without an abundance; composition cited to Brown et al. 2000 (note 4)
+,AsteroidCatalog D/Z/P accessories (_ACC_TL),"magnetite 0.05, troilite 0.03, carbonates 0.03",mass fraction,AsteroidCatalog@86cfc54 asteroid_catalog/mineralogy.py,"attributed to Hiroi et al. 2001, which does not carry them: rc-085"
+lodders_2003_solar_abundances_condensation_temperatures,"Fe in CI chondrites, weighted mean",182800 +/- 1470,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 4
+lodders_2003_solar_abundances_condensation_temperatures,"Ni in CI chondrites, weighted mean",10640 +/- 210,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 3
+lodders_2003_solar_abundances_condensation_temperatures,"Co in CI chondrites, weighted mean",502 +/- 17,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 3
+lodders_2003_solar_abundances_condensation_temperatures,"Cu in CI chondrites, weighted mean",127 +/- 6,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 4
+lodders_2003_solar_abundances_condensation_temperatures,"Ga in CI chondrites, weighted mean",9.51 +/- 0.31,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 4
+lodders_2003_solar_abundances_condensation_temperatures,"Ge in CI chondrites, weighted mean",33.2 +/- 0.3,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 3
+lodders_2003_solar_abundances_condensation_temperatures,"Mo in CI chondrites, weighted mean",1.02 +/- 0.11,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 2
+lodders_2003_solar_abundances_condensation_temperatures,"Ru in CI chondrites, weighted mean",0.692 +/- 0.044,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 3
+lodders_2003_solar_abundances_condensation_temperatures,"Rh in CI chondrites, weighted mean",0.141 +/- 0.002,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 2
+lodders_2003_solar_abundances_condensation_temperatures,"Pd in CI chondrites, weighted mean",0.588 +/- 0.020,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 3
+lodders_2003_solar_abundances_condensation_temperatures,"W in CI chondrites, weighted mean",0.089 +/- 0.007,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 1
+lodders_2003_solar_abundances_condensation_temperatures,"Re in CI chondrites, weighted mean",0.037 +/- 0.002,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 3
+lodders_2003_solar_abundances_condensation_temperatures,"Os in CI chondrites, weighted mean",0.486 +/- 0.007,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 4
+lodders_2003_solar_abundances_condensation_temperatures,"Ir in CI chondrites, weighted mean",0.470 +/- 0.005,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 4
+lodders_2003_solar_abundances_condensation_temperatures,"Pt in CI chondrites, weighted mean",1.004 +/- 0.064,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 2
+lodders_2003_solar_abundances_condensation_temperatures,"Au in CI chondrites, weighted mean",0.146 +/- 0.002,ppm,"Table 3 (p1225-1226, rotated; word coordinates)",N meteorites = 2
+,CI total PGM (Ru+Rh+Pd+Os+Ir+Pt; computed here),3.381,ppm,,
+,CI PGM per unit of Fe+Ni+Co (19.39 wt%; computed here),17.4,ppm,,if all PGM sits in the metal
+,economicspace nickel-iron PGM sum (Pt 15 + Pd 10 + Ru 3 + Ir 4 + Os 2 + Rh 1.5),35.5,ppm,economicspace@8c3083a modules/mineral_value.py _NICKEL_IRON_YIELDS,"its comment and row note say ~37 ppm; IIIAB-calibrated, not CI: about twice the metal-normalised CI value"
+,Pt/Ir and Pd/Pt: CI (Lodders) vs economicspace row (computed here),CI 2.14 and 0.586; economicspace 3.75 and 0.667,ratio,,
+jarosewich_1990_meteorite_chemical_analyses,falls averaged,"H 26, L 54, LL 12",analyses,Table 4 p330,
+jarosewich_1990_meteorite_chemical_analyses,H chondrite falls Fe(m),15.98,wt%,Table 4 p330 (page image),s.d. 1.53
+jarosewich_1990_meteorite_chemical_analyses,H chondrite falls Ni,1.74,wt%,Table 4 p330 (page image),s.d. 0.09
+jarosewich_1990_meteorite_chemical_analyses,H chondrite falls Co,0.08,wt%,Table 4 p330 (page image),s.d. 0.02
+jarosewich_1990_meteorite_chemical_analyses,H chondrite falls FeS,5.43,wt%,Table 4 p330 (page image),s.d. 0.38
+jarosewich_1990_meteorite_chemical_analyses,H chondrite falls Fe(t),27.45,wt%,Table 4 p330 (page image),s.d. 0.84
+jarosewich_1990_meteorite_chemical_analyses,L chondrite falls Fe(m),7.03,wt%,Table 4 p330 (page image),s.d. 0.95
+jarosewich_1990_meteorite_chemical_analyses,L chondrite falls Ni,1.24,wt%,Table 4 p330 (page image),s.d. 0.10
+jarosewich_1990_meteorite_chemical_analyses,L chondrite falls Co,0.06,wt%,Table 4 p330 (page image),s.d. 0.01
+jarosewich_1990_meteorite_chemical_analyses,L chondrite falls FeS,5.76,wt%,Table 4 p330 (page image),s.d. 0.80
+jarosewich_1990_meteorite_chemical_analyses,L chondrite falls Fe(t),21.93,wt%,Table 4 p330 (page image),s.d. 0.80
+jarosewich_1990_meteorite_chemical_analyses,LL chondrite falls Fe(m),2.44,wt%,Table 4 p330 (page image),s.d. 1.61
+jarosewich_1990_meteorite_chemical_analyses,LL chondrite falls Ni,1.07,wt%,Table 4 p330 (page image),s.d. 0.13
+jarosewich_1990_meteorite_chemical_analyses,LL chondrite falls Co,0.05,wt%,Table 4 p330 (page image),s.d. 0.01
+jarosewich_1990_meteorite_chemical_analyses,LL chondrite falls FeS,5.79,wt%,Table 4 p330 (page image),s.d. 1.04
+jarosewich_1990_meteorite_chemical_analyses,LL chondrite falls Fe(t),19.63,wt%,Table 4 p330 (page image),s.d. 0.68
+jarosewich_1990_meteorite_chemical_analyses,CM2 chondrite falls C,1.82,wt%,Table 4 p330 (page image),"2 analyses (Banten, Murchison)"
+jarosewich_1990_meteorite_chemical_analyses,CV3 chondrite falls C,0.43,wt%,Table 4 p330 (page image),"2 analyses (Allende, Bali)"
+,"Fe(m)+Ni+Co, Jarosewich Table 4 (computed here)","H 17.80, L 8.33, LL 3.56",wt%,,every column sums to within 0.05 of its printed total
+,"AsteroidCatalog S, Sq, Q metal_fraction",0.06 = mean of LL 3.56 and L 8.33 wt%,mass fraction,AsteroidCatalog@86cfc54 reference/taxonomy_composition.csv,EXACT: LL and L are Jarosewich's falls; mean 5.945 rounds to 0.06

@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+russell_2016_dawn_arrives_at_ceres,Ceres mass,(9.384 +/- 0.001) x 10^20,kg,p1008,from Dawn's orbit
+russell_2016_dawn_arrives_at_ceres,Ceres triaxial dimensions,483.1 x 481.0 x 445.9 (+/- 0.2),km,p1008,
+russell_2016_dawn_arrives_at_ceres,Ceres geometric mean radius,469.7,km,p1008,
+russell_2016_dawn_arrives_at_ceres,Ceres mean density,2162 +/- 3,kg/m3,p1008,
+russell_2016_dawn_arrives_at_ceres,Ceres rotation period,9.074170 +/- 0.000001,h,p1008,
+,geometric mean of the three axes (computed here),469.68,km,,
+,spacecost 1 Ceres mass_kg / mean_radius_m / cycle_period_hr,9.3835e+20 / 469730.0 / 9.074,,spacecost@0b716ad reference/environments.csv,"near-exact: mass -0.005%, radius +0.006% (an extra digit beyond the paper's rounding); period matches"

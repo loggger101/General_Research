@@ -330,3 +330,15 @@ Also re-checked this round: tholen_1984_asteroid_taxonomy_dissertation (reposito
 
 - **macke_2011_carbonaceous_chondrite_density_porosity** [T1]: retry note only. OpenAlex flags the paper open access with best_oa_location = Wiley pdfdirect (onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1945-5100.2011.01298.x); that URL answers Cloudflare 'Just a moment' HTTP 403 from this machine - stays registered_not_pulled.
 - **gil_hutton_brunini_2008_hilda_sdss_colors** [T1]: retry note only. OpenAlex flags the paper open access with best_oa_location = ScienceDirect article page (pii S001910350700379X); HTTP 403 bot-wall from this machine - stays registered_not_pulled.
+
+## R155 - queue open-copy sweep: four never-sought rows read, D-from-H constant and H tolerance confirmed (2026-10-12; queue -4)
+
+Round 155 looked for open copies of the 35 T1/T2 queue rows that had never been sought (OpenAlex, Semantic Scholar, arXiv by author and title, NTRS, ADS scans, web search, each route tried with a default and a browser User-Agent). Four in this domain were reached and read; none can be hosted, because each PDF carries a publisher copyright. The other nine here stay `registered_not_pulled` with the routes tried recorded in their rows.
+
+**The 1329 km constant is confirmed from both sources.** campins_1985 (ADS scan) gives the Sun's V as -26.768 +/- 0.02 (synthetic) and -26.75 +/- 0.03 (measured), combined as 26.762 +/- 0.017. The combined value is printed without its minus sign; the page image confirms the typo. An inverse-variance mean of the two inputs computes to -26.7625 +/- 0.0166. pravec_harris_2007 (the authors' copy) derives D sqrt(p) = K x 10^(-H/5) with K = 2 AU x 10^(Vsun/5) (Appendix A) and gets 1329 +/- 10 km, with a ~1% diameter systematic. Recomputed here with the IAU 2012 AU, K = 1329.09 km. AsteroidCatalog@86cfc54's V_SUN = -26.762 and constant 1329 match both: EXACT.
+
+**The H tolerances' citation holds.** pravec_2012 (the submitted preprint of 23 February 2012, not the published version) finds catalog H biases under 0.1 mag for large asteroids and a mean offset (Hcatalog - H) of -0.4 to -0.5 near H = 14. AsteroidCatalog's merge.py (0.30 mag) and physics.py (0.75 mag) quote exactly that. The abstract also revises the WISE albedos to 0.057 for C/G/B/F/P/D and 0.197 for S/A/L; nothing upstream uses these yet.
+
+**The Hilda default is consistent.** gil_hutton_brunini_2008 sorts 122 SDSS Hildas into broad D 51, X (P) 49 and C 19. The slope-size correlation holds only for H < 11.5-12, and the small Hildas split evenly between D and P. AsteroidCatalog cites it for "P/D bimodal" and keeps the C-complex inference inside 4.6 AU, arguing that a Tholen P is a dark X or C in later taxonomies. The paper does not contradict that. The SEDICI record says CC BY 4.0, but the file is the Elsevier typeset marked "All rights reserved", so it is not hosted.
+
+Extracted: `extracted_data/r155_queue_open_copies_key_numbers.csv`.
