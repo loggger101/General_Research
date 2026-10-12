@@ -84,11 +84,8 @@ class DataError(Exception):
 
 
 def rel(path):
-    path = Path(path)
-    try:
-        return path.relative_to(ROOT).as_posix()
-    except ValueError:
-        return path.as_posix()
+    """The path relative to ROOT. Every path the tools report is inside the repo; one outside it is a bug and raises."""
+    return Path(path).relative_to(ROOT).as_posix()
 
 
 def domain_dirs():
@@ -96,14 +93,9 @@ def domain_dirs():
     return sorted(p.name for p in ROOT.iterdir() if p.is_dir() and DOMAIN_RE.fullmatch(p.name))
 
 
-def repo_files():
-    """Every file git tracks or would track (untracked but not ignored), as POSIX paths relative to ROOT.
-
-    Raises DataError if git cannot list them: a scan with no file list would check nothing and pass.
-    """
+def _ls_files(*flags):
     try:
-        proc = subprocess.run(['git', '-C', str(ROOT), 'ls-files', '-z', '--cached', '--others', '--exclude-standard'],
-                              capture_output=True)
+        proc = subprocess.run(['git', '-C', str(ROOT), 'ls-files', '-z', *flags], capture_output=True)
     except OSError as e:
         raise DataError('git-ls-files', f'cannot run git to list the repository files: {e}')
     if proc.returncode != 0:
@@ -111,6 +103,19 @@ def repo_files():
     names = proc.stdout.decode('utf-8').split('\0')
     # --cached also lists tracked files deleted from the working tree; those are git status's business, not content.
     return sorted(n for n in names if n and (ROOT / n).is_file())
+
+
+def repo_files():
+    """Every file git tracks or would track (untracked but not ignored), as POSIX paths relative to ROOT.
+
+    Raises DataError if git cannot list them: a scan with no file list would check nothing and pass.
+    """
+    return _ls_files('--cached', '--others', '--exclude-standard')
+
+
+def ignored_files():
+    """Untracked files that .gitignore hides. No check reads them, so validate.py reports any outside __pycache__/."""
+    return _ls_files('--others', '--ignored', '--exclude-standard')
 
 
 def read_text(path):

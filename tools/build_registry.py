@@ -69,18 +69,31 @@ def build_manifest(errors):
 
 
 def normalized(path):
-    return path.read_bytes().decode('utf-8').replace('\r\n', '\n') if path.exists() else None
+    """The file's current text with LF line ends, or None if it does not exist yet. A BOM is kept, so a file that
+    has one compares stale and is rewritten without it; bytes that are not UTF-8 raise DataError."""
+    if not path.exists():
+        return None
+    try:
+        return path.read_bytes().decode('utf-8').replace('\r\n', '\n')
+    except UnicodeDecodeError as e:
+        raise DataError('text-not-utf8', f'{rel(path)}: not UTF-8 ({e}); delete it and rebuild')
 
 
 def main(argv=None):
-    if hasattr(sys.stdout, 'reconfigure'):
-        sys.stdout.reconfigure(encoding='utf-8', errors='backslashreplace')
+    # The messages hold non-ASCII; a cp1252 console would raise partway through the report.
+    sys.stdout.reconfigure(encoding='utf-8', errors='backslashreplace')
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument('--check', action='store_true', help='report staleness instead of writing')
     args = ap.parse_args(argv)
 
     errors = []
     outputs = [(REGISTRY, build_registry(errors)), (MANIFEST, build_manifest(errors))]
+    current = {}
+    for path, _ in outputs:
+        try:
+            current[path] = normalized(path)
+        except DataError as e:
+            errors.append((e.code, str(e)))
     if errors:
         for code, msg in errors:
             print(f'ERROR {code}: {msg}')
@@ -89,7 +102,7 @@ def main(argv=None):
 
     stale = []
     for path, text in outputs:
-        if normalized(path) == text.replace('\r\n', '\n'):
+        if current[path] == text.replace('\r\n', '\n'):
             print(f'up to date  {path.name}')
             continue
         if args.check:

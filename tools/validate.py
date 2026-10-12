@@ -15,10 +15,17 @@ Nothing is allowed to pass silently:
 - the file readers in common.py are strict (no BOM, UTF-8 only, rectangular
   CSVs) and report a bad file instead of reading around it;
 - a check that raises is reported as `check-crashed` and fails the run, and the
-  other checks still run;
+  other checks still run; git that cannot be run is `git-unavailable`;
 - each check counts what it examined, and one that examined nothing reports
   `nothing-checked`, because a check with no input passes vacuously;
-- the summary line says whether the --upstream checks ran.
+- a file .gitignore hides is reported (`ignored-file`): no check would see it;
+- a check that depends on an unreadable file skips only its cross-checks
+  against that file, whose failure is already reported, rather than crash or
+  report false errors;
+- the summary line says whether the --upstream checks ran, and --verbose names
+  the upstream commits compared with.
+tools/tests/measure_coverage.py fails unless the tests reach every line and
+branch here; tools/tests/debug_case.py shows one case's full report.
 """
 import argparse
 import datetime
@@ -33,7 +40,7 @@ from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_S
                     DOMAIN_RE, INDEX, LICENSE_CLASSES, LIVE_CANDIDATE_STATUSES, MANIFEST, MANIFEST_COLS,
                     NOT_REDISTRIBUTABLE, PENDING_ACCESS, README, REGISTRY, REGISTRY_COLS, ROOT, TIERS, UPSTREAM_MAP,
                     UPSTREAM_MAP_COLS, UPSTREAM_REPOS, DataError, access_class, domain_dirs, file_digest, read_csv,
-                    read_domain_csv, read_text, rel, repo_files)
+                    ignored_files, read_domain_csv, read_text, rel, repo_files)
 
 INDEX_HEADER = ['id', 'tier', 'source (short)', 'access', 'backs / could replace']
 REJECTED_HEADER = ['id', 'source', 'link', 'reason']
@@ -51,12 +58,16 @@ ROOT_DIRS = {'tools'}
 DOMAIN_FILES = {'sources_domain.csv', 'FINDINGS.md', '.gitkeep'}
 EXTRACTED_SUFFIXES = {'.csv', '.json'}
 TEXT_SUFFIXES = {'.csv', '.md', '.py', '.json'}
+TEXT_NAMES = {'.gitignore'}
 # A year cell starts with a year, an approximate year or "n.d.", and may explain itself after that.
 YEAR_RE = re.compile(r'(~?\d{4}|n\.d\.)')
 LOG_ENTRY_RE = re.compile(r'- \*\*(?:Round (\d+)|Maintenance)\*\* \((\d{4}-\d{2}-\d{2})(?:/\d{2})?\)')
-# Entry labels in a form other than "- **Round N**": AGENTS.md bans "**RN**" and "### RN".
-LOG_MISLABEL_RE = re.compile(r'\s*(#{1,6}\s|\*\*R(?:ound)?\s*\d|- \*\*R\d)')
+# Entry labels in a form other than "- **Round N**": AGENTS.md bans "**RN**" and "### RN". An unbolded "Round N" or
+# "RN:" at a line start is an entry missing its label, which would otherwise read as part of the entry above.
+LOG_MISLABEL_RE = re.compile(r'\s*(#{1,6}\s|\*\*R(?:ound)?\s*\d|- \*\*R\d|(?:- )?(?:Round\s*\d|R\d+\b))')
 SHA_RE = re.compile(r'[0-9a-f]{7,40}')
+# A candidate's target_file starts with the upstream path; notes may follow it ("reference/x.csv (+ CITATIONS.md)").
+TARGET_PATH_RE = re.compile(r'[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*\.[A-Za-z0-9]+(?=$|[\s(+;,])')
 
 
 class Report:
@@ -106,7 +117,7 @@ def check_files(rep, ctx):
     rep.start('text files')
     for name in ctx['files']:
         parts = name.split('/')
-        if 'full_texts' in parts or not any(name.endswith(s) for s in TEXT_SUFFIXES):
+        if 'full_texts' in parts or not (parts[-1] in TEXT_NAMES or any(name.endswith(s) for s in TEXT_SUFFIXES)):
             continue
         rep.count('text files')
         path = ROOT / name
@@ -151,6 +162,11 @@ def check_layout(rep, ctx):
     for f in REQUIRED_ROOT_FILES:
         if f not in files:
             rep.error('root-file-missing', f'{f} is missing')
+    # Every check reads the git file list, so a file .gitignore hides is invisible to all of them.
+    for name in ctx['ignored']:
+        if '__pycache__' not in name.split('/')[:-1]:
+            rep.error('ignored-file', f'{name}: .gitignore hides it, so no check reads it and it would never be '
+                                      f'committed; only __pycache__/ may be ignored — remove the rule that hides it')
 
     nums = Counter(int(DOMAIN_RE.fullmatch(d).group(1)) for d in ctx['domains'])
     for n, c in sorted(nums.items()):
@@ -324,8 +340,8 @@ def check_index(rep, ctx):
 
 def check_log(rep, ctx):
     rep.start('research log')
+    ctx['latest_round'] = None  # set before the read that can fail, so check_candidates sees "unknown", not a crash
     text = read_text(INDEX)
-    ctx['latest_round'] = None
     if '\n## Research log\n' not in text:
         rep.error('log-missing', 'INDEX.md has no "## Research log" section')
         return
@@ -354,10 +370,13 @@ def check_log(rep, ctx):
             rep.error('log-mislabelled', f'log line {n}: "{line[:40]}" — log entries are "- **Round N** (YYYY-MM-DD): ...", '
                                          f'not headings or bare bold labels')
         elif not line.strip():
+            # A blank line between the heading and the first entry is ordinary Markdown; one between entries is not.
             if started:
                 rep.error('log-blank-line', f'log line {n}: blank line inside the log — keep entries contiguous')
         elif not started:
             rep.error('log-preamble', f'log line {n}: text before the first entry')
+        # Any other line continues the entry above: Markdown folds a line that follows a list item with no blank line
+        # into that item (Round 40's second paragraph, line 127). An unlabelled new entry is caught as log-mislabelled.
     rep.expect('log entries')
     if not rounds:
         rep.error('log-no-rounds', 'no "- **Round N**" entries found')
@@ -374,6 +393,50 @@ def check_log(rep, ctx):
         rep.error('log-duplicate', f'rounds logged twice: {dups}')
     if dates != sorted(dates, reverse=True):
         rep.error('log-date-order', 'entry dates are not newest-first')
+
+
+def log_lines(index_text):
+    """The research log's lines, or None if the text has no "## Research log" section."""
+    if '\n## Research log\n' not in index_text:
+        return None
+    return index_text.split('\n## Research log\n', 1)[1].rstrip('\n').split('\n')
+
+
+def check_log_history(rep, ctx):
+    """AGENTS.md: the log is append-at-top only. The committed log must survive, unchanged, as the working log's tail.
+
+    R43's rewrite deleted Rounds 0-41 and R46's deleted R45; a rewrite that keeps every round number would pass
+    check_log, so this compares the text with the last commit. It catches a rewrite before it is committed.
+    """
+    rep.start('research log history')
+    rc, _ = git(ROOT, 'rev-parse', '--verify', '--quiet', 'HEAD^{commit}')
+    if rc != 0:
+        rep.error('log-no-baseline', 'the repository has no commit to compare the research log with')
+        return
+    rc, blob = git_raw(ROOT, 'show', 'HEAD:INDEX.md')
+    if rc != 0:
+        rep.error('log-no-baseline', 'HEAD has no INDEX.md to compare the research log with')
+        return
+    try:
+        committed_text = blob.decode('utf-8').replace('\r\n', '\n')
+    except UnicodeDecodeError as e:
+        rep.error('log-no-baseline', f'HEAD:INDEX.md is not UTF-8 ({e}), so the research log cannot be compared')
+        return
+    committed = log_lines(committed_text)
+    if committed is None:
+        rep.error('log-no-baseline', 'HEAD:INDEX.md has no "## Research log" section to compare with')
+        return
+    current = log_lines(read_text(INDEX))
+    if current is None:
+        rep.error('log-missing', 'INDEX.md has no "## Research log" section to compare with the committed one')
+        return
+    rep.count('committed log lines', len(committed))
+    if len(current) >= len(committed) and current[len(current) - len(committed):] == committed:
+        return
+    # Name the first committed line, from the oldest end, that is changed or gone (one must be, or the tail matched).
+    line = next(committed[-k] for k in range(1, len(committed) + 1) if k > len(current) or current[-k] != committed[-k])
+    rep.error('log-rewritten', f'the committed log line "{line[:60]}" is changed, moved or gone — the log is '
+                               f'append-at-top only; restore the older entries from git show HEAD:INDEX.md')
 
 
 def check_rejected(rep, ctx):
@@ -512,7 +575,6 @@ def check_manifest(rep, ctx):
 def check_extracted(rep, ctx):
     rep.start('extracted_data')
     reg = ctx['reg']
-    no_source_col = []
     cited = defaultdict(set)  # domain -> every registry id its extracted files name
     # The same token boundaries as the rejected-id scan: an id glued to more id characters is a different token.
     id_token = re.compile(r'[A-Za-z0-9_-]+')
@@ -552,27 +614,32 @@ def check_extracted(rep, ctx):
             if row == header:
                 rep.error('extracted-header-repeat', f'{name} line {n}: repeats the header line')
         if 'source_id' not in header:
-            no_source_col.append(name)
+            # AGENTS.md: every extracted-data CSV needs a source_id column, or its rows trace to no registry id.
+            rep.error('extracted-no-source-col', f'{name}: no source_id column, so its rows are not traceable to a '
+                                                 f'registry id (leave the cell blank for the pipeline\'s own value)')
             continue
         col = header.index('source_id')
-        # A row derived from two sources lists both, joined by ';'.
-        unknown = sorted({sid for row in rows if row != header for sid in row[col].split(';') if sid and sid not in reg})
+        unknown = set()
+        for n, row in enumerate(rows, 2):
+            cell = row[col]
+            if row == header or not cell:
+                continue  # a blank source_id is the pipeline's own value or a comparison computed here (AGENTS.md)
+            # A row derived from two sources lists both, joined by ';'.
+            ids = cell.split(';')
+            if any(not i or i != i.strip() for i in ids):
+                rep.error('extracted-source-id-format', f'{name} line {n}: source_id {cell!r} must be ids joined by ";" '
+                                                        f'with no empty or padded entry')
+            unknown |= {i for i in ids if i and i not in reg}
         if unknown:
-            rep.error('extracted-unknown-source', f'{name}: source_id not in sources.csv: {", ".join(unknown)}')
+            rep.error('extracted-unknown-source', f'{name}: source_id not in sources.csv: {", ".join(sorted(unknown))}')
     rep.expect('extracted files')
-    if no_source_col:
-        rep.warn('extracted-no-source-col', f'{len(no_source_col)} CSVs have no source_id column, so their rows are not '
-                                            f'traceable to a registry id: {", ".join(no_source_col)}')
-    # README "How an item earns a place" #3: numbers extracted into a CSV, or the row says context-only.
+    # AGENTS.md / README "How an item earns a place" #3: numbers extracted into a CSV, or the row says context-only.
     # A registered_not_pulled row has not been read yet, so it cannot be either; it is counted in the summary instead.
-    uncovered = Counter(r['domain_dir'] for sid, r in reg.items()
-                        if sid not in cited[r['domain_dir']]
-                        and access_class(r['access_status']) not in PENDING_ACCESS
-                        and not re.search(r'context[- ]only', r['access_status'] + r['pipeline_mapping'], re.I))
-    if uncovered:
-        rep.warn('source-uncited', f'{sum(uncovered.values())} sources are not cited by id in any extracted-data file of '
-                                   f'their domain and are not marked context-only: '
-                                   + ', '.join(f'{d[:2]}x{n}' for d, n in sorted(uncovered.items())))
+    for sid, r in reg.items():
+        if (sid not in cited[r['domain_dir']] and access_class(r['access_status']) not in PENDING_ACCESS
+                and not re.search(r'context[- ]only', r['access_status'] + r['pipeline_mapping'], re.I)):
+            rep.error('source-uncited', f'{sid} ({r["domain_dir"]}): no extracted-data file of its domain cites it by id, '
+                                        f'and its registry row is not marked "Context-only: <reason>"')
 
 
 # ---------------------------------------------------------------------------------------------- candidates
@@ -580,7 +647,9 @@ def check_extracted(rep, ctx):
 def check_candidates(rep, ctx):
     rep.start('revision_candidates')
     reg = ctx['reg']
-    ctx['candidates'] = []
+    # None means unreadable (reported here): the commit-map and upstream checks then skip their cross-checks
+    # against the candidates instead of reporting every map row as unused.
+    ctx['candidates'] = None
     try:
         header, rows = read_csv(CANDIDATES)
     except DataError as e:
@@ -591,6 +660,7 @@ def check_candidates(rep, ctx):
         return
     today = datetime.date.today()
     seen = set()
+    ctx['candidates'] = []
     for row in rows:
         rep.count('candidates')
         r = dict(zip(header, row))
@@ -609,13 +679,17 @@ def check_candidates(rep, ctx):
             rep.error('cand-kind', f'{cid}: kind {r["kind"]!r} not in {sorted(CANDIDATE_KINDS)}')
         if r['domain_dir'] not in ctx['domains']:
             rep.error('cand-domain', f'{cid}: domain_dir {r["domain_dir"]!r} does not exist')
-        for sid in filter(None, r['source_ids'].split(';')):
+        ids = r['source_ids'].split(';')
+        if r['source_ids'] and any(not i or i != i.strip() for i in ids):
+            rep.error('cand-source-ids-format', f'{cid}: source_ids {r["source_ids"]!r} must be ids joined by ";" with no '
+                                                f'empty or padded entry')
+        for sid in filter(None, ids):
             if sid not in reg:
                 rep.error('cand-source-unknown', f'{cid}: source id {sid!r} is not in sources.csv')
         fr = re.fullmatch(r'R(\d+)', r['found_round'])
         if not fr:
             rep.error('cand-found-round', f'{cid}: found_round {r["found_round"]!r} should look like R12')
-        elif ctx.get('latest_round') is not None and int(fr.group(1)) > ctx['latest_round']:
+        elif ctx['latest_round'] is not None and int(fr.group(1)) > ctx['latest_round']:
             rep.error('cand-found-round-future', f'{cid}: found_round {r["found_round"]} is after the latest logged '
                                                  f'round, R{ctx["latest_round"]}')
         date = parse_date(r['checked_date']) if re.fullmatch(r'\d{4}-\d{2}-\d{2}', r['checked_date']) else None
@@ -625,16 +699,26 @@ def check_candidates(rep, ctx):
             rep.error('cand-date-future', f'{cid}: checked_date {r["checked_date"]} is after today ({today})')
         if r['target_repo'] not in UPSTREAM_REPOS:
             rep.error('cand-target-repo', f'{cid}: target_repo {r["target_repo"]!r} not in {sorted(UPSTREAM_REPOS)}')
+        # --upstream checks that this file exists. Only a method candidate may name a model stage instead
+        # (rc-025 "Stage 4 cost cascade"), because a method has no single cell.
+        if r['kind'] != 'method' and not TARGET_PATH_RE.match(r['target_file']):
+            rep.error('cand-target-file', f'{cid}: target_file {r["target_file"][:50]!r} must start with the upstream '
+                                          f'file path (only a method candidate may name a model stage instead)')
         ca = r['checked_against'].split('@')
         if len(ca) != 2 or ca[0] not in UPSTREAM_REPOS or not SHA_RE.fullmatch(ca[1]):
             rep.error('cand-checked-against', f'{cid}: checked_against {r["checked_against"]!r} must be <repo>@<sha> with '
                                               f'repo in {sorted(UPSTREAM_REPOS)}')
+        elif r['status'] in LIVE_CANDIDATE_STATUSES and ca[0] != r['target_repo']:
+            # A closed row may cite the repo where it was resolved (rc-014: an AsteroidCatalog cell closed by an
+            # economicspace change); an open one is re-checked against its own cell.
+            rep.error('cand-checked-wrong-repo', f'{cid} is {r["status"]} but was checked against {ca[0]}, not its '
+                                                 f'target_repo {r["target_repo"]}')
     rep.expect('candidates')
 
 
 def check_upstream_map(rep, ctx):
     rep.start('upstream_commit_map')
-    ctx['upstream_map'] = []
+    ctx['upstream_map'] = None  # None means unreadable (reported here); check_upstream then skips map lookups
     try:
         header, rows = read_csv(UPSTREAM_MAP)
     except DataError as e:
@@ -643,10 +727,12 @@ def check_upstream_map(rep, ctx):
     if header != UPSTREAM_MAP_COLS:
         rep.error('map-header', f'header is {header}, expected {UPSTREAM_MAP_COLS}')
         return
+    cands = ctx['candidates']
     by_ref = defaultdict(list)
-    for c in ctx.get('candidates', []):
+    for c in cands if cands is not None else ():
         by_ref[c['checked_against']].append(c['id'])
     seen = set()
+    ctx['upstream_map'] = []
     for row in rows:
         rep.count('map rows')
         r = dict(zip(header, row))
@@ -659,15 +745,48 @@ def check_upstream_map(rep, ctx):
         if ref in seen:
             rep.error('map-duplicate', f'{ref} is mapped twice')
         seen.add(ref)
+        if cands is None:
+            continue  # revision_candidates.csv is unreadable (reported there), so who cites the row is unknown
         listed = sorted(filter(None, r['checked_against_in'].split(';')))
-        if listed != sorted(by_ref.get(ref, [])):
+        citing = sorted(by_ref[ref]) if ref in by_ref else []
+        if not citing:
+            rep.error('map-unused', f'{ref}: no candidate cites this commit (checked_against_in lists {listed}); '
+                                    f'delete the row')
+        elif listed != citing:
             rep.error('map-cited-mismatch', f'{ref}: checked_against_in lists {listed}, but the candidates citing it are '
-                                            f'{sorted(by_ref.get(ref, []))}')
+                                            f'{citing}')
+
+
+def git_raw(repo, *args):
+    """(returncode, stdout bytes). A git that cannot be run at all raises DataError, which stops the check."""
+    try:
+        proc = subprocess.run(['git', '-C', str(repo)] + list(args), capture_output=True)
+    except OSError as e:
+        raise DataError('git-unavailable', f'cannot run git: {e}')
+    return proc.returncode, proc.stdout
 
 
 def git(repo, *args):
-    proc = subprocess.run(['git', '-C', str(repo)] + list(args), capture_output=True)
-    return proc.returncode, proc.stdout.decode('utf-8', 'backslashreplace').strip()
+    """(returncode, stdout text). Output that is not UTF-8 keeps its bytes as escapes, so it compares unequal."""
+    rc, out = git_raw(repo, *args)
+    return rc, out.decode('utf-8', 'backslashreplace').strip()
+
+
+def check_target_file(rep, c, checked_repo, sha, repos):
+    """The file a candidate names exists upstream: at the commit it was checked against, or, for a closed row checked
+    in another repo (cand-checked-wrong-repo allows that only for closed rows), on its target repo's origin/main."""
+    m = TARGET_PATH_RE.match(c['target_file'])
+    if not m:
+        # cand-target-file allows a stage name instead of a path only for a method candidate.
+        rep.count('targets named by model stage, no file to check')
+        return
+    target = c['target_repo']
+    if target not in repos:
+        return  # reported as upstream-repo-missing, or by check_candidates as cand-target-repo
+    where = sha if target == checked_repo else 'origin/main'
+    rep.count('target files checked')
+    if git(repos[target], 'cat-file', '-e', f'{where}:{m.group(0)}')[0] != 0:
+        rep.error('upstream-target-file-missing', f'{c["id"]}: {target} has no {m.group(0)} at {where}')
 
 
 def check_upstream(rep, ctx):
@@ -682,34 +801,49 @@ def check_upstream(rep, ctx):
                                                f'repo and fetch, or run without --upstream')
             continue
         repos[name] = path
-    mapped = {f'{r["repo"]}@{r["old_sha"]}': r for r in ctx.get('upstream_map', [])}
-    for r in ctx.get('upstream_map', []):
-        path = repos.get(r['repo'])
-        if path is None:
-            continue
+        # Which origin/main was compared: a clone that was not fetched compares against an old main.
+        ctx['upstream_heads'][name] = git(path, 'rev-parse', '--short', 'origin/main')[1]
+    map_rows = ctx['upstream_map']  # None: the map is unreadable, reported by check_upstream_map
+    mapped = {f'{r["repo"]}@{r["old_sha"]}': r for r in map_rows} if map_rows is not None else None
+    for r in map_rows if map_rows is not None else ():
+        if r['repo'] not in repos:
+            continue  # reported above as upstream-repo-missing (or by check_upstream_map as map-repo)
+        path = repos[r['repo']]
         rep.count('commits checked')
+        ref = f'{r["repo"]}@{r["old_sha"]}'
         rc1, old_tree = git(path, 'rev-parse', '--verify', f'{r["old_sha"]}^{{tree}}')
         rc2, new_tree = git(path, 'rev-parse', '--verify', f'{r["main_sha"]}^{{tree}}')
         rc3, _ = git(path, 'merge-base', '--is-ancestor', r['main_sha'], 'origin/main')
         if rc1 or rc2 or rc3 or old_tree != new_tree:
-            rep.error('map-not-equivalent', f'{r["repo"]}@{r["old_sha"]} -> {r["main_sha"]}: both must exist, the second '
-                                            f'must be on origin/main, and their trees must be identical')
-    for c in ctx.get('candidates', []):
+            rep.error('map-not-equivalent', f'{ref} -> {r["main_sha"]}: both must exist, the second must be on '
+                                            f'origin/main, and their trees must be identical')
+            continue
+        if not old_tree.startswith(r['tree']):
+            rep.error('map-tree-mismatch', f'{ref}: tree column {r["tree"]} is not the commits\' tree {old_tree[:12]}')
+        if git(path, 'merge-base', '--is-ancestor', r['old_sha'], 'origin/main')[0] == 0:
+            rep.error('map-old-on-main', f'{ref} is on origin/main, so it needs no mapping; delete the row')
+        subject = git(path, 'log', '-1', '--format=%s', r['main_sha'])[1]
+        if subject != r['subject']:
+            rep.error('map-subject-mismatch', f'{ref}: subject column {r["subject"][:50]!r} is not {r["main_sha"]}\'s '
+                                              f'subject {subject[:50]!r}')
+    # None: the candidates are unreadable, reported by check_candidates.
+    for c in ctx['candidates'] if ctx['candidates'] is not None else ():
         ref = c['checked_against']
         name, _, sha = ref.partition('@')
-        path = repos.get(name)
-        if path is None:
-            continue
+        if name not in repos:
+            continue  # reported above as upstream-repo-missing (or by check_candidates as cand-checked-against)
+        path = repos[name]
         rep.count('commits checked')
         if git(path, 'cat-file', '-e', f'{sha}^{{commit}}')[0] != 0:
             rep.error('upstream-sha-unknown', f'{c["id"]}: {ref} is not a commit in {path}')
             continue
+        check_target_file(rep, c, name, sha, repos)
         if git(path, 'merge-base', '--is-ancestor', sha, 'origin/main')[0] == 0:
             continue
         if c['status'] in LIVE_CANDIDATE_STATUSES:
             rep.error('upstream-open-off-main', f'{c["id"]} is {c["status"]} but {ref} is not on {name} origin/main; '
                                                 f're-check the cell against main and update checked_against')
-        elif ref not in mapped:
+        elif mapped is not None and ref not in mapped:
             rep.error('upstream-sha-unmapped', f'{c["id"]}: {ref} is not on {name} origin/main and has no row in '
                                                f'upstream_commit_map.csv')
     rep.expect('commits checked')
@@ -745,8 +879,10 @@ def check_readme(rep, ctx):
 
 # ---------------------------------------------------------------------------------------------- driver
 
-CHECKS = [check_files, check_layout, check_registry, check_index, check_log, check_rejected, check_manifest,
-          check_extracted, check_candidates, check_upstream_map, check_readme]
+# Order matters: a check reads the ctx keys earlier checks write (reg, latest_round, rejected, candidates,
+# upstream_map) by subscript, so a reordering crashes as check-crashed instead of checking against nothing.
+CHECKS = [check_files, check_layout, check_registry, check_index, check_log, check_log_history, check_rejected,
+          check_manifest, check_extracted, check_candidates, check_upstream_map, check_readme]
 
 
 def run(argv=None):
@@ -757,13 +893,16 @@ def run(argv=None):
     args = ap.parse_args(argv)
 
     rep = Report()
-    ctx = {'domains': domain_dirs(), 'reg': {}, 'rejected': {}}
+    # reg and rejected feed the summary line, so they exist even if the checks that fill them crash.
+    ctx = {'domains': domain_dirs(), 'reg': {}, 'rejected': {}, 'upstream_heads': {}}
     rep.start('setup')
     try:
         ctx['files'] = repo_files()
+        ctx['ignored'] = ignored_files()
     except DataError as e:
+        # Every check then reports nothing-checked or a missing file, so the run fails loudly.
         rep.error(e.code, str(e))
-        ctx['files'] = []
+        ctx['files'], ctx['ignored'] = [], []
     checks = CHECKS + ([check_upstream] if args.upstream else [])
     for check in checks:
         try:
@@ -778,6 +917,9 @@ def run(argv=None):
     if args.verbose:
         for section, counts in rep.counts.items():
             print(f'checked [{section}] ' + ', '.join(f'{n} {what}' for what, n in counts.items()))
+        if ctx['upstream_heads']:
+            print('compared with origin/main ' + ', '.join(f'{n}@{s}' for n, s in sorted(ctx['upstream_heads'].items()))
+                  + ' (fetch the clones first if these are old)')
     reg = ctx['reg']
     tiers = Counter(r['tier'] for r in reg.values())
     pending = sum(access_class(r['access_status']) in PENDING_ACCESS for r in reg.values())
@@ -788,8 +930,8 @@ def run(argv=None):
 
 
 def main():
-    if hasattr(sys.stdout, 'reconfigure'):
-        sys.stdout.reconfigure(encoding='utf-8', errors='backslashreplace')
+    # The messages hold non-ASCII ("—"); a cp1252 console would raise partway through the report.
+    sys.stdout.reconfigure(encoding='utf-8', errors='backslashreplace')
     sys.exit(run())
 
 

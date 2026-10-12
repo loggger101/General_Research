@@ -61,7 +61,7 @@ revision_candidates.csv                  Upstream cells the evidence says should
 upstream_commit_map.csv                  Upstream commits cited by checked_against that a history rewrite took off main, mapped to their main equivalents
 DOWNLOADS.md                             Checklist of the non-hosted sources still to fetch for a full extraction, with exact links
 AGENTS.md                                Working rules for agents running research rounds here
-tools/                                   build_registry.py (regenerate derived files), validate.py (consistency checks) and tests/ (planted-defect tests of both)
+tools/                                   build_registry.py (regenerate derived files), validate.py (consistency checks) and tests/ (planted-defect tests of both, a coverage gate and a debug script)
 01_density_and_population/               Domain 1: density by spectral type, PGM factors, population stats
 02_composition_value/                    Domain 2: composition → commodity value mapping
 03_dv_propulsion/                        Domain 3: Δv budgets, propulsion performance tables
@@ -245,35 +245,54 @@ python tools/validate.py --strict       # exit 1 on warnings too
 python tools/validate.py --verbose      # also print how many items each check examined
 python tools/validate.py --upstream     # also check cited commits in the sibling upstream clones
 python -m unittest discover -s tools/tests   # the tools' own tests
+python tools/tests/measure_coverage.py  # which lines and branches of the tools no test reaches (needs coverage.py)
+python tools/tests/debug_case.py CODE   # plant one test case's defect and show the full report (--keep, --list)
 ```
 
 `validate.py` checks:
 
-- that every CSV, Markdown, JSON and Python file is UTF-8 with no byte-order mark, no stray carriage returns and a final newline;
-- that the root and the domain folders hold only what "Layout" lists, and that domains are numbered 01..N with no gap or repeat;
+- that every CSV, Markdown, JSON and Python file, and `.gitignore`, is UTF-8 with no byte-order mark, no stray carriage returns and a final newline;
+- that the root and the domain folders hold only what "Layout" lists, that domains are numbered 01..N with no gap or repeat, and that `.gitignore` hides nothing but `__pycache__/` (a hidden file is invisible to every check);
 - that every `sources_domain.csv` is rectangular with no empty or padded cell and a well-formed year, and that `sources.csv` matches them;
 - that each INDEX.md table lists exactly its domain's sources in registry order, with five non-empty cells per row;
-- that the research log runs from Round 0 to the latest with no gaps, real dates and no mislabelled entries;
+- that the research log runs from Round 0 to the latest with no gaps, real dates and no mislabelled entries, and that the committed log survives unchanged as its tail (entries are only ever added at the top; this compares with HEAD, so it catches a rewrite before it is committed);
 - that every hosted file is in the manifest with the right hash and a licence;
-- that every extracted-data CSV is rectangular and cites registered ids, and that every JSON file parses;
-- that `revision_candidates.csv` uses known statuses, sources, repos and dates, and that `upstream_commit_map.csv` agrees with it;
+- that every extracted-data CSV is rectangular, has a `source_id` column and cites registered ids, that every JSON file parses, and that every read source is cited by an extracted-data file of its domain or marked "Context-only: <reason>";
+- that `revision_candidates.csv` uses known statuses, sources, repos and dates, that a candidate names its upstream file (only a `method` candidate may name a model stage instead), that open and blocked candidates were checked against their own target repo, and that `upstream_commit_map.csv` agrees with it and holds no unused row;
 - that no rejected source is still registered or named anywhere but the research log.
 
-It also warns, without failing, on hosted files whose licence does not permit
-redistribution, extracted-data CSVs with no `source_id` column, and sources
-that no extracted-data file in their domain cites (except
-`registered_not_pulled` rows, which it counts in its summary line instead).
+It warns, without failing, only where the decision is the owner's: hosted files
+whose licence does not permit redistribution, files over GitHub's 50 MB warning
+size, and an `access_status` sha256 that matches none of the source's hosted
+files (it may record an earlier, removed copy). `registered_not_pulled` rows are
+exempt from the citation check and counted in the summary line instead.
 `--upstream` reads the clones of AsteroidCatalog, spacecost and economicspace
 next to this repo. It checks that every commit a candidate cites exists, that
-open and blocked candidates were checked against `origin/main`, and that an
-off-main commit on a closed candidate has an identical-tree row in
-`upstream_commit_map.csv`.
+the file it names exists there, that open and blocked candidates were checked
+against `origin/main`, and that an off-main commit on a closed candidate has a
+row in `upstream_commit_map.csv` whose commits have identical trees, whose
+`tree` and `subject` columns are right and whose old commit is really off main.
+`--verbose` names the `origin/main` commit of each clone it compared with; fetch
+the clones first.
 
 Nothing fails silently. The readers stop on a malformed file instead of reading
-around it. A check that crashes is reported as `check-crashed`, and one that
-examined nothing is reported as `nothing-checked`. Every finding carries a code.
-`tools/tests` plants a defect for every code, in a throwaway fixture repository,
-and fails if a code has no test. Standard library and git only; Python 3.8+.
+around it. A check that crashes is reported as `check-crashed`, one that
+examined nothing as `nothing-checked`, and git that cannot be run as
+`git-unavailable`. Every finding carries a code. When a file another check
+depends on is unreadable, that failure is reported and the dependent
+cross-checks are skipped rather than reported a second time as false errors.
+
+`tools/tests` builds a throwaway fixture repository (with sibling upstream
+clones), plants a defect for every code (one case for each place that reports
+it) and fails if a code has no case. It also checks that valid variants pass
+(CRLF line ends, a lazy-continuation paragraph in a log entry, a blank
+`source_id`), that no planted defect crashes a check, that every check function
+is registered, and that the tools hold no `except` that swallows an error and
+none of the fallback idioms that hid defects here before (`dict.get` with a
+default, `hasattr`, `utf-8-sig`, `errors="replace"`). `measure_coverage.py`
+runs the suite under coverage.py and fails unless every line and branch of the
+three tools is reached; run it after changing `tools/`. Standard library and
+git only (coverage.py for `measure_coverage.py` alone); Python 3.8+.
 
 ## Provenance of this process
 
