@@ -117,3 +117,26 @@ Domain 19 prices excavation and beneficiation from terrestrial mineral-processin
 The paper examines a series of possible mission operations advancing both knowledge of which asteroids suit different forms of resource extraction and the capabilities needed to extract them "for mission enhancing and enabling uses such as radiation protection, propulsion, life support, shelter and manufacturing". Verbatim: "An evolutionary development and demonstration approach is recommended within the framework of a larger campaign that prepares for the first landings of humans on Mars." - i.e. NASA's own framing ties asteroid-resource operations to the Evolvable Mars Campaign rather than standalone mining economics.
 
 The staging ladder (verbatim): "the development and demonstration approach progresses from resource prospecting (understanding the resource, and mapping the 'ore body'), mining/extraction feasibility and product assessment, pilot operations, to full in-situ resource utilization (ISRU)." That four-stage sequence is exactly the process structure upstream's excavation/beneficiation cells assume - registered as context-only: a full read found NO cost, mass or dv figures anywhere in the text, so it pins no cell; its value is that an institutional NASA document names and orders the stages. No extracted-data CSV (nothing numeric to cite).
+
+## R152 - rc-027 unblocked: five measured excavation energies and DOE's terrestrial mining benchmark (2026-10-12; +1 source T2x1)
+
+rc-027 (spacecost `Drilling / excavation energy`, 200 Wh/kg, range 50-500, unchanged at spacecost@0b716ad) had been blocked since R43 on just_2019's unread table. It no longer needs that table: four sources read in full now give the same picture. Every number below is in `extracted_data/r152_excavation_specific_energy_key_numbers.csv`, with conversions and ratios computed in code.
+
+| source | what was measured | Wh/kg |
+|---|---|---|
+| schuler_2022 (NASA KSC IPEx bucket-drum scaling, p14 Fig. 15) | mechanical energy at the drum per kg collected, three drum sizes, two cut depths each, 10 and 30 mm/s | 0.0029-0.0071 |
+| giel_2025 (hosted; p5 Table IV) | a bucket-drum excavator from the literature, continuous | 0.007-0.02 |
+| kafi_2026 (p5) | spiral-cavity wheel and two baselines, 44.2-83.5 J/kg | 0.012-0.023 |
+| giel_2025 (p4-p5) | MoonBot bucket drum, continuous | 0.022 |
+| giel_2025 (p5 Table IV) | RASSOR 2.0, batch (the 0.761 just_2019's snippet gave) | 0.76 |
+| giel_2025 (p5 Table III) | MoonBot batch cycle including unloading and 139 s of driving (0.864 recomputed from the table) | 0.86 |
+| doe_2007 (Exhibit 24, on-site) | US metal mining: drilling + blasting + digging, 17,700 Btu/ton | 5.72 |
+| doe_2007 | all extraction including ventilation and dewatering, 23,000 Btu/ton | 7.43 |
+| doe_2007 | extraction plus diesel haulage, 97,900 Btu/ton | 31.63 |
+| doe_2007 | whole mine including crushing, grinding and separation, 168,746 Btu/ton | 54.51 |
+
+Schuler's Fig. 15 was read from the PDF's vector markers against its gridlines, not by eye; the figure is mechanical energy at the drum, not electrical input. The DOE study (US DOE Industrial Technologies Program, prepared by BCS, Incorporated, June 2007; new row doe_2007_mining_industry_energy_bandwidth_study) has a scrambled text layer on Exhibit 24, so the table was read from a page render; the subtotal (162,148) matches its components to within their rounding. A short ton is assumed, the report being a US one that prints no definition; a metric reading lowers each figure by 9.3%. With electricity generation losses included (Exhibit 14), metals run 342,200 Btu/ton, 110.5 Wh/kg. The file carries no licence or public-domain statement, being contractor-prepared, so it is not hosted.
+
+Upstream's 200 Wh/kg is 3.7 times a whole terrestrial metal mine including comminution. spacecost prices comminution separately, in its 500 Wh/kg `Beneficiation / on-site processing energy` row; DOE's crushing and grinding alone is 19.3 Wh/kg of ore. 200 is also 6.3 times extraction plus haulage. The 500 "consolidated rock" end is 9.2 times the whole mine. rc-027 is re-opened with a proposal to move the value into the ~1-10 Wh/kg decade (about 6 for hard-rock drilling, blasting and digging), with a range from ~0.01 to ~32. The alternative is to keep 200 and have the note say what beyond excavation it carries.
+
+The caveat stays: every lunar figure is loose simulant at 1 g and the DOE figures are terrestrial ore. No source here measures asteroid rock, and jayathilake_2022 (geotechnical parameters) and tang_2023 (asteroid rock strengths) remain unread.

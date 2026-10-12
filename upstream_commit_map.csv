@@ -1,0 +1,12 @@
+repo,old_sha,main_sha,tree,subject,checked_against_in
+AsteroidCatalog,6a2cfbc,82a2905,fd0056ab1411,Docs: data-2026-09-29c is the current release (data contract 1.8.1) (#18),rc-001;rc-002;rc-007;rc-045;rc-046;rc-077
+AsteroidCatalog,852bf69,789d4b2,5623b194fc01,Docs: data-2026-09-26b is the current release (data contract 1.5.0) (#10),rc-003;rc-004;rc-005;rc-006;rc-008;rc-009;rc-010;rc-011
+economicspace,0239af6,4781ef4,1a9901f1bf8a,Repin spacecost to v0.5.3 and correct the tungsten note; no value moves (master v1.45.0) (#127),rc-056;rc-063
+economicspace,09814da,c1c188c,de10384ca68d,Re-pin sixteen values to their sources and adopt spacecost v0.6.0 (master v1.46.0) (#128),rc-032;rc-033;rc-034;rc-035;rc-036;rc-037;rc-054;rc-055;rc-057;rc-058;rc-062;rc-064;rc-065;rc-066
+economicspace,1f470d4,1a040b5,edd85046fffc,"Adopt spacecost v0.4.0 on disk, and stop reading live tables for older runs (#112)",rc-038
+economicspace,a3e9b80,631d7a0,a08a09e6495c,"Repin spacecost to v0.5.2, which corrects citations and moves no value (master v1.44.0) (#125)",rc-049
+spacecost,85da36c,8f2945e,b12a4be8e606,"Merge pull request #11: withdraw two dead citations (0.5.1, data contract 1.17.1)",rc-061
+spacecost,c73f1d1,c77a269,8e20b2ffd645,Merge pull request #12 from loggger101/data/citation-corrections-0.5.2,rc-015;rc-017;rc-021;rc-026;rc-028;rc-031;rc-039;rc-040;rc-041;rc-042;rc-043;rc-044;rc-047;rc-053;rc-060;rc-069;rc-071;rc-073;rc-074;rc-079;rc-080
+spacecost,d799cba,c63ce9c,360a0a8fc5e4,Merge pull request #14 from loggger101/data/sourced-values-0.6.0,rc-030;rc-050;rc-051;rc-052
+spacecost,decf8f3,10f1bdb,ad8ee42841b1,Merge pull request #13 from loggger101/data/citation-corrections-0.5.3,rc-067;rc-068;rc-070;rc-072
+spacecost,e831245,53084a2,0953cb3189ea,Merge pull request #3 from loggger101/feat/launch-table-audit,rc-018;rc-019;rc-020;rc-023;rc-024

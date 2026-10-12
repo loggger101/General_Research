@@ -1,0 +1,24 @@
+source_id,item,value,unit,location_in_source,notes
+howard_2010_cv3_modal_mineralogy_psd_xrd,"Fe,Ni metal, reduced CV3 (Vigarano, Efremovka)",2-2.2,vol%,abstract,"PSD-XRD, phases >1 wt%; read from the Curtin repository record of the abstract"
+howard_2010_cv3_modal_mineralogy_psd_xrd,"Fe,Ni metal, oxidized CV3 (Mokoia, Grosnaja, Kaba, Allende)",0.2-1.1,vol%,abstract,"same; sulphide 2.9-8.1, magnetite 0.3-6.1 vol% in the oxidized set"
+howard_2010_cv3_modal_mineralogy_psd_xrd,"olivine, reduced; oxidized",83-85; 76.3-83.9,vol%,abstract,
+howard_2011_cm_modal_mineralogy_psd_xrd_part2,phases reported for CM2 and CM1 (>1 vol% detection),"olivine+pyroxene 13-31 (CM2), 6-10 (CM1); phyllosilicate 67-82 (CM2), 86-88 (CM1); magnetite 0.6-5.2; sulphide 0.6-3.9; calcite 0-1.9; gypsum 0-0.8",vol%,abstract,"no Fe,Ni metal among the listed phases, so CM metal is below the >1 vol% quantification floor"
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,CB/CH spectra classified (n=10),L 6; X 2; Cb 1; S 1,count by asteroid class,online Table A1 (machine-readable),"Bencubbin CBa L; Gujba CBa X; Isheyevo CH/CBb Cb (chip); MIL 07411 CB S and L; PCA 91328 CH3 L, L; PCA 91467 CH3 X, L, L"
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,spectra classified Cb (n=7),ALH 84005 L5; ALH 84005 L5; ALH 84005 L5; Isheyevo CH/CBb [chip]; Mighei CM2; Tsarev L5 (laser irradiated); Y-82162 C1/2-ung,meteorite and group,"online Table A1; Table 2 (p4) gives Cb 7 matches, 0.5%",
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cb mean NEOWISE visual geometric albedo,0.043 (1 object),,"Table 4 (p5), from Mainzer et al. 2011",C 0.050 (9); D 0.048 (13); B 0.120 (2)
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,"iron meteorite visual albedo, for contrast",~0.3,,p6 Sec. 4.2.2,"quoting Ostrowski & Bryson 2019; D-types 0.05, CM and CI ~0.06"
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,D-type meteorite matches (n=38),CM 50%; iron 39%; CO 5%,% of matches,Table 3 (p5),Table A1 by group: CM2 14; IIAB 8; IAB-MG 5; CM-an 4; CO3 2; CR2 1
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,D-type CM dominance explained,sampling bias,,p6 Sec. 4.2.2,most likely due to many CM spectra and the rarity of fragile organic-rich material in the data set
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tagish Lake spectra classified (n=6),D (heated); Xk; Xn (irradiated with pulse laser); Xc; U (heated); X,asteroid class,online Table A1,only the heated spectrum classifies D
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,B-type meteorite matches (n=107),CV 18%; aubrite 15%; CM 14%; lunar 13%; L 10%,% of matches,Table 3 (p5),Table A1 by classification: CV3 19; aubrite 16; lunar (anorth) 14; CM2 12; L5 9; ureilite-an 5
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,CV3 spectra classified,K 46; B 19; Xc 9; L 2,count by asteroid class,online Table A1,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,CI spectra classified,L 7; Xc 5; B 4; X 2; C 1,count by asteroid class,online Table A1,
+wong_2024_jwst_lucy_trojans_oh_organics_co2,less-red and red Trojans,roughly P- and D-types,,arXiv PDF p2,
+wong_2024_jwst_lucy_trojans_oh_organics_co2,surface water ice,absence of the 2 um band precludes a significant water ice fraction across the surface,,arXiv PDF p8,
+wong_2024_jwst_lucy_trojans_oh_organics_co2,water ice depletion depth (thermophysical models),~10 m average; ~10 cm at polar regions,m,arXiv PDF p8,citing Guilbert-Lepoutre 2014
+wong_2024_jwst_lucy_trojans_oh_organics_co2,"subsurface ice, less-red vs red",less-red (P-like) would have intrinsically more water ice in the subsurface than red (D-like),,arXiv PDF p8,if the 3 um OH band is ice; the paper also offers irradiated organic refractory material as an alternative
+wong_2024_jwst_lucy_trojans_oh_organics_co2,aliphatic organics 3.3-3.6 um band,systematically deeper on the red objects Orus and Leucus,,arXiv PDF p1 abstract,no abundance given
+wong_2024_jwst_lucy_trojans_oh_organics_co2,CO2 4.25 um band,Eurybates only (collisional fragment); CO2 may be ubiquitous at depth,,"arXiv PDF p1, p11",
+,upstream D; Z; T; P ice_fraction,0.25; 0.25; 0.10; 0.15,mass fraction,AsteroidCatalog@86cfc54 reference/taxonomy_composition.csv,rc-013
+,upstream D; Z; T; P carbon_fraction,0.30; 0.30; 0.25; 0.25,mass fraction,AsteroidCatalog@86cfc54 reference/taxonomy_composition.csv,rc-075
+,upstream B; C; Cb; F metal_fraction,0.01; 0.01; 0.01; 0.01,mass fraction,AsteroidCatalog@86cfc54 reference/taxonomy_composition.csv,"rc-012 (Cb), rc-076"

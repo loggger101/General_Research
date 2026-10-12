@@ -1,4 +1,4 @@
-﻿# Domain 2 Findings — composition → commodity value mapping
+# Domain 2 Findings — composition → commodity value mapping
 
 ## hein2020 — Hein, Matheson & Fries (2018/2020), "A Techno-Economic Analysis of Asteroid Mining" [T1]
 
@@ -394,3 +394,31 @@ Extracted data: `extracted_data/r115_taxonomy_carbon_metal_checks.csv` (6 rows).
 **lodders_bergemann_palme_2025_solar_system_abundances_ssreview [T1]** - Space Science Reviews 221(2), Mar 2025, DOI 10.1007/s11214-025-01146-w (Crossref-verified). NTRS 20250008646 accepted manuscript pulled from this machine and read in full; copyright.determinationType=MAY_INCLUDE_COPYRIGHT_MATERIAL -> extraction-only per the R94 licence rule, not hostable. Key numbers extracted verbatim to r133_lodders_2025_abundances_key_numbers.csv: protosolar mass fractions X=0.7060 / Y=0.2753 / Z=0.0187 and the paper's explicit finding that "no obvious correlation of CI-chondritic to solar elemental abundance ratios with condensation temperatures is observed" - a caveat for any d02 mapping that leans on condensation-temperature ordering.
 
 This is the successor system to **lodders_2003_solar_abundances_condensation_temperatures** (ApJ 591:1220, still paywalled; this round's NTRS search hit was this SSR paper, not the ApJ one - retry note appended). Future extraction pass: diff its Table 2/4 CI-chondrite values against the abundances embedded in economicspace mineral_value.py (which cites Lodders 2003) before any re-pin.
+
+## R152 - revision-candidate re-check: rc-012 withdrawn on Burbine 2024's meteorite classes, rc-076 narrowed, rc-013 and rc-075 deepened (2026-10-12; +3 sources T1x3, burbine_2024 hosted)
+
+Re-read against AsteroidCatalog@86cfc54 (origin/main, 2026-10-07). The four open composition candidates' cells are unchanged: Cb metal 0.01; D, Z, T, P ice 0.25, 0.25, 0.10, 0.15; D, Z, T, P carbon 0.30, 0.30, 0.25, 0.25; B, C, Cb, F nickel-iron 0.01. Their earlier `checked_against`, AsteroidCatalog@6a2cfbc, is no longer on upstream main: the history was rewritten (package-author change) and 6a2cfbc is now 82a2905 with an identical tree. The root file `upstream_commit_map.csv` maps all eleven rewritten commits that `revision_candidates.csv` cites to their main equivalents by tree hash.
+
+**burbine_2024_testing_bus_demeo_with_meteorite_spectra is now hosted.** The IOP PDF route that refused this machine in R113 answered (1,865,527 B); page 1 carries the Creative Commons Attribution 4.0 statement. Its online Table A1 (machine-readable, 1,489 RELAB spectra, each with its meteorite group and the Bus-DeMeo class the authors gave it) came from content.cld.iop.org and is in `extracted_data/r152_burbine_2024_table_a1.csv` whole, so later rounds can query any class-to-meteorite mapping.
+
+**rc-012 (Cb metal toward CB chondrites): withdrawn.** The row waited for a class-to-meteorite mapping source. Table A1 is one, and it does not support the move. Of the 10 CB/CH spectra, one classifies as Cb (Isheyevo, CH/CBb, measured as a chip), six as L, two as X and one as S. The seven Cb spectra are four L5 ordinary chondrites (one laser-irradiated), Mighei (CM2), Y-82162 (C1/2-ungrouped) and that Isheyevo chip. Table 4 gives the single NEOWISE Cb albedo as 0.043, and the paper puts iron-rich meteorites near 0.3 (p6). Cb's metal question now sits with rc-076.
+
+**rc-076 (C-complex metal ~0): narrowed to the C row.** Two Howard et al. PSD-XRD papers, abstracts read from Curtin University's repository records (Elsevier full texts closed; registered_not_pulled):
+
+- howard_2010 (CV3): Fe,Ni metal is 2-2.2 vol% in reduced and 0.2-1.1 vol% in oxidized samples. Metal is the densest phase, so its mass fraction is higher still; upstream's 0.01 for the CV-paired B and F sits inside or below that range.
+- howard_2011 (CM): the abstract quantifies every phase above 1 vol% and names no metal, so CM metal is under ~1 vol%. That does not contradict 0.01 for the CM-paired Cb, nor 0.02-0.03 for Cg, Ch, G and Cgh.
+
+Only the CI evidence (Ryugu, King et al. 2015) argues for ~0, and of the four rows only C's note names CI. Table A1 also shows B has no single analogue: its 107 spectra run CV3 19, aubrite 16, lunar (anorthositic) 14, CM2 12, L5 9.
+
+**rc-075 (D, Z, T, P carbon) and rc-013 (D, P ice): open, deepened.** These stay owner decisions.
+
+- burbine_2024: D-type meteorite matches are CM 50%, iron 39%, CO 5% (Table 3), which the paper puts down to the many CM spectra and the rarity of fragile organic-rich material in collections (p6). Only one of six Tagish Lake spectra classifies as D (a heated one; the others are Xk, Xn, Xc, U and X).
+- wong_2024_jwst_lucy_trojans_oh_organics_co2 (JWST NIRSpec of the five Lucy Trojans; arXiv copy read in full, default licence, not hosted; the CC BY version of record served a bot check) adds four points:
+  - The less-red and red Trojans "roughly correspond" to P- and D-types (p2).
+  - The missing 2 um band rules out a significant water-ice fraction across the surface, and thermophysical models deplete ice to ~10 m depth on average and ~10 cm at the poles (p8).
+  - If the 3 um band is ice, the less-red (P-like) Trojans hold more subsurface ice than the red (D-like) ones (p8), the opposite order to upstream's D 0.25 > P 0.15.
+  - The aliphatic-organic band is systematically deeper on the red objects (abstract), the same order as upstream's D 0.30 > P 0.25 carbon, though with no abundance.
+
+For rc-013 this adds a second question beside the end-member choice: a cometary ice fraction describes the bulk interior, while the ice within a surface miner's reach is near zero on this evidence.
+
+Extracted: `extracted_data/r152_taxonomy_analogue_checks.csv` (Howard, Burbine and Wong values with locations, and the upstream cells) and `extracted_data/r152_burbine_2024_table_a1.csv`.

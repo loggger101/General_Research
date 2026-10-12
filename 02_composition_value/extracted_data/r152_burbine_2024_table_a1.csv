@@ -1,0 +1,1490 @@
+source_id,meteorite,classification,asteroid_class,relab_spectrum_id,particle_size,note
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-87272,eucrite-mmict,V,camp94,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881280,CM2,L,c1mp56,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881334,CM2,Xc,c1mp35,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881394,eucrite-cm,V,c1mp136a,500-2000 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881458,CM2,K,c1mp36,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881526,diogenite,V,camp95,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881594,CM2,B,c1mp57,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881595,CR2,Xe,c1mp39,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881632,CO3,L,c2mp104,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881655,CM2,K,c1mp55,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881757,lunar (gabbro),V,c2mb29,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881757,lunar (gabbro),V,c4mb29,45-94 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881757,lunar (gabbro),V,c6mb29,>370 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881757,lunar (gabbro),Vw,c9mb29,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881819,eucrite,V,camp96,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881955,CM2,K,c1mp37,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,A-881988,R4,U,c1mp59,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,X,c1mt40,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,Xc,camt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,Xc,cbmt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,Xc,ccmt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,Xc,cdmt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,Xk,cemt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,X,cfmt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,Xc,cgmt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,Ch,chmt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,Xc,cimt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Abee,EH4,Xk,cjmt40,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Acapulco,acapulcoite,Sr,c1mt01,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Acapulco,acapulcoite,Sr,c1tb35,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Acapulco,acapulcoite,Vw,c1tb43,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Acfer 094,C2-ung,L,c1mt275,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Adelaide,C2-ung,L,c1mt276,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Aioun el Atrouss,diogenite-pm,V,camp81,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Air,L6,Sq,c1tb63,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Al Rais,CR2-an,Xk,c1mt265,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Alais,CI1,L,c1mt264,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Aldsworth,LL5,Sq,c1mt77,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Aleppo,L6,Q,c1tb280,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 82101,CO3.4,K,c1ph34,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 82130,ureilite,K,c1ph21,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83007,LL3.4,S,c1mt136a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83010,LL3.3,Sq,c1mt138a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83100,CM1/2,Xe,c1mb51,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83100,CM1/2,K,c1mc01,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83100,CM1/2,K,c1mt222,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83100,CM1/2,K,c2mt222,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83100,CM1/2,K,camh59,<180 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83108,CO3.5,K,c1mb79,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83108,CO3.5,K,c1mc04,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83108,CO3.5,Sq,c2mb79,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83108,CO3.5,K,camh56,<180 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 83108,CO3.5,K,cbmh56,<180 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84001,Martian (OPX),V,c1dd20,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84001,Martian (OPX),B,c1lh65,particulate,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84001,Martian (OPX),V,c1mt02,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84001,Martian (OPX),V,c1mt02n,<125 micron,non-magnetic separate
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84001,Martian (OPX),V,c1mt03,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84001,Martian (OPX),V,c2mt03,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84001,Martian (OPX),V,c3mt02,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84005,L5,Cb,c1mp01,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84005,L5,Cb,s1mp01,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84005,L5,Cb,s2mp01,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84007,aubrite,B,c1lm30a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84007,aubrite,B,c1lm30b,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84028,CV3,K,c1mb78,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84028,CV3,Sq,c1mc05,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84028,CV3,K,c1tb353,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84028,CV3,K,c2mb78,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84028,CV3,K,camb78,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84028,CV3,K,cbmb78,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84028,CV3,K,ccmb78,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84028,CV3,K,cdmb78,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84029,CM2,K,c1mb52,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84033,CM2,D,c1mp14,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84044,CM2,K,c1mp15,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84086,L3.8,Sq,c1mt161a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84096,LL6(?),Q,c1mb83,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84096,LL6(?),B,c2mb83,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84120,L3.8,Sq,c1mt162a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84126,LL3.4,S,c1mt170a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84206,EH3,L,c1mt118a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 84206,EH3,L,c1mt118b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85001,eucrite-Mg-rich,V,c1tb15,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85001,eucrite-Mg-rich,V,cdmb99,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85001,eucrite-Mg-rich,V,cwmb99,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85002,CK4,K,c1mb81,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85002,CK4,K,c1ph35,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85002,CK4,K,c2mb81,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85002,CK4,K,camb81,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85002,CK4,K,camh58,<180 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85002,CK4,K,cbmb81,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85002,CK4,B,ccmb81,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85002,CK4,B,cdmb81,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85003,CO3.5,K,c1mp116,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85006,CV3,Xc,c1mt46,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85013,CM2,K,c1mp23,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85015,diogenite,V,c1rm122a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85015,diogenite,V,c1rm122p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85015,diogenite,V,carm122,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85015,diogenite,V,cbrm122,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85045,L3.8,S,c1mt163a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85070,L3.6,S,c1mt178a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85119,EL3,Xc,c1tb365a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85121,H3.7,S,c1mt154a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85151,R3.6,K,c1mb45,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85151,R3.6,K,c2mb45,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 85155,L3.7,S,c1mt155a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALH 90411,L3.7,Sq,c1tb215,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA76004,LL3.3,Sq,c1mt137a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA76005,eucrite-pmict,V,c1tb23,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA76005,eucrite-pmict,V,c1tb24,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA76005,eucrite-pmict,V,camb66,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA76005,eucrite-pmict,V,cbmb66,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA76005,eucrite-pmict,V,ccmb66,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA76005,eucrite-pmict,V,cdmb66,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA76005,eucrite-pmict,V,cemb66,125-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA76005,eucrite-pmict,V,cfmb66,250-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77003,CO3.6,Xe,c1mb80,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77003,CO3.6,K,c2mb80,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77003,CO3.6,K,camh55,<180 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77005,Martian (shergottite),Sa,c1dd26,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77005,Martian (shergottite),Q,calm09,slab,exposed face
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77005,Martian (shergottite),Q,cblm09,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77005,Martian (shergottite),V,cclm09,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77005,Martian (shergottite),C,cdlm09,chip,around black part
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77081,acapulcoite,Sr,c1mb40,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77081,acapulcoite,Sv,c2mb40,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77081,acapulcoite,Sr,c3mb40,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77081,acapulcoite,Sr,camb40,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77214,L3.4,S,c1lm16,powder,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77214,L3.4,Xe,c1mp02,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77215,L3.8,Sq,cdmb21,<125 micron,dark fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77215,L3.8,Sr,clmb21,<125 micron,light fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77216,L3.7-3.9,Sq,c1tb205,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77252,L3-6,Sq,c1tb206,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77256,diogenite,V,c1rm123a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77256,diogenite,V,c1rm123p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77256,diogenite,V,camp71,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77256,diogenite,V,carm123,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77256,diogenite,V,cbrm123,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77257,ureilite,K,c1ph27,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77271,H6,R,c1tb357,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77278,LL3.7,Sq,c1mt156a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77299,H3.7,S,c1mt157a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77306,CM2,K,c1mp19,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77307,CO3.0,K,c1mp117,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77307,CO3.0,L,c1mt283,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA77307,CO3.0,K,c2mp102,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78108,H5,S,c1mb23,<125 micron,mostly dark matrix
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,B,c1ar01,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,B,c1ar01a,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,B,c1ar01b,45-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,Xc,c1ar01c,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,B,c1ar02a,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,Xc,c1ar02c,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,B,c1lm31a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,B,c1lm31b,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,B,c1lm31c,125-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,Xc,c1lm31d,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78113,aubrite,B,c1lm31f,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78114,aubrite,B,c1ar02b,45-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78115,aubrite,B,c1ar02,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78116,aubrite,Xc,c1ar03c,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78117,aubrite,B,c1ar03a,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78118,aubrite,B,c1ar03b,45-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78119,LL3.5,S,c1mt147a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78132,eucrite-pmict,V,camb72,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78132,eucrite-pmict,V,cbmb72,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA78132,eucrite-pmict,V,ccmb72,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81001,eucrite-pmict,V,c1mp121,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81001,eucrite-unbr,V,c1mt30,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81002,CM2,K,c1mb50,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81002,CM2,Cgh,c1mt196,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81002,CM2,Cgh,c2mt196,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81002,CM2,Cgh,c3mt196,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81005,lunar (anorth),Q,c1lm34,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81005,lunar (anorth),B,calm34,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81005,lunar (anorth),Q,cblm34,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81005,lunar (anorth),B,cclm34,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81005,lunar (anorth),C,cdlm34,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81005,lunar (anorth),Sr,celm34,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81005,lunar (anorth),Q,cflm34,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81011,eucrite-pmict,V,c1mp122,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81011,eucrite-pmict,Q,c1tb13,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81021,EL6,Xc,c1mt119a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81021,EL6,Xc,c1mt119b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81027,L6,Sr,c1tb358,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81101,ureilite,L,c1ph30,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81187,acapulcoite,Vw,c1tb36,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81187,acapulcoite,R,c1mb31,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81187,acapulcoite,Svw,c1tb40,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81187,acapulcoite,S,c2mb31,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81187,acapulcoite,S,c3mb31,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81187,acapulcoite,S,c4mb31,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81187,acapulcoite,S,c5mb31,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81187,acapulcoite,S,c6mb31,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81187,acapulcoite,S,camb31,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81261,acapulcoite,Q,c1mb42,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81261,acapulcoite,Q,c1tb33,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81261,acapulcoite,Q,c1tb39,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81261,acapulcoite,O,c2mb42,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,ALHA81261,acapulcoite,Q,camb42,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allegan,H5,Q,c1tb104,bulk,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allegan,H5,Q,c1tb125,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt104,<125 micron,dark inclusion
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c1mt104a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c1mt104b,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt268,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt68,<38 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt69,<38 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt70,<38 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt71,<38 micron,CAI-free
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt72,<38 micron,dark inclusion
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt73,<38 micron,dark inclusion
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c1mt90a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c1mt90b,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c1mt90c,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c1mt90d,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt91a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c1mt91b,chip,white clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c1mt92a,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c1mt92b,45-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt92c,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt92d,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1mt92e,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c1rs40,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c2mb63,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c2mt90a,chip,more white inclusions
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c2mt92a,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c2mt92b,45-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c2mt92c,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c2mt92d,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c2mt92e,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,Xc,c2rs40,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c3mb63,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c3mt90a,chip,more white inclusions
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c3mt90b,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c3mt90c,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c3mt90d,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c3mt91a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c3mt92a,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c3mt92b,45-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c3mt92c,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c3mt92d,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,c3mt92e,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,c4mb63,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,camb63,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,camh57,<180 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,cams40,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,cbmb63,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,cbms40,<75 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,ccmb63,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,X,ccms40,<75 micron,melted
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,Xc,cdmb63,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,C,cemb63,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,Ch,cfmb63,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,B,cgmb63,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,chmb63,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,czmb63,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Allende,CV3,K,s1rs40,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,B,c1mt105,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt105a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt105b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt105c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,K,c1mt106,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,U,c1mt106b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,U,c1mt106c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Xk,c1mt107,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,C,c1mt107a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt107b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt107c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,B,c1mt108,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,B,c1mt108a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt108b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt108c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Sq,c1mt109,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Xc,c1mt109a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt109b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt109c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Sq,c1mt110a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt110b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt110c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt112b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt112c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt113b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt113c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,C,c1mt93b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,C,c1mt93c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,B,c1mt95,chip,lighter
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt97,chip,lighter
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt99,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,O,c2mt101,<75 micron,non-magnetic separate
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c2mt105,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Xk,c2mt106,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Xk,c2mt93,chip,lighter
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,B,c2mt95,chip,lighter
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c2mt97,chip,lighter
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c2mt98,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c2mt99,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Sq,c1mt110,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt113,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,C,c1mt93,chip,lighter face
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Almahata Sitta,ureilite-an,Q,c1mt98,chip,fresher
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Alta'ameem,LL5,Q,c1mt78,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Alta'ameem,LL5,Q,c1oc10a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Alta'ameem,LL5,Q,c1oc10b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Alta'ameem,LL5,Q,c1oc10c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Andover,L6,Sq,c1tb281,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Andura,H6,Sq,c1tb282,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Andura,H6,Sq,c1tb88,<75 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Angra dos Reis,angrite,Sw,c1tb119,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Appley Bridge,LL6,Q,c1mb13,25-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Appley Bridge,LL6,Q,c1oc12a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Appley Bridge,LL6,Q,c1oc12a20,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Appley Bridge,LL6,Q,c1oc12a40,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Appley Bridge,LL6,Q,c1oc12b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Appley Bridge,LL6,Q,c1oc12c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Apt,L6,Sr,c1tb64,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Arapahoe,L5,Xc,c1mb04,powder,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Arriba,L5,Sw,c1dp17,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Atarra,L4,Sr,c1tb65,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Athens,LL6,Q,c1oc13a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Athens,LL6,Q,c1oc13b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Athens,LL6,Q,c1oc13c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Athens,LL6,Q,c1oc13d,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Athens,LL6,Q,c1oc13d05,<125 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Athens,LL6,Q,c1oc13d15,<125 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Aumale,L6,Q,c1tb101,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ausson,L5,Q,c1mt84,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Avanhandava,H4,S,c1tb66,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,B-7904,C2-ung,Xc,c1mb18,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,B-7904,C2-ung,Xc,c1mb18a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,B-7904,C2-ung,Xc,c1mb18b,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,B-7904,C2-ung,Xc,c1mb18c,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,B-7904,C2-ung,Xc,c2mb18a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bald Mountain,L4,Sq,c1tb284,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bali,CV3,Xc,c1tb126,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bali,CV3,Xc,c1tb285,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bandong,LL6,Q,c1tb67,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Banten,CM2,K,c1mt277,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Barea,mesosiderite-A1,Q,c1mb33,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Barea,mesosiderite-A1,K,c2mb33,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Barea,mesosiderite-A1,Sq,c3mb33,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Barea,mesosiderite-A1,Q,c4mb33,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Barea,mesosiderite-A1,B,c5mb33,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Barratta,L4,S,c1mh02,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Barratta,L4,S,c2mh02,20-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bells,C2-ung,X,c1mb53,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Benares,LL4,Sq,c1mt83,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bencubbin,CBa,L,c1tb360,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bensour,LL6,Q,c1oc22d,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bereba,eucrite-mmict,V,camp89,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bialystok,eucrite-pmict,V,c1tb127,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Binda,eucrite-cm,V,camp82,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bishopville,aubrite,Cg,c1tb10,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bishopville,aubrite,Xc,c1tb47,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bishunpur,LL3.15,K,c1tb288,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bishunpur,LL3.15,K,c1tb89,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bison,LL6,K,camb89,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bison,LL6,K,cbmb89,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Blackwell,L5,S,c1mt81,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Boriskino,CM2,X,c1mt278,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Boriskino,CM2,Xn,c1rs46,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Boriskino,CM2,Xc,s1rs46,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bouvante,eucrite-mmict,V,c1tb118,<44 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bouvante,eucrite-mmict,V,c1tb28,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bouvante,eucrite-mmict,V,c1tb29,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bouvante,eucrite-mmict,V,camp90,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Brachina,brachinite,C,camt53,<45 micron,cleaned with HCl and ultrasound
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,BTN 00300,eucrite-unbr,V,c1mt32,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,BTN 00301,H3.3,K,c1mt167a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,BTN 00302,H3.3,Sq,c1mt132a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,BTNA78004,LL6,Q,c1tb216,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,BUC 10933,CR2,Cg,c1mt280,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,BUC 10944,CK4,K,c1tb158,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Bununu,howardite,V,camp83,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Burnwell,H4-an,Q,c1oc21a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Burnwell,H4-an,K,c1oc21a20,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Burnwell,H4-an,Sq,c1oc21a40,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Burnwell,H4-an,Q,c1oc21b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Burnwell,H4-an,Q,c1oc21c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Burnwell,H4-an,Sq,c1tb291,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Burnwell,H4-an,Sq,c1tb68,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Butsura,H6,S,c1tb69,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cangas De Onis,H5,S,cbmh04,20-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cangas De Onis,H5,S,cdmh04,20-250 micron,dark material
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Canon City,H6,O,c1tb131,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Canyon Diablo,IAB-MG,D,c1mi08,filings,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Castalia,H5,Sr,c1mh19,<500 micron,light colored
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Castalia,H5,Sq,c2mh19,<500 micron,dark colored powder
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cat Mountain,L5,Sq,camb35,20-250 micron,melt fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cat Mountain,L5,C,cbmb35,20-250,clast fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cavour,H6,Xc,c1mh24,chip,vein
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chantonnay,L6,S,c1tb70,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chassigny,Martian (chassignite),Xk,c1dd23,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Q,c1oc11a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Q,c1oc11a20,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Q,c1oc11a40,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Q,c1oc11a60,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Q,c1oc11a80,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Q,c1oc11b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Q,c1oc11c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Q,c1oc11d,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Q,c1oc11d05,<125 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Sq,c1oc11d15,<125 micron,irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chateau-Renard,L6,Sq,c1oc11d35,<125 micron,irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chela,H4,Sr,c1tb71,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chelyabinsk,LL5,Q,c1mt216,chip,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chelyabinsk,LL5,Q,c1mt216a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chelyabinsk,LL5,Ch,c1mt217,chip,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chelyabinsk,LL5,Ch,c1mt217a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chelyabinsk,LL5,Q,c1mt229,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cherokee Springs,LL6,Q,c1oc01a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cherokee Springs,LL6,Q,c1oc01b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cherokee Springs,LL6,Q,c1oc01c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cherokee Springs,LL6,Q,c1tb90,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chervony Kut,eucrite-mmict,V,c1mt35,<38 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chiang Khan,H6,Sr,c1tb132,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chiang Khan,H6,Q,c1tb293,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chicora,LL6,Q,c1oc14a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chicora,LL6,Q,c1oc14b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Chicora,LL6,Q,c1oc14c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cilimus,L5,Q,c1mt82,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cilimus,L5,Sq,c1tb296,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cold Bokkeveld,CM2,K,c1mb61a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cold Bokkeveld,CM2,B,c1mb61c,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cold Bokkeveld,CM2,Cgh,c1mt186,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cold Bokkeveld,CM2,Cgh,c2mt186,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cold Bokkeveld,CM2,B,c1mb61,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cold Bokkeveld,CM2,B,c1mb61b,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cranganore,L6,Q,c1tb133,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Cranganore,L6,Q,c1tb298,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,CRE 01400,howardite,V,c1mt200a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Crescent,CM2,D,c1mt279,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DaG 1042,lunar,K,c1lm52,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DaG 1042,lunar,K,c1lm52b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DaG 1042,lunar,K,c1lm52c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DaG 319,ureilite-pmict,L,c1ph39,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DaG 896,H-imp-melt,Sq,c1tb115,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DAV 92300,CK4,K,c1ph53,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Denver,L6,Q,c1tb299,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Denver,L6,Q,c1tb72,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dhajala,H3.8,S,c1dp11,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dhajala,H3.8,Sq,c1dp12,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dhajala,H3.8,Sq,c1oc20a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dhajala,H3.8,Sr,c1oc20b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dhajala,H3.8,Sr,c1oc20c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dhajala,H3.8,Sq,c1tb300,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dhajala,H3.8,Sq,c1tb91,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dho 125,acapulcoite,Sw,c1mt304a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dho 125,acapulcoite,S,c1mt304t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dho 132,ureilite,S,c1tb116,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dho 225,CM-an,C,c1ma78,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dho 225,CM-an,B,c1mp128,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dho 307,lunar (anorth),Q,c1lm51,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dho 735,CM2,C,c1ma77,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dho 735,CM2,Xc,c1mp114,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dimmit,H3.7,U,c1dp18,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dimmit,H3.7,Xe,c1mb05,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Dimmit,H3.7,L,c1mh25,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DOM 03219,H3,S,c1mt176a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DOM 08001,eucrite-br,V,c1tb220,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DOM 10302,L-imp-melt,Xc,c1tb222,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DOM 10344,LL3.4,Sq,c1tb224,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,D'Orbigny,angrite,A,c1tb62,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DRPA78007,IIAB,D,camb47,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DRPA78007,IIAB,D,cbmb47,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DRPA78007,IIAB,D,cdmb47,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DRPA78007,IIAB,D,cemb47,125-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DRPA78007,IIAB,D,cfmb47,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DRPA78007,IIAB,D,cgmb47,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,DRPA78007,IIAB,D,chmb47,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Eagles Nest,brachinite,C,camt54,<45 micron,cleaned with HCl and ultrasound
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83213,LL3.7,Sq,c1mt175a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83246,diogenite,V,c1rm127a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83246,diogenite,V,c1rm127p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83246,diogenite,V,carm127,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83246,diogenite,V,cbrm127,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83248,H3.5,L,c1mt172a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83250,CM2,X,c1mp40,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83250,CM2,K,c2mp40,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83251,eucrite-pmict,V,c1tb22,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83267,H3.6,S,c1mt174a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83311,CK5,K,c1ph47,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83355,C2-ung,Xe,c1mp41,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83355,C2-ung,L,c2mp41,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83376,howardite,V,c1mt242a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83376,howardite,V,camp73,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83389,CM2,Xk,c1mp42,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 83389,CM2,D,c2mp42,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 84302,acapulcoite/lodranite,Vw,c1tb32,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 84302,acapulcoite/lodranite,Vw,c1tb42,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,R,c1mb68ap,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,V,c1mt243a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,R,camb68,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,V,cbmb68,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,V,ccmb68,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,V,cdmb68,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,V,cemb68,125-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,V,cfmb68,250-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,R,cgmb68,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87503,howardite,V,chmb68,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87507,CK5,K,c1mb92,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87509,eucrite-pmict,V,c1mt201a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87513,howardite,V,c1mt244a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87513,howardite,V,camp74,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87517,ureilite,S,c1ph24,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87518,eucrite-pmict,V,c1mt245a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87520,eucrite-Mg-rich,V,c1mt29,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87521,lunar (basalt),Q,c1lm37,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87522,CM2,T,c1mp21,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87526,CK5,K,c1lm18,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87526,CK5,K,c1mp03,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87532,howardite,V,c1mt246a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87542,eucrite-br,V,c1tb14,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87542,eucrite-br,Sr,camp75,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87548,eucrite-Mg-rich,V,c1tb233,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87720,ureilite-pmict,Xe,c1ph37,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87746,EH4,Xc,c1tb161,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87747,CR2,Xe,c1mb82,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87747,CR2,K,c2mb82,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87770,CR2,L,c2sc98,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87860,CK5/6,K,c1lm19,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 87860,CK5/6,K,c1mp04,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 90020,eucrite-unbr,V,c1tb20,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 90021,CM2,Xc,c1mp43,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 90021,CM2,Cgh,c2mp43,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 90043,CO3-an,Xc,c1mp44,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 90102,EL6,U,c1mt126a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 90102,EL6,Xk,c1mt126b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 90161,L3.05,U,c1mt179a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 90628,L3.4,K,c1mt180a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 92002,CK5,B,c1mc03,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 92003,eucrite-br,V,c1mp118,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 92042,CR2,Xe,c1mp25,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 96008,lunar (basalt),Q,c1lm38,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 96026,C4/5,K,c1tb163,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 96029,CM2,K,c1mp115,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 96042,ureilite,K,c1ph31,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 96135,EH4/5,L,c1mt120b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 96341,EH4/5,L,c1mt121b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 99400,howardite,V,c1mt247a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 99402,brachinite,U,c1mt88,fine powder,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 99402,brachinite,C,c1tb58,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EET 99408,howardite,V,c1mt204a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),Qw,c1dd19,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),V,c1lm07,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),V,c1mt04,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),V,c1mt04a,powder,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),V,c1mt04b,powder,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),V,c2lm07,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),V,cclm07,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),V,celm07,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),V,cilm07,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79001,Martian (shergottite),Q,eblm07,slab,with melt vein
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79002,diogenite,V,camb67,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79002,diogenite,V,cbmb67,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79002,diogenite,V,ccmb67,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79002,diogenite,V,cdmb67,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79002,diogenite,V,cemb67,125-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79002,diogenite,V,cfmb67,250-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79005,eucrite-pmict,V,c1tb25,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79005,eucrite-pmict,V,c1tb26,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79005,eucrite-pmict,V,camp72,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,EETA79006,eucrite-pmict,V,c1mp123,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Efremovka,CV3,L,c1mt269,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ehole,H5,Q,c1oc06a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ehole,H5,Q,c1oc06a20,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ehole,H5,Q,c1oc06a40,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ehole,H5,Q,c1oc06c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ehole,H5,Q,c1tb302,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,El Hammami,H5,Sr,c1ps97,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Elenovka,L5,Q,c1ms13,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Elenovka,L5,Sq,c2ms13,<75 micron,laser irradiation
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Elenovka,L5,Q,cams41,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Elenovka,L5,Q,cbms41,<75 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Elenovka,L5,C,ccms41,<75 micron,fused
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ellemeet,diogenite,V,c1mp112,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ellemeet,diogenite,V,c1mp113,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,El-Quss Abu Said,CM2,B,c1mp131,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,El-Quss Abu Said,CM2,C,c1mp131a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ensisheim,LL6,Q,c1tb303,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ensisheim,LL6,Q,c1tb92,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ergheo,L5,L,c1mh05,20-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Esquel,pallasite-PMG,X,c1mb43,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Esquel,pallasite-PMG,U,c3mb43,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Esquel,pallasite-PMG,A,c4mb43,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Esquel,pallasite-PMG,Sa,c5mb43,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Esquel,pallasite-PMG,C,c6mb43,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Esquel,pallasite-PMG,X,c7mb43,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Esquel,pallasite-PMG,Cg,cmmb43,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Esquel,pallasite-PMG,Sa,comb43,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Essebi,C2-ung,X,c1mt195,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Essebi,C2-ung,X,c2mt195,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Essebi,C2-ung,X,c3mt195,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Estherville,mesosiderite-A3/4,V,c1tb148,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Farmington,L5,Q,c1mh03,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Farmington,L5,Q,c2mh03,20-250 micron,dark fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Farmville,H4,Sq,c1tb128,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Farmville,H4,Sq,c1tb304,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Fayetteville,H4,S,cdmb07,25-250 micron,dark split
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Fayetteville,H4,Sr,clmb07,25-250 micron,light fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Forest Vale,H4,Sq,c1tb93,<75 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Frankfort (stone),howardite,V,camp85,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,FRO 95002,CO3,K,c1ph42,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,FRO 99040,CO3,K,c1ph57,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Gifu,L6,B,c1mh22,slab,dark vein
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Gifu,L6,Q,c2mh22,slab,spot on clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Gifu,L6,Q,c3mh22,chip,on clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Girgenti,L6,Q,c1tb103,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Girgenti,L6,Q,c1tb305,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Goalpara,ureilite,Xc,c1ph29,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Goodland,L4,S,c1mh15,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Gorlovka,H3.7,Xc,c1rs48,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Gorlovka,H3.7,Xc,c2rs48,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Gorlovka,H3.7,Xc,c3rs48,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 06101,CV3,K,c1tb166,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 95205,ureilite,K,c1ph23,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 95208,H3.7,S,c1mt158a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 95209,lodranite,R,c1tb37,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 95209,lodranite,Vw,c1tb44,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 95229,CR2,Xe,c1mt48,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 98023,H3.8,S,c1mt164a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 98098,eucrite-unbr,V,c1mt34,<38 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 98108,diogenite,V,c1mt169,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 98108,diogenite,V,c1mt169a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 98108,diogenite,V,c1rm125a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 98108,diogenite,V,c1rm125p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 98108,diogenite,V,carm125,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRA 98108,diogenite,V,cbrm125,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 06054,L3.6,K,c1mt153a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 85202,CM2,K,c1mp17,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95502,L3.2,S,c1mt139a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95504,L3.5,S,c1mt148a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95533,eucrite-br,V,camp66,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95535,howardite,V,c1mt248a,<75 m,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95535,howardite,V,camp67,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95536,L3.3,S,c1mt140a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95542,L3,S,c1mt149a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95544,L3.2,S,c1mt133a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95550,L3,S,c1mt150a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95555,diogenite-an,V,camp68,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95566,CM2,K,c1mp60,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95574,howardite,V,c1mp125,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95574,howardite,V,c1mt205a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95575,ureilite,K,c1ph25,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95577,CR1,K,c1mp61,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95581,howardite,V,c1mt249a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95596,LL3.8,Sq,c1mt177a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95602,howardite,V,c1mt206a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,GRO 95658,LL3.3,S,c1mt141a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Grosnaja,CV3,K,c1mt270,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Grosnaja,CV3,K,c1rs43,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Grosnaja,CV3,K,s1rs43,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Guarena,H6,Q,c1tb306,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Guibga,L5,Sr,c1tb134,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Gujba,CBa,X,c1tb361,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hamlet,LL4,Sq,c1mt75,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hamlet,LL4,Sq,c1oc02a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hamlet,LL4,S,c1oc02a20,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hamlet,LL4,S,c1oc02a40,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hamlet,LL4,S,c1oc02a60,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hamlet,LL4,S,c1oc02b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hamlet,LL4,Sq,c1oc02c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Happy Canyon,EL6/7,Xc,c1sc01,45-90 micron,"treated with HCl, HNO3"
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Happy Canyon,EL6/7,Xc,caea03,45-90 micron,washed in HCl
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Happy Canyon,EL6/7,Xc,cbea03,<45 micron,washed in HCl
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Harleton,L6,Q,c1oc03a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Harleton,L6,Q,c1oc03b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Harleton,L6,Q,c1oc03c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hedjaz,L3.7-6,Q,c1oc16a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hedjaz,L3.7-6,Sq,c1oc16a20,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hedjaz,L3.7-6,S,c1oc16a40,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hedjaz,L3.7-6,Q,c1oc16b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hedjaz,L3.7-6,Q,c1oc16c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hedjaz,L3.7-6,Sq,c1tb308,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hedjaz,L3.7-6,Sq,c1tb95,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Honolulu,L5,Q,c1tb310,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,HOW 88401,eucrite-br,V,c1tb238,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hughes 026,brachinite,Sa,camt55,<45 micron,cleaned with HCl and ultrasound
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Hugoton,H5,Svw,c1dp14,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ibitira,eucrite-mmict,V,camp54,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Imilac,pallasite-PMG,X,c3mb41,slab,metal-rich
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Imilac,pallasite-PMG,X,c6mb41,slab,metal-rich
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ipiranga,H6,S,c1tb135,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Isheyevo,CH/CBb,Cb,c1tb362,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Itapicuru-Mirim,H5,Sr,c1tb97,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,L,c1mb60,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,Xc,c3mb60,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,B,c4mb60,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,B,camp18,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,Xc,cbmp18,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,X,ccmp18,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,Xc,cdmp18,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,B,cemp18,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,C,cfmp18,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,Xc,cgmp18,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ivuna,CI1,B,cmp18a,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Jackalsfontein,L6,C,cdmb12,25-250 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Jackalsfontein,L6,Q,clmb12,25-250 micron,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Johnstown,diogenite,V,c1ms51,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Johnstown,diogenite,V,c1tb313,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Johnstown,diogenite,V,camb95,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Johnstown,diogenite,V,cams49,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Johnstown,diogenite,V,cbmb95,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Johnstown,diogenite,V,cbms49,<75 micron,irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Johnstown,diogenite,Q,ccms49,<75 micron,irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Jonzac,eucrite-mmict,V,camp91,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Juvinas,eucrite-mmict,V,c1mb70,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Juvinas,eucrite-mmict,V,c1tb153,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Juvinas,eucrite-mmict,V,c2mb70,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Juvinas,eucrite-mmict,V,camb70,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Juvinas,eucrite-mmict,V,cbmb70,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Juvinas,eucrite-mmict,V,ccmb70,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Juvinas,eucrite-mmict,V,cdmb70,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Juvinas,eucrite-mmict,V,cemb70,125-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kaba,CV3,Xc,c1mt271,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kabo,H4,Q,c1tb136,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kaidun,CR2,Xc,c1ma73,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kaidun,CR2,Cg,c1ma74,45-100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kaidun,CR2,U,c1ma75,100-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kaidun,CR2,B,c1ma76,>250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kaidun,CR2,Xc,c1mb98,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kaidun,CR2,B,c2ma76,>250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kaidun,CR2,Xc,c2mb98,125-900 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kaidun,CR2,B,c3ma76,>250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kainsaz,CO3.2,C,c1rs41,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kainsaz,CO3.2,Xc,s1rs41,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kapoeta,howardite,V,c1mp53,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kapoeta,howardite,V,c1tb314,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kapoeta,howardite,V,camp53,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Karkh,L6,Sq,c1tb137,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kenna,ureilite,L,c1ph38,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kernouve,H6,Q,c1dp13,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Khohar,L3.6,Sq,c1tb138,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Khor Temiki,aubrite,Xc,c1tb48,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kisvarsany,L6,Q,c1tb317,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,KLE 98300,EH3,Xc,c1mt122a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,KLE 98300,EH3,Xc,c1mt122b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,KLE 98300,EH3,Xc,c1mt122c,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,KLE 98300,EH3,Xc,c1mt122d,<5 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Krymka,LL3.2,S,cbrs63,20-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Krymka,LL3.2,S,cdrs63,20-250 micron,dark fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kunashak,L6,Q,c1rs62,chip,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kunashak,L6,Q,c1tb139,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kunashak,L6,Q,c2rs62,chip,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kuttippuram,L6,Sq,c1tb320,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kuttippuram,L6,Q,c1tb98,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Kyushu,L6,Sr,c1tb140,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,La Criolla,L6,Xc,c1mh23,chip,dark vein
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,La Criolla,L6,Q,c2mh23,slab,spot on clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,La Criolla,L6,Q,c3mh23,chip,on clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,La Criolla,L6,K,camh50,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,La Criolla,L6,Sv,cbmh50,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,La Criolla,L6,Sv,ccmh50,<350 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Lafayette (stone),Martian (nakhlite),Srw,c1lm23,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,L'Aigle,L6,Sq,c1tb141,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Lamont,mesosiderite,V,c1tb150,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Landes,IAB-MG,X,c1mb46,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Landes,IAB-MG,X,c2mb46,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 02205,lunar (basalt),V,c1lm39,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 02206,CV3,K,c1tb168,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 02216,diogenite,V,c1rm129a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 02216,diogenite,V,c1rm129p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 02216,diogenite,V,carm129,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 02216,diogenite,V,cbrm129,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 02277,CM1,Xk,c1tb355,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,Q,c1mt185a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,Q,c1mt185a2,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,Q,c1mt185b,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,Q,c1mt185b2,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,Sq,c1mt185e,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,Q,c1mt185e2,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,Sq,c1mt185f,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,S,c1mt185f2,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,Q,c1mt185g,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031047,L-melt,S,c1mt185g2,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 031156,R4,K,c1tb366a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 03731,R4,K,c1tb367a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 03793,R4,K,c1tb368a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 03930,EL3,L,c1tb369a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 03930,EL3,K,c1tb369b,>125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 03979,diogenite,V,c1rm131a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 03979,diogenite,V,c1rm131p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 03979,diogenite,V,carm131,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 03979,diogenite,V,cbrm131,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 04462,H-imp-melt,Q,c1tb240,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 04838,howardite,V,c1mt207a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 04838,howardite,V,c1mt250a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 04840,R6,Sa,c1dd107,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 04840,R6,Xk,c1dd108,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 91900,diogenite,V,c1tb18,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAP 91900,diogenite,V,camp77,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAR 04382,H3,S,c1mt171a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAR 06299,LL-melt,C,c1tb245,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAR 06301,LL3.8,Sq,c1mt165a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAR 06469,LL3,S,c1mt166a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAR 06605,acapulcoite/lodranite,Vw,c1mt300a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAR 06605,acapulcoite/lodranite,V,c1mt300t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAR 12001,EH3,L,c1tb179,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LAR 12325,LL-imp-melt,K,c1tb248,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Le Teilleil,howardite,V,camp93,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 85303,eucrite-pmict,V,camp78,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 85311,CM2-an,K,c1mp24,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 85313,howardite,V,c1mt208a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 85339,L3.4,S,c1mt181a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 86001,eucrite-pmict,V,c1mt251a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 86010,angrite,A,c1mt10,<74 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 86018,L3.1,S,c1mt130a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 86127,L3.3,S,c1mt135a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 86220,acapulcoite/lodranite,Svw,c1mt314a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 86220,acapulcoite/lodranite,Sr,c1mt314t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 86505,L3.4,Sq,c1mt142a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87004,eucrite-pmct,V,c1mt209a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87004,eucrite-pmict,V,c1tb19,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87004,eucrite-pmict,V,camp79,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87009,CK6,U,c1lm17,powder,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87009,CK6,U,c1mb88,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87009,CK6,U,c1mp05,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87016,CM2,K,c1mp62,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87022,CM2,K,c1mp20,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87148,CM2,K,c1mp16,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87232,K,Xk,c1tb370a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87232,K,U,c1tb370b,>125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87254,LL3.5,Sq,c1mt173a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 87284,L3.5,Sq,c1mt182a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88001,CM2,Xe,c1mp63,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88008,diogenite,V,c1rm128a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88008,diogenite,V,c1rm128p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88008,diogenite,V,carm128,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88008,diogenite,V,cbrm128,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88180,EH5,L,c1mt123a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88180,EH5,L,c1mt123b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88201,ureilite,K,c1ph22,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88516,Martian (shergottite),Q,c1dd22,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88679,diogenite,Q,c1rm124a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88679,diogenite,Q,c1rm124p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88679,diogenite,K,carm124,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 88679,diogenite,Q,cbrm124,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 90500,CM2,K,c1mb54,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LEW 90500,CM2,Xc,c1mc02,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Lodran,lodranite,R,c1tb34,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Lodran,lodranite,V,c1tb41,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LON 94100,EL6,Xc,c1tb182,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,LON 94101,CM2,K,c1mp26,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Los Angeles,Martian (shergottite),R,c1dd27,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Los Angeles,Martian (shergottite),Sr,c1mt05,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Los Angeles,Martian (shergottite),K,cbmt06,chip,top dark portion
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Los Angeles,Martian (shergottite),Sq,ccmt06,chip,whitish part of chip
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Los Angeles,Martian (shergottite),K,sbmt06,chip,top dark part
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Lost City,H5,Sq,c1tb129,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Louisville,L6,Q,c1tb324,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Lubbock,L5,Sq,c1mh13,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mabwe-Khoywa,L5,Sr,c1tb107,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 02522,eucrite-unbr,V,c1mt28,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 02747,EL4,L,c1mt124a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 02747,EL4,L,c1mt124b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 02747,EL4,L,c1tb371a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 02747,EL4,K,c1tb371b,>125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 02833,H3.7,S,c1tb258,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 87300,C2-ung,C,c1mp45,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 87320,CR2,L,c1ph56,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88100,CM2,Xk,c1mp22,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88100,CM2,Cg,c1mp22l0,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88100,CM2,Cg,c1mp22l1,<125 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88101,CM2,D,c1mp64,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88107,C3-ung,B,c1mp46,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88136,EL3,L,c1mt125a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88136,EL3,L,c1mt125b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88174,H3.5,S,c1mt146a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88176,CM2,Xk,c1mp47,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88177,lodranite,R,c1mt302a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88177,lodranite,V,c1mt302t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88177,lodranite,R,c4mb26,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88177,lodranite,R,camb26,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MAC 88199,L3.3,S,c1mt183a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Macibini,eucrite-pmict,V,c1tb27,<63 micron,clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Magombedze,H3-5,Q,c1tb108,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Malakal,L5,Sq,c1tb109,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Malakal,L5,Sq,c1tb327,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Maryville,L6,O,c1tb110,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Maryville,L6,Q,c1tb328,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mayo Belwa,aubrite,Xc,c1tb46,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mayo Belwa,aubrite,Xc,s1tb46,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,McKinney,L4,Xk,c1dp16,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,McKinney,L4,Xc,c1mh17,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,McKinney,L4,B,c1mh20,slab,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,McKinney,L4,Xc,c2mh01,20-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MCY 92500,CM2,K,c1mp48,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Messina,L5,Sq,c1tb329,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Messina,L5,Q,c1tb99,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 00423,howardite,V,c1mt210a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 00426,CR2,L,c1ph55,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 00436,diogenite,V,c1tb261,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 00489,L3.6,S,c1mt151a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 00506,H3.4,L,c1mt143a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 00607,H3.4,S,c1mt144a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 00639,CM2,Xc,c1ph32,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 00737,CO3.6,K,c1ph50,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01070,CM1,B,c1mt218,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01070,CM1,B,c1ph43,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01070,CM1,Cgh,c2mt218,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01081,eucrite-unbr,V,c1mt33,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01084,diogenite,V,c1rm132a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01084,diogenite,V,c1rm132p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01084,diogenite,V,carm132,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01084,diogenite,V,cbrm132,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01085,ureilite-an,Sq,c1ph40,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01149,R3,K,c1ph45,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01182,H3.8,S,c1mt159a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01212,acapulcoite,R,c1mt301a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 01212,acapulcoite,Q,c1mt301t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 96500,howardite,V,c1mt211a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 96500,howardite,V,c1mt252a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MET 96503,L3.10,S,c1mt152a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,META78008,ureilite,K,c1ph20,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mezo-Madaras,L3.7,Sq,c1oc04a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mezo-Madaras,L3.7,Q,c1oc04b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mezo-Madaras,L3.7,Sq,c1oc04c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c1ma62,>200 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c1ma63,125-200 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c1ma64,40-75 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c1ma65,75-125 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c1ma66,<40 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c1ma68,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,Cb,c1ma70,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c1ma71,<45 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c1ma72,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,D,c1mb55,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,K,c1mt188,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c1rs42,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c2mt188,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,c2rs42,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,Xc,cbms01,100-200 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,Xc,ccms01,40-100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,Cgh,cdms01,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,Xc,cems01,100-200 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,K,cfms01,40-100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,K,cgms01,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,B,cmms01,100-200 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,B,cnms01,40-100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,K,coms01,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mighei,CM2,X,s1rs42,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 03368,diogenite,V,c1rm121a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 03368,diogenite,V,c1rm121p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 03368,diogenite,V,carm121,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 03368,diogenite,V,cbrm121,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 03443,mesosiderite,C,c1rm126a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 03443,mesosiderite,U,c1rm126p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 03443,mesosiderite,U,carm126,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 03443,mesosiderite,U,cbrm126,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 05029,L-melt-rock,Q,c1tb265,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 05035,lunar (basalt),V,c1lm36,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 07001,diogenite-olivine,V,c1mt168,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 07001,diogenite-olivine,V,c1mt168a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 07411,CB,S,c1tb375a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 07411,CB,L,c1tb375b,>125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 07687,CO3,D,c1mt284,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 090001,CR2,D,c1mt281,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 090103,CK5/6,K,c1tb190,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 090648,H-imp-melt,Xc,c1tb268,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 090657,CR2,X,c1mt282,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 11111,CM1/2,Cgh,c1tb192,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 13004,aubrite,Xc,c1tb194,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 13005,CM1-2,K,c1tb195,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 90010,CO3,L,c1mt285,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 90073,CO3,D,c1mt286,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 91004,lodranite,R,c1mt303a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 91004,lodranite,Q,c1mt303t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,MIL 99301,LL6,Q,c1tb272,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,R,c1hh03,<80 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c1mb69,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c1ms52,<75 micron,partially laser-irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c1rk116a,slab,fine-grained clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c1rk116f2,slab,coarse-grained clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c1rk116g,slab,large dark spot
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,Sq,c1rk116i,chip,white spot
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c1rk116l,slab,matrix
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c2mb69,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c3mb69,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,Q,c3ms52,<75 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c4ms52,<75 micron,partially laser-irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,Q,c6ms52,<75 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,c7ms52,<75 micron,partially laser-irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,Q,c9ms52,<75 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,camb69,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,cams48,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,cams52,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,cbmb69,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,cbms48,<75 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,ccmb69,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,Q,ccms48,<75 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Millbillillie,eucrite-mmict,V,cdmb69,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mirzapur,L5,Q,c1tb111,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mirzapur,L5,Sq,c1tb331,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Moapa Valley,CM1,K,c1mt267,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Moapa Valley,CM1,Xk,c1mt274,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mokoia,CV3,Xc,c1mt272,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Monroe,H4,Sq,c1mh07,20-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Monroe,H4,Q,c1oc05a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Monroe,H4,Sq,c1oc05b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Monroe,H4,Sq,c1oc05c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Monroe,H4,Sq,c2oc05c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Moore County,eucrite-cm,V,camp86,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mundrabilla,IAB-ung,X,c0mb34,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mundrabilla,IAB-ung,X,c1mb34,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mundrabilla,IAB-ung,D,c2mb34,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mundrabilla,IAB-ung,X,cbmb34,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Mundrabilla,IAB-ung,X,ccmb34,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,D,c1mt190,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,c1rs45,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,c2mb64,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,Xk,c2mt190,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,D,c3mb64,<64 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,c4mb64,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,C,camb64,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,C,cbmb64,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,cbmh52,<90 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,cbms02,100-200 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,X,ccmb64,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,ccmh52,<180 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,ccms02,40-100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,X,cdmb64,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,D,cdms02,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,X,cemb64,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,B,cems02,100-200 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,C,cfmb64,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,Xc,cfms02,40-100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,C,cgmb64,<63 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,cgms02,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,chmb64,63-125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,C,cimb64,63-125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,Xk,cjmb64,63-125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,Xk,ckmb64,63-125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,Xk,clmb64,63-125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,C,cmmb64,63-125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,B,cmms02,100-200 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,B,cnmb64,63-125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,B,cnms02,40-100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,coms02,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,K,s1rs45,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murchison,CM2,D,s3mb64,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murray,CM2,K,c1mb56,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murray,CM2,K,c1mt189,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Murray,CM2,D,c2mt189,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nakhla,Martian (nakhlite),Qw,c1dd21,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nakhla,Martian (nakhlite),Q,c1lm22,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nas,LL6,Q,camb91,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nas,LL6,Q,cbmb91,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nejo,L6,Q,c1tb112,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,New Concord,L6,Sr,c1tb130,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Noblesville,H4-6,Q,c1mb48,20-45 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nogoya,CM2,X,c1mt187,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nogoya,CM2,Cg,c2mb62,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nogoya,CM2,Xk,c2mt187,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nogoya,CM2,K,c3mb62,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nogoya,CM2,B,c4mb62,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Norton County,aubrite,Xc,c1dp08,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Norton County,aubrite,B,caea04,45-90 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Norton County,aubrite,B,cbea04,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Novosibirsk,H5/6,Sq,c2rs49,chip,spot near dark vein
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Novosibirsk,H5/6,L,cdrs49,20-250 micron,light fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Novosibirsk,H5/6,S,clrs49,20-250 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Novo-Urei,ureilite,K,c1ph28,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nuevo Mercurio,H5,C,camh53,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nuevo Mercurio,H5,Sr,cbmh53,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nuevo Mercurio,H5,Q,ccmh53,<350 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nuevo Mercurio,H5,Sr,cfmh53,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nuevo Mercurio,H5,Sr,cgmh53,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nuevo Mercurio,H5,Q,chmh53,<350 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nullas,H6,Q,c1mb09,25-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nullas,H6,Q,c1oc18a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Nullas,H6,Q,c1oc18c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 1068,Martian (shergottite),Sr,c1mt224p,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 1068,Martian (shergottite),Q,camt224,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 1463,winonaite,Xk,c1mt09,powder,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 1500,achondrite-ung,L,c1ph18,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 1584,LL5,Q,c1oc24d,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 1799,L6,Q,c1oc26d,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 1948,LL6,Q,c1oc23d,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 2626,Martian (shergottite),Sr,c1mt225p,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 2626,Martian (shergottite),Q,camt225,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 2737,Martian (chassignite),U,c1dd67,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 2737,Martian (chassignite),U,c1dd68,45-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 2737,Martian (chassignite),Qw,c1dd69,125-300 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 2871,acapulcoite,Svw,c1mt306a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 2871,acapulcoite,Svw,c1mt306t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 3118,CV3,L,c1mp129,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 3133,CV7,S,c1lm33,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 3134,EL6,L,c1tb363,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 438,LL5,S,c1oc25d,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 482,lunar (anorth),Q,c1lm50,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 482,lunar (anorth),Q,c1lm50B,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 482,lunar (anorth),Q,c1lm50C,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 5218,eucrite,Sr,c1mt115a,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 5218,eucrite,V,c1mt115b,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 5218,eucrite,Sr,c1mt115c1,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 5218,eucrite,R,c1mt115c2,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 5218,eucrite,V,c1mt115c3,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 5218,eucrite,Sr,c2mt115a,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 5488,lodranite,C,c1mt308a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 5488,lodranite,L,c1mt308t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 6234,Martian (shergottite),Q,c1mt226p,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 6234,Martian (shergottite),Q,camt226,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 6963,Martian (shergottite),V,c1mt227p,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 6963,Martian (shergottite),V,camt227,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 7034,Martian (polymict breccia),B,cemt263,slab,dark clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 7034,Martian (polymict breccia),U,cfmt263,chip,average light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 725,winonaite,S,c1mt305a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 725,winonaite,S,c1mt305t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 7312,lodranite,U,c1mt309a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 7312,lodranite,L,c1mt309t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 7397,Martian (shergottite),Q,c1mt228p,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 753,R3.9,U,c1tb114,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 7674,lodranite,Svw,c1mt310a,<125 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,NWA 7674,lodranite,R,c1mt310t,<125 micron,treated with ETG
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ochansk,H4,O,c1oc06b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ochansk,H4,Sr,c1oc08a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ochansk,H4,Q,c1oc08b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ochansk,H4,Q,c1oc08c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Odessa,IAB-MG,D,c1sc06,45-90 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Odessa,IAB-MG,D,c1sc63,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Odessa,IAB-MG,X,c1sc99,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Odessa,IAB-MG,D,casc63,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Odessa,IAB,D,cbsc06,45-90 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Odessa,IAB-MG,X,s1sc99,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Odessa,IAB-MG,D,sbsc06,45-90 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Olivenza,LL5,Q,c1mt85,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Olivenza,LL5,Q,c1oc09a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Olivenza,LL5,Q,c1oc09b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Olivenza,LL5,Q,c1oc09c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Olmedilla de Alarcon,H5,Q,c1oc18b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Olmedilla de Alarcon,H5,Q,c1oc19a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Olmedilla de Alarcon,H5,Q,c1oc19b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Olmedilla de Alarcon,H5,Q,c1oc19c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Orgueil,CI1,X,c1mb57,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Orgueil,CI1,L,c1mt191,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Orgueil,CI1,L,c1rs44,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Orgueil,CI1,L,c2mt191,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Orgueil,CI1,L,cdms03,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Orgueil,CI1,L,s1rs44,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Orvinio,H6,B,c2mh18,<500 micron,darker fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Orvinio,H6,Q,cmmp28,50-250 micron,clast and melt
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ourique,H4,Sq,c1mt07,<150 micron,light material
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ourique,H4,Q,c1mt08,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ozona,H6,S,camh51,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ozona,H6,S,cbmh51,<350 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ozona,H6,C,cemh51,<350 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ozona,H6,Xe,cfmh51,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Padvarninkai,eucrite-mmict,Sr,camb96,<25 micron,impact melt
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Padvarninkai,eucrite-mmict,Sr,cbmb96,25-45 micron,impact melt
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Padvarninkai,eucrite-mmict,V,ccmb96,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Padvarninkai,eucrite-mmict,V,cdmb96,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paragould,LL5,Q,c1mt79,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paragould,LL5,C,c1oc07a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paragould,LL5,B,c1oc07a20,chip,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paragould,LL5,Xc,c1oc07a40,chip,laser irradiation
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paragould,LL5,Xc,c1oc07a60,chip,laser irradiation
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paragould,LL5,B,c1oc07b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paragould,LL5,Q,c1oc07c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paragould,LL5,B,c1oc07d,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paragould,LL5,Sq,clmb02,25-250 micron,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paranaiba,L6,Sq,c1tb142,<75 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paranaiba,L6,Sq,cdmb10,25-250 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Paranaiba,L6,Sq,clmb10,25-250 micron,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Pasamonte,eucrite-pmict,V,camp87,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Patrimonio,L6,Sr,c1tb113,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02008,diogenite,V,c1rm130a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02008,diogenite,V,c1rm130p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02008,diogenite,V,carm130,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02008,diogenite,V,cbrm130,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02009,howardite,V,c1mt238,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02012,CM2,K,c1ph44,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02013,howardite,Q,c1mt239,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02014,howardite,R,c1mt240,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02015,howardite,Sr,c1mt241,<40 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 02066,howardite,V,c1mt253a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 82501,eucrite-unbr,V,c1mp124,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 82501,eucrite-unbr,R,c1tb12,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 82502,eucrite-unbr,V,c1tb21,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 82502,eucrite-unbr,V,camp80,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 82506,ureilite,Q,c1mc06,<500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 82506,ureilite,K,c1ph26,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91002,R3.8-6,K,c1mb65,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91002,R3.8-6,K,camb65,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91002,R3.8-6,B,cbmb65,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91006,eucrite-br,V,c1mp119,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91007,eucrite-br,V,c1mp120,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91007,eucrite-br,V,c1tb16,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91008,CM2-an,Xe,c1mp49,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91008,CM2-an,X,c1mt198,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91008,CM2-an,X,c2mt198,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91008,CM2-an,L,c3mt198,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91020,EL3,Xc,c1tb198,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91078,eucrite-unbr,V,c1mt31,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91082,CR2,Xe,c1ph48,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91084,CM2,L,c1mp50,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91241,R3.8-6,K,c1tb349,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91328,CH3,L,c1tb373a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91328,CH3,L,c1tb373b,>125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91461,EH3,X,c1mt127a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91461,EH3,X,c1mt127b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91467,CH3,X,c1ph49,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91467,CH3,L,c1tb374a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91467,CH3,L,c1tb374b,>125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PCA 91470,CK4,K,c1ph46,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Peetz,L6,S,c1mh14,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Pervomaisky,L6,Q,c1rs64,chip,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Petersburg,eucrite-pmict,V,camp70,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Pinnaroo,mesosiderite-A4,Sv,c1tb151,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Portales Valley,H6,Q,c1mt57,20-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PRA 04401,howardite,Sr,c1mt254a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PRE 95401,L3.4,Sq,c1mt145a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PRE 95404,R3,K,c1mt47,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,PRE 95411,R3,K,c1mt45,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Pribram,H5,Sq,c1tb143,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Pulsora,H5,Sq,c1tb120,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93005,CM2,Xc,c1mp52,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93005,CM2,Cg,c1mt220,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93005,CM2,Xn,c2mt220,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93069,lunar (anorth),B,c1lm35,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93069,lunar (anorth),K,calm35,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93069,lunar (anorth),B,cblm35,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93069,lunar (anorth),B,cclm35,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93069,lunar (anorth),B,cdlm35,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93069,lunar (anorth),B,celm35,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93069,lunar (anorth),B,cflm35,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93351,EL3,U,c1mt128a,<5 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93351,EL3,Xk,c1mt128b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93372,EH5,Xc,c1mt129a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93372,EH5,Xc,c1mt129b,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93372,EH5,Xc,c1mt129c,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93372,EH5,Xc,c1mt129d,<5 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 93744,CV3,K,c1ph41,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 94200,howardite,V,c1mt255a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 94200,howardite,V,camp69,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 94201,Martian (shergottite),R,c1dd24,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 94594,EL3,L,c1tb372a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 94594,EL3,L,c1tb372b,>125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 97001,howardite,V,c1mp126,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 97001,howardite,V,c1mt212a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 97001,howardite,V,c1mt256a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 97002,howardite,V,c1mt213a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 97002,howardite,V,c1mt257a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 97008,L3.05,K,c1mt184a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 97077,CM2,X,c1ph51,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 97990,CM2,D,c1mt219,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 97990,CM2,D,c2mt219,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 99033,howardite,V,c1mt214a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 99038,C2-ung,K,c1ph52,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 99050,diogenite,V,c1rm120a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 99050,diogenite,V,c1rm120p,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 99050,diogenite,V,carm120,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 99050,diogenite,V,cbrm120,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,QUE 99177,CR2,Xe,c1ph54,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Rangala,L6,Q,c1dp09,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Rangala,L6,Sr,c1dp10,<125 micron,chondrules
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,RBT 03522,CK5,K,c1tb200,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Reid 013,brachinite,C,camt52,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Reid 013,brachinite,C,camt56,<45 micron,cleaned with HCl and ultrasound
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Renazzo,CR2,K,c1mb58,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Rio Negro,L4,S,c1mb08,25-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Rio Negro,L4,Sr,c1tb81,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,RKPA80205,H3.8,S,c1mt160a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,RKPA80256,L3.6-4,Sq,c1tb278,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Rose City,H5,B,c1tb339,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Rumuruti,R3.8-6,U,c1mt13,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Rupota,L4,Sq,c1tb121,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sahara 97001,L6,Svw,c1ps98,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sahara 99555,angrite,Xk,c1tb57,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saint-Severin,LL6,Q,c1dp15,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saint-Severin,LL6,Q,c1tb145,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saint-Severin,LL6,Q,c1tb341,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,SAN 03472,howardite,V,c1mt258a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sao Jose do Rio Preto,H4,S,c1tb82,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saratov,L4,Sq,c1tb17,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saratov,L4,S,samb28,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saratov,L4,Sr,sbmb28,10-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saricicek,howardite,V,c1mt311a,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saricicek,howardite,V,c1mt311b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saricicek,howardite,V,c1mt311c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Saricicek,howardite,V,camt311,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Schenectady,H4,Sv,c1tb83,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,SCO 06040,howardite,V,c1mt215a,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,SCO 06043,CM1,K,c1mt197,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,SCO 06043,CM1,Cgh,c2mt197,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,SCO 06043,CM1,Cgh,c3mt197,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Serra de Mage,eucrite-cm,V,camp92,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sete Lagoas,H4,Xc,c1mh21,chip,dark vein
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sete Lagoas,H4,S,c2mh21,slab,light clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sete Lagoas,H4,K,c3mh21,chip,light area
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sete Lagoas,H4,C,c4mh21,chip,dark vein
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sete Lagoas,H4,Sq,c5mh21,chip,light vein
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sete Lagoas,H4,K,c6mh21,chip,light area
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Shelburne,L5,Sr,c1tb122,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Shergotty,Martian (shergottite),V,c1dd61,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Shergotty,Martian (shergottite),V,c1lm21,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sikhote-Alin,IIAB,D,c1tb364,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Sitathali,H5,Sq,c1tb123,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Soko-Banja,LL4,Q,c1oc17a,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Soko-Banja,LL4,Q,c1oc17b,125-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Soko-Banja,LL4,Q,c1oc17c,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Stannern,eucrite-mmict,V,camb97,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Stannern,eucrite-mmict,V,cbmb97,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Suwahib (Buwah),H3.8-an,S,c1tb124,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tadjera,L5,Xc,c1mh11,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tagish Lake,C2-ung,D,c1mt24,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tagish Lake,C2-ung,Xk,c1mt25l0,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tagish Lake,C2-ung,Xn,c1mt25l1,<125 micron,irradiated with pulse laser
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tagish Lake,C2-ung,Xc,c1mt25l2,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tagish Lake,C2-ung,U,c1mt26,<125 micron,heated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tagish Lake,C2-ung,X,c9mt11,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Taiban,L5,Xe,c1mh12,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Taiban,L5,B,c1mh26,slab,vein
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Taiban,L5,B,c2mh26,slab,matrix
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tatahouine,diogenite,V,camp88,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,TIL 82403,eucrite-br,K,cbrm211,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,TIL 82408,LL3.1-3.5,S,c1mt131a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tissint,Martian (shergottite),K,c1mt199,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tissint,Martian (shergottite),Q,c1mt223p,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tissint,Martian (shergottite),Q,camt223,slab,bulk spot
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tissint,Martian (shergottite),Q,cbmt223,slab,impact melt
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tissint,Martian (shergottite),Q,cemt223,slab,shock melt rich clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,B,c1ma41,10-100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Xc,c1ma52,>300 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Cb,c1ma53,>300 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,C,c1ma56,<40 micron,laser irradiated
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Q,p0rs47,45-63 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,B,p1rs60,bulk,light powder
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,K,p2mb01,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,B,p2rs60,<63 micron,light portion
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Xc,p3mb01,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,C,p3rs60,63-125 micron,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Xc,p4mb01,125-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Q,p4rs47,<63 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Xc,p4rs60,125-250 micron,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,B,p5mb01,250-500 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Q,p5rs47,63-125 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Q,p6rs47,125-250 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Xc,p6rs60,<25 micron,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,B,p7rs47,250-500,dark portion
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Q,p7rs60,25-45 micron,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Sq,p8rs47,<25 micron,dark fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Q,p8rs60,45-63 micron,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Q,p9rs47,25-45 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,B,s1rs60,bulk,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,B,s2rs60,<63 micron,light
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tsarev,L5,Q,s4rs47,<63 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tuan Tuc,L6,Sq,c1tb84,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tuxtuac,LL5,R,c1dp06,<125 micron,chondrules
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tuxtuac,LL5,Q,c1dp07,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Tuxtuac,LL5,Q,c1mt80,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Uberaba,H5,Sq,c1tb346,<10 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Uberaba,H5,S,c1tb85,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Ucera,H5,Q,c1mh06,20-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Vaca Muerta,mesosiderite-A1,Sq,c1tb149,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Valdinizza,L6,Q,c1tb87,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Vigarano,CV3,Xc,c1mb59,<100 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Vigarano,CV3,Xc,c1mt273,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Vigarano,CV3,Cg,c2mb59,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Vouille,L6,Q,c1tb86,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Walters,L6,Sr,camp29,50-250 micron,clast and melt
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Walters,L6,Sr,ccmp29,50-250 micron,clast and melt
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Walters,L6,S,cmmp29,50-250 micron,melt
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Weston,H4,Sq,c1mh08,20-250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Wethersfield (1971),L6,Q,c1tb144,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Wethersfield (1982),L6,Q,c1tb147,<150 micron,metal removed
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Wickenberg,L6,S,c1mh10,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,WIS 91600,CM-an,X,c1mp51,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,WIS 91600,CM-an,D,c1mt194,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,WIS 91600,CM-an,D,c1ph33,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,WIS 91600,CM-an,D,c2mt194,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,WIS 91600,CM-an,D,c3mt194,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,WIS 91600,CM-an,X,s1mp51,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Witsand Farm,LL4,Sq,c1mt76,<150 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Wittekrantz,L5,Xc,cdmb11,25-250 micron,dark
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Wittekrantz,L5,Q,clmb11,25-250 micron,light fraction
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,WSG 95300,H3.3,L,c1mt134a,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-693,CK4/5,K,c1mb77,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-7308,howardite,V,camp97,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74013,diogenite,V,camb73,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74013,diogenite,V,cbmb73,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74063,acapulcoite,B,c1mb36,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74063,acapulcoite,B,c2mb36,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74191,L3.7,S,camb84,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74191,L3.7,Sr,cbmb84,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74191,L3.7,Sr,ccmb84,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74191,L3.7,Sr,cdmb84,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74357,lodranite,Sv,c1mb37,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74442,LL4,Q,camb86,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74450,eucrite-pmict,R,camb71,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74450,eucrite-pmict,V,cbmb71,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74450,eucrite-pmict,V,ccmb71,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74450,eucrite-pmict,V,cdmb71,75-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74642,CM2,Xe,c1mb75,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74646,LL6,Sq,camb85,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74646,LL6,Q,cbmb85,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74646,LL6,Q,ccmb85,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74659,ureilite,K,camb87,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74659,ureilite,Sq,cbmb87,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74659,ureilite,Q,ccmb87,45-75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74662,CM2,K,c1mb76,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-74662,CM2,K,c1mp11,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-75011,eucrite-pmict,Q,c1tb08,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-75032,diogenite,V,camb74,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-75032,diogenite,V,cbmb74,25-45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-790727,howardite,V,camp98,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-790746,H5-6,Xc,c1lm05,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-790746,H5-6,Xc,c2lm05,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-790746,H5-6,Xc,s1lm05,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-790746,H5-6,Xc,s2lm05,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791186,eucrite-mmict,V,c1tb09,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791191,CM2,K,c1mp30,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791195,eucrite-cm,V,c1mp134b,chip,darker spot
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),K,c10l01,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),K,c10lm1,slab,large clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),K,c10m01,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),Q,c2lm06,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),X,cblm03,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),B,chlm01,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),Q,colm01,chip,oval clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),B,crlm01,chip,rectangular clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),B,cslm01,chip,white clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),K,s10lm1,slab,large clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),K,s10m01,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),Q,s2lm06,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),Xk,sblm03,<250 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),B,shlm01,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),Q,solm01,slab,oval clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791197,lunar (anorth),B,srlm01,chip,rectangular clast
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791198,CM2,Xc,c1mp12,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791198,CM2,D,c1mt221,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791198,CM2,D,c2mt221,<35 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791491,lodranite,R,c1mb38,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791538,ureilite,K,c1ph19,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791538,ureilite,K,c1ph36,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791538,ureilite,Sq,c2mp101,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791573,howardite,V,camp99,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791717,CO3.3,Xe,c1mb93,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-791824,CM2,K,c1mp31,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-792510,eucrite-mmict,V,c1tb07,bulk,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-792510,eucrite-mmict,V,camt41,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-792769,eucrite-pmict,V,camt42,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-793321,CM2,C,c1mp13,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-793495,CR2,Xe,c1mp38,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-793575,R3.8,A,c1mb94,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-793591,eucrite,V,camt43,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-793595,CM2,K,c1mp32,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-794080,CM2,K,c1mp33,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82042,CM1/2,D,c1mp07,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82050,CO3.2,K,c2mp103,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82054,CM2,L,c1mp58,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82082,eucrite-pmict,V,camt44,<25 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82098,CM2,T,c1mp08,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82162,C1/2-ung,C,c1mb19a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82162,C1/2-ung,Cb,c1mb19b,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82162,C1/2-ung,Xc,c1mb19c,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82162,C1/2-ung,U,camb19,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82162,C1/2-ung,U,cbmb19,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82162,C1/2-ung,C,ccmb19,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82192,lunar (anorth),Q,c1lm06,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82192,lunar (anorth),Q,s1lm06,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-82192,lunar (anorth),B,s3lm06,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-8451,pallasite-ungr,Xk,c1mb39,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-8451,pallasite-ungr,Xk,c2mb39,powder,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-8451,pallasite-ungr,Xk,c3mb39,slab,near metal rich end
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-8451,pallasite-ungr,Xk,camb39,slab,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86029,CI1,Xc,c3mp111,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86032,lunar (anorth),Q,calm13,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86032,lunar (anorth),Q,cblm13,chip,mostly black side
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86032,lunar (anorth),Q,cclm13,chip,whitish face
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86032,lunar (anorth),U,cdlm13,chip,bottom flat black face
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86032,lunar (anorth),Q,celm13,chip,white end face
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86695,CM2,Xk,c1mp34,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86720,C2-ung,B,c1mb20a,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86720,C2-ung,C,c1mb20b,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86720,C2-ung,B,c1mb20c,63-125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86720,C2-ung,B,camb20,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86720,C2-ung,B,cbmb20,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86751,CV3,K,c1mp09,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-86789,C2-ung,Xc,c1mp10,<125 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-980318,eucrite-cm,V,c1mt61,<75 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-980433,eucrite-cm,V,c1mt65,<63 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-984028,Martian (shergottite),Sa,c1dd117,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Y-984028,Martian (shergottite),Sa,c1dd118,<45 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Zagami,Martian (shergottite),V,c1dd25,<50 micron,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Zagami,Martian (shergottite),V,ccmb49,chip,
+burbine_2024_testing_bus_demeo_with_meteorite_spectra,Zagami,Martian (shergottite),V,cpmb49,<125 micron,

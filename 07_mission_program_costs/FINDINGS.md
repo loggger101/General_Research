@@ -1,4 +1,4 @@
-﻿# Domain 7 — Mission program-cost benchmarks
+# Domain 7 — Mission program-cost benchmarks
 
 _NRE / development anchors for the `operational_costs.csv` rows that cite real NASA program costs._
 
