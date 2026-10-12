@@ -231,3 +231,11 @@ Save as `<id>.pdf` in `General_Research_incoming`, as in section A.
   - NTRS title search zero records (no NASA-hosted twin); OpenAlex isOA=False; Semantic Scholar isOpenAccess=False, no open PDF (all probed R151).
 
 Route for all four: institutional/library pull or an Elsevier/Liebert/AIAA archive-access session. Re-probe publisher routes at least once per few rounds - WAF walls are not permanent (R144 GAO precedent).
+## Round 153 - d17 liability-insurance premium queue
+
+- **gao_2012_commercial_space_launches_faa_liability_risk_assessment** [T3] - GAO-12-899 "Commercial Space Launches: FAA Should Update How It Assesses Federal Liability Risk" (Jul 30 2012). The premium-rate source behind d17's third-party liability cell (~1% of coverage x ~$99M avg MPL = ~$0.99M/launch implied; range $0.23-2.67M).
+  - Save as: gao-12-899.pdf; route https://www.gao.gov/assets/600/593106.pdf (HTTP 403 Akamai WAF from this machine R153, full browser headers via urllib and curl); product page https://www.gao.gov/products/gao-12-899 also HTTP 403; NTRS title search zero records. Licence: public-domain (work of the U.S. government) - hostable once pulled.
+- **gao_2017_commercial_space_launch_insurance_faa_calculation_weakness** [T3] - GAO-17-366 "Commercial Space Launch Insurance: Weakness in FAA's Insurance Calculation May Expose the Federal Government to Excess Risk" (Mar 2017). Later data point on the same cell (~$51M avg MPL across five active licenses of 2016 -> ~$0.5M/launch implied) + $3M cost-of-casualty corroboration.
+  - Save as: gao-17-366.pdf; route https://www.gao.gov/assets/690/683915.pdf (HTTP 403 Akamai WAF from this machine R153); product page https://www.gao.gov/products/GAO-17-366 also HTTP 403. Licence: public-domain (work of the U.S. government) - hostable once pulled.
+
+Route for both: institutional/library pull, or re-probe gao.gov when its WAF opens (R144 precedent shows the block is transient in both directions).
