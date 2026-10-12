@@ -80,3 +80,16 @@ Process notes: vision backend still down (4th consecutive round) - Vega Fig 5.3.
 ### Round 136 - TSI companion anchor while kopp_lean stays quarantined (+1 source)
 
 **rind_lean_jonas_2014_tsi_impact_on_climate_model_simulations [T1; verified_live_not_pulled]** — Rind, Lean & Jonas, J. Climate 27 (DOI 10.1175/JCLI-D-13-00136.1), pulled from NTRS 20150011099 and read in full (21 pp). NTRS determinationType=PUBLIC_USE_PERMITTED, but the file carries an in-file copyright ('(c) 2014 American Meteorological Society') -> extraction-only per the R94 rule. This is the direct companion of `kopp_lean_2011_total_solar_irradiance` (which remains quarantined — AGU/Wiley publisher challenge persists): it quantifies what the absolute-TSI difference actually does in a climate model: GISS GAM3 simulations with 1990s-radiometer vs SORCE irradiance differ by **"a global temperature change of 0.48C, comparable to the cooling estimated for the Maunder Minimum"** before energy-balance adjustment; after cloud-cover compensation the difference is regional (high-latitude T / sea-level pressure / stratospheric ozone / tropical precipitation). d12 therefore now has an accessible anchor for the solar-flux question behind `environments.csv` while kopp_lean itself waits. The original kopp_lean paper is NOT on NTRS as its own record — exact-title sweep returns only this companion and 'The Glory Program'. Numbers in `extracted_data/r136_tsi_impact_key_numbers.csv`.
+
+## R155 - queue open-copy sweep: Ceres mass and radius read from Russell et al. 2016 (2026-10-12; queue -1)
+
+russell_2016_dawn_arrives_at_ceres was read in full from the first author's faculty-page copy of the AAAS typeset (copyright printed, so not hosted). p1008 gives:
+
+- mass (9.384 +/- 0.001) x 10^20 kg
+- axes 483.1 x 481.0 x 445.9 km, for a geometric mean radius of 469.7 km (469.68 recomputed here)
+- density 2162 +/- 3 kg/m3
+- rotation period 9.074170 h
+
+spacecost@0b716ad's 1 Ceres row (9.3835e20 kg, 469.73 km, 9.074 h) is near-exact: mass -0.005% and radius +0.006%, each carrying one more digit than the paper prints. The other four queue rows here (kopp_lean_2011, yeomans_2000, mazarico_2011, warner_harris_pravec_2009) were sought and not reached; their rows record the routes tried.
+
+Extracted: `extracted_data/r155_queue_open_copies_key_numbers.csv`.

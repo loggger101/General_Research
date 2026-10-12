@@ -1,0 +1,23 @@
+source_id,item,value,unit,location_in_source,notes
+campins_1985_absolute_calibration_1_5um,"Sun V magnitude, synthetic (Neckel & Labs 1981 spectrum and Kurucz Vega convolved with V)",-26.768 +/- 0.02,mag,p898 col 2,
+campins_1985_absolute_calibration_1_5um,"Sun V magnitude, measured with flux reducers (Wamsteker 1981)",-26.75 +/- 0.03,mag,p898 col 2,
+campins_1985_absolute_calibration_1_5um,"Sun V magnitude, combined",-26.762 +/- 0.017,mag,p898 col 2,printed 'V = 26.762 +/- 0.017' without the minus sign (page image checked); sign restored from the two inputs
+,inverse-variance mean of the two Campins inputs (computed here),-26.7625 +/- 0.0166,mag,,reproduces the printed combination
+pravec_harris_2007_binary_angular_momentum,D-from-H relation,D sqrt(p) = K x 10^(-H/5),,Appendix A Eq. A.5,
+pravec_harris_2007_binary_angular_momentum,constant K definition,K = 2 AU x 10^(Vsun/5),,Appendix A Eq. A.6,
+pravec_harris_2007_binary_angular_momentum,K from Campins et al. 1985 Vsun = -26.762 +/- 0.017,1329 +/- 10,km,p259,the IRAS Minor Planet Survey value (Fowler & Chillemi 1992)
+pravec_harris_2007_binary_angular_momentum,diameter systematic from the Vsun uncertainty,about 1,%,p259,
+,K recomputed here with AU = 149597870.700 km and Vsun = -26.762 (-0.017 / +0.017),1329.09 (1318.73 / 1339.54),km,,matches AsteroidCatalog physics.H_DIAMETER_CONSTANT 1329 (AsteroidCatalog@86cfc54 CITATIONS.md)
+,AsteroidCatalog V_SUN,-26.762,mag,AsteroidCatalog@86cfc54 asteroid_catalog/physics.py,EXACT vs Campins 1985 combined value
+pravec_2012_absolute_magnitudes_wise_albedos,sample,"583 main-belt and near-Earth asteroids, H uncertainties < 0.21 mag (median 0.09)",,abstract p3 (submitted preprint),
+pravec_2012_absolute_magnitudes_wise_albedos,"catalog H bias, large asteroids",smaller than 0.1,mag,abstract p3,
+pravec_2012_absolute_magnitudes_wise_albedos,"mean (Hcatalog - H) at its maximum, near H = 14",-0.4 to -0.5,mag,abstract p3,"catalog H too bright; offset prominent above H ~ 10, big above H ~ 12"
+pravec_2012_absolute_magnitudes_wise_albedos,"revised mean pV, C/G/B/F/P/D types 25-300 km","0.057 (sd 0.013, se 0.002)",,abstract p3,
+pravec_2012_absolute_magnitudes_wise_albedos,"revised mean pV, S/A/L types 0.6-200 km","0.197 (sd 0.051, se 0.006)",,abstract p3,
+,AsteroidCatalog H tolerances,merge 0.30 mag; H_DIAMETER_TOLERANCE_MAG 0.75,mag,AsteroidCatalog@86cfc54 merge.py and physics.py,both cite -0.4 to -0.5 at H ~ 14 and under 0.1 for large bodies: EXACT vs the preprint abstract
+gil_hutton_brunini_2008_hilda_sdss_colors,Hildas selected from SDSS MOC,122,asteroids,p568-569,
+gil_hutton_brunini_2008_hilda_sdss_colors,broad D-class (slope > 6%/1000 A),51,asteroids,p569,"D, T, K, L, Ld of Bus & Binzel"
+gil_hutton_brunini_2008_hilda_sdss_colors,broad X-class (P; slope 2-6%/1000 A),49,asteroids,p569,"X, Xe, Xc, Xk"
+gil_hutton_brunini_2008_hilda_sdss_colors,broad C-class (slope < 2%/1000 A),19,asteroids,p569,"C, Cb, Cg, Ch, Cgh, B"
+gil_hutton_brunini_2008_hilda_sdss_colors,H above which the spectral slope-size correlation fails,11.5-12,mag,p570,small Hildas split evenly between D and P
+gil_hutton_brunini_2008_hilda_sdss_colors,"numbered Hildas by type (Dahlgren et al. 1997, quoted)","D 34%, P 28%, C 2%",,p567,secondary

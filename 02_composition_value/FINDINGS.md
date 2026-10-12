@@ -422,3 +422,15 @@ Only the CI evidence (Ryugu, King et al. 2015) argues for ~0, and of the four ro
 For rc-013 this adds a second question beside the end-member choice: a cometary ice fraction describes the bulk interior, while the ice within a surface miner's reach is near zero on this evidence.
 
 Extracted: `extracted_data/r152_taxonomy_analogue_checks.csv` (Howard, Burbine and Wong values with locations, and the upstream cells) and `extracted_data/r152_burbine_2024_table_a1.csv`.
+
+## R155 - queue open-copy sweep: Jarosewich and Lodders tables read, Tagish Lake modes not in Hiroi 2001 (2026-10-12; queue -3; rc-085)
+
+Round 155 sought the never-sought T1/T2 queue rows. Three in this domain were reached and read; none can be hosted, because each PDF carries a publisher copyright. Eleven stay `registered_not_pulled`, with the routes tried in their rows.
+
+**S, Sq and Q metal is Jarosewich's falls, exactly.** jarosewich_1990 is an image-only ADS scan, so Table 4 (average composition of falls) was read off the rendered page. Each column's components sum to within 0.05 wt% of its printed total. Fe(m) + Ni + Co gives H 17.80, L 8.33 and LL 3.56 wt%. AsteroidCatalog@86cfc54's taxonomy_composition.csv sets metal 0.06 as "the mean of LL (3.56 wt%) and L (8.33 wt%)": EXACT (the mean is 5.945). Table 4 also gives C 1.82 wt% for CM2 and 0.43 wt% for CV3 falls.
+
+**Lodders 2003 carries chondritic, not iron-meteorite, PGM.** Table 3, printed rotated, was read by word coordinates. CI weighted means, in ppm: Ru 0.692, Rh 0.141, Pd 0.588, Os 0.486, Ir 0.470, Pt 1.004, Au 0.146, against Fe 182,800, Ni 10,640 and Co 502. All PGM placed in the metal (19.39 wt% Fe+Ni+Co) gives 17.4 ppm. economicspace@8c3083a's nickel-iron row cites "average chondritic / iron-meteorite compositions (Lodders 2003, Walker 2012)" but is calibrated to IIIAB means, summing to 35.5 ppm PGM: about twice the metal-normalised CI value. Its Pt/Ir is 3.75 and Pd/Pt 0.667, against CI 2.14 and 0.586. Iron-meteorite groups do depart from CI ratios, so this is no contradiction, but Lodders 2003 backs only the chondritic half of that citation. Separately, the row's comment and note say "~37 ppm"; its six PGM values sum to 35.5 (36.5 with Au).
+
+**rc-085: the Tagish Lake accessory modes are not in Hiroi et al. 2001.** The Science Express text (a UWO archive copy) gives carbon 4-5 wt% and reflectivity 2-4%. It names Ca-Fe-Mg carbonates without an abundance and has no magnetite or sulfide figure, and for composition it cites Brown et al. 2000 (Science 290, 320). AsteroidCatalog's mineralogy.py attributes "magnetite ~5, sulfide ~3, carbonate ~3 wt%" to Hiroi et al. 2001. The values are not disputed, only their source.
+
+Extracted: `extracted_data/r155_queue_open_copies_key_numbers.csv`.

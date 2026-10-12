@@ -244,3 +244,19 @@ Route for both: institutional/library pull, or re-probe gao.gov when its WAF ope
 - **gao_2017_pu238_rps_production_planning** [T3] - GAO-17-673 "Space Exploration: DOE Could Improve Planning and Communication Related to Plutonium-238 and Radioisotope Power Systems Production Challenges" (Sep 2017). FIRST institutional per-unit MMRTG costs in d05 ($77M/$94M/$117M vs $850M New Frontiers cap; ~$700k/W at BODL) + CRP-era production context.
   - Save as: gao-17-673.pdf; routes https://www.gao.gov/assets/690/688254.pdf AND the alternate canonical https://www.gao.gov/assets/gao-17-673.pdf (both HTTP 403 Akamai WAF from this machine R154, full browser headers via urllib and curl); product page https://www.gao.gov/products/GAO-17-673 also HTTP 403. Key figures already extracted verbatim from GAO's own published text (search-index capture of gao.gov pages) per the R89/R153 precedent.
   - Route: institutional pull, or a future round when gao.gov unblocks (R144 showed an unblock can be transient). Licence: public-domain (work of the U.S. government) - hostable once pulled.
+## Round 155 - group-5 open-copy sweep: free or hostable copies behind bot walls
+
+Round 155 sought the 35 never-sought T1/T2 queue rows and read eight. These twelve have a free-to-read (or CC BY) copy that this machine cannot fetch. Save each as `<id>.pdf` in `General_Research_incoming`, as in section A.
+
+- [ ] **macke_2011_carbonaceous_chondrite_density_porosity** - https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1945-5100.2011.01298.x - OpenAlex reports the published version as CC BY; Wiley 403s here. May be hosted if the PDF itself says CC BY.
+- [ ] **kopp_lean_2011_total_solar_irradiance** - https://doi.org/10.1029/2010GL045777 (AGU, free to read) or https://apps.dtic.mil/sti/pdfs/ADA535690.pdf (DTIC was under maintenance R155). Extract only unless the file grants reuse.
+- [ ] **carvano_2010_sdss_taxonomy_main_belt** - https://www.aanda.org/articles/aa/pdf/2010/02/aa13322-09.pdf - A&A free access; aanda.org 403s here. Extract only.
+- [ ] **kargel_1994_metalliferous_asteroids_precious_metals** - https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/94JE02141 - AGU archive; 403 here. Extract only.
+- [ ] **nichiporuk_brown_1965_pt_pd_iron_meteorites** - https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/JZ070i002p00459 - AGU archive. Extract only.
+- [ ] **scott_wasson_1975_classification_properties_iron_meteorites** - https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/RG013i004p00527 - AGU archive. Extract only.
+- [ ] **keil_1968_mineralogical_chemical_enstatite_chondrites** - https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/JB073i022p06945 - AGU archive. Extract only.
+- [ ] **pearson_2006_carbon_nitrogen_carbonaceous_chondrites** - https://journals.uair.arizona.edu/index.php/maps/article/download/15367/15355 (University of Arizona MAPS archive; bot check here) or the Wiley DOI. Extract only.
+- [ ] **dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites** - https://repository.si.edu/handle/10088/20464 (Smithsonian repository; 403 here) or the Wiley DOI. Extract only.
+- [ ] **sunshine_connolly_2008_ancient_asteroids_refractory_inclusions** - https://repository.si.edu/items/e39dedbe-b83e-4add-98c6-9d0d9ac7fafd/full - the page loads, but no file link shows in its static HTML. Extract only.
+- [ ] **consolmagno_2008_meteorite_density_porosity** - https://stars.library.ucf.edu/facultybib2000/234 (UCF record, no file) - look for a full-text link in a browser. Extract only.
+- [ ] **fujiwara_2006_itokawa_rubble_pile** - https://ieeemilestones.ethw.org/w/images/8/82/Reference_E_3_2006Fujiwara_Rubble-Pile_Asteroid_Itokawa_Science.pdf (404 to a browser User-Agent here) - retry in a browser. Extract only.
