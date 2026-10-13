@@ -100,7 +100,8 @@ tools/                   the tools
 ```
 """
 
-FINDINGS_ALPHA = '# 01_alpha findings\n\nNumbers in `extracted_data/r1_alpha.csv`; full text `full_texts/hosted.pdf`.\n'
+GITATTRIBUTES = '# Hosted files are checked out byte for byte, as the manifest hashes them.\n**/full_texts/** -text\n'
+FINDINGS_ALPHA ='# 01_alpha findings\n\nNumbers in `extracted_data/r1_alpha.csv`; full text `full_texts/hosted.pdf`.\n'
 FINDINGS_BETA = '# 02_beta findings\n\nCompared with `01_alpha/extracted_data/r1_alpha.csv`.\n'
 # Written after the first commit, whose id it names: a reference into git history (DOWNLOADS.md's restore commands).
 DOWNLOADS_MD = '# Downloads\n\n```bash\ngit cat-file -p {sha}:01_alpha/full_texts/hosted.pdf > ../incoming/hosted.pdf\n```\n'
@@ -165,6 +166,7 @@ def build_template(parent):
     for f in ('common.py', 'validate.py', 'build_registry.py'):
         shutil.copyfile(TOOLS / f, root / 'tools' / f)
     write(root / '.gitignore', '__pycache__/\n')
+    write(root / '.gitattributes', GITATTRIBUTES)
     write(root / 'AGENTS.md', '# Rules\n')
     write(root / 'README.md', README_MD)
     write(root / 'INDEX.md', INDEX_MD)

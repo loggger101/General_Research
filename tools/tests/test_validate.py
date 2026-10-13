@@ -179,6 +179,15 @@ X_BETA = '02_beta/extracted_data/r1_beta.csv'
 X_JSON = '02_beta/extracted_data/r1_beta_response.json'
 
 
+def failing_check_attr(v):
+    """git check-attr exits non-zero; every other git call runs."""
+    real = v.git_raw
+
+    def git_raw(repo, *args, stdin=None):
+        return (1, b'') if 'check-attr' in args else real(repo, *args, stdin=stdin)
+    v.git_raw = git_raw
+
+
 def crash_manifest(v):
     def check_manifest(rep, ctx):
         raise RuntimeError('planted crash')
@@ -313,6 +322,12 @@ CASES = [
     ('manifest-file-missing', 'error', [], lambda r, s: edit(r, MAN, 'hosted.pdf', 'gone.pdf'), {'hosted-without-file', 'manifest-unlisted-file'}),
     ('manifest-file-name', 'error', [], lambda r, s: edit(r, MAN, ',hosted.pdf,', ',../full_texts/hosted.pdf,'), {'hosted-without-file', 'manifest-unlisted-file'}),
     ('manifest-stale', 'error', [], lambda r, s: put(r, '01_alpha/full_texts/hosted.pdf', b'%PDF-1.4 changed\n'), {'access-sha-mismatch'}),
+    # Hosted files must be checked out byte for byte (a fresh core.autocrlf clone rewrote five .html/.txt files).
+    ('full-text-eol-converted', 'error', [], lambda r, s: put(r, '.gitattributes', '# no rule\n')),
+    ('full-text-eol-converted', 'error', [], lambda r, s: put(r, '.gitattributes', '**/full_texts/*.txt -text\n')),
+    # Deleted from the working tree, git check-attr still reads the staged copy, so only root-file-missing can see it.
+    ('root-file-missing', 'error', [], lambda r, s: delete(r, '.gitattributes')),
+    ('git-check-attr', 'error', [], lambda r, s: failing_check_attr),
     ('manifest-file-too-large', 'error', [], lambda r, s: (lambda v: setattr(v, 'GITHUB_HARD_LIMIT', 1))),
     ('manifest-file-large', 'warn', [], lambda r, s: (lambda v: setattr(v, 'GITHUB_WARN_LIMIT', 1))),
     ('manifest-not-redistributable', 'warn', [], lambda r, s: edit(r, MAN, 'cc-by 4.0', 'unknown')),
@@ -536,7 +551,7 @@ def crlf_tree(root):
     for path in root.rglob('*'):
         if '.git' in path.relative_to(root).parts or not path.is_file() or 'full_texts' in path.parts:
             continue
-        if path.suffix in ('.csv', '.md', '.json', '.py') or path.name == '.gitignore':
+        if path.suffix in ('.csv', '.md', '.json', '.py') or path.name in ('.gitignore', '.gitattributes'):
             path.write_bytes(path.read_bytes().replace(b'\r\n', b'\n').replace(b'\n', b'\r\n'))
 
 
@@ -627,6 +642,36 @@ class TestValidate(FixtureCase):
         self.assertEqual(rc, 0, out)
         self.assertIn('checked [revision_candidates] 4 candidates', out)
         self.assertNotIn('compared with origin/main', out, 'named upstream commits it did not compare with')
+
+    def test_fresh_autocrlf_clone_keeps_hosted_bytes(self):
+        """A hosted text file survives a core.autocrlf=true clone byte for byte, so its manifest hash still matches.
+        Without the .gitattributes rule the same clone fails, which shows the test can see the defect."""
+        root = self.copy()
+        put(root, '01_alpha/full_texts/page.txt', 'line one\nline two\n')
+        put(root, MAN, (root / MAN).read_text(encoding='utf-8')
+            + '01_alpha,src_hosted,page.txt,,,cc-by 4.0 (statement on the page)\n')
+        rebuild(root)
+        fixture.git(root, 'add', '-A')
+        fixture.git(root, 'commit', '-q', '-m', 'a hosted text file')
+        for rule in (True, False):
+            with self.subTest(gitattributes=rule):
+                if not rule:
+                    put(root, '.gitattributes', '# no rule\n')
+                    fixture.git(root, 'commit', '-q', '-am', 'drop the rule')
+                clone = root.parent.parent / f'clone-{rule}' / fixture.REPO
+                subprocess.run(['git', 'clone', '-q', '-c', 'core.autocrlf=true', str(root), str(clone)], check=True)
+                self.addCleanup(fixture.remove_tree, clone.parent)
+                self.assertIn(b'\r\n', (clone / 'README.md').read_bytes(), 'the clone did not convert text files')
+                rc, out = self.run_validate(clone)
+                if rule:
+                    self.assertEqual(rc, 0, out)
+                    self.assertEqual((clone / '01_alpha/full_texts/page.txt').read_bytes(), b'line one\nline two\n')
+                else:
+                    self.assertEqual(rc, 1, out)
+                    # Both hosted files changed bytes (git took the fixture's tiny PDF for text too), so the sha256 in
+                    # src_hosted's access_status matches neither.
+                    self.assertEqual(reported_codes(out), {'full-text-eol-converted', 'manifest-stale',
+                                                           'access-sha-mismatch'}, out)
 
     def test_runs_from_any_directory_on_an_ascii_console(self):
         """Paths resolve from the script, and a console that cannot encode "—" does not crash the report."""

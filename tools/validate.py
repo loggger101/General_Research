@@ -56,16 +56,18 @@ GITHUB_WARN_LIMIT = 50 * 1024 * 1024
 # Root-level files and directories, each with a line in README "Layout" unless marked False.
 ROOT_FILES = {'README.md': True, 'INDEX.md': True, 'sources.csv': True, 'full_texts_manifest.csv': True,
               'revision_candidates.csv': True, 'upstream_commit_map.csv': True, 'DOWNLOADS.md': True,
-              'AGENTS.md': True, 'CLAUDE.md': False, 'LICENSE': False, '.gitignore': False}
+              'AGENTS.md': True, 'CLAUDE.md': False, 'LICENSE': False, '.gitignore': False, '.gitattributes': False}
+# .gitattributes keeps hosted files byte for byte. git check-attr reads the staged copy when the working one is
+# deleted, so full-text-eol-converted cannot see a deletion that is about to be committed; root-file-missing does.
 REQUIRED_ROOT_FILES = ['README.md', 'INDEX.md', 'sources.csv', 'full_texts_manifest.csv', 'revision_candidates.csv',
-                       'upstream_commit_map.csv', 'AGENTS.md']
+                       'upstream_commit_map.csv', 'AGENTS.md', '.gitattributes']
 ROOT_DIRS = {'tools'}
 # tools/ holds the tools and tools/tests/ their tests, Python only; any other file there is read by no check.
 TOOLS_FILE_RE = re.compile(r'tools/(?:tests/)?[a-z0-9_]+\.py')
 DOMAIN_FILES = {'sources_domain.csv', 'FINDINGS.md', '.gitkeep'}
 EXTRACTED_SUFFIXES = {'.csv', '.json'}
 TEXT_SUFFIXES = {'.csv', '.md', '.py', '.json'}
-TEXT_NAMES = {'.gitignore'}
+TEXT_NAMES = {'.gitignore', '.gitattributes'}
 # A year cell starts with a year, an approximate year or "n.d.", and may explain itself after that.
 YEAR_RE = re.compile(r'(~?\d{4}|n\.d\.)')
 LOG_ENTRY_RE = re.compile(r'- \*\*(?:Round (\d+)|Maintenance)\*\* \((\d{4}-\d{2}-\d{2})(?:/\d{2})?\)')
@@ -213,6 +215,16 @@ def check_layout(rep, ctx):
             if f'{d}/{part}' not in files:
                 rep.error('domain-file-missing', f'{d}/{part} is missing')
     rep.expect('domain files')
+    # The manifest's sha256 is of the bytes git stores. A checkout with core.autocrlf rewrites the line ends of a file
+    # git treats as text (five hosted .html/.txt files, until 2026-10-12), so a fresh clone failed manifest-stale.
+    hosted = [n for n in files if len(n.split('/')) == 3 and n.split('/')[1] == 'full_texts']
+    attrs = text_attributes(hosted)
+    converted = [n for n in hosted if attrs[n] != 'unset']
+    if converted:
+        rep.error('full-text-eol-converted', f'{len(converted)} hosted file(s), first {converted[0]}, are not marked '
+                                             f'-text: a checkout with core.autocrlf would rewrite a text file\'s line '
+                                             f'ends, so its bytes would stop matching full_texts_manifest.csv; '
+                                             f'.gitattributes must hold "**/full_texts/** -text"')
 
 
 # ---------------------------------------------------------------------------------------------- registry
@@ -921,13 +933,24 @@ def check_upstream_map(rep, ctx):
                                             f'{citing}')
 
 
-def git_raw(repo, *args):
+def git_raw(repo, *args, stdin=None):
     """(returncode, stdout bytes). A git that cannot be run at all raises DataError, which stops the check."""
     try:
-        proc = subprocess.run(['git', '-C', str(repo)] + list(args), capture_output=True)
+        proc = subprocess.run(['git', '-C', str(repo)] + list(args), input=stdin, capture_output=True)
     except OSError as e:
         raise DataError('git-unavailable', f'cannot run git: {e}')
     return proc.returncode, proc.stdout
+
+
+def text_attributes(paths):
+    """{path: git's `text` attribute}. "unset" (from `-text`) means a checkout writes the committed bytes unchanged."""
+    rc, out = git_raw(ROOT, 'check-attr', '-z', '--stdin', 'text', stdin='\0'.join(paths).encode('utf-8'))
+    if rc != 0:
+        raise DataError('git-check-attr', f'git check-attr failed in {ROOT}, so no hosted file\'s line-end handling '
+                                          f'was checked')
+    fields = out.decode('utf-8').split('\0')
+    # -z output is path NUL attribute NUL value NUL, for each path.
+    return {fields[i]: fields[i + 2] for i in range(0, len(fields) - 1, 3)}
 
 
 def git(repo, *args):

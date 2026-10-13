@@ -1,0 +1,3 @@
+# Hosted full texts are stored and checked out byte for byte. full_texts_manifest.csv records each file's sha256,
+# and end-of-line conversion on checkout (core.autocrlf) would change it for a text file such as an .html or .txt.
+**/full_texts/** -text
