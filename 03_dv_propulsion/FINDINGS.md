@@ -2,7 +2,7 @@
 
 ## elvis2011 — Elvis, McDowell, Hoffman & Binzel (2011), "Ultra-Low Delta-v Objects and the Human Exploration of Asteroids" [T1]
 
-- **Full text hosted**: `full_texts/elvis_mcdowell_hoffman_binzel_2011_ultra-low_delta-v_arxiv1105.4152.pdf`
+- **Full text**: hosted here as `elvis_mcdowell_hoffman_binzel_2011_ultra-low_delta-v_arxiv1105.4152.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
   (arXiv:1105.4152; verified live HTTP 200, application/pdf). This is the paper our `delta_v_segments.csv` cites for the
   easy-NEA segment — **citation resolves correctly**.
 
@@ -19,7 +19,7 @@
 
 ## ieva2014 — Ieva et al. (2014), "Low Delta-V near-Earth asteroids: A survey of suitable targets for space missions" [T1]
 
-- **Full text hosted**: `full_texts/ieva_et_al_2014_low-dv_NEOs_NEOSURFACE_arxiv1406.5027.pdf`
+- **Full text**: hosted here as `ieva_et_al_2014_low-dv_NEOs_NEOSURFACE_arxiv1406.5027.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
   (arXiv:1406.5027; verified live HTTP 200). **This is the paper we currently cite for the average-NEA row — and it does not
   support that claim.**
 

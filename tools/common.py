@@ -181,6 +181,12 @@ def to_csv_text(header, rows, lineterminator='\n'):
     return buf.getvalue()
 
 
+def plain_file_name(name):
+    """A bare file name: no directory part, not "." or "..", no leading or trailing whitespace. A manifest `file` that
+    is not one points outside its domain's full_texts/ or at a subdirectory no check lists."""
+    return bool(name) and name == name.strip() and not re.search(r'[/\\]', name) and name not in ('.', '..')
+
+
 def access_class(access_status):
     return re.split(r'[\s(]', access_status.strip(), maxsplit=1)[0]
 

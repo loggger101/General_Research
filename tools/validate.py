@@ -15,10 +15,15 @@ Nothing is allowed to pass silently:
 - the file readers in common.py are strict (no BOM, UTF-8 only, rectangular
   CSVs) and report a bad file instead of reading around it;
 - a check that raises is reported as `check-crashed` and fails the run, and the
-  other checks still run; git that cannot be run is `git-unavailable`;
+  other checks still run; git that cannot be run is `git-unavailable`, and if git cannot list the repository's
+  files no check runs (on an empty list each would report every file missing);
+- an id missing from the registry while a sources_domain.csv is unreadable is not reported as unknown, since it may
+  be in that file: it is counted as not checked, and the unreadable file fails the run;
 - each check counts what it examined, and one that examined nothing reports
   `nothing-checked`, because a check with no input passes vacuously;
 - a file .gitignore hides is reported (`ignored-file`): no check would see it;
+- a data file that a write-up, registry row or candidate cites must exist, in the working tree or in the commit the
+  reference names (`path-ref-missing`): a reference nobody follows goes stale unnoticed;
 - a check that depends on an unreadable file skips only its cross-checks
   against that file, whose failure is already reported, rather than crash or
   report false errors;
@@ -40,7 +45,7 @@ from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_S
                     DOMAIN_RE, INDEX, LICENSE_CLASSES, LIVE_CANDIDATE_STATUSES, MANIFEST, MANIFEST_COLS,
                     NOT_REDISTRIBUTABLE, PENDING_ACCESS, README, REGISTRY, REGISTRY_COLS, ROOT, TIERS, UPSTREAM_MAP,
                     UPSTREAM_MAP_COLS, UPSTREAM_REPOS, DataError, access_class, domain_dirs, file_digest, read_csv,
-                    ignored_files, read_domain_csv, read_text, rel, repo_files)
+                    ignored_files, plain_file_name, read_domain_csv, read_text, rel, repo_files)
 
 INDEX_HEADER = ['id', 'tier', 'source (short)', 'access', 'backs / could replace']
 REJECTED_HEADER = ['id', 'source', 'link', 'reason']
@@ -55,6 +60,8 @@ ROOT_FILES = {'README.md': True, 'INDEX.md': True, 'sources.csv': True, 'full_te
 REQUIRED_ROOT_FILES = ['README.md', 'INDEX.md', 'sources.csv', 'full_texts_manifest.csv', 'revision_candidates.csv',
                        'upstream_commit_map.csv', 'AGENTS.md']
 ROOT_DIRS = {'tools'}
+# tools/ holds the tools and tools/tests/ their tests, Python only; any other file there is read by no check.
+TOOLS_FILE_RE = re.compile(r'tools/(?:tests/)?[a-z0-9_]+\.py')
 DOMAIN_FILES = {'sources_domain.csv', 'FINDINGS.md', '.gitkeep'}
 EXTRACTED_SUFFIXES = {'.csv', '.json'}
 TEXT_SUFFIXES = {'.csv', '.md', '.py', '.json'}
@@ -103,6 +110,15 @@ def parse_date(text):
         return datetime.date.fromisoformat(text)
     except ValueError:
         return None
+
+
+def registry_partial(rep, ctx):
+    """True if a sources_domain.csv is unreadable (check_registry reports it). An id missing from the registry may then
+    be in that file, so the caller does not report it as unknown; it is counted here as not checked instead."""
+    if ctx['unread_domains']:
+        rep.count('ids not checked: a sources_domain.csv is unreadable')
+        return True
+    return False
 
 
 def table_cells(line):
@@ -159,6 +175,9 @@ def check_layout(rep, ctx):
         elif top not in domains and top not in ROOT_DIRS:
             rep.error('root-unexpected-entry', f'{top}/: unexpected directory at the repo root '
                                                f'(a domain directory is named NN_lowercase_words)')
+        elif top == 'tools' and not TOOLS_FILE_RE.fullmatch(name):
+            rep.error('tools-unexpected-entry', f'{name}: tools/ holds Python modules and tools/tests/ their tests; '
+                                                f'no check reads any other file there')
     for f in REQUIRED_ROOT_FILES:
         if f not in files:
             rep.error('root-file-missing', f'{f} is missing')
@@ -208,6 +227,7 @@ def check_registry(rep, ctx):
             domain_rows = read_domain_csv(d)
         except DataError as e:
             unreadable += 1
+            ctx['unread_domains'].add(d)
             rep.error(e.code, f'{e} — its sources are not in this check')
             continue
         for r in domain_rows:
@@ -278,6 +298,9 @@ def check_index(rep, ctx):
             rep.error('index-domain-duplicate', f'"## Domain {num}" appears twice')
             continue
         seen.add(d)
+        if d in ctx['unread_domains']:
+            rep.count('domain tables not compared: their sources_domain.csv is unreadable')
+            continue
         rep.count('domain tables')
         lines = sec.split('\n')
         table = [i for i, l in enumerate(lines) if l.startswith('|')]
@@ -299,13 +322,16 @@ def check_index(rep, ctx):
             if not line.rstrip().endswith('|') or len(cells) != 5:
                 rep.error('index-row-cells', f'Domain {num}: row "{line[:50]}..." has {len(cells)} cells, expected 5 '
                                              f'(and a closing "|")')
+                if cells[0]:
+                    ids.append(cells[0])  # the row lists its id, so it is not also reported as missing
                 continue
             sid = cells[0]
             ids.append(sid)
             if any(not c for c in cells):
                 rep.error('index-empty-cell', f'Domain {num}: {sid or line[:50]} has an empty cell')
             if sid not in reg:
-                rep.error('index-id-unknown', f'Domain {num}: id {sid!r} is not in sources.csv')
+                if not registry_partial(rep, ctx):
+                    rep.error('index-id-unknown', f'Domain {num}: id {sid!r} is not in sources.csv')
                 continue
             if reg[sid]['domain_dir'] != d:
                 rep.error('index-wrong-domain', f'Domain {num}: {sid} is registered under {reg[sid]["domain_dir"]}')
@@ -563,8 +589,13 @@ def check_manifest(rep, ctx):
         if d not in ctx['domains']:
             rep.error('manifest-domain-unknown', f'{fname}: domain_dir {d!r} is not a domain directory')
             continue
+        if not plain_file_name(fname):
+            rep.error('manifest-file-name', f'{d} {sid}: file {fname!r} must be a bare file name inside '
+                                            f'{d}/full_texts/, with no directory part')
+            continue
         if sid not in reg:
-            rep.error('manifest-id-unknown', f'{fname}: id {sid!r} is not in sources.csv')
+            if not registry_partial(rep, ctx):
+                rep.error('manifest-id-unknown', f'{fname}: id {sid!r} is not in sources.csv')
         elif reg[sid]['domain_dir'] != d:
             rep.error('manifest-wrong-domain', f'{fname}: {sid} is registered under {reg[sid]["domain_dir"]}, not {d}')
         path = ROOT / d / 'full_texts' / fname
@@ -641,9 +672,13 @@ def check_extracted(rep, ctx):
             rep.error('extracted-header-duplicate', f'{name}: column names repeat: {dup_cols}')
         if any(not c.strip() for c in header):
             rep.error('extracted-header-empty', f'{name}: a header cell is empty')
+        if not rows:
+            rep.error('extracted-no-rows', f'{name}: a header and no rows, so the file holds no data')
         for n, row in enumerate(rows, 2):
             if row == header:
                 rep.error('extracted-header-repeat', f'{name} line {n}: repeats the header line')
+            elif not any(c.strip() for c in row):
+                rep.error('extracted-row-empty', f'{name} line {n}: every cell is blank')
         if 'source_id' not in header:
             # AGENTS.md: every extracted-data CSV needs a source_id column, or its rows trace to no registry id.
             rep.error('extracted-no-source-col', f'{name}: no source_id column, so its rows are not traceable to a '
@@ -660,8 +695,9 @@ def check_extracted(rep, ctx):
             if any(not i or i != i.strip() for i in ids):
                 rep.error('extracted-source-id-format', f'{name} line {n}: source_id {cell!r} must be ids joined by ";" '
                                                         f'with no empty or padded entry')
-            unknown |= {i for i in ids if i and i not in reg}
-        if unknown:
+            # A padded entry is reported above as a format error, not again as an unknown id.
+            unknown |= {i for i in ids if i and i == i.strip() and i not in reg}
+        if unknown and not registry_partial(rep, ctx):
             rep.error('extracted-unknown-source', f'{name}: source_id not in sources.csv: {", ".join(sorted(unknown))}')
     rep.expect('extracted files')
     # AGENTS.md / README "How an item earns a place" #3: numbers extracted into a CSV, or the row says context-only.
@@ -671,6 +707,98 @@ def check_extracted(rep, ctx):
                 and not re.search(r'context[- ]only', r['access_status'] + r['pipeline_mapping'], re.I)):
             rep.error('source-uncited', f'{sid} ({r["domain_dir"]}): no extracted-data file of its domain cites it by id, '
                                         f'and its registry row is not marked "Context-only: <reason>"')
+
+
+# ---------------------------------------------------------------------------------------------- file references
+
+# A data file a write-up cites: `extracted_data/<file>` or `full_texts/<file>`, relative to the domain whose FINDINGS.md
+# or INDEX.md section cites it; `<domain>/...` from anywhere; `<sha>:<domain>/...` for a file only git history holds
+# (DOWNLOADS.md's restore commands).
+DATA_REF_RE = re.compile(r'(extracted_data|full_texts)/([A-Za-z0-9_.-]+\.[A-Za-z0-9]+)')
+REF_PREFIX_RE = re.compile(r'(?<![\w.:/-])(?:([0-9a-f]{7,40}):)?(\d\d_[a-z0-9_]+)/$')
+# Root files whose references are checked. The research log is not: it is append-only history, and files have moved
+# since the rounds that named them.
+REF_ROOT_FILES = ('README.md', 'INDEX.md', 'DOWNLOADS.md')
+
+
+def reference_scopes(name, text, domain, domains):
+    """(start, end, domain or None) for each stretch of `text` whose bare references resolve in that domain."""
+    if name != 'INDEX.md':
+        return [(0, len(text), domain)]
+    # Each "## Domain N" section resolves bare references in its own domain; the other sections in none.
+    starts = [m.start() for m in re.finditer(r'^## ', text, flags=re.M)]
+    scopes = [(0, starts[0] if starts else len(text), None)]
+    for a, b in zip(starts, starts[1:] + [len(text)]):
+        m = re.match(r'## Domain (\d+)\b', text[a:b])
+        matches = [d for d in domains if m and d.startswith(f'{int(m.group(1)):02d}_')]
+        scopes.append((a, b, matches[0] if len(matches) == 1 else None))
+    return scopes
+
+
+def check_text_references(rep, files, text, start, end, domain, where):
+    """Report every data file cited in text[start:end] that does not exist; `where(pos)` locates a match for the report."""
+    for m in DATA_REF_RE.finditer(text, start, end):
+        rep.count('file references')
+        before = text[max(start, m.start() - 120):m.start()]
+        prefix = REF_PREFIX_RE.search(before)
+        if prefix:
+            sha, d = prefix.groups()
+        elif before.endswith('/'):
+            rep.error('path-ref-unresolved', f'{where(m.start())}: the directory before {m.group(0)} is not a domain '
+                                             f'directory, so the reference cannot be checked')
+            continue
+        elif domain is None:
+            rep.error('path-ref-no-domain', f'{where(m.start())}: {m.group(0)} names no domain here; write '
+                                            f'<domain>/{m.group(0)}')
+            continue
+        else:
+            sha, d = None, domain
+        path = f'{d}/{m.group(0)}'
+        if sha is not None:
+            rep.count('references into git history')
+            if git(ROOT, 'cat-file', '-e', f'{sha}:{path}')[0] != 0:
+                rep.error('path-ref-missing-at-commit', f'{where(m.start())}: {sha}:{path} is not in the '
+                                                        f'repository\'s history')
+        elif path not in files:
+            rep.error('path-ref-missing', f'{where(m.start())}: {path} does not exist; correct the path, or name a file '
+                                          f'that is no longer here without its directory')
+
+
+def check_references(rep, ctx):
+    """Every data file cited exists, in the working tree or in the commit the reference names. Cited where: FINDINGS.md,
+    README.md, DOWNLOADS.md, INDEX.md above the research log, every registry cell and every candidate cell.
+
+    Ten FINDINGS.md entries said "Full text hosted" for PDFs un-hosted on 2026-09-26; four FINDINGS.md paths, one
+    candidate's evidence and two access_status cells named files that had moved or been un-hosted.
+    """
+    rep.start('file references')
+    files = set(ctx['files'])
+    sources = [(f'{d}/FINDINGS.md', d) for d in ctx['domains']] + [(n, None) for n in REF_ROOT_FILES]
+    for name, domain in sources:
+        if name not in files:
+            continue  # check_layout reports a missing FINDINGS.md or required root file; DOWNLOADS.md is optional
+        try:
+            text = read_text(ROOT / name)
+        except DataError as e:
+            rep.error(e.code, f'{e} — its file references were not checked')
+            continue
+        if name == 'INDEX.md':
+            text = text.split('\n## Research log\n', 1)[0]
+        for start, end, scope_domain in reference_scopes(name, text, domain, ctx['domains']):
+            check_text_references(rep, files, text, start, end, scope_domain,
+                                  lambda pos: f'{name} line {text.count(chr(10), 0, pos) + 1}')
+    # Bare references in a row resolve in the row's domain. The registry rows are the readable ones (check_registry
+    # reports an unreadable sources_domain.csv); the candidates are None when unreadable (check_candidates reports it).
+    for sid, r in ctx['reg'].items():
+        for col in DOMAIN_COLS:
+            check_text_references(rep, files, r[col], 0, len(r[col]), r['domain_dir'],
+                                  lambda pos: f'{r["domain_dir"]}/sources_domain.csv {sid} {col}')
+    for c in ctx['candidates'] if ctx['candidates'] is not None else ():
+        domain = c['domain_dir'] if c['domain_dir'] in ctx['domains'] else None  # cand-domain reports a bad one
+        for col in CANDIDATE_COLS:
+            check_text_references(rep, files, c[col], 0, len(c[col]), domain,
+                                  lambda pos: f'revision_candidates.csv {c["id"]} {col}')
+    rep.expect('file references')
 
 
 # ---------------------------------------------------------------------------------------------- candidates
@@ -714,8 +842,9 @@ def check_candidates(rep, ctx):
         if r['source_ids'] and any(not i or i != i.strip() for i in ids):
             rep.error('cand-source-ids-format', f'{cid}: source_ids {r["source_ids"]!r} must be ids joined by ";" with no '
                                                 f'empty or padded entry')
-        for sid in filter(None, ids):
-            if sid not in reg:
+        for sid in ids:
+            # An empty or padded entry is reported above as a format error, not again as an unknown id.
+            if sid and sid == sid.strip() and sid not in reg and not registry_partial(rep, ctx):
                 rep.error('cand-source-unknown', f'{cid}: source id {sid!r} is not in sources.csv')
         fr = re.fullmatch(r'R(\d+)', r['found_round'])
         if not fr:
@@ -776,9 +905,13 @@ def check_upstream_map(rep, ctx):
         if ref in seen:
             rep.error('map-duplicate', f'{ref} is mapped twice')
         seen.add(ref)
+        cited_in = r['checked_against_in'].split(';')
+        if r['checked_against_in'] and any(not c or c != c.strip() for c in cited_in):
+            rep.error('map-cited-format', f'{ref}: checked_against_in {r["checked_against_in"]!r} must be candidate ids '
+                                          f'joined by ";" with no empty or padded entry')
         if cands is None:
             continue  # revision_candidates.csv is unreadable (reported there), so who cites the row is unknown
-        listed = sorted(filter(None, r['checked_against_in'].split(';')))
+        listed = sorted(filter(None, cited_in))
         citing = sorted(by_ref[ref]) if ref in by_ref else []
         if not citing:
             rep.error('map-unused', f'{ref}: no candidate cites this commit (checked_against_in lists {listed}); '
@@ -913,7 +1046,7 @@ def check_readme(rep, ctx):
 # Order matters: a check reads the ctx keys earlier checks write (reg, latest_round, rejected, candidates,
 # upstream_map) by subscript, so a reordering crashes as check-crashed instead of checking against nothing.
 CHECKS = [check_files, check_layout, check_registry, check_index, check_log, check_log_history, check_rejected,
-          check_manifest, check_extracted, check_candidates, check_upstream_map, check_readme]
+          check_manifest, check_extracted, check_candidates, check_upstream_map, check_references, check_readme]
 
 
 def run(argv=None):
@@ -925,16 +1058,17 @@ def run(argv=None):
 
     rep = Report()
     # reg and rejected feed the summary line, so they exist even if the checks that fill them crash.
-    ctx = {'domains': domain_dirs(), 'reg': {}, 'rejected': {}, 'upstream_heads': {}}
+    ctx = {'domains': domain_dirs(), 'reg': {}, 'rejected': {}, 'upstream_heads': {}, 'unread_domains': set()}
     rep.start('setup')
     try:
         ctx['files'] = repo_files()
         ctx['ignored'] = ignored_files()
     except DataError as e:
-        # Every check then reports nothing-checked or a missing file, so the run fails loudly.
-        rep.error(e.code, str(e))
-        ctx['files'], ctx['ignored'] = [], []
-    checks = CHECKS + ([check_upstream] if args.upstream else [])
+        # Every check reads the file list. Run on an empty one, they would report every file missing; none runs.
+        rep.error(e.code, f'{e} — no check can run without the list of repository files, so none ran')
+        checks = []
+    else:
+        checks = CHECKS + ([check_upstream] if args.upstream else [])
     for check in checks:
         try:
             check(rep, ctx)

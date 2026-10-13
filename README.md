@@ -246,19 +246,21 @@ python tools/validate.py --verbose      # also print how many items each check e
 python tools/validate.py --upstream     # also check cited commits in the sibling upstream clones
 python -m unittest discover -s tools/tests   # the tools' own tests
 python tools/tests/measure_coverage.py  # which lines and branches of the tools no test reaches (needs coverage.py)
-python tools/tests/debug_case.py CODE   # plant one test case's defect and show the full report (--keep, --list)
+python tools/tests/debug_case.py CODE   # plant a code's test cases and show each full report (--keep, --list)
+python tools/tests/debug_case.py --build CODE   # the same for build_registry.py's cases; --accepted runs the valid variants
 ```
 
 `validate.py` checks:
 
 - that every CSV, Markdown, JSON and Python file, and `.gitignore`, is UTF-8 with no byte-order mark, no stray carriage returns and a final newline;
-- that the root and the domain folders hold only what "Layout" lists, that domains are numbered 01..N with no gap or repeat, and that `.gitignore` hides nothing but `__pycache__/` (a hidden file is invisible to every check);
+- that the root and the domain folders hold only what "Layout" lists, that `tools/` holds only Python modules, that domains are numbered 01..N with no gap or repeat, and that `.gitignore` hides nothing but `__pycache__/` (a hidden file is invisible to every check);
 - that every `sources_domain.csv` is rectangular with no empty or padded cell and a well-formed year, and that `sources.csv` matches them;
 - that each INDEX.md table lists exactly its domain's sources in registry order, with five non-empty cells per row;
 - that the research log runs from Round 0 to the latest with no gaps, real dates and no mislabelled entries, and that the committed log survives unchanged as its tail (entries are only ever added at the top; this compares with HEAD, so it catches a rewrite before it is committed; during a merge the merge base's log must be the tail and every line of both sides must be kept, in either order);
-- that every hosted file is in the manifest with the right hash and a licence;
-- that every extracted-data CSV is rectangular, has a `source_id` column and cites registered ids, that every JSON file parses, and that every read source is cited by an extracted-data file of its domain or marked "Context-only: <reason>";
+- that every hosted file is in the manifest, by bare file name, with the right hash and a licence;
+- that every extracted-data CSV is rectangular, has a `source_id` column, holds rows and no all-blank row, and cites registered ids, that every JSON file parses, and that every read source is cited by an extracted-data file of its domain or marked "Context-only: <reason>";
 - that `revision_candidates.csv` uses known statuses, sources, repos and dates, that a candidate names its upstream file (only a `method` candidate may name a model stage instead), that open and blocked candidates were checked against their own target repo, and that `upstream_commit_map.csv` agrees with it and holds no unused row;
+- that every data file cited as `extracted_data/<file>` or `full_texts/<file>` (bare in its own domain, or `<domain>/...`) by a FINDINGS.md, README.md, DOWNLOADS.md, INDEX.md above the research log, a registry cell or a candidate exists, and that a `<sha>:<domain>/...` reference exists in that commit (a file no longer here is named without its directory);
 - that no rejected source is still registered or named anywhere but the research log.
 
 It warns, without failing, only where the decision is the owner's: hosted files
@@ -278,20 +280,27 @@ the clones first.
 Nothing fails silently. The readers stop on a malformed file instead of reading
 around it. A check that crashes is reported as `check-crashed`, one that
 examined nothing as `nothing-checked`, and git that cannot be run as
-`git-unavailable`. Every finding carries a code. When a file another check
-depends on is unreadable, that failure is reported and the dependent
-cross-checks are skipped rather than reported a second time as false errors.
+`git-unavailable`; if git cannot list the repository's files, no check runs.
+Every finding carries a code. When a file another check depends on is
+unreadable, that failure is reported and the dependent cross-checks are skipped
+rather than reported a second time as false errors: while a `sources_domain.csv`
+is unreadable, no id is reported as unknown, since it may be in that file.
 
 `tools/tests` builds a throwaway fixture repository (with sibling upstream
 clones), plants a defect for every code (one case for each place that reports
-it) and fails if a code has no case. It also checks that valid variants pass
+it) and fails if a code has no case. Each case's report must hold exactly its
+code plus the codes the case declares the defect also causes, so a check that
+misfires on another check's input fails the suite. Cases run in parallel. It
+also checks that valid variants pass
 (CRLF line ends, a lazy-continuation paragraph in a log entry, a blank
 `source_id`), that no planted defect crashes a check, that every check function
 is registered, and that the tools hold no `except` that swallows an error and
 none of the fallback idioms that hid defects here before (`dict.get` with a
 default, `hasattr`, `utf-8-sig`, `errors="replace"`). `measure_coverage.py`
 runs the suite under coverage.py and fails unless every line and branch of the
-three tools is reached; run it after changing `tools/`. Standard library and
+three tools is reached; run it after changing `tools/`. `test_scripts.py`
+runs the pass and fail paths of `debug_case.py` and `measure_coverage.py`
+themselves. Standard library and
 git only (coverage.py for `measure_coverage.py` alone); Python 3.8+.
 
 ## Provenance of this process

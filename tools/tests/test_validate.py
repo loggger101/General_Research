@@ -3,8 +3,10 @@
     python -m unittest discover -s tools/tests -v
 
 Each case copies a valid fixture repository (fixture.py), plants one defect and asserts that validate.py reports
-that defect's code: an ERROR fails the run; a WARN does not, except under --strict. test_every_code_has_a_case
-fails if validate.py or common.py can report a code that no case here plants, so a new check cannot land untested.
+that defect's code: an ERROR fails the run; a WARN does not, except under --strict. The report must hold exactly the
+planted code and the codes the case declares it also causes, so a check that misfires on another check's input fails
+too. test_every_code_has_a_case fails if validate.py or common.py can report a code that no case here plants, so a new
+check cannot land untested. Cases run in parallel threads; each one's validate.py runs are subprocesses.
 """
 import ast
 import contextlib
@@ -18,6 +20,7 @@ import sys
 import tempfile
 import unittest
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -131,6 +134,17 @@ def without_git_on_path(root, shas):
     return {'env': {'PATH': str(Path(sys.executable).parent)}}
 
 
+class _NoSubprocess:
+    @staticmethod
+    def run(*args, **kwargs):
+        raise OSError('planted: git cannot be run')
+
+
+def no_git_for_validate(v):
+    """validate.py's own git calls fail to start; common.py's file listing (its own subprocess import) still works."""
+    v.subprocess = _NoSubprocess
+
+
 def swap_lines(root, rel, a, b):
     text = (root / rel).read_text(encoding='utf-8')
     if text.count(a) != 1 or text.count(b) != 1:
@@ -140,7 +154,8 @@ def swap_lines(root, rel, a, b):
 
 
 # ------------------------------------------------------------------------------------------- the cases
-# (code, level, args, mutate) — mutate(root, shas) plants the defect. level is 'error' or 'warn'.
+# (code, level, args, mutate[, also]) — mutate(root, shas) plants the defect. level is 'error' or 'warn'. `also` names
+# the other codes the defect must also report (a deleted file is missing, and the checks that read it say so too).
 # A mutate that returns a callable runs validate in-process and passes that callable the loaded module to patch; one
 # that returns {'env': {...}} runs it with those environment variables overridden.
 # A code may have several cases: one per place that reports it (measure_coverage.py finds a place with none).
@@ -172,17 +187,22 @@ def crash_manifest(v):
 
 CASES = [
     # common.py readers
-    ('file-missing', 'error', [], lambda r, s: delete(r, CANDS)),
+    ('file-missing', 'error', [], lambda r, s: delete(r, CANDS), {'root-file-missing'}),
     ('text-bom', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', BOM + b'# findings\n')),
     ('text-not-utf8', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', b'# caf\xe9\n')),
     ('csv-blank-line', 'error', [], lambda r, s: edit(r, CANDS, '\nrc-002', '\n\nrc-002')),
     ('csv-quoting', 'error', [], lambda r, s: edit(r, X_BETA, 'src_live,rate', 'src_live,"rate"x')),
-    ('csv-empty', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_empty.csv', b'')),
+    ('csv-empty', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_empty.csv', b''), {'text-empty'}),
     ('csv-width', 'error', [], lambda r, s: edit(r, X_BETA, 'API,', 'API,extra,')),
-    ('domain-header', 'error', [], lambda r, s: edit(r, BETA_CSV, 'short_title', 'title')),
+    # An unreadable sources_domain.csv: its ids are not claimed unknown anywhere else (registry_partial).
+    ('domain-header', 'error', [], lambda r, s: edit(r, BETA_CSV, 'short_title', 'title'), {'registry-stale'}),
+    ('domain-header', 'error', [], lambda r, s: edit(r, ALPHA_CSV, 'short_title', 'title'), {'registry-stale'}),
+    ('domain-header', 'error', [], lambda r, s: (edit(r, BETA_CSV, 'short_title', 'title'),
+                                                 edit(r, 'INDEX.md', ROW_ALPHA_PENDING, ROW_ALPHA_PENDING + ROW_BETA)), {'registry-stale'}),
+    # No file list: no check runs, rather than every check reporting every file missing.
     ('git-ls-files', 'error', [], lambda r, s: delete(r, '.git')),
     ('git-ls-files', 'error', [], without_git_on_path),
-    ('git-unavailable', 'error', [], without_git_on_path),
+    ('git-unavailable', 'error', [], lambda r, s: no_git_for_validate),
     # the same readers, where each check meets a file it cannot read
     ('text-bom', 'error', [], lambda r, s: put(r, 'sources.csv', BOM + (r / 'sources.csv').read_bytes())),
     ('text-bom', 'error', [], lambda r, s: put(r, X_JSON, BOM + (r / X_JSON).read_bytes())),
@@ -190,34 +210,35 @@ CASES = [
     ('csv-width', 'error', [], lambda r, s: edit(r, MAN, '01_alpha,src_hosted,', '01_alpha,src_hosted,extra,')),
     # an unreadable candidates file or map: the checks that read them skip their cross-checks, they do not crash
     ('csv-width', 'error', ['--upstream'], lambda r, s: edit(r, MAP, ',M1,rc-002', ',M1,rc-002,extra')),
-    ('file-missing', 'error', ['--upstream'], lambda r, s: delete(r, CANDS)),
+    ('file-missing', 'error', ['--upstream'], lambda r, s: delete(r, CANDS), {'root-file-missing'}),
     # check_files
     ('text-empty', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', b'')),
     ('text-doubled-cr', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', b'# a\r\r\nb\r\r\n')),
     ('text-lone-cr', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', b'# a\rb\n')),
     ('text-no-final-newline', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', b'# findings')),
     # check_layout
-    ('root-extracted-data', 'error', [], lambda r, s: put(r, 'extracted_data/r1.csv', 'source_id\nsrc_live\n')),
+    ('root-extracted-data', 'error', [], lambda r, s: put(r, 'extracted_data/r1.csv', 'source_id\nsrc_live\n'), {'root-unexpected-entry'}),
     ('root-unexpected-entry', 'error', [], lambda r, s: put(r, 'notes.txt', 'stray\n')),
     ('root-file-missing', 'error', [], lambda r, s: delete(r, 'AGENTS.md')),
-    ('domain-number-duplicate', 'error', [], lambda r, s: put(r, '02_gamma/FINDINGS.md', '# gamma\n')),
-    ('domain-number-gap', 'error', [], lambda r, s: put(r, '04_delta/FINDINGS.md', '# delta\n')),
+    ('domain-number-duplicate', 'error', [], lambda r, s: put(r, '02_gamma/FINDINGS.md', '# gamma\n'), {'domain-file-missing', 'file-missing', 'index-domain-missing', 'index-domain-no-dir', 'readme-domain-missing', 'registry-stale'}),
+    ('domain-number-gap', 'error', [], lambda r, s: put(r, '04_delta/FINDINGS.md', '# delta\n'), {'domain-file-missing', 'file-missing', 'index-domain-missing', 'readme-domain-missing', 'readme-domain-table', 'registry-stale'}),
     ('domain-unexpected-entry', 'error', [], lambda r, s: put(r, '01_alpha/notes.txt', 'stray\n')),
     ('domain-unexpected-entry', 'error', [], lambda r, s: put(r, '01_alpha/extracted_data/sub/r1.csv', 'source_id\n')),
+    ('tools-unexpected-entry', 'error', [], lambda r, s: put(r, 'tools/notes.txt', 'stray\n')),
     ('ignored-file', 'error', [], lambda r, s: (put(r, '.gitignore', '__pycache__/\n*.bak\n'),
                                                 put(r, '01_alpha/extracted_data/r1_alpha.bak', 'hidden\n'))),
     ('extracted-bad-extension', 'error', [], lambda r, s: put(r, '01_alpha/extracted_data/table.xlsx', b'PK')),
     ('domain-file-missing', 'error', [], lambda r, s: delete(r, '02_beta/FINDINGS.md')),
-    ('nothing-checked', 'error', [], lambda r, s: [delete(r, p) for p in (X_ALPHA, X_BETA, X_JSON)]),
+    ('nothing-checked', 'error', [], lambda r, s: [delete(r, p) for p in (X_ALPHA, X_BETA, X_JSON)], {'path-ref-missing', 'source-uncited'}),
     # check_registry
     ('domain-field-empty', 'error', [], lambda r, s: domain_edit(r, ALPHA_CSV, ',Doe,', ',,')),
     ('domain-field-whitespace', 'error', [], lambda r, s: domain_edit(r, ALPHA_CSV, ',Doe,', ', Doe,')),
     ('year-format', 'error', [], lambda r, s: domain_edit(r, ALPHA_CSV, ',2020,', ',circa 2020,')),
     ('registry-header', 'error', [], lambda r, s: edit(r, 'sources.csv', 'domain_dir,', 'domain,')),
     ('registry-stale', 'error', [], lambda r, s: edit(r, ALPHA_CSV, 'Hosted paper', 'Hosted article')),
-    ('registry-duplicate-id', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, 'src_live,', 'src_hosted,')),
-    ('id-format', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, 'src_live,', 'Src Live,')),
-    ('tier', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, ',T3,', ',T9,')),
+    ('registry-duplicate-id', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, 'src_live,', 'src_hosted,'), {'cand-source-unknown', 'extracted-unknown-source', 'index-id-unknown'}),
+    ('id-format', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, 'src_live,', 'Src Live,'), {'cand-source-unknown', 'extracted-unknown-source', 'index-id-unknown', 'index-missing-rows', 'source-uncited'}),
+    ('tier', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, ',T3,', ',T9,'), {'index-tier'}),
     ('access-class', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, 'verified_live_not_pulled', 'downloaded')),
     # check_index
     ('index-domain-no-dir', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Rejected sources',
@@ -229,8 +250,9 @@ CASES = [
     ('index-separator', 'error', [], lambda r, s: edit(r, 'INDEX.md', '|---|---|---|---|---|\n' + ROW_BETA,
                                                        '|---|---|\n' + ROW_BETA)),
     ('index-row-cells', 'error', [], lambda r, s: edit(r, 'INDEX.md', ROW_BETA, '| src_live | T3 | verified live, not hosted |\n')),
+    ('index-row-cells', 'error', [], lambda r, s: edit(r, 'INDEX.md', ROW_BETA, ROW_BETA + '| | T3 |\n')),
     ('index-empty-cell', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| the gamma cell |', '|  |')),
-    ('index-id-unknown', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| src_live |', '| src_nope |')),
+    ('index-id-unknown', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| src_live |', '| src_nope |'), {'index-missing-rows'}),
     ('index-wrong-domain', 'error', [], lambda r, s: edit(r, 'INDEX.md', ROW_ALPHA_PENDING, ROW_ALPHA_PENDING + ROW_BETA)),
     ('index-tier', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| src_live | T3 |', '| src_live | T2 |')),
     ('index-access-in-last-cell', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| the gamma cell |', '| verified live |')),
@@ -242,34 +264,34 @@ CASES = [
                                                       edit(r, 'INDEX.md', '## Domain 1', DOMAIN2_SECTION + '## Domain 1'))),
     ('index-domain-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', DOMAIN2_SECTION, '')),
     # check_log
-    ('log-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Research log', '## Log')),
-    ('log-not-last', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG0, LOG0 + '## Appendix\n')),
-    ('log-date-invalid', 'error', [], lambda r, s: edit(r, 'INDEX.md', '(2026-01-02)', '(2026-02-30)')),
-    ('log-date-future', 'error', [], lambda r, s: edit(r, 'INDEX.md', '(2026-01-02)', '(2999-01-02)')),
+    ('log-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Research log', '## Log'), {'rejected-position', 'rejected-still-named'}),
+    ('log-not-last', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG0, LOG0 + '## Appendix\n'), {'log-mislabelled', 'log-rewritten'}),
+    ('log-date-invalid', 'error', [], lambda r, s: edit(r, 'INDEX.md', '(2026-01-02)', '(2026-02-30)'), {'log-rewritten'}),
+    ('log-date-future', 'error', [], lambda r, s: edit(r, 'INDEX.md', '(2026-01-02)', '(2999-01-02)'), {'log-rewritten'}),
     ('log-entry-format', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, '- **R2** (2026-01-03): x\n' + LOG1)),
     ('log-mislabelled', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, '### R2 (2026-01-03)\n' + LOG1)),
     ('log-mislabelled', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, 'Round 2 (2026-01-03): unlabelled\n' + LOG1)),
-    ('log-blank-line', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, LOG1 + '\n')),
+    ('log-blank-line', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, LOG1 + '\n'), {'log-rewritten'}),
     ('log-preamble', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, 'Rounds below.\n' + LOG1)),
-    ('log-no-rounds', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1 + LOG0, '- **Maintenance** (2026-01-01): x\n')),
-    ('log-order', 'error', [], lambda r, s: swap_lines(r, 'INDEX.md', LOG1, LOG0)),
-    ('log-gap', 'error', [], lambda r, s: edit(r, 'INDEX.md', '**Round 1**', '**Round 2**')),
+    ('log-no-rounds', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1 + LOG0, '- **Maintenance** (2026-01-01): x\n'), {'log-rewritten'}),
+    ('log-order', 'error', [], lambda r, s: swap_lines(r, 'INDEX.md', LOG1, LOG0), {'log-date-order', 'log-rewritten'}),
+    ('log-gap', 'error', [], lambda r, s: edit(r, 'INDEX.md', '**Round 1**', '**Round 2**'), {'log-rewritten'}),
     ('log-duplicate', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, LOG1 * 2)),
-    ('log-date-order', 'error', [], lambda r, s: edit(r, 'INDEX.md', '(2026-01-02)', '(2025-12-31)')),
+    ('log-date-order', 'error', [], lambda r, s: edit(r, 'INDEX.md', '(2026-01-02)', '(2025-12-31)'), {'log-rewritten'}),
     # check_log_history
     ('log-rewritten', 'error', [], lambda r, s: edit(r, 'INDEX.md', 'first round.', 'first round, reworded.')),
-    ('log-rewritten', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1 + LOG0, '')),  # R43: older entries deleted
-    ('log-no-baseline', 'error', [], lambda r, s: reinit_without_commit(r)),
+    ('log-rewritten', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1 + LOG0, ''), {'log-no-rounds', 'log-preamble', 'nothing-checked'}),  # R43: older entries deleted
+    ('log-no-baseline', 'error', [], lambda r, s: reinit_without_commit(r), {'path-ref-missing-at-commit'}),
     ('log-no-baseline', 'error', [], lambda r, s: commit_head_index(r, None)),
     ('log-no-baseline', 'error', [], lambda r, s: commit_head_index(r, b'# caf\xe9\n')),
     ('log-no-baseline', 'error', [], lambda r, s: commit_head_index(r, b'# Fixture index\n\n## Log\n')),
     # a merge in progress (the 2026-10-12 R153 merge): the base log is the tail and both sides' lines are kept
     ('log-merge-lost', 'error', [], lambda r, s: start_merge(r, merged=[SIDE_A])),
-    ('log-rewritten', 'error', [], lambda r, s: (start_merge(r), edit(r, 'INDEX.md', 'first round.', 'first round, reworded.'))),
+    ('log-rewritten', 'error', [], lambda r, s: (start_merge(r), edit(r, 'INDEX.md', 'first round.', 'first round, reworded.')), {'log-merge-lost'}),
     ('log-no-baseline', 'error', [], lambda r, s: merge_with_unrelated_history(r)),
     ('log-no-baseline', 'error', [], lambda r, s: start_merge(r, merged=[SIDE_A], side_b_index='# Fixture index\n\n## Log\n')),
     # check_rejected
-    ('rejected-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Rejected sources\n', '')),
+    ('rejected-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Rejected sources\n', ''), {'index-row-cells', 'index-table-split'}),
     ('rejected-position', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Research log', '## Notes\n\ntext\n\n## Research log')),
     ('rejected-no-table', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| id | source | link | reason |\n|---|---|---|---|\n' + REJ_ROW, 'none\n')),
     ('rejected-table-split', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, REJ_ROW + '\n| rej_two | b | c | d |\n')),
@@ -279,24 +301,25 @@ CASES = [
     ('rejected-row-cells', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, '| rej_one | off-topic |\n')),
     ('rejected-duplicate', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, REJ_ROW * 2)),
     ('rejected-empty-cell', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| off-topic |', '|  |')),
-    ('rejected-still-registered', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, REJ_ROW + '| src_live | b | c | d |\n')),
+    ('rejected-still-registered', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, REJ_ROW + '| src_live | b | c | d |\n'), {'rejected-still-named'}),
     ('rejected-still-named', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', '# findings\nrej_one was useful\n')),
     # check_manifest
     ('manifest-header', 'error', [], lambda r, s: edit(r, MAN, 'license', 'licence')),
     ('manifest-license', 'error', [], lambda r, s: edit(r, MAN, 'cc-by 4.0', 'gpl 3')),
     ('manifest-duplicate', 'error', [], lambda r, s: duplicate_first_row(r, MAN)),
-    ('manifest-domain-unknown', 'error', [], lambda r, s: edit(r, MAN, '01_alpha,src_hosted', '09_nope,src_hosted')),
-    ('manifest-id-unknown', 'error', [], lambda r, s: edit(r, MAN, 'src_hosted', 'src_nope')),
-    ('manifest-wrong-domain', 'error', [], lambda r, s: edit(r, MAN, '01_alpha,src_hosted', '02_beta,src_hosted')),
-    ('manifest-file-missing', 'error', [], lambda r, s: edit(r, MAN, 'hosted.pdf', 'gone.pdf')),
-    ('manifest-stale', 'error', [], lambda r, s: put(r, '01_alpha/full_texts/hosted.pdf', b'%PDF-1.4 changed\n')),
+    ('manifest-domain-unknown', 'error', [], lambda r, s: edit(r, MAN, '01_alpha,src_hosted', '09_nope,src_hosted'), {'hosted-without-file', 'manifest-unlisted-file'}),
+    ('manifest-id-unknown', 'error', [], lambda r, s: edit(r, MAN, 'src_hosted', 'src_nope'), {'hosted-without-file'}),
+    ('manifest-wrong-domain', 'error', [], lambda r, s: edit(r, MAN, '01_alpha,src_hosted', '02_beta,src_hosted'), {'hosted-without-file', 'manifest-file-missing', 'manifest-unlisted-file'}),
+    ('manifest-file-missing', 'error', [], lambda r, s: edit(r, MAN, 'hosted.pdf', 'gone.pdf'), {'hosted-without-file', 'manifest-unlisted-file'}),
+    ('manifest-file-name', 'error', [], lambda r, s: edit(r, MAN, ',hosted.pdf,', ',../full_texts/hosted.pdf,'), {'hosted-without-file', 'manifest-unlisted-file'}),
+    ('manifest-stale', 'error', [], lambda r, s: put(r, '01_alpha/full_texts/hosted.pdf', b'%PDF-1.4 changed\n'), {'access-sha-mismatch'}),
     ('manifest-file-too-large', 'error', [], lambda r, s: (lambda v: setattr(v, 'GITHUB_HARD_LIMIT', 1))),
     ('manifest-file-large', 'warn', [], lambda r, s: (lambda v: setattr(v, 'GITHUB_WARN_LIMIT', 1))),
     ('manifest-not-redistributable', 'warn', [], lambda r, s: edit(r, MAN, 'cc-by 4.0', 'unknown')),
     ('manifest-unlisted-file', 'error', [], lambda r, s: put(r, '02_beta/full_texts/extra.pdf', b'%PDF extra\n')),
     ('hosted-without-file', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, 'verified_live_not_pulled - read live',
-                                                                  'full_text_hosted - claimed')),
-    ('file-without-hosted', 'error', [], lambda r, s: domain_edit(r, ALPHA_CSV, 'full_text_hosted', 'verified_live_not_pulled')),
+                                                                  'full_text_hosted - claimed'), {'index-access-mismatch'}),
+    ('file-without-hosted', 'error', [], lambda r, s: domain_edit(r, ALPHA_CSV, 'full_text_hosted', 'verified_live_not_pulled'), {'index-access-mismatch'}),
     ('access-sha-mismatch', 'warn', [], lambda r, s: domain_edit(r, ALPHA_CSV, 'read from the fixture PDF',
                                                                  'read from the fixture PDF sha256=deadbeef')),
     # check_extracted
@@ -308,10 +331,27 @@ CASES = [
     ('extracted-source-id-format', 'error', [], lambda r, s: edit(r, X_BETA, '\nsrc_live,', '\nsrc_live;,')),
     ('extracted-source-id-format', 'error', [], lambda r, s: edit(r, X_BETA, '\nsrc_live,', '\nsrc_live; src_live,')),
     ('extracted-no-source-col', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_plain.csv', 'item,value\nsrc_live rate,2\n')),
+    ('extracted-no-rows', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_header_only.csv', 'source_id,item\n')),
+    ('extracted-row-empty', 'error', [], lambda r, s: put(r, X_BETA, (r / X_BETA).read_text(encoding='utf-8') + ',,,,,\n')),
     ('source-uncited', 'error', [], lambda r, s: edit(r, X_ALPHA, '\nsrc_hosted,', '\n,')),
+    # check_references: a FINDINGS.md path, an INDEX.md domain section's bare path, a registry cell, a candidate cell
+    ('path-ref-missing', 'error', [], lambda r, s: edit(r, '01_alpha/FINDINGS.md', 'extracted_data/r1_alpha.csv',
+                                                        'extracted_data/r1_gone.csv')),
+    ('path-ref-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '`extracted_data/r1_alpha.csv`',
+                                                        '`extracted_data/r1_gone.csv`')),
+    ('path-ref-missing', 'error', [], lambda r, s: domain_edit(r, ALPHA_CSV, 'the alpha cell',
+                                                               'the alpha cell (02_beta/full_texts/gone.pdf)')),
+    ('path-ref-missing', 'error', [], lambda r, s: edit(r, CANDS, 'the hosted paper gives 2',
+                                                        'the hosted paper gives 2 (extracted_data/gone.csv)')),
+    ('path-ref-missing-at-commit', 'error', [], lambda r, s: edit(r, 'DOWNLOADS.md', 'full_texts/hosted.pdf',
+                                                                  'full_texts/never.pdf')),
+    ('path-ref-unresolved', 'error', [], lambda r, s: edit(r, '02_beta/FINDINGS.md', '01_alpha/extracted_data',
+                                                           'alpha/extracted_data')),
+    ('path-ref-no-domain', 'error', [], lambda r, s: edit(r, 'README.md', '# Fixture\n',
+                                                          '# Fixture\n\nSee `extracted_data/r1_alpha.csv`.\n')),
     # check_candidates
     ('cand-header', 'error', [], lambda r, s: edit(r, CANDS, 'checked_date', 'date')),
-    ('cand-id', 'error', [], lambda r, s: edit(r, CANDS, 'rc-002', 'rc-2')),
+    ('cand-id', 'error', [], lambda r, s: edit(r, CANDS, 'rc-002', 'rc-2'), {'map-cited-mismatch'}),
     ('cand-field-empty', 'error', [], lambda r, s: edit(r, CANDS, 'upstream applied it', '')),
     ('cand-status', 'error', [], lambda r, s: edit(r, CANDS, 'rc-002,applied', 'rc-002,pending')),
     ('cand-kind', 'error', [], lambda r, s: edit(r, CANDS, ',citation,', ',guess,')),
@@ -322,24 +362,25 @@ CASES = [
     ('cand-date', 'error', [], lambda r, s: edit(r, CANDS, '2026-01-01', '2026-13-01')),
     ('cand-date-future', 'error', [], lambda r, s: edit(r, CANDS, '2026-01-01', '2999-01-01')),
     ('cand-target-repo', 'error', [], lambda r, s: edit(r, CANDS, 'R0,spacecost', 'R0,otherrepo')),
-    ('cand-checked-against', 'error', [], lambda r, s: edit(r, CANDS, f'spacecost@{s["O"]}', 'spacecost-abc')),
+    ('cand-checked-against', 'error', [], lambda r, s: edit(r, CANDS, f'spacecost@{s["O"]}', 'spacecost-abc'), {'map-unused'}),
     ('cand-source-ids-format', 'error', [], lambda r, s: edit(r, CANDS, '02_beta,src_live,', '02_beta,src_live;,')),
     ('cand-target-file', 'error', [], lambda r, s: edit(r, CANDS, ',spacecost,reference.csv,x,x,', ',spacecost,the cascade,x,x,')),
     ('cand-checked-wrong-repo', 'error', [], lambda r, s: edit(r, CANDS, f'spacecost@{s["M1"]}', 'AsteroidCatalog@abcdef1')),
     # check_upstream_map
     ('map-header', 'error', [], lambda r, s: edit(r, MAP, 'main_sha', 'new_sha')),
-    ('map-repo', 'error', [], lambda r, s: edit(r, MAP, '\nspacecost,', '\notherrepo,')),
+    ('map-repo', 'error', [], lambda r, s: edit(r, MAP, '\nspacecost,', '\notherrepo,'), {'map-unused'}),
     ('map-sha-format', 'error', [], lambda r, s: edit(r, MAP, s['tree1'][:12], 'not-a-sha')),
     ('map-duplicate', 'error', [], lambda r, s: duplicate_first_row(r, MAP)),
     ('map-cited-mismatch', 'error', [], lambda r, s: edit(r, MAP, ',rc-002', ',rc-001')),
+    ('map-cited-format', 'error', [], lambda r, s: edit(r, MAP, ',rc-002', ',rc-002;')),
     ('map-unused', 'error', [], lambda r, s: put(r, MAP, (r / MAP).read_text(encoding='utf-8')
                                                  + f'spacecost,{s["O2"]},{s["M0"]},{s["tree0"][:12]},M0,\n')),
     # check_upstream (--upstream)
     ('upstream-repo-missing', 'error', ['--upstream'], lambda r, s: delete(r.parent, 'AsteroidCatalog')),
-    ('upstream-repo-missing', 'error', ['--upstream'], lambda r, s: delete(r.parent, 'spacecost')),
+    ('upstream-repo-missing', 'error', ['--upstream'], lambda r, s: delete(r.parent, 'spacecost'), {'nothing-checked'}),
     ('map-not-equivalent', 'error', ['--upstream'], lambda r, s: edit(r, MAP, s['M1'], s['M0'])),
     ('map-tree-mismatch', 'error', ['--upstream'], lambda r, s: edit(r, MAP, s['tree1'][:12], 'abcdef123456')),
-    ('map-old-on-main', 'error', ['--upstream'], lambda r, s: edit(r, MAP, f'spacecost,{s["O"]}', f'spacecost,{s["M1"]}')),
+    ('map-old-on-main', 'error', ['--upstream'], lambda r, s: edit(r, MAP, f'spacecost,{s["O"]}', f'spacecost,{s["M1"]}'), {'map-cited-mismatch', 'upstream-sha-unmapped'}),
     ('map-subject-mismatch', 'error', ['--upstream'], lambda r, s: edit(r, MAP, ',M1,rc-002', ',M1 renamed,rc-002')),
     ('upstream-target-file-missing', 'error', ['--upstream'],
      lambda r, s: edit(r, CANDS, ',spacecost,reference.csv,x,x,', ',spacecost,missing.csv,x,x,')),
@@ -348,7 +389,7 @@ CASES = [
     ('upstream-sha-unknown', 'error', ['--upstream'], lambda r, s: edit(r, CANDS, f'spacecost@{s["M1"]}', 'spacecost@' + 'f' * 40)),
     ('upstream-open-off-main', 'error', ['--upstream'], lambda r, s: edit(r, CANDS, f'spacecost@{s["M1"]}', f'spacecost@{s["O2"]}')),
     ('upstream-sha-unmapped', 'error', ['--upstream'], lambda r, s: (edit(r, CANDS, f'spacecost@{s["O"]}', f'spacecost@{s["O2"]}'),
-                                                                     edit(r, MAP, ',rc-002', ','))),
+                                                                     edit(r, MAP, ',rc-002', ',')), {'map-unused'}),
     # check_readme
     ('readme-layout-missing', 'error', [], lambda r, s: edit(r, 'README.md', '## Layout', '## Files')),
     ('readme-domain-missing', 'error', [], lambda r, s: drop_line(r, 'README.md', '02_beta/')),
@@ -370,6 +411,57 @@ def codes_in_source():
 
 # ------------------------------------------------------------------------------------------- running
 
+REPORT_RE = re.compile(r'(?m)^(ERROR|WARN ) \[[^\]]+\] ([a-z0-9-]+): ')
+
+
+def reported_codes(out):
+    """Every code a validate.py report holds."""
+    return {code for _, code in REPORT_RE.findall(out)}
+
+
+def case_parts(case):
+    """(code, level, args, mutate, also) of a CASES entry; `also` is empty when the case declares none."""
+    if len(case) not in (4, 5):
+        raise AssertionError(f'test setup: a case has {len(case)} fields, expected 4 or 5: {case[:3]}')
+    code, level, args, mutate = case[:4]
+    return code, level, args, mutate, set(case[4]) if len(case) == 5 else set()
+
+
+def problems(case, rc, out, strict_rc, stderr):
+    """What is wrong with one case's run, one message each; empty when the report holds the planted code at its level
+    and no codes but it and its `also`, and the exit codes are what that level gives."""
+    code, level, _, _, also = case_parts(case)
+    found = []
+    tag = 'ERROR' if level == 'error' else 'WARN '
+    if not re.search(rf'(?m)^{tag} \[[^\]]+\] {re.escape(code)}: ', out):
+        found.append(f'{code} is not reported as {level}')
+    codes = reported_codes(out)
+    if codes - {code} - also:
+        found.append(f'codes the case does not declare: {sorted(codes - {code} - also)} (a check misfired, or the '
+                     f'planted defect really causes them and the case should list them in `also`)')
+    if also - codes:
+        found.append(f'codes the case declares but the report lacks: {sorted(also - codes)}')
+    if stderr:
+        found.append(f'validate.py wrote to stderr:\n{stderr}')
+    if strict_rc != 1:
+        found.append(f'--strict exit {strict_rc}, expected 1')
+    if level == 'error' and rc != 1:
+        found.append(f'exit {rc}, expected 1 for an error')
+    if level == 'warn' and (rc != 0 or re.search(r'(?m)^ERROR ', out)):
+        found.append(f'exit {rc} with errors in the report: a warning alone must not fail the run')
+    if code != 'check-crashed' and 'Traceback' in out:
+        # A check that crashes on bad input stops checking it; every defect must be reported, not crash.
+        found.append('a traceback in the report')
+    return found
+
+
+def run_validate_proc(root, args, env=None, cwd=None):
+    """validate.py in a subprocess: (exit code, stdout, stderr). Safe to call from worker threads."""
+    proc = subprocess.run([sys.executable, str(root / 'tools' / 'validate.py'), *args], capture_output=True,
+                          text=True, encoding='utf-8', env=dict(os.environ, **(env or {})), cwd=cwd)
+    return proc.returncode, proc.stdout, proc.stderr
+
+
 class FixtureCase(unittest.TestCase):
     template = None
 
@@ -385,22 +477,20 @@ class FixtureCase(unittest.TestCase):
         fixture.remove_tree(cls._tmp)
 
     def copy(self):
-        """A fresh copy of the template (repo and upstream siblings); returns the repo root."""
+        """A fresh copy of the template (repo and upstream siblings); returns the repo root. Thread-safe."""
         parent = Path(tempfile.mkdtemp(prefix='case-', dir=self._tmp))
-        fixture.remove_tree(parent)
-        shutil.copytree(self.template, parent)
+        shutil.copytree(self.template, parent / 'c')
         self.addCleanup(fixture.remove_tree, parent)
-        return parent / fixture.REPO
+        return parent / 'c' / fixture.REPO
 
     def run_validate(self, root, *args, env=None, cwd=None):
-        full_env = dict(os.environ, **(env or {}))
-        proc = subprocess.run([sys.executable, str(root / 'tools' / 'validate.py'), *args], capture_output=True,
-                              text=True, encoding='utf-8', env=full_env, cwd=cwd)
-        self.assertEqual(proc.stderr, '', f'validate.py wrote to stderr:\n{proc.stderr}')
-        return proc.returncode, proc.stdout
+        rc, out, err = run_validate_proc(root, args, env, cwd)
+        self.assertEqual(err, '', f'validate.py wrote to stderr:\n{err}')
+        return rc, out
 
     def run_inprocess(self, root, args, patch):
-        """Load the copy's validate.py, let `patch` alter it, run it and capture its output."""
+        """Load the copy's validate.py, let `patch` alter it, run it and capture its output. Main thread only: it
+        swaps sys.modules and sys.stdout."""
         tools = str(root / 'tools')
         saved = {m: sys.modules.pop(m) for m in ('common', 'validate', 'build_registry') if m in sys.modules}
         sys.path.insert(0, tools)
@@ -417,6 +507,28 @@ class FixtureCase(unittest.TestCase):
             for m in ('common', 'validate', 'build_registry'):
                 sys.modules.pop(m, None)
             sys.modules.update(saved)
+
+    def start_case(self, case):
+        """Plant `case` in a fresh copy and, unless its plan patches validate.py in-process, run validate.py on it
+        normally and with --strict. Returns (root, plan, (rc, out, strict_rc, stderr) or None). Thread-safe."""
+        _, _, args, mutate, _ = case_parts(case)
+        root = self.copy()
+        plan = mutate(root, self.shas)
+        if callable(plan):
+            return root, plan, None
+        env = plan['env'] if isinstance(plan, dict) else None
+        rc, out, err = run_validate_proc(root, args, env)
+        strict_rc, _, strict_err = run_validate_proc(root, args + ['--strict'], env)
+        return root, plan, (rc, out, strict_rc, err + strict_err)
+
+    def finish_case(self, case, started):
+        """(rc, out, strict_rc, stderr) of a started case; an in-process case runs now, on this (the main) thread."""
+        root, plan, result = started
+        if result is not None:
+            return result
+        args = case_parts(case)[2]
+        rc, out = self.run_inprocess(root, args, plan)
+        return rc, out, self.run_inprocess(root, args + ['--strict'], plan)[0], ''
 
 
 def crlf_tree(root):
@@ -487,12 +599,16 @@ class TestValidate(FixtureCase):
             self.assertNotIn('ERROR', out)
 
     def test_accepted_variants_pass(self):
-        for label, mutate in ACCEPTED:
-            with self.subTest(variant=label):
-                root = self.copy()
-                mutate(root)
-                rc, out = self.run_validate(root, '--strict', '--upstream')
-                self.assertEqual(rc, 0, f'{label}: rejected:\n{out}')
+        def start(variant):
+            root = self.copy()
+            variant[1](root)
+            return run_validate_proc(root, ['--strict', '--upstream'])
+        with ThreadPoolExecutor() as pool:
+            futures = [pool.submit(start, v) for v in ACCEPTED]
+            for (label, _), future in zip(ACCEPTED, futures):
+                with self.subTest(variant=label):
+                    rc, out, err = future.result()
+                    self.assertEqual((rc, err), (0, ''), f'{label}: rejected:\n{out}{err}')
 
     def test_summary_says_whether_upstream_ran(self):
         root = self.copy()
@@ -504,7 +620,8 @@ class TestValidate(FixtureCase):
         self.assertEqual(rc, 0, out)
         for expected in ('3 sources', '2 domain tables', '2 log entries', '3 committed log lines', '1 manifest rows',
                          '3 extracted files', '4 candidates', '1 map rows', '5 commits checked', '3 target files checked',
-                         '1 targets named by model stage', 'compared with origin/main AsteroidCatalog@'):
+                         '1 targets named by model stage', 'compared with origin/main AsteroidCatalog@',
+                         '5 file references, 1 references into git history'):
             self.assertIn(expected, out)
         rc, out = self.run_validate(self.copy(), '--verbose')
         self.assertEqual(rc, 0, out)
@@ -517,25 +634,6 @@ class TestValidate(FixtureCase):
         rc, out = self.run_validate(root, env={'PYTHONIOENCODING': 'ascii'}, cwd=str(root.parent))
         self.assertEqual(rc, 0, out)
         self.assertIn('rejected — 0 error(s)', out)
-
-    def test_debug_case_script(self):
-        """tools/tests/debug_case.py agrees with test_planted_defects and fails on what it cannot run."""
-        script = [sys.executable, str(TOOLS / 'tests' / 'debug_case.py')]
-
-        def debug(*args):
-            proc = subprocess.run(script + list(args), capture_output=True, text=True, encoding='utf-8')
-            return proc.returncode, proc.stdout + proc.stderr
-        n_cases = Counter(c[0] for c in CASES)
-        rc, out = debug('log-rewritten')
-        self.assertEqual(rc, 0, out)
-        self.assertEqual(out.count(', PASS'), n_cases['log-rewritten'], out)
-        self.assertRegex(out, r'(?m)^ERROR \[research log history\] log-rewritten: ')
-        rc, out = debug('--list')
-        self.assertEqual(rc, 0, out)
-        self.assertRegex(out, rf'(?m)^log-no-baseline +{n_cases["log-no-baseline"]} case\(s\)$')
-        rc, out = debug('no-such-code')
-        self.assertEqual(rc, 1, out)
-        self.assertIn('ERROR unknown-code', out)
 
     def test_every_code_has_a_case(self):
         planted = {c[0] for c in CASES}
@@ -588,30 +686,36 @@ class TestValidate(FixtureCase):
                     self.assertEqual(hits, [], f'{name}: {why}')
 
     def test_planted_defects(self):
-        for n, (code, level, args, mutate) in enumerate(CASES):
-            with self.subTest(case=n, code=code):
-                root = self.copy()
-                plan = mutate(root, self.shas)
-                if callable(plan):
-                    rc, out = self.run_inprocess(root, args, plan)
-                    strict_rc = self.run_inprocess(root, args + ['--strict'], plan)[0]
-                else:
-                    env = plan['env'] if isinstance(plan, dict) else None
-                    rc, out = self.run_validate(root, *args, env=env)
-                    strict_rc = self.run_validate(root, *args, '--strict', env=env)[0]
-                tag = 'ERROR' if level == 'error' else 'WARN '
-                self.assertRegex(out, rf'(?m)^{tag} \[[^\]]+\] {re.escape(code)}: ',
-                                 f'{code}: not reported as {level}:\n{out}')
-                self.assertEqual(strict_rc, 1, f'{code}: --strict run did not fail:\n{out}')
-                if code != 'check-crashed':
-                    # A check that crashes on bad input stops checking it; every defect must be reported, not crash.
-                    self.assertNotIn('check-crashed', out, f'{code}: a check crashed on this input:\n{out}')
-                    self.assertNotIn('Traceback', out, f'{code}: a traceback in the report:\n{out}')
-                if level == 'error':
-                    self.assertEqual(rc, 1, f'{code}: run did not fail:\n{out}')
-                else:
-                    self.assertEqual(rc, 0, f'{code}: a warning alone failed the run:\n{out}')
-                    self.assertNotIn('ERROR', out, f'{code}: the warning case also produced an error:\n{out}')
+        with ThreadPoolExecutor() as pool:
+            futures = [pool.submit(self.start_case, case) for case in CASES]
+            for n, (case, future) in enumerate(zip(CASES, futures)):
+                with self.subTest(case=n, code=case[0]):
+                    rc, out, strict_rc, stderr = self.finish_case(case, future.result())
+                    self.assertEqual(problems(case, rc, out, strict_rc, stderr), [], f'case {n} report:\n{out}')
+
+    def test_problems_catches_each_failure(self):
+        """problems() is what makes a case fail, so each of its rules is checked against a run that breaks it."""
+        case = ('tier', 'error', [], None, {'access-class'})
+        good = 'ERROR [registry] tier: x\nERROR [registry] access-class: y\n'
+        self.assertEqual(problems(case, 1, good, 1, ''), [])
+        broken = {
+            'not reported': (1, 'ERROR [registry] access-class: y\n', 1, ''),
+            'undeclared code': (1, good + 'ERROR [layout] root-file-missing: z\n', 1, ''),
+            'declared code missing': (1, 'ERROR [registry] tier: x\n', 1, ''),
+            'stderr': (1, good, 1, 'boom'),
+            'strict passes': (1, good, 0, ''),
+            'error passes': (0, good, 1, ''),
+            'traceback': (1, good + 'Traceback (most recent call last):\n', 1, ''),
+        }
+        for label, run in broken.items():
+            with self.subTest(label):
+                self.assertEqual(len(problems(case, *run)), 1, f'{label}: {problems(case, *run)}')
+        warn = ('manifest-file-large', 'warn', [], None)
+        self.assertEqual(problems(warn, 0, 'WARN  [manifest] manifest-file-large: x\n', 1, ''), [])
+        self.assertEqual(len(problems(warn, 1, 'WARN  [manifest] manifest-file-large: x\n', 1, '')), 1)
+        self.assertEqual(len(problems(warn, 0, 'ERROR [manifest] manifest-file-large: x\n', 1, '')), 2)
+        with self.assertRaises(AssertionError):
+            case_parts(('a', 'error', []))
 
 
 if __name__ == '__main__':

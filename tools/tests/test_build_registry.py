@@ -11,6 +11,7 @@ import re
 import subprocess
 import sys
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 
 from fixture import TOOLS
 from test_validate import BETA_CSV, BOM, MAN, FixtureCase, delete, duplicate_first_row, edit, put
@@ -22,7 +23,8 @@ def build(root, *args, env=None, cwd=None):
     return proc.returncode, proc.stdout + proc.stderr
 
 
-# (code, mutate(root)) — each must stop the build with `ERROR code:` and leave both derived files untouched.
+# (code, mutate(root)[, also]) — each must stop the build with `ERROR code:`, report no other code but those in `also`,
+# and leave both derived files untouched.
 BUILD_CASES = [
     ('file-missing', lambda r: delete(r, BETA_CSV)),
     ('text-bom', lambda r: put(r, BETA_CSV, BOM + (r / BETA_CSV).read_bytes())),
@@ -38,6 +40,7 @@ BUILD_CASES = [
     ('manifest-header', lambda r: edit(r, MAN, 'license', 'licence')),
     ('manifest-domain-unknown', lambda r: edit(r, MAN, '01_alpha,src_hosted', '09_nope,src_hosted')),
     ('manifest-field-empty', lambda r: edit(r, MAN, ',hosted.pdf,', ',,')),
+    ('manifest-file-name', lambda r: edit(r, MAN, ',hosted.pdf,', ',../full_texts/hosted.pdf,')),
     ('manifest-license-empty', lambda r: edit(r, MAN, 'cc-by 4.0 (statement on PDF p1)', '')),
     ('manifest-duplicate', lambda r: duplicate_first_row(r, MAN)),
     ('manifest-file-missing', lambda r: edit(r, MAN, 'hosted.pdf', 'gone.pdf')),
@@ -45,6 +48,43 @@ BUILD_CASES = [
     ('text-bom', lambda r: put(r, MAN, BOM + (r / MAN).read_bytes())),
     ('text-not-utf8', lambda r: put(r, 'sources.csv', (r / 'sources.csv').read_bytes() + b'caf\xe9\n')),
 ]
+
+
+def build_case_parts(case):
+    """(code, mutate, also) of a BUILD_CASES entry; `also` is empty when the case declares none."""
+    if len(case) not in (2, 3):
+        raise AssertionError(f'test setup: a build case has {len(case)} fields, expected 2 or 3: {case[0]}')
+    return case[0], case[1], set(case[2]) if len(case) == 3 else set()
+
+
+def run_build_case(runner, case):
+    """Plant a BUILD_CASES entry in a fresh copy from `runner` (a FixtureCase) and run the build, then the build with
+    --check. Returns (root, [(args, rc, out)], problems): problems is empty when both runs fail with exactly the
+    planted code (and its `also`), say nothing was written, and leave both derived files as they were. Thread-safe."""
+    code, mutate, also = build_case_parts(case)
+    root = runner.copy()
+    # Make sources.csv stale too, so a build that wrote anything would change it.
+    if code != 'registry-empty':
+        edit(root, '01_alpha/sources_domain.csv', 'Hosted paper', 'Hosted article')
+    mutate(root)
+    before = {n: (root / n).read_bytes() for n in ('sources.csv', MAN)}
+    runs, found = [], []
+    for args in ([], ['--check']):
+        rc, out = build(root, *args)
+        runs.append((args, rc, out))
+        codes = set(re.findall(r'(?m)^ERROR ([a-z0-9-]+): ', out))
+        if rc != 1:
+            found.append(f'{args}: exit {rc}, expected 1')
+        if code not in codes:
+            found.append(f'{args}: {code} is not reported')
+        if codes - {code} - also:
+            found.append(f'{args}: codes the case does not declare: {sorted(codes - {code} - also)}')
+        if also - codes:
+            found.append(f'{args}: codes the case declares but the report lacks: {sorted(also - codes)}')
+        if 'nothing written' not in out:
+            found.append(f'{args}: the report does not say nothing was written')
+        found += [f'{args}: {name} was written' for name, data in before.items() if (root / name).read_bytes() != data]
+    return root, runs, found
 
 
 def build_codes_in_source():
@@ -132,26 +172,17 @@ class TestBuildRegistry(FixtureCase):
         self.assertFalse((root / 'sources.csv').read_bytes().startswith(BOM))
 
     def test_every_code_has_a_case(self):
-        planted = {c for c, _ in BUILD_CASES} | {'write-mismatch'}  # write-mismatch: test_write_mismatch
+        planted = {c[0] for c in BUILD_CASES} | {'write-mismatch'}  # write-mismatch: test_write_mismatch
         self.assertEqual(build_codes_in_source() - planted, set(), 'codes build_registry can report but no case plants')
         self.assertEqual(planted - build_codes_in_source(), set(), 'cases for codes build_registry no longer reports')
 
     def test_bad_inputs_stop_the_build_with_nothing_written(self):
-        for code, mutate in BUILD_CASES:
-            with self.subTest(code=code):
-                root = self.copy()
-                # Make sources.csv stale too, so a build that wrote anything would change it.
-                if code != 'registry-empty':
-                    edit(root, '01_alpha/sources_domain.csv', 'Hosted paper', 'Hosted article')
-                mutate(root)
-                before = {n: (root / n).read_bytes() for n in ('sources.csv', MAN)}
-                for args in ([], ['--check']):
-                    rc, out = build(root, *args)
-                    self.assertEqual(rc, 1, f'{code} {args}: build did not fail:\n{out}')
-                    self.assertRegex(out, rf'(?m)^ERROR {re.escape(code)}: ', f'{code}: not reported:\n{out}')
-                    self.assertIn('nothing written', out)
-                    for name, data in before.items():
-                        self.assertEqual((root / name).read_bytes(), data, f'{code} {args}: {name} was written')
+        with ThreadPoolExecutor() as pool:
+            futures = [pool.submit(run_build_case, self, case) for case in BUILD_CASES]
+            for n, (case, future) in enumerate(zip(BUILD_CASES, futures)):
+                with self.subTest(case=n, code=case[0]):
+                    _, runs, found = future.result()
+                    self.assertEqual(found, [], '\n'.join(out for _, _, out in runs))
 
     def test_write_mismatch(self):
         """A file that reads back different from what was written fails the build."""
