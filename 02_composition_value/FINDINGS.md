@@ -2,7 +2,7 @@
 
 ## hein2020 — Hein, Matheson & Fries (2018/2020), "A Techno-Economic Analysis of Asteroid Mining" [T1]
 
-- **Full text hosted**: `full_texts/hein_matheson_fries_2020_techno-economic_analysis_arxiv1810.03836v11.pdf`
+- **Full text**: hosted here as `hein_matheson_fries_2020_techno-economic_analysis_arxiv1810.03836v11.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
   (arXiv:1810.03836 v11 — the preprint of Acta Astronautica 174 (2020) 59-71, DOI 10.1016/j.actaastro.2019.05.009;
   verified live: HTTP 200 application/pdf). The journal version is paywalled (Elsevier TDM license only); the arXiv
   v11 text is what's committed, per this repo's access policy.
@@ -44,7 +44,7 @@
 
 ## asime2018 — Graps et al. (2019), "ASIME 2018 White Paper: In-Space Utilisation of Asteroids — Composition" [T2]
 
-- **Full text hosted**: `full_texts/graps_et_al_2019_ASIME_asteroid_composition_whitpaper_arxiv1904.11831v1.pdf`
+- **Full text**: hosted here as `graps_et_al_2019_ASIME_asteroid_composition_whitpaper_arxiv1904.11831v1.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
   (arXiv:1904.11831; verified live HTTP 200, 2.4 MB). Luxembourg-funded ASIME conference white paper, multi-author.
 - **What it is**: the state-of-the-art review of what remote sensing actually tells us about asteroid composition — i.e.
   an honest assessment of how much we can trust a spectral type as a proxy for bulk composition (exactly the step our
@@ -59,7 +59,7 @@
 
 ## lewicki2023 — Lewicki, Graps, Elvis, Metzger & Rivkin (2021), Decadal Survey white paper [T2]
 
-- **Full text hosted**: `full_texts/lewicki_et_al_2023_decadal_whitepaper_arxiv2103.02435v1.pdf` (arXiv:2103.02435;
+- **Full text**: hosted here as `lewicki_et_al_2023_decadal_whitepaper_arxiv2103.02435v1.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy (arXiv:2103.02435;
   verified live HTTP 200). Note the author list includes **Martin Elvis** — same Elvis whose low-Δv NEA survey backs our
   easy-NEA Δv segment in domain 3.
 - **What it is**: the decadal-survey framing for asteroid resource utilization, including a "Mine Project Value Curve" —

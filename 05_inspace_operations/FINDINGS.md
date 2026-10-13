@@ -2,7 +2,7 @@
 
 ## lac_bac_2024 — "Local Area Cooling versus Broad Area Cooling for Boil-Off Reduction in Large-Scale Liquid Hydrogen Storage" [T1]
 
-- **Full text hosted**: `full_texts/local_vs_broad_area_cooling_LH2_boiloff_arxiv2412.11720.pdf`
+- **Full text**: hosted here as `local_vs_broad_area_cooling_LH2_boiloff_arxiv2412.11720.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
   (arXiv:2412.11720; verified live HTTP 200, application/pdf). Finite-element thermal study of LH₂ tanks with two insulation
   stacks and active-cooling configurations.
 
@@ -26,7 +26,7 @@
 
 ## ssap_2021 — "The Proposed Silicate-Sulfuric Acid Process (SSAP): Mineral Processing for In Situ Resource Utilization" [T1]
 
-- **Full text hosted**: `full_texts/silicate_sulfuric_acid_ISRU_process_arxiv2107.05872.pdf`
+- **Full text**: hosted here as `silicate_sulfuric_acid_ISRU_process_arxiv2107.05872.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
   (arXiv:2107.05872; verified live HTTP 200, application/pdf).
 
 ### The only per-asteroid-TYPE beneficiation yield table found in round 1
@@ -81,7 +81,7 @@ All three new items hosted and access-verified from this machine. Domain now cov
 ## Round-4 additions — electric propulsion performance anchored to the flight article
 
 ### nextc_ppu_2020 [T2] — Bontempo, Brigeman, Fain et al. (ZIN Technologies / NASA Glenn), "The NEXT-C Power Processing Unit: Lessons Learned from the Design, Build, and Test of the NEXT-C PPU for APL's DART Mission", NTRS 20205004248
-- **Full text hosted**: `full_texts/bontempo_brigeman_fain_2020_NEXT-C_PPU_design_build_test_ntrs_20205004248_publicdomain.pdf` (7.4 MB, 14 pp; verified live from this machine: NTRS API record + PDF download OK). Public domain as a US-government work.
+- **Full text**: hosted here as `bontempo_brigeman_fain_2020_NEXT-C_PPU_design_build_test_ntrs_20205004248_publicdomain.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy (7.4 MB, 14 pp; verified live from this machine: NTRS API record + PDF download OK). It was described here as public domain, but its NTRS record's copyright determination is MAY_INCLUDE_COPYRIGHT_MATERIAL.
 - **Key numbers** → `extracted_data/nextc_ppu_performance_key_numbers.csv`: Prototype PPU **34.5 kg at 0.5–7 kW output** (80–160 V input); system efficiency **94.8% max** with development thruster (March 2019, 7 kW / 120 Vin), dropping to 93.8% hot; Flight PPU for DART tested at **3.7 kW output / 93.9%** with the flight thruster (Jan 2020); beam supply = up to 90% of total PPU power output.
 
 ### What this settles
@@ -156,7 +156,7 @@ The last partially-anchored physical row (`Drilling / excavation energy`) now ha
 **Access breakthrough first:** `api.ntrs.nasa.gov` has been DNS-dead since R9, which froze every "NTRS copy" access path. This round I verified that **the web host serves the whole API surface**: `ntrs.nasa.gov/api/citations/<id>` returns JSON metadata and `…/downloads/<file>` streams PDFs + full-text .txt — all public-domain NASA STI. Every NTRS-hosted source in this repo is therefore pullable from this machine again; three new T2 registrations below were pulled and parsed live through that route. (The single-citation API returns sparse fields for older records — authors/dates came from the citation HTML page.)
 
 ### zeng_2007 [T2] — Zeng, Burnoski, Agui & Wilkinson (Case Western Reserve / NASA Glenn), "Calculation of Excavation Force for ISRU on Lunar Surface", 45th AIAA Aerospace Sciences Meeting Exhibit, NTRS 20070018151
-- **Full text hosted** (`full_texts/zeng_2007_excavation_force.pdf`, sha256=40815c3294b8…; public domain). The soil-mechanics drawbar-force model for digging lunar regolith — the physics that turns "loose vs consolidated" into a force (hence energy) split.
+- **Full text hosted** (`19_asteroid_excavation_beneficiation/full_texts/zeng_2007_excavation_force.pdf`, sha256=40815c3294b8…; public domain). The soil-mechanics drawbar-force model for digging lunar regolith — the physics that turns "loose vs consolidated" into a force (hence energy) split.
 - **JSC-1a simulant parameters measured in-paper** (the standard lunar-regolith test material): density **ρ = 1680 kg/m3**, cohesion **c = 170 N/m2**, soil-tool adhesion ca = 1930 N/m2, internal friction angle **φ = 35°** (external β=10°, blade δ=20°, K0=0.573), specific gravity of JSC-1a fines **2.85**. Tool envelope: width 1 m, depth to 1 m, velocity 0.1–1.63 m/s under lunar g.
 - **Key finding for our row:** required drawbar force is *strongly cohesion-dependent* — "lowest values for cohesionless soil but the highest values for very cohesive soil". That is exactly the mechanism behind `Drilling / excavation energy`'s two-point structure (loose regolith ≲50 Wh/kg, consolidated rock ≳500 Wh/kg): loose C-type regolith sits in the low-cohesion regime where cutting force is small.
 - **What it does NOT do:** print a Wh/kg figure — it anchors the *force model and soil parameters*, not the energy number itself (that stays with metzger_zacny_2020's thermal side + just_2019's measured table).
@@ -172,7 +172,7 @@ The last partially-anchored physical row (`Drilling / excavation energy`) now ha
 1. **Physics anchor added** (zeng_2007): the force model + JSC-1a parameters behind the loose/consolidated split — previously only metzger_zacny_2020 covered this row and it is thermal, not mechanical.
 2. **Measurement-facility anchor added** (proctor_apex_2019): institutional basis for per-test Wh/kg in the loose-regolith regime.
 3. **Asteroid-environment confirmation** (zeitlin project): excavation characterization of C-type icy regolith was an active NASA program — our row's target environment is real, not extrapolated from lunar data alone.
-4. **Comparison finding (revision candidate, NOT applied):** just_2019's indexed table shows measured specific energies far below our median for loose simulant — RASSOR bucket-drum **0.761 Wh/kg** (footnote: excludes auger transport), pneumatic digger **~2 Wh/kg**, impeller ~115–130 W at 6–30 kg/h, bucket ladder <200 W at up to 2400 kg/h. These are *cutting-only* figures for loose material; our median of 200 is defensible only if it prices duty cycle + on-body transport (which the RASSOR footnote explicitly excludes). Recorded in `extracted_data/r43_excavation_energy_key_numbers.csv` — **context-only until just_2019's full text is pulled** (ScienceDirect still bot-blocks; browser backend was down this round, so no pull attempt succeeded — stays open_not_pulled with the snippet values quarantined as context).
+4. **Comparison finding (revision candidate, NOT applied):** just_2019's indexed table shows measured specific energies far below our median for loose simulant — RASSOR bucket-drum **0.761 Wh/kg** (footnote: excludes auger transport), pneumatic digger **~2 Wh/kg**, impeller ~115–130 W at 6–30 kg/h, bucket ladder <200 W at up to 2400 kg/h. These are *cutting-only* figures for loose material; our median of 200 is defensible only if it prices duty cycle + on-body transport (which the RASSOR footnote explicitly excludes). Recorded in `19_asteroid_excavation_beneficiation/extracted_data/r43_excavation_energy_key_numbers.csv` — **context-only until just_2019's full text is pulled** (ScienceDirect still bot-blocks; browser backend was down this round, so no pull attempt succeeded — stays open_not_pulled with the snippet values quarantined as context).
 
 ### Round-43 status (domain 5)
 Registry +3 T2 → domain 5 now carries 16 sources. Open items: just_2019 full-text pull (blocks turning the comparison finding into an applied revision).
@@ -225,7 +225,7 @@ Key rows (parsed from HTML cells — no OCR ambiguity):
 Audit against our row (value=0.10, range_low=0.075, range_high=0.15):
 - **AGREE on the floor**: `range_low` 7.5% vs live Aerospace/Defense CoC 7.60% = within -10 bps (-1.3%) — the "industrial floor" claim holds at sector level even though ValueInvesting.io itself is not verifiable from this machine (recorded as secondary citation only).
 - **AGREE on the value**: our 10% sits +240 bps above the aerospace anchor and +180 bps above metals & mining — exactly where a "startup risk premium to ~10-15%" should land; `range_high` 15% remains unanchored (no sector in the table reaches it), which is fine: it bounds venture scenarios, not industry.
-- **Internal consistency verified programmatically**: all 96 rows satisfy CoC = E/(D+E)*CoE + D/(D+E)*AT-CoD to within +/-0.05 pp — the parsed cells are self-consistent, so no transcription ambiguity in any number above (all deltas computed by code from raw values; see extracted_data/r47_damodaran_cost_of_capital_key_numbers.csv).
+- **Internal consistency verified programmatically**: all 96 rows satisfy CoC = E/(D+E)*CoE + D/(D+E)*AT-CoD to within +/-0.05 pp — the parsed cells are self-consistent, so no transcription ambiguity in any number above (all deltas computed by code from raw values; see 17_cost_of_capital_contingency_insurance/extracted_data/r47_damodaran_cost_of_capital_key_numbers.csv).
 
 ### Round-47 status (domain 5)
 Registry +1 T3 -> domain 5 now carries 20 sources. The WACC row is the first operational-costs cell anchored by a live, re-queryable institutional dataset (T3 per the LBMA precedent); DSN time ($1530/hr, NASA MOCS FY09) and launch insurance (~10%, Plane Talking/Gallagher) remain cited-but-unregistered — recorded as open items, not chased this round.
@@ -332,7 +332,7 @@ Re-verified every non-browser open-access route: Unpaywall 422; Semantic Scholar
 
 - **Un-hosted**: lac_bac_2024 and ssap_2021 (arXiv default licence); nextc_ppu_2020 (NTRS: may include copyrighted material); jpl_dsn_services_catalog_820_100 (copyright Caltech, recorded as public domain). Un-hosted on 2026-09-26 because the licence does not permit redistribution (details in each registry row); every number this file quotes from them was checked against the PDF first and is in `extracted_data/`.
 - **lac_bac_2024, round 1: the insulation labels were swapped.** The paper (p7) gives perlite 5905 W ≈ 0.04 %/day (the better stack) and HePUR 35 350 W ≈ 0.24 %/day. The table above and the CSV had it the other way round, and "35 W" was a truncation of 35 350 W. Our hydrolox 0.05 %/day still sits next to the best case; what changes is which insulation that case is. Abstract figures for LAC/BAC with each stack are now extracted.
-- **ssap_2021**: round 1 called Table 3 fully extracted, but only 3 of its 9 bodies were. The full table (Moon mare/highlands, Mars, three C-type and three S-type mineralogies, 8 products) is in `extracted_data/ssap_2021_table3_theoretical_yields.csv`.
+- **ssap_2021**: round 1 called Table 3 fully extracted, but only 3 of its 9 bodies were. The full table (Moon mare/highlands, Mars, three C-type and three S-type mineralogies, 8 products) is in `19_asteroid_excavation_beneficiation/extracted_data/ssap_2021_table3_theoretical_yields.csv`.
 - **zero_bo_off_2025** is an arXiv preprint with no journal version: re-tiered T2, and "peer-reviewed lower bound" corrected in the registry, INDEX and rc-028. lac_bac_2024 (Cryogenics 148:104065, 2025) and ssap_2021 (Acta Astronautica 188:57-63, 2021) were published, so they stay T1.
 - Page numbers added to the nextc_ppu_2020 rows; the DSN and insurance CSVs gained `source_id`. stackpoole_2013 is marked context-only.
 

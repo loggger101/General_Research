@@ -2,7 +2,7 @@
 
 ## carry2012 — Carry (2012), "Density of asteroids", Planetary and Space Science 73:98-118 [T1]
 
-- **Full text hosted**: `full_texts/carry2012_density_of_asteroids_arxiv1203.4336v1.pdf`
+- **Full text**: hosted here as `carry2012_density_of_asteroids_arxiv1203.4336v1.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
   (arXiv:1203.4336v1 preprint of the PSS paper, DOI 10.1016/j.pss.2012.03.009 — single author B. Carry, ESA ESAC; verified live from this machine: HTTP 200, application/pdf, 5.7 MB).
 - **What it is**: review compiling mass+volume estimates for **287 small bodies** (asteroids, comets, TNOs)
   from the literature, with strict selection of best estimates; computes bulk density and macroporosity per body,
@@ -84,7 +84,7 @@ of `TAXONOMY_COMPOSITION` should start — with carry2012 Table 3 and this SiMDA
 
 ## lodders_palme2009 — Lodders & Palme, "Solar System Elemental Abundances in 2009", 72nd Meteoritical Society Meeting abstract [T2]
 
-- **Full text hosted**: `full_texts/lodders_palme2009_ci_abundances_metSoc72_abstract.pdf`
+- **Full text**: hosted here as `lodders_palme2009_ci_abundances_metSoc72_abstract.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
   (LPI-hosted, verified live: HTTP 200 application/pdf; LPI distributes meeting PDFs openly).
 - **What it is**: the authoritative CI-chondrite abundance table for that era — every element in ppm bulk rock.
 

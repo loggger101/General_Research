@@ -19,7 +19,7 @@ import argparse
 import sys
 
 from common import (MANIFEST, MANIFEST_COLS, REGISTRY, REGISTRY_COLS, ROOT, DataError, domain_dirs,
-                    file_digest, line_terminator, read_csv, read_domain_csv, rel, to_csv_text)
+                    file_digest, line_terminator, plain_file_name, read_csv, read_domain_csv, rel, to_csv_text)
 
 
 def build_registry(errors):
@@ -53,6 +53,10 @@ def build_manifest(errors):
             continue
         if not sid or not fname:
             errors.append(('manifest-field-empty', f'{where}: id and file are required'))
+            continue
+        if not plain_file_name(fname):
+            errors.append(('manifest-file-name', f'{where}: file {fname!r} must be a bare file name inside '
+                                                 f'{domain}/full_texts/, with no directory part'))
             continue
         if not license.strip():
             errors.append(('manifest-license-empty', f'{where}: {fname} has no license; read it off the file or its record'))

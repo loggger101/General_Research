@@ -2,7 +2,8 @@
 
 build_template(parent) writes, under `parent`:
     General_Research/   two domains, one hosted file, extracted CSV + JSON, INDEX.md with a rejected source and a
-                        research log, README layout, revision candidates and an upstream commit map; the tools are
+                        research log, README layout, revision candidates, an upstream commit map, and file references
+                        in FINDINGS.md, INDEX.md and DOWNLOADS.md (one into the first commit); the tools are
                         copied in from this checkout, and sources.csv and the manifest hashes come from its own
                         build_registry.py. It is a git repository with the template committed (validate.py lists
                         files with git and compares the research log with HEAD).
@@ -48,6 +49,8 @@ INDEX_MD = """# Fixture index
 
 ## Domain 1 — Alpha
 
+Key numbers: `extracted_data/r1_alpha.csv`.
+
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
 | src_hosted | T1 | Hosted paper | full text hosted | the alpha cell |
@@ -90,11 +93,18 @@ full_texts_manifest.csv   hosted files
 revision_candidates.csv   candidates
 upstream_commit_map.csv   commit map
 AGENTS.md                 rules
-tools/                    the tools
+DOWNLOADS.md              files to fetch
+tools/                   the tools
 01_alpha/                 domain 1
 02_beta/                  domain 2
 ```
 """
+
+FINDINGS_ALPHA = '# 01_alpha findings\n\nNumbers in `extracted_data/r1_alpha.csv`; full text `full_texts/hosted.pdf`.\n'
+FINDINGS_BETA = '# 02_beta findings\n\nCompared with `01_alpha/extracted_data/r1_alpha.csv`.\n'
+# Written after the first commit, whose id it names: a reference into git history (DOWNLOADS.md's restore commands).
+DOWNLOADS_MD = '# Downloads\n\n```bash\ngit cat-file -p {sha}:01_alpha/full_texts/hosted.pdf > ../incoming/hosted.pdf\n```\n'
+
 
 def csv_text(header, rows):
     buf = io.StringIO()
@@ -160,7 +170,9 @@ def build_template(parent):
     write(root / 'INDEX.md', INDEX_MD)
     for d, rows in (('01_alpha', ALPHA), ('02_beta', BETA)):
         write(root / d / 'sources_domain.csv', csv_text(DOMAIN_HEADER, rows))
-        write(root / d / 'FINDINGS.md', f'# {d} findings\n')
+    # File references, checked by check_references: within the domain, and into another domain.
+    write(root / '01_alpha' / 'FINDINGS.md', FINDINGS_ALPHA)
+    write(root / '02_beta' / 'FINDINGS.md', FINDINGS_BETA)
     write(root / '01_alpha' / 'full_texts' / 'hosted.pdf', PDF)
     write(root / 'full_texts_manifest.csv', csv_text(['domain_dir', 'id', 'file', 'bytes', 'sha256', 'license'],
                                                      [['01_alpha', 'src_hosted', 'hosted.pdf', '', '',
@@ -192,6 +204,10 @@ def build_template(parent):
     # A committed HEAD: validate.py compares the research log with the last commit.
     git(root, 'add', '-A')
     git(root, 'commit', '-q', '-m', 'fixture')
+    shas['GR0'] = git(root, 'rev-parse', 'HEAD')
+    write(root / 'DOWNLOADS.md', DOWNLOADS_MD.format(sha=shas['GR0'][:7]))
+    git(root, 'add', 'DOWNLOADS.md')
+    git(root, 'commit', '-q', '-m', 'downloads')
     return shas
 
 
