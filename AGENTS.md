@@ -36,6 +36,9 @@ the file-reference check (2026-10-12) found 17 stale paths, and the data was cor
   `open service`; a pulled-but-unhostable full text is `verified_live_not_pulled`). `full_text_hosted` needs the file
   in `full_texts/` *and* a row in `full_texts_manifest.csv` (write
   `domain_dir,id,file,,,license` and let the build fill `bytes,sha256`).
+  Hosted files are stored byte for byte: `.gitattributes` marks `full_texts/`
+  `-text`, so a clone with `core.autocrlf` cannot rewrite an .html or .txt
+  file's line ends and break its hash (five did until 2026-10-12).
   A `registered_not_pulled` row (R74) records an upstream citation that has not
   been read; when you pull it, re-class it and say what you read.
 - **Read the licence off the file or its record**: the PDF's own licence
