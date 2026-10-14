@@ -73,3 +73,18 @@ Created in Round 161 (2026-10-13). Blocks are appended one per round, newest las
 - Water / trace rows: unaffected - the study's N2O-decomposition option notes O2 byproduct benefit but registers no water or catalyst figures used here.
 
 **No revision candidate.** Extracted data: `extracted_data/r169_habitat_nitrogen_demand_key_numbers.csv` (9 rows x 6 cols). Companion record NTRS 20260005329 is the presentation deck of this same study - not separately registered. Still open from R168's list: catalyst inventories in kg of PGM per system; sulfur and phosphorus demand.
+
+## R170 - PGM catalyst-inventory anchors for PEM fuel cells (2026-10-14; +2 T2 full_text_hosted)
+
+**Why this.** d30's two existing catalyst rows (franco_2019 Sabatier methanation, nallette_et_al_2013 ISS CDRA) cover the Ru/Ni ISRU side and left 'catalyst inventories in kg of PGM per system' open. This round registers the institutional answer for the PEM fuel-cell side: two 1994 NASA-affiliated conference papers with measured platinum loadings - one a full loading trade study (Murphy et al.), one carrying an explicit grams-of-Pt-per-kilowatt figure (Srinivasan et al.). Together they bound how much PGM any PEM power system actually consumes per kW, which is the quantity upstream's trace-class PGM rows need.
+
+**Sources registered (both NTRS GOV_PUBLIC_USE_PERMITTED, zero in-file copyright per pymupdf scan of all pages; hosted under `full_texts/`):**
+
+- `murphy_hitchens_manko_1994_high_power_density_pem_fuel_cells_n9423359` (NTRS 19940018886, Space Electrochemical Research and Technology conference series; printed paper number 'N94-23359' verified on p.1) = the loading trade study: unsupported Pt-black electrodes at "platinumloadingsof either 1,2.5,5 or 10mg cm-2" (p.3, as-printed squashed OCR span), optimum at 5 mg/cm² - "A platinum black loading of 5 mg per cm 2 was found to be optimum." (abstract) - with the critical utilization caveat: "the degree of platinum utilization was only 16.6% and the roughness factor of a typical electrode was 274" (~83% of purchased Pt electrochemically inactive).
+- `srinivasan_et_al_1994_pemfc_space_electric_vehicle_dual_use_transfer_vol2` (NTRS 19960022614, Dual-Use Space Technology Transfer Conference and Exhibition Vol. 2; venue from NTRS publications field - no conference line printed inside) = the per-power figure: "at current density of about 500 mA/cm2 the amount of platinum required per kilowatt is only 1.2 grams per kilowatt" while state-of-the-art electrodes need ~10x (p.3); low loadings ≤0.4 mg/cm² demonstrated with high energy efficiency, ultra-low 0.1 mg/cm² where "The effective utilization of the platinum with the ultra low platinum loading was quite high"; Pt-alloy catalysts tested at equal 0.3 mg/cm² loading (Fig. 2 caption) as the PGM-substitution path.
+
+**Against the cells.**
+- PGM rows (trace class, utility 0.0 / demand share 0.0005): per-kW platinum intensity now has an institutional anchor - ~1.2 g/kW at low loading vs ~12 g/kW state-of-the-art; per-area loadings 0.4-10 mg/cm² with optimum 5 and only ~17% electrochemical utilization, so any kg-per-system inventory must be computed from TOTAL loaded Pt (active fraction does not reduce purchased mass). Context/bound class - the trace rows stay as-is; no re-pin.
+- Water / ammonia rows: unaffected - neither paper registers water or nitrogen figures used here.
+
+**No revision candidate.** Extracted data: `extracted_data/r170_pgmcatalyst_key_numbers.csv` (5 rows x 6 cols). Still open from the R169 list: sulfur and phosphorus demand; d29's meteoritic Fe-Ni mechanical properties, carbonyl refining of asteroidal Fe-Ni, locally-made share of habitat structure.
