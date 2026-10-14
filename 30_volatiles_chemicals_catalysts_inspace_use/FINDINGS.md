@@ -88,3 +88,18 @@ Created in Round 161 (2026-10-13). Blocks are appended one per round, newest las
 - Water / ammonia rows: unaffected - neither paper registers water or nitrogen figures used here.
 
 **No revision candidate.** Extracted data: `extracted_data/r170_pgmcatalyst_key_numbers.csv` (5 rows x 6 cols). Still open from the R169 list: sulfur and phosphorus demand; d29's meteoritic Fe-Ni mechanical properties, carbonyl refining of asteroidal Fe-Ni, locally-made share of habitat structure.
+
+## R171 - Sulfur-poisoning anchors for catalysts (2026-10-14; +2 T2 full_text_hosted)
+
+**Why this.** d30's open item 'sulfur and phosphorus demand' survived the R168-R170 blocks. This round closes its sulfur half at two levels: (a) the institutional flight record of what actually poisoned the ISS Sabatier catalyst, with measured contaminant concentrations; (b) a low-level poisoning kinetics study showing that catalytic activity is measurably affected in the tens-of-ppm regime - not percent level. No accessible source for phosphorus demand was found this round (NTRS 'phosphorus impurity' / 'Sabatier contaminants' sweeps returned nothing new), so that half stays open.
+
+**Sources registered (both NTRS, zero in-file copyright per pymupdf scan of all pages; hosted under `full_texts/`):**
+
+- `abney_et_al_2026_sabatier_freon_cs2_cos_mitigation_ices2026_601` (NTRS 20260003516, ICES-2026-601, 55th IESS; venue line verified on p.1) = the flight record: the Sabatier Assembly operated intermittently from its 2010 activation until October 2017 when 'operation was discontinued due to performance degradation', and Test/Teardown/Evaluation of the returned unit confirmed that 'analysis confirmed contaminants had reduced catalyst activity by 70%'. The primary contaminants were sulfur, silicon, fluorine and chlorine - 'sulfur and silicon were the most detrimental poisons' - attributed to dimethylsulfone (DMSO2) and volatile methyl siloxanes from upstream sources respectively. Freon R-218 measured at 1500-4500 mg/m3 on ISS; CS2/COS newly identified as Sabatier-catalyst contaminants of concern via zeolite 13X co-adsorption in FBCO2, with a getter redesign that would need bed replacement every 9.9-12.8 hrs if tasked with them (p.4). No .txt fulltext endpoint for this record - all quotes from the PDF text layer.
+- `baumgartner_1974_sulfur_poisoning_hydrocarbon_oxidation_palladium_cr155192` (NTRS 19770026320, M.S. thesis issued as NASA-CR-155192; CR number verified on p.2) = the low-level kinetics: ethane and diethyl-ketone oxidation by Pd studied 'at the 0-30 ppm level in air' with first-order kinetics (Arrhenius parameters given), poisoning investigated at ~247 C by H2S, Freon 22 and Gentron 142-B - 'Poisoning by Gentron 142-B was much more severe than by hydrogen sulfide.' Thesis title page prints 1974; NTRS publicationDate is 1975 (CR issue year) - recorded as 1974 per the document itself, flagged in access_status.
+
+**Against the cells.**
+- Sulfur trace rows: poisoning severity now has a flight-measured anchor (70% activity loss with sulfur among the dominant poisons on an actual ISS unit) plus a kinetics floor - measurable effects at 10s of ppm. Context/bound class for the trace utility/demand-share values; no re-pin.
+- PGM / catalyst rows: unaffected directly, but the flight record shows contamination (not just feedstock purity) drives real catalyst loss-of-life on orbit - relevant to any future catalyst-inventory sizing margin discussion.
+
+**No revision candidate.** Extracted data: `extracted_data/r171_sulfur_poisoning_key_numbers.csv` (6 rows x 6 cols). d30 remaining open after this round: phosphorus demand only. d29 keeps its Fe-Ni mechanical properties, carbonyl refining of asteroidal Fe-Ni, and locally-made share of habitat structure.
