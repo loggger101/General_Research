@@ -36,7 +36,7 @@ and what a source has to supply.
 | 12 | Destination environments & physical constants | spacecost `environments.csv` (flux, gravity, escape velocity, light time, eclipse) and `units.py` constants |
 | 13 | Astrodynamics methods, ephemerides & audited software | economicspace `research/starred-repos/` (Lambert and Kepler solvers, ephemeris oracles, the 17-repository licence audit) |
 | 14 | Propellant & consumable prices | `propellants.csv` `ref_cost_usd_per_kg` and its component prices |
-| 15 | In-space demand & market absorption | economicspace `mineral_value.py` in-space utility, annual-demand and class-share tables; `calc.py` `demand_elasticity`, `surplus_price_fraction` |
+| 15 | In-space demand & market absorption | economicspace `mineral_value.py` in-space utility (market side; the engineering basis of each row is in 28–30 since Round 161), annual-demand and class-share tables; `calc.py` `demand_elasticity`, `surplus_price_fraction` |
 | 16 | Reliability, learning curves & hardware service life | `operational_costs.csv` launch reliability, spacecraft MTBF, mining success and growth, rig life, trips and salvage rows; `calc.py` `learning_curve_rate` |
 | 17 | Cost of capital, contingency & insurance | `operational_costs.csv` WACC, contingency, launch and third-party insurance rows; `calc.py` `contingency_fraction` |
 | 18 | Licensing, planetary protection & space-resource law | `operational_costs.csv` FAA Part 450 licensing rows and the MPL behind third-party liability; the Earth-return and right-to-sell premises (context-only) |
@@ -49,6 +49,9 @@ and what a source has to supply.
 | 25 | Net smelter return: refining charges & payable terms | `calc.py` `_mineral_implied_value` (100% of contained metal at refined prices) and the refined-metal basis of element prices |
 | 26 | Spacecraft storage & energy-system physical properties (propellant tankage / COPV / MLI / cryocooler; RTG / fission surface power) | `storage_systems.csv` propellant-storage + energy-storage cells (COPV burst performance factor, MLI passive, orbital-depot boil-off, RTG specific power, Kilopower-class fission W-elec/kg); the cargo-containment cells stay upstream judgement rows for now |
 | 27 | Orbital debris & collision risk | the debris environment behind `operational_costs.csv` launch-insurance premium drivers (domain 17), economicspace's satellite-lifetime and disposal assumptions, and the depot mission durations of domain 26 |
+| 28 | Radiation-shielding value of in-space materials | the rock rows of economicspace `mineral_value.py` `IN_SPACE_UTILITY` (silicates, oxides, rock-valued carbonates and phosphates), the shielding part of water's row, and their destination overrides |
+| 29 | Structural metals, alloys & in-space manufacturing | the structural-class rows of `IN_SPACE_UTILITY` (Fe, Ni, Co, Cu, Cr, Ti, Fe-Ni alloy phases and their ores): the manufacturing-gap discount and its destination overrides |
+| 30 | Volatiles, process chemicals & catalyst metals in space | the propellant, chemical and trace-class rows of `IN_SPACE_UTILITY` (water, ammonia, CO2, carbon, organics, S, P, PGMs and other trace metals) and the rejected PGM catalyst utility |
 
 ## Layout
 
@@ -89,6 +92,9 @@ tools/                                   build_registry.py (regenerate derived f
 25_net_smelter_return_refining_terms/     Domain 25: net smelter return: refining charges & payable terms
 26_spacecraft_storage_energy_properties/     Domain 26: spacecraft storage & energy-system physical properties
 27_orbital_debris_collision_risk/          Domain 27: orbital debris & collision risk
+28_radiation_shielding_value_of_materials/ Domain 28: radiation-shielding value of in-space materials
+29_structural_metals_inspace_manufacturing/ Domain 29: structural metals, alloys & in-space manufacturing
+30_volatiles_chemicals_catalysts_inspace_use/ Domain 30: volatiles, process chemicals & catalyst metals in space
 
 <domain>/sources_domain.csv              The registry rows for that domain (the file you edit)
 <domain>/FINDINGS.md                     Prose write-ups and per-number comparisons, one block per round
