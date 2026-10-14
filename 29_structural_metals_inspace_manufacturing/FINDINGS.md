@@ -40,3 +40,22 @@ Stated bases: the base 0.70 is "Discounted for the in-space manufacturing gap"; 
 **Still open.** Tensile and fracture properties of meteoritic Fe-Ni (kamacite, taenite, tetrataenite) against structural steels; in-space metal forming demonstrations (such as the ESA metal 3D printer delivered to the ISS in 2024) and their mass and power; carbonyl (Mond) refining of asteroidal Fe-Ni; the share of a habitat or depot's structural mass that could be locally made.
 
 **Boundary.** Domain 19 holds the refining and forming energy and plant cost (`IN_SPACE_PROCESSING_KWH_PER_KG`, plant $/kg); domain 25 holds terrestrial refining terms; domain 15 holds the demand side.
+## R167 - ISS metal-forming demonstrations at program level + institutional logistics anchors (2026-10-14; +1 T2 full_text_hosted)
+
+**Why these.** The R161 opening block left four items open: meteoritic Fe-Ni mechanical properties, 'in-space metal forming demonstrations (such as the ESA metal 3D printer delivered to the ISS in 2024) and their mass and power', carbonyl refining of asteroidal Fe-Ni, and the locally-made share of a habitat's structure. This round closes the second at program level - both NASA-side flight candidates are now on record with named hardware, and ESA's printer is cross-cited from an already-registered source - plus extracts two institutional logistics anchors that were sitting unextracted inside roberts_2023.
+
+**Source registered (NTRS public-use, hosted under `full_texts/`):**
+
+- `prater_et_al_2021_metal_am_processes_for_iss_sampe_nexus` (SAMPE neXus 2021; DOI Crossref-verified this round). The NTRS record is the single-page abstract copy - the full paper's twin record (20205011519) carries MAY_INCLUDE_COPYRIGHT_MATERIAL, so only the public-use presentation version was pulled. 'There are currently two processes in development as payloads for an ISS technology demonstration: wire+arc additive manufacturing (the Vulcan payload from Made in Space, Inc.) and bound metal deposition (the Fabrication Laboratory from Techshot, Inc)' - i.e. at a point when ODMM still had funding, both forming routes behind the 0.70 discount were real flight candidates with named hardware; roberts_2023 then records their fate (furnace module + process gas drawer canceled May-2023).
+
+**Cross-cited extractions from already-registered sources** (by id, per the R147 convention):
+
+- `roberts_2023_nasa_tmp_in_space_manufacturing_metals_sff` carries two logistics anchors unextracted until this round: 'Current up-mass costs for passive cargo to low-Earth Orbit is $20,000 per kilogram while down-mass costs exceed $40,000 per kilogram', and CLPS lunar delivery at '$300,000 per kilogram to lunar orbit and $1.2 M per kilogram to the lunar surface' (Astrobotic Peregrine's publicly listed prices as cited by NASA) - institutional-grade context for d15's transport cells; plus 'No mechanical testing capabilities or volumetric testing capabilities currently exist for in-space applications', which is why the gap behind 0.70 does not close with hardware alone.
+- `nasa_2026_isam_state_of_play` p.266 PGM07: ESA's Metal 3D printer 'was the first metal printer installed on ISS that demonstrated the simplicity of metallic part production under microgravity environment' - high-power lasers melting stainless-steel wire (~1400 C), four reference prints compared against Earth copies, Status Operational from 2024. This is the demonstration d29's open list named.
+
+**Against the cells.**
+
+- Base 0.70: both forming routes were flight candidates with named hardware (Vulcan, FabLab) and one foreign analogue has now actually flown (MELT, operational from 2024) - the use is real AND demonstrated in microgravity; but NASA's own plant was canceled before flight and no NDE/mechanical-testing capability exists on-orbit, so the discount stays. Consistent with upstream's 'the melting / forming plant that turns it into one is not costed anywhere'; no re-pin.
+- geo 0.15: unchanged - none of the three demonstrations operated at GEO; 'no manufacturing at GEO' still holds as a statement about what exists, not just what was planned.
+
+**No revision candidate.** Extracted data: `extracted_data/r167_inspace_metals_manufacturing_key_numbers.csv` (5 rows x 6 cols). Still open from R161's list: meteoritic Fe-Ni mechanical properties vs structural steels; carbonyl refining of asteroidal Fe-Ni; the locally-made share of a habitat or depot's structure.
