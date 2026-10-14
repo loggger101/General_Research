@@ -260,3 +260,9 @@ Round 155 sought the 35 never-sought T1/T2 queue rows and read eight. These twel
 - [ ] **sunshine_connolly_2008_ancient_asteroids_refractory_inclusions** - https://repository.si.edu/items/e39dedbe-b83e-4add-98c6-9d0d9ac7fafd/full - the page loads, but no file link shows in its static HTML. Extract only.
 - [ ] **consolmagno_2008_meteorite_density_porosity** - https://stars.library.ucf.edu/facultybib2000/234 (UCF record, no file) - look for a full-text link in a browser. Extract only.
 - [ ] **fujiwara_2006_itokawa_rubble_pile** - https://ieeemilestones.ethw.org/w/images/8/82/Reference_E_3_2006Fujiwara_Rubble-Pile_Asteroid_Itokawa_Science.pdf (404 to a browser User-Agent here) - retry in a browser. Extract only.
+
+## R160 - Tagish Lake modal mineralogy (rc-085)
+
+- Zolensky, M.E.; Nakamura, E.; Gounelle, M.; Mikouchi, T.; Kasama, Y.; et al. 'Mineralogy of Tagish Lake: An ungrouped type 2 carbonaceous chondrite', Meteoritics & Planetary Science 37(5):737-761 (May 2002), DOI 10.1111/j.1945-5100.2002.tb00852.x.
+  - Why: THE dedicated modal-mineralogy study for Tagish Lake - mode percentages of magnetite, sulfides and carbonates in pristine samples; the figures upstream's _ACC_TL (magnetite ~5 / troilite ~3 / carbonates ~3 wt%) needs a source for. rc-085.
+  - Routes tried R160: NTRS 20010044424 = conference ABSTRACT record, determinationType=GOV_PUBLIC_USE_PERMITTED but metadata-only (downloadsAvailable=false, zero files); OpenAlex is_oa=false with no OA location; Wiley/MAPS paywall. Needs an institutional/library pull.
