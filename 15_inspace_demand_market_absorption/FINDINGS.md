@@ -140,3 +140,9 @@ The domain's opening brief asked for demand forecasts and market-size anchors; e
 All quoted spans verified count==1 against the hosted PDFs after normalization (soft-hyphen + hyphen-linebreak joins; one sentence in each case paragraph is split by footnote 13's ISAM definition in the text layer, so the low-case span was taken as two sub-spans). r156_faa_launch_demand_forecast_key_numbers.csv (9 rows x 7 cols).
 
 **No re-pin, no rc opened.** The FAA figures are a demand-scale / market-size context class: they bracket IN_SPACE_ANNUAL_DEMAND_KG's 'JUDGEMENT, not measurement' status from the institutional side (launch operations per year + total addressable economy) without asserting any per-kg price or utility factor - those cells keep their R151 queue anchors.
+
+## R161 - The engineering basis of the utility rows moves to new domains 28-30 (2026-10-13; d15 registry unchanged)
+
+Round 161 opened three domains for the physical question behind each `IN_SPACE_UTILITY` row: what a delivered kilogram of the material does in its role compared with the launched alternative. Domain 28 holds the shielding rows (silicates, oxides and other rock), domain 29 the structural metals, alloys and ores, and domain 30 the volatiles, process chemicals and trace metals. They follow upstream's `_COMMODITY_CLASS`.
+
+This domain keeps the market side of the same tables: `IN_SPACE_ANNUAL_DEMAND_KG`, `_DEMAND_SHARE_BY_CLASS`, `market_model`, `demand_elasticity`, `surplus_price_fraction`, and the economic studies that price delivered material against launch (Kornuta 2019, LunA-10, Steinert 2024 and the R151 queue). No source moved: each one registered here backs a demand or price cell. A utility factor now has two halves, the functional equivalence in domains 28-30 and the market's willingness to pay here.
