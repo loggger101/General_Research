@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2023_ig-23-010_rps_program_management,Juno MMRTG option: cost per mission watt,"263,279",USD per W (average over design life),PDF p21 (printed p15) Table 2,computed here: $114M / 433 W (5 MMRTGs); notional estimates (table note)
+nasa_oig_2023_ig-23-010_rps_program_management,Lucy MMRTG option: cost per mission watt,"248,555",USD per W (average over design life),PDF p21 (printed p15) Table 2,computed here: $129M / 519 W (6 MMRTGs); notional estimates (table note)
+nasa_oig_2023_ig-23-010_rps_program_management,Europa Clipper MMRTG option: cost per mission watt,"223,363",USD per W (average over design life),PDF p21 (printed p15) Table 2,computed here: $174M / 779 W (9 MMRTGs); notional estimates (table note)
+nasa_oig_2017_ig-17-009_mars2020_project,MMRTG project line per BODL watt (one-unit reading),"600,000-636,364",USD per W,Table 3 (see r70_nasa_oig_2017_ig-17-009_table3_mars2020_estimate_history.csv),"computed here: $66-70M / 110 We; unit count not distinguished, an envelope"
+gao_2017_pu238_rps_production_planning,finished MMRTG cost per BODL watt,"700,000",USD per W,"GAO-17 (registry row, R154)",computed here: ~$77M / ~110 We
+,upstream RTG (radioisotope power) value,"500,000",USD per W,spacecost@0b716ad operational_costs.csv,"band 200,000-1,000,000"
+schmitz_2023_rps_vs_solar_array_comparison,Li-ion battery SOA usable specific energy (175 Wh/kg x 80% DoD),140,usable Wh/kg,PDF p8 Table 3,computed here from the Table 3 cells 175 Wh/kg and 80% depth of discharge
+,upstream Energy storage usable specific energy,104,usable Wh/kg,spacecost@0b716ad operational_costs.csv,130 Wh/kg system level x 0.80 DoD
+schmitz_2023_rps_vs_solar_array_comparison,upstream usable value against the Schmitz SOA usable value,-25.7,%,computed here,upstream below the institutional battery SOA; DoD 0.80 and round-trip 0.90 match Table 3 exactly

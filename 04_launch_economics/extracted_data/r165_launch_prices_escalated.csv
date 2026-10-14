@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+zapata_2017_state_of_play_us_space_systems,"Falcon 9, NASA LSP science Class C: 2017 price carried to Aug 2026 at spacecost's CPI-U factor x1.3484",124.1,USD million (2026),PDF p16 chart data labels (r70_zapata_2017_state_of_play_launch_prices.csv),computed here: $92M (2017) x 1.3484
+zapata_2017_state_of_play_us_space_systems,"Falcon 9, DoD (GPS): 2017 price carried to Aug 2026 at spacecost's CPI-U factor x1.3484",130.8,USD million (2026),PDF p16 chart data labels (r70_zapata_2017_state_of_play_launch_prices.csv),computed here: $97M (2017) x 1.3484
+zapata_2017_state_of_play_us_space_systems,"Delta IV Heavy, NRO (service + ELC): 2017 price carried to Aug 2026 at spacecost's CPI-U factor x1.3484",453.1,USD million (2026),PDF p16 chart data labels (r70_zapata_2017_state_of_play_launch_prices.csv),computed here: $336M (2017) x 1.3484
+,Falcon Heavy (expendable) low end $150M (2017) at the same factor,202.3,USD million (2026),computed here,"spacecost@0b716ad carries it unescalated as list_price_usd_low 150,000,000"

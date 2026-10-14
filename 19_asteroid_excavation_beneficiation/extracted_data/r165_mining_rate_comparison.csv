@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+sowers_2020_niac_phase1_thermal_mining_of_ices,thermal-mining plant productivity,0.1150,kg of propellant per day per kg of plant,PDF p88,computed here from 42.0 kg/yr per kg
+sowers_2020_niac_phase1_thermal_mining_of_ices,Langley excavation-based plant productivity (as quoted by Sowers),0.00647,kg of propellant per day per kg of plant,PDF p88,computed here from 49.4 t/yr / 20.9 t (jones_klovstad_komar_judd_2018)
+,upstream mining_rate_kg_per_day_per_kg_rig,0.10,kg of REGOLITH per day per kg of rig,economicspace@f7fe1c6 modules/calc.py,"a different basis: regolith moved, not product made"

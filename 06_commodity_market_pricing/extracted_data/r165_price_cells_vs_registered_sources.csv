@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+lbma_precious_metals_fixings,palladium LBMA 2026-05-29 in USD/oz,"1,364.00",USD/troy oz,r45_lbma_precious_metals_key_numbers.csv,"computed here from 43,853.6 USD/kg"
+lbma_precious_metals_fixings,"economicspace palladium 48,000 USD/kg against the LBMA 2026-05-29 fixing",+9.5,%,computed here,upstream dates its quote May 8 2026; the module ref date is 2026-05-29
+worldbank_cmo_pink_sheet,gold World Bank May 2026 average in USD/kg,"147,475",USD/kg,"r46 cross-check row (WB 4587 $/oz, May-26)",computed here
+lbma_precious_metals_fixings,"economicspace gold 150,000 USD/kg against the LBMA 2026-05-29 fixing (145,506.2)",+3.1,%,r45_lbma_precious_metals_key_numbers.csv,computed here
+usgs_mineral_commodity_summaries_2026,crushed stone average unit value 2025e in USD/kg,0.0185,USD/kg,MCS 2026 PDF p180 Salient Statistics,"computed from 18.50 $/t; economicspace carbonates 0.02 ($20/t, crushed limestone)"
+usgs_mineral_commodity_summaries_2026,feldspar (marketable production) average unit value 2025e in USD/kg,0.110,USD/kg,MCS 2026 PDF p82 Salient Statistics,computed from 110 $/t; economicspace plagioclase 0.10 ($100/t)
+usgs_mineral_commodity_summaries_2026,iron ore average unit value reported by mines 2025e in USD/kg,0.089,USD/kg,MCS 2026 PDF p112 Salient Statistics,"computed from 89 $/t; economicspace iron note says ""the $0.10/kg iron-ore"""
+usgs_mcs2026_cobalt_chapter,LME cobalt cash 2025 annual average in USD/kg,33.07,USD/kg,MCS 2026 cobalt chapter (r115 / registry row),computed from 15 $/lb; economicspace cobalt 33.00

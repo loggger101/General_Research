@@ -459,3 +459,15 @@ figures cover the finished generator - a different cost base, same pattern as R9
 
 **Key numbers** -> `extracted_data/r154_rtg_program_cost_key_numbers.csv` (9 rows; locally-verifiable spans count==1 against the hosted PDFs pre-write; GAO spans verbatim from
 GAO's own published text - provenance class R89/R153).
+
+## R163 (2026-10-14) - the ZBO cryocooler note's Carnot band has no source (rc-089; registry unchanged)
+
+`storage_systems.csv` 'Zero-boil-off cryocooler (20 K)' (spacecost@0b716ad) justifies its 50-150 W/W range with "real machines run 15-25% of Carnot". R44 confirmed the 80 W/W value (it equals the NASA programme threshold) but did not check that sentence. The measured fractions are already in `extracted_data/r72_nugent_2022_rtb_cryocooler_test_results.csv`. Nugent et al.'s 'Carnot COP (%)' row, by its eq. 5, is the fraction of Carnot, and it reads 5.0-15.6% over the ten test points: 14.5% at the 91.6 W/W flight-like point and 15.6% at best. The legacy GM cooler on the MHTB demonstration ran at 4% (350 W/W, Hastings et al. 2010 p16). So the band's upper half lies above every measured machine, and the arithmetic does not close either: 14 W/W at 15-25% of Carnot is 56-93 W/W, not 50-150. rc-089 (wording) proposes anchoring the note on the test data. The value and range stand.
+
+## R164 (2026-10-14) - 3 revision candidate(s) from sources already registered (registry unchanged)
+
+A citation-and-contradiction pass over sources registered in earlier rounds: each upstream row was cross-referenced to the registry rows mapped to it (spacecost@0b716ad, economicspace@f7fe1c6), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
+
+- **rc-101 (citation, spacecost `reference/operational_costs.csv` Power system specific mass).** Cite Hoffman et al. 2000 (NASA/TM-2000-210342) for the array-vs-system gap in this mission class: its Main Belt Asteroid Tour array is 121 kg for 7.5 kW EOL at 1.5 AU (~62 W/kg there, ~140 W/kg array-only at 1 AU), which is the halving the note asserts. Cite Schmitz et al. 2023 for current-generation arrays (Lucy, 184 W/kg at 1 AU). No registered source carries the ROSA 150 W/kg figure.
+- **rc-103 (citation, spacecost `reference/operational_costs.csv` Power processing unit specific mass).** Cite the NEXT-C PPU paper (Aerojet/NASA 2020) for the 34.5 kg, and note that it states the PPU's output range as 0.5-7 kW (7.4 kW is the input at full power), so 4.7 kg/kW is per kW of INPUT, as the row's unit says.
+- **rc-108 (citation, spacecost `reference/storage_systems.csv` Cryocooler specific mass (20 K)).** Cite the test data: NASA's 20 W / 20 K reverse-turbo-Brayton cooler measured a flight-like 5.5 kg/W (106.3 kg flight-like projection), against a project goal of 4.4 kg/W and a previous state of the art of 18.7 kg/W at 1 W lift. 5.0 sits between test and goal; the worked example (~100 kg, ~1.6 kW for 20 W) matches the tested 106 kg and 1.8 kW.

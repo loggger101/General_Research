@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+lodders_palme2009,"S, Sa, Sk, Sl, Sq, Sr, Sv, Q: CI bulk PGM 3.29 ppm in metal fraction 0.06",54.8,ppm total PGM in metal (if the metal holds all of it),Table 1 sum (lodders_palme2009_ci_pgm.csv),computed here; factor against the ~37 ppm baseline = 1.48; upstream factor 1.0 (default)
+lodders_palme2009,K: CI bulk PGM 3.29 ppm in metal fraction 0.08,41.1,ppm total PGM in metal (if the metal holds all of it),Table 1 sum (lodders_palme2009_ci_pgm.csv),computed here; factor against the ~37 ppm baseline = 1.11; upstream factor 1.0 (default)
+lodders_palme2009,L: CI bulk PGM 3.29 ppm in metal fraction 0.05,65.8,ppm total PGM in metal (if the metal holds all of it),Table 1 sum (lodders_palme2009_ci_pgm.csv),computed here; factor against the ~37 ppm baseline = 1.78; upstream factor 1.0 (default)

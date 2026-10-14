@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_nssdca_moon_fact_sheet,Moon mass: upstream against the cited fact sheet,-0.054,%,fact sheet table (r102_key_constants.csv / hosted HTML),upstream 7.342e+22 vs fact sheet 7.346e+22 kg
+nasa_nssdca_mars_fact_sheet,Mars mass: upstream against the cited fact sheet,+0.003,%,fact sheet table (r102_key_constants.csv / hosted HTML),upstream 6.4171e+23 vs fact sheet 6.4169e+23 kg
+nasa_nssdca_mars_fact_sheet,Phobos mass: upstream against the cited fact sheet,+0.557,%,fact sheet table (r102_key_constants.csv / hosted HTML),upstream 1.0659e+16 vs fact sheet 1.06e+16 kg
+nasa_nssdca_mars_fact_sheet,Phobos geometric-mean radius from the fact sheet axes 13.0 x 11.4 x 9.1 km,11.05,km,"Mars fact sheet, Phobos column",computed here; upstream 11.267 km is +2.0%
