@@ -342,3 +342,9 @@ Round 155 looked for open copies of the 35 T1/T2 queue rows that had never been 
 **The Hilda default is consistent.** gil_hutton_brunini_2008 sorts 122 SDSS Hildas into broad D 51, X (P) 49 and C 19. The slope-size correlation holds only for H < 11.5-12, and the small Hildas split evenly between D and P. AsteroidCatalog cites it for "P/D bimodal" and keeps the C-complex inference inside 4.6 AU, arguing that a Tholen P is a dark X or C in later taxonomies. The paper does not contradict that. The SEDICI record says CC BY 4.0, but the file is the Elsevier typeset marked "All rights reserved", so it is not hosted.
 
 Extracted: `extracted_data/r155_queue_open_copies_key_numbers.csv`.
+
+## R165 (2026-10-14) - 1 revision candidate(s) from sources already registered (registry unchanged)
+
+A second cross-reference pass (economicspace config dials and price/production tables, spacecost launch prices, physical constants and propellant Isp, AsteroidCatalog PGM factors) over sources registered in earlier rounds (spacecost@0b716ad, economicspace@f7fe1c6, AsteroidCatalog@86cfc54), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
+
+- **rc-140 (method, AsteroidCatalog `asteroid_catalog/taxonomy.py` S, Sa, Sk, Sl, Sq, Sr, Sv, Q, K, L (default 1.0) and the header paragraph L744-745).** Build the table the file itself proposes, for the classes it applies to: CI bulk PGM 3.29 ppm divided by each class's metal_fraction gives 54.8 ppm for the S-complex and Q (0.06 metal; factor 1.48 against 37 ppm), 41.1 ppm for K (0.08; 1.11) and 65.8 ppm for L (0.05; 1.78). Leave the C-complex out (its metal fraction is near zero and rc-076 disputes it), and correct the header paragraph that still calls the baseline chondritic.

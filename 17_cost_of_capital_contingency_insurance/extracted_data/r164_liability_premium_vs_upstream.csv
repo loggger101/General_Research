@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+gao_2012_commercial_space_launches_faa_liability_risk_assessment,"implied premium at ~1% of coverage, 2012 average required MPL","990,000",USD per launch,r153_liability_premium_key_numbers.csv,computed here: 1% x $99M; the ~1% rate is GAO-12-899's
+gao_2012_commercial_space_launches_faa_liability_risk_assessment,"upstream $1.5M against the implied premium, 2012 average required MPL",+52,%,computed here,"spacecost@0b716ad Third-party liability insurance value 1,500,000"
+gao_2017_commercial_space_launch_insurance_faa_calculation_weakness,"implied premium at ~1% of coverage, 2016 average required MPL (five active licences)","510,000",USD per launch,r153_liability_premium_key_numbers.csv,computed here: 1% x $51M; the ~1% rate is GAO-12-899's
+gao_2017_commercial_space_launch_insurance_faa_calculation_weakness,"upstream $1.5M against the implied premium, 2016 average required MPL (five active licences)",+194,%,computed here,"spacecost@0b716ad Third-party liability insurance value 1,500,000"

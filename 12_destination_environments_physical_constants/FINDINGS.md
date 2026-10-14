@@ -93,3 +93,12 @@ russell_2016_dawn_arrives_at_ceres was read in full from the first author's facu
 spacecost@0b716ad's 1 Ceres row (9.3835e20 kg, 469.73 km, 9.074 h) is near-exact: mass -0.005% and radius +0.006%, each carrying one more digit than the paper prints. The other four queue rows here (kopp_lean_2011, yeomans_2000, mazarico_2011, warner_harris_pravec_2009) were sought and not reached; their rows record the routes tried.
 
 Extracted: `extracted_data/r155_queue_open_copies_key_numbers.csv`.
+
+## R165 (2026-10-14) - 4 revision candidate(s) from sources already registered (registry unchanged)
+
+A second cross-reference pass (economicspace config dials and price/production tables, spacecost launch prices, physical constants and propellant Isp, AsteroidCatalog PGM factors) over sources registered in earlier rounds (spacecost@0b716ad, economicspace@f7fe1c6, AsteroidCatalog@86cfc54), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
+
+- **rc-131 (value, spacecost `reference/environments.csv` Lunar surface (equatorial);Lunar surface (polar ridge)).** Use the cited sheet's value, 0.07346 x 10^24 = 7.346e22 kg, or cite the source of 7.342e22 (it is not on the sheet the note names). The derived surface gravity and escape velocity move by +0.05% / +0.03%.
+- **rc-132 (value, spacecost `reference/environments.csv` Mars surface (mid-latitude)).** Use the cited sheet's 0.64169 x 10^24 = 6.4169e23 kg, or cite where 6.4171e23 comes from (an older edition of the sheet).
+- **rc-133 (citation, spacecost `reference/environments.csv` Phobos).** Name the source of each number: the Mars Fact Sheet gives Phobos as 10.6 x 10^15 kg with axes 13.0 x 11.4 x 9.1 km (geometric mean 11.05 km), so neither 1.0659e16 nor 11.267 km is from it. Attribute 11.267 km to Willner et al. 2014 if that is where it is (the paper is registered but has not been read here) and give the mass's own source.
+- **rc-165 (wording, economicspace `modules/mineral_value.py` IN_SPACE_UTILITY_BY_DESTINATION mars_surface comments (L652, L841, L846)).** Use the NASA Mars Fact Sheet values and cite it: CO2 95.1% and N2 2.59% by volume, surface pressure 6.36 mb (636 Pa) at mean radius, varying 4.0-8.7 mb with season.
