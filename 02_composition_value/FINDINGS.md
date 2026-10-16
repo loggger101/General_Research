@@ -449,3 +449,13 @@ Key numbers committed in extracted_data/r160_tagish_lake_composition_key_numbers
 
 - king_schofield_2015_ci_modal_mineralogy_xrd: OpenAlex hybrid-OA file oro.open.ac.uk/69573/1/69573.pdf re-probed with Safari UA (R137b lesson) - HTTP 403; no alternate bitstream on the ORO record. Stays registered_not_pulled for institutional pull.
 - lebofsky_et_al_1990: exact-title NTRS twin located = 19900035855 (REPRINT, [1990], "The nature of low-albedo asteroids from 3-micron multi-color photometry") with zero downloadable files - metadata-only record.
+
+## R177 - LPSC-2001 conference abstract located for the Tagish Lake modal study (2026-10-16)
+
+**Why this.** rc-085's missing source is Zolensky et al.'s MAPS 37:737-761 modal-mineralogy study; R160 queued it for an institutional pull after the NTRS record proved metadata-only. This round located a freely accessible copy of the conference version (LPSC XXXII, 2001) while re-probing the row.
+
+**What was found.** The LPSC-2001 proceedings session file at lpi.usra.edu/meetings/lpsc2001/pdf/sess01.pdf (96,675 B, 2 pp, pulled live this round; LPI/USRA public conference archive) carries abstract #1616 'Mineralogy of Tagish Lake, a Unique Type 2 Carbonaceous Chondrite' by Gounelle M., Zolensky M.E.*, Tonui E., Mikouchi T. (Gounelle first author in the conference version; Zolensky leads the journal version). Verbatim from the proceedings: 'We have identified in Tagish Lake an abondant carbonate-poor lithology and a less common carbonate-rich lithology.' ('abondant' as printed) - three sentences total, no modal wt% figures.
+
+**Against rc-085.** The abstract confirms the study's existence, authorship order and its central claim (two lithologies, unique type 2), but carries none of the mode percentages upstream needs for _ACC_TL; the MAPS full text remains paywalled from this machine (Wiley pdfdirect connection error R177). rc-085 stays open on the same terms as after R160. No new source row: the abstract is a second copy of content already represented by the registered NTRS abstract record, so it is documented here and in the row's access_status instead (near-miss convention).
+
+**Registry hygiene.** The row's authors_short carried 'Nakamura, E.'; Crossref for 10.1111/j.1945-5100.2002.tb00852.x prints Nakamura K. - corrected this round (id and year untouched).
