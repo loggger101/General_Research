@@ -102,3 +102,8 @@ A second cross-reference pass (economicspace config dials and price/production t
 - **rc-132 (value, spacecost `reference/environments.csv` Mars surface (mid-latitude)).** Use the cited sheet's 0.64169 x 10^24 = 6.4169e23 kg, or cite where 6.4171e23 comes from (an older edition of the sheet).
 - **rc-133 (citation, spacecost `reference/environments.csv` Phobos).** Name the source of each number: the Mars Fact Sheet gives Phobos as 10.6 x 10^15 kg with axes 13.0 x 11.4 x 9.1 km (geometric mean 11.05 km), so neither 1.0659e16 nor 11.267 km is from it. Attribute 11.267 km to Willner et al. 2014 if that is where it is (the paper is registered but has not been read here) and give the mass's own source.
 - **rc-165 (wording, economicspace `modules/mineral_value.py` IN_SPACE_UTILITY_BY_DESTINATION mars_surface comments (L652, L841, L846)).** Use the NASA Mars Fact Sheet values and cite it: CO2 95.1% and N2 2.59% by volume, surface pressure 6.36 mb (636 Pa) at mean radius, varying 4.0-8.7 mb with season.
+
+## Round 175 - queue sweep: NTRS twin hunt for the Eros radio-science and LOLA illumination rows
+
+- yeomans_2000_near_eros_radio_science: NTRS sweeps "radio science Eros NEAR" + "NEAR Shoemaker radio science" found no twin of the Science paper; nearest records 20060031186 (Mathilde+Eros radio-science conference paper, zero files) and 20010019470 (orbit-operations abstract record). Stays registered_not_pulled.
+- mazarico_2011_lunar_polar_illumination_lola: exact-title NTRS twin located = 20120010094 (REPRINT, [2010], "Illumination Conditions of the Lunar Polar Regions Using LOLA Topography") with zero downloadable files - metadata-only record.

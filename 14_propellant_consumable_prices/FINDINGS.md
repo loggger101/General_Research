@@ -78,3 +78,8 @@ The d14 queue row `dla_energy_aerospace_standard_prices_fy2020` (the FY2019 lett
 **rc-083 opened (value)** against spacecost@cd66898 `reference/propellants.csv`: the MMH/NTO row's components are MMH $100/kg + N2O4 $35/kg under a note reading verbatim "Pricing from DOD FY20 standards." — ~5x below current DLA standard prices; the hydrazine row reads verbatim "DOD FY20 standard $30.5/kg, commercial $75.8/kg (AIAA 2024). Used $75/kg conservative for aerospace." and sits ~5x below the current HPH price. The cited FY2019 file itself appears in no search index anymore, so its original figures cannot be re-verified from this machine — the rc proposes re-pinning to the FY2025 letter (or at minimum updating the notes). A further successor letter effective Oct 1 2025 is live but its propellant table was not read this round (server-side quota burned after ~2 calls); retry next round.
 
 Also this round: d17 GAO-18-57 direct fetch re-tested — still HTTP 403 (Akamai), stays registered.
+
+## Round 175 - queue sweep: Mobius paywall confirmed; EFC page carries no pricing data
+
+- mobius_2024_fueling_starships_methane: page live but the post is members-only ("Energy Shots #108", Oct 13 2024, "Unlock Research" gate); served HTML = title + teaser only with no cost figures in any script payload. Stays registered_not_pulled - cited content behind Mobius paywall.
+- efc_gases_xenon_krypton_space_propulsion: aerospace applications page live (HTTP 200) but carries application descriptions only, no public price data; vendor quotes remain non-public as at registration.
