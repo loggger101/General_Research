@@ -209,3 +209,19 @@ A second cross-reference pass (economicspace config dials and price/production t
 **Against the cells.** No re-pin this round - rc-125 (value) and rc-126 (citation) remain open for upstream. Cross-domain note added to domain 25's FINDINGS: its 'osmium price gap' item is now anchored via this row.
 
 **Extracted data:** `extracted_data/r182_osmium_production_price_key_numbers.csv` (7 rows x 6 cols; all prose spans count==1, chart reading flagged).
+
+## R190 - mineral_value_catalog audited cell-by-cell at economicspace@d77f1ce (no candidate)
+
+Live `asteroid_pipeline/mineral_value_catalog.csv` (59 rows; the file mineral_value.py reads at runtime, per-destination snapshots under campaign/stage2 are derived copies of it). All three layers checked against registered sources and prior audits:
+
+### Price layer
+Every ref_price_usd_per_kg cell is either re-pinned by an applied RC or matches its own note against a registered hosted source: copper 13,543/t and nickel 18,806/t are the WB Pink Sheet May-2026 values exactly (r46 rows); iridium $257,206/kg = JM Q1-2026 ATH $8,000/oz converted exact; ruthenium $56,263.8/kg = JM ATH $1,750/oz with the end-2025 record $1,275 per oz (r46 rows); platinum 61,472.2 = LBMA 2026-05-29 $1,912/oz via applied rc-034; gold/silver/palladium sit +3.1%/+9.5% vs their own LBMA notes - the open claims there remain rc-142/rc-141 (do not re-open); tungsten 45.0 is the start-of-2025 level explicitly deferred as a value decision in applied rc-063 evidence cell (end-2025 ~$85/kg W refresh = owner call, not an RC target per that row).
+
+### Production / market-depth layer
+Ga/Mo/Re/W world production exact vs MCS 2025 chapters (R83); Rh/Ir/Ru within ~6% of JM 2025 primary supply (R71); iron/cobalt/platinum-group chapter figures hosted in d25. No cell contradicts its cited source at the current upstream state.
+
+### yields_json PGM layer
+Nickel-iron IIIAB mean composition carries Pt 15 / Pd 10 / Ru 3 / Ir 4 / Os 2 / Rh 1.5 / Au 1 ppm (total ~36.5; note says "total ~36.5 ppm matches siderite literature of approximately 37 ppm"). The R72 ratio audit stands: iron meteorites fractionate Ir/Ru away from CI, so the no-candidate verdict is correct even though the absolute total sits below W&F/N&B siderite totals; backing sources registered at R74/R83 (Wright & Fleischer B-1214A hosted in d02, Nichiporuk & Brown 1965, Scott & Wasson 1975 trace metals).
+
+### Status
+No candidate from any layer of the live catalog at economicspace@d77f1ce. The price/production/yield surface is fully covered; future rounds should not re-audit these cells unless upstream changes a value or note.

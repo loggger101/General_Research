@@ -568,3 +568,22 @@ The v0.12.0-era EP sizing columns of spacecost reference/propellants.csv (thrust
 - **Remaining rows (FEEP 2500 / MPD 40 / electrospray 10000 / exotic classes):** no institutional mass-per-thrust measurements found on NTRS or elsewhere accessible from this machine; the notes name no sources, so there is nothing to contradict - not RC targets.
 
 No new revision candidate opened: anchorable RC space against current upstream state (spacecost@29a7ced v0.12.0 / economicspace@d77f1ce / AsteroidCatalog@84e026e data-2026-09-29c) remains exhausted as of R185, reconfirmed this round by nine further audit angles (drift #146-#149 tooling-only; operational_costs claim map fully claimed or pre-adjudicated by R113/R163; all six reference tables code-to-CSV consistent via live import - 194 rows, ~1500 fields; cross-repo table duplication absent (economicspace re-exports spacecost objects as aliases); AsteroidCatalog alloy-fix coverage verified at GR-R83).
+
+## R190 - propellants.csv non-thruster columns + ssoBFT delta_v carried item (no candidate)
+
+propellants.csv audited on the four value columns Round 189 did not cover (isp_vac_s, density_kg_per_L, ref_cost_usd_per_kg, boiloff_pct_per_day), all 41 rows:
+
+### Isp design points
+Xenon Hall/ion 3000 s sits mid-range of the NEXT-C flight envelope [1400-4160] measured on SN001 (nextc_flight_thruster_key_numbers.csv) - a throttle level this hardware actually flies, not an aspiration. PPT ~1000 s is consistent with the hosted EO-1 paper ground-test regime; chemical rows are standard TRL-9 values and no registered source contradicts any cell.
+
+### Storage densities
+The column records fluid density at actual flight storage conditions: argon 0.3 kg/L is documented in its own note (v1.10.0 convention change) as supercritical at 18 MPa and ambient - recomputed PM/RT gives ~0.29, physically consistent since Ar Tc = 150.7 K < 300 K; krypton 0.55 kg/L is a dense gas near 16-17 MPa at ambient (Kr Tc = 209 K) - consistent; xenon 2.0 kg/L requires cold near-critical storage (Xe Tc = 165 K, so the tank must run well below ambient), plausible for ion-engine practice and contradicted by no registered source; iodine solid 4.93 kg/L is the standard value.
+
+### Cost cells
+Xenon $10k/kg cites SETS Space 2024 + EFC in its note (used-value context); krypton $794 = geometric centre of a sourced band [$300 INL RPT-23-75203 bulk -> $2,100 SETS flight-grade], the rc-059 re-anchor applied upstream at v0.10.0; hydrazine 75 / green monopropellant 500 are specialty grades with no institutional price series in the registry (not RC targets).
+
+### ssoBFT per-body delta_v
+The carried R41 item is already mined: Round-42 addition computed population statistics from the full parquet (NEA p05 = 5.539, median 8.877; MBA median 10.13) and judged our approach/transfer rows AGREE as representative values. Data unchanged since R41 registration - no re-mining needed.
+
+### Status
+No candidate: no registered source contradicts any non-thruster propellant cell, and the ssoBFT item is closed by prior work. Anchorable RC space remains exhausted per R185/R192.
