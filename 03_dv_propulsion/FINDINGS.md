@@ -101,7 +101,7 @@ AAS 19-225 Table 3 (2035): MOI 121.31/122.04 m/s, TEI 121.37/127.21, outbound SE
 | MBA | 1,467,308 | 8.492 | 10.129 | 10.249 | 12.506 |
 | other | 53,941 | 8.213 | 11.797 | 11.656 | 14.915 |
 
-The 10,500 m/s main-belt row sits just above the MBA median (p75 = 10.89). Only 0.219% of NEAs (93) are below 4 km/s, 2.2% below 5, 9.1% below 6: the easy/average rows price the accessible tail. Bennu 7.368, Ryugu 6.985, Eros 7.643, Didymos 6.139 km/s. Join on `number`: (69230) is Hermes, Bennu is 101955. `extracted_data/r42_sso_bft_delta_v_key_numbers.csv`.
+The 10,500 m/s main-belt row sits just above the MBA median (p75 = 10.89). Only 0.219% of NEAs (93) are below 4 km/s, 2.2% below 5, 9.1% below 6: the easy/average rows price the accessible tail. Bennu 7.368, Ryugu 6.985, Eros 7.643, Didymos 6.139 km/s (transfer times 233–382 days, 2–3 burns). Join on `number`: (69230) is Hermes, Bennu is 101955. `extracted_data/r42_sso_bft_delta_v_key_numbers.csv`.
 
 ## Round 49 - whitley_martinez_2015_nro_staging_orbits [T2, hosted]
 
@@ -153,6 +153,8 @@ No candidate. Dawn flight records remain unreachable (R148 below). `extracted_da
 
 - `nasa_std_5019_fracture_control_spaceflight_hardware` hosted at NASA-STD-5019A w/Change 4 (2024-07-29): §7.2.2 covers fracture-critical COPVs and defers to ANSI/AIAA S-081-2000. The 392 kJ/kg figure is a material property; context only.
 - `nasa_sp125_huzel_huang_design_liquid_rocket_engines` read (47.8 MB, too large to host): engine design only, no ascent or Δv content (for rc-060).
+
+`extracted_data/r103_sp125_content_check.csv`.
 
 ## R115 - DRA 5.0 vs five more Mars rows (rc-070 to rc-074)
 

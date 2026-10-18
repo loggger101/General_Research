@@ -45,6 +45,8 @@ Dwarf planets have little macroporosity; bodies under 400 km can carry large voi
 
 The table tracks medians for S/X/Cgh/D (±0.2) but sits ~0.7-1 g/cm3 low for B, L and K.
 
+`extracted_data/simda2024_density_by_class.csv`.
+
 ### Other Round-1 sources
 
 - **dziadura2023** [T1] (A&A 680, A77; CC BY): Yarkovsky drift with Gaia DR3 for NEAs; read in R73.
@@ -84,6 +86,8 @@ Icarus 235:5-22: Yarkovsky da/dt = (-19.0±0.1)e-4 au/Myr (284 ± 1.5 m/yr); rho
 - **fowler_chillemi_1992_iras_mps_diameter_formula** [T2, hosted chapter]: D_km = 1329/sqrt(pV)*10^(-H/5); over 149,277 ssoBFT bodies the implied C is 1328.4 / 1329.0 / 1329.6 (p05/p50/p95). Read directly from the page image in R70: 10^3.1236 = 1329.2.
 - **demeo_2009_bus_taxonomy_near_ir** [T1, open_not_pulled]: the class system behind both density anchors.
 
+`extracted_data/r41_stage1_backbone_key_numbers.csv`.
+
 ## Round 42 - MP3C, MPC links, Bus-DeMeo bundle
 
 - **mp3c_minor_planet_physical_properties_catalogue** [T3]: v3.2.0-beta.1 (2024-02-13); 1,335,502 best rows, 6,086,962 aliases; Eros D 15.77 km, pV 0.385, M = 6.69e15 kg (+0.04%), Bennu D 0.492 km. Numbered bodies key through packed MPC aliases (`mp3c_main.name`, priority 3).
@@ -116,7 +120,7 @@ adam_2017 vs AsteroidCatalog: C median 1.60 (1.5), S 2.70 (2.7), Psyche/Kalliope
 ## R73 - Blocked downloads read (2026-09-27)
 
 - **dziadura2023** (publisher PDF from Univ. Alicante; CC BY): `r73_dziadura2023_tableA1_yarkovsky_densities.csv` (57 = 49 accepted + 8 marginal NEAs), `r73_dziadura2023_table2_observation_data.csv` (57; N_total = N_MPC + N_radar + N_Gaia on every row; 20 PHAs, 3 binaries), `r73_dziadura2023_tableA1_reference_key.csv`, `r73_dziadura2023_key_numbers.csv`. Kept as printed: Table 1's 154 094 vs 54 094 in the text; four rows print da/dt equal to their diameter; five print no density; (4769) Castalia negative; (88710) 2249.96 vs 2032 kg/m3. Yarkovsky S-type NEAs median 1.37 g/cm3 (N = 23, 0.73-3.70) vs S 2.7, Q median 1.47 (N = 9) vs Q 3.0; errors 30-60%, so **rc-045** and **rc-046** ask only for a small-NEA caveat. The backfill's 446 / 93 / 54,094 are fitted orbits; detections are 49 NEAs.
-- **wilkinson_robinson_2000** (ADS scan): `r73_wilkinson_robinson_2000_tables2_3_sample_bulk_densities.csv` (82), `..._table4_group_comparison.csv`, `..._table1_standards.csv`, `..._table5_shock_stages.csv`, `..._table6_asteroid_densities.csv`, `..._appendix1_bulk_geochemistry.csv` (44), `..._key_numbers.csv`. Group means recompute (H 3.44 +/- 0.19, n = 42; L 3.40 +/- 0.15, n = 30; LL 3.29 +/- 0.17, n = 9); 40 of 42 appendix rows satisfy Fe(T) = Fe(M) + 0.7773 FeO + 0.6353 FeS (Conquista, Macau off ~4.2 wt%); 39 meteorites listed vs 40 in the text. The citation is M&PS 35:1203-1213. Eros has 21-33% porosity (OC 3.40 vs 2.67 +/- 0.03); S 2.7 vs LL/L 3.29/3.40 implies ~20%.
+- **wilkinson_robinson_2000** (ADS scan): `r73_wilkinson_robinson_2000_tables2_3_sample_bulk_densities.csv` (82), `r73_wilkinson_robinson_2000_table4_group_comparison.csv`, `r73_wilkinson_robinson_2000_table1_standards.csv`, `r73_wilkinson_robinson_2000_table5_shock_stages.csv`, `r73_wilkinson_robinson_2000_table6_asteroid_densities.csv`, `r73_wilkinson_robinson_2000_appendix1_bulk_geochemistry.csv` (44), `r73_wilkinson_robinson_2000_key_numbers.csv`. Group means recompute (H 3.44 +/- 0.19, n = 42; L 3.40 +/- 0.15, n = 30; LL 3.29 +/- 0.17, n = 9); 40 of 42 appendix rows satisfy Fe(T) = Fe(M) + 0.7773 FeO + 0.6353 FeS (Conquista, Macau off ~4.2 wt%); 39 meteorites listed vs 40 in the text. The citation is M&PS 35:1203-1213. Eros has 21-33% porosity (OC 3.40 vs 2.67 +/- 0.03); S 2.7 vs LL/L 3.29/3.40 implies ~20%.
 - **epsc2022_context** (CC BY): chondritic Ru/Ir 1.51 +/- 0.05; no absolute PGE concentrations. `r73_epsc2022_context_key_numbers.csv`.
 
 ## R74 - Upstream citations registered (+22)

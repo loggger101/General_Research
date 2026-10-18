@@ -112,6 +112,8 @@ From the hosted FY2027 Budget Estimates (d07), p60 Space Operations ($M):
 
 Plus $250.0M/yr FY2027-31 of mandatory WFTC funding (PL 119-21) for ISS operations and cargo. The $2M per-delivery berthing estimate is 0.217% of the ISS line; "depot" occurs 0 times; $1.0 billion for future commercial station services (p63). Envelope only.
 
+`extracted_data/r63_fy2027_space_operations_iss_lines.csv`.
+
 ## Maintenance (2026-09-26)
 
 Un-hosted: lac_bac_2024, ssap_2021 (arXiv), nextc_ppu_2020 (NTRS copyright flag), jpl_dsn_services_catalog_820_100 (Caltech). lac_bac labels corrected (above). ssap Table 3: all 9 bodies now extracted. zero_bo_off_2025 re-tiered T2; lac_bac and ssap stay T1. stackpoole context-only then.
@@ -197,3 +199,5 @@ Both hosted:
 - **kleinhenz_paz_2021_lunar_water_isru_ptmss_srr** (2021-06-10): H2/O2 at mixture ratio 6; "The baseline system to produce 10 mT of O2 and 1.67 mT of H2 in 225 days was 4.9 mT and 68 kW"; ridge system 2.6 tons, 46 kW ridge + 22 kW mine → 7.28, the row's value and range_low exactly. The 46 kW is also rc-166's cross-check.
 
 Crossref titles the 2017 paper "An ISRU propellant production system for a fully fueled Mars Ascent Vehicle", as spacecost cites; NTRS's copy says "to Fully Fuel". **rc-167:** add DOI 10.2514/6.2017-0423 and note the variant title. No unregistered upstream reference remains for spacecost v0.12.0.
+
+`extracted_data/r184_kp_isru_plant_key_numbers.csv`.

@@ -28,6 +28,8 @@ Re-pulled with the default constraints (dv <= 12 km/s, duration <= 450 d, stay >
 
 Slides 5-6: "As of 2014-12-06, 1317 NHATS-compliant NEAs have been discovered"; 49 cost less Δv than lunar orbit and 556 less than the lunar surface. Calibration pairs: Mars surface 12.53 km/s / 923 d; elliptical Mars orbit 6.29 / 923 and 12.14 / 422; Venus-flyby variants 12.81 / 485 and 8.12 / 588; Mars flyby 9.01 / 501 and 6.07 / 582; "No round-trip mission to Mars (orbit, surface, or flyby) or Phobos/Deimos is possible with both Δv ≤12 km/s AND mission duration ≤450 days." The PDF text layer is garbled, so quotes come from NTRS's extracted fulltext, checked against slide renders. Pins the definition of the oracle output; no cell changes.
 
+`extracted_data/r138_nhats_criteria_key_numbers.csv`.
+
 ## R143 - Dated points for the NHATS population (2026-10-09)
 
 Three hosted NASA papers:

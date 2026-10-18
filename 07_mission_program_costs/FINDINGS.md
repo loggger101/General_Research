@@ -42,6 +42,8 @@ No per-Earth-recovery figure.
 
 Curation is 9.9% of its section. p160: with OSIRIS-REx ending in 2026 the office completes sample processing and distribution. The $15M per-recovery centre sits 8.0% below the $16.3M annual line, inside [5-30]M: a consistency anchor (the line is broader and recurring). No OSIRIS-APEX line exists ("APEX" occurs 0 times). Psyche FY2027 $35.8M -> $41.9M (FY2031); Europa Clipper $89.2M -> $187.7M.
 
+`extracted_data/r62_fy2027_curation_and_ps_lines.csv`.
+
 ## R70 - Full extraction (2026-09-27)
 
 Files in `extracted_data/`: `r70_nasa_fy2027_budget_all_budget_authority_lines.csv` (444), `r70_nasa_fy2027_budget_development_cost_commitments.csv` (9), `r70_nasa_fy2027_budget_development_cost_details_by_element.csv` (55), `r70_nasa_fy2027_budget_funds_distribution_by_center.csv` (100), `r70_nasa_oig_2020_ig-20-023_appendix_b_mission_lifecycle_costs.csv` (21), `r70_nasa_oig_2020_ig-20-023_planetary_science_portfolio.csv` (16), `r70_nasa_oig_2020_ig-20-023_table1_psd_budget_by_program.csv` (9), `r70_nasa_oig_2024_ig-24-008_mars_sample_return_audit.csv` (11), `r70_nasa_oig_2024_ig-24-008_table1_msr_milestones.csv` (10), `r70_nasa_oig_2024_ig-24-008_table4_funding_fy2021_2024.csv` (10).

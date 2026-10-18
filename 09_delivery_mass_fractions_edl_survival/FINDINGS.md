@@ -8,7 +8,7 @@ Backings: spacecost `delivery.py` typed constants with no table row: `MARS_LANDE
 - `nasa_mars2020_flight_mech_edl_simulation` (NTRS 20210024480, hosted), p1: "At 1026 kg, Perseverance is the largest, most sophisticated rover ever delivered to another planet."
 - `jpl_msl_factsheet_curiosity_mass` (live): Curiosity "899 kg in Earth gravity" (1,982 lbs).
 
-**Audit:** MSL 899/3153 = 28.51%; Perseverance 1026/3369 = 30.45% (29.86% on the design case). Band [28.51%, 30.45%]; 0.30 sits inside at the optimistic edge (+5.22% vs MSL, -1.49% vs Perseverance), as the code's "takes the better of the two" says.
+**Audit:** MSL 899/3153 = 28.51%; Perseverance 1026/3369 = 30.45% (29.86% on the design case). Band [28.51%, 30.45%]; 0.30 sits inside at the optimistic edge (+5.22% vs MSL, -1.49% vs Perseverance), as the code's "takes the better of the two" says. `extracted_data/r54_mars_edl_landed_mass_fractions.csv`.
 
 **Note-level discrepancy (constant unaffected):** the comment cites MSL entry 3257 kg where the BET is 3153 kg (+3.30%), and rover 1025 kg vs 1026. It shifts the quoted per-mission percentages (27.6%/29.8%), not the constant.
 
@@ -38,6 +38,8 @@ The other two constants were later anchored from SP-4029 (d03): TUG in R56 (S-IV
 **way_et_al_2006_msl_entry_descent_landing_system_performance** (NTRS 20070016022, hosted): designed "to land an 850 kg rover to altitudes as high as 1 km above the Mars Orbiter Laser Altimeter" (Curiosity flew at 899 kg); MER "delivered a 173 kg rover to an altitude of -1.44 km MOLA"; usable hydrazine "up to 390 kg"; Table 9 mean use 298.2 kg (bounds 284.2/312.8, std 4.7): Powered Approach 193.4 / Constant Velocity 9.7 / Constant Deceleration 35.0 / Sky Crane 42.1 / Fly Away 17.8, so ~26% margin at design time. Ballistic coefficient ~140 kg/m^2.
 
 **dutta_et_al_2012_low_ballistic_coefficient_entry_sizing_trade_studies** (NTRS 20120006657; "©2012 IEEE", so read, not hosted): "The lowest ballistic coefficient of the past successful missions has been 188 kg/m2"; deployables "may attain aeroshell areal densities of 10 kg/m2 as opposed to 50 kg/m2 for rigid aeroshells". Context only.
+
+`extracted_data/r139_edl_mass_budget_key_numbers.csv`.
 
 ## R147 - LANDER_DRY_MASS_FRAC backed by as-flown Apollo data (no new sources)
 
