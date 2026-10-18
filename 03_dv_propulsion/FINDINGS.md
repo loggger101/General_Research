@@ -69,8 +69,8 @@ tirila_2023 [T1] (Hall thruster database) is context-only. kim_2013 R40 Table 2 
 
 | segment | our value | SP-4029 | verdict |
 |---|---|---|---|
-| LEO → TLI | 3150 (note 3.05–3.20 km/s) | S-IVB 2nd burn A8 9,974 … A17 10,376 ft/s = 3.04–3.20 km/s | agrees |
-| TLI → LLO | 900 | LOI 2,918–3,022 ft/s = 889–922 m/s | agrees |
+| LEO → TLI | 3150 (note 3.05–3.20 km/s) | S-IVB 2nd-burn cutoff A8 9,974 / A11 10,008 / A12 10,515 / A13 10,039 / A14 10,367 / A15 10,415 / A16 10,390 / A17 10,376 ft/s = 3.04–3.20 km/s | agrees |
+| TLI → LLO | 900 | LOI cutoff A8 2,997 / A10 2,982 / A11 2,918 / A14 3,022 / A15 3,000 / A17 2,988 ft/s = 889–922 m/s (A16 column-shifted, excluded) | agrees |
 | LLO → surface | 1870 (now 2050) | descent A15 6,813 / A16 6,703 / A17 6,698 ft/s = 2.04–2.08 km/s | was 9–11% low; fixed upstream (R134) |
 | surface → LEO | 5900 | LM ascent A14 6,066.1 / A15 6,059 / A17 6,075.7 ft/s ≈ 1.85 km/s component | consistent |
 
@@ -118,7 +118,7 @@ delivery.py's comment "Apollo LM descent stage flew 2,134 kg dry on 8,200 kg of 
 
 ## Round 56 - TUG_DRY_MASS_FRAC = 0.10 (SP-4029 p294)
 
-S-IVB 'Ground Ignition Weights' (A7–A17; components sum to the printed total within 0.5 lb in 9 of 11): δ structure-only [0.0857, 0.0989], median 0.0963; including 'other' hardware [0.0908, 0.1044], median 0.1021. 0.10 is inside (−2.01% vs median), between Centaur V ~0.08 and DCSS ~0.11. `extracted_data/r56_sp4029_sivb_stage_mass_key_numbers.csv`.
+S-IVB 'Ground Ignition Weights' (A7–A17; components sum to the printed total within 0.5 lb in 9 of 11): δ structure-only [0.0857, 0.0989], median 0.0963 (A7, the first S-IVB, lowest: 21852 lb dry vs fleet median ~25089); 'other' hardware ~1432–1873 lb; including 'other' hardware [0.0908, 0.1044], median 0.1021. 0.10 is inside (−2.01% vs median), between Centaur V ~0.08 and DCSS ~0.11. `extracted_data/r56_sp4029_sivb_stage_mass_key_numbers.csv`.
 
 ## Maintenance (2026-09-26)
 

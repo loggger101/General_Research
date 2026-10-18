@@ -42,7 +42,7 @@ import traceback
 from collections import Counter, defaultdict
 
 from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_STATUSES, CANDIDATES, DOMAIN_COLS,
-                    DOMAIN_RE, INDEX, LICENSE_CLASSES, LOG, LIVE_CANDIDATE_STATUSES, MANIFEST, MANIFEST_COLS,
+                    DOMAIN_RE, INDEX, LICENSE_CLASSES, LIVE_CANDIDATE_STATUSES, LOG, MANIFEST, MANIFEST_COLS,
                     NOT_REDISTRIBUTABLE, PENDING_ACCESS, README, REGISTRY, REGISTRY_COLS, ROOT, TIERS, UPSTREAM_MAP,
                     UPSTREAM_MAP_COLS, UPSTREAM_REPOS, DataError, access_class, domain_dirs, file_digest, read_csv,
                     ignored_files, plain_file_name, read_domain_csv, read_text, rel, repo_files)
@@ -56,7 +56,8 @@ GITHUB_WARN_LIMIT = 50 * 1024 * 1024
 # Root-level files and directories, each with a line in README "Layout" unless marked False.
 ROOT_FILES = {'README.md': True, 'INDEX.md': True, 'RESEARCH_LOG.md': True, 'sources.csv': True,
               'full_texts_manifest.csv': True, 'revision_candidates.csv': True, 'upstream_commit_map.csv': True,
-              'DOWNLOADS.md': True, 'AGENTS.md': True, 'CLAUDE.md': False, 'LICENSE': False, '.gitignore': False, '.gitattributes': False}
+              'DOWNLOADS.md': True, 'AGENTS.md': True, 'CLAUDE.md': False, 'LICENSE': False, '.gitignore': False,
+              '.gitattributes': False}
 # .gitattributes keeps hosted files byte for byte. git check-attr reads the staged copy when the working one is
 # deleted, so full-text-eol-converted cannot see a deletion that is about to be committed; root-file-missing does.
 REQUIRED_ROOT_FILES = ['README.md', 'INDEX.md', 'RESEARCH_LOG.md', 'sources.csv', 'full_texts_manifest.csv',

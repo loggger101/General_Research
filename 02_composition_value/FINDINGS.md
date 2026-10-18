@@ -43,6 +43,10 @@ Nature Astronomy 9:199–210: OSIRIS-REx Bennu samples: total C 4.5–4.7 wt%, N
 - **wilkinson_robinson_2000** (see d01).
 - **mandler_elkins_tanton_2013** [T1, open_not_pulled]: Vesta = ~60–70% equilibrium magma-ocean crystallisation with residual melt extracted to shallow chambers: core, mantle (dunites, harzburgites, diogenites) and eucrite crust, whose PGMs went to the core. The mechanism behind `PGM_ENRICHMENT_BY_TYPE`.
 
+## Round 12 - farnocchia_2024
+
+Second M-type density, registered here because the M row's composition and density feed both domains; the write-up is in domain 1's Round 12 block.
+
 ## Round 36 - Per-type material anchors
 
 `extracted_data/r36_per_type_materials_key_numbers.csv`:
