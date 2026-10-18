@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+jaxa_2003_hii_no6_accident_page,H-IIA per-vehicle cost at F4,9.3 billion yen,JPY nominal,"rendered DOM layer (JAXA page, R188 pull)","verbatim ""As a result, the cost was reduced by almost half, down to 9.3 billion yen (H-IIA F4)."" count==1; direct fetch CloudFront-403 from this machine - rendered layer passed"
+mhi_2002_hii_maiden_flight_results_tech_report,H-IIA per-unit cost statement (F1 era),below 8.5 billion yen per unit,JPY nominal,"p.1 English abstract (PDF text layer, sha 9781879b...)",verbatim Japanese span count==1; English abstract states the sub-8.5-billion-yen-per-unit cost
+mhi_2002_hii_maiden_flight_results_tech_report,H-IIA standard-type estimated launch cost (world comparison table),75-85 hundred million yen,"JPY nominal, stated rate $=JPY 120",p.3 Table 3 world rocket costs (PDF text layer),cell + note spans count==1; = $62.5M-$70.8M at the stated rate
+space_review_2023_japan_space_policy_h3_first_flight,H-2A launch cost (Mar 2023),about 10 billion yen (about $75 million),JPY nominal + USD conversion as printed,"article body, published Mar 7 2023 (raw HTML layer)",verbatim count==1

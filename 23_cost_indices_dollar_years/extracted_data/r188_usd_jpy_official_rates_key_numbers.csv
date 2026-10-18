@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+world_bank_official_fx_averages_jpn,"USD/JPY official rate, period average 2005",JPY/$ = 110.22,LCU per US$,PA.NUS.FCRF JPN (API pull R188),context: ~JPY 10B at this rate = $90.7M - one of the windows where the row value reconciles
+world_bank_official_fx_averages_jpn,"USD/JPY official rate, period average 2018",JPY/$ = 110.42,LCU per US$,PA.NUS.FCRF JPN (API pull R188),context: ~JPY 10B at this rate = $90.6M - second window where the row value reconciles
+world_bank_official_fx_averages_jpn,"USD/JPY official rate, period average 2023",JPY/$ = 140.49,LCU per US$,PA.NUS.FCRF JPN (API pull R188),~JPY 10B at this rate = $71.2M
+world_bank_official_fx_averages_jpn,"USD/JPY official rate, period average 2024",JPY/$ = 151.37,LCU per US$,PA.NUS.FCRF JPN (API pull R188),~JPY 9.3B at this rate = $61.4M; ~JPY 10B = $66.1M
+world_bank_official_fx_averages_jpn,"USD/JPY official rate, period average 2025",JPY/$ = 149.66,LCU per US$,PA.NUS.FCRF JPN (API pull R188),proposed anchor: ~JPY 9.3B = $62.1M; ~JPY 10B = $66.8M
