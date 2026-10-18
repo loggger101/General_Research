@@ -50,6 +50,8 @@ Over 2009-2024 NNSI is 2.1% below the CPI chain upstream used (x1.4570); carried
 
 Factors: FY2017 -> Q4-2025 x1.3536, FY2014 x1.4417, FY2009 x1.5825 (to Q2-2026: x1.376 / x1.466 / x1.609); in PEBD's convention through CY2024: x1.353651 / x1.441792 / x1.582508. Peak Q2-2022 5.1%, trough Q4-2009 1.4%. Over FY2009-2024 ECI gives x1.5286 vs the World Bank CPI chain's x1.4570 (~4.9% apart), so the index choice matters for operations rows. No re-pin.
 
+`extracted_data/r140_eci_series_key_numbers.csv`.
+
 ## R145 - GDP deflator: FRED GDPDEF (2026-10-09)
 
 **fred_gdpdef_quarterly_usd_series** [T3 open service]: BEA implicit price deflator, Q1-1947 to Q1-2026 (318 obs). GDPC1 is real GDP, not the deflator. Factors to Q1-2026 (`extracted_data/r145_gdpdef_key_numbers.csv`): FY2009 x1.5067, 2014 x1.3928, 2016 x1.3684, 2017 x1.3423, each ~4% below CPI-U to the same quarter (FY2009: x1.5724). Consumer-price escalation overstates production-side cost growth by ~4% on long spans. No cell names GDPDEF yet, so no re-pin.

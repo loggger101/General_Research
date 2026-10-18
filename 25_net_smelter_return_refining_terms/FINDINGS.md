@@ -55,6 +55,8 @@ On a feed this iron-rich, flotation alone loses ~half the cobalt and a quarter o
 
 World PGM mine production 472,000 kg (+12%), South Africa 61%, Russia 23%. USGS publishes no separate osmium figure (Census combines Ir/Os/Ru), so the 1.0e3 kg/yr osmium cell needs a non-USGS source. **rc-058** proposes re-pinning Ir/Rh/Ru to ~7.9e3 / ~2.44e4 / ~3.37e4.
 
+`extracted_data/r98_pgm_world_production_key_numbers.csv`.
+
 ## R114 - PGM concentrate flowsheet recoveries (2026-10-04)
 
 `dowling_2022_capital_efficient_upgrading_of_pgm_concentrates` (Glencore, SAIMM 2022): ISASMELT + Albion design recoveries on a ~100 g/t Platreef concentrate, 98% Pt/Pd/Au/Rh and 97% Cu/Ni (Table VII), at Pt $950/oz, Pd $2,000/oz, Au $1,600/oz, Rh $5,000/oz, Cu $7,500/t, Ni $15,000/t. Design values, not contract terms. `usitc_hts_7502_20_00_00_nickel_alloys_duty_rates`: nickel alloys duty "Free" (6.6 cents/kg in column 2). `extracted_data/r114_gr_links_key_numbers.csv`. No candidate.
