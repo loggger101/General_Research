@@ -11,7 +11,9 @@ sources".
 
 ## Domains
 
-One domain per group of upstream cells; each domain's FINDINGS.md names its
+This repo backs the cells that `economicspace/CITATIONS.md` leaves weakly
+sourced, one domain per group of cells; domains 1–5 were the weakest, the rest
+were added as rounds found uncovered cells. Each domain's FINDINGS.md names its
 cells, their values and what a source must supply.
 
 | # | domain | pipeline cell(s) it could back or replace |

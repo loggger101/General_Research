@@ -86,7 +86,7 @@ Icarus 235:5-22: Yarkovsky da/dt = (-19.0±0.1)e-4 au/Myr (284 ± 1.5 m/yr); rho
 
 ## Round 42 - MP3C, MPC links, Bus-DeMeo bundle
 
-- **mp3c_minor_planet_physical_properties_catalogue** [T3]: v3.2.0-beta.1 (2024-02-13); 1,335,502 best rows, 6,086,962 aliases; Eros M = 6.69e15 kg (+0.04%), Bennu D 0.492 km. Numbered bodies key through packed MPC aliases (`mp3c_main.name`, priority 3).
+- **mp3c_minor_planet_physical_properties_catalogue** [T3]: v3.2.0-beta.1 (2024-02-13); 1,335,502 best rows, 6,086,962 aliases; Eros D 15.77 km, pV 0.385, M = 6.69e15 kg (+0.04%), Bennu D 0.492 km. Numbered bodies key through packed MPC aliases (`mp3c_main.name`, priority 3).
 - **mpc_mpcorb_extended_designation_links** [T3]: 182 MB gzip, structure as AsteroidCatalog's `identity.py` expects.
 - **bus_demeo_2020_pds_taxonomy_bundle** [T3, hosted as `full_texts/bus_demeo_2020_pds_bundle.zip`]: 371 classified bodies (S=144; L 22, Xk 18, V 17, Ch/D/K/Cgh ~10-16, T 4); 24 of 31 named types covered (none for Sk, Sl or Tholen-only M/E/P/F/G). `extracted_data/r42_bus_demeo_class_distribution.csv`.
 

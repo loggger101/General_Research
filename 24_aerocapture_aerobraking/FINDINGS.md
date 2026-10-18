@@ -42,7 +42,7 @@ Aero-assisted returns are offered at earth_surface, LEO, GEO, Mars orbit and Mar
 - `cassell_2019_aeroassist_technologies_small_satellite_missions`: small sample-return capsules at about 11-12.8 km/s.
 - `girija_2023_aerocapture_design_reference_missions_venus_to_neptune` and `braun_powell_lyne_1992_earth_aerobraking_strategies_manned_return_from_mars`: savings not yet read.
 
-The owner's list quoted '1500 vs 5500 m/s', '2300 m/s' and '3-4x launch mass'; none was found in the passages read. `extracted_data/r114_gr_links_key_numbers.csv`. No candidate.
+The owner's list quoted '1500 vs 5500 m/s', '2300 m/s' and '3-4x launch mass'; none was found in the passages read. Two list links are not new sources: NTRS 20000102372 and its PDF are one record, and NTRS 20110014670 (Woodcock & Dankanich, JPC 2006) is a second record of an already registered paper. `extracted_data/r114_gr_links_key_numbers.csv`. No candidate.
 
 ## R119 - girija_2023_aerocapture_design_reference_missions_venus_to_neptune hosted (CC BY-SA 4.0; 2026-10-05)
 

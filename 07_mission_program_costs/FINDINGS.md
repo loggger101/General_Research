@@ -8,7 +8,7 @@ The Planetary Society's Planetary Exploration Budget Dataset (Casey Dreier), pul
 
 | mission | Official LCC ($M) | Formulation+Implementation incl LV ($M) | Launch Vehicle(s) total ($M) | Operations obligations ($M) |
 |---|---|---|---|---|
-| OSIRIS-REx | 1,057.3 | 785.3 | 183.5 | 232.2 (FY2017–FY2025) |
+| OSIRIS-REx | 1,057.3 | 785.3 (140.9 + 644.4) | 183.5 | 232.2 (FY2017–FY2025) |
 | Mars Perseverance | 2,725.8 | 2,462.6 | 243.0 | 517.1 (through FY2025) |
 
 - **Spacecraft development (NRE):** OSIRIS-REx FY2011-FY2016 total cost minus launch vehicle = $588.5M, matching the note to the decimal; its "$183.5M launch vehicle" also matches.
