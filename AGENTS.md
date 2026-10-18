@@ -13,87 +13,76 @@ python tools/validate.py         # must exit 0
 ```
 
 When a round re-checks revision candidates, also run `python tools/validate.py --upstream`
-(it needs the sibling clones fetched). When you change anything under `tools/`, run
-`python -m unittest discover -s tools/tests` and give every new report code a planted-defect
-case: the suite fails on a code without one. Then run `python tools/tests/measure_coverage.py`:
-it fails unless every line and branch of the tools is reached by a test, so a new place that
-reports an existing code needs its own case too. A case's report must hold exactly its code and
-the codes it lists in `also`: list a code there only when the planted defect really causes it,
-never to quiet a check that misfired (fix the check). `python tools/tests/debug_case.py CODE --keep`
-(or `--build CODE`) shows a case's full report and problems and keeps its planted repo. Fix a
-failing check's cause; do not add a fallback, a skip or an exception that lets the run pass
-around it. When a new check fails on the data, decide whether the data or the check is wrong:
-a stray-log-line check (2026-10-12) failed on Round 40's second paragraph, which Markdown
-renders as part of the entry, so the check was narrowed rather than the old entry rewritten;
-the file-reference check (2026-10-12) found 17 stale paths, and the data was corrected.
+(fetch the sibling clones first). When you change anything under `tools/`, run
+`python -m unittest discover -s tools/tests` and `python tools/tests/measure_coverage.py`:
+every report code needs a planted-defect case, and every line and branch of the tools must be
+reached, so a new place that reports an existing code needs its own case too. A case's report
+must hold exactly its code and the codes it lists in `also`; list a code there only when the
+planted defect really causes it, never to quiet a misfiring check. `python tools/tests/debug_case.py
+CODE --keep` (or `--build CODE`) shows a case's report and keeps its planted repo. Fix a failing
+check's cause; never add a fallback, skip or exception that lets the run pass around it. When a
+new check fails on the data, decide whether the data or the check is wrong.
+
+## Writing it down
+
+- **FINDINGS.md: one block per round, facts only.** Give the source id, what it
+  says (short verbatim quotes with page), the upstream cell and value it bears
+  on, the verdict, any `rc-NNN`, and the extracted-data file. Leave out access
+  narration (which routes failed, retries, user agents), round status
+  summaries, and restatements of earlier blocks. Candidate texts live in
+  `revision_candidates.csv`; a FINDINGS block lists the ids with a few words each.
+- **The research log (`RESEARCH_LOG.md`) is append-at-top only.** Add one
+  entry, `- **Round N** (YYYY-MM-DD): ...`, of one or two sentences above the
+  previous one — that exact label, not `**RN**` or a heading. The details
+  belong in FINDINGS. Never rewrite or reorder older entries; `validate.py`
+  fails if the committed log is not kept as the tail. (The log was condensed
+  once, on the owner's instruction, on 2026-10-18.)
 
 ## Rules (each one exists because it broke in a past round)
 
 - **Edit `<domain>/sources_domain.csv`, never `sources.csv`.** The aggregate is
   generated; hand-appended rows landed outside their domain block in R42.
 - **`access_status` starts with one of the seven classes** in README "Access
-  classes", followed by how it was verified (write `open_service`, not
-  `open service`; a pulled-but-unhostable full text is `verified_live_not_pulled`). `full_text_hosted` needs the file
-  in `full_texts/` *and* a row in `full_texts_manifest.csv` (write
-  `domain_dir,id,file,,,license` and let the build fill `bytes,sha256`).
-  Hosted files are stored byte for byte: `.gitattributes` marks `full_texts/`
-  `-text`, so a clone with `core.autocrlf` cannot rewrite an .html or .txt
-  file's line ends and break its hash (five did until 2026-10-12).
-  A `registered_not_pulled` row (R74) records an upstream citation that has not
-  been read; when you pull it, re-class it and say what you read.
-- **Read the licence off the file or its record**: the PDF's own licence
-  statement, the NTRS `copyright.determinationType`, or the arXiv abs page.
-  Don't take it from the journal's general policy or from where the copy came
-  from. arXiv's default licence, an author-homepage copy and "free to read" grant
-  no right to redistribute. The 2026-09-26 audit found 20 hosted files hosted
-  on those grounds, including one recorded as "CC BY per journal policy" whose
-  PDF says "All rights reserved".
+  classes", then how it was verified (`open_service`, not `open service`; a
+  pulled-but-unhostable full text is `verified_live_not_pulled`).
+  `full_text_hosted` needs the file in `full_texts/` *and* a manifest row
+  (write `domain_dir,id,file,,,license`; the build fills `bytes,sha256`).
+  `.gitattributes` marks `full_texts/` `-text` so `core.autocrlf` cannot
+  change a hosted file's bytes. A `registered_not_pulled` row records an
+  upstream citation not yet read; when you pull it, re-class it and say what you read.
+- **Read the licence off the file or its record**: the PDF's own statement, the
+  NTRS `copyright.determinationType`, or the arXiv abs page, never the journal's
+  general policy or where the copy came from. arXiv's default licence, an
+  author-homepage copy and "free to read" grant no right to redistribute (the
+  2026-09-26 audit un-hosted 20 files hosted on those grounds).
 - **INDEX.md domain tables list the same ids in the same order as
-  `sources_domain.csv`**: a new source is appended to both. Every table uses
-  the header `| id | tier | source (short) | access | backs / could replace |`,
-  five cells per row with a closing `|`, and no blank line inside the table.
-  (A blank line split the domain-6 table; 20 rows in domains 4 and 8–11 had
-  only three cells, and domains 8–11 had three-column headers, which make
-  GitHub drop any wider row's extra cells.)
-- **The research log is append-at-top only.** Add one entry,
-  `- **Round N** (YYYY-MM-DD): ...`, above the previous one — that exact label,
-  not `**RN**` or a `### RN` heading. Never rewrite, trim or reorder older
-  entries: R43's rewrite deleted Rounds 0–41 and R46's deleted R45 (all
-  restored from git on 2026-09-26), and R53's commit claimed an entry it never
-  wrote.
+  `sources_domain.csv`**: append a new source to both. Header
+  `| id | tier | source (short) | access | backs / could replace |`, five cells
+  per row with a closing `|`, no blank line inside a table. Keep the access and
+  backs cells short; detail goes in FINDINGS.
 - **Extracted data lives in `<domain>/extracted_data/`**, never a root
-  `extracted_data/`: FINDINGS paths are relative to the domain, so R47–R57's
-  root-level files were unreachable until moved.
+  `extracted_data/`: FINDINGS paths are relative to the domain.
 - **Write extracted-data CSVs with `csv.writer` on a file opened with
-  `newline=''`**, never by joining strings: ten older files had unquoted commas
-  that shifted cells, and R53's file had doubled carriage returns. Keep the
-  `source_id,item,value,unit,location_in_source,notes` columns where they fit.
-  Every extracted-data CSV needs a `source_id` column. Leave it blank only for
-  the pipeline's own value or a comparison computed here, and write `a;b` for a
-  row derived from two sources. A source that no CSV cites needs "Context-only:
-  <reason>" in its registry row.
-- **Read tables by word coordinates, then check what you read.** Taking numbers
-  from the text stream mixed values between wrapped rows of carry2012 Table 3
-  (a revision candidate, rc-006, was built on one and later withdrawn) and
-  swapped the two insulation cases in lac_bac_2024. Check each value against its
-  row label, and where a table has totals, check that they add up.
+  `newline=''`**, never by joining strings. Use
+  `source_id,item,value,unit,location_in_source,notes` where it fits. Every
+  CSV needs a `source_id` column: blank only for the pipeline's own value or a
+  comparison computed here, `a;b` for a row from two sources. A source no CSV
+  cites needs "Context-only: <reason>" in its registry row.
+- **Read tables by word coordinates, then check what you read.** The text
+  stream mixed wrapped rows of carry2012 Table 3 (rc-006 was built on one and
+  withdrawn) and swapped lac_bac_2024's insulation cases. Check each value
+  against its row label and that totals add up.
 - **Before un-hosting a file, extract every number the repo uses from it**, with
   page locations, and record the removed copy's size and sha256 in its
-  `access_status`. After removal nothing can be re-checked. (A rejected
-  source is the exception: its data is deleted, not kept.)
+  `access_status` (a rejected source is the exception: its data is deleted).
 - **A rejected source keeps one record: its row in INDEX.md "Rejected
-  sources"** (`id`, `source`, `link`, `reason`). Only the owner rejects a
-  source. Rejecting it deletes its domain and INDEX rows, hosted files,
-  extracted data, FINDINGS write-ups, DOWNLOADS entry and any revision
-  candidate that rests on it alone. Past research-log entries stay as written.
-  README "Rejecting a source" lists the steps, and `validate.py` fails if the
-  id is named anywhere else.
-- **Record revision candidates.** When a source contradicts an upstream cell,
-  add a `revision_candidates.csv` row (next `rc-NNN`, status `open`) with the
-  current upstream value and the commit you read it from. When you re-check
-  upstream and find it changed, update `status`, `checked_against` and
-  `checked_date` rather than adding a new row.
-- **IDs are permanent**, and a rejected source's id is never reused. Use the
-  registry id everywhere (INDEX, extracted-data `source_id`, candidates); do
-  not abbreviate it in INDEX (`krishnan_2010` for
-  `krishnan_2010_h2o2_rp1_upper_stage` broke the cross-reference).
+  sources"** (`id`, `source`, `link`, `reason`). Only the owner rejects; README
+  "Rejecting a source" lists what to delete, and `validate.py` fails if the id
+  is named anywhere but the research log.
+- **Record revision candidates.** A source contradicting an upstream cell gets a
+  `revision_candidates.csv` row (next `rc-NNN`, status `open`) with the current
+  upstream value and the commit read. On re-check, update `status`,
+  `checked_against` and `checked_date` rather than adding a row.
+- **IDs are permanent** and a rejected id is never reused. Write the full
+  registry id everywhere (INDEX, FINDINGS, the log, `source_id`, candidates):
+  `krishnan_2010` for `krishnan_2010_h2o2_rp1_upper_stage` broke a cross-reference.

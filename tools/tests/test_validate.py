@@ -78,16 +78,16 @@ def drop_line(root, rel, prefix):
     (root / rel).write_text('\n'.join(keep), encoding='utf-8', newline='')
 
 
-def commit_head_index(root, data):
-    """Commit `data` (bytes, or None to drop the file) as HEAD's INDEX.md, then put the working INDEX.md back."""
-    path = root / 'INDEX.md'
+def commit_head_log(root, data):
+    """Commit `data` (bytes, or None to drop the file) as HEAD's RESEARCH_LOG.md, then put the working one back."""
+    path = root / 'RESEARCH_LOG.md'
     working = path.read_bytes()
     if data is None:
-        fixture.git(root, 'rm', '-q', '--cached', 'INDEX.md')
+        fixture.git(root, 'rm', '-q', '--cached', 'RESEARCH_LOG.md')
     else:
         path.write_bytes(data)
-        fixture.git(root, 'add', 'INDEX.md')
-    fixture.git(root, 'commit', '-q', '-m', 'planted HEAD:INDEX.md')
+        fixture.git(root, 'add', 'RESEARCH_LOG.md')
+    fixture.git(root, 'commit', '-q', '-m', 'planted HEAD:RESEARCH_LOG.md')
     path.write_bytes(working)
 
 
@@ -95,16 +95,16 @@ SIDE_B = '- **Round 2** (2026-01-03): the other branch\'s round.\n'
 SIDE_A = '- **Maintenance** (2026-01-03): this branch\'s fix.\n'
 
 
-def start_merge(root, merged=None, side_b_index=None):
-    """A merge in progress, as `git merge` leaves it after an INDEX.md conflict.
+def start_merge(root, merged=None, side_b_log=None):
+    """A merge in progress, as `git merge` leaves it after a RESEARCH_LOG.md conflict.
 
-    Side B (MERGE_HEAD) commits SIDE_B at the top of the log, or `side_b_index` as INDEX.md; HEAD, from the same base,
-    commits SIDE_A. The working INDEX.md is then `merged`, a list of the entries to put on top, in order.
+    Side B (MERGE_HEAD) commits SIDE_B at the top of the log, or `side_b_log` as RESEARCH_LOG.md; HEAD, from the same
+    base, commits SIDE_A. The working RESEARCH_LOG.md is then `merged`, a list of the entries to put on top, in order.
     Returns MERGE_HEAD's id.
     """
-    path = root / 'INDEX.md'
+    path = root / 'RESEARCH_LOG.md'
     base = path.read_text(encoding='utf-8')
-    path.write_text(side_b_index if side_b_index is not None else base.replace(LOG1, SIDE_B + LOG1), encoding='utf-8',
+    path.write_text(side_b_log if side_b_log is not None else base.replace(LOG1, SIDE_B + LOG1), encoding='utf-8',
                     newline='')
     fixture.git(root, 'commit', '-q', '-am', 'side B')
     side_b = fixture.git(root, 'rev-parse', 'HEAD')
@@ -273,35 +273,35 @@ CASES = [
                                                       edit(r, 'INDEX.md', '## Domain 1', DOMAIN2_SECTION + '## Domain 1'))),
     ('index-domain-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', DOMAIN2_SECTION, '')),
     # check_log
-    ('log-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Research log', '## Log'), {'rejected-position', 'rejected-still-named'}),
-    ('log-not-last', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG0, LOG0 + '## Appendix\n'), {'log-mislabelled', 'log-rewritten'}),
-    ('log-date-invalid', 'error', [], lambda r, s: edit(r, 'INDEX.md', '(2026-01-02)', '(2026-02-30)'), {'log-rewritten'}),
-    ('log-date-future', 'error', [], lambda r, s: edit(r, 'INDEX.md', '(2026-01-02)', '(2999-01-02)'), {'log-rewritten'}),
-    ('log-entry-format', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, '- **R2** (2026-01-03): x\n' + LOG1)),
-    ('log-mislabelled', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, '### R2 (2026-01-03)\n' + LOG1)),
-    ('log-mislabelled', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, 'Round 2 (2026-01-03): unlabelled\n' + LOG1)),
-    ('log-blank-line', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, LOG1 + '\n'), {'log-rewritten'}),
-    ('log-preamble', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, 'Rounds below.\n' + LOG1)),
-    ('log-no-rounds', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1 + LOG0, '- **Maintenance** (2026-01-01): x\n'), {'log-rewritten'}),
-    ('log-order', 'error', [], lambda r, s: swap_lines(r, 'INDEX.md', LOG1, LOG0), {'log-date-order', 'log-rewritten'}),
-    ('log-gap', 'error', [], lambda r, s: edit(r, 'INDEX.md', '**Round 1**', '**Round 2**'), {'log-rewritten'}),
-    ('log-duplicate', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1, LOG1 * 2)),
-    ('log-date-order', 'error', [], lambda r, s: edit(r, 'INDEX.md', '(2026-01-02)', '(2025-12-31)'), {'log-rewritten'}),
+    ('log-missing', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', '# Research log', '# Log')),
+    ('log-mislabelled', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', LOG0, LOG0 + '## Appendix\n'), {'log-rewritten'}),
+    ('log-date-invalid', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', '(2026-01-02)', '(2026-02-30)'), {'log-rewritten'}),
+    ('log-date-future', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', '(2026-01-02)', '(2999-01-02)'), {'log-rewritten'}),
+    ('log-entry-format', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', LOG1, '- **R2** (2026-01-03): x\n' + LOG1)),
+    ('log-mislabelled', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', LOG1, '### R2 (2026-01-03)\n' + LOG1)),
+    ('log-mislabelled', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', LOG1, 'Round 2 (2026-01-03): unlabelled\n' + LOG1)),
+    ('log-blank-line', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', LOG1, LOG1 + '\n'), {'log-rewritten'}),
+    ('log-preamble', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', LOG1, 'Rounds below.\n' + LOG1)),
+    ('log-no-rounds', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', LOG1 + LOG0, '- **Maintenance** (2026-01-01): x\n'), {'log-rewritten'}),
+    ('log-order', 'error', [], lambda r, s: swap_lines(r, 'RESEARCH_LOG.md', LOG1, LOG0), {'log-date-order', 'log-rewritten'}),
+    ('log-gap', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', '**Round 1**', '**Round 2**'), {'log-rewritten'}),
+    ('log-duplicate', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', LOG1, LOG1 * 2)),
+    ('log-date-order', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', '(2026-01-02)', '(2025-12-31)'), {'log-rewritten'}),
     # check_log_history
-    ('log-rewritten', 'error', [], lambda r, s: edit(r, 'INDEX.md', 'first round.', 'first round, reworded.')),
-    ('log-rewritten', 'error', [], lambda r, s: edit(r, 'INDEX.md', LOG1 + LOG0, ''), {'log-no-rounds', 'log-preamble', 'nothing-checked'}),  # R43: older entries deleted
+    ('log-rewritten', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', 'first round.', 'first round, reworded.')),
+    ('log-rewritten', 'error', [], lambda r, s: edit(r, 'RESEARCH_LOG.md', LOG1 + LOG0, ''), {'log-no-rounds', 'log-preamble', 'nothing-checked'}),  # R43: older entries deleted
     ('log-no-baseline', 'error', [], lambda r, s: reinit_without_commit(r), {'path-ref-missing-at-commit'}),
-    ('log-no-baseline', 'error', [], lambda r, s: commit_head_index(r, None)),
-    ('log-no-baseline', 'error', [], lambda r, s: commit_head_index(r, b'# caf\xe9\n')),
-    ('log-no-baseline', 'error', [], lambda r, s: commit_head_index(r, b'# Fixture index\n\n## Log\n')),
+    ('log-no-baseline', 'error', [], lambda r, s: commit_head_log(r, None)),
+    ('log-no-baseline', 'error', [], lambda r, s: commit_head_log(r, b'# caf\xe9\n')),
+    ('log-no-baseline', 'error', [], lambda r, s: commit_head_log(r, b'# Log\n')),
     # a merge in progress (the 2026-10-12 R153 merge): the base log is the tail and both sides' lines are kept
     ('log-merge-lost', 'error', [], lambda r, s: start_merge(r, merged=[SIDE_A])),
-    ('log-rewritten', 'error', [], lambda r, s: (start_merge(r), edit(r, 'INDEX.md', 'first round.', 'first round, reworded.')), {'log-merge-lost'}),
+    ('log-rewritten', 'error', [], lambda r, s: (start_merge(r), edit(r, 'RESEARCH_LOG.md', 'first round.', 'first round, reworded.')), {'log-merge-lost'}),
     ('log-no-baseline', 'error', [], lambda r, s: merge_with_unrelated_history(r)),
-    ('log-no-baseline', 'error', [], lambda r, s: start_merge(r, merged=[SIDE_A], side_b_index='# Fixture index\n\n## Log\n')),
+    ('log-no-baseline', 'error', [], lambda r, s: start_merge(r, merged=[SIDE_A], side_b_log='# Log\n')),
     # check_rejected
     ('rejected-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Rejected sources\n', ''), {'index-row-cells', 'index-table-split'}),
-    ('rejected-position', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Research log', '## Notes\n\ntext\n\n## Research log')),
+    ('rejected-position', 'error', [], lambda r, s: put(r, 'INDEX.md', (r / 'INDEX.md').read_text(encoding='utf-8') + '\n## Notes\n\ntext\n')),
     ('rejected-no-table', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| id | source | link | reason |\n|---|---|---|---|\n' + REJ_ROW, 'none\n')),
     ('rejected-table-split', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, REJ_ROW + '\n| rej_two | b | c | d |\n')),
     ('rejected-header', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| id | source | link | reason |', '| id | source | why |')),
@@ -559,10 +559,10 @@ def crlf_tree(root):
 # reaches a branch the planted defects do not.
 ACCEPTED = [
     ('a new round appended at the top, with an unindented second paragraph (Markdown folds it into the entry)',
-     lambda r: edit(r, 'INDEX.md', LOG1, '- **Round 2** (2026-01-03): third round.\nits second paragraph.\n' + LOG1)),
-    ('a maintenance entry at the top', lambda r: edit(r, 'INDEX.md', LOG1, '- **Maintenance** (2026-01-03): tidy.\n' + LOG1)),
+     lambda r: edit(r, 'RESEARCH_LOG.md', LOG1, '- **Round 2** (2026-01-03): third round.\nits second paragraph.\n' + LOG1)),
+    ('a maintenance entry at the top', lambda r: edit(r, 'RESEARCH_LOG.md', LOG1, '- **Maintenance** (2026-01-03): tidy.\n' + LOG1)),
     ('a blank line between the log heading and the first entry',
-     lambda r: edit(r, 'INDEX.md', '## Research log\n', '## Research log\n\n')),
+     lambda r: edit(r, 'RESEARCH_LOG.md', '# Research log\n', '# Research log\n\n')),
     ('CRLF line ends throughout the working tree', crlf_tree),
     ('a row derived from two sources', lambda r: edit(r, X_BETA, '\nsrc_live,rate', '\nsrc_live;src_pending,rate')),
     ("a blank source_id for the pipeline's own value", lambda r: put(r, X_BETA, (r / X_BETA).read_text(encoding='utf-8')

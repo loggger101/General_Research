@@ -1,589 +1,203 @@
 # Domain 3 Findings — Δv budgets and propulsion performance tables
 
-## elvis2011 — Elvis, McDowell, Hoffman & Binzel (2011), "Ultra-Low Delta-v Objects and the Human Exploration of Asteroids" [T1]
+Backings: spacecost `reference/delta_v_segments.csv`, `reference/propellants.csv` (Isp, density, cost, EP sizing columns), `delivery.py` stage-mass fractions; economicspace `calc.py` `ep_target_thrust_yr`.
 
-- **Full text**: hosted here as `elvis_mcdowell_hoffman_binzel_2011_ultra-low_delta-v_arxiv1105.4152.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
-  (arXiv:1105.4152; verified live HTTP 200, application/pdf). This is the paper our `delta_v_segments.csv` cites for the
-  easy-NEA segment — **citation resolves correctly**.
+## Round 1 - NEA Δv anchors (both un-hosted 2026-09-26, arXiv default licence)
 
-### Extracted numbers + comparison to pipeline segments
+**elvis2011** [T1] (Planetary and Space Science 59(13):1408-1412; arXiv:1105.4152), the paper the easy-NEA row cites:
 
-| pipeline segment | our value | elvis2011 evidence | verdict |
+| segment | our value | elvis2011 | verdict |
 |---|---|---|---|
-| LEO → easy NEA (low-Δv class) | 4500 m/s | ultra-low threshold **<4.5 km/s** (65/6699 NEOs, ~1%) | **AGREEMENT** — our value sits exactly on the published boundary; citation is correct as written |
-| LEO → average NEA | 6500 m/s | population distribution **peaks at 6.65 km/s** (Benner 2010 compilation, Shoemaker-Helin formalism) | **VALUE AGREES but CITATION IS WRONG** — we cite arXiv:1406.5027 for this row; the 6.65 peak actually comes from Elvis/Benner's distribution (see below). The number is right (~6.5–6.65), the source tag points at the wrong paper |
-| LEO → hard NEA | 8500 m/s | upper-decile, still < main-belt; consistent with their "typical ~6 km/s" + tail framing | defensible (no direct number in this paper) |
+| LEO → easy NEA | 4500 m/s | ultra-low threshold <4.5 km/s (65/6699 NEOs, ~1%) | agrees; citation correct |
+| LEO → average NEA | 6500 m/s | distribution peaks at 6.65 km/s (Benner compilation, Shoemaker-Helin formalism; Sec 4 p4, the plot captioned Figure 3) | value agrees, citation wrong |
+| LEO → hard NEA | 8500 m/s | upper tail, below main belt | defensible |
 
-- Their payload-gain formula `e^(Δv−<Δv>)/v_ex` with v_ex = 4.4 km/s (RL-10/J-2X LH₂/LOX, Isp≈449 s) is the same
-  rocket-equation logic Module 4's mass cascade uses — a useful external consistency check on our hydrolox row.
+Payload-gain formula e^((Δv−<Δv>)/v_ex) with v_ex = 4.4 km/s (Isp ≈ 449 s), the rocket-equation logic of Module 4.
 
-## ieva2014 — Ieva et al. (2014), "Low Delta-V near-Earth asteroids: A survey of suitable targets for space missions" [T1]
+**ieva2014** [T1] (A&A 569:A59; arXiv:1406.5027): NEOSURFACE survey of 13 objects (all Δv < 10.5 km/s; 11 S-complex, 2 C-complex), with no median or mean Δv. The average-NEA note ("Median NEA Δv per low-Δv NEA survey (arXiv:1406.5027)") should cite elvis2011 and say peak, not median. R71 files: `r71_elvis2011_key_numbers.csv`, `r71_elvis2011_table1_lowest_dv_neos.csv`, `r71_ieva2014_key_numbers.csv`, `r71_ieva2014_table3_mineralogy.csv`, `r71_ieva2014_tables1_2_low_dv_nea_targets.csv`.
 
-- **Full text**: hosted here as `ieva_et_al_2014_low-dv_NEOs_NEOSURFACE_arxiv1406.5027.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
-  (arXiv:1406.5027; verified live HTTP 200). **This is the paper we currently cite for the average-NEA row — and it does not
-  support that claim.**
+## Round 3 - shoemaker_helin_1978 [T2, hosted]
 
-### What this paper actually is
+NASA CP-2053 (NTRS 19780021079), the root of Asterank's `dv`: rendezvous impulse ~1 km/s for low-Δv Amors/Apollos; sample-return round trip 2–3 km/s to easy targets vs 5–6+ km/s for typical main-belt objects; dV = 30F + 0.5 km/s (Eq. 11 p4, Fig. 1 p5; corrected in R70 from "3.0F"). The outbound leg dominates the 6500 m/s row; the belt is 2-3x harder than NEAs. `extracted_data/shoemaker_helin_delta_v_key_numbers.csv`.
 
-The NEOSURFACE survey of **13 specific objects** (all Δv < 10.5 km/s), taxonomically classifying 9 of them for the first
-time (11 S-complex, 2 C-complex) with IRTF/ESO/TNG spectroscopy. It is a *targeted small sample*, not a population-wide
-Δv distribution — it contains **no median or mean Δv statistic** that our row's note ("Median NEA Δv per low-Δv NEA survey")
-claims to quote.
+taylor2018 (Acta Astronautica 146, DOI 10.1016/j.actaastro.2018.02.014), behind the 10500 m/s main-belt row, is paywalled: context-only.
 
-### ⚠️ CITATION CORRECTION REQUIRED (highest-value item in domain 3)
+## Round 5 - nextc_protoflight_2021 [T2, hosted]
 
-`spacecost/reference/delta_v_segments.csv`, segment `LEO → average NEA`:
-```
-notes: 'Median NEA Δv per low-Δv NEA survey (arXiv:1406.5027); matches OSIRIS-REx Bennu mission profile.'
-```
-should be re-pointed to **elvis2011** (population peak 6.65 km/s via Benner's Shoemaker-Helin compilation). The numeric value
-(6500 m/s) is well-supported by Elvis/Benner; only the citation tag and the word "Median" are wrong — it's a *mode/peak*, not
-a median, and from a different paper. ieva2014 remains a valid source for the easy-NEA class characterization (its 13 objects
-are all <10.5 km/s) but should be cited there, not on the average row.
+NEXT-C flight thruster SN001 (NTRS 20210018563): Isp 1400–4160 s, thrust 25–235 mN at up to 6.85 kW; delivered for DART. The Xenon row's 3000 s is a mid-envelope throttle point of flown hardware. With nextc_ppu_2020 (d05), both thruster and PPU rest on flight-article tests. `extracted_data/nextc_flight_thruster_key_numbers.csv`; R72 Tables 2-8 (320 rows: `r72_nextc_protoflight_2021_tables2_8_component_performance.csv`; the 0.69 sccm margin and 1267 V limit print under TL09 in Tables 3-4 but TL05 in Tables 7-8, kept as printed).
 
-## Round-1 status (domain 3)
+## Round 12 - sanna_2024 [T1, hosted, CC BY]
 
-2 items processed, both full texts hosted; one is a **citation correction** (average-NEA row → Elvis/Benner peak), the other
-confirms the easy-NEA boundary exactly. The Taylor et al. 2018 main-belt Δv map (Acta Astronautica) backing our 10500 m/s
-row is paywalled and not yet resolved — flagged for a later round; its value is directionally consistent with the NEA ladder
-we've now anchored at both ends.
+Gateway (NRHO) → LLO bi-impulsive transfers, ≤48 h: lowest total 666 m/s (polar LLO, free RAAN; Table 1 p10), fixed-RAAN polar 671-851 m/s (Table 4), up to ~1253 m/s at i = 20°. (R12's 648 m/s was a single burn of the 738 m/s RAAN = 0 case; corrected R70, with rc-018's text.) The 730 row cites Whitley & Martinez instead (R49). `r72_sanna_2024_tables2_3_method1_transfers.csv`.
 
+## Rounds 13-31 - Isp anchors for propellants.csv
 
-## Round-3 addition — the true root of our average-NEA Δv row
-
-### shoemaker_helin_1978 [T2] — Shoemaker & Helin, "Earth-Approaching Asteroids as Targets for Exploration", NASA CP-2053 (Proc. 4th Lunar and Planetary Science Conference), pp. 245–256
-- **Full text hosted**: `full_texts/shoemaker_helin_1978_NASA_CP-2053_Earth-approaching_targets_ntrs_19780021079_publicdomain.pdf` (NTRS id 19780021079, verified live from this machine: NTRS API search → PDF download OK, 12 pp scanned text). Public domain as a US-government work.
-- **What it is**: the 1978 analysis that first ranked Earth-approaching asteroids by Δv using the figure-of-merit F (the same formalism Asterank's `dv` column still descends from — CITATIONS.md already names this paper; now we actually hold and can quote it).
-- **Key numbers** → `extracted_data/shoemaker_helin_delta_v_key_numbers.csv`: rendezvous impulse ~1 km/s for low-Δv Amors/Apollos at aphelion (some less); sample-return round trip 2–3 km/s total to easy targets vs **5–6+ km/s for typical main-belt objects**; Anteros + 1977 VA easiest, Eros/1960 UA/Icarus near Mars; closed-form Δv ≈ 3.0·F + 0.5 km/s (Fig. 1 caption).
-
-### What this settles
-- Our `LEO → average NEA` row at **6500 m/s** is a full LEO-referenced transfer, and the paper's ~1 km/s rendezvous impulse confirms it: even in 1978 the terminal burn was an order of magnitude smaller than the outbound leg. No change needed to our value; this citation now backs *why* the number sits where it does (outbound-dominated), replacing the mis-cited arXiv:1406.5027 that rounds-1 flagged.
-- Our `main belt → Earth return` at **7500 m/s** and LEO→belt 10500 m/s get a direct peer-reviewed anchor: "typical main-belt" round trips were already estimated at 5–6+ km/s in 1978 — the belt being ~2-3x harder than NEAs is not our assumption, it's measured history.
-- **Taylor et al. 2018 status (still open)**: "A Delta-V map of the known Main Belt Asteroids", Acta Astronautica 146:73–…, DOI 10.1016/j.actaastro.2018.02.014 — verified paywalled this round too (Elsevier Cloudflare challenge on both article and pdfft routes; no OA location in OpenAlex or Crossref). Abstract recovered via the ADS record: "With the lowered costs of rocket technology … asteroid mining is becoming both feasible and potentially profitable. Although the first targets for mining will be the most accessible near Earth objects (NEOs), the Main Belt contains 10^6 times more material by mass…" — recorded here so a later browser pull has the full abstract on hand; it remains `open_not_pulled`.
-
-## Round-3 status (domain 3)
-Domain now anchored at all three rungs: easy NEA (elvis2011, hosted), average/hard NEA + belt contrast (shoemaker_helin_1978, hosted — new this round), and the main-belt map itself (taylor2018, paywalled-pending). The one remaining citation correction from round 1 (average-NEA row → elvis2011) is now *reinforced* rather than contradicted by its true root source.
-
-## Round-5 addition — the flight-thruster half of the electric-propulsion chain
-
-### nextc_protoflight_2021 [T2] — Monheiser, Goodfellow, Aubuchon et al. (Aerojet Rocketdyne / NASA Glenn), "A Summary of the NEXT-C Flight Thruster Proto-Flight Testing", NTRS 20210018563
-- **Full text hosted**: `full_texts/monheiser_goodfellow_aubuchon_2021_NEXT-C_flight_thruster_proto-flight_test_ntrs_20210018563_publicdomain.pdf` (2.5 MB, 18 pp; verified live from this machine: NTRS API record + PDF download OK). Public domain as a US-government work.
-- **Key numbers** → `extracted_data/nextc_flight_thruster_key_numbers.csv`: flight thruster SN001 designed for Isp **1400–4160 s**, thrust **25–235 mN** at up to 6.85 kW; proto-flight sequence = performance characterization interleaved with vibration + TVAC, then DART-tailored SIT; delivered to APL for the DART mission.
-
-### What this settles
-- Our `Xenon (Hall / ion)` row carries **isp_vac_s = 3000** and its notes name NEXT-C as heritage — that number is now confirmed as a *mid-envelope throttle level* of hardware that actually flew, not an aspiration from a brochure. The full measured range (1400–4160 s) also bounds the row's implicit assumption: any mission Module 4 sizes at Isp outside ~2500-3500 s is extrapolating past the tested core of this article class.
-- Pairs with nextc_ppu_2020 (round 4, domain 5): between the two hosted reports, **both halves** of our electric-propulsion chain — thruster head (kg/N, Isp) and power processing unit (kg/kW, η) — now rest on flight-article test documentation. The EP rows are the best-sourced performance numbers in `propellants.csv` after this round.
-- Thrust range 25–235 mN at ~7 kW is also the quantitative reason our low-thrust trip times run to years: a cargo tug sized by Module 4's rocket equation gets ~0.1-0.2 N of acceleration authority, and that number now has its source committed here.
-
-## Round-5 status (domain 3)
-Domain 3 is now complete at both ends AND in the middle: easy NEA boundary (elvis2011), population Δv root + belt contrast (shoemaker_helin_1978), main-belt per-object map recorded paywalled (taylor2018, open item), and propulsion performance anchored to flight articles for both thruster head (this round) and PPU (round 4).
-
-## Round-12 addition — the cislunar rows get their first peer-reviewed anchor (sanna_2024, hosted)
-
-**sanna_2024 (T1, full text hosted)**: minimum-fuel bi-impulsive Gateway(NRHO)->LLO transfers, <=48 h ToF, high-fidelity model. Results by target inclination: **648 m/s** (free RAAN/LTO) up to ~1253 m/s (i=20 deg); polar LLO optimum **666 m/s**, consistent with Bucchioni & Innocenti 661 / Lu et al. 650 under CR3BP. Our `delta_v_segments.csv` row "NRHO -> low lunar orbit = 730" sits mid-range of the peer-reviewed envelope — AGREE, and it can now cite this paper (polar-orbit case) instead of an uncited planning number. Hosted via the Sapienza IRIS institutional copy because MDPI's pdfdirect route 403s from this machine; CC-BY per publisher.
-## Round-13 addition — propellants.csv gets its first peer-reviewed propulsion anchors (one hosted)
-**bowles_dawson_2004 (T2, full text hosted)**: NASA SP-4176 public-domain history of the Centaur/RL-10 program. Published confirmation that LOX/LH2 is the highest-Isp chemical propellant and why the expander cycle made the RL-10 so efficient/reliable — anchors our hydrolox row (datasheet 452 s vac) at the claim level. SCOPE: narrative, not an Isp table (~4 mentions); keep datasheets for numbers.
-**tirila_2023 (T1, open_not_pulled)**: comprehensive database of experimentally measured Hall thruster performance across xenon/argon/krypton/iodine/water alternatives — the comparison table our electric rows need; Soton ePrints PDF 401s from this machine so recorded with abstract only.
-## Round-14 addition — methalox row gets a peer-reviewed Isp anchor
-**kim_2013 (T1, full text hosted)**: KSPE 17(6):120 state-of-the-art review of methane/oxygen LPREs. Raptor 2nd stage = **380 s vacuum specific impulse** at 2940 kN — exact match to our methalox row (datasheet-cited). Same-manufacturer comparison: RD-192 methane **356 s** vs RD-191 kerosene **337 s** vac (Energomash) = the ~+19 s / +5.6% methane advantage at equal thrust class, now peer-reviewed rather than datasheet-only. Also tabulates US methalox programs (Morpheus HD5 321 s, PCAD RCEs 317-355 s, XCOR XR series).
-## Round-15 addition — kerolox row gets its peer-reviewed Isp anchor (two NTRS-hosted items)
-**jue_2003 (T2, full text hosted)**: AIAA JPC paper 'Space Shuttle Main Engine: Thirty Years of Innovation' (Boeing/Rocketdyne). Full RS-25 spec table — vacuum nominal thrust 2190 kN / sea-level 1770 kN / **vacuum Isp 452 s** / sea-level 366 s / area ratio 69:1 / mixture ratio 6.0 O/F / weight 3530 kg — EXACT match to our kerolox row (datasheet-cited at 452 s vac); plus a world-engine Isp comparison chart (SSME vs HM7O/RD-180/RO-1TO/LR87/YF-20 class).
-**ssme_rs25_adaptation_2015 (T2, full text hosted)**: AIAA paper on SSME→RS-25 SLS adaptation — why the 452 s number is stable across Shuttle+SLS service (maturity: ~3000 ground tests, >1M s hot-fire time; staged-combustion cycle rationale). SCOPE: integration narrative, no Isp table; pairs with jue_2003 which carries the numbers.
-## Round-17 addition — propellants.csv gets a cross-check Isp table (one hosted)
-
-- **thapa_2023** (T1, JMPC 11(1):8-21, CC-BY; pubs.sciepub.com direct PDF route verified live) is now hosted in full_texts/ and registered. It carries a vacuum-Isp comparison table of flown engines: Shuttle main engines LOX/LH2 = **453 s** (vs our hydrolox row 452 s — near-exact, +1 s), Saturn V Stage-1 LOX/RP-1 = **304 s** (F-1 class; family anchor for the kerolox row's lower bound — our 340 s modern-engine value is already anchored by kim_2013 RD-191 337 s), Shuttle OMS NTO/MMH = **313 s** (OMS-class hypergolic vs our MMH/NTO row 336 s — family anchor, not the same engine), Shuttle solid motors APCP = **268 s** (SRB class vs our Solid row 285-286 s Star 48B kick-motor value). Scope note: each table entry is a specific flown engine, so it anchors its propellant FAMILY and lower bound rather than replacing the per-engine datasheet values in our rows.
-## Round-18 addition — Solid (APCP) row gets a MEASURED flight-Isp anchor (one hosted)
-
-- **thiokol_sts33r_1990** (T2, Thiokol TWR-17546-1 'Flight Motor Set 360L007 (STS-33R) Final Report', June 1990; NTRS citation 19900016751 direct PDF route verified live — US-government contractor report, public domain) is now hosted in full_texts/ and registered. Section 3.1.3.1 records the reconstructed vacuum specific impulse for both flight motors: **268.2 s (LH) / 267.6 s (RH)** at 71 deg F, within 0.3% of the predicted 268.5 — a flight-verified APCP performance number for the Shuttle RSRM class, and exactly the 'Shuttle solid motors APCP = 268 s' entry in thapa_2023's table (independent cross-check). Scope note: our Solid row carries Star 48B / Orion 38 kick-motor values (285-286 s) — a different motor family; the SRB-class number anchors the lower bound of the APCP family. Delivered burn rate also recorded: 0.368/0.369 ips at 71 deg F / 625 psia.
-## Round-19 addition — MMH/NTO row gets a peer-reviewed configuration anchor (one hosted)
-
-- **yim_2014** (T2, AIAA JPC 50th Joint Propulsion Conference paper 2014-3883; NTRS citation 20140017052 direct PDF route verified live — US-government work, public domain) is now hosted in full_texts/ and registered. It documents Orion's ESM propulsion system — our MMH/NTO row's flagship deep-space application: a common pressure-regulated **MMH/NTO** feed with three engine classes (Shuttle-heritage 26.7 kN / 6000 lbf OMS-E at 55:1 area ratio, eight Aerojet R-4D 490 N auxiliary engines of HTV heritage, twenty-four 220 N RCS thrusters) and records the design change from the original Orion Main Engine concept (33.4 kN / 150:1 AR). Scope note: NO Isp table in this paper — it anchors engine configuration/heritage, not our row's 336 s value (which stays datasheet-sourced; thapa_2023's OMS entry of 313 s remains the family cross-check).
-- Companion read live this round: ESM development/integration/qualification status report (NTRS 20170009574) — duplicate configuration content only, not registered separately. Minor source discrepancy noted for honesty: that paper quotes the OMS-E as '27.7 kN' while yim_2014 and NASA's own OMS-E spec say 6000 lbf = 26.7 kN; we follow the latter.
-## Round-20 addition — Hydrazine (monoprop) row gets a peer-reviewed measured-Isp anchor (one hosted)
-
-- **jpl_1968** (T2, JPL Technical Report 32-7227 'Status of Technology — The Monopropellant Hydrazine'; NTRS citation 19680006875 direct PDF route verified live — US-government work, public domain) is now hosted in full_texts/ and registered. Peer-reviewed **measured Isp = 235 lbf-s/lbm (~97% of theoretical)** from a catalytic-bed reactor at ammonia dissociation 50-55%, area ratio 44:1; plus Fig. 3 'Theoretical vacuum specific impulse of monopropellant hydrazine' vs % ammonia dissociated — the curve our row's ~220 s value sits on (lower-dissociation / smaller-reactor end). Also states 95-98% of theoretical is commonly achieved across operating conditions, and documents pulse-mode Isp degradation with duty cycle. Scope note: anchors the CATALYTIC-BED class (our row's 'Cat-bed decomposition'); electrothermal hydrazine resistojet reports read live this round (NTRS 19720011120 / 19730017100, steady-state Isp ~200-230 s) are a different technology class — not registered.
-## Round-21 addition — HTP (98% peroxide) row gets a peer-reviewed Isp anchor (one hosted)
-
-- **hitt_2001** (T1, Smart Materials and Structures 10(6); NTRS citation 20010102648 direct PDF route verified live — US-government work, public domain) is now hosted in full_texts/ and registered. Peer-reviewed isentropic analysis gives a **theoretical maximum vacuum Isp ~185 s** for 98% H2O2 decomposition products at adiabatic flame temperature, with empirical older-study values reduced to ~140 s at 80% operating efficiency (Bureau of Aeronautics 1955) — our row's ~165 s sits squarely inside that band. Scope note: MEMS-scale design study; the Isp physics (decomposition products, gamma, flame temperature) is scale-independent and applies to macro catalytic HTP thrusters too.
-## Round-22 addition — Hydrazine arcjet row gets a peer-reviewed measured-Isp anchor (one hosted)
-
-- **morren_curran_1991** (T2, NASA TM-105149 / AIAA-91-2228; NTRS citation 19910020938 direct PDF route verified live — US-government work, public domain) is now hosted in full_texts/ and registered. This IS the NASA program that expanded low-power arcjets beyond state-of-the-art (~530 s mission-average at 1.6 kW hydrazine) toward **600 s and 2-5 kW** — measured stable operation for a total of 300 h (three continuous 100-h sessions) at exactly **550 s / 2.0 kW** on H2:N2 simulating hydrazine decomposition products, with no measurable performance degradation; the report's stated goal is precisely our row's 'Aerojet MR-510, 600 s vac on 2 kW' spec.
-## Round-23 addition — Nuclear thermal (LH2) row gets peer-reviewed Isp anchors (two hosted)
-
-- **borowski_2012** (T2 — conference paper, IEEE Aerospace; NTRS citation 20120003776 direct PDF route verified live — US-government work, public domain): PRIMARY anchor. Peer-reviewed statement that 'the NTR can achieve specific impulse values of ~900 seconds or more — twice that of today's best chemical rockets'; DRA 5.0 selected the NTR specifically for Isp ~875-950 s; MCNP core modeling shows an achievable range of ~894-940 s by varying fuel-element length and U-235 loading. Our row's exactly-900-s value sits at the center of that band.
-- **robbins_1991** (T2, NASA CR-187154 / AIAA-91-3451 by Robbins & Finger for NASA Lewis; NTRS citation 19910017902 direct PDF route verified live — public domain): historical anchor. Documents that from 1955-1972 twenty rocket reactors were designed, built and ground tested in the Rover/NERVA programs, with a single flight-baseline engine defined at 75,000 lbf thrust and **825 s specific impulse** — what was actually demonstrated on the ground vs our row's ~900 s design value (the difference is fuel-temperature growth path).
-## Round-24 addition — UDMH / NTO row gets a family-level measured-Isp anchor (abstract-only item)
-
-- **schoenman_1992** (T2, AIAA-92-3800; NTRS citation 19920066503 record + full abstract verified live from this machine — dissemination is METADATA_ONLY on NTRS and the 1992 JPC proceedings are not freely hosted elsewhere reachable here) registered as **open_not_pulled**. Measured hot-fire performance of a 490-N high-performance hypergolic engine on **NTO/MMH**: nominal specific impulse **309 s at area ratio 44:1** and **321 lbf-s/lbm for the all-welded assembly at area ratio 286:1**. Our row's 318 s (UDMH/NTO) sits just below that MMH value, exactly as expected since UDMH's higher molecular weight lowers Isp slightly vs MMH at equal chamber conditions. Scope note: propellant is NTO/MMH not NTO/UDMH; anchor is abstract-level (no full text), so treat it as a family benchmark rather than an exact-match row anchor.
-## Round-25 addition — Solar thermal row gets peer-reviewed Isp anchors (two hosted)
-
-- **woodcock_byers_2003** (T2, SAIC evaluation study for NASA's In-Space Propulsion Technology program; NTRS 20030068437 full text downloaded + extracted on this machine): hydrogen heated to 2500-3000 K 'could deliver specific impulse in excess of **800 seconds**' — our row's ~800 s value is exactly this class; design case Isp estimated at **811 s** (2800 K absorber cavity, 2700 K thruster wall). Scope note: evaluation study, no hot-fire data of its own.
-- **boddy_1980** (T2, AFRPL TR-79-7g final report by Jack Boddy / Rockwell; NTRS 19800022964 full text downloaded + extracted on this machine): 'In a test program conducted at the AFRPL, **a specific impulse of 680 seconds was achieved**. The thruster utilized hydrogen as the propellant' — the only MEASURED solar-thermal Isp number in this repo; our ~800 s design value sits above it (design vs demonstrated). Also documents obtainable range '500 to 1100 seconds for representative solar rocket systems', theoretical vacuum-Isp-vs-gas-temperature curves for H2/NH3/CH4/N2H4 at 50 psia, and delivered Isp of 861 lbf-s/lbm for a two-collector sphere/horn/disc configuration with hydrogen at 5000 R.
-## Round-26 addition — Aerozine-50 / NTO row gets peer-reviewed anchors (two hosted)
-
-- **cuffe_jacobs_1970** (T2, NASA MSC D2-I17060-1 via NTRS 19700026467): 'Apollo Spacecraft Engine Specific Impulse' — the measurement-methodology report behind how vacuum Isp was rated for all four Apollo hypergolic engines (SM engine/Aerojet, LM ascent/Bell, LM descent/Rocketdyne). Verified from extracted text: injector-level measured values cluster ~1-4 s below rated (e.g. SM-engine injector #115 mean 312.8 s in one chamber vs 311.4 s in another), Aerojet's allocated AEDC data uncertainty of just **0.2 s**, and full bias+random error budgets per engine. Our row's 320 s is the rated vacuum value; this report shows what 'measured' looks like for exactly that propellant pair.
-- **boyce_aj10_oral_history** (T2, NASA oral history via NTRS 20100027319): Clay Boyce's first-person chapter on the AJ10-137 — 'The general configuration of the SPS engine was 20,000 pounds of thrust, with a chamber pressure of 100 psi and specific impulse (Isp) of **314.5** ... area ratio of 62.5:1 ... The propellants were nitrogen tetroxide ... and A-50.' This is the exact engine behind our row's Astronautix note; also documents its famous spec (750 s duration or fifty restarts per flight).
-
-**Net effect:** every chemical + nuclear thermal + solar thermal workhorse row in `propellants.csv` now has at least one access-verified anchor. Remaining unanchored rows are minor variants (e.g. other electric-propellant species) already covered by the tirila_2023 open_not_pulled item.
-## Round-27 addition — Green monopropellant row gets an EXACT-MATCH peer-reviewed anchor (one hosted)
-
-- **spores_2013** (T2, AIAA 50th Joint Propulsion Conference, 2014, via NTRS 20140012587): Spores, Masse, Kimbrel & McLean — 'GPIM AF-M315E Propulsion System'. Verified from extracted text: Table 1 gives GR-1 (AF-M315E HAN-based) vacuum Isp = **235 s** — identical to our row's value; acceptance hot-fire data independently yields an estimated maximum steady-state Isp approximating the predicted 235 sec. Also documents the full GPIM flight system (GR-1 0.4–1.1 N, GR-22 8–25 N, catalyst preheat >285 C) — the first on-orbit green-monoprop demonstration.
-
-**Net effect:** Green monoprop row now exact-matched. Remaining unanchored rows are exotic/concept-class (HTP/RP-1 biprop, water resistojet/ion, ALICE metal/water, CO/LOX ISRU, VASIMR, MPD, nuclear pulse/fusion/antimatter concepts) — most already covered at family level by tirila_2023 or the NTP anchors; will continue with the highest-value of these next.
-
-## Round-28 addition — Water (electrothermal / resistojet) row gets peer-reviewed anchors, incl. the FIRST measured on-orbit water-resistojet Isp (two hosted)
-
-- **asakawa_aquarius_onorbit_2024** (T1): Asakawa, Koizumi et al., JAXA — 'On-orbit Performance of the Water Resistojet Propulsion System AQUARIUS on EQUULEUS', Trans. JSASS Vol. 67 No. 5 (2024), open access via J-STAGE, hosted in full_texts/. MEASURED cycle-averaged Isp **91.1 +/- 1.7 s / 92.0 +/- 1.3 s** (DV1) and **89.4 / 91.0 s** (TCM1) at ~6 mN thrust, <14 W input — the first water-resistojet deep-space orbit transfer ever flown (EQUULEUS, Artemis-1 CubeSat). Scope note: this is the LOW-power end of our row's class band ('Isp 150-220 s' per the row's own notes); higher specific-power designs (HYDROS-C, Vigoride-class) reach into that band. Also documents measured CF = 1.53/1.51 and partial-condensation behavior in the nozzle.
-- **komurasaki_aquarius_ground_2018** (T1): Komurasaki, Asakawa et al., JAXA — 'Fundamental Ground Experiment of a Water Resistojet Propulsion System: AQUARIUS', Trans. JSASS Aerospace Tech. Japan Vol. 16 No. 5 pp. 427-431 (2018), open access via J-STAGE, hosted in full_texts/. Ground-test companion: design point ~2 mN at **~70 s Isp** for the CubeSat-class unit; evaporation-rate and heat-budget methodology for water as propellant.
-
-- Also this round (registry hygiene): root `sources.csv` was stale — it had not been updated since Round 15 (54 rows) while per-domain registries held 69. Regenerated it as the aggregate of all five domain files: now **71 rows**, matching the union exactly.
-
-## Round-29 addition — HTP / RP-1 (peroxide bipropellant) row gets peer-reviewed anchors, incl. a near-exact engine match (two hosted)
-
-Target: propellants.csv row 'HTP / RP-1 (peroxide biprop)' at ~320 s vacuum Isp with O/F 7:1 — the last unanchored
-workhorse-class chemical row after Round 28. Two independent peer-reviewed sources now bracket it, both hosted in full_texts/:
-
-### krishnan_2010_h2o2_rp1_upper_stage (T2, AIAA JPC proceedings)
-S. Krishnan (Universiti Teknologi Malaysia), 'Hydrogen Peroxide / Kerosene, Liquid-Oxygen / Kerosene, and
-Liquid-Oxygen / Liquid Methane for Upper Stage Propulsion'. PDF created 25 Jul 2010 (embedded metadata); the paper's own
-AIAA number is not recoverable from the text layer (all AIAA-number hits in the document are references to other papers),
-so it is deliberately omitted rather than guessed. Author-hosted copy downloaded and extracted on this machine.
-
-Verified numbers (regex-checked against extracted text):
-- Table 3, RD-161P engine: H2O2(~0.97)/RP-1, Phi = 5.9, vacuum Isp **3128 N-s/kg (~319 s)** — NEAR-EXACT match to our ~320 s row value (within 0.4%).
-- Table 3, Gamma-2: H2O2(~0.83)/RP-1, Phi = 8.23, vacuum Isp 2599 N-s/kg (~265 s) — this is the Black Arrow flight engine; confirms our row's O/F ~7:1 sits between the historical low-concentration (Gamma-2) and high-concentration (RD-161P) designs.
-- Table 3, BA-44 / BA-810 at Phi = 7.5: 2941 / 2765 N-s/kg (~299 s / ~282 s).
-- Table 2 (theoretical): H2O2-RP1 maximum equilibrium Isp occurs at equivalence ratio 1; first column (Phi = 7.38) gives ~3268 N-s/kg (~333 s), bracketing our row from above under frozen-flow conditions the paper also tabulates.
-- Paper recommends eta_sI ~0.90 for HTP/RP-1 upper-stage engines — a defensible efficiency factor if we ever want to derive engine-level Isp from theoretical values in this class.
-
-### pietrobon_1999_h2o2_kero_shuttle_boosters (T1, JBIS vol. 52 pp. 163-168)
-Steven S. Pietrobon, 'High Density Liquid Rocket Boosters for the Space Shuttle'. Published in the Journal of the British
-Interplanetary Society May/June 1999; author-hosted copy downloaded and extracted on this machine.
-
-Verified numbers: Table 1 — **98% H2O2/Kero at MR (O:F) = 7.30 gives ve = 3017 m/s (~308 s)** with density impulse
-Id = 3940 Ns/l, versus LOX/Kero at MR 2.60 giving ve = 3305 m/s but Id only 3388 Ns/l — an independent peer-reviewed
-confirmation of the ~310-320 s class value for our row's O/F ~7:1, plus the density rationale that historically favored
-peroxide/kerosene over LOX/kerosene.
-
-### Scope note
-Our 320 s row is a class-level design point at O/F 7:1 with high-concentration HTP (~98%). Krishnan's RD-161P entry
-(~319 s, Phi 5.9) is the closest real-engine match; Pietrobon's theoretical ~308 s (Phi 7.30) and Krishnan's theoretical
-~333 s bracket it from below/above respectively. The row now has a measured-class anchor plus two independent peer-reviewed
-theoretical confirmations — same anchoring standard as the other workhorse rows.
-
-Remaining unanchored propellant rows after this round: ALICE metal/water and CO/LOX ISRU (both exotic/niche; next-round candidates).
-
-## Round-30 addition — Metal / water (ALICE) row gets peer-reviewed anchors, incl. the program's own flight paper (one hosted + one open_not_pulled)
-
-Target: propellants.csv 'Metal / water (ALICE, Al + H2O)' row at 210 s vacuum — nano-aluminium burnt in water; our notes reference the Purdue/NASA ALICE sounding rocket that flew in 2009. Both components are asteroid-derivable (Al from silicate reduction, water from ice), which is why this row exists despite its modest Isp.
-
-### risha_2014_alice_jpp — T1, HOSTED
-Risha G.A., Connell T.L. Jr., Yetter R.A. (Penn State) + Sundaram D.S., Yang V. (Georgia Tech), "Combustion of Frozen Nanoaluminum and Water Mixtures", AIAA Journal of Propulsion and Power 30(1):133-142 (2014), doi:10.2514/1.B34783.
-- VERIFIED in hosted text: ideal (theoretical) Isp for the ALICE formulation = **207 s sea-level / 230 s vacuum** at P=1000 psia, perfect expansion, 74.5 wt% active aluminum — i.e. our row's 210 s sits almost exactly on the peer-reviewed ideal curve (between their SL and vac values).
-- Measured lab-scale static-fire motors: combustion efficiency ~69%, Isp efficiency ~64% at ER=10 for the 7.62 cm motor — documents how far real hardware is from the ideal, which bounds what a future ALICE engine could actually deliver (roughly 0.6-0.7 x ideal in current small-motor form).
-- Authors explicitly acknowledge Pourpoint/Son/Wood/Pfeil at Purdue for contributions to the program; AFOSR contract FA9550-07-1-0582 — same program our notes cite.
-
-### pourpoint_2012_alice_feasibility — T1, open_not_pulled
-Pourpoint T.L., Wood T.D., Pfeil M.A., Tsohas J., Son S.F. (Purdue), "Feasibility Study and Demonstration of an Aluminum and Ice Solid Propellant", Int. Journal of Aerospace Engineering 2012:874076, doi:10.1155/2012/874076 — the program's own paper documenting the actual ALICE sounding-rocket launch (the flight our notes reference).
-- Abstract-level data verified live from publisher page: it reports the actual ALICE sounding-rocket launch plus small-scale static experiments (strand burner + motors), and cites prior CEA equilibrium work showing vacuum Isp **>300 s at O/F ~1.2 with expansion ratio 100** for Al/water mixtures — i.e. the class ceiling is well above our row's conservative 210 s; our value tracks the realistic small-motor regime, not the ideal high-ER limit.
-- PDF route blocked from this machine: Wiley pdfdirect HTTP 403 AND Hindawi archive (downloads.hindawi.com) HTTP 403 — recurring block pattern for both hosts. Registered open_not_pulled with abstract data as anchor; full text is CC-BY OA and retrievable via any non-blocked network or institutional access.
-
-### Scope note
-Our row's 210 s vacuum is a conservative, hardware-realistic value: it sits between Risha et al.'s ideal SL (207 s) and vac (230 s) figures for the same formulation family, while Pourpoint et al. show the theoretical ceiling (>300 s at ER=100) that future optimized ALICE engines could approach. The row is now anchored from both sides by peer-reviewed sources from the actual program behind it.
-
-### Remaining unanchored propellant rows after this round
-- CO / LOX (carbonaceous ISRU, ~260 s) — next target; theoretical CEA-class data expected to be available in NTRS/peer-reviewed literature on carbon monoxide + oxygen combustion for Mars ascent concepts.
-
-## Round-31 addition — CO / LOX (carbonaceous ISRU) row gets peer-reviewed anchors from the actual Mars-ISRU literature (two hosted)
-
-**Target:** `propellants.csv` "CO / LOX (carbonaceous ISRU)" at ~260 s vacuum, mild-cryogen storage. This was the LAST unanchored propellant row — with this round every workhorse chemical + electric-adjacent class in the file now has a peer-reviewed anchor.
-
-**Anchors added:**
-1. `hepp_landis_kubiak_1991_mars_co2` (T2, NASA TM-103728, hosted) — Hepp/Landis/Kubiak, "Chemical Approaches to Carbon Dioxide Utilization for Manned Mars Missions" (UA/NASA SERC 2nd Annual Symposium). The canonical early peer-reviewed treatment of CO as a direct Mars-derived rocket fuel. Verified verbatim in the extracted text:
-   - *"Mars-derived carbon monoxide can be used directly as a fuel, at a specific impulse of about 300 seconds."* — brackets our conservative 260 s engineering value from above (our row is deliberately below the idealized figure).
-   - Same paragraph gives the class ladder: H/O₂ up to ~500 s; hydrocarbon fuels ~375 s; alcohols slightly less; CO ~300 s.
-   - Also documents the key rationale our row encodes: *"Carbon monoxide contains no Earth-derived hydrogen"* — i.e., it is the only chemical bipropellant makeable from Martian resources alone, which is exactly why the pipeline carries a separate CO/LOX class rather than folding ISRU into methalox.
-2. `linne_1996_co_ox_ignition` (T2, NASA TM-107267 / AIAA-96-2943, hosted) — Linne (NASA Lewis), "Experimental Evaluation of the Ignition Process of Carbon Monoxide and Oxygen in a Rocket Engine" (32nd JPC). Subscale combustion tests with both propellants chilled to near-liquid temperatures (-197 °F O₂ / -193 °F CO) at optimum mixture ratio **O/F 0.55** — steady-state combustion achieved in every test case; ignition-boundary data for engine design. This validates the cryogenic-storage class our row assumes (mild_cryogen, not ambient) and supplies the O/F context: note CO/O₂ runs FUEL-LEAN by mass ratio convention (O/F 0.55 ≈ fuel-rich on a molar basis), i.e., FUEL-RICH relative to the stoichiometric O/F ≈ 1.14 (2CO + O₂ → 2CO₂), which is typical for high-Isp operation of this pair and consistent with CO's low molecular weight as fuel.
-
-**Scope notes:**
-- The ~300 s figure is an idealized/theoretical class value from the ISRU literature; our row's 260 s is intentionally conservative (hardware-realistic, engine-cycle losses). Both anchors bracket it honestly: Hepp et al. above at ~300 s, Linne confirming the combustion regime works as assumed.
-- No measured full-scale CO/LOX engine Isp exists in the open literature — this propellant was never flown; both anchors are therefore theoretical + subscale-experimental by nature, which is the best available for a non-flying class and matches how other unflown rows (e.g., HTP/RP-1) were anchored.
-
-## Round-35 addition — cislunar + Mars Δv segments get flight-data and peer-reviewed trajectory anchors (four hosted; one DISCREPANCY found)
-
-**Target:** `spacecost/reference/delta_v_segments.csv` — the cislunar rows (`LEO → TLI`, `TLI → low lunar orbit`, `LLO → lunar surface`) which cited "NASA SP-4029" and "NASA DRA 5.0" in their notes but had never been checked against those documents, plus the Mars rows (TMI / MOI / TEI) which were figure-dependent with no verifiable total-level anchor.
-
-**Anchors added:**
-1. `sp4029_apollo_by_the_numbers` (T2, NASA SP-2000-4029, NTRS 20010008244 — title verified live this round; public domain). Orloff's *Apollo by the Numbers* carries per-mission ignition/cutoff tables for Apollo 7–17. I parsed every burn table via **word-coordinate column alignment** (matching each value to its header x-position, since PyMuPDF text extraction scrambles ragged table columns) and extracted TLI / LOI / powered-descent / ascent burns across all landing missions:
-
-   | pipeline segment | our value | SP-4029 measured evidence | verdict |
-   |---|---|---|---|
-   | LEO → TLI (trans-lunar injection) | 3150 m/s, note says "Apollo TLI 3.05–3.20 km/s" | S-IVB 2nd-burn cutoff: A8 **9,974** / A11 **10,008** / A12 **10,515** / A14 **10,367** / A15 **10,415** / A16 **10,390** / A17 **10,376** ft/s (A13 10,039) = **~3.04–3.20 km/s** | **AGREEMENT — the row's stated range matches the measured flight data essentially exactly**; our point value 3,150 sits mid-range |
-   | TLI → low lunar orbit (LOI) | 900 m/s | LOI cutoff: A8 2,997 / A10 2,982 / A11 2,918 / A14 3,022 / A15 3,000 / A17 2,988 ft/s = **~889–922 m/s** (A16 table column-shifted, excluded) | **near-exact — our 900 sits mid-range**; row can now cite SP-4029 directly with confidence |
-   | LLO → lunar surface (descent) | 1870 m/s | LM powered-descent cutoff: A15 **6,813** / A16 **6,703** / A17 **6,698** ft/s (durations 721–739 s) = **~2.04–2.08 km/s** | ⚠️ **DISCREPANCY — measured flight values are ~9–11% ABOVE our row's 1,870 m/s.** Three independent missions agree with each other tightly (6,698–6,813 ft/s), so this is a real gap in *our* number, not source noise. Our note attributes the value to "SP-4029" but SP-4029's own tables give ~2.05 km/s — our 1,870 likely came from a secondary/rounded figure or a descent profile that excludes part of the burn. **Flagged as a row-correction candidate for a future round** (spacecost is read-only for this process; I have not touched it). |
-   | Lunar surface → LEO (ascent component) | 5900 m/s total | LM ascent-orbit burn: A14 **6,066** / A15 **6,059** / A17 **6,076** ft/s ≈ **~1.85 km/s** for the surface→LLO leg alone | component anchor — confirms the ~1.85 km/s ascent sub-term inside our 5,900 m/s total (which also carries plane-change + LLO→LEO return); consistent |
-
-   - TEI context rows (A8 3,519 / A11 3,279 / A17 3,046 ft/s ≈ 0.9–1.07 km/s) are the CSM's *lunar* trans-Earth injection from LLO — useful cross-check for cislunar return-leg framing but **not** a Mars value (do not conflate with the Mars TEI row).
-2. `dra5_2009_human_exploration_of_mars` (T2, NASA SP-2009-566 "Human Exploration of Mars DRA 5.0", NTRS 20100028285 — title verified live; public domain). The In-Space Transportation chapter gives the total-level ΔV budgets our Mars rows inherit:
-   - p62 verbatim (conjunction class): *"the average total delta-V was approximately **7 km/s ± 1 km/s**."* Our per-segment sum TMI(3,600)+MOI(900)+TEI-from-LMO(2,100) ≈ **6.6 km/s** sits inside the 7±1 envelope — **CONSISTENT at total level**. (Our rows deliberately take minimum-energy low-end values; the TMI row's note already flags this as a lower bound.)
-   - p62 verbatim (opposition class): *"Variation of delta-V across the synodic cycle for Opposition-class missions is nearly 100% with an average total delta-V of **10 km/s ± 3.7 km/s**."* — documents why opposition-class is much more expensive, supporting our choice to price on conjunction-class minimums.
-   - ⚠️ **Two honest caveats recorded (not papered over):** (a) the exact per-burn split lives in **Figure 4-2**, whose extractable text layer carries only axis ticks (0–4.5 km/s) + series names — no per-line data values; both vision-model analysis and pixel-trace were inconclusive from this machine, so row-level TMI/MOI/TEI remain figure-dependent until OCR-capable extraction. (b) The MOI row's specific sub-claim *"arrival v∞ of 2.65 km/s"* appears **NOWHERE** in DRA 5.0 extractable text (full-document search returned no hits) — that particular number needs an alternate source or OCR pass in a future round; I have NOT registered it as verified.
-3. `qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization` (T2, AAS 19-225 "End to End Optimization of a Mars Hybrid Transportation Architecture", NTRS 20200002738 — title verified live; public domain). NASA Langley / Analytical Mechanics Associates, peer-reviewed at the 69th Space Flight Meeting. **A modern hybrid (chemical + solar-electric) Mars architecture in our exact mission class.** Verbatim p.2: *"A direct burn from LDHEO during its Earth close approach is needed for Earth departure/arrival V∞ greater than **2 km/s**"* — i.e., low-thrust SEP cannot cover high-energy departures, a chemical TMI must. Gives us a citable peer-reviewed basis for the chemical-TMI assumption and for any future SEP-based Mars data in economicspace. (Hosted copy is footnoted "(Preprint)" at p.1 = author version of the accepted proceedings paper.)
-4. `chai_merrill_pfrang_qu_aas19_226_landing_site_accessibility` (T2, AAS 19-226 "Hybrid Transportation System Integrated Trajectory Design and Optimization for Mars Landing Site Accessibility", NTRS 20200002454 — title verified live; public domain). Same NASA MSCT team. **Quantifies opportunity-to-opportunity Mars Δv variation:** verbatim p.11 SEP effective ΔV *"from **7.5 – 8.5 km/s in 2033** to **6.5 – 7.5 km/s in 2041**"* with per-burn chemical breakdown (TMI/MOI/Reorient/TEI/EOI) — directly supports our TMI row's framing that "the real figure swings across the 26-month synodic cycle." Also: landing-site access ±20° latitude every opportunity 2033–2052.
-
-**Scope notes:**
-- All four NTRS handles were verified live by **exact title match** this round (fetched each `/citations/<id>` page and read the `<title>`). Note: `api.ntrs.nasa.gov` was DNS-down mid-round, so I used the search-page HTML route + citation pages instead — worth re-checking the API host next round.
-- Every extracted number is recorded in `extracted_data/r35_cislunar_mars_delta_v_key_numbers.csv` (30 rows) with page citations and ft/s→m/s conversions, so each claim above is traceable to a specific table row.
-- **Net effect on the pipeline:** the cislunar TLI + LOI rows are now solidly anchored by flight data; the Mars rows have a verifiable total-level anchor (with per-burn split honestly flagged as figure-dependent); and we found one real discrepancy (powered-descent 1,870 → measured ~2.05 km/s) that should be corrected in spacecost when it is next editable. No changes were made to spacecost or economicspace — this process only writes to General_Research.
-
-## Round-37 addition — R35's two open items CLOSED: DRA Fig 4-2 per-burn split extracted (it was vector all along) + MOI v∞=2.65 km/s verified as a misattribution with correct first-principles anchor; AAS tables/figures fully mined
-
-**Target:** the two R35 caveats on `spacecost/reference/delta_v_segments.csv`'s Mars rows, plus criterion #2 completeness mining of the three already-registered domain-3 trajectory sources (no new source IDs this round — everything below comes from `dra5_2009_human_exploration_of_mars`, `qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization`, and `chai_merrill_pfrang_qu_aas19_226_landing_site_accessibility`, all registered in R35; registry count unchanged at 89).
-
-**Finding 1 — DRA Figure 4-2 is VECTOR, not raster: the per-burn split is now extractable and self-validating.**
-R35 recorded that Fig 4-2's "extractable text layer carries only axis ticks" and that vision/pixel-trace were inconclusive. This round I inspected the PDF drawing objects directly (`page.get_drawings()`, item-level rectangles) and found the chart is fully vector: every bar is a filled rectangle with exact coordinates, on an exactly uniform 0.5 km/s tick grid (all ten left-panel ticks verify to <0.1 pt of linear). Extracted all **51 bars** (24 crew + 27 cargo):
-
-| panel | years | TMI range | MOI range | TEI |
-|---|---|---|---|---|
-| LEFT — All-propulsive Crew Mission | 2031–2046 | 3.95 (2031) – 4.10 km/s, most years ≈4.08 | **0.97 (2035) – 1.79 (2031)** km/s | constant 1.56 |
-
-| panel | years | TMI range | MOI (propulsive capture) range |
-|---|---|---|---|
-| RIGHT — Propulsive-or-Aerobrake Cargo | 2028–2045 | ≈3.55 – 4.01 km/s (aero vs prop-MOI series nearly identical by design) | **0.82 (2039/2041) – 1.35 (2030)** km/s |
-
-**Self-validation of the extraction (two independent checks, both pass):**
-- Crew per-year totals = TMI+MOI+TEI range **6.27–7.38 km/s, mean 7.17**, vs DRA's own p62 verbatim "the average total delta-V was approximately 7 km/s ± 1 km/s" — inside the stated band exactly as expected for a correct bar reading (a wrong calibration would have shifted all totals off-band).
-- Crew TEI is constant at 1.563 across every year, and TMI dips specifically in **2031/2035** — matching p36 verbatim "all TMI maneuvers are designed to achieve the maximum allowed Earth departure V∞, except for the 2031 and 2035 opportunities … the maximum allowed Mars arrival V∞ is exceeded with slightly lower values." The geometry reproduces the document's own narrative.
-
-**Effect on spacecost rows:** our MOI row (900 m/s) now has a per-burn peer context: DRA's *all-propulsive* crew MOI spans 0.97–1.79 km/s across opportunities and its cargo propulsive-capture MOI spans 0.82–1.35 — our 0.9 sits at the low (minimum-energy) end, consistent with the row's stated lower-bound design intent. R35's "per-burn split remains figure-dependent" caveat is **retired**.
-
-**Finding 2 — MOI sub-claim "arrival v∞ of 2.65 km/s (NASA DRA 5.0)" = VERIFIED NEGATIVE + correct anchor supplied.**
-Full-document text search of SP-2009-566: the string "2.65" occurs only as a thousands separator ("2,650"); V∞ is discussed qualitatively at p36 with **no numeric Mars-arrival value anywhere** in the extractable layer (Fig 4-2's bars are ΔV per burn, not arrival energy). So spacecost line 29's citation "(NASA DRA 5.0)" for that specific number is a **misattribution**. The number itself is correct and I re-derived it from first principles this round:
-- Hohmann Earth→Mars (r₁=1 AU, r₂=1.523679 AU): v_transfer@aphelion = 21.480 km/s vs Mars circular 24.129 km/s ⇒ **V∞ = 2.6489 ≈ 2.65 km/s** — exact match to the row's value.
-- MOI ΔV into a 250×33,793 km orbit at that V∞ (periapsis burn): √(v_esc²+v∞²) − v_ell = **0.918 ≈ 0.9 km/s** — matches the row's 900 m/s to within rounding.
-
-Correction candidate for spacecost when editable: reword the note from "(NASA DRA 5.0)" to a two-body Hohmann derivation (the value is computed, not sourced); keep DRA as context via Fig 4-2 now that its per-burn values are registered below. **Not applied** — target repo read-only for this process.
-
-**Finding 3 — AAS 19-225 Tables fully mined (text layer; criterion #2).**
-The paper's four tables carry exact peer-reviewed per-maneuver ΔV in the text layer: Table 3 (2035 mission): MOI **121.31/122.04 m/s** (closure/E2E), TEI **121.37/127.21**, outbound SEP **3624.05/3615.80**, WSB transfer actual 145.56 out / 54.30 in vs 75 budgeted, LDHEO maintenance 84.29/56.76; Table 4 (2039 mission at **50° latitude**): MOI **367.72/368.16**, apotwist reorientation via SEP **135.27/127.11 m/s** over 11 revs of ~4°/rev plane changes, TEI **279.35/281.16**. Key structural fact: in this hybrid architecture the chemical MOI is only ~0.1–0.4 km/s because SEP does the heliocentric leg — so these are *context* anchors for a different mission design than spacecost's pure-chemical rows (noted as such on every CSV row, to prevent future conflation). The high-latitude case shows MOI tripling (122→368 m/s) purely from inclination — the peer-reviewed quantification of the latitude penalty.
-
-**Finding 4 — AAS 19-226 Figs 8/10 vector-extracted + remaining quantitative content pulled.**
-Figs 8 (2033 MO) and 10 (2041 MO) are also fully vector; extracted all chemical per-burn rows by landing-site latitude: at |lat|≈50° the Mars-side chemical budget is **MOI ≈ 0.33–0.39 + Reorient ≈ 0.07–0.11 + TEI ≈ 0.08–0.24 km/s** (chemical TMI ≈ 0 in every row — SEP+LGA do Earth departure), with Reorient vanishing near the equator and MOI growing monotonically with |latitude|. Completeness sweep of everything else quantitative: hybrid vehicle total propellant tank capacity **58 t** ("no solutions required that cumulative limit"); Table 1 HPS age/degradation assumptions (0/7.5/15% array degradation; power at TMI 675/624/574 kW for 0/5/10-year vehicles); MSCT campaign dates (Table 1, crew EDs 2035/2039/2043/2048).
-
-**Scope notes:**
-- All extracted numbers → `extracted_data/r37_mars_per_burn_key_numbers.csv` (**70 rows**, csv.writer-generated with guaranteed quoting — the R36 lesson applied up front; plain UTF-8 no BOM; every value page-cited, vector-extraction precision stated as ~±0.03 km/s for bar heights).
-- No new source IDs: this round deepens three already-registered items (registry stays 89: T1×46/T2×40/T3×3); `sources.csv` untouched and re-verified field-intact.
-- Vision-model analysis timed out repeatedly from this machine again; it was not needed — direct vector extraction superseded both vision and OCR for every figure in scope, with self-validation against the documents' own text-level numbers.
-
-
-## Round-40 addition — kim_2013 propellant-comparison tables fully mined: PROPELLANTS_REFERENCE Isp column gets peer-reviewed anchors for all four operational biprop/monoprop blends (no new source ID)
-
-**Deepening of the already-hosted `kim_2013` T1 row** (KSPE 17(6):120-130). R40 extracts the paper's three comparison tables in full — Table 1 (theoretical performance), Table 2 (propellant characteristics across N2H4 / MMH-NTO / LH2-LOX / LCH4-LOX) and Table 3 (flown CH4/LOX engines) — via word-coordinate reconstruction of the positioned table cells. → `extracted_data/r40_kim2013_propellant_isp_cost_key_numbers.csv` (**8 rows**).
-**Headline — first peer-reviewed anchor for `PROPELLANTS_REFERENCE`'s Isp column.** The table sets every rocket-equation mass ratio in spacecost and previously cited only "RocketCEA / Astronautix" (unregistered). Kim Table 2 vs our rows:
-
-| Blend | Kim Isp [s] | our isp_vac_s | delta |
-|---|---|---|---|
-| N2H4 monoprop | 240 | 220 | in-band (Astronautix cat-bed value) |
-| MMH/NTO | 323 | 336 | +4% (datasheet vs generic table) |
-| LH2/LOX hydrolox | **455** | 452 | **-0.7%, near-exact** |
-| LCH4/LOX methalox | 364 (generic) / **380 = Raptor 2nd gen, Table 3, at 2940 kNvac** | 380 | **EXACT match on the engine our row cites** |
-**Cost row (Table 2, order-of-magnitude per the table's own '~' marks — exponents verified at character level)**: N2H4 ~$10^3 / MMH-NTO ~$10^3 / LH2-LOX ~$10^1 / LCH4-LOX <$10^1 $/kg. Our component-based combined costs agree within an order of magnitude for the cryo blends (hydrolox $1.60/kg, methalox $0.243/kg); the hypergolic figures carry toxicity/handling overhead and are not directly comparable to DOD FY20 raw-material pricing — recorded as a sanity check only, no revision candidate.
-
-**Table 1 (theoretical performance at Pc = 6.89 MPa, expansion ratio 40:1)**: kerosene/LOX O/F 2.77 → Tc 3701 K, C* 1783 m/s, max Isp **358.2 s**; CH4/LOX O/F 3.45 → Tc 3563 K, C* 1838 m/s, max Isp **368.9 s** — the ~+10.7 s / +55 m/s C* methane advantage at equal chamber pressure, peer-reviewed and consistent with our methalox-over-kerolox ranking in `PROPELLANTS_REFERENCE`.
-
-## Round-42 addition — ssoBFT per-body delta_v mined live: population anchor for the approach/transfer rows + Bennu/Hermes identity anomaly resolved (no new source ID)
-
-**Target:** R41's carried open item "ssoBFT's per-body `delta_v` column = future anchor candidate for spacecost approach/transfer rows." No new source ID — the data is `berthier_2023_ssodnet` (domain 1, registered R41); this block records the mining.
-
-**Official definition** (SsODNet service docs, ssp.imcce.fr/webservices/ssodnet/api/ssobft/, fetched live): `delta_v.delta_v` = "Best total velocity range (Delta-V) that a spacecraft must undergo from Earth orbit to match orbit and rendezvous with a target" [km/s]; companion columns `transfer_time` [days] and `n_burns`. It is an **Earth-orbit-to-rendezvous** budget — the same frame as our LEO→NEA rows, not a point-intercept figure.
-
-**Population statistics** (parsed live from the R41 parquet; q = a(1−e) from orbital_elements):
-
-| population | n | p05 | median | mean | p95 | max |
-|---|---|---|---|---|---|---|
-| whole table | 1,563,628 | — | **10.156** | 10.293 | — | 37.582 (min 3.459) |
-| NEA (q<1.3 au) | 42,379 | 5.539 | **8.877** | 10.071 | 18.334 | — |
-| MBA (1.6≤a≤3.4, q≥1.6) | 1,467,308 | 8.492 | **10.129** | 10.249 | 12.506 | — |
-| other (Trojans/JFC/high-ecc) | 53,941 | 8.213 | 11.797 | 11.656 | 14.915 | — |
-
-**Comparison to `spacecost/reference/delta_v_segments.csv`:**
-- "LEO → main-belt asteroid = **10,500 m/s**" (cites Taylor et al. 2018): the ssoBFT MBA population median is **10.13 km/s**, p75=10.89 — our row sits just above the population median / inside its interquartile range → **AGREE as a representative main-belt target**. Taylor's per-object map remains the cited source; this adds an independent 1.47M-body distribution behind it.
-- "LEO → easy NEA = 4,500" / "average NEA = 6,500": ssoBFT NEA p05=**5.539**, median **8.877**. Only **0.219% (93 of 42,379)** sit below 4 km/s; 2.2% below 5; 9.1% below 6 → our easy/average rows price the *accessible tail* (Elvis et al.'s low-Δv class), not the population mean — consistent with their stated intent ("bottom decile of accessibility"), but now explicit: a random NEA costs ~9 km/s, and only about 2% are sub-5-km-s.
-- Headline bodies (joined by MPC number verified via JPL sbdb.api this round): **Bennu 7.368 / Ryugu 6.985 / Eros 7.643 / Didymos 6.139 km/s**, transfer times 233–382 days (n_burns 2–3).
-
-**Identity anomaly caught and resolved:** my first join on number=69230 returned the row named "Hermes" — ssoBFT's `number` column is authoritative: **(69230) = Hermes**, an Apollo NEA (dv 9.699 km/s). The true Bennu row carries name="Bennu", number=**101955**, dv **7.368 km/s** — matching R41's recorded value exactly, confirming the earlier cross-check was correct and that any future per-body join must key on `number` (JPL sbdb.api?sstr=Bennu → fullname "101955 Bennu (1999 RQ36)" settles it).
-
-All numbers in `extracted_data/r42_sso_bft_delta_v_key_numbers.csv` (29 rows, every value with population context; the official column definition quoted verbatim at the foot of the file).
-### whitley_martinez_2015_nro_staging_orbits [T2 (IEEE Aerospace conference paper); full text hosted] — Martinez & Whitley (NASA JSC), "Options for Staging Orbits in Cis-Lunar Space," IEEE Aerospace Conference 2015 (NTRS 20150019648, public domain)
-
-**The cited-but-unregistered source behind both cislunar depot Δv rows.** `delta_v_segments.csv` cites "Whitley & Martinez" for the
-TLI→NRHO insertion and the Gateway-to-LLO transfer; neither was registered or verified until now. Pulled live from NTRS this round (PDF 4.65 MB,
-sha256=9a1e79821407...; public domain — determinationType GOV_PUBLIC_USE_PERMITTED + in-text "Government work not protected by U.S. copyright").
-Duplicate abstract-only record 20150013825 noted (one registration only).
-
-Word-coordinate-verified values (all re-extracted from the PDF this round; see extracted_data/r49_whitley_martinez_nro_staging_orbits_key_numbers.csv):
-
-**Table 3 "Surface Access Costs from Various Orbits" (p4)** — one-way staging-orbit → LLO transfer costs:
-| orbit | ∆V to LLO (m/s) | ∆T | total incl. plane change |
-|---|---|---|---|
-| **NRO (Polar)** | **730** | 0.5 days | 730 |
-| NRO (Equatorial) | 898 | 0.5 days | 898 |
-| ELO (0° PC) | 515 | 7 hrs | 515 |
-| PCO (Polar) | 700 | 5 hrs | 700 |
-| Frozen (Polar) | 556 + 252 pc | 6 hrs | 808 |
-| Frozen (Equatorial) | 556 + 408 pc | 6 hrs | 964 |
-| EM-L2 Halo (Polar) | 800 | 3 days | 800 |
-| DRO (Polar) | 830 | 4 days | 830 |
-
-**Table 6 "Staging Orbit Summary Comparison" (p8)** — NRO row: Earth Access = **"Feasible"** (qualitative label only), Lunar Access (to Polar LLO) = **∆V = 730 m/s, ∆T = .5 day**, Stationkeeping <10 m/s/yr; LLO row: Infeasible.
-**Table 2 "Round Trip Sample Missions"**: NRO 21-day total **840 m/s** (stay 10.9 d); NRO 60-day total **751 m/s** (stay 37.6 d). Body: "the Earth-Moon libration point halos and NRO orbits require very small ∆Vs in the 10's of m/s, easily less than 100 m/s total if transfer time is free to be several months"; predicted stationkeeping ~5 m/s/yr.
-
-Audit against our rows:
-- **`NRHO → low lunar orbit` (dv_m_per_s=730) — EXACT MATCH, true pin.** Table 3 NRO(Polar) one-way = 730 m/s and Table 6's Lunar Access cell repeats it verbatim. This is the load-bearing row: it sets Module-2's cislunar sale price (the Δv a kg of asteroid material AVOIDS lifting through). Now anchored by its own cited source, word-coordinate-verified.
-- **`TLI → NRHO insertion` (dv_m_per_s=450) — consistency anchor ONLY.** The paper has NO single one-way Earth→NRO cell: Table 6's NRO Earth-Access entry is the qualitative label "Feasible"; its round-trip sample missions total ≈840 m/s (21-day) / 751 m/s (60-day), and the body says access can be "<100 m/s TOTAL" given months of transfer time. Our 450 m/s one-way figure is plausible against those bounds but NOT pinned by this source — registered as a consistency anchor per convention, with both numbers stated. The note's "~0.4-0.45 km/s (NASA Gateway NRHO trade studies)" remains the row's own citation; Whitley & Martinez corroborates the order of magnitude and the "cheapest usefully-stable cislunar depot orbit" claim (NRO is the paper's headline recommendation).
-
-### Round-49 status (domain 3)
-Registry +1 T1 → domain 3 now carries 38 sources. Both NRHO-cited Δv rows are now registered against a live, hosted public-domain source; one row pinned exactly, one honestly scoped as consistency-only.
-
-## Round-55 addition — SP-4029 deepening pass: Apollo LM descent-stage mass data anchors delivery.py's LANDER_DRY_MASS_FRAC (no new source ID)
-
-`sp4029_apollo_by_the_numbers` was registered in R35 for its TLI/LOI tables. This round mines the same hosted PDF's spacecraft-mass statistical tables to anchor a load-bearing constant that economicspace CITATIONS.md §7 flags as an "engineering judgement" with no citation: **spacecost/delivery.py `LANDER_DRY_MASS_FRAC = 0.20`** — the stage dry mass / (dry + propellant) used for every powered-descent leg in the delivery chains, and its supporting comment *"Apollo LM descent stage flew 2,134 kg dry on 8,200 kg of propellant = 0.21"*.
-
-**What SP-4029 actually says (verbatim from the hosted PDF):**
-- p305 table header: "LM Descent Stage Propellant StatusJs Weight (" — caption: *"Compiled from mission reports."*
-- p287 footnote under the dry-weight rows: *"LM ascent and descent stages, LRV and CM dry weights are as published in mission press kits. All other weights are actual "as flown:' Statistica"* (i.e. LM stage dry weights are as published in mission press kits; all other weights actual as-flown)
-
-**Extracted data** (`extracted_data/r55_sp4029_lm_stage_mass_key_numbers.csv`, 32 rows): descent-stage **dry weight** per mission (p287, reading-order text layer — the scan's OCR splits some digits across tokens; every clean cell asserted against its column) and descent-stage propellant **Loaded / Consumed totals** for all nine LM flights (p305, fuel+oxidizer reconciles to total within 0.1 lb on every row), plus ascent-stage loaded totals for the eight missions that flew an ascent burn (p306). Garbled scan cells A14/A15/A17 dry weights are recorded as such and excluded from the band — not guessed.
-
-**Anchor verdicts (all deltas computed in code):**
-- **The comment's numbers ARE Apollo 10, essentially exact.** SP-4029 A10 descent stage: dry 4703 lb = **2133.2 kg** vs the cited 2,134 kg (**+0.04%**, i.e. a rounding); propellant loaded total 18218.7 lb = **8263.9 kg** vs the cited 8,200 kg (**-0.77%**). A10 was the dress-rehearsal flight — it "flew" this load exactly.
-- **The comment's ratio is a slight over-round.** From its own numbers: 2134/(2134+8200) = **0.2065**; the stated "0.21" is +1.69% above that. Against SP-4029's as-flown A10 pair, measured δ = **0.2052** — the comment's 0.21 sits +2.35% high.
-- **Fleet band: [0.1912, 0.2372], median 0.2033.** δ = dry/(dry+prop) per mission (six clean dry cells): A9=0.1912, A10=0.2052, A11=0.1978, A12=0.2092, A13=0.2014, A16=0.2372. The later LMs flew heavier stages with ~8% more descent propellant than A9 (+8.4%), pushing δ up to 0.2372.
-- **`LANDER_DRY_MASS_FRAC = 0.20`: AGREE — inside the measured Apollo LM descent-stage band** (-2.52% vs A10's as-flown 0.2052; between band edges; median 0.2033). The constant sits just below the band centre — a defensible reading of six as-flown descent stages whose dry weights survived this scan, not an unanchored judgement.
-
-**Scope notes (honest gaps):**
-- `TUG_DRY_MASS_FRAC = 0.10` — **correction (R56)**: the S-IVB stage dry weights DO exist in SP-4029, at p294 'Ground Ignition Weights' (the R35/R55 scan only checked the p286 Key Facts table and the propellant-usage tables — a false negative). The constant is now anchored below in the Round 56 block: as-flown fleet δ incl. stage hardware = [0.0908, 0.1044] across all eleven missions; our 0.10 sits inside at -2.01% vs median.
-- The descent-stage dry weights are *press-kit* values per the p287 footnote; the propellant loads are as-flown. Mixed provenance is fine for a band estimate and noted here rather than silently mixed.
-- A13's δ uses its loaded (not consumed) total — it aborted before landing, so consumption data would be meaningless there anyway.
-
-## Round 56 addition — SP-4029 p294 'Ground Ignition Weights' S-IVB stage block anchors TUG_DRY_MASS_FRAC; R55 false negative corrected (no new source ID)
-
-**Target:** `spacecost/delivery.py` `TUG_DRY_MASS_FRAC = 0.10` — "mid-range for a cryogenic upper stage (Centaur V ~0.08, DCSS ~0.11), stage dry mass / (dry + propellant)". R35 and R55 both recorded this as an honest gap because SP-4029's Key Facts table (p286) lists S-IVB dimensions/thrust but no weight row — that statement was a **false negative**: the same document carries per-mission stage weights at p294, 'Ground Ignition Weights' ("Actual weights at S-IC stage ignition, compiled from Saturn launch vehicle flight evaluation reports"), which this round mined via word-coordinate extraction on the rotated scan (columns pinned to the mission header band; every component row reconciled against the table's own total row).
-
-**Extracted (→ `extracted_data/r56_sp4029_sivb_stage_mass_key_numbers.csv`, 11 missions A7–A17):** S-IVB stage dry weight, LH2 fuel load, LOX oxidizer load and 'other' (non-propellant hardware) per mission. Self-validation: for 9 of 11 missions the four component cells sum to the table's own total within <0.5 lb; A11/A12 total cells are OCR-garbled in this scan (split digits), so their totals are left blank with a note — components complete, and both sums sit exactly inside fleet range.
-
-**Fleet δ = dry/(dry+prop) per mission:**
-- structure-only ('other' excluded): [0.0857, 0.0989], median 0.0963 — A7 (first S-IVB flight) is the low end at 0.0857 with a lighter stage (21852 lb dry vs fleet median ~25089);
-- incl. 'other' hardware: [0.0908, 0.1044], median 0.1021 — this is the quantity delivery.py's definition actually computes (stage mass / total).
-
-**Verdicts (all deltas computed in code):**
-- **`TUG_DRY_MASS_FRAC = 0.10`: AGREE — inside the as-flown S-IVB band [0.0908, 0.1044]** (+10.17% vs low edge, -4.26% vs high edge, -2.01% vs median). The constant is now a defensible reading of eleven flown cryogenic upper stages rather than an unanchored judgement; it also lands exactly where delivery.py's own comment places it (between Centaur V ~0.08 and DCSS ~0.11) — the S-IVB fleet corroborates that framing with flight data.
-- **R55 correction:** the scope bullet above is rewritten in place; R35/R55's "no S-IVB dry weight" referred only to p286 Key Facts and was wrong for the document as a whole.
-
-**Scope notes (honest gaps):**
-- The 'other' row (~1432–1873 lb) is stage hardware not counted with propellant; both δ variants are reported so the convention choice stays visible.
-- p294 weights are *at S-IC ignition* (ground), i.e. full loads — exactly what a delivery-chain tug leg starts from.
-
-## Maintenance (2026-09-26) — seven files un-hosted; five tiers corrected; extraction and attribution fixes
-
-- **Un-hosted**: elvis2011, ieva2014 (arXiv default licence); kim_2013 (no licence statement); komurasaki_aquarius_ground_2018 (JSASS, all rights reserved — the registry had said CC BY); krishnan_2010, pietrobon_1999, risha_2014_alice_jpp (publisher copyright). Un-hosted on 2026-09-26 because the licence does not permit redistribution (details in each registry row); every number this file quotes from them was checked against the PDF first and is in `extracted_data/`.
-- **Tiers**: krishnan_2010, spores_2013, borowski_2012 and whitley_martinez_2015_nro_staging_orbits are conference papers, so T2 (README: AIAA/IAC proceedings are T2). Labels above corrected in place.
-- **Venues**: elvis2011 is Planetary and Space Science 59(13):1408-1412 (registry said A&A); ieva2014 is A&A 569:A59; risha_2014 is JPP 30(1):133-142 (round 30 said 31(5)); spores_2013 was presented at the 50th JPC, Cleveland, in 2014, not 2013.
-- **krishnan_2010 Table 2** (round 29): 3268 N-s/kg is the maximum *frozen* Isp, at O/F 6.26. The O/F 7.38 column gives 3407 (equilibrium) and 3236 (frozen). The paper reports Isp efficiencies of 0.90-0.94; it does not recommend 0.90. Bracketing from above still holds.
-- **asakawa_aquarius_onorbit_2024** (round 28): Table 3 gives Isp 91.7 ± 1.0 s (DV1) and 90.3 ± 3.0 s (TCM1), ground test 68.5 ± 5.5 s; the abstract gives ~6.0 mN and 91.0 s. The 91.1 / 92.0 / 89.4 s and "CF = 1.53/1.51" above are not in the paper's text layer. The conclusion (~91 s at < 14 W) holds.
-- **komurasaki_2018**: the design is 4.0 mN (delta-V thruster) / 2.0 mN (RCS) at 70 s; the ground test measured 1.6 mN on the RCS head.
-- **jue_2003** backs the HYDROLOX row: the RS-25 burns LOX/LH2. The round-15 block and the registry called it the kerolox row.
-- **robbins_1991**: 825 s is the flight-baseline engine *rating* ('was defined with', p5), and the paper counts twenty reactor tests and two engine tests (p11), not twenty reactors built. Same correction as domain 10's R65 NERVA reversal.
-- New rows: 44 page-located rows for 20 hosted sources in `extracted_data/backfill_2026-09-26_key_numbers.csv`, plus schoenman_1992 and pourpoint_2012 at abstract level. taylor2018 and tirila_2023 are marked context-only.
-
-## R70 - Full-extraction pass of the hosted sources (2026-09-27; registry unchanged)
-
-Every hosted full text in this domain was re-read end to end for pipeline-useful numbers; tables were read by word coordinates (or from rendered page images where the text layer fails) and checked against their printed totals. New files (all in `extracted_data/`, every row carries `source_id` and a page location): `r70_asakawa_aquarius_onorbit_2024.csv` (6); `r70_boddy_1980.csv` (9); `r70_borowski_2012.csv` (20); `r70_bowles_dawson_2004.csv` (28); `r70_boyce_aj10_oral_history.csv` (7); `r70_chai_merrill_pfrang_qu_aas19_226_landing_site_accessibility.csv` (4); `r70_cuffe_jacobs_1970.csv` (7); `r70_dra5_2009_human_exploration_of_mars.csv` (28); `r70_hepp_landis_kubiak_1991_mars_co2.csv` (15); `r70_hitt_2001.csv` (6); `r70_jpl_1968.csv` (11); `r70_jue_2003.csv` (11); `r70_linne_1996_co_ox_ignition.csv` (6); `r70_morren_curran_1991.csv` (3); `r70_morren_curran_1991_table2_arcjet_performance.csv` (44); `r70_nextc_protoflight_2021.csv` (5); `r70_nextc_protoflight_2021_table1_throttle_performance.csv` (6); `r70_qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization.csv` (4); `r70_robbins_1991.csv` (9); `r70_sanna_2024.csv` (20); `r70_shoemaker_helin_1978.csv` (24); `r70_sp4029_apollo_budget_appropriations.csv` (29); `r70_sp4029_apollo_by_the_numbers_vehicle_summary.csv` (4); `r70_sp4029_entry_and_key_facts.csv` (16); `r70_sp4029_ground_ignition_weights.csv` (27); `r70_sp4029_launch_vehicle_propellant_usage.csv` (47); `r70_sp4029_lm_ascent_propellant_status.csv` (24); `r70_sp4029_selected_mission_weights.csv` (54); `r70_spores_2013.csv` (7); `r70_ssme_rs25_adaptation_2015.csv` (6); `r70_thapa_2023.csv` (8); `r70_thiokol_sts33r_1990.csv` (8); `r70_woodcock_byers_2003.csv` (8); `r70_yim_2014.csv` (4).
-
-- **Correction - Shoemaker & Helin figure of merit.** `shoemaker_helin_delta_v_key_numbers.csv` gave dV ~ 3.0*F + 0.5 km/s. The page images of Eq.(11) (p4) and Fig.1 (p5) give **dV = 30F + 0.5 km/s** (30 km/s is Earth's orbital speed). Fixed in place; the Asterank lineage argument is unaffected.
-- **Correction - sanna_2024 648 m/s.** The backfill row "free RAAN (LTO) 648 m/s" (and R12's FINDINGS text, the R12 log entry and rc-018's proposed range) used 648 m/s, which is the second (LLO insertion) burn of the RAAN = 0 case in Tables 2-3 (total 738 m/s). The lowest total dV in the paper is **666 m/s** (polar LLO, free RAAN, Table 1 p10); fixed-RAAN polar cases run 671-851 m/s (Table 4). The backfill row and rc-018's proposed text are corrected; the R12 log entry is left as written. Upstream spacecost never used 648 (its row cites Whitley & Martinez, 730 m/s), so no candidate is needed.
-- **Correction - asakawa thrust coefficient note.** The backfill note said Round 28's CF = 1.53 / 1.51 was not in the text layer. PDF p5 prints it as "1:53 ± 0:03" (DVT1) and "1:51 ± 0:02" (DVT2), with colons as decimal points as in Table 3. R28 was right; the note is fixed.
-- **Source inconsistency kept as printed**: in SP-4029's Apollo appropriations table the NASA-total row's yearly figures sum to 41,625,782, not the printed programme total 56,661,332, and the printed 34% Apollo share (19,408,134 / 56,661,332) uses the larger figure; the Apollo rows and year columns all reconcile. Woodcock & Byers: the text layer misreads the Atlas IIA GTO and Atlas IIIB LEO-10% cells; values were taken from the page image.
-- Largest new tables: SP-4029 selected mission weights (54 events x 11 missions), launch-vehicle propellant usage (47), ground-ignition weights (27); Morren & Curran arcjet performance (44 rows, V x I = P and Isp = T/(mdot g0) checked); DRA 5.0 manifests and the EDL mass chain 110.2 -> 56.8 -> 40.4 t.
-
-## R71 - Side-deepening extraction round (2026-09-27; logged in R72; registry unchanged)
-
-Branch `side-deepening`, commit 0729c2d, merged into this branch in R72. It gave the 20 PDFs un-hosted on 2026-09-26 (restored byte for byte from git `5dd58d5`, sha256 matched against `DOWNLOADS.md`) their first full pass, and read seven non-hosted sources from copies the owner downloaded (DOWNLOADS.md section B). The commit wrote no FINDINGS block or log entry; this block and the R71 log entry were written in R72 from the commit and the files themselves. R72 then re-checked every R71 file whose PDF is restorable: every numeric cell was searched for in the PDF text (0 values missing outside cells the R71 notes say were read from page images), the image-read cells were compared against rendered pages, and large tables were checked row by row. New files: `r71_elvis2011_key_numbers.csv` (10); `r71_elvis2011_table1_lowest_dv_neos.csv` (6); `r71_ieva2014_key_numbers.csv` (2); `r71_ieva2014_table3_mineralogy.csv` (11); `r71_ieva2014_tables1_2_low_dv_nea_targets.csv` (13); `r71_kim_2013_key_numbers.csv` (9); `r71_kim_2013_table3_methalox_engines.csv` (26); `r71_kim_2013_table5_energomash_kerolox_vs_methalox.csv` (4); `r71_komurasaki_aquarius_ground_2018_key_numbers.csv` (9); `r71_krishnan_2010_key_numbers.csv` (7); `r71_krishnan_2010_table1_propellant_properties.csv` (4); `r71_krishnan_2010_table2_theoretical_performance.csv` (42); `r71_krishnan_2010_table3_sample_upper_stage_engines.csv` (9); `r71_krishnan_2010_table4_stage_performance.csv` (4); `r71_pietrobon_1999_key_numbers.csv` (8); `r71_pietrobon_1999_table2_engine_performance.csv` (3); `r71_pietrobon_1999_table3_shuttle_liftoff_masses.csv` (8); `r71_pietrobon_1999_table4_h2o2_properties.csv` (8); `r71_risha_2014_key_numbers.csv` (10); `r71_risha_2014_table4_composite_baselines.csv` (7); `r71_risha_2014_table7_alice_motor_performance.csv` (21); `r71_risha_2014_tables5_6_motor_tests.csv` (6).
-
-- **krishnan_2010 Tables 1-4** (propellant properties, 42 theoretical-performance cells, sample upper-stage engines, stage performance); **kim_2013 Tables 3 and 5** (26 methalox engines; Energomash kerolox vs methalox); **pietrobon_1999 Tables 2-4**; **risha_2014 Tables 4-7** (ALICE motor performance by diameter); **elvis2011 Table 1** and **ieva2014 Tables 1-3**; komurasaki key numbers.
-- **Correction (R71)**: `delta_v_segments_key_numbers.csv` located elvis2011's 6.65 km/s peak at 'Sec 3, p4 (Fig 1)'; it is Sec 4, p4, and the plot the text calls Fig 1 is captioned Figure 3.
-
-## R72 - Tables R70/R71 skipped, verification of R71, upstream re-check (2026-09-27; registry unchanged)
-
-This round's container reached only package registries (arXiv, NTRS, JPL, Google Docs and every publisher returned 403), so nothing new could be fetched; the work used the hosted PDFs and the 20 restored from git `5dd58d5`. Each hosted and restored PDF's table captions were listed and matched against the extracted CSVs; tables no CSV cited were read by word coordinates (columns assigned from header or fully populated rows, so blank cells stay blank) or from rendered page images, and checked against printed totals. Upstream heads re-read: spacecost@e831245, AsteroidCatalog@852bf69, economicspace@1f470d4 (unchanged since 2026-09-26). New files: `r72_kim_2013_table4_aerojet_methane_experience.csv` (6); `r72_linne_1996_table1_ignition_boundaries.csv` (23); `r72_nextc_protoflight_2021_tables2_8_component_performance.csv` (320); `r72_risha_2014_tables1_3_nano_al_characterization.csv` (55); `r72_sanna_2024_tables2_3_method1_transfers.csv` (16); `r72_thiokol_sts33r_rsrm_mass_properties.csv` (62); `r72_whitley_martinez_2015_tables1_6_staging_orbits.csv` (128); `r72_woodcock_byers_2003_table2_mission_payloads.csv` (9); `r72_yim_2014_table2_plume_heat_flux.csv` (4).
-
-- **thiokol_sts33r RSRM mass properties** (scanned pages with no text layer, read from rendered images). Tables 4.3-5/4.3-6 reconcile completely: usable + unusable = propellant, sub-rows sum, and every delta and error % recomputes. Loaded motor 1,256,032 lb (569.7 t), of which propellant is 1,106,493 lb: **propellant mass fraction 0.881** for both motors (inerts 13.5% of propellant). Tables 4.3-1/4.3-2 give weight at 21 events from prelaunch to splashdown; the RH prelaunch weight equals inerts + propellant, while the LH one is 16.8 lb above.
-- **whitley_martinez_2015 complete (Tables 1-6 and text)**: R49 took 15 rows. **Source inconsistency kept as printed**: Table 6 gives ELO to polar LLO as 953 m/s, while Table 3 gives 515 + 478 = 993 m/s. Table 3's 846 m/s LLO 30-degree plane change reproduces as 2v sin(15 deg) at a 100 km LLO.
-- **Upstream: `TLI -> NRHO insertion` (spacecost 450 m/s) now has a numeric anchor.** R49 recorded that this paper gives no one-way Earth-to-NRO figure. Figure 2 (p3) breaks the 840 m/s round trip into burns: outbound powered flyby 178 + NRO insertion 250.5 = **428.5 m/s** from TLI, return flyby 190 + departure 221.5. 450 is 5% above 428.5. AGREEMENT, no candidate.
-- **NEXT-C protoflight Tables 2-8** (320 rows; R70 took Table 1, the Table 5 averages and Table 6's discharge losses). The mean of each three-test group reproduces Table 5's printed averages. **Source inconsistency**: the PaT-only Tables 3 and 4 print the 0.69 sccm neutralizer flow margin and the 1267 V perveance limit under TL09 (x-position checked, and Table 3's prose names TL29 and TL09), while Tables 7-8 print the same values as TL05 PaT; both kept as printed.
-- **linne_1996 Table I** (12 lower- and 9 upper-boundary ignition points) and both response-surface models. **Source inconsistency**: the printed lower-boundary model, ln(O/F) = -0.414029 - 0.0036789 Tox + 0.00062535 Tco + 0.0000683 Tox Tco, gives O/F 64 at the chilled test point (measured 2.423). A least-squares refit of the 12 points gives 6.6e-6 for the cross term, so the printed coefficient is probably missing a zero; kept as printed. The upper-boundary model reproduces its data.
-- **sanna_2024 Tables 2-3** (Method 1 Lambert guesses and fmincon refinement; R70 took Method 2's Table 4): dV1 + dV2 = total in every row. Also risha_2014 Tables 1-3 (nano-Al characterisation, every view sums to 100%), kim_2013 Table 4, woodcock_byers_2003 Table 2 (mission payload masses, from the page image; the text layer is garbled OCR), yim_2014 Table 2.
-- **Correction to Round 30 (this file, ALICE block)**: it called the `Metal / water (ALICE)` row's 210 s 'a conservative, hardware-realistic value'. risha_2014 Table 7 (extracted R71) shows motor-scale delivered Isp of 56 / 83 / 133 s in 1.91 / 3.81 / 7.62 cm motors (27-64% Isp efficiency); 210 s is near the ideal (207 s sea level / 230 s vacuum). The row is gated out of runs and its value is not wrong as an ideal figure, so this is a note change only: **rc-044** (wording).
-- **RSRM vs spacecost `Solid (APCP)`**: the row is anchored to kick motors (case 6.9% of grain, Isp 285 s); the RSRM's inerts are 13.5% of propellant and its delivered Isp 268 s. That is a recoverable steel-case booster, a different class, so this is context only.
-- **Skipped with reasons**: SLS Mission Planner's Guide Tables 5-x/6-x/7-x (payload environments and ground facilities; Table 4-1 performance was taken in R70); DRA 5.0 Tables 3-x/6-x, spores_2013 Table 2, baumeister Table 6 (qualitative); hitt_2001 Table 2 (survey list); asakawa Tables 1-2 (operations sequence and telemetry list).
-
-## R74 - Upstream citations registered (2026-09-27; +6 sources, T1x1, T2x2, T4x3; nothing extracted)
-
-Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
-
-- `nasa_sp125_huzel_huang_design_liquid_rocket_engines` (T2): delta_v_segments.csv "surface -> LEO ascent" textbook value including gravity and drag losses.
-- `curtis_orbital_mechanics_engineering_students` (T4): delta_v_segments.csv ascent and textbook segment values.
-- `rafalskyi_2021_iodine_ep_in_orbit` (T1): propellants.csv "Iodine (Hall / gridded)" row: first iodine EP flown (NPT30-I2).
-- `astronautix_encyclopedia_propellant_engine_pages` (T4): propellants.csv vacuum Isp for kerolox, MMH/NTO, hydrazine, UDMH/NTO, Aerozine-50; LOX component price.
-- `rocketcea_nasa_cea_python_wrapper` (T4): propellants.csv kerolox vacuum Isp.
-- `nasa_std_5019_fracture_control_spaceflight_hardware` (T2): storage_systems.csv "COPV burst performance factor" and every supercritical-gas tank_kg_per_L in propellants.csv.
-
-## R76 - Gaps recorded from the second domain pass (2026-09-27; registry unchanged)
-
-Found while looking for new domains in economicspace@1f470d4 and spacecost@e831245; no source was sought. Two low-thrust cells in this domain's scope have no registry source. (Thruster-head kg/N is not one of them: the NEXT-C documents above already back it.)
-
-| cell | current value | upstream's stated basis |
+| row (our Isp) | source | what it gives |
 |---|---|---|
-| spacecost `propellants.py` `_LOW_THRUST_DV_PENALTY`, carried as `propellants.csv` `dv_penalty_factor` on every electric row | 1.5 x the impulsive mission delta-v | "1.5 is a mid-range figure": spiralling out of LEO ~7 km/s against ~3.2 km/s impulsive, interplanetary low-thrust transfers "~1.3-2× the impulsive Δv depending on thrust-to-mass"; no source |
-| economicspace `calc.py` `ep_target_thrust_yr` | 3.0 yr of thrusting the electric stage is sized for | none stated |
+| hydrolox (452 s) | **bowles_dawson_2004** [T2, hosted] (SP-4176, Centaur/RL-10 history) | narrative only |
+| hydrolox (452 s) | **jue_2003** [T2, hosted] (RS-25, AIAA JPC) | vac thrust 2190 kN, SL 1770 kN, vac Isp 452 s, SL 366 s, 69:1, O/F 6.0, 3530 kg: exact (it is the hydrolox row, not kerolox) |
+| hydrolox | **ssme_rs25_adaptation_2015** [T2, hosted] | ~3000 ground tests, >1M s hot fire; no Isp table |
+| methalox (380 s) | **kim_2013** [T1] (KSPE 17(6):120; un-hosted) | Raptor 2nd stage 380 s vac at 2940 kN: exact; RD-192 356 s vs RD-191 kerolox 337 s |
+| several | **thapa_2023** [T1, hosted, CC BY] | Shuttle LOX/LH2 453 s, Saturn V LOX/RP-1 304 s, OMS NTO/MMH 313 s, Shuttle SRB APCP 268 s |
+| Solid (285-286 s, kick motors) | **thiokol_sts33r_1990** [T2, hosted] (TWR-17546-1) | RSRM 268.2 s (LH) / 267.6 s (RH) vs predicted 268.5; burn rate 0.368/0.369 ips. R72: propellant mass fraction 0.881, inerts 13.5% (a booster, context only; `r72_thiokol_sts33r_rsrm_mass_properties.csv`) |
+| MMH/NTO (336 s) | **yim_2014** [T2, hosted] (Orion ESM) | OMS-E 26.7 kN at 55:1, eight R-4D 490 N, twenty-four 220 N RCS; no Isp. A companion paper quotes 27.7 kN; NASA says 26.7 |
+| Hydrazine monoprop (220 s) | **jpl_1968** [T2, hosted] (TR 32-7227) | measured 235 lbf-s/lbm (~97% of theoretical) at 50-55% NH3 dissociation, 44:1; Fig. 3 curve |
+| HTP monoprop (165 s) | **hitt_2001** [T1, hosted] | theoretical ~185 s for 98% H2O2; ~140 s at 80% efficiency (1955) |
+| Hydrazine arcjet (600 s) | **morren_curran_1991** [T2, hosted] (TM-105149) | SOA ~530 s at 1.6 kW; 300 h at 550 s / 2.0 kW; 600 s at 2-5 kW the goal. `r70_morren_curran_1991_table2_arcjet_performance.csv` |
+| NTP (900 s) | **borowski_2012** [T2, hosted] | "~900 seconds or more"; DRA 5.0 ~875-950 s; MCNP ~894-940 s |
+| NTP | **robbins_1991** [T2, hosted] (CR-187154) | flight-baseline engine rated 75,000 lbf / 825 s; twenty reactor tests and two engine tests (p11) |
+| UDMH/NTO (318 s) | **schoenman_1992** [T2, abstract only] | NTO/MMH 490 N: 309 s at 44:1, 321 lbf-s/lbm at 286:1 |
+| Solar thermal (~800 s) | **woodcock_byers_2003** [T2, hosted] | H2 at 2500-3000 K "in excess of 800 seconds"; design case 811 s |
+| Solar thermal | **boddy_1980** [T2, hosted] (AFRPL TR-79-7g) | "a specific impulse of 680 seconds was achieved" (the only measured value); 500-1100 s range |
+| Aerozine-50/NTO (320 s) | **cuffe_jacobs_1970** [T2, hosted] | SM injector #115 312.8 / 311.4 s; AEDC uncertainty 0.2 s |
+| Aerozine-50/NTO | **boyce_aj10_oral_history** [T2, hosted] | AJ10-137 SPS: 20,000 lbf, 100 psi, Isp 314.5, 62.5:1, NTO/A-50 |
+| Green monoprop (235 s) | **spores_2013** [T2, hosted] (GPIM, 50th JPC 2014) | GR-1 vac Isp 235 s: exact; GR-1 0.4–1.1 N, GR-22 8–25 N |
+| Water resistojet | **asakawa_aquarius_onorbit_2024** [T1, hosted] (EQUULEUS) | Table 3: 91.7 ± 1.0 s (DV1), 90.3 ± 3.0 s (TCM1), ground 68.5 ± 5.5 s; ~6.0 mN, <14 W; CF 1.53 / 1.51 (p5). Low end of the row's 150-220 s |
+| Water resistojet | **komurasaki_aquarius_ground_2018** [T1] (JSASS, all rights reserved; un-hosted) | 4.0 mN (Δv thruster) / 2.0 mN (RCS) at 70 s; measured 1.6 mN |
+| HTP/RP-1 (320 s, O/F 7) | **krishnan_2010_h2o2_rp1_upper_stage** [T2; un-hosted] | RD-161P 3128 N-s/kg (~319 s) at Phi 5.9; Gamma-2 2599 (~265 s); BA-44/BA-810 2941/2765; Table 2: maximum frozen 3268 at O/F 6.26, O/F 7.38 gives 3407 equilibrium / 3236 frozen; efficiencies 0.90-0.94 |
+| HTP/RP-1 | **pietrobon_1999_h2o2_kero_shuttle_boosters** [T1; un-hosted] (JBIS 52) | 98% H2O2/kero at MR 7.30: ve 3017 m/s (~308 s), Id 3940 Ns/l vs LOX/kero 3305 m/s, 3388 Ns/l |
+| ALICE (210 s) | **risha_2014_alice_jpp** [T1; un-hosted] (JPP 30(1):133-142) | ideal 207 s SL / 230 s vac; Table 7 motors deliver 56 / 83 / 133 s (1.91 / 3.81 / 7.62 cm). 210 s is an ideal figure, not hardware-realistic: **rc-044** (wording) |
+| ALICE | **pourpoint_2012_alice_feasibility** [T1, abstract only, CC BY] | the flight paper; CEA >300 s at O/F ~1.2, ε 100 |
+| CO/LOX (260 s) | **hepp_landis_kubiak_1991_mars_co2** [T2, hosted] (TM-103728) | "Mars-derived carbon monoxide can be used directly as a fuel, at a specific impulse of about 300 seconds."; contains no Earth-derived hydrogen |
+| CO/LOX | **linne_1996_co_ox_ignition** [T2, hosted] (TM-107267) | chilled CO/O2 combustion at O/F 0.55 (stoichiometric ≈ 1.14). R72: the printed lower-boundary model's cross term (0.0000683) gives O/F 64 at the test point; a refit gives 6.6e-6 (kept as printed). `r72_linne_1996_table1_ignition_boundaries.csv` |
 
-What a source has to supply: low-thrust against impulsive delta-v for the transfers the pipeline flies (LEO spiral, NEA rendezvous and return) as a function of thrust-to-mass, and the thrusting durations flown or designed for electric-propulsion missions.
+tirila_2023 [T1] (Hall thruster database) is context-only. kim_2013 R40 Table 2 vs our rows: N2H4 240 vs 220; MMH/NTO 323 vs 336 (+4%); LH2/LOX 455 vs 452; LCH4/LOX 364 generic / 380 Raptor; costs ~$10^3 (hypergols), ~$10^1 (LH2/LOX), <$10^1 (LCH4/LOX) per kg; Table 1 at 6.89 MPa, 40:1: kerolox max 358.2 s, methalox 368.9 s. `extracted_data/r40_kim2013_propellant_isp_cost_key_numbers.csv`; R71 `r71_kim_2013_table3_methalox_engines.csv`.
 
-## R82 - First sources for the two low-thrust cells recorded as gaps in R76 (2026-09-29; +3 T2 hosted)
+## Round 35 - Cislunar and Mars Δv (four hosted)
 
-The three NTRS-hosted full texts anchor both cells of R76's gap table. All quoted fragments below are verbatim slices of the committed PDFs (whitespace/ligature-normalized).
+**sp4029_apollo_by_the_numbers** (SP-2000-4029), burn tables by word coordinates:
 
-**dv_penalty_factor = 1.5** (spacecost `propellants.py` `_LOW_THRUST_DV_PENALTY`) - verdict AGREE, bracketed from both sides by woodcock_dankanich_2006:
-- Spiral capture to lunar orbit: 'SEP delta V to spiral down to a given lunar orbit altitude was estimated as 40% more than the chemical lunar orbit insertion.' -> ~1.4x (below our 1.5)
-- Exchange rate: 'a unit of launch vehicle delta V was "worth" 70% more than a unit of SEP delta V.' -> 1.7x (above our 1.5)
-- Perigee-hold spirals cost even more dV and time ('There is no tradeoff of transfer time versus delta V.'); an apogee-gap strategy recovers 'a few hundred m/s' for ~15 days - the penalty is partially recoverable, a ceiling on how much higher 1.5 should go
-- GEO: 'a 35 kWe SEP starting from a 400 x 10,000 orbit could deliver 3600 kg to GEO in about 130 days' vs 'about half that for all-chemical propulsion' - the trip-time penalty is real but bounded
+| segment | our value | SP-4029 | verdict |
+|---|---|---|---|
+| LEO → TLI | 3150 (note 3.05–3.20 km/s) | S-IVB 2nd-burn cutoff A8 9,974 / A11 10,008 / A12 10,515 / A13 10,039 / A14 10,367 / A15 10,415 / A16 10,390 / A17 10,376 ft/s = 3.04–3.20 km/s | agrees |
+| TLI → LLO | 900 | LOI cutoff A8 2,997 / A10 2,982 / A11 2,918 / A14 3,022 / A15 3,000 / A17 2,988 ft/s = 889–922 m/s (A16 column-shifted, excluded) | agrees |
+| LLO → surface | 1870 (now 2050) | descent A15 6,813 / A16 6,703 / A17 6,698 ft/s = 2.04–2.08 km/s | was 9–11% low; fixed upstream (R134) |
+| surface → LEO | 5900 | LM ascent A14 6,066.1 / A15 6,059 / A17 6,075.7 ft/s ≈ 1.85 km/s component | consistent |
 
-**ep_target_thrust_yr = 3.0** (economicspace `calc.py`) - verdict AGREE as a sizing target, with quantified trip time:
-- sjauw_mcguire_freeh_2016 designs HAT EMC Mars cargo at fixed SEP power: 'The Earth-to-Mars (E-M) transfer starts at an Earth escape condition defined as having a C3 = +2.0 km2/sec2 and ends at Mars with an incoming Vinf = 5.2 km/sec.'
-- Representative case: 'E-M trip= 975 days' - the interplanetary leg alone consumes ~89% of the 3-yr thrusting budget; adding EEO spiral-out + capture exceeds it, so upstream's 3 yr is a reasonable sizing target but real Mars SEP transfers run longer
-- johnson_castillo_rogez_dervan_mcnutt_2017 (NEA Scout): 'two year-long cruise' at continuous low thrust - the NEA rendezvous class spacecost's sail row models; that row's dv_penalty_factor = 1.0 is right in dV terms, and this paper quantifies what it does not capture: ~2 yr of trip time
+Lunar TEI A8 3,519 / A11 3,279 / A17 3,046 ft/s.
 
-**Still unanchored (recorded)**: Dawn flight records (actual spiral durations/dVs) - every NTRS Dawn record has determinationType OTHER with zero downloadable files; the EPAG handbook domain is DNS-dead from this machine. No revision candidate opened: both cells are bracketed, not contradicted.
+**dra5_2009_human_exploration_of_mars** (SP-2009-566) p62: conjunction class "the average total delta-V was approximately 7 km/s ± 1 km/s" (our TMI 3,600 + MOI 900 + TEI 2,100 ≈ 6.6 km/s); opposition class "10 km/s ± 3.7 km/s". EDL mass chain 110.2 → 56.8 → 40.4 t (R70).
 
-Numbers in `extracted_data/r82_low_thrust_dv_penalty_and_duration.csv` (9 rows).
+**qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization** (AAS 19-225): "A direct burn from LDHEO during its Earth close approach is needed for Earth departure/arrival V∞ greater than 2 km/s". **chai_merrill_pfrang_qu_aas19_226_landing_site_accessibility** (AAS 19-226): SEP effective ΔV "from 7.5 – 8.5 km/s in 2033 to 6.5 – 7.5 km/s in 2041"; ±20° latitude access 2033–2052.
 
-## Round 103 - STD-5019A current revision + SP-125 content check (2026-10-02)
+`extracted_data/r35_cislunar_mars_delta_v_key_numbers.csv`.
 
-[nasa_std_5019_fracture_control_spaceflight_hardware] is now full_text_hosted at the CURRENT revision: NASA-STD-5019A w/Change 4, approved 2024-07-29, revalidated 2025-09-05 (the registered row cited the interim standard; this supersedes it). §7.2.2 'Fracture Critical COPVs and Composite Overwrapped Pressurized Fluid Containers' is the specific clause behind storage_systems.csv's 'COPV burst performance factor', with STD-5019A deferring detailed COPV requirements to ANSI/AIAA S-081-2000 (both read verbatim to r103 CSV). Context anchor only: upstream's 392 kJ/kg figure is a material property, not a standard requirement - no re-pin.
+## Round 37 - DRA Fig 4-2 per burn; the MOI v∞
 
-[nasa_sp125_huzel_huang_design_liquid_rocket_engines] read live (469-page NTRS scan, GOV_PUBLIC_USE_PERMITTED) but NOT committed: 47.8 MB exceeds the repo's ~36 MB cap; sha recorded in the domain CSV. Content check for rc-060: chapters I-X are all engine design - Introduction / Design Implements / Sample Calculations / Thrust Chambers / Pressurized-Gas Feed Systems / Turbopump Feed Systems / Controls & Valves / Propellant Tanks / Interconnecting Components / Engine Systems Integration. A full-text keyword sweep found no orbital-mechanics, ascent-profile or delta-v content; the only 'orbit' mention is a rhetorical aside on p44 ('weight of payload flown over a distance, or placed into orbit'). Edition note: title page reads 'Second Edition' but NTRS metadata and the title-page OCR both date this record 1967.
+Fig 4-2 is vector: 51 bars on a 0.5 km/s grid. Crew (2031–2046): TMI 3.95–4.10, MOI 0.97 (2035) – 1.79 (2031), TEI 1.563 constant; totals 6.27–7.38 km/s, mean 7.17 (inside DRA's 7 ± 1). Cargo (2028–2045): TMI 3.55–4.01, propulsive MOI 0.82–1.35. Our 0.9 MOI is at the low end.
 
-## R115 - DRA 5.0 read against five more Mars rows; five new candidates (2026-10-04; registry unchanged)
+"arrival v∞ of 2.65 km/s (NASA DRA 5.0)" is not in DRA 5.0; Hohmann gives V∞ = 2.6489 km/s and MOI into 250 × 33,793 km = 0.918 km/s, so the value is computed, not sourced.
 
-R37 compared DRA 5.0's Fig 4-2 bars with the Mars injection and capture rows. This round compared the remaining Mars rows in spacecost@85da36c `reference/delta_v_segments.csv` with the hosted SP-2009-566 and the registry's own extraction of it (all cells verified unchanged since e831245; only the notes of the HTP and beneficiation rows moved).
+AAS 19-225 Table 3 (2035): MOI 121.31/122.04 m/s, TEI 121.37/127.21, outbound SEP 3624.05/3615.80; Table 4 (2039, 50° latitude): MOI 367.72/368.16, reorientation 135.27/127.11, TEI 279.35/281.16 (hybrid architecture: context, not our pure-chemical rows). AAS 19-226 Figs 8/10 at |lat| ≈ 50°: MOI ≈ 0.33–0.39 + reorient 0.07–0.11 + TEI 0.08–0.24 km/s; tank capacity 58 t; power at TMI 675/624/574 kW. `extracted_data/r37_mars_per_burn_key_numbers.csv`.
 
-- **1-sol Mars orbit to Earth (rc-070)**: 900 m/s ('symmetric with MOI'). DRA's TEI is 1.563 km/s in all eight crew opportunities, from the same 1-sol orbit (p36), with a 12 km/s entry limit (p45). No DRA opportunity reaches 900. Design intent is a lower bound, so this is an owner decision; the MOI row, by contrast, sits inside DRA's range.
-- **TMI range (rc-071)**: the note says 3.6-4.3 km/s (DRA 5.0); the 26 bars run 3.545-4.103.
-- **Mars entry to surface (rc-072)**: 800 m/s against DRA Table 4-3's descent 595 m/s plus 15 m/s deorbit; bracketed by the row's own 0.5-1.0 km/s, so recorded for a decision.
-- **Low Mars orbit to Earth, 2,100 (rc-073) and surface to low Mars orbit, 4,100 (rc-074)**: both cite DRA 5.0, which gives neither (verified negative on the hosted copy; the Addendum was not read). 2,100 is the repo's own circularisation arithmetic.
-- Checked and agreeing: Apollo TLI 3.04-3.20 km/s and LOI 0.89-0.92 km/s (SP-4029, R35); NRO to polar LLO 730 m/s (Whitley and Martinez Table 3, exact).
+## Round 42 - ssoBFT per-body Δv (berthier_2023_ssodnet, d1)
 
-Extracted data: `extracted_data/r115_dra5_vs_spacecost_mars_rows.csv` (7 rows).
-## R120 - rafalskyi_2021 Nature iodine EP hosted, CC BY 4.0 in-file (2026-10-05; queue -1)
+`delta_v.delta_v` = "Best total velocity range (Delta-V) that a spacecraft must undergo from Earth orbit to match orbit and rendezvous with a target" [km/s].
 
-**rafalskyi_2021_iodine_ep_in_orbit [T1]** - re-classed registered_not_pulled -> full_text_hosted. Pulled live from nature.com/articles/s41586-021-04015-y.pdf and committed to full_texts/rafalskyi_et_al_2021_in_orbit_demonstration_of_an_iodine_electric_propulsion_system_nature599_ccby.pdf (11,467,518 B sha256=866b8b9318cbd7243e710f7c588b02cad6c3ec1bcf5c2a0bf308389134b9fbbf). Nature 599:411-415; in-file 'Open Access - Creative Commons Attribution 4.0 International License'. Verbatim title: "In-orbit demonstration of an iodine electric propulsion system. The NPT30-I2 iodine EP flight demonstration is the source behind propellants.csv's iodine (Hall/gridded) row - first flown iodine EP; performance numbers are extraction follow-up.
+| population | n | p05 | median | mean | p95 |
+|---|---|---|---|---|---|
+| whole table | 1,563,628 | — | 10.156 | 10.293 | — (min 3.459, max 37.582) |
+| NEA (q<1.3 au) | 42,379 | 5.539 | 8.877 | 10.071 | 18.334 |
+| MBA | 1,467,308 | 8.492 | 10.129 | 10.249 | 12.506 |
+| other | 53,941 | 8.213 | 11.797 | 11.656 | 14.915 |
 
-**astronautix_encyclopedia_propellant_engine_pages [T4]** - re-classed registered_not_pulled -> verified_live_not_pulled. R123 live check: the propellant/engine pages answer HTTP 200 with full content at their letter-index paths (/m/mmh.html, /n/n2o4mmh.html, /n/n2o4aerozine-50.html); guessed root-level URLs return a styled 'Page Not Found' page (HTTP 200) - use the index paths. The pages carry the Isp tables behind propellants.csv vacuum-Isp row notes; nothing extracted yet.
-**rocketcea_nasa_cea_python_wrapper [T4]** - re-classed registered_not_pulled -> verified_live_not_pulled. R123 live check: readthedocs docs answer HTTP 200 at https://rocketcea.readthedocs.io/en/latest/ (v1.2.3) and the upstream repo sonofeft/RocketCEA is public on GitHub (GPL-3.0, 148 stars, last push 2026-01-19). Nothing extracted yet.
+The 10,500 m/s main-belt row sits just above the MBA median (p75 = 10.89). Only 0.219% of NEAs (93) are below 4 km/s, 2.2% below 5, 9.1% below 6: the easy/average rows price the accessible tail. Bennu 7.368, Ryugu 6.985, Eros 7.643, Didymos 6.139 km/s. Join on `number`: (69230) is Hermes, Bennu is 101955. `extracted_data/r42_sso_bft_delta_v_key_numbers.csv`.
 
-## R129 - Orion nuclear-pulse gap closed: two design-era documents hosted, spacecost's propellants.csv note anchored (2026-10-06)
+## Round 49 - whitley_martinez_2015_nro_staging_orbits [T2, hosted]
 
-**Gap.** The citation sweep of the three upstream repos this round found exactly one load-bearing claim with no source anywhere in the registry: `spacecost/propellants.csv` row **Nuclear pulse  (Orion)** (`isp_vac_s = 10,000.0`, `type=nuclear_pulse`, TRL 2) whose notes assert "Isp 10,000 s at MEGANEWTON thrust is the only entry here that is both high-Isp and high-thrust", "Designed in full engineering detail by General Atomics 1958-1965 — Dyson and Taylor's programme produced vehicle layouts, not sketches — and killed by the 1963 Partial Test Ban Treaty." No DOI/NTRS id/author-year token for it appears in any reference CSV or CITATIONS.md of either repo. (Everything else swept - NEA Scout solar-sail history, Pielke & Byerly shuttle cost, Minotaur IV/Pegasus XL price notes - is already registered: `johnson_castillo_rogez_dervan_mcnutt_2017_nea_scout`, `pielke_byerly_2011_shuttle_programme_lifetime_cost` (still queued), and the v0.6.0 re-pins that handled rc-050/051/052.)
+IEEE Aerospace 2015 (NTRS 20150019648), behind both cislunar depot rows. Table 3 one-way staging orbit → LLO (m/s): NRO polar 730, NRO equatorial 898, ELO 515, PCO 700, Frozen polar 556 + 252, Frozen equatorial 556 + 408, EM-L2 halo 800, DRO 830. Table 2: NRO round trips 840 m/s (21 d) and 751 m/s (60 d).
 
-**Discovery.** NTRS search endpoint (`q=` param, 2-3 word chunks): "nuclear pulse" -> 13 hits; two are the design-era primary sources. Both pulled live from ntrs.nasa.gov and read in full (pymupdf text layer + page renders for charts).
+- `NRHO → low lunar orbit` = 730: exact (Table 3 and Table 6).
+- `TLI → NRHO insertion` = 450: Figure 2 splits the 840 m/s round trip into flyby 178 + NRO insertion 250.5 = 428.5 m/s from TLI (R72); 450 is 5% above. Agrees.
 
-**general_dynamics_1964_nuclear_pulse_vehicle_study_ga4891 [T2]** - General Dynamics Corp., *Nuclear Pulse Vehicle Study*, condensed summary report GA-4891, NTIS N76-70976 (Jan 1964), 22 pp. FOREWORD verbatim: "Technical studies on nuclear pulse propulsion were initiated in 1957 by the General Atomic Division of General Dynamics Corporation. Early governmental support was awarded in 1958, initially from the Advanced Research Projects Agency (ARPA). From 1960 to the present, the research support has been continued by the United States Air Force and by General Dynamics Corporation." - so spacecost's note is EXACT on attribution but one year early on the start date (corporate studies began 1957; government money from 1958). The design-study class: "vehicles of large sizes (4,000 tons) and high specific impulse (4,000 to 6,000 sec) that would be capable of direct launch" - and for the future: "a specific impulse between 10,000 and 20,000 sec is predicted for vehicles somewhat larger than the 20-m vehicle" (post-1980). The cell `isp_vac_s=10,000` therefore sits at the LOWER bound of GA-4891's own prediction range. PTBT verbatim: "Current wording of the Nuclear Test Ban Treaty precludes the final development and or operation of nuclear pulse vehicles." [OCR 'and or' = 'and/or']. NTRS 19760065935 GOV_PUBLIC_USE_PERMITTED, no in-file copyright statement -> hosted (962,212 B).
+R72: Table 6 gives ELO → polar LLO 953 m/s vs Table 3's 515 + 478 = 993 (kept as printed). `extracted_data/r49_whitley_martinez_nro_staging_orbits_key_numbers.csv`, `r72_whitley_martinez_2015_tables1_6_staging_orbits.csv`.
 
-**schmidt_bonometti_morton_2000_nuclear_pulse_orion_and_beyond [T2]** - Schmidt, Bonometti & Morton (NASA MSFC), AIAA 2000-3856, 36th JPC (Jul 16-19 2000), 10 pp. The survey paper: external pusher-plate systems give "The resulting Isp limits are approximately 3.000 to 10,000 seconds" [OCR 'approx imately 3.000'] - the cell sits at the UPPER bound of that documented range (magnetic-field shielding is what pushes past it). History section: "Taylor and Francis de Hoffman, the founder of General Atomic, persuaded Freeman Dyson ... to come to San Diego to work on Orion during the 1958-1959 academic year" (backs 'Dyson and Taylor's programme'); termination verbatim: "NASA made its decision in December 1964 and announced publicly that it would not continue to fund Orion. The Air Force then announced discontinuation of all funding, thus terminating Orion. All told, approximately $11 million had been spent on Orion over nearly seven years." NTRS 20000096503 PUBLIC_USE_PERMITTED; in-file notice is the standard AIAA government-work boilerplate (NASA authors) -> hosted per d03 precedent `borowski_2012`/`robbins_1991` (5,758,672 B).
+## Round 55 - LANDER_DRY_MASS_FRAC = 0.20 (SP-4029)
 
-**Match quality for the cell.** Both documents bracket `isp_vac_s=10,000.0`: GA-4891's post-1980 prediction 10,000-20,000 sec from below, Schmidt's external-pulse limit 3,000-10,000 sec from above - so the value is a **ceiling-anchor** (documented range endpoint), not an exact pin. The notes' 'meganewton thrust' clause has NO direct statement in either document: GA-4891's Fig 2 plots Isp vs effective thrust up to ~20 x 10^6 lb (~89 MN) so meganewton-class thrust is inside the plotted range, but the vision backend was down this round (three timeouts on page renders), so the chart values are not read off - recorded as a remaining micro-gap in `extracted_data/r129_orion_nuclear_pulse_key_numbers.csv` notes rather than claimed. No rc opened: upstream cites nothing for this row, so there is no citation to re-source; the gap was absence, and it is now closed.
+delivery.py's comment "Apollo LM descent stage flew 2,134 kg dry on 8,200 kg of propellant = 0.21" is Apollo 10: dry 4703 lb = 2133.2 kg (+0.04%), loaded 18218.7 lb = 8263.9 kg (−0.77%); 2134/(2134+8200) = 0.2065, so "0.21" rounds up. Fleet δ (p287 press-kit dry, p305 as-flown propellant): A9 0.1912, A10 0.2052, A11 0.1978, A12 0.2092, A13 0.2014, A16 0.2372; median 0.2033. 0.20 is inside the band. `extracted_data/r55_sp4029_lm_stage_mass_key_numbers.csv`.
 
-**Round-level.** Upstream drift check first: spacecost unchanged at d799cba (v0.6.0), AsteroidCatalog unchanged @6a2cfbc, economicspace advanced v1.45.0 -> **master v1.46.0** (@09814da) which re-pinned sixteen values to their sources - twelve Stage 2 mineral rows (Ni 16.50->18.806 WB May-2026 avg; Fe 0.50->0.319 MCS No.1 HMS composite; Ir 160,000->257,206 JM Q1-2026 $8,000/oz; Ru ->56,263.8; Ti ->13.00; Ga ->500; NH3 0.45->0.485 ($440/SHORT ton); Ag/Cu/Pt LBMA+WB fallbacks) plus cobalt world production 2.3e8->3.1e8 kg, ammonia production 1.8e11->1.5e11, and the `geo` absorption ceiling 40,000->**44,600 kg/yr** (613 sats x 72.7 - rc-057's own proposal); Stage 3 re-pinned Atlas V 551 $211M / Minotaur IV high $76M / Pegasus XL $54M / DSN $2,082/hr (rc-030/050/051/052). All sixteen rc statuses were already updated to applied@economicspace@09814da in the tracker by commits 5337bc7/be6961e before this round - nothing for R129 to change there; rc-022 (F9H band vs $178M) and rc-016 (lunar descent epoch) are explicitly left open upstream. Registry 504 -> **506 sources** (+2 T2, both full_text_hosted); queue unchanged at 109.
+## Round 56 - TUG_DRY_MASS_FRAC = 0.10 (SP-4029 p294)
 
-## R134 - Upstream v0.9.0 lunar re-pin verified against our hosted SP-4029 (2026-10-07)
+S-IVB 'Ground Ignition Weights' (A7–A17; components sum to the printed total within 0.5 lb in 9 of 11): δ structure-only [0.0857, 0.0989], median 0.0963 (A7, the first S-IVB, lowest: 21852 lb dry vs fleet median ~25089); 'other' hardware ~1432–1873 lb; including 'other' hardware [0.0908, 0.1044], median 0.1021. 0.10 is inside (−2.01% vs median), between Centaur V ~0.08 and DCSS ~0.11. `extracted_data/r56_sp4029_sivb_stage_mass_key_numbers.csv`.
 
-Spacecost advanced locally this round to an unpushed commit `62c317b` (“Cut 0.9.0: the lunar descent is what Apollo flew, and the ascent has its own row”; data contract 1.21.0 — not pushed from this machine, which has no write permission on that repo). It re-pins `LLO → lunar surface (descent)` from 1,870 to **2,050 m/s** (“the descent engine’s velocity change on Apollo 15, 16 and 17 was 6,813, 6,703 and 6,698 ft/s … mean 2,054, rounded to 2,050”) and adds a new `Lunar surface → LLO (ascent)` row at **1,850 m/s** (“the ascent engine’s velocity change on Apollo 14, 15 and 17 was 6,066, 6,059 and 6,076 ft/s … mean 1,849, rounded to 1,850”).
+## Maintenance (2026-09-26)
 
-Every value was verified against our hosted `sp-4029_apollo_by_the_numbers_statistical_reference_public_domain.pdf` using word-coordinate column alignment (table columns: GET / Altitude(nmi) / Velocity(ft/sec) / Duration(sec) / Velocity Change(ft/sec)): descent-cutoff rows A15 **6,813** ft/s (p.213), A16 **6,703** (p.241), A17 **6,698** (p.267); ascent-orbit-cutoff rows A14 **6,066.1** (p.185), A15 **6,059** (p.213), A17 **6,075.7** (p.267). All six match the upstream note; the only delta is that note’s rounding of A17 to “6,076” against the printed 6,075.7 — immaterial at its stated precision.
+Un-hosted: elvis2011, ieva2014, kim_2013, komurasaki_aquarius_ground_2018, krishnan_2010_h2o2_rp1_upper_stage, pietrobon_1999_h2o2_kero_shuttle_boosters, risha_2014_alice_jpp. Tiers: krishnan_2010_h2o2_rp1_upper_stage, spores_2013, borowski_2012 and whitley_martinez_2015_nro_staging_orbits are conference papers (T2). Venue, value and attribution fixes are folded into the text above. 44 rows for 20 hosted sources in `extracted_data/backfill_2026-09-26_key_numbers.csv`.
 
-This closes the ⚠️ discrepancy flagged in the R55-era table above (our old 1,870 m/s descent row sat ~9-11% below flight data) with **no revision candidate needed**: the owner has already applied the correction upstream and our hosted primary source confirms it cell-by-cell. Evidence rows: `extracted_data/r134_spacecost_v090_lunar_repin_verification.csv` (6 rows).
+## R70 / R71 / R72 - Extraction (2026-09-27)
 
-## Round 148 - Dawn flight-records gap re-probed: six peer-reviewed IPS papers registered as the queue (2026-10-10; R82's two dead routes re-tested, EPAG domain confirmed DNS-dead)
+- R70: `r70_asakawa_aquarius_onorbit_2024.csv`, `r70_boddy_1980.csv`, `r70_borowski_2012.csv`, `r70_bowles_dawson_2004.csv`, `r70_boyce_aj10_oral_history.csv`, `r70_chai_merrill_pfrang_qu_aas19_226_landing_site_accessibility.csv`, `r70_cuffe_jacobs_1970.csv`, `r70_dra5_2009_human_exploration_of_mars.csv`, `r70_hepp_landis_kubiak_1991_mars_co2.csv`, `r70_hitt_2001.csv`, `r70_jpl_1968.csv`, `r70_jue_2003.csv`, `r70_linne_1996_co_ox_ignition.csv`, `r70_morren_curran_1991.csv`, `r70_morren_curran_1991_table2_arcjet_performance.csv`, `r70_nextc_protoflight_2021.csv`, `r70_nextc_protoflight_2021_table1_throttle_performance.csv`, `r70_qu_merrill_chai_aas19_225_hybrid_mars_e2e_optimization.csv`, `r70_robbins_1991.csv`, `r70_sanna_2024.csv`, `r70_shoemaker_helin_1978.csv`, `r70_sp4029_apollo_budget_appropriations.csv`, `r70_sp4029_apollo_by_the_numbers_vehicle_summary.csv`, `r70_sp4029_entry_and_key_facts.csv`, `r70_sp4029_ground_ignition_weights.csv`, `r70_sp4029_launch_vehicle_propellant_usage.csv`, `r70_sp4029_lm_ascent_propellant_status.csv`, `r70_sp4029_selected_mission_weights.csv`, `r70_spores_2013.csv`, `r70_ssme_rs25_adaptation_2015.csv`, `r70_thapa_2023.csv`, `r70_thiokol_sts33r_1990.csv`, `r70_woodcock_byers_2003.csv`, `r70_yim_2014.csv`. SP-4029 appropriations: the NASA-total row's years sum to 41,625,782 vs the printed 56,661,332 (kept as printed).
+- R71 (un-hosted PDFs restored from git `5dd58d5`): `r71_kim_2013_key_numbers.csv`, `r71_kim_2013_table5_energomash_kerolox_vs_methalox.csv`, `r71_komurasaki_aquarius_ground_2018_key_numbers.csv`, `r71_krishnan_2010_key_numbers.csv`, `r71_krishnan_2010_table1_propellant_properties.csv`, `r71_krishnan_2010_table2_theoretical_performance.csv`, `r71_krishnan_2010_table3_sample_upper_stage_engines.csv`, `r71_krishnan_2010_table4_stage_performance.csv`, `r71_pietrobon_1999_key_numbers.csv`, `r71_pietrobon_1999_table2_engine_performance.csv`, `r71_pietrobon_1999_table3_shuttle_liftoff_masses.csv`, `r71_pietrobon_1999_table4_h2o2_properties.csv`, `r71_risha_2014_key_numbers.csv`, `r71_risha_2014_table4_composite_baselines.csv`, `r71_risha_2014_table7_alice_motor_performance.csv`, `r71_risha_2014_tables5_6_motor_tests.csv` (plus the elvis, ieva and kim files above).
+- R72: `r72_kim_2013_table4_aerojet_methane_experience.csv`, `r72_risha_2014_tables1_3_nano_al_characterization.csv`, `r72_woodcock_byers_2003_table2_mission_payloads.csv`, `r72_yim_2014_table2_plume_heat_flux.csv` (plus the files named above).
 
-The standing open item from R82 - actual Dawn spiral durations/delta-Vs to back the low-thrust rows of `delta_v_segments.csv` - was re-probed end-to-end. Both routes recorded dead in R82 are still dead:
-- **NTRS**: every one of the fourteen Dawn IPS-series/cruise/spiral records surfaced by fresh searches (the whole 'In-Flight Operation of the Dawn Ion Propulsion System' series plus cruise/spiral/maneuver papers) shows `determinationType=OTHER`, `belongsToUsGov=False` and zero downloadable files - re-probed live 2026-10-10. Two further records, both off-target for this gap: NTRS 20140011355 (Moon Search Algorithms for Dawn at Vesta; PUBLIC_USE_PERMITTED, PDF pulled and scanned in full - navigation algorithms only, no spiral/delta-V content) and NTRS 20120003514 (a one-page pre-mission student abstract about the mission to Vesta; GOV_PUBLIC_USE_PERMITTED, no flight data).
-- **EPAG handbook domain**: `epag.gsfc.nasa.gov`, `www.epag.gsfc.nasa.gov`, `epag.jpl.nasa.gov` and `epag.nasa.gov` all answer NXDOMAIN (errno 11001) while control hosts ntrs.nasa.gov / www.jpl.nasa.gov resolve fine - the domains are genuinely absent from public DNS, not a resolver failure. The exact URL was never recorded in this repo's corpus, so no other route to test exists; NTRS has no record titled 'Electric Propulsion Applications Guidance'.
+## R74 - Upstream citations registered (+6)
 
-**What R148 registered instead (6 rows, all `registered_not_pulled`)** - the peer-reviewed papers that carry exactly the flight records d03 needs, every DOI Crossref-verified live this round:
-- `brophy_2011_dawn_ips` [T1] Space Science Reviews 163(1-4):251-261 (2011) - the flagship review of the NEXT system as flown; Springer paywall stub on both article and PDF routes, no OA copy in OpenAlex/Unpaywall/SemanticScholar.
-- `rayman_mase_2014_dawn_cruise_acta` [T1] Acta Astronautica 103:113-118 (Oct-2014) - the Vesta-to-Ceres cruise leg as flown; ScienceDirect routes 403, NTRS twin 20150007126 is det=OTHER with zero files.
-- `garner_rayman_2013_jpc_cruise_yr1` [T2] AIAA JPC paper 6.2013-4112 - in-flight IPS performance through year one of cruise; NTRS twin 20150008021 det=OTHER.
-- `garner_rayman_2015_jpc_orbit_ops` [T2] AIAA JPC paper 6.2015-3717 - through early orbit operations at Ceres; no NTRS twin located in the R148 searches (sister papers all det=OTHER).
-- `garner_rayman_2016_jpc_lamo` [T2] AIAA JPC paper 6.2016-4539 - through LAMO operations; NTRS twin 20190002063 det=OTHER.
-- `garner_rayman_2018_jpc_final_orb` [T2] AIAA JPC paper 6.2018-4641 - through completion of the final orbit (Dec-2018); NTRS twin 20210008613 det=OTHER.
-None is reachable from this machine: Springer/Elsevier/AIAA all paywall-stub or 403, and every existing NTRS twin of the series is metadata-only. They are now d03's extraction queue for the Dawn gap - the first pull attempt should go via an institutional/library route (see DOWNLOADS.md R148 block).
+`nasa_sp125_huzel_huang_design_liquid_rocket_engines` (ascent Δv), `curtis_orbital_mechanics_engineering_students`, `rafalskyi_2021_iodine_ep_in_orbit` (iodine row), `astronautix_encyclopedia_propellant_engine_pages`, `rocketcea_nasa_cea_python_wrapper`, `nasa_std_5019_fracture_control_spaceflight_hardware` (COPV factor).
 
-Pivot context: before targeting d03, this round's brief scan flagged two other candidate gaps; both were checked against live repo state. d18's 'national space-resource legislation / international frameworks' open item is already closed by the R113/R114 rows (51 U.S.C. ch. 513 + PL 114-90 enrolled bill + CRS R48144, three of them full_text_hosted), so d18 was not re-opened. No revision candidate opened or closed; no re-pin - nothing contradicts upstream's low-thrust penalty/duration cells.
+## R76 / R82 - Low-thrust penalty and thrusting duration
 
-## R164 (2026-10-14) - 7 revision candidate(s) from sources already registered (registry unchanged)
+| cell | value | upstream basis |
+|---|---|---|
+| spacecost `_LOW_THRUST_DV_PENALTY` (`propellants.csv` `dv_penalty_factor`, every electric row) | 1.5 x impulsive Δv | "1.5 is a mid-range figure"; no source |
+| economicspace `calc.py` `ep_target_thrust_yr` | 3.0 yr | none |
 
-A citation-and-contradiction pass over sources registered in earlier rounds: each upstream row was cross-referenced to the registry rows mapped to it (spacecost@0b716ad, economicspace@f7fe1c6), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
+R82 (three NTRS-hosted):
 
-- **rc-111 (citation, spacecost `reference/propellants.csv` Hydrazine  (monoprop)).** Replace the Astronautix web page with the JPL record: a catalytic-bed hydrazine reactor measured 235 lbf-s/lbm (~97% of theoretical) at 50-55% ammonia dissociation and a 44:1 area ratio, and its Fig. 3 theoretical curve is where 220 s sits (higher dissociation or smaller nozzles). Say 220 is the conservative end.
-- **rc-112 (citation, spacecost `reference/propellants.csv` HTP  (98% peroxide monoprop)).** Cite Hitt et al. 2001: 98% H2O2 decomposition gives a theoretical vacuum Isp of about 185 s, and older empirical work about 140 s at 80% efficiency; 165 s sits between.
-- **rc-113 (citation, spacecost `reference/propellants.csv` Hydrazine arcjet).** Cite the NASA arcjet programme record, and say what it shows: state of the art was ~530 s mission-average at 1.6 kW on hydrazine, 600 s at 2-5 kW was the programme's goal, and a 2 kW thruster ran 300 h at 550 s on simulated hydrazine. 600 s is therefore the top of the demonstrated range unless an MR-510 flight figure is sourced.
-- **rc-114 (citation, spacecost `reference/propellants.csv` Nuclear thermal  (LH2, NTP)).** Cite Borowski, McCurdy & Packard 2012 for 900 s: the NTR "can achieve specific impulse (Isp) values of ~900 seconds (s) or more", and MCNP core modelling gives ~894-940 s. The DRACO target is not in any registered source.
-- **rc-116 (wording, spacecost `reference/propellants.csv` Nuclear pulse  (Orion)).** The programme began in 1957 (government support from 1958), and the GA study's large direct-launch vehicles were designed for 4,000-6,000 s; 10,000 s is the top of the 3,000-10,000 s external-pulse range Schmidt et al. give. Say "1957-1965" and give 10,000 s as the upper bound of the documented range.
-- **rc-117 (citation, spacecost `reference/propellants.csv` CO / LOX  (carbonaceous ISRU)).** Cite Hepp, Landis & Kubiak 1991 (NASA TM-103728): carbon monoxide "can be used directly as a fuel, at a specific impulse of about 300 seconds", so 260 s is the conservative engineering value below it; cite Linne 1996 for the subscale CO/O2 combustion tests at O/F 0.55 with both propellants chilled near liquid temperature.
-- **rc-118 (citation, spacecost `reference/propellants.csv` Water  (electrothermal / resistojet)).** Cite the only water-resistojet flight measurement registered and say how far it is from the row: AQUARIUS on EQUULEUS (Artemis I) measured 91.7 +/- 1.0 s and 90.3 +/- 3.0 s at ~6 mN and under 14 W. The 150-220 s band needs a source for higher-power designs, or the row should say it is an estimate.
+- **woodcock_dankanich_2006_sep_applications_near_earth**: lunar spiral "40% more than the chemical lunar orbit insertion" (~1.4x); "a unit of launch vehicle delta V was "worth" 70% more than a unit of SEP delta V" (1.7x); GEO "a 35 kWe SEP starting from a 400 x 10,000 orbit could deliver 3600 kg to GEO in about 130 days". 1.5 is bracketed.
+- **sjauw_mcguire_freeh_2016_hat_emc_cargo_mars_sep**: Mars cargo from C3 = +2.0 km2/s2 to Vinf 5.2 km/s, "E-M trip= 975 days" (~89% of 3 yr).
+- **johnson_castillo_rogez_dervan_mcnutt_2017_nea_scout**: "two year-long cruise".
 
-## R165 (2026-10-14) - 11 revision candidate(s) from sources already registered (registry unchanged)
+No candidate. Dawn flight records remain unreachable (R148 below). `extracted_data/r82_low_thrust_dv_penalty_and_duration.csv`.
 
-A second cross-reference pass (economicspace config dials and price/production tables, spacecost launch prices, physical constants and propellant Isp, AsteroidCatalog PGM factors) over sources registered in earlier rounds (spacecost@0b716ad, economicspace@f7fe1c6, AsteroidCatalog@86cfc54), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
+## Round 103 - STD-5019A and SP-125
 
-- **rc-138 (citation, economicspace `modules/calc.py` MiningConfig.ep_target_thrust_yr (L439)).** Cite the NASA SEP cargo study: a 150 kW BOL solar-electric cargo stage for 50 t to Mars thrusts for an Earth-Mars leg of 975 days (~2.7 yr) from C3 = +2 km2/s2, which is the institutional scale for a 3-year sizing target.
-- **rc-155 (value, spacecost `reference/propellants.csv` MMH / NTO  (hypergolic)).** Re-pin to a measured engine and cite it: the registered NTO/MMH hot-fire record is 309 s at area ratio 44:1 and 321 lbf-s/lbm at 286:1 (a 490 N engine, Schoenman 1992), and the Shuttle OMS ran 313 s (Thapa 2023); 336 s is +4.7% above the best of them. About 315-320 s for a deep-space bipropellant is the registered range.
-- **rc-156 (value, spacecost `reference/propellants.csv` Aerozine-50 / NTO  (hypergolic)).** Re-pin to the documented AJ10-137 figure: the SPS engine's specific impulse was 314.5 s at a 62.5:1 area ratio (Boyce), and AEDC ratings of its injectors measured 311.4-312.8 s (Cuffe & Jacobs 1970); 320 s is +1.7% above the engine the note names.
-- **rc-157 (citation, spacecost `reference/propellants.csv` UDMH / NTO  (hypergolic)).** Replace the Astronautix web page with a measured family anchor: Schoenman 1992's NTO/MMH engine (309 s at 44:1, 321 s at 286:1) brackets 318 s, which sits just under the MMH figure as UDMH's higher molecular weight predicts. No registered source measures a UDMH/NTO engine; say so.
-- **rc-158 (citation, spacecost `reference/propellants.csv` kerolox  (RP-1 / LOX)).** Cite a measured engine instead of a CEA wrapper and Astronautix: the RD-191 (Energomash) delivers 337 s in vacuum (Kim 2013), so 340 s is +0.9% above it; the F-1 class ran 304 s (Thapa 2023), the family's low end.
-- **rc-159 (citation, spacecost `reference/propellants.csv` hydrolox  (LH2 / LOX)).** Cite Jue 2003 for the RS-25 table (vacuum Isp 452 s, area ratio 69:1, mixture ratio 6.0), which matches the cell exactly, and Baumeister 2015 for the RL10A-3-3A's measured 444.4 +/- 2.5 s at O/F 5.0, the Centaur engine the delivery chains actually fly (1.7% below 452).
-- **rc-160 (citation, spacecost `reference/propellants.csv` methalox  (LCH4 / LOX)).** Cite the peer-reviewed record of the same figure: Kim 2013 tabulates the Raptor upper-stage engine at 380 s vacuum Isp (2,940 kN) and the RD-192 methane engine at 356 s; JAXA/IHI component tests reached the equivalent of 370 s (Ukai 2019).
-- **rc-161 (citation, spacecost `reference/propellants.csv` Green monoprop  (ASCENT / AF-M315E)).** Cite Spores 2013 (GPIM): the GR-1 thruster's predicted vacuum Isp is 235 s, matched by acceptance hot-fire data, and AF-M315E's theoretical Isp and density are 257 s and 1.47 g/cc against hydrazine's 235 s and 1.00 (+12% and +45%, "~50% higher density-Isp"). Keep the comparison like for like: 235 s here is delivered, as is the hydrazine row's 220 s.
-- **rc-162 (wording, spacecost `reference/propellants.csv` Solar thermal  (LH2)).** Say what the registered record shows: the only measured solar-thermal Isp in it is 680 s (an AFRPL hydrogen thruster test, Boddy 1980), and 800-811 s is a design estimate for a 2800 K absorber (Woodcock & Byers 2003). "700-900 s demonstrated" has no registered source; cite one or call it the design range.
-- **rc-163 (citation, spacecost `reference/propellants.csv` Xenon  (Hall / ion)).** Cite the NEXT-C protoflight test: the flight thruster delivered to DART throttles over Isp 1,400-4,160 s and 25-235 mN at up to 6.85 kW, so 3,000 s is a mid-envelope point of flown gridded-ion hardware; a Hall thruster runs lower (AEPS ~2,800 s), which matters because the row is labelled "Hall / ion".
-- **rc-164 (wording, spacecost `reference/delta_v_segments.csv` Lunar surface  →  LEO).** Describe the row by its flown parts: LM ascent to lunar orbit (Apollo 14/15/17: 1,847-1,852 m/s, the table's own ascent row), plus trans-earth injection (927-1,122 m/s on Apollo 8, 10-12 and 14-17), plus a propulsive LEO capture that Apollo never flew (it entered directly), roughly the TLI magnitude (3,150 m/s in this table). That sums to ~5,930-6,120 m/s; 5,900 sits just below. The LM ascent made no plane change toward LEO.
+- `nasa_std_5019_fracture_control_spaceflight_hardware` hosted at NASA-STD-5019A w/Change 4 (2024-07-29): §7.2.2 covers fracture-critical COPVs and defers to ANSI/AIAA S-081-2000. The 392 kJ/kg figure is a material property; context only.
+- `nasa_sp125_huzel_huang_design_liquid_rocket_engines` read (47.8 MB, too large to host): engine design only, no ascent or Δv content (for rc-060).
 
-## R189 (2026-10-18) - thruster mass-per-newton column audit; EO-1 flight paper registered and hosted
+## R115 - DRA 5.0 vs five more Mars rows (rc-070 to rc-074)
 
-The v0.12.0-era EP sizing columns of spacecost reference/propellants.csv (thruster_kg_per_n, thrust_scaling for 16 devices) had no GR or RC coverage before this round - a sweep of the tracker and all domain FINDINGS found zero mentions outside d03 NEXT-C files opened for rc-102/rc-104. Audited every row against institutional data where accessible:
+- 1-sol orbit → Earth 900 m/s vs DRA's constant TEI 1.563 km/s (p36): rc-070.
+- TMI note 3.6-4.3 km/s vs the bars' 3.545-4.103: rc-071.
+- Mars entry → surface 800 m/s vs DRA Table 4-3 descent 595 + 15 deorbit: rc-072.
+- Low Mars orbit → Earth 2,100 (rc-073) and surface → low Mars orbit 4,100 (rc-074) cite DRA 5.0, which gives neither.
 
-- **Xenon (Hall / ion), 54 kg/N:** consistent with registered flight article nextc_protoflight_2021 - at the NEXT-C maximum thrust of 235 mN that value implies a ~12.7 kg head, i.e. the NEXT-C hardware class; no contradiction.
-- **PPT (PTFE pulsed plasma), 5000 kg/N:** anchored by new source zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing [T2, full_text_hosted ntrs-public-use] - EO-1 flight system total mass 4.95 kg at a maximum mean thrust of ~860 uN (impulse-bit upper bound x tabled 1 Hz) gives ~5756 kg/N: +13 percent vs the row, same order of magnitude under its replicated scaling class. The paper prints impulse bits in pico units but its own total-impulse estimate proves micro; recorded verbatim with flag in r189_eo1_ppt_kg_per_newton_key_numbers.csv.
-- **Remaining rows (FEEP 2500 / MPD 40 / electrospray 10000 / exotic classes):** no institutional mass-per-thrust measurements found on NTRS or elsewhere accessible from this machine; the notes name no sources, so there is nothing to contradict - not RC targets.
+`extracted_data/r115_dra5_vs_spacecost_mars_rows.csv`.
 
-No new revision candidate opened: anchorable RC space against current upstream state (spacecost@29a7ced v0.12.0 / economicspace@d77f1ce / AsteroidCatalog@84e026e data-2026-09-29c) remains exhausted as of R185, reconfirmed this round by nine further audit angles (drift #146-#149 tooling-only; operational_costs claim map fully claimed or pre-adjudicated by R113/R163; all six reference tables code-to-CSV consistent via live import - 194 rows, ~1500 fields; cross-repo table duplication absent (economicspace re-exports spacecost objects as aliases); AsteroidCatalog alloy-fix coverage verified at GR-R83).
+## R120 - rafalskyi_2021_iodine_ep_in_orbit hosted (CC BY in file)
 
-## R190 - propellants.csv non-thruster columns + ssoBFT delta_v carried item (no candidate)
+Nature 599:411-415, the NPT30-I2 flight behind the iodine row. Also verified live: `astronautix_encyclopedia_propellant_engine_pages` (use the letter-index paths, e.g. /m/mmh.html) and `rocketcea_nasa_cea_python_wrapper` (v1.2.3, GPL-3.0).
 
-propellants.csv audited on the four value columns Round 189 did not cover (isp_vac_s, density_kg_per_L, ref_cost_usd_per_kg, boiloff_pct_per_day), all 41 rows:
+## R129 - Orion nuclear pulse (two hosted)
 
-### Isp design points
-Xenon Hall/ion 3000 s sits mid-range of the NEXT-C flight envelope [1400-4160] measured on SN001 (nextc_flight_thruster_key_numbers.csv) - a throttle level this hardware actually flies, not an aspiration. PPT ~1000 s is consistent with the hosted EO-1 paper ground-test regime; chemical rows are standard TRL-9 values and no registered source contradicts any cell.
+The `Nuclear pulse (Orion)` row (10,000 s, "Designed in full engineering detail by General Atomics 1958-1965") had no source.
 
-### Storage densities
-The column records fluid density at actual flight storage conditions: argon 0.3 kg/L is documented in its own note (v1.10.0 convention change) as supercritical at 18 MPa and ambient - recomputed PM/RT gives ~0.29, physically consistent since Ar Tc = 150.7 K < 300 K; krypton 0.55 kg/L is a dense gas near 16-17 MPa at ambient (Kr Tc = 209 K) - consistent; xenon 2.0 kg/L requires cold near-critical storage (Xe Tc = 165 K, so the tank must run well below ambient), plausible for ion-engine practice and contradicted by no registered source; iodine solid 4.93 kg/L is the standard value.
+- **general_dynamics_1964_nuclear_pulse_vehicle_study_ga4891** (GA-4891, NTRS 19760065935): "Technical studies on nuclear pulse propulsion were initiated in 1957 ... Early governmental support was awarded in 1958"; direct-launch vehicles of 4,000 tons at 4,000 to 6,000 sec; "a specific impulse between 10,000 and 20,000 sec is predicted for vehicles somewhat larger than the 20-m vehicle"; the Test Ban Treaty "precludes the final development and or operation".
+- **schmidt_bonometti_morton_2000_nuclear_pulse_orion_and_beyond** (AIAA 2000-3856): external pusher-plate Isp limits "approximately 3.000 to 10,000 seconds"; NASA ended funding in December 1964; "approximately $11 million had been spent on Orion over nearly seven years".
 
-### Cost cells
-Xenon $10k/kg cites SETS Space 2024 + EFC in its note (used-value context); krypton $794 = geometric centre of a sourced band [$300 INL RPT-23-75203 bulk -> $2,100 SETS flight-grade], the rc-059 re-anchor applied upstream at v0.10.0; hydrazine 75 / green monopropellant 500 are specialty grades with no institutional price series in the registry (not RC targets).
+10,000 s is a range endpoint, not a pin; the "meganewton thrust" clause is unread (GA-4891 Fig 2). `extracted_data/r129_orion_nuclear_pulse_key_numbers.csv`. Meanwhile economicspace@09814da applied rc-030, rc-050, rc-051, rc-052 and rc-057; rc-016 and rc-022 stayed open. Every other swept claim was already registered (`johnson_castillo_rogez_dervan_mcnutt_2017_nea_scout`, `pielke_byerly_2011_shuttle_programme_lifetime_cost`).
 
-### ssoBFT per-body delta_v
-The carried R41 item is already mined: Round-42 addition computed population statistics from the full parquet (NEA p05 = 5.539, median 8.877; MBA median 10.13) and judged our approach/transfer rows AGREE as representative values. Data unchanged since R41 registration - no re-mining needed.
+## R134 - Lunar descent re-pin verified
 
-### Status
-No candidate: no registered source contradicts any non-thruster propellant cell, and the ssoBFT item is closed by prior work. Anchorable RC space remains exhausted per R185/R192.
+spacecost 0.9.0 re-pins `LLO → lunar surface (descent)` 1,870 → 2,050 m/s (mean of 6,813, 6,703, 6,698 ft/s) and adds `Lunar surface → LLO (ascent)` 1,850 m/s (6,066, 6,059, 6,076). All six match SP-4029 (A17 ascent prints 6,075.7). R35's discrepancy closes with no candidate. `extracted_data/r134_spacecost_v090_lunar_repin_verification.csv`.
+
+## Round 148 - Dawn flight records (queue)
+
+NTRS's Dawn IPS records are metadata-only and the EPAG handbook domains are NXDOMAIN. Registered `registered_not_pulled`: `brophy_2011_dawn_ips` (Space Sci Rev 163), `rayman_mase_2014_dawn_cruise_acta` (Acta 103), `garner_rayman_2013_jpc_cruise_yr1`, `garner_rayman_2015_jpc_orbit_ops`, `garner_rayman_2016_jpc_lamo`, `garner_rayman_2018_jpc_final_orb`. They need a library route (DOWNLOADS.md).
+
+## R164 / R165 - Candidates (2026-10-14)
+
+rc-111 (hydrazine: cite JPL 1968), rc-112 (HTP: cite Hitt 2001), rc-113 (arcjet: cite Morren & Curran), rc-114 (NTP: cite Borowski 2012), rc-116 (Orion: 1957-1965, 10,000 s as the upper bound), rc-117 (CO/LOX: cite Hepp and Linne), rc-118 (water resistojet: cite AQUARIUS), rc-138 (cite the 975-day SEP cargo study for `ep_target_thrust_yr`), rc-155 (MMH/NTO 336 s above the measured 309-321), rc-156 (Aerozine-50 to 314.5 s), rc-157 (UDMH/NTO family anchor), rc-158 (kerolox: RD-191 337 s), rc-159 (hydrolox: Jue 2003 and `baumeister_2015_rl10_atlas_to_shuttle_centaur`: RL10A-3-3A 444.4 s), rc-160 (methalox: Kim 2013, `ukai_2019_eucass_jaxa_ihi_lox_methane_full_expander_component_tests`), rc-161 (green monoprop: Spores 2013), rc-162 (solar thermal: 680 s measured, 800-811 s design), rc-163 (xenon: NEXT-C envelope; Hall lower), rc-164 (lunar surface → LEO by flown parts, ~5,930-6,120 m/s). Texts in `revision_candidates.csv`.
+
+## R189 - Thruster mass per newton
+
+The EP sizing columns (`thruster_kg_per_n`, `thrust_scaling`, 16 devices) had no coverage beyond the NEXT-C files cited by rc-102 and rc-104.
+
+- Xenon 54 kg/N: at NEXT-C's 235 mN, a ~12.7 kg head; consistent.
+- PPT 5000 kg/N: **zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing** [T2, hosted]: EO-1 PPT 4.95 kg at ~860 µN mean thrust ≈ 5756 kg/N (+13%). The paper prints impulse bits in pico units but its total impulse shows micro (kept with a flag). `extracted_data/r189_eo1_ppt_kg_per_newton_key_numbers.csv`.
+- FEEP, MPD, electrospray and exotic rows: no measurements found; their notes name no source.
+
+No candidate.
+
+## R190 - Non-thruster propellant columns (no candidate)
+
+All 41 rows of `isp_vac_s`, `density_kg_per_L`, `ref_cost_usd_per_kg`, `boiloff_pct_per_day`: Xenon 3000 s mid NEXT-C envelope; argon 0.3 kg/L supercritical at 18 MPa (PM/RT ~0.29), krypton 0.55 at 16-17 MPa, xenon 2.0 needs cold near-critical storage (Tc 165 K), iodine 4.93; krypton $794 is the centre of the rc-059 band ($300-$2,100); hydrazine 75 and green monoprop 500 have no price series. The ssoBFT item is closed by R42.

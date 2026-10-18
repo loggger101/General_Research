@@ -6,71 +6,46 @@ Created in Round 75 (2026-09-27). Blocks are appended one per round, newest last
 
 ## R75 - Domain opened (2026-09-27; no sources yet)
 
-Domain 8 is an external oracle for delta-v; nothing plays that role for the profitability answer. economicspace `research/starred-repos/SECOND-PASS.md` calls Asterank "the only direct prior art this project has". Values below were read from economicspace@1f470d4 and spacecost@e831245 (unchanged since R73). No source was sought; the table is the brief for the first research round here.
+Domain 8 is an external oracle for delta-v; nothing plays that role for profitability. economicspace `research/starred-repos/SECOND-PASS.md` calls Asterank "the only direct prior art this project has". Read at economicspace@1f470d4 and spacecost@e831245.
 
 | cell | current value | upstream's stated basis |
 |---|---|---|
 | `campaign/results.csv` `best_obj`, `winner`, `payload_kg`, `programme_missions` | the per-cell headline answer | no external comparison except Asterank (domain 8) |
-| Stage 4 cost cascade (`modules/calc.py`) | the structure of the cost lines and their order | upstream design; not compared with any published model |
+| Stage 4 cost cascade (`modules/calc.py`) | the structure and order of the cost lines | upstream design; not compared with any published model |
 
-**What a source has to supply.**
+**What a source has to supply:** published techno-economic models of asteroid mining or lunar/cislunar propellant supply that state enough inputs (target, delta-v, hardware mass and cost, throughput, prices, discount rate) to map onto pipeline cells, so a disagreement in the headline can be traced to its cell. A model that publishes only its conclusion is context-only. Extracted inputs go into comparison CSVs whose rows name the cell each maps to.
 
-- Published techno-economic models of asteroid mining, and of lunar or cislunar propellant supply (which shares the in-space demand side), that state enough of their inputs (target, delta-v, hardware mass and cost, throughput, prices, discount rate) to map onto pipeline cells, so a disagreement in the headline can be traced to the cell that causes it.
-- A model that publishes only its conclusion is registered as context-only.
-- Extracted inputs go into comparison CSVs whose rows name the pipeline cell each input maps to.
+**Also relevant, registered elsewhere:** `asterank_neo_service_shoemaker_helin` (d08), `lewicki2023` (d02).
 
-**Already registered in other domains.** These ids stay where they are; cite them from here by id.
+**Boundary:** input cells stay with their own domains (a model's price goes to domain 6, its throughput to 19); this domain holds whole-model comparisons.
 
-- `asterank_neo_service_shoemaker_helin` (domain 8): the one prior-art ranking upstream names.
-- `hein2020` (domain 2): end-to-end techno-economic analysis; parameter tables extracted in R61.
-- `lewicki2023` (domain 2): valuation framework.
-
-**Boundary.** Input cells stay with their own domains (a benchmark model's price goes to domain 6, its throughput to 19); this domain holds whole-model comparisons.
-
-## R77 - Sources moved in (2026-09-27; registry unchanged at 267)
-
-These rows were registered in other domains before this one existed; they moved here because the cells they back are this domain's. Their earlier write-ups stay in the old domain's FINDINGS.md under the blocks named.
+## R77 - Sources moved in (2026-09-27)
 
 | id | from | earlier write-ups | files moved here |
 |---|---|---|---|
-| `hein2020` | domain 2 | `02_composition_value/FINDINGS.md`: the `hein2020` block; Round-1 status; Round 61 addition; Maintenance; R71; R72 | `extracted_data/r61_hein2020_plant_economics_key_numbers.csv`, `extracted_data/r71_hein2020_key_numbers.csv`, `extracted_data/r71_hein2020_table3_pt_supply_demand_profitability.csv` |
+| `hein2020` | domain 2 | `02_composition_value/FINDINGS.md`: the `hein2020` block; Round 61 addition; Maintenance; R71; R72 | `extracted_data/r61_hein2020_plant_economics_key_numbers.csv`, `extracted_data/r71_hein2020_key_numbers.csv`, `extracted_data/r71_hein2020_table3_pt_supply_demand_profitability.csv` |
 | `metzger_2023` | domain 4 | `04_launch_economics/FINDINGS.md`: Round-12 addition; Maintenance; R71 | `extracted_data/r71_metzger_2023_key_numbers.csv`, `extracted_data/r71_metzger_2023_table1_years_to_absolute_advantage.csv`, `extracted_data/r71_metzger_2023_table2_production_mass_ratio_phi.csv`, `extracted_data/r71_metzger_2023_table3_cost_elasticities.csv`, `extracted_data/r71_metzger_2023_tableA1_lunar_propellant_tea_parameters.csv` |
 
-The cross-reference to `hein2020` in the opening block is now a row of this domain.
-## R88 - Third prior-art model: Stenis & Hogland's interplanetary resource-economy optimisation (2026-09-30; registry 314 -> 315)
+## R88 - Stenis & Hogland's interplanetary resource-economy optimisation (2026-09-30)
 
-**stenis_hogland_2017_interplanetary_resource_economy_optimisation** [T2, extraction-only] - Jan Stenis & William Hogland (Linnaeus University), "Optimisation of the resource economy of metals, minerals and energy in an interplanetary perspective", Linnaeus Eco-Tech '14 proceedings / institutional OA journal series (ISSN 2002-8008; DOI 10.15626/eco-tech.2014.030 Crossref-verified live this round). Full text read in full from the author-repository copy (open.lnu.se, 290,020 bytes / 24 pp); **not hosted** - the OJS article page carries only a Copyright notice with no redistribution licence and Crossref's license field is empty.
+**stenis_hogland_2017_interplanetary_resource_economy_optimisation** [T2, read, not hosted: no redistribution licence] - Linnaeus Eco-Tech '14, DOI 10.15626/eco-tech.2014.030.
 
-What it adds to d22: Hein (2020) models plant-level PT economics, Metzger (2023) models lunar propellant TEA + cost elasticities - **this is the only prior-art model in our corpus with a bottom-up per-mission total**: its case study's "total estimated cost for a mission to mine an asteroid of $5 billion" (p14), which the authors themselves flag as *almost certainly low*. The rest of the structure is top-down calibration: 5% of US industrial GDP (~$2T) = $100B initial global allocation to cosmic industry; C_commodity_total = $50B/yr (USA share $25B); tellurium-residual value chain A=$1B / B=$1T / C=$10B with shadow costs R=$100M global -> $50M USA via eq.(39)-(40) (pp14-15). Value-side context (p3): 30-m asteroid = $25-50B platinum, >80-m = >$100B materials, ~200-m metallic = ~$30B at then-current prices - a second independent statement of the "single asteroid worth tens of billions" figure already in our corpus (useful as corroboration for d4/d6 value rows). Macro backdrop: space economy ~$251B in 2007, >60% commercial (p2).
+The only prior-art model here with a bottom-up per-mission total: "total estimated cost for a mission to mine an asteroid of $5 billion" (p14), which the authors call almost certainly low. The rest is top-down calibration: 5% of US industrial GDP (~$2T) = $100B global allocation; C_commodity_total $50B/yr (USA $25B); tellurium-residual chain A=$1B / B=$1T / C=$10B with shadow costs $100M global -> $50M USA (eq. 39-40, pp14-15). Value context (p3): a 30 m asteroid holds $25-50B of platinum, >80 m >$100B of materials, a ~200 m metallic body ~$30B. Order-of-magnitude calibration values, so no re-pin. `extracted_data/r88_stenis_hogland_2017_key_numbers.csv`.
 
-**No re-pin proposed**: all figures are 2017 order-of-magnitude estimates used to calibrate the authors' optimisation model, not measurements - they bracket rather than contradict our rows. Extracted data: `extracted_data/r88_stenis_hogland_2017_key_numbers.csv` (7 rows, page-located). d22 now holds three prior-art models covering plant-level (Hein), lunar-propellant TEA + elasticities (Metzger) and macro interplanetary resource-economy structure with a per-mission cost anchor (Stenis & Hogland).
+## R113 - A lunar ISRU TEA with stated inputs (2026-10-04)
 
-## R113 - A lunar ISRU TEA with stated inputs (2026-10-04; +1 source, T2x1)
+**`paulson_balchanos_mavris_2026_isru_economic_environmental_tradeoffs`** (AIAA 2026-2788; abstract only, paywalled). Earth resupply vs ISRU for a 4-person lunar crew over 3 years: resupply reaches $500M by year 3; ISRU needs $800M setup plus $10,000/day maintenance and pays back only after 30 years; a 15% carbon tax or 30% maintenance subsidy does not change that; the ice comes from 0.761 km2 of a permanently shadowed region. Its demand is crew consumption, so it bounds lunar ISRU payback at small demand rather than serving as a comparator. Context-only until its input tables are read.
 
-**`paulson_balchanos_mavris_2026_isru_economic_environmental_tradeoffs`** (AIAA SciTech 2026, AIAA 2026-2788; abstract read live on arc.aiaa.org, paper itself paywalled). A simulation of Earth resupply against ISRU for a 4-person lunar crew over 3 years: resupply reaches $500M by year 3; ISRU needs an $800M setup plus $10,000 per day in maintenance and pays back only after 30 years; a 15% carbon tax or 30% maintenance subsidy does not change the verdict; all needed ice comes from 0.761 km2 of a permanently shadowed region. Its demand is crew consumption, not propellant, so it is a bound on lunar ISRU payback at small demand rather than a comparator for economicspace's headline. Registered context-only until the paper's input tables are read.
+## R114 - Three ISRU and PGM-market benchmarks (2026-10-04)
 
-The owner's list also offered an NPS master's thesis on asteroid-mining feasibility; it is a secondary survey with no model of its own and was rejected (Round 113 log entry). Its $7B break-even figure comes from Calla, Fries & Welch (2019), "Asteroid Mining with Small Spacecraft and Its Economic Feasibility", which is not registered and is the primary to pull next for this domain.
+- `jones_klovstad_komar_judd_2018_cost_breakeven_cislunar_isru` (NASA Langley, FY2018$): for 59 t/yr of H2/O2 over 14 years the cheapest option is commercial delivery from Earth at $40,000/kg in cislunar space; lunar ISRU breaks even at 35 years.
+- `miyajima_2022_cost_analysis_in_situ_space_resources_moon_mars_habitation`: propellant at $4,000, $12,000 and $36,000/kg delivered from Earth to LEO, EML1 and the Moon; $3,000/kg from the Moon to LEO if lunar production costs under $500/kg.
+- `nachtrieb_smith_2026_will_astroforge_collapse_the_pgm_market` (arXiv, CC BY): PGM prices fall toward mining cost only after the entire supply has moved off-world; quotes 100-187 ppm PGM for metallic asteroids vs 4-10 ppm in ores, above the maxima in `usgs_pp1802n` and `cannon2023` and resting on one reference, so recorded, not adopted.
 
-## R114 - Three independent ISRU and PGM-market benchmarks (2026-10-04; +3 sources, T2x3)
+`extracted_data/r114_gr_links_key_numbers.csv`.
 
-`jones_klovstad_komar_judd_2018_cost_breakeven_cislunar_isru` (NASA Langley, FY2018 dollars): for 59 t/yr of hydrogen/oxygen over 14 years the cheapest architecture is commercial delivery from Earth at $40,000/kg of propellant in cis-lunar space, lunar ISRU does not break even within 14 years and breaks even at 35. `miyajima_2022_cost_analysis_in_situ_space_resources_moon_mars_habitation`: propellant at $4,000, $12,000 and $36,000/kg delivered from Earth to LEO, EML1 and the Moon, and $3,000/kg from the Moon to LEO if lunar production costs under $500/kg. `nachtrieb_smith_2026_will_astroforge_collapse_the_pgm_market` (arXiv, CC BY 4.0): a system-dynamics model in which the PGM price falls toward asteroid mining cost 'only after the entire supply has shifted off-world', quoting 100-187 ppm PGM for metallic asteroids against 4-10 ppm in ores. That range is above the maxima in the sources registered for domain 1 and 2 (`usgs_pp1802n`, `cannon2023`), which find lower values at high iridium; it rests on one reference in the preprint and is recorded here, not adopted. No revision candidate.
+## R141 - The $7B break-even's primary source, plus a parametric model (2026-10-09)
 
-Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+**calla_fries_welch_2019_asteroid_mining_small_spacecraft_economic_feasibility** [T2, read from arXiv 1808.05099v2; default licence, not hosted]. The primary behind every "$7B asteroid-mining break-even" figure: spacecraft <500 kg deliver 100 kg of water per trip from NEAs within ~0.03 AU (437 m/s one-way); microwave extraction at 2 Wh/g; SSCM unit cost $113.6M, first unit $145.7M + a $90M Falcon Heavy. Break-even needs more than 100 spacecraft over five years; the most likely feasible case is ~200 craft selling water in cislunar space for ~$7 billion up front, profitable after ~10 years (7 at best). It brackets the shape of economicspace's answer (fleet scale, cislunar market) but pins no cell. `extracted_data/r141_calla_key_numbers.csv`.
 
-## R141 - The $7B break-even gets its primary source, plus a peer-reviewed parametric model (2026-10-09; +2 sources: T2x1, T1x1)
-
-R113 rejected an NPS master's thesis as 'a secondary survey with no model of its own' and noted that its $7B break-even figure comes from Calla, Fries & Welch (2019), which was not registered. This round registers it - and a second model the same search surfaced.
-
-**calla_fries_welch_2019_asteroid_mining_small_spacecraft_economic_feasibility** [T2, verified_live_not_pulled] - arXiv:1808.05099v2 (Calla ISU / Fries I3S / Welch; v2 24 Jun 2019). No journal version exists in Crossref/OpenAlex/Semantic Scholar as of this round, so the preprint is the work itself - T2 per the lewicki2023/asime2018 precedent. Read in full from the export.arxiv.org mirror (23 pp; sha256 5acc9270...); NOT hosted: the abs page carries arXiv's DEFAULT non-exclusive distribution licence and there is no in-file redistribution grant.
-
-What it adds to d22: a whole-SWARM mission-economics model with fully stated inputs - spacecraft <500 kg delivering 100 kg of water per trip to NEAs within ~0.03 AU (437 m/s one-way), microwave extraction at 2 Wh/g, SSCM unit cost $113.6M, first-unit total $145.7M + a $90M Falcon Heavy launch, and the headline result: break-even needs more than 100 spacecraft operating over five years; the most-likely feasible scenario is ~200 craft selling water in cis-lunar space with an up-front investment of ~$7 billion and profit after roughly 10 years (as little as 7 under favourable parameters). That sentence - 'Even for the 200 spacecraft fleet required to reach break-even in less than 10 years the up-front investment of ~$7 billion ...' - is the primary source behind every downstream '$7B asteroid-mining break-even' figure, including R113's rejected thesis. All inputs extracted with locations: `extracted_data/r141_calla_key_numbers.csv` (9 rows).
-
-Match quality vs upstream: context/bound class for campaign/results.csv - it brackets the shape of economicspace's answer (fleet scale required to break even, cis-lunar demand as the feasible market) but pins no cell; its water prices and launch costs are 2018-19 estimates. No re-pin proposed.
-
-**dorrington_olsen_2026_parametric_economic_modelling_asteroid_mining_architectures** [T1, registered_not_pulled] - Acta Astronautica 241:19-47 (April 2026), DOI Crossref-verified live this round; licence field = CC-BY VOR. The first peer-reviewed parametric economic model of asteroid-mining architectures in our corpus - exactly d22's brief ('published techno-economic models ... that state enough of their inputs to map onto pipeline cells'). Full text not pulled: doi.org resolves to linkinghub.elsevier.com and every ScienceDirect route (article page, /pdf?md5=..., the author-manuscript endpoint /am/pii/..., /sdfe pdffiles) answers HTTP 403 from this machine with both browser-style and curl UAs; OpenAlex/Semantic Scholar list no mirror PDF. Because it is CC-BY VOR a copy IS legally hostable once reachable - re-probe in a later round (a repository deposit or the journal's own OA route).
-
-d22 now holds four prior-art models: Hein 2020 (plant-level PT economics), Metzger 2023 (lunar-propellant TEA + cost elasticities), Stenis & Hogland 2017 (macro interplanetary resource economy with a per-mission anchor) and Calla et al. 2019 (swarm mission economics) - plus the Dorrington-Olsen parametric model queued for extraction.
-
-## Round 175 - queue sweep: NTRS title hunt negative
-
-- paulson_balchanos_mavris_2026_isru_economic_environmental_tradeoffs: NTRS sweeps "economic environmental ISRU" + "ISRU economic environmental tradeoff" return zero records for this work (the 2026 hits are VIPER-related); arc.aiaa.org remains No Access per R113. Stays registered_not_pulled for institutional pull.
+**dorrington_olsen_2026_parametric_economic_modelling_asteroid_mining_architectures** [T1, registered_not_pulled] - Acta Astronautica 241:19-47 (2026), CC BY: the first peer-reviewed parametric model of asteroid-mining architectures, exactly this domain's brief. Every ScienceDirect route refuses this machine; hostable once fetched (DOWNLOADS.md).

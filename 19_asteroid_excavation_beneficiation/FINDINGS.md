@@ -6,154 +6,96 @@ Created in Round 75 (2026-09-27). Blocks are appended one per round, newest last
 
 ## R75 - Domain opened (2026-09-27; no sources yet)
 
-These fields size the haul, and upstream calls the mining rate "an engineering assumption, not a measurement". The beneficiation-energy row cites a school worksheet (rc-048; withdrawn upstream in spacecost 0.5.1, see R112), and the drilling-energy row cites NIAC studies too vague to register in R74. Values below were read from economicspace@1f470d4 and spacecost@e831245 (unchanged since R73). No source was sought; the table is the brief for the first research round here.
+Read at economicspace@1f470d4 and spacecost@e831245.
 
 | cell | current value | upstream's stated basis |
 |---|---|---|
-| `calc.py` `mining_rate_kg_per_day_per_kg_rig` | 0.10 (a 2,000 kg rig moves 200 kg/day) | "an engineering assumption, not a measurement"; OSIRIS-REx TAGSAM (~122 g per touch) quoted for scale |
+| `calc.py` `mining_rate_kg_per_day_per_kg_rig` | 0.10 (a 2,000 kg rig moves 200 kg/day) | "an engineering assumption, not a measurement"; TAGSAM (~122 g per touch) for scale |
 | `calc.py` `mining_hardware_kg` | 2,000 kg | none stated |
 | `calc.py` `max_mining_duration_yr` / `station_keeping_floor_yr` | 3.0 yr / 0.25 yr | none stated |
-| `calc.py` `beneficiation_recovery` | 0.90 | "Terrestrial PGM / sulphide flotation circuits run 85-95%"; no source, and no microgravity heritage |
-| `calc.py` `max_concentration_ratio` | 50:1 feed to concentrate | "Terrestrial mills run 100:1 to 1000:1 on PGM ores"; no source |
-| `Drilling / excavation energy` | 200 Wh/kg [50, 500] of regolith extracted | "Zacny et al. (NIAC studies ...)", not identifiable (R74) |
-| `Beneficiation / on-site processing energy` | 500 Wh/kg [100, 2000] of refined product | "NASA Money-Mass-ematics 2023", a grades 7-8 worksheet (rc-048; withdrawn upstream in spacecost 0.5.1, see R112) |
-| `In-space processing plant throughput` | 100 kg/yr per kg of plant [20, 500] | "Terrestrial smelters run 1,000x their own mass per year", derated tenfold by judgement |
+| `calc.py` `beneficiation_recovery` | 0.90 | "Terrestrial PGM / sulphide flotation circuits run 85-95%"; no source, no microgravity heritage |
+| `calc.py` `max_concentration_ratio` | 50:1 | "Terrestrial mills run 100:1 to 1000:1 on PGM ores"; no source |
+| `Drilling / excavation energy` | 200 Wh/kg [50, 500] of regolith | "Zacny et al. (NIAC studies ...)", not identifiable (R74) |
+| `Beneficiation / on-site processing energy` | 500 Wh/kg [100, 2000] of refined product | a school worksheet, withdrawn in spacecost 0.5.1 (R112) |
+| `In-space processing plant throughput` | 100 kg/yr per kg of plant [20, 500] | "Terrestrial smelters run 1,000x their own mass per year", derated tenfold |
 
-**What a source has to supply.**
+**What a source has to supply:** measured excavation rates and specific energies in reduced gravity or vacuum with machine mass; recovery and grade of magnetic and electrostatic metal-silicate separation, and terrestrial comminution energies; throughput-to-mass of compact plants; terrestrial autonomous-mining analogues for scale.
 
-- Measured excavation rates and specific energies for loose regolith and consolidated rock in reduced gravity or vacuum (drills, bucket wheels, pneumatic systems), from tests rather than concept claims, with the machine mass so a rate per kg of rig can be formed.
-- Recovery and grade data for magnetic and electrostatic separation of metal from silicate, on meteorite or simulant feeds, and terrestrial comminution and separation specific energies.
-- Throughput-to-mass ratios of compact or modular processing plants.
-- Terrestrial remote and autonomous mining analogues, recorded for scale.
+**Also relevant, registered elsewhere:** `metzger_zacny_2020` (d05), `hein2020` (d22; R61 recorded a plant-throughput discrepancy).
 
-**Already registered in other domains.** These ids stay where they are; cite them from here by id.
+**Boundary:** domain 5 keeps volatile extraction, ISRU propellant processing and storage; domain 2 what the body contains. This domain covers getting ore out and concentrating it.
 
-- `metzger_zacny_2020` (domain 5): excavation.
-- `zeng_2007` (domain 5): excavation.
-- `just_2019` (domain 5): excavation.
-- `hein2020` (domain 2): beneficiation cost structure; R61 recorded a plant-throughput discrepancy against the row.
-
-**Boundary.** Domain 5 keeps volatile extraction (water-liberation energy, volatile recovery), ISRU propellant processing (`isru_processing_usd_per_kg`) and storage; domain 2 keeps what the body contains. This domain covers getting ore out of the body and concentrating it.
-
-## R76 - Scope extended to in-space refining energy (2026-09-27; registry unchanged)
-
-Found while looking for new domains in economicspace@1f470d4 and spacecost@e831245; no source was sought. The energy to turn raw feedstock into a usable in-space product sits next to this domain's plant-throughput row (the same code reads both), so it joins this domain rather than opening its own:
+## R76 - Scope extended to in-space refining energy (2026-09-27)
 
 | cell | current value | upstream's stated basis |
 |---|---|---|
-| economicspace `mineral_value.py` `IN_SPACE_PROCESSING_KWH_PER_KG` | kWh per kg of feedstock: Fe, Ni, Co, Cu, nickel-iron, awaruite 5.0; magnetite 7.0; troilite 4.0; carbon, organics 2.0; silicates 1.0; water 0.5 | metals: "Terrestrial electric-arc / direct-reduction steelmaking runs 4-5 kWh/kg; electrowinning iron is similar"; no source |
-| economicspace `mineral_value.py` `_INSPACE_PLANT_LIFE_YR` | 15 yr, over which the refinery is amortised | none stated; the same figure as `Mining rig service life` (domain 16) |
+| economicspace `mineral_value.py` `IN_SPACE_PROCESSING_KWH_PER_KG` | kWh per kg of feedstock: Fe, Ni, Co, Cu, nickel-iron, awaruite 5.0; magnetite 7.0; troilite 4.0; carbon, organics 2.0; silicates 1.0; water 0.5 | "Terrestrial electric-arc / direct-reduction steelmaking runs 4-5 kWh/kg; electrowinning iron is similar"; no source |
+| economicspace `mineral_value.py` `_INSPACE_PLANT_LIFE_YR` | 15 yr | none stated; same as `Mining rig service life` (domain 16) |
 
-What a source has to supply: specific energies of reducing, melting and forming iron-nickel metal and of sintering silicates, measured or designed for space or for small terrestrial plants.
+Needed: specific energies of reducing, melting and forming Fe-Ni and sintering silicates, for space or small plants.
 
-## R77 - Sources moved in (2026-09-27; registry unchanged at 267)
-
-These rows were registered in other domains before this one existed; they moved here because the cells they back are this domain's. Their earlier write-ups stay in the old domain's FINDINGS.md under the blocks named.
+## R77 - Sources moved in (2026-09-27)
 
 | id | from | earlier write-ups | files moved here |
 |---|---|---|---|
-| `just_2019` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round-9 status; Round-10 addition; Round 43 addition; Round 44 addition; Round 57 addition | `extracted_data/r43_excavation_energy_key_numbers.csv` |
+| `just_2019` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round-10, 43, 44 and 57 additions | `extracted_data/r43_excavation_energy_key_numbers.csv` |
 | `zeng_2007` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 43 addition | `extracted_data/r70_zeng_2007.csv`, `full_texts/zeng_2007_excavation_force.pdf` |
 | `proctor_apex_2019` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 43 addition; R71 | `extracted_data/r71_proctor_apex_2019_key_numbers.csv` |
 | `zeitlin_asteroid_excavation_project` | domain 5 | `05_inspace_operations/FINDINGS.md`: Round 43 addition | `extracted_data/r71_zeitlin_asteroid_excavation_project_key_numbers.csv` |
-| `ssap_2021` | domain 5 | `05_inspace_operations/FINDINGS.md`: the `ssap_2021` block; Round-3 additions; Round-3 status; Maintenance; R71 | `extracted_data/ssap_2021_table3_theoretical_yields.csv`, `extracted_data/r71_ssap_2021_key_numbers.csv`, `extracted_data/r71_ssap_2021_reactions_energetics.csv` |
+| `ssap_2021` | domain 5 | `05_inspace_operations/FINDINGS.md`: the `ssap_2021` block; Round-3 additions; Maintenance; R71 | `extracted_data/ssap_2021_table3_theoretical_yields.csv`, `extracted_data/r71_ssap_2021_key_numbers.csv`, `extracted_data/r71_ssap_2021_reactions_energetics.csv` |
 
-Revision candidates on these sources, written up in their old domains: rc-026 (open, Drilling / excavation energy), rc-027 (blocked, Drilling / excavation energy).
+rc-026 and rc-027 (Drilling / excavation energy) are written up in domain 5. `metzger_zacny_2020` stays in domain 5 (thermal volatile extraction).
 
-The cross-references to `zeng_2007` and `just_2019` in the opening block are now rows of this domain. `hein2020`, listed in the opening block under domain 2, is now in domain 22.
+## R112 - Beneficiation citation withdrawn upstream (2026-10-04)
 
-`metzger_zacny_2020` stays in domain 5: its row maps to the drilling-energy row, but the paper is about thermal extraction of volatiles, which domain 5 keeps.
-## R85 - just_2019 retry (2026-09-30; registry unchanged by this note)
+spacecost 0.5.1 (`85da36c`) applied rc-048: the beneficiation row now calls its 500 Wh/kg [100, 2000] an unsourced estimate. The worksheet was rejected by the owner and rc-048 deleted with it. The cell still needs a specific energy for magnetic, electrostatic or thermal concentration per kg of concentrate.
 
-Retried the three routes that could host `just_2019`: OpenAlex best_oa_location (= the ScienceDirect PDF route itself, Cloudflare challenge still blocks this machine), UoM Research Explorer publication record (page 404 / no file behind it) and a USRA Lunar ISRU workshop proceedings copy of the conference version (1-page abstract only - not the full text and without the specific-energy tables rc-027 needs). Status unchanged: open_not_pulled; **rc-027 remains blocked**.
+## R113 - Two unread candidates (2026-10-04)
 
-## R112 - Beneficiation-energy citation withdrawn upstream; worksheet rejected (2026-10-04; registry -1)
+Both paywalled, `registered_not_pulled`: `tang_et_al_2023_asteroid_rock_mechanical_properties` (Engineering Geology 321:107154; asteroid rock mineralogy and strength, for the excavation row and mining rate) and `liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum` (Chem. Eng. Res. Des. 233:150-161; laser processing of simulants with Fe-Ni enrichment, for recovery and concentration ratio).
 
-spacecost 0.5.1 (data contract 1.17.1, tag `v0.5.1`, merge commit `85da36c`) applied rc-048: the `Beneficiation / on-site processing energy` row of `operational_costs.csv` no longer cites "NASA Money-Mass-ematics 2023" and now calls its 500 Wh/kg [100, 2000] of refined product an unsourced engineering estimate. No value moved.
+## R114 - Measured excavation energy, thermal and optical mining, PGM recovery (2026-10-04; +13)
 
-The worksheet was rejected by owner decision (INDEX.md "Rejected sources"). rc-048 rested on it alone, so it was deleted with the rejection, as README "Rejecting a source" step 6 requires; its number is not reused. The cell is unchanged in this domain's brief: it still needs a measured or designed specific energy for magnetic, electrostatic or thermal concentration, per kg of concentrate.
+**Excavation energy:** `giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru` (4.8 kg bucket drum: 777.54 kg/h at 0.022 Wh/kg continuous, 172.02 kg/h at 0.86 Wh/kg batch) and `kafi_2026_spiral_cavity_wheel_excavator_lunar_isru` (29% below a bucket drum) are orders of magnitude under 200 Wh/kg, a floor for loose regolith. `schuler_2022_isru_pilot_excavator_bucket_drum_scaling`: a 30 kg-class excavator for 10,000 kg of regolith (RASSOR 2.0 is 65 kg). `jayathilake_2022_geotechnical_parameters_lunar_regolith_excavations` and `ricardo_2026_trafficability_excavatability_icy_lunar_regolith_cone_penetration` from abstract.
 
-## R113 - Two unread candidates for the excavation and beneficiation cells (2026-10-04; +2 sources, T1x2)
+**Thermal and optical mining:** `sowers_2020_niac_phase1_thermal_mining_of_ices` (read in full; the Colorado School of Mines copy, since the owner's copy differs: 'February 2019' vs 'February 2020'), probably the NIAC study the row meant: 126 kg/h of ice; 42.0 kg of annual propellant per kg of plant vs 2.3 for Langley's excavation-based plant (`jones_klovstad_komar_judd_2018_cost_breakeven_cislunar_isru`, d22). `techport_33509_optical_mining_asteroid_excavation_sbir` (a 100 t water claim), `broslav_2025_optical_mining_carbonaceous_chondrite_simulants` (abstract), `sercel_2018_time_dependent_outgassing_model_bulk_heating` (simple heating "too slow for industrial water yield").
 
-From the owner's list. Both DOIs were verified on Crossref; ScienceDirect serves a CAPTCHA to this machine and both are paywalled, so neither abstract nor full text was read and both are `registered_not_pulled`.
+**PGM recovery (0.90):** `liddell_adams_2012_kell_hydrometallurgical_process_pgm_base_metals` and `liddell_2019_kell_hydrometallurgical_extraction_piloting_engineering_implementation`: above 95% for value metals; capex 18-33% and opex 51-66% of smelting and refining. `kabemba_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm`: batch flotation 83.25-94.37% (the owner's "90.6%" is the liberated share). `hay_2010_optimising_ug2_flotation_part2_modelling_pgm_recovery_cr2o3_rejection`: title only. All terrestrial analogues.
 
-- `tang_et_al_2023_asteroid_rock_mechanical_properties` (Engineering Geology 321:107154): by its title, mineral make-up and macroscale strength of asteroid rock, the property the `Drilling / excavation energy` row (200 Wh/kg, its NIAC citation unidentifiable since R74) and `mining_rate_kg_per_day_per_kg_rig` lack.
-- `liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum` (Chemical Engineering Research and Design 233:150-161): the owner's list marked it unverified and doubted its relevance; the Crossref title shows laser processing of asteroid simulants with Fe-Ni enrichment in cryogenic vacuum, the in-space concentration step behind `beneficiation_recovery` (0.90) and `max_concentration_ratio` (50:1).
+`extracted_data/r114_gr_links_key_numbers.csv`. No candidate.
 
-What each supplies is unknown until read; both are on DOWNLOADS.md.
+## R119 / R120 - Excavation and recovery papers hosted (2026-10-05)
 
-## R114 - Measured excavation energy, optical and thermal mining, and PGM recovery (2026-10-04; +13 sources, T1x7, T2x6)
+- giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru hosted (CC BY) as full_texts/giel_et_al_2025_bucket_drum_excavator_moonbot_arxiv2511.00492.pdf: "The resulting tool weighs 4.8 kg and has a volume of 14.06 L"; the R114 figures confirmed.
+- ricardo_2026_trafficability_excavatability_icy_lunar_regolith_cone_penetration: the journal version's in-file licence is CC BY-NC-ND (Crossref says cc-by), so the CC BY Research Square preprint is hosted as full_texts/ricardo_hodgkinson_rhamdhani_et_al_2026_trafficability_excavatability_icy_lunar_regolith_research_square_rs-9421896_ccby.pdf: cone penetration of unsintered, pressure-sintered, ice-cemented and vapour-deposited icy simulants.
+- kafi_2026_spiral_cavity_wheel_excavator_lunar_isru read in full from arXiv (default licence, not hosted).
+- `kabemba_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm` hosted (CC BY) as kabemba_mutombo_waters_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm_minerals_15_701_mdpi_ccby.pdf: "P-FPX3 = 83.25%" and "peak recovery (94.37%)".
 
-Thirteen sources from the owner's excavation and beneficiation blocks. **Excavation energy.** The `Drilling / excavation energy` row is 200 Wh/kg. Two 2025-26 preprints report measured specific energies for light lunar excavators in loose regolith: `giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru` (a 4.8 kg bucket drum: 777.54 kg/h at 0.022 Wh/kg continuous, 172.02 kg/h at 0.86 Wh/kg batch) and `kafi_2026_spiral_cavity_wheel_excavator_lunar_isru` (a wheel with 29% lower specific energy than a bucket drum). Both are orders of magnitude under 200 Wh/kg, which is a hard-rock figure, so they set a floor for loose regolith rather than contradict the row and no revision candidate is opened; `schuler_2022_isru_pilot_excavator_bucket_drum_scaling` gives the rig-mass side (a 30 kg-class excavator for 10,000 kg of regolith; RASSOR 2.0 is 65 kg). `jayathilake_2022_geotechnical_parameters_lunar_regolith_excavations` and `ricardo_2026_trafficability_excavatability_icy_lunar_regolith_cone_penetration` are registered from record or abstract only.
+## R137 - NASA's ISRU staging ladder (2026-10-09)
 
-**Thermal and optical mining.** `sowers_2020_niac_phase1_thermal_mining_of_ices` (read in full) is probably the NIAC study the row cited; its point design collects 126 kg/h of ice and its plant efficiency is 42.0 kg of annual propellant per kg of plant mass against 2.3 for the Langley excavation-based plant (`jones_klovstad_komar_judd_2018_cost_breakeven_cislunar_isru`, domain 22). The owner's link was a third-party copy that differs from the Colorado School of Mines file (10,405,776 against 10,436,681 bytes; title page 'February 2019' against 'February 2020'), so the CSM copy was used. `techport_33509_optical_mining_asteroid_excavation_sbir` (a 100 t water claim), `broslav_2025_optical_mining_carbonaceous_chondrite_simulants` (measured excavation rates, abstract only) and `sercel_2018_time_dependent_outgassing_model_bulk_heating` (simple heating 'too slow for industrial water yield') cover the volatile-rich case.
+**mueller_sibille_sanders_jones_2014_arrm_concepts_of_operations_isru_ladder** (NTRS 20140017854, hosted; context only): resource operations for "radiation protection, propulsion, life support, shelter and manufacturing", within a campaign preparing for Mars: "the development and demonstration approach progresses from resource prospecting (understanding the resource, and mapping the 'ore body'), mining/extraction feasibility and product assessment, pilot operations, to full in-situ resource utilization (ISRU)." No cost, mass or delta-v figures.
 
-**PGM recovery** (`beneficiation_recovery` 0.90): `liddell_adams_2012_kell_hydrometallurgical_process_pgm_base_metals` and `liddell_2019_kell_hydrometallurgical_extraction_piloting_engineering_implementation` report above 95% for value metals and capex 18-33% and opex 51-66% of smelter-refining; `kabemba_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm` reports 83.25-94.37% batch flotation recovery (the owner's '90.6% recovery' is the liberated share of PGMs, not a recovery); `hay_2010_optimising_ug2_flotation_part2_modelling_pgm_recovery_cr2o3_rejection` is title-only. All are terrestrial ores, analogues at best.
+## R152 - rc-027 unblocked: measured excavation energies and DOE's mining benchmark (2026-10-12)
 
-Rejected: a 16-page slide deck with no numbers, a press release, a trade explainer, a personal blog, a model-only conference abstract and an off-topic lightcurve paper (Round 114 log entry). Undecided: a J-STAGE paper (connection reset), a dead blog URL and an unresolved 2016 Sercel programme paper. The list's Just 2019 and Zeng 2007 entries are already registered.
-
-Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
-## R116 - just_2019 retry (2026-10-04; registry unchanged by this note)
-
-Retried the routes that could host `just_2019`: the Elsevier TDM API (`api.elsevier.com/content/article/PII:S003206331930162X?httpAccept=text/plain&view=fulltext` -> HTTP 401 AUTHENTICATION_ERROR - a registered API key is required and none exists on this machine), UCL Discovery (intermittent: one search query returned a results page but no `just_2019` record; all subsequent queries now get an HTTP 403 Cloudflare challenge, and the EPrints REST endpoint `/cgi/rest` answers 404 - the eprint route is dead from this machine) and Manchester Pure (publication URL still HTTP 404). Status unchanged: open_not_pulled; **rc-027 remains blocked**.
-
-## R119 - giel_2025 pulled live from arXiv and hosted, CC BY 4.0 (2026-10-05; queue -1)
-
-**giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru [T2]** - re-classed registered_not_pulled -> full_text_hosted. PDF pulled live via export.arxiv.org/pdf/2511.00492v1; committed to full_texts/giel_et_al_2025_bucket_drum_excavator_moonbot_arxiv2511.00492.pdf (495,736 B sha256=6093a7e0b692f49f0d58cd3c1c227eebc106c0c7fef109b51648cbb2afa3e96a). 6 pages, no in-file copyright statement so the abs-page CC BY 4.0 governs (checked live). The R114 abstract figures are now backed by the hosted full text: "The resulting tool weighs 4.8 kg and has a volume of 14.06 L." and "It is capable of continuous excavation at a rate of 777.54 kg/h, with a normal-ized energy consumption of 0.022 Wh/kg. (the word normalized is split across a line break in the PDF text layer), with batch operation at 172.02 kg/h / 0.86 Wh/kg - a measured excavation specific energy for the lightweight-tool case behind d19's `Drilling / excavation energy` row (context; no re-pin).
-## R120 - ricardo_2026 preprint hosted (journal version is BY-NC-ND); kafi_2026 read in full, not hostable (2026-10-05; queue -2)
-
-**ricardo_2026_trafficability_excavatability_icy_lunar_regolith_cone_penetration [T1]** - re-classed registered_not_pulled -> full_text_hosted. The Springer journal version now pulls live, but its IN-FILE licence is 'Creative Commons Attribution-NonCommercial-NoDerivatives 4.0' while Crossref tags it cc-by (discrepancy flagged per the R97 source-inconsistency convention) - so we host the explicitly CC BY 4.0 Research Square preprint instead: pulled from researchsquare.com/article/rs-9421896/latest.pdf and committed to full_texts/ricardo_hodgkinson_rhamdhani_et_al_2026_trafficability_excavatability_icy_lunar_regolith_research_square_rs-9421896_ccby.pdf (7,430,744 B sha256=b3b407473d3f43c3ba1c59e5d511d37b29a342ca79d98d7bd4990d2b446a1b97). 53 pages; in-file 'This work is licensed under a Creative Commons Attribution 4.0 International License'. Verbatim title: "Trafficability and excavatability of icy lunar regolith simulants quantified using cone penetration. Cone-penetration data on unsintered / pressure-sintered / ice-cemented / vapour-deposited icy lunar regolith simulants - already cited by r114_gr_links_key_numbers.csv.
-
-**kafi_2026_spiral_cavity_wheel_excavator_lunar_isru [T2]** - re-classed registered_not_pulled -> verified_live_not_pulled. PDF pulled live via export.arxiv.org/pdf/2609.25724 and read in full, but NOT hostable (default non-exclusive distribution licence only); hash recorded (10,103,383 B sha256=3a8ed7620d7e8f381a3b1108b43944985a7000f17ea8f03c1d4c15da81fa0e42). Verbatim: {Q+q_kafi} - benchtop spiral-cavity wheel data behind d19's excavation-energy row.
-- `kabemba_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm` [T1] - re-classed registered_not_pulled -> full_text_hosted. 28-page PDF pulled live from mdpi-res.com (www.mdpi.com still HTTP 403 to this machine) and read in full; IN-FILE CC BY 4.0 + 'Copyright: © 2025 by the authors'. Verbatim confirming pipeline_mapping's figures: 'P-FPX3 = 83.25%' (lowest cumulative recovery, G-class silicate-locked PGMs) and 'peak recovery (94.37%)' (P-FPX1). Committed as kabemba_mutombo_waters_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm_minerals_15_701_mdpi_ccby.pdf (3,460,221 B sha256=c9134eda1333bcd6f441854b74ecad9b4693b0118736fc20f885351536e49bcb).
-## R125 (2026-10-06) - CC-BY queue sweep: broslav_2025 thesis located in Mines DSpace 7; bitstreams auth-gated
-
-- **broslav_2025_optical_mining_carbonaceous_chondrite_simulants** [T1]: CC BY 4.0 re-confirmed via Crossref licence field; ScienceDirect TOC marks the article 'Open access'. The first author's PhD thesis - Broslav, T., 'Shining light on optical mining: an experimental and modeling investigation for asteroid resource extraction' (Colorado School of Mines, 2024) - is in repository.mines.edu at item uuid abed9ab3-8bf3-4cac-aafa-b81d379ee4d2. DSpace 7 REST verified live anonymously: /server/api/core/items/<uuid> returns full metadata and the bundles list (TEXT/THUMBNAIL/ORIGINAL/LICENSE), but bitstream listing under any bundle returns HTTP 401 from this machine, so the PDF was not pulled. Retry note appended; stays registered_not_pulled.
-
-## R137 - NASA's own ISRU staging ladder for asteroid rendezvous missions (2026-10-09)
-
-Domain 19 prices excavation and beneficiation from terrestrial mineral-processing analogues; what it lacked was the institutional statement of HOW a space-based extraction campaign is staged. NTRS search for NEA target-selection material surfaced Mueller/Sibille/Sanders/Jones, "Concepts of Operations for Asteroid Rendezvous Missions Focused on Resources Utilization" (NASA KSC Surface Systems Office + JSC Propulsion & Power + Langley Space Mission Analysis Branch; 10 pp), NTRS 20140017854 - PUBLIC_USE_PERMITTED, zero in-file copyright statements -> hosted under ntrs-public-use. Year assigned from the NTRS publicationDate (2014-10-27); no date printed in-document (R135 precedent).
-
-The paper examines a series of possible mission operations advancing both knowledge of which asteroids suit different forms of resource extraction and the capabilities needed to extract them "for mission enhancing and enabling uses such as radiation protection, propulsion, life support, shelter and manufacturing". Verbatim: "An evolutionary development and demonstration approach is recommended within the framework of a larger campaign that prepares for the first landings of humans on Mars." - i.e. NASA's own framing ties asteroid-resource operations to the Evolvable Mars Campaign rather than standalone mining economics.
-
-The staging ladder (verbatim): "the development and demonstration approach progresses from resource prospecting (understanding the resource, and mapping the 'ore body'), mining/extraction feasibility and product assessment, pilot operations, to full in-situ resource utilization (ISRU)." That four-stage sequence is exactly the process structure upstream's excavation/beneficiation cells assume - registered as context-only: a full read found NO cost, mass or dv figures anywhere in the text, so it pins no cell; its value is that an institutional NASA document names and orders the stages. No extracted-data CSV (nothing numeric to cite).
-
-## R152 - rc-027 unblocked: five measured excavation energies and DOE's terrestrial mining benchmark (2026-10-12; +1 source T2x1)
-
-rc-027 (spacecost `Drilling / excavation energy`, 200 Wh/kg, range 50-500, unchanged at spacecost@0b716ad) had been blocked since R43 on just_2019's unread table. It no longer needs that table: four sources read in full now give the same picture. Every number below is in `extracted_data/r152_excavation_specific_energy_key_numbers.csv`, with conversions and ratios computed in code.
+rc-027 (200 Wh/kg, range 50-500, spacecost@0b716ad) no longer needs just_2019's table. `extracted_data/r152_excavation_specific_energy_key_numbers.csv`:
 
 | source | what was measured | Wh/kg |
 |---|---|---|
-| schuler_2022 (NASA KSC IPEx bucket-drum scaling, p14 Fig. 15) | mechanical energy at the drum per kg collected, three drum sizes, two cut depths each, 10 and 30 mm/s | 0.0029-0.0071 |
-| giel_2025 (hosted; p5 Table IV) | a bucket-drum excavator from the literature, continuous | 0.007-0.02 |
-| kafi_2026 (p5) | spiral-cavity wheel and two baselines, 44.2-83.5 J/kg | 0.012-0.023 |
-| giel_2025 (p4-p5) | MoonBot bucket drum, continuous | 0.022 |
-| giel_2025 (p5 Table IV) | RASSOR 2.0, batch (the 0.761 just_2019's snippet gave) | 0.76 |
-| giel_2025 (p5 Table III) | MoonBot batch cycle including unloading and 139 s of driving (0.864 recomputed from the table) | 0.86 |
-| doe_2007 (Exhibit 24, on-site) | US metal mining: drilling + blasting + digging, 17,700 Btu/ton | 5.72 |
-| doe_2007 | all extraction including ventilation and dewatering, 23,000 Btu/ton | 7.43 |
-| doe_2007 | extraction plus diesel haulage, 97,900 Btu/ton | 31.63 |
-| doe_2007 | whole mine including crushing, grinding and separation, 168,746 Btu/ton | 54.51 |
+| schuler_2022_isru_pilot_excavator_bucket_drum_scaling (IPEx, p14 Fig. 15; read from vector markers) | mechanical energy at the drum per kg, three drums, two cut depths, 10 and 30 mm/s | 0.0029-0.0071 |
+| giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru (p5 Table IV) | a literature bucket drum, continuous | 0.007-0.02 |
+| kafi_2026_spiral_cavity_wheel_excavator_lunar_isru (p5) | spiral-cavity wheel and two baselines, 44.2-83.5 J/kg | 0.012-0.023 |
+| giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru (p4-p5) | MoonBot bucket drum, continuous | 0.022 |
+| giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru (p5 Table IV) | RASSOR 2.0, batch (just_2019's 0.761) | 0.76 |
+| giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru (p5 Table III) | MoonBot batch cycle incl. unloading and 139 s driving (0.864 recomputed) | 0.86 |
+| doe_2007_mining_industry_energy_bandwidth_study (Exhibit 24) | US metal mining: drilling + blasting + digging, 17,700 Btu/ton | 5.72 |
+| doe_2007_mining_industry_energy_bandwidth_study | all extraction incl. ventilation and dewatering, 23,000 Btu/ton | 7.43 |
+| doe_2007_mining_industry_energy_bandwidth_study | extraction plus diesel haulage, 97,900 Btu/ton | 31.63 |
+| doe_2007_mining_industry_energy_bandwidth_study | whole mine incl. crushing, grinding and separation, 168,746 Btu/ton | 54.51 |
 
-Schuler's Fig. 15 was read from the PDF's vector markers against its gridlines, not by eye; the figure is mechanical energy at the drum, not electrical input. The DOE study (US DOE Industrial Technologies Program, prepared by BCS, Incorporated, June 2007; new row doe_2007_mining_industry_energy_bandwidth_study) has a scrambled text layer on Exhibit 24, so the table was read from a page render; the subtotal (162,148) matches its components to within their rounding. A short ton is assumed, the report being a US one that prints no definition; a metric reading lowers each figure by 9.3%. With electricity generation losses included (Exhibit 14), metals run 342,200 Btu/ton, 110.5 Wh/kg. The file carries no licence or public-domain statement, being contractor-prepared, so it is not hosted.
+**doe_2007_mining_industry_energy_bandwidth_study** (US DOE ITP, BCS Inc., June 2007; new; contractor-prepared, no licence, not hosted): Exhibit 24 read from a page render (text layer scrambled), subtotal 162,148 matches its components; short tons assumed (metric lowers each figure 9.3%); with generation losses (Exhibit 14) metals run 342,200 Btu/ton = 110.5 Wh/kg.
 
-Upstream's 200 Wh/kg is 3.7 times a whole terrestrial metal mine including comminution. spacecost prices comminution separately, in its 500 Wh/kg `Beneficiation / on-site processing energy` row; DOE's crushing and grinding alone is 19.3 Wh/kg of ore. 200 is also 6.3 times extraction plus haulage. The 500 "consolidated rock" end is 9.2 times the whole mine. rc-027 is re-opened with a proposal to move the value into the ~1-10 Wh/kg decade (about 6 for hard-rock drilling, blasting and digging), with a range from ~0.01 to ~32. The alternative is to keep 200 and have the note say what beyond excavation it carries.
+Upstream's 200 Wh/kg is 3.7x a whole terrestrial metal mine including comminution (which spacecost prices separately at 500 Wh/kg; DOE crushing and grinding alone is 19.3 Wh/kg), and 6.3x extraction plus haulage; the 500 end is 9.2x the whole mine. rc-027 re-opened: move to ~1-10 Wh/kg (about 6 for drilling, blasting and digging), range ~0.01-32, or keep 200 and say what beyond excavation it carries. Caveat: lunar figures are loose simulant at 1 g, DOE's terrestrial ore; nothing measures asteroid rock.
 
-The caveat stays: every lunar figure is loose simulant at 1 g and the DOE figures are terrestrial ore. No source here measures asteroid rock, and jayathilake_2022 (geotechnical parameters) and tang_2023 (asteroid rock strengths) remain unread.
+## R164 / R165 - Candidates (2026-10-14)
 
-## R164 (2026-10-14) - 2 revision candidate(s) from sources already registered (registry unchanged)
-
-A citation-and-contradiction pass over sources registered in earlier rounds: each upstream row was cross-referenced to the registry rows mapped to it (spacecost@0b716ad, economicspace@f7fe1c6), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
-
-- **rc-097 (citation, spacecost `reference/operational_costs.csv` Beneficiation / on-site processing energy).** A published terrestrial figure is now registered: the DOE Mining Industry Energy Bandwidth Study, Exhibit 24, gives US metal-mining beneficiation (crushing + grinding) of 59,800 Btu per short ton of material = 19.3 Wh/kg of ore, separations 1.4 and flotation 0.3 Wh/kg; the whole mine is 54.5 Wh/kg. Cite it and convert to the row's basis (per kg of refined product = per kg of ore x the feed:product ratio), or keep 500 as an estimate but drop "no published figure".
-- **rc-122 (citation, economicspace `modules/calc.py` MiningConfig.beneficiation_recovery (L402-406)).** Cite Kabemba et al. 2025 for the flotation range: batch flotation of eight Platreef samples recovered 83.25-94.37% of PGMs, so the low end is ~83%, not 85%; cite Liddell 2019 for >95% extraction in the downstream Kell refinery step.
-
-## R165 (2026-10-14) - 1 revision candidate(s) from sources already registered (registry unchanged)
-
-A second cross-reference pass (economicspace config dials and price/production tables, spacecost launch prices, physical constants and propellant Isp, AsteroidCatalog PGM factors) over sources registered in earlier rounds (spacecost@0b716ad, economicspace@f7fe1c6, AsteroidCatalog@86cfc54), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
-
-- **rc-136 (citation, economicspace `modules/calc.py` MiningConfig.mining_rate_kg_per_day_per_kg_rig (L263-264)).** Give the dial the plant-scale numbers the registry holds, with their bases: a NIAC thermal-mining design makes 42.0 kg of propellant a year per kg of plant (0.115 kg/day/kg) against 2.3 (0.0065 kg/day/kg) for NASA Langley's excavation-based lunar plant; NASA's IPEx is a 30 kg-class excavator meant to move 10,000 kg of regolith; a 4.8 kg bucket-drum tool dug 172-778 kg/h in sandbox tests. These measure product or a tool, not regolith per kg of whole rig, so they bracket rather than pin 0.10; cite them so the dial's order of magnitude has a reference.
-
-## Round 175 - queue sweep: SSRN preprint route probed
-
-- tang_et_al_2023_asteroid_rock_mechanical_properties: OpenAlex green flag resolves to the SSRN preprint DOI 10.2139/ssrn.4169416; papers.ssrn.com landing page HTTP 403 from this machine and no other repository file exists in any OpenAlex location. Stays registered_not_pulled for institutional pull (journal version Elsevier-paywalled per R113).
+rc-097 (cite DOE's 19.3 Wh/kg beneficiation), rc-122 (cite Kabemba's 83.25-94.37% and Liddell's >95%), rc-136 (give the mining-rate dial its plant-scale references: 42.0 vs 2.3 kg/yr per kg of plant). Texts in `revision_candidates.csv`.

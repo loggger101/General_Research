@@ -1,227 +1,111 @@
 # Domain 6 — Commodity / mineral market pricing (value side of the pipeline)
 
-**Why this domain exists.** Domains 1–5 anchor every *physics and cost* number in `spacecost`/`economicspace` (densities, Δv, launch $/kg, ISRU energy). But the economicspace pipeline's **profitability output is driven by a second, equally load-bearing input: commodity market prices.** `modules/mineral_value.py` prices every tradable element and mineral (`ref_price_usd_per_kg`) and multiplies that by per-asteroid yields to produce all of `profitability_catalog.csv`. Until R39 those price inputs carried only the citation "USGS/LME/mineralogy reference" with **no registered, analyzable source** — a gap as real as any unanchored Δv row.
+Backings: economicspace `modules/mineral_value.py` `ref_price_usd_per_kg` for every tradable element and mineral (multiplied by per-asteroid yields into every row of `profitability_catalog.csv`) and `ANNUAL_WORLD_PRODUCTION_KG`. Until R39 the prices carried only "USGS/LME/mineralogy reference", with no registered source.
 
-## Round 38→39 trigger (criterion #1)
-R39 began by auditing whether domains 4/5 were exhausted before standing up new ones: domain-4's remaining gaps (Vulcan Centaur / New Glenn LEO payload masses) are **vendor-datasheet values** — every reachable source traces to ULA/Blue Origin, so no peer-reviewed anchor exists; domain-5's ZBO cryocooler W/W has no flight data and its NRE/capital rows are management assumptions by nature. With those confirmed non-paper-closeable, the audit then surfaced this genuinely unanchored value side → **new domain 6**, per criterion #1 ("begin looking for other domain gaps").
+## R39 - World Bank Pink Sheet
 
-## The anchor — World Bank Commodity Price Data ("Pink Sheet")
-**`worldbank_cmo_pink_sheet` (T2, full text hosted)** — institutional primary source from the World Bank Commodity Markets Group. Two artifacts committed to `full_texts/`:
-- `CMO-Historical-Data-Monthly.xlsx` (587 KB) — **monthly nominal-USD prices for 71 commodities, 1960M01 → present** (file updated 2026-09-02; latest data month **2026M08**). Parsed live with openpyxl: sheets `Monthly Prices` / `Monthly Indices` / `Description` (per-series provenance) / `Index Weights`.
-- `CMO-Pink-Sheet-September-2026.pdf` (239 KB) — the published CMO report for the same period.
+**`worldbank_cmo_pink_sheet`** (T2, hosted): `CMO-Historical-Data-Monthly.xlsx` (monthly nominal USD for 71 commodities, 1960M01 to 2026M08) and `CMO-Pink-Sheet-September-2026.pdf`. It covers gold, platinum, silver, copper, nickel, aluminium, zinc and iron ore, not the minor PGMs. (USGS was unreachable then; it was registered in R81.)
 
-**Why WB and not USGS:** our code's fallback citation names "USGS/LME", but **pubs.usgs.gov is bot-blocked from this machine** (403 on special-topics, 404 on every MCS PDF path shape tried) — so I could *not* access/analyze the Mineral Commodity Summary and therefore did NOT register it. The World Bank Pink Sheet satisfies the standing requirement ("actually able to access and analyze") fully: downloaded, parsed, cross-checked against our catalog this round. Tier T2 (institutional government data compilation, not a peer-reviewed journal — same tier logic as `hf_dataset`/NTRS statistical references).
-
-**Coverage vs our 13 tradable elements:** WB carries **gold, platinum, silver, copper, nickel, aluminum, zinc, iron-ore**. It does **NOT** carry the minor PGMs (Rh/Ir/Os/Ru/Pd) — those remain on the yfinance/LBMA path and are out of scope for this anchor.
-
-## Audit finding — our `ref_price_usd_per_kg` is a MIXED-DATED snapshot
-Despite a uniform `ref_price_date = 2026-05-29`, each element's value matches a *different* market month (verified by scanning the full WB series for the closest-ratio period):
+**Audit:** despite one `ref_price_date = 2026-05-29`, each price matches a different month:
 
 | Element | our ref $/kg | best-match WB month | current (Aug-26) $/kg | status |
 |---|---|---|---|---|
-| Gold | 150,000 | Apr-2026 ($151,783, ratio .988) | 141,817 | **current** |
-| Nickel | 16.5 | Jul-2026 ($16.65, ratio .991) | 16.75 | **current** |
-| Platinum | 45,000 | ~Jul-2025 (ratio 1.006) | 57,228 | **stale (~21% low)** |
-| Copper | 8.8 | ~Jan-2025 ($8.99, ratio .979) | 14.326 | **stale (~39% low)** |
-| Silver | 950 | no month since Jan-2024 (closest $977) | 2,103 | **stale (~55% low)** |
+| Gold | 150,000 | Apr-2026 ($151,783, ratio .988) | 141,817 | current |
+| Nickel | 16.5 | Jul-2026 ($16.65, ratio .991) | 16.75 | current |
+| Platinum | 45,000 | ~Jul-2025 (ratio 1.006) | 57,228 | stale (~21% low) |
+| Copper | 8.8 | ~Jan-2025 ($8.99, ratio .979) | 14.326 | stale (~39% low) |
+| Silver | 950 | no month since Jan-2024 (closest $977) | 2,103 | stale (~55% low) |
 
-**Interpretation:** the column was evidently refreshed element-by-element over time and then stamped with one date. Gold/nickel are fine; silver/copper/platinum understate current market by 21–55%. This is a **correction candidate for `mineral_value.py`/`mineral_value_catalog.csv`, NOT applied** (target repo read-only). It matters because those prices flow directly into every row of the profitability output — an understated silver price makes silver-bearing asteroids look less profitable than they are. All numbers → `extracted_data/r39_commodity_price_verification.csv`.
+`extracted_data/r39_commodity_price_verification.csv`.
 
-## Round 45 -> LBMA precious-metals fixings (second value-side anchor)
+## R45 - LBMA precious-metal fixings
 
-**`lbma_precious_metals_fixings` [T3; open service, JSON pulled live this round]** — the London Bullion Market Association's official daily benchmark prices. R39 registered the World Bank Pink Sheet as the *first* value-side anchor but it carries **no minor PGMs and only monthly** precious-metals data; LBMA is the actual authority our `mineral_value.py` "yfinance/LBMA path" resolves to, now registered and analyzable (not just cited). Four JSON series pulled live 2026-09-23: gold & silver daily since **1968-01-02** (~14.8k fixings each), platinum & palladium daily since **1990-04-02** (~9.2k AM + ~9.15k PM each). Basis note: Au/Pt/Pd use the **AM London fixing**; Ag uses LBMA's single daily benchmark (no separate am/pm file is published for silver).
+**`lbma_precious_metals_fixings`** [T3, open service]: gold and silver daily since 1968-01-02, platinum and palladium since 1990-04-02 (AM fixing; silver's single benchmark). $/kg = $/oz / 0.0311034768.
 
-### Audit — our static `ref_price_usd_per_kg` vs LBMA at OUR OWN stamp date (2026-05-29)
-Compared each catalog value to the LBMA fixing on the *same* trading day it claims (`ref_price_date = 2026-05-29`; gap = 0 days for all four, i.e. a real fix existed that day):
-
-| metal | our ref $/kg (2026-05-29) | LBMA @ 2026-05-29 ($/kg) | diff | LBMA latest 2026-09-22 ($/kg) | status |
-|---|---|---|---|---|---|
-| gold      | 150,000 | 145,506.2 | **+3.1%**   | 138,671.0 | current (fine) |
-| platinum  | 45,000  | **61,472.2** | **-26.8% LOW** | 57,628.6 | STALE — underpriced ~27% even at our own date |
-| palladium | 48,000  | 43,853.6  | **+9.5%**   | 41,644.9  | near-current (mildly high) |
-| silver    | 950     | **2,436.5** | **-61.0% LOW** | 2,110.2  | STALE — underpriced ~61%; the worst of the four |
-
-Conversion is $/troy-oz / 0.0311034768 (verified against gold's known magnitude: LBMA AM $4,313.15/oz -> $138,671/kg). **Silver at $950/kg when it was actually ~$2,436/kg on our own reference date is a material error** for any profitability cell that prices Ag; platinum's 27% underprice is the second. Both are recorded as revision candidates — NOT applied here (the economicspace target repo is read-only this round). Gold and palladium agree well enough to leave alone.
-
-### Series statistics (for future re-anchoring)
-| metal | n fixings (AM/single) | first date | last date | min $/oz troy | max $/oz troy |
-|---|---|---|---|---|---|
-| gold      | 14,840 | 1968-01-02 | 2026-09-22 | 34.78   | 5,501.70 |
-| silver    | 14,851 | 1968-01-02 | 2026-09-22 | 1.272   | 118.45   |
-| platinum  | 9,216  | 1990-04-02 | 2026-09-22 | 330     | 2,860    |
-| palladium | 9,217  | 1990-04-02 | 2026-09-22 | 78.75   | 3,339    |
-
-Minor PGMs **Rh/Ir/Os/Ru are still not carried by LBMA** (no JSON series) — they remain on the yfinance/USGS path and stay out of scope for this anchor.
-
-## Round 46 -> base-metals audit quantified + JM PGM market report (minor-PGM anchor)
-
-**Two additions this round:** (1) the R39/R45 precious-metals staleness finding is now **quantified for every priced element we can compare**, using the committed World Bank xlsx at our own stamp month; (2) a new T2 source — `jm_pgm_market_report_2026` — closes the minor-PGM gap that neither LBMA nor WB covers.
-
-### Base-metals audit vs World Bank CMO monthly (same-month comparison, 2026M05 = our stamp month)
-| element | our ref $/kg (stamp 2026-05-29) | WB May-2026 ($/mt -> $/kg) | diff vs same month | status |
+| metal | our ref $/kg (2026-05-29) | LBMA @ 2026-05-29 ($/kg) | diff | LBMA 2026-09-22 ($/kg) |
 |---|---|---|---|---|
-| copper  | 8.80   | **13.543** (from $13,543/mt) | **-35.0% LOW** | STALE — R39's "~Jan-2025 match" confirmed; worst base metal |
-| nickel  | 16.50  | **18.806** (from $18,806/mt) | **-12.3% LOW** | mildly stale (R39 called it "current"; same-month view says ~12% low) |
-| iron    | 0.50   | n/a — WB series is *ore* ($108.6/dmtu, cfr spot), not refined Fe | context only | unit/product mismatch; our row prices element Fe at a refined-metal price |
+| gold | 150,000 | 145,506.2 | +3.1% | 138,671.0 |
+| platinum | 45,000 | 61,472.2 | -26.8% | 57,628.6 |
+| palladium | 48,000 | 43,853.6 | +9.5% | 41,644.9 |
+| silver | 950 | 2,436.5 | -61.0% | 2,110.2 |
 
-Aluminum & zinc are carried by the WB sheet but have **no priced row in our catalog** (not tradable elements here) — no comparison needed. Cobalt is priced in our catalog ($33/kg) but appears in neither WB nor JM datasets → recorded as an unanchorable-by-these-sources gap alongside osmium.
+Series ($/oz): gold 14,840 fixings, 34.78-5,501.70; silver 14,851, 1.272-118.45; platinum 9,216, 330-2,860; palladium 9,217, 78.75-3,339. `extracted_data/r45_lbma_precious_metals_key_numbers.csv`.
 
-### Cross-check: World Bank monthly vs LBMA daily at 2026-05 (independent sources, same month)
-| metal | WB May-2026 $/oz troy | LBMA @ 2026-05-29 $/oz troy | diff |
-|---|---|---|---|
-| gold      | 4,587 | 4,525.75 | +1.35% |
-| platinum  | 1,998 | 1,912.00 | +4.50% |
-| silver    | 78    | 75.78    | +2.93% |
+## R46 - Base metals at the stamp month; Johnson Matthey PGM report
 
-Two independent institutional series agreeing within ≤4.5% for the same month = high confidence in both anchors (and in our conversion factor).
+World Bank May-2026: copper $13.543/kg vs 8.80 (-35.0%); nickel $18.806/kg vs 16.50 (-12.3%); iron is ore ($108.6/dmtu), not comparable with refined Fe. WB vs LBMA in May-2026 ($/oz): gold 4,587 vs 4,525.75 (+1.35%), platinum 1,998 vs 1,912.00 (+4.50%), silver 78 vs 75.78 (+2.93%).
 
-### New anchor — `jm_pgm_market_report_2026` [T2; full text pulled, NOT hosted]
-Johnson Matthey's annual PGM market report (May 2026 edition, 36 pp), the industry-standard institutional source: base-price narrative for Pt/Pd/Rh/Ir/Ru plus complete supply & demand tables in troy oz **and** tonnes (primary production by region + secondary/recycling + industrial demand, 2021–2026). Pulled live this round from matthey.com; **not committed to full_texts/** because JM's terms state the prices "are the property of Johnson Matthey Plc" and prohibit use without consent — extraction-only registration (all numbers below verbatim from the pulled PDF).
+**`jm_pgm_market_report_2026`** [T2; read, not hosted: JM's terms forbid reuse] (May 2026, 36 pp):
 
-**Price audit vs our static `ref_price_usd_per_kg`** (JM quotes are Q1-2026 levels; report covers through March 2026, so these bracket rather than pin our May-29 stamp):
-| metal | JM quote (verbatim basis) | ≈ $/kg | ours $/kg | diff | status |
-|---|---|---|---|---|---|
-| rhodium   | "spiking above **$9,000** during the final days of December" [2025] | ~289,357 | 320,000 | **+10.6%** high | mildly stale (JM: peaked $12,000 late Feb-26, retreated "towards $10,000") |
-| iridium   | "new all-time highs of **$8,000** and $1,750" [Q1-2026; Ir listed first] | ~257,206 | 160,000 | **-37.8% LOW** | STALE — revision candidate |
-| ruthenium | same sentence (Ru second) **$1,750** [Q1-2026 ATH]; end-2025 "then all-time record of **$1,275**" | ~56,263 (ATH); ~40,992 (end-25 record) | 16,000 | **-71.6% LOW** vs ATH / -61.0% vs end-25 record | STALE — worst PGM gap; revision candidate |
-| platinum  | "falling to **$1,908** and $1,448, respectively [Pt/Pd], at the end of March" [2026] | ~61,343 | 45,000 | **-26.6%** low | corroborates R45's LBMA finding (-26.8%) independently |
-| palladium | same sentence (**$1,448**) | ~46,554 | 48,000 | +3.1% high | fine at Q1 levels (R45: +9.5% vs May-29 LBMA) |
+| metal | JM quote | ≈ $/kg | ours $/kg | diff |
+|---|---|---|---|---|
+| rhodium | above $9,000 in late December 2025 (peak $12,000 Feb-26) | ~289,357 | 320,000 | +10.6% |
+| iridium | all-time high $8,000 (Q1-2026) | ~257,206 | 160,000 | -37.8% |
+| ruthenium | all-time high $1,750 (Q1-2026); end-2025 record $1,275 | ~56,263 / ~40,992 | 16,000 | -71.6% / -61.0% |
+| platinum | $1,908 at end March 2026 | ~61,343 | 45,000 | -26.6% |
+| palladium | $1,448 at end March 2026 | ~46,554 | 48,000 | +3.1% |
 
-**Production estimate audit** — our `mineral_value.py` annual-production comments vs JM primary supply **2025**:
-| metal | ours (~t/yr, code comment) | JM 2025 primary (tonnes table) | verdict |
-|---|---|---|---|
-| rhodium   | ~23 t    | **17.6** | **ours +30.7% high — revision candidate** |
-| iridium   | ~7.5 t   | **7.1**  | AGREE (within 6%) |
-| ruthenium | ~30 t    | **30.2** | AGREE (exact) |
+Production vs JM 2025 primary: iridium ~7.5 t vs 7.1 and ruthenium ~30 vs 30.2 agree; rhodium (see R71). Osmium has no LBMA or JM price, and cobalt is in neither dataset. `extracted_data/r46_price_audit_key_numbers.csv`.
 
-(Platinum/palladium have no production rows in our catalog — nothing to compare.)
+## R70 / R71 / R72 - Extraction and verification (2026-09-27)
 
-### Osmium & cobalt gap (recorded, uncloseable by these sources)
-Osmium: NO published reference price series exists at LBMA or JM and the JM report contains **no osmium table** (verified by full-text scan) → our $13k/kg row (~1 t/yr basis) remains anchored to nothing registered; it is the only precious-metal row with no institutional price source reachable from this machine. Cobalt: priced in our catalog ($33/kg) but absent from both WB's 71-commodity sheet and JM's report → same status. Both recorded as standing gaps, not errors.
+- R70: `r70_worldbank_pink_sheet_monthly_energy_fertilizer_metals.csv` (800 months x 24 series), `r70_worldbank_pink_sheet_annual_means_2016_2025.csv` (240), `r70_worldbank_pink_sheet_sept2026_report_summary_table.csv` (64 commodities, 17 indexes); published 2025 means match the xlsx (copper 9,947 vs 9,947.42 $/mt; platinum 1,278 vs 1,278.33 $/toz).
+- R71: JM supply and demand tables for Pt, Pd, Rh, Ru, Ir 2021-2026f in oz and tonnes (`r71_jm_pgm_2026_supply_demand_tables.csv`, `r71_jm_pgm_2026_key_numbers.csv`). **Correction:** R46's 17.6 t rhodium was South Africa only; total primary supply is 21.8 t in 2025, so upstream's 23 t is 5.5% high; **rc-038 withdrawn**.
+- R72: JM totals, supply = primary + secondary and balance all check; oz and tonne rows agree within 0.14 t. Upstream market depth: platinum 180 t vs JM 172.9 t (+4.1%), palladium 210 vs 205.0 (+2.4%); no candidate.
 
-## R70 - Full-extraction pass of the hosted sources (2026-09-27; registry unchanged)
+## R74 - Upstream citations registered (+7)
 
-Every hosted full text in this domain was re-read end to end for pipeline-useful numbers; tables were read by word coordinates (or from rendered page images where the text layer fails) and checked against their printed totals. New files (all in `extracted_data/`, every row carries `source_id` and a page location): `r70_worldbank_pink_sheet_annual_means_2016_2025.csv` (240); `r70_worldbank_pink_sheet_monthly_energy_fertilizer_metals.csv` (800); `r70_worldbank_pink_sheet_sept2026_report_summary_table.csv` (81).
+`usgs_mineral_commodity_summaries_2026` (curated fallback prices and world production), `lme_official_reference_prices` (Ni, Co), `cme_comex_nymex_futures` (live Au/Ag/Cu/Pt/Pd basis; spacecost RP-1 and methane proxies), `yahoo_finance_yfinance`, `metals_dev_api`, `heraeus_2026_precious_metals_forecast` (platinum price), `reuters_2026_gold_analyst_consensus` (gold context).
 
-- **Pink Sheet monthly series**: 800 months (1960M01-2026M08) x 24 energy, fertiliser, base-metal and precious-metal series in one CSV, plus 2016-2025 annual means computed here (240 rows).
-- **September 2026 report summary table**: 64 commodities and 17 indexes x 11 periods (2023-2025 annual, four quarters, June-August 2026). The published 2025 annual averages match the means computed from the xlsx (copper 9,947 vs 9,947.42 $/mt; platinum 1,278 vs 1,278.33 $/toz).
+## R83 - USGS MCS 2025 hosted; world-production audit (2026-09-30)
 
-## R71 - Side-deepening extraction round (2026-09-27; logged in R72; registry unchanged)
+economicspace@7d99662 cites *Mineral Commodity Summaries 2025* for the mineral_value 1.11.0 rows; v1.2 hosted. Against `ANNUAL_WORLD_PRODUCTION_KG` (`extracted_data/r83_mcs2025_world_production_key_numbers.csv`):
 
-Branch `side-deepening`, commit 0729c2d, merged into this branch in R72. It gave the 20 PDFs un-hosted on 2026-09-26 (restored byte for byte from git `5dd58d5`, sha256 matched against `DOWNLOADS.md`) their first full pass, and read seven non-hosted sources from copies the owner downloaded (DOWNLOADS.md section B). The commit wrote no FINDINGS block or log entry; this block and the R71 log entry were written in R72 from the commit and the files themselves. R72 then re-checked every R71 file whose PDF is restorable: every numeric cell was searched for in the PDF text (0 values missing outside cells the R71 notes say were read from page images), the image-read cells were compared against rendered pages, and large tables were checked row by row. New files: `r71_jm_pgm_2026_key_numbers.csv` (14); `r71_jm_pgm_2026_supply_demand_tables.csv` (148).
+- Exact: gallium 760,000 kg, molybdenum 260,000 t, rhenium 62,000 kg, tungsten 81,000 t W; phosphate rock 240 Mt matches the phosphorus comment.
+- Within rounding: chromium 47,000 kt vs 4.4e10 kg (-6.4%); sulfur 85,000 kt vs 8.3e10 kg (-2.4%); titanium sponge 320,000 t excl. US vs 3.0e8 kg (-6.2%).
+- **rc-055:** ammonia 1.8e11 kg N is +20% above 150,000 kt (2024e) and contradicts its own comment "~150 Mt N as ammonia".
+- Germanium has no world table ("global production data were limited").
 
-- **jm_pgm_market_report_2026**: full supply and demand tables (primary supply by region, secondary supply, demand by sector, balance) for Pt, Pd, Rh, Ru and Ir, 2021-2026f, in both troy ounces and tonnes.
-- **Correction and withdrawal (R71)**: R46's rhodium supply figure of 17.6 t was the South Africa row of the p32 table. Total primary supply is 21.8 t in 2025, so economicspace's 23 t is 5.5% high, the margin R46 accepted for iridium. **rc-038 is withdrawn**, and `r46_price_audit_key_numbers.csv` was corrected in place.
+v1.0 and v1.1 carry identical values, so no discrepancy is edition drift.
 
-## R72 - Tables R70/R71 skipped, verification of R71, upstream re-check (2026-09-27; registry unchanged)
+## R114 - An osmium price source (2026-10-04)
 
-This round's container reached only package registries (arXiv, NTRS, JPL, Google Docs and every publisher returned 403), so nothing new could be fetched; the work used the hosted PDFs and the 20 restored from git `5dd58d5`. Each hosted and restored PDF's table captions were listed and matched against the extracted CSVs; tables no CSV cited were read by word coordinates (columns assigned from header or fully populated rows, so blank cells stay blank) or from rendered page images, and checked against printed totals. Upstream heads re-read: spacecost@e831245, AsteroidCatalog@852bf69, economicspace@1f470d4 (unchanged since 2026-09-26). no new files in this domain.
+**`ipa_sfa_2026_osmium_pgm_factsheet`** (IPA/SFA Oxford, May 2026; read): osmium has no exchange benchmark or market transparency, is priced per transaction, and has been "fixed in the 300-400$/oz range since the 2000's" (~$9,600-12,900/kg); output is hundreds of kilograms a year. Upstream's $13,000/kg is $404/oz. Cobalt's gap stays open. `extracted_data/r114_gr_links_key_numbers.csv`.
 
-- **R71's JM tables verified**: every total equals the sum of its rows in both units; combined supply = primary + secondary; balance = supply - demand; and each ounce row converts to its tonne row within 0.14 t (JM rounds each table separately).
-- **Upstream market sizes** (`ANNUAL_WORLD_PRODUCTION_KG`, economicspace@1f470d4): platinum 180 t vs JM 2025 primary supply 172.9 t (+4.1%); palladium 210 t vs 205.0 t (+2.4%). Both agree; no candidate.
+## R115 - Prices against the hosted USGS summaries; five candidates (2026-10-04)
 
-## R74 - Upstream citations registered (2026-09-27; +7 sources, T3x3, T4x4; nothing extracted)
+Against economicspace@29a0309 (v1.11.0 elements stamped 2025-01-31, citing MCS 2025):
 
-Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
+- **titanium (rc-062):** sponge import value $10.60-13/kg over 2020-2024e vs cell $9 and note $7-10.
+- **tungsten (rc-063):** MCS 2025 withholds the price; MCS 2026 gives APT $331 -> $675 per mtu through 2025 ($41.7 -> $85.1 per kg W), the cell ~47% below end-2025.
+- **gallium (rc-064):** 2024e $500 (range $450-625); cell $600, the note's $700 not printed.
+- **ammonia (rc-065):** $440 per short ton read as $450 per metric ton (it is $485/t).
+- **cobalt production (rc-066):** 2.3e8 kg vs 3.10e8 for 2025e (-25.8%; it is Congo alone).
+- Agreeing: chromium $12.35/kg vs $10-12; rhenium $1,370 vs $1,200-1,600; molybdenum $47 vs $44; germanium $2,100 vs $2,000-3,000; sulfur $69-116 per long ton vs $80-100/t.
 
-- `usgs_mineral_commodity_summaries_2026` (T3): mineral_value.py curated fallback prices for metals yfinance lacks, and every terrestrial market depth in ANNUAL_WORLD_PRODUCTION_KG.
-- `lme_official_reference_prices` (T3): mineral_value.py ref_price_usd_per_kg for nickel and cobalt (and the other LME base metals).
-- `cme_comex_nymex_futures` (T3): mineral_value.py live price basis for Au/Ag/Cu/Pt/Pd; spacecost live RP-1 and methane price proxies.
-- `yahoo_finance_yfinance` (T4): mineral_value.py live futures prices; spacecost optional live propellant price proxies.
-- `metals_dev_api` (T4): mineral_value.py optional live LME and precious-metal quotes.
-- `heraeus_2026_precious_metals_forecast` (T4): mineral_value.py platinum ref_price_usd_per_kg (midpoint of the 2026 forecast range).
-- `reuters_2026_gold_analyst_consensus` (T4): mineral_value.py gold ref_price_usd_per_kg context.
-## R83 - USGS Mineral Commodity Summaries 2025 registered + hosted, world-production audit (2026-09-30; +1 T3 row)
+`extracted_data/r115_usgs_new_element_prices_cobalt_production.csv`. Also read live: `heraeus_2026_precious_metals_forecast` (per oz: platinum $1,300 – $1,800, gold $3,750 – $5,000, silver $43 – $62, palladium $950 – $1,500, rhodium $6,000 – $9,000) and `metals_dev_api` (live LBMA/LME/MCX feed, free tier).
 
-economicspace@7d99662 CITATIONS.md names *Mineral Commodity Summaries 2025* as the source of "the order of the 2024 prices and world production behind the rows mineral_value 1.11.0 added (sulfur, chromium, titanium, gallium, germanium, rhenium, tungsten, molybdenum, ammonia)" - a citation this registry did not have (the 2026 edition is registered as `usgs_mineral_commodity_summaries_2026`). The full report v1.2 (March-2025, 216 p., 10.4 MB) was pulled live from pubs.usgs.gov this machine and committed under `full_texts/` with its manifest row; USGS public domain.
+## R164 / R165 - Candidates (2026-10-14)
 
-World-production tables read by word coordinates (chromium p62, gallium p78, germanium pp83-84, molybdenum p126, nitrogen-fixed-ammonia pp131-132, phosphate rock p138, rhenium p150, sulfur p176, titanium p190, tungsten p194) and audited against `ANNUAL_WORLD_PRODUCTION_KG` at economicspace@7d99662 - full rows in `extracted_data/r83_mcs2025_world_production_key_numbers.csv`:
+rc-125 (osmium market depth), rc-126 (cite the factsheet for the osmium price), rc-141 (palladium to LBMA 2026-05-29 $43,853.6/kg), rc-142 (gold to $145,506/kg), rc-144, rc-145, rc-146 (cite USGS for carbonates, plagioclase, iron ore), rc-147, rc-148, rc-149, rc-150, rc-151, rc-152, rc-153 (re-pin gold, nickel, palladium, platinum, copper, chromium and titanium production to MCS 2026), rc-154 (cite MCS 2026 pig iron). Texts in `revision_candidates.csv`.
 
-- EXACT: gallium 760,000 kg (primary), molybdenum 260,000 t, rhenium 62,000 kg, tungsten 81,000 t W-content; phosphate rock 240 Mt matches the phosphorus row's own comment.
-- Within '~rounded' tolerance (consistency notes only): chromium world mine production 47,000 kt vs our 4.4e10 kg (-6.4%); sulfur 85,000 kt vs our 8.3e10 kg (-2.4%); titanium sponge '320,000^8' (footnote: excludes U.S.) vs our 3.0e8 kg (-6.2%).
-- **rc-055 opened**: ammonia cell 1.8e11 kg N is +20% above the chapter's world plant production of 150,000 kt (2024e) AND contradicts its own inline comment '~150 Mt N as ammonia'.
-- Gap: germanium carries no published world table in the chapter ('global production data were limited' - prose only), so our 1.4e5 kg refinery row stays unanchored by MCS.
+## R182 - Osmium production and price in full (2026-10-16)
 
-Edition check: v1.0 and v1.1 (both pulled this round) carry identical values on every audited total, so none of the discrepancies is edition drift; the hosted copy is v1.2 as printed in CITATIONS.md's publication date window.
+The IPA/SFA factsheet re-read (16 pp):
 
-## R114 - A source for the osmium price (2026-10-04; +1 source, T2x1)
+- p10: "Annual global production of osmium is likely to therefore have been limited to about 500kg-550kg/annum over 2024 and 2025." (companies report none); rc-125 now cites it.
+- No exchange, LBMA or JM price exists; Engelhard's (BASF) Industrial Bullion sheet: "Osmium prices have historically been very stable (due to lack of market liquidity), fixed in the 300-400$/oz range since the 2000s."; SFA's 2019-2025 sponge-price reconstruction is a chart (200-500 $/oz axis). Priced "at each transaction between the seller and buyer, including the nominal metal price plus associated fabrication, storage, transport and related costs." rc-126 stays open.
+- Losses: nitric acid or peroxide oxidation "forms osmium tetroxide (OsO₄) that goes to vent scrubbers, so any operation that loses ruthenium also loses osmium"; Amplats recovered potassium osmate "until around the year 1990;" and later "concluded recovery was not to be pursued due to complexity and hazard."
+- A vendor quote of EUR 54.30/g (EUR 1,688.92/oz, 2026-09-24) runs 4-5x the industrial band; not registered.
 
-The owner's list added an osmium block: two dealer price pages, two dead price-tracker sites, and the IPA/SFA (Oxford) osmium factsheet of May 2026, registered as `ipa_sfa_2026_osmium_pgm_factsheet`. It closes the 'Osmium & cobalt gap' recorded in this domain's FINDINGS above, for osmium: p5 says osmium has no exchange-traded benchmark and no market transparency, is priced at each transaction, and has been 'fixed in the 300-400$/oz range since the 2000's' (about $9,600-12,900/kg); global output is hundreds of kilograms a year. The economicspace osmium row of $13,000/kg is $404/oz, a hair above that band; no revision candidate. The cobalt gap stays open.
+`extracted_data/r182_osmium_production_price_key_numbers.csv`.
 
-The two dealer pages quote EUR 2,351.81 per gram (about 200 times the factsheet's band) for 99.9995% crystalline bars, a retail price for a fabricated product from one vendor network, and were rejected (Round 114 log entry). The three price-tracker URLs (platinumbased.co.uk, dailyplatinum.com, dailypl.com) are dead and stay undecided.
+## R190 - Catalogue audited cell by cell (economicspace@d77f1ce; no candidate)
 
-Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
+`asteroid_pipeline/mineral_value_catalog.csv` (59 rows):
 
-## R115 - Prices and a production cell checked against the hosted USGS summaries; five new candidates (2026-10-04; registry unchanged)
+- Prices: copper 13,543/t and nickel 18,806/t are WB May-2026 exactly; iridium $257,206/kg and ruthenium $56,263.8/kg are JM's $8,000 and $1,750/oz; platinum 61,472.2 is LBMA via applied rc-034; gold, silver, palladium remain open as rc-142 and rc-141; tungsten 45.0 is the start-2025 level deferred in applied rc-063 (end-2025 ~$85/kg is the owner's call).
+- Production: Ga/Mo/Re/W exact (R83); Rh/Ir/Ru within ~6% of JM (R71).
+- Yields: the nickel-iron phase carries Pt 15 / Pd 10 / Ru 3 / Ir 4 / Os 2 / Rh 1.5 / Au 1 ppm (~36.5 total); the R72 ratio audit stands.
 
-Both Mineral Commodity Summaries editions were already hosted (R83, R81) but R83 compared only the world-production figures of the v1.11.0 rows. This round read their price lines against economicspace@29a0309 `modules/mineral_value.py`, which stamps the ten v1.11.0 elements 2025-01-31 and cites 'USGS MCS 2025' for each.
-
-- **titanium (rc-062)**: the cited table's sponge price is the landed duty-paid import value, $10.60-13/kg over 2020-2024e; the cell is $9 and the note says $7-10. All five years are above the note's ceiling.
-- **tungsten (rc-063)**: MCS 2025 withholds the price ('W') in every year and quotes no APT figure; the $340/mtu is not in the cited edition. MCS 2026 reports APT at $331 rising to $675 per mtu through 2025 ($41.7 to $85.1 per kg W), so the cell is about 47% below the end-2025 level.
-- **gallium (rc-064)**: 2024e high-purity import value is $500 (range $450-625 over five years); the cell is $600 and the note's '$500-700' upper end is not printed.
-- **ammonia (rc-065)**: $440 per SHORT ton is read as $450 per metric ton (it is $485/t).
-- **cobalt world production (rc-066)**: 2.3e8 kg against 3.10e8 for 2025e (-25.8%); it equals Congo's output alone. R81 had recorded the gap without a row.
-- Agreeing with their notes, so no row: chromium metal $5.60/lb = $12.35/kg against $10-12; rhenium pellets $1,370 against $1,200-1,600; molybdenum $47/kg against $44; germanium $2,100 against $2,000-3,000; sulfur Tampa contract $69-116 per long ton against $80-100/t.
-
-Extracted data: `extracted_data/r115_usgs_new_element_prices_cobalt_production.csv` (13 rows, page-located; percentages computed in code).
-
-**heraeus_2026_precious_metals_forecast [T4]** - re-classed registered_not_pulled -> verified_live_not_pulled. Forecast page read live; verbatim table rows "Platinum $1,300 – $1,800", "Gold $3,750 – $5,000", "Silver $43 – $62", "Palladium $950 – $1,500", "Rhodium $6,000 – $9,000" (per ounce). First institutional per-ounce precious-metals forecast range in d06 - the platinum row is cited upstream by economicspace's mineral_value.py.
-**metals_dev_api [T4]** - re-classed registered_not_pulled -> verified_live_not_pulled. metals.dev docs read live; verbatim "Live Feed of Gold, Silver, Platinum & Palladium Spot Prices. Real-time prices from leading Authorities & Markets like LBMA , LME , MCX" + free-tier line "Get started for free. No credit card required." with endpoint GET api.metals.dev/v1/latest shown on-page.
-**yahoo_finance_yfinance [T4]** - retry note only. pypi.org/project/yfinance/ now serves a 'Client Challenge' bot page from this machine instead of the package page - stays registered_not_pulled.
-
-## R164 (2026-10-14) - 2 revision candidate(s) from sources already registered (registry unchanged)
-
-A citation-and-contradiction pass over sources registered in earlier rounds: each upstream row was cross-referenced to the registry rows mapped to it (spacecost@0b716ad, economicspace@f7fe1c6), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
-
-- **rc-125 (value, economicspace `modules/mineral_value.py` ANNUAL_WORLD_PRODUCTION_KG["osmium"] (L948)).** Lower the osmium market depth to the registered figure, "hundreds of kilograms per year" (e.g. 3e2-5e2 kg), or keep 1e3 as an upper bound and say so. The depth sets where an osmium delivery saturates the market, so a 2-3x overstatement matters more here than in any larger market.
-- **rc-126 (citation, economicspace `modules/mineral_value.py` osmium ref_price_usd_per_kg (L1626-1637)).** Cite the IPA/SFA factsheet: osmium has no exchange-traded benchmark and has been priced "in the 300-400$/oz range since the 2000's" ($9,645-12,860/kg); $13,000/kg is $404/oz, just above the band.
-
-## R165 (2026-10-14) - 13 revision candidate(s) from sources already registered (registry unchanged)
-
-A second cross-reference pass (economicspace config dials and price/production tables, spacecost launch prices, physical constants and propellant Isp, AsteroidCatalog PGM factors) over sources registered in earlier rounds (spacecost@0b716ad, economicspace@f7fe1c6, AsteroidCatalog@86cfc54), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
-
-- **rc-141 (value, economicspace `modules/mineral_value.py` palladium ref_price_usd_per_kg).** Re-pin to the LBMA palladium price on the module's own reference date, 2026-05-29: $43,853.6/kg ($1,364/oz), as the platinum and silver rows already are. The May 8 spot is three weeks off _REF_PRICE_DATE and 9.5% above the same-day fixing.
-- **rc-142 (value, economicspace `modules/mineral_value.py` gold ref_price_usd_per_kg).** Pin gold the way platinum and silver now are, to the LBMA fixing on 2026-05-29: $145,506/kg ($4,525.75/oz); the World Bank May 2026 average ($4,587/oz = $147,475/kg) agrees within 1.4%. $150k is 3.1% above the fixing and cites an analyst-consensus article (T4, not pulled) rather than a price series.
-- **rc-144 (citation, economicspace `modules/mineral_value.py` carbonates ref_price_usd_per_kg).** Cite USGS MCS 2026 Stone (Crushed): average unit value $18.50/t in 2025e ($0.0185/kg), with which 0.02 agrees.
-- **rc-145 (citation, economicspace `modules/mineral_value.py` plagioclase ref_price_usd_per_kg).** Cite USGS MCS 2026 Feldspar and Nepheline Syenite: feldspar marketable production averaged $110/t in 2025e ($0.110/kg), with which 0.10 agrees.
-- **rc-146 (wording, economicspace `modules/mineral_value.py` iron ref_price_usd_per_kg notes).** Give the iron-ore comparison its source and year: USGS MCS 2026 puts the average unit value reported by US mines at $89/t in 2025e ($0.089/kg), down from $141.78 in 2021.
-- **rc-147 (value, economicspace `modules/mineral_value.py` ANNUAL_WORLD_PRODUCTION_KG["gold"]).** Re-pin to the USGS figure and cite it: world mine production 2025e, 3,300 t = 3.3e+06 kg; the cell is -9.1% off. Market depth sets where a delivery saturates the market in market_model, so the cell should carry its source and year.
-- **rc-148 (value, economicspace `modules/mineral_value.py` ANNUAL_WORLD_PRODUCTION_KG["nickel"]).** Re-pin to the USGS figure and cite it: world mine production 2025e, 3,900,000 t = 3.9e+09 kg; the cell is -7.7% off. Market depth sets where a delivery saturates the market in market_model, so the cell should carry its source and year.
-- **rc-149 (value, economicspace `modules/mineral_value.py` ANNUAL_WORLD_PRODUCTION_KG["palladium"]).** Re-pin to the USGS figure and cite it: world mine production 2025e, 190,000 kg = 1.9e+05 kg; the cell is +10.5% off. Market depth sets where a delivery saturates the market in market_model, so the cell should carry its source and year.
-- **rc-150 (value, economicspace `modules/mineral_value.py` ANNUAL_WORLD_PRODUCTION_KG["platinum"]).** Re-pin to the USGS figure and cite it: world mine production 2025e, 170,000 kg = 1.7e+05 kg; the cell is +5.9% off. Market depth sets where a delivery saturates the market in market_model, so the cell should carry its source and year.
-- **rc-151 (value, economicspace `modules/mineral_value.py` ANNUAL_WORLD_PRODUCTION_KG["copper"]).** Re-pin to the USGS figure and cite it: world MINE production 2024 and 2025e, 23,000 thousand t (refinery 2025e 29,000) = 2.3e+10 kg; the cell is -4.3% off. Market depth sets where a delivery saturates the market in market_model, so the cell should carry its source and year.
-- **rc-152 (value, economicspace `modules/mineral_value.py` ANNUAL_WORLD_PRODUCTION_KG["chromium"]).** Re-pin to the USGS figure and cite it: shipping-grade chromite ore 2024e, 47,000 thousand t = 4.7e+10 kg; the cell is -6.4% off. Market depth sets where a delivery saturates the market in market_model, so the cell should carry its source and year.
-- **rc-153 (value, economicspace `modules/mineral_value.py` ANNUAL_WORLD_PRODUCTION_KG["titanium"]).** Re-pin to the USGS figure and cite it: titanium sponge 2024e, 320,000 t (excl. U.S.) = 3.2e+08 kg; the cell is -6.2% off. Market depth sets where a delivery saturates the market in market_model, so the cell should carry its source and year.
-- **rc-154 (citation, economicspace `modules/mineral_value.py` ANNUAL_WORLD_PRODUCTION_KG["iron"]).** Cite USGS MCS 2026 Iron and Steel: world pig-iron production 1,300 Mt in 2025e (1,280 Mt in 2024), which the cell matches exactly.
-
-## R182 - Osmium: the exact production figure and the full price picture (2026-10-16; no new sources, evidence upgrade)
-
-**Why this round.** The IPA/SFA osmium factsheet registered in R114 left two soft spots: rc-125's production evidence said only 'hundreds of kilograms per year', and the price side carried a band ('300-400$/oz since the 2000s') without the surrounding mechanism. This round re-pulled the same PDF live (sha f4759ac3..., 16 pp) and read it in full again - no new source needed, just the exact spans.
-
-**The production figure is now specific.** p.10: 'Annual global production of osmium is likely to therefore have been limited to about 500kg-550kg/annum over 2024 and 2025.' [count==1] - SFA (Oxford) estimate from historical resource grade estimates plus company/expert guidance; companies do not report production at all. rc-125's evidence cell now carries this verbatim span, so the open candidate reads 'lower toward ~5e2 kg or keep 1.0e3 as an explicit upper bound' with a citable band behind it.
-
-**The price picture in full.** No exchange, no LBMA benchmark and no Johnson Matthey base price exist for osmium - the only PGM without any institutional quote (JM's own report carries no osmium table; verified R46/R71). The last wholesale series was Engelhard's (now BASF) Industrial Bullion sheet: 'Osmium prices have historically been very stable (due to lack of market liquidity), fixed in the 300-400$/oz range since the 2000s.' [count==1]. SFA collated a reconstructed average sponge price from TradeDataPro trade data and traded volumes for 2019-2025 (chart, axis $/oz 200-500 - chart reading flagged as such). Mechanism: 'normally priced at each transaction between the seller and buyer, including the nominal metal price plus associated fabrication, storage, transport and related costs.' [count==1]. Upstream's $13,000/kg = $404/oz sits a hair above the historical band - rc-126 (citation) stays open for that note.
-
-**Why production is so low.** Osmium follows ruthenium through South African circuits and 'oxidation using nitric acid or peroxide forms osmium tetroxide (OsO₄) that goes to vent scrubbers, so any operation that loses ruthenium also loses osmium' [count==1]; Amplats (now Valterra Platinum) recovered it as potassium osmate 'until around the year 1990;' and later reviews 'concluded recovery was not to be pursued due to complexity and hazard.' [both count==1; a page footer interrupts between the two sub-spans - flagged per R143].
-
-**Vendor-quote context (secondary, recorded so nobody mistakes it for the market price).** The Osmium-Institut's Fine-Osmium refined-metal quote of EUR 54.30/g on 24 Sep 2026 (= EUR 1,688.92/oz) runs ~4-5x above SFA's historical industrial band - a small-lot vendor premium relayed via dailyplatinum.com/price/osmium/, not in the factsheet PDF and not registered as a source (R114 precedent: dealer pages considered, only the factsheet registered).
-
-**Against the cells.** No re-pin this round - rc-125 (value) and rc-126 (citation) remain open for upstream. Cross-domain note added to domain 25's FINDINGS: its 'osmium price gap' item is now anchored via this row.
-
-**Extracted data:** `extracted_data/r182_osmium_production_price_key_numbers.csv` (7 rows x 6 cols; all prose spans count==1, chart reading flagged).
-
-## R190 - mineral_value_catalog audited cell-by-cell at economicspace@d77f1ce (no candidate)
-
-Live `asteroid_pipeline/mineral_value_catalog.csv` (59 rows; the file mineral_value.py reads at runtime, per-destination snapshots under campaign/stage2 are derived copies of it). All three layers checked against registered sources and prior audits:
-
-### Price layer
-Every ref_price_usd_per_kg cell is either re-pinned by an applied RC or matches its own note against a registered hosted source: copper 13,543/t and nickel 18,806/t are the WB Pink Sheet May-2026 values exactly (r46 rows); iridium $257,206/kg = JM Q1-2026 ATH $8,000/oz converted exact; ruthenium $56,263.8/kg = JM ATH $1,750/oz with the end-2025 record $1,275 per oz (r46 rows); platinum 61,472.2 = LBMA 2026-05-29 $1,912/oz via applied rc-034; gold/silver/palladium sit +3.1%/+9.5% vs their own LBMA notes - the open claims there remain rc-142/rc-141 (do not re-open); tungsten 45.0 is the start-of-2025 level explicitly deferred as a value decision in applied rc-063 evidence cell (end-2025 ~$85/kg W refresh = owner call, not an RC target per that row).
-
-### Production / market-depth layer
-Ga/Mo/Re/W world production exact vs MCS 2025 chapters (R83); Rh/Ir/Ru within ~6% of JM 2025 primary supply (R71); iron/cobalt/platinum-group chapter figures hosted in d25. No cell contradicts its cited source at the current upstream state.
-
-### yields_json PGM layer
-Nickel-iron IIIAB mean composition carries Pt 15 / Pd 10 / Ru 3 / Ir 4 / Os 2 / Rh 1.5 / Au 1 ppm (total ~36.5; note says "total ~36.5 ppm matches siderite literature of approximately 37 ppm"). The R72 ratio audit stands: iron meteorites fractionate Ir/Ru away from CI, so the no-candidate verdict is correct even though the absolute total sits below W&F/N&B siderite totals; backing sources registered at R74/R83 (Wright & Fleischer B-1214A hosted in d02, Nichiporuk & Brown 1965, Scott & Wasson 1975 trace metals).
-
-### Status
-No candidate from any layer of the live catalog at economicspace@d77f1ce. The price/production/yield surface is fully covered; future rounds should not re-audit these cells unless upstream changes a value or note.
+Do not re-audit unless upstream changes a value or note.

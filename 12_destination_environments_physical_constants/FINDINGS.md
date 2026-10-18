@@ -4,106 +4,64 @@ Backings: spacecost `reference/environments.csv` (solar flux, array mass factor,
 
 Created in Round 74 (2026-09-27). Blocks are appended one per round, newest last.
 
-## R74 - Upstream citations registered (2026-09-27; +16 sources, T1x9, T2x1, T3x6; nothing extracted)
+## R74 - Upstream citations registered (2026-09-27; +16 sources)
 
-Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
+All `registered_not_pulled`, each backing an environments.csv cell:
 
-- `kopp_lean_2011_total_solar_irradiance` (T1): environments.csv solar_flux_w_per_m2 and solar_array_mass_factor for every row (1 AU total solar irradiance).
-- `tiesinga_2021_codata_2018_constants` (T1): environments.csv surface_gravity and escape_velocity (Newtonian constant of gravitation).
-- `iau_2012_resolution_b2_astronomical_unit` (T3): environments.csv one_way_light_time_min (AU as a defined length).
-- `bipm_si_brochure_9th_edition` (T3): environments.csv one_way_light_time_min (defined value of c).
-- `nasa_nssdca_moon_fact_sheet` (T3): environments.csv lunar rows: mass, mean radius, synodic day.
-- `nasa_nssdca_mars_fact_sheet` (T3): environments.csv Mars surface mass, radius and sol; Phobos row.
-- `willner_2014_phobos_shape_topography` (T1): environments.csv Phobos mean radius.
-- `watanabe_2019_hayabusa2_ryugu_spinning_top` (T1): environments.csv 162173 Ryugu mass, mean radius, rotation, orbit.
-- `yeomans_2000_near_eros_radio_science` (T1): environments.csv 433 Eros mass and mean radius.
-- `daly_2023_dart_kinetic_impact` (T1): environments.csv 65803 Didymos mass, radius, rotation.
-- `russell_2016_dawn_arrives_at_ceres` (T1): environments.csv 1 Ceres mass and mean radius.
-- `nasa_iss_facts_and_figures` (T3): environments.csv Low Earth orbit (400 km) period and eclipse fraction.
-- `itu_r_s1003_geostationary_orbit` (T3): environments.csv Geostationary orbit eclipse seasons (cited with "standard GEO mission practice").
-- `mazarico_2011_lunar_polar_illumination_lola` (T1): environments.csv Lunar surface (polar ridge) illumination fraction.
-- `appelbaum_flood_1989_tm102299_solar_radiation_mars` (T2): environments.csv Mars surface insolation and the dust caveat on that row.
-- `warner_harris_pravec_2009_asteroid_lightcurve_database` (T1): environments.csv generic asteroid rows: population-median rotation period.
-## R102 - First hosted sources for the domain (2026-10-02; 7 of 16 rows upgraded registered_not_pulled -> full_text_hosted, +1 NEW source, +1 extraction CSV)
+| id | cell |
+|---|---|
+| `kopp_lean_2011_total_solar_irradiance` (T1) | solar flux and array mass factor, every row (1 AU TSI) |
+| `tiesinga_2021_codata_2018_constants` (T1) | surface gravity, escape velocity (G) |
+| `iau_2012_resolution_b2_astronomical_unit`, `bipm_si_brochure_9th_edition` (T3) | one-way light time (AU, c) |
+| `nasa_nssdca_moon_fact_sheet`, `nasa_nssdca_mars_fact_sheet` (T3) | lunar and Mars mass, radius, day; Phobos row |
+| `willner_2014_phobos_shape_topography` (T1) | Phobos mean radius |
+| `watanabe_2019_hayabusa2_ryugu_spinning_top`, `yeomans_2000_near_eros_radio_science`, `daly_2023_dart_kinetic_impact`, `russell_2016_dawn_arrives_at_ceres` (T1) | Ryugu, Eros, Didymos, Ceres mass, radius, rotation |
+| `nasa_iss_facts_and_figures` (T3) | LEO (400 km) period and eclipse fraction |
+| `itu_r_s1003_geostationary_orbit` (T3) | GEO eclipse seasons |
+| `mazarico_2011_lunar_polar_illumination_lola` (T1) | polar-ridge illumination fraction |
+| `appelbaum_flood_1989_tm102299_solar_radiation_mars` (T2) | Mars surface insolation and its dust caveat |
+| `warner_harris_pravec_2009_asteroid_lightcurve_database` (T1) | generic asteroid rotation period |
 
-All three upstream repos were re-swept at their current HEADs first and carried no new institutional claims (economicspace's only dirty file is a runtime _queue.log line), so this round opened d12 - the one domain whose entire 16 rows sat in the registered-not-pulled queue with zero hosted or verified sources. Every row was probed live from this machine; seven documents were pulled and committed, nine got dated re-check notes recording exactly which route failed.
+## R102 - First hosted sources (2026-10-02)
 
-- `iau_2012_resolution_b2_astronomical_unit` [T3, full_text_hosted] - IAU 2012 General Assembly Resolution B2 (syrte.obspm.fr mirror of the official text; no rights statement in file). The recommendation fixing the astronomical unit at exactly 149,597,870,700 m is quoted verbatim in extracted_data/r102_key_constants.csv.
-- `bipm_si_brochure_9th_edition` [T3, full_text_hosted] - BIPM SI Brochure 9th edition (English), CC BY 4.0 statement on p.2 of the file; defined value c = 299,792,458 m/s quoted verbatim from the text layer.
-- `nasa_nssdca_moon_fact_sheet` / `nasa_nssdca_mars_fact_sheet` [T3, full_text_hosted] - NASA NSSDCA planetary fact sheets (US Government work); HTML snapshots of the live pages; mass/radius/gravity/escape-velocity/GM table rows read into the extraction CSV.
-- `nasa_iss_facts_and_figures` [T3, full_text_hosted] - NASA ISS facts-and-figures page snapshot at the exact URL upstream cites (article body: 5 agencies / 15 countries; crew of seven; ~90-minute orbit; 356 ft end-to-end).
-- `appelbaum_flood_1989_tm102299_solar_radiation_mars` [T2, full_text_hosted] - NTRS 19890018252, determination GOV_PUBLIC_USE_PERMITTED; NASA TM-102299 (August 1989) 'Solar Radiation on Mars' = the direct institutional source for environments.csv solar_flux_w_per_m2 on every Mars row: mean beam irradiance at a clear Martian atmosphere = **590 W/m²** (Eq. (4), p.10, quoted verbatim into the extraction CSV) vs upstream's per-heliocentric-distance 586.2 W/m² on both Mars rows (-0.7% = consistency anchor).
-- `daly_2023_dart_kinetic_impact` [T1, full_text_hosted] - Nature 616:443 (DART mission paper), in-file CC BY 4.0 statement p.5; impact site (8.84 ± 0.45° S, 264.30 ± 0.47° E) and system albedo (0.15 ± 0.02 at 0.55 μm) quoted verbatim into the extraction CSV.
-- **NEW** `thomas_2023_dimorphos_orbital_period_change` [T1, full_text_hosted] - Nature 616:448 (companion paper to Daly; registered this round because it carries what upstream's Didymos row actually points at): the MEASURED orbital-period change of Dimorphos = **−33.0 ± 1.0 (3σ) min**, determined by two independent methods (pre-impact period 11.92148 h; post-impact 11.372/11.371 h per method); in-file CC BY 4.0 statement p.4.
+Hosted: `iau_2012_resolution_b2_astronomical_unit` (AU = 149,597,870,700 m exactly); `bipm_si_brochure_9th_edition` (CC BY 4.0; c = 299,792,458 m/s); the Moon and Mars NSSDCA sheets and `nasa_iss_facts_and_figures` (HTML snapshots; ISS: 5 agencies / 15 countries, crew of seven, ~90-minute orbit, 356 ft); `appelbaum_flood_1989_tm102299_solar_radiation_mars` (NASA TM-102299): clear-atmosphere mean beam irradiance 590 W/m² (Eq. 4, p10) vs upstream's 586.2 W/m² on both Mars rows (-0.7%); `daly_2023_dart_kinetic_impact` (Nature 616:443, CC BY): impact site 8.84 ± 0.45° S, 264.30 ± 0.47° E, albedo 0.15 ± 0.02 at 0.55 μm.
 
-Still registered_not_pulled after this round's re-checks (route failures recorded per row): kopp_lean_2011_total_solar_irradiance (AGU legacy PDF 403 + Wiley pdfdirect bot-blocked despite the OpenAlex OA flag), tiesinga_2021_codata_2018_constants (APS paywall; NIST CUU value pages behind a Cloudflare JS challenge from this machine), willner_2014_phobos_shape_topography / mazarico_2011_lunar_polar_illumination_lola / warner_harris_pravec_2009_asteroid_lightcurve_database (Elsevier, no open copy in the Crossref record; arXiv title query zero for Mazarico), watanabe_2019_hayabusa2_ryugu_spinning_top / yeomans_2000_near_eros_radio_science / russell_2016_dawn_arrives_at_ceres (science.org PDFs 403 from this machine), itu_r_s1003_geostationary_orbit (ITU landing page live but every free-download endpoint pattern fails: XML path 404, dologin_pub.asp 500).
+New: **`thomas_2023_dimorphos_orbital_period_change`** (Nature 616:448, CC BY, hosted), what the Didymos row actually points at: period change −33.0 ± 1.0 (3σ) min by two methods (11.92148 h pre-impact; 11.372/11.371 h after). `extracted_data/r102_key_constants.csv`. The other nine rows stayed unreached (routes in each row).
 
-## R115 - Three environments.csv rows read against hosted sources; three new candidates (2026-10-04; registry unchanged)
+## R115 - Three rows against hosted sources; three candidates (2026-10-04)
 
-The hosted Daly 2023 paper, the Siltala and Granvik extraction and the ISS page were read against spacecost@85da36c `reference/environments.csv`.
+Against spacecost@85da36c:
 
-- **65803 Didymos (rc-067)**: the row cites Daly et al. 2023 for mass 5.28e11 kg and radius 390 m. Table 1 (PDF p3) has a system mass of (5.6 +/- 0.5)e11 kg (Dimorphos 4.3e9 inferred) and a volume-equivalent diameter of 761 +/- 26 m. Both upstream cells are inside Daly's 1-sigma, but the derived surface gravity is 9.6% low and the escape velocity 3.7% low at Daly's numbers.
-- **16 Psyche (rc-068)**: the radius (111 km) is Siltala and Granvik's; the mass 2.29e19 kg is not (their GM of 1.482 km3/s2 gives 2.22e19 kg). 2.29e19 is Kretlow's SiMDA perturber mass, already in the registry.
-- **Low Earth orbit (rc-069)**: the ISS page says 'about every 90 minutes' and 16 sunrises and sunsets a day; it gives no 92.7-minute period and no shadow time. The cells are consistent with a 400 km circular orbit; only the attribution is off.
-- Checked and agreeing (Phobos within 2%): the Mars fact sheet's Phobos column (10.6e15 kg; axes 13.0 x 11.4 x 9.1 km, i.e. a mean radius of 11.0 km; period 0.31891 d) against the Phobos row (1.0659e16 kg, 11.267 km, 7.653 h); Mars surface gravity and mass; Appelbaum and Flood Table IV daily mean global irradiance on clear days (250-308 W/m2 against the 590 W/m2 beam mean, i.e. 42-52%) against the Mars row's '40-60% of the orbital figure'. The Moon sheet's mass (7.346e22 kg) is 0.05% above the row's 7.342e22, too small to record.
+- **65803 Didymos (rc-067):** the row cites Daly 2023 for 5.28e11 kg and 390 m; Table 1 (p3) gives system mass (5.6 +/- 0.5)e11 kg (Dimorphos 4.3e9) and volume-equivalent diameter 761 +/- 26 m. Both cells are within 1-sigma, but derived gravity is 9.6% and escape velocity 3.7% low at Daly's numbers.
+- **16 Psyche (rc-068):** radius 111 km is Siltala and Granvik's, but mass 2.29e19 kg is Kretlow's SiMDA figure (their GM 1.482 km3/s2 gives 2.22e19 kg).
+- **Low Earth orbit (rc-069):** the ISS page gives "about every 90 minutes" and 16 sunrises a day, not the 92.7-minute period or shadow time; the cells fit a 400 km orbit, only the attribution is off.
+- Agreeing: Phobos (sheet 10.6e15 kg, axes 13.0 x 11.4 x 9.1 km = 11.0 km mean, 0.31891 d vs row 1.0659e16 kg, 11.267 km, 7.653 h; within 2%); Mars gravity and mass; Appelbaum and Flood Table IV clear-day daily means 250-308 W/m2 (42-52% of 590) vs the row's "40-60%"; Moon mass 7.346e22 vs 7.342e22 (0.05%).
 
-Extracted data: `extracted_data/r115_environment_rows_vs_sources.csv` (10 rows).
-## R116 - GEO eclipse-seasons citation re-sourced: ITU-R S.1003 read in full, ECSS Part 15A registered (2026-10-04; registry +1 source T3x1)
+`extracted_data/r115_environment_rows_vs_sources.csv`.
 
-Upstream’s environments.csv Geostationary orbit row attributes its eclipse-seasons note to “ITU-R S.1003 / standard GEO mission practice” (CITATIONS.md illumination table: “ITU-R S.1003 and standard GEO practice | the geostationary eclipse seasons”). This round pulled ITU-R S.1003-2 in full from ITU’s own PDF endpoint (the working route is `recommendation.asp?lang=en&parent=R-REC-S.1003-<edition>` -> `/dms_pubrec/itu-r/rec/s/R-REC-S.1003-2-201012-I!!PDF-E.pdf`; R102’s probed patterns were the wrong ones) and read all 6 pages.
+## R116 - GEO eclipse citation re-sourced (rc-079; 2026-10-04)
 
-**The citation is a misattribution (rc-079).** The document prescribes GSO debris mitigation: “This Recommendation provides guidance about disposal orbits for satellites in the geostationary-satellite orbit and comments on the increase in debris due to fragments resulting from increased numbers of satellites and their associated launches.” Its operative requirement for end-of-life disposal orbits reads “Combining equations (1), (2) and (3) gives the minimum re-orbit perigee altitude requirement above the GSO altitude to ensure that the satellite, following end of life disposal, does not return within the protected GSO region which extends 200 km above the geostationary altitude: ΔH > 235 + 1 000 Cr A/M (4) for eccentricities < 0.003.” A full-text scan finds **zero occurrences of “eclipse”** - it says nothing about eclipse seasons, durations or duty cycles. It also cannot be hosted: p2 states “All rights reserved. No part of this publication may be reproduced, by any means whatsoever, without written permission of ITU.” (hash-recorded; %s-page PDF 1,340,810 B sha256=6e69d438c50fa3bf27aece8c9bdb59cfd1ff70a96bb8e358521266abb776df2e).
+ITU-R S.1003-2 read in full (route: `recommendation.asp?lang=en&parent=R-REC-S.1003-<edition>`; "All rights reserved", not hostable). It concerns GSO disposal orbits ("ΔH > 235 + 1 000 Cr A/M (4) for eccentricities < 0.003") and contains no occurrence of "eclipse": the citation is a misattribution.
 
-**The real source behind the numbers is registered this round:** `ecss_e_hb_31_01_part15a_existing_satellites` [T3] = ECSS-E-HB-31-01 Part 15A (Rev A), Thermal design handbook - Existing Satellites, pulled live from ecss.nl and read in full (%d pp; 1,781,591 B sha256=a070293c9134359bfecb0ff80382a63f4cbf01a23513656fa2e09548b69b98ff). Its OTS case study (§5) describes a geostationary satellite over Gabon: “Orbit Geostationary (over Gabon). Equatorial. At first positioned at 10° E longitude. In April 1982 was moved to 5° E to make room for the ECS satellites. Apogee: 35779 km. Perigee: 35072 km.” and its thermal-design constraints list includes verbatim “Maximum eclipse of 72 minutes” (p35) - an exact match for upstream’s “up to 72 min a day”. The same case study documents the equinox behaviour behind “eclipses only near the equinoxes”: “During the equinox there are operational RF mode changes, extra switching of heaters in pre‐eclipse periods, battery recharging and a drastic change of external input after eclipse.” (p44, in-orbit performance data from Bouchez & Gülpen 1981 / Bouchez & Howle 1982). The file carries no copyright or licence statement anywhere -> not hostable under this repo’s rules; hash-recorded only (R113 precedent, cospar_2026 class).
+**`ecss_e_hb_31_01_part15a_existing_satellites`** [T3; read, no licence statement, not hosted], ECSS thermal design handbook Part 15A: the OTS case study (a geostationary satellite over Gabon, apogee 35779 km, perigee 35072 km) lists "Maximum eclipse of 72 minutes" (p35), matching upstream's "up to 72 min a day", and "During the equinox there are operational RF mode changes, extra switching of heaters in pre‐eclipse periods..." (p44). The ~45-day season and 1.2% annual average are standard geometry. rc-079 proposes citing Part 15A for the maximum. `extracted_data/r116_geo_eclipse_key_numbers.csv`.
 
-The ~45-day season length and the 1.2% year-average are standard GEO geometry (two equinox seasons of roughly two months each); no institutional document stating both numbers in one sentence was found on NTRS or Crossref this round - rc-079 proposes re-sourcing the citation to ECSS Part 15A for the measured maximum and keeping the season length as derived geometry.
+## R121 - CODATA and Phobos shape read, not hostable (2026-10-05)
 
-Extracted data: `extracted_data/r116_geo_eclipse_key_numbers.csv` (6 rows).
-## R121 - tiesinga_2021 CODATA 2018 read in full via PMC, not hostable; willner_2014 Phobos shape model read from DLR elib, (c) Elsevier (2026-10-05; queue -2)
+- `tiesinga_2021_codata_2018_constants` (PMC9890581; text mining and fair use only): Table I "Newtonian constant of gravitation G 6.674 30(15)", relative uncertainty 2.2 x 10^-5, matching units.py `NEWTON_G_M3_PER_KG_S2 = 6.674_30e-11` exactly.
+- `willner_2014_phobos_shape_topography` (DLR elib copy; "© 2013 Elsevier Ltd. All rights reserved"): the degree-45 Phobos shape model behind the Phobos radius row.
 
-**tiesinga_2021_codata_2018_constants [T1]** - re-classed registered_not_pulled -> verified_live_not_pulled. Full text read in full from this machine via the PMC open-access copy (PMC9890581; article page + efetch XML, ~302k chars of body text), but NOT hostable: the PMC statement allows only 'text mining' and 'fair use under the copyright law', no redistribution licence is granted, and no stable PDF route exists from this machine (the /pdf/main.pdf endpoint answers with an HTML stub). Verbatim (Table I): "Newtonian constant of gravitation G 6.674 30(15)"; relative std. uncertainty 2.2 x 10^-5 - confirms spacecost/units.py NEWTON_G_M3_PER_KG_S2 = 6.674_30e-11 exactly (consistency anchor; no re-pin).
+## R133 - Lunar pole illumination: upstream's ~86% traced (2026-10-07)
 
-**willner_2014_phobos_shape_topography [T1]** - re-classed registered_not_pulled -> verified_live_not_pulled. An institutional repository copy IS available and was read in full from this machine: elib.dlr.de/92240/1/...pdf pulled live (Semantic Scholar location; 4,338,083 B sha256=585ee39427b404e6c4afb66c951347392f326082a1fbb03cc6fb9fb27ec5893f), but NOT hostable - the in-file statement is '© 2013 Elsevier Ltd. All rights reserved' on both p1 and p9: publisher copyright outranks repository availability per the R97 convention (the journal article itself remains paywalled). Verbatim: "degree and order 45 are computed - the Phobos shape model behind environments.csv's Phobos mean radius row.
+**glaser_oberst_mazarico_et_al_2017_lunar_pole_illumination** (PSS 162:170-178; NTRS accepted manuscript, hosted). Its Table 1 quotes Mazarico 2011: Shackleton S (-89.78, 204.27) maximum average illumination **86.7%** over a 20-year cycle, matching the polar-ridge row's "~86%" (Glaser's own run at -89.7849 / 203.97 gives 81.0%). Connecting Ridge C1 reaches 89.0% with a maximum shadow of 141.12 h (~5.9 days), consistent with "worst continuous darkness of a few days". `mazarico_2011_lunar_polar_illumination_lola` itself stays unreached (NTRS has a file-less record). `extracted_data/r133_lunar_polar_illumination_key_numbers.csv`. No re-pin.
 
-**watanabe_2019_hayabusa2_ryugu_spinning_top [T1]** - retry note only (stays registered_not_pulled): the JAXA repository dspace item page located via Semantic Scholar / Unpaywall as a green-OA copy answers HTTP 406 from this machine on all routes; science.org still answers HTTP 403.
+## R136 - TSI companion paper (2026-10-08)
 
-## R133 - glaser_oberst_mazarico_et_al_2017 hosted from NTRS; upstream's ~86% polar-ridge figure traced to Mazarico's own Table row (2026-10-07; +1 source T1x1, queue unchanged)
+**rind_lean_jonas_2014_tsi_impact_on_climate_model_simulations** (J. Climate 27; AMS copyright, read only), companion to the unreached kopp_lean_2011_total_solar_irradiance: GISS GAM3 with 1990s-radiometer vs SORCE irradiance differs by "a global temperature change of 0.48C, comparable to the cooling estimated for the Maunder Minimum" before energy-balance adjustment. `extracted_data/r136_tsi_impact_key_numbers.csv`.
 
-**glaser_oberst_mazarico_et_al_2017_lunar_pole_illumination [T1]** - registered and hosted this round: NTRS 20170007365 accepted manuscript (PSS 162:170-178, DOI 10.1016/j.pss.2017.07.006 Crossref-verified), copyright.determinationType=PUBLIC_USE_PERMITTED, no in-file copyright statement ('Preprint submitted to PSS June 29, 2017' is a pre-publication notice). Read in full; key numbers extracted verbatim to r133_lunar_polar_illumination_key_numbers.csv.
+## R155 - Ceres from Russell et al. 2016 (2026-10-12)
 
-- **Upstream's ~86% traced**: spacecost environments.csv 'Lunar surface (polar ridge)' cites "Mazarico et al. 2011" for "~86% illumination over a year". Mazarico's Icarus paper is not on NTRS and the Elsevier copy stays paywalled, but Glaser Table 1 quotes its values verbatim: Shackleton S (lat -89.78 / lon 204.27) max average illumination **86.7%** over a 20-year precessional cycle - upstream's ~86% matches that cell exactly. No re-pin; the citation is now backed by a hosted document.
-- Two independent 20-year simulations bracket the site: Mazarico row 86.7%, Glaser's own run at slightly different coordinates (-89.7849 / 203.97) 81.0%; Connecting Ridge C1 (the "ridge between Shackleton and de Gerlache") is higher still - 89.0% in Mazarico's row with a max shadow of only 141.12 h (~5.9 days), consistent with upstream's "worst continuous darkness of a few days rather than a fortnight".
-- **mazarico_2011_lunar_polar_illumination_lola** stays registered_not_pulled: NTRS exact-title search returns no record for the Icarus paper (retry note appended); its numbers are now reachable via the hosted Glaser Table 1.
+`russell_2016_dawn_arrives_at_ceres` (author copy, AAAS copyright; read only), p1008: mass (9.384 +/- 0.001) x 10^20 kg; axes 483.1 x 481.0 x 445.9 km, geometric mean 469.7 km (469.68 recomputed); density 2162 +/- 3 kg/m3; rotation 9.074170 h. spacecost@0b716ad's Ceres row (9.3835e20 kg, 469.73 km, 9.074 h) agrees to -0.005% and +0.006%. `extracted_data/r155_queue_open_copies_key_numbers.csv`.
 
-Process notes: vision backend still down (4th consecutive round) - Vega Fig 5.3.2a labels remain deferred; Firecrawl keyless quota dead at round start ("Upstream forbidden") so the DLA FY2026 letter stays queued; NTRS search endpoint healthy this round (~5 s spacing).
+## R165 - Candidates (2026-10-14)
 
-### Round 136 - TSI companion anchor while kopp_lean stays quarantined (+1 source)
-
-**rind_lean_jonas_2014_tsi_impact_on_climate_model_simulations [T1; verified_live_not_pulled]** — Rind, Lean & Jonas, J. Climate 27 (DOI 10.1175/JCLI-D-13-00136.1), pulled from NTRS 20150011099 and read in full (21 pp). NTRS determinationType=PUBLIC_USE_PERMITTED, but the file carries an in-file copyright ('(c) 2014 American Meteorological Society') -> extraction-only per the R94 rule. This is the direct companion of `kopp_lean_2011_total_solar_irradiance` (which remains quarantined — AGU/Wiley publisher challenge persists): it quantifies what the absolute-TSI difference actually does in a climate model: GISS GAM3 simulations with 1990s-radiometer vs SORCE irradiance differ by **"a global temperature change of 0.48C, comparable to the cooling estimated for the Maunder Minimum"** before energy-balance adjustment; after cloud-cover compensation the difference is regional (high-latitude T / sea-level pressure / stratospheric ozone / tropical precipitation). d12 therefore now has an accessible anchor for the solar-flux question behind `environments.csv` while kopp_lean itself waits. The original kopp_lean paper is NOT on NTRS as its own record — exact-title sweep returns only this companion and 'The Glory Program'. Numbers in `extracted_data/r136_tsi_impact_key_numbers.csv`.
-
-## R155 - queue open-copy sweep: Ceres mass and radius read from Russell et al. 2016 (2026-10-12; queue -1)
-
-russell_2016_dawn_arrives_at_ceres was read in full from the first author's faculty-page copy of the AAAS typeset (copyright printed, so not hosted). p1008 gives:
-
-- mass (9.384 +/- 0.001) x 10^20 kg
-- axes 483.1 x 481.0 x 445.9 km, for a geometric mean radius of 469.7 km (469.68 recomputed here)
-- density 2162 +/- 3 kg/m3
-- rotation period 9.074170 h
-
-spacecost@0b716ad's 1 Ceres row (9.3835e20 kg, 469.73 km, 9.074 h) is near-exact: mass -0.005% and radius +0.006%, each carrying one more digit than the paper prints. The other four queue rows here (kopp_lean_2011, yeomans_2000, mazarico_2011, warner_harris_pravec_2009) were sought and not reached; their rows record the routes tried.
-
-Extracted: `extracted_data/r155_queue_open_copies_key_numbers.csv`.
-
-## R165 (2026-10-14) - 4 revision candidate(s) from sources already registered (registry unchanged)
-
-A second cross-reference pass (economicspace config dials and price/production tables, spacecost launch prices, physical constants and propellant Isp, AsteroidCatalog PGM factors) over sources registered in earlier rounds (spacecost@0b716ad, economicspace@f7fe1c6, AsteroidCatalog@86cfc54), and a candidate opened wherever a registered source contradicts the cell, or backs a figure the upstream note leaves uncited or attributes to something else. Registry unchanged. Candidates from this domain's sources:
-
-- **rc-131 (value, spacecost `reference/environments.csv` Lunar surface (equatorial);Lunar surface (polar ridge)).** Use the cited sheet's value, 0.07346 x 10^24 = 7.346e22 kg, or cite the source of 7.342e22 (it is not on the sheet the note names). The derived surface gravity and escape velocity move by +0.05% / +0.03%.
-- **rc-132 (value, spacecost `reference/environments.csv` Mars surface (mid-latitude)).** Use the cited sheet's 0.64169 x 10^24 = 6.4169e23 kg, or cite where 6.4171e23 comes from (an older edition of the sheet).
-- **rc-133 (citation, spacecost `reference/environments.csv` Phobos).** Name the source of each number: the Mars Fact Sheet gives Phobos as 10.6 x 10^15 kg with axes 13.0 x 11.4 x 9.1 km (geometric mean 11.05 km), so neither 1.0659e16 nor 11.267 km is from it. Attribute 11.267 km to Willner et al. 2014 if that is where it is (the paper is registered but has not been read here) and give the mass's own source.
-- **rc-165 (wording, economicspace `modules/mineral_value.py` IN_SPACE_UTILITY_BY_DESTINATION mars_surface comments (L652, L841, L846)).** Use the NASA Mars Fact Sheet values and cite it: CO2 95.1% and N2 2.59% by volume, surface pressure 6.36 mb (636 Pa) at mean radius, varying 4.0-8.7 mb with season.
-
-## Round 175 - queue sweep: NTRS twin hunt for the Eros radio-science and LOLA illumination rows
-
-- yeomans_2000_near_eros_radio_science: NTRS sweeps "radio science Eros NEAR" + "NEAR Shoemaker radio science" found no twin of the Science paper; nearest records 20060031186 (Mathilde+Eros radio-science conference paper, zero files) and 20010019470 (orbit-operations abstract record). Stays registered_not_pulled.
-- mazarico_2011_lunar_polar_illumination_lola: exact-title NTRS twin located = 20120010094 (REPRINT, [2010], "Illumination Conditions of the Lunar Polar Regions Using LOLA Topography") with zero downloadable files - metadata-only record.
+rc-131 (Moon mass 7.346e22 per the cited sheet), rc-132 (Mars mass 6.4169e23), rc-133 (Phobos mass and radius not from the cited sheet), rc-165 (Mars atmosphere 95.1% CO2, 2.59% N2, 636 Pa). Texts in `revision_candidates.csv`.
