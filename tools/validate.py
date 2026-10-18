@@ -1,4 +1,4 @@
-"""Check that the registry, INDEX.md, the manifest and the data files agree.
+"""Check that the registry, INDEX.md, the research log, the manifest and the data files agree.
 
     python tools/validate.py              # exit 1 on any ERROR
     python tools/validate.py --strict     # exit 1 on any ERROR or WARN
@@ -42,7 +42,7 @@ import traceback
 from collections import Counter, defaultdict
 
 from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_STATUSES, CANDIDATES, DOMAIN_COLS,
-                    DOMAIN_RE, INDEX, LICENSE_CLASSES, LIVE_CANDIDATE_STATUSES, MANIFEST, MANIFEST_COLS,
+                    DOMAIN_RE, INDEX, LICENSE_CLASSES, LOG, LIVE_CANDIDATE_STATUSES, MANIFEST, MANIFEST_COLS,
                     NOT_REDISTRIBUTABLE, PENDING_ACCESS, README, REGISTRY, REGISTRY_COLS, ROOT, TIERS, UPSTREAM_MAP,
                     UPSTREAM_MAP_COLS, UPSTREAM_REPOS, DataError, access_class, domain_dirs, file_digest, read_csv,
                     ignored_files, plain_file_name, read_domain_csv, read_text, rel, repo_files)
@@ -54,13 +54,13 @@ ACCESS_WORDS = re.compile(r'(full[_ ]text[_ ]hosted|open[_ ]not[_ ]pulled|verifi
 GITHUB_HARD_LIMIT = 100 * 1024 * 1024
 GITHUB_WARN_LIMIT = 50 * 1024 * 1024
 # Root-level files and directories, each with a line in README "Layout" unless marked False.
-ROOT_FILES = {'README.md': True, 'INDEX.md': True, 'sources.csv': True, 'full_texts_manifest.csv': True,
-              'revision_candidates.csv': True, 'upstream_commit_map.csv': True, 'DOWNLOADS.md': True,
-              'AGENTS.md': True, 'CLAUDE.md': False, 'LICENSE': False, '.gitignore': False, '.gitattributes': False}
+ROOT_FILES = {'README.md': True, 'INDEX.md': True, 'RESEARCH_LOG.md': True, 'sources.csv': True,
+              'full_texts_manifest.csv': True, 'revision_candidates.csv': True, 'upstream_commit_map.csv': True,
+              'DOWNLOADS.md': True, 'AGENTS.md': True, 'CLAUDE.md': False, 'LICENSE': False, '.gitignore': False, '.gitattributes': False}
 # .gitattributes keeps hosted files byte for byte. git check-attr reads the staged copy when the working one is
 # deleted, so full-text-eol-converted cannot see a deletion that is about to be committed; root-file-missing does.
-REQUIRED_ROOT_FILES = ['README.md', 'INDEX.md', 'sources.csv', 'full_texts_manifest.csv', 'revision_candidates.csv',
-                       'upstream_commit_map.csv', 'AGENTS.md', '.gitattributes']
+REQUIRED_ROOT_FILES = ['README.md', 'INDEX.md', 'RESEARCH_LOG.md', 'sources.csv', 'full_texts_manifest.csv',
+                       'revision_candidates.csv', 'upstream_commit_map.csv', 'AGENTS.md', '.gitattributes']
 ROOT_DIRS = {'tools'}
 # tools/ holds the tools and tools/tests/ their tests, Python only; any other file there is read by no check.
 TOOLS_FILE_RE = re.compile(r'tools/(?:tests/)?[a-z0-9_]+\.py')
@@ -70,6 +70,8 @@ TEXT_SUFFIXES = {'.csv', '.md', '.py', '.json'}
 TEXT_NAMES = {'.gitignore', '.gitattributes'}
 # A year cell starts with a year, an approximate year or "n.d.", and may explain itself after that.
 YEAR_RE = re.compile(r'(~?\d{4}|n\.d\.)')
+# RESEARCH_LOG.md is this heading, then the entries; it moved out of INDEX.md's last section on 2026-10-18.
+LOG_HEADING = '# Research log\n'
 LOG_ENTRY_RE = re.compile(r'- \*\*(?:Round (\d+)|Maintenance)\*\* \((\d{4}-\d{2}-\d{2})(?:/\d{2})?\)')
 # Entry labels in a form other than "- **Round N**": AGENTS.md bans "**RN**" and "### RN". An unbolded "Round N" or
 # "RN:" at a line start is an entry missing its label, which would otherwise read as part of the entry above.
@@ -379,16 +381,13 @@ def check_index(rep, ctx):
 def check_log(rep, ctx):
     rep.start('research log')
     ctx['latest_round'] = None  # set before the read that can fail, so check_candidates sees "unknown", not a crash
-    text = read_text(INDEX)
-    if '\n## Research log\n' not in text:
-        rep.error('log-missing', 'INDEX.md has no "## Research log" section')
+    lines = log_lines(read_text(LOG))
+    if lines is None:
+        rep.error('log-missing', f'RESEARCH_LOG.md does not start with "{LOG_HEADING.strip()}"')
         return
-    log = text.split('\n## Research log\n', 1)[1]
-    if re.search(r'^## ', log, flags=re.M):
-        rep.error('log-not-last', '"## Research log" must be the last section of INDEX.md')
     rounds, dates, started = [], [], False
     today = datetime.date.today()
-    for n, line in enumerate(log.rstrip('\n').split('\n'), 1):
+    for n, line in enumerate(lines, 1):
         m = LOG_ENTRY_RE.match(line)
         if m:
             started = True
@@ -406,7 +405,7 @@ def check_log(rep, ctx):
                                           f'"- **Maintenance** (YYYY-MM-DD)"')
         elif LOG_MISLABEL_RE.match(line):
             rep.error('log-mislabelled', f'log line {n}: "{line[:40]}" — log entries are "- **Round N** (YYYY-MM-DD): ...", '
-                                         f'not headings or bare bold labels')
+                                         f'not headings or bare bold labels; the file holds no other section')
         elif not line.strip():
             # A blank line between the heading and the first entry is ordinary Markdown; one between entries is not.
             if started:
@@ -424,8 +423,8 @@ def check_log(rep, ctx):
         rep.error('log-order', 'rounds are not newest-first')
     missing = sorted(set(range(max(rounds) + 1)) - set(rounds))
     if missing:
-        rep.error('log-gap', f'rounds missing from the log: {missing} — an INDEX.md rewrite may have dropped them '
-                             f'(recover with git show <sha>:INDEX.md)')
+        rep.error('log-gap', f'rounds missing from the log: {missing} — a RESEARCH_LOG.md rewrite may have dropped '
+                             f'them (recover with git show <sha>:RESEARCH_LOG.md)')
     dups = sorted(r for r, c in Counter(rounds).items() if c > 1)
     if dups:
         rep.error('log-duplicate', f'rounds logged twice: {dups}')
@@ -433,27 +432,27 @@ def check_log(rep, ctx):
         rep.error('log-date-order', 'entry dates are not newest-first')
 
 
-def log_lines(index_text):
-    """The research log's lines, or None if the text has no "## Research log" section."""
-    if '\n## Research log\n' not in index_text:
+def log_lines(log_text):
+    """The research log's lines below its heading, or None if the text does not start with the heading."""
+    if not log_text.startswith(LOG_HEADING):
         return None
-    return index_text.split('\n## Research log\n', 1)[1].rstrip('\n').split('\n')
+    return log_text[len(LOG_HEADING):].rstrip('\n').split('\n')
 
 
 def committed_log(rep, rev, label):
-    """The research log's lines in `rev`'s INDEX.md; reports log-no-baseline and returns None if it has none."""
-    rc, blob = git_raw(ROOT, 'show', f'{rev}:INDEX.md')
+    """The research log's lines in `rev`'s RESEARCH_LOG.md; reports log-no-baseline and returns None if it has none."""
+    rc, blob = git_raw(ROOT, 'show', f'{rev}:RESEARCH_LOG.md')
     if rc != 0:
-        rep.error('log-no-baseline', f'{label} has no INDEX.md to compare the research log with')
+        rep.error('log-no-baseline', f'{label} has no RESEARCH_LOG.md to compare the research log with')
         return None
     try:
         text = blob.decode('utf-8').replace('\r\n', '\n')
     except UnicodeDecodeError as e:
-        rep.error('log-no-baseline', f'{label}\'s INDEX.md is not UTF-8 ({e}), so the research log cannot be compared')
+        rep.error('log-no-baseline', f'{label}\'s RESEARCH_LOG.md is not UTF-8 ({e}), so the log cannot be compared')
         return None
     lines = log_lines(text)
     if lines is None:
-        rep.error('log-no-baseline', f'{label}\'s INDEX.md has no "## Research log" section to compare with')
+        rep.error('log-no-baseline', f'{label}\'s RESEARCH_LOG.md does not start with "{LOG_HEADING.strip()}"')
     return lines
 
 
@@ -472,9 +471,10 @@ def check_log_history(rep, ctx):
     if rc != 0:
         rep.error('log-no-baseline', 'the repository has no commit to compare the research log with')
         return
-    current = log_lines(read_text(INDEX))
+    current = log_lines(read_text(LOG))
     if current is None:
-        rep.error('log-missing', 'INDEX.md has no "## Research log" section to compare with the committed one')
+        rep.error('log-missing', f'RESEARCH_LOG.md does not start with "{LOG_HEADING.strip()}", so it cannot be '
+                                 f'compared with the committed log')
         return
     rc, merging = git(ROOT, 'rev-parse', '--verify', '--quiet', 'MERGE_HEAD^{commit}')
     if rc == 0:
@@ -495,7 +495,7 @@ def check_log_history(rep, ctx):
         line = next(committed[-k] for k in range(1, len(committed) + 1)
                     if k > len(current) or current[-k] != committed[-k])
         rep.error('log-rewritten', f'{tail_label}\'s log line "{line[:60]}" is changed, moved or gone — the log is '
-                                   f'append-at-top only; restore the older entries from git show {tail_rev[:7]}:INDEX.md')
+                                   f'append-at-top only; restore the older entries from git show {tail_rev[:7]}:RESEARCH_LOG.md')
     kept = set(current)
     for rev, label in sides:
         lines = committed_log(rep, rev, label)
@@ -516,10 +516,10 @@ def check_rejected(rep, ctx):
     text = read_text(INDEX)
     m = re.search(r'^## Rejected sources\n(.*?)(?=^## |\Z)', text, flags=re.M | re.S)
     if not m:
-        rep.error('rejected-missing', 'INDEX.md has no "## Rejected sources" section (it goes directly above "## Research log")')
+        rep.error('rejected-missing', 'INDEX.md has no "## Rejected sources" section (it is the last section)')
         return
-    if not text[m.end():].startswith('## Research log\n'):
-        rep.error('rejected-position', '"## Rejected sources" must be directly above "## Research log"')
+    if m.end() != len(text):
+        rep.error('rejected-position', '"## Rejected sources" must be the last section of INDEX.md')
     lines = m.group(1).split('\n')
     table = [i for i, l in enumerate(lines) if l.startswith('|')]
     if not table:
@@ -553,14 +553,14 @@ def check_rejected(rep, ctx):
         return
     # Nothing but the research log may name a rejected id: not a file path, not a CSV cell, not a FINDINGS block.
     token = re.compile(r'(?<![A-Za-z0-9_-])(' + '|'.join(map(re.escape, rejected)) + r')(?![A-Za-z0-9_-])')
-    before_log = text[:m.start()] + re.split(r'^## Research log\n', text[m.end():], maxsplit=1, flags=re.M)[0]
+    outside_table = text[:m.start()] + text[m.end():]
     for name in ctx['files']:
         rep.count('files scanned for rejected ids')
         hits = set(token.findall(name))
         path = ROOT / name
         if path == INDEX:
-            hits |= set(token.findall(before_log))
-        elif any(name.endswith(s) for s in ('.csv', '.md', '.json')):
+            hits |= set(token.findall(outside_table))
+        elif path != LOG and any(name.endswith(s) for s in ('.csv', '.md', '.json')):
             try:
                 hits |= set(token.findall(read_text(path)))
             except DataError as e:
@@ -728,8 +728,8 @@ def check_extracted(rep, ctx):
 # (DOWNLOADS.md's restore commands).
 DATA_REF_RE = re.compile(r'(extracted_data|full_texts)/([A-Za-z0-9_.-]+\.[A-Za-z0-9]+)')
 REF_PREFIX_RE = re.compile(r'(?<![\w.:/-])(?:([0-9a-f]{7,40}):)?(\d\d_[a-z0-9_]+)/$')
-# Root files whose references are checked. The research log is not: it is append-only history, and files have moved
-# since the rounds that named them.
+# Root files whose references are checked. RESEARCH_LOG.md is not: it is history, and files have moved since the
+# rounds that named them.
 REF_ROOT_FILES = ('README.md', 'INDEX.md', 'DOWNLOADS.md')
 
 
@@ -778,7 +778,7 @@ def check_text_references(rep, files, text, start, end, domain, where):
 
 def check_references(rep, ctx):
     """Every data file cited exists, in the working tree or in the commit the reference names. Cited where: FINDINGS.md,
-    README.md, DOWNLOADS.md, INDEX.md above the research log, every registry cell and every candidate cell.
+    README.md, DOWNLOADS.md, INDEX.md, every registry cell and every candidate cell.
 
     Ten FINDINGS.md entries said "Full text hosted" for PDFs un-hosted on 2026-09-26; four FINDINGS.md paths, one
     candidate's evidence and two access_status cells named files that had moved or been un-hosted.
@@ -794,8 +794,6 @@ def check_references(rep, ctx):
         except DataError as e:
             rep.error(e.code, f'{e} — its file references were not checked')
             continue
-        if name == 'INDEX.md':
-            text = text.split('\n## Research log\n', 1)[0]
         for start, end, scope_domain in reference_scopes(name, text, domain, ctx['domains']):
             check_text_references(rep, files, text, start, end, scope_domain,
                                   lambda pos: f'{name} line {text.count(chr(10), 0, pos) + 1}')

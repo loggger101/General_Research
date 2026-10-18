@@ -1,7 +1,7 @@
 """A minimal, valid General_Research checkout for the tool tests, plus sibling upstream clones.
 
 build_template(parent) writes, under `parent`:
-    General_Research/   two domains, one hosted file, extracted CSV + JSON, INDEX.md with a rejected source and a
+    General_Research/   two domains, one hosted file, extracted CSV + JSON, INDEX.md with a rejected source, a
                         research log, README layout, revision candidates, an upstream commit map, and file references
                         in FINDINGS.md, INDEX.md and DOWNLOADS.md (one into the first commit); the tools are
                         copied in from this checkout, and sources.csv and the manifest hashes come from its own
@@ -67,8 +67,9 @@ Key numbers: `extracted_data/r1_alpha.csv`.
 | id | source | link | reason |
 |---|---|---|---|
 | rej_one | A rejected page | https://rejected.example | off-topic |
+"""
 
-## Research log
+LOG_MD = """# Research log
 - **Round 1** (2026-01-02): second round; rej_one rejected.
 - **Round 0** (2026-01-01): first round.
   - detail: the fixture's two domains were set up.
@@ -88,6 +89,7 @@ README_MD = """# Fixture
 ```
 README.md                 this file
 INDEX.md                  index
+RESEARCH_LOG.md           log
 sources.csv               generated
 full_texts_manifest.csv   hosted files
 revision_candidates.csv   candidates
@@ -170,6 +172,7 @@ def build_template(parent):
     write(root / 'AGENTS.md', '# Rules\n')
     write(root / 'README.md', README_MD)
     write(root / 'INDEX.md', INDEX_MD)
+    write(root / 'RESEARCH_LOG.md', LOG_MD)
     for d, rows in (('01_alpha', ALPHA), ('02_beta', BETA)):
         write(root / d / 'sources_domain.csv', csv_text(DOMAIN_HEADER, rows))
     # File references, checked by check_references: within the domain, and into another domain.

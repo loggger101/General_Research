@@ -4,51 +4,30 @@ Backings: economicspace `research/starred-repos/`: the Lambert and Kepler solver
 
 Created in Round 74 (2026-09-27). Blocks are appended one per round, newest last.
 
-## R74 - Upstream citations registered (2026-09-27; +23 sources, T1x1, T3x3, T4x19; nothing extracted)
+## R74 - Upstream citations registered (2026-09-27; +23 sources)
 
-Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
+Every source the upstream repos cite that the registry lacked, each `registered_not_pulled`:
 
-- `izzo_2015_revisiting_lamberts_problem` (T1): economicspace Lambert oracle (probe_lambert.py, F4): the algorithm implemented from the paper.
-- `vallado_fundamentals_astrodynamics_applications` (T4): validation case for the Lambert oracle (published worked example).
-- `mathar_2021_kepler_equation_first_estimates` (T4): Kepler-equation starter and quartic Newton step in orbital.py kepler_E (reached via skyfield).
-- `jpl_horizons_api` (T3): recommended oracle for bounding the two-body error in the F4 Lambert oracle; not yet used upstream.
-- `neodys_orbit_covariance_service` (T3): recommended per-object orbit covariance source; not yet used upstream.
-- `jpl_de441_small_body_perturber_kernels` (T3): recommended offline harness to bound the Lambert oracle two-body assumption; not yet used upstream.
-- `github_python_skyfield` (T4): economicspace repository audit: code adapted: kepler_E, true_anomaly and elements_to_state in research/starred-repos/orbital.py.
-- `github_space_datasets` (T4): economicspace repository audit: the PDS3 column layout for the SDSS taxonomy table, and the JPL NHATS endpoint used by probe_nhats.py.
-- `github_astroquery` (T4): economicspace repository audit: nothing taken; showed the IRSA async-TAP approach and pointed to the NEODyS covariance service.
-- `github_space_map` (T4): economicspace repository audit: nothing taken; showed that SBDB publishes a field list (how condition_code was found missing).
-- `github_z3` (T4): economicspace repository audit: nothing taken yet.
-- `github_pyomo` (T4): economicspace repository audit: nothing taken.
-- `github_pymc` (T4): economicspace repository audit: nothing taken yet.
-- `github_mesa` (T4): economicspace repository audit: nothing taken (listed upstream as mesa/mesa).
-- `github_openscvx` (T4): economicspace repository audit: nothing taken.
-- `github_pygmo2` (T4): economicspace repository audit: nothing taken.
-- `github_polars` (T4): economicspace repository audit: nothing taken.
-- `github_spacekit` (T4): economicspace repository audit: nothing taken; its per-body Kepler solve is the technique behind the ui.py orbit diagram.
-- `github_brahe` (T4): economicspace repository audit: nothing taken yet; recommended for its SPICE reader and Horizons SPK client.
-- `github_pds4_tools` (T4): economicspace repository audit: nothing taken.
-- `github_nyx` (T4): economicspace repository audit: nothing taken (copyleft; Lambert deliberately implemented from the paper instead).
-- `github_campyros` (T4): economicspace repository audit: nothing taken.
-- `github_celestia` (T4): economicspace repository audit: nothing taken.
+- `izzo_2015_revisiting_lamberts_problem` (T1): the algorithm behind economicspace's Lambert oracle (probe_lambert.py, F4).
+- `vallado_fundamentals_astrodynamics_applications` (T4): the oracle's published validation case.
+- `mathar_2021_kepler_equation_first_estimates` (T4): the Kepler-equation starter in orbital.py `kepler_E`.
+- `jpl_horizons_api`, `neodys_orbit_covariance_service`, `jpl_de441_small_body_perturber_kernels` (T3): recommended upstream for bounding the oracle's two-body error and for orbit covariances; not yet used.
+- 17 audited GitHub repositories (T4). Code was adapted only from `github_python_skyfield` (kepler_E, true_anomaly, elements_to_state) and `github_space_datasets` (the SDSS taxonomy PDS3 layout and the NHATS endpoint). `github_astroquery` pointed to NEODyS, `github_space_map` showed SBDB's field list, `github_spacekit` is the technique behind the ui.py orbit diagram, `github_brahe` is recommended for SPICE/Horizons; `github_nyx` is copyleft, so Lambert was implemented from the paper. Nothing was taken from `github_z3`, `github_pyomo`, `github_pymc`, `github_mesa`, `github_openscvx`, `github_pygmo2`, `github_polars`, `github_pds4_tools`, `github_campyros` or `github_celestia`.
 
-**Dead endpoint in economicspace CITATIONS.md (rc-049).** The Horizons API is listed as `https://ssd-api.jpl.nasa.gov/horizons.api`, which answers 404 with or without query parameters. The live endpoint is `https://ssd.jpl.nasa.gov/api/horizons.api` (an OBJ_DATA query for Mars returned JSON on 2026-09-27). Nothing in the pipeline calls it yet, so only the reference changes.
+**rc-049:** economicspace CITATIONS.md lists the Horizons API as `https://ssd-api.jpl.nasa.gov/horizons.api`, which answers 404; the live endpoint is `https://ssd.jpl.nasa.gov/api/horizons.api`. Nothing in the pipeline calls it yet.
 
-## R109 - The three JPL service rows get live re-classified + the SB441 I/O manual registered (2026-10-03; registry 399 -> 400)
+## R109 - The three JPL service rows re-classified; SB441 manual registered (2026-10-03)
 
-R74 registered the services upstream's probes recommend but never use, all as `registered_not_pulled`. This round each was re-checked from this machine and moved to its true access class:
-
-| row | R109 result |
+| row | result |
 |---|---|
-| jpl_horizons_api | **open_service** - Horizons API v1.3 at https://ssd.jpl.nasa.gov/api/horizons.api answered live JSON for a Mars OBSERVER ephemeris (PHYSICAL DATA: radius 3389.92+-0.04 km, density 3.933 g/cm^3) and a Bennu VECTORS query (osc elements A=1.12639 au / EC=.20375 at EPOCH 2455562.5; the exact shape upstream's F4 Lambert-oracle probe would issue). Evidence snapshots: extracted_data/r109_horizons_mars_observer_ephemeris.json + r109_horizons_bennu_101955_vectors_ephemeris.json, key numbers in r109_jpl_astrodynamics_services_key_numbers.csv. **v1.3 breaking change (2025 June): parameter `EPH_TYPE` renamed `EPHEM_TYPE`** - pre-2025 query examples now 400 with 'one or more query parameter was not recognized'. rc-049 re-checked: upstream's dead URL (ssd-api.jpl.nasa.gov/horizons.api) still HTTP 404; the corrected endpoint is now live-proven twice.
-| jpl_de441_small_body_perturber_kernels | **open_service** - kernel directory re-pulled live: sb441-n16.bsp 615.8 MB / sb441-n373s.bsp 936.6 MB / sb441-n373.bsp 14.13 GB, all beyond the ~36 MB repo cap -> URL'd + size/date-recorded in extracted_data/, not committed. The I/O manual SB441_IOM392R-21-005 (Farnocchia, JPL interoffice memorandum, 2021-03-30) pulled live and **hosted** under full_texts/ as its own registry row `jpl_sb441_iom_perturber_manual` [T2, public-domain; no in-file copyright statement].
-| neodys_orbit_covariance_service | stays **registered_not_pulled** - newton.spacedys.com/neodys/ now serves an anti-bot interstitial ('Making sure you're not a bot!', 3,629 B challenge page) from this machine instead of the JS app shell recorded in R74; no API surface reachable without solving it.
+| jpl_horizons_api | **open_service**: Horizons API v1.3 answered a Mars OBSERVER query (radius 3389.92 +/- 0.04 km, density 3.933 g/cm^3) and a Bennu VECTORS query (A=1.12639 au, EC=.20375 at EPOCH 2455562.5). Snapshots: extracted_data/r109_horizons_mars_observer_ephemeris.json, r109_horizons_bennu_101955_vectors_ephemeris.json; key numbers in r109_jpl_astrodynamics_services_key_numbers.csv. v1.3 (2025 June) renamed `EPH_TYPE` to `EPHEM_TYPE`. The dead URL behind rc-049 still answers 404. |
+| jpl_de441_small_body_perturber_kernels | **open_service**: sb441-n16.bsp 615.8 MB, sb441-n373s.bsp 936.6 MB, sb441-n373.bsp 14.13 GB, too large to commit (URLs and sizes in extracted_data/). The I/O manual SB441_IOM392R-21-005 (Farnocchia, 2021-03-30) is hosted as `jpl_sb441_iom_perturber_manual` [T2, public domain]. |
+| neodys_orbit_covariance_service | stays registered_not_pulled: the service serves an anti-bot page to this machine. |
 
-No revision candidate opened or closed by this round (rc-049 stays open - upstream's CITATIONS.md is read-only and still carries the dead URL; its evidence column now records both re-checks).
+## R119 - mathar_2021_kepler_equation_first_estimates read in full, not hostable (2026-10-05)
 
-## R119 - mathar_2021 read in full, not hostable (2026-10-05; queue -1)
+`mathar_2021_kepler_equation_first_estimates` read from arXiv 2108.03215v3 (default arXiv licence, so not hosted): a starting guess for Kepler's equation from e and M, the starter `kepler_E` cites. Context only.
 
-**mathar_2021_kepler_equation_first_estimates [T4]** - re-classed registered_not_pulled -> verified_live_not_pulled. Full text pulled live via export.arxiv.org/pdf/2108.03215v3 (latest version; dated 30 Jun 2025) and read in full from this machine, but NOT hostable: the arXiv abs page carries only the default non-exclusive distribution licence with no Creative Commons licence, so redistribution into GR is barred by the R70 audit lesson / R113 precedent. v3 hash recorded in access_status (403,121 B sha256=cd99051b11f04c489fd3c282bbcc4a0e38766f1f86ed71d8d604653d6cd2aae2); no file committed. Content confirmed: a novel starting guess for Kepler's equation E given e and M - exactly the starter orbital.py kepler_E cites; backs that row as context (no numeric re-pin).
-## R121 - izzo_2015 hosted from the arXiv CC0 copy (2026-10-05; queue -1)
+## R121 - izzo_2015_revisiting_lamberts_problem hosted from the arXiv CC0 copy (2026-10-05)
 
-**izzo_2015_revisiting_lamberts_problem [T1]** - re-classed registered_not_pulled -> full_text_hosted. Full text pulled live via export.arxiv.org/pdf/1403.2705v2 and committed to full_texts/izzo_2015_revisiting_lamberts_problem_celestial_mech_dynam_astron_arxiv1403.2705.pdf (859,375 B sha256=0db5671f894283789e27a42cfdb14dcb2922225b17261a45ee79a708b2a737b7). 17 pages; the arXiv abs page carries a CC0 public domain dedication ('Rights to this article' -> creativecommons.org/licenses/publicdomain/, re-checked this round) and no in-file copyright statement was found - hostable under the public-domain token. Verbatim (abstract): "Building upon Lancaster and Blanchard approach"; also 'The orbital boundary value problem, also known as Lambert Problem, is revisited.' ('Problem' hyphenated across a line break in the PDF text layer). The algorithm behind economicspace's lambert_izzo oracle - context this round; numeric extraction (e.g. the time-of-flight relations) is follow-up.
+`izzo_2015_revisiting_lamberts_problem` hosted as full_texts/izzo_2015_revisiting_lamberts_problem_celestial_mech_dynam_astron_arxiv1403.2705.pdf (arXiv abs page: CC0 dedication). The algorithm behind economicspace's lambert_izzo oracle; its time-of-flight relations are not yet extracted.

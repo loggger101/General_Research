@@ -70,6 +70,7 @@ MANIFEST = ROOT / 'full_texts_manifest.csv'
 CANDIDATES = ROOT / 'revision_candidates.csv'
 UPSTREAM_MAP = ROOT / 'upstream_commit_map.csv'
 INDEX = ROOT / 'INDEX.md'
+LOG = ROOT / 'RESEARCH_LOG.md'
 README = ROOT / 'README.md'
 
 BOM = b'\xef\xbb\xbf'

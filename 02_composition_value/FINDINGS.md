@@ -1,461 +1,160 @@
 # Domain 2 Findings — composition → commodity value mapping
 
-## hein2020 — Hein, Matheson & Fries (2018/2020), "A Techno-Economic Analysis of Asteroid Mining" [T1]
+Backings: AsteroidCatalog `taxonomy_composition.csv` material fractions (metal, silicate, carbon, ice), `mineralogy.py` phase splits (`comp_phases_detailed`), `PGM_ENRICHMENT_BY_TYPE`, and economicspace `mineral_value.py` mineralogy and nickel-iron yields.
 
-- **Full text**: hosted here as `hein_matheson_fries_2020_techno-economic_analysis_arxiv1810.03836v11.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
-  (arXiv:1810.03836 v11 — the preprint of Acta Astronautica 174 (2020) 59-71, DOI 10.1016/j.actaastro.2019.05.009;
-  verified live: HTTP 200 application/pdf). The journal version is paywalled (Elsevier TDM license only); the arXiv
-  v11 text is what's committed, per this repo's access policy.
-- **What it is**: THE peer-reviewed techno-economic model of asteroid mining — first-principles TEA with two revenue
-  streams: water for in-space use and platinum returned to Earth. This is the closest published analogue to the whole
-  economicspace pipeline (per-body Δv + cost cascade → profit), so every assumption it makes that differs from ours is a
-  calibration point.
+## Round 1 - First sources
 
-### Key extracted numbers (see `extracted_data/composition_value_key_numbers.csv`)
+- **hein2020** [T1] (Acta Astronautica 174:59-71; arXiv v11 hosted until 2026-09-26, then un-hosted; moved to d22 in R77): the peer-reviewed TEA of asteroid mining, with water for space and platinum for Earth as separate markets (as the pipeline splits them). Pt demand anchored at $40,449/kg and 254,582 kg/yr, PED -0.6 to -0.5; sensitivity at $30k and $70k/kg. `extracted_data/composition_value_key_numbers.csv`. (Its "150 kg/s/kg" was a misreading: 150 kg is the craft dry mass; see R61.)
+- **nat_dms2023** [T1, hosted, CC BY] (Sci Rep 13:6497): metal dissolution from metal-rich meteorite proxies with a deep eutectic solvent (ChCl:2EG). NEAs 1986 DA and 2016 ED85 show 85% surface metal / 15% silicate against the M row's metal 0.50 (surface, not bulk).
+- **asime2018** [T2] (Graps et al. 2019 white paper; un-hosted): meteorites hold up to 22% water, so C-complex ice 0.10-0.30 is a population maximum; primitive, water-rich composition correlates with albedo below ~7.5% (a possible guardrail).
+- **lewicki2023** [T2] (decadal white paper; un-hosted): a "Mine Project Value Curve" of value vs resource confidence.
+- **cannon2023** [T1] (PSS 215:105608; CC BY-NC-ND, skipped by owner decision): which classes carry recoverable precious and structural metal.
 
-- Platinum demand curve anchored at **($40,449/kg, 254,582 kg/yr)** with inelastic PED ∈ (-0.6,-0.5); sensitivity
-  cases run at $70k and $30k per kg — profitability of the Pt-return case is price-dominated across that band.
-- Water-for-space treated as a separate market from metals (same split our `_DEMAND_SHARE_BY_CLASS` uses: propellant
-  0.55 vs trace PGMs 0.0005).
+## Round 2 - PGM gradient and Vesta
 
-### Comparison against pipeline assumptions
+**usgs_pp1802n** [T3] (USGS PP 1802-N; public-domain excerpt quoted here):
 
-| assumption | hein2020 | pipeline | verdict |
-|---|---|---|---|
-| two markets (water-in-space / Pt-to-Earth) | yes, separate revenue streams | yes (`DELIVERY_DESTINATIONS` + commodity classes) | **AGREEMENT** on structure — our destination pricing is the more granular version |
-| platinum price band that matters | $30k–$70k/kg (2018-2020 data) | live yfinance futures, stamped per run | consistent; note hein's demand-curve point ($40.4k at 254 t/yr supply) is a useful sanity check on our price fetches |
-| beneficiation assumed feasible | yes (throughput 150 kg/s/kg-equipment in their process chain) | yes, but charged only via utility discounts + ISRU processing row | pipeline's beneficiation cost line is far lighter than hein's equipment mass — worth a look when operational_costs get revisited |
-
-## nat_dms2023 — (Sci Rep 13:6497, 2023) "A novel method for extracting metals from asteroids using non-aqueous deep eutectic solvents" [T1]
-
-- **Full text hosted**: `full_texts/des_metal_extraction_scirep_s41598-023-44152-0_CC-BY4.pdf` (CC-BY-4.0 per Crossref;
-  verified live: HTTP 200 application/pdf, 9.4 MB).
-- **What it is**: first lab demonstration of metal dissolution from meteorite proxies of metal-rich asteroids using a
-  deep eutectic solvent (ChCl:2EG) that can plausibly be made in space — the process route behind "beneficiation" in
-  Module 2/4.
-
-### Key finding for the pipeline
-
-- **85% surface metal / 15% silicate** reported for NEAs 1986 DA and 2016 ED85 (spectral twins of 16 Psyche).
-  Our `catalog.py` M-type row carries `metal_fraction = 0.50`. The peer-reviewed *surface* figure is ~70% higher; bulk
-  fraction may differ, but the gap means our M/Xe rows are likely **under-pricing metal content by a similar factor** —
-  the single biggest value-side discrepancy found in round 1 so far (pairs with domain-1's density findings: Xe density
-  contested there too).
-
-## asime2018 — Graps et al. (2019), "ASIME 2018 White Paper: In-Space Utilisation of Asteroids — Composition" [T2]
-
-- **Full text**: hosted here as `graps_et_al_2019_ASIME_asteroid_composition_whitpaper_arxiv1904.11831v1.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy
-  (arXiv:1904.11831; verified live HTTP 200, 2.4 MB). Luxembourg-funded ASIME conference white paper, multi-author.
-- **What it is**: the state-of-the-art review of what remote sensing actually tells us about asteroid composition — i.e.
-  an honest assessment of how much we can trust a spectral type as a proxy for bulk composition (exactly the step our
-  pipeline performs in `TAXONOMY_COMPOSITION`).
-
-### Key extracted numbers
-
-- Meteorites contain **up to 22% water** by mass → our C-complex ice_fraction rows (0.10–0.30) sit at/above the measured
-  upper envelope; fine as a population-max, but should not be read as an average for every C body.
-- Primitive/water-rich composition correlates with **geometric albedo < ~7.5%** — a cheap guardrail the pipeline could add:
-  flag high-albedo "C-type" bodies as hydration-unreliable before pricing their water content.
-
-## lewicki2023 — Lewicki, Graps, Elvis, Metzger & Rivkin (2021), Decadal Survey white paper [T2]
-
-- **Full text**: hosted here as `lewicki_et_al_2023_decadal_whitepaper_arxiv2103.02435v1.pdf` until 2026-09-26, then un-hosted because its licence does not permit redistribution; the source's `access_status` records the licence and the removed copy (arXiv:2103.02435;
-  verified live HTTP 200). Note the author list includes **Martin Elvis** — same Elvis whose low-Δv NEA survey backs our
-  easy-NEA Δv segment in domain 3.
-- **What it is**: the decadal-survey framing for asteroid resource utilization, including a "Mine Project Value Curve" —
-  project value as a function of *mineral-resource confidence*. The conceptual argument that valuation should carry an
-  explicit knowledge-confidence discount; our utility factors are the nearest existing analogue but are per-commodity,
-  not per-knowledge-state.
-
-## cannon2023 — Cannon, Gialich & Acain (PSS 215:105608, 2023), "Precious and structural metals on asteroids" [T1]
-
-- **Access**: `open_not_pulled` — the article is genuinely open access (**CC-BY-NC-ND** per Crossref license record) but
-  (a) its NC clause conflicts with hosting in a public repo unless you confirm non-commercial intent, and (b) ScienceDirect
-  bot-blocks this machine anyway. **Decision needed from user**: if General_Research stays strictly commercial-safe, keep
-  as metadata-only; otherwise the full text can be pulled from a normal browser session and committed under that license.
-- **What it is**: THE paper behind the "Harvard study: few asteroids worth mining" news cycle (Colorado School of Mines +
-  AstroForge). Quantifies which asteroid classes carry economically recoverable precious/structural metal — the direct
-  external benchmark for our per-type commodity valuations.
-
-## Round-1 status (domain 2)
-
-5 items processed; 4 full texts hosted, 1 awaiting a license decision from the user. Headline: **the M/Xe metal-fraction
-row is under-modelled by ~70% vs the peer-reviewed surface estimate**, and hein2020 gives us our first external TEA to
-calibrate against end-to-end.
-
-
-## usgs_pp1802n — Zientek et al., USGS Professional Paper 1802-N: Platinum-Group Elements [T3]
-
-- **Access**: full text is public domain (USGS); the report PDF lives at `https://pubs.usgs.gov/pp/1802/n/pp1802n.pdf`
-  (DOI 10.3133/pp1802N). It is a 34 MB / ~570 KB-of-text multi-chapter report, so rather than committing the whole PDF we
-  commit the *relevant extraterrestrial-abundance passage* as an excerpt below and cite it by DOI + section. The numbers are
-  quoted verbatim from the "Geology" chapter's discussion of PGEs in meteorites/planetary bodies.
-
-### Why this is the anchor for `PGM_ENRICHMENT_BY_TYPE` (domain-2 gap)
-
-Our pipeline differentiates PGM concentration by spectral type on a physical story — differentiated core fragments keep
-metal-segregated PGMs, mantle/crust fragments lost them to the core during differentiation. The USGS report supplies the
-peer-reviewed magnitude of exactly that gradient:
-
-| body / phase | Pt (and PGE) abundance | what it anchors in our table |
+| body / phase | Pt abundance | anchors |
 |---|---|---|
-| **Iron meteorites** ("best analogs for the composition of Earth's core") | **2.4–16 ppm** Pt (Wasson et al., 1989, cited therein) | `M` / `Xe` = **2.0×**, `Xk/E/Xc` = 1.5–2.0× — metal-rich differentiated fragments carry the high end of this range |
-| **Upper mantle** (e.g. Vesta-type achondrite parent bodies) | **~0.002–0.005 ppm** Pt (Maier et al., 2012, cited therein) = 2–5 ppb | `A`/`R`/`O` mantle fragments = **0.5×**, and the *depletion factor* of ~10³–10⁴ vs core metal that justifies why a differentiated body's crust/mantle is nearly PGM-free |
-| **Upper crust** (basaltic, e.g. Vesta surface / HED) | **~0.0005 ppm** Pt = 0.5 ppb (Rudnick & Gao, 2003, cited therein) | `V` (eucrite/basaltic crust) = **0.2×** — the most-depleted row, consistent with PGMs extracted into a core during Vesta's magma-ocean differentiation |
+| Iron meteorites ("best analogs for the composition of Earth's core") | 2.4–16 ppm (Wasson et al. 1989) | M / Xe 2.0×; Xk/E/Xc 1.5–2.0× |
+| Upper mantle | ~0.002–0.005 ppm (2–5 ppb; Maier et al. 2012) | A/R/O 0.5× |
+| Upper crust (basaltic) | ~0.0005 ppm (0.5 ppb; Rudnick & Gao 2003) | V 0.2× |
 
-- **Verdict**: our enrichment factors are *directionally and order-of-magnitude correct* against this independent
-  public-domain source. The one refinement it supports: the gap between "metal fragment" (2–16 ppm) and "mantle/crust
-  fragment" (0.5–5 ppb) is ~4 orders of magnitude, so a body that is *partially* differentiated should not sit at exactly
-  1.0× — our `X`-complex rows at 1.2–1.5× are reasonable midpoints, and the baseline `.get()` default of 1.0× for primitive
-  (undifferentiated) types is correct because a chondritic body never segregated its PGMs into a core in the first place.
+The enrichment factors are right to order of magnitude; the ~4-orders gap between metal and crust supports intermediate X values and 1.0 for undifferentiated types.
 
-### Round-2 status (domains 1+2 deepening pass)
+**toplis2014** [T2, hosted, NTRS]: Vesta's core radius 90–120 km of metal and sulphide; HEDs as parent-body analogues, supporting the differentiated-body model behind the V row.
 
-- **Domain 2**: added `usgs_pp1802n` as the public-domain anchor for the whole `PGM_ENRICHMENT_BY_TYPE` gradient
-  (previously only a CI-chondrite baseline via `lodders_palme2009`). This closes the "where does the per-type PGM factor
-  come from" gap with a citable, legally-committable source.
-- **Domain 1**: still waiting on the Gaia DR3 density paper (`dziadura2023`) — A&A bot-blocks both curl and headless+local
-  browser (Cloudflare challenge never clears in-session). It is CC-BY-4.0, so it *can* be committed once pulled from a normal
-  interactive session; recorded as `open_not_pulled` with the exact URL for that follow-up. No new density numbers this pass —
-  round 1's `carry2012` + `simda2024` remain the working anchors, and they already agree on the B/L/K revision candidates.
+## Round 3 - bennu_volatiles_2025 [T1, hosted, CC BY]
 
+Nature Astronomy 9:199–210: OSIRIS-REx Bennu samples: total C 4.5–4.7 wt%, N 0.23–0.25 wt%, ammonia ≈40% of N; regional aliphatic/aromatic C up to ~2.5 wt%; Bennu more volatile-rich than Ryugu and most meteorites; CI/CM/CY baseline ~1–3 wt% C, rarely ~5. `extracted_data/bennu_volatiles_key_numbers.csv`. The B row's carbon_fraction 0.30 is 6-7x the measured total C, so it cannot mean elemental carbon (Round 8). Ammonia is a volatile class upstream does not model.
 
-## toplis2014 — Toplis et al., "Bulk Composition of Vesta as Constrained by the Dawn Mission and the HED Meteorites" [T2]
+## Round 4 - C-type hydration
 
-- **Full text hosted**: `full_texts/toplis_et_al_2014_bulk_composition_of_vesta_ntrs.pdf`
-  (NASA NTRS 20140005771, public domain; verified live HTTP 200 application/pdf). LPSC abstract.
+- **ryugu_hydrated_2023** [T1, hosted, CC BY] (Nature Astronomy 7:170–181): a dehydrated space-weathered skin (~66% of grains, ≥1.5 µm deep) over an interior retaining structural –OH. Spectral ice estimates for C-types are therefore low bounds. `extracted_data/ryugu_hydrated_interior_key_numbers.csv`.
+- **ryugu_soluble_organics_2023** and **ryugu_macromolecular_om_2023** [T1, open_not_pulled] (Science 2023): CHNOS organics of abiotic origin; aqueously altered macromolecular matter with phyllosilicates and carbonates.
 
-### What it anchors
+## Round 8 - Per-class carbon; the CI endmember
 
-- Vesta's core: **radius 90–120 km of metal + sulphide** — the geophysical constraint that makes our `V` row
-  (basaltic crust, PGMs extracted into a core during differentiation) physically grounded rather than assumed.
-- HED meteorites as bulk-composition analogues for Vesta's differentiated interior: validates treating the whole
-  spectral-type→composition mapping as "meteorite class = parent-body fragment" — the premise of both `TAXONOMY_COMPOSITION`
-  and `PGM_ENRICHMENT_BY_TYPE`.
-- Paired with `usgs_pp1802n`: Vesta *has* a large metal core (this paper) AND its crust is ~0.5 ppb Pt (`usgs_pp1802n`) —
-  together they justify the full differentiated-body model our pipeline prices on for X/V/A/R/O types.
+- **glavin_2018** [T2, hosted, NTRS]: C ~0.1 wt% (CK) to ~5 wt% (CI); IDPs ~12 wt%; hydration minerals (serpentine, saponite, smectite in CI, CM, CR and Tagish Lake; tochilinite in CM2). The B/C-complex 22–30% defaults are 4–6× the most carbon-rich C-type: "carbon-bearing material", not elemental C. `extracted_data/glavin_2018_chondrite_volatiles_key_numbers.csv`.
+- **ryugu_ivuna_2023** [T1] (Science 379:786; author version, not hostable): Ryugu is CI1; structural water like CI, interlayer water largely lost; below ~100 °C since alteration. Free ice is essentially absent, so ice priced at the in-space water proxy is recoverable only through dehydroxylation (d05). `extracted_data/ryugu_ivuna_2023_key_findings.csv`.
 
+## Round 11 - Meteorite density and the differentiation mechanism
 
-## Round-3 addition — measured volatile inventory of a real B-type sample
+- **wilkinson_robinson_2000** (see d01).
+- **mandler_elkins_tanton_2013** [T1, open_not_pulled]: Vesta = ~60–70% equilibrium magma-ocean crystallisation with residual melt extracted to shallow chambers: core, mantle (dunites, harzburgites, diogenites) and eucrite crust, whose PGMs went to the core. The mechanism behind `PGM_ENRICHMENT_BY_TYPE`.
 
-### bennu_volatiles_2025 [T1] — "Abundant ammonia and nitrogen-rich soluble organic matter in samples from asteroid (101955) Bennu", Nature Astronomy 9:199–210 (Feb 2025), DOI 10.1038/s41550-024-02472-9
-- **Full text hosted**: `full_texts/bennu_volatiles_nature_astronomy_2025_s41550-024-02472-9_CC-BY.pdf` (8.4 MB, 20 pp; verified live from this machine: HTTP 200 application/pdf via nature.com direct PDF route — the one publisher that did NOT bot-block in round 3). CC-BY per OpenAlex license record.
-- **What it is**: first lab analysis of OSIRIS-REx returned Bennu material (B-type, hydrated) for total C/N and free ammonia/amine/amino-acid inventory, benchmarked against CI–CY chondrites AND the Ryugu samples — i.e. a head-to-head volatile comparison between our two best-studied C-complex targets.
-- **Key numbers** → `extracted_data/bennu_volatiles_key_numbers.csv`: total C 4.5–4.7 wt%, total N 0.23–0.25 wt% (aggregate samples, Ext Data Table 1); ammonia ≈ 40% of total N in the hot-water extract; regional aliphatic/aromatic carbon up to ~2.5 wt%; headline: Bennu is MORE volatile-rich than Ryugu and most meteorites.
+## Round 36 - Per-type material anchors
 
-### Comparison against pipeline `TAXONOMY_COMPOSITION`
-| field (B row) | our value | peer-reviewed measurement | verdict |
-|---|---|---|---|
-| carbon_fraction | 0.30 | total C = 4.5–4.7 wt% in a real B-type sample | **DISCREPANCY — ours is ~6-7x low IF we intend elemental carbon.** Caveat: our `carbon_fraction` prices *free/bulk* carbon at the $/kg commodity rate; the paper's figure includes organics locked in phyllosilicates and soluble N-C species. The honest reading: our B-row volatile mass is under-modelled, but part of the gap is "not extractable as a commodity". Flag for user decision — do NOT silently raise 0.30 |
-| ice_fraction (as water proxy) | 0.20 | not directly measured here (this paper reports C/N/NH3, not H2O wt%) | no verdict this round; the 40%-of-N-as-ammonia result is a NEW volatile class we don't model at all — candidate commodity row for `mineral_value.py` if ammonia ever has an in-space price anchor |
-| (C-complex rows) | carbon_fraction 0.20–0.28 | CI/CM/CY comparison values in Ext Data Table 1 (~1–3 wt% total C, "rare instances up to ~5 wt%" per the paper's own meteorite baseline sentence) | same caveat as B: measured TOTAL carbon is an order of magnitude above our priced fraction; directionally supports raising the volatile mass for hydrated types, but only after deciding what fraction is commodity-extractable (cf. ssap_2021 yields in domain 5 — that paper's per-type extraction numbers are the right bridge between "measured total" and "sellable") |
+`extracted_data/r36_per_type_materials_key_numbers.csv`:
 
-- **Why this matters**: rounds 1–2 anchored *density* and *metal/PGM* content of C-complex bodies; nothing had ever pinned down their VOLATILE inventory against returned material. This paper does, for both Bennu (B) and Ryugu (C), with a common lab protocol — the cleanest possible per-type volatile anchor we will get without flying another sample mission.
+- **elkins_tanton_2020_psyche_preflight** [T1] (JGR Planets 125, CC BY-NC; author mirror): the paper the M row cites. Psyche "between ~25 vol% metal and ~60 vol% metal" (p10; Point D ~25/55/20 metal/pyroxene/pores); the M row's 0.50/0.45 mass split is ≈34 vol% metal, inside. Surface endmembers 90 wt% metal → 6 wt% opx → pure metal (p9); 25–80 km silicate veneer on a stripped core (p13); iron 7,000–8,000, pallasite 4,100–7,800, mesosiderite 3,100–7,200 kg/m³ vs Psyche ~4,000 (p10); pallasites ~65 vol% olivine, Ni ~9–12 wt% (p11); CB chondrites ~60 vol% metal vs the Cb row's 0.01 (pp11–12).
+- **reddy_asteroids_iv_mineralogy** [T1] (Asteroids IV; arXiv preprint, un-hosted): A-types monomineralic olivine Fo85–93 (p8); R chondrites 65–78% olivine (p9); HED pyroxene Fs23–56 / Wo2–14 (±3 / ±1 mol%, p7); S/Q as ordinary chondrites via Dunn et al. 2010b (<2 mol%, ~50 powders); Itokawa LL with ol/(ol+pyx) 76%, Eros in the L/LL zone; A/S/Q/V analogues are 91% of meteorites (p8).
+- **lodders_2010_solar_abundances** [T2] (arXiv preprint, un-hosted): Table 2 CI (Orgueil): C 34,800 ppm (3.48 wt%); Fe/Mg/Si/O/S 18.5/9.6/10.7/45.9/5.35 wt%; PGM 3.29 ppm. Carbon defaults are ~7–9× elemental C; Fe/Mg/Si agree with Cannon's Palme 2014 values within 2%. Full table: `extracted_data/lodders_2010_ci_composition_table2.csv` (incl. Ni 10,800, Co 506, Cr 2,650 ppm).
 
-## Round-4 additions — C-type hydration measured, and the spectral-bias it implies
+## Round 38 - D/T/P anchors
 
-### ryugu_hydrated_2023 [T1] — "A dehydrated space-weathered skin cloaking the hydrated interior of Ryugu", Nature Astronomy 7:170–181 (Feb 2023), DOI 10.1038/s41550-022-01841-6
-- **Full text hosted**: `full_texts/ryugu_dehydrated_skin_hydrated_interior_nature_astronomy_2023_s41550-022-01841-6_CC-BY.pdf` (7.2 MB; verified live from this machine via nature.com direct PDF — same route that worked for bennu_volatiles_2025). CC-BY per OpenAlex license record.
-- **What it is**: lab study of Hayabusa2 Ryugu grains showing the C-type surface carries a dehydrated, space-weathered skin (dehydroxylation of saponite/serpentine) over an interior that still retains structural –OH — i.e. the bulk body IS hydrated even where spectra look dry.
-- **Key numbers** → `extracted_data/ryugu_hydrated_interior_key_numbers.csv`: ~66% (4/6) of examined grains show weathering; dehydration extends ≥1.5 µm below the surface; pristine-grain O/cation ratios confirm interlayer H₂O largely lost but structural –OH retained, consistent with thermogravimetric analysis of Ryugu grains.
+- **marschall_2025_67p_refractory_ice_ratio** [T1] (PSS 259:106061): 67P refractory/ice 0.5 < chi < 1.7, water 28–52 wt% (~35–40% preferred), formed at 25–35 au. D ice 0.25 and P 0.15 sit below.
+- **rubin_2019_67p_abundances** [T1] (MNRAS 489:594; un-hosted): per-water CO2 4.7±1.4, CO 3.1±0.9, O2 3.1±1.1; CH4 0.34, C2H6 0.29, CH3OH 0.21, H2CO 0.32; near-solar O/Si and C/Si, N depleted (as Halley).
 
-### What this settles for `TAXONOMY_COMPOSITION`
-- **The ice_fraction rows carry a systematic bias we can now name**: our per-type water fractions are inferred from spectral/physical properties of the *surface* (albedo bands, thermal inertia), but this paper shows C-complex surfaces dehydrate by exactly the same dehydroxylation process our `Water liberation energy` row prices. A weak 2.7 µm band can mean weathered skin rather than bulk dryness — so **spectral-based volatile estimates for C-types are biased LOW**, and our ice_fraction values (0.10–0.20) should be read as *surface-representative lower bounds*, not bulk means.
-- This is the C-type companion to bennu_volatiles_2025's B-type result: between the two, both of our best-studied hydrated types now have returned-sample evidence that their interiors hold more volatiles than their surfaces advertise. No table change applied — this changes how the existing numbers should be *interpreted* (and possibly nudged up), which is a user decision like round 3's carbon_fraction flag.
+Every one of the 32 types now has a material anchor. `extracted_data/r38_primitive_type_materials_key_numbers.csv`.
 
-### ryugu_soluble_organics_2023 [T1] — "Soluble organic molecules in samples of the carbonaceous asteroid (162173) Ryugu", Science (2023), DOI 10.1126/science.abn9033
-- **Access**: OA per OpenAlex, but both HAL mirror routes bot-block this machine (Anubis challenge page returned instead of PDF — verified). Recorded `open_not_pulled`; pullable from a normal browser.
-- **Abstract (as published via OpenAlex)**: Hayabusa2 Ryugu surface samples analyzed for organics; identified CHNOS molecules formed by methylation, hydration, hydroxylation and sulfurization reactions — amino acids, aliphatic amines, carboxylic acids, PAHs and N-heterocycles with properties consistent with abiotic origin.
-- **Pipeline mapping**: the C-type organic-inventory companion to bennu_volatiles_2025's B-type numbers; together they bracket what "carbon_fraction" means for both of our hydrated reference types (B vs C).
+## Round 61 - hein2020 plant economics
 
-### ryugu_macromolecular_om_2023 [T1] — "Macromolecular organic matter in samples of the asteroid (162173) Ryugu", Science (2023), DOI 10.1126/science.abn9057
-- **Access**: OA per OpenAlex; CNRS HAL mirror bot-blocked from this machine (same Anubis challenge). Recorded `open_not_pulled`.
-- **Abstract (as published via OpenAlex)**: Ryugu macromolecular organic matter contains aromatic + aliphatic carbon, ketone and carboxyl groups; spectroscopic features consistent with chemically primitive CCs that experienced parent-body aqueous alteration; morphology = nanoglobules + diffuse carbon associated with phyllosilicate and carbonate minerals; D/N-15 enrichments indicate formation in the early Solar System.
-- **Pipeline mapping**: confirms Ryugu's organic carbon is *aqueously altered* — direct sample-level support for treating C-type bodies as hydrated parent-body fragments (the premise behind `ice_fraction` > 0 on every C-complex row).
+Tables 1-2: breakeven throughput "2.3*10-4 kg/s/kg, meaning that for each kg of spacecraft dry mass, 0.23 grams of material are processed per second" (7258 kg/yr per kg of craft), ~73x the plant-throughput centre (100) and above its 500 maximum even per kg of plant (24194-72582). Platinum (grade 1e-5) needs 0.35 kg/s/kg: "The spacecraft would need to be able to process the equivalent of its own mass within 3 seconds." Water $20,000/kg, Pt $70,000/kg; production cost $1,000,000 / $10,000 per kg; operations $5,700,000 / $100,000; development $5,453,333 / $500,000 per kg; refined/processed 0.05. These are profitability requirements, not plant capability: recorded, not a candidate. `22_prior_art_techno_economic_benchmarks/extracted_data/r61_hein2020_plant_economics_key_numbers.csv`.
 
-## Round-4 status (domain 2)
-Both reference types now have returned-sample volatile/organic anchors: B = bennu_volatiles_2025 + ryugu_hydrated_2023's comparison data; C = ryugu_hydrated_2023 + the two Science organic papers (OA-pending). The domain-2 question "what does a spectral type actually contain" now has measured answers for both ends of the hydrated range, with one systematic bias (surface weathering) explicitly named.
+## Maintenance (2026-09-26)
 
-## Round-8 addition — per-class carbon anchor + the C/CI endmember of our volatile range (both returned samples)
+Un-hosted (arXiv default licence): hein2020, asime2018, lewicki2023, reddy, lodders_2010_solar_abundances, rubin_2019_67p_abundances; numbers extracted first. rubin_2019_67p_abundances Table 2 extras and Tables 4-5 central values in `extracted_data/unhosted_sources_key_numbers.csv` (dust + volatiles = combined in every column). New backfill rows for toplis2014 (p2), usgs_pp1802n, mandler, farnocchia.
 
-### glavin_2018 [T2] — Glavin, Alexander, Aponte, Dworkin, Elsila & Yabuta, "The Origin and Evolution of Organic Matter in Carbonaceous Chondrites and Links to Their Parent Bodies" (NASA chapter; NTRS 20180004493)
-- **Full text hosted**: `full_texts/glavin_et_al_2018_origin_evolution_organic_matter_carbonaceous_chondrites_NTRS_20180004493_publicdomain.pdf` (2.1 MB, 67 pp; verified live from this machine: NTRS API + PDF download OK). Public domain as a US-government work.
-- **Key numbers** → `extracted_data/glavin_2018_chondrite_volatiles_key_numbers.csv`: carbon abundance across C-types runs **~0.1 wt% (CK) up to ~5 wt% (CI)**; IDPs average ~12 wt% C (~half organic); per-class hydration mineralogy table (serpentine/saponite/smectite present in CI, CM, CR + Tagish Lake; tochilinite concentrated in CM2s).
+## R70 / R71 / R72 - Extraction (2026-09-27)
 
-### What this settles
-- **The `carbon_fraction` rows now have their first measured per-class anchor — and it shows the defaults encode a different definition than bulk elemental carbon.** TAXONOMY_COMPOSITION carries 22–30% carbon for B/C-complex; the most carbon-rich real C-type (CI) is ~5 wt%. That 4–6× gap means our fractions must be read as 'carbon-bearing material' (organics + inorganic carbonates + fine-grained dust), not elemental C. This round's data gives any future re-calibration a measured starting point per class instead of the current defaults.
-- **The `ice_fraction` rows get their mineralogical grounding**: for C-types, 'ice' is actually phyllosilicate-bound water (serpentine/saponite/smectite) — real and class-specific, with the hydration gradient CI > CM > CV matching our B-row-sits-above-C-rows ordering.
+- R70: `r70_bennu_volatiles_2025.csv` (15), `r70_bennu_volatiles_2025_ed_table1_CNH.csv` (13), `r70_glavin_2018.csv` (17), `r70_marschall_2025_67p_refractory_ice_ratio.csv` (95), `r70_nat_dms2023.csv` (15), `r70_ryugu_hydrated_2023.csv` (8), `r70_toplis2014.csv` (6).
+- R71: `r71_asime2018_key_numbers.csv`, `r71_lewicki2023_key_numbers.csv`, `r71_lodders_2010_key_numbers.csv`, `r71_lodders_2010_table3_ci_solar_recommended_abundances.csv` (83), `r71_lodders_2010_table6_protosolar_abundances.csv` (83), `r71_lodders_2010_table8_nuclide_abundances.csv` (287), `r71_reddy_asteroids_iv_key_numbers.csv`, `r71_reddy_asteroids_iv_spectral_calibrations.csv`, `r71_rubin_2019_key_numbers.csv`, `r71_rubin_2019_table2_67p_bulk_ice_composition.csv` (44), `r71_rubin_2019_table3_67p_elemental_ratios_to_oxygen.csv`, `r71_rubin_2019_table4_67p_elements_per_si.csv`, `r71_rubin_2019_table5_67p_dust_ice_split.csv`, and USGS PP1802-N Tables N2-N5, N7, N10 (`r71_usgs_pp1802n_tableN10_pge_deposit_grade_tonnage.csv`, 137 deposits; `r71_usgs_pp1802n_key_numbers.csv`). rubin's image-read error superscripts checked against pages.
+- R72: `r72_lodders_2010_tables4_5_7_solar_mass_fractions.csv` (73; X+Y+Z = 1; Table 5 Z 1.41 / 1.22 / 1.69 %). economicspace's nickel-iron yields (IIIAB, 35.5 ppm PGM) relative to Pt: Ru 0.20, Os 0.13, Ir 0.27, Pd 0.67, Rh 0.10 vs CI 0.72, 0.52, 0.50, 0.59, 0.15; CI PGM in metal (19.6 wt% Fe+Ni+Co) ~17 ppm; iron meteorites fractionate Ir/Os/Ru, so no candidate. Hein's elasticity sweep 0.08-0.95 ("not below 0.25") agrees with 0.5.
 
-### ryugu_ivuna_2023 [T1] — Yokoyama et al., "Samples returned from the asteroid Ryugu are similar to Ivuna-type carbonaceous meteorites", Science 379(6634):786 (DOI 10.1126/science.abn7850)
-- **Access**: full text verified live this round via Hokudai's HUSCAP institutional repository (the HAL route was Anubis-blocked in round 4 — a different, working path). BUT the repository copy is explicitly an **author's version posted "by permission of AAAS for personal use, not for redistribution"** → recorded `open_not_pulled` with metadata + key findings; NOT hosted (hosting would violate the stated rights).
-- **Key findings** → `extracted_data/ryugu_ivuna_2023_key_findings.csv`: Ryugu = Ivuna-type CI1 endmember; structural water similar to CI chondrites, but **interlayer/free water is largely absent — lost to space**; samples stayed below ~100 °C from alteration to present.
+## R73 - Elkins-Tanton and Ryugu read (2026-09-27)
 
-### What this settles
-- **Both ends of our volatile range now rest on returned samples**: B = bennu_volatiles_2025 (round 3), C/CI = ryugu_ivuna_2023 + the two Ryugu organics papers (rounds 4, recorded OA-pending).
-- **The critical caveat for `ice_fraction` pricing**: returned C-type samples contain essentially no free ice. Any value priced at the $2500/kg in-space water proxy overstates what is extractable from a C-complex body without structural-water liberation processing (the kleinhenz_2016/2018 energy chain, domain 5). The pipeline's `ice_fraction` should be read as 'hydrated-mineral content', with the recoverable fraction gated by that processing step — this round makes that distinction explicit and sourced.
+- `elkins_tanton_2020_psyche_preflight` (post-erratum): `r73_elkins_tanton_2020_key_numbers.csv`, `..._table1_psyche_diameter_volume.csv`, `..._table2_psyche_mass_density.csv`; densities = mass / Viikinkoski volume (226 km) within 0.2%; adopted 3,780 +/- 340 kg/m3 (3,400-4,100). **rc-009 withdrawn**: the abstract, summary and conclusions say ~30 vol% (Sec 2.5 ~25; p5 27%), matching upstream's "roughly 30-60%".
+- ryugu_ivuna_2023: H2O 6.84 +/- 0.34 wt% (interlayer 0.30 +/- 0.01, structural 6.54 +/- 0.32); Ivuna 12.73 (6.58 interlayer); C 4.63 +/- 0.23 wt% (organic 3.08 +/- 0.30); alteration at 37 +/- 10 C, 5.2 Myr after CAIs. Supports rc-014 (ice is structural water). Upstream C carbon 0.04 sits between organic 3.1 and total 4.6 wt%. `r73_ryugu_ivuna_2023_key_numbers.csv`.
 
-## Round-8 status (domain 2)
-Domain 2 is now anchored at both ends of its volatile range (B + C/CI returned samples), has a measured per-class carbon baseline, AND names the exact mineralogy behind `ice_fraction`. Remaining open items in this domain are unchanged: epsc2022_context (Copernicus login wall) and the PGM-enrichment differentiation argument still rests on usgs_pp1802n alone.
+## R74 - Upstream citations registered (+8)
 
-## Round-11 addition — S-type density gets a meteorite-side anchor; PGM gradient gets its differentiation mechanism
+`pearson_2006_carbon_nitrogen_carbonaceous_chondrites` and `lauretta_2024_bennu_in_the_laboratory` (C-complex carbon); `jarosewich_1990_meteorite_chemical_analyses` (S/Q metal); `kargel_1994_metalliferous_asteroids_precious_metals` (PGM baseline caveat); `fornasier_2010_m_type_spectroscopic_survey` (Xk/Xe and M mapping); `lodders_2003_solar_abundances_condensation_temperatures`, `wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals`, `nichiporuk_brown_1965_pt_pd_iron_meteorites` (nickel-iron PGM yields).
 
-**wilkinson_robinson_2000 (T1, open_not_pulled)**: 82 samples / 72 ordinary chondrites measured to ~1% accuracy by modified Archimedes method. H group **3.44±0.19**, L **3.40±0.15**, LL **3.29±0.17 g/cm^3** (1-sigma); intra-group spread 3.0–3.8 at near-invariant bulk composition — density tracks porosity/texture, not chemistry, within a group. This is the meteorite-side anchor for our S row: hand samples of chondritic material sit ~3.3–3.4 g/cm^3 while carry2012's asteroid-scale S median is 2.70 — the gap is km-scale macro-porosity/rubble structure, exactly what `TAXONOMY_COMPOSITION` encodes (S=2.70). Wiley bot-blocks; no preprint found.
+## R77 - hein2020 moved to d22
 
-**mandler_elkins_tanton_2013 (T1, open_not_pulled)**: CC-BY per OpenAlex but only the Wiley route exists and it 403s from this machine. Best-fit Vesta model = ~60–70% equilibrium crystallization of a magma ocean + continuous extraction of residual melt into shallow chambers; predicts metallic core / mantle (dunites, harzburgites, diogenites) / basaltic crust (eucrites). This is the **mechanism** behind `PGM_ENRICHMENT_BY_TYPE`: eucrites are late-stage residual melts from a body whose metal segregated into its core, so their HSE/PGM budget is depleted vs primitive chondritic material by exactly that process. With usgs_pp1802n (measured Pt numbers) the whole gradient now has both legs: USGS = abundances, this paper = why they differ by type.
+Files now at `22_prior_art_techno_economic_benchmarks/extracted_data/r61_hein2020_plant_economics_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_hein2020_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_hein2020_table3_pt_supply_demand_profitability.csv`. Shared CSVs staying here: `extracted_data/composition_value_key_numbers.csv`, `extracted_data/unhosted_sources_key_numbers.csv`.
 
-## Round-12 addition — second M-type density (farnocchia_2024) + ISRU economics anchor
+## R83 - Mineralogy-phase citations registered (+11)
 
-**farnocchia_2024**: see domain 1's round-12 block for the full write-up; it is registered here too because M-row composition/density feeds both domains.
+From AsteroidCatalog@6a2cfbc `mineralogy.py` and economicspace CITATIONS.md, all `registered_not_pulled`:
 
-## Round-36 addition — per-type MATERIAL anchors (criterion #3: "asteroid composition and the materials we can find in each type, plus its ratios")
+- `scott_wasson_1975_classification_properties_iron_meteorites`: iron-meteorite trace metals (Ga/Ge/Mo/W/Re) behind nickel-iron yields.
+- `dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites`: S/Sq/Q silicate split (olivine ~0.58, orthopyroxene ~0.24, pyroxene ~0.06, plagioclase ~0.12), troilite, chromite.
+- `king_schofield_2015_ci_modal_mineralogy_xrd`: CI split (phyllosilicate ~81-84 wt%, magnetite, sulfide, carbonate).
+- `howard_alexander_2015_hydrous_meteorite_phyllosilicate_classification`: CM phyllosilicate 70-90 wt%.
+- `alexander_fogel_2007_macromolecular_organic_matter_chondrites`: IOM:soluble carbon 0.70:0.30.
+- `mittelfehldt_2015_hed_clan_vesta`: V phases (pyroxene ≈ plagioclase; chromite, ilmenite ~1 wt%; Ni-free metal).
+- `sunshine_connolly_2008_ancient_asteroids_refractory_inclusions`: L-types have the most CAIs (spinel).
+- `hiro_i_zolensky_2001_tagish_lake_possible_d_type_sample`: D/Z/P accessories (magnetite ~5, sulfide ~3, carbonate ~3 wt%; see rc-085).
+- `keil_1968_mineralogical_chemical_enstatite_chondrites`, `keil_2010_aubrites_and_their_asteroidal_parent_bodies`: Xe sulfides (troilite ~5, niningerite ~2, oldhamite ~0.7, daubreelite ~0.3 wt%), low-Ni kamacite.
+- `jones_mccubbin_2014_phosphate_minerals_ll_chondrites`: merrillite ~0.4, chlorapatite ~0.2 wt%.
 
-**The gap this round closed.** Densities per spectral class were already anchored (carry2012 Table 3 + simda2024 medians), but `TAXONOMY_COMPOSITION`'s *material* content — the metal/silicate/carbon/ice mass fractions and the minerals lists for ~30 types — had no citable source anywhere in this repo. The three items below change that, each verified from full text on this machine (page citations in `extracted_data/r36_per_type_materials_key_numbers.csv`, 18 rows).
+## R113 - Class-to-meteorite mapping (2026-10-04)
 
-### elkins_tanton_2020_psyche_preflight — JGR Planets 125:e2019JE006296 [T1, open_not_pulled]
-- **Why it matters first**: `catalog.py`'s M-row note already cites "Elkins-Tanton et al. 2020" for the claim that Psyche's metal content is "roughly 30–60%" — but this paper was never registered in General_Research, so a load-bearing citation pointed at nothing verifiable here. Registered now; gap closed.
-- **Access**: CC-BY-**NC** license (verified in PDF front matter) + AGU landing page 403s from this machine ⇒ `open_not_pulled` per the repo legend (same class as cannon2023). Analyzed from the author mirror https://benweiss.mit.edu/s/Elkins-Tanton_2020_JGR.pdf — HTTP 200, application/pdf, 4.4 MB, verified live this round; NTRS search returned no index entry for it.
-- **Key extracted numbers** (all verbatim from the full text):
-  - p10 (Sec 2.5): Psyche predicted **"between ~25 vol% metal and ~60 vol% metal"**; Point D = ~25 vol% metal + ~55 vol% magnesian pyroxene + ~20% pore space.
-  - **Comparison against pipeline**: our M-row mass fractions (metal 0.50 / silicate 0.45) convert to ≈34 vol% metal at ρ_metal≈7.8 vs ρ_sil≈3.6 g/cm³ → **INSIDE the peer-reviewed band; row AGREEs.** Note: catalog.py paraphrases "30–60%" but the paper's verbatim band is ~25–60 vol% — a future spacecost edit could quote it exactly (read-only for this process).
-  - Surface endmembers, p9: 90 wt.% metal / 10 wt.% opx (Hardersen) → only 6 wt.% opx (Sanchez) → strictly metal powder (Fornasier); pairs with nat_dms2023's 85/15 surface figure as the high end of the *surface* range.
-  - Retained silicate veneer scenario, p13: **25–80 km** of silicate rock on a stripped core (Johnson et al., 2019).
-  - Meteorite-analog density table, p10: iron 7,000–8,000 / pallasite 4,100–7,800 / mesosiderite 3,100–7,200 kg/m³ vs Psyche ~4,000 (range 3,400–4,100) — the density argument that rules out a solid-metal M-type; pallasites = Fe-Ni metal + olivine Fa11-20 at **~65 vol% olivine** with Ni ~9–12 wt% (p11).
-  - CB chondrites, pp11–12: **~60 vol% metal**, skeletal olivine Fa2-4 + cryptocrystalline pyroxene Fs2 — the high-metal carbonaceous endmember relevant to our Xc/Cb rows (our Cb row carries only 1% metal; flagged as a candidate revision, not applied).
+- `burbine_2024_testing_bus_demeo_with_meteorite_spectra` (CC BY; hosted from R152): ~1,500 meteorite spectra classified: HEDs fall in V, ordinary chondrites in S/Q, D and X mostly CM with many irons; C, B, L and Xc mix very different meteorites, so class sets the analogue well for V and S/Q only.
+- `de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: five spinel-rich L-types show Mg-rich olivine plus spinel, little hydration, like CV3 Allende: supports the L row.
+- `mahlke_2022_phd_thesis_asteroid_taxonomy` (abstract) and `lebofsky_et_al_1990_low_albedo_3um_photometry` (unread).
 
-### reddy_asteroids_iv_mineralogy — Asteroids IV chapter, UAPress 2015 pp.43–63 [T1, full_text_hosted]
-- **What it is**: the definitive review of asteroid mineralogical interpretation (Reddy, Dunn, Thomas, Moskovitz & Burbine; book DOI 10.2458/azu_uapress_9780816532131). Hosted copy = arXiv:1502.05008v1 author preprint (arXiv comment field verbatim: "Chapter to appear in the Space Science Series Book: Asteroids IV, 51 pages"); abs-page metadata verified live this round.
-- **Key extracted numbers** — first per-type material anchors for `TAXONOMY_COMPOSITION`:
-  - A-types = **monomineralic olivine Fo85–93**, p8 (RMS 5 mol% calibration) → anchors our A-row minerals list [olivine] + metal_fraction=0.05 (monomineralic ⇒ essentially no free metal).
-  - R chondrites carry **65–78% olivine by volume** ("higher abundances of olivine than the ordinary chondrites"), p9 → anchor for A/R silicate-dominant rows (our A/R: silicate_fraction=0.90 — consistent).
-  - HED/V-type pyroxene range **Fs23–56 / Wo2–14**, Burbine et al. 2007 calibrations accurate to within 3 mol% Fs and 1 mol% Wo, p7 → anchor for V-row minerals [pyroxene, plagioclase, olivine].
-  - S/Q = ordinary-chondrite analogs via Dunn et al. 2010b Fa/Fs calibrations (<2 mol% error) built on ~50 measured OC powders (PSD-XRD modes down to 1 wt%), pp7–9 → anchor for S-row minerals [olivine, pyroxene, nickel-iron].
-  - **Ground truth**: Itokawa = LL chondrite with Shkuratov model ol/(ol + low-Ca pyx) = **76%** (Fig.5 caption p26; Hayabusa sample-confirmed); Eros plots in the L/LL zone with identical Fs/Fa from NEAR NIS and ground-based spectra (Fig.6 captions pp26–27). Two spacecraft verifications of "S-row = ordinary chondrite".
-  - Context, p8: A/S/Q/V meteorite analogs constitute **91% of the terrestrial meteorite collection** — i.e., our table is anchored where most ground truth exists; rows without such coverage (D/T/P/Xc) legitimately remain approximate.
+## R114 - Carbonaceous bulk composition (2026-10-04)
 
-### lodders_2010_solar_abundances — Kodaikanal lecture notes [T2, full_text_hosted]
-- **What it is**: Lodders' solar-system abundance compilation with the complete CI-chondrite composition table (Orgueil as representative CI). Hosted copy = arXiv:1010.2746v1 (marked "2010 Preprint" on p.1; published in Astrophys. Space Sci. Proc. 57:379–417, Springer 2010) — preprint of a peer-reviewed proceedings volume ⇒ T2 per repo convention.
-- **Key extracted numbers** (Table 2, pp8–10): total C = **34,800 ppm = 3.48 wt%**; Fe/Mg/Si/O/S = 185,000/95,800/107,000/459,000/53,500 ppm (18.5/9.6/10.7/45.9/5.35 wt%); PGM suite Ru 0.686 + Rh 0.139 + Pd 0.558 + Os 0.493 + Ir 0.469 + Pt 0.947 = **exactly 3.29 ppm** CI bulk.
-- **Comparison against pipeline**: (a) our B/C-complex carbon_fraction defaults of 0.25–0.30 are ~7–9× bulk *elemental* C — independently confirms the glavin_2018 flag that those fractions encode a broader "carbon-bearing material" definition, not elemental C; (b) Fe/Mg/Si cross-checks Cannon et al.'s Table 3 CI values (Fe 18.88 / Mg 9.54 / Si 10.70 from Palme et al. 2014) — two independent compilations agree to <2%; (c) the PGM sum independently reproduces the lodders_palme2009 baseline in domain 1 that anchors `PGM_ENRICHMENT_BY_TYPE` calibration — the whole PGM chain now has a second, element-by-element verifiable leg.
+`trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites` (MNRAS 2025): ICP-MS bulk composition of CI, CM, CR, CO, CV, CK and a ureilite; CI Orgueil Fe 25.93 wt%, Ni 7,719 ppm; Ni 2,779-15,469 ppm across CO and CV; no PGM columns. `schubert_2025_economical_extraction_platinum_main_belt_asteroids`: record only (the owner's "20-100 ppm" unchecked). `extracted_data/r114_gr_links_key_numbers.csv`.
 
-### Open items after R36
-- Xc/Cb metal fractions: CB-chondrite ~60 vol% metal endmember (above) vs our Cb=0.01/Xc=0.25 — candidate revision when spacecost is editable; not applied silently.
-- M-row paraphrase "30–60%" → verbatim "~25–60 vol%" quote available for a future edit.
-- D/T/P rows RESOLVED by R38: marschall_2025 + rubin_2019 now anchor D/T/P at material level (see Round 38 block below) at material level (no comparable ground truth exists in the hosted literature set) — honest gap, recorded rather than papered over.
+## R115 - Primitive-class carbon and metal; AsteroidCatalog re-checked (2026-10-04)
 
-## Round 38 — D/T/P primitive rows get their first peer-reviewed material anchors (criterion #3 closed for all 32 types)
+At AsteroidCatalog@6a2cfbc:
 
-R36 left the D, T and P rows "unanchored at material level" as an honest gap. R38 closes it with two Rosetta-era papers on comet 67P — the most pristine measured primitive body in the solar system — both full-text hosted (arXiv preprints of T1 journal articles):
+- **rc-075:** v1.5.0 cut C-complex carbon to 0.04 (rc-010) but left D and Z at 0.30, T and P at 0.25; Tagish Lake (the D/Z/P analogue) carries 4.11 and 4.13 wt% C, so the cells are 7.3x and 6.1x; 67P dust (~45 wt% organic-like) is the counter-case: the owner's call (as rc-013 for ice).
+- **rc-076:** B, C, Cb and F carry 0.01 metal; Ryugu has "no metal grains", so 0.01 is a ceiling.
+- rc-007, rc-045, rc-046 applied; rc-001 declined; rc-002, rc-012, rc-013, rc-014 open (Xc metal 0.25 -> 0.32 as an albedo mixture).
+- Agreeing: every DENSITY_EVIDENCE body with a Carry value matches Carry Table 1 (Ceres 2.13, Pallas 2.86, Interamnia 1.96, Mathilde 1.32, Pulcova 1.00, Daphne 2.03, Hermione 1.27, Elektra 1.84, Eugenia 1.34, Antiope 0.86, Lundia 1.64, Frostia 0.88, Klotho 4.16, Hestia 5.81, Eunomia 3.54, Juno 3.68, Parthenope 3.27, Ostro 2.59, Kleopatra 4.27, Lutetia 3.44, Sylvia 1.31, Camilla 2.28, Psyche 3.38, Patroclus 0.88); CV/CO 2.79/3.03; 67P ices 100 : 4.7 : 0.67.
 
-**marschall_2025_67p_refractory_ice_ratio (T1, PSS 259:106061)** — Rosetta ROSINA+COSIMA Monte Carlo bulk model. Refractory-to-ice ratio constrained to **0.5 < chi < 1.7** from composition alone; bulk water mass fraction **28–52 wt%** (preferred case chi~1.1, solar O at ~35–40%); formation region **25–35 au**. This is the peer-reviewed basis for primitive-body ice fractions: our D-row ice_fraction=0.25 and P-row 0.15 sit BELOW even the chondritic upper case — defensible as dehydrated outer-belt analogs, but a revision candidate (upward toward ~0.3–0.4) if a cometary end-member is preferred for D/T. Recorded, not applied (target repo read-only).
+`extracted_data/r115_taxonomy_carbon_metal_checks.csv`.
 
-**rubin_2019_67p_abundances (T1, MNRAS 489:594)** — full bulk volatile inventory from ROSINA/DFMS. Table 2 (normalized to H2O): CO2 = **4.7±1.4**, CO = **3.1±0.9**, O2 = **3.1±1.1** mol/mol; CH4 0.34, C2H6 0.29, CH3OH 0.21, H2CO 0.32. Table 4 elemental ratios: near-solar O/Si and C/Si with **N/Si depleted** — the same signature as 1P/Halley (p.20). Together with Marschall's refractory/ice split this bounds the organic+ice budget of D/T/P rows: our D-row carbon_fraction=0.30 + ice_fraction=0.25 is consistent once CO2/CO/O2 are folded into "organics". No revision forced — supporting evidence, recorded in `extracted_data/r38_primitive_type_materials_key_numbers.csv` (20 rows).
+## R120 / R121 / R125 / R133 - Queue reads (2026-10-05 to 10-07)
 
-**Criterion #3 status**: every one of the 32 TAXONOMY_COMPOSITION types now has at least one peer-reviewed anchor for its material content or ratios. The last unanchored trio (D/T/P) is closed this round. Remaining open items are *revision candidates* (values that disagree with newer data), not missing anchors: Xc/Cb metal fractions, M-row verbatim quote wording, and — new from R38 — the P-row density below.
-## Round 61 addition — hein2020 deepened: plant-economics mining closes the 'beneficiation cost structure' calibration point named in round 1
+- `wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals` hosted (Bulletin 1214 chapter A, public domain): PGM abundances in rocks and meteorites summarised from the literature.
+- `fornasier_2010_m_type_spectroscopic_survey` read from arXiv (not hostable): the M-type survey behind the Xk/M notes.
+- `jones_mccubbin_2014_phosphate_minerals_ll_chondrites`: only the electronic appendix (X-ray maps for five LL chondrites) is open; no wt% figures.
+- `lauretta_2024_bennu_in_the_laboratory` read from arXiv (CC BY-NC-ND there, not hostable): hummocky stones 1.55 ± 0.07 g/cm3, angular 1.69 ± 0.04 (Table 2, 12 stones); 637 Ryugu particles 1.79 ± 0.31.
+- `lodders_bergemann_palme_2025_solar_system_abundances_ssreview` (read only): protosolar X=0.7060, Y=0.2753, Z=0.0187; "no obvious correlation of CI-chondritic to solar elemental abundance ratios with condensation temperatures is observed". `r133_lodders_2025_abundances_key_numbers.csv`.
 
-**Context**: d2's original hein2020 block (round 1) recorded its demand curve + market split and flagged one open item — *"the pipeline's beneficiation cost line is far lighter than hein's equipment mass — worth a look when operational_costs get revisited."* This round mines the hosted full text for exactly that: Tables 1+2 carry the complete per-scenario parameter set, including throughput rate in **kg processed / s / kg of spacecraft dry mass** — the same quantity class as our `In-space processing plant throughput` row (operational_costs.csv).
+## R152 - Candidate re-check (2026-10-12)
 
-**Verbatim parameters (Tables 1+2 + p6-p7 prose; every string below verified against a fresh arXiv pull — sha-identical to the hosted v11 copy: prose count==1, cost rows shared by both tables once per table):** "Table 1: Water mining conservative and optimistic scenarios" "Table 2: Platinum mining conservative and optimistic scenarios" Prose: "The throughput rate for arriving at a reasonable duration to breakeven is 2.3*10-4 kg/s/kg, meaning that for each kg of spacecraft dry mass, 0.23 grams of material are processed per second." "For platinum mining, the situation is quite different, simply due to the much lower ratio of platinum to asteroid material. We use a value of 10-5 from Blair [35]. For a similar breakeven to the water mining case, the throughput rate needs to be about two orders of magnitude higher." "The value of 0.35 kg/s/kg seems very high. The spacecraft would need to be able to process the equivalent of its own mass within 3 seconds." Table cells verbatim — water case: "Specific production cost [$/kg] 1000000 10000 (conservative SMAD-Calla / optimistic mass-production)"; "Price of water [$/kg] 20000"; "Operation cost [$] 5700000 100000"; "Specific development cost [$/kg] 5453333 500000"; "Ratio refined resources vs processed material 0.05 0.05" (the paper's own words: "For water mining in Table 1, a value of 5% for the fraction of extracted resources versus processed material is used, which is a rather conservative value for C-type asteroids."); Pt case — price $70,000/kg, ratio **1e-5** (Blair), throughput **0.35 kg/s/kg**, with the authors' honesty note verbatim above.
+At AsteroidCatalog@86cfc54 (6a2cfbc is now 82a2905 after a history rewrite; `upstream_commit_map.csv`): cells unchanged (Cb metal 0.01; D/Z/T/P ice 0.25/0.25/0.10/0.15, carbon 0.30/0.30/0.25/0.25; B/C/Cb/F nickel-iron 0.01).
 
-**Comparison against our `In-space processing plant throughput` row (centre 100 kg/yr per kg of PLANT, range 20-500):**
-- **Water breakeven case — DISCREPANCY recorded (his viability threshold exceeds even our range high).** hein's conservative scenario processes at 2.3e-4 kg/s/kg = **7258 kg processed / yr per kg** of spacecraft dry mass (computed: f x seconds-per-year). Against our plant-row centre this is **+7158% (~73x)** — and it exceeds even the TOP of our 20-500 band. Scope-adjusted reading, recorded honestly: his denominator is WHOLE-craft dry mass (bus + plant in a 150 kg craft), ours is PLANT-only; if the processing plant were ~10-30% of craft mass his requirement maps to 24194-72582 kg/yr per kg PLANT — i.e. ~5-14x our range high of 500, in every case above the band. Verdict: **DISCREPANCY recorded, no revision forced** — his f is an ECONOMIC model input (chosen so a 150 kg craft breaks even over a 100-day mining campaign at $20k/kg water), not an independent measurement of achievable plant throughput; our row prices engineering capability with its own documented derating logic from terrestrial smelters. The two numbers now bracket the question 'how fast must a plant run to be profitable' (ours: what we believe it CAN do; his: what profitability DEMANDS) — both on file for any future re-calibration of the throughput row or mining-duration assumptions.
-- **Platinum case — a different regime by orders of magnitude, recorded not revised.** Pt breakeven needs 0.35 kg/s/kg = **11045160.0 kg/yr per kg** — a factor of ~110,000x our centre. The paper itself flags this as "seems very high" (process its own mass in ~3 s). This is the arithmetic consequence of the 1e-5 Pt concentration, not a plant-capacity disagreement: at that grade you must move enormous feed to extract sellable metal. Our pipeline prices Pt-return missions on per-body resource value rather than assuming this throughput; hein's number is registered as the *viability threshold* for any future Earth-return-Pt scenario.
-- **Value-side calibration point (new).** hein prices in-space water at **$20,000/kg** and Pt at $70,000/kg (Table 1/2 constants). Our pipeline's in-space water proxy is ~$2.5k/kg — an 8x gap on the value side of exactly this market split. NOT a revision candidate for either table: hein's price is a cis-lunar-delivery assumption inside his own model, ours is the pipeline's working proxy; both are recorded so any future water-market row carries both institutional reference points.
+- **burbine_2024_testing_bus_demeo_with_meteorite_spectra** hosted; its Table A1 (1,489 RELAB spectra with group and class) in `extracted_data/r152_burbine_2024_table_a1.csv`.
+- **rc-012 withdrawn:** of 10 CB/CH spectra one is Cb, six L, two X, one S; the seven Cb spectra are four L5 chondrites, Mighei (CM2), Y-82162 and Isheyevo; the one NEOWISE Cb albedo is 0.043 vs ~0.3 for iron-rich meteorites.
+- **rc-076 narrowed to C:** howard_2010_cv3_modal_mineralogy_psd_xrd (CV3 metal 2-2.2 vol% reduced, 0.2-1.1 oxidised) and howard_2011_cm_modal_mineralogy_psd_xrd_part2 (CM metal under ~1 vol%) leave 0.01 standing for CV/CM-paired rows; B's 107 spectra run CV3 19, aubrite 16, lunar 14, CM2 12, L5 9.
+- **rc-075 / rc-013 deepened:** Burbine's D matches CM 50%, iron 39%, CO 5% (collection bias); one of six Tagish Lake spectra is D. `wong_2024_jwst_lucy_trojans_oh_organics_co2` (arXiv): less-red and red Trojans "roughly correspond" to P and D; no 2 um band, ice depleted to ~10 m (~10 cm at poles); if the 3 um band is ice, P-like Trojans hold more (opposite to D 0.25 > P 0.15); aliphatic organics deeper on red (same order as D 0.30 > P 0.25). Surface-reachable ice is near zero.
 
-**Criterion #2 status (hein2020)**: every cost-relevant parameter in the hosted text now extracted — Tables 1+2 complete cell sets + all throughput prose passages. The round-1 open item on beneficiation cost structure is CLOSED at the level this paper allows; no Wh/kg energy figures exist anywhere in it (energy per kg processed was never part of its model), so our `Beneficiation / on-site processing energy` row keeps its existing literature anchor.
+`extracted_data/r152_taxonomy_analogue_checks.csv`.
 
-## Maintenance (2026-09-26) — six files un-hosted; full CI table; hein2020 misread corrected
+## R155 - Jarosewich, Lodders 2003, Hiroi (2026-10-12; rc-085)
 
-- **Un-hosted**: hein2020, asime2018, lewicki2023, reddy_asteroids_iv_mineralogy, lodders_2010_solar_abundances, rubin_2019_67p_abundances (all arXiv default licence). Un-hosted on 2026-09-26 because the licence does not permit redistribution (details in each registry row); every number this file quotes from them was checked against the PDF first and is in `extracted_data/`.
-- **lodders_2010 Table 2 in full**: all 83 elements (ppm, σ, atoms per 10^6 Si) in `extracted_data/lodders_2010_ci_composition_table2.csv`. Adds the values the nickel-iron rows need (Ni 10,800 ppm, Co 506 ppm, Cr 2,650 ppm) that R36 did not take.
-- **rubin_2019**: Table 2 ratios for C2H6, C3H8, H2CO, H2S and atomic S, and the central values of Tables 4 and 5 (per-Si element ratios; dust/ice split), are now in `extracted_data/unhosted_sources_key_numbers.csv`. Their uncertainties are set in a font the text layer garbles; the central values pass dust + volatiles = combined in every column. R38 had recorded Table 4 only as "near-solar".
-- **hein2020, round 1's comparison table**: "throughput 150 kg/s/kg-equipment" misreads the paper. 150 kg is the spacecraft dry mass; the breakeven throughput is 2.3 x 10^-4 kg/s per kg (p6), as R61 already extracted. The line's conclusion (our beneficiation cost line is light) does not depend on it.
-- Page numbers added to the hein2020, asime2018 and lewicki2023 rows of `composition_value_key_numbers.csv`.
-- New rows: toplis2014 (core radius 90-120 km, p2); usgs_pp1802n, mandler_elkins_tanton_2013 and farnocchia_2024 (abstract/excerpt level, not re-checkable here). cannon2023 and the two Ryugu organics papers are marked context-only.
+- `jarosewich_1990_meteorite_chemical_analyses` (ADS scan) Table 4 falls: Fe(m)+Ni+Co H 17.80, L 8.33, LL 3.56 wt%; the S/Sq/Q metal 0.06 "mean of LL (3.56 wt%) and L (8.33 wt%)" matches (5.945). CM2 C 1.82, CV3 0.43 wt%.
+- `lodders_2003_solar_abundances_condensation_temperatures` Table 3 CI ppm: Ru 0.692, Rh 0.141, Pd 0.588, Os 0.486, Ir 0.470, Pt 1.004, Au 0.146; Fe 182,800, Ni 10,640, Co 502; all PGM in metal (19.39 wt%) = 17.4 ppm, half economicspace's IIIAB 35.5 ppm (Pt/Ir 3.75 vs CI 2.14; Pd/Pt 0.667 vs 0.586). Lodders backs only the chondritic half of the row's citation; its "~37 ppm" is 35.5 (36.5 with Au).
+- **rc-085:** `hiro_i_zolensky_2001_tagish_lake_possible_d_type_sample` gives C 4-5 wt% and reflectivity 2-4% but no magnetite or sulfide figure, deferring to Brown 2000; the accessory modes upstream attributes to it are not there.
 
-## R70 - Full-extraction pass of the hosted sources (2026-09-27; registry unchanged)
+`extracted_data/r155_queue_open_copies_key_numbers.csv`.
 
-Every hosted full text in this domain was re-read end to end for pipeline-useful numbers; tables were read by word coordinates (or from rendered page images where the text layer fails) and checked against their printed totals. New files (all in `extracted_data/`, every row carries `source_id` and a page location): `r70_bennu_volatiles_2025.csv` (15); `r70_bennu_volatiles_2025_ed_table1_CNH.csv` (13); `r70_glavin_2018.csv` (17); `r70_marschall_2025_67p_refractory_ice_ratio.csv` (95); `r70_nat_dms2023.csv` (15); `r70_ryugu_hydrated_2023.csv` (8); `r70_toplis2014.csv` (6).
+## R160 - Tagish Lake composition pair (rc-085)
 
-- Bennu Extended Data Table 1 (C, N, H by sample: 13 rows), Marschall 2025 67P refractory/ice ratios (Tables 1-4: 95 rows) and the Glavin 2018, Toplis 2014, Ryugu hydrated-phase and DMS key numbers are now machine-readable.
+- `brown_2000_tagish_lake_fall_recovery_orbit_composition` (Science 290:320-325; UWO copy, not hostable): qualitative only: "magnetite is far more abundant than in most CMs", "In many places, magnetite has partially or completely replaced sulfides."; "Around 3.7 wt % carbon derives from carbonates" (vs 0.2-0.5 in CI/CM); total C 5.4 wt%.
+- `gounelle_zolensky_2001_mineralogy_of_tagish_lake` (MAPS 37:737-761): the modal study; paywalled (DOWNLOADS.md).
 
-## R71 - Side-deepening extraction round (2026-09-27; logged in R72; registry unchanged)
+`extracted_data/r160_tagish_lake_composition_key_numbers.csv`. rc-085 open: pull Zolensky, or upstream lists the split as unsourced.
 
-Branch `side-deepening`, commit 0729c2d, merged into this branch in R72. It gave the 20 PDFs un-hosted on 2026-09-26 (restored byte for byte from git `5dd58d5`, sha256 matched against `DOWNLOADS.md`) their first full pass, and read seven non-hosted sources from copies the owner downloaded (DOWNLOADS.md section B). The commit wrote no FINDINGS block or log entry; this block and the R71 log entry were written in R72 from the commit and the files themselves. R72 then re-checked every R71 file whose PDF is restorable: every numeric cell was searched for in the PDF text (0 values missing outside cells the R71 notes say were read from page images), the image-read cells were compared against rendered pages, and large tables were checked row by row. New files: `r71_asime2018_key_numbers.csv` (21); `r71_hein2020_key_numbers.csv` (14); `r71_hein2020_table3_pt_supply_demand_profitability.csv` (168); `r71_lewicki2023_key_numbers.csv` (7); `r71_lodders_2010_key_numbers.csv` (12); `r71_lodders_2010_table3_ci_solar_recommended_abundances.csv` (83); `r71_lodders_2010_table6_protosolar_abundances.csv` (83); `r71_lodders_2010_table8_nuclide_abundances.csv` (287); `r71_reddy_asteroids_iv_key_numbers.csv` (21); `r71_reddy_asteroids_iv_spectral_calibrations.csv` (22); `r71_rubin_2019_key_numbers.csv` (6); `r71_rubin_2019_table2_67p_bulk_ice_composition.csv` (44); `r71_rubin_2019_table3_67p_elemental_ratios_to_oxygen.csv` (22); `r71_rubin_2019_table4_67p_elements_per_si.csv` (20); `r71_rubin_2019_table5_67p_dust_ice_split.csv` (20); `r71_usgs_pp1802n_key_numbers.csv` (17); `r71_usgs_pp1802n_tableN10_pge_deposit_grade_tonnage.csv` (137); `r71_usgs_pp1802n_tableN2_nonmagmatic_pge_occurrences.csv` (40); `r71_usgs_pp1802n_tableN3_placer_platinum_production.csv` (8); `r71_usgs_pp1802n_tableN4_identified_pge_resources.csv` (13); `r71_usgs_pp1802n_tableN5_pge_intrusions.csv` (17); `r71_usgs_pp1802n_tableN7_crustal_pge_concentrations.csv` (4).
+## R177 - The LPSC-2001 abstract (2026-10-16)
 
-- **rubin_2019 Tables 2-5**: 67P bulk ice composition (44 species), elemental ratios to O for volatiles and refractories, per-Si ratios and the dust/ice split. The asymmetric errors are superscripts the text layer garbles; R71 read them from page images, and R72 compared every such cell on pp14, 15 and 18 with rendered pages: all match.
-- **lodders_2010** Tables 3 (CI, photosphere and recommended A values), 6 (protosolar, 83 elements) and 8 (287 nuclides); **reddy_asteroids_iv** Tables 1-2 (spectral calibrations, an image-only table; R72 checked Table 2 against the rotated page); **hein2020** Table 3 (168 profitability cells, class read from the cell fill colour); **asime2018** and **lewicki2023** key numbers.
-- **usgs_pp1802n** Tables N2-N5, N7 and N10 (137 PGE deposits with grade and tonnage) from the full PDF the owner downloaded; only the excerpt is quoted in this repo.
-
-## R72 - Tables R70/R71 skipped, verification of R71, upstream re-check (2026-09-27; registry unchanged)
-
-This round's container reached only package registries (arXiv, NTRS, JPL, Google Docs and every publisher returned 403), so nothing new could be fetched; the work used the hosted PDFs and the 20 restored from git `5dd58d5`. Each hosted and restored PDF's table captions were listed and matched against the extracted CSVs; tables no CSV cited were read by word coordinates (columns assigned from header or fully populated rows, so blank cells stay blank) or from rendered page images, and checked against printed totals. Upstream heads re-read: spacecost@e831245, AsteroidCatalog@852bf69, economicspace@1f470d4 (unchanged since 2026-09-26). New files: `r72_lodders_2010_tables4_5_7_solar_mass_fractions.csv` (73).
-
-- **lodders_2010 Tables 4, 5, 7**: present-day and protosolar X/Y/Z and He abundance for four compilations, and present-day solar composition by mass. X + Y + Z = 1 for every compilation and Table 5's heavy-element rows sum to its printed Z (1.41 / 1.22 / 1.69 %).
-- **Not extracted, no pipeline use**: rubin_2019 Table 1 (DFMS calibration factors); glavin_2018 Tables 4-6 (amino-acid names, isovaline enantiomeric excesses, purines at ppb).
-- **CI PGM ratios vs economicspace's nickel-iron yields** (`mineral_value.py`, IIIAB-calibrated, 35.5 ppm total PGM): relative to Pt, upstream carries Ru 0.20, Os 0.13, Ir 0.27, Pd 0.67, Rh 0.10; CI chondrite (lodders_palme2009) gives 0.72, 0.52, 0.50, 0.59, 0.15. Scaled to CI's metal fraction (19.6 wt% Fe+Ni+Co), CI PGMs would total ~17 ppm in metal. No candidate: iron meteorites fractionate Ir, Os and Ru during crystallisation, and this repo holds no iron-meteorite PGE compilation to test the IIIAB calibration against. That source is a gap worth filling.
-- **hein2020 vs economicspace demand elasticity**: `calc.py` defaults to 0.5; Hein sweeps 0.08-0.95 and judges elasticity 'not below 0.25'. Agreement.
-
-## R73 - Blocked downloads fetched and extracted (2026-09-27; registry unchanged)
-
-New files: `r73_elkins_tanton_2020_key_numbers.csv` (22); `r73_elkins_tanton_2020_table1_psyche_diameter_volume.csv` (3); `r73_elkins_tanton_2020_table2_psyche_mass_density.csv` (20); `r73_ryugu_ivuna_2023_key_numbers.csv` (25).
-
-- **elkins_tanton_2020_psyche_preflight** (author mirror, post-erratum version of record; CC BY-NC). Table 2 was checked against the rendered page; every recalculated density equals the row's mass over the Viikinkoski et al. (2018) volume (226 km) within 0.2%. The adopted density is 3,780 +/- 340 kg/m3 (range 3,400-4,100), and AsteroidCatalog's M row (3.9 g/cm3, 50% metal by mass, about 30-35 vol%) sits inside the paper's band, as R36 found.
-- **rc-009 withdrawn.** R36 read Sec 2.5 (p10, '~25 vol% metal') and proposed that the upstream note's 'roughly 30-60%' be replaced with the verbatim band. The paper states the low end three ways: ~30 vol% in the abstract, plain-language summary, key points and conclusions; ~25 vol% in Sec 2.5; 27% for point D on p5 (Fig. 3 caption: ~30 to 55). The upstream note matches the abstract, so the candidate's premise does not hold. Its registry row is reworded.
-- **ryugu_ivuna_2023** (Hokudai author version; personal use only). Ryugu H2O 6.84 +/- 0.34 wt% total, of which interlayer 0.30 +/- 0.01 and structural 6.54 +/- 0.32; Ivuna 12.73 wt% total with 6.58 interlayer. Total carbon 4.63 +/- 0.23 wt% (organic 3.08 +/- 0.30). Aqueous alteration at 37 +/- 10 C, 5.2 +0.7/-0.8 (stat) +1.6/-2.1 (syst) Myr after CAIs; the exponents were read from the page image because the text layer garbles them. These values support rc-014 (C-complex ice_fraction is structural water recoverable only by dehydroxylation above 300 C): Ryugu's free (interlayer) water is 0.3 wt%. Upstream C carbon_fraction 0.04 sits between Ryugu organic 3.1 and total 4.6 wt%. The per-element bulk chemistry (Data S2) and the isotope tables are supplementary xlsx files on science.org, which serves them only behind a Cloudflare challenge; not retrieved.
-- **Still blocked**: cannon2023 (ScienceDirect), mandler_elkins_tanton_2013 (Wiley), farnocchia_2024 (IOP Radware), ryugu_soluble_organics_2023 and ryugu_macromolecular_om_2023 (HAL Anubis). Upstream read at AsteroidCatalog@852bf69, unchanged.
-
-## R74 - Upstream citations registered (2026-09-27; +8 sources, T1x7, T3x1; nothing extracted)
-
-Sources the upstream repos cite that this registry did not have, found by reading every per-row `notes` field, code comment and CITATIONS.md in AsteroidCatalog@852bf69, spacecost@e831245 and economicspace@1f470d4. Each is `registered_not_pulled`: its DOI was checked against Crossref, or its landing page against a live request from this machine, and the result is recorded in the row. No full text was sought and no number was extracted; the rows are the queue for a later extraction round.
-
-- `pearson_2006_carbon_nitrogen_carbonaceous_chondrites` (T1): taxonomy_composition.csv C-complex carbon_fraction (CI chondrite wt% C).
-- `lauretta_2024_bennu_in_the_laboratory` (T1): taxonomy_composition.csv C-complex carbon_fraction (Bennu and Ryugu sample carbon).
-- `jarosewich_1990_meteorite_chemical_analyses` (T1): taxonomy_composition.csv S-complex and Q metal_fraction (H/L/LL chondrite Fe-Ni-Co metal).
-- `kargel_1994_metalliferous_asteroids_precious_metals` (T1): AsteroidCatalog PGM_ENRICHMENT_BY_TYPE caveat (chondritic metal carries more precious metal than the 1.0 baseline assumes).
-- `fornasier_2010_m_type_spectroscopic_survey` (T1): taxonomy_composition.csv Xk/Xe swap and the M-row mapping (Tholen M-types that are Bus-DeMeo Xk).
-- `lodders_2003_solar_abundances_condensation_temperatures` (T1): economicspace mineral_value.py nickel-iron yields: trace PGM abundances in the iron-meteorite analogue.
-- `wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals` (T3): economicspace mineral_value.py nickel-iron yields: siderite total-PGM concentration.
-- `nichiporuk_brown_1965_pt_pd_iron_meteorites` (T1): economicspace mineral_value.py nickel-iron yields: siderite total-PGM concentration.
-
-## R77 - Sources moved to domain 22 (2026-09-27; registry unchanged at 267)
-
-These rows moved to the domain that now holds the cells they back. The blocks above stay as written, so their relative paths to the files below no longer resolve from this folder; the files are at the paths given here.
-
-| id | moved to | earlier blocks here | files now at |
-|---|---|---|---|
-| `hein2020` | 22 | the `hein2020` block; Round-1 status; Round 61 addition; Maintenance; R71; R72 | `22_prior_art_techno_economic_benchmarks/extracted_data/r61_hein2020_plant_economics_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_hein2020_key_numbers.csv`, `22_prior_art_techno_economic_benchmarks/extracted_data/r71_hein2020_table3_pt_supply_demand_profitability.csv` |
-
-Shared CSVs that cite a moved source and stay here: `extracted_data/composition_value_key_numbers.csv` (`hein2020`); `extracted_data/unhosted_sources_key_numbers.csv` (`hein2020`). Where a moved row names one of them, the path now includes this folder.
-## R83 - comp_phases_detailed and nickel-iron trace-metal citations registered (2026-09-30; +11 T1 rows in this domain, all registered_not_pulled)
-
-AsteroidCatalog data contracts 1.7.0/1.8.x resolved the four coarse fractions into `comp_phases` / `comp_phases_detailed`, and economicspace v1.40.0 prices those phases - so every class split now carries a meteorite-analogue citation in the header block of AsteroidCatalog@6a2cfbc asteroid_catalog/mineralogy.py, with the iron-meteorite trace metals cited in economicspace@7d99662 CITATIONS.md section 1 ('Mineral composition'). The registry had none of them; eleven T1 rows were registered this round from that block. Every DOI was checked against Crossref live from this machine (title, first author and year all match the row).
-
-- `scott_wasson_1975_classification_properties_iron_meteorites` - order-of-magnitude mean trace metals (Ga/Ge/Mo/W/Re) over the common iron meteorite groups behind modules/mineral_value.py nickel-iron yields.
-- `dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites` - L/LL XRD modal abundances: the S/Sq/Q silicate split (olivine ~0.58 / orthopyroxene ~0.24 / pyroxene ~0.06 / plagioclase ~0.12) + troilite and chromite body fractions.
-- `king_schofield_2015_ci_modal_mineralogy_xrd` - CI (C/B/Cb/F) phase split from Orgueil and Ivuna XRD: phyllosilicate ~81-84 wt%, magnetite, sulfide, carbonate.
-- `howard_alexander_2015_hydrous_meteorite_phyllosilicate_classification` - CM (Cg/Ch/G) phase split: phyllosilicate 70-90 wt%.
-- `alexander_fogel_2007_macromolecular_organic_matter_chondrites` - carbon (C complex) IOM:soluble split 0.70:0.30; IOM is 70-99% of CI/CM organic carbon, the low end so the cheaper row is not over-credited.
-- `mittelfehldt_2015_hed_clan_vesta` - HED (V) phase detail: eucrite pyroxene/plagioclase near-equal, chromite and ilmenite ~1 wt% each; eucrite metal nearly Ni-free.
-- `sunshine_connolly_2008_ancient_asteroids_refractory_inclusions` - CV/CO (K/L): L-types need the highest CAI content of any spectrum, so L carries the most spinel the residual allows.
-- `hiro_i_zolensky_2001_tagish_lake_possible_d_type_sample` - D/Z/P accessories via the Tagish Lake analogue: magnetite ~5, sulfide ~3, carbonate ~3 wt%.
-- `keil_1968_mineralogical_chemical_enstatite_chondrites` + `keil_2010_aubrites_and_their_asteroidal_parent_bodies` - enstatite-chondrite (Xe) sulfide split (troilite ~5 / niningerite ~2 / oldhamite ~0.7 / daubreelite ~0.3 wt%) and aubrite (E); both metals low-Ni kamacite alone.
-- `jones_mccubbin_2014_phosphate_minerals_ll_chondrites` - S/Sq/Q phosphates: merrillite ~0.4 and chlorapatite ~0.2 wt% in LL chondrites.
-
-Already registered, matched rather than duplicated: `rubin_2019_67p_abundances` (the ices H2O:CO2:NH3 mix), `jarosewich_1990_meteorite_chemical_analyses` and `adam_2017` (= Hanuš et al. 2017, A&A 601 A114 - the ADAM density paper; verified_live_not_pulled with r71 extractions). No number was extracted from any of the eleven new rows: they are registered so the dependency is visible and readable later (full texts mostly behind publisher paywalls or bot blocks from this machine).
-
-## R113 - The class-to-meteorite mapping: two tests and two unread candidates (2026-10-04; +4 sources, T1x3, T4x1)
-
-From the owner's link list. The first two are CC BY 4.0 in PSJ, but iopscience.iop.org serves a bot-validation page to this machine and neither has an arXiv copy, so they are registered `open_not_pulled` from their Crossref abstracts and marked context-only.
-
-- `burbine_2024_testing_bus_demeo_with_meteorite_spectra`: about 1,500 meteorite spectra classified in Bus-DeMeo. HED meteorites fall in V, ordinary chondrites in the S-complex or Q, D- and X-types mostly in CM chondrites with many iron-meteorite matches, and C, B, L and Xc each mix meteorites of very different mineralogy. For the `composition` notes in AsteroidCatalog `reference/taxonomy_composition.csv` this means a class sets the analogue well for V and S/Q and poorly for the featureless classes, where albedo is needed to separate them.
-- `de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: JWST MIRI 5-28 um spectra of five spinel-rich L-types show Mg-rich crystalline olivine plus spinel or amorphous olivine and little hydration, and resemble the CV3 chondrite Allende (possibly CO3). This supports the `L` row (minerals spinel, olivine, pyroxene; note "possibly CV3 chondrite") as written.
-
-Two more are registered but unread (`registered_not_pulled`):
-
-- `mahlke_2022_phd_thesis_asteroid_taxonomy` (T4): its taxonomy is the paper already registered in domain 1, but its HAL abstract adds an application to asteroid-meteorite spectral matching, the same link the `composition` notes rest on. HAL serves a bot check to this machine, so only the abstract (via the HAL API) was read.
-- `lebofsky_et_al_1990_low_albedo_3um_photometry`: by its title, 3-um hydration photometry of low-albedo asteroids, which bears on which rows list hydrated silicates (phyllosilicates in the C-complex rows, none in P and D). No abstract is deposited anywhere this machine can reach and ScienceDirect serves a CAPTCHA.
-
-All four are qualitative or unread, so nothing is extracted. Upstream read at AsteroidCatalog@6a2cfbc.
-
-## R114 - Carbonaceous-chondrite bulk composition and a PGM-extraction paper (2026-10-04; +2 sources, T1x2)
-
-The owner's list pointed at a Royal Astronomical Society press release; its study is Trigo-Rodriguez et al. (MNRAS 2025, arXiv:2510.27373), now registered as `trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites`. Its appendix tables give ICP-MS bulk composition for CI, CM, CR, CO, CV and CK chondrites and a ureilite: CI Orgueil is Fe 25.93 wt% and Ni 7,719 ppm, and Ni runs from 2,779 to 15,469 ppm across the CO and CV specimens (ranges computed from Table A2). The tables stop at La and have no platinum-group columns, so the paper backs the iron and base-metal fractions of the carbonaceous rows, not their PGM content.
-
-`schubert_2025_economical_extraction_platinum_main_belt_asteroids` is registered from its Crossref record only: no abstract exists in Crossref, OpenAlex or Semantic Scholar and ScienceDirect blocks this machine. The owner's list says it gives 20-100 ppm PGM for metallic M-class bodies; that is unchecked. The list's PGM-concentration section also cited a Cannon et al. 2023 critique (already registered as `cannon2023`, from two URLs) and an arXiv paper whose different, higher range (100-187 ppm) is recorded in domain 22. No revision candidate.
-
-Extracted data: `extracted_data/r114_gr_links_key_numbers.csv`.
-
-## R115 - Carbon and metal in the primitive classes against Tagish Lake and Ryugu; two new candidates, and the AsteroidCatalog rows re-checked at 6a2cfbc (2026-10-04; registry unchanged)
-
-AsteroidCatalog moved from 852bf69 to 6a2cfbc (data contracts 1.5.0-1.8.1: densities held to a second route, the X complex split by albedo, mineral phases added). The rows below were compared with registry evidence that was already extracted.
-
-- **D, Z, T, P carbon (rc-075)**: v1.5.0 cut the C-complex carbon fraction from 0.20-0.30 to 0.04 on CI, Bennu and Ryugu carbon (rc-010) but left D and Z at 0.30 and T and P at 0.25. Upstream's own mineralogy module takes Tagish Lake as the D, Z and P analogue, and the registry's bennu_volatiles_2025 table gives Tagish Lake 4.11 and 4.13 wt% C: the cells are 7.3x and 6.1x that. The counter-evidence is 67P dust at ~45 wt% insoluble-organic-like matter, so the choice of end-member is the owner's, as for ice (rc-013).
-- **CI-like metal (rc-076)**: B, C, Cb and F carry 0.01 metal and a nickel-iron phase; Ryugu has 'no metal grains' and upstream's own CI source lists none. 0.01 is a ceiling.
-- Status of earlier rows: rc-007 (P density 1.2), rc-045 (S note) and rc-046 (Q density 2.7 and note) are applied; rc-001 (K) is declined with the reason in taxonomy.py's DENSITY_EVIDENCE; rc-002, rc-012, rc-013 and rc-014 stay open (Xc metal moved 0.25 to 0.32 as an albedo mixture, not on the CB-chondrite evidence).
-- Checked and agreeing: every body in DENSITY_EVIDENCE with a Carry (2012) value matches Carry's Table 1 (Ceres 2.13, Pallas 2.86, Interamnia 1.96, Mathilde 1.32, Pulcova 1.00, Daphne 2.03, Hermione 1.27, Elektra 1.84, Eugenia 1.34, Antiope 0.86, Lundia 1.64, Frostia 0.88, Klotho 4.16, Hestia 5.81, Eunomia 3.54, Juno 3.68, Parthenope 3.27, Ostro 2.59, Kleopatra 4.27, Lutetia 3.44, Sylvia 1.31, Camilla 2.28, Psyche 3.38, Patroclus 0.88); CV and CO bulk densities 2.79 and 3.03 (Carry Table 2); the 67P ice ratios 100 : 4.7 : 0.67 (Rubin Table 2).
-
-Extracted data: `extracted_data/r115_taxonomy_carbon_metal_checks.csv` (6 rows).
-## R120 - wright_fleischer_1965 USGS B-1214-A chapter A hosted (2026-10-05; queue -1)
-
-**wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals [T3]** - re-classed registered_not_pulled -> full_text_hosted. Pulled live from pubs.usgs.gov/bul/1214a/report.pdf (the correct /bul/ path; the /b/ pattern 404s) and committed to full_texts/wright_fleischer_1965_geochemistry_platinum_metals_usgs_bulletin_b1214a_report.pdf (1,809,279 B sha256=60c5635efbe1c66e211141bd67c4c718a1594a3bd9825d0ea913ebac73735062). U.S. government work - public domain. The file IS Chapter A of Bulletin 1214 ('Geochemistry of the Platinum Metals', Wright & Fleischer), 31 pages: the chapter upstream cites for siderite total-PGM concentrations behind economicspace mineral_value.py nickel-iron yields. Verbatim abstract line: "Abundance and ranges of composition of the platinum metals in various rocks and meteorites are summarized from the literature.
-## R121 - fornasier_2010 M-type survey read in full from arXiv, not hostable; jones_mccubbin_2014 open copy is the electronic appendix only (2026-10-05; queue -2)
-
-**fornasier_2010_m_type_spectroscopic_survey [T1]** - re-classed registered_not_pulled -> verified_live_not_pulled. Full text pulled live via export.arxiv.org/pdf/1007.2582v1 (49 pages) and read in full, but NOT hostable: the arXiv abs page carries only the default non-exclusive distribution licence (no CC link); v1 hash recorded in access_status (1,023,459 B sha256=eb1b65c550c86b93ca2b1ed5764a363341091a9756d185f10a935a498d028804). Verbatim title line (p1): "Spectroscopic survey of M–type asteroids"; 'Submitted to Icarus: September 2009' - the M-type spectroscopic survey behind taxonomy_composition.csv's Xk/M row notes.
-
-**jones_mccubbin_2014_phosphate_minerals_ll_chondrites [T1]** - re-classed registered_not_pulled -> verified_live_not_pulled. The open copy located via Semantic Scholar is only the electronic appendix (authors.library.caltech.edu/records/g5568-y1282/files/mmc1.pdf?download=1; 732,853 B sha256=0310c078227c267fc198e45ab9422b10b347687e1399ac13074494dec8f4c9a7; no licence statement in file): figures EA1-EA5 - X-ray maps for Cl and P showing merrillite/chlorapatite distributions in five LL chondrites (Bo Xian UNM 265 x2, Bjurböle UNM 117, Tuxtuac UNM 627, St. Séverin UNM 693). The journal article itself (GCA 132:120-140) remains paywalled from this machine; the appendix confirms the mineralogy context behind comp_phases_detailed's S/Sq/Q phosphate rows but carries no bulk wt% numbers in text. Verbatim (p1): "Electronic Appendix: Figures EA1 to EA5 X-ray maps for Cl and P for the chondrites studied, showing the distribution of merrillite and chlorapatite..
-## R125 (2026-10-06) - CC-BY queue sweep: lauretta_2024 read in full via arXiv; king_schofield ORA copy located but walled
-
-- **lauretta_2024_bennu_in_the_laboratory** [T1]: arXiv copy found (arXiv:2404.12536v1) and read in full via export.arxiv.org/pdf/2404.12536v1 - 73 pp / 13,807,665 B sha256 42c84cb98b2f9dafe7e87f4d26cc74a1b57cadb49cc2f6bd76c6f2d6e5a192a1; identity verified on p1 (title + 53-author list). NOTE: the journal version is CC BY 4.0 per Crossref, but the arXiv copy's abs page carries a **CC BY-NC-ND 4.0** icon - NOT hostable under LICENSE_CLASSES (R70 lesson: in-file/arXiv terms outrank; here the arXiv-side grant restricts). Wiley pdfdirect still Cloudflare-blocked from this machine (R124). Re-classed verified_live_not_pulled + Context-only. Verbatim density anchors for a future extraction round: hummocky stones "a weighted average of 1.55 ± 0.07 g/cm3", angular stones "averaging 1.69 ± 0.04 g/cm3" (Table 2, 12-stone XCT set = 11.7% of the 121.6 g collection); comparison value "The average bulk density of 637 Ryugu particles was determined to be 1.79 ± 0.31 g/cm3".
-- **king_schofield_2015_ci_modal_mineralogy_xrd** [T1]: institutional OA copy located at Open University ORA, oro.open.ac.uk/69573/1/69573.pdf (bitstream 69573). Record page verified live via the web_extract fetcher: title/authors/journal match exactly (Geochimica et Cosmochimica Acta 165 pp. 148-160, King/Schofield/Howard/Russell) and search snippets show the in-file statement "This is an open access article under the CC BY license" - consistent with Crossref's registered CC BY 4.0. ORA serves a Cloudflare 'Just a moment' challenge to every direct fetch from this machine (urllib + full browser headers, REST API path too), so the PDF was not pulled and no verbatim text is quoted here beyond what the record page carries. Retry note appended; stays registered_not_pulled.
-
-## R133 - lodders_bergemann_palme_2025 SSR accepted manuscript read in full from NTRS, extraction-only (2026-10-07; +1 source T1x1)
-
-**lodders_bergemann_palme_2025_solar_system_abundances_ssreview [T1]** - Space Science Reviews 221(2), Mar 2025, DOI 10.1007/s11214-025-01146-w (Crossref-verified). NTRS 20250008646 accepted manuscript pulled from this machine and read in full; copyright.determinationType=MAY_INCLUDE_COPYRIGHT_MATERIAL -> extraction-only per the R94 licence rule, not hostable. Key numbers extracted verbatim to r133_lodders_2025_abundances_key_numbers.csv: protosolar mass fractions X=0.7060 / Y=0.2753 / Z=0.0187 and the paper's explicit finding that "no obvious correlation of CI-chondritic to solar elemental abundance ratios with condensation temperatures is observed" - a caveat for any d02 mapping that leans on condensation-temperature ordering.
-
-This is the successor system to **lodders_2003_solar_abundances_condensation_temperatures** (ApJ 591:1220, still paywalled; this round's NTRS search hit was this SSR paper, not the ApJ one - retry note appended). Future extraction pass: diff its Table 2/4 CI-chondrite values against the abundances embedded in economicspace mineral_value.py (which cites Lodders 2003) before any re-pin.
-
-## R152 - revision-candidate re-check: rc-012 withdrawn on Burbine 2024's meteorite classes, rc-076 narrowed, rc-013 and rc-075 deepened (2026-10-12; +3 sources T1x3, burbine_2024 hosted)
-
-Re-read against AsteroidCatalog@86cfc54 (origin/main, 2026-10-07). The four open composition candidates' cells are unchanged: Cb metal 0.01; D, Z, T, P ice 0.25, 0.25, 0.10, 0.15; D, Z, T, P carbon 0.30, 0.30, 0.25, 0.25; B, C, Cb, F nickel-iron 0.01. Their earlier `checked_against`, AsteroidCatalog@6a2cfbc, is no longer on upstream main: the history was rewritten (package-author change) and 6a2cfbc is now 82a2905 with an identical tree. The root file `upstream_commit_map.csv` maps all eleven rewritten commits that `revision_candidates.csv` cites to their main equivalents by tree hash.
-
-**burbine_2024_testing_bus_demeo_with_meteorite_spectra is now hosted.** The IOP PDF route that refused this machine in R113 answered (1,865,527 B); page 1 carries the Creative Commons Attribution 4.0 statement. Its online Table A1 (machine-readable, 1,489 RELAB spectra, each with its meteorite group and the Bus-DeMeo class the authors gave it) came from content.cld.iop.org and is in `extracted_data/r152_burbine_2024_table_a1.csv` whole, so later rounds can query any class-to-meteorite mapping.
-
-**rc-012 (Cb metal toward CB chondrites): withdrawn.** The row waited for a class-to-meteorite mapping source. Table A1 is one, and it does not support the move. Of the 10 CB/CH spectra, one classifies as Cb (Isheyevo, CH/CBb, measured as a chip), six as L, two as X and one as S. The seven Cb spectra are four L5 ordinary chondrites (one laser-irradiated), Mighei (CM2), Y-82162 (C1/2-ungrouped) and that Isheyevo chip. Table 4 gives the single NEOWISE Cb albedo as 0.043, and the paper puts iron-rich meteorites near 0.3 (p6). Cb's metal question now sits with rc-076.
-
-**rc-076 (C-complex metal ~0): narrowed to the C row.** Two Howard et al. PSD-XRD papers, abstracts read from Curtin University's repository records (Elsevier full texts closed; registered_not_pulled):
-
-- howard_2010 (CV3): Fe,Ni metal is 2-2.2 vol% in reduced and 0.2-1.1 vol% in oxidized samples. Metal is the densest phase, so its mass fraction is higher still; upstream's 0.01 for the CV-paired B and F sits inside or below that range.
-- howard_2011 (CM): the abstract quantifies every phase above 1 vol% and names no metal, so CM metal is under ~1 vol%. That does not contradict 0.01 for the CM-paired Cb, nor 0.02-0.03 for Cg, Ch, G and Cgh.
-
-Only the CI evidence (Ryugu, King et al. 2015) argues for ~0, and of the four rows only C's note names CI. Table A1 also shows B has no single analogue: its 107 spectra run CV3 19, aubrite 16, lunar (anorthositic) 14, CM2 12, L5 9.
-
-**rc-075 (D, Z, T, P carbon) and rc-013 (D, P ice): open, deepened.** These stay owner decisions.
-
-- burbine_2024: D-type meteorite matches are CM 50%, iron 39%, CO 5% (Table 3), which the paper puts down to the many CM spectra and the rarity of fragile organic-rich material in collections (p6). Only one of six Tagish Lake spectra classifies as D (a heated one; the others are Xk, Xn, Xc, U and X).
-- wong_2024_jwst_lucy_trojans_oh_organics_co2 (JWST NIRSpec of the five Lucy Trojans; arXiv copy read in full, default licence, not hosted; the CC BY version of record served a bot check) adds four points:
-  - The less-red and red Trojans "roughly correspond" to P- and D-types (p2).
-  - The missing 2 um band rules out a significant water-ice fraction across the surface, and thermophysical models deplete ice to ~10 m depth on average and ~10 cm at the poles (p8).
-  - If the 3 um band is ice, the less-red (P-like) Trojans hold more subsurface ice than the red (D-like) ones (p8), the opposite order to upstream's D 0.25 > P 0.15.
-  - The aliphatic-organic band is systematically deeper on the red objects (abstract), the same order as upstream's D 0.30 > P 0.25 carbon, though with no abundance.
-
-For rc-013 this adds a second question beside the end-member choice: a cometary ice fraction describes the bulk interior, while the ice within a surface miner's reach is near zero on this evidence.
-
-Extracted: `extracted_data/r152_taxonomy_analogue_checks.csv` (Howard, Burbine and Wong values with locations, and the upstream cells) and `extracted_data/r152_burbine_2024_table_a1.csv`.
-
-## R155 - queue open-copy sweep: Jarosewich and Lodders tables read, Tagish Lake modes not in Hiroi 2001 (2026-10-12; queue -3; rc-085)
-
-Round 155 sought the never-sought T1/T2 queue rows. Three in this domain were reached and read; none can be hosted, because each PDF carries a publisher copyright. Eleven stay `registered_not_pulled`, with the routes tried in their rows.
-
-**S, Sq and Q metal is Jarosewich's falls, exactly.** jarosewich_1990 is an image-only ADS scan, so Table 4 (average composition of falls) was read off the rendered page. Each column's components sum to within 0.05 wt% of its printed total. Fe(m) + Ni + Co gives H 17.80, L 8.33 and LL 3.56 wt%. AsteroidCatalog@86cfc54's taxonomy_composition.csv sets metal 0.06 as "the mean of LL (3.56 wt%) and L (8.33 wt%)": EXACT (the mean is 5.945). Table 4 also gives C 1.82 wt% for CM2 and 0.43 wt% for CV3 falls.
-
-**Lodders 2003 carries chondritic, not iron-meteorite, PGM.** Table 3, printed rotated, was read by word coordinates. CI weighted means, in ppm: Ru 0.692, Rh 0.141, Pd 0.588, Os 0.486, Ir 0.470, Pt 1.004, Au 0.146, against Fe 182,800, Ni 10,640 and Co 502. All PGM placed in the metal (19.39 wt% Fe+Ni+Co) gives 17.4 ppm. economicspace@8c3083a's nickel-iron row cites "average chondritic / iron-meteorite compositions (Lodders 2003, Walker 2012)" but is calibrated to IIIAB means, summing to 35.5 ppm PGM: about twice the metal-normalised CI value. Its Pt/Ir is 3.75 and Pd/Pt 0.667, against CI 2.14 and 0.586. Iron-meteorite groups do depart from CI ratios, so this is no contradiction, but Lodders 2003 backs only the chondritic half of that citation. Separately, the row's comment and note say "~37 ppm"; its six PGM values sum to 35.5 (36.5 with Au).
-
-**rc-085: the Tagish Lake accessory modes are not in Hiroi et al. 2001.** The Science Express text (a UWO archive copy) gives carbon 4-5 wt% and reflectivity 2-4%. It names Ca-Fe-Mg carbonates without an abundance and has no magnetite or sulfide figure, and for composition it cites Brown et al. 2000 (Science 290, 320). AsteroidCatalog's mineralogy.py attributes "magnetite ~5, sulfide ~3, carbonate ~3 wt%" to Hiroi et al. 2001. The values are not disputed, only their source.
-
-Extracted: `extracted_data/r155_queue_open_copies_key_numbers.csv`.
-
-### Round 160 - the Tagish Lake composition pair behind rc-085 (+2 T1, not hosted): the accessory-mode citation hunt closes at its accessible limit
-
-rc-085 (opened R155) asked for a paper that reports Tagish Lake's modal mineralogy for the three D/Z/P accessory modes upstream prices via _ACC_TL (magnetite ~5 / troilite ~3 / carbonates ~3 wt%) - Hiroi et al. 2001 defers composition to its note 4, P.G. Brown et al., Science 290, 320 (2000). This round reads that paper in full and registers the dedicated mineralogy study; neither yields modal figures from an accessible copy, so rc-085 stays open with a precise statement of what is missing.
-
-**brown_2000_tagish_lake_fall_recovery_orbit_composition [T1; verified_live_not_pulled]** - Brown, Hildebrand, Zolensky et al., 'The Fall, Recovery, Orbit, and Composition of the Tagish Lake Meteorite: A New Type of Carbonaceous Chondrite', Science 290(5490):320-325 (13 Oct 2000); DOI 10.1126/science.290.5490.320 Crossref-verified live this round. The Science reprint pulled from the UWO Tagish Lake archive (aquarid.physics.uwo.ca/~pbrown/tagish/new.html, first author's own page; 6 pp, 517,668 B) and read in full: a third-party copy of an AAAS paper with no licence statement -> not hosted per the R94 rule. Content relevant to rc-085: QUALITATIVE modal statements only - 'magnetite is far more abundant than in most CMs', 'In many places, magnetite has partially or completely replaced sulfides.', 'The majority of the opaques (bright-appearing phases) are magnetite.'; plus carbonates: 'Around 3.7 wt % carbon derives from carbonates (mainly Fe-Mg– rich), a much higher proportion than is usual for either CI or CM chondrites, where 0.2 to 0.5 wt % carbon typically occurs as carbonate' and total carbon yield 5.4 wt %. NO modal wt% figures are printed -> the ~5/~3/~3 accessory modes are still not sourced from this paper.
-
-**gounelle_zolensky_2001_mineralogy_of_tagish_lake [T1; registered_not_pulled]** - Zolensky, Nakamura, Gounelle et al., 'Mineralogy of Tagish Lake: An ungrouped type 2 carbonaceous chondrite', MAPS 37(5):737-761 (May 2002); DOI 10.1111/j.1945-5100.2002.tb00852.x Crossref-verified live this round. THE dedicated modal-mineralogy study - the standard reference for mode percentages of magnetite, sulfides and carbonates in pristine Tagish Lake, i.e. exactly what _ACC_TL needs a source for. NTRS holds only the conference abstract record (20010044424: determinationType=GOV_PUBLIC_USE_PERMITTED but stiType=ABSTRACT, downloadsAvailable=false - metadata-only, no file); OpenAlex shows is_oa=false with no OA location -> institutional/library pull queued in DOWNLOADS.md R160.
-
-Key numbers committed in extracted_data/r160_tagish_lake_composition_key_numbers.csv (6 rows x 6 cols; all quoted spans count==1 re-verified pre-write). rc-085 evidence updated and stays open: the accessible route is exhausted - either an institutional pull of Zolensky et al. supplies the modes, or upstream lists the split under WHAT HAS NO SOURCE per rc-085's own proposal. Registry **578 -> 580** sources (T1 +2); queue 114 -> 115 registered_not_pulled.
-
-## Round 175 - queue sweep: ORO route re-probed; NTRS twin documented
-
-- king_schofield_2015_ci_modal_mineralogy_xrd: OpenAlex hybrid-OA file oro.open.ac.uk/69573/1/69573.pdf re-probed with Safari UA (R137b lesson) - HTTP 403; no alternate bitstream on the ORO record. Stays registered_not_pulled for institutional pull.
-- lebofsky_et_al_1990: exact-title NTRS twin located = 19900035855 (REPRINT, [1990], "The nature of low-albedo asteroids from 3-micron multi-color photometry") with zero downloadable files - metadata-only record.
-
-## R177 - LPSC-2001 conference abstract located for the Tagish Lake modal study (2026-10-16)
-
-**Why this.** rc-085's missing source is Zolensky et al.'s MAPS 37:737-761 modal-mineralogy study; R160 queued it for an institutional pull after the NTRS record proved metadata-only. This round located a freely accessible copy of the conference version (LPSC XXXII, 2001) while re-probing the row.
-
-**What was found.** The LPSC-2001 proceedings session file at lpi.usra.edu/meetings/lpsc2001/pdf/sess01.pdf (96,675 B, 2 pp, pulled live this round; LPI/USRA public conference archive) carries abstract #1616 'Mineralogy of Tagish Lake, a Unique Type 2 Carbonaceous Chondrite' by Gounelle M., Zolensky M.E.*, Tonui E., Mikouchi T. (Gounelle first author in the conference version; Zolensky leads the journal version). Verbatim from the proceedings: 'We have identified in Tagish Lake an abondant carbonate-poor lithology and a less common carbonate-rich lithology.' ('abondant' as printed) - three sentences total, no modal wt% figures.
-
-**Against rc-085.** The abstract confirms the study's existence, authorship order and its central claim (two lithologies, unique type 2), but carries none of the mode percentages upstream needs for _ACC_TL; the MAPS full text remains paywalled from this machine (Wiley pdfdirect connection error R177). rc-085 stays open on the same terms as after R160. No new source row: the abstract is a second copy of content already represented by the registered NTRS abstract record, so it is documented here and in the row's access_status instead (near-miss convention).
-
-**Registry hygiene.** The row's authors_short carried 'Nakamura, E.'; Crossref for 10.1111/j.1945-5100.2002.tb00852.x prints Nakamura K. - corrected this round (id and year untouched).
+Abstract #1616 (Gounelle, Zolensky, Tonui, Mikouchi; LPSC XXXII): "an abondant carbonate-poor lithology and a less common carbonate-rich lithology"; no modes. rc-085 unchanged. The row's author initial corrected to Nakamura K.
