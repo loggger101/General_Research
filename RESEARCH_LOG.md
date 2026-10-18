@@ -1,4 +1,5 @@
 # Research log
+- **Round 191** (2026-10-18): Five long-walled queue rows re-probed, all still blocked, dated retry notes in their access_status (dorrington_olsen_2026_parametric_economic_modelling_asteroid_mining_architectures, kopp_lean_2011_total_solar_irradiance, just_2019, knox_1970_yield_strength_meteoritic_iron, iyer_kelly_2022_lci_critical_materials_ni_cu_ti_ree). No candidate, registry unchanged.
 - **Round 190** (2026-10-18): Coverage check, no candidate: economicspace mineral_value_catalog prices all match an applied candidate or a registered source, and spacecost propellants.csv's non-thruster columns (Isp design points, storage densities) contradict no registered source.
 - **Round 189** (2026-10-18): propellants.csv thruster kg-per-newton column audited: Xenon Hall 54 kg/N fits NEXT-C; PPT 5000 kg/N anchored within 13% by the newly hosted EO-1 on-orbit PPT paper (d03). No candidate.
 - **Round 188** (2026-10-18): Cross-repo consistency audit found no drift; rc-171 opened (H-IIA 204 $90M has no source and disagrees with JAXA/MHI yen figures; proposes ~$68M). +4 sources (3 in d04, World Bank USD/JPY in d23); registry 623.
