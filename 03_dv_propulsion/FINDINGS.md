@@ -203,3 +203,17 @@ No candidate.
 ## R190 - Non-thruster propellant columns (no candidate)
 
 All 41 rows of `isp_vac_s`, `density_kg_per_L`, `ref_cost_usd_per_kg`, `boiloff_pct_per_day`: Xenon 3000 s mid NEXT-C envelope; argon 0.3 kg/L supercritical at 18 MPa (PM/RT ~0.29), krypton 0.55 at 16-17 MPa, xenon 2.0 needs cold near-critical storage (Tc 165 K), iodine 4.93; krypton $794 is the centre of the rc-059 band ($300-$2,100); hydrazine 75 and green monoprop 500 have no price series. The ssoBFT item is closed by R42.
+
+## R192 - The two dead un-hosted file references re-pointed (hygiene)
+
+- After the 2026-10-18 re-clone, `validate.py` failed both `<sha>:<path>` refs in `access_status`
+  (`krishnan_2010_h2o2_rp1_upper_stage`, `pietrobon_1999_h2o2_kero_shuttle_boosters`) at commit
+  5dd58d5: the object survives only in the pre-re-clone copy and is not in origin's history.
+- Re-pointed to 89b6f5f, whose tree (e46be5a3da568b365e262e470dea7cc2535f47b6) is IDENTICAL to
+  the orphan's: same maintenance commit survived a history rewrite under a new id. `git show`
+  at that state returns exactly what each cell records - krishnan 268,620 B sha256 0641a5e9...,
+  pietrobon 89,348 B sha256 31e72bb5... - so the refs now resolve in every fresh clone.
+- The bare prose mentions "restored from git 5dd58d5" (the R71 re-extraction anchor) are left as
+  history: they record what was fetched at the time and are not checked references.
+
+No source changed; this round's candidate is rc-172, recorded in `02_composition_value/FINDINGS.md`.

@@ -1,4 +1,7 @@
 # Research log
+- **Round 192** (2026-10-18): rc-172 opened - the detailed-phase split ratios in AsteroidCatalog
+  mineralogy.py declare themselves unsourced upstream, class K keeps a taenite share about 5.6x the
+  lever-rule-neutral value while pricing reads it directly, and three registered modal-mineralogy studies sit queued to supply them.
 - **Maintenance** (2026-10-18): Markdown audit on the owner's instruction: the log moved from INDEX.md to this file and its entries were condensed; FINDINGS, INDEX, DOWNLOADS, README and AGENTS were condensed (about 62% smaller) with full registry ids throughout. No source, upstream cell or candidate changed.
 - **Round 191** (2026-10-18): Five long-walled queue rows re-probed, all still blocked, dated retry notes in their access_status (dorrington_olsen_2026_parametric_economic_modelling_asteroid_mining_architectures, kopp_lean_2011_total_solar_irradiance, just_2019, knox_1970_yield_strength_meteoritic_iron, iyer_kelly_2022_lci_critical_materials_ni_cu_ti_ree). No candidate, registry unchanged.
 - **Round 190** (2026-10-18): Coverage check, no candidate: economicspace mineral_value_catalog prices all match an applied candidate or a registered source, and spacecost propellants.csv's non-thruster columns (Isp design points, storage densities) contradict no registered source.

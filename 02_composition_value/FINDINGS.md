@@ -162,3 +162,32 @@ At AsteroidCatalog@86cfc54 (6a2cfbc is now 82a2905 after a history rewrite; `ups
 ## R177 - The LPSC-2001 abstract (2026-10-16)
 
 Abstract #1616 (Gounelle, Zolensky, Tonui, Mikouchi; LPSC XXXII): "an abondant carbonate-poor lithology and a less common carbonate-rich lithology"; no modes. rc-085 unchanged. The row's author initial corrected to Nakamura K.
+
+## R192 - The detailed-phase split ratios declare themselves unsourced (rc-172)
+
+- `mineralogy.py` at AsteroidCatalog@84e026e, verbatim (count==1): "WHAT HAS NO SOURCE: every
+  sulfide split as a number (the sources name the species, not a ratio this table could quote);
+  the K alloy split; the CAI oxide fractions; and the metal of every class not named above --
+  the C complex, P, D, Z, T, A, R, O and L."
+- Class K keeps `_ALLOY_CV = {"taenite": 0.60, "kamacite": 0.40}` (`"K": _detail(_ALLOY_CV,
+  _SULFIDE_NI),` count==1) while the module's own 1.8.1 fix moved every class with no source for
+  its metal to `_ALLOY_OCTAHEDRITE = {"kamacite": 0.89, "taenite": 0.11}     # ~9 wt% Ni: no
+  change`. K is not on that fix list although the same file names its alloy split unsourced.
+- Arithmetic (computed here): lever-rule neutral taenite share = 0.106; _ALLOY_CV puts it
+  at 0.60, about 5.6x neutral; Ni in K-class metal reads ~20.6 wt% against the ~9 wt%
+  the coarse column assumed. taxonomy_composition.csv gives class K metal_fraction 0.08,
+  so this moves value: economicspace master.py prices each alloy phase by its own derived
+  composition (`_KAMACITE_NI` 0.065, `_TAENITE_NI` 0.30) and prints the neutral share itself:
+  "(9.0 - 6.5) / (30 - 6.5) = 0.106".
+- CAI accessories move numbers too: perovskite and hibonite take different base recoveries
+  (0.40 vs 0.25), so the K/L perovskite-hibonite fractions are load-bearing unsourced values.
+  The sulfide species ratios are attribution-only today: `_UTILITY_FAMILIES` asserts every Fe/Ni
+  sulfide at one utility level, but the split decides where nickel sits if ore mineralogy ever
+  prices differently.
+- Registered sources that could supply them, all queued full texts:
+  `king_schofield_2015_ci_modal_mineralogy_xrd` (ORO bitstream 403, re-probed R175),
+  `howard_2011_cm_modal_mineralogy_psd_xrd_part2` and `howard_2010_cv3_modal_mineralogy_psd_xrd`
+  (Elsevier closed per R152). No full text read this round; nothing extracted.
+
+**rc-172** opened (citation): source the split ratios from institutional pulls of the three
+queued studies, or apply NO SOURCE MEANS NO CHANGE to class K and label the rest as assumptions.
