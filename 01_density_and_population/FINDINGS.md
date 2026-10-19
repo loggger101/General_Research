@@ -228,3 +228,27 @@ The installed CSV header also equals the manifest's `columns` list order-exactly
 3. Manifest `sources` provenance counts - JPL SBDB 1,568,882 / SsODNet 1,563,656 / NEOWISE 143,015 / MP3C 1,335,051 - are in-catalog sourcing tallies, not source-table sizes; no tension with R41-era registrations (ssoBFT parquet 1,563,708 rows and NEOWISE V2.0 bundle 183,419 are different tables/views).
 
 No RC opened: every declared value matched reality exactly - the pinned artifact chain is clean from release metadata through to the working files behind every committed pipeline number. rc-176 (the "~1.2 GB" survivors) remains open and untouched; its subject file is now identified to exact hash, strengthening rather than altering that candidate.
+## Round 201 - release-history manifest sweep across all eight AsteroidCatalog builds; stamped doc claims verified against their own builds (2026-10-19)
+
+Every published AsteroidCatalog release carries its own manifest.json declaring rows / measured_diameters / sources counts / contract version. Pulled all seven older ones (R200 covered 29c) and cross-checked every stamped figure in README/CHANGELOG against the build it names:
+
+| release | rows | measured_diameters | contract | pkg | SsODNet | cols |
+|---|---|---|---|---|---|---|
+| data-2026-09-23 | 1,566,618 | **149,740** | 1.3.0 | 0.3.0 | 1,563,644 | 95 |
+| data-2026-09-25 | 1,567,469 | 149,718 | 1.4.0 | 0.4.0 | 1,563,656 | 99 |
+| data-2026-09-26 | 1,567,657 | 149,718 | 1.4.1 | 0.6.0 | 1,563,656 | 99 |
+| data-2026-09-26b | 1,567,859 | 149,718 | 1.5.0 | 0.7.0 | 1,563,656 | 99 |
+| data-2026-09-27 | 1,568,641 | 149,718 | 1.6.0 | 0.8.0 | 1,563,656 | 100 |
+| data-2026-09-29 | 1,568,748 | 149,718 | 1.7.0 | 0.9.0 | 1,563,656 | 101 |
+| data-2026-09-29b | 1,568,882 | 149,718 | 1.8.0 | 0.10.0 | 1,563,656 | 102 |
+| data-2026-09-29c (R200) | 1,568,882 | 149,718 | 1.8.1 | 0.10.1 | 1,563,656 | 102 |
+
+Doc claims verified against their own builds: README L143-144 "(149,718 of 1,568,641 in data-2026-09-27)" matches the -27 manifest exactly; CHANGELOG "Built from d30a34f: 1,568,882 bodies" for -29b matches its rows; "SsODNet ~1.56 M (1,563,656 bodies of data-2026-09-26)" matches the -26 manifest sources field. **Zero mismatches across every stamped count.**
+
+Parquet-level verification: CHANGELOG claims-correction table says "in data-2026-09-26, 77 masses are known to 5% and the densest are Kalliope 4.18 and Psyche 4.14". Computed on that release's own parquet (downloaded this round): exactly **77** bodies have estimated_mass_sigma_kg/estimated_mass_kg in (0, 0.05], top densities Kalliope 4.175310 and Psyche 4.142608 - the stated 4.18/4.14 are those values rounded up to two decimals; third is 110 Lydia at 3.538, consistent with the same table row's correction about Lydia. Claim verified true for its named build.
+
+Methodology fact recorded: "masses known to X%" in AC docs = mass-only relative-sigma selection (sigma/mass in (0, 0.05]), NOT tools/density_evidence.py measured_bodies() - applying the flagged density-evidence filter at 5% gives 45 bodies on the same build. Future rounds: do not apply measured_bodies() to this statistic.
+
+Refinement of R199's flat-numerator story: measured_diameters was **149,740 in data-2026-09-23** and 149,718 from -25 onward (one correction event between builds; docs never cite a count for -23 so no conflict). The +241-bodies claim (09-27 to 29c) stands unchanged.
+
+No RC opened: the release-history record is internally consistent with its own metadata at every point checked, from manifest counts down to per-body densities on an archived build.
