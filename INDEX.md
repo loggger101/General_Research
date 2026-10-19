@@ -64,6 +64,7 @@ _Backings: per-spectral-type density and PGM factors in AsteroidCatalog `referen
 | britt_2002_pds_asteroid_densities | T3 | NASA PDS Asteroid Densities V1.1 (Britt et al. 2002 table; 23 bodies) | open service | per-body best densities by class, incl. the M-types Psyche and Kalliope (older than the registered Siltala 2021 and Ferrais 2022) |
 | neese_2010_pds_asteroid_taxonomy_v3_0 | T3 | NASA PDS Asteroid Taxonomy V3.0 (1,198 bodies; Tholen, Tedesco, Howell, Xu classes) | open service | class counts and the Tholen classes behind JPL spec_T (the M/E/P/F/G rows of taxonomy_composition.csv) |
 | pentikainen_2026_gaia_dr3_asteroid_characterization | T1 | Pentikainen et al. 2026, Asteroid characterization using Gaia DR3 (A&A 707:A132) | registered, not pulled | context-only: second Gaia DR3 class source, focused on Ch-class (possibly hydrated) bodies |
+| asteroidcatalog_release_data_2026_09_29c | T3 | AsteroidCatalog published data release 'data-2026-09-29c' (pipeline contract 1.8.1; GitHub artifact set: catalog CSV.gz + parquet + manifest) (github.com/loggger101/AsteroidCatalog, released 2026-09-29) | open service | The pinned catalog economicspace installs - installed copy verified this round at exactly 2,201,796,047 B / header + 1,568,882 rows / 102 columns; gzip asset 325,443,405 B = 310.4 MiB (README '~310 MB' reconciles under binary units); measured diameters exactly 149,718 of 1,568,882 via diameter_source=='measured' on the release parquet; backs rc-176 |
 
 ## Domain 2 — Composition → commodity value mapping
 
