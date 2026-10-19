@@ -183,3 +183,21 @@ rc-140 (method): build the PGM table taxonomy.py proposes: CI 3.29 ppm / metal f
 ## Round 175 - Tholen dissertation read (2026-10-16)
 
 `tholen_1984_asteroid_taxonomy_dissertation` read live (UA DSpace REST; 168 pp; author copyright, not hosted): the original source behind the Tholen-class citation.
+## Round 195 - AsteroidCatalog README contract verified against data-2026-09-29c (2026-10-19)
+
+Evidence-only sweep; no new sources, no RC opened from it. Every quantitative claim in the
+AsteroidCatalog README (the user-facing data contract since commit 84e026e) was re-measured on the
+pinned release and reproduces exactly:
+
+- Row count 1,568,882 matches the README opening figure for `data-2026-09-29c`.
+- Psyche diameter spread claim ("spreads 30% across the four sources"): published `diameter_spread` = 0.298613 on -29c, provider SsODNet, n_sources=4.
+- X-complex split medians (README L389-390, CHANGELOG L188): reproduced with upstream's OWN selection from `tools/density_evidence.py` (`spectral_type_source` in source/tholen, mass_measured AND density_measured flags, relative mass sigma in (0, 0.20], a < 5.5 AU), grouping by label group per README L393: dark band p_V < 0.10 N=15 median 1.4359; moderate band 0.10-0.30 N=17 median 3.4496 - documented as 1.44 (N=15) and 3.45 (N=17).
+- JPL Tholen label reproduction ("80 of the 83 bodies it types E, M or P that carry an albedo"): exact on -29c - base N=83, in-bin 80; misses are Tokio (M at p_V 0.0694), Penelope (M at 0.0400), Larissa (P at 0.1690).
+- Densest of the masses known to 5% ("77 ... Kalliope (4.18) and Psyche (4.14)", claim build `data-2026-09-26`): -29c count is also exactly 77, top two Kalliope 4.1753 / Psyche 4.1426; next Lydia 3.538.
+- README example dicts match live tables at HEAD: `TAXONOMY_COMPOSITION["M"]` (group X-complex, density_est_gcm3 3.9, metal_fraction 0.5); S-type `comp_phases` all eight entries exact; S-type `comp_phases_detailed` documented entries exact (kamacite 0.033 / taenite 0.0228 / tetrataenite 0.0042 / merrillite 0.004 / chlorapatite 0.002).
+
+Note for future rounds: the release identity `estimated_mass_kg = density_gcm3 x pi/6 x diameter_km^3`
+holds for Eros BY CONSTRUCTION (density is computed from that mass-diameter pair), so rc-174 remains a
+diameter-convention claim, not an arithmetic gate violation - README section 5 is accurate as written.
+
+This surface (README prose claims vs release) is now covered; do not re-sweep unless the README or the pinned release changes.
