@@ -191,3 +191,7 @@ Abstract #1616 (Gounelle, Zolensky, Tonui, Mikouchi; LPSC XXXII): "an abondant c
 
 **rc-172** opened (citation): source the split ratios from institutional pulls of the three
 queued studies, or apply NO SOURCE MEANS NO CHANGE to class K and label the rest as assumptions.
+
+**Round 204 - completeness registration of the X-type survey.**
+
+AsteroidCatalog CITATIONS.md section 3 (the literature behind its reference values) was swept work-by-work against sources.csv on 2026-10-19; author-year-only entries were invisible to every earlier DOI/URL/NTRS-accession token sweep, so this seam had never been checked end-to-end. Forty-six of the forty-seven works already carry registry rows, three of them under ids without the first-author surname: Hanus 2017 as adam_2017 (flagged as such by AC itself), Yokoyama et al. 2023 as ryugu_ivuna_2023, and Glavin et al. 2025 Nature Astronomy 9:199 as bennu_volatiles_2025. The single gap was Fornasier, Clark & Dotto (2011), Spectroscopic survey of X-type asteroids, Icarus 214:131-146 - the paper behind the upstream taxonomy.X_SPLIT_BOUNDS albedo convention. Registered this round as fornasier_2011_x_type_spectroscopic_survey [T1; registered_not_pulled]; DOI verified live against Crossref (10.1016/j.icarus.2011.04.022), no arXiv mirror found, publisher route paywalled - full text deferred to an institutional pull.
