@@ -99,3 +99,34 @@ Upstream's 200 Wh/kg is 3.7x a whole terrestrial metal mine including comminutio
 ## R164 / R165 - Candidates (2026-10-14)
 
 rc-097 (cite DOE's 19.3 Wh/kg beneficiation), rc-122 (cite Kabemba's 83.25-94.37% and Liddell's >95%), rc-136 (give the mining-rate dial its plant-scale references: 42.0 vs 2.3 kg/yr per kg of plant). Texts in `revision_candidates.csv`.
+
+## R207 - Refinery throughput row vs institutional ISRU bounds (rc-178)
+
+The spacecost `In-space processing plant throughput` row (100 kg processed per year per kg of
+plant, band 20-500) is justified only by an uncited analogy: "Terrestrial smelters run 1,000x their
+own mass per year" [count==1]. No institutional in-space processing rate is named for it anywhere.
+
+The sister row two lines away, `ISRU propellant plant throughput`, IS institutionally anchored - its
+own note prints the derivation 11.67 t / 0.616 yr / 2.6 t = 7.28 from Kleinhenz & Paz PTMSS/SRR 2021,
+and CITATIONS.md L138-139 name both K&P papers for it (band high 13.3 from AIAA-2017: 1.7 mT hardware,
+6,978 kg CH4 + 22,728 kg O2 over 480 days). Recomputed live from the hosted PDFs' printed figures:
+
+| K&P case | basis | kg processed/yr/kg plant | refinery row multiple |
+|---|---|---|---|
+| PTMSS ridge chain (2.6 t) | product=feedstock mass | 7.286 | point x13.7 / floor x2.74 |
+| PTMSS whole baseline (4.9 mT incl mine) | same | 3.866 | point x25.9 / floor x5.17 |
+| AIAA-2017 Mars hardware (1.7 mT) | product side only | 13.297 | point x7.5 / floor x1.50 |
+
+So the refinery band's FLOOR sits ~1.5x above the best institutional figure and its POINT value
+runs 8-26x past it, in spacecost's own units. Economicspace consumes the row live as `refinery_rate`
+(modules/calc.py L7618; master.py L11125) with an unsourced restated fallback constant at master.py
+L1757 (count==1). Their verification_sheet #150 backing ledger flags this input (I89) as needing
+backing independently. rc-178 proposes naming both papers as bound references on the note and a
+CITATIONS.md entry; value decision left open, no re-pin.
+
+STANDING SEAM NOTE for future rounds: that same backing ledger names 99 inputs needing backing - most map onto
+open candidates already (rc-086..177 cover operational/storage/propellant/mineral cells). Remaining unclaimed
+classes seen while triaging it: the physics/dv constants restated uncited in campaign/worked_calculation.py L103-124
+(mu_E, v_E, r_LEO, R_MOON, DV_NRHO=0.450 - which MATCHES the sourced delta_v_segments NRHO-insertion row 450 m/s),
+the search-method dials (ladder rungs, fleet max) and the Cap_* market-routing ceilings; those are judgment or
+self-derived by design. The sister-row band [7.28,13.3] is anchored - do not re-litigate it here.
