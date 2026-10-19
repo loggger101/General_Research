@@ -70,3 +70,6 @@ gao.gov refused this machine again, so both are registered from GAO's published 
 ## R164 - Candidates (2026-10-14)
 
 rc-098 (WACC citation: Damodaran backs the floor only), rc-099 and rc-124 (contingency citations: Whitley & Shinn, NRC 2010), rc-107 (liability premium ~$1.0M per GAO). Texts in `revision_candidates.csv`.
+
+**Round 205 - near-miss: Slingshot Aerospace pairing.**
+spacecost CITATIONS.md section 4 pairs 'Plane Talking (Gallagher) / Slingshot Aerospace, 2024' for the launch-insurance market rate. Live search on 2026-10-19 found no separate Slingshot artifact: Plane Talking issues are hosted at specialty.ajg.com (Q1/Q3/Q4-2024 located; the Q1-2024 issue is what the insurance row's cell cites), and spacecost/operations.py names only Plane Talking in the row note itself. The registered gallagher_plane_talking_space_market_updates already covers the cited cell; per R96 convention this pairing is documented as a near-miss, not registered.

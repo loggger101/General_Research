@@ -236,3 +236,7 @@ The constant's own comment marks these figures as comparisons and context rather
 Boundary case recorded for completeness: Module 4's arrival-plane-change figure of 253 m/s recomputes to ~252 from unrounded inputs (arrival combined burn at 23.44 deg = 1729.2; minus coplanar 1477.3) — the same rounded-intermediate family; deliberately not part of the proposal.
 
 Source: curtis_orbital_mechanics_engineering_students (T4, d03), the textbook spacecost's own delta_v_segments header cites for ascent-line values and covering Hohmann transfers with inclined plane change by law of cosines.
+
+**Round 205 - Sutton & Biblarz registered as RELATIONS-register context.**
+
+economicspace CITATIONS.md section 4 names Sutton and Biblarz (Rocket Propulsion Elements, 9th ed., Wiley 2017) for the rocket equation, exhaust velocity, thrust and jet power relations that campaign/verification_sheet.py prints in its RELATIONS register. No registry row carried it; registered this round as sutton_biblarz_2017_rocket_propulsion_elements_ninth_edition [T4; registered_not_pulled], textbook class alongside curtis_orbital_mechanics_engineering_students (d03) and vallado_fundamentals_astrodynamics_applications (d13). Context-only: no cell pins a figure to it.
