@@ -252,3 +252,18 @@ Methodology fact recorded: "masses known to X%" in AC docs = mass-only relative-
 Refinement of R199's flat-numerator story: measured_diameters was **149,740 in data-2026-09-23** and 149,718 from -25 onward (one correction event between builds; docs never cite a count for -23 so no conflict). The +241-bodies claim (09-27 to 29c) stands unchanged.
 
 No RC opened: the release-history record is internally consistent with its own metadata at every point checked, from manifest counts down to per-body densities on an archived build.
+## Round 202 - cross-build CHANGELOG claims verified against published parquets; asset integrity extended to two more releases (2026-10-19)
+
+Continuing the release-history seam from R201: the data-2026-09-25 -> data-2026-09-26 diff paragraph in AsteroidCatalog's CHANGELOG makes several claims that say "(checked against the published parquet)" - this round re-ran those checks independently on fresh downloads of both builds.
+
+Claims verified exactly:
+- "188 bodies JPL added, none gone": set difference = +188 / 0 removed; all 188 new rows cite JPL in their sources field.
+- "19 H-derived diameters and masses moved because JPL revised those bodies' H and orbit": exactly **19** common bodies have a material diameter change (relative > 1e-6) and the same 19 for mass; `absolute_magnitude_h` differs on exactly those 19 rows - the movers are provisional-designation bodies like 2026 SZ7 (largest shift +2.68%), consistent with fresh JPL H revisions.
+- "no body's class, albedo, density, source list or diameter source changed": spectral_type, spectral_type_tholen, measured albedo, sources and diameter_source all show zero changes; `albedo_assumed_for_diameter` zero changes; the 12 rows whose density_gcm3 differs in exact string form are all within rebuild float noise (old == new at display precision).
+- "no row of data-2026-09-25 is one" (the blank-class asymmetry between derive.py's three spellings and enrich_composition's eight, `taxonomy._BLANK_CLASSES` = 8 notations): scanning -25 for rows whose Bus column holds one of the five asymmetric notations {"-", "NaN", "none", "NA", "<NA>"} while a Tholen class is present returns **0** rows.
+
+METHODOLOGY FACT recorded (prevents false RCs against this changelog line in future rounds): exact string comparison of derived float columns across builds flags 60,750 diameter and 118,319 mass cells as changed - all but the material 19 are <=1e-9 relative rebuild noise from unifying `physics.H_DIAMETER_CONSTANT` into one definition (the same changelog section describes that refactor). Cross-build claims of "N values moved" must be tested with a relative tolerance; material counts here are exactly 19/19 at any threshold above ~1e-6.
+
+Asset integrity extended: fresh downloads of the data-2026-09-25 and data-2026-09-26 parquets hash to their manifests' declared sha256 (older builds key the asset map as `files`, newer releases as `assets` - same content). Together with R200 (29c) and R201 (-26 manifest sweep), three releases now have independently proven artifact integrity.
+
+No RC opened: every re-runnable claim in this changelog section reproduces exactly against the published artifacts.
