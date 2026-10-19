@@ -31,3 +31,7 @@ Every source the upstream repos cite that the registry lacked, each `registered_
 ## R121 - izzo_2015_revisiting_lamberts_problem hosted from the arXiv CC0 copy (2026-10-05)
 
 `izzo_2015_revisiting_lamberts_problem` hosted as full_texts/izzo_2015_revisiting_lamberts_problem_celestial_mech_dynam_astron_arxiv1403.2705.pdf (arXiv abs page: CC0 dedication). The algorithm behind economicspace's lambert_izzo oracle; its time-of-flight relations are not yet extracted.
+
+**Round 206 - Vallado edition stated upstream.**
+
+economicspace@36bc858 CITATIONS.md now names *Fundamentals of Astrodynamics and Applications*, **4th ed., Microcosm Press, 2013**, for vis-viva, circular and escape speed, the combined plane change, Kepler's third law and the synodic period (RELATIONS register). The registry row carried "n.d. (upstream gives no edition)" from R74; year set to 2013 with a dated access_status note. No cell semantics change - validation-case mapping for the Lambert oracle is untouched.
