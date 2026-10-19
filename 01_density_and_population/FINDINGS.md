@@ -210,3 +210,21 @@ Following the provenance trail into that catalog's own documentation found a liv
 **False-flag trap closed:** economicspace README L1209 "In data-2026-09-29c, 149,718 of 1,568,882 bodies have a measured diameter" looks like it transplanted AsteroidCatalog README's figure ("(149,718 of 1,568,641 in data-2026-09-27)") onto the new denominator - but counting `diameter_source == "measured"` (the canonical flag per AC tools/audit_catalog.py) on the release parquet gives **exactly 149,718 of 1,568,882**. The numerator is genuinely unchanged between builds (+241 bodies added in two days carried no new measured diameters); both documents are correct for their stamped releases. Recorded so a future round does not flag L1209 as stale.
 
 Registered the release itself: `asteroidcatalog_release_data_2026_09_29c` [T3 open_service] with r199_catalog_release_key_numbers.csv (7 rows). Registry completeness under all token classes now confirmed against upstream at economicspace@d77f1ce.
+## Round 200 - pinned-release artifact integrity proven end-to-end; measured-diameter fact now triple-corroborated (2026-10-19)
+
+The release manifest for `data-2026-09-29c` (manifest.json, 3,599 B, gh release download this round) declares sha256 + byte counts for every asset. Verified against the artifacts actually in use:
+
+| artifact | declared sha256 (prefix) | verified where | result |
+|---|---|---|---|
+| catalog_csv (decompressed, 2,201,796,047 B) | e3cd21d6645211e3…f1245 | economicspace/asteroid_pipeline/asteroid_catalog.csv (installed working copy; full-file sha256sum this round) | EXACT MATCH |
+| asteroid_catalog.parquet (216,789,479 B) | 227b5e06a8a9a01f…354f3f7 | scratch copy used for the R199 measured-diameter count | EXACT MATCH |
+| taxonomy.json (37,811 B) | 931767a3fe9c3d57…e275bd | economicspace/asteroid_pipeline/catalog_taxonomy.json (installed copy) | EXACT MATCH |
+| rejected_entries.csv (327 B) | 417b1953fbf16f80…0350b0 | same directory | EXACT MATCH |
+
+The installed CSV header also equals the manifest's `columns` list order-exactly (102 columns). Consequences for future rounds:
+
+1. **Installed-copy facts are settled unless the pin moves.** Any claim about what economicspace reads can be checked against this one hash; no need to re-wc or re-parse unless `catalog.catalog_release` changes (README L591 says a repin must record in versions.md - watch that).
+2. **R199's measured-diameter reconciliation is now triple-corroborated**: the release manifest itself declares `"measured_diameters": 149718`, agreeing with both economicspace README L1209 and my flag-based count on the (now hash-authenticated) parquet. The do-not-re-flag ruling stands on three independent records.
+3. Manifest `sources` provenance counts - JPL SBDB 1,568,882 / SsODNet 1,563,656 / NEOWISE 143,015 / MP3C 1,335,051 - are in-catalog sourcing tallies, not source-table sizes; no tension with R41-era registrations (ssoBFT parquet 1,563,708 rows and NEOWISE V2.0 bundle 183,419 are different tables/views).
+
+No RC opened: every declared value matched reality exactly - the pinned artifact chain is clean from release metadata through to the working files behind every committed pipeline number. rc-176 (the "~1.2 GB" survivors) remains open and untouched; its subject file is now identified to exact hash, strengthening rather than altering that candidate.
