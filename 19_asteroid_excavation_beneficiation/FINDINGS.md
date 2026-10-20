@@ -130,3 +130,7 @@ classes seen while triaging it: the physics/dv constants restated uncited in cam
 (mu_E, v_E, r_LEO, R_MOON, DV_NRHO=0.450 - which MATCHES the sourced delta_v_segments NRHO-insertion row 450 m/s),
 the search-method dials (ladder rungs, fleet max) and the Cap_* market-routing ceilings; those are judgment or
 self-derived by design. The sister-row band [7.28,13.3] is anchored - do not re-litigate it here.
+
+## R212 cross-reference (2026-10-20)
+
+The previously-unclaimed worked_calculation constants MU_EARTH and V_EARTH are now institutionally cited upstream (economicspace CITATIONS.md, PR#154 at origin/main 675f0cf) and registered in domain 12 as iers_petit_luzum_2010_conventions_tn36 and nasa_nssdca_earth_fact_sheet; R_MOON likewise matches the Moon fact sheet semimajor axis exactly (see d12 FINDINGS correction note). DV_NRHO restates a sourced spacecost delta-v row. The remaining unclaimed classes from R207 are unchanged: search-method dials, Cap_* routing and r_LEO as an engineering definition.

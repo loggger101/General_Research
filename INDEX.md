@@ -436,6 +436,8 @@ _Backings: spacecost `reference/environments.csv` (solar flux, array mass factor
 | ecss_e_hb_31_01_part15a_existing_satellites | T3 | ECSS-E-HB-31-01 Part 15A: Thermal design handbook - Existing Satellites — European Cooperation for Space Standardization (ESA ESTEC) | read, not hosted | environments.csv Geostationary orbit eclipse claim: OTS case study “Maximum eclipse of 72 minutes” + equinox operations = the real source behind upstream’s note (rc-079) |
 | glaser_oberst_mazarico_et_al_2017_lunar_pole_illumination | T1 | Illumination conditions at the lunar poles: Implications for future exploration — Planetary and Space Science 162:170-178 (accepted manuscript) | full text hosted | environments.csv Lunar surface (polar ridge) illumination fraction (~86%) and the 'a few days' worst-darkness note |
 | rind_lean_jonas_2014_tsi_impact_on_climate_model_simulations | T1 | Rind, Lean & Jonas 2014, "The Impact of Different Absolute Solar Irradiance Values on Current Climate Model Simulations" - J. Climate 27 (NTRS copy 20150011099) | read, not hosted | companion to kopp_lean_2011_total_solar_irradiance: old vs SORCE absolute TSI shifts modelled global temperature by 0.48 C |
+| nasa_nssdca_earth_fact_sheet | T3 | Earth Fact Sheet - NASA NSSDCA (Williams) | full text hosted (html, US Government work) | economicspace worked_calculation V_EARTH and window_phasing_au via CITATIONS.md PR#154 worksheet backing |
+| iers_petit_luzum_2010_conventions_tn36 | T2 | IERS Conventions (2010), Technical Note No. 36, Petit and Luzum eds. | read live, not hosted (in-file publisher copyright; extraction-only) | economicspace worked_calculation MU_EARTH via CITATIONS.md PR#154 worksheet backing |
 
 ## Domain 13 — Astrodynamics methods, ephemerides & audited software
 
