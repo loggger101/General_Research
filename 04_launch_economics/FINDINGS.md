@@ -181,3 +181,9 @@ Evidence-only sweep of the spacecost README (rewritten at bda6415 "README carrie
 - Delivery surfaces: lander $200k/kg = STAGE_HARDWARE_USD_PER_KG[0.2] exact; aeroshell $50k/kg = ENTRY_SYSTEM_USD_PER_KG exact.
 
 Corpus-level note: this is the second consecutive repo whose user-facing prose re-measures exactly against its own tables (AsteroidCatalog README at Round 195); both findings so far came from data-vs-data comparisons instead - upstream docs discipline holds under adversarial re-measurement, and RC hunting should keep prioritising cross-table and convention seams over prose claims. This surface is covered; skip unless the README or v0.12.x tables change.
+
+**Round 208 - Northrop Grumman Propulsion Products Catalog registered; rc-179 opened.**
+
+The economicspace MODEL.md propellant-tankage table asserts "Star 48B measures 6.4%" with no source named anywhere upstream. The manufacturer catalog (public release OSR No. 16-S-1432, dated 05 April 2016; 9752514 B sha 5b52adf1) gives both flight-proven variants on pp.102-103: propellant load 4,431.2 lbm identical across variants [appears twice], total inert 274.2 lbm (TE-M-711-17 short nozzle) and 289.6 lbm (TE-M-711-18 long nozzle). Inert-over-propellant = 6.19% / 6.54%, mean 6.36% - the printed 6.4 is true within variant spread but uncited; rc-179 proposes the citation, no number change.
+Sister context: spacecost APCP class anchor prints 6.9% (reproduces from pinned rows per Round 197) - conservative above both measured variants.
+This surface is covered; skip unless a new catalog edition appears or the MODEL.md row changes.

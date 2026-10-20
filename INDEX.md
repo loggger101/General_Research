@@ -272,6 +272,7 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | jaxa_2003_hii_no6_accident_page | T3 | JAXA official H-IIA page: per-vehicle cost "down to 9.3 billion yen (H-IIA F4)" + TF1-F6 flight table (Copyright 2003) | read, not hosted | d04 H-IIA 204 price anchor - the page named by the row note "JAXA/MHI pricing" |
 | mhi_2002_hii_maiden_flight_results_tech_report | T2 | MHI Tech Report Vol. 39 No. 1 (Jan-2002): New H-IIA Technology and Maiden Flight Results, via NDL pid/3527426 | read, not hosted | d04 H-IIA 204 price anchor - F1-era per-unit ceiling + Table 3 standard type at stated $=JPY 120 rate |
 | space_review_2023_japan_space_policy_h3_first_flight | T4 | The Space Review (Mar 7, 2023): Japan’s space policy after the H3 launch vehicle failure - H-2A cost statement | read, not hosted | d04 H-IIA 204 price anchor - program-consensus ~JPY 10B with dollar conversion |
+| ng_propulsion_products_catalog_2016 | T4 | Northrop Grumman Propulsion Products Catalog - STAR 48A/48B spec pages, public release OSR No. 16-S-1432 dated 05 April 2016 | read, not hosted | economicspace MODEL.md solid-motor tankage row "Star 48B measures 6.4%" - the missing citation named by rc-179 |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
