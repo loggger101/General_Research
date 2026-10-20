@@ -1,6 +1,6 @@
 # Domain 13 — Astrodynamics methods, ephemerides & audited software
 
-Backings: economicspace `research/starred-repos/`: the Lambert and Kepler solvers in `orbital.py`, the ephemeris oracles its probes are measured against, and the licence record of the 17 repositories audited there (economicspace CITATIONS.md sections 3-5).
+Backings: economicspace `orbital.py` (the Lambert and Kepler solvers, at its root since 876cd44) and [starred-repos](https://github.com/loggger101/starred-repos), split out of economicspace `research/starred-repos/` on 2026-10-20: the ephemeris oracles its probes are measured against, and the licence record of the 17 repositories audited there (economicspace CITATIONS.md sections 3-5).
 
 Created in Round 74 (2026-09-27). Blocks are appended one per round, newest last.
 
@@ -35,3 +35,7 @@ Every source the upstream repos cite that the registry lacked, each `registered_
 **Round 206 - Vallado edition stated upstream.**
 
 economicspace@36bc858 CITATIONS.md now names *Fundamentals of Astrodynamics and Applications*, **4th ed., Microcosm Press, 2013**, for vis-viva, circular and escape speed, the combined plane change, Kepler's third law and the synodic period (RELATIONS register). The registry row carried "n.d. (upstream gives no edition)" from R74; year set to 2013 with a dated access_status note. No cell semantics change - validation-case mapping for the Lambert oracle is untouched.
+
+## R219 - economicspace research/starred-repos/ is its own repository (2026-10-20)
+
+economicspace PR#159 (876cd44) moved `research/starred-repos/` to loggger101/starred-repos with its six commits replayed (each replayed tree equals the folder's tree at its source commit; patch-ids, authors and dates unchanged), and moved `orbital.py` to economicspace's root, byte-identical apart from one docstring pointer. PR#160 (31fb355) fixed the section reference that remained in its CITATIONS.md section 5. At starred-repos c1d554c, `sdsstax_ast.tab` is byte-identical to the economicspace copy and its citation is section 2 of that repo's CITATIONS.md; economicspace CITATIONS.md section 2 now says no data is committed there, and sections 3-4 still cite skyfield, Izzo and Mathar for `orbital.py`. No value or verdict moves. Pinned `Cited upstream` cells keep the path as read and carry an R219 note: hasselmann_2012_sdss_taxonomy_v1_1_pds and carvano_2010_sdss_taxonomy_main_belt (domain 01), izzo_2015_revisiting_lamberts_problem, mathar_2021_kepler_equation_first_estimates and vallado_fundamentals_astrodynamics_applications. github_python_skyfield's mapping and the domain 13 backings line (here, INDEX.md, README.md) name the new homes. Older blocks, including domain 22's R75, keep the path as read at their pinned commits.
