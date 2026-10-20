@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spaceinsider_rp1_price,hydrazine commercial price (up to around),75.8,USD/kg,"article body, defense moving-average paragraph",span count==1 on saved copy; backs the $75/kg value in spacecost Hydrazine row directionally - printed as an upper-around figure
+spaceinsider_rp1_price,LH2 Defense Working Capital Fund standard price,30.5,USD/kg,"article body, same paragraph",span count==1; in this carrier the $30.5/kg DWCF standard-price figure attaches to LH2 not hydrazine - rc-180 asks upstream to resolve or name a document attaching it to hydrazine
+spaceinsider_rp1_price,RP-1 price,2.3,USD/kg,"article body, same paragraph",span count==1; the figure this row was originally registered for (R74/R100) - carrier now identified
+spaceinsider_rp1_price,numerical family vintage,as of 2008,vintage note,"article solids/HTPB sentences, same paragraph",solids priced as of 2008 and the study named is a 2008 Purdue School of Aeronautics and Astronautics work - dollar-year flag rc-168 class recorded not adjudicated
