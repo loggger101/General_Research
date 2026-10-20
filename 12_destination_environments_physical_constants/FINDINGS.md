@@ -80,3 +80,7 @@ rc-175 / rc-176 / rc-177 targets (MODEL.md, README.md, master.py and modules/min
 ## R213 - environments gravity and escape-speed self-consistency clean (2026-10-20)
 
 Recomputed surface_gravity_m_per_s2 as G*M/R^2 and escape_velocity_m_per_s as sqrt(2*G*M/R) from the mass_kg and mean_radius_m each row itself publishes, for all ten body rows of spacecost@29a7ced reference/environments.csv (Lunar equator + polar ridge, Bennu, Ryugu, Eros, Didymos, Mars mid-latitude, Phobos, Ceres, Psyche): every stored value reproduces within 0.02 percent either way - the rounding level of G itself. No candidate; future rounds need not re-run this seam unless those columns move.
+
+## R214 - environments solar-irradiance seam exact (2026-10-20)
+
+Recomputed the product of solar_flux_w_per_m2 and au_mean squared for every row carrying both fields in spacecost@29a7ced reference/environments.csv: all 23 rows reproduce exactly 1361.0 W/m^2 at full stored precision (the CSV keeps au_mean beyond its printed digits). The flux column is derived from one inverse-square law against the 1361 solar constant rather than independent per-body measurements - internally exact, no candidate; skip unless those columns move.
