@@ -76,3 +76,7 @@ economicspace origin/main moved 36bc858 -> 675f0cf (PR#154, Verification workshe
 R_MOON correction recorded deliberately: the Moon fact sheet publishes Semimajor axis 0.3844 x 10^6 km, so R_MOON = 384,400 km agrees exactly at published precision - there is NO mismatch with this source and no future round should flag one (a 384,500 average-distance figure does not appear on the current page). DV_NRHO restates spacecost delta_v_segments row 'TLI -> NRHO insertion' per PR#154 own note; that row already carries its source - nothing to register.
 
 rc-175 / rc-176 / rc-177 targets (MODEL.md, README.md, master.py and modules/mineral_value.py constants) are untouched by PR#154: the diffstat covers CITATIONS.md, campaign/verification_sheet.py, campaign/worked_calculation.py and versions.md only. The economicspace tree still carries a further WIP batch after #154 - audit published state per R206 rule next round.
+
+## R213 - environments gravity and escape-speed self-consistency clean (2026-10-20)
+
+Recomputed surface_gravity_m_per_s2 as G*M/R^2 and escape_velocity_m_per_s as sqrt(2*G*M/R) from the mass_kg and mean_radius_m each row itself publishes, for all ten body rows of spacecost@29a7ced reference/environments.csv (Lunar equator + polar ridge, Bennu, Ryugu, Eros, Didymos, Mars mid-latitude, Phobos, Ceres, Psyche): every stored value reproduces within 0.02 percent either way - the rounding level of G itself. No candidate; future rounds need not re-run this seam unless those columns move.
