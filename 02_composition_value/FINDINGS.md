@@ -203,3 +203,13 @@ Cross-tier consistency audit of reference/mineral_phases.csv vs mineral_phases_d
 Residual-fit invariant holds for all 32 spectral types: detailed totals never exceed 1.0 (tightest L at 0.998), so every accessory fits inside its coarse residual - no mass overflow exists anywhere in the pair.
 
 Benign rounding class recorded to prevent a future false flag: X troilite children sum +1e-6 against their parent (0.022458 vs 0.022457) and Xc sums -1e-6, because five independent child values are each rounded at the sixth decimal; that is display precision of a share split, not an arithmetic violation. rc-172 stays open on its own claim (the split ratios have no source); nothing in this seam bears on it.
+
+## Round 237 - the end-member candidates decided upstream (2026-10-21)
+
+The owner chose the Tagish Lake end-member for the primitive types. AsteroidCatalog 1.10.0 (`6915077`, published as data-2026-10-21b, compared by value with data-2026-10-21):
+
+- rc-075 applied: D, Z, T and P carbon_fraction 0.04 (bennu_volatiles_2025 Extended Data Table 1: Tagish Lake 4.11 and 4.13 wt%); X and Xc follow P, 0.08 to 0.02. Carbon and both phase columns moved on exactly the 40,394 predicted bodies.
+- rc-013 declined: D and P ice stay 0.25 and 0.15; upstream's header now carries wong_2024_jwst_lucy_trojans_oh_organics_co2's reachable-ice point and the P-over-D ordering.
+- rc-076 declined: the C row's 0.01 metal kept and labelled an upper bound in its notes.
+
+AsteroidCatalog candidates: none open.
