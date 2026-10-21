@@ -1,6 +1,6 @@
 # Domain 8 — NEA accessibility oracles (R53)
 
-Backings: distribution and rank reference for the NEA rows of spacecost `delta_v_segments.csv`, through economicspace `probe_nhats.py` (FINDINGS F4/F6), which validates the shipped one-way estimator against these external oracles. Key statistics: `extracted_data/r53_nea_oracle_key_numbers.csv`.
+Backings: distribution and rank reference for the NEA rows of spacecost `delta_v_segments.csv`, through `probe_nhats.py` (FINDINGS F4/F6), in [starred-repos](https://github.com/loggger101/starred-repos) since economicspace 876cd44, which validates the shipped one-way estimator against these external oracles. Key statistics: `extracted_data/r53_nea_oracle_key_numbers.csv`.
 
 **1. NASA/JPL NHATS** (`jpl_nhats_nea_dv_oracle`; `ssd-api.jpl.nasa.gov/nhats.api`, T3 live service): JPL's numerically optimised **round-trip** delta-v for every NEA with a viable crewed trajectory (real ephemerides, multi-revolution transfers, entry-speed capped). N=7092 on 2026-09-24. Round-trip median **9.367 km/s** (p10 5.99, p90 11.55; range 3.39-12.00), reproducing economicspace SECOND-PASS.md F6 to 3 dp. Shares: <5 km/s 281 (4.0%); 5-8 1879 (26.5%); 8-10 2114 (29.8%); >=10 2818 (39.7%). The population is bounded by the filter, so it is an accessibility ladder, not a census.
 
@@ -39,3 +39,7 @@ Three hosted NASA papers:
 - **barbee_abell_adamo_johnson_landis_mazanek_2023_prospects_human_nea_missions_pdc**: "There are currently 4,658 NHATS NEAs" (CNEOS, 2022-12-22); NEO Surveyor is the growth driver.
 
 Ladder: 666 (Sep-2010) -> 765/590 (Feb-2011) -> 1,317 (Dec-2014) -> 4,658 (~Dec-2022) -> 7,094 live. `extracted_data/r143_nhats_population_ladder_key_numbers.csv`. Context only.
+
+## R223 - probe_nhats.py is in starred-repos (2026-10-21)
+
+economicspace PR#159 (876cd44) moved `research/starred-repos/`, `probe_nhats.py` and SECOND-PASS.md F6 included, to [starred-repos](https://github.com/loggger101/starred-repos); at economicspace be86297 no `probe_nhats.py` exists. R219 updated domain 13's backings and not this domain's, which still named economicspace as the probe's home. The backings line here, in INDEX.md and in README.md, and jpl_nhats_nea_dv_oracle's mapping, now name starred-repos. The R53, R73 and R138 blocks and their extracted-data notes keep the path as read. No value or verdict moves.

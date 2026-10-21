@@ -339,7 +339,7 @@ _Backings: `operational_costs.csv` NRE rows (`Spacecraft development`, `Autonomo
 
 ## Domain 8 — NEA accessibility oracles (round-trip delta-v ground truth)
 
-_Backings: distribution and rank reference for the NEA rows of `delta_v_segments.csv` (economicspace `probe_nhats.py`): JPL NHATS round-trip delta-v and Asterank's Shoemaker-Helin form. Both are round-trip quantities, the rows one-way legs._
+_Backings: distribution and rank reference for the NEA rows of `delta_v_segments.csv` (starred-repos `probe_nhats.py`): JPL NHATS round-trip delta-v and Asterank's Shoemaker-Helin form. Both are round-trip quantities, the rows one-way legs._
 
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
