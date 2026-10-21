@@ -93,3 +93,10 @@ spacecost@0b716ad uses P = exp(-T/MTBF). Navard 1993's fitted survival "initiall
 ## R164 - Candidates (2026-10-14)
 
 rc-093 (cite Cross & Vesely; 0.90 is the credited case), rc-094 (cite Kinnett and Shapiro Vol 2 for the tally), rc-095 (Shapiro's ~10% is per satellite; 97-99% needs a source), rc-096 (cite CR-3349's 5-10% / 60-90% salvage), rc-127 (cite Chen & McLennan; 0.85 is a judgement; Hirschmann's 80% not found). Texts in `revision_candidates.csv`.
+
+
+### R220 - Wright 1936 registered: the original learning-curve article now backs the beta_LC trail in-corpus
+
+economicspace published a six-commit batch (origin/main 675f0cf to 31fb355): starred-repos split out, quietlaunch launcher split, worksheet extension on other architectures. Their CITATIONS.md gained the block quote Wright, T. P. (1936). Factors affecting the cost of airplanes. Journal of the Aeronautical Sciences 3(4), 122-128 with the learning-curve gloss each doubling of units built costs a fixed fraction of the last, and campaign/verification_sheet.py registers the citation mapping that prints Wright 1936 for any step whose formula is log2(b_LC) or k ^ beta_LC. The registry held duane_1964 (T1), hirschmann_1964 (T4 context) and chen_mclennan_2004 (T2 measured anchor) but never the 1936 original; now registered T1 with Crossref-verified volume/issue/pages and a documented HTTP 403 at doi.org from this machine.
+
+Near-miss documented, NOT registered: MIL-HDBK-189 appears in the same worksheet diff only inside planted-case test scaffolding (a fixture proving the sheet can recognize standards cited by number), not as a source claim of any model value. All three open RC targets re-checked at the new HEAD and untouched: rc-175 documented tank-fraction pair count==1, rc-176 1.2 GB README claim count==1, rc-183 winner-table section present.

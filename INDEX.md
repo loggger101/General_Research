@@ -559,6 +559,7 @@ _Backings: `operational_costs.csv` launch reliability, spacecraft MTBF, mining s
 | nasa_cr_3349_1980_sps_salvage_and_disposal_alternatives | T2 | NASA CR-3349 (1980): Satellite Power System Salvage and Disposal Alternatives | read, not hosted | salvage value 5-10% of capital cost (~$0.5-1B) for a power satellite; demonstration unit 60-90%; disposal options $66-179M |
 | katzberg_garrison_1995_selv_based_in_space_operations_workshop | T2 | Katzberg & Garrison 1995, SELV-based in-space operations workshop (NTRS 19960002340; 476 pp) | read, not hosted | repair/replace economics: success 80%/85%, ~2.3 failures per year, median spacecraft cost $31.6M insured (1993) |
 | hirschmann_1964_profit_from_the_learning_curve | T4 | Hirschmann 1964, Profit from the Learning Curve (HBR) | registered, not pulled | context-only: the original aircraft learning-curve article (unread; paywalled) |
+| wright_1936_factors_affecting_cost_airplanes | T1 | Factors affecting the cost of airplanes - Journal of the Aeronautical Sciences 3(4):122-128 | registered, not pulled | Context-only: learning-curve law behind economicspace beta_LC fleet flag; named by CITATIONS.md at 31fb355 |
 
 ## Domain 17 — Cost of capital, contingency & insurance
 
