@@ -30,7 +30,7 @@ cells, their values and what a source must supply.
 | 10 | Launch vehicle & engine hardware / propellant performance | engine-level ground truth for `propellants.csv` and `launch_vehicles.csv` |
 | 11 | Spacecraft power & electric propulsion | power and electric-propulsion rows of `operational_costs.csv` |
 | 12 | Destination environments & physical constants | spacecost `environments.csv` (flux, gravity, escape velocity, light time, eclipse) and `units.py` constants |
-| 13 | Astrodynamics methods, ephemerides & audited software | economicspace `orbital.py` (Lambert and Kepler solvers) and [starred-repos](https://github.com/loggger101/starred-repos), split from economicspace `research/starred-repos/` (ephemeris oracles, the 17-repository licence audit) |
+| 13 | Astrodynamics methods, ephemerides & audited software | economicspace `orbital.py` (`elements_to_state`) and [starred-repos](https://github.com/loggger101/starred-repos), split from economicspace `research/starred-repos/` (Lambert and Kepler solvers, ephemeris oracles, the 17-repository licence audit) |
 | 14 | Propellant & consumable prices | `propellants.csv` `ref_cost_usd_per_kg` and its component prices |
 | 15 | In-space demand & market absorption | economicspace `mineral_value.py` in-space utility (market side; the engineering basis of each row is in 28–30 since Round 161), annual-demand and class-share tables; `calc.py` `demand_elasticity`, `surplus_price_fraction` |
 | 16 | Reliability, learning curves & hardware service life | `operational_costs.csv` launch reliability, spacecraft MTBF, mining success and growth, rig life, trips and salvage rows; `calc.py` `learning_curve_rate` |
