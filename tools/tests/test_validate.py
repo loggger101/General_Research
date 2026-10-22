@@ -165,6 +165,7 @@ ROW_ALPHA_PENDING = '| src_pending | T2 | Pending report | registered, not pulle
 ROW_BETA = '| src_live | T3 | Live dataset | verified live, not hosted | the gamma cell |\n'
 DOMAIN2_SECTION = ('## Domain 2 — Beta\n\n| id | tier | source (short) | access | backs / could replace |\n'
                    '|---|---|---|---|---|\n' + ROW_BETA + '\n')
+REPL_ROW = "| src_pending | the beta cell's figure | news: a press report of it | the agency's own report | R1 |\n"
 REJ_ROW = '| rej_one | A rejected page | https://rejected.example | off-topic (rc-005 deleted with it) |\n'
 LOG1 = '- **Round 1** (2026-01-02): second round; rej_one rejected.\n'
 LOG0 = '- **Round 0** (2026-01-01): first round.\n'
@@ -252,8 +253,8 @@ CASES = [
     ('tier', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, ',T3,', ',T9,'), {'index-tier'}),
     ('access-class', 'error', [], lambda r, s: domain_edit(r, BETA_CSV, 'verified_live_not_pulled', 'downloaded')),
     # check_index
-    ('index-domain-no-dir', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Rejected sources',
-                                                         '## Domain 9 — Nine\n\n## Rejected sources')),
+    ('index-domain-no-dir', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Sources to replace',
+                                                         '## Domain 9 — Nine\n\n## Sources to replace')),
     ('index-domain-duplicate', 'error', [], lambda r, s: edit(r, 'INDEX.md', DOMAIN2_SECTION, DOMAIN2_SECTION * 2)),
     ('index-no-table', 'error', [], lambda r, s: edit(r, 'INDEX.md', DOMAIN2_SECTION, '## Domain 2 — Beta\n\nno table\n\n')),
     ('index-table-split', 'error', [], lambda r, s: edit(r, 'INDEX.md', ROW_ALPHA_HOSTED, ROW_ALPHA_HOSTED + '\n')),
@@ -302,7 +303,8 @@ CASES = [
     ('log-no-baseline', 'error', [], lambda r, s: merge_with_unrelated_history(r)),
     ('log-no-baseline', 'error', [], lambda r, s: start_merge(r, merged=[SIDE_A], side_b_log='# Log\n')),
     # check_rejected
-    ('rejected-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Rejected sources\n', ''), {'index-row-cells', 'index-table-split'}),
+    ('rejected-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Rejected sources\n', ''),
+     {'replace-position', 'replace-table-split', 'replace-row-cells'}),  # its table joins the list above it
     ('rejected-position', 'error', [], lambda r, s: put(r, 'INDEX.md', (r / 'INDEX.md').read_text(encoding='utf-8') + '\n## Notes\n\ntext\n')),
     ('rejected-no-table', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| id | source | link | reason |\n|---|---|---|---|\n' + REJ_ROW, 'none\n')),
     ('rejected-table-split', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, REJ_ROW + '\n| rej_two | b | c | d |\n')),
@@ -314,6 +316,24 @@ CASES = [
     ('rejected-empty-cell', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| off-topic (rc-005 deleted with it) |', '|  |'), {'cand-ref-unknown'}),  # the reason recorded the deletion
     ('rejected-still-registered', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, REJ_ROW + '| src_live | b | c | d |\n'), {'rejected-still-named'}),
     ('rejected-still-named', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', '# findings\nrej_one was useful\n')),
+    # check_to_replace
+    ('replace-missing', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Sources to replace', '## Notes on sources')),
+    ('replace-position', 'error', [], lambda r, s: edit(r, 'INDEX.md', '## Rejected sources',
+                                                        '## Notes\n\ntext\n\n## Rejected sources')),
+    ('replace-no-table', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| id | backs upstream | weakness | replacement sought '
+                                                        '| flagged |\n|---|---|---|---|---|\n' + REPL_ROW, 'none\n')),
+    ('replace-table-split', 'error', [], lambda r, s: edit(r, 'INDEX.md', REPL_ROW,
+                                                           REPL_ROW + '\n| src_hosted | a | news: b | c | R1 |\n')),
+    ('replace-header', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| replacement sought |', '| replacement |')),
+    ('replace-separator', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| flagged |\n|---|---|---|---|---|\n',
+                                                         '| flagged |\n|---|---|\n')),
+    ('replace-row-cells', 'error', [], lambda r, s: edit(r, 'INDEX.md', REPL_ROW, '| src_pending | news: a report |\n')),
+    ('replace-duplicate', 'error', [], lambda r, s: edit(r, 'INDEX.md', REPL_ROW, REPL_ROW * 2)),
+    ('replace-empty-cell', 'error', [], lambda r, s: edit(r, 'INDEX.md', "| the agency's own report |", '|  |')),
+    ('replace-id-unknown', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| src_pending | the beta', '| src_nope | the beta')),
+    ('replace-weakness', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| news: a press', '| gossip: a press')),
+    ('replace-flagged', 'error', [], lambda r, s: edit(r, 'INDEX.md', 'report | R1 |', 'report | Round 1 |')),
+    ('replace-flagged', 'error', [], lambda r, s: edit(r, 'INDEX.md', 'report | R1 |', 'report | R9 |')),
     # check_manifest
     ('manifest-header', 'error', [], lambda r, s: edit(r, MAN, 'license', 'licence')),
     ('manifest-license', 'error', [], lambda r, s: edit(r, MAN, 'cc-by 4.0', 'gpl 3')),

@@ -75,6 +75,10 @@ new check fails on the data, decide whether the data or the check is wrong.
 - **Before un-hosting a file, extract every number the repo uses from it**, with
   page locations, and record the removed copy's size and sha256 in its
   `access_status` (a rejected source is the exception: its data is deleted).
+- **A weak source upstream still cites is flagged, not rejected.** Propose it for INDEX.md "Sources to
+  replace" only when a better class of evidence plausibly exists (README "Flagging a source to
+  replace"; a vendor's own document is not weak for its own figures). The owner approves each flag.
+  When a candidate swapping it out is applied and upstream stops citing it, propose rejecting it.
 - **A rejected source keeps one record: its row in INDEX.md "Rejected
   sources"** (`id`, `source`, `link`, `reason`). Only the owner rejects; README
   "Rejecting a source" lists what to delete, and `validate.py` fails if the id

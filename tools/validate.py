@@ -50,6 +50,9 @@ from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_S
 
 INDEX_HEADER = ['id', 'tier', 'source (short)', 'access', 'backs / could replace']
 REJECTED_HEADER = ['id', 'source', 'link', 'reason']
+REPLACE_HEADER = ['id', 'backs upstream', 'weakness', 'replacement sought', 'flagged']
+# README "Flagging a source to replace": the weakness cell starts with one of these, then says what it is.
+WEAKNESSES = {'aggregator', 'news', 'price-page', 'secondary', 'thesis', 'statement'}
 ACCESS_WORDS = re.compile(r'(full[_ ]text[_ ]hosted|open[_ ]not[_ ]pulled|verified[_ ]live|open[_ ]service|'
                           r'public[_ ]domain[_ ]excerpt|registered[_ ]not[_ ]pulled|skipped)\b', re.I)
 GITHUB_HARD_LIMIT = 100 * 1024 * 1024
@@ -576,6 +579,62 @@ def check_rejected(rep, ctx):
             rep.error('rejected-still-named', f'{name} still names rejected source {sid} — its only record is the '
                                               f'"Rejected sources" row')
     rep.expect('files scanned for rejected ids')
+
+
+def check_to_replace(rep, ctx):
+    """README "Flagging a source to replace": registered sources upstream still cites that a better class of evidence
+    should replace. The list sits directly above "Rejected sources", where a replaced source may go next."""
+    rep.start('sources to replace')
+    reg = ctx['reg']
+    text = read_text(INDEX)
+    m = re.search(r'^## Sources to replace\n(.*?)(?=^## |\Z)', text, flags=re.M | re.S)
+    if not m:
+        rep.error('replace-missing', 'INDEX.md has no "## Sources to replace" section (it comes directly before '
+                                     '"## Rejected sources")')
+        return
+    if not text.startswith('## Rejected sources\n', m.end()):
+        rep.error('replace-position', '"## Sources to replace" must come directly before "## Rejected sources"')
+    lines = m.group(1).split('\n')
+    table = [i for i, l in enumerate(lines) if l.startswith('|')]
+    if not table:
+        rep.error('replace-no-table', 'no table — keep the header and separator even while it has no rows')
+        return
+    if table != list(range(table[0], table[0] + len(table))):
+        rep.error('replace-table-split', 'table is split by a blank line or text — rows after the break do not render')
+    if table_cells(lines[table[0]]) != REPLACE_HEADER:
+        rep.error('replace-header', f'table header must be "| {" | ".join(REPLACE_HEADER)} |"')
+    if len(table) < 2 or table_cells(lines[table[1]]) != ['---'] * len(REPLACE_HEADER):
+        rep.error('replace-separator', 'second table line must be the 5-column "|---|...|" separator')
+    seen = set()
+    for i in table[2:]:
+        line = lines[i]
+        cells = table_cells(line)
+        if not line.rstrip().endswith('|') or len(cells) != len(REPLACE_HEADER):
+            rep.error('replace-row-cells', f'row "{line[:50]}..." has {len(cells)} cells, expected '
+                                           f'{len(REPLACE_HEADER)} (and a closing "|")')
+            continue
+        sid = cells[0]
+        rep.count('flagged sources')
+        if sid in seen:
+            rep.error('replace-duplicate', f'{sid} is listed twice')
+        seen.add(sid)
+        if any(not c for c in cells):
+            rep.error('replace-empty-cell', f'{sid or line[:50]}: every row needs an id, the upstream cell it backs, '
+                                            f'its weakness, the replacement sought and the round that flagged it')
+            continue
+        # A rejected id is not registered either; rejected-still-named also reports it here.
+        if sid not in reg and not registry_partial(rep, ctx):
+            rep.error('replace-id-unknown', f'{sid} is not in sources.csv — only a registered source is flagged')
+        word = re.match(r'[a-z-]+', cells[2])
+        if not word or word.group() not in WEAKNESSES:
+            rep.error('replace-weakness', f'{sid}: weakness "{cells[2][:30]}" must start with one of '
+                                          f'{", ".join(sorted(WEAKNESSES))}')
+        flagged = re.fullmatch(r'R(\d+)', cells[4])
+        if not flagged:
+            rep.error('replace-flagged', f'{sid}: flagged "{cells[4]}" must be the round that flagged it, as "R<N>"')
+        elif ctx['latest_round'] is not None and int(flagged.group(1)) > ctx['latest_round']:
+            rep.error('replace-flagged', f'{sid}: flagged in {cells[4]}, after the latest logged round '
+                                         f'(R{ctx["latest_round"]})')
 
 
 # ---------------------------------------------------------------------------------------------- manifest
@@ -1126,7 +1185,7 @@ def check_readme(rep, ctx):
 # Order matters: a check reads the ctx keys earlier checks write (reg, latest_round, rejected, candidates,
 # upstream_map) by subscript, so a reordering crashes as check-crashed instead of checking against nothing.
 CHECKS = [check_files, check_layout, check_registry, check_index, check_log, check_log_history, check_rejected,
-          check_manifest, check_extracted, check_candidates, check_candidate_refs, check_upstream_map, check_references,
+          check_to_replace, check_manifest, check_extracted, check_candidates, check_candidate_refs, check_upstream_map, check_references,
           check_readme]
 
 

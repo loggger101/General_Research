@@ -106,7 +106,7 @@ From AsteroidCatalog@6a2cfbc `mineralogy.py` and economicspace CITATIONS.md, all
 
 - `burbine_2024_testing_bus_demeo_with_meteorite_spectra` (CC BY; hosted from R152): ~1,500 meteorite spectra classified: HEDs fall in V, ordinary chondrites in S/Q, D and X mostly CM with many irons; C, B, L and Xc mix very different meteorites, so class sets the analogue well for V and S/Q only.
 - `de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: five spinel-rich L-types show Mg-rich olivine plus spinel, little hydration, like CV3 Allende: supports the L row.
-- `mahlke_2022_phd_thesis_asteroid_taxonomy` (abstract) and `lebofsky_et_al_1990_low_albedo_3um_photometry` (unread).
+- `lebofsky_et_al_1990_low_albedo_3um_photometry` (unread).
 
 ## R114 - Carbonaceous bulk composition (2026-10-04)
 

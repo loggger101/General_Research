@@ -132,7 +132,7 @@ Un-hosted: elvis2011, ieva2014, kim_2013, komurasaki_aquarius_ground_2018, krish
 
 ## R74 - Upstream citations registered (+6)
 
-`nasa_sp125_huzel_huang_design_liquid_rocket_engines` (ascent Δv), `curtis_orbital_mechanics_engineering_students`, `rafalskyi_2021_iodine_ep_in_orbit` (iodine row), `astronautix_encyclopedia_propellant_engine_pages`, `rocketcea_nasa_cea_python_wrapper`, `nasa_std_5019_fracture_control_spaceflight_hardware` (COPV factor).
+`nasa_sp125_huzel_huang_design_liquid_rocket_engines` (ascent Δv), `curtis_orbital_mechanics_engineering_students`, `rafalskyi_2021_iodine_ep_in_orbit` (iodine row), `astronautix_encyclopedia_propellant_engine_pages`, `nasa_std_5019_fracture_control_spaceflight_hardware` (COPV factor).
 
 ## R76 / R82 - Low-thrust penalty and thrusting duration
 
@@ -167,7 +167,7 @@ No candidate. Dawn flight records remain unreachable (R148 below). `extracted_da
 
 ## R120 - rafalskyi_2021_iodine_ep_in_orbit hosted (CC BY in file)
 
-Nature 599:411-415, the NPT30-I2 flight behind the iodine row. Also verified live: `astronautix_encyclopedia_propellant_engine_pages` (use the letter-index paths, e.g. /m/mmh.html) and `rocketcea_nasa_cea_python_wrapper` (v1.2.3, GPL-3.0).
+Nature 599:411-415, the NPT30-I2 flight behind the iodine row. Also verified live: `astronautix_encyclopedia_propellant_engine_pages` (use the letter-index paths, e.g. /m/mmh.html).
 
 ## R129 - Orion nuclear pulse (two hosted)
 

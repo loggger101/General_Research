@@ -125,7 +125,7 @@ adam_2017 vs AsteroidCatalog: C median 1.60 (1.5), S 2.70 (2.7), Psyche/Kalliope
 
 ## R74 - Upstream citations registered (+22)
 
-All `registered_not_pulled`, each tied to an AsteroidCatalog or taxonomy cell: `pravec_harris_2007_binary_angular_momentum` and `campins_1985_absolute_calibration_1_5um` (the 1329 km constant); `mainzer_2011_neowise_thermal_model_calibration` and `pravec_2012_absolute_magnitudes_wise_albedos` (merge tolerances, H offset); `buratti_2004_ds1_borrelly_photometry` (albedo floor); `ferrais_2022_kalliope_tiny_mercury` (density ceiling, Kalliope); `consolmagno_2008_meteorite_density_porosity`, `macke_2011_carbonaceous_chondrite_density_porosity` (carbonaceous ceiling); `macke_2010_enstatite_chondrite_density_porosity` (Xe density); `patzold_2016_67p_homogeneous_nucleus_gravity`, `thomas_2013_tempel1_nucleus_two_flybys` (density floor); `lauretta_2019_bennu_unexpected_surface` (B density, Bennu row); `fujiwara_2006_itokawa_rubble_pile` (Sq note); `pravec_harris_2000_fast_slow_rotation`, `holsapple_2007_spin_limits` (spin barrier); `emery_2011_trojan_nir_two_groups` (Trojan default D); `gil_hutton_brunini_2008_hilda_sdss_colors` (Hilda default); `mahlke_2022_asteroid_taxonomy_spectra_albedo` (Z row); `tholen_1984_asteroid_taxonomy_dissertation` (Tholen rows); `hasselmann_2012_sdss_taxonomy_v1_1_pds`, `carvano_2010_sdss_taxonomy_main_belt`, `ivezic_2001_sdss_solar_system_objects` (the SDSS taxonomy check).
+All `registered_not_pulled`, each tied to an AsteroidCatalog or taxonomy cell: `pravec_harris_2007_binary_angular_momentum` and `campins_1985_absolute_calibration_1_5um` (the 1329 km constant); `mainzer_2011_neowise_thermal_model_calibration` and `pravec_2012_absolute_magnitudes_wise_albedos` (merge tolerances, H offset); `buratti_2004_ds1_borrelly_photometry` (albedo floor); `ferrais_2022_kalliope_tiny_mercury` (density ceiling, Kalliope); `consolmagno_2008_meteorite_density_porosity`, `macke_2011_carbonaceous_chondrite_density_porosity` (carbonaceous ceiling); `macke_2010_enstatite_chondrite_density_porosity` (Xe density); `patzold_2016_67p_homogeneous_nucleus_gravity`, `thomas_2013_tempel1_nucleus_two_flybys` (density floor); `lauretta_2019_bennu_unexpected_surface` (B density, Bennu row); `fujiwara_2006_itokawa_rubble_pile` (Sq note); `pravec_harris_2000_fast_slow_rotation`, `holsapple_2007_spin_limits` (spin barrier); `emery_2011_trojan_nir_two_groups` (Trojan default D); `gil_hutton_brunini_2008_hilda_sdss_colors` (Hilda default); `mahlke_2022_asteroid_taxonomy_spectra_albedo` (Z row); `tholen_1984_asteroid_taxonomy_dissertation` (Tholen rows).
 
 ## R113 - Taxonomy and albedo lineage (2026-10-04; +9)
 
@@ -153,10 +153,9 @@ Catalog medians agree with Popescu's peaks (S 0.2340, V 0.3355, D 0.0820). `extr
 
 The Xe note's 3.55 g/cm3 enstatite-chondrite bulk density vs Carry Table 2 EH 3.47 +/- 0.21, EL 3.46 +/- 0.32 (mean 3.465, 2.4% apart); Xe cell (2.90) unaffected. `extracted_data/r115_xe_enstatite_bulk_density_check.csv`.
 
-## R118 - Mahlke 2022 and the SDSS taxonomy hosted (2026-10-05)
+## R118 - Mahlke 2022 hosted (2026-10-05)
 
 - **mahlke_2022_asteroid_taxonomy_spectra_albedo** (CC BY, arXiv 2203.11229 hosted): D-types have "featureless and strongly red-sloped spectrum"; Z-types a "diffuse cluster of feature-less, extremely red objects"; "23 asteroids (1.1 %) are classified as Z-types". No carbon abundance (context for rc-075).
-- **hasselmann_2012_sdss_taxonomy_v1_1_pds** (hosted as `full_texts/sdsstax_v1_1_ast_table_pds_bundle.zip`): 63,468 classified bodies, matching economicspace's copy; the raw observation table excluded.
 
 `extracted_data/r118_d01_queue_pull_key_numbers.csv`.
 
@@ -165,7 +164,7 @@ The Xe note's 3.55 g/cm3 enstatite-chondrite bulk density vs Carry Table 2 EH 3.
 - `thomas_2013_tempel1_nucleus_two_flybys` hosted (NTRS; Icarus 222:453-466): second comet density for the floor; density not yet extracted.
 - `mahlke_carry_denneau_2021_atlas_phase_curves` read (94,777 asteroids, 127,012 phase curves), not hostable.
 - `lauretta_2019_bennu_unexpected_surface` read (KU Leuven copy): "a density of 1190 ± 13 kg/m3"; ~50% macroporosity, "a microgravity aggregate".
-- `emery_2011_trojan_nir_two_groups`, `ivezic_2001_sdss_solar_system_objects` and `mainzer_2011_neowise_thermal_model_calibration` (50 radar or in-situ objects calibrate NEATM) read from arXiv, not hostable.
+- `emery_2011_trojan_nir_two_groups` and `mainzer_2011_neowise_thermal_model_calibration` (50 radar or in-situ objects calibrate NEATM) read from arXiv, not hostable.
 
 ## R155 - D-from-H constant and H tolerance confirmed (2026-10-12)
 

@@ -1,7 +1,7 @@
 """A minimal, valid General_Research checkout for the tool tests, plus sibling upstream clones.
 
 build_template(parent) writes, under `parent`:
-    General_Research/   two domains, one hosted file, extracted CSV + JSON, INDEX.md with a rejected source, a
+    General_Research/   two domains, one hosted file, extracted CSV + JSON, INDEX.md with a source to replace and a rejected source, a
                         research log, README layout, open and closed revision candidates, an upstream commit map, and file references
                         in FINDINGS.md, INDEX.md and DOWNLOADS.md (one into the first commit); the tools are
                         copied in from this checkout, and sources.csv and the manifest hashes come from its own
@@ -61,6 +61,12 @@ Key numbers: `extracted_data/r1_alpha.csv`.
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
 | src_live | T3 | Live dataset | verified live, not hosted | the gamma cell |
+
+## Sources to replace
+
+| id | backs upstream | weakness | replacement sought | flagged |
+|---|---|---|---|---|
+| src_pending | the beta cell's figure | news: a press report of it | the agency's own report | R1 |
 
 ## Rejected sources
 
