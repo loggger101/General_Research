@@ -49,3 +49,7 @@ The 'Fission surface power (Kilopower class)' note (spacecost@0b716ad) says "KRU
 ## R164 - Candidates (2026-10-14)
 
 rc-109 (regenerative fuel cell round trip 47.4%), rc-110 (four storage figures not in the R104/R105 reports), rc-115 (NEP row repeats the KRUSTY overstatement). Texts and evidence in `revision_candidates.csv`.
+
+## R238 - Six storage and power candidates applied upstream; two author slips (2026-10-21)
+
+spacecost 0.12.5 (PR #28, tag v0.12.5, main `b5eb32a`) applied rc-088, rc-089, rc-108, rc-109, rc-110 and rc-115, notes only, no value moved; each row's evidence says what landed. Two registry slips found while re-reading the title pages: `ntrs_2006_g2_flywheel_module_design` is by Ralph H. **Jansen** (University of Toledo) and Timothy P. Dever, NASA/CR-2006-213862 / AIAA-2004-5603, not "Jensen"; `ntrs_2020_analysis_100w_regenerative_fuel_cell_demonstration` (NASA/TM-20205000357) is by Bennett, Smith **and Jakupca**, titled "Analysis of 100-W Regenerative Fuel Cell Demonstration" (no "a"). Both rows corrected; ids unchanged.

@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+willner_2014_phobos_shape_topography,Phobos mean radius r0 from degree-45 spherical harmonic coefficients,10.993,km,PDF p5 (journal p55),upstream 11.267 km is +2.49%
+willner_2014_phobos_shape_topography,Reference sphere radius for heights,11.1,km,"PDF p3-4 (journal p53-54), Fig 1-2",
+willner_2014_phobos_shape_topography,Triaxial ellipsoid radii from the SH model,13.03 x 11.40 x 9.14,km,PDF p5 (journal p55); Table 3 p8,Willner et al. 2010 previous: 13.00 x 11.39 x 9.07
+willner_2014_phobos_shape_topography,Volume from the SH model,5741.5,km3,PDF p4 (journal p54); Table 3 p8 gives 5742 +/- 35,"equal-volume sphere radius 11.108 km, computed here; upstream 11.267 km is +1.43%"
+willner_2014_phobos_shape_topography,GM of Phobos (quoted from Andert et al. 2011 radio science),0.7127 +/- 0.0021 x 10^-3,km3/s2,PDF p5 (journal p55),Andert et al. 2011 not registered
+willner_2014_phobos_shape_topography,Mass from the quoted GM,1.0678e+16,kg,computed here with CODATA 2018 G = 6.67430e-11,upstream 1.0659e16 kg is -0.18%
+willner_2014_phobos_shape_topography,Bulk density,1.860,g/cm3,PDF p5 (journal p55); Table 3 p8,check: 1.860 g/cm3 from the GM and volume above
