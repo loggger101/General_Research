@@ -81,7 +81,7 @@ economicspace@f7fe1c6 `_mission_cost_prologue` prices the plant array as `proces
 
 ## R164 - Candidates (2026-10-14)
 
-rc-100 (battery: Schmitz 175 Wh/kg at 80% DoD, usable 140 vs 104), rc-102 (AEPS ~9 kg/kW string; NEXT-C mass mismatch 12.7 vs 13.5 kg), rc-104 (no source for $10-15M per string; PPE $12.2M/kW element), rc-105 (RTG $/W from institutional unit costs), rc-120 (economicspace: Pu-238 1.5 kg/yr is a goal). Texts in `revision_candidates.csv`.
+rc-100 (battery: Schmitz 175 Wh/kg at 80% DoD, usable 140 vs 104), rc-102 (AEPS ~9 kg/kW string; NEXT-C mass mismatch 12.7 vs 13.5 kg), rc-104 (no source for $10-15M per string; PPE $12.2M/kW element), rc-105 (RTG $/W from institutional unit costs), rc-120 (economicspace: Pu-238 1.5 kg/yr is a goal). Texts in `revision_candidates_closed.csv`.
 
 **Round 210 - rc-181 opened on the EP recurring-cost anchor; two seams closed clean.**
 

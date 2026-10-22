@@ -150,7 +150,7 @@ US government work, 255 pp: "The maximum payload dimensions by design are 720 in
 
 ## R164 / R165 - Candidates (2026-10-14)
 
-rc-119 (cite Zapata 2017 for the Delta IV Heavy and Atlas V 551 payloads), rc-128 (Falcon 9 expendable band at escalated LSP/GPS prices $124M and $131M), rc-129 (Falcon Heavy expendable low end escalated to $202M), rc-130 (cite Zapata for the Delta IV Heavy price, $453M escalated). Texts in `revision_candidates.csv`; `extracted_data/r165_launch_prices_escalated.csv`.
+rc-119 (cite Zapata 2017 for the Delta IV Heavy and Atlas V 551 payloads), rc-128 (Falcon 9 expendable band at escalated LSP/GPS prices $124M and $131M), rc-129 (Falcon Heavy expendable low end escalated to $202M), rc-130 (cite Zapata for the Delta IV Heavy price, $453M escalated). Texts in `revision_candidates.csv` (open) and `revision_candidates_closed.csv`; `extracted_data/r165_launch_prices_escalated.csv`.
 
 ## Round 175 - glavkosmos_tass_2018_soyuz_price
 

@@ -2,7 +2,8 @@
 
 Every registered source by domain: tier, access and the upstream cell it backs or could replace. Tiers and access
 classes are defined in README.md; `sources.csv` is the same registry machine-readable; each domain's FINDINGS.md holds
-the write-ups; `revision_candidates.csv` tracks contradicted upstream cells; RESEARCH_LOG.md records the rounds.
+the write-ups; `revision_candidates.csv` tracks contradicted upstream cells still open, and
+`revision_candidates_closed.csv` the closed ones; RESEARCH_LOG.md records the rounds.
 Rejected sources are listed at the bottom and nowhere else.
 
 ## Domain 1 — Density by spectral type, PGM factors, population statistics

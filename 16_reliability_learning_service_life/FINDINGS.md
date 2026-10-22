@@ -92,7 +92,7 @@ spacecost@0b716ad uses P = exp(-T/MTBF). Navard 1993's fitted survival "initiall
 
 ## R164 - Candidates (2026-10-14)
 
-rc-093 (cite Cross & Vesely; 0.90 is the credited case), rc-094 (cite Kinnett and Shapiro Vol 2 for the tally), rc-095 (Shapiro's ~10% is per satellite; 97-99% needs a source), rc-096 (cite CR-3349's 5-10% / 60-90% salvage), rc-127 (cite Chen & McLennan; 0.85 is a judgement; Hirschmann's 80% not found). Texts in `revision_candidates.csv`.
+rc-093 (cite Cross & Vesely; 0.90 is the credited case), rc-094 (cite Kinnett and Shapiro Vol 2 for the tally), rc-095 (Shapiro's ~10% is per satellite; 97-99% needs a source), rc-096 (cite CR-3349's 5-10% / 60-90% salvage), rc-127 (cite Chen & McLennan; 0.85 is a judgement; Hirschmann's 80% not found). Texts in `revision_candidates_closed.csv`.
 
 
 ### R220 - Wright 1936 registered: the original learning-curve article now backs the beta_LC trail in-corpus

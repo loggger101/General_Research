@@ -64,7 +64,7 @@ ITU-R S.1003-2 read in full (route: `recommendation.asp?lang=en&parent=R-REC-S.1
 
 ## R165 - Candidates (2026-10-14)
 
-rc-131 (Moon mass 7.346e22 per the cited sheet), rc-132 (Mars mass 6.4169e23), rc-133 (Phobos mass and radius not from the cited sheet), rc-165 (Mars atmosphere 95.1% CO2, 2.59% N2, 636 Pa). Texts in `revision_candidates.csv`.
+rc-131 (Moon mass 7.346e22 per the cited sheet), rc-132 (Mars mass 6.4169e23), rc-133 (Phobos mass and radius not from the cited sheet), rc-165 (Mars atmosphere 95.1% CO2, 2.59% N2, 636 Pa). Texts in `revision_candidates.csv` (open) and `revision_candidates_closed.csv`.
 
 ## R212 - economicspace PR#154 worksheet backing: two institutional constant sources registered (2026-10-20)
 

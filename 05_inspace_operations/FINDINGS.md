@@ -189,7 +189,7 @@ The note's "real machines run 15-25% of Carnot" is unsourced: Nugent's measured 
 
 ## R164 - Candidates (2026-10-14)
 
-rc-101 (cite Hoffman and Schmitz for power-system mass), rc-103 (cite the NEXT-C PPU paper; 4.7 kg/kW is per kW input), rc-108 (cite the RTB test: 5.5 kg/W). Texts in `revision_candidates.csv`.
+rc-101 (cite Hoffman and Schmitz for power-system mass), rc-103 (cite the NEXT-C PPU paper; 4.7 kg/kW is per kW input), rc-108 (cite the RTB test: 5.5 kg/W). Texts in `revision_candidates_closed.csv`.
 
 ## R184 - Kleinhenz & Paz ISRU plants (rc-167; 2026-10-17)
 

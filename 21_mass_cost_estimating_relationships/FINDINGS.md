@@ -78,4 +78,4 @@ The flat 0.15 approximates this curve for one entry class. `extracted_data/r159_
 
 ## R165 - Candidates (2026-10-14)
 
-rc-134 and rc-135 (scale the heat-shield fraction with entry speed in economicspace and spacecost), rc-137 (return-structure heritage figures: Cygnus 3,754 kg), rc-139 (the SSCM/NICM $/kg bracket is unreadable; NICM is an instrument model). Texts in `revision_candidates.csv`.
+rc-134 and rc-135 (scale the heat-shield fraction with entry speed in economicspace and spacecost), rc-137 (return-structure heritage figures: Cygnus 3,754 kg), rc-139 (the SSCM/NICM $/kg bracket is unreadable; NICM is an instrument model). Texts in `revision_candidates.csv` (open) and `revision_candidates_closed.csv`.

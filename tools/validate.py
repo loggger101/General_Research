@@ -23,7 +23,8 @@ Nothing is allowed to pass silently:
   `nothing-checked`, because a check with no input passes vacuously;
 - a file .gitignore hides is reported (`ignored-file`): no check would see it;
 - a data file that a write-up, registry row or candidate cites must exist, in the working tree or in the commit the
-  reference names (`path-ref-missing`): a reference nobody follows goes stale unnoticed;
+  reference names (`path-ref-missing`): a reference nobody follows goes stale unnoticed; likewise a candidate id
+  must be a row of one of the two candidates files (`cand-ref-unknown`);
 - a check that depends on an unreadable file skips only its cross-checks
   against that file, whose failure is already reported, rather than crash or
   report false errors;
@@ -41,8 +42,8 @@ import sys
 import traceback
 from collections import Counter, defaultdict
 
-from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_STATUSES, CANDIDATES, DOMAIN_COLS,
-                    DOMAIN_RE, INDEX, LICENSE_CLASSES, LIVE_CANDIDATE_STATUSES, LOG, MANIFEST, MANIFEST_COLS,
+from common import (ACCESS_CLASSES, CANDIDATE_COLS, CANDIDATE_KINDS, CANDIDATE_STATUSES, CANDIDATES, CLOSED_CANDIDATES,
+                    DOMAIN_COLS, DOMAIN_RE, INDEX, LICENSE_CLASSES, LIVE_CANDIDATE_STATUSES, LOG, MANIFEST, MANIFEST_COLS,
                     NOT_REDISTRIBUTABLE, PENDING_ACCESS, README, REGISTRY, REGISTRY_COLS, ROOT, TIERS, UPSTREAM_MAP,
                     UPSTREAM_MAP_COLS, UPSTREAM_REPOS, DataError, access_class, domain_dirs, file_digest, read_csv,
                     ignored_files, plain_file_name, read_domain_csv, read_text, rel, repo_files)
@@ -55,13 +56,14 @@ GITHUB_HARD_LIMIT = 100 * 1024 * 1024
 GITHUB_WARN_LIMIT = 50 * 1024 * 1024
 # Root-level files and directories, each with a line in README "Layout" unless marked False.
 ROOT_FILES = {'README.md': True, 'INDEX.md': True, 'RESEARCH_LOG.md': True, 'sources.csv': True,
-              'full_texts_manifest.csv': True, 'revision_candidates.csv': True, 'upstream_commit_map.csv': True,
-              'DOWNLOADS.md': True, 'AGENTS.md': True, 'CLAUDE.md': False, 'LICENSE': False, '.gitignore': False,
+              'full_texts_manifest.csv': True, 'revision_candidates.csv': True, 'revision_candidates_closed.csv': True,
+              'upstream_commit_map.csv': True, 'DOWNLOADS.md': True, 'AGENTS.md': True, 'CLAUDE.md': False, 'LICENSE': False, '.gitignore': False,
               '.gitattributes': False}
 # .gitattributes keeps hosted files byte for byte. git check-attr reads the staged copy when the working one is
 # deleted, so full-text-eol-converted cannot see a deletion that is about to be committed; root-file-missing does.
 REQUIRED_ROOT_FILES = ['README.md', 'INDEX.md', 'RESEARCH_LOG.md', 'sources.csv', 'full_texts_manifest.csv',
-                       'revision_candidates.csv', 'upstream_commit_map.csv', 'AGENTS.md', '.gitattributes']
+                       'revision_candidates.csv', 'revision_candidates_closed.csv', 'upstream_commit_map.csv', 'AGENTS.md',
+                       '.gitattributes']
 ROOT_DIRS = {'tools'}
 # tools/ holds the tools and tools/tests/ their tests, Python only; any other file there is read by no check.
 TOOLS_FILE_RE = re.compile(r'tools/(?:tests/)?[a-z0-9_]+\.py')
@@ -514,6 +516,8 @@ def check_rejected(rep, ctx):
     rep.start('rejected sources')
     reg = ctx['reg']
     ctx['rejected'] = {}
+    # True once every row of the table is read: only then does check_candidate_refs know every deleted candidate.
+    ctx['rejected_complete'] = False
     text = read_text(INDEX)
     m = re.search(r'^## Rejected sources\n(.*?)(?=^## |\Z)', text, flags=re.M | re.S)
     if not m:
@@ -532,13 +536,14 @@ def check_rejected(rep, ctx):
         rep.error('rejected-header', f'table header must be "| {" | ".join(REJECTED_HEADER)} |"')
     if len(table) < 2 or table_cells(lines[table[1]]) != ['---'] * len(REJECTED_HEADER):
         rep.error('rejected-separator', 'second table line must be the 4-column "|---|...|" separator')
-    rejected = {}
+    rejected, complete = {}, True
     for i in table[2:]:
         line = lines[i]
         cells = table_cells(line)
         if not line.rstrip().endswith('|') or len(cells) != len(REJECTED_HEADER):
             rep.error('rejected-row-cells', f'row "{line[:50]}..." has {len(cells)} cells, expected '
                                             f'{len(REJECTED_HEADER)} (and a closing "|")')
+            complete = False
             continue
         sid = cells[0]
         if sid in rejected:
@@ -550,6 +555,7 @@ def check_rejected(rep, ctx):
             rep.error('rejected-still-registered', f'{sid} is rejected but still registered in '
                                                    f'{reg[sid]["domain_dir"]}/sources_domain.csv (ids stay reserved)')
     ctx['rejected'] = rejected
+    ctx['rejected_complete'] = complete
     if not rejected:
         return
     # Nothing but the research log may name a rejected id: not a file path, not a CSV cell, not a FINDINGS block.
@@ -808,83 +814,135 @@ def check_references(rep, ctx):
         domain = c['domain_dir'] if c['domain_dir'] in ctx['domains'] else None  # cand-domain reports a bad one
         for col in CANDIDATE_COLS:
             check_text_references(rep, files, c[col], 0, len(c[col]), domain,
-                                  lambda pos: f'revision_candidates.csv {c["id"]} {col}')
+                                  lambda pos: f'{c["file"]} {c["id"]} {col}')
     rep.expect('file references')
 
 
 # ---------------------------------------------------------------------------------------------- candidates
 
 def check_candidates(rep, ctx):
+    """Both candidates files: open and blocked rows in revision_candidates.csv, closed ones in
+    revision_candidates_closed.csv. Ids are unique across the two, so a row keeps its id when it moves."""
     rep.start('revision_candidates')
-    reg = ctx['reg']
-    # None means unreadable (reported here): the commit-map and upstream checks then skip their cross-checks
-    # against the candidates instead of reporting every map row as unused.
+    # None means a candidates file is unreadable (reported here): the commit-map, upstream and candidate-reference
+    # checks then skip their cross-checks against the candidates instead of reporting every map row as unused.
     ctx['candidates'] = None
-    try:
-        header, rows = read_csv(CANDIDATES)
-    except DataError as e:
-        rep.error(e.code, str(e))
-        return
-    if header != CANDIDATE_COLS:
-        rep.error('cand-header', f'header is {header}, expected {CANDIDATE_COLS}')
-        return
+    tables = []
+    for path in (CANDIDATES, CLOSED_CANDIDATES):
+        try:
+            header, rows = read_csv(path)
+        except DataError as e:
+            rep.error(e.code, str(e))
+            continue
+        if header != CANDIDATE_COLS:
+            rep.error('cand-header', f'{rel(path)}: header is {header}, expected {CANDIDATE_COLS}')
+            continue
+        tables.append((path, rows))
     today = datetime.date.today()
     seen = set()
-    ctx['candidates'] = []
-    for row in rows:
-        rep.count('candidates')
-        r = dict(zip(header, row))
-        ctx['candidates'].append(r)
-        cid = r['id']
-        if not re.fullmatch(r'rc-\d{3}', cid) or cid in seen:
-            rep.error('cand-id', f'id {cid!r} must be unique and look like rc-001')
-        seen.add(cid)
-        for k in ('status', 'kind', 'domain_dir', 'source_ids', 'found_round', 'target_repo', 'target_file', 'target_row', 'field',
-                  'current_value', 'proposed', 'evidence', 'checked_against', 'checked_date'):
-            if not r[k].strip():
-                rep.error('cand-field-empty', f'{cid}: {k} is empty')
-        if r['status'] not in CANDIDATE_STATUSES:
-            rep.error('cand-status', f'{cid}: status {r["status"]!r} not in {sorted(CANDIDATE_STATUSES)}')
-        if r['kind'] not in CANDIDATE_KINDS:
-            rep.error('cand-kind', f'{cid}: kind {r["kind"]!r} not in {sorted(CANDIDATE_KINDS)}')
-        if r['domain_dir'] not in ctx['domains']:
-            rep.error('cand-domain', f'{cid}: domain_dir {r["domain_dir"]!r} does not exist')
-        ids = r['source_ids'].split(';')
-        if r['source_ids'] and any(not i or i != i.strip() for i in ids):
-            rep.error('cand-source-ids-format', f'{cid}: source_ids {r["source_ids"]!r} must be ids joined by ";" with no '
-                                                f'empty or padded entry')
-        for sid in ids:
-            # An empty or padded entry is reported above as a format error, not again as an unknown id.
-            if sid and sid == sid.strip() and sid not in reg and not registry_partial(rep, ctx):
-                rep.error('cand-source-unknown', f'{cid}: source id {sid!r} is not in sources.csv')
-        fr = re.fullmatch(r'R(\d+)', r['found_round'])
-        if not fr:
-            rep.error('cand-found-round', f'{cid}: found_round {r["found_round"]!r} should look like R12')
-        elif ctx['latest_round'] is not None and int(fr.group(1)) > ctx['latest_round']:
-            rep.error('cand-found-round-future', f'{cid}: found_round {r["found_round"]} is after the latest logged '
-                                                 f'round, R{ctx["latest_round"]}')
-        date = parse_date(r['checked_date']) if re.fullmatch(r'\d{4}-\d{2}-\d{2}', r['checked_date']) else None
-        if date is None:
-            rep.error('cand-date', f'{cid}: checked_date {r["checked_date"]!r} should be a YYYY-MM-DD date')
-        elif date > today:
-            rep.error('cand-date-future', f'{cid}: checked_date {r["checked_date"]} is after today ({today})')
-        if r['target_repo'] not in UPSTREAM_REPOS:
-            rep.error('cand-target-repo', f'{cid}: target_repo {r["target_repo"]!r} not in {sorted(UPSTREAM_REPOS)}')
-        # --upstream checks that this file exists. Only a method candidate may name a model stage instead
-        # (rc-025 "Stage 4 cost cascade"), because a method has no single cell.
-        if r['kind'] != 'method' and not TARGET_PATH_RE.match(r['target_file']):
-            rep.error('cand-target-file', f'{cid}: target_file {r["target_file"][:50]!r} must start with the upstream '
-                                          f'file path (only a method candidate may name a model stage instead)')
-        ca = r['checked_against'].split('@')
-        if len(ca) != 2 or ca[0] not in UPSTREAM_REPOS or not SHA_RE.fullmatch(ca[1]):
-            rep.error('cand-checked-against', f'{cid}: checked_against {r["checked_against"]!r} must be <repo>@<sha> with '
-                                              f'repo in {sorted(UPSTREAM_REPOS)}')
-        elif r['status'] in LIVE_CANDIDATE_STATUSES and ca[0] != r['target_repo']:
-            # A closed row may cite the repo where it was resolved (rc-014: an AsteroidCatalog cell closed by an
-            # economicspace change); an open one is re-checked against its own cell.
-            rep.error('cand-checked-wrong-repo', f'{cid} is {r["status"]} but was checked against {ca[0]}, not its '
-                                                 f'target_repo {r["target_repo"]}')
+    candidates = []
+    for path, rows in tables:
+        for row in rows:
+            rep.count('candidates')
+            r = dict(zip(CANDIDATE_COLS, row), file=rel(path))
+            candidates.append(r)
+            check_candidate_row(rep, ctx, r, path, seen, today)
     rep.expect('candidates')
+    if len(tables) == 2:
+        ctx['candidates'] = candidates
+
+
+def check_candidate_row(rep, ctx, r, path, seen, today):
+    """One candidate row from `path`; `seen` collects the ids of both files."""
+    reg = ctx['reg']
+    cid = r['id']
+    if not re.fullmatch(r'rc-\d{3}', cid) or cid in seen:
+        rep.error('cand-id', f'id {cid!r} must be unique across both candidates files and look like rc-001')
+    seen.add(cid)
+    live = r['status'] in LIVE_CANDIDATE_STATUSES
+    if r['status'] in CANDIDATE_STATUSES and live != (path == CANDIDATES):
+        rep.error('cand-wrong-file', f'{cid} is {r["status"]} but is in {rel(path)}; move the row to '
+                                     f'{rel(CANDIDATES if live else CLOSED_CANDIDATES)}')
+    for k in ('status', 'kind', 'domain_dir', 'source_ids', 'found_round', 'target_repo', 'target_file', 'target_row', 'field',
+              'current_value', 'proposed', 'evidence', 'checked_against', 'checked_date'):
+        if not r[k].strip():
+            rep.error('cand-field-empty', f'{cid}: {k} is empty')
+    if r['status'] not in CANDIDATE_STATUSES:
+        rep.error('cand-status', f'{cid}: status {r["status"]!r} not in {sorted(CANDIDATE_STATUSES)}')
+    if r['kind'] not in CANDIDATE_KINDS:
+        rep.error('cand-kind', f'{cid}: kind {r["kind"]!r} not in {sorted(CANDIDATE_KINDS)}')
+    if r['domain_dir'] not in ctx['domains']:
+        rep.error('cand-domain', f'{cid}: domain_dir {r["domain_dir"]!r} does not exist')
+    ids = r['source_ids'].split(';')
+    if r['source_ids'] and any(not i or i != i.strip() for i in ids):
+        rep.error('cand-source-ids-format', f'{cid}: source_ids {r["source_ids"]!r} must be ids joined by ";" with no '
+                                            f'empty or padded entry')
+    for sid in ids:
+        # An empty or padded entry is reported above as a format error, not again as an unknown id.
+        if sid and sid == sid.strip() and sid not in reg and not registry_partial(rep, ctx):
+            rep.error('cand-source-unknown', f'{cid}: source id {sid!r} is not in sources.csv')
+    fr = re.fullmatch(r'R(\d+)', r['found_round'])
+    if not fr:
+        rep.error('cand-found-round', f'{cid}: found_round {r["found_round"]!r} should look like R12')
+    elif ctx['latest_round'] is not None and int(fr.group(1)) > ctx['latest_round']:
+        rep.error('cand-found-round-future', f'{cid}: found_round {r["found_round"]} is after the latest logged '
+                                             f'round, R{ctx["latest_round"]}')
+    date = parse_date(r['checked_date']) if re.fullmatch(r'\d{4}-\d{2}-\d{2}', r['checked_date']) else None
+    if date is None:
+        rep.error('cand-date', f'{cid}: checked_date {r["checked_date"]!r} should be a YYYY-MM-DD date')
+    elif date > today:
+        rep.error('cand-date-future', f'{cid}: checked_date {r["checked_date"]} is after today ({today})')
+    if r['target_repo'] not in UPSTREAM_REPOS:
+        rep.error('cand-target-repo', f'{cid}: target_repo {r["target_repo"]!r} not in {sorted(UPSTREAM_REPOS)}')
+    # --upstream checks that this file exists. Only a method candidate may name a model stage instead
+    # (rc-025 "Stage 4 cost cascade"), because a method has no single cell.
+    if r['kind'] != 'method' and not TARGET_PATH_RE.match(r['target_file']):
+        rep.error('cand-target-file', f'{cid}: target_file {r["target_file"][:50]!r} must start with the upstream '
+                                      f'file path (only a method candidate may name a model stage instead)')
+    ca = r['checked_against'].split('@')
+    if len(ca) != 2 or ca[0] not in UPSTREAM_REPOS or not SHA_RE.fullmatch(ca[1]):
+        rep.error('cand-checked-against', f'{cid}: checked_against {r["checked_against"]!r} must be <repo>@<sha> with '
+                                          f'repo in {sorted(UPSTREAM_REPOS)}')
+    elif r['status'] in LIVE_CANDIDATE_STATUSES and ca[0] != r['target_repo']:
+        # A closed row may cite the repo where it was resolved (rc-014: an AsteroidCatalog cell closed by an
+        # economicspace change); an open one is re-checked against its own cell.
+        rep.error('cand-checked-wrong-repo', f'{cid} is {r["status"]} but was checked against {ca[0]}, not its '
+                                             f'target_repo {r["target_repo"]}')
+
+
+# A candidate id as write-ups cite it; "Rc-012" opens a sentence.
+CAND_REF_RE = re.compile(r'(?<![A-Za-z0-9_-])rc-(\d{3})(?![A-Za-z0-9_])', re.I)
+
+
+def check_candidate_refs(rep, ctx):
+    """Every rc-NNN that a write-up, registry row, data file or candidate names is a row of one of the two candidates
+    files, or one a rejection deleted (README "Rejecting a source"), which the source's "Rejected sources" row names.
+    A row lost on its way to revision_candidates_closed.csv would otherwise leave every citation of it pointing at
+    nothing. RESEARCH_LOG.md is history and is not scanned, as for file references; sources.csv repeats the
+    sources_domain.csv files, which are. While the "Rejected sources" table cannot be read in full (check_rejected
+    reports why), an id it may record as deleted is counted as not checked rather than reported."""
+    rep.start('candidate references')
+    if ctx['candidates'] is None:
+        return  # a candidates file is unreadable (reported by check_candidates), so which ids exist is unknown
+    known = {c['id'] for c in ctx['candidates']}
+    deleted = {f'rc-{n}' for cells in ctx['rejected'].values() for cell in cells for n in CAND_REF_RE.findall(cell)}
+    for name in ctx['files']:
+        path = ROOT / name
+        if path in (LOG, REGISTRY) or 'full_texts' in name.split('/') or not name.endswith(('.md', '.csv', '.json')):
+            continue
+        rep.count('files scanned for candidate ids')
+        try:
+            text = read_text(path)
+        except DataError as e:
+            rep.error(e.code, f'{e} — it was not searched for candidate ids')
+            continue
+        for cid in sorted({f'rc-{n}' for n in CAND_REF_RE.findall(text)} - known - deleted):
+            if not ctx['rejected_complete']:
+                rep.count('ids not checked: the "Rejected sources" table is unreadable')
+                continue
+            rep.error('cand-ref-unknown', f'{name} names {cid}, which is a row of neither {rel(CANDIDATES)} nor '
+                                          f'{rel(CLOSED_CANDIDATES)}, and no "Rejected sources" row records deleting it')
+    rep.expect('files scanned for candidate ids')
 
 
 def check_upstream_map(rep, ctx):
@@ -921,7 +979,7 @@ def check_upstream_map(rep, ctx):
             rep.error('map-cited-format', f'{ref}: checked_against_in {r["checked_against_in"]!r} must be candidate ids '
                                           f'joined by ";" with no empty or padded entry')
         if cands is None:
-            continue  # revision_candidates.csv is unreadable (reported there), so who cites the row is unknown
+            continue  # a candidates file is unreadable (reported there), so who cites the row is unknown
         listed = sorted(filter(None, cited_in))
         citing = sorted(by_ref[ref]) if ref in by_ref else []
         if not citing:
@@ -1068,7 +1126,8 @@ def check_readme(rep, ctx):
 # Order matters: a check reads the ctx keys earlier checks write (reg, latest_round, rejected, candidates,
 # upstream_map) by subscript, so a reordering crashes as check-crashed instead of checking against nothing.
 CHECKS = [check_files, check_layout, check_registry, check_index, check_log, check_log_history, check_rejected,
-          check_manifest, check_extracted, check_candidates, check_upstream_map, check_references, check_readme]
+          check_manifest, check_extracted, check_candidates, check_candidate_refs, check_upstream_map, check_references,
+          check_readme]
 
 
 def run(argv=None):

@@ -2,7 +2,7 @@
 
 build_template(parent) writes, under `parent`:
     General_Research/   two domains, one hosted file, extracted CSV + JSON, INDEX.md with a rejected source, a
-                        research log, README layout, revision candidates, an upstream commit map, and file references
+                        research log, README layout, open and closed revision candidates, an upstream commit map, and file references
                         in FINDINGS.md, INDEX.md and DOWNLOADS.md (one into the first commit); the tools are
                         copied in from this checkout, and sources.csv and the manifest hashes come from its own
                         build_registry.py. It is a git repository with the template committed (validate.py lists
@@ -66,7 +66,7 @@ Key numbers: `extracted_data/r1_alpha.csv`.
 
 | id | source | link | reason |
 |---|---|---|---|
-| rej_one | A rejected page | https://rejected.example | off-topic |
+| rej_one | A rejected page | https://rejected.example | off-topic (rc-005 deleted with it) |
 """
 
 LOG_MD = """# Research log
@@ -92,7 +92,8 @@ INDEX.md                  index
 RESEARCH_LOG.md           log
 sources.csv               generated
 full_texts_manifest.csv   hosted files
-revision_candidates.csv   candidates
+revision_candidates.csv   open candidates
+revision_candidates_closed.csv  closed candidates
 upstream_commit_map.csv   commit map
 AGENTS.md                 rules
 DOWNLOADS.md              files to fetch
@@ -104,7 +105,9 @@ tools/                   the tools
 
 GITATTRIBUTES = '# Hosted files are checked out byte for byte, as the manifest hashes them.\n**/full_texts/** -text\n'
 FINDINGS_ALPHA ='# 01_alpha findings\n\nNumbers in `extracted_data/r1_alpha.csv`; full text `full_texts/hosted.pdf`.\n'
-FINDINGS_BETA = '# 02_beta findings\n\nCompared with `01_alpha/extracted_data/r1_alpha.csv`.\n'
+# Candidate ids, checked by check_candidate_refs: a closed row, and one deleted with rej_one (its INDEX.md row says so).
+FINDINGS_BETA = ('# 02_beta findings\n\nCompared with `01_alpha/extracted_data/r1_alpha.csv`; rc-002 applied, rc-005 '
+                 'deleted.\n')
 # Written after the first commit, whose id it names: a reference into git history (DOWNLOADS.md's restore commands).
 DOWNLOADS_MD = '# Downloads\n\n```bash\ngit cat-file -p {sha}:01_alpha/full_texts/hosted.pdf > ../incoming/hosted.pdf\n```\n'
 
@@ -190,6 +193,8 @@ def build_template(parent):
     write(root / 'revision_candidates.csv', csv_text(CANDIDATE_HEADER, [
         ['rc-001', 'open', 'value', '01_alpha', 'src_hosted', 'R1', 'spacecost', 'reference.csv', 'x', 'x', '1', '2',
          'the hosted paper gives 2', f'spacecost@{shas["M1"]}', '2026-01-02'],
+    ]))
+    write(root / 'revision_candidates_closed.csv', csv_text(CANDIDATE_HEADER, [
         ['rc-002', 'applied', 'citation', '02_beta', 'src_live', 'R0', 'spacecost', 'reference.csv', 'x', 'notes',
          'none', 'cite src_live', 'upstream applied it', f'spacecost@{shas["O"]}', '2026-01-01'],
         # Closed, and resolved in another repo than its target's: its file is checked on AsteroidCatalog's main.

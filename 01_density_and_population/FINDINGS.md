@@ -178,7 +178,7 @@ The Xe note's 3.55 g/cm3 enstatite-chondrite bulk density vs Carry Table 2 EH 3.
 
 ## R165 - Candidate (2026-10-14)
 
-rc-140 (method): build the PGM table taxonomy.py proposes: CI 3.29 ppm / metal fraction gives 54.8 ppm for S-complex and Q (factor 1.48 vs 37 ppm), 41.1 for K (1.11), 65.8 for L (1.78). Text in `revision_candidates.csv`.
+rc-140 (method): build the PGM table taxonomy.py proposes: CI 3.29 ppm / metal fraction gives 54.8 ppm for S-complex and Q (factor 1.48 vs 37 ppm), 41.1 for K (1.11), 65.8 for L (1.78). Text in `revision_candidates_closed.csv`.
 
 ## Round 175 - Tholen dissertation read (2026-10-16)
 

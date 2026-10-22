@@ -67,7 +67,9 @@ CANDIDATE_KINDS = {'value', 'citation', 'wording', 'range', 'method'}
 
 REGISTRY = ROOT / 'sources.csv'
 MANIFEST = ROOT / 'full_texts_manifest.csv'
+# Open and blocked candidates; a row moves to the closed file when its status leaves LIVE_CANDIDATE_STATUSES.
 CANDIDATES = ROOT / 'revision_candidates.csv'
+CLOSED_CANDIDATES = ROOT / 'revision_candidates_closed.csv'
 UPSTREAM_MAP = ROOT / 'upstream_commit_map.csv'
 INDEX = ROOT / 'INDEX.md'
 LOG = ROOT / 'RESEARCH_LOG.md'

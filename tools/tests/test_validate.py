@@ -165,13 +165,14 @@ ROW_ALPHA_PENDING = '| src_pending | T2 | Pending report | registered, not pulle
 ROW_BETA = '| src_live | T3 | Live dataset | verified live, not hosted | the gamma cell |\n'
 DOMAIN2_SECTION = ('## Domain 2 — Beta\n\n| id | tier | source (short) | access | backs / could replace |\n'
                    '|---|---|---|---|---|\n' + ROW_BETA + '\n')
-REJ_ROW = '| rej_one | A rejected page | https://rejected.example | off-topic |\n'
+REJ_ROW = '| rej_one | A rejected page | https://rejected.example | off-topic (rc-005 deleted with it) |\n'
 LOG1 = '- **Round 1** (2026-01-02): second round; rej_one rejected.\n'
 LOG0 = '- **Round 0** (2026-01-01): first round.\n'
 LOG0_DETAIL = "  - detail: the fixture's two domains were set up.\n"
 ALPHA_CSV = '01_alpha/sources_domain.csv'
 BETA_CSV = '02_beta/sources_domain.csv'
 CANDS = 'revision_candidates.csv'
+CLOSED = 'revision_candidates_closed.csv'
 MAP = 'upstream_commit_map.csv'
 MAN = 'full_texts_manifest.csv'
 X_ALPHA = '01_alpha/extracted_data/r1_alpha.csv'
@@ -199,7 +200,7 @@ CASES = [
     ('file-missing', 'error', [], lambda r, s: delete(r, CANDS), {'root-file-missing'}),
     ('text-bom', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', BOM + b'# findings\n')),
     ('text-not-utf8', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', b'# caf\xe9\n')),
-    ('csv-blank-line', 'error', [], lambda r, s: edit(r, CANDS, '\nrc-002', '\n\nrc-002')),
+    ('csv-blank-line', 'error', [], lambda r, s: edit(r, CLOSED, '\nrc-002', '\n\nrc-002')),
     ('csv-quoting', 'error', [], lambda r, s: edit(r, X_BETA, 'src_live,rate', 'src_live,"rate"x')),
     ('csv-empty', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_empty.csv', b''), {'text-empty'}),
     ('csv-width', 'error', [], lambda r, s: edit(r, X_BETA, 'API,', 'API,extra,')),
@@ -220,6 +221,7 @@ CASES = [
     # an unreadable candidates file or map: the checks that read them skip their cross-checks, they do not crash
     ('csv-width', 'error', ['--upstream'], lambda r, s: edit(r, MAP, ',M1,rc-002', ',M1,rc-002,extra')),
     ('file-missing', 'error', ['--upstream'], lambda r, s: delete(r, CANDS), {'root-file-missing'}),
+    ('file-missing', 'error', ['--upstream'], lambda r, s: delete(r, CLOSED), {'root-file-missing'}),
     # check_files
     ('text-empty', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', b'')),
     ('text-doubled-cr', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', b'# a\r\r\nb\r\r\n')),
@@ -309,7 +311,7 @@ CASES = [
                                                                   '| reason |\n|---|---|\n')),
     ('rejected-row-cells', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, '| rej_one | off-topic |\n')),
     ('rejected-duplicate', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, REJ_ROW * 2)),
-    ('rejected-empty-cell', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| off-topic |', '|  |')),
+    ('rejected-empty-cell', 'error', [], lambda r, s: edit(r, 'INDEX.md', '| off-topic (rc-005 deleted with it) |', '|  |'), {'cand-ref-unknown'}),  # the reason recorded the deletion
     ('rejected-still-registered', 'error', [], lambda r, s: edit(r, 'INDEX.md', REJ_ROW, REJ_ROW + '| src_live | b | c | d |\n'), {'rejected-still-named'}),
     ('rejected-still-named', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', '# findings\nrej_one was useful\n')),
     # check_manifest
@@ -366,19 +368,29 @@ CASES = [
                                                           '# Fixture\n\nSee `extracted_data/r1_alpha.csv`.\n')),
     # check_candidates
     ('cand-header', 'error', [], lambda r, s: edit(r, CANDS, 'checked_date', 'date')),
-    ('cand-id', 'error', [], lambda r, s: edit(r, CANDS, 'rc-002', 'rc-2'), {'map-cited-mismatch'}),
-    ('cand-field-empty', 'error', [], lambda r, s: edit(r, CANDS, 'upstream applied it', '')),
-    ('cand-status', 'error', [], lambda r, s: edit(r, CANDS, 'rc-002,applied', 'rc-002,pending')),
-    ('cand-kind', 'error', [], lambda r, s: edit(r, CANDS, ',citation,', ',guess,')),
-    ('cand-domain', 'error', [], lambda r, s: edit(r, CANDS, 'citation,02_beta', 'citation,09_nope')),
-    ('cand-source-unknown', 'error', [], lambda r, s: edit(r, CANDS, '02_beta,src_live', '02_beta,src_nope')),
-    ('cand-found-round', 'error', [], lambda r, s: edit(r, CANDS, ',R0,', ',0,')),
-    ('cand-found-round-future', 'error', [], lambda r, s: edit(r, CANDS, ',R0,', ',R9,')),
-    ('cand-date', 'error', [], lambda r, s: edit(r, CANDS, '2026-01-01', '2026-13-01')),
-    ('cand-date-future', 'error', [], lambda r, s: edit(r, CANDS, '2026-01-01', '2999-01-01')),
-    ('cand-target-repo', 'error', [], lambda r, s: edit(r, CANDS, 'R0,spacecost', 'R0,otherrepo')),
-    ('cand-checked-against', 'error', [], lambda r, s: edit(r, CANDS, f'spacecost@{s["O"]}', 'spacecost-abc'), {'map-unused'}),
-    ('cand-source-ids-format', 'error', [], lambda r, s: edit(r, CANDS, '02_beta,src_live,', '02_beta,src_live;,')),
+    ('cand-id', 'error', [], lambda r, s: edit(r, CLOSED, 'rc-002', 'rc-2'), {'cand-ref-unknown', 'map-cited-mismatch'}),
+    # Ids are unique across the two files: a closed row given an open row's id.
+    ('cand-id', 'error', [], lambda r, s: edit(r, CLOSED, 'rc-002', 'rc-001'), {'cand-ref-unknown', 'map-cited-mismatch'}),
+    # A row in the file its status does not belong to: reopened but left in the closed file, or closed but not moved.
+    ('cand-wrong-file', 'error', [], lambda r, s: edit(r, CLOSED, 'rc-002,applied', 'rc-002,open')),
+    ('cand-wrong-file', 'error', [], lambda r, s: edit(r, CANDS, 'rc-001,open', 'rc-001,applied')),
+    # check_candidate_refs: an id no row has; a row lost on its way to the closed file (the map row citing it is
+    # then unused too); a deleted id whose Rejected-sources row no longer records the deletion.
+    ('cand-ref-unknown', 'error', [], lambda r, s: edit(r, '02_beta/FINDINGS.md', 'rc-002 applied', 'rc-009 applied')),
+    ('cand-ref-unknown', 'error', [], lambda r, s: drop_line(r, CLOSED, 'rc-002,'), {'map-unused'}),
+    ('cand-ref-unknown', 'error', [], lambda r, s: edit(r, 'INDEX.md', ' (rc-005 deleted with it)', '')),
+    ('cand-field-empty', 'error', [], lambda r, s: edit(r, CLOSED, 'upstream applied it', '')),
+    ('cand-status', 'error', [], lambda r, s: edit(r, CLOSED, 'rc-002,applied', 'rc-002,pending')),
+    ('cand-kind', 'error', [], lambda r, s: edit(r, CLOSED, ',citation,', ',guess,')),
+    ('cand-domain', 'error', [], lambda r, s: edit(r, CLOSED, 'citation,02_beta', 'citation,09_nope')),
+    ('cand-source-unknown', 'error', [], lambda r, s: edit(r, CLOSED, '02_beta,src_live', '02_beta,src_nope')),
+    ('cand-found-round', 'error', [], lambda r, s: edit(r, CLOSED, ',R0,', ',0,')),
+    ('cand-found-round-future', 'error', [], lambda r, s: edit(r, CLOSED, ',R0,', ',R9,')),
+    ('cand-date', 'error', [], lambda r, s: edit(r, CLOSED, '2026-01-01', '2026-13-01')),
+    ('cand-date-future', 'error', [], lambda r, s: edit(r, CLOSED, '2026-01-01', '2999-01-01')),
+    ('cand-target-repo', 'error', [], lambda r, s: edit(r, CLOSED, 'R0,spacecost', 'R0,otherrepo')),
+    ('cand-checked-against', 'error', [], lambda r, s: edit(r, CLOSED, f'spacecost@{s["O"]}', 'spacecost-abc'), {'map-unused'}),
+    ('cand-source-ids-format', 'error', [], lambda r, s: edit(r, CLOSED, '02_beta,src_live,', '02_beta,src_live;,')),
     ('cand-target-file', 'error', [], lambda r, s: edit(r, CANDS, ',spacecost,reference.csv,x,x,', ',spacecost,the cascade,x,x,')),
     ('cand-checked-wrong-repo', 'error', [], lambda r, s: edit(r, CANDS, f'spacecost@{s["M1"]}', 'AsteroidCatalog@abcdef1')),
     # check_upstream_map
@@ -400,10 +412,10 @@ CASES = [
     ('upstream-target-file-missing', 'error', ['--upstream'],
      lambda r, s: edit(r, CANDS, ',spacecost,reference.csv,x,x,', ',spacecost,missing.csv,x,x,')),
     ('upstream-target-file-missing', 'error', ['--upstream'],  # checked in spacecost, file looked up on AsteroidCatalog main
-     lambda r, s: edit(r, CANDS, ',AsteroidCatalog,reference.csv (+ notes),', ',AsteroidCatalog,missing.csv (+ notes),')),
+     lambda r, s: edit(r, CLOSED, ',AsteroidCatalog,reference.csv (+ notes),', ',AsteroidCatalog,missing.csv (+ notes),')),
     ('upstream-sha-unknown', 'error', ['--upstream'], lambda r, s: edit(r, CANDS, f'spacecost@{s["M1"]}', 'spacecost@' + 'f' * 40)),
     ('upstream-open-off-main', 'error', ['--upstream'], lambda r, s: edit(r, CANDS, f'spacecost@{s["M1"]}', f'spacecost@{s["O2"]}')),
-    ('upstream-sha-unmapped', 'error', ['--upstream'], lambda r, s: (edit(r, CANDS, f'spacecost@{s["O"]}', f'spacecost@{s["O2"]}'),
+    ('upstream-sha-unmapped', 'error', ['--upstream'], lambda r, s: (edit(r, CLOSED, f'spacecost@{s["O"]}', f'spacecost@{s["O2"]}'),
                                                                      edit(r, MAP, ',rc-002', ',')), {'map-unused'}),
     # check_readme
     ('readme-layout-missing', 'error', [], lambda r, s: edit(r, 'README.md', '## Layout', '## Files')),
@@ -567,6 +579,8 @@ ACCEPTED = [
     ('a row derived from two sources', lambda r: edit(r, X_BETA, '\nsrc_live,rate', '\nsrc_live;src_pending,rate')),
     ("a blank source_id for the pipeline's own value", lambda r: put(r, X_BETA, (r / X_BETA).read_text(encoding='utf-8')
                                                                       + ',our rate,3,kg/h,calc,\n')),
+    ('a candidate id capitalised at the start of a sentence',
+     lambda r: edit(r, '02_beta/FINDINGS.md', 'rc-002 applied', 'applied. Rc-002 closed')),
     ('a year with a note after it', lambda r: domain_edit(r, ALPHA_CSV, ',2020,', ',2020 (online 2019),')),
     ('a __pycache__ file, the one thing .gitignore may hide', lambda r: put(r, 'tools/__pycache__/common.pyc', b'\0')),
     ("a merge in progress with the other side's entry on top", lambda r: start_merge(r, merged=[SIDE_B, SIDE_A])),

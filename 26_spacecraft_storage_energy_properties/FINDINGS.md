@@ -48,7 +48,7 @@ The 'Fission surface power (Kilopower class)' note (spacecost@0b716ad) says "KRU
 
 ## R164 - Candidates (2026-10-14)
 
-rc-109 (regenerative fuel cell round trip 47.4%), rc-110 (four storage figures not in the R104/R105 reports), rc-115 (NEP row repeats the KRUSTY overstatement). Texts and evidence in `revision_candidates.csv`.
+rc-109 (regenerative fuel cell round trip 47.4%), rc-110 (four storage figures not in the R104/R105 reports), rc-115 (NEP row repeats the KRUSTY overstatement). Texts and evidence in `revision_candidates_closed.csv`.
 
 ## R238 - Six storage and power candidates applied upstream; two author slips (2026-10-21)
 

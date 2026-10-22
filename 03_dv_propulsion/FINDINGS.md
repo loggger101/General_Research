@@ -188,7 +188,7 @@ NTRS's Dawn IPS records are metadata-only and the EPAG handbook domains are NXDO
 
 ## R164 / R165 - Candidates (2026-10-14)
 
-rc-111 (hydrazine: cite JPL 1968), rc-112 (HTP: cite Hitt 2001), rc-113 (arcjet: cite Morren & Curran), rc-114 (NTP: cite Borowski 2012), rc-116 (Orion: 1957-1965, 10,000 s as the upper bound), rc-117 (CO/LOX: cite Hepp and Linne), rc-118 (water resistojet: cite AQUARIUS), rc-138 (cite the 975-day SEP cargo study for `ep_target_thrust_yr`), rc-155 (MMH/NTO 336 s above the measured 309-321), rc-156 (Aerozine-50 to 314.5 s), rc-157 (UDMH/NTO family anchor), rc-158 (kerolox: RD-191 337 s), rc-159 (hydrolox: Jue 2003 and `baumeister_2015_rl10_atlas_to_shuttle_centaur`: RL10A-3-3A 444.4 s), rc-160 (methalox: Kim 2013, `ukai_2019_eucass_jaxa_ihi_lox_methane_full_expander_component_tests`), rc-161 (green monoprop: Spores 2013), rc-162 (solar thermal: 680 s measured, 800-811 s design), rc-163 (xenon: NEXT-C envelope; Hall lower), rc-164 (lunar surface → LEO by flown parts, ~5,930-6,120 m/s). Texts in `revision_candidates.csv`.
+rc-111 (hydrazine: cite JPL 1968), rc-112 (HTP: cite Hitt 2001), rc-113 (arcjet: cite Morren & Curran), rc-114 (NTP: cite Borowski 2012), rc-116 (Orion: 1957-1965, 10,000 s as the upper bound), rc-117 (CO/LOX: cite Hepp and Linne), rc-118 (water resistojet: cite AQUARIUS), rc-138 (cite the 975-day SEP cargo study for `ep_target_thrust_yr`), rc-155 (MMH/NTO 336 s above the measured 309-321), rc-156 (Aerozine-50 to 314.5 s), rc-157 (UDMH/NTO family anchor), rc-158 (kerolox: RD-191 337 s), rc-159 (hydrolox: Jue 2003 and `baumeister_2015_rl10_atlas_to_shuttle_centaur`: RL10A-3-3A 444.4 s), rc-160 (methalox: Kim 2013, `ukai_2019_eucass_jaxa_ihi_lox_methane_full_expander_component_tests`), rc-161 (green monoprop: Spores 2013), rc-162 (solar thermal: 680 s measured, 800-811 s design), rc-163 (xenon: NEXT-C envelope; Hall lower), rc-164 (lunar surface → LEO by flown parts, ~5,930-6,120 m/s). Texts in `revision_candidates.csv` (open) and `revision_candidates_closed.csv`.
 
 ## R189 - Thruster mass per newton
 
@@ -255,7 +255,7 @@ economicspace moved d77f1ce -> **36bc858** (four commits: verification-worksheet
 
 ## Round 234 - three identifiers corrected from the page images; 36 spacecost candidates applied
 
-The spacecost releases 0.12.1-0.12.4 (merged to main at `7b40d5b`) applied 36 candidates; their rows in `revision_candidates.csv` record what landed. Re-reading the sources before the upstream edits found three identifiers in this domain's registry rows wrong. Each was read from a rendered page image, because the text layer is what misled:
+The spacecost releases 0.12.1-0.12.4 (merged to main at `7b40d5b`) applied 36 candidates; their rows in `revision_candidates_closed.csv` record what landed. Re-reading the sources before the upstream edits found three identifiers in this domain's registry rows wrong. Each was read from a rendered page image, because the text layer is what misled:
 
 - **bowles_dawson_2004** is NASA **SP-2004-4230** (title page, p2; cataloging data "NASA-SP-2004-4230", p3), by Dawson & Bowles. The registry, INDEX and rc-170 had SP-4176. The hosted file is renamed to match; bytes unchanged.
 - **jpl_1968** is JPL **Technical Report 32-1227**, "The Status of Monopropellant Hydrazine Technology", by T. W. Price and D. D. Evans (cover; page iii footer "JPL TECHNICAL REPORT 32-1227"). The cover's text layer reads 32-7227, which the registry, INDEX and rc-111 carried. The hosted file is renamed; bytes unchanged.

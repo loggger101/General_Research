@@ -98,7 +98,7 @@ Upstream's 200 Wh/kg is 3.7x a whole terrestrial metal mine including comminutio
 
 ## R164 / R165 - Candidates (2026-10-14)
 
-rc-097 (cite DOE's 19.3 Wh/kg beneficiation), rc-122 (cite Kabemba's 83.25-94.37% and Liddell's >95%), rc-136 (give the mining-rate dial its plant-scale references: 42.0 vs 2.3 kg/yr per kg of plant). Texts in `revision_candidates.csv`.
+rc-097 (cite DOE's 19.3 Wh/kg beneficiation), rc-122 (cite Kabemba's 83.25-94.37% and Liddell's >95%), rc-136 (give the mining-rate dial its plant-scale references: 42.0 vs 2.3 kg/yr per kg of plant). Texts in `revision_candidates_closed.csv`.
 
 ## R207 - Refinery throughput row vs institutional ISRU bounds (rc-178)
 

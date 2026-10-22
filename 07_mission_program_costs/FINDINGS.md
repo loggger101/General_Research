@@ -88,4 +88,4 @@ rc-047 (applied in spacecost 0.5.2) fixed the Mission operations note with PEBD 
 
 ## R164 - Candidate (2026-10-14)
 
-rc-106: cite PEBD for the Perseverance programme figure and mark the $150M autonomy figure unsourced. Text in `revision_candidates.csv`.
+rc-106: cite PEBD for the Perseverance programme figure and mark the $150M autonomy figure unsourced. Text in `revision_candidates_closed.csv`.

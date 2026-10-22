@@ -30,7 +30,7 @@ new check fails on the data, decide whether the data or the check is wrong.
   on, the verdict, any `rc-NNN`, and the extracted-data file. Leave out access
   narration (which routes failed, retries, user agents), round status
   summaries, and restatements of earlier blocks. Candidate texts live in
-  `revision_candidates.csv`; a FINDINGS block lists the ids with a few words each.
+  the candidates files; a FINDINGS block lists the ids with a few words each.
 - **The research log (`RESEARCH_LOG.md`) is append-at-top only.** Add one
   entry, `- **Round N** (YYYY-MM-DD): ...`, of one or two sentences above the
   previous one — that exact label, not `**RN**` or a heading. The details
@@ -80,9 +80,12 @@ new check fails on the data, decide whether the data or the check is wrong.
   "Rejecting a source" lists what to delete, and `validate.py` fails if the id
   is named anywhere but the research log.
 - **Record revision candidates.** A source contradicting an upstream cell gets a
-  `revision_candidates.csv` row (next `rc-NNN`, status `open`) with the current
-  upstream value and the commit read. On re-check, update `status`,
-  `checked_against` and `checked_date` rather than adding a row.
+  `revision_candidates.csv` row (next `rc-NNN` above the highest in either
+  candidates file, status `open`) with the current upstream value and the
+  commit read. On re-check, update `status`, `checked_against` and
+  `checked_date` rather than adding a row. A row whose status is no longer
+  `open` or `blocked` moves to the end of `revision_candidates_closed.csv` in
+  the same commit; never delete one (upstream changelogs and code cite the ids).
 - **IDs are permanent** and a rejected id is never reused. Write the full
   registry id everywhere (INDEX, FINDINGS, the log, `source_id`, candidates):
   `krishnan_2010` for `krishnan_2010_h2o2_rp1_upper_stage` broke a cross-reference.

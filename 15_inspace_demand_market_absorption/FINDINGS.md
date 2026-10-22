@@ -102,4 +102,4 @@ Demand-scale context, no per-kg price. `extracted_data/r156_faa_launch_demand_fo
 
 ## R164 - Candidate (2026-10-14)
 
-rc-123: cite the IMF elasticities (below 0.5 short-run) and not the Banque de France supply figure for `demand_elasticity`. Text in `revision_candidates.csv`.
+rc-123: cite the IMF elasticities (below 0.5 short-run) and not the Banque de France supply figure for `demand_elasticity`. Text in `revision_candidates_closed.csv`.
