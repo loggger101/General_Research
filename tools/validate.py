@@ -65,7 +65,7 @@ REQUIRED_ROOT_FILES = ['README.md', 'INDEX.md', 'RESEARCH_LOG.md', 'sources.csv'
 ROOT_DIRS = {'tools'}
 # tools/ holds the tools and tools/tests/ their tests, Python only; any other file there is read by no check.
 TOOLS_FILE_RE = re.compile(r'tools/(?:tests/)?[a-z0-9_]+\.py')
-DOMAIN_FILES = {'sources_domain.csv', 'FINDINGS.md', '.gitkeep'}
+DOMAIN_FILES = {'sources_domain.csv', 'FINDINGS.md'}
 EXTRACTED_SUFFIXES = {'.csv', '.json'}
 TEXT_SUFFIXES = {'.csv', '.md', '.py', '.json'}
 TEXT_NAMES = {'.gitignore', '.gitattributes'}
