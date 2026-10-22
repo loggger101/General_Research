@@ -129,7 +129,7 @@ Un-hosted: lac_bac_2024, ssap_2021 (arXiv), nextc_ppu_2020 (NTRS copyright flag)
 
 ## R74 - Upstream citations registered (+7; most moved in R77)
 
-`faa_14_cfr_part_450_launch_reentry_licensing`, `crs_r48582_commercial_launch_reentry_regulations` (d18); `mil_hdbk_189c_reliability_growth_management`, `duane_1964_learning_curve_reliability_monitoring` (d16); `valueinvesting_io_2026_boeing_howmet_wacc` (d17); `space_com_pu238_rtg_cost_reporting` (RTG Pu-238 cost context, stays here).
+`faa_14_cfr_part_450_launch_reentry_licensing`, `crs_r48582_commercial_launch_reentry_regulations` (d18); `mil_hdbk_189c_reliability_growth_management`, `duane_1964_learning_curve_reliability_monitoring` (d16); `valueinvesting_io_2026_boeing_howmet_wacc` (d17).
 
 ## R76 - Gap: Starship tanker flights
 
@@ -170,10 +170,6 @@ Shared CSVs staying here: `extracted_data/r50_dsn_rates_and_launch_insurance_key
 | 10 MW reactor, 0% ROI | $1.6 M | 6.25 kg/yr |
 
 p37: capital $35.7M ($35.2M reactor + CAT.-1 fence), process cost $3.2M +/- 50% per kg, "the sale price of $6,000,000", ROI 4%/yr, 5.3-year payback; $0.56M/kg using an existing facility's flux. Kept as printed: "$3.2 million (±50%) which is substantially above the sale price of $6,000,000". Upstream's ~$2.5M/kg Russian figure sits inside; no candidate (rc-043 covers the production-rate wording). `extracted_data/r97_pu238_unit_price_key_numbers.csv`.
-
-## R127 - The Space.com Pu-238 article
-
-`space_com_pu238_rtg_cost_reporting` (2012-04-06, read live): "The goal is to eventually produce between 3.3 pounds and 4.4 pounds (1.5 to 2 kg) of plutonium-238 per year": backs the note's supply clause; the $2.5M/kg is not from it.
 
 ## R154 - RTG programme cost and status
 

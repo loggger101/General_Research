@@ -55,7 +55,7 @@ Production vs JM 2025 primary: iridium ~7.5 t vs 7.1 and ruthenium ~30 vs 30.2 a
 
 ## R74 - Upstream citations registered (+7)
 
-`usgs_mineral_commodity_summaries_2026` (curated fallback prices and world production), `lme_official_reference_prices` (Ni, Co), `cme_comex_nymex_futures` (live Au/Ag/Cu/Pt/Pd basis; spacecost RP-1 and methane proxies), `yahoo_finance_yfinance`, `metals_dev_api`, `heraeus_2026_precious_metals_forecast` (platinum price), `reuters_2026_gold_analyst_consensus` (gold context).
+`usgs_mineral_commodity_summaries_2026` (curated fallback prices and world production), `lme_official_reference_prices` (Ni, Co), `cme_comex_nymex_futures` (live Au/Ag/Cu/Pt/Pd basis; spacecost RP-1 and methane proxies), `yahoo_finance_yfinance`, `metals_dev_api`, `reuters_2026_gold_analyst_consensus` (gold context).
 
 ## R83 - USGS MCS 2025 hosted; world-production audit (2026-09-30)
 
@@ -83,7 +83,7 @@ Against economicspace@29a0309 (v1.11.0 elements stamped 2025-01-31, citing MCS 2
 - **cobalt production (rc-066):** 2.3e8 kg vs 3.10e8 for 2025e (-25.8%; it is Congo alone).
 - Agreeing: chromium $12.35/kg vs $10-12; rhenium $1,370 vs $1,200-1,600; molybdenum $47 vs $44; germanium $2,100 vs $2,000-3,000; sulfur $69-116 per long ton vs $80-100/t.
 
-`extracted_data/r115_usgs_new_element_prices_cobalt_production.csv`. Also read live: `heraeus_2026_precious_metals_forecast` (per oz: platinum $1,300 – $1,800, gold $3,750 – $5,000, silver $43 – $62, palladium $950 – $1,500, rhodium $6,000 – $9,000) and `metals_dev_api` (live LBMA/LME/MCX feed, free tier).
+`extracted_data/r115_usgs_new_element_prices_cobalt_production.csv`. Also read live: `metals_dev_api` (live LBMA/LME/MCX feed, free tier).
 
 ## R164 / R165 - Candidates (2026-10-14)
 

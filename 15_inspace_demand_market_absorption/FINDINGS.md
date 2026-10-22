@@ -70,8 +70,6 @@ cislunar 100 t/yr is at the bottom of NASA's band; lunar_surface 50 t/yr matches
 | `snyder_2001_iepc_172_dual_mode_spt_geosynchronous_satellites` | 244 kg xenon over 15 years (~16 kg/yr) | 3,500 kg dry, 48.5 m/s/yr N/S |
 | `sovey_pidgeon_1990_advanced_propulsion_leo_geo_platforms` | arcjet 51%, ion 25% of the hydrazine baseline; ~138 kg/yr chemical implied | 8,000 kg-class platform |
 | `oleson_1995_advanced_propulsion_geo_insertion_nssk` | assumptions only (Isp 600-3,160 s, tankage 0.07-0.15) | 15-year NSSK model |
-| `zhang_2016_xips_station_keeping_failure_mode_eclipse_constraints` | none in the abstract | unread |
-
 Chemical fits 70 kg/yr (65 to ~138 by size), electric cuts it to ~11-16 kg/yr, and the row does not say which fleet it assumes: a clarification for the owner.
 
 `bogmans_2024_power_of_prices_commodity_supply_demand_elasticities` (IMF WP 2024/077): minerals "particularly inelastic", copper and zinc demand near zero, oil and coal below 0.2, rising with horizon; no PGMs. `vertier_2025_banque_de_france_eco_notepad_419_price_elasticity_critical_mineral_supply`: for eight critical minerals incl. PGMs a 1% demand-driven price rise raises output ~0.5% over five years (0.2-1%), a supply elasticity. `sanders_2010_iac_lunar_isru_isecg_reference_architecture`: ~250 kg O2/yr demonstration scale. `esa_2019_space_resources_strategy`: Luxembourg study's EUR 73-170B space-resources revenue over 2018-2045 (EUR 2.7-6.3B/yr), excluding propellant oxygen and asteroid PGMs. `extracted_data/r114_gr_links_key_numbers.csv`.

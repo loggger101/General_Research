@@ -24,8 +24,6 @@ Remove an item when it is done.
 - [ ] **mandler_elkins_tanton_2013** (d02) - https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/maps.12135 - CC BY; may host.
 - [ ] **pourpoint_2012_alice_feasibility** (d03) - https://downloads.hindawi.com/journals/ijae/2012/874076.pdf (or the Purdue docs.lib copy) - CC BY; may host.
 - [ ] **demeo_2009_bus_taxonomy_near_ir** (d01) - https://hal.science/hal-00545286 - extract only.
-- [ ] **ryugu_soluble_organics_2023** (d02) - https://hal.science/hal-04208565/document - extract only.
-- [ ] **ryugu_macromolecular_om_2023** (d02) - https://cnrs.hal.science/hal-04034418/document - extract only.
 - [ ] **masiero_2021_albedo_uncertainties_thermal_modeling** (d01) - https://doi.org/10.3847/PSJ/abda4d - read from arXiv; publisher version CC BY, may host.
 - [ ] **masiero_2021_neowise_reactivation_years_6_7** (d01) - https://doi.org/10.3847/PSJ/ac15fb - as above.
 - [ ] **myhrvold_2022_four_band_wise_asteroids** (d01) - https://doi.org/10.3847/PSJ/ac3232 - as above.
@@ -98,6 +96,6 @@ Remove an item when it is done.
 ## D. Live services and pages that refuse this machine (nothing to save; retry later)
 
 dla_energy_aerospace_standard_prices_fy2020, aqua_calc_lox_bulk_price, lme_official_reference_prices,
-cme_comex_nymex_futures, neodys_orbit_covariance_service, jaxa_h3_launch_vehicle, watanabe_2019_hayabusa2_ryugu_spinning_top,
+cme_comex_nymex_futures, jaxa_h3_launch_vehicle, watanabe_2019_hayabusa2_ryugu_spinning_top,
 macke_2010_enstatite_chondrite_density_porosity, sercel_2018_time_dependent_outgassing_model_bulk_heating,
 nasa_instrument_cost_model_nicm, pearson_1979_anchored_lunar_satellites.

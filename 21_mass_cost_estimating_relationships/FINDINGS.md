@@ -42,7 +42,6 @@ Read at economicspace@1f470d4 and spacecost@e831245.
 | cell | backed by | what it supplies |
 |---|---|---|
 | Mining payload / Berthing adapter recurring cost | foreman_lemoine_deweck_2016_cer_survey_distributed_spacecraft_missions (hosted) | the scope, versions and access routes of SSCM and NICM/NICM-E (p6 table); both models stay access-restricted |
-| Heat shield / TPS | koenig_stewart_2019_orion_tps_manufacturability_em1 (hosted); borner_venkatapathy_2024_low_cost_tps_materials (read only) | EM-1 Avcoat blocks brought "cost and schedule savings and a reduction in overall heat shield weight" vs EFT-1 (p3); ablator cost trends against Discovery/SIMPLEx/CLPS caps; no $/kg |
 | Surface lander + `return_structure_frac_of_payload` | clark_pensado_jones_grande_judd_2021_lander_function_allocation_propellant (hosted) | inert mass fractions for lunar transport stages: SSL/AE 0.25, DE 0.20, RTE 0.10 at Isp 450 s; sensitivity 0.20-0.30 / 0.15-0.25 / 0.05-0.15 (Tables 7, 9) |
 
 NICM VI / NICM-E / NICM 8.5 records on NTRS carry no public files (ONCE portal only); SSCM's landing page refuses this machine. Per-kg unit costs of capsules, landers, stages, tanks and TPS remain unsourced estimates.

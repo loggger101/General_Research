@@ -31,8 +31,6 @@ Nature Astronomy 9:199–210: OSIRIS-REx Bennu samples: total C 4.5–4.7 wt%, N
 ## Round 4 - C-type hydration
 
 - **ryugu_hydrated_2023** [T1, hosted, CC BY] (Nature Astronomy 7:170–181): a dehydrated space-weathered skin (~66% of grains, ≥1.5 µm deep) over an interior retaining structural –OH. Spectral ice estimates for C-types are therefore low bounds. `extracted_data/ryugu_hydrated_interior_key_numbers.csv`.
-- **ryugu_soluble_organics_2023** and **ryugu_macromolecular_om_2023** [T1, open_not_pulled] (Science 2023): CHNOS organics of abiotic origin; aqueously altered macromolecular matter with phyllosilicates and carbonates.
-
 ## Round 8 - Per-class carbon; the CI endmember
 
 - **glavin_2018** [T2, hosted, NTRS]: C ~0.1 wt% (CK) to ~5 wt% (CI); IDPs ~12 wt%; hydration minerals (serpentine, saponite, smectite in CI, CM, CR and Tagish Lake; tochilinite in CM2). The B/C-complex 22–30% defaults are 4–6× the most carbon-rich C-type: "carbon-bearing material", not elemental C. `extracted_data/glavin_2018_chondrite_volatiles_key_numbers.csv`.

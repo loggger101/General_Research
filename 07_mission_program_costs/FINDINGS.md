@@ -74,8 +74,6 @@ Re-pulled (137 sheets; last update 2025-11-13). Every cell in long form with ita
 
 - **drake_2008_mars_dra5_study_executive_summary** (hosted; the executive deck of DRA 5.0, distinct from d03's `dra5_2009_human_exploration_of_mars`): slide 10 (rotated page, unambiguous pairs only): IMLEO 1,252 t chemical vs 825 t NTR; Ares V cargo launches 10-12 vs 7-9 "on 30-day centers".
 - **sparx_2026_sdt_report_lunar_sample_return_baseline_cost** (420 pp; copyright material, read only): baseline $840M FY25 incl. reserves (rover $543M, instruments $137M at $25M x 5, operations $160M), "well below the TOR recommended cap of $1.5B"; CLPS lander ~$200M; Team-X sample-return link/ERV/SRC/ops $716M FY25$; ~$700M per robotic sample-return mission; $2B-$4B for 10-20 landers.
-- **kremic_hurford_mandell_arnold_2015_out_of_this_world_science_down_to_earth_prices** (poster, hosted): image-only, unread.
-
 `extracted_data/r136_mission_cost_key_numbers.csv`.
 
 ## R144 - GAO-26-108556 major-projects assessment (hosted)

@@ -71,10 +71,6 @@ Both paywalled, `registered_not_pulled`: `tang_et_al_2023_asteroid_rock_mechanic
 - kafi_2026_spiral_cavity_wheel_excavator_lunar_isru read in full from arXiv (default licence, not hosted).
 - `kabemba_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm` hosted (CC BY) as kabemba_mutombo_waters_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm_minerals_15_701_mdpi_ccby.pdf: "P-FPX3 = 83.25%" and "peak recovery (94.37%)".
 
-## R137 - NASA's ISRU staging ladder (2026-10-09)
-
-**mueller_sibille_sanders_jones_2014_arrm_concepts_of_operations_isru_ladder** (NTRS 20140017854, hosted; context only): resource operations for "radiation protection, propulsion, life support, shelter and manufacturing", within a campaign preparing for Mars: "the development and demonstration approach progresses from resource prospecting (understanding the resource, and mapping the 'ore body'), mining/extraction feasibility and product assessment, pilot operations, to full in-situ resource utilization (ISRU)." No cost, mass or delta-v figures.
-
 ## R152 - rc-027 unblocked: measured excavation energies and DOE's mining benchmark (2026-10-12)
 
 rc-027 (200 Wh/kg, range 50-500, spacecost@0b716ad) no longer needs just_2019's table. `extracted_data/r152_excavation_specific_energy_key_numbers.csv`:
