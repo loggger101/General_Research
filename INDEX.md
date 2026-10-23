@@ -269,6 +269,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | mhi_2002_hii_maiden_flight_results_tech_report | T2 | MHI Tech Report Vol. 39 No. 1 (Jan-2002): New H-IIA Technology and Maiden Flight Results, via NDL pid/3527426 | read, not hosted | d04 H-IIA 204 price anchor - F1-era per-unit ceiling + Table 3 standard type at stated $=JPY 120 rate |
 | space_review_2023_japan_space_policy_h3_first_flight | T4 | The Space Review (Mar 7, 2023): Japan’s space policy after the H3 launch vehicle failure - H-2A cost statement | read, not hosted | d04 H-IIA 204 price anchor - program-consensus ~JPY 10B with dollar conversion |
 | ng_propulsion_products_catalog_2016 | T4 | Northrop Grumman Propulsion Products Catalog - STAR 48A/48B spec pages, public release OSR No. 16-S-1432 dated 05 April 2016 | read, not hosted | economicspace MODEL.md solid-motor tankage row "Star 48B measures 6.4%" - the missing citation named by rc-179 |
+| isro_pslv_c61_eos09_mission_status_page | T3 | ISRO mission status page PSLV-C61/EOS-09: "mission could not be accomplished" + flight 63 / XL count statement | read, not hosted | d04 PSLV failure-record anchor replacing The Week for C61 |
+| isro_pslv_c62_eosn1_mission_status_page | T3 | ISRO mission status page PSLV-C62/EOS-N1: "anomaly during end of the PS3 stage" + DL variant pre-launch block | read, not hosted | d04 anchor for the C62 anomaly statement and configuration |
+| isro_pslv_launchers_list_page | T3 | ISRO List of PSLV Launches - dated table marking C61 Not accomplished; C62 row carries no outcome mark | read, not hosted | d04 dated-outcome anchor for both failure rows |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 

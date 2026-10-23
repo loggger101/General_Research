@@ -197,3 +197,15 @@ This surface is covered; skip unless a new catalog edition appears or the MODEL.
 
 The Atlas V row note declares its own LEO figure unsourced ("whose own source is not recorded"). The GR-hosted Rev 11 Launch Services User Guide (cleared OSR 10-S-0689, pulled live at R99) settles it: Table 2.6.5-2f prints the Single Burn figure at 200 km as Payload Systems Weight 18,814 kg [41,478 lb], conditions CCAFS SLC-41 with the 5-m Short fairing, park orbit perigee at least 167 km, confidence level 2.33 sigma GCS - exactly the band low end upstream carries. A full-document scan of all 420 pages finds zero occurrences of 18,850, so the high end matches nothing in the guide; rc-189 cites the table and asks for the upper figure to be adopted away or documented. PSW semantics (adapter included) are flagged in the proposal.
 
+
+### Round 247 (2026-10-23): PSLV failure record moves onto ISRO mission status pages (rc-191)
+
+INDEX replace-flag for the_week_2026_isro_pslv_reporting named two institutional replacement classes: NSIL price statements and ISRO
+failure-analysis releases. The second class is now resolvable at primary level from this machine: www.isro.gov.in serves both mission status
+pages live (apex domain fails DNS here; the www host answers). C61 page states "Due to an observation in 3 rd stage, the mission could not be
+accomplished" and flight-63/XL-count context; C62 page states the PS3 anomaly sentence verbatim with no failure verdict. The launcher list marks
+C61 Not accomplished but carries no outcome mark for C62 - so the institutional record supports a failure statement for C61 only, plus an
+initiated-analysis status for C62. Upstream causal clause (flight control near stage separation) is committee/news-level detail not on these pages;
+rc-191 proposes citing the three registered T3 rows and restating to institutional wording. The pricing half of the flag stays open: nsilindia.co.in
+(carved-out domain, resolves where nsil.isro.gov.in does not) publishes no tariff PDF in launch-services or brochures pages, and the 60-page ISRO
+Space-in-Parliament compendium carries zero per-launch unit-cost statements.
