@@ -81,3 +81,13 @@ Conversion computed here: molar mass 131.293 g/mol over 22.414 L/mol gives STP g
 Upstream cell: Xenon row notes cite SETS Space 2024 ($5-12k/kg) and "used $10k/kg (2023 EFC reference)" - both sources owner-flagged in INDEX.md Sources to replace (R240) with this INL study named as replacement sought; the 2023 EFC phrase matches zero CITATIONS.md entries at b5eb32a. SETS range brackets the INL-derived figure, so the swap is corroborative not contradictory.
 
 Verdict: open candidate rc-186 (citation; value keep-or-re-pin left to owner); upstream untouched. Extracted data: extracted_data/r242_xenon_inl_price_key_numbers.csv.
+
+**Round 243 - LCH4 price bracketed by hosted Pink Sheet series (rc-187)**
+
+Hosted workbook domain 06: sheet Monthly Prices, columns Natural gas US and Liquefied natural gas Japan (both $/mmbtu), Sept 2026 edition through 2026M08. Computed here from the committed file: US hub 2025 mean $3.525/MMBtu over n=12; Japan LNG delivered liquid 2025 mean $12.036/MMBtu (2026 January-August means: US $3.595, Japan $12.793).
+
+Conversion arithmetic computed here: methane gross calorific 55.5 MJ/kg; MMBtu(IT) = 1055.06 MJ; therefore 19.01 kg CH4 per MMBtu and hub gas content $0.185/kg versus delivered liquid $0.633/kg at the 2025 means.
+
+Upstream: propellants.py _COMPONENTS carries LCH4 cost_usd_per_kg = 0.40 with trailing comment "~$400/tonne open market", the component block names Mobius Market Research 2024, and the methalox CSV notes repeat "LCH4 ~$400/tonne open-market per Mobius Market Research 2024." The INDEX Sources to replace row (R240) marks that source news class with replacement sought: a natural-gas or LNG price series. The cell sits between the two institutional anchors - defensible as a US-liquefaction-at-hub midpoint, unsourced as written.
+
+Verdict: open candidate rc-187 (citation; owner keeps value decision inside the bracket); upstream untouched. Extracted data: extracted_data/r243_lch4_pink_sheet_key_numbers.csv.

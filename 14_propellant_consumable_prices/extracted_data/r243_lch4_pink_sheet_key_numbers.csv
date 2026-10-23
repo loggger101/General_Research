@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+worldbank_cmo_pink_sheet,Natural gas US hub price 2025 annual mean,3.525,$/MMBtu,"Monthly Prices sheet, column Natural gas US (Sept 2026 edition, through 2026M08)",computed here from the committed workbook n=12; gross-calorific content conversion gives $0.185/kg CH4
+worldbank_cmo_pink_sheet,Liquefied natural gas Japan delivered price 2025 annual mean,12.036,$/MMBtu,"Monthly Prices sheet, column Liquefied natural gas Japan",computed here from the committed workbook n=12; conversion gives $0.633/kg delivered liquid
+,Comparison of upstream cell against institutional bracket,0.40 vs 0.185 / 0.633,USD/kg,computed here (methane gross calorific 55.5 MJ/kg; MMBtu(IT) = 1055.06 MJ),comparison computed here: cell sits between hub-gas content and delivered-liquid import parity at the 2025 means; conversion constant 19.01 kg CH4 per MMBtu
