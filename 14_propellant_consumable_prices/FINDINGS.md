@@ -71,3 +71,13 @@ DLA letter E_2024Oct1AerospaceStandardPrices (dla_energy_aerospace_standard_pric
 Upstream cell: spacecost/propellants.py _COMPONENTS LOX cost_usd_per_kg = 0.20 at b5eb32a, attributed in the component-price comment to "Astronautix / aqua-calc"; both sources are owner-flagged in INDEX.md "Sources to replace" (R240) with DLA FY2025 named as replacement sought. The component feeds _blend into four published rows; the blend formula reproduces every current ref_cost exactly at b5eb32a, and LOX at $0.37 moves kerolox +13.2% (to 1.015633), hydrolox +9.1% (to 1.745933), methalox +54.7% (to 0.376722; LOX is 64 percent of that blend price) and CO/LOX +8.7% (to 0.771367). economicspace reads these ref_costs through modules/transportation.py.
 
 Verdict: open candidate rc-185; upstream untouched (read-only from here). Extracted data: extracted_data/r241_lox_reanchor_key_numbers.csv.
+
+**Round 242 - Xenon price citation swap to INL (rc-186)**
+
+INL/RPT-23-75203 (inl_rpt_23_75203_krypton_xenon_recovery_cost_benefit, hosted in this domain since R100; public-domain DOE report). Sec.1 Introduction verbatim at raw count==1: "prices for Kr and Xe tend to hover around $1/L and $60/L". Sec.2 XENON MARKET ASSESSMENT, PDF p.11 (normalized-whitespace count==1): in the first quarter of 2023, Xe was sold for around $60/L compared to Kr which was trading at approximately $1/L (Wang 2023).
+
+Conversion computed here: molar mass 131.293 g/mol over 22.414 L/mol gives STP gas density 5.8576 g/L, so $60/L = $10,243.04/kg; the upstream Xenon ref_cost_usd_per_kg = 10000.0 at spacecost b5eb32a is -2.4% below that. The identical conversion on Kr (83.798 g/mol, $1/L) gives $267.48/kg and reproduces the upstream krypton comment (about $267/kg), the convention applied when rc-059 was applied in v0.10.0.
+
+Upstream cell: Xenon row notes cite SETS Space 2024 ($5-12k/kg) and "used $10k/kg (2023 EFC reference)" - both sources owner-flagged in INDEX.md Sources to replace (R240) with this INL study named as replacement sought; the 2023 EFC phrase matches zero CITATIONS.md entries at b5eb32a. SETS range brackets the INL-derived figure, so the swap is corroborative not contradictory.
+
+Verdict: open candidate rc-186 (citation; value keep-or-re-pin left to owner); upstream untouched. Extracted data: extracted_data/r242_xenon_inl_price_key_numbers.csv.
