@@ -87,3 +87,9 @@ rc-047 (applied in spacecost 0.5.2) fixed the Mission operations note with PEBD 
 ## R164 - Candidate (2026-10-14)
 
 rc-106: cite PEBD for the Perseverance programme figure and mark the $150M autonomy figure unsourced. Text in `revision_candidates_closed.csv`.
+
+
+## Round 246 - SLS Block 1B cancellation status anchored to NASA FY2027 budget estimates
+
+The owner replace-flag for satnews_2026_artemis_restructuring asked for a NASA document instead of press reports; the hosted FY2027 budget estimates supplies one. Its SLS program section and its EXPLANATION OF MAJOR CHANGES both print "Instead of futher developing the Exploration Upper Stage (EUS), which faced significant cost overruns and delays" [appears twice; typo as printed], the Major Projects table lists SLS Block 1B under the footnote "Funding is not proposed for these projects in the FY 2027 budget", and the same passage states "NASA also no longer needing the Mobile Launcher 2". rc-190 cites this document as institutional backing for the cancelled status upstream carries with news-only attribution; announcement timing may remain attributed to SpaceNews/SatNews. No values move.
+
