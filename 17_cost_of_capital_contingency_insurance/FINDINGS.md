@@ -73,3 +73,13 @@ rc-098 (WACC citation: Damodaran backs the floor only), rc-099 and rc-124 (conti
 
 **Round 205 - near-miss: Slingshot Aerospace pairing.**
 spacecost CITATIONS.md section 4 pairs 'Plane Talking (Gallagher) / Slingshot Aerospace, 2024' for the launch-insurance market rate. Live search on 2026-10-19 found no separate Slingshot artifact: Plane Talking issues are hosted at specialty.ajg.com (Q1/Q3/Q4-2024 located; the Q1-2024 issue is what the insurance row's cell cites), and spacecost/operations.py names only Plane Talking in the row note itself. The registered gallagher_plane_talking_space_market_updates already covers the cited cell; per R96 convention this pairing is documented as a near-miss, not registered.
+
+**Round 244 - WACC floor anchored on registered Damodaran table (rc-188)**
+
+Upstream row at b5eb32a: Cost of capital (WACC) value 0.1, range_low 0.075, range_high 0.15; notes open with "Boeing 7.5% / Howmet 8.3% WACC (ValueInvesting.io 2026) as the industrial floor" and then quote Damodaran sector averages Aerospace/Defense 7.60 percent and Metals & Mining 8.20 percent Jan 2026.
+
+In-repo institutional evidence: r47_damodaran_cost_of_capital_full_table_96_industries.csv (extracted live at R47 from the registered page and XLS twin, both hosts byte-identical) carries Aerospace/Defense n=79 Cost of Capital 7.60 percent with delta -10 bps against range_low, Metals & Mining n=73 at 8.20 percent; value 0.10 sits +240 bps above the aerospace anchor per the same file.
+
+Attribution seam: CITATIONS.md line reads "| Damodaran (NYU Stern), Cost of Capital by Industry Sector (Jan 2026); Boeing and Howmet filings | cost-of-capital floor: industry averages, with no startup premium |" - but a sweep of sources.csv id and title fields finds no SEC filing for either company anywhere in the registry; the upstream note itself says those two figures come from ValueInvesting.io model output. The INDEX Sources to replace flag (R240) names price-page class with Damodaran replacement sought, which the note already quotes.
+
+Verdict: open candidate rc-188 (citation; values untouched); upstream untouched. Extracted data: extracted_data/r244_wacc_floor_damodaran_anchor_key_numbers.csv.

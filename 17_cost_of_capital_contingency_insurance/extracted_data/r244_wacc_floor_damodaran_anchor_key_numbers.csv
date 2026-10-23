@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+damodaran_cost_of_capital_by_industry,Aerospace/Defense industry cost of capital (Jan 2026 vintage),7.60,%,"r47 full-table extraction row Aerospace/Defense, n=79 firms",in-repo since R47; live-pulled HTML and XLS byte-identical per registry access_status; upstream note quotes this exact figure
+damodaran_cost_of_capital_by_industry,Metals & Mining industry cost of capital (Jan 2026 vintage),8.20,%,"r47 full-table extraction row Metals & Mining, n=73 firms",in-repo since R47; upstream note quotes this exact figure
+,range_low of WACC row versus aerospace sector anchor,-10,bps,delta column of r47 key-numbers extraction (computed at R47),comparison computed there: 0.075 against 7.60 percent; value 0.10 sits +240 bps above the same anchor
+valueinvesting_io_2026_boeing_howmet_wacc,Boeing and Howmet company WACC figures as used upstream,7.5 / 8.3,%,operational_costs.csv notes opening span at b5eb32a,valuation-site model output (owner-flagged R240 price-page class); no SEC filing for either company is registered anywhere in sources.csv despite CITATIONS.md naming filings
