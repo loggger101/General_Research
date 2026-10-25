@@ -272,6 +272,7 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | isro_pslv_c61_eos09_mission_status_page | T3 | ISRO mission status page PSLV-C61/EOS-09: "mission could not be accomplished" + flight 63 / XL count statement | read, not hosted | d04 PSLV failure-record anchor replacing The Week for C61 |
 | isro_pslv_c62_eosn1_mission_status_page | T3 | ISRO mission status page PSLV-C62/EOS-N1: "anomaly during end of the PS3 stage" + DL variant pre-launch block | read, not hosted | d04 anchor for the C62 anomaly statement and configuration |
 | isro_pslv_launchers_list_page | T3 | ISRO List of PSLV Launches - dated table marking C61 Not accomplished; C62 row carries no outcome mark | read, not hosted | d04 dated-outcome anchor for both failure rows |
+| arianegroup_va269_launch_kit_jun_2026 | T3 | ArianeGroup VA269 launch kit PDF | verified live, not hosted (extraction-only; sha recorded in registry) | launch_vehicles.csv Ariane 6 A64 LEO payload currency (rc-195) |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
