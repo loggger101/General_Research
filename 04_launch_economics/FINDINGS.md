@@ -296,3 +296,11 @@ rc-206 [citation] on Angara A5: price cell was bare Wikipedia; the manufacturer 
 SYSTEMIC CONVENTION FINDING (do not re-litigate per row): every one of 76 rows in launch_vehicles.csv carries reference_year=2026 while thirteen notes state explicit source years from 2010 to 2023 - the field is a table-vintage as-of stamp, not a dollar-year; dollar-year RCs against this file belong only where conversion math itself is wrong (rc-171 class). Also recorded: Proton-M contract cost of 2.33 billion rubles per unit via RIA state procurement in the same BBC article (about $32.3M at WB 2020 rate) - institutional context for the Angara-expensive note; no Proton row exists upstream to attach it to.
 
 Family queue after this round: Long March variants, Gravity-1, Hyperbola-3 (i-Space DNS-dead), Jielong-3, Kinetica family, Soyuz-5.
+
+## Round 264 (2026-10-26)
+
+rc-207 [citation] on Long March 5: the note clause attributing the stored LEO figure to the Long March 5B contradicts the institutional record - SCIO pages fetched live give LM-5 own capacity as 25 t to LEO and 14 t to GTO (CALT figures, span count==1) while the 5B official figure quoted from the same development team is 22 t. Stored values match LM-5 itself exactly; clause moves, no value changes.
+
+SELF-CORRECTION of a Round 261 line: that block asserted “Long March 5 corroborated: its stored value of 25 t matches the official near-Earth figure carried on gov.cn pages” without ever fetching such a page - ungrounded at writing time, now superseded. The live fetch shows the attribution ran the other way than that sentence implied: 25 t is LM-5 own published capability and the upstream note misattributes it to the 5B; rc-207 carries the grounded finding.
+
+WITNESS BANKED for future rounds (same SCIO family, seen via search snippets only this round - fetch and verify before use): Hyperbola-3 company targets of a 12.9-tonne LEO configuration and 8.5 tonnes in reusable mode per the Aug-2024 SCIO commercial-space article; Long March-8A approximate 7 t LEO plus at least 6.4 t to 700 km SSO and Long March-10 figures of 70 t LEO and 27 tonnes lunar-transfer per the Jan-2025 SCIO missions article - both against rows whose notes name no document (Hyperbola-3, Long March variants).

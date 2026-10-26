@@ -292,6 +292,8 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | globaltimes_20251203_zhuque3_debut_flight_report | T4 | Global Times Zhuque-3 debut-flight report (66.1 m flown vehicle) | read live, not hosted (saved-copy sha recorded in registry) | rc-205: witness that the flown configuration is shorter |
 | bbc_russian_2021_angara_cost_and_capacity_report | T4 | BBC Russian Angara cost-and-capacity report (Khrunichev 2019 financial disclosure) | read live, not hosted (saved-copy sha recorded in registry) | rc-206: production cost 7 billion rubles brackets stored $100M |
 | scientificrussia_2024_angara_a5_vostochny_first_flight | T4 | Scientific Russia Vostochny-debut article with Roscosmos spec line | read live, not hosted (saved-copy sha recorded in registry) | rc-206: official LEO band 24 to 24.5 t |
+| scio_gov_cn_long_march_5_capability_2018 | T4 | SCIO gov.cn Long March-5 capability article (CALT figures) | read live, not hosted (saved-copy sha recorded in registry) | rc-207: LM-5 own figure 25 t LEO and 14 t GTO |
+| scio_gov_cn_long_march_5b_capability_2020 | T4 | SCIO gov.cn Long March-5B capability article (Wang Jue, CALT) | read live, not hosted (saved-copy sha recorded in registry) | rc-207: 5B official figure is 22 t LEO |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
