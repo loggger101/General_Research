@@ -287,6 +287,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | kari_nuri_vehicle_page | T4 | KARI NURI official vehicle page (QUICK OVERVIEW specs) | read live, not hosted (saved-copy sha recorded in registry) | rc-204: 1.5-ton class to LEO at 600-800 km altitude |
 | kari_launch_vehicle_program_page | T4 | KARI launch vehicle program overview page | read live, not hosted (saved-copy sha recorded in registry) | rc-204: same official figure for sun-synchronous orbits |
 | wikipedia_nuri_rocket_article | T4 | Wikipedia Nuri (rocket) article with infobox capacity table | read live, not hosted (saved-copy sha recorded in registry) | rc-204: stored 3,300 kg equals its Altitude 200 km entry |
+| landspace_zhuque_3_capability_release_itemid57 | T4 | LandSpace Zhuque-3 capability release (maker figures 21.3 t / 18.3 t) | read live, not hosted (saved-copy sha recorded in registry) | rc-205: maker attributes both to Zhuque-3 itself |
+| wikipedia_zhuque_3_article | T4 | Wikipedia Zhuque-3 article with two-mode infobox and ZQ-3E row | read live, not hosted (saved-copy sha recorded in registry) | rc-205: stored 8,000 kg equals its recovered-mode entry |
+| globaltimes_20251203_zhuque3_debut_flight_report | T4 | Global Times Zhuque-3 debut-flight report (66.1 m flown vehicle) | read live, not hosted (saved-copy sha recorded in registry) | rc-205: witness that the flown configuration is shorter |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
