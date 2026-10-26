@@ -281,6 +281,7 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | wikipedia_soyuz_2_article_leo_table | T4 | Soyuz-2 Wikipedia article (payload-by-launch-site infobox table) | read live, not hosted (saved-copy sha recorded in registry) | rc-199: cited-table maximum for variant A is Vostochny 7,460 kg vs stored high end 7,430 |
 | gov_cn_long_march_12_xinhua_backgrounder | T4 | Long March-12 Xinhua background page (official floor capacity figures) | read live, not hosted (saved-copy sha recorded in registry) | rc-201: no less than 12 t LEO official minimum equals stored band high end |
 | straitstimes_long_march_12_debut_2024 | T4 | Straits Times Long March 12 debut preview (SAST design target) | read live, not hosted (saved-copy sha recorded in registry) | rc-201: SAST 10,000 kg LEO target equals stored band low end exactly |
+| wikipedia_kuaizhou_family_article | T4 | Wikipedia Kuaizhou family article (variant spec table with per-kg prices) | read live, not hosted (saved-copy sha recorded in registry) | rc-202: printed $10,000/kg cell for KZ-11 versus stored price implying $8,133 |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
