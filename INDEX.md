@@ -276,6 +276,7 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | nasa_skylab_history_article_2023 | T3 | NASA history article Skylab - America's First Space Station | verified live, not hosted (extraction-only; sha recorded in registry) | Skylab delivered-mass bound for rc-196 high end |
 | nasa_apollo8_press_kit_ntrs19690003059 | T2 | Apollo 8 Press Kit | full text hosted (NTRS public use; sha in registry) | Saturn V payload_leo_kg headline (rc-196) |
 | sumrall_et_al_2009_aresv_shifting_payload_design_paradigm | T2 | Ares V: Shifting the Payload Design Paradigm | full text hosted (NTRS public use; sha in registry) | Saturn V LEO band low-end provenance (rc-196) |
+| ula_vulcan_centaur_technical_summary_2022 | T4 | Vulcan Centaur technical summary sheet — ULA manufacturer document | read, not hosted (extraction-only; sha recorded in registry) | rc-197: VC6 LEO band high end 27,200 kg at the 28.7 deg orbit definition |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
