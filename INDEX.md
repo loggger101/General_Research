@@ -278,6 +278,7 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | sumrall_et_al_2009_aresv_shifting_payload_design_paradigm | T2 | Ares V: Shifting the Payload Design Paradigm | full text hosted (NTRS public use; sha in registry) | Saturn V LEO band low-end provenance (rc-196) |
 | ula_vulcan_centaur_technical_summary_2022 | T4 | Vulcan Centaur technical summary sheet — ULA manufacturer document | read, not hosted (extraction-only; sha recorded in registry) | rc-197: VC6 LEO band high end 27,200 kg at the 28.7 deg orbit definition |
 | ils_proton_mission_planners_guide_rev7_2009 | T4 | Proton Launch System Mission Planner’s Guide Rev 7 (PMPG, LKEB-9812-1990) | read live, not hosted (extraction-only; sha recorded in registry) | rc-198: Table 2.2-1 prints all three Proton-M LEO band figures by inclination |
+| wikipedia_soyuz_2_article_leo_table | T4 | Soyuz-2 Wikipedia article (payload-by-launch-site infobox table) | read live, not hosted (saved-copy sha recorded in registry) | rc-199: cited-table maximum for variant A is Vostochny 7,460 kg vs stored high end 7,430 |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
