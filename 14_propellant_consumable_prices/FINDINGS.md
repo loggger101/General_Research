@@ -91,3 +91,11 @@ Conversion arithmetic computed here: methane gross calorific 55.5 MJ/kg; MMBtu(I
 Upstream: propellants.py _COMPONENTS carries LCH4 cost_usd_per_kg = 0.40 with trailing comment "~$400/tonne open market", the component block names Mobius Market Research 2024, and the methalox CSV notes repeat "LCH4 ~$400/tonne open-market per Mobius Market Research 2024." The INDEX Sources to replace row (R240) marks that source news class with replacement sought: a natural-gas or LNG price series. The cell sits between the two institutional anchors - defensible as a US-liquefaction-at-hub midpoint, unsourced as written.
 
 Verdict: open candidate rc-187 (citation; owner keeps value decision inside the bracket); upstream untouched. Extracted data: extracted_data/r243_lch4_pink_sheet_key_numbers.csv.
+
+## Round 257 (2026-10-26)
+
+Drift audit at this round's pins: spacecost caed8ce..5ea3f24 = v0.14.0 recorded-quote surface only (quotes.py 367 lines, SHA256SUMS + two fuel snapshots; consumer-contract and README prose commits); economicspace d5bbe63..0d08128 moves Stage-2 pricing to the spacevalue sibling and stops fetching live prices (#179), plus samebytes verification passes - no tracked dollar row moved in either diff for our claim map; AsteroidCatalog unchanged at 61768e0.
+
+New seam opened as rc-200: the quote-snapshot doctrine (quotes.py docstring, spans count==1) says a snapshot is THE FORMAT IS THE QUOTE AS THE SOURCE GAVE IT and that fetches are recorded once; but fuel-2026-10-17.csv was not fetched - its own note says both values were recovered from the economicspace Stage 3 tables, i.e. back-solved — and today's same source disagrees on that session for both tickers (HO=F recorded 4.559800 vs current 4.755300; NG=F recorded 3.13499999 vs current exactly 3.0), in opposite directions, while the directly-recorded fuel-2026-10-26.csv matches today feed bit-for-bit on HO=F/NG=F/CL=F. Divergence is dated and sha-backed; source-revision vs recovery-error cannot be adjudicated from this machine (investing.com challenge page, stooq JS-PoW wall). A future round with CME or WSJ access could settle it.
+
+Skip-note for future rounds: the Oct-26 snapshot is proven faithful to Yahoo as of 2026-10-26 - do not re-flag those three values. Remaining launch-row payload-band targets (Soyuz-5 / Long March 12 / Kuaizhou family) still unprobed.

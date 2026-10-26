@@ -478,6 +478,7 @@ _Backings: spacecost `propellants.csv` `ref_cost_usd_per_kg` and the component p
 | fazio_2019_mission_cost_gridded_ion_engines_alternative_propellants | T2 | Fazio et al. 2019, Mission cost for gridded ion engines using alternative propellants (Southampton) | open, not pulled | context-only: Xe vs Kr vs 1:4 mixture mission cost (krypton row, rc-059); no price in the abstract |
 | edwards_gabriel_1993_propellant_selection_uk25_ion_thruster_missions | T2 | Edwards & Gabriel 1993, propellant selection for UK-25 ion-thruster missions (IEPC-93-239) | read, not hosted | assumed 1990s prices: Xe $2,400/kg, Kr $450/kg, 1:4 mix $840/kg (Kr/Xe 0.19 vs ~0.03 now) |
 | dla_energy_aerospace_standard_prices_fy2025 | T3 | DLA Energy, Aerospace Standard Prices letter effective Oct 1 2024 (FY2025) — MMH $225.40/LB, hydrazine HPH $165.75/LB, NTO MON-3 $106.42/LB | read, not hosted | propellants.csv MMH/hydrazine/N2O4 component prices: rc-083 evidence (~5x below upstream's stale 'DOD FY20') |
+| yfinance_futures_closes_ho_ng_cl_2026 | T3 | Yahoo Finance chart API closes HO=F NG=F CL=F (saved-response shas recorded) | read live, not hosted (saved responses sha-recorded in registry) | rc-200: current-feed Sep-28 closes diverge from the two recovered snapshot values; Oct-23 file matches bit-for-bit |
 
 ## Domain 15 — In-space demand & market absorption
 
