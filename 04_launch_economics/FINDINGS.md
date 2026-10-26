@@ -312,3 +312,11 @@ rc-208 [citation] on Hyperbola-3: stored single point equals the reusable-mode c
 WITNESS CONFLICT recorded for adjudication: company statement via SCIO (Aug-2024) describes a 12.9-tonne LEO first-flight configuration while Wikipedia design specification says 13.4 t expendable - specs moved during development and the two dates bound the number; do not treat either as final without an i-Space current product sheet (i-space domain unreachable from this machine per R262 notes).
 
 Wiki-title trap for future rounds: Hyperbola_3 does not exist, Hyperbola_(rocket_family) soft-404s; the article is at exactly Hyperbola_rocket_series - resolve titles via opensearch API before fetching i-Space family pages.
+
+## Round 266 (2026-10-26)
+
+rc-209 [value] on Long March 8A: stored LEO single point 10 t is contradicted by both current witnesses and absent from its own named source (zero occurrences in the fetched Wikipedia article) - CALT via SCIO gives approximately 7 tonnes for this variant; re-anchor proposal recomputes $/kg family live ($5,290 -> $7557). This is the first outright value contradiction of the wiki-family seam (previous rounds found provenance gaps and mode semantics); pattern suggests other rows may carry figures from superseded wiki revisions - sweep remaining China rows against current institutional statements in future rounds.
+
+Corroboration recorded: SCIO Jan-2025 article also carries the Long March-10 disclosure (70 t LEO, lunar-transfer 8.2 to 27 tonnes) matching the existing Long March 10 row note class - that row gains a witness without an RC since figures agree exactly.
+
+Staleness noted without RC: wiki launch statistics line shows twelve flights for variant 8A against eleven stored (catalog_date 2026-09-23 predates the latest flight). Flight-count currency is table-vintage material, not sourcing defects.
