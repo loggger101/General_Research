@@ -304,3 +304,11 @@ rc-207 [citation] on Long March 5: the note clause attributing the stored LEO fi
 SELF-CORRECTION of a Round 261 line: that block asserted “Long March 5 corroborated: its stored value of 25 t matches the official near-Earth figure carried on gov.cn pages” without ever fetching such a page - ungrounded at writing time, now superseded. The live fetch shows the attribution ran the other way than that sentence implied: 25 t is LM-5 own published capability and the upstream note misattributes it to the 5B; rc-207 carries the grounded finding.
 
 WITNESS BANKED for future rounds (same SCIO family, seen via search snippets only this round - fetch and verify before use): Hyperbola-3 company targets of a 12.9-tonne LEO configuration and 8.5 tonnes in reusable mode per the Aug-2024 SCIO commercial-space article; Long March-8A approximate 7 t LEO plus at least 6.4 t to 700 km SSO and Long March-10 figures of 70 t LEO and 27 tonnes lunar-transfer per the Jan-2025 SCIO missions article - both against rows whose notes name no document (Hyperbola-3, Long March variants).
+
+## Round 265 (2026-10-26)
+
+rc-208 [citation] on Hyperbola-3: stored single point equals the reusable-mode capability (both witnesses agree at 8.5 t exactly), so the row prices recovery-mode payload while its own note concedes expendable 13.4 t - $/kg swing from $4988 to $3164 depending on configuration; propose mode-labelled rows per Falcon convention, no value change.
+
+WITNESS CONFLICT recorded for adjudication: company statement via SCIO (Aug-2024) describes a 12.9-tonne LEO first-flight configuration while Wikipedia design specification says 13.4 t expendable - specs moved during development and the two dates bound the number; do not treat either as final without an i-Space current product sheet (i-space domain unreachable from this machine per R262 notes).
+
+Wiki-title trap for future rounds: Hyperbola_3 does not exist, Hyperbola_(rocket_family) soft-404s; the article is at exactly Hyperbola_rocket_series - resolve titles via opensearch API before fetching i-Space family pages.

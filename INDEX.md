@@ -294,6 +294,8 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | scientificrussia_2024_angara_a5_vostochny_first_flight | T4 | Scientific Russia Vostochny-debut article with Roscosmos spec line | read live, not hosted (saved-copy sha recorded in registry) | rc-206: official LEO band 24 to 24.5 t |
 | scio_gov_cn_long_march_5_capability_2018 | T4 | SCIO gov.cn Long March-5 capability article (CALT figures) | read live, not hosted (saved-copy sha recorded in registry) | rc-207: LM-5 own figure 25 t LEO and 14 t GTO |
 | scio_gov_cn_long_march_5b_capability_2020 | T4 | SCIO gov.cn Long March-5B capability article (Wang Jue, CALT) | read live, not hosted (saved-copy sha recorded in registry) | rc-207: 5B official figure is 22 t LEO |
+| scio_gov_cn_commercial_space_2024 | T4 | SCIO gov.cn commercial-space article with Hyperbola-3 company targets | read live, not hosted (saved-copy sha recorded in registry) | rc-208: 12.9 t configuration and 8.5 t reusable |
+| wikipedia_hyperbola_rocket_series_article | T4 | Wikipedia Hyperbola rocket series article (design specification section) | read live, not hosted (saved-copy sha recorded in registry) | rc-208: at least 8.5 t reusable and 13.4 t expendable |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
