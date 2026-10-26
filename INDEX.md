@@ -279,6 +279,8 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | ula_vulcan_centaur_technical_summary_2022 | T4 | Vulcan Centaur technical summary sheet — ULA manufacturer document | read, not hosted (extraction-only; sha recorded in registry) | rc-197: VC6 LEO band high end 27,200 kg at the 28.7 deg orbit definition |
 | ils_proton_mission_planners_guide_rev7_2009 | T4 | Proton Launch System Mission Planner’s Guide Rev 7 (PMPG, LKEB-9812-1990) | read live, not hosted (extraction-only; sha recorded in registry) | rc-198: Table 2.2-1 prints all three Proton-M LEO band figures by inclination |
 | wikipedia_soyuz_2_article_leo_table | T4 | Soyuz-2 Wikipedia article (payload-by-launch-site infobox table) | read live, not hosted (saved-copy sha recorded in registry) | rc-199: cited-table maximum for variant A is Vostochny 7,460 kg vs stored high end 7,430 |
+| gov_cn_long_march_12_xinhua_backgrounder | T4 | Long March-12 Xinhua background page (official floor capacity figures) | read live, not hosted (saved-copy sha recorded in registry) | rc-201: no less than 12 t LEO official minimum equals stored band high end |
+| straitstimes_long_march_12_debut_2024 | T4 | Straits Times Long March 12 debut preview (SAST design target) | read live, not hosted (saved-copy sha recorded in registry) | rc-201: SAST 10,000 kg LEO target equals stored band low end exactly |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
