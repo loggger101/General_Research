@@ -284,6 +284,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | wikipedia_kuaizhou_family_article | T4 | Wikipedia Kuaizhou family article (variant spec table with per-kg prices) | read live, not hosted (saved-copy sha recorded in registry) | rc-202: printed $10,000/kg cell for KZ-11 versus stored price implying $8,133 |
 | chinadaily_2021_kuaizhou_1a_casic_statement | T4 | China Daily Oct-27-2021 CASIC statement on KZ-1A capability | read live, not hosted (saved-copy sha recorded in registry) | rc-203: official LEO 300 kg point value equals stored band floor |
 | chinadaily_gansu_2021_kuaizhou_1a_launch_note | T4 | China Daily Gansu Oct-27-2021 KZ-1A launch report | read live, not hosted (saved-copy sha recorded in registry) | rc-203: under-300 kg design phrasing corroborates official figure |
+| kari_nuri_vehicle_page | T4 | KARI NURI official vehicle page (QUICK OVERVIEW specs) | read live, not hosted (saved-copy sha recorded in registry) | rc-204: 1.5-ton class to LEO at 600-800 km altitude |
+| kari_launch_vehicle_program_page | T4 | KARI launch vehicle program overview page | read live, not hosted (saved-copy sha recorded in registry) | rc-204: same official figure for sun-synchronous orbits |
+| wikipedia_nuri_rocket_article | T4 | Wikipedia Nuri (rocket) article with infobox capacity table | read live, not hosted (saved-copy sha recorded in registry) | rc-204: stored 3,300 kg equals its Altitude 200 km entry |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
