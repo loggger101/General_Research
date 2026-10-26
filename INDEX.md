@@ -290,6 +290,8 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | landspace_zhuque_3_capability_release_itemid57 | T4 | LandSpace Zhuque-3 capability release (maker figures 21.3 t / 18.3 t) | read live, not hosted (saved-copy sha recorded in registry) | rc-205: maker attributes both to Zhuque-3 itself |
 | wikipedia_zhuque_3_article | T4 | Wikipedia Zhuque-3 article with two-mode infobox and ZQ-3E row | read live, not hosted (saved-copy sha recorded in registry) | rc-205: stored 8,000 kg equals its recovered-mode entry |
 | globaltimes_20251203_zhuque3_debut_flight_report | T4 | Global Times Zhuque-3 debut-flight report (66.1 m flown vehicle) | read live, not hosted (saved-copy sha recorded in registry) | rc-205: witness that the flown configuration is shorter |
+| bbc_russian_2021_angara_cost_and_capacity_report | T4 | BBC Russian Angara cost-and-capacity report (Khrunichev 2019 financial disclosure) | read live, not hosted (saved-copy sha recorded in registry) | rc-206: production cost 7 billion rubles brackets stored $100M |
+| scientificrussia_2024_angara_a5_vostochny_first_flight | T4 | Scientific Russia Vostochny-debut article with Roscosmos spec line | read live, not hosted (saved-copy sha recorded in registry) | rc-206: official LEO band 24 to 24.5 t |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
