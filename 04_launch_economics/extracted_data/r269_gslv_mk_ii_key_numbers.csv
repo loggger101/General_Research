@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+isro_gslv_mark_ii_vehicle_page,payload to GTO (official point value),"2,250",kg,"technical specification line Payload to GTO: 2,250 kg","span count==1; equals stored band low end exactly; stored headline 2,370 is the geometric mean of a band whose high end this page does not support"
+isro_gslv_mark_ii_vehicle_page,payload to LEO (official point value),"6,000",kg,"technical specification line Payload to LEO (Low Earth Orbit) : 6,000 kg",span count==1; equals stored single-point payload_leo_kg exactly
+isro_gslv_launch_manifest,total GSLV launches through Sept 2026,19,launches,manifest table rows numbered 1 through 19 ending at GSLV-F17/EOS-05 dated Sept 04 2026,parsed row count; contradicts stored note text of 13 flights
+isro_gslv_launch_manifest,missions marked unsuccessful,4,launches,"remark column Mission unsuccessful on rows F06, D3, F02 and F10",four remarks parsed; contradicts stored note text of 2 failures
+wikipedia_gslv_article,family statistics (current revision),19 launches / 13 successes / 4 failures / 2 partial,count,article infobox launch history block,stored figure 13 equals the success count - conflation provenance hypothesis recorded for rc-212 without adjudicating intent
+wikipedia_gslv_article,price attribution check (US$47 million),47,million USD per launch,infobox line Cost per launch US$47 million,"span count==1; price cell correctly attributed to this article, only payload and flight-record clauses need the citation move"

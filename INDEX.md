@@ -303,6 +303,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | cas_space_kinetica_1_product_page | T4 | CAS Space official Lijian-1 product page (parameter block) | full text read live, not hosted | rc-211: manufacturer primary source for 2 t LEO and 1.5 t SSO (500 km) |
 | gov_cn_lijian_1_y5_statement | T4 | gov.cn English statement on the Lijian-1 Y5 mission | full text read live, not hosted | rc-211: state-level restatement of both capacities with orbit qualifiers |
 | wikipedia_kinetica_1_article | T4 | Wikipedia Kinetica 1 article (spaced slug only) | full text read live, not hosted | rc-211: reproduces stored figures; launch record dated; hyphenated-slug trap banked |
+| isro_gslv_mark_ii_vehicle_page | T4 | ISRO official GSLV Mark II vehicle page (specification block) | full text read live, not hosted | rc-212: agency publishes both stored payload figures exactly; GTO high end unsupported |
+| isro_gslv_launch_manifest | T4 | ISRO official list of GSLV launches with remarks | full text read live, not hosted | rc-212: 19 launches / four unsuccessful through Sept 04 2026 vs stored note text |
+| wikipedia_gslv_article | T4 | Wikipedia Geosynchronous Satellite Launch Vehicle article | full text read live, not hosted | rc-212: family statistics explain stored figure; price attribution verified accurate |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
