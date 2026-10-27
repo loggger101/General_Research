@@ -312,6 +312,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | chinadaily_2025_zq2e_y2_fifth_series_flight | T4 | China Daily fifth-series-flight report with company capability statement | full text read live, not hosted | rc-214: series-count anchor for the flight arithmetic; SSO 4 t company figure |
 | chinadaily_2026_zq2e_sixth_flight_record | T4 | China Daily sixth-ZQ-2E-flight report (September 2026) | full text read live, not hosted | rc-214: dates latest family flight Sep 2026 contradicting stored Aug 2025 clause |
 | wikipedia_zhuque_2_article | T4 | Wikipedia Zhuque-2 article (family page) | full text read live, not hosted | rc-214: milestone superlative verified; LEO column provenance boundary recorded |
+| nasa_odqn_v27n3_evolution_major_debris_clouds_leo | T3 | NASA ODQN v27n3 Evolution of Major Debris Clouds in LEO | full text hosted (public domain) | rc-215: Table 1 CZ-6A Y2 count 781 cataloged / 722 on orbit validates stored debris clause |
+| casc_cz6a_product_page | T4 | CASC official Long March 6A product page | full text read live, not hosted | rc-215: only official capacity figure SSO at 700 km not less than 4 t; LEO boundary recorded |
+| wikipedia_long_march_6a_article | T4 | Wikipedia Long March 6A article | full text read live, not hosted | rc-215: named source for both payload figures and the four-event debris sequence |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 

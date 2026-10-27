@@ -374,3 +374,15 @@ Verified accurate and untouched: the failure cause text second-stage voltage fau
 Evidence boundary recorded: no institutional statement of a ZQ-2E LEO capacity figure was found this round - the stored single point 6,000 kg remains Wikipedia-sourced; LandSpace English pages are JS shells (R262) and Chinese product-page probes did not surface an LEO number.
 
 Verdict rc-214 [value]: redate latest-flight clause per Sep 2026 report, cite both carriers for the record chain and SSO figure; launch counts, failure cause text, milestone claim unchanged. Extracted data: extracted_data/r271_zq2e_launch_record_key_numbers.csv.
+
+## Round 272 (2026-10-26) - Long March 6A debris and payload claims vindicated by institutional records; citation move
+
+The LM-6A note carries two unsourced clauses beyond its bare Wikipedia payloads attribution. Both check out against institutional sources, so this round opens a citation-move candidate rather than a value defect.
+
+Debris history: NASA Orbital Debris Quarterly News vol 27 issue 3 Table 1 (reference date 01 June 2023) lists the YUNHAI 3 CZ-6A R/B breakup of 12 November 2022 with Cataloged to Date 781 and On Orbit 722 fragments - stored phrasing 700+ tracked pieces is correct against NASA records, and the same article ranks the event behind only Fengyun-1C, Cosmos 1408 and Cosmos 2251 in cataloged debris produced. The several flights phrasing also holds: the registered Wikipedia article documents three further upper-stage events after November 2022 (launches of 26 March 2024, 4 July 2024 and 6 August 2024), with the US SDA confirmation for the August event cited there; SpaceNews independently reported the pattern in July 2024 (witness recorded not registered per R271 convention). ODQN v28 issues two and three were scanned this round: zero CZ-6A mentions - NASA has no published account of the later events.
+
+Payload pair: current Wikipedia carries both stored figures exactly (LEO 8,000 kg; SSO at 500 km 6,500 kg), but its LEO citation is a Zhihu column post. CASC own product page publishes only one capacity figure - SSO at 700 km not less than 4 tonnes (span count==1) - and no official LEO statement exists; the zh-wiki article attributes LEO payload capacity of 8 t and above to the Zhang Weidong et al technical paper in International Space. Boundary recorded: stored LEO 8 t is consistent with that literature chain, not with a CASC product-page figure.
+
+Launch record untouched: note self-dates twenty-six for twenty-six to Jul 2026; current wiki statistics read Total launches 28 Success(es) 28 with first flight 29 March 2022 matching the stored variant history - consistent under the R270 flight-record boundary rule.
+
+ODQN vol 27 issue 3 hosted in full_texts (public-domain US government work; zero copyright tokens across all pages). Verdict rc-215 [citation]: name ODQN + CASC page + wiki article for the debris and payload clauses, values untouched. Extracted data: extracted_data/r272_lm6a_debris_record_key_numbers.csv.
