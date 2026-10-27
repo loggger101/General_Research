@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+interfax_2025_soyuz5_baiterek_roscosmos_statement,LEO capacity per Roscosmos press service,up to 17,tonnes,capacity sentence count==1,institutional cap below stored band high end 18000 kg; above headline 16700
+interfax_2025_soyuz5_baiterek_roscosmos_statement,head developer,Energia Rocket and Space Corporation,-,developer sentence count==1,corroborates stored fairing clause naming RSC Energia as publication source
+interfax_2025_soyuz5_baiterek_roscosmos_statement,manufacture location,Samara enterprise of the Progress Rocket Space Center,-,manufacture sentence count==1,matches Wikipedia manufacturer line RKTs Progress co-listed with Energia
+tass_2025_soyuz5_first_launch_schedule,operational status statement,fully operational in 2028,-,phrase appears twice on page [appears twice],consistent with stored development status at audit date
+wikipedia_soyuz_5_article,uncrewed LEO capacity as printed,"18,000",kg,infobox row count==1,matches stored note figure; band high end source
+wikipedia_soyuz_5_article,crewed-profile LEO capacity as printed,"15,500",kg,infobox row count==1,band low end source; geometric mean with 18000 gives stored headline 16700
+wikipedia_soyuz_5_article,GTO capacity as printed,"5,000",kg,infobox row count==1,no institutional GTO figure exists in any witness - boundary recorded
+wikipedia_soyuz_5_article,first flight record,30 April 2026 mass simulator Suborbital Success,-,flight log table parsed from saved revision,stored suborbital clause correct; second test flight planned second half of 2027

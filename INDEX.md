@@ -335,6 +335,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | blueorigin_new_glenn_9x4_page | T4 | Blue Origin New Glenn 9x4 product page (undated) | read, not hosted (verified live 2026-10-27) | New Glenn 9x4 fairing volume and capability triple|
 | blueorigin_new_glenn_vehicle_page | T4 | Blue Origin New Glenn vehicle page (undated) | read, not hosted (verified live 2026-10-27) | base-variant LEO/GTO manufacturer statement|
 | wikipedia_new_glenn_article | T4 | Wikipedia article New Glenn (current revision) | read, not hosted (verified live 2026-10-27) | New Glenn figures, price range and flight-record currency|
+| interfax_2025_soyuz5_baiterek_roscosmos_statement | T4 | Interfax: Roscosmos press service on Baiterek and Soyuz-5 (Feb 27, 2025) | read, not hosted (verified live 2026-10-27) | Roscosmos up-to-17-tonne statement, Energia head-developer and Samara manufacture|
+| tass_2025_soyuz5_first_launch_schedule | T4 | TASS: Roscosmos reaffirms Soyuz-5 test-launch plans (Aug 22, 2025) | read, not hosted (verified live 2026-10-27) | Soyuz-5 schedule context to 2028|
+| wikipedia_soyuz_5_article | T4 | Wikipedia article Soyuz-5 rocket (current revision) | read, not hosted (verified live 2026-10-27) | stored capacity figures and April 30 2026 suborbital flight record|
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
