@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+blueorigin_new_glenn_9x4_page,fairing internal volume (manufacturer-published),"29,000",cubic feet,volume clause on product page count==1,equals 821.2 cubic metres via x0.0283168466; contradicts stored no-usable-volume clause
+blueorigin_new_glenn_9x4_page,LEO capability as printed point value,70,metric tons,capability sentence fragment count==1,"matches stored payload_leo_kg=70000 exactly; wiki renders >70,000 kg floor form"
+blueorigin_new_glenn_9x4_page,direct-GSO capability as printed point value,14,metric tons,capability sentence fragment count==1,stored GTO-NaN rationale unaffected - no GTO figure exists upstream or manufacturer-side
+blueorigin_new_glenn_9x4_page,TLI capability as printed point value,20,metric tons,capability sentence fragment count==1,no TLI column upstream; recorded for context
+blueorigin_new_glenn_9x4_page,fairing diameter,8.7,metres,diameter mention within volume clause count==1,stored note had the diameter only - page publishes volume alongside it
+blueorigin_new_glenn_vehicle_page,base-variant GTO capability sentence,more than 13,metric tons,capability sentence count==1,consistent with stored base-row GTO figure; corroborates sibling row attribution
+blueorigin_new_glenn_vehicle_page,base-variant LEO capability,45,metric tons,same sentence count==1,matches stored payload_leo_kg=45000 on New Glenn row
+wikipedia_new_glenn_article,launch record currency check,"Total launches 3, last flight April 19, 2026",count,statistics parsed from saved revision infobox,stored three-flight clause current; NG-4 pad-loss tag dated May 2026 is context not a flight

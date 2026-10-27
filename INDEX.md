@@ -332,6 +332,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | cas_space_kinetica2_y2_rollout_release_2026 | T4 | CAS Space Chinese release, Kinetica-2 Y2 factory acceptance and October launch plan (Aug 25, 2026) | full text read live, not hosted | second-flight status and cadence context |
 | guangming_daily_cas_reprint_kinetica2_maiden | T4 | Guangming Daily maiden-flight report reprinted on Chinese Academy of Sciences site (Mar 31, 2026) | full text read live, not hosted | institutional maiden-flight capacity statement |
 | wikipedia_kinetica_2_article | T4 | Wikipedia article Kinetica 2 (current revision) | full text read live, not hosted | Kinetica-2 figures and launch-record currency |
+| blueorigin_new_glenn_9x4_page | T4 | Blue Origin New Glenn 9x4 product page (undated) | read, not hosted (verified live 2026-10-27) | New Glenn 9x4 fairing volume and capability triple|
+| blueorigin_new_glenn_vehicle_page | T4 | Blue Origin New Glenn vehicle page (undated) | read, not hosted (verified live 2026-10-27) | base-variant LEO/GTO manufacturer statement|
+| wikipedia_new_glenn_article | T4 | Wikipedia article New Glenn (current revision) | read, not hosted (verified live 2026-10-27) | New Glenn figures, price range and flight-record currency|
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
