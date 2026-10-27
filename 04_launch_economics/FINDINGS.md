@@ -386,3 +386,11 @@ Payload pair: current Wikipedia carries both stored figures exactly (LEO 8,000 k
 Launch record untouched: note self-dates twenty-six for twenty-six to Jul 2026; current wiki statistics read Total launches 28 Success(es) 28 with first flight 29 March 2022 matching the stored variant history - consistent under the R270 flight-record boundary rule.
 
 ODQN vol 27 issue 3 hosted in full_texts (public-domain US government work; zero copyright tokens across all pages). Verdict rc-215 [citation]: name ODQN + CASC page + wiki article for the debris and payload clauses, values untouched. Extracted data: extracted_data/r272_lm6a_debris_record_key_numbers.csv.
+
+**Round 273 - Long March 4C payload attribution and institutional SSO spec (rc-216)**
+
+The stored row keeps LEO 4,200 kg and GTO 1,500 kg attributed to bare Wikipedia. Current article verified: both figures exact against the infobox capacity block, but every citation there is a skyrocket.de snapshot accessed April 27, 2008 - one aging reference carries all three numbers of an active rocket. The institutional record only ever speaks sun-synchronous: the CASC product page (dated September 15, 2015) prints its spec sentence with SSO-transfer wording at 2.8 tonnes at 800 km, and current launch reports through April 17, 2026 print 3 tonnes at 700 km. Upstream has no SSO column for this launcher, so the one officially published capacity figure is invisible in spacecost while two unofficial ones are stored - recorded as semantics context, values untouched per citation-move convention.
+
+Launch record: infobox statistics Total launches 59 (Successes 57) with Last flight April 17, 2026; the same-day CASC report corroborates no flights since. Stored ~59 is current exactly. The stored price cell self-declares estimated against the sister Long March 4B figure of 50 million dollars dated 2006 - documented-by-design class (zero cost statements on any fetched institutional page), untouched.
+
+Witness hosts: three T4 verified_live_not_pulled rows registered d04 with full sha256 in access_status; no hosted files this round. Extracted data r273_lm4c_payload_attribution_key_numbers.csv.

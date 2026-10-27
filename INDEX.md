@@ -315,6 +315,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | nasa_odqn_v27n3_evolution_major_debris_clouds_leo | T3 | NASA ODQN v27n3 Evolution of Major Debris Clouds in LEO | full text hosted (public domain) | rc-215: Table 1 CZ-6A Y2 count 781 cataloged / 722 on orbit validates stored debris clause |
 | casc_cz6a_product_page | T4 | CASC official Long March 6A product page | full text read live, not hosted | rc-215: only official capacity figure SSO at 700 km not less than 4 t; LEO boundary recorded |
 | wikipedia_long_march_6a_article | T4 | Wikipedia Long March 6A article | full text read live, not hosted | rc-215: named source for both payload figures and the four-event debris sequence |
+| wikipedia_long_march_4c_article | T4 | Wikipedia Long March 4C article | full text read live, not hosted | rc-216: named source for stored LEO and GTO figures; capacity citation chain is one skyrocket.de snapshot accessed April 27, 2008 |
+| casc_cz4c_product_page_2015 | T4 | CASC official Long March 4C product page | full text read live, not hosted | rc-216: only official spec is sun-synchronous (SSO-transfer 2.8 t at 800 km as printed); no LEO or GTO statement |
+| casc_cz4c_launch_report_20260417 | T4 | CASC Long March 4C launch report April 17, 2026 | full text read live, not hosted | rc-216: current institutional spec SSO at 700 km = 3 t; corroborates last-flight date behind stored ~59 launches |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
