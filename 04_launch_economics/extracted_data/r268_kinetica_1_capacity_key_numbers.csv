@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+cas_space_kinetica_1_product_page,payload to LEO,2,tonne,parameter block 运载能力 1.5t(500kmSSO) 2t(LEO),span count==1 on saved copy; manufacturer figure
+cas_space_kinetica_1_product_page,payload to SSO at 500 km,1.5,tonne,"same parameter block, first half of the span",count==1; altitude qualifier printed by manufacturer but absent from upstream note
+gov_cn_lijian_1_y5_statement,capacity statement (both orbits),1.5 t / 2 t,tonnes,"body sentence can send a payload of 1.5 tonnes to a 500-km sun-synchronous orbit, or a payload of 2 tonnes to low Earth orbit",span count==1; state portal restating CAS Space figures with both qualifiers
+wikipedia_kinetica_1_article,infobox capacities,"2,000 / 1,500",kg,"infobox rows Payload to LEO Mass 2,000 kg and Payload to SSO Mass 1,500 kg",each row count==1; reproduces stored payload_leo_kg exactly
+wikipedia_kinetica_1_article,launch record currency,16 launches / 15 successes / 1 failure,count,infobox Launch history block with last flight 20 September 2026,"matches stored note text 16 launches, 1 failure and dates it; no cost statement anywhere in article"

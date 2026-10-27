@@ -330,3 +330,11 @@ Upstream cells: spacecost@c633a57 reference/launch_vehicles.csv row Gravity-1, p
 Verdict rc-210 [citation]: name both documents in the note (manufacturer page for capacities; cited article for cost), record the LEO altitude qualifier; no value change. Extracted data: extracted_data/r267_gravity_1_capacity_key_numbers.csv.
 
 Witness banked, not extracted: the same Orienspace page carries Gravity-2 program parameters (GTO figure visible); spacecost has no Gravity-2 row yet - future-round target if upstream adds one.
+
+## Round 268 (2026-10-26) - Kinetica-1 payload attribution onto manufacturer disclosure
+
+CAS Space publishes the Lijian-1 parameter block on its official site: 运载能力 1.5t(500kmSSO) 2t(LEO), count==1 on the saved copy (sha in registry row). The state portal restates both figures with orbit qualifiers in prose - can send a payload of 1.5 tonnes to a 500-km sun-synchronous orbit, or a payload of 2 tonnes to low Earth orbit - count==1. The Wikipedia article reproduces the same pair in its infobox (Payload to LEO Mass 2,000 kg / Payload to SSO Mass 1,500 kg) and dates the launch record: Total launches 16 with last flight 20 September 2026.
+
+Upstream cells: spacecost@c633a57 reference/launch_vehicles.csv row Kinetica-1, payload_leo_kg 2000 single point; note attributes payloads to bare Wikipedia and drops the SSO altitude qualifier. Unlike rc-209 all figures are present in a resolvable article - but only at the spaced slug Kinetica 1: the hyphenated slug serves missing-article placeholder text, recorded so future rounds do not false-flag it as an unsourced figure. The price band is self-declared estimated and no witness carries any cost statement, so it remains documented-by-design.
+
+Verdict rc-211 [citation]: name the manufacturer page and the state statement in the note, record the SSO 500 km qualifier; no value change. Extracted data: extracted_data/r268_kinetica_1_capacity_key_numbers.csv.

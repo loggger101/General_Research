@@ -300,6 +300,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | wikipedia_long_march_8_article | T4 | Wikipedia Long March 8 article (base and A variant; redirects from Long_March_8A) | read live, not hosted (saved-copy sha recorded in registry) | rc-209: no 10 t figure carried; CZ-8A SSO row only |
 | orienspace_gravity_1_product_page | T4 | Orienspace official product page, Gravity-1 parameter block (server-rendered) | full text read live, not hosted | rc-210: manufacturer primary source for 6.5 t LEO and 4.2 t SSO (500 km); Gravity-2 figures banked |
 | wikipedia_gravity_1_article | T4 | Wikipedia standalone article Gravity-1 (infobox + cost sentence) | full text read live, not hosted | rc-210: reproduces all stored note figures incl US$39M cost sentence; adds dropped LEO 200 km qualifier |
+| cas_space_kinetica_1_product_page | T4 | CAS Space official Lijian-1 product page (parameter block) | full text read live, not hosted | rc-211: manufacturer primary source for 2 t LEO and 1.5 t SSO (500 km) |
+| gov_cn_lijian_1_y5_statement | T4 | gov.cn English statement on the Lijian-1 Y5 mission | full text read live, not hosted | rc-211: state-level restatement of both capacities with orbit qualifiers |
+| wikipedia_kinetica_1_article | T4 | Wikipedia Kinetica 1 article (spaced slug only) | full text read live, not hosted | rc-211: reproduces stored figures; launch record dated; hyphenated-slug trap banked |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
