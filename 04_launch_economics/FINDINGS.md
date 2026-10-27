@@ -320,3 +320,13 @@ rc-209 [value] on Long March 8A: stored LEO single point 10 t is contradicted by
 Corroboration recorded: SCIO Jan-2025 article also carries the Long March-10 disclosure (70 t LEO, lunar-transfer 8.2 to 27 tonnes) matching the existing Long March 10 row note class - that row gains a witness without an RC since figures agree exactly.
 
 Staleness noted without RC: wiki launch statistics line shows twelve flights for variant 8A against eleven stored (catalog_date 2026-09-23 predates the latest flight). Flight-count currency is table-vintage material, not sourcing defects.
+
+## Round 267 (2026-10-26) - Gravity-1 capacity attribution onto manufacturer disclosure
+
+Orienspace publishes its own Gravity-1 parameter block on www.orienspace.com (server-rendered, reachable from this machine): 运载能力-近地轨道 吨 6.5 and 运载能力-太阳同步轨道(500km) 吨 4.2, each count==1 on the saved copy (sha in registry row). The standalone Wikipedia article Gravity-1 reproduces both capacities in its infobox with orbit altitudes - Payload to LEO (200km) Mass 6,500 kg and Payload to SSO (500km) Mass 4,200 kg - and carries the cost sentence The launch cost for Gravity-1 is around US$39 million. each span count==1; its capacity reference resolves to the Orienspace maiden-flight bulletin of 2024-01-11.
+
+Upstream cells: spacecost@c633a57 reference/launch_vehicles.csv row Gravity-1, payload_leo_kg 6500 single point and note clause attributing price and both capacities to Wikipedia. All three figures are present in the named source family, so unlike rc-209 this is not a superseded-figure case; the defect is that no document is named beyond bare Wikipedia while the manufacturer publishes both capacity figures directly, and the LEO altitude qualifier (200 km) printed by the cited infobox was dropped. Launch record currency verified: article infobox shows 4 launches / 4 successes with last flight 15 September 2026, matching stored note text.
+
+Verdict rc-210 [citation]: name both documents in the note (manufacturer page for capacities; cited article for cost), record the LEO altitude qualifier; no value change. Extracted data: extracted_data/r267_gravity_1_capacity_key_numbers.csv.
+
+Witness banked, not extracted: the same Orienspace page carries Gravity-2 program parameters (GTO figure visible); spacecost has no Gravity-2 row yet - future-round target if upstream adds one.

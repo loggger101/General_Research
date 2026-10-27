@@ -298,6 +298,8 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | wikipedia_hyperbola_rocket_series_article | T4 | Wikipedia Hyperbola rocket series article (design specification section) | read live, not hosted (saved-copy sha recorded in registry) | rc-208: at least 8.5 t reusable and 13.4 t expendable |
 | scio_gov_cn_missions_2025 | T4 | SCIO gov.cn 2025 missions article (CALT designer, Long March variants) | read live, not hosted (saved-copy sha recorded in registry) | rc-209: LM-8A approximately 7 t LEO |
 | wikipedia_long_march_8_article | T4 | Wikipedia Long March 8 article (base and A variant; redirects from Long_March_8A) | read live, not hosted (saved-copy sha recorded in registry) | rc-209: no 10 t figure carried; CZ-8A SSO row only |
+| orienspace_gravity_1_product_page | T4 | Orienspace official product page, Gravity-1 parameter block (server-rendered) | full text read live, not hosted | rc-210: manufacturer primary source for 6.5 t LEO and 4.2 t SSO (500 km); Gravity-2 figures banked |
+| wikipedia_gravity_1_article | T4 | Wikipedia standalone article Gravity-1 (infobox + cost sentence) | full text read live, not hosted | rc-210: reproduces all stored note figures incl US$39M cost sentence; adds dropped LEO 200 km qualifier |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 

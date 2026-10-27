@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+orienspace_gravity_1_product_page,payload to LEO (near-Earth orbit),6.5,tonne,product page parameter block 运载能力-近地轨道 吨 6.5,"span count==1 on saved copy; manufacturer figure, no orbit altitude qualifier printed"
+orienspace_gravity_1_product_page,payload to SSO at 500 km,4.2,tonne,parameter block 运载能力-太阳同步轨道(500km) 吨 4.2,span count==1; matches stored note figure 4.2 t 500 km SSO including the altitude qualifier
+wikipedia_gravity_1_article,payload to LEO with orbit qualifier,"6,500",kg,"infobox row Payload to LEO (200km) Mass 6,500 kg",row count==1; article prints the 200 km altitude that upstream dropped from its note
+wikipedia_gravity_1_article,launch cost statement,US$39 million,USD per launch,body sentence The launch cost for Gravity-1 is around US$39 million.,span count==1 in current revision; confirms the stored attribution of ~$39M to Wikipedia is accurate as sourced
+wikipedia_gravity_1_article,capacity reference lineage,WeChat announcement 2024-01-11,reference,"infobox reference name YL-1 Y1 (Eastern Space, maiden-flight success bulletin)",manufacturer primary source behind the wiki capacity figures; archive URL recorded inside the article
