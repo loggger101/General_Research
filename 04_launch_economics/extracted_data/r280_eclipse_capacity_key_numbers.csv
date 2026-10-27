@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+firefly_eclipse_vehicle_page,GTO payload as printed,"3,200",kg,spec block compound span count==1,contradicts stored cell 3100; seconded by Wikipedia infobox
+firefly_eclipse_vehicle_page,LEO payload as printed,"16,300",kg,same spec block count==1,matches stored value exactly
+firefly_eclipse_vehicle_page,TLI payload as printed,"2,300",kg,spec block span count==1,no upstream TLI column; recorded for context
+firefly_eclipse_vehicle_page,fairing diameter and overall length,5.4 m / 59 m,-,dimensions spans each count==1,stored note has the diameter only; fairing-volume claim not contradicted
+wikipedia_eclipse_article,infobox GTO mass,"3,200 kg (7,100 lb)",-,infobox row count==1,agrees with manufacturer against stored cell
+wikipedia_eclipse_article,reuse timeline sentence,sixth flight after expendable first flights,-,sentence fragment count==1,validates stored note clause; no change needed there
