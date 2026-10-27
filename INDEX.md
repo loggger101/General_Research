@@ -326,6 +326,12 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | wikipedia_stoke_space_nova_article | T4 | Wikipedia article Stoke Space Nova (current revision) | full text read live, not hosted | rc-219: demonstrator pair verbatim plus Block 2 figures - note silent on configuration split |
 | stokespace_nova_block_2_page | T4 | Stoke Space Nova Block 2 product page (undated) | full text read live, not hosted | rc-219: Fairing 15,000 kg to LEO (100% reusable) and 4,000kg to GTO - published GTO exists |
 | stokespace_nova_pathfinder_page | T4 | Stoke Space Nova Pathfinder product page (undated) | full text read live, not hosted | rc-219: demonstrator versus Block 2 program structure; printed label prints 2,500 kg against wiki 3 t |
+| cls_kinetica2_cost_interview_20260331 | T4 | Cailianshe Kechuang Board Daily report on Kinetica-2 cost statement (Mar 31, 2026) | full text read live, not hosted | Kinetica-2 cost-rate statement and date |
+| tmtpost_commercial_launch_price_analysis_2026 | T4 | TMTPost analysis of Chinese commercial launch cost versus price claims (2026) | full text read live, not hosted | cost-versus-price caveat for Chinese launch quotes |
+| cas_space_kinetica2_maiden_release_en_2026 | T4 | CAS Space English release, Kinetica-2 Y1 successful inaugural flight (Mar 30, 2026) | full text read live, not hosted | Kinetica-2 capacity pair with orbit qualifiers |
+| cas_space_kinetica2_y2_rollout_release_2026 | T4 | CAS Space Chinese release, Kinetica-2 Y2 factory acceptance and October launch plan (Aug 25, 2026) | full text read live, not hosted | second-flight status and cadence context |
+| guangming_daily_cas_reprint_kinetica2_maiden | T4 | Guangming Daily maiden-flight report reprinted on Chinese Academy of Sciences site (Mar 31, 2026) | full text read live, not hosted | institutional maiden-flight capacity statement |
+| wikipedia_kinetica_2_article | T4 | Wikipedia article Kinetica 2 (current revision) | full text read live, not hosted | Kinetica-2 figures and launch-record currency |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
