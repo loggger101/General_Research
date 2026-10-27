@@ -340,6 +340,8 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | wikipedia_soyuz_5_article | T4 | Wikipedia article Soyuz-5 rocket (current revision) | read, not hosted (verified live 2026-10-27) | stored capacity figures and April 30 2026 suborbital flight record|
 | firefly_eclipse_vehicle_page | T4 | Firefly Aerospace Eclipse vehicle page (undated) | read, not hosted (verified live 2026-10-27) | Eclipse LEO/GTO/TLI spec block and dimensions|
 | wikipedia_eclipse_article | T4 | Wikipedia article Eclipse rocket (current revision) | read, not hosted (verified live 2026-10-27) | Eclipse infobox capacities and reuse timeline|
+| nasa_oig_2026_ig-26-004_hls_contracts_audit | T2 | "NASA's Management of the Human Landing System Contracts" | full text hosted (public domain, sha in registry) | tanker fleet more-than-10 plan and 6-day cadence|
+| wikipedia_starship_spacecraft_article | T4 | Wikipedia article SpaceX Starship (spacecraft) (current revision) | read, not hosted (verified live 2026-10-27) | Musk tweet eight-launch figure and four-and-eight range phrase|
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 

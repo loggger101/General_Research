@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2026_ig-26-004_hls_contracts_audit,tanker count in current SpaceX plan,more than 10,Starship tankers,"physical p.11 aggregation passage, span count==1",institutional anchor for stored value 12; depot launches first then the tanker fleet
+nasa_oig_2026_ig-26-004_hls_contracts_audit,tanker launch cadence target,every 6 days,-,p.11 sentence span count==1,"aggregation window more than 200 days prior to crew launching, same page"
+wikipedia_starship_spacecraft_article,Musk tweet refuel figure as reported,eight launches,-,wikitext fragment count==1 before link markup; August-2021 cite titled 8 Launches (Maybe 4),source of stored band low end 8
+wikipedia_starship_spacecraft_article,range phrase for HLS tanker count,four and eight to high teens,-,phrase count==1 in wikitext,no source publishes a fixed 8-16 range; supports attribution-move proposal
