@@ -362,3 +362,15 @@ Flight-record boundary: the same Aug 2026 report closes with second launch failu
 The upstream attribution CASC / Wikipedia payload figures names the right agency but no document. The wiki infobox additionally carries orbit parameters (LEO altitude 200 to 400 km at inclination 42 degrees) that the CALT statements do not print; recorded so a future qualifier edit does not lose them.
 
 Verdict rc-213 [citation]: name both China Daily carriers of CALT statements in notes with variant qualifiers; no value change. Extracted data: extracted_data/r270_lm7_capability_key_numbers.csv.
+
+## Round 271 (2026-10-26) - Zhuque-2E latest-flight date contradicted by its own launch total
+
+Two state-media-carried LandSpace reports bracket the family flight record. The May 2025 report states that mission was the fifth of the ZQ-2 series (count==1); with base flights December 2022 failed plus July and December 2023 successful, that puts the ZQ-2E Y3 loss on Aug 15 2025 at family flight six. The September 2026 report calls its launch the sixth flight of the ZQ 2E variant [appears twice] - a success carrying ten satellites - which makes the family total nine with two failures, exactly matching stored counts.
+
+But that same arithmetic contradicts the stored latest-flight clause: if nine launches through September 2026 are counted then the latest flight is Sep 2026, not Aug 2025 as the note text says; and if counting stopped at August 2025 the total would be six. The row is internally inconsistent whichever way it was compiled - rc-214 [value] proposes redating the latest-flight clause to September 2026 or dropping the month claim, counts unchanged.
+
+Verified accurate and untouched: the failure cause text second-stage voltage fault matches the company review-board wording quoted by trade press (second-stage servo power bus voltage abnormally dropped); the milestone first methalox rocket to reach orbit with year 2023 is verified verbatim against the cited Wikipedia article for the July 2023 flight; SSO figure 4 t gains a company statement via state media with the 500 km altitude qualifier restored.
+
+Evidence boundary recorded: no institutional statement of a ZQ-2E LEO capacity figure was found this round - the stored single point 6,000 kg remains Wikipedia-sourced; LandSpace English pages are JS shells (R262) and Chinese product-page probes did not surface an LEO number.
+
+Verdict rc-214 [value]: redate latest-flight clause per Sep 2026 report, cite both carriers for the record chain and SSO figure; launch counts, failure cause text, milestone claim unchanged. Extracted data: extracted_data/r271_zq2e_launch_record_key_numbers.csv.
