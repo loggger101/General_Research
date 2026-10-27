@@ -321,6 +321,8 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | wikipedia_tianlong_3_article | T4 | Wikipedia Tianlong-3 article | full text read live, not hosted | rc-217: capacity pair exact; timing clause absent from this named source |
 | spacepioneer_tl3_y1_investigation_statement_weixin | T4 | Space Pioneer return-to-zero investigation statement | full text read live, not hosted | rc-217: institutional failure timeline - first stage nominal through separation at T+182.2 s; loss of control about three minutes in |
 | chinadaily_2026_tl3_maiden_flight_failure_report | T4 | China Daily Tianlong-3 maiden-flight failure report April 4, 2026 | full text read live, not hosted | rc-217: company announcement wording - flight became abnormal before preset orbital altitude |
+| relativity_terran_r_product_page | T4 | Relativity Space Terran R product page (undated) | full text read live, not hosted | rc-218: mode-labelled capacity triple - 23,500 kg LEO downrange landing = stored value exactly |
+| wikipedia_terran_r_article | T4 | Wikipedia Terran R article (current revision) | full text read live, not hosted | rc-218: prose carries both modes and Cost per launch $55 million - capacity block is expendable-only |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 

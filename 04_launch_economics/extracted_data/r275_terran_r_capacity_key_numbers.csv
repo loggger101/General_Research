@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+relativity_terran_r_product_page,LEO payload downrange landing (reusable mode),23500,kg,Specs section first capacity line,= stored payload_leo_kg exactly; span count==1 on visible body text
+relativity_terran_r_product_page,GTO payload downrange landing,5500,kg,Specs section second capacity line,= stored payload_gto_kg exactly; manufacturer restates GTO for the reusable config - note clause outdated
+relativity_terran_r_product_page,LEO payload expendable configuration,33500,kg,Specs section third capacity line,matches wiki infobox Capacity figure; upstream documents its v1.16.0 mode choice in the same note
+relativity_terran_r_product_page,First launch window qualifier,late 2026,-,Launch Complex 16 sentence starting in late 2026,= stored NET late 2026; span count==1
+wikipedia_terran_r_article,Prose capacity pair reusable versus expended,"23,500 and 33,500",tonnes LEO,Body sentence with mode words fully reusable first stage and if fully expended,each fragment count==1; infobox prints the expendable figure only - quote prose for the reusable mode
+wikipedia_terran_r_article,Cost per launch (infobox),55000000,USD,Infobox row Cost per launch $55 million,"= stored list_price_usd_low exactly; band self-declares target basis, price untouched"
