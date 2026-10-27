@@ -306,6 +306,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | isro_gslv_mark_ii_vehicle_page | T4 | ISRO official GSLV Mark II vehicle page (specification block) | full text read live, not hosted | rc-212: agency publishes both stored payload figures exactly; GTO high end unsupported |
 | isro_gslv_launch_manifest | T4 | ISRO official list of GSLV launches with remarks | full text read live, not hosted | rc-212: 19 launches / four unsuccessful through Sept 04 2026 vs stored note text |
 | wikipedia_gslv_article | T4 | Wikipedia Geosynchronous Satellite Launch Vehicle article | full text read live, not hosted | rc-212: family statistics explain stored figure; price attribution verified accurate |
+| chinadaily_2025_tianzhou9_lm7_capability | T4 | China Daily Tianzhou 9 report carrying CALT LM-7 capability statement | full text read live, not hosted | rc-213: official LEO figure 13.5 tons equals stored value exactly |
+| chinadaily_2026_lm7a_failure_status | T4 | China Daily August 2026 LM-7A failure report with capability statement | full text read live, not hosted | rc-213: GTO figure 7-ton exact; dates flight record at seventeen missions two failures |
+| wikipedia_long_march_7_article | T4 | Wikipedia Long March 7 article (both variants in one page) | full text read live, not hosted | rc-213: reproduces figures with orbit parameters; LM-7A statistics lag institutional count |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
