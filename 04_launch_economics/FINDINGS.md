@@ -407,3 +407,11 @@ Witness hosts: three T4 verified_live_not_pulled rows registered d04 with full s
 - Wikipedia current-revision trap: the Terran_R infobox Capacity block prints only the expendable figure (Payload to LEO Mass 33,500 kg); the reusable-mode figure lives in prose. Future rounds quoting wiki for a mode-specific payload must cite the sentence, not the capacity block.
 - Boundary recorded: stored payload_escape_kg=4000 has zero support on either current page; upstream note concedes legacy status - leave as documented-by-design unless an institutional restatement surfaces.
 - Extracted data 04_launch_economics/extracted_data/r275_terran_r_capacity_key_numbers.csv (6 rows).
+
+## Round 2026-10-27 - Stoke Space Nova configuration attribution (rc-219)
+- Witness route: stokespace.com serves plain curl Chrome UA with partially server-rendered Next.js body (~4.9 KB visible on Block 2 page); vehicle spec labels live in the static payload, no browser needed.
+- Configuration split is institutional in both records: Nova = program name; Pathfinder = technology demonstrator versus Block 2 scaled version (manufacturer sentence count==1 and Wikipedia excerpt article Stoke Space Nova agrees). Future rounds must attribute per configuration, not by row name - stored figures belong to the demonstrator while Block 2 publishes up to 15 t LEO fully reusable / 23 t expended plus GTO 4 t.
+- Printed-label ambiguity recorded: manufacturer Pathfinder page diagram label reads Fairing 2,500 kg to LEO Reusable against wiki 3 t for the demonstrator; do not treat either as authoritative without a dated press release.
+- Propellant-class context: Andromeda second stage burns LH2/LOX while Zenith first stage burns LNG - stored core_propellant=methalox describes the booster only and the table schema allows one value.
+- Heat-shield wording verified against manufacturer page text (regeneratively cooled metallic reentry heat shield) - the note claim on that point is supported.
+- Extracted data 04_launch_economics/extracted_data/r276_stoke_nova_configurations_key_numbers.csv (7 rows).

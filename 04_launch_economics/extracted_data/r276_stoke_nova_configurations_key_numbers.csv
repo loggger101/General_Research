@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+stokespace_nova_block_2_page,Block 2 LEO payload fully reusable,15000,kg,"Specs label Fairing 15,000 kg to LEO (100% reusable)",span count==1; matches wiki up-to-15-tonnes sentence
+stokespace_nova_block_2_page,Block 2 GTO payload,4000,kg,"Specs label 4,000kg to GTO",span count==1; contradicts the note claim that no published GTO figure exists
+wikipedia_stoke_space_nova_article,Block 2 expendable LEO continuation,23000,kg,"Sentence and up to 23 tonnes (51,000 lb) in an expendable configuration",count==1; pairs with manufacturer reusable 15 t figure
+wikipedia_stoke_space_nova_article,Demonstrator variant pair as stored,3000 and 7000,kg reusable / expended,"Sentence the Pathfinder variant uses two stages with an expected payload capacity of 3 tonnes (3,000 kg) and 7 tonnes expendable",count==1; = stored values exactly but attributed to the demonstrator variant
+stokespace_nova_pathfinder_page,Demonstrator printed label ambiguity,2500,kg,"Diagram label Fairing 2,500 kg to LEO Reusable",printed as-is on manufacturer page; differs from wiki 3 t for the demonstrator - recorded not adjudicated
+stokespace_nova_pathfinder_page,Configuration statement,n/a,-,Sentence Pathfinder proves the technology; Nova Block 2 scales the capability,count==1; manufacturer program structure demonstrator versus scaled version
+wikipedia_stoke_space_nova_article,Absence checks for price and escape,none found,-,Full-article scan of saved copy,zero launch-price statements and zero escape or TLI mass figures - those halves of the note hold

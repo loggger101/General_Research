@@ -323,6 +323,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | chinadaily_2026_tl3_maiden_flight_failure_report | T4 | China Daily Tianlong-3 maiden-flight failure report April 4, 2026 | full text read live, not hosted | rc-217: company announcement wording - flight became abnormal before preset orbital altitude |
 | relativity_terran_r_product_page | T4 | Relativity Space Terran R product page (undated) | full text read live, not hosted | rc-218: mode-labelled capacity triple - 23,500 kg LEO downrange landing = stored value exactly |
 | wikipedia_terran_r_article | T4 | Wikipedia Terran R article (current revision) | full text read live, not hosted | rc-218: prose carries both modes and Cost per launch $55 million - capacity block is expendable-only |
+| wikipedia_stoke_space_nova_article | T4 | Wikipedia article Stoke Space Nova (current revision) | full text read live, not hosted | rc-219: demonstrator pair verbatim plus Block 2 figures - note silent on configuration split |
+| stokespace_nova_block_2_page | T4 | Stoke Space Nova Block 2 product page (undated) | full text read live, not hosted | rc-219: Fairing 15,000 kg to LEO (100% reusable) and 4,000kg to GTO - published GTO exists |
+| stokespace_nova_pathfinder_page | T4 | Stoke Space Nova Pathfinder product page (undated) | full text read live, not hosted | rc-219: demonstrator versus Block 2 program structure; printed label prints 2,500 kg against wiki 3 t |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
