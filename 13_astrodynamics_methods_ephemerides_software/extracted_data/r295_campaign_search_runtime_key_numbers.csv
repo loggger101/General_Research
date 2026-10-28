@@ -1,0 +1,9 @@
+source_id,item,value,location,notes
+economicspace_runtime_measurement_records_2026,"raw cell wall clock, search OFF",735 s,"modules/calc.py MEASURED_CELL_SECONDS (False,False); versions.md v1.22 table row 'raw, N = 1'",committed record at calc 1.22.0
+economicspace_runtime_measurement_records_2026,"raw cell wall clock, searched",1439 s,"modules/calc.py (False,True); versions.md row '| raw, searched | **3.9218x** | 650,921 | 1,439 s |'",span count==1 at @3ba6f3a
+economicspace_runtime_measurement_records_2026,programme search cost on raw ore,1.96x (runtime ratio),versions.md prints current column **1.96x**; 1439/735 recomputed this round,matches printed figure exactly to 3 s.f.
+economicspace_runtime_measurement_records_2026,programme search cost beneficiated,2.46x derived (runtime ratio),derived from committed wall clocks 4737 s and 11676 s in same table,derived this round; not printed upstream
+economicspace_runtime_measurement_records_2026,MODEL.md claimed range lower end,claimed 2.0 (unsourced),"MODEL.md L579 present tense, no release stamp","no committed measurement yields the pair (2.0, 3.1)"
+economicspace_runtime_measurement_records_2026,MODEL.md claimed range upper end,claimed 3.1 (unsourced),MODEL.md L579; nearest recorded value is raw 3.05x from a superseded release per versions.md table previous column,"claim introduced commit 21135e8, no measurement attached"
+economicspace_runtime_measurement_records_2026,historical pair v1.16.0,2.98 / 2.64 (runtime ratios),versions.md recorded seconds 1307->3890 and 9300->24587,recomputed this round from those seconds
+economicspace_runtime_measurement_records_2026,historical pair v1.17.7,1.71 / 1.66 (runtime ratios),versions.md supersession table; programme search 1.71 printed there for raw,seconds 733->1253 and 3424->5692

@@ -41,3 +41,35 @@ economicspace PR#164 (8ce5c53) cut its root `orbital.py` to `elements_to_state` 
 ## R240 - starred-repos is outside the pipeline (2026-10-22)
 
 The owner rejected the sources only starred-repos uses: the Lambert solver's paper and the Kepler starter (both live only in starred-repos' `orbital.py` since economicspace #164) and, in domain 01, the SDSS taxonomy table with its survey and method papers (moved with its probe in #159). This domain keeps economicspace's `orbital.py` (`github_python_skyfield`, `github_spacekit`), the worksheet's textbook relations (`vallado_fundamentals_astrodynamics_applications`) and the JPL services.
+
+## Round 295 - MODEL.md programme-scale search-cost claim vs the committed runtime record (rc-233)
+
+MODEL.md section "Programme scale" L579 at economicspace origin/main 3ba6f3a states in present tense:
+"That costs **2.0x to 3.1x runtime** rather than one full run per N". No release is named. The committed record of
+record for search cost is MEASURED_CELL_SECONDS (modules/calc.py L1247), stamped MEASURED_CELL_CALC = "1.22.0", with
+entries ore-one-mission 735 s, ore-searched 1_439 s, concentrate N=1 4_737 s, both-default 11_676 s on catalog of
+MEASURED_CELL_ROWS = 1_555_667. versions.md reproduces the same four wall clocks in its v1.22 cell table and prints
+the derived raw search ratio itself: "programme search, on raw ore | 3.05x | **1.96x**".
+
+Ratios from committed seconds only (computed this round): current raw 1439/735 = 1.958 -> versions.md prints 1.96;
+current beneficiated 11676/4737 = 2.465 (derived, not printed anywhere); v1.17.7 pair recorded in the supersession
+table was raw 1253/733 = 1.709 and beneficiated 5692/3424 = 1.662; v1.16.0 pair 3890/1307 = 2.976 and 24587/9300 =
+2.644; the full-catalog ladder-era correction (commit 55f681d) recorded 1.51x after sample cells had mispredicted
+1.04-1.13x. No release pair equals or brackets (2.0, 3.1). The claim entered docs at commit 21135e8 ("Promote the
+28-cell campaign") with no measurement in that same commit; #144 (f134d35) copied it into MODEL.md when README was
+split. versions.md's own governance text quoted verbatim: "The cross-release reading of that table is not one
+measurement"; measured_cell_provenance docstring states a banner quoting a figure without naming its release relies
+on somebody having re-measured. Proposal in rc-233 restates to the stamped current pair or names releases; display
+prose only - search cost touches no pricing chain, matching the rc-176 class of documentation-versus-artifact seams.
+
+BANKED (recorded, NOT opened): a comment block near model_volatile_containment in modules/calc.py attributes the
+pair 1307 s -> 3890 s and "at 1.17.7 it is 1.71x (733 s -> 1,253 s)" to containment cost, while versions.md labels
+those identical seconds as search OFF/ON runtimes for the same cells; one of the two attributions looks like a copy
+error in their docs. Different file and different claim than rc-233 (L579); future round may open separately with
+fresh evidence - do not bundle into this candidate.
+
+Skip-note: MODEL.md Programme scale section otherwise consistent - the structural argument that N enters nothing in
+the mass cascade is code-consistent by construction (mass cascade runs before cost/reliability blocks price N), and
+no other runtime figure appears in the section. No key-numbers CSV needed beyond r295 file named below; all claims
+here carry this-round git-blob evidence per R264 rule.
+

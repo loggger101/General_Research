@@ -520,6 +520,7 @@ _Backings: economicspace `orbital.py` (`elements_to_state`, for the dashboard's 
 | github_python_skyfield | T4 | skyfielders/python-skyfield (GitHub repository, MIT) — open-source software repository (MIT) | read, not hosted | economicspace repository audit: code adapted: elements_to_state in economicspace's root orbital.py (alone since 8ce5c53); kepler_E, true_anomaly and elements_to_state in loggger101/starred-repos' orbital.py, the audited copy |
 | github_spacekit | T4 | typpo/spacekit (GitHub repository, MIT) — open-source software repository (MIT) | read, not hosted | economicspace repository audit: nothing taken; its per-body Kepler solve is the technique behind the ui.py orbit diagram |
 | jpl_sb441_iom_perturber_manual | T2 | JPL IOM 392R-21-005 (Farnocchia): SB441 perturber-file manual - the I/O documentation for sb441-n*/n373s kernels | full text hosted | jpl_de441_small_body_perturber_kernels: authoritative kernel usage docs |
+| economicspace_runtime_measurement_records_2026 | T4 | economicspace repository documentation (versions.md cell table plus MEASURED_CELL_SECONDS in modules/calc.py), 2026 | read live via git blob at @3ba6f3a, not hosted (MIT licensed) | rc-233 restatement target record; committed runtime measurements at calc v1.22.0 |
 
 ## Domain 14 — Propellant & consumable prices
 
