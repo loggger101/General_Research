@@ -648,6 +648,7 @@ _Backings: `operational_costs.csv` FAA Part 450 licensing rows, the MPL behind t
 | faa_2026_launch_reentry_licensing_user_fees_policy_statement | T3 | FAA 2026 policy statement: Space Launch and Reentry Licensing and Permitting User Fees (91 FR 21591) | read, not hosted | per-launch user fee from 2026 (51 U.S.C. 50924): lesser of a per-pound schedule and a maximum; no rate in the notice |
 | crs_r48144_2024_space_resource_extraction_overview_and_issues_for_congress | T3 | CRS R48144 (2024): Space Resource Extraction, Overview and Issues for Congress (24 pp) | read, not hosted | context-only: legal basis for selling mined space resources (OST, 2015 US act, Artemis Accords) |
 | sinibaldi_haldemann_2026_planetary_protection_is_expensive_esa_perspective | T1 | Sinibaldi & Haldemann 2026, planetary protection cost from the ESA perspective (Phil. Trans. R. Soc. A 384) | registered, not pulled | planetary-protection cost share: cat. I-II none; cat. III orbiters <1%; cat. IV Mars landers up to ~5%; cat. V Earth return integral |
+| faa_pra_notice_2019_streamlined_license_burden_hours | T3 | Federal Register PRA notice (public-inspection.federalregister.gov) 2019 | full text hosted (US government work, sha recorded in registry row) | operational_costs FAA Part 450 licensing compliance internal-cost component |
 
 ## Domain 19 — Asteroid excavation throughput & beneficiation
 
