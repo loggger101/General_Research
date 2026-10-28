@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+antreasian_et_al_2021_osirisrex_proxops_nav_performance,desat_imparted_delta_v_1sigma,0.5,mm/sec,momentum desaturations at 3-day frequency during proximity ops,"verbatim 'could be around 0.5 mm/sec' count==1 on NTRS machine fulltext (saved copy sha in registry row); figure is per-event imparted delta-V from reaction-wheel dump, not a phase budget"
+antreasian_et_al_2021_osirisrex_proxops_nav_performance,orbital_a_imparted_delta_v_status,small,qualitative,from start of Orbital A onward,verbatim 'the imparted ΔV remain small due to the fact that two desats' count==1 raw bytes (line-wrap after 'desats'); paper reports no station-keeping budget figure anywhere

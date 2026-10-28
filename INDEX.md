@@ -185,6 +185,7 @@ _Backings: spacecost `delta_v_segments.csv` and the Isp rows of `propellants.csv
 | garner_rayman_2018_jpc_final_orb | T2 | Garner & Rayman, "Operation of the Dawn Ion Propulsion System Through the Final Orbit Around Dwarf Planet Ceres" - 2018 Joint Propulsion Conference proceedings (AIAA) | registered, not pulled | closes out the in-flight IPS series through mission end (Dec-2018) |
 | zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing | T2 | Zalawski et al., "On-Orbit Testing of the EO-1 Pulsed Plasma Thruster" (NTRS) | full text hosted | PPT row thruster_kg_per_n=5000 anchored at +13 percent via flight mass 4.95 kg / max ~860 uN; key numbers in r189_eo1_ppt_kg_per_newton_key_numbers.csv |
 | sutton_biblarz_2017_rocket_propulsion_elements_ninth_edition | T4 | Rocket Propulsion Elements, 9th ed. (Wiley, 2017) — textbook | registered, not pulled | RELATIONS register of verification_sheet: rocket equation, exhaust velocity, thrust and jet power |
+| antreasian_et_al_2021_osirisrex_proxops_nav_performance | T2 | Antreasian et al., "OSIRIS-REx Proximity Operations and Navigation Performance at (101955) Bennu" (NTRS 20210025471) | read live via machine fulltext, not hosted | rc-231 evidence: maintenance-class delta-V scale near Bennu; key numbers in r288_osirisrex_proxops_dv_key_numbers.csv |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
