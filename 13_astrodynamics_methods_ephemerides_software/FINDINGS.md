@@ -123,3 +123,31 @@ past mispredictions, not a live claim; MODEL.md krypton "13 cheaper than xenon" 
 by applied rc-059; calc.py use_beneficiation comment and measured_cell_provenance machinery are de-typed and carry the
 stamp-on-staleness rule explicitly.
 
+## Round 298 (2026-10-28): runtime-ratio restatement sweep completed across economicspace - seam family closed, no RC
+
+Continuation of the R297 seam (rc-234). Swept at @3ba6f3a: CLAUDE.md, campaign/README.md and LESSONS.md for
+present-tense time claims (zero hits; the single Nx line in CLAUDE.md is a closed-items table verdict - "the RTX 2080
+Ti is 7.6x slower than the CPU at fp64 exp" - which names its own hardware, so it carries no release-stamp debt), and
+all thirty-two py files for hardcoded runtime ratios of the verify.py kind rc-234 caught.
+
+Every surviving figure classified compliant this round (skip-note: do not re-flag unless the named tables move):
+calc.py eval_row_cap budget block quotes 947 / 2,888 / 4,967 / 9,878 s under its own explicit stamp, quoted across the comment wrap: MEASURED
+2026-09-11/13 at cislunar, six physical cores / 12 workers,
+calc 1.21.2 - and states the figures are the cislunar row of that campaign table, pointing to
+MEASURED_DEST_SECONDS; ui_meta.py dashboard help text for optimise_programme_scale stamps both releases it quotes -
+v1.15.0 widely-quoted 1.51x one-dimensional, v1.16.0 two-dimensional at 2.98x raw / 2.64x beneficiated reproducing
+the versions.md recorded pair {2.976, 2.644} exactly; ui.py comment block documents its own stale-copy incident and
+retires the old 3.12x stride-sample figure by name; calc.py sampling lessons (3.1x overestimate, 4.8x the other way)
+are governance text about past mispredictions with measurements named per release.
+
+Two-vintage cislunar record documented BY DESIGN so it is never flagged as a contradiction: MEASURED_CELL_SECONDS was
+re-measured at calc 1.22.0 to 735 / 1,439 / 4,737 / 11,676 s while the 2026-09 campaign table (and README block and
+calc budget comment) keeps the v1.21.2 row 947 / 2,888 / 4,967 / 9,878 - expected_cell_seconds reads cislunar from the
+newer dict and other destinations from the campaign table "because that is the newest measurement each one has"; both
+records name their release. The beneficiation ratio rise 3.42x to 8.11x across those vintages is itself documented in
+calc.py with the programme_options_priced cross-check argument.
+
+Conclusion: the three copies found by rc-234 (README sample header, verify.py comments twice) are the only unstamped stale
+runtime restatements anywhere in economicspace at @3ba6f3a. Seam family closed; reopen only on upstream drift touching
+the measured tables or new doc prose.
+
