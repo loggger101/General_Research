@@ -97,3 +97,29 @@ blob grep this round: the RESEARCH_LOG Round 295 bullet and rc-233's tracker row
 only this FINDINGS paragraph carried the error; commit message f3b244e asserted it too and is immutable post-push -
 this entry plus the Round 296 log line serve as its addendum.
 
+## Round 297 (2026-10-28): present-tense runtime-claim sweep of economicspace docs - one seam, rc-234
+
+Swept README.md and MODEL.md at @3ba6f3a for unstamped present-tense ratio/runtime claims (the family that yielded
+rc-176, rc-183, rc-233). Result: the only surviving stale figures are three copies of the beneficiation runtime ratio
+4.7 - README sample header "[default: beneficiated (~4.7x slower)]" and verify.py comments twice ("Beneficiated cells
+run at 150 rows because they are ~4.7x raw", "(beneficiated is ~4.7x raw, so it runs at 150)"). The stamped record
+MEASURED_CELL_SECONDS (calc 1.22.0: 735 / 1,439 / 4_737 / 11_676 s) yields ratios of 8.11 with the programme search on
+and 6.44 at N = 1; run_pipeline fmt_ore derives the README-style label live from that dict, so a default configuration
+run today prints ~8.1x and cannot print 4.7 at all.
+
+Provenance: versions.md documents an identical incident - calc.py config comment plus dashboard help text carried 4.67x
+while banners derived 3.42x then 8.11x ("So the dashboard told a reader 4.67x, the banner beside it said 3.42x"
+[whitespace-normalized across wrap]), and records "Both are de-typed now, and run_pipeline.py ore formatter lost a
+third copy in the same pass." The README capture and verify.py comments are further copies that survived that pass;
+verify.py even says its comment is the only place it restates the dict figure - and what it restates is two releases
+behind. Proposal recorded on rc-234: update or date-stamp, restate verify ratios with a pointer to the dict. Display
+and comments only; no engine value moves.
+
+Clean findings from the same sweep (skip notes for future rounds): README 28-cell wall-clock block is properly stamped
+(calc v1.21.2, measured 2026-09-11/13) and its heading ratio reproduces exactly from its own table - cislunar N = 1
+pair 4,967 s over 947 s = 5.24; README release-multiplier sentences name their releases (v1.16.0 to v1.17.7 worth
+1.78x to 4.32x; v1.21.0 ceilings cost 1.29x to 2.31x back) and the sampling warning block is governance text about
+past mispredictions, not a live claim; MODEL.md krypton "13 cheaper than xenon" line cites spacecost pricing covered
+by applied rc-059; calc.py use_beneficiation comment and measured_cell_provenance machinery are de-typed and carry the
+stamp-on-staleness rule explicitly.
+

@@ -1,0 +1,4 @@
+source_id,item,value,location,notes
+economicspace_runtime_measurement_records_2026,beneficiation_cost_ratio(search=True) prints,~8.1x slower,"modules/calc.py MEASURED_CELL_SECONDS (True,True)/(False,True) = 11,676 s / 1,439 s = 8.11 @3ba6f3a",run_pipeline fmt_ore calls with settings[search]; default optimise_programme_scale True
+economicspace_runtime_measurement_records_2026,beneficiation_cost_ratio(search=False) prints,~6.4x slower,"modules/calc.py MEASURED_CELL_SECONDS (True,False)/(False,False) = 4,737 s / 735 s = 6.44 @3ba6f3a",
+economicspace_runtime_measurement_records_2026,MEASURED_CELL_CALC stamp,1.22.0,"modules/calc.py line MEASURED_CELL_CALC = ""1.22.0"" (count==1)","dict rows as printed 735 / 1_439 / 4_737 / 11_676; README header capture shows ~4.7x, matching neither pair"
