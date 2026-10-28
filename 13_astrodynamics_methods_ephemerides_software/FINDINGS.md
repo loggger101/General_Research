@@ -73,3 +73,27 @@ the mass cascade is code-consistent by construction (mass cascade runs before co
 no other runtime figure appears in the section. No key-numbers CSV needed beyond r295 file named below; all claims
 here carry this-round git-blob evidence per R264 rule.
 
+## SELF-CORRECTION (round 296, 2026-10-28): the R295 banked containment note was a misread - no seam exists
+
+The Round 295 paragraph above states: "BANKED (recorded, NOT opened): a comment block near model_volatile_containment
+in modules/calc.py attributes the pair 1307 s -> 3890 s and "at 1.17.7 it is 1.71x (733 s -> 1,253 s)" to containment
+cost, while versions.md labels those identical seconds as search OFF/ON runtimes for the same cells; one of the two
+attributions looks like a copy error in their docs." That statement is WRONG and this entry retracts it.
+
+Fresh evidence at @3ba6f3a this round: the comment block containing "It is NOT free.  Measured at 2.98x runtime on the
+full raw cislunar cell" (each of the three anchor spans count==1 in modules/calc.py) sits inside the programme-scale
+comment group - it discusses optimise_programme_scale ("DEFAULT TRUE as of v1.17.0", "the search is two-dimensional
+over (F, W)", prices 40 programmes per surviving candidate against the one-dimensional ladder's 8) and is followed by
+programme_search_steps: int = 8 near L945. Those seconds are attributed to PROGRAMME SEARCH there, exactly as in
+versions.md, so both records agree; MEASURED_CELL_SECONDS keys vary only on (beneficiated, searched) - the dict has no
+containment dimension at all and never claimed one. The R295 note conflated two comment blocks read together in one
+dump: the containment block near L653 carries no runtime claim whatsoever (it ends at "INCREMENTAL to the 0.15 ore
+restraint already carried by return_structure_frac_of_payload").
+
+Consequences recorded: rc-233 is unaffected and stands - MODEL.md L579 remains the single outlier against three
+mutually consistent records (calc.py comment, versions.md table, MEASURED_CELL_SECONDS dict). The banked target "open
+containment seam in a future round" is WITHDRAWN; never re-flag that calc.py comment. Scope of correction verified by
+blob grep this round: the RESEARCH_LOG Round 295 bullet and rc-233's tracker row contain zero containment mentions, so
+only this FINDINGS paragraph carried the error; commit message f3b244e asserted it too and is immutable post-push -
+this entry plus the Round 296 log line serve as its addendum.
+
