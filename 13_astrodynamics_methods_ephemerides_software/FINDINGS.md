@@ -151,3 +151,24 @@ Conclusion: the three copies found by rc-234 (README sample header, verify.py co
 runtime restatements anywhere in economicspace at @3ba6f3a. Seam family closed; reopen only on upstream drift touching
 the measured tables or new doc prose.
 
+## Round 299 (2026-10-28): MODEL.md launch-window table seam - rc-235 opened
+
+Swept economicspace@3ba6f3a. The Launch windows subsection of "Gaps in what the model charged for" illustrates
+expected wait times with a three-row table whose first row prints | 1.05 AU | 1.08 yr | **10.0 yr** | (count==1).
+
+Computation: Kepler P = a^1.5 gives P(1.05) = 1.0759 yr - the printed Period column agrees at 1.08 - while the
+standard synodic relation S = 1/(1 - 1/P) gives 14.17 yr (13.50 from the rounded period). A ten-year value needs
+P = 1.111 yr, i.e. a = 1.0728 AU: not this row. Rows two and three reproduce exactly under the same formula -
+P(1.13) = 1.2012 -> S = 5.97 printed as 6.0; P(2.70) = 4.4366 -> S = 1.29 printed as 1.3 - so the table is
+internally inconsistent only at its first row. Real-world check of the relation: Apophis a = 0.9224 AU gives
+S = 7.8 yr, matching its known ~7.95-year Earth-return cycle.
+
+Witnesses inside economicspace itself: verification_sheet.py L5412 carries regex token r"1 / \|1 / T_ast - 1 /
+T_dest\|" labelled "the synodic period" (count==1) - the engine uses the standard relation; versions.md states
+"A NEA at 1.05 AU can only be revisited every ~14 years however fast its rig works" (count==1); an older
+feature-announce entry in the same file says "has a 10-year synodic period with" (count==1) - dated history, out
+of scope per their governance that versions.md records what shipped when.
+
+Skip-note: do not re-sweep this table unless MODEL.md moves or engine window code changes; rc-235 is the single
+candidate from this seam. Claim map checked before drafting: no open RC mentions synodic or launch windows;
+rc-071 (applied) covers Mars TMI synodic swing in spacecost delta_v notes - different repo, file and row.
