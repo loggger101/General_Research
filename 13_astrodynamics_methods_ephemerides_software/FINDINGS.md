@@ -196,3 +196,7 @@ Two readings banked so future rounds do not false-flag:
 Skip-note: do not re-sweep the delivery table unless MODEL.md tables or the pinned spacecost move; rc-236 covers the band sentence.
 Claim map checked before drafting: rc-185 (open) matched only on substring noise - it targets LOX component price in spacecost
 propellants, different repo/file/claim.
+
+**Round 301 (2026-10-29) - economicspace pin enumeration and catalog shape claims verified at 3ba6f3a (skip-note).**
+
+The README quantitative contract was last swept in full at be86297 (R231); pins moved since, so the enumeration was re-verified against published blobs only. spacecost v0.14.0 confirmed in all five places the README names: requirements.txt URL pin, modules/_runtime.py PIP_SPEC entry, README itself (L154), CLAUDE.md (L503) and CITATIONS.md (L297); tag v0.14.0 dereferences to commit edfd5bec (annotated tag object aa1118c). Catalog pin data-2026-10-21b confirmed at modules/catalog.py L121 and price release prices-2026-10-07 at modules/mineral_value.py L104. README L536 shape claims reproduce exactly on the R286-audited -21b parquet: rows 1,575,889; columns 102; comp_phases and comp_phases_detailed both present (comp_phases new at contract 1.7.0 per AC enrich.py comment at the release tag). README L1221 measured-diameter sentence matches the -21b manifest counts R286 reproduced from the shipped parquet; its single data-2026-09-29c mention (L1092) is a dated past-tense run record, accurate by design. Skip unless these pins move or MODEL.md prose changes.
