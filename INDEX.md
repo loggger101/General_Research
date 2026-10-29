@@ -521,6 +521,7 @@ _Backings: economicspace `orbital.py` (`elements_to_state`, for the dashboard's 
 | github_spacekit | T4 | typpo/spacekit (GitHub repository, MIT) — open-source software repository (MIT) | read, not hosted | economicspace repository audit: nothing taken; its per-body Kepler solve is the technique behind the ui.py orbit diagram |
 | jpl_sb441_iom_perturber_manual | T2 | JPL IOM 392R-21-005 (Farnocchia): SB441 perturber-file manual - the I/O documentation for sb441-n*/n373s kernels | full text hosted | jpl_de441_small_body_perturber_kernels: authoritative kernel usage docs |
 | economicspace_runtime_measurement_records_2026 | T4 | economicspace repository documentation (versions.md cell table plus MEASURED_CELL_SECONDS in modules/calc.py), 2026 | read live via git blob at @3ba6f3a, not hosted (MIT licensed) | rc-233 restatement target record; committed runtime measurements at calc v1.22.0 |
+| spacecost_v0_14_0_delivery_chains | T4 | spacecost v0.14.0 delivery-chain module (software release tag aa1118c, MIT) | read, not hosted (git tag v0.14.0 this round) | rc-236 hardware-share band sentence; MODEL.md delivery-table currency proof |
 
 ## Domain 14 — Propellant & consumable prices
 

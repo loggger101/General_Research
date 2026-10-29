@@ -172,3 +172,27 @@ of scope per their governance that versions.md records what shipped when.
 Skip-note: do not re-sweep this table unless MODEL.md moves or engine window code changes; rc-235 is the single
 candidate from this seam. Claim map checked before drafting: no open RC mentions synodic or launch windows;
 rc-071 (applied) covers Mars TMI synodic swing in spacecost delta_v notes - different repo, file and row.
+
+## Round 300 (2026-10-28): MODEL.md delivery-table currency proof and the hardware-share band seam - rc-236 opened
+
+Reproduction at exactly what economicspace consumes: requirements.txt pins spacecost @ v0.14.0 (= aa1118c; MIT LICENSE present).
+Extracted that tag with git archive and called the module directly (read-only, no edits anywhere): every cell of the MODEL.md
+delivery table reproduces - costs within display rounding ($2,555 / 5,168 / 8,462 / 7,236 / 48,226 / 9,154 / 186,306), kg-in-LEO
+ratios to two decimals (1.86 / 2.95 / 2.54 / 5.28 / 3.17 / 10.61), stage-hardware amounts exact ($414 / $937 / $742 / $34,737 /
+$1,046 / $159,209); downlegs compute to $25,410 (LEO) and $27,317 (cislunar), matching the printed ~$25,400/~$27,300; MARS_EDL
+fraction 0.3 as quoted. Tip 860bef9 gives identical numbers (delivery.py unchanged between tag and tip).
+
+The one defect: prose band "against 11-12% at the orbital destinations" vs live shares gto 8.02%, cislunar 10.26%, geo 11.07%,
+mars_orbit 11.43%. The GTO and cislunar rows of the same table print cells that any reader can divide to get 8% and 10.3%; only
+GEO and Mars-orbit sit inside the stated band. Surface figures are accurate (72.03%, 85.46%). Opened as rc-236 [wording].
+
+Two readings banked so future rounds do not false-flag:
+- Single-stage claim "12.81 kg in LEO per kg landed" for the whole 6,100 m/s reproduces exactly via stage_mass_ratio(6100, isp=465,
+  dry=0.2) - lander dry class; tug-class delta=0.1 gives 5.54 instead. The prose does not state which class it assumed; the claim is
+  valid under a defensible reading (the stage that lands must be built like a lander), so never flag without checking both classes.
+- Mars-orbit period claim: the 250 x 33,793 km ellipse gives P = 88,582 s against the sidereal sol of 88,642.7 s - within one minute
+  as claimed (against the solar day it would be ~193 s off; sidereal is the right comparison).
+
+Skip-note: do not re-sweep the delivery table unless MODEL.md tables or the pinned spacecost move; rc-236 covers the band sentence.
+Claim map checked before drafting: rc-185 (open) matched only on substring noise - it targets LOX component price in spacecost
+propellants, different repo/file/claim.
