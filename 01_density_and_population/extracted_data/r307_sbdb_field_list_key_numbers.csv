@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+jpl_sbdb_field_list_probe_2026_10_29,fields listed by ?info=field,79,count,"saved answer 2026-10-29, all info.field blocks",matches AC README claim of 79 exactly
+jpl_sbdb_field_list_probe_2026_10_29,unreviewed fields (offered - requested - declined),31,count,recomputed with their compare() formula at AsteroidCatalog@66fb47a,matches README; zero declined-and-requested conflicts
+jpl_sbdb_field_list_probe_2026_10_29,sigma_* uncertainties among unreviewed,11,count,same classification: sigma_a ad e i ma n om per q tp w,README prose says nine - rc-237 records the miscount (nine osculating + sigma_q + sigma_ad)
+jpl_sbdb_field_list_probe_2026_10_29,soln_date listed in field list,no,boolean,saved answer membership check,matches README claim it is unlisted
+jpl_sbdb_field_list_probe_2026_10_29,soln_date answers query for Ceres row,2021-04-13 11:04:44,UTC timestamp,"sbdb_query.api fields=pdes,soln_date limit=1 sb-kind=a",byte-for-byte identical to AC UNLISTED_BUT_ACCEPTED recorded witness

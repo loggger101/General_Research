@@ -67,6 +67,7 @@ _Backings: per-spectral-type density and PGM factors in AsteroidCatalog `referen
 | daly_2020_bennu_hemispherical_shape_ola | T1 | Daly, Barnouin, Seabrook et al., "Hemispherical differences in the shape and topography of asteroid (101955) Bennu" - Science Advances 6:eabd3649 (2020, CC BY 4.0) | read, not hosted | Bennu volume 0.061354 km3, density 1194 +/- 3 kg/m3 (Table 1); AsteroidCatalog SHAPE_MODEL_VOLUMES['101955'] since 1.10.0 |
 | ferrais_2020_psyche_primordial_shape_jacobi_ellipsoid | T1 | Ferrais, Vernazza, Jorda et al., A&A 638:L15 (Jun 2020), DOI 10.1051/0004-6361/202038100 | registered, not pulled (aanda.org 403; HAL mirror Anubis-walled) | backs Psyche diameter input of environments.csv via Siltala & Granvik adoption - rc-227 |
 | asteroidcatalog_release_data_2026_10_21b | T3 | AsteroidCatalog published data release 'data-2026-10-21b' (pipeline contract 1.10.0; GitHub artifact set: catalog CSV.gz + parquet + manifest) (github.com/loggger101/AsteroidCatalog, released 2026-10-21) | open service | Current pinned release economicspace installs per its README at @3ba6f3a; manifest and asset hashes verified this round against published declarations; row count 1575889 and measured-diameter count 149718 reproduced from the shipped parquet; rejected_rows field defect opened as rc-229 |
+| jpl_sbdb_field_list_probe_2026_10_29 | T3 | SBDB query-API field list saved answer 2026-10-29 (JPL SSD) | full text hosted (saved JSON, sha in registry row) | witness for AC README sigma-count audit rc-237 |
 
 ## Domain 2 — Composition → commodity value mapping
 
