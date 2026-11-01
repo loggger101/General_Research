@@ -424,6 +424,7 @@ CASES = [
                                                  + f'spacecost,{s["O2"]},{s["M0"]},{s["tree0"][:12]},M0,\n')),
     # check_upstream (--upstream)
     ('upstream-repo-missing', 'error', ['--upstream'], lambda r, s: delete(r.parent, 'AsteroidCatalog')),
+    ('upstream-repo-missing', 'error', ['--upstream'], lambda r, s: delete(r.parent, 'spacevalue')),
     ('upstream-repo-missing', 'error', ['--upstream'], lambda r, s: delete(r.parent, 'spacecost'), {'nothing-checked'}),
     ('map-not-equivalent', 'error', ['--upstream'], lambda r, s: edit(r, MAP, s['M1'], s['M0'])),
     ('map-tree-mismatch', 'error', ['--upstream'], lambda r, s: edit(r, MAP, s['tree1'][:12], 'abcdef123456')),
@@ -431,6 +432,9 @@ CASES = [
     ('map-subject-mismatch', 'error', ['--upstream'], lambda r, s: edit(r, MAP, ',M1,rc-002', ',M1 renamed,rc-002')),
     ('upstream-target-file-missing', 'error', ['--upstream'],
      lambda r, s: edit(r, CANDS, ',spacecost,reference.csv,x,x,', ',spacecost,missing.csv,x,x,')),
+    ('upstream-target-file-missing', 'error', ['--upstream'],
+     lambda r, s: (edit(r, CANDS, ',spacecost,reference.csv,x,x,', ',spacevalue,missing.csv,x,x,'),
+                   edit(r, CANDS, f'spacecost@{s["M1"]}', f'spacevalue@{s["V0"]}'))),
     ('upstream-target-file-missing', 'error', ['--upstream'],  # checked in spacecost, file looked up on AsteroidCatalog main
      lambda r, s: edit(r, CLOSED, ',AsteroidCatalog,reference.csv (+ notes),', ',AsteroidCatalog,missing.csv (+ notes),')),
     ('upstream-sha-unknown', 'error', ['--upstream'], lambda r, s: edit(r, CANDS, f'spacecost@{s["M1"]}', 'spacecost@' + 'f' * 40)),
@@ -639,6 +643,14 @@ def tool_sources():
 
 
 class TestValidate(FixtureCase):
+    def test_spacevalue_candidate_checks_its_commit_and_file(self):
+        root = self.copy()
+        edit(root, CANDS, ',spacecost,reference.csv,x,x,', ',spacevalue,reference.csv,x,x,')
+        edit(root, CANDS, f'spacecost@{self.shas["M1"]}', f'spacevalue@{self.shas["V0"]}')
+        rc, out = self.run_validate(root, '--strict', '--upstream')
+        self.assertEqual(rc, 0, out)
+        self.assertIn('0 error(s), 0 warning(s)', out)
+
     def test_clean_fixture_passes(self):
         root = self.copy()
         for args in ([], ['--strict'], ['--upstream', '--strict']):

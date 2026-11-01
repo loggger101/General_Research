@@ -215,3 +215,25 @@ AsteroidCatalog candidates: none open.
 **Round 304 (2026-10-29) - spacevalue sibling citation seam opened and closed; two density-reference rows registered.**
 
 economicspace PIP_SPEC at tip pins spacevalue at tag v0.2.0 alongside spacecost at v0.14.0; the package holds Stage 2 pricing (formerly modules/mineral_value.py) and from their #183 also Stage 4 cargo valuation, so its citation list is load-bearing for economicspace outputs but had never been swept against this registry - the same blind-seam class as the R204 author-year pass. Work-level resolution at tag d12f626: yfinance, USGS Mineral Commodity Summaries 2025 and 2026 editions (the 2025 row was present at HEAD; strict grep after a truncated first-pass hit list), World Bank Pink Sheet = worldbank_cmo_pink_sheet, LBMA fixings = lbma_precious_metals_fixings, Johnson Matthey PGM Market Report May 2026 = jm_pgm_market_report_2026, McDowell Space Activities in 2025 Table 22 = mc_dowell_2025_space_activities_gcat, Northrop Grumman LunA-10 rail network study = northrop_grumman_2024_luna10_lunar_rail_network, the eight meteorite analogue papers all already registered (verified at R302), Mars fact sheet row present - leaving only the density/formula cluster: Klein and Hurlbut Manual of Mineralogy plus Mindat.org and Webmineral.com, now registered as klein_hurlbut_manual_of_mineralogy T4 and mindat_webmineral_online_mineral_data_databases T3. Live probes this round: webmineral.com HTTP 200 with sha recorded; mindat.org answers 403 Forbidden from this machine (new dated witness-class fact - do not expect a document pull). spacevalue pyproject pins spacecost v0.14.0, identical to the economicspace pin: dependency graph consistent across all three repos at these tips.
+
+## R312 - The pyroxene metadata formula omits one metal-site cation (2026-11-01)
+
+`morimoto_1988_nomenclature_pyroxenes`, Bulletin de Minéralogie p535, specifies normalization
+"to six oxygens, or to four cations". Page536 gives the standard M2M1T2O6 formula and
+site-allocation sums T=2, M1=1 and M2=1. M2 and M1 denote two distinct cation sites.
+
+At spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011, `spacevalue/catalog.py:1970`
+stores the `pyroxene` formula as `(Mg,Fe,Ca)Si2O6`. This has only one metal-site cation
+and two Si, three cations per six O. For the divalent Mg/Fe/Ca shorthand, the consistent
+formula is `(Mg,Fe,Ca)2Si2O6`: two metal cations and two Si. A charge check with divalent
+Mg/Fe/Ca, Si4+ and O2- gives -2 for the stored formula and zero for the corrected one.
+The neighbouring orthopyroxene `(Mg,Fe)2Si2O6` already has four cations; enstatite
+`MgSiO3` has the correct reduced stoichiometry and normalizes to the same count.
+
+All eight committed `tests/data/prices-2026-10-07/mineral_value_catalog.*.csv` destination
+fixtures carry the erroneous pyroxene formula. The formula field is serialized in catalog.py
+(L2290); neither `spacevalue/cargo.py` nor economicspace `modules/calc.py` reads it.
+The independent pyroxene yield is `iron:0.07`. Verdict: a metadata formula correction,
+with no new yield, density or price derived. `rc-242`: restore the missing coefficient in
+the current source and regenerated price metadata, preserving archived provenance.
+`extracted_data/r312_pyroxene_formula_cation_count.csv`.

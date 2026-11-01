@@ -101,3 +101,53 @@ Demand-scale context, no per-kg price. `extracted_data/r156_faa_launch_demand_fo
 ## R164 - Candidate (2026-10-14)
 
 rc-123: cite the IMF elasticities (below 0.5 short-run) and not the Banque de France supply figure for `demand_elasticity`. Text in `revision_candidates_closed.csv`.
+
+## R310 - A positive surplus-price floor does not guarantee a bounded fleet optimum (2026-11-01)
+
+`economicspace_spacevalue_capacity_market_implementation_2026`: economicspace
+`MODEL.md:777-784` at 54e30b0ae82be71c987f08feb95630502b7f54f0 says surplus sales leave
+the objective turning over on its own and calls `1.0` "the only setting that would
+genuinely remove the ceiling". The active surplus fraction is 0.5 (`modules/calc.py:526`);
+`max_fleet_ships` is 64 (L946). The price floor permits unlimited surplus quantity at that
+fraction, so declining marginal revenue does not itself prove an interior optimum.
+
+The original cost tail, programme-options and selection-key functions from calc.py and
+`_delivery_window_yr` / `_capped_sale_value` from spacevalue cargo were executed together.
+The latter two functions have the same blob at the consumer pin v0.2.0 and current main
+873b91c1ce51fd2f5fe9ead63ce171d755e73011. This is a reduced mathematical ledger, not a
+simulated asteroid: each delivery contains 2 kg of one commodity at normalized price 1;
+its annual full-price ceiling is 1 kg/yr, mission duration 5 yr, cadence 1 yr, and each rig
+can fly five campaigns. Recurring cost is 1.5 per delivery and one-time NRE is 10.
+All other monetary ledger fields are zero, contingency multiplier is 1, WACC is zero,
+and the learning factor is 1; the complete cost-tail input tuple is in the CSV.
+
+| maximum fleet | surplus fraction | selected F | selected W | cost / revenue |
+|---|---|---|---|---|
+| 64 | 0.5 | 64 | 5 | 1.5077285512 |
+| 128 | 0.5 | 128 | 5 | 1.5038850768 |
+| 256 | 0.5 | 256 | 5 | 1.5019478082 |
+| 64, 128 or 256 | 0 (wall control) | 1 | 5 | 1.9444444444 |
+
+Each coarse ladder has forty options. Exhaustive enumeration of every integer fleet
+through each cap crossed with W=1..5 gives the same selection using the original
+`cost_revenue_ratio` key. All options are unprofitable, so that key minimizes cost/revenue.
+The counterexample has a finite positive ceiling and five 1-year stays within a 15-year rig
+life; it uses no missing-market exemption.
+
+For W=5 the implemented window is `2/F-0.2/F^2`, revenue per delivery is
+`1+1/F-0.1/F^2`, and cost is `1.5+2/F`. The ratio is therefore
+`R(F)=(1.5*F^2+2*F)/(F^2+F-0.1)`. Exact-rational differentiation gives numerator
+`-0.5*F^2-0.3*F-0.2` over the positive squared denominator: it strictly decreases for
+all F>=1 and approaches 1.5. The fleet optimum is the search cap in this example.
+Verdict: an interior optimum is contingent, and positive discounted marginal revenue can
+leave fleet growth favourable indefinitely. `rc-240`: qualify the fleet-bound guarantee.
+`extracted_data/r310_surplus_price_floor_fleet_bound.csv`.
+
+The same record explicitly declares finite-programme window averaging (`cargo.py:996-1001`).
+Its quantitative effect was checked separately: N=5,F=1,T=5,cadence=1 gives average window
+1.8. Five 2-kg raw loads at price 1 and annual ceiling 1 yield total value 9.5 at half-price
+surplus under pooled capacity, versus 8.0 when the documented first window of 5 and four
+later windows of 1 are each cleared independently; with no surplus sale the totals are
+9 and 6. Cargo 0.5 kg (no window binds) and 6 kg (every window binds) give equal totals
+under both treatments. The averaging is an explicitly declared capacity-pooling assumption.
+`extracted_data/r310_declared_window_averaging_comparison.csv`.

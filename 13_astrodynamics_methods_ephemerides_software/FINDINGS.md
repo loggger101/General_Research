@@ -208,3 +208,44 @@ Work-level pass over the whole file plus an accession-token pass: every named wo
 **Round 306 (2026-10-29) - spacevalue CHANGELOG claim battery fully verified at pinned tag v0.2.0; skip-note for this seam.**
 
 Every falsifiable numeric or cross-repo claim in the package CHANGELOG was tested against surviving committed bytes, all five repo tips static (spacecost 860bef9 / economicspace 3ba6f3a / AsteroidCatalog 92f7739 / spacevalue main 873b91c ahead of pin by tests-only commits; no tag newer than v0.2.0). Results: package version string equals 0.2.0 at the tag and all eight committed fixture tables carry pipeline_version stamp 1.17.0, matching the declared data contract; exactly eight destination CSVs are committed under tests/data/prices-2026-10-07/ as claimed; economicspace versions.md contains the named Stage 2 changelog section that the CHANGELOG points to for contracts before 1.17.0; the consumer-contract claim of twenty-five imported cargo names reproduces exactly - the from-import block in economicspace modules/calc.py at tip lists precisely those twenty-five distinct names; the golden recording holds thirteen distinct cells across sixteen recorded functions and 4,858 calls as stated (default raw, default benef+search, detailed_off benef, elasticity raw and benef+search, phases_off both, refinery_off both, single_mission both, surplus_wall, unbounded). The headline byte-for-byte claim was verified directly: economicspace tracks frozen Stage-2 tables under campaign/stage2/mineral_value-1.15.0/ for exactly seven destinations (no gto - that destination joined later per the #141 history at R203), and comparing each against the spacevalue fixture leaves precisely one differing column, pipeline_version, with 59 rows giving exactly 59 differing cells per table; every value cell including catalog_date is identical. The claim of equality for all eight destinations against a mineral_value 1.16.0 build has no surviving committed bytes on the economicspace side (zero files under mineral_value-1.16.0/, publication having moved to spacevalue), so that half stands as their CI-era assertion; the CHANGELOG wording is accurate about which seven are byte-frozen. The requires-python 3.12 rationale was reproduced mechanically on this machine: a mixed-magnitude float list summed naively gives bits 402f20345f3459f1 under CPython 3.11.16 (uv-managed) versus 402f20345f1ac05a under system 3.13, the latter equal to math.fsum - pre-3.12 builtin sum is genuinely uncompensated, so one-bit yield differences at lower interpreters are real; demonstrated at mechanism level on a synthetic list, not from their exact yield inputs. Registered spacevalue_release_record_v0_2_0 T4 in d13. Skip-note: this seam is fully mined while tips hold - do not re-sweep unless spacevalue tags beyond v0.2.0, economicspace unfreezes Stage-2 tables, or the CHANGELOG changes.
+
+
+## R313 - A phase lookup overwrites the refinery composition-cache key (2026-11-01)
+
+`spacevalue_refinery_composition_cache_record_2026`: at spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011,
+`spacevalue/cargo.py` L476 obtains a composition tuple and L478-481 looks up its
+refinery result. The phase loop reassigns `key` to a phase name at L492; L507
+therefore stores the result under that string instead of the composition tuple.
+`_composition_key` L654-657 explicitly sends unsupported scalar types down
+"the uncached path". Its None result is also overwritten by the phase loop,
+so the final write can refer to `entries` without having initialized it.
+The cargo blob is identical at the consumer pin v0.2.0. Economicspace
+`modules/calc.py` L8150 calls `asteroid_refinery` for each evaluated body.
+
+The original complete cargo module was executed against the committed cislunar
+price fixture, switched to gross prices exactly as economicspace L1603-1608
+does, with mappings assembled from AsteroidCatalog@66fb47a's taxonomy and
+detailed-phase CSVs. All 32 populated reference compositions miss the refinery
+cache on each of three identical-value calls. For C, `_phase_terms` calls are
+12,12,12; the tuple's refinery slot remains empty and a `silicates` string-key
+entry holds the result. Across the 33 reference rows, including Unknown,
+99 calls invoke `_phase_terms` 1,188 times.
+
+Renaming only the loop's two `key` references to `phase_key` in an in-memory
+copy changes C's counts to 12,0,0 and the aggregate to 396. Every returned
+phase energy and raw weighted sum is bit-identical for all 33 rows. Unknown
+returns zero and caches normally on both versions because its phase loop is
+empty. Removing detailed phases from C gives counts 5,5,5 versus 5,0,0;
+switching the refinery off returns None on both versions.
+
+A hand-built C mapping with its finite metal fraction written as
+`Decimal("0.01")` has an uncacheable key. The original raises
+`UnboundLocalError` at L507; the same variable rename returns the ordinary
+float-input energy result bit for bit without caching it. This control is an
+API-input witness, not an observed catalog-loader failure.
+
+Verdict: a key-shadowing defect defeats composition memoization on populated
+rows and breaks the documented uncached path. `rc-243`: preserve the
+composition key and use a separate phase lookup variable. Full-catalog wall
+time and ranking effects were not measured; no price or energy value change
+is proposed. `extracted_data/r313_refinery_composition_cache_witness.csv`.

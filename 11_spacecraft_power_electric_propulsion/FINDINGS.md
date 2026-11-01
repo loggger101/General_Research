@@ -98,3 +98,69 @@ RTG specific power row: probed for mixed denominators between its GPHS-RTG and M
 The upstream note prints 44 kg for MMRTG because applied rc-041 (R67) corrected it from 45 to 44 citing IG-23-010 Table 1 - an adjudicated institutional-figure choice already implemented in spacecost v0.5.2; never re-open against the fact-sheet figure of 45. The derived comparison figures (GPHS-class ~5.2, MMRTG ~2.5 W/kg) match the record within rounding of BOM-versus-EOL power quotes across sources. Stored value 5.0 with band [2.4..5.5] brackets both flight classes; economicspace worked_calculation.py L2590 feeds val() of this row to RTG-shaped campaign cells (plant mass = draw / w) - documented-by-design.
 
 Do not re-sweep storage_systems.csv physics unless value/band columns move at a future spacecost tip.
+
+
+## R314 - Electric ISRU stages are sized from a placeholder propellant book (2026-11-01)
+
+`economicspace_electric_stage_placeholder_propellant_record_2026`: at
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`
+L4315-4324 returns an ISRU "Placeholder cascade" with `m_return_prop=0` and
+outbound propellant for the empty-return-vehicle floor. The sizing loop sends
+this cascade to `_ep_stage_kg` at L6336-6343. That helper sums its outbound and
+return propellant, sizes power and thrust to `ep_target_thrust_yr=3`, and
+reports that same three-year duration (L3887-3909). The actual capped return
+propellant and outbound book are rebuilt later (L6648-6680), with no EP resize.
+The mission-duration check then reads the provisional three years, not the
+burn time of the settled load (L6849-6853). The configured limit is 25 years.
+
+The complete original evaluator and its original numerical helpers return
+the following synthetic missions using the committed `Falcon 9 (reusable)`
+and `Water  (gridded ion / ECR)` rows of spacecost@860bef9, and its 46 original
+operational rows. The body is 1e9 kg, density 2 g/cm3, water fraction 0.2 and
+semi-major axis 1.2 AU. Caller delta-v is 1,000 m/s per leg, multiplied by the
+row's 1.5 penalty. These are function-level witnesses, not observed catalog
+bodies or an orbital-trajectory claim. Refinery, launch windows, water heating,
+volatile containment and propellant boil-off are initially off. Market pricing
+is unbounded and programme-scale search is off; other defaults, including the
+three-year EP target and 25-year mission limit, remain. The CSV records all
+effective settings and inputs.
+
+| raw cargo cap | returned cargo (kg) | reported EP power (W) | settled propellant (kg) | reported thrust (yr) | thrust at reported power (yr) |
+|---|---|---|---|---|---|
+| 100 kg | 100 | 564.838636 | 588.958312 | 3 | 3.676923 |
+| 1,000 kg | 1,000 | 567.674729 | 812.566903 | 3 | 5.047588 |
+| 10,000 kg | 10,000 | 589.800641 | 3,037.703941 | 3 | 18.162037 |
+| no caller cap | 77,391.923434 | 589.800641 | 19,173.783007 | 3 | 114.637559 |
+
+For the 10,000 kg case, the final stage-sizing input contains only
+501.767042 kg outbound propellant and zero return propellant. The settled
+mission carries 805.414055 kg outbound and makes 2,232.289886 kg for return.
+The original power relation, `P=m_prop*(Isp*g0)^2/(2*efficiency*t)`, inverted
+at its reported 589.800641 W, 900 s Isp and efficiency 0.35 gives 18.162037 yr.
+Independently inverting its reported 0.046777833 N thrust gives the same time.
+Using the original stage helper on that fixed settled book instead requires
+3,570.660447 W for three years; this diagnostic does not include the feedback
+of flying a larger stage and is not a completed replacement design.
+
+All ISRU witness cases fit both the body and rig-throughput material budgets.
+The uncapped case uses 169,888.004024 kg of the 219,150 kg throughput budget,
+and reports a 5.298325 yr mission despite needing 114.637559 yr of thrusting
+alone at the reported power. Switching tank mass off still gives 18.531251 yr
+for the 10,000 kg case: this defect is independent of rc-241's fuel-feed
+resource check. With water liberation and volatile containment on, that case
+still needs 16.785576 yr; with those features on and no caller cap, 71,012.935069
+kg cargo is accepted with a 5.144580 yr reported mission but 98.216220 yr of
+thrusting at its reported power. The latter also fits both material budgets.
+
+Controls: a non-ISRU xenon mission that fills its launch budget implies
+2.999375 yr, consistent with the loop's 1% convergence tolerance. Capping that
+non-ISRU body to 100 kg instead leaves the opposite mismatch: a full-vehicle
+stage, whose actual propellant only needs 0.139848 yr. Switching the low-thrust
+model off explicitly reports zero EP mass, power and time; no inversion is
+made for that control.
+
+Verdict: the electric stage and its duration refer to a different propellant
+book from the returned mission. `rc-244`: couple EP sizing to the actual
+capped outbound and ISRU-return loads, and propagate settled thrust duration
+through feasibility and cost. Current-catalog incidence and ranking effects
+were not measured. `extracted_data/r314_electric_stage_vs_settled_propellant.csv`.

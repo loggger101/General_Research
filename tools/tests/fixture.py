@@ -7,7 +7,7 @@ build_template(parent) writes, under `parent`:
                         copied in from this checkout, and sources.csv and the manifest hashes come from its own
                         build_registry.py. It is a git repository with the template committed (validate.py lists
                         files with git and compares the research log with HEAD).
-    spacecost/, AsteroidCatalog/, economicspace/
+    spacecost/, spacevalue/, AsteroidCatalog/, economicspace/
                         upstream clones with an origin/main ref, for `validate.py --upstream`.
 It returns the upstream commit ids the tests need. Each test copies the template and plants one defect.
 """
@@ -141,9 +141,9 @@ def git(cwd, *args):
 
 def make_upstream(parent):
     """spacecost: main = M0 -> M1; O has M1's tree and subject but is off main (a rewritten copy of M1); O2 has M0's
-    tree and is off main, unmapped. AsteroidCatalog and economicspace: main = their own M0 (A0, E0)."""
+    tree and is off main, unmapped. AsteroidCatalog, economicspace and spacevalue: their own M0 (A0, E0, V0)."""
     shas = {}
-    for name in ('spacecost', 'AsteroidCatalog', 'economicspace'):
+    for name in ('spacecost', 'spacevalue', 'AsteroidCatalog', 'economicspace'):
         repo = parent / name
         repo.mkdir()
         git(repo, 'init', '-q')
@@ -163,7 +163,7 @@ def make_upstream(parent):
                         O2=git(repo, 'commit-tree', tree0, '-m', 'an unmapped commit'))
             git(repo, 'update-ref', 'refs/remotes/origin/main', m1)
         else:
-            shas['A0' if name == 'AsteroidCatalog' else 'E0'] = m0
+            shas[{'AsteroidCatalog': 'A0', 'economicspace': 'E0', 'spacevalue': 'V0'}[name]] = m0
             git(repo, 'update-ref', 'refs/remotes/origin/main', m0)
     return shas
 

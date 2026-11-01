@@ -30,7 +30,7 @@ CANDIDATE_COLS = ['id', 'status', 'kind', 'domain_dir', 'source_ids', 'found_rou
 UPSTREAM_MAP_COLS = ['repo', 'old_sha', 'main_sha', 'tree', 'subject', 'checked_against_in']
 # The repos this registry anchors. They are read-only from here (AGENTS.md); `validate.py --upstream` reads the
 # sibling clones next to this repo.
-UPSTREAM_REPOS = {'AsteroidCatalog', 'spacecost', 'economicspace'}
+UPSTREAM_REPOS = {'AsteroidCatalog', 'spacecost', 'spacevalue', 'economicspace'}
 
 # T4 (R74): secondary / grey sources the upstream rows cite: company documents and price pages, news, encyclopedias,
 # vendor or market-research posts, textbooks, software, market-data APIs.

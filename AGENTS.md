@@ -1,6 +1,6 @@
 # Working in General_Research
 
-This repo is the evidence registry behind economicspace, spacecost and
+This repo is the evidence registry behind economicspace, spacecost, spacevalue and
 AsteroidCatalog. Those repos are **read-only from here**: a contradicting
 source becomes a FINDINGS block plus a `revision_candidates.csv` row, never an
 upstream edit. README.md explains the layout, tiers and access classes.

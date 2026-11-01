@@ -125,6 +125,7 @@ _Backings: AsteroidCatalog material fractions and economicspace `mineral_value.p
 | fornasier_2011_x_type_spectroscopic_survey | T1 | Spectroscopic survey of X-type asteroids — Icarus 214:131-146 (DOI Crossref-verified this round) | registered, not pulled | taxonomy.X_SPLIT_BOUNDS albedo convention (E above p_V 0.3 / M 0.1 to 0.3 / P below 0.1); completeness registration of the AsteroidCatalog CITATIONS.md section 3 entry |
 | klein_hurlbut_manual_of_mineralogy | T4 | Manual of Mineralogy (Klein and Hurlbut, Wiley; edition not stated upstream) — print textbook | registered, not pulled | density/formula authority for spacevalue catalog columns feeding Stage-2 conversions; completeness registration from pinned dependency v0.2.0 |
 | mindat_webmineral_online_mineral_data_databases | T3 | Mindat.org and Webmineral.com online mineral data databases — joint density/formula reference (webmineral HTTP 200 sha recorded; mindat 403 bot-block dated this round) | open service | spacevalue catalog densities and formulas feeding Stage-2 conversions; completeness registration from pinned dependency v0.2.0 |
+| morimoto_1988_nomenclature_pyroxenes | T1 | Morimoto 1988, IMA pyroxene nomenclature (Bull. Minéral. 111) | read, not hosted | pyroxene formula needs two Mg/Fe/Ca cations (rc-242) |
 
 ## Domain 3 — Δv budgets and propulsion performance tables
 
@@ -376,6 +377,7 @@ _Backings: spacecost `storage_systems.csv`; the volatile-ISRU, power and electri
 | kleinhenz_paz_2021_lunar_water_isru_ptmss_srr | T2 | Kleinhenz & Paz, "A Lunar Water ISRU System Study for Human-Scale Propellant Production" (PTMSS/SRR study report June 10, 2021; NTRS 20210016820) | full text hosted | same row value/range_low 7.28: ridge system 2.6 t for 10 mT O2 + 1.67 mT H2 at mixture ratio 6 in 225 days (p3/p8/p14); the 46 kW ridge power is rc-166's whole-plant cross-check |
 | johnson_2023_h2_liquefaction_ascend | T2 | Johnson W. (NASA GRC), Concepts for the Liquefaction of Hydrogen for In-Situ Operations on the Lunar or Martian Surface - AIAA ASCEND 2023, Las Vegas Oct 23 2023 (NTRS 20230014839) | full text hosted | H2-liquefaction term of the spacecost v0.12.0 hydrolox ISRU energy band (baseline 35 kW at 0.3 kg/hr; combined pre-cooling cuts input power by 70%; O2 liquefaction < 2 kW); radiator-only floor 3.9 kg/kW heat rejection with its own ignore-cryocooler-mass caveat - the rejected alternative anchor named in operational_costs notes |
 | doe_hfto_pem_electrolysis_technical_targets | T3 | DOE PEM electrolysis technical targets (live web table; legacy URL redirects) | verified live, not hosted | system-level 55 kWh/kg H2 as-of-2022 claim in the hydrolox row + rc-166 evidence trail |
+| economicspace_isru_feed_resource_budget_record_2026 | T4 | ISRU feed and asteroid resource budget, pinned implementation record | read, not hosted | settled ISRU plus cargo feed can exceed body mass (rc-241) |
 
 ## Domain 6 — Commodity / mineral market pricing (value side of the pipeline)
 
@@ -481,6 +483,7 @@ _Backings: the power and electric-propulsion rows of `operational_costs.csv` (EP
 | polzin_et_al_2026_nep_technology_maturation_plan | T2 | Polzin et al. 2026, NASA high-power NEP technology maturation plan (NTRS 20260001499) | full text hosted | the power-system specific mass a nuclear power model for the NEP row would need |
 | nasa_sr1_freedom_mission_page | T2 | NASA, Space Reactor-1 Freedom mission page | read, not hosted | flight-demo scale for the NEP row: 20 kWe, 12 t, 12-kW Hall thrusters, 2028 |
 | burns_2022_inl_subscale_maturation_ntp_reactor_testing | T2 | Burns et al. 2022, INL subscale NTP reactor-testing options (INL/RPT-22-65557) | read, not hosted | NTP key performance parameters: >2,700 K exhaust, 10-15 klbf, 900 s Isp, reactor <3,500 kg (requirements, not demonstrated) |
+| economicspace_electric_stage_placeholder_propellant_record_2026 | T4 | electric-stage provisional/settled propellant witness | read, not hosted | rc-244: ISRU stage power and burn time |
 
 ## Domain 12 — Destination environments & physical constants
 
@@ -526,6 +529,7 @@ _Backings: economicspace `orbital.py` (`elements_to_state`, for the dashboard's 
 | economicspace_runtime_measurement_records_2026 | T4 | economicspace repository documentation (versions.md cell table plus MEASURED_CELL_SECONDS in modules/calc.py), 2026 | read live via git blob at @3ba6f3a, not hosted (MIT licensed) | rc-233 restatement target record; committed runtime measurements at calc v1.22.0 |
 | spacecost_v0_14_0_delivery_chains | T4 | spacecost v0.14.0 delivery-chain module (software release tag aa1118c, MIT) | read, not hosted (git tag v0.14.0 this round) | rc-236 hardware-share band sentence; MODEL.md delivery-table currency proof |
 | spacevalue_release_record_v0_2_0 | T4 | spacevalue release record at tag v0.2.0 — CHANGELOG, contract 1.17.0 fixture stamps, thirteen-cell golden recording; byte-compared to economicspace frozen 1.15.0 tables | read, not hosted (git tag d12f626 this round) | R306 claim battery: seven-of-seven byte-for-byte equality modulo pipeline_version stamp only; twenty-five-name consumer contract and thirteen cells exact; skip-note in FINDINGS |
+| spacevalue_refinery_composition_cache_record_2026 | T4 | spacevalue refinery composition-cache witness | read, not hosted | rc-243: preserve composition key; uncached input path |
 
 ## Domain 14 — Propellant & consumable prices
 
@@ -588,6 +592,7 @@ _Backings: economicspace `mineral_value.py` `IN_SPACE_UTILITY` (market side), `I
 | kutter_sowers_2016_cislunar1000_self_sustaining_space_economy | T2 | Kutter & Sowers, "Cislunar-1000: Transportation supporting a self-sustaining Space Economy", AIAA SPACE 2016 (DOI 10.2514/6.2016-5491) | registered, not pulled | demand-scale anchor: transportation demand for a self-sustaining cislunar economy behind IN_SPACE_ANNUAL_DEMAND_KG's judgement status |
 | faa_2024_aerospace_forecast_commercial_space | T3 | FAA (AST), "Commercial Space" chapter, FAA Aerospace Forecast FY2024-2044 - prior-year five-year edition with historical actuals 2015-2023 | full text hosted | prior-year demand baseline: 'low-high range of 134-156 in FY2024 to ... 195-338 by FY2028' + the historical actuals row (2015: 14 -> 2023: 113) |
 | faa_2025_aerospace_forecast_commercial_space | T3 | FAA (AST), "Commercial Space" chapter, FAA Aerospace Forecast FY2025-2045 - FIRST ten-year launch/reentry forecast: FY2024 actuals + low/high cases through FY2034 | full text hosted | FIRST institutional demand-scale anchor for d15: FY2024 = 148 operations (record), 174-183 -> 259-566 by FY2034, SpaceX 83%, space economy $1.4-2.3T by 2035 |
+| economicspace_spacevalue_capacity_market_implementation_2026 | T4 | Capacity pricing and fleet bound, pinned implementation record | read, not hosted | half-price surplus does not guarantee an interior fleet optimum (rc-240) |
 
 ## Domain 16 — Reliability, learning curves & hardware service life
 

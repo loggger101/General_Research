@@ -208,3 +208,46 @@ No RC opened this round: the band's low end remains contested by rc-166 (open, k
 **Round 205 - DOE HFTO PEM electrolysis technical targets registered.**
 
 spacecost CITATIONS.md section 2 credits the DOE Hydrogen and Fuel Cell Technologies Office technical-targets table for hydrolox ISRU electrolysis at system level 55 kWh/kg H2 (2022 status); no registry row carried that source. Registered this round as doe_hfto_pem_electrolysis_technical_targets [T3; verified_live_not_pulled]: read live from energy.gov on 2026-10-19 - the legacy eere/fuelcells URL answers HTTP 302 to https://www.energy.gov/cmei/fuels/technical-targets-proton-exchange-membrane-electrolysis, where the System block prints Energy Efficiency kWh/kg H2 (% LHV) = 55 (61%) / 51 (65%) / 46 (72%). The string '55 (61%)' is count==1; '51 (65%)' appears twice on the page (Stack-block 2022 Status cell and System-block 2026 Targets cell) - disambiguated by table position per the [appears twice] convention. Extracted to r205_doe_hfto_pem_targets_key_numbers.csv (4 rows). The stack-vs-system distinction is recorded for the rc-166 evidence trail: kornuta_2019's ~4.41 kWh/kg electrolysis-alone figure is a plant-level measurement, not comparable to DOE target cells; rc-166 stays open and untouched.
+
+## R311 - Settled ISRU feed can exceed the asteroid resource budget (2026-11-01)
+
+`economicspace_isru_feed_resource_budget_record_2026`: economicspace `modules/calc.py`
+at 54e30b0ae82be71c987f08feb95630502b7f54f0 says ISRU feed "comes off both budgets
+before any ore is loaded" (L6566-6567). The sizing loop estimates return propellant
+without `k_ret` (L6361-6365); the settled return book includes that tank-closure factor
+(L6648-6653). Settled fuel feed is then checked against rig throughput (L6678-6682),
+with no corresponding check against `mineable_kg`.
+
+A complete call through the original `_evaluate_combo_at_ratio`, its original physical
+and cost helpers, and the 46 original spacecost operational rows returns this synthetic
+mission: body budget 1,000 kg, raw cargo 100 kg, return dry floor 10 kg, structure fraction
+0.1, return mass ratio 2, tank fraction 0.1, water fraction 0.2, recovery 0.9, and
+water/propellant ratio 9/7. The LEO capacity is deliberately nonbinding (1e8 kg); the
+caller caps cargo at 100 kg. This is a function-level conservation witness, not an
+observed catalog body or quoted launch architecture.
+
+The loop computes 120 kg of propellant and 857.142857 kg of fuel feed. The settled book
+instead has `k_ret=1/(1-0.1*(2-1))=1.1111111111`, 133.333333 kg of propellant and
+952.380952 kg of fuel feed. With 100 kg cargo feed, this consumes **1,052.380952 kg**
+from a 1,000 kg body, yet returns a complete mission result at L7303.
+
+| case | body budget (kg) | cargo feed (kg) | fuel feed (kg) | total feed (kg) | original result |
+|---|---|---|---|---|---|
+| baseline | 1,000 | 100 | 952.380952 | 1,052.380952 | returned |
+| zero tank control | 1,000 | 100 | 857.142857 | 957.142857 | returned, within budget |
+| larger body control | 1,200 | 100 | 952.380952 | 1,052.380952 | returned, within budget |
+| throughput limited to 1,000 kg | 1,000 | 100 | 952.380952 | 1,052.380952 | rejected at L6682 |
+| processing, liberation and containment on | 1,000 | 100 | 960.317460 | 1,060.317460 | returned |
+| smaller 94 kg cargo | 1,000 | 94 | 900 | 994 | returned, within budget |
+
+The baseline disables those three processing/containment features and the refinery to
+isolate the resource book; the enabled case restores processing, liberation and containment.
+The extracted CSV records fixture dictionaries, config overrides, call arguments and
+results. Independently solving `P+q*k_ret*(1.1*P+10)<=1000` gives a maximum payload below
+100 kg; the 94 kg control fits. Adding only a settled material-budget comparison to an
+in-memory copy rejects the baseline, with no upstream source-file change.
+
+Verdict: the returned resource book violates its own finite-material bound. `rc-241`:
+use consistent tank-inclusive fuel estimates and enforce both resource budgets after
+settlement, refitting payload/feed when necessary. Current-catalog incidence and ranking
+impact were not measured. `extracted_data/r311_isru_feed_vs_asteroid_resource_budget.csv`.

@@ -1,8 +1,8 @@
 # General Research
 
 The evidence registry behind the **economicspace** asteroid-mining profitability
-pipeline, its Stage 3 reference package **spacecost**, and its Stage 1 package
-**AsteroidCatalog**. Each source here was accessed and read: the full text is
+pipeline, its Stage 1 package **AsteroidCatalog**, Stage 2 package **spacevalue**,
+and Stage 3 reference package **spacecost**. Each source here was accessed and read: the full text is
 hosted where it may be redistributed; otherwise the metadata, abstract and
 extracted numbers are kept. Since Round 74 the registry also lists every source
 those repos cite, grey sources (T4) included, so each upstream dependency is
@@ -215,7 +215,7 @@ manifest and `.gitattributes`; extracted-data CSVs and the citation of every rea
 in the file its status belongs to) and `upstream_commit_map.csv`; that every cited `extracted_data/` or
 `full_texts/` path and every cited `rc-NNN` exists; and rejected ids. It
 only warns where the decision is the owner's (licence, file size, an `access_status` sha256 matching no hosted
-file). `--upstream` checks cited commits and files in the sibling clones of the three upstream repos (fetch them
+file). `--upstream` checks cited commits and files in the sibling clones of the four upstream repos (fetch them
 first).
 
 Nothing fails silently: a malformed file stops its reader, a crashing check reports `check-crashed`, one that
