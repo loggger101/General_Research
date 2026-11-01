@@ -619,6 +619,7 @@ _Backings: `operational_costs.csv` launch reliability, spacecraft MTBF, mining s
 | katzberg_garrison_1995_selv_based_in_space_operations_workshop | T2 | Katzberg & Garrison 1995, SELV-based in-space operations workshop (NTRS 19960002340; 476 pp) | read, not hosted | repair/replace economics: success 80%/85%, ~2.3 failures per year, median spacecraft cost $31.6M insured (1993) |
 | hirschmann_1964_profit_from_the_learning_curve | T4 | Hirschmann 1964, Profit from the Learning Curve (HBR) | registered, not pulled | context-only: the original aircraft learning-curve article (unread; paywalled) |
 | wright_1936_factors_affecting_cost_airplanes | T1 | Factors affecting the cost of airplanes - Journal of the Aeronautical Sciences 3(4):122-128 | registered, not pulled | Context-only: learning-curve law behind economicspace beta_LC fleet flag; named by CITATIONS.md at 31fb355 |
+| economicspace_spacecost_rig_calendar_cadence_record_2026 | T4 | Rig calendar life and campaign cadence, pinned implementation record | read, not hosted | 15-year rig cap omits idle intervals between campaigns (rc-239) |
 
 ## Domain 17 — Cost of capital, contingency & insurance
 
@@ -684,6 +685,7 @@ _Backings: `calc.py` mining and beneficiation fields (mining rate, rig mass, dur
 | hay_2010_optimising_ug2_flotation_part2_modelling_pgm_recovery_cr2o3_rejection | T1 | Hay 2010, optimising UG2 flotation, part 2: modelling PGM recovery and Cr2O3 rejection (Miner. Eng. 23) | registered, not pulled | context-only: PGM flotation recovery at a UG2 concentrator (unread) |
 | kabemba_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm | T1 | Kabemba et al. 2025, flotation kinetics of Platreef PGM ore, mode-of-occurrence model (Minerals 15) | full text hosted | batch flotation PGM recovery 83-94% on Platreef ores (90.6% is liberated/sulfide-associated share, not recovery) |
 | doe_2007_mining_industry_energy_bandwidth_study | T2 | US DOE ITP 2007, Mining Industry Energy Bandwidth Study (prepared by BCS, Inc.) | read, not hosted | `Drilling / excavation energy` 200 Wh/kg: US metal mining drill+blast+dig 5.72, with haulage 31.63, whole mine incl. comminution 54.51 Wh/kg (rc-027) |
+| sanchez_scheeres_2020_cohesive_regolith_fast_rotating_asteroids | T1 | Sánchez & Scheeres 2020, regolith on fast rotators (Icarus 338) | read, not hosted | spin cutoff: stable polar regolith, including zero cohesion (rc-238) |
 
 ## Domain 20 — Mission operations, communications & ground segment
 

@@ -134,3 +134,35 @@ The previously-unclaimed worked_calculation constants MU_EARTH and V_EARTH are n
 **Round 222 drift re-run closure (skip unless verification_sheet.py moves):** economicspace `be86297` campaign-runner split (#162/#163) touched no engine or sheet code; the full verification-sheet run reproduces the R215 input verdict exactly — 337 tags, inputs 29 named a source / 5 derived here / 2 term not charged / 95 need backing, steps 86 spending an unbacked input. The Round 207 triage of those classes remains current; no new needs-backing seam surfaced since. Related completeness facts: requirements.txt mirrors _MASTER_REQUIRED (requests pandas numpy yfinance tqdm spacecost-as-tagged-ref v0.12.0) with their verify_docs check 7 enforcing it, and the quietqueue citation added to CITATIONS.md is sibling tooling-repo class (github.com/loggger101/quietqueue at tag v0.1.0), documented not registered per Round 220 precedent for carved-out repos.
 
 **Ledger verdicts invariant under CITATIONS restructuring; skip vsheet re-run unless verification_sheet.py itself moves (Round 228):** two structural proofs at economicspace `8ce5c53`. First, verification_sheet.py contains no runtime read of CITATIONS.md — the file is named only in prose labels pointing readers to where sources live; backing content derives from spacecost row notes, Module-2 catalog price-source columns and Stage-1 provenance columns per its own provenance-section comment block. Second, the #164 removal audit holds under independent check: ui.py (line 1481) is the sole importer of orbital in the published tree, and no other file references kepler_E / true_anomaly / propagate_elements / lambert_izzo / _hyp2f1b, so campaign reproduction cannot hit a dangling import. Consequence: the R215-R222 ledger counts (inputs 29 named / 5 derived / 2 term-not-charged / 95 need backing of 131) remain current at `8ce5c53` without re-running, and the roughly one-gigabyte generated profitability_catalog.csv dependency stays untouched in scratch worktree runs.
+
+## R308 - Equatorial lift is not a whole-body regolith exclusion (2026-11-01)
+
+`sanchez_scheeres_2020_cohesive_regolith_fast_rotating_asteroids` (arXiv v1 p18, conclusions):
+"the poles are always covered with regolith". The cohesionless limit is explicit on p9; the
+model assumes a thin surface layer on a strong sphere (p3) and fixed-axis rotation (p18).
+
+At economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py:8135-8138`
+returns `None` before searching any mission when `model_spin_limit=True` and measured period
+is below `sqrt(3*pi/(G*rho))`. `MODEL.md:1344-1347` infers from equatorial grain loss that
+the body has no loose layer to scoop. The default flag is false.
+
+Using the paper's 35-degree friction (p4) and zero cohesion, its force components (p4,
+Eqs.(3)-(4)) and Coulomb condition (p5, Eq.(9)) give, for latitude delta and
+`k=(P_lift/P)^2`, downward acceleration `g*(1-k*cos(delta)^2)` and tangential magnitude
+`g*k*abs(sin(delta)*cos(delta))`. Solving the friction boundary yields these static regions
+for a sphere of density 2 g/cm3 (`P_lift=2.33407713 h`):
+
+| measured period | current gate rejects | stable absolute latitude above | two polar caps / surface |
+|---|---|---|---|
+| 2 h | yes | 64.706755 deg | 9.586707% |
+| 1 h | yes | 83.142557 deg | 0.715370% |
+| 0.467 h | yes | 88.423542 deg | 0.037850% |
+
+The closed-form boundaries also match independent numerical bisection of the force inequality.
+At 2 h and latitude 80 degrees, downward acceleration remains positive and friction capacity
+exceeds the tangential force. These are derived static counterexamples to universal surface
+loss, not measurements of regolith inventory. Shape, tumbling and disturbance during digging
+can change retention; the paper specifically warns about tumbling (p18), and supplies no
+excavatable mass or throughput. Verdict: the equatorial formula is correct, but whole-body
+rejection requires an additional screening assumption. `rc-238`: scope the spin gate and
+its physical claim. `extracted_data/r308_spin_cutoff_polar_regolith.csv`.

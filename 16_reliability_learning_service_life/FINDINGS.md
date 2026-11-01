@@ -100,3 +100,43 @@ rc-093 (cite Cross & Vesely; 0.90 is the credited case), rc-094 (cite Kinnett an
 economicspace published a six-commit batch (origin/main 675f0cf to 31fb355): starred-repos split out, quietlaunch launcher split, worksheet extension on other architectures. Their CITATIONS.md gained the block quote Wright, T. P. (1936). Factors affecting the cost of airplanes. Journal of the Aeronautical Sciences 3(4), 122-128 with the learning-curve gloss each doubling of units built costs a fixed fraction of the last, and campaign/verification_sheet.py registers the citation mapping that prints Wright 1936 for any step whose formula is log2(b_LC) or k ^ beta_LC. The registry held duane_1964 (T1), hirschmann_1964 (T4 context) and chen_mclennan_2004 (T2 measured anchor) but never the 1936 original; now registered T1 with Crossref-verified volume/issue/pages and a documented HTTP 403 at doi.org from this machine.
 
 Near-miss documented, NOT registered: MIL-HDBK-189 appears in the same worksheet diff only inside planted-case test scaffolding (a fixture proving the sheet can recognize standards cited by number), not as a source claim of any model value. All three open RC targets re-checked at the new HEAD and untouched: rc-175 documented tank-fraction pair count==1, rc-176 1.2 GB README claim count==1, rc-183 winner-table section present.
+
+## R309 - Rig calendar life omits the idle gaps between campaigns (2026-11-01)
+
+`economicspace_spacecost_rig_calendar_cadence_record_2026`: economicspace
+`modules/calc.py:4539-4541` at 54e30b0ae82be71c987f08feb95630502b7f54f0 says the
+15-year rig life "is a calendar figure"; spacecost `spacecost/operations.py:899-901`
+at 860bef9902aa67fec705875cd52fdb8e6def159f calls it a "CALENDAR bound". The table
+holds 15 years and an independent five-campaign duty limit.
+
+`rig_trips_per_ship` divides 15 by `stay_yr` (L4564), but the same body can have
+`campaign_cadence_yr=max(stay_yr,synodic_yr)` (L4600-4604). Its call site computes
+rig trips before cadence (L6886-6894), and `programme_options` enumerates every
+campaign count up to that trip bound (L4951), without checking elapsed rig age.
+The wait already included in each stay is half the synodic period (L5917);
+there can still be additional idle time between stays.
+
+Executing the pinned helper functions with the actual table values and dataclass defaults
+(`capacity_cap`, programme search on, eight fleet rungs, both rig limits on) gives:
+
+| case | stay (yr) | cadence (yr) | permitted campaigns per rig | final completion from first start (yr) | campaigns within 15 yr |
+|---|---|---|---|---|---|
+| 0.5 yr dig, 4 yr synodic | 2.5 | 4 | 5 | 18.5 | 4 |
+| 1.25 yr dig, a=1.05 AU | 6.25 | 10 | 2 | 16.25 | 1 |
+| 1.25 yr dig, a=1.13 AU | 4.235009 | 5.970019 | 3 | 16.175047 | 2 |
+| stay-bound control | 4.5 | 4.5 | 3 | 13.5 | 3 |
+| windows-off control | 0.5 | 0.5 | 5 | 2.5 | 5 |
+
+The 1.05 AU example respects the code's 10-year synodic cap. In the first case,
+starts are 0, 4, 8, 12 and 16 years, so the fifth campaign begins after the calendar
+life has already expired. Each failing case admits eight over-life coarse programme
+options, one per fleet rung. Both controls admit none. Enumerating completion times
+independently reproduces `1+floor((life-stay)/cadence)` as the calendar count for
+`stay<=life`; the five-cycle cap still applies.
+
+Verdict: the implemented count is a cumulative-stay budget, whereas its stated
+meaning is a calendar budget. `rc-239`: include inter-campaign idle time in the rig
+life constraint, or explicitly redefine the estimate as duty time. This comparison
+starts the age clock at the first stay and omits outbound transit; it does not assign
+a new empirical rig lifetime or quantify a change to any full-catalog winner.
+`extracted_data/r309_rig_lifetime_vs_campaign_cadence.csv`.
