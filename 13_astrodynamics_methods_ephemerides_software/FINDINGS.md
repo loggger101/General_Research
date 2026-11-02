@@ -20,7 +20,8 @@ Every source the upstream repos cite that the registry lacked, each `registered_
 |---|---|
 | jpl_horizons_api | **open_service**: Horizons API v1.3 answered a Mars OBSERVER query (radius 3389.92 +/- 0.04 km, density 3.933 g/cm^3) and a Bennu VECTORS query (A=1.12639 au, EC=.20375 at EPOCH 2455562.5). Snapshots: extracted_data/r109_horizons_mars_observer_ephemeris.json, r109_horizons_bennu_101955_vectors_ephemeris.json; key numbers in r109_jpl_astrodynamics_services_key_numbers.csv. v1.3 (2025 June) renamed `EPH_TYPE` to `EPHEM_TYPE`. The dead URL behind rc-049 still answers 404. |
 | jpl_de441_small_body_perturber_kernels | **open_service**: sb441-n16.bsp 615.8 MB, sb441-n373s.bsp 936.6 MB, sb441-n373.bsp 14.13 GB, too large to commit (URLs and sizes in extracted_data/). The I/O manual SB441_IOM392R-21-005 (Farnocchia, 2021-03-30) is hosted as `jpl_sb441_iom_perturber_manual` [T2, public domain]. |
-**Round 206 - Vallado edition stated upstream.**
+
+## R206 - Vallado edition stated upstream (2026-10-19)
 
 economicspace@36bc858 CITATIONS.md now names *Fundamentals of Astrodynamics and Applications*, **4th ed., Microcosm Press, 2013**, for vis-viva, circular and escape speed, the combined plane change, Kepler's third law and the synodic period (RELATIONS register). The registry row carried "n.d. (upstream gives no edition)" from R74; year set to 2013 with a dated access_status note. No cell semantics change - validation-case mapping for the Lambert oracle is untouched.
 
@@ -42,7 +43,7 @@ economicspace PR#164 (8ce5c53) cut its root `orbital.py` to `elements_to_state` 
 
 The owner rejected the sources only starred-repos uses: the Lambert solver's paper and the Kepler starter (both live only in starred-repos' `orbital.py` since economicspace #164) and, in domain 01, the SDSS taxonomy table with its survey and method papers (moved with its probe in #159). This domain keeps economicspace's `orbital.py` (`github_python_skyfield`, `github_spacekit`), the worksheet's textbook relations (`vallado_fundamentals_astrodynamics_applications`) and the JPL services.
 
-## Round 295 - MODEL.md programme-scale search-cost claim vs the committed runtime record (rc-233)
+## R295 - MODEL.md programme-scale search-cost claim vs the committed runtime record (rc-233) (2026-10-28)
 
 MODEL.md section "Programme scale" L579 at economicspace origin/main 3ba6f3a states in present tense:
 "That costs **2.0x to 3.1x runtime** rather than one full run per N". No release is named. The committed record of
@@ -73,7 +74,7 @@ the mass cascade is code-consistent by construction (mass cascade runs before co
 no other runtime figure appears in the section. No key-numbers CSV needed beyond r295 file named below; all claims
 here carry this-round git-blob evidence per R264 rule.
 
-## SELF-CORRECTION (round 296, 2026-10-28): the R295 banked containment note was a misread - no seam exists
+## R296 - Self-correction: the R295 banked containment note was a misread - no seam exists (2026-10-28)
 
 The Round 295 paragraph above states: "BANKED (recorded, NOT opened): a comment block near model_volatile_containment
 in modules/calc.py attributes the pair 1307 s -> 3890 s and "at 1.17.7 it is 1.71x (733 s -> 1,253 s)" to containment
@@ -97,7 +98,7 @@ blob grep this round: the RESEARCH_LOG Round 295 bullet and rc-233's tracker row
 only this FINDINGS paragraph carried the error; commit message f3b244e asserted it too and is immutable post-push -
 this entry plus the Round 296 log line serve as its addendum.
 
-## Round 297 (2026-10-28): present-tense runtime-claim sweep of economicspace docs - one seam, rc-234
+## R297 - present-tense runtime-claim sweep of economicspace docs - one seam, rc-234 (2026-10-28)
 
 Swept README.md and MODEL.md at @3ba6f3a for unstamped present-tense ratio/runtime claims (the family that yielded
 rc-176, rc-183, rc-233). Result: the only surviving stale figures are three copies of the beneficiation runtime ratio
@@ -123,7 +124,7 @@ past mispredictions, not a live claim; MODEL.md krypton "13 cheaper than xenon" 
 by applied rc-059; calc.py use_beneficiation comment and measured_cell_provenance machinery are de-typed and carry the
 stamp-on-staleness rule explicitly.
 
-## Round 298 (2026-10-28): runtime-ratio restatement sweep completed across economicspace - seam family closed, no RC
+## R298 - runtime-ratio restatement sweep completed across economicspace - seam family closed, no RC (2026-10-28)
 
 Continuation of the R297 seam (rc-234). Swept at @3ba6f3a: CLAUDE.md, campaign/README.md and LESSONS.md for
 present-tense time claims (zero hits; the single Nx line in CLAUDE.md is a closed-items table verdict - "the RTX 2080
@@ -151,7 +152,7 @@ Conclusion: the three copies found by rc-234 (README sample header, verify.py co
 runtime restatements anywhere in economicspace at @3ba6f3a. Seam family closed; reopen only on upstream drift touching
 the measured tables or new doc prose.
 
-## Round 299 (2026-10-28): MODEL.md launch-window table seam - rc-235 opened
+## R299 - MODEL.md launch-window table seam - rc-235 opened (2026-10-28)
 
 Swept economicspace@3ba6f3a. The Launch windows subsection of "Gaps in what the model charged for" illustrates
 expected wait times with a three-row table whose first row prints | 1.05 AU | 1.08 yr | **10.0 yr** | (count==1).
@@ -173,7 +174,7 @@ Skip-note: do not re-sweep this table unless MODEL.md moves or engine window cod
 candidate from this seam. Claim map checked before drafting: no open RC mentions synodic or launch windows;
 rc-071 (applied) covers Mars TMI synodic swing in spacecost delta_v notes - different repo, file and row.
 
-## Round 300 (2026-10-28): MODEL.md delivery-table currency proof and the hardware-share band seam - rc-236 opened
+## R300 - MODEL.md delivery-table currency proof and the hardware-share band seam - rc-236 opened (2026-10-28)
 
 Reproduction at exactly what economicspace consumes: requirements.txt pins spacecost @ v0.14.0 (= aa1118c; MIT LICENSE present).
 Extracted that tag with git archive and called the module directly (read-only, no edits anywhere): every cell of the MODEL.md
@@ -197,15 +198,15 @@ Skip-note: do not re-sweep the delivery table unless MODEL.md tables or the pinn
 Claim map checked before drafting: rc-185 (open) matched only on substring noise - it targets LOX component price in spacecost
 propellants, different repo/file/claim.
 
-**Round 301 (2026-10-29) - economicspace pin enumeration and catalog shape claims verified at 3ba6f3a (skip-note).**
+## R301 - economicspace pin enumeration and catalog shape claims verified at 3ba6f3a (skip-note) (2026-10-29)
 
 The README quantitative contract was last swept in full at be86297 (R231); pins moved since, so the enumeration was re-verified against published blobs only. spacecost v0.14.0 confirmed in all five places the README names: requirements.txt URL pin, modules/_runtime.py PIP_SPEC entry, README itself (L154), CLAUDE.md (L503) and CITATIONS.md (L297); tag v0.14.0 dereferences to commit edfd5bec (annotated tag object aa1118c). Catalog pin data-2026-10-21b confirmed at modules/catalog.py L121 and price release prices-2026-10-07 at modules/mineral_value.py L104. README L536 shape claims reproduce exactly on the R286-audited -21b parquet: rows 1,575,889; columns 102; comp_phases and comp_phases_detailed both present (comp_phases new at contract 1.7.0 per AC enrich.py comment at the release tag). README L1221 measured-diameter sentence matches the -21b manifest counts R286 reproduced from the shipped parquet; its single data-2026-09-29c mention (L1092) is a dated past-tense run record, accurate by design. Skip unless these pins move or MODEL.md prose changes.
 
-**Round 303 (2026-10-29) - economicspace CITATIONS.md verified complete at tip 3ba6f3a (skip-note).**
+## R303 - economicspace CITATIONS.md verified complete at tip 3ba6f3a (skip-note) (2026-10-29)
 
 Work-level pass over the whole file plus an accession-token pass: every named work resolves to a registry row and every NTRS, DOI or OIG token appears in one. The only unregistered identifier is arXiv:2108.03215, which sits on an explicit disclaimer sentence stating that the Izzo 2015 Lambert solver and its Kepler starter live in starred-repos orbital.py rather than economicspace - out of scope per the R227 carve-out convention (starred-repos carries its own CITATIONS.md, blob-verified faithful at R227). The previous work-level sweep was anchored pre-#154; this round closes drift #154 through #187. Do not re-sweep this file unless it changes at a new tip.
 
-**Round 306 (2026-10-29) - spacevalue CHANGELOG claim battery fully verified at pinned tag v0.2.0; skip-note for this seam.**
+## R306 - spacevalue CHANGELOG claim battery fully verified at pinned tag v0.2.0; skip-note for this seam (2026-10-29)
 
 Every falsifiable numeric or cross-repo claim in the package CHANGELOG was tested against surviving committed bytes, all five repo tips static (spacecost 860bef9 / economicspace 3ba6f3a / AsteroidCatalog 92f7739 / spacevalue main 873b91c ahead of pin by tests-only commits; no tag newer than v0.2.0). Results: package version string equals 0.2.0 at the tag and all eight committed fixture tables carry pipeline_version stamp 1.17.0, matching the declared data contract; exactly eight destination CSVs are committed under tests/data/prices-2026-10-07/ as claimed; economicspace versions.md contains the named Stage 2 changelog section that the CHANGELOG points to for contracts before 1.17.0; the consumer-contract claim of twenty-five imported cargo names reproduces exactly - the from-import block in economicspace modules/calc.py at tip lists precisely those twenty-five distinct names; the golden recording holds thirteen distinct cells across sixteen recorded functions and 4,858 calls as stated (default raw, default benef+search, detailed_off benef, elasticity raw and benef+search, phases_off both, refinery_off both, single_mission both, surplus_wall, unbounded). The headline byte-for-byte claim was verified directly: economicspace tracks frozen Stage-2 tables under campaign/stage2/mineral_value-1.15.0/ for exactly seven destinations (no gto - that destination joined later per the #141 history at R203), and comparing each against the spacevalue fixture leaves precisely one differing column, pipeline_version, with 59 rows giving exactly 59 differing cells per table; every value cell including catalog_date is identical. The claim of equality for all eight destinations against a mineral_value 1.16.0 build has no surviving committed bytes on the economicspace side (zero files under mineral_value-1.16.0/, publication having moved to spacevalue), so that half stands as their CI-era assertion; the CHANGELOG wording is accurate about which seven are byte-frozen. The requires-python 3.12 rationale was reproduced mechanically on this machine: a mixed-magnitude float list summed naively gives bits 402f20345f3459f1 under CPython 3.11.16 (uv-managed) versus 402f20345f1ac05a under system 3.13, the latter equal to math.fsum - pre-3.12 builtin sum is genuinely uncompensated, so one-bit yield differences at lower interpreters are real; demonstrated at mechanism level on a synthetic list, not from their exact yield inputs. Registered spacevalue_release_record_v0_2_0 T4 in d13. Skip-note: this seam is fully mined while tips hold - do not re-sweep unless spacevalue tags beyond v0.2.0, economicspace unfreezes Stage-2 tables, or the CHANGELOG changes.
 

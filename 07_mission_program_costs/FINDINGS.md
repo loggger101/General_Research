@@ -15,11 +15,11 @@ The Planetary Society's Planetary Exploration Budget Dataset (Casey Dreier), pul
 - **Autonomous mining control & AI (NRE):** the note's "~$2.4B program" vs Perseverance dev+launch $2,462.6M (-2.5%). PEBD has no software line, so the ~$150M autonomy subset stays secondary.
 - **Sample recovery operations:** the note's "$283M / 9 yr" envelope was a pre-return projection; final operations obligations were $232.2M (+21.9% over). No source has a standalone recovery-cost line.
 
-## Round 59 - OIG IG-20-023 cross-validates PEBD (hosted)
+## R59 - OIG IG-20-023 cross-validates PEBD (hosted) (2026-09-25)
 
 NASA OIG "NASA's Planetary Science Portfolio" (2020-09-16), Table 2 (p15): Perseverance LCC 2,725.8 (exact match with PEBD); OSIRIS-REx 622.0 cap basis / 1,121.4 LCC (+6.1% vs PEBD, a vintage difference); MSL 2,476.3. "these cost caps do not reflect the total costs of those missions because they do not include launch vehicle and operations costs": NRE rows compare to the cap basis. InSight 593.9/828.9, Lucy 505.7/981.1, Psyche 626.3/996.4 (all three above the $500M Discovery cap), Dragonfly n/a / 1,800–2,200, Europa Clipper n/a / 4,250.0. No per-recovery figure.
 
-## Round 60 - OIG IG-24-008: Mars Sample Return programme economics (hosted)
+## R60 - OIG IG-24-008: Mars Sample Return programme economics (hosted) (2026-09-25)
 
 "Audit of the Mars Sample Return Program" (2024-02-28):
 
@@ -31,7 +31,7 @@ NASA OIG "NASA's Planetary Science Portfolio" (2020-09-16), Table 2 (p15): Perse
 
 No per-Earth-recovery figure.
 
-## Round 62 - NASA FY2027 Budget Estimates (hosted)
+## R62 - NASA FY2027 Budget Estimates (hosted) (2026-09-25)
 
 384 pp, April 2026. p159 lists Curation office activities including "(4) recovery and transport of returned materials". p158 *Other Missions and Data Analysis* (Budget Authority, $M):
 
@@ -88,8 +88,7 @@ rc-047 (applied in spacecost 0.5.2) fixed the Mission operations note with PEBD 
 
 rc-106: cite PEBD for the Perseverance programme figure and mark the $150M autonomy figure unsourced. Text in `revision_candidates_closed.csv`.
 
-
-## Round 246 - SLS Block 1B cancellation status anchored to NASA FY2027 budget estimates
+## R246 - SLS Block 1B cancellation status anchored to NASA FY2027 budget estimates (2026-10-23)
 
 The owner replace-flag for satnews_2026_artemis_restructuring asked for a NASA document instead of press reports; the hosted FY2027 budget estimates supplies one. Its SLS program section and its EXPLANATION OF MAJOR CHANGES both print "Instead of futher developing the Exploration Upper Stage (EUS), which faced significant cost overruns and delays" [appears twice; typo as printed], the Major Projects table lists SLS Block 1B under the footnote "Funding is not proposed for these projects in the FY 2027 budget", and the same passage states "NASA also no longer needing the Mobile Launcher 2". rc-190 cites this document as institutional backing for the cancelled status upstream carries with news-only attribution; announcement timing may remain attributed to SpaceNews/SatNews. No values move.
 

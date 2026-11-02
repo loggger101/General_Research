@@ -79,7 +79,7 @@ The flat 0.15 approximates this curve for one entry class. `extracted_data/r159_
 
 rc-134 and rc-135 (scale the heat-shield fraction with entry speed in economicspace and spacecost), rc-137 (return-structure heritage figures: Cygnus 3,754 kg), rc-139 (the SSCM/NICM $/kg bracket is unreadable; NICM is an instrument model). Texts in `revision_candidates.csv` (open) and `revision_candidates_closed.csv`.
 
-**Round 282 (2026-10-27)** - Bulk ore restraint citation seam
+## R282 - Bulk ore restraint citation seam (2026-10-27)
 
 Seam: the storage_systems.csv row Bulk ore restraint (bag / hopper), value 0.15 kg containment per kg ore [0.08..0.3], is Module 4 return-vehicle structure fraction (return_structure_frac_of_payload) and economicspace consumes it as its calc.py default, feeding the fixed-point mass cascade; verification_sheet input f_str is backed only by cite_config quoting that dial comment. The row note claims Real cargo spacecraft run 0.4:1 to 2:1 payload-to-structure with no document named in spacecost, and CITATIONS.md covers this table only by policy - every storage system cited by the notes field of its own row (fragments count==1 at @860bef9). The note simultaneously asserts recorded here so the cargo side of storage has a citation of its own; under the self-citation contract that claim is empty because no document appears in it.
 

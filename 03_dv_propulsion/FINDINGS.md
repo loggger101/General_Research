@@ -2,7 +2,7 @@
 
 Backings: spacecost `reference/delta_v_segments.csv`, `reference/propellants.csv` (Isp, density, cost, EP sizing columns), `delivery.py` stage-mass fractions; economicspace `calc.py` `ep_target_thrust_yr`.
 
-## Round 1 - NEA Δv anchors (both un-hosted 2026-09-26, arXiv default licence)
+## R1 - NEA Δv anchors (both un-hosted 2026-09-26, arXiv default licence) (2026-09-17)
 
 **elvis2011** [T1] (Planetary and Space Science 59(13):1408-1412; arXiv:1105.4152), the paper the easy-NEA row cites:
 
@@ -16,21 +16,21 @@ Payload-gain formula e^((Δv−<Δv>)/v_ex) with v_ex = 4.4 km/s (Isp ≈ 449 s)
 
 **ieva2014** [T1] (A&A 569:A59; arXiv:1406.5027): NEOSURFACE survey of 13 objects (all Δv < 10.5 km/s; 11 S-complex, 2 C-complex), with no median or mean Δv. The average-NEA note ("Median NEA Δv per low-Δv NEA survey (arXiv:1406.5027)") should cite elvis2011 and say peak, not median. R71 files: `r71_elvis2011_key_numbers.csv`, `r71_elvis2011_table1_lowest_dv_neos.csv`, `r71_ieva2014_key_numbers.csv`, `r71_ieva2014_table3_mineralogy.csv`, `r71_ieva2014_tables1_2_low_dv_nea_targets.csv`.
 
-## Round 3 - shoemaker_helin_1978 [T2, hosted]
+## R3 - shoemaker_helin_1978 [T2, hosted] (2026-09-18)
 
 NASA CP-2053 (NTRS 19780021079), the root of Asterank's `dv`: rendezvous impulse ~1 km/s for low-Δv Amors/Apollos; sample-return round trip 2–3 km/s to easy targets vs 5–6+ km/s for typical main-belt objects; dV = 30F + 0.5 km/s (Eq. 11 p4, Fig. 1 p5; corrected in R70 from "3.0F"). The outbound leg dominates the 6500 m/s row; the belt is 2-3x harder than NEAs. `extracted_data/shoemaker_helin_delta_v_key_numbers.csv`.
 
 taylor2018 (Acta Astronautica 146, DOI 10.1016/j.actaastro.2018.02.014), behind the 10500 m/s main-belt row, is paywalled: context-only.
 
-## Round 5 - nextc_protoflight_2021 [T2, hosted]
+## R5 - nextc_protoflight_2021 [T2, hosted] (2026-09-18)
 
 NEXT-C flight thruster SN001 (NTRS 20210018563): Isp 1400–4160 s, thrust 25–235 mN at up to 6.85 kW; delivered for DART. The Xenon row's 3000 s is a mid-envelope throttle point of flown hardware. With nextc_ppu_2020 (d05), both thruster and PPU rest on flight-article tests. `extracted_data/nextc_flight_thruster_key_numbers.csv`; R72 Tables 2-8 (320 rows: `r72_nextc_protoflight_2021_tables2_8_component_performance.csv`; the 0.69 sccm margin and 1267 V limit print under TL09 in Tables 3-4 but TL05 in Tables 7-8, kept as printed).
 
-## Round 12 - sanna_2024 [T1, hosted, CC BY]
+## R12 - sanna_2024 [T1, hosted, CC BY] (2026-09-18)
 
 Gateway (NRHO) → LLO bi-impulsive transfers, ≤48 h: lowest total 666 m/s (polar LLO, free RAAN; Table 1 p10), fixed-RAAN polar 671-851 m/s (Table 4), up to ~1253 m/s at i = 20°. (R12's 648 m/s was a single burn of the 738 m/s RAAN = 0 case; corrected R70, with rc-018's text.) The 730 row cites Whitley & Martinez instead (R49). `r72_sanna_2024_tables2_3_method1_transfers.csv`.
 
-## Rounds 13-31 - Isp anchors for propellants.csv
+## R13-R31 - Isp anchors for propellants.csv
 
 | row (our Isp) | source | what it gives |
 |---|---|---|
@@ -63,7 +63,7 @@ Gateway (NRHO) → LLO bi-impulsive transfers, ≤48 h: lowest total 666 m/s (po
 
 tirila_2023 [T1] (Hall thruster database) is context-only. kim_2013 R40 Table 2 vs our rows: N2H4 240 vs 220; MMH/NTO 323 vs 336 (+4%); LH2/LOX 455 vs 452; LCH4/LOX 364 generic / 380 Raptor; costs ~$10^3 (hypergols), ~$10^1 (LH2/LOX), <$10^1 (LCH4/LOX) per kg; Table 1 at 6.89 MPa, 40:1: kerolox max 358.2 s, methalox 368.9 s. `extracted_data/r40_kim2013_propellant_isp_cost_key_numbers.csv`; R71 `r71_kim_2013_table3_methalox_engines.csv`.
 
-## Round 35 - Cislunar and Mars Δv (four hosted)
+## R35 - Cislunar and Mars Δv (four hosted) (2026-09-21)
 
 **sp4029_apollo_by_the_numbers** (SP-2000-4029), burn tables by word coordinates:
 
@@ -82,7 +82,7 @@ Lunar TEI A8 3,519 / A11 3,279 / A17 3,046 ft/s.
 
 `extracted_data/r35_cislunar_mars_delta_v_key_numbers.csv`.
 
-## Round 37 - DRA Fig 4-2 per burn; the MOI v∞
+## R37 - DRA Fig 4-2 per burn; the MOI v∞ (2026-09-21)
 
 Fig 4-2 is vector: 51 bars on a 0.5 km/s grid. Crew (2031–2046): TMI 3.95–4.10, MOI 0.97 (2035) – 1.79 (2031), TEI 1.563 constant; totals 6.27–7.38 km/s, mean 7.17 (inside DRA's 7 ± 1). Cargo (2028–2045): TMI 3.55–4.01, propulsive MOI 0.82–1.35. Our 0.9 MOI is at the low end.
 
@@ -90,7 +90,7 @@ Fig 4-2 is vector: 51 bars on a 0.5 km/s grid. Crew (2031–2046): TMI 3.95–4.
 
 AAS 19-225 Table 3 (2035): MOI 121.31/122.04 m/s, TEI 121.37/127.21, outbound SEP 3624.05/3615.80; Table 4 (2039, 50° latitude): MOI 367.72/368.16, reorientation 135.27/127.11, TEI 279.35/281.16 (hybrid architecture: context, not our pure-chemical rows). AAS 19-226 Figs 8/10 at |lat| ≈ 50°: MOI ≈ 0.33–0.39 + reorient 0.07–0.11 + TEI 0.08–0.24 km/s; tank capacity 58 t; power at TMI 675/624/574 kW. `extracted_data/r37_mars_per_burn_key_numbers.csv`.
 
-## Round 42 - ssoBFT per-body Δv (berthier_2023_ssodnet, d1)
+## R42 - ssoBFT per-body Δv (berthier_2023_ssodnet, d1) (2026-09-23)
 
 `delta_v.delta_v` = "Best total velocity range (Delta-V) that a spacecraft must undergo from Earth orbit to match orbit and rendezvous with a target" [km/s].
 
@@ -103,7 +103,7 @@ AAS 19-225 Table 3 (2035): MOI 121.31/122.04 m/s, TEI 121.37/127.21, outbound SE
 
 The 10,500 m/s main-belt row sits just above the MBA median (p75 = 10.89). Only 0.219% of NEAs (93) are below 4 km/s, 2.2% below 5, 9.1% below 6: the easy/average rows price the accessible tail. Bennu 7.368, Ryugu 6.985, Eros 7.643, Didymos 6.139 km/s (transfer times 233–382 days, 2–3 burns). Join on `number`: (69230) is Hermes, Bennu is 101955. `extracted_data/r42_sso_bft_delta_v_key_numbers.csv`.
 
-## Round 49 - whitley_martinez_2015_nro_staging_orbits [T2, hosted]
+## R49 - whitley_martinez_2015_nro_staging_orbits [T2, hosted] (2026-09-23)
 
 IEEE Aerospace 2015 (NTRS 20150019648), behind both cislunar depot rows. Table 3 one-way staging orbit → LLO (m/s): NRO polar 730, NRO equatorial 898, ELO 515, PCO 700, Frozen polar 556 + 252, Frozen equatorial 556 + 408, EM-L2 halo 800, DRO 830. Table 2: NRO round trips 840 m/s (21 d) and 751 m/s (60 d).
 
@@ -112,11 +112,11 @@ IEEE Aerospace 2015 (NTRS 20150019648), behind both cislunar depot rows. Table 3
 
 R72: Table 6 gives ELO → polar LLO 953 m/s vs Table 3's 515 + 478 = 993 (kept as printed). `extracted_data/r49_whitley_martinez_nro_staging_orbits_key_numbers.csv`, `r72_whitley_martinez_2015_tables1_6_staging_orbits.csv`.
 
-## Round 55 - LANDER_DRY_MASS_FRAC = 0.20 (SP-4029)
+## R55 - LANDER_DRY_MASS_FRAC = 0.20 (SP-4029) (2026-09-24)
 
 delivery.py's comment "Apollo LM descent stage flew 2,134 kg dry on 8,200 kg of propellant = 0.21" is Apollo 10: dry 4703 lb = 2133.2 kg (+0.04%), loaded 18218.7 lb = 8263.9 kg (−0.77%); 2134/(2134+8200) = 0.2065, so "0.21" rounds up. Fleet δ (p287 press-kit dry, p305 as-flown propellant): A9 0.1912, A10 0.2052, A11 0.1978, A12 0.2092, A13 0.2014, A16 0.2372; median 0.2033. 0.20 is inside the band. `extracted_data/r55_sp4029_lm_stage_mass_key_numbers.csv`.
 
-## Round 56 - TUG_DRY_MASS_FRAC = 0.10 (SP-4029 p294)
+## R56 - TUG_DRY_MASS_FRAC = 0.10 (SP-4029 p294) (2026-09-24)
 
 S-IVB 'Ground Ignition Weights' (A7–A17; components sum to the printed total within 0.5 lb in 9 of 11): δ structure-only [0.0857, 0.0989], median 0.0963 (A7, the first S-IVB, lowest: 21852 lb dry vs fleet median ~25089); 'other' hardware ~1432–1873 lb; including 'other' hardware [0.0908, 0.1044], median 0.1021. 0.10 is inside (−2.01% vs median), between Centaur V ~0.08 and DCSS ~0.11. `extracted_data/r56_sp4029_sivb_stage_mass_key_numbers.csv`.
 
@@ -149,7 +149,7 @@ R82 (three NTRS-hosted):
 
 No candidate. Dawn flight records remain unreachable (R148 below). `extracted_data/r82_low_thrust_dv_penalty_and_duration.csv`.
 
-## Round 103 - STD-5019A and SP-125
+## R103 - STD-5019A and SP-125 (2026-10-02)
 
 - `nasa_std_5019_fracture_control_spaceflight_hardware` hosted at NASA-STD-5019A w/Change 4 (2024-07-29): §7.2.2 covers fracture-critical COPVs and defers to ANSI/AIAA S-081-2000. The 392 kJ/kg figure is a material property; context only.
 - `nasa_sp125_huzel_huang_design_liquid_rocket_engines` read (47.8 MB, too large to host): engine design only, no ascent or Δv content (for rc-060).
@@ -182,7 +182,7 @@ The `Nuclear pulse (Orion)` row (10,000 s, "Designed in full engineering detail 
 
 spacecost 0.9.0 re-pins `LLO → lunar surface (descent)` 1,870 → 2,050 m/s (mean of 6,813, 6,703, 6,698 ft/s) and adds `Lunar surface → LLO (ascent)` 1,850 m/s (6,066, 6,059, 6,076). All six match SP-4029 (A17 ascent prints 6,075.7). R35's discrepancy closes with no candidate. `extracted_data/r134_spacecost_v090_lunar_repin_verification.csv`.
 
-## Round 148 - Dawn flight records (queue)
+## R148 - Dawn flight records (queue) (2026-10-10)
 
 NTRS's Dawn IPS records are metadata-only and the EPAG handbook domains are NXDOMAIN. Registered `registered_not_pulled`: `brophy_2011_dawn_ips` (Space Sci Rev 163), `rayman_mase_2014_dawn_cruise_acta` (Acta 103), `garner_rayman_2013_jpc_cruise_yr1`, `garner_rayman_2015_jpc_orbit_ops`, `garner_rayman_2016_jpc_lamo`, `garner_rayman_2018_jpc_final_orb`. They need a library route (DOWNLOADS.md).
 
@@ -217,12 +217,14 @@ All 41 rows of `isp_vac_s`, `density_kg_per_L`, `ref_cost_usd_per_kg`, `boiloff_
   history: they record what was fetched at the time and are not checked references.
 
 No source changed; this round's candidate is rc-172, recorded in `02_composition_value/FINDINGS.md`.
-## Round 197 - MODEL.md tank-fraction list audited against live pinned rows; rc-175 opened (2026-10-19)
+
+## R197 - MODEL.md tank-fraction list audited against live pinned rows; rc-175 opened (2026-10-19)
 
 The economicspace model reference documents eight propellant-tank fractions as a fraction of contained propellant mass. That is exactly the ratio the runtime computes (`tank_kg_per_L / density_kg_per_L`, worked_calculation.py line 2409; master.py line 8523 reads the row fields verbatim), so each entry must equal the pinned spacecost v0.12.0 row division. Recomputed all eight live: iodine 0.23, xenon 1.91, APCP solid motor 6.94, hydrolox 9.73, krypton 12.52, cold gas GN2 45.92, bare LH2 (nuclear-thermal row) 52.97 - all seven round to the documented figures; **kerolox is the exception: live rows give 0.027326 / 1.0153 = 2.69 percent while MODEL.md says "xenon 1.9%, kerolox 2.5%"** (quote unique in the file at time of writing; not repeated in README or CITATIONS). Provenance: spacecost propellants.py _STORAGE_CLASS_TANK_MULT comment for mild_cryogen reads 'LOX at 1.141 kg/L -> 2.5%' - the pure-LOX class fraction (0.02875 / 1.141 = 2.52) - and base plus all multipliers are identical between economicspace@260d536, which wrote the sentence on 2026-08-08, and v0.12.0; a class anchor was mislabelled as the blend figure from day one rather than drifting later. Opened **rc-175** (value): change to 2.7 percent or state both figures with their semantics. Documentation-only impact - model output already correct - but it breaks the invariant that MODEL.md can be read as an oracle for what verification_sheet.py prints, understating kerolox tankage by about 0.19 percentage points per kilogram of propellant (+7.6 percent relative) for a reader working from prose.
 
 Same sweep, two consistency results recorded without RCs: (a) the GCAT claim "613 active geostationary satellites (McDowell's GCAT, Jan 2026; 550 until mineral_value 1.13.0)" agrees with registered source mc_dowell_2025_space_activities_gcat - rc-057 was applied upstream and the model re-pinned exactly as the registry predicted; (b) MODEL.md quotes Mars entry survival derivations "MSL landed 899 kg of a 3,153 kg entry mass" and "Perseverance 1,026 of 3,369" - internally consistent with the documented fractions (28.5 percent / 30.5 percent) but spacecost stores only the flat MARS_LANDED_MASS_FRACTION = 0.3; no registered GR source carries institutional entry masses for either mission, so no candidate can be opened on them yet - if a future pull lands JPL mission factsheets with entry masses, re-check this line first (899 kg landed matches r139_edl_mass_budget_key_numbers.csv).
-## Round 203 - rc-177: the GEO coplanar-burn context figure contradicts exact two-body arithmetic and upstream's own docs (2026-10-19)
+
+## R203 - rc-177: the GEO coplanar-burn context figure contradicts exact two-body arithmetic and upstream's own docs (2026-10-19)
 
 While sweeping economicspace MODEL.md delivery-table claims against the pinned spacecost v0.12.0 delta-v table, one prose-vs-code seam opened onto a three-way contradiction on the same manoeuvre:
 
@@ -237,11 +239,11 @@ Boundary case recorded for completeness: Module 4's arrival-plane-change figure 
 
 Source: curtis_orbital_mechanics_engineering_students (T4, d03), the textbook spacecost's own delta_v_segments header cites for ascent-line values and covering Hohmann transfers with inclined plane change by law of cosines.
 
-**Round 205 - Sutton & Biblarz registered as RELATIONS-register context.**
+## R205 - Sutton & Biblarz registered as RELATIONS-register context (2026-10-19)
 
 economicspace CITATIONS.md section 4 names Sutton and Biblarz (Rocket Propulsion Elements, 9th ed., Wiley 2017) for the rocket equation, exhaust velocity, thrust and jet power relations that campaign/verification_sheet.py prints in its RELATIONS register. No registry row carried it; registered this round as sutton_biblarz_2017_rocket_propulsion_elements_ninth_edition [T4; registered_not_pulled], textbook class alongside curtis_orbital_mechanics_engineering_students (d03) and vallado_fundamentals_astrodynamics_applications (d13). Context-only: no cell pins a figure to it.
 
-**Round 206 - drift audit of economicspace #150-#153 and provenance correction.**
+## R206 - drift audit of economicspace #150-#153 and provenance correction (2026-10-19)
 
 economicspace moved d77f1ce -> **36bc858** (four commits: verification-worksheet backing part "Backing, row by row", layout fixes, retired-$50-ISRU-rate naming, text pass; no engine or reference-table changes). Audit results:
 - The new CITATIONS.md section "Textbook relations the verification worksheet cites" names exactly three works - Sutton & Biblarz 2017 (registered R205), Vallado 4th ed. 2013 (row updated this round, see d13 FINDINGS) and Fowler & Chillemi 1992 in Tedesco et al., PL-TR-92-2049 (hosted since R70). No new registration needed; the inline "(SpaceNews 2024)" and "per Reuters analyst consensus" attributions surfaced by their source-splitter audit are already registered (`spacenews_launch_reporting_2024_2026`, `reuters_2026_gold_analyst_consensus`).
@@ -253,7 +255,7 @@ economicspace moved d77f1ce -> **36bc858** (four commits: verification-worksheet
 
 **NEA delta-v anchors are dated by design; skip any live-NHATS staleness chase (Round 229):** at spacecost `29a7ced` the LEO-to-NEA rows of delta_v_segments.csv (easy 4500, average 6500, hard 8500 m/s) each carry catalog_date 2026-09-23 and name their sources in-row (Elvis et al. 2011 arXiv:1105.4152 for the ultra-low class ~65 of 6699; Benner compilation peak 6.65 km/s for average). Because the reference population is stamped, drift in the live NHATS service does not stale these rows and no update candidate applies unless upstream re-pulls without re-dating.
 
-## Round 234 - three identifiers corrected from the page images; 36 spacecost candidates applied
+## R234 - three identifiers corrected from the page images; 36 spacecost candidates applied (2026-10-21)
 
 The spacecost releases 0.12.1-0.12.4 (merged to main at `7b40d5b`) applied 36 candidates; their rows in `revision_candidates_closed.csv` record what landed. Re-reading the sources before the upstream edits found three identifiers in this domain's registry rows wrong. Each was read from a rendered page image, because the text layer is what misled:
 
@@ -263,21 +265,23 @@ The spacecost releases 0.12.1-0.12.4 (merged to main at `7b40d5b`) applied 36 ca
 
 Corrections to candidate proposals, each recorded in its row: rc-101 (Hoffman's ~62 W/kg is array-level, not the system halving), rc-104 (the PPE is "60-kilowatt power generation", IG-21-004 p11), rc-105 (IG-23-010 Table 2 gives $223k-263k per mission watt; no GAO figure or 110 We conversion), rc-159 (the delivery chains fly a typed 465 s, not the RL10's 444 s) and rc-182 ($68,800/kg is not in IG-18-016; p27 gives $63,200 CRS-1 and $71,800 projected CRS-2).
 
+## R283 - rafalskyi_2021_iodine_ep_in_orbit - cost comparison extracted (rc-226 trail) (2026-10-27)
 
-**R283 rafalskyi_2021_iodine_ep_in_orbit - cost comparison extracted (rc-226 trail).** The hosted Methods section carries a propellant cost comparison: total iodine propellant cost approximately US$60 at 99.5% purity, xenon US$1,275 for the same mass, iodine-related hardware below US$200 against xenon hardware about 100 times higher, qualification just under US$4,000 versus about US$9,000 (spans in r283_rafalskyi_propellant_cost_key_numbers.csv). No propellant load mass is printed anywhere in the article body or Methods; the system total mass including propellant is 1.2 kg. The figures are therefore totals of unknown quantity - usable for relative statements only. See d14 FINDINGS and rc-226 for the spacecost-side defect.
+The hosted Methods section carries a propellant cost comparison: total iodine propellant cost approximately US$60 at 99.5% purity, xenon US$1,275 for the same mass, iodine-related hardware below US$200 against xenon hardware about 100 times higher, qualification just under US$4,000 versus about US$9,000 (spans in r283_rafalskyi_propellant_cost_key_numbers.csv). No propellant load mass is printed anywhere in the article body or Methods; the system total mass including propellant is 1.2 kg. The figures are therefore totals of unknown quantity - usable for relative statements only. See d14 FINDINGS and rc-226 for the spacecost-side defect.
 
-**Round 285 - delta_v_segments.csv notes-to-CITATIONS sweep (spacecost@860bef9)**
+## R285 - delta_v_segments.csv notes-to-CITATIONS sweep (spacecost@860bef9) (2026-10-28)
+
 Swept all 34 rows against the self-citation contract. One seam opened as rc-228: row LEO to GTO stores 2,440 m/s attributed to a nonexistent handbook; bisection on two-body perigee burn (mu=398600.4418, R_E=6378) reproduces 2,440 exactly at parking altitude 250.4 km and gives 2,455 at the table-wide 200-km convention - an undocumented orbit-convention difference against the perigee-burn row whose printed constants (v_p(GTO) 10.239 minus v_LEO 7.784) give 2,455; delivery.py consumes only that derived row.
 Closure without RC: rows naming Curtis / Taylor et al. 2018 / Elvis et al. 2011 (Benner compilation reaches via Elvis per R209) / DRA 5.0 Fig 4-2 and Table 4-3 / Orloff SP-4029 lunar phase tables / Whitley & Martinez 2016 / Lyons JPL and Long et al. 2007 all resolve to CITATIONS.md section 3 entries with registry rows; composites (NRHO depot, GEO depot, Mars 1-sol depot) are arithmetic on own rows; the two-body rows state their derivation explicitly including honest DRA departures; self-declared estimates follow R282 documented-by-design.
 Recorded for a future round: row LEO to hard NEA stores 8,500 m/s with no document named - an upper-decile class figure where the registered hosted ssoBFT table (already cited by the average-NEA note for its 8.88 km/s median) could supply a recomputed decile value; row Asteroid station-keeping cites an OSIRIS-REx budget with no document.
 
-**Round 287 - hard-NEA upper-decile label contradicted by the cited distribution**
+## R287 - hard-NEA upper-decile label contradicted by the cited distribution (2026-10-28)
 
 The row LEO -> hard NEA at spacecost@860bef9 stores a single-point value of 8500 m/s whose payload_note reads, verbatim and count==1 in the committed blob: "Upper-decile NEA (inclined or eccentric); approaches MBA territory." No document is named for either figure - uncited under the self-citation contract standing rule (R282). The only quantitative accessibility distribution in the corpus is ssoBFT, registered and hosted as berthier_2023_ssodnet; the R42 extraction in this domain (r42_sso_bft_delta_v_key_numbers.csv) records NEA perihelion q<1.3 au population n=42,379 with median delta_v 8.877 km/s (p05 5.539, p95 18.334), and MBA p05 = 8.492 km/s. Membership of an upper decile requires a value at or above the 90th percentile, which necessarily exceeds the median - so under the very distribution the sibling LEO -> average NEA row cites verbatim (puts the NEA median at 8.88 km/s), labeling 8,500 m/s as upper-decile is contradicted: it sits below the NEA median. The stored figure instead coincides with MBA p05 to rounding, which is exactly what the second clause of the note describes - an MBA accessibility boundary wearing an NEA decile label.
 
-IMCCE outage recorded as dated evidence: ssp.imcce.fr answered HTTP 502 Bad Gateway on HEAD and on a ranged GET at 2026-10-28T09:31Z and again at 09:40Z, for both the canonical parquet path and the webservices route; no independent mirror of ssoBFT exists (every documented download link points at that host). The exact NEA p90 needed for a re-anchor value is therefore deferred to a future round with IMCCE reachable. No new source rows were required: berthier_2023_ssodnet is already registered hosted, and the R42 extraction carries the statistics used here.
+The exact NEA p90 needed for a re-anchor value was not read: ssoBFT is served only from ssp.imcce.fr, which was unavailable on 2026-10-28. No new source rows were required: berthier_2023_ssodnet is already registered hosted, and the R42 extraction carries the statistics used here.
 
-**Round 288 - Asteroid station-keeping row cites a document class that does not exist in the record**
+## R288 - Asteroid station-keeping row cites a document class that does not exist in the record (2026-10-28)
 
 The row Asteroid station-keeping at spacecost@860bef9 stores dv_m_per_s = 200 with duration_yr = 0.5, and its note reads verbatim and count==1 in the committed blob: "Proximity ops, sample retrieval — OSIRIS-REx station-keeping budget." No document is named - uncited under the self-citation contract standing rule (R282). The attribution was then tested against the institutional record. NTRS full-corpus searches for Bennu station keeping and for OSIRIS-REx delta-V requirements both return zero records (probed 2026-10-28); the twenty-three proximity-operations hits are navigation-performance papers, none of which publishes a station-keeping budget figure. A live sweep of CITATIONS.md confirms no entry covers the leg: OSIRIS-REx appears only for mission cost (PEBD) and Bennu physical properties (Lauretta et al. 2019), while station hits are ISS berthing and geostationary-eclipse context.
 

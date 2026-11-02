@@ -70,12 +70,12 @@ rc-131 (Moon mass 7.346e22 per the cited sheet), rc-132 (Mars mass 6.4169e23), r
 
 economicspace origin/main moved 36bc858 -> 675f0cf (PR#154, Verification worksheet citations and backing). Its CITATIONS.md now cites documents for three worked_calculation constants that R207 had recorded in d19 as self-derived by design. Neither document was registered; both are added this round:
 
-- iers_petit_luzum_2010_conventions_tn36 [T2, verified_live_not_pulled]: official IERS Conventions Centre PDF read live (179 pp). Table 1.1 prints GM_EARTH = 3.986004418 x 10^14 m^3 s^-2 and worked_calculation MU_EARTH = 398,600.4418 km^3 s^-2 agrees exactly at that precision. In-file publisher copyright on the title page makes it extraction-only per R94; DTIC mirror ADA535671 was bot-walled from this machine when probed.
+- iers_petit_luzum_2010_conventions_tn36 [T2, verified_live_not_pulled]: official IERS Conventions Centre PDF read live (179 pp). Table 1.1 prints GM_EARTH = 3.986004418 x 10^14 m^3 s^-2 and worked_calculation MU_EARTH = 398,600.4418 km^3 s^-2 agrees exactly at that precision. In-file publisher copyright on the title page makes it extraction-only per R94.
 - nasa_nssdca_earth_fact_sheet [T3, full_text_hosted]: Mean orbital velocity 29.78 km/s (V_EARTH = 29.784 agrees to published figures) and J2000 Semimajor axis 1.00000011 AU (window_phasing_au = 1 au likewise).
 
 R_MOON correction recorded deliberately: the Moon fact sheet publishes Semimajor axis 0.3844 x 10^6 km, so R_MOON = 384,400 km agrees exactly at published precision - there is NO mismatch with this source and no future round should flag one (a 384,500 average-distance figure does not appear on the current page). DV_NRHO restates spacecost delta_v_segments row 'TLI -> NRHO insertion' per PR#154 own note; that row already carries its source - nothing to register.
 
-rc-175 / rc-176 / rc-177 targets (MODEL.md, README.md, master.py and modules/mineral_value.py constants) are untouched by PR#154: the diffstat covers CITATIONS.md, campaign/verification_sheet.py, campaign/worked_calculation.py and versions.md only. The economicspace tree still carries a further WIP batch after #154 - audit published state per R206 rule next round.
+rc-175 / rc-176 / rc-177 targets (MODEL.md, README.md, master.py and modules/mineral_value.py constants) are untouched by PR#154: the diffstat covers CITATIONS.md, campaign/verification_sheet.py, campaign/worked_calculation.py and versions.md only.
 
 ## R213 - environments gravity and escape-speed self-consistency clean (2026-10-20)
 
@@ -89,7 +89,7 @@ Recomputed the product of solar_flux_w_per_m2 and au_mean squared for every row 
 
 Re-read `willner_2014_phobos_shape_topography` from the same DLR elib file R121 read (sha256 585ee394..., not hosted). It gives a mean radius r0 = 10.993 km (PDF p5), a volume of 5741.5 km3 (p4; Table 3: 5742 +/- 35), SH-model axes 13.03 x 11.40 x 9.14 km, and quotes Andert et al. 2011's GM of 0.7127 x 10^-3 km3/s2, which is 1.0678e16 kg. So neither the fact sheet nor Willner holds upstream's 1.0659e16 kg or 11.267 km; the row's pipeline_mapping now says so. spacecost 0.12.6 (PR #29, tag v0.12.6, main `b5eb32a`) applied rc-133: the note labels both values an estimate and gives what each source prints. `extracted_data/r238_willner_2014_phobos_key_numbers.csv`.
 
-**Round 291 - environments.csv physics recompute, skip-note.**
+## R291 - environments.csv physics recompute, skip-note (2026-10-28)
 
 All 23 rows recomputed from committed bytes at spacecost@860bef9 (raw git-show capture, uniform parsed-width proof). Surface gravity equals G*M/R^2 and escape velocity sqrt(2GM/R) on every row with mass plus radius; dark period equals eclipse fraction times cycle period wherever all three are present; blackbody temperature is the rapid-rotator uniform-temperature value (S/4sigma)^0.25 at zero bond albedo in every single row - one convention, no exceptions; solar_array_mass_factor equals au_mean^2 exactly (= 1361/stored flux) in all rows.
 

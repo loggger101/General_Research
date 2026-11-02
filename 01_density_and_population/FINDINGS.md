@@ -2,7 +2,7 @@
 
 Backings: per-spectral-type density and PGM factors in AsteroidCatalog `reference/taxonomy_composition.csv` (`TAXONOMY_COMPOSITION`, loaded by economicspace `catalog.py`); diameter, albedo and taxonomy inputs; ranking quality of the whole pipeline.
 
-## Round 1 - First sources
+## R1 - First sources (2026-09-17)
 
 ### carry2012 [T1] — Carry (2012), "Density of asteroids", PSS 73:98-118
 
@@ -53,32 +53,32 @@ The table tracks medians for S/X/Cgh/D (±0.2) but sits ~0.7-1 g/cm3 low for B, 
 - **lodders_palme2009** [T2] (72nd MetSoc abstract; un-hosted 2026-09-26): CI bulk-rock ppm Ru 0.686, Rh 0.139, Pd 0.558, Ag 0.201, Os 0.493, Ir 0.469, Pt 0.947, Au 0.146; PGM total ≈3.29 ppm. Divided by a metal fraction of ~0.09-0.15 it gives ~22-37 ppm in metal, the chain behind `catalog.py`'s "~37 ppm total PGM+Au in nickel-iron alloy". Per-type enrichment factors remain uncited here (see d02).
 - **epsc2022_context** [T2] (EPSC-2022): read in R73.
 
-## Round 3 - harris_dabramo_2021 [T1]
+## R3 - harris_dabramo_2021 [T1] (2026-09-18)
 
 Harris & D'Abramo, Icarus 2021: the corrected NEA population estimate (the 2015 numbers suffered from MPC rounding of H to 0.1 mag), discoveries through 2020-08-03, to pair with `catalog_date`. Paywall-blocked; abstract only.
 
-## Round 5 - adam_2017 [T1]
+## R5 - adam_2017 [T1] (2026-09-18)
 
 40 bulk densities from ADAM shape models (A&A, 10.1051/0004-6361/201629956), a second per-body sample and a possible D-type anchor. Read in R71.
 
-## Round 11 - wilkinson_robinson_2000
+## R11 - wilkinson_robinson_2000 (2026-09-18)
 
 Ordinary chondrites: H 3.44±0.19, L 3.40±0.15, LL 3.29±0.17 g/cm3 (82 samples, ~1%); the gap to the asteroid-scale S median 2.70 is macro-porosity. Read in R73. Also in d02's Round 11 block.
 
-## Round 12 - Psyche density (M row)
+## R12 - Psyche density (M row) (2026-09-18)
 
 - **siltala_granvik_2021** [T1, hosted]: Psyche 3.88±0.25 g/cm3, ruling out an exposed iron core; the measurement the M row (3.90, metal 0.50) cites.
 - **farnocchia_2024** [T1, open_not_pulled]: GM 1.601±0.017 km^3/s^2 from close-approach astrometry; 4.17±0.15 g/cm3. The M row sits at the low end.
 
-## Round 38 - kretlow_2022_rosa_mass_density [T1, hosted, CC BY]
+## R38 - kretlow_2022_rosa_mass_density [T1, hosted, CC BY] (2026-09-21)
 
 (223) Rosa, a Tholen P-type, D = 83±8 km: M = (3.62±1.25)×10^17 kg from three encounters, rho = 1.2 ± 0.5 g/cm3, "consistent with typical densities for Tholen taxonomy P-type asteroids" (~1.3). SiMDA has no P bodies; catalog.py's P = 1.80 is the older estimate Kretlow says "did not match very well" (rc-007).
 
-## Round 40 - chesley_2014_bennu_orbit_bulk_density [T1]
+## R40 - chesley_2014_bennu_orbit_bulk_density [T1] (2026-09-22)
 
 Icarus 235:5-22: Yarkovsky da/dt = (-19.0±0.1)e-4 au/Myr (284 ± 1.5 m/yr); rho = 1260 ± 70 kg/m^3, M = (7.8±0.9)e10 kg, GM = 5.2±0.6 m^3/s^2 (Table 7, p56). environments.csv's Bennu (7.329e10 kg, r 244.5 m; ~1197 kg/m^3) sits at -0.8 sigma. Un-hosted 2026-09-26. `extracted_data/r40_bennu_mass_density_key_numbers.csv`.
 
-## Round 41 - The AsteroidCatalog data backbone registered
+## R41 - The AsteroidCatalog data backbone registered (2026-09-22)
 
 - **berthier_2023_ssodnet** [T1, arXiv hosted]: ssoBFT parquet 1,563,708 rows × 266 columns (855.8 MB, hash-recorded). Eros mass exact (6.687e15 kg); Ryugu +0.44σ, Didymos −0.12σ; Ceres radius +0.01%; Bennu 0.02%. Eros's +14% "density gap" is a radius convention (r=8420 m vs equivalent-sphere D 17.6 km).
 - **mainzer_2019_neowise_v2** [T3, bundle hosted]: TAP 183,412 rows vs the release's 183,419; Bennu, Ryugu, Eros, Didymos and Ceres are absent (better radar or spacecraft values exist).
@@ -88,7 +88,7 @@ Icarus 235:5-22: Yarkovsky da/dt = (-19.0±0.1)e-4 au/Myr (284 ± 1.5 m/yr); rho
 
 `extracted_data/r41_stage1_backbone_key_numbers.csv`.
 
-## Round 42 - MP3C, MPC links, Bus-DeMeo bundle
+## R42 - MP3C, MPC links, Bus-DeMeo bundle (2026-09-23)
 
 - **mp3c_minor_planet_physical_properties_catalogue** [T3]: v3.2.0-beta.1 (2024-02-13); 1,335,502 best rows, 6,086,962 aliases; Eros D 15.77 km, pV 0.385, M = 6.69e15 kg (+0.04%), Bennu D 0.492 km. Numbered bodies key through packed MPC aliases (`mp3c_main.name`, priority 3).
 - **mpc_mpcorb_extended_designation_links** [T3]: 182 MB gzip, structure as AsteroidCatalog's `identity.py` expects.
@@ -179,10 +179,11 @@ The Xe note's 3.55 g/cm3 enstatite-chondrite bulk density vs Carry Table 2 EH 3.
 
 rc-140 (method): build the PGM table taxonomy.py proposes: CI 3.29 ppm / metal fraction gives 54.8 ppm for S-complex and Q (factor 1.48 vs 37 ppm), 41.1 for K (1.11), 65.8 for L (1.78). Text in `revision_candidates_closed.csv`.
 
-## Round 175 - Tholen dissertation read (2026-10-16)
+## R175 - Tholen dissertation read (2026-10-16)
 
 `tholen_1984_asteroid_taxonomy_dissertation` read live (UA DSpace REST; 168 pp; author copyright, not hosted): the original source behind the Tholen-class citation.
-## Round 195 - AsteroidCatalog README contract verified against data-2026-09-29c (2026-10-19)
+
+## R195 - AsteroidCatalog README contract verified against data-2026-09-29c (2026-10-19)
 
 Evidence-only sweep; no new sources, no RC opened from it. Every quantitative claim in the
 AsteroidCatalog README (the user-facing data contract since commit 84e026e) was re-measured on the
@@ -200,7 +201,8 @@ holds for Eros BY CONSTRUCTION (density is computed from that mass-diameter pair
 diameter-convention claim, not an arithmetic gate violation - README section 5 is accurate as written.
 
 This surface (README prose claims vs release) is now covered; do not re-sweep unless the README or the pinned release changes.
-## Round 199 - pinned-catalog release registered; economicspace README provenance contradiction found -> rc-176; measured-diameter false-flag trap closed (2026-10-19)
+
+## R199 - pinned-catalog release registered; economicspace README provenance contradiction (rc-176) (2026-10-19)
 
 R198's new completeness rule (grep bare NTRS accession tokens, not only URLs/DOIs) was run across all three upstream repos: 420 files scanned for NTRS accessions, AIAA paper numbers, NASA report designators, GAO and OIG ids - **zero unregistered tokens**; the johnson deck was the last invisible citation. That seam is closed; recorded here so no round repeats the sweep unless upstream drifts. (Tooling note: economicspace/asteroid_pipeline holds multi-GB generated catalogs - 2.2 GB asteroid_catalog.csv, ~10-15 MB transportation summaries across backup snapshots - any repo-wide scan must size-gate before opening files.)
 
@@ -209,7 +211,8 @@ Following the provenance trail into that catalog's own documentation found a liv
 **False-flag trap closed:** economicspace README L1209 "In data-2026-09-29c, 149,718 of 1,568,882 bodies have a measured diameter" looks like it transplanted AsteroidCatalog README's figure ("(149,718 of 1,568,641 in data-2026-09-27)") onto the new denominator - but counting `diameter_source == "measured"` (the canonical flag per AC tools/audit_catalog.py) on the release parquet gives **exactly 149,718 of 1,568,882**. The numerator is genuinely unchanged between builds (+241 bodies added in two days carried no new measured diameters); both documents are correct for their stamped releases. Recorded so a future round does not flag L1209 as stale.
 
 Registered the release itself: `asteroidcatalog_release_data_2026_09_29c` [T3 open_service] with r199_catalog_release_key_numbers.csv (7 rows). Registry completeness under all token classes now confirmed against upstream at economicspace@d77f1ce.
-## Round 200 - pinned-release artifact integrity proven end-to-end; measured-diameter fact now triple-corroborated (2026-10-19)
+
+## R200 - pinned-release artifact integrity proven end-to-end; measured-diameter fact now triple-corroborated (2026-10-19)
 
 The release manifest for `data-2026-09-29c` (manifest.json, 3,599 B, gh release download this round) declares sha256 + byte counts for every asset. Verified against the artifacts actually in use:
 
@@ -227,7 +230,8 @@ The installed CSV header also equals the manifest's `columns` list order-exactly
 3. Manifest `sources` provenance counts - JPL SBDB 1,568,882 / SsODNet 1,563,656 / NEOWISE 143,015 / MP3C 1,335,051 - are in-catalog sourcing tallies, not source-table sizes; no tension with R41-era registrations (ssoBFT parquet 1,563,708 rows and NEOWISE V2.0 bundle 183,419 are different tables/views).
 
 No RC opened: every declared value matched reality exactly - the pinned artifact chain is clean from release metadata through to the working files behind every committed pipeline number. rc-176 (the "~1.2 GB" survivors) remains open and untouched; its subject file is now identified to exact hash, strengthening rather than altering that candidate.
-## Round 201 - release-history manifest sweep across all eight AsteroidCatalog builds; stamped doc claims verified against their own builds (2026-10-19)
+
+## R201 - release-history manifest sweep across all eight AsteroidCatalog builds; stamped doc claims verified against their own builds (2026-10-19)
 
 Every published AsteroidCatalog release carries its own manifest.json declaring rows / measured_diameters / sources counts / contract version. Pulled all seven older ones (R200 covered 29c) and cross-checked every stamped figure in README/CHANGELOG against the build it names:
 
@@ -251,7 +255,8 @@ Methodology fact recorded: "masses known to X%" in AC docs = mass-only relative-
 Refinement of R199's flat-numerator story: measured_diameters was **149,740 in data-2026-09-23** and 149,718 from -25 onward (one correction event between builds; docs never cite a count for -23 so no conflict). The +241-bodies claim (09-27 to 29c) stands unchanged.
 
 No RC opened: the release-history record is internally consistent with its own metadata at every point checked, from manifest counts down to per-body densities on an archived build.
-## Round 202 - cross-build CHANGELOG claims verified against published parquets; asset integrity extended to two more releases (2026-10-19)
+
+## R202 - cross-build CHANGELOG claims verified against published parquets; asset integrity extended to two more releases (2026-10-19)
 
 Continuing the release-history seam from R201: the data-2026-09-25 -> data-2026-09-26 diff paragraph in AsteroidCatalog's CHANGELOG makes several claims that say "(checked against the published parquet)" - this round re-ran those checks independently on fresh downloads of both builds.
 
@@ -273,7 +278,7 @@ The section 'Every destination at this release' asserts it is the current answer
 
 Documented without registering: five of six headline winners checked from the hash-verified pinned parquet rest on estimated physics - 2018 DT carries derived_diameter_is_estimate=True, albedo_assumed_for_diameter=0.133 (taxonomy albedo for class M), density_measured=False and zero rotation-period sources; likewise 2015 DS, 350751, 2005 QP87 and the v1.51 lunar winner 2014 YN are all derived_h_taxonomy_albedo with unmeasured density, while the geo winner 2016 GS2 alone is diameter_source=measured (40 m) though its density is likewise unmeasured; EC documents the provenance vocabulary at README L1206 ('only measured is a size somebody observed') but never states that its own winners are estimate-sized. Because minable mass scales as diameter cubed, the assumed-albedo uncertainty propagates cubically into every headline multiple (at half the assumed albedo the body doubles in diameter and an eightfold revenue swing follows). This strengthens rc-183's currency claim; a separate disclosure RC was not opened this round - if the winner table is refreshed per rc-183, adding each row's diameter_source alongside the figure closes both concerns.
 
-## Round 237 - Vesta and Bennu take their mission volumes upstream (2026-10-21)
+## R237 - Vesta and Bennu take their mission volumes upstream (2026-10-21)
 
 AsteroidCatalog 1.10.0 (`6915077`, published as data-2026-10-21b) extends merge.SHAPE_MODEL_VOLUMES, rc-174's per-body table, to the two bodies R235 recorded as just outside JPL's uncertainty. Both sources registered this round and read in full:
 
@@ -282,18 +287,19 @@ AsteroidCatalog 1.10.0 (`6915077`, published as data-2026-10-21b) extends merge.
 
 Verdict: both agree with their papers to the stated digits; no candidate. tools/density_evidence.py on the release moves only the V and B rows (weighted means 3.41 to 3.46 and 1.21 to 1.20) and fails no row. Extracted: extracted_data/r237_mission_shape_volumes.csv.
 
-**Round 284 - environments.csv notes-to-CITATIONS completeness sweep (spacecost@860bef9)**
+## R284 - environments.csv notes-to-CITATIONS completeness sweep (spacecost@860bef9) (2026-10-27)
+
 Swept every work named in the notes column of reference/environments.csv against CITATIONS.md section 5. Result: one seam only - Ferrais et al. 2020, cited on row 16 Psyche for the adopted volume-equivalent diameter (span Siltala and Granvik adopt (Ferrais et al. 2020), count==1) has no CITATIONS.md entry; registered in this domain as ferrais_2020_psyche_primordial_shape_jacobi_ellipsoid with dated retrieval evidence (aanda.org 403, HAL hal-02898978 Anubis-walled). All other named works have section-5 entries: ISS Facts and Figures, ECSS-E-HB-31-01 Part 15A, Whitley & Martinez 2016, NASA Moon Fact Sheet, Mazarico et al. 2011, Elvis 2011 (section 3 for the accessibility class), Lauretta et al. 2019, Watanabe et al. 2019, Yeomans et al. 2000, Daly et al. 2023, DRA 5.0, Appelbaum & Flood TM-102299, Willner et al. 2024 with Andert quoted values, Russell et al. 2016, Kretlow SiMDA pair, Siltala & Granvik 2021.
 Consistency checks without RC: LLO note period recomputed from the same-table lunar mass and radius (circular orbit at 100 km altitude gives 7,067 s = 117.8 min against printed 118 minutes) - derivable, no citation needed; Didymos row self-declares its own source gap upstream per R282 documented-by-design rule; Moon and Mars sheet mismatches already claimed by open rc-131/rc-132.
 
-**Round 286 (2026-10-28) — release data-2026-10-21b integrity audit; one RC**
+## R286 - release data-2026-10-21b integrity audit; one RC (2026-10-28)
 
 The current published release (contract 1.10.0, asteroid_catalog 0.12.0) was audited end to end against its own published documentation.
 All green: manifest rows 1575889 reproduced from the shipped parquet; measured_diameters 149718 reproduced by counting diameter_source == measured in that parquet (the identical numerator across -27, -29c and -21b is genuine carryover — third confirmation, do not flag); taxonomy.json sha256 and parquet sha256 recomputed locally and matched the manifest declarations exactly; shipped taxonomy.json PHASE_SHARES/ACCESSORY_PHASES mirror reference/mineral_phases.csv to stored rounding (tolerance 5e-7 over all 32 classes, zero mismatches beyond CSV truncation); README line 143 measured-share sentence is dated data-2026-09-27 and accurate as history; economicspace at @3ba6f3a repinned to -21b with ~2.4 GB matching manifest catalog_csv bytes 2387414099.
 One defect, opened as rc-229 [wording]: release.py computes n_rejected = len(pd.read_csv(rejected_path)) on a file the pipeline writes as a per-reason summary (config.py: one row per reason, a count and examples), so both shipped manifests print rejected_rows 3 while their sha-pinned rejection logs sum to 273 (-21b) and 267 (-29c) dropped bodies; README line 78 meanwhile promises every row validation dropped. Latent display defect only — economicspace references the asset filename, never the field.
 Skip-note for future rounds: release -21b is audited through manifest/asset-hash/row-count/measured-count/mirror levels; re-audit only on a new data tag. The -29c registry row carries a dated note that EC repinned past it.
 
-**Round 292 - AsteroidCatalog README numeric-prose seam, skip-note.**
+## R292 - AsteroidCatalog README numeric-prose seam, skip-note (2026-10-28)
 
 Swept every number-bearing line (137) of AC README.md at @92f7739 against committed bytes. Gate prose vs release.py and physics.py: all thresholds exact - FLOORS rows 1_500_000, measured_diameters 135_000, JPL SBDB 1_500_000, SsODNet 1_400_000, NEOWISE 130_000, MP3C 1_200_000; MAX_ROW_DROP 0.005 and MAX_SOURCE_DROP 0.02 matching the printed 0.5 percent / 2 percent; DENSITY_FLOOR_GCM3 0.25 with _IRON_CEILING 8.0 as absolute bound (carbonaceous 3.6, measured-record 5.0 per-class ceilings also match prose); ALBEDO_CEILING 1.0 and ALBEDO_FLOOR 0.01; SPIN_LIMIT_MIN_DIAMETER_KM 10.0.
 
@@ -307,15 +313,15 @@ Source-scale table: the NEOWISE 183 k fits figure matches the R41-measured V2.0 
 
 Do not re-sweep README numeric prose unless the README or gate code moves at a future AC tip.
 
-**Round 301 (2026-10-29) - AsteroidCatalog drift coverage note at 92f7739 (skip-note).**
+## R301 - AsteroidCatalog drift coverage note at 92f7739 (skip-note) (2026-10-29)
 
 Diff 84e026e..origin/main(92f7739) touches reference/taxonomy_composition.csv, reference/pgm_enrichment.csv, mineral_phases files and docs - these are the data-contract 1.9.0/1.10.0 releases (commits #20/#22: five GR revision candidates applied; Tagish Lake carbon plus Vesta/Bennu shape volumes) whose shipped outputs R286 already audited end-to-end at -21b (manifest rows and measured-diameter counts reproduced from the parquet, taxonomy.json shas recomputed equal to declared values, PHASE_SHARES mirrored to 5e-7 across all 32 classes). The later commits #24-#28 are tests-only plus samebytes pinning. No un-audited reference-table content exists between my older anchors and the current tip; do not re-flag those CSV changes as drift needing review.
 
-**Round 302 (2026-10-29) - AC CITATIONS completeness verified over releases #20/#22 at tip 92f7739 (skip-note).**
+## R302 - AC CITATIONS completeness verified over releases #20/#22 at tip 92f7739 (skip-note) (2026-10-29)
 
 Releases 9d971b5 (contract 1.9.0, five GR revision candidates applied) and 6915077 (contract 1.10.0, Tagish Lake carbon plus Vesta/Bennu shape volumes) added literature entries to CITATIONS.md after the work-level sweeps anchored at 84e026e; none was unregistered. Verified surname by surname against sources.csv: Lodders 2010, Lodders and Palme 2009 (72nd Meteoritical Society meeting abstract), Kargel 1994, Yeomans et al. 2000 Science 289:2085, Park et al. 2025 Nat Astron 9:824, Daly et al. 2020 Sci Adv Bennu OLA shape, Wong et al. 2024 PSJ 5:87 Lucy JWST, plus the older Kretlow 2022 / Dziadura 2023 / Chesley 2014 / Farnocchia 2024 / Patzold 2016 / Mittlefehldt 2015 / Sunshine 2008 / Rubin 2019 / Jones-McCubbin 2014 / Keil 1968 and 2010 entries - all resolve to rows. The one alias needing care: AC prints Alexander et al. (2007), GCA 71, 4380 for insoluble versus soluble organic carbon; Crossref confirms volume 71 pages 4380-4403, DOI 10.1016/j.gca.2007.06.052 = registry row alexander_fogel_2007_macromolecular_organic_matter_chondrites (registered R83). Do not re-open this seam unless CITATIONS.md changes again.
 
-### R307: SBDB field-list witness and the sigma miscount in the AC README
+## R307 - SBDB field-list witness and the sigma miscount in the AC README (2026-10-29)
 
 Live probe 2026-10-29 of sbdb_query.api?info=field (saved answer, sha recorded in the registry row): seventy-nine fields listed. Reproducing the AsteroidCatalog tool classification offline with its own compare() formula at @66fb47a gives 31 unreviewed, matching the README, but eleven of them are sigma_* uncertainties: a, ad, e, i, ma, n, om, per, q, tp and w. Nine are osculating-element sigmas; sigma_q (perihelion distance) and sigma_ad (activity index) make two more than the sentence counts. The tool prints every unreviewed field one line each, so its output lists eleven while the prose says nine - a display-class count slip in README text no code reads; rc-237 records it for the owner. All other claims verified live: 79 fields total; soln_date absent from the list yet answering with Ceres value '2021-04-13 11:04:44', identical to their recorded witness string.
 The field-list snapshot is registered as a T3 hosted witness because SBDB lists can change; future rounds comparing unreviewed sets should re-fetch rather than trust this copy. Nine osculating sigmas would in principle let Stage-1 carry per-element uncertainties for catalog objects - recorded here, not built.

@@ -2,7 +2,7 @@
 
 Backings: spacecost `storage_systems.csv`; the volatile-ISRU, power and electric-propulsion rows of `operational_costs.csv` (power and EP overlap domain 11; finance, licensing, operations, mining and hardware-rate rows moved to domains 16-21 in R77); environment penalties.
 
-## Round 1 - Boil-off, transfer loss, ISRU yields
+## R1 - Boil-off, transfer loss, ISRU yields (2026-09-17)
 
 - **lac_bac_2024** [T1] (Cryogenics 148:104065; arXiv copy un-hosted 2026-09-26): finite-element LH₂ tank study. Boil-off: perlite 5905 W ≈ 0.04 %/day (the better stack), HePUR 35 350 W ≈ 0.24 %/day (round 1 had the labels swapped; corrected 2026-09-26). The hydrolox passive boil-off of 0.05 %/day sits beside the best case, with a ~6x spread by insulation that the MLI row (1.2 kg/m²) carries implicitly. Reliquefaction 5 kWh/kg (Kim et al.); local-area cooling shrinks the cooler when heat ingress is concentrated, the architecture the ZBO rows assume.
 - **zero_bo_off_2025** [T2, hosted; arXiv preprint, no journal version]: LH₂ transfer between large ground tanks: VSD pump 0.00–0.24 wt%, fixed-speed 0.76–1.06 wt% per ~11,248 t transfer, against the in-space transfer-loss row's 3 % (1–8 %). Keep 3 % for current TRL and use this as range_low once space-rated pumps exist (rc-028).
@@ -10,7 +10,7 @@ Backings: spacecost `storage_systems.csv`; the volatile-ISRU, power and electric
 
 `extracted_data/storage_isru_key_numbers.csv`.
 
-## Round 3 - Volatiles handling and plant decomposition
+## R3 - Volatiles handling and plant decomposition (2026-09-18)
 
 All NTRS, hosted:
 
@@ -20,28 +20,28 @@ All NTRS, hosted:
 
 Handling loses a large share of the water, so `Volatile cargo containment` (0.05 kg/kg) prices a measured need; the `Water liberation energy` row (2500 Wh/kg) gets its mechanism (heated extraction and cold trapping; no Wh/kg here). `extracted_data/volatile_recovery_isru_key_numbers.csv`.
 
-## Round 4 - nextc_ppu_2020 [T2]
+## R4 - nextc_ppu_2020 [T2] (2026-09-18)
 
 NEXT-C PPU for DART (NTRS 20205004248; un-hosted: NTRS says may include copyright): prototype 34.5 kg at 0.5–7 kW output (80–160 V input); 94.8% efficiency (7 kW, 120 V, March 2019), 93.8% hot; flight PPU 3.7 kW / 93.9% (Jan 2020); beam supply up to 90% of output. Confirms `Power processing unit specific mass` 4.7 kg/kW (34.5 / 7.4 kW input); the PPU's ~0.94 bounds the 0.60 total EP efficiency (anode × utilisation ≈ 0.64). `extracted_data/nextc_ppu_performance_key_numbers.csv`.
 
-## Round 6 - ambrosi_2019 [T1, hosted, CC BY]
+## R6 - ambrosi_2019 [T1, hosted, CC BY] (2026-09-18)
 
 European RTGs and RHUs (Space Sci Rev 215:55): GPHS/MMRTG heritage; Pu-238 production restart toward ~1.5 kg/yr by 2025 (the ceiling hard-coded in calc.py); small or stacked RTGs 1.3-2.1 W/kg; skutterudite and zintl thermoelectrics as the efficiency path. R72: the americium unit as built gives 9.1-9.3 We from 200 Wth in a 9.4 kg 10 We system, ~1 W/kg. `extracted_data/european_rtg_review_2019_key_numbers.csv`.
 
-## Round 7 - hoffman_2000 [T2, hosted]
+## R7 - hoffman_2000 [T2, hosted] (2026-09-18)
 
 Thin-film PV parametric assessment (NASA/TM-2000-210342): the Main Belt Asteroid Tour at 1.5 AU with SEP: 7.5 kW EOL, array 121 kg (4-junction GaAs), $14.1M (2000$). ~62 W/kg at 1.5 AU = ~140 W/kg array-only at 1 AU, about twice the 60 W/kg system row, matching its "batteries, regulation and structure roughly halve that". ~$1880/W at array level vs cells at $400/W (4-j GaAs), $220/W (thin Si), ~$60/W (CIS). Below ~12% film efficiency a lighter substrate does not win on mass. `extracted_data/hoffman_2000_pv_array_key_numbers.csv`.
 
-## Round 9 - ali_2023 [T1, hosted, CC BY]
+## R9 - ali_2023 [T1, hosted, CC BY] (2026-09-18)
 
 Li-ion calendar ageing for long missions (Front. Energy Res. 11:1108269): space cells ~265 Wh/kg, 670 Wh/L, ~1000 W/kg; flown on Perseverance, OSIRIS-REx, Parker, THEMIS; controlled envelope -40..+40 °C (an asteroid surface needs active heating); fade grows with temperature and state of charge. Anchors the "cells reach 250–300 Wh/kg" input of the 104 Wh/kg usable row. `extracted_data/ali_2023_space_batteries_key_numbers.csv`.
 
-## Round 10 - The excavation row's "Zacny et al." resolved
+## R10 - The excavation row's "Zacny et al." resolved (2026-09-18)
 
 - **metzger_zacny_2020** [T1] (J. Aerosp. Eng. 33(6):04020075; arXiv preprint, no licence, read only): regolith conductivity (Eq 21, basalt A0=6.12e-3 W/m-K); volatile release below ~300 °C for epsomite-class material (UCF-CI-1, Orgueil TGA); drilling heat takes hours to days to dissipate, a timeline cost not modelled. Stays in this domain (thermal extraction). `extracted_data/metzger_zacny_2020_key_findings.csv`.
 - **just_2019** [T1] (PSS, CC BY; moved to d19): parametric review of 13 excavation techniques.
 
-## Round 43 - Excavation force model and test facility (moved to d19 in R77)
+## R43 - Excavation force model and test facility (moved to d19 in R77) (2026-09-23)
 
 NTRS reachable again through `ntrs.nasa.gov/api/citations/<id>`.
 
@@ -51,7 +51,7 @@ NTRS reachable again through `ntrs.nasa.gov/api/citations/<id>`.
 
 just_2019's indexed table (RASSOR bucket drum 0.761 Wh/kg excluding transport; pneumatic ~2 Wh/kg; impeller ~115–130 W at 6–30 kg/h; bucket ladder <200 W at up to 2400 kg/h) puts loose-regolith cutting far below the 200 Wh/kg median (later rc-027). `19_asteroid_excavation_beneficiation/extracted_data/r43_excavation_energy_key_numbers.csv`.
 
-## Round 44 - ZBO cryocoolers: tested hardware (all hosted)
+## R44 - ZBO cryocoolers: tested hardware (all hosted) (2026-09-23)
 
 **nugent_2022_rtb_cryocooler_test** (NTRS 20220009350), Table 1:
 
@@ -68,7 +68,7 @@ just_2019's indexed table (RASSOR bucket drum 0.761 Wh/kg excluding transport; p
 
 The 80 W/W median equals NASA's threshold and the tested 91.6 sits in the 50-150 band; the worked example (20 W leak → ~100 kg, ~1.6 kW) matches 5.5 kg/W × 91.6 W/W (≈108 kg, ≈1.83 kW). The 60 W/W goal is unmet.
 
-## Round 47 - damodaran_cost_of_capital_by_industry (moved to d17)
+## R47 - damodaran_cost_of_capital_by_industry (moved to d17) (2026-09-23)
 
 January 2026 table (96 industries; CoC = wE×CoE + wD×AT-CoD within ±0.05 pp on every row):
 
@@ -81,7 +81,7 @@ January 2026 table (96 industries; CoC = wE×CoE + wD×AT-CoD within ±0.05 pp o
 
 The 10% WACC sits 240 bps above aerospace; range_low 7.5% matches the floor; 15% bounds venture cases. `17_cost_of_capital_contingency_insurance/extracted_data/r47_damodaran_cost_of_capital_key_numbers.csv`.
 
-## Round 50 - DSN rate and launch insurance (both moved in R77)
+## R50 - DSN rate and launch insurance (both moved in R77) (2026-09-23)
 
 **jpl_dsn_services_catalog_820_100** (Rev H, 2022-06-06; un-hosted, Caltech copyright): AF = RB × AW × MW (p65; AW 1.0 one 34 m, 2.0 two-station, 3.0 three-array or any combination with a 70 m, 4.0 four; MW 1.0 or 0.5 downlink-only); "the DSN contact dependent hourly rate (RB) was $1,792" (p66); passes over 8 h segmented. CPI-U H1-2022 288.347 -> Aug-2026 334.980 (x1.1617): 34 m ≈ $2,082/hr, so $1,530 is 26.5% low (rc-030); 70 m (AW 3.0) ≈ $6,245 vs the note's ~$4k. The note's own method (FY09 $1,057 x 1.4570 = $1,540) is consistent but rests on the superseded MOCS rate. BLS and World Bank chains agree within 0.02% over 2016-2024.
 
@@ -89,17 +89,17 @@ The 10% WACC sits 240 bps above aerospace; range_low 7.5% matches the floor; 15%
 
 `extracted_data/r50_dsn_rates_and_launch_insurance_key_numbers.csv`.
 
-## Round 56 - stackpoole_2013_pica_pica_x_postflight_eval (TPS heritage; moved to d21)
+## R56 - stackpoole_2013_pica_pica_x_postflight_eval (TPS heritage; moved to d21) (2026-09-24)
 
 The TPS row's cited NTRS 20140005558 (IPPW 2013 summary slide): "Both materials performed well with no unusual ablation performance"; PICA chosen for MSL and OSIRIS-REx; SpaceX's PICA-X flew Dragon COTS Demo 1 (2010); "PICA‐X virgin and char have higher density than Stardust era PICA"; Stardust PICA peak 1000 W/cm2 / 28 kJ/cm2 vs ~50 W/cm2 for Dragon-1 (R70). The $50k/kg stays an estimate.
 
-## Round 57 - Plane Talking through Q2-2026
+## R57 - Plane Talking through Q2-2026 (2026-09-24)
 
 Seven issues read: Q4-2024 "circa. USD2bn of claims being notified within 18 months."; Q1-2025 capacity USD 550m (2024) / 502m (2025); Q2-2025 "finally shown signs of having turned the corner ... pressure on premium rates", premium fell "by over 50%" 2012-2018; Q1-2026 capacity +~USD100m, SpainSat NG-2 (over USD400m) moves the 2025 loss ratio "from circa 15% to circa 75%", "launch pricing continues to improve"; Q2-2026 +USD 70 million capacity, BlueBird 7 (Blue Origin failure, April 2026) ~USD30m, rate reductions possible in H2-2026. The 10% may sit high for 2026; still no explicit launch rate. R50's claim of Q2-2026 coverage was premature and corrected. `17_cost_of_capital_contingency_insurance/extracted_data/r57_plane_talking_series_key_numbers.csv`.
 
 Also: no source gives a Centaur III or EUS unit price (IG-24-001's $482M EUS is a launch scope; SP-4176 has programme costs: R&D FY59-FY61 $4m -> $36.6m -> $62.6m), so the upper-stage high end stays unanchored.
 
-## Round 63 - FY2027 budget: the ISS envelope
+## R63 - FY2027 budget: the ISS envelope (2026-09-25)
 
 From the hosted FY2027 Budget Estimates (d07), p60 Space Operations ($M):
 
@@ -197,7 +197,8 @@ Both hosted:
 Crossref titles the 2017 paper "An ISRU propellant production system for a fully fueled Mars Ascent Vehicle", as spacecost cites; NTRS's copy says "to Fully Fuel". **rc-167:** add DOI 10.2514/6.2017-0423 and note the variant title. No unregistered upstream reference remains for spacecost v0.12.0.
 
 `extracted_data/r184_kp_isru_plant_key_numbers.csv`.
-## Round 198 - Johnson AIAA ASCEND 2023 H2-liquefaction deck registered; every upstream attribution verified verbatim; no RC (2026-10-19)
+
+## R198 - Johnson AIAA ASCEND 2023 H2-liquefaction deck registered; every upstream attribution verified verbatim; no RC (2026-10-19)
 
 The hydrolox ISRU energy band in spacecost v0.12.0 (`isru_processing_wh_per_kg` = 15,200 Wh/kg low end of a 15.2-26.3 kWh/kg band; economicspace MODEL.md and versions.md carry the same construction) rests on three named components: DOE HFTO PEM electrolysis (verified live at R183), Kleinhenz & Paz whole-plant cross-check (registered + verified R184), and **W. Johnson, AIAA ASCEND 2023 - which was cited by name in all three places but absent from the GR registry**: it carries no DOI and only a bare NTRS accession number, so the URL/DOI-token completeness sweep of R186 could not see it. Pulled live (NTRS 20230014839; 785,453 B; sha256 27161cbe... prefix), scanned all 16 pages for copyright marks - zero hits under GOV_PUBLIC_USE_PERMITTED determination → hosted as `johnson_2023_h2_liquefaction_ascend` [T2, ntrs-public-use] with key-numbers file r198_h2_liquefaction_key_numbers.csv.
 
@@ -205,9 +206,9 @@ Every figure upstream charges to this deck reproduces verbatim (all count==1 aga
 
 No RC opened this round: the band's low end remains contested by rc-166 (open, kornuta_2019 plant-level figures vs the DOE-system construction) - a different question from attribution fidelity, and that candidate row is untouched per convention. Completeness-scan lesson recorded: registry sweeps against upstream must grep bare NTRS accession tokens (NTRS \d{8,}) in addition to URL/DOI patterns, or citation-by-accession references like this one stay invisible.
 
-**Round 205 - DOE HFTO PEM electrolysis technical targets registered.**
+## R205 - DOE HFTO PEM electrolysis technical targets registered (2026-10-19)
 
-spacecost CITATIONS.md section 2 credits the DOE Hydrogen and Fuel Cell Technologies Office technical-targets table for hydrolox ISRU electrolysis at system level 55 kWh/kg H2 (2022 status); no registry row carried that source. Registered this round as doe_hfto_pem_electrolysis_technical_targets [T3; verified_live_not_pulled]: read live from energy.gov on 2026-10-19 - the legacy eere/fuelcells URL answers HTTP 302 to https://www.energy.gov/cmei/fuels/technical-targets-proton-exchange-membrane-electrolysis, where the System block prints Energy Efficiency kWh/kg H2 (% LHV) = 55 (61%) / 51 (65%) / 46 (72%). The string '55 (61%)' is count==1; '51 (65%)' appears twice on the page (Stack-block 2022 Status cell and System-block 2026 Targets cell) - disambiguated by table position per the [appears twice] convention. Extracted to r205_doe_hfto_pem_targets_key_numbers.csv (4 rows). The stack-vs-system distinction is recorded for the rc-166 evidence trail: kornuta_2019's ~4.41 kWh/kg electrolysis-alone figure is a plant-level measurement, not comparable to DOE target cells; rc-166 stays open and untouched.
+spacecost CITATIONS.md section 2 credits the DOE Hydrogen and Fuel Cell Technologies Office technical-targets table for hydrolox ISRU electrolysis at system level 55 kWh/kg H2 (2022 status); no registry row carried that source. Registered this round as doe_hfto_pem_electrolysis_technical_targets [T3; verified_live_not_pulled]: read live from energy.gov on 2026-10-19 (https://www.energy.gov/cmei/fuels/technical-targets-proton-exchange-membrane-electrolysis), where the System block prints Energy Efficiency kWh/kg H2 (% LHV) = 55 (61%) / 51 (65%) / 46 (72%). The string '55 (61%)' is count==1; '51 (65%)' appears twice on the page (Stack-block 2022 Status cell and System-block 2026 Targets cell) - disambiguated by table position per the [appears twice] convention. Extracted to r205_doe_hfto_pem_targets_key_numbers.csv (4 rows). The stack-vs-system distinction is recorded for the rc-166 evidence trail: kornuta_2019's ~4.41 kWh/kg electrolysis-alone figure is a plant-level measurement, not comparable to DOE target cells; rc-166 stays open and untouched.
 
 ## R311 - Settled ISRU feed can exceed the asteroid resource budget (2026-11-01)
 

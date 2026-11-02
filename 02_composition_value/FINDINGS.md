@@ -2,7 +2,7 @@
 
 Backings: AsteroidCatalog `taxonomy_composition.csv` material fractions (metal, silicate, carbon, ice), `mineralogy.py` phase splits (`comp_phases_detailed`), `PGM_ENRICHMENT_BY_TYPE`, and economicspace `mineral_value.py` mineralogy and nickel-iron yields.
 
-## Round 1 - First sources
+## R1 - First sources (2026-09-17)
 
 - **hein2020** [T1] (Acta Astronautica 174:59-71; arXiv v11 hosted until 2026-09-26, then un-hosted; moved to d22 in R77): the peer-reviewed TEA of asteroid mining, with water for space and platinum for Earth as separate markets (as the pipeline splits them). Pt demand anchored at $40,449/kg and 254,582 kg/yr, PED -0.6 to -0.5; sensitivity at $30k and $70k/kg. `extracted_data/composition_value_key_numbers.csv`. (Its "150 kg/s/kg" was a misreading: 150 kg is the craft dry mass; see R61.)
 - **nat_dms2023** [T1, hosted, CC BY] (Sci Rep 13:6497): metal dissolution from metal-rich meteorite proxies with a deep eutectic solvent (ChCl:2EG). NEAs 1986 DA and 2016 ED85 show 85% surface metal / 15% silicate against the M row's metal 0.50 (surface, not bulk).
@@ -10,7 +10,7 @@ Backings: AsteroidCatalog `taxonomy_composition.csv` material fractions (metal, 
 - **lewicki2023** [T2] (decadal white paper; un-hosted): a "Mine Project Value Curve" of value vs resource confidence.
 - **cannon2023** [T1] (PSS 215:105608; CC BY-NC-ND, skipped by owner decision): which classes carry recoverable precious and structural metal.
 
-## Round 2 - PGM gradient and Vesta
+## R2 - PGM gradient and Vesta (2026-09-17/18)
 
 **usgs_pp1802n** [T3] (USGS PP 1802-N; public-domain excerpt quoted here):
 
@@ -24,28 +24,29 @@ The enrichment factors are right to order of magnitude; the ~4-orders gap betwee
 
 **toplis2014** [T2, hosted, NTRS]: Vesta's core radius 90–120 km of metal and sulphide; HEDs as parent-body analogues, supporting the differentiated-body model behind the V row.
 
-## Round 3 - bennu_volatiles_2025 [T1, hosted, CC BY]
+## R3 - bennu_volatiles_2025 [T1, hosted, CC BY] (2026-09-18)
 
 Nature Astronomy 9:199–210: OSIRIS-REx Bennu samples: total C 4.5–4.7 wt%, N 0.23–0.25 wt%, ammonia ≈40% of N; regional aliphatic/aromatic C up to ~2.5 wt%; Bennu more volatile-rich than Ryugu and most meteorites; CI/CM/CY baseline ~1–3 wt% C, rarely ~5. `extracted_data/bennu_volatiles_key_numbers.csv`. The B row's carbon_fraction 0.30 is 6-7x the measured total C, so it cannot mean elemental carbon (Round 8). Ammonia is a volatile class upstream does not model.
 
-## Round 4 - C-type hydration
+## R4 - C-type hydration (2026-09-18)
 
 - **ryugu_hydrated_2023** [T1, hosted, CC BY] (Nature Astronomy 7:170–181): a dehydrated space-weathered skin (~66% of grains, ≥1.5 µm deep) over an interior retaining structural –OH. Spectral ice estimates for C-types are therefore low bounds. `extracted_data/ryugu_hydrated_interior_key_numbers.csv`.
-## Round 8 - Per-class carbon; the CI endmember
+
+## R8 - Per-class carbon; the CI endmember (2026-09-18)
 
 - **glavin_2018** [T2, hosted, NTRS]: C ~0.1 wt% (CK) to ~5 wt% (CI); IDPs ~12 wt%; hydration minerals (serpentine, saponite, smectite in CI, CM, CR and Tagish Lake; tochilinite in CM2). The B/C-complex 22–30% defaults are 4–6× the most carbon-rich C-type: "carbon-bearing material", not elemental C. `extracted_data/glavin_2018_chondrite_volatiles_key_numbers.csv`.
 - **ryugu_ivuna_2023** [T1] (Science 379:786; author version, not hostable): Ryugu is CI1; structural water like CI, interlayer water largely lost; below ~100 °C since alteration. Free ice is essentially absent, so ice priced at the in-space water proxy is recoverable only through dehydroxylation (d05). `extracted_data/ryugu_ivuna_2023_key_findings.csv`.
 
-## Round 11 - Meteorite density and the differentiation mechanism
+## R11 - Meteorite density and the differentiation mechanism (2026-09-18)
 
 - **wilkinson_robinson_2000** (see d01).
 - **mandler_elkins_tanton_2013** [T1, open_not_pulled]: Vesta = ~60–70% equilibrium magma-ocean crystallisation with residual melt extracted to shallow chambers: core, mantle (dunites, harzburgites, diogenites) and eucrite crust, whose PGMs went to the core. The mechanism behind `PGM_ENRICHMENT_BY_TYPE`.
 
-## Round 12 - farnocchia_2024
+## R12 - farnocchia_2024 (2026-09-18)
 
 Second M-type density, registered here because the M row's composition and density feed both domains; the write-up is in domain 1's Round 12 block.
 
-## Round 36 - Per-type material anchors
+## R36 - Per-type material anchors (2026-09-21)
 
 `extracted_data/r36_per_type_materials_key_numbers.csv`:
 
@@ -53,14 +54,14 @@ Second M-type density, registered here because the M row's composition and densi
 - **reddy_asteroids_iv_mineralogy** [T1] (Asteroids IV; arXiv preprint, un-hosted): A-types monomineralic olivine Fo85–93 (p8); R chondrites 65–78% olivine (p9); HED pyroxene Fs23–56 / Wo2–14 (±3 / ±1 mol%, p7); S/Q as ordinary chondrites via Dunn et al. 2010b (<2 mol%, ~50 powders); Itokawa LL with ol/(ol+pyx) 76%, Eros in the L/LL zone; A/S/Q/V analogues are 91% of meteorites (p8).
 - **lodders_2010_solar_abundances** [T2] (arXiv preprint, un-hosted): Table 2 CI (Orgueil): C 34,800 ppm (3.48 wt%); Fe/Mg/Si/O/S 18.5/9.6/10.7/45.9/5.35 wt%; PGM 3.29 ppm. Carbon defaults are ~7–9× elemental C; Fe/Mg/Si agree with Cannon's Palme 2014 values within 2%. Full table: `extracted_data/lodders_2010_ci_composition_table2.csv` (incl. Ni 10,800, Co 506, Cr 2,650 ppm).
 
-## Round 38 - D/T/P anchors
+## R38 - D/T/P anchors (2026-09-21)
 
 - **marschall_2025_67p_refractory_ice_ratio** [T1] (PSS 259:106061): 67P refractory/ice 0.5 < chi < 1.7, water 28–52 wt% (~35–40% preferred), formed at 25–35 au. D ice 0.25 and P 0.15 sit below.
 - **rubin_2019_67p_abundances** [T1] (MNRAS 489:594; un-hosted): per-water CO2 4.7±1.4, CO 3.1±0.9, O2 3.1±1.1; CH4 0.34, C2H6 0.29, CH3OH 0.21, H2CO 0.32; near-solar O/Si and C/Si, N depleted (as Halley).
 
 Every one of the 32 types now has a material anchor. `extracted_data/r38_primitive_type_materials_key_numbers.csv`.
 
-## Round 61 - hein2020 plant economics
+## R61 - hein2020 plant economics (2026-09-25)
 
 Tables 1-2: breakeven throughput "2.3*10-4 kg/s/kg, meaning that for each kg of spacecraft dry mass, 0.23 grams of material are processed per second" (7258 kg/yr per kg of craft), ~73x the plant-throughput centre (100) and above its 500 maximum even per kg of plant (24194-72582). Platinum (grade 1e-5) needs 0.35 kg/s/kg: "The spacecraft would need to be able to process the equivalent of its own mass within 3 seconds." Water $20,000/kg, Pt $70,000/kg; production cost $1,000,000 / $10,000 per kg; operations $5,700,000 / $100,000; development $5,453,333 / $500,000 per kg; refined/processed 0.05. These are profitability requirements, not plant capability: recorded, not a candidate. `22_prior_art_techno_economic_benchmarks/extracted_data/r61_hein2020_plant_economics_key_numbers.csv`.
 
@@ -190,7 +191,7 @@ Abstract #1616 (Gounelle, Zolensky, Tonui, Mikouchi; LPSC XXXII): "an abondant c
 **rc-172** opened (citation): source the split ratios from institutional pulls of the three
 queued studies, or apply NO SOURCE MEANS NO CHANGE to class K and label the rest as assumptions.
 
-**Round 204 - completeness registration of the X-type survey.**
+## R204 - completeness registration of the X-type survey (2026-10-19)
 
 AsteroidCatalog CITATIONS.md section 3 (the literature behind its reference values) was swept work-by-work against sources.csv on 2026-10-19; author-year-only entries were invisible to every earlier DOI/URL/NTRS-accession token sweep, so this seam had never been checked end-to-end. Forty-six of the forty-seven works already carry registry rows, three of them under ids without the first-author surname: Hanus 2017 as adam_2017 (flagged as such by AC itself), Yokoyama et al. 2023 as ryugu_ivuna_2023, and Glavin et al. 2025 Nature Astronomy 9:199 as bennu_volatiles_2025. The single gap was Fornasier, Clark & Dotto (2011), Spectroscopic survey of X-type asteroids, Icarus 214:131-146 - the paper behind the upstream taxonomy.X_SPLIT_BOUNDS albedo convention. Registered this round as fornasier_2011_x_type_spectroscopic_survey [T1; registered_not_pulled]; DOI verified live against Crossref (10.1016/j.icarus.2011.04.022), no arXiv mirror found, publisher route paywalled - full text deferred to an institutional pull.
 
@@ -202,7 +203,7 @@ Residual-fit invariant holds for all 32 spectral types: detailed totals never ex
 
 Benign rounding class recorded to prevent a future false flag: X troilite children sum +1e-6 against their parent (0.022458 vs 0.022457) and Xc sums -1e-6, because five independent child values are each rounded at the sixth decimal; that is display precision of a share split, not an arithmetic violation. rc-172 stays open on its own claim (the split ratios have no source); nothing in this seam bears on it.
 
-## Round 237 - the end-member candidates decided upstream (2026-10-21)
+## R237 - the end-member candidates decided upstream (2026-10-21)
 
 The owner chose the Tagish Lake end-member for the primitive types. AsteroidCatalog 1.10.0 (`6915077`, published as data-2026-10-21b, compared by value with data-2026-10-21):
 
@@ -212,9 +213,9 @@ The owner chose the Tagish Lake end-member for the primitive types. AsteroidCata
 
 AsteroidCatalog candidates: none open.
 
-**Round 304 (2026-10-29) - spacevalue sibling citation seam opened and closed; two density-reference rows registered.**
+## R304 - spacevalue sibling citation seam opened and closed; two density-reference rows registered (2026-10-29)
 
-economicspace PIP_SPEC at tip pins spacevalue at tag v0.2.0 alongside spacecost at v0.14.0; the package holds Stage 2 pricing (formerly modules/mineral_value.py) and from their #183 also Stage 4 cargo valuation, so its citation list is load-bearing for economicspace outputs but had never been swept against this registry - the same blind-seam class as the R204 author-year pass. Work-level resolution at tag d12f626: yfinance, USGS Mineral Commodity Summaries 2025 and 2026 editions (the 2025 row was present at HEAD; strict grep after a truncated first-pass hit list), World Bank Pink Sheet = worldbank_cmo_pink_sheet, LBMA fixings = lbma_precious_metals_fixings, Johnson Matthey PGM Market Report May 2026 = jm_pgm_market_report_2026, McDowell Space Activities in 2025 Table 22 = mc_dowell_2025_space_activities_gcat, Northrop Grumman LunA-10 rail network study = northrop_grumman_2024_luna10_lunar_rail_network, the eight meteorite analogue papers all already registered (verified at R302), Mars fact sheet row present - leaving only the density/formula cluster: Klein and Hurlbut Manual of Mineralogy plus Mindat.org and Webmineral.com, now registered as klein_hurlbut_manual_of_mineralogy T4 and mindat_webmineral_online_mineral_data_databases T3. Live probes this round: webmineral.com HTTP 200 with sha recorded; mindat.org answers 403 Forbidden from this machine (new dated witness-class fact - do not expect a document pull). spacevalue pyproject pins spacecost v0.14.0, identical to the economicspace pin: dependency graph consistent across all three repos at these tips.
+economicspace PIP_SPEC at tip pins spacevalue at tag v0.2.0 alongside spacecost at v0.14.0; the package holds Stage 2 pricing (formerly modules/mineral_value.py) and from their #183 also Stage 4 cargo valuation, so its citation list is load-bearing for economicspace outputs but had never been swept against this registry - the same blind-seam class as the R204 author-year pass. Work-level resolution at tag d12f626: yfinance, USGS Mineral Commodity Summaries 2025 and 2026 editions (the 2025 row was present at HEAD; strict grep after a truncated first-pass hit list), World Bank Pink Sheet = worldbank_cmo_pink_sheet, LBMA fixings = lbma_precious_metals_fixings, Johnson Matthey PGM Market Report May 2026 = jm_pgm_market_report_2026, McDowell Space Activities in 2025 Table 22 = mc_dowell_2025_space_activities_gcat, Northrop Grumman LunA-10 rail network study = northrop_grumman_2024_luna10_lunar_rail_network, the eight meteorite analogue papers all already registered (verified at R302), Mars fact sheet row present - leaving only the density/formula cluster: Klein and Hurlbut Manual of Mineralogy plus Mindat.org and Webmineral.com, now registered as klein_hurlbut_manual_of_mineralogy T4 and mindat_webmineral_online_mineral_data_databases T3. spacevalue pyproject pins spacecost v0.14.0, identical to the economicspace pin: dependency graph consistent across all three repos at these tips.
 
 ## R312 - The pyroxene metadata formula omits one metal-site cation (2026-11-01)
 

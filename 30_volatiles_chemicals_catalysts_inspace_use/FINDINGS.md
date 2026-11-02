@@ -76,8 +76,7 @@ Hosted:
 
 Some launched P remains needed even at full closure, supporting a small non-zero row. `extracted_data/r172_phosphorus_demand_key_numbers.csv`. The opening brief is closed.
 
-
-### R218 - rc-184 opened: the Volatile cargo containment note cites a citation that does not exist upstream
+## R218 - rc-184 opened: the Volatile cargo containment note cites a citation that does not exist upstream (2026-10-20)
 
 The spacecost operational_costs.csv row Volatile cargo containment carries the sentence "Charged on WATER only, which is what the citation covers." while CITATIONS.md at 29a7ced has zero entries covering containment, sublimation, volatiles or depots (token sweep: contain/sublimat/olatile/shaded and Depot all return nothing; the single Water hit is the Kleinhenz & Paz lunar-ISRU title for a different claim). The storage_systems.csv twin Volatile cargo containment (water ice) likewise names no source in its note. The input is load-bearing, not decorative: economicspace consumes it live with model_volatile_containment default True and m_containment = c_frac * m_pay feeding three masses in the denominator, so every water-rich destination multiple rests on this 0.05 kg/kg fraction; their own verification worksheet ledger independently lists I70 c_seal marked needs backing stating that the notes of the row name no published source (consumed by steps S101 and S116). The proposal follows rc-182 shape: add a CITATIONS.md entry naming an institutional document, or reword as self-declared engineering estimate in house style; values untouched.
 
