@@ -68,6 +68,8 @@ _Backings: per-spectral-type density and PGM factors in AsteroidCatalog `referen
 | ferrais_2020_psyche_primordial_shape_jacobi_ellipsoid | T1 | Ferrais, Vernazza, Jorda et al., A&A 638:L15 (Jun 2020), DOI 10.1051/0004-6361/202038100 | registered, not pulled (aanda.org 403; HAL mirror Anubis-walled) | backs Psyche diameter input of environments.csv via Siltala & Granvik adoption - rc-227 |
 | asteroidcatalog_release_data_2026_10_21b | T3 | AsteroidCatalog published data release 'data-2026-10-21b' (pipeline contract 1.10.0; GitHub artifact set: catalog CSV.gz + parquet + manifest) (github.com/loggger101/AsteroidCatalog, released 2026-10-21) | open service | the release economicspace pins at @3ba6f3a: 1,575,889 rows, 149,718 measured diameters; rejected_rows field defect (rc-229) |
 | jpl_sbdb_field_list_probe_2026_10_29 | T3 | SBDB query-API field list saved answer 2026-10-29 (JPL SSD) | full text hosted (saved JSON, sha in registry row) | witness for AC README sigma-count audit rc-237 |
+| asteroidcatalog_mass_reconciliation_record_2026 | T4 | Mass identity units and rejected-sigma provenance, pinned record | read, not hosted | equation conversion (rc-256); orphaned mass sigma (rc-257) |
+| asteroidcatalog_neowise_alias_reaggregation_record_2026 | T4 | NEOWISE alias regrouping statistics, pinned record | read, not hosted | pooled diameters/errors depend on alias grouping (rc-259) |
 
 ## Domain 2 — Composition → commodity value mapping
 
@@ -126,6 +128,7 @@ _Backings: AsteroidCatalog material fractions and economicspace `mineral_value.p
 | klein_hurlbut_manual_of_mineralogy | T4 | Manual of Mineralogy (Klein and Hurlbut, Wiley; edition not stated upstream) — print textbook | registered, not pulled | density/formula authority for spacevalue catalog columns feeding Stage-2 conversions; completeness registration from pinned dependency v0.2.0 |
 | mindat_webmineral_online_mineral_data_databases | T3 | Mindat.org and Webmineral.com online mineral data databases — joint density/formula reference (webmineral HTTP 200 sha recorded; mindat 403 bot-block dated this round) | open service | spacevalue catalog densities and formulas feeding Stage-2 conversions; completeness registration from pinned dependency v0.2.0 |
 | morimoto_1988_nomenclature_pyroxenes | T1 | Morimoto 1988, IMA pyroxene nomenclature (Bull. Minéral. 111) | read, not hosted | pyroxene formula needs two Mg/Fe/Ca cations (rc-242) |
+| spacevalue_full_residual_valuation_record_2026 | T4 | Whole-body residual valuation, pinned record | read, not hosted | zero named fraction suppresses residual floor (rc-263) |
 
 ## Domain 3 — Δv budgets and propulsion performance tables
 
@@ -349,6 +352,7 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | wikipedia_eclipse_article | T4 | Wikipedia article Eclipse rocket (current revision) | read, not hosted (verified live 2026-10-27) | Eclipse infobox capacities and reuse timeline|
 | nasa_oig_2026_ig-26-004_hls_contracts_audit | T2 | "NASA's Management of the Human Landing System Contracts" | full text hosted (public domain, sha in registry) | tanker fleet more-than-10 plan and 6-day cadence|
 | wikipedia_starship_spacecraft_article | T4 | Wikipedia article SpaceX Starship (spacecraft) (current revision) | read, not hosted (verified live 2026-10-27) | Musk tweet eight-launch figure and four-and-eight range phrase|
+| spacecost_summary_propellant_uplift_record_2026 | T4 | Transfer-summary propellant uplift | read, not hosted | rc-273: launch mass missing from the total |
 
 ## Domain 5 — In-space storage / ISRU / operational costs
 
@@ -378,6 +382,8 @@ _Backings: spacecost `storage_systems.csv`; the volatile-ISRU, power and electri
 | johnson_2023_h2_liquefaction_ascend | T2 | Johnson W. (NASA GRC), Concepts for the Liquefaction of Hydrogen for In-Situ Operations on the Lunar or Martian Surface - AIAA ASCEND 2023, Las Vegas Oct 23 2023 (NTRS 20230014839) | full text hosted | H2-liquefaction term of the spacecost v0.12.0 hydrolox ISRU energy band (35 kW at 0.3 kg/hr; pre-cooling cuts input power 70%); radiator-only floor 3.9 kg/kW |
 | doe_hfto_pem_electrolysis_technical_targets | T3 | DOE PEM electrolysis technical targets (live web table; legacy URL redirects) | verified live, not hosted | system-level 55 kWh/kg H2 as-of-2022 claim in the hydrolox row + rc-166 evidence trail |
 | economicspace_isru_feed_resource_budget_record_2026 | T4 | ISRU feed and asteroid resource budget, pinned implementation record | read, not hosted | settled ISRU plus cargo feed can exceed body mass (rc-241) |
+| economicspace_isru_water_liberation_flag_record_2026 | T4 | ISRU water-heating flag, pinned implementation | read, not hosted | disabled flag still charges ISRU heating (rc-247) |
+| economicspace_settled_boiloff_hold_record_2026 | T4 | Final cargo volume cap and cryogenic storage clock, pinned record | read, not hosted | return fuel retains the earlier mining clock (rc-253) |
 
 ## Domain 6 — Commodity / mineral market pricing (value side of the pipeline)
 
@@ -390,12 +396,13 @@ _Backings: economicspace `mineral_value_catalog.csv` `ref_price_usd_per_kg` for 
 | jm_pgm_market_report_2026 | T2 | Johnson Matthey "PGM market report May 2026" — base-price narrative + full supply/demand tables (oz AND tonnes, 2021-2026) for Pt/Pd/Rh/Ir/Ru; free public download pulled live this round | read, not hosted | minor PGM prices and production: iridium -37.8% and ruthenium -71.6% vs upstream; rhodium production 17.6 t (upstream +30.7%); no osmium price |
 | usgs_mineral_commodity_summaries_2026 | T3 | Mineral Commodity Summaries 2026 — U.S. Geological Survey (annual) | full text hosted | mineral_value.py curated fallback prices for metals yfinance lacks, and every terrestrial market depth in ANNUAL_WORLD_PRODUCTION_KG |
 | lme_official_reference_prices | T3 | London Metal Exchange official and reference prices (nickel 3-month, cobalt cash) — London Metal Exchange (exchange data) | registered, not pulled | mineral_value.py ref_price_usd_per_kg for nickel and cobalt (and the other LME base metals) |
-| cme_comex_nymex_futures | T3 | CME Group COMEX and NYMEX front-month futures (GC, SI, HG, PL, PA; HO, NG, CL) — CME Group (exchange data) | registered, not pulled | mineral_value.py live price basis for Au/Ag/Cu/Pt/Pd; spacecost live RP-1 and methane price proxies |
+| cme_comex_nymex_futures | T3 | CME COMEX/NYMEX futures; NG contract rules read | read, not hosted | pricing proxies; NG heating basis (rc-275) |
 | yahoo_finance_yfinance | T4 | Yahoo Finance quotes via the yfinance Python package — open-source software / market-data service (Yahoo terms apply) | registered, not pulled | mineral_value.py live futures prices; spacecost optional live propellant price proxies |
-| metals_dev_api | T4 | metals.dev metals price API — commercial market-data API (optional; off by default upstream) | read, not hosted | mineral_value.py optional live LME and precious-metal quotes |
+| metals_dev_api | T4 | metals.dev metals price API | read, not hosted | rc-267: provider response timestamp contract |
 | reuters_2026_gold_analyst_consensus | T4 | Reuters precious-metals analyst consensus (May 2026; article not named upstream) — Reuters (news agency) | registered, not pulled | mineral_value.py gold ref_price_usd_per_kg context |
 | usgs_mineral_commodity_summaries_2025 | T3 | Mineral Commodity Summaries 2025 — U.S. Geological Survey (annual; v1.2, March-2025) | full text hosted | mineral_value.py ANNUAL_WORLD_PRODUCTION_KG v1.11.0 rows (sulfur, chromium, titanium, gallium, germanium, rhenium, tungsten, molybdenum, ammonia) and the order of the 2024 prices behind them; rc-055 opened on the ammonia cell |
 | ipa_sfa_2026_osmium_pgm_factsheet | T2 | IPA / SFA (Oxford) 2026 Osmium PGM factsheet (16 pp) | read, not hosted | the osmium price row: no benchmark exists; $300-400/oz since the 2000s (upstream $13k/kg = $404/oz); output hundreds of kg/yr |
+| spacevalue_metals_dev_timestamp_record_2026 | T4 | Metals.Dev quote-date mapping | read, not hosted | rc-267: provider time replaced by retrieval day |
 
 ## Domain 7 — Mission program-cost benchmarks (NRE / development anchors)
 
@@ -410,6 +417,7 @@ _Backings: `operational_costs.csv` NRE rows (`Spacecraft development`, `Autonomo
 | drake_2008_mars_dra5_study_executive_summary | T2 | Drake, "Mars Design Reference Architecture 5.0 Study: Executive Summary" (NASA HEP deck; NTRS 20090010571) | full text hosted | human Mars scale: IMLEO 1,252 t chemical / 825 t NTR; 10-12 vs 7-9 Ares V cargo launches |
 | sparx_2026_sdt_report_lunar_sample_return_baseline_cost | T2 | SPARX Science Definition Team Report (JPL/Caltech under NASA task order; NTRS 20260009103), SDT meetings Jan-Dec 2025 | read, not hosted | post-MSR sample-return cost: SPARX baseline $840M FY25 incl. reserves (rover $543M, instruments $137M, ops $160M); CLPS lander ~$200M |
 | gao_2026_assessments_of_major_projects | T3 | GAO-26-108556 "NASA: Assessments of Major Projects" (July 2026) - annual independent review of the 36 major projects (> $250M LCC): portfolio >=$70B, cumulative growth +~$311M since last report ($4.4B -> $4.7B), Dragonfly within $3.4B LCC (+$216M HQ funds Apr 2028), Psyche +~$132M dev cost after staffing-shortage delay | full text hosted | **portfolio-level growth record for the NRE rows**: first registered source measuring cost-growth between annual snapshots of NASA's major-project base; context/bound class - no re-pin |
+| economicspace_programme_minimum_missions_record_2026 | T4 | configured programme floor, pinned implementation | read, not hosted | search can choose fewer than committed N (rc-249) |
 
 ## Domain 8 — NEA accessibility oracles (round-trip delta-v ground truth)
 
@@ -484,6 +492,7 @@ _Backings: the power and electric-propulsion rows of `operational_costs.csv` (EP
 | nasa_sr1_freedom_mission_page | T2 | NASA, Space Reactor-1 Freedom mission page | read, not hosted | flight-demo scale for the NEP row: 20 kWe, 12 t, 12-kW Hall thrusters, 2028 |
 | burns_2022_inl_subscale_maturation_ntp_reactor_testing | T2 | Burns et al. 2022, INL subscale NTP reactor-testing options (INL/RPT-22-65557) | read, not hosted | NTP key performance parameters: >2,700 K exhaust, 10-15 klbf, 900 s Isp, reactor <3,500 kg (requirements, not demonstrated) |
 | economicspace_electric_stage_placeholder_propellant_record_2026 | T4 | electric-stage provisional/settled propellant witness | read, not hosted | rc-244: ISRU stage power and burn time |
+| economicspace_electric_stage_return_mass_record_2026 | T4 | electric-stage return mass witness | read, not hosted | rc-246: EP hardware absent from return mass |
 
 ## Domain 12 — Destination environments & physical constants
 
@@ -530,6 +539,18 @@ _Backings: economicspace `orbital.py` (`elements_to_state`, for the dashboard's 
 | spacecost_v0_14_0_delivery_chains | T4 | spacecost v0.14.0 delivery-chain module (software release tag aa1118c, MIT) | read, not hosted (git tag v0.14.0 this round) | rc-236 hardware-share band sentence; MODEL.md delivery-table currency proof |
 | spacevalue_release_record_v0_2_0 | T4 | spacevalue release record at tag v0.2.0 — CHANGELOG, contract 1.17.0 fixture stamps, thirteen-cell golden recording; byte-compared to economicspace frozen 1.15.0 tables | read, not hosted (git tag d12f626 this round) | R306 claim battery: seven-of-seven byte-for-byte equality modulo pipeline_version stamp only; twenty-five-name consumer contract and thirteen cells exact; skip-note in FINDINGS |
 | spacevalue_refinery_composition_cache_record_2026 | T4 | spacevalue refinery composition-cache witness | read, not hosted | rc-243: preserve composition key; uncached input path |
+| economicspace_prefilter_probe_stage_coverage_record_2026 | T4 | Prefilter probe versus actual two-stage search, pinned record | read, not hosted | whole-filter report omits second-stage refusals (rc-255) |
+| asteroidcatalog_duplicate_measurement_pairing_record_2026 | T4 | Duplicate measurement/error pairing, pinned record | read, not hosted | independent coalescing can reject the preferred mass (rc-258) |
+| asteroidcatalog_nonfinite_catalogue_fields_record_2026 | T4 | Non-finite catalogue fields, pinned record | read, not hosted | infinite inputs and overflow evade row checks (rc-260) |
+| economicspace_propellant_cache_configuration_record_2026 | T4 | Propellant cache/config reuse, pinned record | read, not hosted | reused rows retain the first tank setting (rc-264) |
+| economicspace_apsis_dv_sum_preselection_record_2026 | T4 | Apsis selection by delta-v sum | read, not hosted | rc-266: price both apsides through mission search |
+| asteroidcatalog_designation_case_identity_record_2026 | T4 | Designation case and identity | read, not hosted | rc-268: wrong-body joins and lost measurements |
+| imcce_ssodnet_orbital_metadata_api | T4 | SsODNet orbital metadata and Ceres record | open service | rc-269/rc-270: source epoch and time convention |
+| asteroidcatalog_orbital_epoch_pairing_record_2026 | T4 | Orbital epoch ingestion and bundle pairing | read, not hosted | rc-269/rc-270: epoch loss and cross-source mixing |
+| asteroidcatalog_quality_gate_consistency_record_2026 | T4 | Catalog quality gates and missing class markers | read, not hosted | rc-271/rc-272: final size and class eligibility |
+| spacecost_summary_consumer_contract_record_2026 | T4 | Summary versus Stage-4 input contract | read, not hosted | rc-274: correct the consumer dependency |
+| spacevalue_release_quote_attestation_record_2026 | T4 | Release manifest and quoted-table attestation | read, not hosted | rc-276/rc-277: incomplete quote checks |
+| economicspace_cached_release_contract_record_2026 | T4 | Cached-release contract admission, original installers | read, not hosted | rc-278: cache hits bypass the contract guard |
 
 ## Domain 14 — Propellant & consumable prices
 
@@ -557,6 +578,10 @@ _Backings: spacecost `propellants.csv` `ref_cost_usd_per_kg` and the component p
 | yfinance_futures_closes_ho_ng_cl_2026 | T3 | Yahoo Finance chart API closes HO=F NG=F CL=F (saved-response shas recorded) | read live, not hosted (saved responses sha-recorded in registry) | rc-200: current-feed Sep-28 closes diverge from the two recovered snapshot values; Oct-23 file matches bit-for-bit |
 | usgs_mineral_commodity_summaries_2026_iodine | T3 | USGS Mineral Commodity Summaries Iodine February 2026 | full text hosted (public-domain; sha recorded) | rc-226: iodine market price context for the propellants.csv stored $60/kg; import unit value series 2021 to 2025 estimate |
 | spacevalue_metals_snapshots_2026 | T4 | spacevalue quote snapshots with SHA256SUMS (pinned package v0.2.0 release data) — read at pinned tag, sha-verified both directions; release asset HTTP 200 | verified live, not hosted | Stage-2/Stage-4 quote-input provenance and integrity; r305 bit-exact feed reconfirmation feeds the rc-200 trail |
+| sabine_2026_gas_tariff_heating_value | T4 | Sabine tariff: gas heating value | read, not hosted | Henry Hub gross heating basis (rc-275) |
+| ashrae_2021_fundamentals_fuel_heating_values | T4 | ASHRAE 2021 fuel heating values | read, not hosted | methane HHV/LHV (rc-275) |
+| thompson_taylor_2008_nist_sp811_si | T3 | NIST SP811 SI conversion factors | read, not hosted | Btu(IT) to joule (rc-275) |
+| spacecost_methane_quote_heating_basis_record_2026 | T4 | Methane quote basis, pinned implementation | read, not hosted | live/snapshot conversion (rc-275) |
 
 ## Domain 15 — In-space demand & market absorption
 
@@ -593,6 +618,8 @@ _Backings: economicspace `mineral_value.py` `IN_SPACE_UTILITY` (market side), `I
 | faa_2024_aerospace_forecast_commercial_space | T3 | FAA (AST), "Commercial Space" chapter, FAA Aerospace Forecast FY2024-2044 - prior-year five-year edition with historical actuals 2015-2023 | full text hosted | prior-year demand baseline: 'low-high range of 134-156 in FY2024 to ... 195-338 by FY2028' + the historical actuals row (2015: 14 -> 2023: 113) |
 | faa_2025_aerospace_forecast_commercial_space | T3 | FAA (AST), "Commercial Space" chapter, FAA Aerospace Forecast FY2025-2045 - FIRST ten-year launch/reentry forecast: FY2024 actuals + low/high cases through FY2034 | full text hosted | FIRST institutional demand-scale anchor for d15: FY2024 = 148 operations (record), 174-183 -> 259-566 by FY2034, SpaceX 83%, space economy $1.4-2.3T by 2035 |
 | economicspace_spacevalue_capacity_market_implementation_2026 | T4 | Capacity pricing and fleet bound, pinned implementation record | read, not hosted | half-price surplus does not guarantee an interior fleet optimum (rc-240) |
+| economicspace_market_capped_hold_engineering_record_2026 | T4 | Market-capped cargo versus engineering hold, pinned record | read, not hosted | priced mix differs from physical and exported cargo (rc-252) |
+| spacevalue_shared_class_market_budget_record_2026 | T4 | Shared class market budgets, pinned record | read, not hosted | substitute phases spend separate class allowances (rc-261) |
 
 ## Domain 16 — Reliability, learning curves & hardware service life
 
@@ -625,6 +652,8 @@ _Backings: `operational_costs.csv` launch reliability, spacecraft MTBF, mining s
 | hirschmann_1964_profit_from_the_learning_curve | T4 | Hirschmann 1964, Profit from the Learning Curve (HBR) | registered, not pulled | context-only: the original aircraft learning-curve article (unread; paywalled) |
 | wright_1936_factors_affecting_cost_airplanes | T1 | Factors affecting the cost of airplanes - Journal of the Aeronautical Sciences 3(4):122-128 | registered, not pulled | Context-only: learning-curve law behind economicspace beta_LC fleet flag; named by CITATIONS.md at 31fb355 |
 | economicspace_spacecost_rig_calendar_cadence_record_2026 | T4 | Rig calendar life and campaign cadence, pinned implementation record | read, not hosted | 15-year rig cap omits idle intervals between campaigns (rc-239) |
+| economicspace_nonrectangular_rig_cost_allocation_record_2026 | T4 | integer rig allocation in partial fleets | read, not hosted | partially filled fleets underpay rig cost (rc-250) |
+| delionback_1975_guidelines_learning_cost_improvement_curves | T2 | NASA1975 learning/cost improvement curve guidelines | full text hosted | Wright/Crawford ordinate distinction (rc-251) |
 
 ## Domain 17 — Cost of capital, contingency & insurance
 
@@ -644,6 +673,7 @@ _Backings: `operational_costs.csv` WACC, contingency, launch and third-party ins
 | parkinson_1999_hidden_costs_of_reliability_and_failure_in_launch_systems | T1 | Parkinson 1999, The hidden costs of reliability and failure in launch systems (Acta Astronautica 44) | registered, not pulled | context-only: cost of launch failure and insurance (the owner's note says up to 20% of launch cost; unread) |
 | gao_2012_commercial_space_launches_faa_liability_risk_assessment | T3 | GAO-12-899 Commercial Space Launches: FAA Should Update How It Assesses Federal Liability Risk (Jul 2012) | registered, not pulled | Third-party liability insurance premium rate (~1% of coverage x $99M avg MPL = ~$0.99M/launch implied) |
 | gao_2017_commercial_space_launch_insurance_faa_calculation_weakness | T3 | GAO-17-366 Commercial Space Launch Insurance: Weakness in FAA's Insurance Calculation (Mar 2017) | registered, not pulled | Same cell - later data point (~$51M avg MPL 2016 -> ~$0.5M/launch implied); $3M cost-of-casualty corroboration |
+| economicspace_terminal_salvage_timing_record_2026 | T4 | Terminal salvage timing, pinned record | read, not hosted | terminal credit earns launch-to-sale interest (rc-262) |
 
 ## Domain 18 — Licensing, planetary protection & space-resource law
 
@@ -691,6 +721,10 @@ _Backings: `calc.py` mining and beneficiation fields (mining rate, rig mass, dur
 | kabemba_2025_geometallurgical_framework_flotation_kinetics_platreef_pgm | T1 | Kabemba et al. 2025, flotation kinetics of Platreef PGM ore, mode-of-occurrence model (Minerals 15) | full text hosted | batch flotation PGM recovery 83-94% on Platreef ores (90.6% is liberated/sulfide-associated share, not recovery) |
 | doe_2007_mining_industry_energy_bandwidth_study | T2 | US DOE ITP 2007, Mining Industry Energy Bandwidth Study (prepared by BCS, Inc.) | read, not hosted | `Drilling / excavation energy` 200 Wh/kg: US metal mining drill+blast+dig 5.72, with haulage 31.63, whole mine incl. comminution 54.51 Wh/kg (rc-027) |
 | sanchez_scheeres_2020_cohesive_regolith_fast_rotating_asteroids | T1 | Sánchez & Scheeres 2020, regolith on fast rotators (Icarus 338) | read, not hosted | spin cutoff: stable polar regolith, including zero cohesion (rc-238) |
+| economicspace_programme_cumulative_resource_budget_record_2026 | T4 | Programme extraction versus finite target mass (pinned implementation) | read, not hosted | cumulative cargo/fuel feed across campaigns (rc-245) |
+| economicspace_concentration_market_search_bound_record_2026 | T4 | Nominal-purity concentration search bound | read, not hosted | rc-265: market caps leave better ratios outside search |
+| spacevalue_flown_refinery_route_preselection_record_2026 | T4 | Flown-refinery sale-route preselection | read, not hosted | rc-279: couple route and mission choice |
+| economicspace_raw_excavation_energy_record_2026 | T4 | Raw-cargo excavation power gates | read, not hosted | rc-280: raw feed omits excavation power |
 
 ## Domain 20 — Mission operations, communications & ground segment
 
@@ -709,6 +743,7 @@ _Backings: `operational_costs.csv` mission operations, DSN time, downlink and de
 | remer_sherif_buchanan_1992_dsn_modification_costs_model_spaceops | T2 | Remer/Sherif/Buchanan 1992: DSN modification & enhancement preparation costs (SpaceOps; NTRS 19940019495) - Table 6 per-mission actuals $32.5-36.0M, MJS $97.5M / Viking $49.7M independent checks | full text hosted | operations.py DSN rows: ceiling anchor for per-mission ground-support prep cost (no cell pinned exactly) |
 | nasa_oig_2018_ig-18-016_commercial_resupply_services_audit | T2 | OIG IG-18-016 - CRS audit: per-mission actuals $191.3M avg (CRS-1), SpaceX $152.1M / Orbital ATK $262.6M avg (CRS-2, max value $14B) | full text hosted | FIRST institutional source for the berthing/handover cell - ceiling-anchor class: brackets the $2M/delivery ESTIMATE inside a ~$150-260M delivery budget; no re-pin |
 | nasa_2026_isam_state_of_play | T2 | NASA LaRC ISAM State of Play 2026 - institutional RPOD/servicing program catalog with budgets (Astroscale K $77M/5yr; CDM $89.7M) | full text hosted | capability-side context for berthing/handover + autonomy-staffing brief items - no cell pinned |
+| spacecost_downleg_recovery_mass_ratio_record_2026 | T4 | Downleg ground-recovery mass-ratio cost, pinned record | read, not hosted | fixed recovery fee scales with departure propellant (rc-254) |
 
 ## Domain 21 — Spacecraft mass & recurring-cost estimating relationships
 
@@ -732,6 +767,7 @@ _Backings: `operational_costs.csv` recurring $/kg rows by hardware class; `calc.
 | mahzari_et_al_2022_mars2020_tps_development_sizing | T2 | Mahzari et al. 2022, development and sizing of the Mars 2020 TPS (AIAA Aviation 2022; NTRS 20220009403; PUBLIC_USE_PERMITTED + explicit US-government statement) | full text hosted | heat-shield cell: Mars 2020 TPS kept MSL thicknesses, sized with the MSL/Orion method (context) |
 | kibbey_2015_rho_isp_stage_mass_estimating_jpc | T2 | Kibbey, Rho-Isp Revisited + basic stage mass estimating for launch vehicle conceptual sizing studies (AIAA JPC paper 2015-3791; DOI Crossref-verified this round) | full text hosted | d21 brief item 'mass estimating relationships': institutional inert-fraction MER model - tank constants f-prime-i = 0.0180 (oxidizer) / 0.0255 (fuel) from Atlas V core; validated vs Delta IV CBC (predicts 0.82 vs published 0.887) |
 | motiwala_mathias_mattenberger_2014_conceptual_lv_spacecraft_design_risk | T2 | Motiwala, Mathias & Mattenberger, conceptual launch vehicle + spacecraft design for risk assessment (NASA/TM-2014-218366; NTRS 20150000182) | full text hosted | d21 brief item 'mass estimating relationships': component-level MER sizing methodology + institutional range 'Typical structural mass fractions range from 0.038 to 0.45' bracketing return_structure_frac_of_payload=0.15 |
+| economicspace_stationary_rig_repeat_launch_record_2026 | T4 | stationary rig versus repeat launch manifest | read, not hosted | reused rig still counted in every launch (rc-248) |
 
 ## Domain 22 — Prior-art techno-economic benchmarks
 

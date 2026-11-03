@@ -109,3 +109,76 @@ The IPA/SFA factsheet re-read (16 pp):
 - Yields: the nickel-iron phase carries Pt 15 / Pd 10 / Ru 3 / Ir 4 / Os 2 / Rh 1.5 / Au 1 ppm (~36.5 total); the R72 ratio audit stands.
 
 Do not re-audit unless upstream changes a value or note.
+
+## R336 - Metals.Dev provider timestamps become the retrieval day (2026-11-02)
+
+Sources `metals_dev_api` and `spacevalue_metals_dev_timestamp_record_2026`:
+provider documentation at https://www.metals.dev/docs, Latest Endpoint / API
+Response and general response-property table; spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011,
+`spacevalue/catalog.py`, README, original snapshot and LICENSE;
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f, original quote/delivery dependencies.
+The provider calls a timestamp the "date & time the data is collected".
+Its latest example carries `timestamps.metal=2023-07-05T06:16:02.829Z`;
+the general table also names `timestamp`. This is collection provenance,
+not a trading-session close. The adapter instead reads `date` or
+`timestamp_iso`, then the current UTC day (catalog.py L2239), and writes
+that selection into `live_price_date` (L2253-2257).
+
+Twelve original adapter comparisons replay a field subset of the documented
+example through a local HTTP stub. No real credential or live price request
+is used. Six supported metals are accepted. With the unchanged provider
+example, only the simulated retrieval clock changes:
+
+| simulated retrieval UTC | provider metal date | original live_price_date |
+|---|---|---|
+| 2026-11-02 12:00 | 2023-07-05 | 2026-11-02 |
+| 2026-11-03 12:00 | 2023-07-05 | 2026-11-03 |
+
+The same price payload therefore acquires a different quoted date on replay.
+A constructed midnight-boundary response with metal timestamp 2026-11-01
+23:59:30Z, read at 2026-11-02 00:00:20Z, is likewise labelled November 2.
+Constructed root-timestamp and different metal/currency-date cases also fail
+to retain the metal collection date. These five cases isolate field mapping;
+they do not report the freshness of an actual API response.
+
+Seven controls cover the already-read legacy date fields, a same-calendar-day
+provider timestamp, DEMO/empty keys, HTTP failure and a payload without rates.
+Exposing the provider date through the adapter's existing `date` input restores
+the expected metadata while every other result column remains exactly equal.
+Every original adapter result repeats exactly. All accepted numerical prices
+match the unchanged rate-times-troy-ounce conversion independently.
+
+Four complete `build_mineral_value_catalog` pairs include merge, destination
+handling, validation and CSV export/readback. Each affected 59-row build has
+six `metals.dev` rows whose wrong date survives to disk. Repeating the original
+build gives an identical frame; the metadata-only input diagnostic changes
+only `live_price_date`, both in memory and after CSV reread. `catalog_date`
+continues to record the build day separately. DEMO-key and recorded-snapshot
+catalogs are unchanged controls. Two builds from `metals-2026-10-07` at the
+two simulated clocks are wholly identical and make no HTTP call.
+
+Verdict: the optional keyed adapter drops available provider collection time
+and replaces it with retrieval-day metadata. `rc-267`: preserve the documented
+metal timestamp and keep retrieval/catalog time separate. This finding changes
+quote provenance, with no numerical price discrepancy in these tests; default
+unkeyed and recorded-release behaviour remain effective controls. No current
+market-price level, live-service staleness, or published-release corruption is
+claimed. `extracted_data/r336_metals_dev_timestamp_provenance.csv`.
+
+
+## R341 - Henry Hub contract heating-basis link (2026-11-03)
+
+`cme_comex_nymex_futures`, NYMEX Chapter 220 PDF p1, 220101,
+calls the gas "consisting essentially of methane" and requires the
+then-effective Sabine FERC tariff. Sections 220102.B/C state a 10,000-MMBtu
+trading unit and USD/MMBtu pricing. The read establishes the Henry Hub
+contract link; it does not establish any market close or the metals,
+heating-oil or crude-oil contract specifications.
+
+At spacecost 860bef9902aa67fec705875cd52fdb8e6def159f,
+`spacecost/units.py` L69-75 converts this quote with 0.04739 MMBtu/kg,
+an implied 50-MJ/kg net basis. The linked tariff's condensed-water definition
+and the methane gross/net comparison are recorded in domain 14's R341 block.
+Verdict: `rc-275`, gross versus net basis in the methane proxy.
+Contract extraction: `extracted_data/r341_henry_hub_contract_basis.csv`.
+Calculation record: `14_propellant_consumable_prices/extracted_data/r341_methane_quote_heating_basis.csv`.

@@ -129,3 +129,60 @@ spacevalue CITATIONS.md at pinned tag v0.2.0 states that its quote file metals-2
 ## R305 - spacevalue metals snapshots bit-exact against the live feed; schema asymmetry noted for the rc-200 trail (2026-10-29)
 
 All five forward-recorded Oct-23 closes in metals-2026-10-26.csv (GC=F 4007.89990234375 troy_oz, HG=F 6.47599983215332 lb, PA=F 1046.5999755859375, PL=F 1554.199951171875, SI=F 53.71099853515625 troy_oz) match the live Yahoo chart-API bars bit-for-bit on re-pull, values in extracted_data/r305_metals_snapshot_bit_exact_key_numbers.csv. Combined with the R301 fuel-side result (Oct-23 HO=F and NG=F closes matched exactly six days after recording), the forward-recording mechanism is now proven sound across two packages and eight tickers: snapshots never drift once written, and recorded observations reproduce. The single anomaly anywhere remains that fuel-2026-10-17.csv stamps back-solved Sep-28 values onto close_date 2026-09-28 where the same feed now prints different closes for that date - a divergence specific to derived values, consistent with either front-month roll re-splicing of continuous history or an actual older-date feed revision; adjudication still requires archived feed state (rc-200 untouched per standing rule). Schema asymmetry recorded as fact: spacevalue snapshots separate close_date from recorded_date in two columns while the fuel snapshot schema carries a single date column, so back-solved values there sit in the field that elsewhere means observed observation-date. Also verified this round at pinned tag v0.2.0: README per-destination table reproduces exactly from the delivery chain of spacecost v0.14.0 (all seven destinations to display rounding), SHA256SUMS bidirectionally clean, release assets resolve; post-pin commits on spacevalue main are tests-only tooling and no tag newer than v0.2.0 exists, so the economicspace pin is current.
+
+
+## R341 - Henry Hub quote heating-value basis (2026-11-03)
+
+`cme_comex_nymex_futures`, NYMEX Chapter 220 PDF p1, 220101,
+binds the methane-based Henry Hub grade to the then-effective Sabine
+FERC tariff. `sabine_2026_gas_tariff_heating_value`, Section 7.1 v1.0.0
+effective March 1, 2026, defines Btu(IT) on printed p2/12 (PDF p16).
+Its heating-value definition on printed pp4-5/12 (PDF pp18-19) has
+combustion water "condensed to the liquid state": a gross/HHV basis.
+
+`ashrae_2021_fundamentals_fuel_heating_values`, 2021 Fundamentals SI
+Chapter 28 Table 3, Methane/CH4 row, gives "55.533" MJ/kg under Higher
+Heating Values and "49.997" MJ/kg under Lower Heating Values. The
+six-column header and row align in the HTML DOM and online table;
+footnote a states 15.6 C, 101.4 kPa, dry. Its Heating Value subsection
+defines the condensed-water distinction. `thompson_taylor_2008_nist_sp811_si`,
+online Appendix B.8, Btu_IT-to-joule row, gives 1.055056 E+03 J/Btu_IT:
+one MMBtu_IT is 1055.056 MJ at the printed precision.
+
+`spacecost_methane_quote_heating_basis_record_2026` reads spacecost
+860bef9902aa67fec705875cd52fdb8e6def159f. `units.py` L69-75 multiplies
+the USD/MMBtu close by 0.04739 and describes one kg of LNG as about 50 MJ.
+The implied 49.99910384 MJ/kg matches the net value, whereas the quote's
+tariff uses gross heat. `tests/test_prices.py` L100-110 asserts the same
+factor and 50-MJ arithmetic. `prices.py` L113-205 uses this helper for
+both live closes and stored snapshots; the only natural-gas proxy row
+is methalox. Its fuel mass fraction is 1/(1+3.6), with LOX held at 0.20 USD/kg.
+
+A pure-CH4 gross proxy is 55.533/1055.056 = 0.05263512078979694 MMBtu/kg:
+11.06799% above the existing factor, or a 9.96506% shortfall in the current
+methane-only price relative to that diagnostic. With the unchanged stored
+October 23 NG=F close 2.640000104904175 USD/MMBtu, methane 0.125109604971409
+becomes 0.138956724406708 USD/kg; the full blend 0.183719479341611 becomes
+0.186729722697110 USD/kg (+1.63850%). The other stored profile changes
+the blend 0.188819054249577 to 0.192393718081314 USD/kg (+1.89317%).
+
+Five unit cases and eight original/repeat/factor-only adapter triples
+include four positive NG cases and four unchanged zero/missing/wrong-unit/
+empty controls. Nine complete builds cover reference and both stored
+fuel profiles, each with an exact original repeat and the in-memory factor
+diagnostic. The reference profile is wholly identical. Each snapshot
+changes four price cells in one methalox row and three cost columns across
+2,052 of 84,132 summary rows; the five other tables are identical. All 63 CSV
+exports preserve the full missing masks and populated cells on readback;
+original repeats preserve dtypes, values and output bytes. Snapshot CSVs
+and SHA256SUMS remain byte-identical and their integrity checks pass.
+
+Verdict: `rc-275`, use and document a gross heating-value mass conversion
+for the Henry Hub methane proxy, including the test's basis. The numerical
+example assumes pure CH4 and the stated reference conditions; it does not
+calibrate every gas mixture or delivered LNG, add liquefaction/handling
+costs, settle `rc-187` or `rc-200`, or measure a profitability-ranking effect.
+Fourteen local blobs match pinned GitHub metadata and all four live main
+comparisons are identical to the commits read.
+`extracted_data/r341_methane_quote_heating_basis.csv`.
+Contract extract: `06_commodity_market_pricing/extracted_data/r341_henry_hub_contract_basis.csv`.

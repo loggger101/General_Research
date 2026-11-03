@@ -252,3 +252,132 @@ Verdict: the returned resource book violates its own finite-material bound. `rc-
 use consistent tank-inclusive fuel estimates and enforce both resource budgets after
 settlement, refitting payload/feed when necessary. Current-catalog incidence and ranking
 impact were not measured. `extracted_data/r311_isru_feed_vs_asteroid_resource_budget.csv`.
+
+## R317 - Disabled water liberation still charges ISRU heating (2026-11-01)
+
+Source `economicspace_isru_water_liberation_flag_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0 `modules/calc.py`, with
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f original reference rows and
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011 cargo helpers.
+`model_water_liberation` defaults to True (L417-421). The sizing branch gates
+both water sources, described as "the water turned into ISRU propellant, and
+the water sold as CARGO" (L6427-6429). Final settlement instead initializes
+`water_kg = isru_water_kg` before testing the flag; only cargo water is gated,
+and the water-heating draw is added outside the flag (L6707-6717).
+
+Eleven complete original-evaluator cases use actual Falcon 9 reusable,
+hydrolox and all 46 ops rows. Synthetic inputs: 1e9 kg body, density 2 g/cm3,
+water fraction 0.2, 1.2 AU, cargo value 100 USD/kg and a nonbinding commodity
+ceiling. Main case: 100 kg raw cargo cap, caller 1,000 m/s per leg, ISRU on,
+single-mission market, no aerocapture; windows, refinery, containment,
+boil-off and the separate ISRU chemical-processing model are disabled.
+No EP hardware is involved.
+
+| original case | final power (W) | cargo water heated (kg) | ISRU water heated (kg) |
+|---|---|---|---|
+| ISRU, liberation flag False | 347.185555 | 0 | 205.160440 |
+| ISRU, flag True | 370.000978 | 20 | 205.160440 |
+| ISRU, flag False, water-energy row set to zero | 113.144442 | 0 | 0 |
+| non-ISRU, flag False | 0 | 0 | 0 |
+| non-ISRU, flag True | 22.815423 | 20 | 0 |
+
+The False ISRU case includes 234.041113 W of water heating, exactly
+`2500 * 205.16043958720536 / (0.25 * 365.25 * 24)`. Against the zero-rate
+control it adds 16.178842 kg of solar power hardware and 333,705.210064 USD
+of total cost. The zero-rate control still makes and reports the physical
+ISRU water; the table's zero denotes its uncharged heating load. An iron-only
+concentrated hold contains no cargo water, and both flag settings then return
+the same 370.000978 W, despite different sizing-loop draws.
+
+For a 10,000 kg raw cargo cap, caller outbound/return delta-v 1,000/4,000 m/s
+and the original 5,000 W RTG limit, False gives 1,666.666667 W in the sizing
+loop but 5,177.047517 W at settlement. It is rejected at L6737. The excess is
+3,510.380850 W of ISRU-water heating. Setting only the water-energy row to
+zero returns the same cargo and fuel book at 1,666.666667 W and 8,129.807868 kg
+launch mass. The solar candidate survives with the unwanted heating term.
+Both body and throughput budgets fit; this is a flag-consistency witness,
+not a claim that a real mission can omit the physical heat requirement.
+
+Five separate in-memory diagnostics gate just L6707 by the same flag. Disabled
+raw, concentrated and RTG cases reproduce the zero-rate controls' power,
+mass and costs. Enabled and non-ISRU controls preserve the complete serialized
+outputs and every finite output float bit-for-bit.
+
+Verdict: the loop and settled mission implement different meanings of the
+same flag. `rc-247`: apply one policy consistently to both water sources,
+including feasibility and reporting, or explicitly narrow the flag and make
+ISRU heating mandatory in both stages. The default True path is not shown
+to fail; current-catalog incidence and ranking effects were not measured.
+`extracted_data/r317_isru_water_liberation_flag.csv`.
+
+## R323 - Cryogenic fuel retains the pre-volume mining duration (2026-11-02)
+
+Source `economicspace_settled_boiloff_hold_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`
+and `MODEL.md`; original spacecost@860bef9902aa67fec705875cd52fdb8e6def159f
+reference rows and spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011
+cargo functions. MODEL.md L932-933 says return propellant sits in the tank
+"from launch until the departure burn". The model's factor is
+`exp(boiloff_pct_per_day / 100 * hold_yr * 365.25)`, with hold equal to
+outbound time plus the estimated asteroid stay (calc.py L6293-6298).
+
+The sizing loop precedes the cargo volume cap at L6542-6580. That cap can
+reduce final feed and mining duration (L6597-6604, L6700), but settlement
+retains the loop's return ratio and tank factor (L6611-6612, L6648-6653).
+It rebuilds power, hardware and launch masses without recalculating the
+cryogenic storage factor or effective return delta-v. Thus final fuel can
+still be sized for a dig the returned mission no longer performs.
+
+Fourteen baseline full-evaluator cases and ten early-volume diagnostics use
+unchanged numerical functions and actual Falcon 9 reusable, propellant and
+all 46 operational-cost rows. The principal synthetic body is 1e9 kg,
+density 0.2 g/cm3, 10% iron and 90% silicates, priced at 100 and 1 USD/kg.
+Recovery is 0.9, concentration ratio 10, and delta-v is 1,000 m/s per leg.
+N=1 and an unbounded market remove programme/resource and capped-mix issues.
+Propulsion is chemical without ISRU or aerocapture. The isolation cases turn
+off refinery, launch windows, cargo-water liberation and containment; the
+cryogenic model remains enabled at its default. The actual 157 m3 fairing,
+25% usable-volume rule and body density bound cargo to 7,850 kg. Its
+78,500 kg feed takes 1.074606 years to mine; including the 0.5-year outbound
+leg gives a final storage duration of 1.574606 years.
+
+| original propellant | booked storage yr | booked factor | final-clock factor | extra launch kg in paired comparison |
+|---|---|---|---|---|
+| hydrolox | 2.632628 | 1.617341 | 1.333174 | 1,040.039 |
+| methalox | 2.953816 | 1.138220 | 1.071452 | 274.157 |
+| kerolox | 2.647310 | 1.156085 | 1.090099 | 314.274 |
+
+The diagnostics give the existing evaluator its already-required volume
+ceiling through `payload_cap_kg`, so the loop can see it before sizing fuel.
+All three pairs retain exactly the same cargo, feed, mining/mission clocks,
+processing power, power-system mass, composition and revenue. Hydrolox then
+loads 3,323.585 kg return fuel instead of 4,061.384 kg, with launch mass
+9,594.597 kg instead of 10,634.636 kg. Total cost falls by 5.974M USD while
+gross value stays 707,285 USD. Methalox and kerolox cost differences are
+1.465M and 1.664M USD. These are comparisons at the same returned cargo,
+not a new global vehicle or concentration optimisation.
+
+The effect also occurs on raw ore: a 100 m/s-per-leg case drops to the
+0.25-year mining floor after volume clipping but retains a 1.549683-year
+fuel-storage exposure instead of 0.75 years. A denser 0.5 g/cm3 concentrated
+case shows a 0.361M USD difference. With launch windows enabled, the principal
+hydrolox result retains 4.225339 storage years instead of its final 3.664259;
+the same-cargo early-limit comparison reduces launch mass by 794.597 kg.
+Enabling both cargo-water models preserves the complete principal output
+because this composition contains no water.
+
+Boil-off-disabled and zero-rate MMH/NTO controls retain every physical and
+cost output; only `volume_fits` changes, as it describes demand before the
+cap. An already tighter 1,000 kg cap preserves the complete output, including
+that flag. Nonbinding dense cases retain small ordinary finite-loop residuals
+from the existing 1% state-convergence test; this candidate concerns the
+larger subsequent volume change, not a claim of exact loop convergence.
+All 24 cases converge before the 12-pass limit and fit separate body,
+throughput and launch limits. Independent clock inversion and tank-closed
+fuel calculations reproduce the reported books and seven affected pairs.
+
+Verdict: the reported final mission clock and the cryogenic sizing exposure
+describe different digs. `rc-253`: settle cryogenic fuel against final cargo
+and mining duration. The adopted evaporation rates are unchanged; these are
+synthetic-body witnesses with no measured population incidence or ranking
+effect. `extracted_data/r323_settled_boiloff_hold.csv`.

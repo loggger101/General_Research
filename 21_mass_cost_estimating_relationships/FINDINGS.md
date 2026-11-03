@@ -86,3 +86,68 @@ Seam: the storage_systems.csv row Bulk ore restraint (bag / hopper), value 0.15 
 Evidence state: hosted IG-18-016 physical p.18 spacecraft comparison table prints capacity only - Upmass Per Mission 3,754 (Cygnus), 5,500 with footnote a (Sierra Nevada column; the economicspace dial comment words this figure as Dream Chaser, loose attribution recorded not adjudicated), and for SpaceX pressurized 2,507 plus Trunk: 800 kg unpressurized - while dry mass appears zero times in all 55 pages in both letter cases. The report therefore supports capacity claims but cannot support any payload-to-structure ratio; the applied rc-137 dial comment concedes exactly that for the Cygnus ~1,500 kg anchor (ratio 0.40, has no source here.). Hosted motiwala_2014 p.11 footnote gives structural mass fractions range from 0.038 to 0.45 based on historical data with a stage-level denominator (body text: for each stage) - usable only as context for launch stages, not cargo vehicles.
 
 Standing note for future rounds: audit storage_systems.csv rows against the self-citation contract in CITATIONS.md - a row whose notes name no document is uncited regardless of status token. Six sibling rows carry ESTIMATE declarations (COPV burst performance factor; Multi-layer insulation passive; Zero-boil-off cryocooler 20 K; Volatile cargo containment water ice; Regenerative fuel cell; Flywheel energy storage), and the CITATIONS.md volatile-containment line shows the engineering-estimate route is an accepted upstream pattern (which is an engineering estimate, count==1). Sister row under open rc-184 adds INCREMENTAL to this 0.15 ore-restraint fraction per operations.py.
+
+## R318 - Rig procurement is shared but its launch manifest is repeated (2026-11-01)
+
+Source `economicspace_stationary_rig_repeat_launch_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0 `modules/calc.py`, with
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f original reference rows and
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011 cargo helpers.
+The architecture says "A rig stays at the asteroid" (calc.py L4579), while
+L5616-5618 describe one unit shared across campaigns. Rig procurement is
+divided by `missions_sharing_rig` (L5592-5596). The mass solve nevertheless
+includes all `config.mining_hardware_kg` in every outbound stack (L6670-6674,
+L6742-6746), and programme pricing reuses that same cascade (L6981-7045).
+
+Nine complete original-evaluator cases retain original numerical functions.
+Main synthetic inputs: 1e9 kg body, density 2 g/cm3, no water, 1.2 AU,
+100 USD/kg silicate cargo and a nonbinding commodity ceiling; actual Falcon 9
+reusable, kerolox and all 46 ops rows; caller delta-v 1,000 m/s per leg,
+raw cargo, no ISRU or aerocapture. Windows, refinery, water liberation,
+containment and boil-off are disabled for isolation. The entire added
+hardware is the 2,000 kg rig: no EP, processing array or refinery is involved.
+
+At fixed N=5, the model selects F=1, W=5. The rig's 600M USD procurement is
+charged at 120M per mission, exactly one fully used rig over the programme.
+Cargo is 17,794.394348 kg per delivery and each launch is 17,400 kg, including
+that full rig. Four later flights therefore repeat the launch manifest of
+the rig which the cost book says is already installed at the target.
+
+A separate fixed-cargo diagnostic omits only that installed rig from later
+Earth manifests, retaining its on-site throughput and procurement allocation.
+From the original tank-closure relation, with H=2,000 kg:
+`delta_prop = H*k_out*(R_out-1)` and
+`delta_launch = H+delta_prop+tank_frac*delta_prop`.
+Here each repeat flight drops 706.139341 kg outbound propellant and 19.005365
+kg tankage as well as the rig, giving 14,674.855294 kg launch mass. Four such
+flights reduce the programme launch book by 10,900.578825 kg.
+
+| case | N | F | W | repeat rig shipments in current book | aggregate fixed-cargo launch difference (kg) |
+|---|---|---|---|---|---|
+| fixed five / searched one ship | 5 | 1 | 5 | 4 | 10,900.578825 |
+| fixed two | 2 | 1 | 2 | 1 | 2,725.144706 |
+| searched fleet cap 64 | 320 | 64 | 5 | 256 | 697,637.044819 |
+| numeric defaults, body at 1.8 AU | 320 | 64 | 5 | 256 | 697,637.044819 |
+| single mission | 1 | 1 | 1 | 0 | 0 |
+| one-trip rig control | 5 | 5 | 1 | 0 | 0 |
+| zero outbound delta-v | 5 | 1 | 5 | 4 | 8,000 |
+| tank mass off | 5 | 1 | 5 | 4 | 10,797.969151 |
+
+The one-trip control changes only the rig maximum-trips row from five to one.
+Every case fits cumulative body supply, the 15-year rig calendar and launch
+capacity. Thus the discrepancy does not depend on the separate depletion,
+calendar-age or EP/ISRU defects.
+
+Original cost helpers exactly reproduce every evaluator cost field on the
+original manifest. Repricing the first/repeat manifests at the same N, W,
+cargo and calendar changes the main case's average total cost from
+1,020.540131M to 1,009.303614M USD. The rig, capsule, return fuel, NRE and
+operations lines remain unchanged. This 11.236518M USD-per-mission difference
+uses the model's linear launch USD/kg tariff and contingency; it is not a
+quoted saving on a dedicated rocket flight or a new joint payload optimum.
+
+Verdict: stationary rig reuse is represented in manufacturing cost but not
+in per-launch mass flow. `rc-248`: distinguish first-use and repeat manifests,
+or account consistently for a new rig on every mission. Current-population
+incidence and ranking effects were not measured.
+`extracted_data/r318_stationary_rig_repeat_launch.csv`.

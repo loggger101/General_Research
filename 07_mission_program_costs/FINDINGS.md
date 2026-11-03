@@ -92,3 +92,61 @@ rc-106: cite PEBD for the Perseverance programme figure and mark the $150M auton
 
 The owner replace-flag for satnews_2026_artemis_restructuring asked for a NASA document instead of press reports; the hosted FY2027 budget estimates supplies one. Its SLS program section and its EXPLANATION OF MAJOR CHANGES both print "Instead of futher developing the Exploration Upper Stage (EUS), which faced significant cost overruns and delays" [appears twice; typo as printed], the Major Projects table lists SLS Block 1B under the footnote "Funding is not proposed for these projects in the FY 2027 budget", and the same passage states "NASA also no longer needing the Mobile Launcher 2". rc-190 cites this document as institutional backing for the cancelled status upstream carries with news-only attribution; announcement timing may remain attributed to SpaceNews/SatNews. No values move.
 
+
+## R319 - Searched programme N can fall below its configured minimum (2026-11-01)
+
+Source `economicspace_programme_minimum_missions_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0 `modules/calc.py`, with
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f original reference rows and
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011 cargo helpers. The source
+says "The configured N is the FLOOR of the search" and describes an already
+committed programme (L4940-4943). It bounds only F by `ceil(N_cfg/trips)`;
+with the programme calendar on it then enumerates every W from 1 to trips,
+so `N=F*W` may be below that floor (L4944-4951). The evaluator selects without
+an N-floor check in either the coarse or refinement path (L7243-7283).
+
+Nine complete original-evaluator cases use actual Falcon 9 reusable,
+kerolox and 46 ops rows. Synthetic body: 1e9 kg, density 2 g/cm3, no water,
+raw silicate cargo at 100 USD/kg and a nonbinding market; caller delta-v
+1,000 m/s per leg, no ISRU or aerocapture. Set configured N to 100, enable
+WACC compounding at the original 10% rate and disable the refinery. Other
+settings, including max_fleet_ships=64, retain their defaults.
+
+At 1.08 AU, rig_trips=3 gives minimum fleet 34. Thirteen of the 24 coarse
+tuples nevertheless have N below 100, and the evaluator selects N=64, F=64,
+W=1. The source already prices an admissible N=128, F=64, W=2 alternative.
+Its last dig completes 14.008014 years after the first dig starts, within
+the 15-year rig life. Its cost is 2,303.638207M USD per mission versus
+2,151.553598M for the inadmissible smaller programme. The lower objective is
+obtained by violating the stated constraint. At 1.10 AU the same N=64 result
+occurs; the admitted N=128 alternative completes its final dig at 11.509923 yr.
+Both comparisons fit cumulative body supply and launch capacity and involve
+no EP or ISRU.
+
+| original case | configured N | selected N | below-floor coarse tuples |
+|---|---|---|---|
+| 1.08 AU, WACC on | 100 | 64 | 13 / 24 |
+| 1.10 AU, WACC on | 100 | 64 | 13 / 24 |
+| 1.13 AU, WACC on | 100 | 128 | 17 / 32 |
+| 1.8 AU, WACC on | 100 | 320 | 20 / 40 |
+| 1.08 AU, lower floor | 50 | 64 | 8 / 24 |
+| 1.08 AU, default floor | 1 | 64 | 0 / 24 |
+| explicit single_mission market | 100 | 1 | intentional override |
+| 1.8 AU, programme search off | 100 | 100 | 0 / 1 |
+| 1.8 AU, programme calendar and windows off | 100 | 320 | 0 / 8 |
+
+Five in-memory diagnostics add only coarse and refinement N-floor guards,
+exempting the documented single_mission override. The two failing examples
+then select N=128, with identical mass profiles. Default-floor and explicit
+single-mission controls retain complete serialized outputs. The 1.8 AU
+control retains N=320 and every economic/mass field; only the pricing-count
+diagnostic changes from 42 to 22 after pruning 20 below-floor coarse tuples.
+Every selected original and guarded case fits the body, calendar and launch
+limits. The diagnostics are not a complete replacement search implementation.
+
+Verdict: the fleet lower bound is not the documented programme-N lower bound
+when W varies. `rc-249`: enforce the actual configured mission minimum on
+coarse and refined candidates, preserving explicit overrides, or redefine
+the control consistently. The default N=1 is not shown to fail, and
+current-population incidence and ranking effects were not measured.
+`extracted_data/r319_programme_minimum_missions.csv`.

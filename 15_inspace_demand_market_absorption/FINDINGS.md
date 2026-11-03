@@ -151,3 +151,156 @@ later windows of 1 are each cleared independently; with no surplus sale the tota
 9 and 6. Cargo 0.5 kg (no window binds) and 6 kg (every window binds) give equal totals
 under both treatments. The averaging is an explicitly declared capacity-pooling assumption.
 `extracted_data/r310_declared_window_averaging_comparison.csv`.
+
+## R322 - Market-shaped cargo is priced after the engineering hold is fixed (2026-11-02)
+
+Source `economicspace_market_capped_hold_engineering_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`
+and `MODEL.md`; spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011,
+`spacevalue/cargo.py` and the committed cislunar price fixture; original
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f reference rows.
+MODEL.md L786-787 says the discount "changes what the ship carries, not just
+what it is paid". calc.py L7343 calls the exported composition "What the
+optimiser actually chose to load".
+
+The settled engineering book uses the uncapped hold: refinery energy and
+cargo water at calc.py L6622-6631, containment and return dry mass at L6632-6642,
+then processing power, plant mass and launch mass at L6701-6746. The refinery
+helper asks for an uncapped mix (cargo.py L523-548). The later programme-price
+call supplies market caps (calc.py L7177-7200), but retains only revenue,
+clearing, unsold and surplus fields. Its changed mix never replaces these
+physical books or the original composition exported at L7344-7350.
+
+Nine original full-evaluator cases use the actual Falcon 9 reusable, kerolox
+and all 46 operational-cost rows. The synthetic body is 1e9 kg, half iron and
+half water, density 2 g/cm3, at 1.2 AU; delta-v is 1,000 m/s per leg. The
+concentrated cases process three times their cargo mass with recovery 0.9.
+ISRU and aerocapture are off, propulsion is chemical, and launch windows,
+boil-off and programme-scale search are disabled. The first cases disable
+refinery to isolate cargo-water engineering; water liberation and volatile
+containment remain enabled. Iron is 100 USD/kg with a 10 kg/yr full-price
+market; water is 80 USD/kg with a nonbinding market. Default surplus fraction
+is 0.5. The priced and physically booked loads differ:
+
+| original case | exported/engineered hold | mix priced for sale | booked / required processing W |
+|---|---|---|---|
+| 1,000 kg solar | 1,000 kg iron | 12.5 kg iron + 987.5 kg water | 501.939 / 1,628.451 |
+| 10,000 kg RTG | 10,000 kg iron | 14.1068 kg iron + 9,985.8932 kg water | 3,055.556 / 9,990.204 |
+
+The solar result books no cargo water or containment, while the priced hold
+requires 49.375 kg containment under the same 0.05 kg/kg water row. Its gross
+value is 80,250 USD; selling the exported iron hold under the same ceiling,
+window and discount gives 50,625 USD. The RTG result passes the configured
+5,000 W limit despite its priced mix requiring 9,990.204 W at the same mining
+duration. These term-level comparisons hold cargo/feed fixed; they are not
+fully redesigned mass stacks.
+
+Three fixed-N=1 diagnostics supply the same market caps to the engineering
+mix calls, preserving the original numerical helpers. The solar case then
+books 987.5 kg water, 49.375 kg containment and 1,628.451 W, with the same
+80,250 USD revenue; its complete launch mass rises from 4,473.247 to
+4,671.025 kg and total cost by 10.992M USD. The RTG diagnostic rejects at the
+trial power check. The nonbinding-market diagnostic preserves the complete
+original output. Original controls also retain a pure-iron hold when its
+discounted price exceeds water's full price, and preserve the raw-ore path.
+Disabling both water models removes those physical terms but leaves the
+price/exported-mix disagreement. A zero-surplus hard-cap case also reshapes
+the priced hold without updating engineering.
+
+Two further original cases enable refinery and use the actual committed
+cislunar fixture rows: iron/water pre-processing prices 5,065.7565/7,236.3403
+USD/kg, annual markets 25,000/55,000 kg and refining energies 5/0.5 kWh/kg.
+At N=1 the 1,000 kg pure-water hold faces no binding ceiling. At fixed N=320
+(64 ships, five campaigns each), the same physical book remains pure water,
+while the priced hold is 804.9927 kg water plus 195.0073 kg iron. Refining
+energy is booked at 500,000 Wh versus 1,377,532.959 Wh for that mix. After
+its smaller water-heating term, required processing is 2,048.832 W versus
+1,870.865 W booked. Containment is conversely overbooked at 50 kg versus
+40.2496 kg. Thus the mismatch can change physical requirements in either
+direction and occurs with actual price, demand and energy inputs.
+
+All accepted cases fit their separate body, cumulative-feed, throughput and
+launch budgets; no electric-stage or ISRU discrepancy is needed. Independent
+two-tier allocation, direct sale sums and phase-energy calculations reproduce
+the six capped cases. Verdict: price, exported cargo and engineering do not
+describe one mission. `rc-252`: couple priced, physical and exported cargo.
+A power-infeasible maximum-revenue mix does not prove that every alternative
+cargo is infeasible.
+These are synthetic-body witnesses; population incidence and ranking effects
+were not measured. `extracted_data/r322_market_capped_hold_engineering.csv`.
+
+## R330 - Substitute commodities spend the same class import budget separately (2026-11-02)
+
+Source `spacevalue_shared_class_market_budget_record_2026`:
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011, `spacevalue/catalog.py`,
+`spacevalue/cargo.py`, committed cislunar/Earth price fixtures and
+`tests/test_tables.py`; economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0,
+`modules/calc.py`; AsteroidCatalog@66fb47aaeb17aa7e11c023773a39765c1aa793fb,
+`reference/taxonomy_composition.csv` and `reference/mineral_phases_detailed.csv`.
+
+The market definition says "within a class they are substitutes" and
+"The four bulk classes partition the budget" (catalog.py L995-997). Cislunar
+annual imports are 100,000 kg; shielding receives 0.15, structural 0.25,
+propellant 0.55 and chemical 0.05 (L959,L1004-1010). These are declared
+assumptions, not measured destination demand. `annual_market_kg` returns the
+whole class allowance for each name (L1084-1087), then the exported table
+records that number without the class market identity (L2604-2611).
+`phase_market_key` returns a commodity's own name whenever it is in the
+market table (cargo.py L856-859). Its explicit silicate-residual alias is
+pooled, but olivine, pyroxene and other substitutes remain different keys.
+The consumer carries those keys into its raw sale, nonbinding test and
+beneficiation caps (calc.py L6961-6964,L7150-7186).
+
+Thirty-three original raw-sale/knapsack calls use the committed net-price
+fixtures and a one-year delivery window. Every allocation is observed
+without changing the functions, and each output exactly matches an untraced
+call. All 118 fixture annual-cap values match the current original cap
+function. An independent continuous allocation first reproduces the original
+market keys, then changes only full-price grouping to the declared in-space
+classes, retaining Earth-sale markets. All 66 solutions satisfy supply,
+payload and market constraints and have residual-potential optimality
+certificates. The equal-price two-mineral result also has a closed-form check.
+
+At the fixture price 1,603.050708496265 USD/kg, a raw 20,000 kg load split
+equally between olivine and pyroxene sells all 20,000 kg at full price:
+each 10,000 kg is below its separate 15,000 kg allowance. Together they
+exceed the shielding class budget by 5,000 kg. Under the default half-price
+surplus rule the same declared class budget gives:
+
+| calculation | full-price kg | half-price kg | value USD |
+|---|---|---|---|
+| original separate commodity keys | 20,000 | 0 | 32,061,014.169925 |
+| one shared shielding budget | 15,000 | 5,000 | 28,053,387.398685 |
+
+The 4,007,626.771241 USD difference occurs in both raw and beneficiated
+helpers. With a hard wall the values are 32,061,014.169925 and
+24,045,760.627444 USD instead. These synthetic load sizes preserve the
+original prices and annual-demand assumptions.
+
+Using the committed S-type detailed composition, a 20,000 kg raw hold sells
+17,280 kg of shielding phases at full price against the same 15,000 kg
+class budget, although no individual commodity cap binds. Value is
+38,161,839.329710 versus 36,334,361.522025 USD with the shared budget.
+At a 100,000 kg hold, original raw pricing gives 54,900 kg full-price
+shielding and 165,561,147.989735 USD, versus 133,580,286.355235 USD shared.
+The beneficiated case, with 500,000 kg feed and recovery 0.9, gives full-price
+structural/shielding/chemical mass 52,000/38,800/7,200 kg against
+25,000/15,000/5,000 kg class budgets. Its original value is
+292,737,345.009292 versus 227,684,295.005964 USD shared. The original C, D,
+M and V reference compositions also give revenue differences in both paths.
+
+Nineteen comparisons differ in value; fourteen revenue controls agree:
+one product, nonbinding supply, the existing silicates/residual alias,
+different classes, terrestrial markets, in-space downleg sales and equal
+full/discount prices. Equal-tier prices can leave allocation labels tied;
+observed full-price mass exceeds a class budget in twenty cases, including
+the raw discount=1 case whose revenue does not change. Earth-sold Pt/Au
+remain separate terrestrial markets despite sharing the trace label.
+
+Verdict: per-commodity keys replicate a declared shared class allowance.
+`rc-261`: preserve market identity and enforce shared class full-price budgets.
+The adopted class shares, prices and programme window are unchanged. Tests
+checking each exported cap against its own function (test_tables.py L45-56)
+do not test aggregate class spending. This is a capacity-pricing witness;
+complete mission redesign, prevalence in the catalogue and ranking effects
+were not measured. `extracted_data/r330_shared_class_market_budget.csv`.

@@ -326,3 +326,126 @@ Releases 9d971b5 (contract 1.9.0, five GR revision candidates applied) and 69150
 Live probe 2026-10-29 of sbdb_query.api?info=field (saved answer, sha recorded in the registry row): seventy-nine fields listed. Reproducing the AsteroidCatalog tool classification offline with its own compare() formula at @66fb47a gives 31 unreviewed, matching the README, but eleven of them are sigma_* uncertainties: a, ad, e, i, ma, n, om, per, q, tp and w. Nine are osculating-element sigmas; sigma_q (perihelion distance) and sigma_ad (activity index) make two more than the sentence counts. The tool prints every unreviewed field one line each, so its output lists eleven while the prose says nine - a display-class count slip in README text no code reads; rc-237 records it for the owner. All other claims verified live: 79 fields total; soln_date absent from the list yet answering with Ceres value '2021-04-13 11:04:44', identical to their recorded witness string.
 The field-list snapshot is registered as a T3 hosted witness because SBDB lists can change; future rounds comparing unreviewed sets should re-fetch rather than trust this copy. Nine osculating sigmas would in principle let Stage-1 carry per-element uncertainties for catalog objects - recorded here, not built.
 
+## R326 - Field-unit mass identity and uncertainty after mass rejection (2026-11-02)
+
+Source `asteroidcatalog_mass_reconciliation_record_2026`:
+AsteroidCatalog@66fb47aaeb17aa7e11c023773a39765c1aa793fb, `README.md` and
+`asteroid_catalog/{physics,merge,derive,validate,enrich,release,build}.py`.
+README L317-318 states that every row satisfies
+`estimated_mass_kg = density_gcm3 * pi/6 * diameter_km**3`; the enrichment
+docstring repeats this equality at enrich.py L282. These named units require
+an additional factor of 1e12: 1 g/cm3 is 1,000 kg/m3, while 1 km3 is 1e9 m3.
+The implementation includes both conversions (physics.py L264-280;
+enrich.py L347-354).
+
+Eighteen original helper cases cross diameters 0.001-1,000 km with densities
+0.5, 2 and 5 g/cm3. Every result agrees with the inverse diameter and density
+helpers, and the correct mass is 1e12 times the literal documented result.
+For D=1 km and density 2 g/cm3, the implementation gives
+1.047197551e12 kg; the printed field equation gives 1.047197551. Verdict:
+the field equation's unit conversion is missing in two descriptions, while
+the numerical implementation is correct. `rc-256`: restore the equation's
+conversion factor.
+
+README L236 separately promises: "The value's sigma always comes from the
+same source as the value." The late enrichment screen masks an unfit
+measured mass and clears its provider (enrich.py L336-344), then replaces
+that mass from the class density and volume (L346-354). It does not change
+`estimated_mass_sigma_kg`. The active sigma can therefore still describe
+the rejected measurement rather than the newly derived value.
+
+Eleven fixtures execute the original offline sequence from build.py:
+merge, H-based diameter derivation, validation and composition enrichment.
+They use synthetic JPL/SsODNet rows, H=15, a=2.3 AU, and S or C type. Four
+late rejections retain a non-null rejected sigma beside a new mass:
+
+| fixture | rejected mass kg | retained sigma kg | replacement mass kg |
+|---|---|---|---|
+| S, low SsODNet mass | 1e9 | 1e8 | 2.931659606e13 |
+| S, high SsODNet mass | 1e20 | 1e18 | 2.931659606e13 |
+| S, low JPL mass | 1e9 | 1e8 | 2.931659606e13 |
+| C, low SsODNet mass | 1e9 | 1e8 | 1.194200613e14 |
+
+Each final row correctly sets `mass_measured=False`, clears `mass_provider`
+and records the rejected provider in `mass_screened_out`, but leaves the
+old sigma active. The first row now appears to have a 3.411 ppm relative
+mass uncertainty, although its replacement rests on an estimated albedo and
+class density. The high-mass case instead carries a sigma 34,110 times its
+new mass. Those ratios are demonstrations of stale metadata, not valid
+uncertainty estimates.
+
+Three retained-measurement controls preserve mass and sigma, including a
+case whose diameter is re-derived from the retained mass. Four no-sigma or
+earlier-rejection controls keep the active sigma missing. All eleven final
+masses independently satisfy the correctly converted density-volume identity,
+and the original `physical_problems` row checker reports no problems; it
+does not inspect this sigma relationship. No complete release-gate pass is
+claimed for the small fixtures. Verdict: late replacement breaks the stated
+value/sigma provenance contract. `rc-257`: clear or derive the replacement
+mass's active uncertainty consistently. Published-catalog incidence and
+downstream ranking effects were not measured.
+`extracted_data/r326_mass_identity_units_and_sigma_provenance.csv`.
+
+## R328 - NEOWISE alias regrouping does not preserve raw-fit statistics (2026-11-02)
+
+Source `asteroidcatalog_neowise_alias_reaggregation_record_2026`:
+AsteroidCatalog@66fb47aaeb17aa7e11c023773a39765c1aa793fb,
+`asteroid_catalog/{neowise,merge,identity,derive,validate,enrich,physics,release}.py`
+and `tests/test_cross_source.py`. The NEOWISE fetcher combines fits per
+designation before merging (neowise.py L373-379). Merge resolves aliases,
+then combines those summaries again through `_dedup_source` (merge.py
+L534-539, L635-644). The repeat-fit comment says the "formal sigma of a
+combined row is its weight" and the maths carries over (neowise.py L462-465).
+
+The stored sigma is actually the larger of formal mean error and weighted
+scatter (L495-501). It need not preserve the original weight. The second
+pass also lacks within-group scatter and per-parameter sigma-availability
+information; `neowise_n_fits` preserves counts, but is not a weight/moment
+ledger. Both problems change the existing declared pooling rule when the
+same underlying fits reach one body through different aliases.
+
+Seventeen configurations compare all raw fits pooled once under the canonical
+designation against pooling per alias and then regrouping. Every numerical
+function remains original. Both inputs also run through the original
+merge, derive, validate and enrich sequence with the same known alias relation
+and a synthetic S-class backbone. Independent raw weighted sums reproduce
+the one-pass helper. Representative diameter results are:
+
+| raw fits km, grouped as first two / last | raw sigmas km | one-pass D km | staged D km | staged / one-pass derived mass |
+|---|---|---|---|---|
+| 10, 12 / 14 | 1, 1 / 1 | 12.000000 | 12.500000 | 1.130281 |
+| 10, 12 / 14 | 0.1, 0.1 / 1 | 11.014925 | 12.500000 | 1.461455 |
+| 10, 12 / 14 | missing for all | 12.000000 | 11.000000 | 0.770255 |
+| 10, 12 / 14 | missing, missing / 1 | 14.000000 | 12.500000 | 0.711780 |
+
+All paths retain the correct raw-fit count of three. In the first case,
+the first alias summary is 11 km with sigma 1 km because scatter exceeds
+formal error. The second pass therefore gives that two-fit group the same
+weight as the 14 km singleton. Its reported final sigma is 1.5 km instead
+of the raw-fit 1.632993 km. The unchanged downstream class-density formula
+turns the diameter difference into 13.0281% more mass. With no input sigmas,
+an alias's derived scatter can become a positive second-pass error while a
+singleton still has none, changing which raw information contributes at all.
+
+Mean agreement alone is insufficient: unequal-error and balanced-group cases
+can preserve the mean while losing within-group variance. Replaying the
+committed alias test's numeric fits, 3.878/2.887/2.900 km with errors
+0.113/0.179/0.200 km (test_cross_source.py L237-248), preserves its mean but
+returns sigma 0.485913331 km versus the raw pooled 0.485931275 km. This is
+a test-data replay with synthetic alias/backbone labels, not a new observation.
+The current test checks count, mean range and references, not this raw-pooling
+error equivalence.
+
+Albedo, infrared albedo and beaming-parameter cases also change their means
+and errors. Eleven of seventeen configurations differ beyond 1e-12 relative
+tolerance. Six controls agree to numerical precision: small-scatter,
+constant-value, mixed-missing-sigma, missing-value, already-canonical and
+distinct-body cases. Already-canonical and distinct-body helper rows are
+exactly unchanged. Both full numerical paths retain all rows and have no
+reported physical-row problems; no complete release-gate pass is claimed.
+
+Verdict: canonical identity regrouping changes the result of the same
+raw-fit pooling policy. `rc-259`: preserve raw fits or sufficient per-parameter
+statistics until aliases are resolved. These fixtures do not estimate
+published-catalog prevalence or downstream ranking changes.
+`extracted_data/r328_neowise_alias_reaggregation.csv`.

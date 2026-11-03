@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+cme_comex_nymex_futures,Contract grade,consisting essentially of methane,short verbatim quote,"NYMEX Chapter 220 PDF p1, 220101","The grade must meet the then-effective FERC-approved Sabine tariff; this read covers rules, not market closes or the other contracts in this registry row."
+cme_comex_nymex_futures,Trading unit,10000,MMBtu,"Chapter 220 PDF p1, 220102.B",MMBtu is one million Btu; prices are USD/MMBtu under 220102.C.
+cme_comex_nymex_futures,Rulebook URL,https://www.cmegroup.com/rulebook/NYMEX/2/220.pdf,URL,Chapter 220 p1,"Online PDF text read; copyright footer 2009 NYMEX, all rights reserved. No full-text copy hosted here."

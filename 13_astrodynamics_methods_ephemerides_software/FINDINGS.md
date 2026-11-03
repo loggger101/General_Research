@@ -250,3 +250,693 @@ rows and breaks the documented uncached path. `rc-243`: preserve the
 composition key and use a separate phase lookup variable. Full-catalog wall
 time and ranking effects were not measured; no price or energy value change
 is proposed. `extracted_data/r313_refinery_composition_cache_witness.csv`.
+
+## R325 - The prefilter report counts only the first stage (2026-11-02)
+
+Source `economicspace_prefilter_probe_stage_coverage_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`;
+original spacecost@860bef9902aa67fec705875cd52fdb8e6def159f reference rows
+and spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011 cargo functions and
+recorded mineral-price fixture. The `_prefilter_probe` docstring says it
+"Mirrors the loop nest in `evaluate_asteroid` exactly" (L8047), with the same
+test so the printed rate describes the upcoming search. Its predicate at
+L8080-8086 calls only `_combo_can_close`, the first-stage mass-budget test.
+The real search also calls `_closes_carrying_its_own_stage` at L8326-8331
+before entering `evaluate_combo`. The printed whole-filter kept/pruned
+report at L8735-8741 uses the probe's incomplete count.
+
+Fourteen original probe/search pairs use the original candidate builder,
+actual vehicle/propellant rows and all 46 operational-cost rows, plus the
+committed 2026-10-07 Earth-surface mineral fixture. The principal synthetic
+body is 1e9 kg of silicates, density 2 g/cm3, a=1.2 AU, e=0.1 and rotation
+5 hours. Explicit fallback delta-v is 6,500 m/s per leg before each
+propellant's own low-thrust penalty. Aerocapture, ISRU, beneficiation,
+programme search, launch windows and refinery are off to isolate the gate;
+damping and low-thrust sizing retain their defaults except in named controls.
+Observational wrappers call and return the unchanged numerical functions.
+
+| original case | candidates seen | probe kept | pass both stages | evaluator entries |
+|---|---|---|---|---|
+| Falcon 9, electrospray | 1 | 1 | 0 | 0 |
+| Falcon 9, PPT | 1 | 1 | 0 | 0 |
+| Falcon 9, FEEP | 1 | 1 | 1 | 1 |
+| Falcon 9, xenon | 1 | 1 | 1 | 1 |
+| three vehicles, five propellants | 15 | 9 | 5 | 5 |
+| Falcon 9, cold gas | 1 | 0 | 0 | 0 |
+
+The mixed grid uses Falcon 9 reusable, Falcon Heavy expendable and Electron,
+crossed with kerolox, xenon, electrospray, FEEP and PPT. All nine reported
+survivors reach the real second-stage check, which rejects four, leaving
+five evaluator calls. The printed counts therefore imply 60.0% kept and
+six pruned, whereas the same original search keeps 33.3% and prunes ten.
+The single electrospray and PPT cases imply 100% kept although neither
+enters the evaluator. These are architecture counts before power-source
+branching, not final viable-mission counts.
+
+The electrospray discrepancy remains with operational-only propellants,
+at a=2.5 AU, and the PPT discrepancy remains without damping. Low-delta-v
+xenon/PPT and a 1,000 m/s kerolox control agree between probe and search.
+Disabling electric-stage sizing also removes the electrospray count gap.
+A xenon case at a=4 AU, e=0.8 passes both stages once but enters the evaluator
+twice, for solar and RTG; it confirms that solver-call counts must not be
+substituted for architecture counts. In total six of the fourteen cases
+disagree. This is a synthetic test set, not a catalogue pruning-rate estimate.
+
+Verdict: the report describes first-stage pruning as the entire prefilter,
+contrary to its exact-mirroring contract. `rc-255`: include both stages or
+label and report them separately. The diagnostic does not feed the optimiser;
+these results establish no false rejection of feasible missions or changed
+winner. `extracted_data/r325_prefilter_probe_stage_coverage.csv`.
+
+## R327 - Duplicate rows can combine one measurement with another's sigma (2026-11-02)
+
+Source `asteroidcatalog_duplicate_measurement_pairing_record_2026`:
+AsteroidCatalog@66fb47aaeb17aa7e11c023773a39765c1aa793fb, `README.md` and
+`asteroid_catalog/{merge,derive,validate,enrich,physics,release}.py`.
+`deduplicate_catalog` says "each column takes the first non-null value"
+(merge.py L49). It stably sorts duplicate rows by completeness, then calls
+`groupby(...).first()` (L83-89). `_dedup_source` uses this before measured
+fields are resolved (L635-646, L514 and L539). Consequently a missing sigma
+on the preferred value's row can be filled from a different measurement.
+The later resolver itself says "A sigma with no value to belong to says
+nothing" (L323), but independent duplicate coalescing can already have
+associated that sigma with another row's value.
+
+Thirteen original fixtures execute deduplication, merge, H-based diameter
+derivation, validation and enrichment. They use a synthetic join key,
+a=2.3 AU, H=15 and S type. The preferred duplicate row has more populated
+fields than its competitor, so it supplies the value under the documented
+priority. For the principal mass case:
+
+| stage | mass kg | sigma kg |
+|---|---|---|
+| preferred raw row | 1e13 | missing |
+| less-complete raw row | 1e18 | 1e16 |
+| combined source row | 1e13 | 1e16 |
+| measured-source resolution | rejected | cleared |
+| final enrichment | 2.931659606e13, derived | missing |
+
+The synthetic pair appears in neither raw row. The mass screen's
+`sigma >= mass` condition (L361-371) rejects it. Running the preferred row
+alone retains its 1e13 kg measured mass. Reversing arrival order preserves
+the same erroneous combination; the effect also occurs inside a supplement's
+duplicates. Thus the active mass changes, rather than only its displayed
+uncertainty. Missing uncertainty on the preferred row is already a supported
+case in the original single-row path.
+
+Other fixtures retain the value but borrow an unjustified small sigma:
+1e13 kg mass takes 1e8 kg uncertainty from a different mass; 2.7 km diameter
+takes 0.001 km from a 4 km measurement; H=15 takes 0.001 mag from H=20;
+albedo 0.2 takes 0.001 from albedo 0.5. A diameter-less row's orphan sigma
+can likewise become attached to another duplicate's diameter. A common
+provider name does not make uncertainties of different measurements
+interchangeable.
+
+Thirteen in-memory diagnostics keep the original deduplication's value
+choices and complementary fields, but take each measured field's sigma only
+from the raw row that supplied that field. Every later numerical function
+is unchanged. The three erroneous-rejection variants then retain 1e13 kg
+with unknown sigma instead of substituting a 2.932-times larger class-derived
+mass. Five other affected fixtures keep their values and clear the unpaired
+sigma. Five controls preserve every final column: one row, a preferred
+mass's own sigma, no sigmas, a preferred diameter's own sigma, and a genuinely
+complementary diameter/sigma pair from the same row.
+
+Verdict: independent column coalescing synthesizes unsupported measurement
+pairs and can change physical screening decisions. `rc-258`: keep measured
+values and their uncertainties together during duplicate combination.
+These are synthetic fixtures, not a measured published-catalog duplicate
+frequency or ranking effect. The NEOWISE-specific averaging of repeat fits
+was not changed by the diagnostic.
+`extracted_data/r327_duplicate_measurement_sigma_pairing.csv`.
+
+## R329 - Non-finite fields survive validation and the physical-row check (2026-11-02)
+
+Source `asteroidcatalog_nonfinite_catalogue_fields_record_2026`:
+AsteroidCatalog@66fb47aaeb17aa7e11c023773a39765c1aa793fb,
+`asteroid_catalog/{merge,derive,validate,enrich,physics,taxonomy,release,build}.py`,
+with the configuration and numeric-column helper. Diameter validation uses
+`diam.isna() | (diam <= 0)` (validate.py L79-88); the semi-major-axis check
+uses the same form (L98-103). Positive infinity passes both. Merge's positive
+ratio filter also retains it (merge.py L329-330). Diameter derivation marks
+any positive input measured (derive.py L356-360); its comment, "Guard against
+a non-finite result reaching the catalog", applies to the newly derived H
+result at L406-408, not every source diameter. The physical-row helper promises
+"Every physically impossible value in a catalog" (release.py L152), but its
+density bounds and identity comparisons (L169-180) do not flag NaN results.
+
+Eighteen synthetic single-body fixtures execute the original merge, derive,
+validate and enrich sequence (build.py L90-108), then `physical_problems` on
+retained frames. They use the unchanged default CONFIG and a source S type;
+normal values are D=2.7 km, H=15 and a=2.3 AU. Principal outcomes:
+
+| changed input | final composition | final mass kg | physical-row problems |
+|---|---|---|---|
+| none, normal control | S | 2.782618569e13 | none |
+| a=positive infinity, numeric or string Infinity | D | 1.236719364e13 | none |
+| D=positive infinity, numeric or string inf; H missing | S | positive infinity | none |
+| D=1e120 km, finite; H missing | S | positive infinity | none |
+| D and mass=positive infinity; H missing | S | positive infinity; density NaN | none |
+
+For infinite a, the source label remains S but the rule a>5.5 AU selects the
+D composition row (enrich.py L211-218; physics.py L219). Its 1.2 g/cm3
+estimate replaces S's 2.7 (taxonomy.py L189-193,L366-370), giving exactly
+4/9 of the normal mass at the same diameter. Infinite diameter without H
+evades the H/albedo screen because the implied albedo is missing (merge.py
+L350-354). The finite 1e120 km case overflows the volume power (physics.py
+L264-266), so screening input infinities alone is insufficient. Enrichment
+writes the resulting infinite mass (enrich.py L347-355). In these cases
+infinite mass over infinite volume yields NaN, and all physical-check
+inequalities are false. Simultaneous infinite measured mass and diameter
+also leave the reported density NaN. Runtime warnings are recorded separately
+from the helper's empty problem lists.
+
+Six cases retain non-finite critical fields. Twelve controls delimit the
+finding: four missing/non-positive/unparseable a inputs and three missing or
+non-positive diameters without H are rejected; five finite or repaired paths
+are retained. In particular known H makes the earlier screen remove infinite
+D and derive 2.747369371 km, while infinite mass with finite D is screened
+and replaced by a finite class estimate. Finite D with missing H is valid.
+An entirely absent a column retains the existing warning/legacy behavior
+(validate.py L105-108), distinct from an invalid value in a present column.
+
+Verdict: positivity tests and density comparisons do not ensure finite
+critical fields. `rc-260`: finite input and post-computation validation.
+These are synthetic robustness witnesses, not measured bad rows in the
+published catalogue or ranking effects. The physical helper is the one
+called by `check_release` (release.py L245-246); the complete release gate,
+population floors and source-count requirements were not exercised or changed.
+The extraction retains every intermediate frame and distinguishes numeric
+infinity markers from input strings.
+`extracted_data/r329_nonfinite_catalogue_fields.csv`.
+
+## R333 - Reused propellant rows retain the first configuration's tank setting (2026-11-02)
+
+Source `economicspace_propellant_cache_configuration_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`,
+`README.md` and `MODEL.md`; spacecost@860bef9902aa67fec705875cd52fdb8e6def159f,
+original launch/propellant/ops CSVs;
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011, `spacevalue/cargo.py`.
+Sizing constants are described as functions of "(propellant row × config)
+alone" (calc.py L3609-3610). `_tank_frac_per_kg` returns 0 when
+`model_tank_mass` is False, otherwise the row's tank-per-litre divided by
+density (L3629-3645; README.md L645 describes the switch). The solver
+attaches that configuration-dependent tuple to its caller's row and later
+reads it without checking the current flag (L6011-6016). `candidate_combos`
+also attaches sizing and prefilter tuples for its own config (L7955-7964).
+
+Eighteen complete original `evaluate_combo` sequences compare a reused
+propellant dictionary with a fresh copy of the same physical source row
+under the same final config. They retain actual Falcon 9 reusable,
+kerolox/hydrolox and all 46 ops rows. The body is synthetic, 1e9 kg at
+2 g/cm3; caller delta-v is 1,000 m/s each way, raw cargo is 100 USD/kg and
+the programme is one mission. ISRU, aerocapture, refinery and boil-off are
+off, isolating tankage. Representative final calls are:
+
+| propellant | first flag -> current flag | reused tank ratio kg/kg | correct current ratio | reused payload kg | fresh payload kg |
+|---|---|---|---|---|---|
+| kerolox | True -> False | 0.026914468803 | 0 | 17,794.394348 | 18,501.069719 |
+| hydrolox | False -> True | 0 | 0.097263455658 | 25,529.154868 | 22,835.390472 |
+
+The kerolox call with tankage now disabled still carries 199.209996 kg of
+return tank and 121.348916 kg outbound tank; its fresh disabled counterpart
+carries zero. Hydrolox with tankage now enabled instead carries zero in the
+reused call, versus 675.337997/341.799807 kg return/outbound in the fresh
+call. The cached ratio, not the current flag, exactly explains each tank
+mass through tank_mass=ratio*propellant_mass.
+
+Both toggle directions fail for both propellants. A new configuration object,
+editing the existing config in place, and shallow-copying the cached row
+all preserve the stale coefficient. An initial infeasible call, made with
+a deliberately oversized dry return vehicle, also leaves a tuple that can
+affect the next otherwise valid call. Four same-setting row controls match
+fresh results. Repeated stale calls are internally repeatable, so repeated
+output alone does not establish that the current inputs were honoured.
+
+Four complete `evaluate_asteroid` comparisons cover reused candidate lists.
+The two cross-setting cases retain the same 706.675371 kg kerolox payload
+difference; the two same-setting cases agree. Fresh `candidate_combos`
+under the current config and omitting the optional combos argument produce
+identical results in all four cases. These lists contain the same physical
+candidate, so changed filtering is not needed for the discrepancy.
+
+Twenty-two diagnostics recompute only the existing original sizing tuple
+for the current config, and the original prefilter tuple for a reused
+candidate list. Every result then matches the corresponding fresh call,
+including field types, finite float.hex values and NaN positions. No
+numerical helper or physical source field changes. Source tank coefficients
+and all nominal rates remain fixed; different payloads can also change dig
+time and cost, so those cost differences are not fixed-payload comparisons.
+
+Verdict: row-attached constants outlive the configuration they depend on.
+`rc-264`: validate or refresh cache dependencies, or apply the current tank
+switch to configuration-independent cached physics. This finding concerns
+reused input rows/candidate lists across settings. The standard build creates
+fresh candidates per configuration and gives the correct setting in these
+controls; no incorrect fresh-build result, population incidence, false-pruning
+rate or catalogue ranking effect is claimed.
+`extracted_data/r333_propellant_cache_configuration.csv`.
+
+## R335 - Delta-v sum discards a better or uniquely feasible apsis (2026-11-02)
+
+Source `economicspace_apsis_dv_sum_preselection_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`,
+`README.md` and `MODEL.md`; spacecost@860bef9902aa67fec705875cd52fdb8e6def159f,
+original launch/propellant/ops CSVs; spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011,
+original cargo dependency and its 2026-10-07 Mars-orbit price fixture.
+README.md L1030-1034 describes "the best mission found for it" across axes
+including rendezvous apsis. `asteroid_transfer_options_km_s` supplies both
+apsides (calc.py L2928-2942), but `asteroid_dv_options` keeps one per return
+mode by smallest `dv_out + dv_ret` (L3321-3343), before any launcher,
+propellant or mass/cost solve. It calls this the "best apsis already resolved
+for each return mode" (L3302-3305). `evaluate_asteroid` only prices the offered
+legs through its original objective (L8285-8350).
+
+Sixteen complete consumer pairs retain the original numerical functions and
+append the missing apsis to the original options. There are 31 corresponding
+direct original `evaluate_combo` solves. The main synthetic body is 1e9 kg,
+2 g/cm3, all silicates, a=1.1 AU, e=0.2, i=0 degrees and 8 h rotation.
+Actual Falcon 9 reusable, kerolox and all 46 ops rows are unchanged. Cargo
+is raw at a caller price of 100 USD/kg, N=1, Mars-orbit delivery and
+propulsive return. ISRU, boil-off, refinery, WACC, reliability and learning
+are off. The original analytic geometry gives:
+
+| apsis | outbound m/s | return m/s | sum m/s | returned cargo kg | cost/revenue |
+|---|---|---|---|---|---|
+| perihelion, offered normally | 5,299.415825 | 2,311.393458 | 7,610.809283 | 109.987665 | 156,253.546915 |
+| aphelion, discarded normally | 4,285.049316 | 3,949.887248 | 8,234.936565 | 243.995310 | 70,716.469558 |
+
+Both options satisfy the 17,400 kg launch capacity. An independent rocket/
+material balance at the same 100 kg returned cargo needs 17,325.415613 kg
+at perihelion versus 15,717.482836 kg at aphelion, despite the latter's
+larger delta-v sum. Cargo is mined at the target; the outbound manifest
+carries rig, return vehicle, tanks and return propellant. The two burns
+therefore act on different masses, and their unweighted sum is not the
+mission objective. Independent solved-payload and outbound/return propellant
+calculations match the original numerical outputs.
+
+At the nearby i=2 degrees, the normally chosen perihelion still has a smaller
+sum, 8,255.527636 versus 8,388.784903 m/s. Its zero-cargo stack already needs
+18,048.165689 kg, so the original full search returns None. The discarded
+aphelion option returns 190.311790 kg within the same 17,400 kg capacity.
+A second synthetic orbit, a=1.15 AU, e=0.25, i=1 degree, likewise changes
+from no mission to an accepted 133.482947 kg aphelion delivery.
+
+Nine pairs improve, including those two restored feasible results. Nearby
+orbital cases and a tank-disabled case retain the effect. A fixture keeping
+the committed Mars-orbit silicates price, 2,082.429580 USD/kg, improves
+cost/revenue from 7,503.425249 to 3,395.863669 at the same physical loads.
+Turning the existing combo prefilter off reproduces the main normal and
+augmented results exactly, locating this miss in the earlier apsis choice.
+Every changed-case delta-v lies strictly inside the original floors and cap;
+no clipping, geometry correction or price/rate change produces the difference.
+
+Seven controls retain the complete original result: aerocapture available,
+cislunar delivery, circular orbit, fixed reference delta-v, missing-element
+fallback, Falcon Heavy expendable and hydrolox. The last two retain
+perihelion as the best mission under their original source mass/cost rules;
+there is no globally preferred apsis. Every original and augmented consumer
+repeats with identical full-result type/float.hex signatures, and every
+augmented winner has the same objective as the best direct original solve.
+
+Verdict: unweighted delta-v-sum preselection can discard a better or the only
+feasible mission before the physical/economic search. `rc-266`: carry both
+apsides into the original mission search and select on its objective, retaining
+existing options and fallback behaviour. This comparison holds the analytic
+trajectory approximation unchanged; MODEL.md L1286-1294's separate accuracy
+limitations are not corrected here. Actual-population incidence, catalogue
+rankings and true trajectory-optimal missions were not measured.
+`extracted_data/r335_apsis_dv_sum_preselection.csv`.
+
+## R337 - Designation case can change the body or lose its measurement (2026-11-02)
+
+Sources `asteroidcatalog_designation_case_identity_record_2026` and
+`jpl_sbdb_small_body_database`: AsteroidCatalog@66fb47aaeb17aa7e11c023773a39765c1aa793fb,
+original designation/identity helpers and complete build; live SBDB API
+identity objects queried by `sstr=3568`, `sstr=1999` and `sstr=1999 KW4`.
+JPL identifies these as 3568 ASCII (1936 UB), 1999 Hirayama (1973 DR),
+and 66391 Moshup (1999 KW4), respectively. Its returned shortname for the
+first is exactly `3568 ASCII`.
+
+`_extract_canonical_designation` classifies a numeric prefix followed by a
+capital/lowercase pair as number-plus-name (designations.py L75-87).
+`_designation_key` calls it before folding case, while claiming that
+"upper-casing stops case variation fragmenting a group" (L107-113).
+The two classifications fail in opposite directions:
+
+| incoming string | original canonical/key behaviour | independently identified target |
+|---|---|---|
+| `1999 Kw4` | truncates to `1999` | `66391`, via `1999 KW4` |
+| `3568 ASCII` | retains the whole string, no numeric/name alias match | `3568` |
+| `(3568) ASCII` | becomes the same unmatched `3568 ASCII` | `3568` |
+| `1936 Ub` | truncates to `1936` | `3568`, via `1936 UB` |
+
+Eighteen resolver fixtures give seven failures and eleven controls. The
+capitalisation/spacing variants are constructed inputs, except the exact
+JPL shortname `3568 ASCII`. Correct uppercase/lowercase provisional inputs,
+title-case numbered names, bare ASCII, numeric/zero-padded/float-form keys
+and missing values retain their expected identities. Thus the comparison
+key's case folding does not make the preceding classification case-safe.
+
+Ten complete original `build_catalog` pairs continue through merge, diameter
+derivation, validation, enrichment, final dedup and CSV export/readback.
+The three-body backbone uses the verified identities above. Its physical
+values are synthetic: diameters 10, 1 and 6 km for fixture rows 1999, 66391
+and 3568, H=12/18/14, positive finite orbits and S-type composition. These
+are not measurements of the named asteroids. One supplement carries only
+rotation_period_h=4.25 and its source flag.
+
+With `1999 Kw4`, the original pipeline publishes that rotation value on
+1999 Hirayama; 66391 Moshup receives none. Changing only the incoming
+designation to `1999 KW4` places the same value on 66391. Correct MPC-style
+alias links do not rescue the original: the string is reduced to the
+already-known number before the alias lookup. The same wrong-body result
+occurs with those links disabled.
+
+Four other build cases lose the measurement: `3568 ASCII`, `(3568) ASCII`,
+`3568 ascii` and `1936 Ub` enter as unmatched supplement-only rows and are
+rejected for missing diameter. Replacing only their designation with the
+verified numeric/provisional spelling retains the value on 3568. Every
+build still ends with three bodies, so the final row count hides both the
+misjoin and these losses. Original and diagnostic outputs pass the unchanged
+`physical_problems` check; physical consistency cannot establish identity.
+
+Six full-build pairs expose a failure, and four uppercase-provisional,
+title-case-name, numeric and missing-key controls preserve the entire
+result. Every original build repeats exactly, including field types and
+numeric values, and the recipient read back from CSV matches memory. Only
+source frames, links and metadata clock are controlled; all original
+normalization, merge and scientific functions remain unchanged.
+
+Verdict: case-dependent number/name discrimination can create a wrong body
+key or defeat an available alias before matching. `rc-268`: distinguish
+provisional/survey designations from numbered-name forms using their complete
+grammar and preserve identity through supported case variants; leave an
+unrecognised form unresolved rather than projecting it onto another body's
+number. No actual-provider incidence, published-catalog corruption, real
+rotation value or downstream ranking effect was measured.
+`extracted_data/r337_designation_case_identity.csv`.
+
+
+## R338 - Orbital epochs and source-record coherence (2026-11-02)
+
+`imcce_ssodnet_orbital_metadata_api` lists
+`orbital_elements.ref_epoch` as float64 in days, described as
+"Reference epoch of osculation" (ssoBFT documentation, Metadata description,
+Dynamical properties). Its ssoCard documentation selects orbital elements
+from a resource such as ASTORB or MPCORB rather than averaging them.
+The live Ceres ssoCard supplies ref_epoch=2461300.5,
+ref_epoch_timescale=TT, ref_plane=Ecliptic and ref_center=Heliocenter.
+`jpl_sbdb_small_body_database` documents its epoch as "epoch of osculation
+(TDB) in Julian day form" (SBDB API, Orbit Data Section, epoch row); its
+live Ceres response has epoch=2461200.5. These displayed day numbers differ
+by 100; the records also declare different time scales. That difference is
+not a propagated-orbit residual or a TT/TDB conversion.
+
+`asteroidcatalog_orbital_epoch_pairing_record_2026` pins AsteroidCatalog
+at `66fb47aaeb17aa7e11c023773a39765c1aa793fb`. In `asteroid_catalog/ssodnet.py`
+L82-105, `_SSODNET_WANTED` requests the orbital elements including mean
+anomaly but omits `orbital_elements.ref_epoch`; L308-329 reads only those
+projected columns. The rename/numeric lists likewise have no epoch entry
+(L127-160). The JPL adapter already describes its anomaly as "mean anomaly
+AT EPOCH" and fetches a per-row epoch (`jpl.py` L61-74).
+
+Seven original adapter pairs use a controlled schema/column-projection
+reader and replace only parquet/cache I/O. Four lose known epochs: a replay
+of Ceres orbital metadata, two rows with distinct epochs, an unnumbered
+body and a numerically capped/sorted table. Three absent-epoch, null-epoch
+and absent-required-key controls have no known epoch to recover. A mapping
+diagnostic retains the raw source epoch number and changes no pre-existing
+adapter output cell; it does not establish a TT-to-TDB conversion. Actual
+parquet decoding and current bulk-table incidence were not measured.
+
+The second seam is independent: `merge_sources` fills every non-measured
+column separately (`merge.py` L565-575). Seven direct original merge pairs
+produce three complete orbital records that match neither provider bundle:
+a mean-anomaly gap, an epoch gap and a node gap. Four complete-backbone,
+compatible-same-epoch and unavailable-data controls retain coherent or
+explicitly incomplete records.
+
+In the synthetic mean-anomaly fixture, both providers describe one circular
+1-AU orbit with period 365.25 days, expressly using the same assumed time
+scale and frame. The supplement gives M=10 degrees at JD2451545.0. The
+backbone has JD2451645.0 and no M; the original merge publishes M=10 beside
+that later epoch. The independent periodic relation requires
+M=108.562628336756 degrees there: a 98.562628336756-degree phase difference,
+equivalent to a 1.515843254995-AU chord in this idealized orbit. These are
+synthetic errors, not measured errors for Ceres or any released row.
+
+Eleven complete original build cases run fetch, merge, diameter derivation,
+validation, enrichment, final dedup and CSV export. Three retain a source-only
+or supplement-only body while losing its known source epoch; two fill a
+backbone anomaly gap across different epochs, in opposite time directions.
+The other six are controls. All original outputs repeat exactly; all
+physical-row checks pass and exported orbit cells match memory. Forty-four
+final build invocations include the repeat and two diagnostics per case.
+Adding only the epoch projection leaves both original hybrid outputs
+exactly unchanged. A separate diagnostic selecting a complete provider
+bundle removes the mismatch; every non-orbital output cell remains equal,
+and all six controls preserve the entire projection/coherent result.
+Eleven raw local files match their pinned GitHub blobs; all four upstream
+main comparisons are identical to the commits read.
+
+Verdict: `rc-269`, retain the source orbital epoch and its time convention;
+`rc-270`, preserve a coherent orbital-element/epoch record across source
+gaps. Neither diagnostic is a production patch. The live complete Ceres
+responses establish distinct source metadata, not a currently missing
+provider field, released-catalog corruption, launch-window error or ranking
+effect. `extracted_data/r338_orbital_epoch_and_bundle_pairing.csv`.
+
+
+## R339 - Final-size eligibility and missing spectral classes (2026-11-02)
+
+`asteroidcatalog_quality_gate_consistency_record_2026` pins AsteroidCatalog at
+`66fb47aaeb17aa7e11c023773a39765c1aa793fb`. Its configuration says the global
+`min_diameter_km` gate "drops anything below this size" (`config.py`
+L151-155), default 0.001 km. The build derives diameters, validates rows,
+then enriches (`build.py` L96-108). Enrichment can replace an H-derived size
+with the diameter implied by measured mass and class density, labelled
+`derived_mass` (`enrich.py` L322-335); no subsequent size gate runs.
+
+Thirteen original build cases give two false positives, two false negatives
+and nine exact final-catalog controls. For a synthetic S-type body, keep
+the adopted density 2.7 g/cm3 and measured albedo 0.04; choose H for an
+initial 10-km diameter and mass for a 4-km diameter at that density.
+A 5-km global floor accepts the H estimate and the unchanged enrichment
+then exports 4.000000000000001 km. The original validator rejects that
+final row when reapplied. With the default one-metre floor, the same
+sequence accepts an initial 2.5 m and exports 0.8 m.
+
+The reverse cases use albedo 0.2: initial sizes 4 km and 0.8 m are rejected
+before mass reconciliation. The original enrichment would instead yield
+10 km and 2.5 m, above their 5-km and one-metre floors. A membership
+diagnostic predicts final size with the unchanged enrichment and applies
+the original validator at the actual floor, returning the unchanged
+eligible source rows for the build's normal enrichment. Only those four
+accepted sets change. Independent H/albedo and mass-volume arithmetic
+reproduces both sizes. Controls cover final sizes on the same side of the
+cut, a final boundary, measured diameters, absent mass/H, rejected
+impossible-albedo mass and a zero global floor. No interpretation of the
+separate `min_derived_diameter_km` setting is changed.
+
+The spectral contract says that strict mode rejects a body with no Bus or
+Tholen classification (`config.py` L157-159). `_BLANK_CLASSES` expressly
+defines `""`, `"-"`, `"nan"`, `"NaN"`, `"None"`, `"none"`, `"NA"` and
+`"<NA>"` as missing (`taxonomy.py` L922-926). The Bus normalization and
+diameter-derivation fallback use that vocabulary. In contrast, the strict
+gate's `_blank` tests null/empty/whitespace only (`validate.py` L19-25,
+L109-136), and Tholen fallback sends every nonempty string through stripping
+and case folding without masking those markers (`enrich.py` L82-92,
+L125-129).
+
+Eighteen strict-mode build cases expose ten missing-class acceptances:
+the seven nonempty Bus markers, two Tholen markers and a two-row catalog
+with one valid anchor and one placeholder-only row. The predicate diagnostic
+rejects only the missing-class rows and restores original source cells for
+all retained rows. Eight controls preserve the entire final catalog,
+including valid Bus, valid Tholen, a valid Tholen after a missing Bus marker,
+whitespace/actual nulls, a real complex label and strict mode disabled.
+
+Eight additional builds use default permissive spectral mode. Five Tholen
+markers block normal inference; three valid/missing/Bus-precedence controls
+are unchanged. For a synthetic one-km body with H=18, albedo=0.2 and no
+measured mass, a Tholen hyphen is published as spectral_type_source=tholen
+and comp_class=Unknown, with no density or mass. Masking only the recognized
+missing-type predicate lets the original albedo fallback choose S,
+density=2.7 g/cm3 and derived mass=1.413716694115407e12 kg. The raw Tholen
+cell remains a hyphen. This is the existing inferred composition/mass path,
+not a new measured mass or a change to the taxonomy table.
+
+Thirty-nine cases run the original build, an exact original repeat and the
+stated in-memory diagnostic: 117 invocations. Eighty-four newly produced
+catalogs pass selected diameter/class/mass/density/provenance readback;
+33 all-rejected builds create no new CSV, as `build.py` L103-105 specifies.
+All original outputs repeat exactly and physical checks pass. Ten raw
+local files match pinned GitHub blobs; all four upstream main comparisons
+are identical to the commits read.
+
+Verdict: `rc-271`, apply global size eligibility to reconciled final size in
+both directions; `rc-272`, interpret missing class markers consistently in
+strict filtering and Tholen fallback. The source frames are synthetic and
+do not establish provider frequency, released-catalog errors or ranking
+effects. `extracted_data/r339_catalog_quality_gate_order_and_class_markers.csv`.
+
+
+## R340 - Composite-summary consumer dependency (2026-11-03)
+
+`spacecost_summary_consumer_contract_record_2026` reads spacecost
+`860bef9902aa67fec705875cd52fdb8e6def159f` against economicspace
+`54e30b0ae82be71c987f08feb95630502b7f54f0`. The summary docstring says:
+"This is what Module 4 reads to pick the cheapest viable combination for
+any asteroid" (`spacecost/tables.py` L116-119). The same dependency is
+asserted in spacecost README L394-399, `spacecost/query.py` L176-180 and
+the comment in `tests/test_query.py` L260-267, as the rationale for leaving
+the composite summary unpenalized while query helpers apply low-thrust
+delta-v factors.
+
+The actual `load_all_catalogs` constructs six catalogs (`calc.py`
+L1519-1562): asteroid, mineral, launch vehicle, propellant, delta-v and
+operations. Its `_CATALOG_PROVENANCE` assertion has those exact keys and
+no summary. No code string constant in the module names
+`transportation_summary.csv` or its total-cost field. Sizing/prefilter
+constants read `dv_penalty_factor` from the raw propellant row
+(`calc.py` L3648-3672), rather than a composite-summary cost.
+
+Four executions of the original loader and its three unchanged reader/list
+parser helpers test the scratch summary in valid-original, absent,
+invalid-UTF8 and misleading-negative-total states. Each execution makes
+exactly the same six CSV reads; none reads the summary. All six returned
+frames are identical in values, dtypes and column order. Stage-1/2 inputs
+are small synthetic fixtures, including a mineral-list string; the actual
+generated Stage-3 inputs have 76 vehicles, 41 propellants, 34 delta-v rows
+and 46 operations rows. The original AST function bodies and line numbers
+are retained, with a config namespace supplying their normal path/model
+attributes; startup/install/output actions are not executed.
+
+Verdict: `rc-274`, correct the repeated consumer dependency and test
+rationale while retaining the stated raw-summary API and standalone query
+helper behavior. This is a documentation/interface finding, not evidence
+that the current Stage-4 ranking uses an unpenalized summary or is changed
+by its total-cost correction. The associated cost-field audit is
+`spacecost_summary_propellant_uplift_record_2026`. All four live main comparisons remain identical to
+the commits read. `extracted_data/r340_summary_consumer_dependency.csv`.
+
+
+## R342 - Release quote attestation (2026-11-03)
+
+`spacevalue_release_quote_attestation_record_2026` reads spacevalue
+873b91c1ce51fd2f5fe9ead63ce171d755e73011. `release.py` L163 says:
+"The quotes the manifest records must be the snapshot's, exactly."
+The builder writes ticker, source, close, unit and close_date (L114-116).
+The checker compares only a set of (ticker, close) pairs (L174-176),
+discarding the other declared fields and record multiplicity. README L190
+repeats the quote-equality contract.
+
+Four complete offline builds cover the two stored metal snapshots, with
+one exact repeat each. All eight 59-row destination CSVs and the full
+manifest reproduce byte for byte, and the original gate accepts them.
+The five quoted prices are independently converted from the stored closes;
+the unchanged public destination-price helper supplies their effective
+destination values. The source snapshots and checksums are unchanged.
+
+Eight manifest-only fixtures per snapshot change or omit unit/source/
+close_date, or add an identical or conflicting-metadata duplicate quote.
+All 16 return no gate findings and CLI exit 0. Comparing the multiset of
+all five declared fields rejects every one. Reordering the quote list stays
+valid; changing the close, removing a quote and changing the manifest
+catalog date are detected controls. recorded_date and note are not fields
+of the per-quote manifest schema and are not part of this finding.
+
+The second contract is "every quoted metal is priced from its quote"
+(README L194). `check_release` instead counts nonblank live_price_source
+cells and compares that count with five (L219-223). Eight table fixtures per
+snapshot preserve all five source-bearing rows and rehash only the changed
+table. They double gold's live/effective value on Earth and in cislunar
+space, alter the final Earth/GEO value alone, change live date/source,
+replace palladium with a second gold row, or reassign gold's source ticker.
+All 16 return no findings and CLI exit 0.
+
+For metals-2026-10-26, Earth gold 128856.97403016586 USD/kg becomes
+257713.94806033172 USD/kg while the raw close stays unchanged. Cislunar
+gold 101540.01543822547 becomes 230396.98946839134 USD/kg under the same
+destination rule. A GEO final-price-only edit from 94542.29355535637 to
+95542.29355535637 also passes. The duplicate fixture keeps 59 rows and
+five source-bearing cells, with two gold rows and no palladium. Added
+canonical-name, converted-price, date/source and effective-price checks
+reject all 16, using a relative tolerance of 1e-12 and absolute tolerance
+of 1e-9 for serialization rather than rejecting last-bit rounding.
+
+There are 54 original/repeated-API/CLI case triples: 32 false passes,
+six valid controls and 16 correctly detected controls. The latter include
+unrehashed bytes, a missing table, LF line endings, a blank quoted source
+and a negative price as well as the manifest controls. Gate calls leave
+every case file unchanged. All 16 local source/input blobs match pinned
+GitHub metadata, and four fresh main comparisons are identical.
+
+Verdict: `rc-276`, complete manifest quote records; `rc-277`, verify quoted
+table content. These are planted-defect gate results, not evidence of
+corrupt published releases or changed rankings. The workflow separately
+compares committed fixtures where the tag has them (publish-prices.yml
+L75-85); its later summary indexes unit and close_date directly (L94), so
+missing-key cases need not finish that workflow despite passing this gate.
+`extracted_data/r342_release_quote_attestation.csv`.
+
+
+## R343 - Cached-release data contracts (2026-11-03)
+
+`economicspace_cached_release_contract_record_2026` reads economicspace
+54e30b0ae82be71c987f08feb95630502b7f54f0. Both installer module headers
+promise refusal "before anything on disk is touched" when the release's
+data contract differs from the configured reader (catalog.py L45;
+mineral_value.py L44). The configuration comments repeat this contract
+(catalog.py L146-155; mineral_value.py L139-146). Fresh manifests are
+checked at catalog.py L211-220 and mineral_value.py L224-237, with
+"STAGE 1 CONTRACT MISMATCH" and "STAGE 2 CONTRACT MISMATCH" errors.
+
+Stage 1 `release_on_disk` checks the installed tag and catalog byte count/
+SHA-256, without comparing the contract (L243-257). `build_catalog`
+skips the manifest check on that cache hit (L309). Stage 2 `cached_release`
+checks the tag and every listed table hash, also without comparing the
+contract (L240-256). `install_destination` selects that cached manifest
+instead of `_download_release` (L315), copies the active CSV, and the
+builder writes its installation record (L340-375).
+
+Twenty-four cases execute the original Config classes and complete
+installer function bodies, exact repeats and an in-memory cache guard:
+72 calls. Startup installation/UI actions are excluded; manifest/asset
+HTTP calls are replaced by recorded local fixture responses. Original
+hash checks, staging, copy/replace operations and CSV reads remain in use.
+The Stage 1 input is a two-row synthetic release-shaped fixture, not a
+downloaded public catalog. Stage 2 inputs are two complete original
+spacevalue releases from the stored metal snapshots, each with eight
+59-row destination tables and a clean original release-gate report.
+
+With intact caches, Stage 1 returns a 1.10.0-stamped frame to readers
+configured for 1.9.0 or 1.11.0, making no manifest/asset request. Stage 2
+installs the 1.17.0 table for expectations 1.16.0 or 1.18.0 on each price
+profile, replacing the pre-existing active CSV and writing its record
+with no request. The configured incompatible versions are deliberate
+test inputs, not a claim that current defaults mismatch their releases.
+
+The same incompatible expectations on absent or hash-damaged caches
+fetch one manifest, raise the original contract error, transfer no asset
+and preserve the previous target and installation record. Adding only
+the missing contract comparison after admitted-cache hash checks rejects
+all six warm mismatch cases before returning/installing the table.
+Eighteen controls remain identical in outcome, request sequence, file
+effects and complete returned frames, including valid offline cache hits,
+valid fresh/hash-damaged refreshes and existing fresh-path refusals.
+All original repeats are exact; all returned frames and target bytes
+match the selected input CSVs.
+
+The original `stamp_check` warns and returns False for all twelve
+original/repeated incompatible returns when their owning module/config
+is visible (calc.py L1896-1985). Its `integrity_check` caller ignores that
+return (L1799). This later diagnostic is not the installer's promised
+refusal. No full profitability catalog or ranking is executed. Fifteen
+local source/input blobs match pinned GitHub metadata and all four
+fresh main comparisons are identical to the commits read.
+
+Verdict: `rc-278`, enforce reader-contract compatibility on cached as well
+as fresh release admission while retaining valid offline cache reuse.
+`extracted_data/r343_cached_release_contract.csv`.

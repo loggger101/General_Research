@@ -57,3 +57,67 @@ Neither audit gives a per-mission operations split or a per-hour fee, so rc-030 
 The deferred economicspace verification-sheet run completed 2026-10-20; its full ledger declares 95 NEED BACKING inputs out of 131. Claim-mapping the live-consumed class against all open candidates left one gap, opened as rc-182: the Depot berthing & handover operations row (USD per delivery) feeds economicspace end-of-mission economics at worked_calculation.py line 2672 with zero citations upstream, and its note self-declares ESTIMATE while scaling from ISS visiting-vehicle berthing ops without naming a document; the sibling Sample recovery operations row it scales against concedes NASA has not published a standalone figure. The pair is mutually-referencing estimates - IG-18-016 CRS per-delivery actuals (rows above) are the ceiling anchors proposed as bound references, values untouched.
 
 Also recorded without registering: the Volatile cargo containment note at spacecost@29a7ced says its charge is 'Charged on WATER only, which is what the citation covers', but no entry in CITATIONS.md @29a7ced covers cargo containment or sublimation loss (the only Water token anywhere is the title of the Kleinhenz and Paz ISRU production paper) - a dangling referent. The value itself (0.05 kg containment per kg volatile cargo) is an engineering ratio argued from sublimation physics in the note, so no candidate was opened this round; if a future round finds the intended citation or its replacement, that seam is live.
+
+## R324 - Ground recovery is multiplied by the downleg departure mass ratio (2026-11-02)
+
+Source `spacecost_downleg_recovery_mass_ratio_record_2026`:
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f, `spacecost/delivery.py`,
+`operations.py` and `reference/operational_costs.csv`;
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011, `spacevalue/catalog.py`
+and its committed terrestrial-price fixture;
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`.
+The recovery row's unit is "USD per recovery" (operational CSV L35), with
+value 15M USD, explicitly an estimate rather than a published NASA standalone
+recovery cost. delivery.py L416 sets a 10,000 kg batch, described as the
+"nominal batch the recovery is spread over".
+
+`downleg_cost_usd_per_kg` (L662-686) first calculates recovery as the
+per-recovery amount divided by that batch, then returns
+`(hardware + recovery) * R`, with `R=exp(departure_dv/(Isp*g0))`.
+Its docstring explicitly says all three costs are scaled by departure mass
+ratio. Thus this is the implemented costing rule, not an arithmetic typo.
+The propellant multiplier also scales the ground recovery of an unchanged
+returned-cargo batch. The same operational row is a flat Earth-return cost
+in economicspace calc.py L5377-5383.
+
+Eighteen direct configurations call the original helper with nominal, zero
+and nominal-plus-1M USD recovery amounts. Zero-recovery subtraction isolates
+the component; the perturbation measures sensitivity `R/batch`, rather than
+`1/batch`. Independent 50-digit Decimal exponentials reproduce the outputs.
+For the unchanged 10,000 kg batch, a source rate of 15M USD becomes:
+
+| downleg origin | departure m/s | R | implied recovery per batch, M USD | additional deduction, USD/kg |
+|---|---|---|---|---|
+| LEO | 120 | 1.026665 | 15.399968 | 39.9968 |
+| GTO | 16 | 1.003515 | 15.052723 | 5.2723 |
+| GEO | 1,490 | 1.386452 | 20.796776 | 579.6776 |
+| cislunar | 450 | 1.103715 | 16.555732 | 155.5732 |
+| lunar surface | 2,700 | 1.807769 | 27.116529 | 1,211.6529 |
+| Mars orbit | 900 | 1.218188 | 18.272819 | 327.2819 |
+| Mars surface | 6,200 | 3.894719 | 58.420790 | 4,342.0790 |
+
+The comparison holds ground recovery at `C/batch`, preserving the existing
+hardware multiplier and all other constants. For Mars surface this changes
+the total downleg deduction from 96,394.3034 to 92,052.2244 USD/kg. It is a
+recovery-term diagnostic, not a complete departure-stage cost reconstruction.
+Seven zero-departure cases agree exactly at R=1. Earth-surface and unknown
+destinations retain zero downleg costs. Doubling the nominal batch halves
+the per-kg recovery term but still attributes `C*R` to one complete batch.
+
+The unchanged spacevalue route chooser (catalog.py L1235-1242) subtracts
+this fee from terrestrial value before choosing the better route and
+flooring at zero. A wrapper changing only the recovery term was compared
+against the original on all 59 terrestrial-price rows of the committed
+2026-10-07 Earth-surface fixture at eight destinations: 472 paired helper
+calls, with 38 price increases and no route changes. Earth-surface values
+and commodities staying on the in-space-use route remain unchanged.
+Mars-surface rhodium moves from 223,605.6966 to 227,947.7756 USD/kg; cislunar
+rhodium moves from 292,683.0414 to 292,838.6147 USD/kg. Missing terrestrial
+prices remain missing on Earth. These are repricings from recorded inputs,
+not new market quotes, regenerated full catalogues or ranking results.
+
+Verdict: the formula turns a per-recovery ground cost into a departure-mass
+charge without changing the recovery count or returned batch.
+`rc-254`: separate fixed ground recovery from departure-mass costs.
+Neither the adopted recovery estimate nor its empirical uncertainty is
+revised here. `extracted_data/r324_downleg_ground_recovery_mass_ratio.csv`.

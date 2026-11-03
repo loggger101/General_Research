@@ -168,3 +168,198 @@ can change retention; the paper specifically warns about tumbling (p18), and sup
 excavatable mass or throughput. Verdict: the equatorial formula is correct, but whole-body
 rejection requires an additional screening assumption. `rc-238`: scope the spin gate and
 its physical claim. `extracted_data/r308_spin_cutoff_polar_regolith.csv`.
+
+## R315 - Programme extraction has no cumulative body-mass bound (2026-11-01)
+
+Source `economicspace_programme_cumulative_resource_budget_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py` and
+`MODEL.md`; original spacecost@860bef9902aa67fec705875cd52fdb8e6def159f reference
+rows and spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011 cargo functions.
+`campaign_cadence_yr` says "A rig stays at the asteroid" (calc.py L4579), while
+the programme description says "N enters nothing in the mass cascade"
+(MODEL.md L580). The per-mission cap is body mass times `max_mining_fraction`
+(L5911); the returned feed is bounded against it at L6570-6603. Programme
+options and selection then price this same mass book for different N, without
+bounding their combined extraction (L4945-4951, L6875-6902, L7026-7290).
+
+Nine complete original-evaluator cases retain every numerical function and
+use the actual Falcon 9 reusable, kerolox and all 46 operational-cost rows.
+Synthetic inputs are a 1,000 kg body of density 2 g/cm3, raw silicate cargo at
+100 USD/kg, a nonbinding 1e12 kg/yr commodity ceiling and caller delta-v
+1,000 m/s per leg. ISRU, beneficiation and aerocapture are off for the tested
+architecture. The one-ship isolation cases disable launch windows, refinery,
+water liberation, volatile containment and boil-off; other numeric defaults
+remain. With the default capacity market the returned mission extracts the
+whole body, but the selected programme repeats it five times:
+
+| original case | body mass (kg) | feed per mission (kg) | selected N | total feed (kg) |
+|---|---|---|---|---|
+| one ship, searched | 1,000 | 1,000 | 5 | 5,000 |
+| single-mission market | 1,000 | 1,000 | 1 | 1,000 |
+| fixed five missions | 1,000 | 1,000 | 5 | 5,000 |
+| cargo capped at half the body | 1,000 | 500 | 5 | 2,500 |
+| cargo capped at one fifth | 1,000 | 200 | 5 | 1,000 |
+| larger body, cargo capped at 1,000 kg | 1,000,000 | 1,000 | 5 | 5,000 |
+| fleet cap 64, other isolation settings | 1,000 | 1,000 | 320 | 320,000 |
+| unbounded market, one ship | 1,000 | 1,000 | 5 | 5,000 |
+| default numeric configuration, body at 1.8 AU | 1,000 | 1,000 | 320 | 320,000 |
+
+The one-ship five-mission result charges NRE at 82.39M USD per mission and
+total cost at 498.893366M USD, versus 411.95M and 1,662.365366M respectively
+at N=1, while gross value remains 0.1M per mission. These are per-mission
+accounts. Every mission fits its separate body, throughput and launch budgets.
+All cases also fit the stated 15-year rig calendar life: final dig completion
+from the first dig start is 1.25 years for the five-campaign isolation cases
+and 7.930317 years for the default-settings case. Thus the excess does not
+require the separate rig-age, ISRU-feed or EP-sizing defects.
+
+Four additional diagnostics filter only the F=1 programme ladder by
+`N * fixed_raw_feed <= body_mass`, retaining the original masses, costs and
+selection. Whole-, half- and fifth-body loads then select N=1, 2 and 5;
+the large-body control retains N=5 and identical output. These diagnose the
+missing bound; they do not optimise a new smaller-payload programme.
+
+Verdict: the per-mission material cap does not conserve the finite target
+across its selected programme. `rc-245`: impose a cumulative cargo/fuel-feed
+budget across all ships and campaigns, with joint resizing where appropriate.
+`max_mining_fraction` is documented as a per-mission fraction; the contradiction
+above uses its default 1.0 and exceeds the entire body, independently of how
+a smaller fraction is interpreted. Actual-population incidence and ranking
+effects were not measured. `extracted_data/r315_programme_cumulative_resource_budget.csv`.
+
+## R334 - Nominal-purity cutoff excludes better market-capped missions (2026-11-02)
+
+Source `economicspace_concentration_market_search_bound_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`,
+`MODEL.md`; spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011,
+`spacevalue/cargo.py` and its 2026-10-07 cislunar price fixture;
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f, original launch,
+propellant and operational CSVs. The bound says "Above this the knapsack
+has nothing better to load" (calc.py L7673), using only the fraction of the
+highest nominal-price phase, recovery and the configured maximum (L7679-7683).
+`evaluate_combo` limits every coarse/refined ratio to that result (L7772-7814).
+MODEL.md L511 likewise says "there is nothing better to add". Market caps
+instead free space for lower nominal-price phases (cargo.py L1228-1230),
+whose full-price kilograms can outrank the dearer phase's discounted surplus.
+
+Twelve fixed-hold comparisons isolate this without mission costs, timing or
+engineering feedback. A 1,000 kg hold, phases 90% silicates at 100 USD/kg and
+10% carbon at 90 USD/kg, recovery 0.9, fixed full-price allowances of 10 and
+1,000 kg, and half-price surplus give:
+
+| feed:hold ratio | reason | carbon loaded kg | total value USD |
+|---|---|---|---|
+| 1.234567901235 | nominal-purity search ceiling | 111.111111 | 54,944.444444 |
+| 10 | admissible extra feed | 900 | 86,500 |
+
+The same mechanism appears at 80%/20% composition and surplus fractions
+0, 0.25, 0.5 and 0.75. Independent tier arithmetic matches all eight
+improvements. Four uncapped/full-price controls return 100,000 USD at both
+ratios. Thus the nominal highest-price phase's physical purity point is
+not a bound on market-adjusted cargo value.
+
+Seventeen complete original `evaluate_combo` pairs retain the actual Falcon
+9 reusable row, kerolox and all 46 ops rows. The synthetic body is 1e9 kg,
+2 g/cm3, 1.2 AU and 8 h rotation; caller delta-v is 1,000 m/s each leg.
+Recovery 0.9, maximum ratio 50 and all physical/cost coefficients remain
+unchanged. Programmes have one mission; ISRU, aero, boil-off, refinery,
+WACC, reliability and learning are off. Only additional original solver
+calls above the normal bound are considered, retaining the original winner:
+
+| inputs | normal chosen ratio | added ratio | normal cost/revenue | with added point |
+|---|---|---|---|---|
+| synthetic 90%/10%, 100/90 USD/kg, binding rich-phase market, half-price surplus | 1 (raw) | 10 | 2,354.421336 | 1,553.806592 |
+| snapshot carbon 90% / silicates 10%, original prices and markets | 1.234567901235 | 2.659147948472 | 49.354569 | 48.804609 |
+
+The snapshot retains carbon's 2,682.567488 USD/kg and 5,000 kg/yr, and
+silicates' 1,603.050708 USD/kg and 15,000 kg/yr. Its body/composition remain
+synthetic. This witness includes the original mission-duration/market-window
+feedback; it is not the fixed-window scalar comparison above. Six synthetic
+market-setting pairs and six snapshot pairs improve. Increasing the normal
+search from 7 to 25 or 101 steps cannot help: recorded requested ratios all
+remain at or below the same nominal bound. Five ample-market, unbounded,
+single-mission, full-price-surplus and beneficiation-off controls retain
+the complete original result.
+
+Six complete `evaluate_asteroid` pairs include its original orbital,
+architecture and power search with the one source vehicle/propellant.
+Adding original ratio-10/20/50 solves changes the binding-cap fixture from
+raw cargo to ratio 20: cost/revenue falls from 85,550.144082 to 54,621.779334.
+Payload changes from 391.142165 to 370.773648 kg; gross value rises from
+21,330.408099 to 33,411.374586 USD, with cost 1,824,819,486.230986 versus
+1,824,988,729.869837 USD. Both mission durations are 4.174623535088 yr,
+and both mining durations 0.25 yr. The 101-step consumer gives the same
+miss; four complete consumer controls preserve the original result.
+Every normal search/consumer repeats with an identical full-result type/
+float.hex signature. The diagnostic adds candidates; it changes no original
+numerical helper or physical/price field and claims no global optimum.
+
+Verdict: the nominal-purity ratio is an unsafe search cutoff under binding
+market caps. `rc-265`: use a valid market-aware bound or cover the configured
+range while retaining existing candidates. This concerns which ratios are
+offered to the original evaluator, separately from `rc-252`'s cargo ledger
+and `rc-261`'s shared class budgets. No actual-population incidence, ranking
+effect or correction to adopted rates is claimed.
+`extracted_data/r334_concentration_market_search_bound.csv`.
+
+
+## R344 - Flown refining routes and raw excavation power (2026-11-03)
+
+`spacevalue_flown_refinery_route_preselection_record_2026` reads spacevalue
+873b91c1ce51fd2f5fe9ead63ce171d755e73011 with economicspace
+54e30b0ae82be71c987f08feb95630502b7f54f0. `_phase_terms` says "The route
+is decided on NET prices" (cargo.py L454-459), then passes that route's
+gross value and energy to the flown-refinery mission. In the unchanged
+59-row LEO input, magnetite's refined/as-is net values are 1128.280467/
+779.411210 USD/kg; gross values 1295.104956/1022 USD/kg and process energies
+10620/7000 Wh/kg. Independent yield/energy sums reproduce both routes.
+
+Twenty-four route cases run original, exact repeat, as-is alternative,
+and both routes with raw excavation charged: 120 complete consumer/kernel
+runs. Nine full `evaluate_asteroid` cases and four direct RTG cases improve
+the configured cost/revenue objective, including three restored feasible
+RTG options. At 5 AU, a homogeneous magnetite fixture using explicit 1000 m/s
+reference burns each way returns 1988.710239 kg at cost/revenue 656.124242.
+Retaining its as-is alternative returns 2821.290144 kg at 593.020922, with
+launch 17280.833/17191.508 kg both below the actual Falcon 9 reusable 17400 kg
+capacity. All input rates, yields, prices and constraints stay fixed.
+
+At 1100 kg direct RTG cargo, the original return trace rejects 5330.595 W
+at calc.py L6474 under the 5000 W limit. As-is needs 3513.575 W and remains
+feasible. All 13 gains persist with excavation charged: the 5 AU pair is
+684.740246 versus 603.831611 and the RTG pair 5430.983 W rejected versus
+3613.963 W accepted. Eleven non-improving/tied cases retain the original
+choice, including exact legacy/coarse/already-as-is cases and a profit-
+objective control. Lower cost/revenue is not a claim of improved profit;
+all examples remain unprofitable. The compositions and reference burns
+are controlled fixtures, not observed asteroid trajectories or incidence.
+`extracted_data/r344_flown_refinery_route_preselection.csv`.
+
+`economicspace_raw_excavation_energy_record_2026` reads the same consumer.
+The spacecost Drilling / excavation energy row is 200 "Watt-hours per kg
+of regolith extracted" (operations.py L676-688), separate from beneficiation.
+MODEL.md L553-559 says these energies size the flown power system. Both
+the sizing and settlement code instead initialize process power to 0 and
+call `processing_power_w` only "if beneficiate or isru" (calc.py L6385-6391,
+L6700-6706). Raw non-ISRU feed is mined and timed but pays neither extraction
+power nor its plant mass/cost; refinery/water draws are separate additions.
+
+Fourteen excavation cases run original, exact repeat and the two-gate
+diagnostic: 42 full runs. Ten change; zero-rate, zero-feed, beneficiation-on
+and ISRU-on controls remain exact. At 1000 kg raw Earth cargo and 0.25 yr
+stay, with no other process draw, the original has 0 W and 0 kg power plant.
+The adopted 200 Wh/kg implies 91.2616929044 W, with 13.4049386616 kg solar
+hardware in the same solver. Launch mass 4425.967992 becomes 4444.233191 kg;
+total cost 1662365366.256608 becomes 1662547118.001492 USD, with cargo and
+duration fixed. In raw LEO cases, that draw adds to the existing 456.308465 W
+refinery load. Two full `evaluate_asteroid` cases with use_beneficiation=True
+reproduce the omission in the raw alternative the normal search selects.
+The 200 Wh/kg magnitude remains the separate `rc-027` question.
+`extracted_data/r344_raw_excavation_energy.csv`.
+
+Verdict: `rc-279`, keep sale-route alternatives through mission evaluation;
+`rc-280`, apply excavation energy to all extracted feed. Original repeats
+match exactly, and all feasible recorded results satisfy body, launch,
+throughput, duration, volume and RTG limits. Nineteen local source/input
+blobs match pinned GitHub metadata; all four live main comparisons are
+identical. No full-catalog ranking or population effect is measured.

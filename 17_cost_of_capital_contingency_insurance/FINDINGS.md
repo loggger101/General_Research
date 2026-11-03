@@ -84,3 +84,78 @@ In-repo institutional evidence: r47_damodaran_cost_of_capital_full_table_96_indu
 Attribution seam: CITATIONS.md line reads "| Damodaran (NYU Stern), Cost of Capital by Industry Sector (Jan 2026); Boeing and Howmet filings | cost-of-capital floor: industry averages, with no startup premium |" - but a sweep of sources.csv id and title fields finds no SEC filing for either company anywhere in the registry; the upstream note itself says those two figures come from ValueInvesting.io model output. The INDEX Sources to replace flag (R240) names price-page class with Damodaran replacement sought, which the note already quotes.
 
 Verdict: open candidate rc-188 (citation; values untouched); upstream untouched. Extracted data: extracted_data/r244_wacc_floor_damodaran_anchor_key_numbers.csv.
+
+## R331 - Terminal salvage still receives the launch-to-sale carry factor (2026-11-02)
+
+Source `economicspace_terminal_salvage_timing_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`
+and `MODEL.md`; spacecost@860bef9902aa67fec705875cd52fdb8e6def159f,
+original vehicle, propellant and operational-cost CSVs;
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011, `spacevalue/cargo.py`.
+The calendar contract says "The rig's salvage credit is received once, at
+the END of the programme" (calc.py L4648-4649). MODEL.md L1130-1133 likewise
+places it at the end and rejects forward compounding of a refund. The
+prologue defines year-zero, effective-midpoint and end-of-mission buckets,
+with end multiplier 1 and upfront multiplier Q=(1+r)^T (L5425-5453).
+
+The tail first nets the terminal value against rig procurement
+(calc.py L5592-5594), putting the credit in upfront hardware. Its later
+calendar delta changes the credit by the reciprocal factor but also multiplies
+that delta by the upfront Q (L5676-5680). Consequently the combined credit is
+`(S/W)*cal_credit*(1+contingency)*Q`, not the stated end-date receipt
+`(S/W)*cal_credit*(1+contingency)`. Here S is one rig's nominal terminal
+value and W its campaign count. Under the existing per-sale averaging,
+sale j is at T+j*cadence and the receipt at T+(W-1)*cadence: T cancels
+from the discount exponent, so it cannot supply this extra Q.
+
+Eighteen original `mission_cost_usd` cases are each paired with the same
+input and salvage fraction zero. They retain the actual Falcon 9 reusable,
+kerolox and all 46 operational rows, with explicitly labelled rate/salvage
+controls and a synthetic finite mass book. Totals-only and full-breakdown
+costs agree exactly. A principal case has two rigs flying one campaign each,
+1-year stay, 5-year mission, 10% WACC, 600M USD procurement per rig and
+the unchanged 0.50 salvage estimate. Utilisation is 1/5 of duty life,
+so terminal value is 240M USD per rig. All receipts coincide with the sale:
+
+| per-mission terminal credit | before contingency USD | with unchanged 20% contingency USD |
+|---|---|---|
+| receipt at the stated year 5 date | 240,000,000 | 288,000,000 |
+| original credit multiplied by 1.1^5 | 386,522,400 | 463,826,880 |
+| excess credit / total-cost undercharge | 146,522,400 | 175,826,880 |
+
+There is no staggered-fleet allocation in this one-campaign witness. Other
+positive-rate cases span 1-12 years and 10-20% rates. Multi-campaign cases
+retain the original reciprocal calendar series; independently summing dated
+receipt shares at 50-digit Decimal precision reproduces its correctly dated
+credit and isolates the same extra Q. A 150 kg refinery addition on the rig
+shares the timing error. Turning the calendar flag off does not remove the
+baseline error when WACC remains on.
+
+Six further paired cases execute the complete original evaluator on a
+synthetic 1e9 kg, 2 g/cm3 body, raw silicate cargo at 100 USD/kg, a 1,000 kg
+payload cap and 1,000 m/s per leg. They use the actual chemical vehicle and
+propellant, no ISRU or aerocapture, a nonbinding one-commodity market and
+unchanged numerical functions. The main WACC-on result is one rig serving
+two campaigns: mission 1.25 years, cadence 0.25 years, sale dates 1.25/1.50
+and terminal receipt at 1.50. Its reported total is 937,819,491.876605
+USD/mission. The zero-salvage pair isolates a 120,232,353.131616 USD credit,
+against 106,728,520.842521 USD under the stated receipt dates. Correcting
+only this timing gives 951,323,324.165700 USD/mission, 13,503,832.289095
+USD higher. The mass book and duration are identical in the paired run.
+Finite result floats match their untraced replay by float.hex, with identical
+field types and NaN positions.
+
+Ten direct and two full-evaluator pairs show excess credits. Eight direct
+and four full controls are inert with zero rate, the WACC flag off, zero
+salvage, an exhausted rig, no modelled rig life or a single mission receiving
+no credit. WACC is off by default (calc.py L1017), so this does not change
+the reported default run. The main full fixture is a rectangular programme;
+fractional procurement or cumulative extraction beyond body mass is not
+needed for the finding.
+
+Verdict: the stated end receipt is still valued as though it existed at
+launch. `rc-262`: retain the terminal credit's date in the cost buckets and
+calendar calculation. The diagnostic preserves the nominal salvage rule,
+rate, contingency and current averaging convention. It does not replace
+that convention with NPV, redesign the mission or measure catalogue/ranking
+effects. `extracted_data/r331_terminal_salvage_timing.csv`.

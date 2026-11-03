@@ -438,3 +438,55 @@ storage_systems.csv attribution audit result: unlike launch_vehicles, this table
 All 76 rows of reference/launch_vehicles.csv were swept against their own inputs: for each mode in leo, gto, escape the headline cell usd_per_kg_to_MODE was recomputed as list_price_usd divided by band_centre(payload_low, payload_high) when a payload band exists (the geometric-mean-to-3-significant-figures convention of fact 62, vehicles.py L1978-2004), or the point payload otherwise; bound cells were recomputed as price-low over payload-high and price-high over payload-low. Result: zero mismatches within a 1.5 percent rounding tolerance - no unit-cost cell contradicts its own price or payload inputs, and no headline violates band_centre (extending R251 from the payload headlines to the derived price layer). The table also applies a clean design rule where capability is absent: payload zero with blank unit cost on 76 of the row-mode combinations that lack GTO or escape capability - consistent by construction, not defects. No row carries $/kg bounds without a corresponding payload band, so no bound cell escapes testability.
 
 This derived layer is arithmetically closed at @860bef9; provenance questions on individual prices are covered by the open RCs and the attribution sweep.
+
+
+## R340 - Propellant launch mass in the composite transfer total (2026-11-03)
+
+`spacecost_summary_propellant_uplift_record_2026` pins spacecost at
+`860bef9902aa67fec705875cd52fdb8e6def159f`. `build_transportation_summary` emits
+`total_usd_per_kg_payload_to_segment_end` (`tables.py` L123, L160-185) as
+L+p*c: one kg of payload launched at the LEO rate L, plus purchase of
+p=exp(delta-v/(Isp*g0))-1 kg of transfer propellant at rate c. It does not
+charge to lift that propellant. The original `mission_cost_breakdown`
+includes outbound propellant in launch mass (`query.py` L217-246).
+
+Use the same reference Falcon 9 reusable and kerolox rates, L=4253 USD/kg,
+c=0.896969696969697 USD/kg and Isp=340 s, for a raw 6500-m/s single leg.
+The original summary returns p=6.024875312747583 kg and
+4258.404130583555 USD/kg. Isolating the original mission helper to one kg
+payload, zero hardware, zero return burn, zero operations duration and zero
+contingency gives launch mass=7.024875312747583 kg and
+total=29882.198835699026 USD. Both purchase exactly
+5.404130583555408 USD of propellant. The 25623.79470511547-USD gap is the
+unchanged LEO rate times the omitted propellant mass.
+
+Independent mass accounting gives L*(1+p)+c*p; the missing term is L*p.
+Sixteen original helper pairs contain eight positive omissions and eight
+zero-term controls: four zero-delta-v cases and four propellantless raw
+metric limits. Those limits are controls of the arithmetic, not feasible
+propulsion recommendations. A standard-library exponential independently
+reproduces the original NumPy scalar propellant masses and costs.
+
+The committed `reference/summary_sample.csv` has 868 finite, priced rows:
+805 have positive L*p and 63 have zero terms. Its first stored row, Falcon
+9 reusable / LEO-to-GTO / kerolox, reports p=1.0788115101939009 kg and a
+4253.967661233386-USD/kg total, again charging the payload launch plus
+0.9676612333860444 USD of propellant purchase alone.
+
+Two original full-build profiles, reference and recorded fuel-2026-10-26,
+each produce 84,132 finite, priced rows: 77,976 have positive omitted
+uplift terms and 6,156 have zero terms. Each profile repeats exactly,
+including all seven CSV byte hashes and in-memory frames. Readback checks
+every populated cell and the full missing-value mask; CSV absence does not
+retain the in-memory distinction between pd.NA and NaN. These counts
+diagnose the cost identity and do not establish feasibility of every raw
+vehicle/segment/propellant combination.
+
+Verdict: `rc-273`, include transfer propellant in the Earth-launched
+single-leg cost basis and identify any retained bare-cost proxy explicitly.
+No tanks, electric plant, boiloff, return hardware or complete mission
+operations are added to this lower-bound comparison. The current Stage-4
+loader does not consume this summary (the separate `spacecost_summary_consumer_contract_record_2026`
+trace); no profitability or ranking change is claimed. Nineteen local
+source/reference blobs match pinned GitHub records; all four upstream main
+comparisons remain identical. `extracted_data/r340_transportation_summary_launch_mass.csv`.

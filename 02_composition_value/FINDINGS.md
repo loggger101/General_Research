@@ -238,3 +238,80 @@ The independent pyroxene yield is `iron:0.07`. Verdict: a metadata formula corre
 with no new yield, density or price derived. `rc-242`: restore the missing coefficient in
 the current source and regenerated price metadata, preserving archived provenance.
 `extracted_data/r312_pyroxene_formula_cation_count.csv`.
+
+## R332 - Wholly residual bodies miss the bulk-silicate valuation floor (2026-11-02)
+
+Source `spacevalue_full_residual_valuation_record_2026`:
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011, `spacevalue/cargo.py`
+and the committed Earth/cislunar price fixtures;
+AsteroidCatalog@66fb47aaeb17aa7e11c023773a39765c1aa793fb, original
+merge/derive/validate/enrich and supporting numerical modules;
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0, `modules/calc.py`;
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f, original reference CSVs.
+
+The catalogue contract explicitly says Unknown has four None fractions,
+"so the residual is the whole body" (taxonomy.py L10-13; Unknown row
+L561-570). Unknown phase cells are missing (mineralogy.py L337-346,
+L566-571). Cargo's bulk residual comment says "value at silicate floor so it
+doesn't vanish" (cargo.py L798), but the next line requires
+`0.0 < frac_sum < 1.0`. The phase-table residual repeats the same strict
+lower bound (L921-929). A zero total therefore gets neither the value nor a
+loadable residual phase. `asteroid_best_phase_usd_per_kg` also returns zero
+through its bulk floor (L1467-1468). Economicspace returns None at `bulk_value <= 0`
+before checking mass or candidate feasibility (calc.py L8121-8123).
+
+Twenty-four original valuation cases compare both destinations. All-zero,
+all-None, all-NaN and absent coarse fractions, empty coarse/detailed phase
+objects and a zero-fraction phase each produce bulk value 0, best value 0
+and an empty phase table. The existing fixture quotes are 0.05 USD/kg on
+Earth and 1,603.050708496265 USD/kg cislunar. Even a silicate fraction of
+1e-12 restores the entire rock value under the existing remainder rule:
+
+| representation | original Earth USD/kg | original cislunar USD/kg |
+|---|---|---|
+| zero named fraction, all mass residual | 0 | 0 |
+| 1e-12 silicate, remainder residual | 0.05 | 1,603.050708496265 |
+| explicitly 100% silicate | 0.05 | 1,603.050708496265 |
+
+An in-memory diagnostic changes only the two lower comparisons to include
+zero. Fourteen empty/zero cases then receive the declared whole-body
+residual floor and one residual phase of fraction 1. Ten nonempty controls
+retain their original bulk, best and phase values: epsilon, half/full
+silicate, half metal and an explicit silicate phase at each destination.
+Original replays agree, and phase-weighted values reproduce the diagnostic
+bulk values. No price or material fraction is recalibrated.
+
+Four complete original catalogue chains use a synthetic 2.7 km body at
+a=1.2 AU, e=0.1, inclination 1 degree, H=15 and rotation 8 h. U is an
+unrecognised synthetic source label; S is the recognised comparison. Each
+is run with and without a supplied 1e13 kg mass. All four rows survive
+validation and have no reported physical-row problems. U with measured mass
+retains 1e13 kg and density 0.9703090571 g/cm3, takes comp_class Unknown,
+and has missing fractions/phase cells. Its original cargo value is zero.
+
+Eight complete consumer pairs run those original in-memory catalogue rows
+through `evaluate_asteroid`, with actual Falcon 9 reusable, kerolox, all 46
+operational rows, raw cargo, a single mission and no ISRU or aerocapture.
+The finite-mass U body is originally rejected at the zero-value gate. After
+the two guard changes it returns accepted, unprofitable mission results:
+
+| destination | returned cargo kg | gross value USD | total cost USD |
+|---|---|---|---|
+| Earth surface | 391.142165 | 19.557108 | 1,746,081,377.494511 |
+| cislunar | 3,261.850862 | 5,228,912.335548 | 1,683,342,646.289729 |
+
+An original-code control explicitly supplying one full silicate phase gives
+identical mission fields, including finite float.hex values and NaN
+positions; only the two expected phase-provenance flags differ. The
+diagnostic retains the unknown classification and invents no density or
+mass. U without a measured mass still rejects after the mass-context check.
+The four S consumer fixtures retain exactly matching results. Thus two
+consumer dispositions change and six controls retain their outcomes.
+
+Verdict: the residual floor disappears at exactly zero named fraction,
+contrary to the stated whole-body residual contract. `rc-263`: include the
+wholly residual case consistently in bulk, phase and best valuation while
+preserving missing-mass exclusions and malformed-input reporting. This
+checks the model's declared rock-floor assumption, not the true composition
+of an unknown asteroid. Population incidence and ranking effects were not
+measured. `extracted_data/r332_full_residual_valuation.csv`.

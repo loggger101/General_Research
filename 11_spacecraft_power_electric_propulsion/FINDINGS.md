@@ -164,3 +164,64 @@ book from the returned mission. `rc-244`: couple EP sizing to the actual
 capped outbound and ISRU-return loads, and propagate settled thrust duration
 through feasibility and cost. Current-catalog incidence and ranking effects
 were not measured. `extracted_data/r314_electric_stage_vs_settled_propellant.csv`.
+
+## R316 - Electric propulsion hardware is missing from the return mass book (2026-11-01)
+
+Source `economicspace_electric_stage_return_mass_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0 `modules/calc.py`, with
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f original reference rows and
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011 cargo helpers. The EP helper
+returns array, PPU and thruster mass (L3899-3911). That mass enters
+`hardware_total_kg` (L6742-6746), which is carried outbound and added at the
+asteroid (L6670-6675). The return dry mass is only the configured floor plus
+payload-dependent structure/containment (L6640); post-burn return mass adds
+the payload, TPS and return tank (L6650-6653), with no EP term. The stage is
+sized from both legs' propellant, although its mass is carried on one leg.
+
+Nine complete original-evaluator cases use original numerical helpers and
+reference rows. The main witness is a synthetic 1e9 kg, 2 g/cm3 body at
+1.2 AU, actual Falcon 9 reusable and electrospray rows, caller delta-v
+2,500 m/s each way (row penalty 1.5), raw cargo, no ISRU or aerocapture,
+single-mission market, synthetic 100 USD/kg silicate cargo. Windows,
+refinery, water liberation, containment and boil-off are disabled for the
+isolation case. It accepts 6,047.515549 kg cargo and reports 10,214.098028 kg
+of EP hardware, 1,236.188075 kg return propellant and 3.25 years total mission.
+All non-cargo mass after the return burn, including the tank, is only
+1,432.050479 kg.
+
+The model's own momentum-flux relation and adopted 10,000 kg/N electrospray
+rate give an independent lower bound. Even granting the entire mission,
+including outbound travel and mining, to thrusting on return:
+`T_min = m_return_prop * Isp * g0 / mission_seconds = 0.295500286 N`, so
+thrusters alone need at least 2,955.002864 kg. This already exceeds all return
+dry mass by 2.063477 times, before adding any array, PPU, tanks or structure.
+Thus an unspecified allocation inside the capsule floor cannot close the
+book under the adopted device model. The bound uses actual returned fuel
+and full reported mission time, independently of provisional EP timing.
+
+| case | all reported return dry mass (kg) | minimum return thrusters using the entire mission (kg) |
+|---|---|---|
+| electrospray isolation | 1,432.050479 | 2,955.002864 |
+| electrospray, tank mass off | 1,423.557098 | 2,994.920785 |
+| electrospray, default physical flags at 1.8 AU | 1,342.218266 | 2,129.632951 |
+| PPT, same 2,500 m/s caller legs | 1,222.904936 | 1,324.495917 |
+
+A separate diagnostic relocates the unchanged reported EP unit from one-way
+hardware to return dry mass, counting it once. Keeping the original cargo
+then requires 19,420.248042 kg launch mass against the 17,400 kg capacity;
+the original closed-form helper refits to 1,032.431902 kg cargo at that fixed
+stage size. This is not a completed joint mass/power redesign. A xenon case
+confirms the missing placement without exceeding the generous thruster-only
+bound. Chemical and low-thrust-off controls have no explicit EP mass; with
+zero return delta-v the return impulse bound is zero and moving the stage
+does not increase launch mass. A zero-outbound-delta-v limiting case has
+exactly three years of actual-book thrusting and still fails the return
+hardware bound. Every case is a resource-safe single mission, isolating
+the ISRU and programme-resource candidates.
+
+Verdict: the declared electric propulsion hardware has no return-leg mass
+allocation, and accepted cases cannot hide it within the existing return dry
+allowance. `rc-246`: carry a shared EP unit through the return burn, or size
+and account for separate stages and jettison events, then re-solve the coupled
+mass/power problem. No observed-catalog incidence or ranking effect was
+measured. `extracted_data/r316_electric_stage_return_mass.csv`.

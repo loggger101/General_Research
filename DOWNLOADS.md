@@ -94,6 +94,8 @@ Remove an item when it is done.
 ## D. Live services and pages that refuse this machine (nothing to save; retry later)
 
 dla_energy_aerospace_standard_prices_fy2020, aqua_calc_lox_bulk_price, lme_official_reference_prices,
-cme_comex_nymex_futures, jaxa_h3_launch_vehicle, watanabe_2019_hayabusa2_ryugu_spinning_top,
+jaxa_h3_launch_vehicle, watanabe_2019_hayabusa2_ryugu_spinning_top,
 macke_2010_enstatite_chondrite_density_porosity, sercel_2018_time_dependent_outgassing_model_bulk_heating,
 nasa_instrument_cost_model_nicm, pearson_1979_anchored_lunar_satellites.
+
+cme_comex_nymex_futures: R341 read the NG contract rules in NYMEX Chapter 220 p1; market quotes and the other contracts remain queued.

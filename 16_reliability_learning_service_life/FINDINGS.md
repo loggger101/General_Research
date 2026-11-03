@@ -139,3 +139,110 @@ life constraint, or explicitly redefine the estimate as duty time. This comparis
 starts the age clock at the first stay and omits outbound transit; it does not assign
 a new empirical rig lifetime or quantify a change to any full-catalog winner.
 `extracted_data/r309_rig_lifetime_vs_campaign_cadence.csv`.
+
+## R320 - Partially filled fleets underallocate rig procurement and credits (2026-11-02)
+
+Source `economicspace_nonrectangular_rig_cost_allocation_record_2026`:
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0 `modules/calc.py`, with
+spacecost@860bef9902aa67fec705875cd52fdb8e6def159f original reference rows and
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011 cargo helpers. The source
+claims "Non-rectangular programmes stop being mis-booked" (L4822), using
+seven missions on two ships as its example (L4823-4825). The fixed-N path
+sets F=ceil(N/trips), W=ceil(N/F) (L4931-4938), but each mission is then
+charged `(rig_cost-credit_at_W)/W` (L5592-5603). Across N missions this buys
+N/W rig equivalents, which is less than F when the final fleet is not full.
+
+Ten complete original-evaluator cases use actual Falcon 9 reusable, kerolox
+and all 46 ops rows. Main synthetic inputs: 1e9 kg body, density 2 g/cm3,
+no water, 1.2 AU, raw silicate cargo at 100 USD/kg and a nonbinding market;
+caller delta-v 1,000 m/s per leg, no ISRU or aerocapture. Windows, refinery,
+water liberation, containment and boil-off are off for isolation. WACC and
+learning remain off by default. Each mission returns 17,794.394348 kg and
+the 0.25-year minimum stay binds; every case fits body, rig-calendar and
+launch limits.
+
+With programme search off and N=7, the original five-cycle rig limit gives
+F=2, W=4. The 2,000 kg rig at 300,000 USD/kg costs 600M USD. The code uses
+the four-cycle credit of 60M, charging (600M-60M)/4 = 135M per mission, or
+945M for the programme. Seven missions under a four-campaign maximum require
+actual rig uses 4+3. Their credits are 60M+120M under the same rules, so the
+two rigs cost 1,200M-180M = 1,020M net. The code underallocates 75M before
+contingency, or 90M of programme total cost with the original 20% contingency.
+
+| case | rig campaign counts | reported rig cost (M USD/programme) | integer rig cost (M USD/programme) | difference (M USD) |
+|---|---|---|---|---|
+| N=7 | 4+3 | 945 | 1,020 | 75 |
+| N=9 | 5+4 | 1,080 | 1,140 | 60 |
+| N=11 | 4+4+3 | 1,485 | 1,560 | 75 |
+| N=13 | 5+4+4 | 1,560 | 1,680 | 120 |
+| N=7, salvage fraction set to zero | 4+3 | 1,050 | 1,200 | 150 |
+| N=6 | 3+3 | 960 | 960 | 0 |
+| N=8 | 4+4 | 1,080 | 1,080 | 0 |
+| N=10 | 5+5 | 1,200 | 1,200 | 0 |
+| single mission | 1 | 600 | 600 | 0 |
+| searched one-ship programme | 5 | 600 | 600 | 0 |
+
+The zero-salvage control isolates fractional procurement independently of
+any residual-value estimate. Separate calls to the original cost tail, using
+each actual rig's campaign count and the unchanged global N for NRE and
+learning, reproduce the integer totals when weighted by missions served.
+An independent sum of F full procurement costs minus individual credits
+agrees. Launch, return fuel, capsule, NRE and operations remain unchanged.
+The balanced 5+4+4 allocation is not essential here: the short-stay cycle
+credit is linear in campaigns, so the total depends on N and integer F.
+
+Verdict: using the maximum W as every mission's divisor does not buy the
+integer fleet required for a partially filled fixed programme. `rc-250`:
+aggregate procurement and credits per actual rig before averaging over N,
+while retaining global programme terms. Equal-use searched and single-mission
+controls match; current-population incidence and ranking effects were not
+measured. `extracted_data/r320_nonrectangular_rig_cost_allocation.csv`.
+
+## R321 - Learning-curve family label differs from the implemented unit-cost mean (2026-11-02)
+
+Source `delionback_1975_guidelines_learning_cost_improvement_curves`, NASA
+TM X-64968 (1975): Wright's ordinate is "cumulative average cost" (printed p6,
+PDF p10); Crawford's ordinate uses "unit values as opposed to a cumulative
+average" (p6, continued p7). Appendix B (p31, PDF p34) explains that the same
+rate/quantity gives a common line for Wright cumulative average and Crawford
+unit cost, while Crawford cumulative average lies above it. These are model
+definitions, not a spacecraft slope measurement.
+
+Upstream: economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0,
+`learning_curve_factor` (calc.py L4440-4456), configuration comments L423-450
+and MODEL.md L721-733. The helper describes a Wright cumulative-average
+multiplier but calculates `sum(k**b for k in 1..N)/N`, where
+`b=log(rate)/log(2)`. It is a cumulative mean of Crawford unit costs. Under
+Wright cumulative-average theory the corresponding normalized mean is
+`N**b`, without averaging those already cumulative-average values again.
+
+Twenty-one unchanged original-helper cases cover rates 0.80 and 0.85 at
+N=1,2,4,8,10,16,32,64,100,320, plus rate 1.0 at N=100. Independent 50-digit
+Decimal unit-power sums match the original helper; Wright means agree with
+the telescoping sum of marginal total costs. At the current 0.85 judgement:
+
+| N | implemented Crawford-unit mean | same-rate Wright cumulative average |
+|---|---|---|
+| 1 | 1.000000000 | 1.000000000 |
+| 2 | 0.925000000 | 0.850000000 |
+| 4 | 0.836353709 | 0.722500000 |
+| 10 | 0.711606273 | 0.582820402 |
+| 100 | 0.437538671 | 0.339679621 |
+| 320 | 0.335746969 | 0.258600509 |
+
+The N=100 learned recurring-cost factor differs by 28.8092%; this is a
+comparison of model families, not a measured error in actual factory cost.
+MODEL.md's rounded 0.44 is consistent with the existing calculation. The
+unit costs obey the 0.85 doubling rate, while their cumulative mean does not:
+the first doubling changes that mean from 1.0 to 0.925. Both models agree at
+N=1 and with no learning. The default flag remains False, resolving the
+cost model's learning rate to 1.0 (calc.py L5470).
+
+Verdict: the implementation's family label and its cumulative-average
+interpretation conflict with the formal Wright/Crawford distinction.
+`rc-251`: identify the existing calculation as the cumulative mean of a
+Crawford unit curve, preserving its arithmetic and the 0.85 judgement. A
+switch to Wright cumulative-average theory would be a separate numerical
+model decision requiring its own justification. Neither family is shown
+empirically superior for asteroid spacecraft, and population/ranking effects
+were not measured. `extracted_data/r321_learning_curve_model_identity.csv`.
