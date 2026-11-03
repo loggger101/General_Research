@@ -449,3 +449,51 @@ raw-fit pooling policy. `rc-259`: preserve raw fits or sufficient per-parameter
 statistics until aliases are resolved. These fixtures do not estimate
 published-catalog prevalence or downstream ranking changes.
 `extracted_data/r328_neowise_alias_reaggregation.csv`.
+
+## R347 - Geometric albedo can reach or exceed one (2026-11-03)
+
+`buratti_veverka_1984_voyager_satellite_photometry` reports Enceladus
+geometric albedo 1.04+/-0.15 and Bond albedo 0.9+/-0.1 (publisher abstract,
+Icarus 58(2), p254; NTRS 19840056323 abstract).
+`verbiscer_et_al_2007_enceladus_geometric_albedos` independently reports
+E-ring satellites whose mean geometric albedos "approximate or exceed unity"
+(indexed author abstract, Science 315(5813), p815; PMID 17289992).
+These are satellite observations establishing a
+physical distinction, not evidence of incidence in an asteroid catalogue.
+
+`asteroidcatalog_geometric_albedo_ceiling_record_2026` reads AsteroidCatalog
+66fb47aaeb17aa7e11c023773a39765c1aa793fb. physics.py L118-131 sets
+ALBEDO_CEILING=1.0 and calls values at/above 1 failed fits rather than surfaces.
+merge.py L348 discards them; derive.py L269-272 calls values outside(0,1)
+unphysical. The bound is also used by enrich.py L328, taxonomy.py L1007
+and the original release gate L182. Specific JPL ceiling-hit fits can still
+be suspect; their existence does not establish a universal physical limit.
+
+Fourteen controlled fixtures run original, exact repeat, a scoped finite-
+value policy probe and its repeat: 56 complete fetch-boundary-stubbed
+builds, with original merge/derive/validate/enrich/export numerical bodies.
+Seven outputs change, six in derived size/mass; seven controls retain exact
+outputs and CSV hashes. A synthetic H=15/E-type fixture with supplied p=1.04
+loses the measurement and uses the E median 0.5964: D=1.720902096 km and
+mass=8.539198148e12 kg. The policy probe retaining that supplied value
+uses the same H equation and density to give D=1.303191718 km and
+3.708288672e12 kg; native mass is 2.302732851 times larger. A measured-diameter
+control retains a D consistent with p=1.04 while discarding the explicit
+albedo. Alternative-source, X-class and outer-body fixtures show selection,
+classification and fallback consequences. Ordinary albedo, lower-floor,
+zero, negative, missing and nonfinite controls remain exact. The original
+release gate's expected rejection of probe values is recorded, not removed.
+
+The same assumption appears in smallest_diameter_km (physics.py L290-296).
+With p=1.04, D=9.9 km implies H=10.5968655835, but its H-only minimum is
+10.0960586369 km. That crosses the adopted 10 km rotation-screen threshold;
+the algebra demonstrates a conditional bound, not a real 9.9 km fast rotator.
+
+Verdict: `rc-283`, distinguish a conservative fit-quality screen from
+physical impossibility, keep consumers/provenance consistent, and describe
+H-only size/rotation bounds as conditional on an adopted albedo maximum.
+No universal replacement ceiling or blanket acceptance of suspect fits is
+established. Both repeated pairs pass native type/value/float.hex checks
+and identical CSV hashes. Twenty-three source blobs, including all 21
+imported modules, match fresh pinned metadata; four live main comparisons
+are identical. `extracted_data/r347_geometric_albedo_ceiling.csv`.

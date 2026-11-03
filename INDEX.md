@@ -70,6 +70,9 @@ _Backings: per-spectral-type density and PGM factors in AsteroidCatalog `referen
 | jpl_sbdb_field_list_probe_2026_10_29 | T3 | SBDB query-API field list saved answer 2026-10-29 (JPL SSD) | full text hosted (saved JSON, sha in registry row) | witness for AC README sigma-count audit rc-237 |
 | asteroidcatalog_mass_reconciliation_record_2026 | T4 | Mass identity units and rejected-sigma provenance, pinned record | read, not hosted | equation conversion (rc-256); orphaned mass sigma (rc-257) |
 | asteroidcatalog_neowise_alias_reaggregation_record_2026 | T4 | NEOWISE alias regrouping statistics, pinned record | read, not hosted | pooled diameters/errors depend on alias grouping (rc-259) |
+| buratti_veverka_1984_voyager_satellite_photometry | T1 | Buratti & Veverka1984: geometric versus Bond albedo | abstract read | rc-283: geometric albedo can exceed1 |
+| verbiscer_et_al_2007_enceladus_geometric_albedos | T1 | Verbiscer etal2007: HST opposition photometry | abstract read | rc-283: observed geometric albedos above unity |
+| asteroidcatalog_geometric_albedo_ceiling_record_2026 | T4 | geometric-albedo upper-bound witness | read, not hosted | rc-283: quality policy versus physical limit |
 
 ## Domain 2 — Composition → commodity value mapping
 
@@ -184,9 +187,9 @@ _Backings: spacecost `delta_v_segments.csv` and the Isp rows of `propellants.csv
 | johnson_castillo_rogez_dervan_mcnutt_2017_nea_scout | T2 | Johnson, Castillo-Rogez, Dervan & McNutt (NASA MSFC/JPL), 'Near Earth Asteroid (NEA) Scout' - ISSS 2017 (NTRS 20170001499) | full text hosted | the NEA Scout source spacecost's solar-sail row cites: two-year cruise at continuous low thrust |
 | schmidt_bonometti_morton_2000_nuclear_pulse_orion_and_beyond | T2 | Schmidt, Bonometti & Morton (NASA MSFC), 'Nuclear Pulse Propulsion - Orion and Beyond' - AIAA 2000-3856 / 36th JPC (NTRS 20000096503) | full text hosted | **the source for spacecost's nuclear-pulse (Orion) propellant row**: external-pulse Isp limits 'approximately 3,000 to 10,000 seconds' put isp_vac_s=10,000 at the TOP of the documented range; Dyson/Taylor history + PTBT termination verbatim |
 | general_dynamics_1964_nuclear_pulse_vehicle_study_ga4891 | T2 | General Dynamics Corp. (General Atomic Division), 'Nuclear Pulse Vehicle Study' condensed summary report GA-4891, NTIS N76-70976, Jan 1964 (NTRS 19760065935) | full text hosted | nuclear pulse (Orion) row: programme began 1957 (notes say 1958); Isp 4,000-6,000 s direct-launch, 10,000-20,000 s predicted post-1980 |
-| brophy_2011_dawn_ips | T1 | Brophy, "The Dawn Ion Propulsion System" - Space Science Reviews 163(1-4):251-261 (Springer) | registered, not pulled | flagship IPS review - NEXT as flown, total mission delta-V + spiral durations for the low-thrust rows |
+| brophy_2011_dawn_ips | T1 | Brophy, "The Dawn Ion Propulsion System" (Space Sci Rev 163:251-261) | abstract read | Dawn NSTAR mission budget; full text still queued |
 | rayman_mase_2014_dawn_cruise_acta | T1 | Rayman & Mase, "Dawn's operations in cruise from Vesta to Ceres" - Acta Astronautica 103:113-118 (Elsevier) | registered, not pulled | Vesta-to-Ceres cruise leg as flown - duration and delta-V record for the interplanetary low-thrust row |
-| garner_rayman_2013_jpc_cruise_yr1 | T2 | Garner & Rayman, "In-Flight Operation of the Dawn Ion Propulsion System Through Year One of Cruise to Ceres" - 49th AIAA Joint Propulsion Conference proceedings (AIAA) | registered, not pulled | in-flight IPS performance, year one of cruise (thrust level / delta-V accumulation) |
+| garner_rayman_2013_jpc_cruise_yr1 | T2 | Garner & Rayman, Dawn IPS first cruise year (AIAA 2013-4112) | abstract read | 31,000 h, 300 kg Xe, 8.3 km/s to date; full text queued |
 | garner_rayman_2015_jpc_orbit_ops | T2 | Garner & Rayman, "In-Flight Operation of the Dawn Ion Propulsion System Through Early Orbit Operations at Ceres" - 51st AIAA Joint Propulsion Conference proceedings (AIAA) | registered, not pulled | in-flight IPS performance through early orbit operations at Ceres |
 | garner_rayman_2016_jpc_lamo | T2 | Garner & Rayman, "In-Flight Operation of the Dawn Ion Propulsion System Through Operations in the LAMO Orbit at Ceres" - 52nd AIAA Joint Propulsion Conference proceedings (AIAA) | registered, not pulled | final spiral into ~35 km LAMO - trip-time and delta-V record for low-thrust capture |
 | garner_rayman_2018_jpc_final_orb | T2 | Garner & Rayman, "Operation of the Dawn Ion Propulsion System Through the Final Orbit Around Dwarf Planet Ceres" - 2018 Joint Propulsion Conference proceedings (AIAA) | registered, not pulled | closes out the in-flight IPS series through mission end (Dec-2018) |
@@ -365,7 +368,7 @@ _Backings: spacecost `storage_systems.csv`; the volatile-ISRU, power and electri
 | kleinhenz_2016 | T2 | Kleinhenz, Paulsen & Zacny, "Regolith Volatile Recovery at Simulated Lunar Environments" (NASA Glenn / Honeybee, NTRS 20160010281) | full text hosted | `Volatile cargo containment` row: coring/auger capture lost 88% of sample water in lunar-simulant tests |
 | kleinhenz_2018 | T2 | Kleinhenz, Smith, Roush et al., "Volatiles Loss from Water Bearing Regolith Simulant at Lunar Environments" (NTRS 20180005235) | full text hosted | `Water liberation energy` mechanism: volatiles escape unless recovered by heated extraction and cold trapping; no Wh/kg |
 | carlson_2024 | T2 | Carlson, Andersen & Collins, "ISRU Modeling of a Lunar Water Processing System" — NASA's SIMA framework (NTRS 20240007647) | full text hosted | NASA ISRU plant breakdown mirrors the cost lines carried; H2 liquefaction and storage dominate energy and mass |
-| nextc_ppu_2020 | T2 | Bontempo et al., "The NEXT-C Power Processing Unit: Lessons Learned from Design/Build/Test for APL's DART Mission" (NASA Glenn / ZIN Technologies, NTRS 20205004248) | read, not hosted | PPU specific mass: 34.5 kg at 7 kW = 4.7 kg/kW exactly; efficiency 94.8% (prototype), 93.9% (DART flight unit) |
+| nextc_ppu_2020 | T2 | Bontempo et al., NEXT-C PPU design/build/test for DART (NTRS 20205004248) | read, not hosted | 34.5 kg; 7.0/7.4 kW output conflict; input basis inferred (rc-103) |
 | ambrosi_2019 | T1 | Ambrosi et al., "European Radioisotope Thermoelectric Generators (RTGs) and Radioisotope Heater Units (RHUs) for Space Science and Exploration" — Space Sci Rev 215:55, DOI 10.1007/s11214-019-0623-9 | full text hosted | RTG rows: GPHS/MMRTG heritage (5.2 vs 2.4 W/kg); Pu-238 supply target ~1.5 kg/yr; small RTGs 1.3-2.1 W/kg |
 | hoffman_2000 | T2 | Hoffman et al., "Thin-Film Photovoltaic Solar Array Parametric Assessment" — NASA/TM--2000-210342 = AIAA-2000-2919 (NTRS 20000081753) | full text hosted | solar row: main-belt tour array ~62 W/kg EOL at 1.5 AU (~140 W/kg array-only at 1 AU) vs the 60 W/kg system row |
 | ali_2023 | T1 | Ali, Beltran, Lindsey & Pecht (CALCE/UMD), "Assessment of the calendar aging of lithium-ion batteries for a long-term - Space missions" — Frontiers in Energy Research 11:1108269, DOI 10.3389/fenrg.2023.1108269 | full text hosted | energy storage row: NASA ~265 Wh/kg Li-ion cells support the 250-300 Wh/kg claim; -40 to +40 C controlled envelope |
@@ -384,6 +387,7 @@ _Backings: spacecost `storage_systems.csv`; the volatile-ISRU, power and electri
 | economicspace_isru_feed_resource_budget_record_2026 | T4 | ISRU feed and asteroid resource budget, pinned implementation record | read, not hosted | settled ISRU plus cargo feed can exceed body mass (rc-241) |
 | economicspace_isru_water_liberation_flag_record_2026 | T4 | ISRU water-heating flag, pinned implementation | read, not hosted | disabled flag still charges ISRU heating (rc-247) |
 | economicspace_settled_boiloff_hold_record_2026 | T4 | Final cargo volume cap and cryogenic storage clock, pinned record | read, not hosted | return fuel retains the earlier mining clock (rc-253) |
+| economicspace_return_capture_boiloff_record_2026 | T4 | return-capture cryogenic inventory witness | read, not hosted | rc-284: capture fuel held during return coast |
 
 ## Domain 6 — Commodity / mineral market pricing (value side of the pipeline)
 
@@ -493,6 +497,7 @@ _Backings: the power and electric-propulsion rows of `operational_costs.csv` (EP
 | burns_2022_inl_subscale_maturation_ntp_reactor_testing | T2 | Burns et al. 2022, INL subscale NTP reactor-testing options (INL/RPT-22-65557) | read, not hosted | NTP key performance parameters: >2,700 K exhaust, 10-15 klbf, 900 s Isp, reactor <3,500 kg (requirements, not demonstrated) |
 | economicspace_electric_stage_placeholder_propellant_record_2026 | T4 | electric-stage provisional/settled propellant witness | read, not hosted | rc-244: ISRU stage power and burn time |
 | economicspace_electric_stage_return_mass_record_2026 | T4 | electric-stage return mass witness | read, not hosted | rc-246: EP hardware absent from return mass |
+| economicspace_rtg_payload_search_record_2026 | T4 | RTG power-bound payload search witness | read, not hosted | rc-281: smaller feasible RTG cargo omitted |
 
 ## Domain 12 — Destination environments & physical constants
 
@@ -551,6 +556,7 @@ _Backings: economicspace `orbital.py` (`elements_to_state`, for the dashboard's 
 | spacecost_summary_consumer_contract_record_2026 | T4 | Summary versus Stage-4 input contract | read, not hosted | rc-274: correct the consumer dependency |
 | spacevalue_release_quote_attestation_record_2026 | T4 | Release manifest and quoted-table attestation | read, not hosted | rc-276/rc-277: incomplete quote checks |
 | economicspace_cached_release_contract_record_2026 | T4 | Cached-release contract admission, original installers | read, not hosted | rc-278: cache hits bypass the contract guard |
+| economicspace_unconverged_sizing_iteration_record_2026 | T4 | unconverged sizing-loop mass-closure witness | read, not hosted | rc-282: accepted oscillation misses feasible cargo |
 
 ## Domain 14 — Propellant & consumable prices
 
@@ -864,6 +870,7 @@ _Backings: spacecost `storage_systems.csv` propellant-storage and energy-storage
 | mcbrayan_francis_sobey_2025_viper_mobility_dust_mitigation | T2 | McBryan, Francis & Sobey (NASA JSC), "Dust Mitigation for the VIPER Mobility System", ICES-2025-147 54th Int'l Conf on Environmental Systems Prague Jul 2025 (NTRS 20250005201) - full text hosted + read R150 | full text hosted | FIRST modern institutional seal matrix for a lunar mobility system (labyrinth / Nomex felt / spring-energized PTFE + grease damming; face-seal compression practice); context/bound class for the 'Dust mitigation and seals' kg-per-kg cell |
 | lee_brown_2023_gateway_lunar_dust_mitigation_overview | T2 | Lee & Brown, "Overview of NASA Gateway Lunar Dust Mitigation and Contamination Modeling and Analysis" (NTRS 20230003126) - full text hosted + read R150 | full text hosted | institutional Gateway dust-mitigation program record: GOLDMAP physics-based framework + two-pronged mitigation strategy with cross-program coordination; context class for d26's contamination-risk premise |
 | jones_et_al_2026_artemis_suit_dust_exposed_fabrics | T2 | Jones et al. (Leidos/KBR HHPC + NASA JSC), "Artemis Suit Material Optical Property Testing of Dust Exposed Fabrics", ICES-2026-164 55th Int'l Conf on Environmental Systems Rio Grande PR Jul 2026 (NTRS 20260002937) - full text hosted + read R150 | full text hosted | measured EOL dust-soiling test process (rotary tumbler, simulant + ceramic media, 8 h at 80 rpm): institutional basis for cumulative-wear assumptions behind d26's dust-mitigation cell; context/bound class |
+| economicspace_return_cargo_volume_record_2026 | T4 | Returned-cargo density/volume closure, pinned consumer record | read, not hosted | rc-285: water cargo can exceed its volume allowance |
 
 ## Domain 27 — Orbital debris & collision risk
 

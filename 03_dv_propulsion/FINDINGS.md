@@ -288,3 +288,26 @@ The row Asteroid station-keeping at spacecost@860bef9 stores dv_m_per_s = 200 wi
 The nearest institutional document to what the note gestures at is Antreasian et al., OSIRIS-REx Proximity Operations and Navigation Performance at (101955) Bennu (NTRS 20210025471, conference paper, PUBLIC_USE_PERMITTED), now registered as a witness read via the NTRS machine-extracted fulltext endpoint. It reports momentum-desaturation imparted delta-V that "could be around 0.5 mm/sec" at the three-day cadence and states that from start of Orbital A onward the imparted values remain small - maintenance-class delta-V near Bennu is institutionally recorded per event in millimetres per second, with no published aggregate budget line for station-keeping anywhere in the corpus. That neither confirms nor refutes 200 m/s outright; it shows the cited artifact does not exist.
 
 rc-231 [citation] proposes naming a real document or restating the note as self-declared engineering estimate per documented-by-design convention (the six storage_systems ESTIMATE rows precedent). No value change forced. The duration_yr = 0.5 cell is scenario-parameter material, not an attribution claim - left untouched.
+
+## R349 - Dawn mission scope and the NSTAR/NEXT distinction (2026-11-03)
+
+`brophy_2011_dawn_ips` publisher abstract (Space Science Reviews 163,
+p251) gives a mission IPS budget of nearly 11 km/s and 1.2e7 N s total
+impulse, excluding the Mars gravity assist. `garner_rayman_2013_jpc_cruise_yr1`
+author abstract (NTRS 20150008021) reports approximately 31,000 operating
+hours, 300 kg xenon and 8.3 km/s accumulated through the first year of
+cruise to Ceres, with approximately 11 km/s the whole-mission plan.
+Neither full article was read; their full-paper requests remain queued.
+
+`nextc_ppu_2020` p1 and Table 2 p4 distinguish Dawn NSTAR from its NEXT
+successor. This corrects the NEXT-as-flown description in this registry's
+brophy_2011_dawn_ips row and INDEX. At spacecost
+860bef9902aa67fec705875cd52fdb8e6def159f, propellants.py L851-868 separately
+backs 3,000 s xenon Isp with `nextc_protoflight_2021` and a Hall comparison;
+the Dawn distinction is not misidentified there. The 1.5 low-thrust penalty
+at L37-54 is a heuristic; the abstract's aggregate mission figures have no
+like-for-like impulsive baseline from which to calibrate that ratio.
+
+Verdict: registry classification/scope correction and bounded abstract
+extraction; no new upstream value candidate follows from these figures.
+`extracted_data/r349_dawn_nstar_mission_scope.csv`.

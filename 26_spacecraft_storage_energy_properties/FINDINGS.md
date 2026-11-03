@@ -53,3 +53,53 @@ rc-109 (regenerative fuel cell round trip 47.4%), rc-110 (four storage figures n
 ## R238 - Six storage and power candidates applied upstream; two author slips (2026-10-21)
 
 spacecost 0.12.5 (PR #28, tag v0.12.5, main `b5eb32a`) applied rc-088, rc-089, rc-108, rc-109, rc-110 and rc-115, notes only, no value moved; each row's evidence says what landed. Two registry slips found while re-reading the title pages: `ntrs_2006_g2_flywheel_module_design` is by Ralph H. **Jansen** (University of Toledo) and Timothy P. Dever, NASA/CR-2006-213862 / AIAA-2004-5603, not "Jensen"; `ntrs_2020_analysis_100w_regenerative_fuel_cell_demonstration` (NASA/TM-20205000357) is by Bennett, Smith **and Jakupca**, titled "Analysis of 100-W Regenerative Fuel Cell Demonstration" (no "a"). Both rows corrected; ids unchanged.
+
+## R350 - Body density does not bound the volume of separated water cargo (2026-11-03)
+
+`economicspace_return_cargo_volume_record_2026` reads economicspace
+54e30b0ae82be71c987f08feb95630502b7f54f0, spacecost
+860bef9902aa67fec705875cd52fdb8e6def159f and spacevalue
+873b91c1ce51fd2f5fe9ead63ce171d755e73011. calc.py L6542-6552 sets a
+quarter-fairing allowance using the parent body's density; L6606 reports
+payload divided by that same density before the final cargo mix at
+L6815-6826. MODEL.md L1377-1379 acknowledges the proxy and concludes
+"the volume constraint is conservative". The mineral catalog separately
+sets water density to 1.0 g/cm3 (catalog.py L1595-1598).
+
+Twenty-one constructed fixtures run original, repeat, a scoped cargo-volume
+guard and its repeat: 84 complete evaluate_asteroid consumers, retaining
+original numerical function bodies, reference-only Stage 2 prices, real
+source vehicles/kerolox and geometric transfer options. The guard feeds an
+additional payload cap through the original kernel and lets the original
+objective reselect ratios/architectures. Twelve selected native books exceed
+the unchanged allowance on water alone; twelve guarded books close it.
+Nine selected-book controls are exact, including raw, equal/lower body
+density, smaller vehicle, longer transfer, low water, metal, pure ice and a
+zero-mass refusal. Coarse/detailed phases and disabled boil-off/eclipse
+sensitivities retain the finding. No packing assumption for the other
+material is needed to establish the twelve water-only excesses.
+
+The main fixture is 20% water/80% silicates, body density 1.8 g/cm3,
+a=1.01 AU, e=i=0 and 10 h rotation, with a declared 3,000 kg rig sensitivity.
+SLS Block 1 has 95,000 kg LEO capacity and a 216 m3 fairing, hence a 54 m3
+return allowance. Native geometric burns are 3298.408532/617.064275 m/s.
+The selected book carries 57,746.596841 kg water, requiring 57.746597 m3
+at its adopted density, while reporting 32.081443 m3 and volume_fits=True.
+The guard selects 54,000 kg water at just below 54 m3. Original-kernel
+recomputation lowers launch 95,000 to 89,157.614501 kg, feed 320,814.426897
+to 300,000 kg and cost 6,047,419,401.070768 to 5,789,776,426.154996 USD.
+At the default 2,000 kg rig, a=1.001 AU Falcon Heavy case, water alone is
+39.447 m3 against 39.25 m3 allowed, before its accompanying silicate.
+
+Verdict: `rc-285`, use explicit returned-material/state/packing assumptions
+in joint cargo allocation and sizing, keep the volume report consistent,
+and qualify the conservative-direction claim. Body density and the 0.25
+allowance are not re-pinned. The diagnostic is a restricted feasible repair,
+not a global two-resource knapsack solution. All examples remain
+unprofitable; no observed-trajectory, population-incidence or ranking claim
+is made. Both repeated pairs match native types/values/float.hex digests.
+All returned books pass current source mass/resource/throughput/time checks
+to their tolerance; guarded books also pass the added material-volume check.
+Twenty-four blobs, including all 22 imported local modules, match fresh
+pinned metadata and all four live main comparisons are identical.
+`extracted_data/r350_return_cargo_volume.csv`.

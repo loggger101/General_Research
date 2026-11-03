@@ -79,9 +79,9 @@ Remove an item when it is done.
 - [ ] **broslav_2025_optical_mining_carbonaceous_chondrite_simulants** (d19) - Colorado School of Mines repository item abed9ab3-8bf3-4cac-aafa-b81d379ee4d2 (files need a login).
 - [ ] **paulson_balchanos_mavris_2026_isru_economic_environmental_tradeoffs** (d22) - https://doi.org/10.2514/6.2026-2788
 - [ ] **hayhurst_2016_historical_mass_power_schedule_cost_growth_nasa_spacecraft** (d21) - IEEE Aerospace 2016, DOI 10.1109/aero.2016.7500553 (NTRS has no file).
-- [ ] **brophy_2011_dawn_ips** (d03) - DOI 10.1007/s11214-011-9848-y
+- [ ] **brophy_2011_dawn_ips** (d03) - DOI 10.1007/s11214-011-9848-y (publisher abstract read R349; full paper still needed)
 - [ ] **rayman_mase_2014_dawn_cruise_acta** (d03) - DOI 10.1016/j.actaastro.2014.06.042
-- [ ] **garner_rayman_2013_jpc_cruise_yr1**, **garner_rayman_2015_jpc_orbit_ops**, **garner_rayman_2016_jpc_lamo**, **garner_rayman_2018_jpc_final_orb** (d03) - AIAA JPC papers 6.2013-4112, 6.2015-3717, 6.2016-4539, 6.2018-4641.
+- [ ] **garner_rayman_2013_jpc_cruise_yr1**, **garner_rayman_2015_jpc_orbit_ops**, **garner_rayman_2016_jpc_lamo**, **garner_rayman_2018_jpc_final_orb** (d03) - AIAA JPC papers 6.2013-4112, 6.2015-3717, 6.2016-4539, 6.2018-4641. The 2013 NTRS abstract was read R349; full papers still needed.
 - [ ] **calt_lm2c_users_manual_issue_1999**, **cgwic_lm3a_series_launch_vehicle_users_manual_issue_2011**, **cgwic_lm2d_technical_data_fairing_dimensions** (d04) - customer-only Chinese manuals; fairing envelope figures.
 - [ ] **galactic_energy_ceres1_launch_vehicle_user_manual_2023**, **galactic_energy_pallas1_user_manual_2023** (d04) - request through the company; fairing envelopes.
 

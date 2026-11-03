@@ -381,3 +381,90 @@ describe different digs. `rc-253`: settle cryogenic fuel against final cargo
 and mining duration. The adopted evaporation rates are unchanged; these are
 synthetic-body witnesses with no measured population incidence or ranking
 effect. `extracted_data/r323_settled_boiloff_hold.csv`.
+
+## R348 - Capture propellant remains stored during the return coast (2026-11-03)
+
+`economicspace_return_capture_boiloff_record_2026` reads economicspace
+54e30b0ae82be71c987f08feb95630502b7f54f0. The return budget adds the asteroid
+departure burn and later LEO capture (calc.py L2834-2861), but non-ISRU
+storage exposure ends at outbound flight plus stay (L6293-6298). ISRU is
+exempt because it is made on departure (L6203-6206). Capture fuel still has
+to remain available after the return cruise; the ISRU plant and processing
+power stay at the asteroid (L6650-6673). MODEL.md's acknowledged uncharged
+production-window loss (L943-949) is a separate issue.
+
+Twenty controlled chemical/single-mission fixtures run original, repeat,
+an additional return-storage mass ratio and its repeat: 80 complete original
+kernel evaluations. Source vehicle, propellant and operations rates remain
+unchanged except declared rate/capacity sensitivities. Physical burns and
+the original travel-time proxy stay fixed. The diagnostic passes a storage-
+equivalent ratio through the existing numerical kernel and preserves the
+physical clock with a scoped duration wrapper; it is not a new trajectory.
+
+At synthetic a=1.2 AU, e=i=0, 100 kg cargo and one-year stay, asteroid
+departure is 1265.303230 m/s and LEO capture is 3303.723236 m/s. The model's
+1.050876087-year return cruise and adopted 0.05%/day loss give B=1.211569038.
+The native ISRU book provides 1347.056809 kg fuel and 747.019400 kg terminal
+dry/cargo/tank mass. After departure, 827.041622 kg capture fuel remains;
+after coast, only 682.620301 kg remains versus 827.041622 kg required.
+
+Let Rd and Rc be the departure and capture rocket ratios. For terminal mass
+M, departure requires `[Rd*(1+B*(Rc-1))-1]*M`, rather than `(Rd*Rc-1)*M`.
+Even retaining the original tank mass gives a lower bound of 1579.839346 kg
+departure fuel. Independent tank closure and the original kernel agree on
+1640.122457 kg, with the return tank increasing from 131.019400 to
+159.523978 kg. At the same cargo, launch rises from 10495.836457 to
+10918.009602 kg, both below 17400 kg; cost rises from 1741004657.100574 to
+1758684304.770426 USD. The physical 3.101752174-year clock is unchanged.
+Cargo value is a controlled 100 USD/kg; all examples remain unprofitable.
+
+Fourteen native books lack terminal-capture fuel under the adopted rate.
+Thirteen changed same-cargo books close the independent forward inventory;
+one 10550 kg capacity variant is refused by this kernel, without establishing
+global infeasibility for other payloads/architectures. Six controls retain
+exact original results: zero/disabled loss, zero return fuel, both-refused,
+and direct-entry Earth-return cases with Earth-supplied or ISRU fuel.
+
+`kleinhenz_paz_2021_lunar_water_isru_ptmss_srr` identifies liquefaction
+cryocoolers with an included radiator estimate and capacity-sized storage
+tanks (p15, subsystem rows checked by word coordinates and rendered page).
+Its system-level thermal exclusion is qualified by subsystem allowances
+(p3). This calculation grants perfect on-site production/storage and credits
+that equipment; it does not assert a physical production-capacity ceiling or
+charge another on-site cooler. Flown return-coast storage is the issue.
+
+Verdict: `rc-284`, account for later-burn fuel through the return cruise or
+explicitly size/credit a flown zero-boiloff system, then reclose tanks,
+feed, power, launch mass and costs. Native and diagnostic repeats match in
+types/values/float.hex and digests. Every returned book passes current
+launch, body, throughput, time and volume checks. No observed-trajectory,
+population/ranking or global-optimum claim is made. Twenty-seven blobs,
+including all 21 imported local modules, match fresh pinned metadata and
+four live main comparisons are identical.
+`extracted_data/r348_return_capture_boiloff.csv`.
+
+## R349 - NEXT-C PPU input-power inference and a conflicting output label (2026-11-03)
+
+`nextc_ppu_2020` p4 Table 2 labels the NEXT-C 7.4 kW cell
+"PPU Max Output Power (kW)" above 34.5 kg. The text's paired prototype
+point is "7 kW output at 94.8% efficiency" (p2; p10 Sec.III.D, 120 V and
+25 C). Table 3 p11 instead gives design output 7.0 kW and DART flight
+output 3.7 kW; p11 gives identical 34.5 kg prototype/flight mass.
+The two table columns and row labels were checked by word coordinates
+and rendered pages. The complete 14-page copy matches the previously
+removed file's 7393690 bytes and sha256
+450c737c6c340735234c4d8c5c72edf12d0892954aad6f905e5f08931ea691e1.
+
+At spacecost 860bef9902aa67fec705875cd52fdb8e6def159f,
+operations.py L384-408 retains 4.7 kg/kW input and presents 7.4 kW as
+input at full power. The R164 reasoning for `rc-103` did not acknowledge
+the survey's conflicting output label. At the paired prototype point,
+input inferred as 7/0.948 = 7.383966245 kW gives 4.672285714 kg/kW input,
+supporting the adopted 4.7 to rounding (+0.593%). The numerical centre
+is not contradicted; the unqualified source interpretation needs correction.
+
+Verdict: `rc-103` re-opened for citation/derivation qualification. The source
+does not resolve its 7.0/7.4 output discrepancy; an inferred nominal input
+point must be distinguished from a printed rating and the DART test range.
+Three local upstream blobs match fresh pinned metadata; four live main
+comparisons are identical. `extracted_data/r349_nextc_ppu_power_basis.csv`.

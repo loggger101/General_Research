@@ -940,3 +940,57 @@ fresh main comparisons are identical to the commits read.
 Verdict: `rc-278`, enforce reader-contract compatibility on cached as well
 as fresh release admission while retaining valid offline cache reuse.
 `extracted_data/r343_cached_release_contract.csv`.
+
+## R346 - An unconverged sizing sequence can be accepted after twelve passes (2026-11-03)
+
+`economicspace_unconverged_sizing_iteration_record_2026` reads economicspace
+54e30b0ae82be71c987f08feb95630502b7f54f0. The loop says "Solve the fixed point
+instead of assuming it away" (calc.py L6086-6093), but stops after twelve
+passes unless a nonviable cascade activates backoff (L6285-6288). Its final
+guard is `if damped_here and not converged: return None` (L6517-6518).
+An always-viable sequence can therefore be accepted with converged=False
+and damped_here=0 under default damp_sizing_loop=True.
+
+Twenty-three fixtures run original, exact repeat, an additional analytic
+closure, its exact repeat, and the same pair with excavation charged:
+138 complete `evaluate_asteroid` calls. The oracle is added only after an
+accepted, unconverged, never-backed-off raw solar branch. It uses the
+unchanged kernel's payload_cap_kg argument; all native candidates and the
+original objective remain available. Fifteen cases improve; eight controls
+retain identical winners. With excavation charged, thirteen still improve
+and ten controls retain exact winners; the changed energy makes two cases
+start backing off and converge without the extra candidate.
+
+At 1.4 AU, homogeneous magnetite, actual Falcon 9 reusable/kerolox and
+configured 1000 m/s reference burns each way, the selected raw solar branch
+exhausts twelve passes with converged=False and no backoff. It returns
+4,743.852061 kg cargo and 10,766.976256 kg launch against 17,400 kg allowance,
+at cost/revenue 283.017319. Body, throughput and volume are not binding.
+The selected refining route, 59-row LEO price input and 0.25-year stay
+remain unchanged. In this fixed-stay chemical/no-ISRU regime the settled
+mass book is independently affine in cargo m:
+
+`M_launch = 1.362572353161971 * (2681.2861765809853 + 1.1005111525434224*m)`.
+
+Its capacity root is 9,167.265480 kg; a point 1e-12 inside it makes the
+original kernel converge in two passes at 17,399.999999986 kg launch and
+cost/revenue 160.486179. The direct mass formula matches that returned
+launch mass. The native fixed-point derivative is -0.941079855, explaining
+the slowly decaying oscillation captured in all twelve original passes.
+The independent recurrence `m_n = m_star * [1 - (-c)^n]` also reproduces
+the native twelfth payload to floating-point precision.
+With the independent excavation omission corrected, native cargo is
+3,694.003409 kg at 9,239.484697 kg launch; a converged 9,090.488329 kg load
+still fits the same allowance and improves the configured ratio.
+
+Verdict: `rc-282`, use justified convergence or constrained closure before
+accepting the last sizing iterate. Damping-off, default-beneficiation-search,
+other ores, tank-off and longer-stay cases reproduce; naturally converged,
+body-limited, volume-limited, refinery-off and profit-objective controls
+retain their native winners. Every feasible result fits launch, resource,
+throughput, time and volume bounds. Both repeated pairs pass native
+type/value checks including float.hex and result digests. All examples
+remain unprofitable controlled compositions/reference burns; no observed
+trajectory, population effect or global optimum is claimed. Thirty-one
+source/input blobs match fresh pinned metadata and all four live main
+comparisons are identical. `extracted_data/r346_unconverged_sizing_iteration.csv`.

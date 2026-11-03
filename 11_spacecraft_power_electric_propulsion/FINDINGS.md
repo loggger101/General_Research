@@ -225,3 +225,54 @@ allowance. `rc-246`: carry a shared EP unit through the return burn, or size
 and account for separate stages and jettison events, then re-solve the coupled
 mass/power problem. No observed-catalog incidence or ranking effect was
 measured. `extracted_data/r316_electric_stage_return_mass.csv`.
+
+## R345 - The RTG ceiling rejects a trial before smaller cargo is searched (2026-11-03)
+
+`economicspace_rtg_payload_search_record_2026` reads economicspace
+54e30b0ae82be71c987f08feb95630502b7f54f0. The trial payload is bounded by
+launch capacity, body mass and throughput (calc.py L6350-6354). The RTG check
+calls its ceiling a "hard constraint, not a preference" (L6467-6474), then
+returns None if that trial exceeds it. The normal consumer prices solar
+alongside RTG (L8180-8200), but does not search smaller RTG cargo before
+discarding that architecture. The final power check remains valid; the
+intermediate oversized trial does not establish that every payload fails.
+
+Twenty-three controlled fixtures run original, exact repeat, bounded-RTG
+alternative, its exact repeat, and the original/alternative with excavation
+charged: 138 complete `evaluate_asteroid` calls. The unchanged original
+kernel prices the bounded cargo through its existing `payload_cap_kg`
+argument. Every original candidate remains available and the original
+selection objective chooses the winner. Fourteen cases improve, including
+four restored native refusals; nine controls retain identical winners.
+
+At 20 AU, homogeneous magnetite and configured 1000 m/s reference burns on
+each leg, the first RTG trial is 18,592.349374 kg at 88,500 W and returns None
+at L6474 under the 5,000 W ceiling. The actual Falcon 9 reusable/kerolox
+consumer instead selects solar: 142.256523 kg cargo, cost/revenue 8897.013496.
+The unchanged 59-row LEO input gives refined-route energy
+`(7 + 0.724*5)*1000 = 10620 Wh/kg`. With the 0.25-year stay floor, independent
+power-limited cargo is `5000*(0.25*365.25*24)/10620 = 1031.779661 kg`.
+An interior point 1e-12 below that bound converges in two passes at
+4999.999999995 W, 5,869.325797 kg launch mass against 17,400 kg capacity, and
+cost/revenue 3440.676043. Both prices and the selected refining route remain
+unchanged. This is a better configured ratio, not a profit improvement.
+
+The same fourteen gains persist when the separate raw-excavation gates are
+enabled in memory. The added 200 Wh/kg changes the example's energy to
+10820 Wh/kg and cargo to 1,012.707948 kg at the same power ceiling;
+cost/revenue is 3505.042630 versus 8925.496630 for that corrected native
+consumer. Two corrected native refusals are restored. Ilmenite, chromite,
+mixed ore, different ceilings and a longer stay supply further gains.
+Default beneficiation search and damping-disabled fixtures also reproduce.
+Closer-in solar choices, small-body and large-ceiling RTG choices, RTG-off,
+zero-refinery draw and a profit-objective fixture retain exact winners.
+
+Verdict: `rc-281`, couple payload/stay/plant sizing to the RTG ceiling before
+rejecting an architecture. Both repeats pass recursive native type/value
+checks, including float.hex, and result digests. Every feasible result fits
+launch, body-feed, time, volume and RTG limits. All examples are unprofitable
+synthetic compositions with reference burns, not observed trajectories or a
+population/ranking measurement. Thirty-one source/input blobs, including
+all 22 imported local modules, match fresh pinned GitHub metadata; all four
+live main comparisons are identical.
+`extracted_data/r345_rtg_power_constrained_payload.csv`.
