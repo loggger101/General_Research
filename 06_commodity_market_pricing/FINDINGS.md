@@ -217,3 +217,37 @@ stands at those commits. Row-by-row verdicts and locations are in
   hardware is 8.0% (gto), 10.3% (cislunar), 11.1% (geo) and 11.4% (mars_orbit).
 - **All other reference-table rows** match the checked commit in every cell but
   `pipeline_version`. The secondary homes of rc-185 to rc-190 are byte-identical.
+
+## R356 - Candidates applied upstream (2026-11-04)
+
+104 candidates applied and moved to `revision_candidates_closed.csv`; 35 stay
+`open`. Each row's `checked_against` is the merge commit below.
+
+- **AsteroidCatalog 99781b6** (PR #31, 0.13.0, data contract 1.11.0, tag
+  `v0.13.0`): 13 candidates.
+- **spacevalue 2f0b4f2** (PR #7, 0.3.0, data contract 1.18.0, tag `v0.3.0`): 21
+  candidates. rc-177's spacecost half is in spacecost 4c53b6a.
+- **spacecost 4c53b6a** (PR #40, 0.15.0, data contract 1.24.0, tag `v0.15.0`):
+  62 candidates. Its `CHANGELOG.md` 0.15.0 lists each with the value taken.
+  rc-155 took 321 s. Where a candidate offered a value or a note the note was
+  taken and the value did not move: rc-090, rc-107, rc-128, rc-129, rc-135,
+  rc-166, rc-186, rc-187, rc-230.
+- **economicspace d10f4e5** (PR #191, no release): rc-183, rc-233, rc-234,
+  rc-235, rc-236, rc-238, rc-240, rc-251, in prose, comments and printed labels.
+  No computed value moved.
+
+No catalog, price or quote release was cut and economicspace repinned nothing:
+its Stage 1 to 3 inputs stand at their earlier pins until it does.
+
+Still open, not applied:
+
+- rc-134: upstream now says the flat 0.15 is lunar-return class and optimistic
+  for faster returns; the entry-speed scaling is not applied.
+- rc-185, rc-254: move delivery chains `tests/test_delivery.py` pins for
+  economicspace.
+- rc-027: what the row covers is undecided.
+- rc-202: $12.2M is the geometric centre of the $10-15M band, so the premise
+  does not hold as written.
+- rc-261, rc-263, rc-279: move cargo floats, so need a calc release; rc-263 also
+  needs an eligibility decision.
+- The other 27 economicspace method candidates are unchanged.
