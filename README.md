@@ -107,6 +107,7 @@ tools/                                   build_registry.py, validate.py, tests/ 
 - **T3**: authoritative government or dataset publications with a DOI (USGS MCS, PDS releases, NEOWISE V2.0).
 - **T4**: grey sources that upstream rows cite (company documents, price pages, news, encyclopedias, textbooks,
   software and market-data APIs). T4 is grey, not necessarily weak; a source a better class of evidence should replace is flagged ("Flagging a source to replace").
+  T4 also holds the `*_record_2026` audit records: runs of pinned upstream code, built in this repo to back a revision candidate.
 
 ## Access classes
 

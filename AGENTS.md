@@ -12,6 +12,9 @@ python tools/build_registry.py   # regenerates sources.csv, fills manifest hashe
 python tools/validate.py         # must exit 0
 ```
 
+On Windows, if `python` exits 49 with "Python was not found", it is the Microsoft Store alias: run these
+with the full interpreter path.
+
 When a round re-checks revision candidates, also run `python tools/validate.py --upstream`
 (fetch the sibling clones first). When you change anything under `tools/`, run
 `python -m unittest discover -s tools/tests` and `python tools/tests/measure_coverage.py`:

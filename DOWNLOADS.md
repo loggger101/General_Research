@@ -6,7 +6,7 @@ Remove an item when it is done.
 
 ## How to use this list
 
-1. Save files to `C:\Users\Loggg\OneDrive\Documents\GitHub\General_Research_incoming\`, outside the repo (it is public
+1. Save files to `..\General_Research_incoming\`, the folder beside this repo and outside it (it is public
    and most of these may not be redistributed). Never into `<domain>/full_texts/`.
 2. Name each file `<id>.pdf` (or `.html`/`.png` where noted), so the next round matches it to its row.
 3. Then ask Claude to "extract the files in General_Research_incoming": each is read in full into
