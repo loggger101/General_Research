@@ -76,7 +76,7 @@ _Backings: per-spectral-type density and PGM factors in AsteroidCatalog `referen
 
 ## Domain 2 — Composition → commodity value mapping
 
-_Backings: AsteroidCatalog material fractions and economicspace `mineral_value.py` mineralogy and destination pricing._
+_Backings: AsteroidCatalog material fractions and spacevalue `catalog.py` mineralogy and destination pricing._
 
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
@@ -102,10 +102,10 @@ _Backings: AsteroidCatalog material fractions and economicspace `mineral_value.p
 | jarosewich_1990_meteorite_chemical_analyses | T1 | Chemical analyses of meteorites: A compilation of stony and iron meteorite analyses — Meteoritics 25:323-337 | read, not hosted | taxonomy_composition.csv S-complex and Q metal_fraction (H/L/LL chondrite Fe-Ni-Co metal) |
 | kargel_1994_metalliferous_asteroids_precious_metals | T1 | Metalliferous asteroids as potential sources of precious metals — Journal of Geophysical Research: Planets 99(E10):21129-21141 | registered, not pulled | AsteroidCatalog PGM_ENRICHMENT_BY_TYPE caveat (chondritic metal carries more precious metal than the 1.0 baseline assumes) |
 |  fornasier_2010_m_type_spectroscopic_survey | T1 | Spectroscopic survey of M-type asteroids — Icarus 210:655-673 | verified live, not hosted (arXiv:1007.2582v1 read in full R121; default non-exclusive licence bars redistribution) | taxonomy_composition.csv Xk/Xe swap and the M-row mapping (Tholen M-types that are Bus-DeMeo Xk) |
-| lodders_2003_solar_abundances_condensation_temperatures | T1 | Solar System Abundances and Condensation Temperatures of the Elements — The Astrophysical Journal 591:1220-1247 | read, not hosted | economicspace mineral_value.py nickel-iron yields: trace PGM abundances in the iron-meteorite analogue |
-|  wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals | T3 | Geochemistry of the platinum metals (USGS Bulletin 1214-A) — U.S. Geological Survey Bulletin 1214-A | full text hosted (USGS Bulletin 1214-A chapter, public domain; 1,809,279 B) | economicspace mineral_value.py nickel-iron yields: siderite total-PGM concentration |
-| nichiporuk_brown_1965_pt_pd_iron_meteorites | T1 | The distribution of platinum and palladium metals in iron meteorites and in the metal phase of ordinary chondrites — Journal of Geophysical Research 70:459-470 | registered, not pulled | economicspace mineral_value.py nickel-iron yields: siderite total-PGM concentration |
-| scott_wasson_1975_classification_properties_iron_meteorites | T1 | Classification and properties of iron meteorites — Reviews of Geophysics and Space Physics 13(4):527-546 (1975) | registered, not pulled | economicspace mineral_value.py nickel-iron yields: order-of-magnitude mean trace metals (Ga/Ge/Mo/W/Re) over the common iron meteorite groups |
+| lodders_2003_solar_abundances_condensation_temperatures | T1 | Solar System Abundances and Condensation Temperatures of the Elements — The Astrophysical Journal 591:1220-1247 | read, not hosted | spacevalue catalog.py nickel-iron yields: trace PGM abundances in the iron-meteorite analogue |
+|  wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals | T3 | Geochemistry of the platinum metals (USGS Bulletin 1214-A) — U.S. Geological Survey Bulletin 1214-A | full text hosted (USGS Bulletin 1214-A chapter, public domain; 1,809,279 B) | spacevalue catalog.py nickel-iron yields: siderite total-PGM concentration |
+| nichiporuk_brown_1965_pt_pd_iron_meteorites | T1 | The distribution of platinum and palladium metals in iron meteorites and in the metal phase of ordinary chondrites — Journal of Geophysical Research 70:459-470 | registered, not pulled | spacevalue catalog.py nickel-iron yields: siderite total-PGM concentration |
+| scott_wasson_1975_classification_properties_iron_meteorites | T1 | Classification and properties of iron meteorites — Reviews of Geophysics and Space Physics 13(4):527-546 (1975) | registered, not pulled | spacevalue catalog.py nickel-iron yields: order-of-magnitude mean trace metals (Ga/Ge/Mo/W/Re) over the common iron meteorite groups |
 | dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites | T1 | Analysis of ordinary chondrites using powder X-ray diffraction: 1. Modal mineral abundances in L and LL chondrites — Meteoritics & Planetary Science (MAPS 45, 123 per upstream citation) | registered, not pulled | AsteroidCatalog comp_phases_detailed: S/Sq/Q silicate split olivine ~0.58 / orthopyroxene ~0.24 / pyroxene ~0.06 / plagioclase ~0.12 + troilite and chromite body fractions |
 | king_schofield_2015_ci_modal_mineralogy_xrd | T1 | Modal mineralogy of CI and CI-like chondrites by X-ray diffraction — Geochimica et Cosmochimica Acta 165:148-160 (2015) | registered, not pulled | AsteroidCatalog comp_phases_detailed: CI (C/B/Cb/F) phase split from Orgueil and Ivuna XRD — phyllosilicate ~81-84 wt%, magnetite, sulfide, carbonate |
 | howard_alexander_2015_hydrous_meteorite_phyllosilicate_classification | T1 | Classification of hydrous meteorites (CR, CM and C2 ungrouped) by phyllosilicate fraction — Geochimica et Cosmochimica Acta 149:206-222 (2015) | registered, not pulled | AsteroidCatalog comp_phases_detailed: CM (Cg/Ch/G) phase split — phyllosilicate 70-90 wt%, olivine + pyroxene most of the rest |
@@ -121,7 +121,7 @@ _Backings: AsteroidCatalog material fractions and economicspace `mineral_value.p
 | lebofsky_et_al_1990_low_albedo_3um_photometry | T1 | Lebofsky et al. 1990, 3-um photometry of low-albedo asteroids (Icarus 83) | registered, not pulled | hydrated-silicate minerals listed for low-albedo rows (unread) |
 | schubert_2025_economical_extraction_platinum_main_belt_asteroids | T1 | Schubert 2025, Economical Extraction of Platinum from Main Belt Asteroids (Adv. Space Res.) | registered, not pulled | context-only: PGM extraction economics for main-belt asteroids (unread) |
 | trigo_rodriguez_2025_metal_and_rare_earth_mining_potential_undifferentiated_asteroids_carbonaceous_chondrites | T1 | Trigo-Rodriguez et al. 2025, metal and REE mining potential of carbonaceous chondrites (MNRAS; arXiv:2510.27373) | read, not hosted | measured CI/CM/CR/CO/CV/CK chondrite bulk composition (Fe 25-33 wt%, Ni 2.8-15 mg/g); no PGM columns |
-| lodders_bergemann_palme_2025_solar_system_abundances_ssreview | T1 | Solar System Elemental Abundances from the Solar Photosphere and CI-Chondrites — Space Science Reviews 221(2) (accepted manuscript) | read, not hosted | economicspace mineral_value.py meteorite-composition baseline: updated CI-chondrite abundances incl. PGM/volatile rows |
+| lodders_bergemann_palme_2025_solar_system_abundances_ssreview | T1 | Solar System Elemental Abundances from the Solar Photosphere and CI-Chondrites — Space Science Reviews 221(2) (accepted manuscript) | read, not hosted | spacevalue catalog.py meteorite-composition baseline: updated CI-chondrite abundances incl. PGM/volatile rows |
 | howard_2010_cv3_modal_mineralogy_psd_xrd | T1 | Howard et al. 2010, modal mineralogy of CV3 chondrites by PSD-XRD (GCA 74:5084) | registered, not pulled | CV3 Fe,Ni metal 2-2.2 vol% reduced, 0.2-1.1 vol% oxidized: B and F metal_fraction (rc-076) |
 | howard_2011_cm_modal_mineralogy_psd_xrd_part2 | T1 | Howard et al. 2011, modal mineralogy of CM chondrites by PSD-XRD, Part 2 (GCA 75:2735) | registered, not pulled | no Fe,Ni metal among CM phases above 1 vol%: C and Cb metal_fraction (rc-076) |
 | wong_2024_jwst_lucy_trojans_oh_organics_co2 | T1 | Wong et al. 2024, JWST NIRSpec of the Lucy Trojan targets: OH, aliphatic organics, CO2 (PSJ 5:87) | read, not hosted | D and P ice_fraction and carbon_fraction: no surface ice, ice depleted to ~10 m, organics deeper on red (D-like) Trojans (rc-013, rc-075) |
@@ -399,13 +399,13 @@ _Backings: economicspace `mineral_value_catalog.csv` `ref_price_usd_per_kg` for 
 | worldbank_cmo_pink_sheet | T2 | World Bank Commodity Markets Group, "Commodity Price Data (The Pink Sheet)" — monthly nominal-USD prices for 71 commodities, 1960M01→present (xlsx updated 2026-09-02, latest month 2026M08) + Sept-2026 CMO report PDF | full text hosted | commodity prices (monthly, 71 series): upstream's 2026-05-29 prices are mixed-date (silver, copper, platinum stale) |
 | lbma_precious_metals_fixings | T3 | LBMA precious-metals fixings — daily benchmark $/troy oz for gold/silver (1968->) and Pt/Pd AM+PM (1990->), JSON pulled live 2026-09-23, current to 2026-09-22 | open service | daily precious-metal fixings: on 2026-05-29 platinum -26.8% and silver -61.0% vs upstream; gold, palladium close |
 | jm_pgm_market_report_2026 | T2 | Johnson Matthey "PGM market report May 2026" — base-price narrative + full supply/demand tables (oz AND tonnes, 2021-2026) for Pt/Pd/Rh/Ir/Ru; free public download pulled live this round | read, not hosted | minor PGM prices and production: iridium -37.8% and ruthenium -71.6% vs upstream; rhodium production 17.6 t (upstream +30.7%); no osmium price |
-| usgs_mineral_commodity_summaries_2026 | T3 | Mineral Commodity Summaries 2026 — U.S. Geological Survey (annual) | full text hosted | mineral_value.py curated fallback prices for metals yfinance lacks, and every terrestrial market depth in ANNUAL_WORLD_PRODUCTION_KG |
-| lme_official_reference_prices | T3 | London Metal Exchange official and reference prices (nickel 3-month, cobalt cash) — London Metal Exchange (exchange data) | registered, not pulled | mineral_value.py ref_price_usd_per_kg for nickel and cobalt (and the other LME base metals) |
+| usgs_mineral_commodity_summaries_2026 | T3 | Mineral Commodity Summaries 2026 — U.S. Geological Survey (annual) | full text hosted | spacevalue catalog.py curated fallback prices for metals yfinance lacks, and every terrestrial market depth in ANNUAL_WORLD_PRODUCTION_KG |
+| lme_official_reference_prices | T3 | London Metal Exchange official and reference prices (nickel 3-month, cobalt cash) — London Metal Exchange (exchange data) | registered, not pulled | spacevalue catalog.py ref_price_usd_per_kg for nickel and cobalt (and the other LME base metals) |
 | cme_comex_nymex_futures | T3 | CME COMEX/NYMEX futures; NG contract rules read | read, not hosted | pricing proxies; NG heating basis (rc-275) |
-| yahoo_finance_yfinance | T4 | Yahoo Finance quotes via the yfinance Python package — open-source software / market-data service (Yahoo terms apply) | registered, not pulled | mineral_value.py live futures prices; spacecost optional live propellant price proxies |
+| yahoo_finance_yfinance | T4 | Yahoo Finance quotes via the yfinance Python package — open-source software / market-data service (Yahoo terms apply) | registered, not pulled | spacevalue catalog.py live futures prices; spacecost optional live propellant price proxies |
 | metals_dev_api | T4 | metals.dev metals price API | read, not hosted | rc-267: provider response timestamp contract |
-| reuters_2026_gold_analyst_consensus | T4 | Reuters precious-metals analyst consensus (May 2026; article not named upstream) — Reuters (news agency) | registered, not pulled | mineral_value.py gold ref_price_usd_per_kg context |
-| usgs_mineral_commodity_summaries_2025 | T3 | Mineral Commodity Summaries 2025 — U.S. Geological Survey (annual; v1.2, March-2025) | full text hosted | mineral_value.py ANNUAL_WORLD_PRODUCTION_KG v1.11.0 rows (sulfur, chromium, titanium, gallium, germanium, rhenium, tungsten, molybdenum, ammonia) and the order of the 2024 prices behind them; rc-055 opened on the ammonia cell |
+| reuters_2026_gold_analyst_consensus | T4 | Reuters precious-metals analyst consensus (May 2026; article not named upstream) — Reuters (news agency) | registered, not pulled | spacevalue catalog.py gold ref_price_usd_per_kg context |
+| usgs_mineral_commodity_summaries_2025 | T3 | Mineral Commodity Summaries 2025 — U.S. Geological Survey (annual; v1.2, March-2025) | full text hosted | spacevalue catalog.py ANNUAL_WORLD_PRODUCTION_KG v1.11.0 rows (sulfur, chromium, titanium, gallium, germanium, rhenium, tungsten, molybdenum, ammonia) and the order of the 2024 prices behind them; rc-055 opened on the ammonia cell |
 | ipa_sfa_2026_osmium_pgm_factsheet | T2 | IPA / SFA (Oxford) 2026 Osmium PGM factsheet (16 pp) | read, not hosted | the osmium price row: no benchmark exists; $300-400/oz since the 2000s (upstream $13k/kg = $404/oz); output hundreds of kg/yr |
 | spacevalue_metals_dev_timestamp_record_2026 | T4 | Metals.Dev quote-date mapping | read, not hosted | rc-267: provider time replaced by retrieval day |
 
@@ -592,7 +592,7 @@ _Backings: spacecost `propellants.csv` `ref_cost_usd_per_kg` and the component p
 
 ## Domain 15 — In-space demand & market absorption
 
-_Backings: economicspace `mineral_value.py` `IN_SPACE_UTILITY` (market side), `IN_SPACE_ANNUAL_DEMAND_KG`, `_DEMAND_SHARE_BY_CLASS`; `calc.py` `market_model`, `demand_elasticity`, `surplus_price_fraction`. Also relevant: `hein2020` (d22), `usgs_mineral_commodity_summaries_2026` (d06), `dra5_2009_human_exploration_of_mars` (d03)._
+_Backings: spacevalue `catalog.py` `IN_SPACE_UTILITY` (market side), `IN_SPACE_ANNUAL_DEMAND_KG`, `_DEMAND_SHARE_BY_CLASS`; `calc.py` `market_model`, `demand_elasticity`, `surplus_price_fraction`. Also relevant: `hein2020` (d22), `usgs_mineral_commodity_summaries_2026` (d06), `dra5_2009_human_exploration_of_mars` (d03)._
 
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
@@ -704,7 +704,7 @@ _Backings: `operational_costs.csv` FAA Part 450 licensing rows, the MPL behind t
 
 ## Domain 19 — Asteroid excavation throughput & beneficiation
 
-_Backings: `calc.py` mining and beneficiation fields (mining rate, rig mass, duration, recovery, concentration cap); `operational_costs.csv` drilling and beneficiation energy and plant throughput; `mineral_value.py` `IN_SPACE_PROCESSING_KWH_PER_KG`. Also relevant: `metzger_zacny_2020` (d05), `hein2020` (d22)._
+_Backings: `calc.py` mining and beneficiation fields (mining rate, rig mass, duration, recovery, concentration cap); `operational_costs.csv` drilling and beneficiation energy and plant throughput; spacevalue `catalog.py` `IN_SPACE_PROCESSING_KWH_PER_KG`. Also relevant: `metzger_zacny_2020` (d05), `hein2020` (d22)._
 
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
@@ -832,7 +832,7 @@ _Backings: `calc.py` aero-assisted return model (`use_aerocapture_return`, `aero
 
 ## Domain 25 — Net smelter return: refining charges & payable terms
 
-_Backings: `calc.py` `_mineral_implied_value` (100% of contained metal at refined prices) and the refined-metal basis of element prices. Also relevant: `nat_dms2023` (d02), `jm_pgm_market_report_2026` (d06), `lbma_precious_metals_fixings` (d06)._
+_Backings: spacevalue `cargo.py` `_mineral_implied_value` (100% of contained metal at refined prices) and the refined-metal basis of element prices. Also relevant: `nat_dms2023` (d02), `jm_pgm_market_report_2026` (d06), `lbma_precious_metals_fixings` (d06)._
 
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
@@ -970,7 +970,7 @@ Registered sources upstream still cites that a better class of evidence should r
 | satnews_2026_artemis_restructuring | spacecost CITATIONS.md: SLS Block 1B and the Exploration Upper Stage cancelled | news: a press report of a NASA decision | NASA's own budget or programme document (nasa_fy2027_budget_estimates) | R240 |
 | spacenews_launch_reporting_2024_2026 | spacecost launch_vehicles.csv Atlas V 551: government missions add $30-80M | news: articles upstream does not name | a NASA OIG or GAO launch-services audit | R240 |
 | the_week_2026_isro_pslv_reporting | spacecost CITATIONS.md: LVM3, PSLV, GSLV and SSLV pricing; the PSLV-C61 and C62 failures | news: a magazine report this machine cannot open | NSIL's price statements and ISRO's failure-analysis releases | R240 |
-| reuters_2026_gold_analyst_consensus | economicspace mineral_value.py gold note: $4,732/oz (May 2026) | news: an analyst consensus in an unnamed article | the LBMA gold price (lbma_precious_metals_fixings) | R240 |
+| reuters_2026_gold_analyst_consensus | spacevalue catalog.py gold note: $4,732/oz (May 2026) | news: an analyst consensus in an unnamed article | the LBMA gold price (lbma_precious_metals_fixings) | R240 |
 | aqua_calc_lox_bulk_price | spacecost propellants.py LOX component price ~$0.20/kg | price-page: a unit-conversion site with no stated basis | DLA's FY2025 standard price, $0.37/kg (dla_energy_aerospace_standard_prices_fy2025) | R240 |
 | haltermann_solutions_rp1 | spacecost propellants.py RP-1 component price $2-3/kg | price-page: a quote-request page that shows no price | a published RP-1 price: a DLA standard price or a government fuel contract | R240 |
 | spaceinsider_rp1_price | spacecost propellants.py RP-1 $2-3/kg comment and the hydrazine commercial price ~$75.8/kg | news: a blog price table without sources | DLA standard prices (dla_energy_aerospace_standard_prices_fy2025) or a supplier's list | R240 |

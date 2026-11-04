@@ -16,6 +16,8 @@ Payload-gain formula e^((Δv−<Δv>)/v_ex) with v_ex = 4.4 km/s (Isp ≈ 449 s)
 
 **ieva2014** [T1] (A&A 569:A59; arXiv:1406.5027): NEOSURFACE survey of 13 objects (all Δv < 10.5 km/s; 11 S-complex, 2 C-complex), with no median or mean Δv. The average-NEA note ("Median NEA Δv per low-Δv NEA survey (arXiv:1406.5027)") should cite elvis2011 and say peak, not median. R71 files: `r71_elvis2011_key_numbers.csv`, `r71_elvis2011_table1_lowest_dv_neos.csv`, `r71_ieva2014_key_numbers.csv`, `r71_ieva2014_table3_mineralogy.csv`, `r71_ieva2014_tables1_2_low_dv_nea_targets.csv`.
 
+Key numbers for both: `extracted_data/delta_v_segments_key_numbers.csv`.
+
 ## R3 - shoemaker_helin_1978 [T2, hosted] (2026-09-18)
 
 NASA CP-2053 (NTRS 19780021079), the root of Asterank's `dv`: rendezvous impulse ~1 km/s for low-Δv Amors/Apollos; sample-return round trip 2–3 km/s to easy targets vs 5–6+ km/s for typical main-belt objects; dV = 30F + 0.5 km/s (Eq. 11 p4, Fig. 1 p5; corrected in R70 from "3.0F"). The outbound leg dominates the 6500 m/s row; the belt is 2-3x harder than NEAs. `extracted_data/shoemaker_helin_delta_v_key_numbers.csv`.
@@ -156,6 +158,8 @@ No candidate. Dawn flight records remain unreachable (R148 below). `extracted_da
 
 `extracted_data/r103_sp125_content_check.csv`.
 
+Extracted data: `extracted_data/r103_std_5019a_copv_key_numbers.csv`.
+
 ## R115 - DRA 5.0 vs five more Mars rows (rc-070 to rc-074)
 
 - 1-sol orbit → Earth 900 m/s vs DRA's constant TEI 1.563 km/s (p36): rc-070.
@@ -281,6 +285,8 @@ The row LEO -> hard NEA at spacecost@860bef9 stores a single-point value of 8500
 
 The exact NEA p90 needed for a re-anchor value was not read: ssoBFT is served only from ssp.imcce.fr, which was unavailable on 2026-10-28. No new source rows were required: berthier_2023_ssodnet is already registered hosted, and the R42 extraction carries the statistics used here.
 
+rc-230: restate the payload_note to what ssoBFT supports, or raise the value toward the recomputed NEA 90th percentile. Text in `revision_candidates.csv`.
+
 ## R288 - Asteroid station-keeping row cites a document class that does not exist in the record (2026-10-28)
 
 The row Asteroid station-keeping at spacecost@860bef9 stores dv_m_per_s = 200 with duration_yr = 0.5, and its note reads verbatim and count==1 in the committed blob: "Proximity ops, sample retrieval — OSIRIS-REx station-keeping budget." No document is named - uncited under the self-citation contract standing rule (R282). The attribution was then tested against the institutional record. NTRS full-corpus searches for Bennu station keeping and for OSIRIS-REx delta-V requirements both return zero records (probed 2026-10-28); the twenty-three proximity-operations hits are navigation-performance papers, none of which publishes a station-keeping budget figure. A live sweep of CITATIONS.md confirms no entry covers the leg: OSIRIS-REx appears only for mission cost (PEBD) and Bennu physical properties (Lauretta et al. 2019), while station hits are ISS berthing and geostationary-eclipse context.
@@ -288,6 +294,8 @@ The row Asteroid station-keeping at spacecost@860bef9 stores dv_m_per_s = 200 wi
 The nearest institutional document to what the note gestures at is Antreasian et al., OSIRIS-REx Proximity Operations and Navigation Performance at (101955) Bennu (NTRS 20210025471, conference paper, PUBLIC_USE_PERMITTED), now registered as a witness read via the NTRS machine-extracted fulltext endpoint. It reports momentum-desaturation imparted delta-V that "could be around 0.5 mm/sec" at the three-day cadence and states that from start of Orbital A onward the imparted values remain small - maintenance-class delta-V near Bennu is institutionally recorded per event in millimetres per second, with no published aggregate budget line for station-keeping anywhere in the corpus. That neither confirms nor refutes 200 m/s outright; it shows the cited artifact does not exist.
 
 rc-231 [citation] proposes naming a real document or restating the note as self-declared engineering estimate per documented-by-design convention (the six storage_systems ESTIMATE rows precedent). No value change forced. The duration_yr = 0.5 cell is scenario-parameter material, not an attribution claim - left untouched.
+
+Extracted data: `extracted_data/r288_osirisrex_proxops_dv_key_numbers.csv`.
 
 ## R349 - Dawn mission scope and the NSTAR/NEXT distinction (2026-11-03)
 

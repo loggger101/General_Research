@@ -19,6 +19,8 @@ Key numbers (quotes in `extracted_data/r130_debris_environment_key_numbers.csv`)
 
 No upstream cell carries an absolute debris figure yet, so no candidate.
 
+Also read this round: `vega_users_manual_issue4_apr2014`, in `04_launch_economics/extracted_data/r130_vega_um_key_numbers.csv`.
+
 ## R131 - Conjunction-assessment methodology: four NTRS papers hosted (2026-10-07)
 
 - **bollenbacher_guptill_1999_launch_collision_probability** (NASA/TP-1999-208852): launch-vehicle collision probability against the ~10,000 tracked objects, used to avoid launching when it is unacceptably high.

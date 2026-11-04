@@ -1,6 +1,6 @@
 # Domain 30 — Volatiles, process chemicals & catalyst metals in space
 
-Backings: economicspace `modules/mineral_value.py` `IN_SPACE_UTILITY` and `IN_SPACE_UTILITY_BY_DESTINATION`, the rows in `_COMMODITY_CLASS` classes `"propellant"` (water, ammonia), `"chemical"` (carbon, organics, carbon dioxide, carbonates, sulfur, phosphorus, oldhamite, merrillite, chlorapatite) and `"trace"` (the PGMs and their ores, gold, silver, gallium, germanium, rhenium, tungsten, molybdenum), and the comment that records why PGMs get no catalyst utility at the surface destinations: what each volatile, process chemical and trace metal is used for in space and how well it replaces the launched alternative.
+Backings: spacevalue `spacevalue/catalog.py` `IN_SPACE_UTILITY` and `IN_SPACE_UTILITY_BY_DESTINATION`, the rows in `_COMMODITY_CLASS` classes `"propellant"` (water, ammonia), `"chemical"` (carbon, organics, carbon dioxide, carbonates, sulfur, phosphorus, oldhamite, merrillite, chlorapatite) and `"trace"` (the PGMs and their ores, gold, silver, gallium, germanium, rhenium, tungsten, molybdenum), and the comment that records why PGMs get no catalyst utility at the surface destinations: what each volatile, process chemical and trace metal is used for in space and how well it replaces the launched alternative.
 
 Created in Round 161 (2026-10-13). Blocks are appended one per round, newest last.
 

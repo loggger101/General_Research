@@ -852,6 +852,7 @@ def check_references(rep, ctx):
     rep.start('file references')
     files = set(ctx['files'])
     sources = [(f'{d}/FINDINGS.md', d) for d in ctx['domains']] + [(n, None) for n in REF_ROOT_FILES]
+    findings = []
     for name, domain in sources:
         if name not in files:
             continue  # check_layout reports a missing FINDINGS.md or required root file; DOWNLOADS.md is optional
@@ -860,6 +861,8 @@ def check_references(rep, ctx):
         except DataError as e:
             rep.error(e.code, f'{e} — its file references were not checked')
             continue
+        if domain is not None:
+            findings.append(text)
         for start, end, scope_domain in reference_scopes(name, text, domain, ctx['domains']):
             check_text_references(rep, files, text, start, end, scope_domain,
                                   lambda pos: f'{name} line {text.count(chr(10), 0, pos) + 1}')
@@ -875,6 +878,17 @@ def check_references(rep, ctx):
             check_text_references(rep, files, c[col], 0, len(c[col]), domain,
                                   lambda pos: f'{c["file"]} {c["id"]} {col}')
     rep.expect('file references')
+    # AGENTS.md: a FINDINGS block gives its extracted-data file. 53 files had come to be named by no block, 33 of them
+    # by nothing at all. A FINDINGS.md that is missing or unreadable (reported above) may name any file, so the check
+    # needs them all. A shared file may be named from another domain's block.
+    if len(findings) == len(ctx['domains']):
+        written = '\n'.join(findings)
+        for name in sorted(files):
+            parts = name.split('/')
+            if (len(parts) == 3 and parts[1] == 'extracted_data' and parts[0] in ctx['domains']
+                    and any(parts[2].endswith(s) for s in EXTRACTED_SUFFIXES) and parts[2] not in written):
+                rep.error('extracted-unnamed', f'{name}: no FINDINGS.md names this file, so nothing says what its '
+                                               f'numbers are for; name it in the block of the round that wrote it')
 
 
 # ---------------------------------------------------------------------------------------------- candidates

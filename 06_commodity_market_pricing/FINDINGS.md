@@ -1,6 +1,6 @@
 # Domain 6 — Commodity / mineral market pricing (value side of the pipeline)
 
-Backings: economicspace `modules/mineral_value.py` `ref_price_usd_per_kg` for every tradable element and mineral (multiplied by per-asteroid yields into every row of `profitability_catalog.csv`) and `ANNUAL_WORLD_PRODUCTION_KG`. Until R39 the prices carried only "USGS/LME/mineralogy reference", with no registered source.
+Backings: spacevalue `spacevalue/catalog.py` `ref_price_usd_per_kg` for every tradable element and mineral (multiplied by per-asteroid yields into every row of `profitability_catalog.csv`) and `ANNUAL_WORLD_PRODUCTION_KG`. Until R39 the prices carried only "USGS/LME/mineralogy reference", with no registered source.
 
 ## R39 - World Bank Pink Sheet
 
@@ -88,6 +88,8 @@ Against economicspace@29a0309 (v1.11.0 elements stamped 2025-01-31, citing MCS 2
 ## R164 / R165 - Candidates (2026-10-14)
 
 rc-125 (osmium market depth), rc-126 (cite the factsheet for the osmium price), rc-141 (palladium to LBMA 2026-05-29 $43,853.6/kg), rc-142 (gold to $145,506/kg), rc-144, rc-145, rc-146 (cite USGS for carbonates, plagioclase, iron ore), rc-147, rc-148, rc-149, rc-150, rc-151, rc-152, rc-153 (re-pin gold, nickel, palladium, platinum, copper, chromium and titanium production to MCS 2026), rc-154 (cite MCS 2026 pig iron). Texts in `revision_candidates.csv` (open) and `revision_candidates_closed.csv`.
+
+Extracted data: `extracted_data/r165_price_cells_vs_registered_sources.csv`.
 
 ## R182 - Osmium production and price in full (2026-10-16)
 

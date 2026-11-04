@@ -68,6 +68,8 @@ just_2019's indexed table (RASSOR bucket drum 0.761 Wh/kg excluding transport; p
 
 The 80 W/W median equals NASA's threshold and the tested 91.6 sits in the 50-150 band; the worked example (20 W leak → ~100 kg, ~1.6 kW) matches 5.5 kg/W × 91.6 W/W (≈108 kg, ≈1.83 kW). The 60 W/W goal is unmet.
 
+Extracted data: `extracted_data/r44_zbo_cryocooler_key_numbers.csv`.
+
 ## R47 - damodaran_cost_of_capital_by_industry (moved to d17) (2026-09-23)
 
 January 2026 table (96 industries; CoC = wE×CoE + wD×AT-CoD within ±0.05 pp on every row):

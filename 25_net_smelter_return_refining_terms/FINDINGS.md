@@ -1,6 +1,6 @@
 # Domain 25 — Net smelter return: refining charges & payable terms
 
-Backings: economicspace `modules/calc.py` `_mineral_implied_value` (mirroring `modules/mineral_value.py` `mineral_to_element_value`), which values every yield-priced phase as the sum of its element yields times the element prices, and the refined-metal basis of those prices (`iron` "Priced as refined steel scrap").
+Backings: spacevalue `spacevalue/cargo.py` `_mineral_implied_value` (mirroring `spacevalue/catalog.py` `mineral_to_element_value`), which values every yield-priced phase as the sum of its element yields times the element prices, and the refined-metal basis of those prices (`iron` "Priced as refined steel scrap").
 
 Created in Round 76 (2026-09-27). Blocks are appended one per round, newest last.
 
@@ -33,6 +33,8 @@ Read at economicspace@e3b3897.
 - `gertsch_1993_asteroid_mining_jsc` (JSC; context only): "The bag could also serve as a retort for carbonyl or other types of processing during return."
 
 `extracted_data/r81_terrestrial_product_prices.csv`. Open: (1) payable terms for asteroid material itself; (2) osmium price; (3) Ni/Co recovery from iron-rich feeds.
+
+World production from `usgs_mineral_commodity_summaries_2026`: `06_commodity_market_pricing/extracted_data/r81_mcs2026_world_production_key_numbers.csv`.
 
 ## R91 - Iron-rich-feed recoveries (2026-10-01)
 

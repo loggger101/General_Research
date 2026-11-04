@@ -92,6 +92,7 @@ rc-106: cite PEBD for the Perseverance programme figure and mark the $150M auton
 
 The owner replace-flag for satnews_2026_artemis_restructuring asked for a NASA document instead of press reports; the hosted FY2027 budget estimates supplies one. Its SLS program section and its EXPLANATION OF MAJOR CHANGES both print "Instead of futher developing the Exploration Upper Stage (EUS), which faced significant cost overruns and delays" [appears twice; typo as printed], the Major Projects table lists SLS Block 1B under the footnote "Funding is not proposed for these projects in the FY 2027 budget", and the same passage states "NASA also no longer needing the Mobile Launcher 2". rc-190 cites this document as institutional backing for the cancelled status upstream carries with news-only attribution; announcement timing may remain attributed to SpaceNews/SatNews. No values move.
 
+Extracted data: `extracted_data/r246_sls_block1b_cancellation_key_numbers.csv`.
 
 ## R319 - Searched programme N can fall below its configured minimum (2026-11-01)
 

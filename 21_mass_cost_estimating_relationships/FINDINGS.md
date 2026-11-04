@@ -87,6 +87,8 @@ Evidence state: hosted IG-18-016 physical p.18 spacecraft comparison table print
 
 Standing note for future rounds: audit storage_systems.csv rows against the self-citation contract in CITATIONS.md - a row whose notes name no document is uncited regardless of status token. Six sibling rows carry ESTIMATE declarations (COPV burst performance factor; Multi-layer insulation passive; Zero-boil-off cryocooler 20 K; Volatile cargo containment water ice; Regenerative fuel cell; Flywheel energy storage), and the CITATIONS.md volatile-containment line shows the engineering-estimate route is an accepted upstream pattern (which is an engineering estimate, count==1). Sister row under open rc-184 adds INCREMENTAL to this 0.15 ore-restraint fraction per operations.py.
 
+Extracted data: `extracted_data/r282_bulk_ore_restraint_key_numbers.csv`.
+
 ## R318 - Rig procurement is shared but its launch manifest is repeated (2026-11-01)
 
 Source `economicspace_stationary_rig_repeat_launch_record_2026`:

@@ -50,7 +50,7 @@ The table tracks medians for S/X/Cgh/D (±0.2) but sits ~0.7-1 g/cm3 low for B, 
 ### Other Round-1 sources
 
 - **dziadura2023** [T1] (A&A 680, A77; CC BY): Yarkovsky drift with Gaia DR3 for NEAs; read in R73.
-- **lodders_palme2009** [T2] (72nd MetSoc abstract; un-hosted 2026-09-26): CI bulk-rock ppm Ru 0.686, Rh 0.139, Pd 0.558, Ag 0.201, Os 0.493, Ir 0.469, Pt 0.947, Au 0.146; PGM total ≈3.29 ppm. Divided by a metal fraction of ~0.09-0.15 it gives ~22-37 ppm in metal, the chain behind `catalog.py`'s "~37 ppm total PGM+Au in nickel-iron alloy". Per-type enrichment factors remain uncited here (see d02).
+- **lodders_palme2009** [T2] (72nd MetSoc abstract; un-hosted 2026-09-26): CI bulk-rock ppm Ru 0.686, Rh 0.139, Pd 0.558, Ag 0.201, Os 0.493, Ir 0.469, Pt 0.947, Au 0.146; PGM total ≈3.29 ppm. Divided by a metal fraction of ~0.09-0.15 it gives ~22-37 ppm in metal, the chain behind `catalog.py`'s "~37 ppm total PGM+Au in nickel-iron alloy". Per-type enrichment factors remain uncited here (see d02). `extracted_data/lodders_palme2009_ci_pgm.csv`.
 - **epsc2022_context** [T2] (EPSC-2022): read in R73.
 
 ## R3 - harris_dabramo_2021 [T1] (2026-09-18)
@@ -179,6 +179,8 @@ The Xe note's 3.55 g/cm3 enstatite-chondrite bulk density vs Carry Table 2 EH 3.
 
 rc-140 (method): build the PGM table taxonomy.py proposes: CI 3.29 ppm / metal fraction gives 54.8 ppm for S-complex and Q (factor 1.48 vs 37 ppm), 41.1 for K (1.11), 65.8 for L (1.78). Text in `revision_candidates_closed.csv`.
 
+Extracted data: `02_composition_value/extracted_data/r165_pgm_metal_normalised_factors.csv`.
+
 ## R175 - Tholen dissertation read (2026-10-16)
 
 `tholen_1984_asteroid_taxonomy_dissertation` read live (UA DSpace REST; 168 pp; author copyright, not hosted): the original source behind the Tholen-class citation.
@@ -292,12 +294,16 @@ Verdict: both agree with their papers to the stated digits; no candidate. tools/
 Swept every work named in the notes column of reference/environments.csv against CITATIONS.md section 5. Result: one seam only - Ferrais et al. 2020, cited on row 16 Psyche for the adopted volume-equivalent diameter (span Siltala and Granvik adopt (Ferrais et al. 2020), count==1) has no CITATIONS.md entry; registered in this domain as ferrais_2020_psyche_primordial_shape_jacobi_ellipsoid with dated retrieval evidence (aanda.org 403, HAL hal-02898978 Anubis-walled). All other named works have section-5 entries: ISS Facts and Figures, ECSS-E-HB-31-01 Part 15A, Whitley & Martinez 2016, NASA Moon Fact Sheet, Mazarico et al. 2011, Elvis 2011 (section 3 for the accessibility class), Lauretta et al. 2019, Watanabe et al. 2019, Yeomans et al. 2000, Daly et al. 2023, DRA 5.0, Appelbaum & Flood TM-102299, Willner et al. 2024 with Andert quoted values, Russell et al. 2016, Kretlow SiMDA pair, Siltala & Granvik 2021.
 Consistency checks without RC: LLO note period recomputed from the same-table lunar mass and radius (circular orbit at 100 km altitude gives 7,067 s = 117.8 min against printed 118 minutes) - derivable, no citation needed; Didymos row self-declares its own source gap upstream per R282 documented-by-design rule; Moon and Mars sheet mismatches already claimed by open rc-131/rc-132.
 
+rc-227: add a CITATIONS.md section-5 entry for Ferrais et al. 2020. Text in `revision_candidates.csv`.
+
 ## R286 - release data-2026-10-21b integrity audit; one RC (2026-10-28)
 
 The current published release (contract 1.10.0, asteroid_catalog 0.12.0) was audited end to end against its own published documentation.
 All green: manifest rows 1575889 reproduced from the shipped parquet; measured_diameters 149718 reproduced by counting diameter_source == measured in that parquet (the identical numerator across -27, -29c and -21b is genuine carryover — third confirmation, do not flag); taxonomy.json sha256 and parquet sha256 recomputed locally and matched the manifest declarations exactly; shipped taxonomy.json PHASE_SHARES/ACCESSORY_PHASES mirror reference/mineral_phases.csv to stored rounding (tolerance 5e-7 over all 32 classes, zero mismatches beyond CSV truncation); README line 143 measured-share sentence is dated data-2026-09-27 and accurate as history; economicspace at @3ba6f3a repinned to -21b with ~2.4 GB matching manifest catalog_csv bytes 2387414099.
 One defect, opened as rc-229 [wording]: release.py computes n_rejected = len(pd.read_csv(rejected_path)) on a file the pipeline writes as a per-reason summary (config.py: one row per reason, a count and examples), so both shipped manifests print rejected_rows 3 while their sha-pinned rejection logs sum to 273 (-21b) and 267 (-29c) dropped bodies; README line 78 meanwhile promises every row validation dropped. Latent display defect only — economicspace references the asset filename, never the field.
 Skip-note for future rounds: release -21b is audited through manifest/asset-hash/row-count/measured-count/mirror levels; re-audit only on a new data tag. The -29c registry row carries a dated note that EC repinned past it.
+
+Extracted data: `extracted_data/r286_catalog_release_21b_key_numbers.csv`.
 
 ## R292 - AsteroidCatalog README numeric-prose seam, skip-note (2026-10-28)
 
@@ -325,6 +331,8 @@ Releases 9d971b5 (contract 1.9.0, five GR revision candidates applied) and 69150
 
 Live probe 2026-10-29 of sbdb_query.api?info=field (saved answer, sha recorded in the registry row): seventy-nine fields listed. Reproducing the AsteroidCatalog tool classification offline with its own compare() formula at @66fb47a gives 31 unreviewed, matching the README, but eleven of them are sigma_* uncertainties: a, ad, e, i, ma, n, om, per, q, tp and w. Nine are osculating-element sigmas; sigma_q (perihelion distance) and sigma_ad (activity index) make two more than the sentence counts. The tool prints every unreviewed field one line each, so its output lists eleven while the prose says nine - a display-class count slip in README text no code reads; rc-237 records it for the owner. All other claims verified live: 79 fields total; soln_date absent from the list yet answering with Ceres value '2021-04-13 11:04:44', identical to their recorded witness string.
 The field-list snapshot is registered as a T3 hosted witness because SBDB lists can change; future rounds comparing unreviewed sets should re-fetch rather than trust this copy. Nine osculating sigmas would in principle let Stage-1 carry per-element uncertainties for catalog objects - recorded here, not built.
+
+Extracted data: `extracted_data/r307_sbdb_field_list_key_numbers.csv`.
 
 ## R326 - Field-unit mass identity and uncertainty after mass rejection (2026-11-02)
 

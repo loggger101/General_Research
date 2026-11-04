@@ -1,6 +1,6 @@
 # Domain 29 — Structural metals, alloys & in-space manufacturing
 
-Backings: economicspace `modules/mineral_value.py` `IN_SPACE_UTILITY` and `IN_SPACE_UTILITY_BY_DESTINATION`, the rows in `_COMMODITY_CLASS` class `"structural"` (iron, nickel, cobalt, copper, chromium, titanium, nickel-iron, awaruite, kamacite, taenite, tetrataenite, cohenite, schreibersite, and the ores magnetite, ilmenite, chromite, perovskite, troilite and the Fe/Ni sulfides): how good a substitute raw asteroid metal is for structure launched from Earth, given that the plant that turns it into parts is not costed.
+Backings: spacevalue `spacevalue/catalog.py` `IN_SPACE_UTILITY` and `IN_SPACE_UTILITY_BY_DESTINATION`, the rows in `_COMMODITY_CLASS` class `"structural"` (iron, nickel, cobalt, copper, chromium, titanium, nickel-iron, awaruite, kamacite, taenite, tetrataenite, cohenite, schreibersite, and the ores magnetite, ilmenite, chromite, perovskite, troilite and the Fe/Ni sulfides): how good a substitute raw asteroid metal is for structure launched from Earth, given that the plant that turns it into parts is not costed.
 
 Created in Round 161 (2026-10-13). Blocks are appended one per round, newest last.
 

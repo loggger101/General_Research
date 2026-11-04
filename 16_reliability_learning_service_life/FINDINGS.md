@@ -86,6 +86,8 @@ All 149 pages pulled from the reliabilityanalytics.com page library (ASSIST and 
 
 **Correction (applying rc-084):** the handbook does give a band, printed "0.27-0.64": Table II "Historical Growth Rate Estimates" (§5.2.6.2, p32), one-shot systems 0.27-0.64 (median 0.47), time-based 0.23-0.53 (median 0.32), with Duane's universal 0.5 rejected; the 0.1-0.2 passive band is absent. spacecost 0.6.1 cites Table II and keeps alpha = 0.30. Probe sweeps should search for the quantity's name and table captions, not just the claimed number.
 
+Extracted data: `extracted_data/r132_mil_hdbk_189c_growth_rate_key_numbers.csv`.
+
 ## R163 - The MTBF row's exponential form (rc-090; 2026-10-14)
 
 spacecost@0b716ad uses P = exp(-T/MTBF). Navard 1993's fitted survival "initially drops at a much faster rate than the theoretical one" and the model "does not model the early failures very well"; Jacklin's 41.3% points the same way. rc-090 (method) asks for an infant-mortality term or a note that the constant hazard is an assumption. The 30-year scale is untested.

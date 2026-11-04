@@ -193,9 +193,13 @@ This surface is covered; skip unless a new catalog edition appears or the MODEL.
 
 **spacecost CITATIONS.md fully swept work-level at R231; skip unless its source tables change:** all ten sections resolved against sources.csv. Section 1 provider table maps to specific ids (IG-24-001 = the Oct-2023 OIG audit beside IG-22-003, identified by hosted path /uploads/2023/10/ig-24-001.pdf; rocket_lab_form_10q_fy2026_q1 read at R128). Section 3: taylor2018, elvis2011, curtis_orbital_mechanics_engineering_students, dra5_2009 + drake_2008 (SP-2009-566), sp4029 Orloff; NTRS/JPL design-handbooks line = generic class pointer per prose-pointer convention. Section 4: autonomy row claimed by open rc-106, refinery throughput row by open rc-178, remainder resolves (jpl_dsn_services_catalog_820_100, damodaran_cost_of_capital_by_industry, planetary_society_pebd_mission_costs, IG-23-010, frieman_2021, kleinhenz_paz pair, MIL-HDBK-189C). Section 5 every input named has a dedicated row; sections 7 to 10 tooling and meta class - documented NOT registered (quietqueue precedent R222).
 
+Extracted data: `extracted_data/r208_star48b_case_fraction_key_numbers.csv`.
+
 ## R245 - Atlas V LEO band re-anchored to the hosted Rev 11 user guide (2026-10-23)
 
 The Atlas V row note declares its own LEO figure unsourced ("whose own source is not recorded"). The GR-hosted Rev 11 Launch Services User Guide (cleared OSR 10-S-0689, pulled live at R99) settles it: Table 2.6.5-2f prints the Single Burn figure at 200 km as Payload Systems Weight 18,814 kg [41,478 lb], conditions CCAFS SLC-41 with the 5-m Short fairing, park orbit perigee at least 167 km, confidence level 2.33 sigma GCS - exactly the band low end upstream carries. A full-document scan of all 420 pages finds zero occurrences of 18,850, so the high end matches nothing in the guide; rc-189 cites the table and asks for the upper figure to be adopted away or documented. PSW semantics (adapter included) are flagged in the proposal.
+
+Extracted data: `extracted_data/r245_atlas_v_leo_key_numbers.csv`.
 
 ## R247 - PSLV failure record moves onto ISRO mission status pages (rc-191) (2026-10-23)
 
@@ -207,17 +211,25 @@ initiated-analysis status for C62. Upstream causal clause (flight control near s
 rc-191 proposes citing the three registered T3 rows and restating to institutional wording. The pricing half of the flag stays open: NSIL (nsilindia.co.in) publishes no tariff PDF in launch-services or brochures pages, and the 60-page ISRO
 Space-in-Parliament compendium carries zero per-launch unit-cost statements.
 
+Extracted data: `extracted_data/r247_pslv_failure_status_key_numbers.csv`.
+
 ## R248 - Vega C payload cells move onto the guide that already carries its fairing citation (2026-10-24)
 
 Owner replace-flag wikipedia_launch_vehicle_articles executed for the Vega C row. The Arianespace Vega C Users Manual Issue 0 Rev 0 (May 2018) byte-matches the R99 access_status record (sha in r248 key-numbers file). The guide publishes its payload figures as text at exactly two points: Table 2.4.2.a polar orbit 500 km at inclination 88 deg = 2,250 kg including adapter, and the section 2.4.3 equatorial elliptical statement of 1,700 kg at apogee 5,700 km - both spans count==1; SSO performance exists only as Figure 2.4.1.e chart (rendered reading about 2,150 to 2,250 kg at 700 km, axes capped at 2,700 kg). Consequences recorded in rc-192: the row low end of 2,250 kg is confirmed directly by the manufacturer document (vehicles.py comment "500 km polar" matches Table 2.4.2.a), while the 3,300 kg high end occurs zero times in all 118 pages and exceeds even the chart ceiling; stored headline LEO of 2,720 kg is above every circular-orbit figure this guide publishes; single-point anchoring at 2,250 kg moves usd_per_kg_to_leo from 16580.88 to 20044.44 (+20.9 percent) at the unchanged price cell. GTO stays zero - no GTO capability statement exists in the document. The Figure 2.4.1.e reading carries a chart-reading flag.
+
+Extracted data: `extracted_data/r248_vega_c_performance_key_numbers.csv`.
 
 ## R249 - Minotaur IV payload figures traced to Wikipedia infobox with orbit parameters dropped upstream (2026-10-24)
 
 The row cites Wikipedia for price and the NG guide for fairing volume, but the three payload numbers (headline 1660 kg, band [1591..1735]) are attributed nowhere. The Wikipedia Minotaur IV infobox states Capacity Payload to LEO Altitude 200 km (120 mi) Orbital inclination 28.5 deg Mass IV: 1,591 kg (3,508 lb) - the stored low end matches exactly and wiki supplies orbit parameters that upstream dropped; wiki itself cites the NG guide for its sub-orbital figure. Guide Release 2.5 (byte-identical to the R99 copy) has a text layer that holds zero occurrences of any stored number: all Minotaur IV performance is curves only, Figures 3.3-1 and 3.3-2 fleet comparison for SSO out of KLC/PSCA and 28.5 deg inclination out of CCSFS plus per-site Figures 3.3.1-1 through 3.3.1-4. The section 3.3 definition (count==1) says curve values are total mass above the standard, non-separating interface with separation system and any payload adapter included in the payload allocation - a different convention from satellite-mass semantics. High end 1735 kg is found in neither current Wikipedia nor guide; headline 1660 differs from its own band midpoint 1663, violating the v1.16.0 centre policy by 3 kg. Only prose capability figure in the whole guide belongs to Minotaur VI+ (3360 kg), count==1. rc-193 records all of this; no curve values were read from Figures 3.3-2/3.3.1-x.
 
+Extracted data: `extracted_data/r249_minotaur_iv_payload_key_numbers.csv`.
+
 ## R250 - Electron capacity sentence traced into the guide that already carries its fairing citation; high end 320 unsourced (2026-10-24)
 
 The row attributes price to Rocket Lab Form 10-Q FY2026 Q1 and fairing volume to Payload User Guide v7.0 p26, but the sentence Current published capacity 300 kg LEO / 200 kg SSO names no document. The registered guide (byte-identical to the R99 copy) publishes both figures as verbatim text: two prose spans for up to 300 kg / 660 lbm LEO and a specs block span NOMINAL PAYLOAD 200 kg / 440 lbm To 500 km SSO, each count==1; the performance section adds Electron is designed to place payloads of up to 200 kg into a circular SSO at 500 km altitude (count==1) on a page that prints legacy footer Launch: Payload User Guide V 7.0 inside the v8.0 file, consistent with upstream citing the earlier edition for identical content. The stored band high end 320 kg exists nowhere in the document as a mass figure - zero occurrences of 320 kg / 310 kg / up to 320 across all 72 pages; bare 320 appears only as fairing millimetre dimensions and standalone 310 is an axis tick on the Elliptical Orbit Payload vs Apogee chart. Arithmetic: payload headline equals its band midpoint (310) so the centre policy holds there, but price headline 8130000 deviates -0.854 percent from midpoint of its own [7100000..9300000] band; usd_per_kg_to_leo=26226 is consistent with stored cells (8130000/310). Single-point re-anchor at the published 300 kg moves usd_per_kg_to_leo to 27100 (+3.3 percent) - recorded in rc-194 for adjudication together with a proposal to cite the guide directly and to document or drop the unsourced high end.
+
+Extracted data: `extracted_data/r250_electron_payload_key_numbers.csv`.
 
 ## R251 - band_centre is a geometric mean to 3 significant figures; full-table audit finds no violations (2026-10-24)
 
@@ -227,13 +239,19 @@ spacecost/vehicles.py at b5eb32a corrects how Rounds 248-250 framed internal con
 
 The A62 and A64 rows store LEO bands [10300..10350] and [21500..21650] kg with no document named for the payload column in either note. Re-fetching the ESA overview page (registered row esa_ariane6_overview) re-verified its two official figures verbatim count==1: A62 approximately 10.3 t and A64 approximately 21.6 t to LEO. The stored values sit on those points exactly - the A64 headline reproduces the official figure under the geometric-mean band_centre policy (fact #62) - but none of the three endpoints appears in any fetched document, formatted or bare: synthetic padding of the class documented for Vega C (rc-192), Minotaur IV (rc-193) and Electron (rc-194). The ArianeGroup VA269 launch kit dated 17 June 2026 (registered this round as arianegroup_va269_launch_kit_jun_2026) publishes the P160C booster upgrade raising official A64 capacity to approximately 22 tons LEO, above the stored band high end; no upstream file mentions it. The User Manual Issue 2 Rev 0 re-fetched byte-identical to the R99 copy and its text layer across all 171 pp carries no LEO mass figures at all (page 39 is a mission-phase timeline), so it cannot anchor the bands either. rc-195 proposed attribution plus currency restatement; price cells untouched.
 
+Extracted data: `extracted_data/r252_ariane6_leo_payload_key_numbers.csv`.
+
 ## R253 - Saturn V LEO band provenance (rc-196) (2026-10-25)
 
 Sixth instance of the unsourced-band-endpoint seam family (after Vega C rc-192, Minotaur IV rc-193, Electron rc-194, Ariane 6 rc-195). Saturn V payload columns carry no document attribution upstream; two NTRS records now hosted here supply official provenance: press-kit statement 285,000 lb to LEO (= headline) and rated comparison figure 262,000 lb / 118.8 mT (= low end). The high end 140,000 kg matches no NASA document found; Skylab-era delivered mass was about 77 t in orbit.
 
+Extracted data: `extracted_data/r253_saturn_v_leo_capability_key_numbers.csv`.
+
 ## R254 - Vulcan Centaur LEO band provenance (rc-197) (2026-10-25)
 
 Seventh instance of the unsourced-band-endpoint seam family (after Vega C rc-192, Minotaur IV rc-193, Electron rc-194, Ariane 6 rc-195, Saturn V rc-196). The registered Oct 2023 user guide (sha in registry row) publishes all three stored Vulcan LEO figures in Table 2.2.1-1 for the ISS representative orbit at 407 km and inclination 51.6 deg - VC2S 16,300 / VC4L 21,400 / VC6L 25,600 kg, each span count==1; the strings 27,200 RL10E and upgraded Centaur have zero occurrences in all 85 pp. The VC6 band high end comes from a different ULA document: the one-page Vulcan Centaur technical summary sheet (registered this round as read-not-hosted), which defines LEO as a 200 km circular orbit at inclination 28.7 deg and prints the across-configuration capacity line 10,800 – 27,200 kg count==1; word coordinates map that line to the LEO label, separating it from the GTO range above. Wikipedia cites the same sheet URL for its infobox figure, so upstream notes of figures via Wikipedia resolve onto both documents once named - rc-197 proposes attribution and orbit-parameter restatement with no value change.
+
+Extracted data: `extracted_data/r254_vulcan_leo_key_numbers.csv`.
 
 ## R255 - Proton-M LEO band onto ILS PMPG Rev 7 Table 2.2-1 (rc-198) (2026-10-26)
 
@@ -243,6 +261,8 @@ PMPG Rev 7 (ilslaunch.com; 20342733 B, sha256 18f4472216699242840e2a893685abade3
 
 Not opened: upstream payload_gto_kg = 6600 matches none of Table 2.2-1 GTO rows (GSO 3250 kg; GTO with 1500 m/s to GSO 6150 kg at i = 23.2 deg Hp 4120 km; GTO with 1800 m/s to GSO 6920 kg at i = 31.1 deg Hp 2175 km) — the Wikipedia infobox carries 6,920 and 6,300 variants; which one the stored figure intends is untraced.
 
+Extracted data: `extracted_data/r255_proton_leo_key_numbers.csv`.
+
 ## R256 - Soyuz-2.1a band drops its cited Vostochny maximum (rc-199) (2026-10-26)
 
 Ninth probe of the launch-vehicle payload seam family and a new class: data-vs-data inside upstream's own named source. The Soyuz-2.1a row cites Wikipedia payloads by launch site, and its stored band [6800..7430] reproduces that infobox exactly as Plesetsk-A (i = 72 deg) minimum and Baikonur-A maximum — but the same table prints Vostochny A = 7,460 kg at the identical 51.6 deg class, so the stored high end silently drops the cited source's own maximum by 30 kg while the note claims coverage across launch sites. rc-199 proposes either adopting 7,460 (headline 7120 via band_centre; usd_per_kg_to_leo $4557 to $4551) or stating a Baikonur-only selection rule. The -1b row is unaffected: Baikonur B 8,670 exceeds Vostochny B 8,600.
@@ -251,9 +271,13 @@ Third-site context extracted this round and recorded in the CSG manual registry 
 
 Stale-reference finding (documented, NOT registered): Wikipedia reference 19 for the payload sentence points at the STARSSEM Soyuz User's Manual (starsem.com), dated April 2001 (ST-GTD-SUM-01 Issue 3 Rev 0; © Starsem 2001 All rights reserved; 8,855,821 B sha256 550768027ceb84a73c12a3643901e487d3c7617a37eb525e10fe0d54a8196064), predates the Soyuz-2 first flight and mentions neither the -1a nor any of these figures.
 
+Extracted data: `extracted_data/r256_soyuz_leo_key_numbers.csv`.
+
 ## R258 - Long March 12 band onto SAST and Xinhua figures (rc-201) (2026-10-26)
 
 Tenth probe of the payload-band seam family. The Long March 12 row attributes capacity to Wikipedia payloads; tracing both endpoints lands on named documents: low end equals the SAST design target reported by Straits Times Feb-26-2024 (span count==1) and high end equals the Xinhua background page at first flight carried on english.www.gov.cn Dec-1-2024. New wrinkle for this family: the official figure is a floor - no less than 12 tonnes in low Earth orbit - so using it as band maximum understates capability; rc-201 asks notes to say so and name the documents, values unchanged (headline reproduces geometric-mean convention at 11000; usd_per_kg_to_leo consistent at $5745). Xinhua also prints no less than 6 tonnes to a 700 km sun-synchronous orbit; upstream has no SSO column, recorded in the key CSV for context.
+
+Extracted data: `extracted_data/r258_lm12_payload_key_numbers.csv`.
 
 ## R259 - Kuaizhou-11 price cells disagree with the cited rate (rc-202) (2026-10-26)
 
@@ -261,11 +285,15 @@ Eleventh probe of the payload-band family, this time on price cells: Kuaizhou-11
 
 Not opened: KZ-1A band [300..400] versus the same table printing 450 kg for KZ-1A Pro (first flight 4 Dec 2024, span count==1) and wiki prose itself inconsistent (400 in table vs 450 in upgrade sentence); the article also prints SSO figures upstream has no column for: KZ-1A 200 kg @700 km SSO and KZ-11 1,000 kg @700 km.
 
+Extracted data: `extracted_data/r259_kz11_price_key_numbers.csv`.
+
 ## R260 - Kuaizhou-1A band ceiling against the CASIC statement (rc-203) (2026-10-26)
 
 Twelfth probe of the payload-band family and the resolution of R259's noted item: for Kuaizhou-1A the institutional record runs against the stored band ceiling. CASIC's own statement, carried by China Daily on Oct 27 2021 (saved copy sha in registry), prints official point values - SSO 200 kg and LEO 300 kg - exactly equal to the stored floor; the Gansu bureau report for the same mission says designed to launch low-orbit satellites weighing under 300 kg (count==1). The ceiling of 400 rests only on wiki table cells [20][21]; SpaceNews coverage that day attributes 660 pounds (300 kilograms) LEO to Expace, matching CASIC. rc-203 [citation]: cite both saved pages in notes with semantics recorded; no value change - headline 346 reproduces the geometric-mean convention exactly and sits 15.3 percent above the official point value.
 
 Provenance map now complete for this vehicle: LEO floor = CASIC official (matches); ceiling = aggregator wiki cells (unbacked); per-kg rate $20,000/kg printed in the same wiki table and reproduced exactly by stored usd_per_kg_to_leo 20029; KZ-1A Pro at 450 kg remains an upstream content decision (new variant not listed), NOT a sourcing defect - R259 note stands.
+
+Extracted data: `extracted_data/r260_kz1a_official_capacity_key_numbers.csv`.
 
 ## R261 - Nuri LEO figure stored without its altitude qualifier (rc-204) (2026-10-26)
 
@@ -273,15 +301,21 @@ Thirteenth probe of the payload-band family and its first pure SEMANTICS hit: fo
 
 Attribution-quality sweep of all 75 rows at spacecost@2bd5e20: notes classified URL / named-doc / wiki-only / vague. Long March 5 corroborated: its stored 25 t matches the official near-Earth figure carried on gov.cn pages - documented here as consistent, no RC.
 
+Extracted data: `extracted_data/r261_nuri_capacity_semantics_key_numbers.csv`.
+
 ## R262 - Zhuque-3 mode and variant attribution (rc-205) (2026-10-26)
 
 rc-205 [citation] on Zhuque-3: two defects live in one note cell. First, mode semantics - the table convention is explicit mode rows (Falcon 9 reusable at 17,400 kg beside Falcon 9 expendable at 22,800 kg), yet this unqualified row stores only the down-range-recovery figure while its own note quotes expendable 11.8 t; usd_per_kg_to_leo $4425 therefore prices one mode silently (about $3000/kg at the expendable figure). Second, variant attribution - upstream says 21 t / 18.3 t belong to an enlarged ZQ-3E still in development; that split is Wikipedia-only: LandSpace own release calls the rocket Zhuque-3 (model code ZQ-3), gives full length 76.6 m and states expendable LEO capacity reaching 21.3 t with down-range recovery at 18.3 t (Chinese spans count==1, translation in registry rows). The Global Times debut report shows the flown vehicle stands 66.1 meters tall - a shorter configuration than the maker spec page carries those figures on. Proposal cites all three witnesses and records mode semantics; no value change.
+
+Extracted data: `extracted_data/r262_zhuque3_capacity_attribution_key_numbers.csv`.
 
 ## R263 - Angara A5 price onto the Khrunichev 2019 report (rc-206) (2026-10-26)
 
 rc-206 [citation] on Angara A5: price cell was bare Wikipedia; the manufacturer financial disclosure exists and brackets it - BBC Russian quoting the Khrunichev 2019 report puts production cost at 7 billion rubles (about $108.1M at WB 2019 official rate, or $95.0M converted at 2021) against stored $100M - within five percent either way, citation moves and no value changes. Payload side fully corroborated: Khrunichev page quoted by BBC gives exactly 24,5 тонны (= stored 24,500 kg); a Roscosmos-quoted spec line reads the band 24 to 24.5 t; Interfax counted the Vostochny debut as the fourth A5 flight and upstream own fairing note names the Jun-19-2025 Plesetsk launch (the fifth) - five-flights claim reconciles against institutional tallies.
 
 Convention finding: every one of 76 rows in launch_vehicles.csv carries reference_year=2026 while thirteen notes state explicit source years from 2010 to 2023 - the field is a table-vintage as-of stamp, not a dollar-year; dollar-year RCs against this file belong only where conversion math itself is wrong (rc-171 class). Also recorded: Proton-M contract cost of 2.33 billion rubles per unit via RIA state procurement in the same BBC article (about $32.3M at WB 2020 rate) - institutional context for the Angara-expensive note; no Proton row exists upstream to attach it to.
+
+Extracted data: `extracted_data/r263_angara_price_corroboration_key_numbers.csv`.
 
 ## R264 - Long March 5 capacity misattributed to the 5B (rc-207) (2026-10-26)
 
@@ -291,6 +325,8 @@ SELF-CORRECTION of a Round 261 line: that block asserted “Long March 5 corrobo
 
 Seen in SCIO search snippets only, not fetched or verified: Hyperbola-3 company targets of a 12.9-tonne LEO configuration and 8.5 tonnes in reusable mode per the Aug-2024 SCIO commercial-space article; Long March-8A approximate 7 t LEO plus at least 6.4 t to 700 km SSO and Long March-10 figures of 70 t LEO and 27 tonnes lunar-transfer per the Jan-2025 SCIO missions article - both against rows whose notes name no document (Hyperbola-3, Long March variants).
 
+Extracted data: `extracted_data/r264_long_march_5_leo_attribution_key_numbers.csv`.
+
 ## R265 - Hyperbola-3 stores the reusable-mode capacity (rc-208) (2026-10-26)
 
 rc-208 [citation] on Hyperbola-3: stored single point equals the reusable-mode capability (both witnesses agree at 8.5 t exactly), so the row prices recovery-mode payload while its own note concedes expendable 13.4 t - $/kg swing from $4988 to $3164 depending on configuration; propose mode-labelled rows per Falcon convention, no value change.
@@ -299,6 +335,8 @@ WITNESS CONFLICT recorded for adjudication: company statement via SCIO (Aug-2024
 
 The Wikipedia article is at Hyperbola_rocket_series (Hyperbola_3 does not exist).
 
+Extracted data: `extracted_data/r265_hyperbola_3_modes_key_numbers.csv`.
+
 ## R266 - Long March 8A LEO figure contradicted by CALT (rc-209) (2026-10-26)
 
 rc-209 [value] on Long March 8A: stored LEO single point 10 t is contradicted by both current witnesses and absent from its own named source (zero occurrences in the fetched Wikipedia article) - CALT via SCIO gives approximately 7 tonnes for this variant; re-anchor proposal recomputes $/kg family live ($5,290 -> $7557). This is the first outright value contradiction in the wiki-family rows (earlier rounds found provenance gaps and mode semantics).
@@ -306,6 +344,8 @@ rc-209 [value] on Long March 8A: stored LEO single point 10 t is contradicted by
 Corroboration recorded: SCIO Jan-2025 article also carries the Long March-10 disclosure (70 t LEO, lunar-transfer 8.2 to 27 tonnes) matching the existing Long March 10 row note class - that row gains a witness without an RC since figures agree exactly.
 
 Staleness noted without RC: wiki launch statistics line shows twelve flights for variant 8A against eleven stored (catalog_date 2026-09-23 predates the latest flight). Flight-count currency is table-vintage material, not sourcing defects.
+
+Extracted data: `extracted_data/r266_long_march_8a_leo_key_numbers.csv`.
 
 ## R267 - Gravity-1 capacity attribution onto manufacturer disclosure (2026-10-26)
 
@@ -407,10 +447,14 @@ Witness hosts: three T4 verified_live_not_pulled rows registered d04 with full s
 Defect class: unnamed-source price cell with semantics error. The stored note attributes the rate to 'CAS Space, Apr 2026' but no document is named in CITATIONS.md beyond a bare label; the figure traces to commander-in-chief Yang Haoliang interview carried by Cailianshe dated March 31, 2026 stating non-recoverable single-launch launch COST of 30,000 yuan/kg versus Falcon 9 at 5,000 USD/kg. TMTPost analysis explicitly distinguishes cost wording from published prices in the Chinese commercial market and places common customer quotes at 50k-100k yuan/kg - so price_basis=published plus list_price_usd derived from a cost statement is a category mismatch for owner adjudication (values untouched). Arithmetic sound: 12 t x ¥30,000 = ¥360M; World Bank official CNY average 7.1898 (latest published year) reproduces the ~$50M conversion at $50.07M - no rc-171-class FX defect.
 Flight-currency check: Kinetica-2 Y2 completed factory acceptance Aug 25 with an October launch plan but is unflown at audit; Wikipedia lists one flight only, so the stored One-flight clause is current.
 
+Extracted data: `extracted_data/r277_kinetica2_cost_basis_key_numbers.csv`.
+
 ## R278 - New Glenn 9x4 fairing-volume contradiction (rc-221) (2026-10-27)
 
 Defect class: manufacturer publishes more than upstream claims. The stored note for the development-status 9x4 row asserts that Blue Origin gave only the 8.7 m diameter and no readable envelope or volume; the company live product page states 'Its 8.7 meter fairing packs 29,000 cubic feet of volume' (count==1) - a directly published internal volume equal to about 821.2 cubic metres (x0.0283168466 computed in-script). The same page prints the capability triple as point values - 70 t LEO, 14 t Geostationary Orbit Direct, 20 t TLI - matching stored payload_leo_kg=70000 exactly; Wikipedia renders them with floor signs (>70,000 kg etc), a rendering difference recorded but not adjudicated. GTO-NaN rationale survives: no GTO figure exists in any witness; only direct-to-GSO. Base-variant sibling check clean on the vehicle page (more than 13 t GTO and 45 t LEO count==1) - no RC there.
 Saved copies of the Blue Origin pages are sha-recorded (copyright notice inside: extraction only). Flight-record currency recheck at audit date: Wikipedia statistics still three flights, last April 19, 2026 - stored clause current. The NG-4 vehicle lost on the pad in a May 2026 static-fire test (maintenance tag and Berger reference inside wiki revision) is not a launch failure and does not count against success statistics.
+
+Extracted data: `extracted_data/r278_new_glenn_9x4_fairing_key_numbers.csv`.
 
 ## R279 - Soyuz-5 institutional witness conflict at 17 t (rc-222) (2026-10-27)
 
@@ -419,6 +463,8 @@ Arithmetic note: stored headline 16,700 is exactly band_centre of the two Wikipe
 Corroboration bonus from same Interfax copy: 'Its head developer is the Energia Rocket and Space Corporation' (count==1) validates the existing fairing clause that assigns publication responsibility to RSC Energia; wiki manufacturer line lists RKTs Progress co-listed with Energia. TASS schedule context: fully operational in 2028 [appears twice] consistent with stored development status.
 The Wikipedia article is at the hyphenated slug Soyuz-5_(rocket); the unhyphenated URL is a missing-article placeholder.
 
+Extracted data: `extracted_data/r279_soyuz5_capacity_witnesses_key_numbers.csv`.
+
 ## R280 - Eclipse GTO cell has no witness at all (rc-223) (2026-10-27)
 
 Value contradiction class (rc-209 family): the stored Eclipse payload_gto_kg=3,100 matches nothing fetchable. Firefly own vehicle page spec block prints LEO 16,300 kg / GTO 3,200 kg / TLI 2,300 kg (compound span count==1) and Wikipedia current revision agrees on all three; the figure 3,100 has zero occurrences in either witness. Proposal re-anchors to the manufacturer value (+3.2%); owner decides.
@@ -426,12 +472,16 @@ Attribution: notes say 'Source: Firefly / Northrop' - no document named (last un
 Exclusions done before comparison: wiki 8,000 kg LEO / 5,800 kg SSO figures belong to the historical Firefly Beta design (2017-2021 era), not Eclipse.
 Sweep closure: with rc-223 opened, every real vehicle row in launch_vehicles.csv either names a document or carries an open RC; remaining bare-note rows are concept-class vehicles whose prose cites proposal literature (documented-by-design).
 
+Extracted data: `extracted_data/r280_eclipse_capacity_key_numbers.csv`.
+
 ## R281 - tanker-flight band has no publishing hand behind it (rc-224) (2026-10-27)
 
 Attribution class: the storage_systems row Depot refuelling flights to escape says SpaceX's own range and the Starship vehicle note repeats 8-16 quoted, but the fetchable record contains only point figures - OIG IG-26-004 March 2026 plans more than 10 tankers at one every 6 days (p.11), Wikipedia reports Musk's August-2021 tweet of eight launches maybe four.
 High-end hypothesis recorded unconfirmed: GAO B-419783 reportedly counted SpaceX HLS concept as depot + 14 tankers + lander = 16 campaign launches; if true, the stored high end 16 is a campaign-total misread as tanker count. GAO B-419783 itself was not read.
 Values untouched: 12 stays inside the institutional plan (>10); owner adjudicates whether ASAP October-2026 estimates near 22 flights for Artemis IV refueling widen the band - those figures are NOT in the registered Wikipedia revision and were excluded from evidence cells to keep every quote span verifiable.
 storage_systems.csv attribution audit result: unlike launch_vehicles, this table self-declares ESTIMATE on nearly every unsourced cell (COPV PV/W, MLI areal density, fuel-cell Wh/kg, flywheel Wh/kg all carry named near-miss reports). The tanker row was the outlier claiming a publishing hand with no document. Remaining unanchored-but-undeclared cells: Vapour-cooled shield 0.4 fraction (not modelled downstream - context only) and Bulk ore restraint ratio 0.15 feeding return_structure_frac_of_payload.
+
+Extracted data: `extracted_data/r281_depot_tanker_flights_key_numbers.csv`.
 
 ## R289 - launch_vehicles.csv derived unit-cost layer proven self-consistent at spacecost@860bef9 (2026-10-28)
 

@@ -113,7 +113,7 @@ GITATTRIBUTES = '# Hosted files are checked out byte for byte, as the manifest h
 FINDINGS_ALPHA ='# 01_alpha findings\n\nNumbers in `extracted_data/r1_alpha.csv`; full text `full_texts/hosted.pdf`.\n'
 # Candidate ids, checked by check_candidate_refs: a closed row, and one deleted with rej_one (its INDEX.md row says so).
 FINDINGS_BETA = ('# 02_beta findings\n\nCompared with `01_alpha/extracted_data/r1_alpha.csv`; rc-002 applied, rc-005 '
-                 'deleted.\n')
+                 'deleted. Numbers in `extracted_data/r1_beta.csv` and `extracted_data/r1_beta_response.json`.\n')
 # Written after the first commit, whose id it names: a reference into git history (DOWNLOADS.md's restore commands).
 DOWNLOADS_MD = '# Downloads\n\n```bash\ngit cat-file -p {sha}:01_alpha/full_texts/hosted.pdf > ../incoming/hosted.pdf\n```\n'
 

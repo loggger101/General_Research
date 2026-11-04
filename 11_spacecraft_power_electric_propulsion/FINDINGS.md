@@ -83,6 +83,8 @@ economicspace@f7fe1c6 `_mission_cost_prologue` prices the plant array as `proces
 
 rc-100 (battery: Schmitz 175 Wh/kg at 80% DoD, usable 140 vs 104), rc-102 (AEPS ~9 kg/kW string; NEXT-C mass mismatch 12.7 vs 13.5 kg), rc-104 (no source for $10-15M per string; PPE $12.2M/kW element), rc-105 (RTG $/W from institutional unit costs), rc-120 (economicspace: Pu-238 1.5 kg/yr is a goal). Texts in `revision_candidates_closed.csv`.
 
+Extracted data: `extracted_data/r164_rtg_cost_and_storage_vs_upstream.csv`.
+
 ## R210 - rc-181 opened on the EP recurring-cost anchor; two seams closed clean (2026-10-19)
 
 spacecost operational_costs.csv 'Electric propulsion system recurring cost' ($1.5M per kW input power, band $500k-$3M) rests entirely on an uncited procurement-class assertion - procured in the $10-15M-per-string class for a NEXT-C flight string. No document is named anywhere upstream: CITATIONS.md at @29a7ced carries no NEXT-C entry in any section (only the SETS Space xenon/argon/krypton pricing line matches an EP grep). Anchor hunt this round found no public per-string or per-kW figure: OIG IG-23-005 STMD portfolio review pulled live and read all 35 pages mentions the Solar Electric Propulsion project qualitatively only (near-miss, not registered per convention); usaspending spending_by_award keyword probes for NEXT-C thruster return zero rows from this machine; frieman_2021_aeps_etu2 and shastry_2024 are registered for AEPS performance not procurement price. rc-102 and rc-103 claim the two specific-mass rows beside it - the recurring-cost anchor was unclaimed before this round.

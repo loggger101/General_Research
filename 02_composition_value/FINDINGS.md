@@ -1,6 +1,6 @@
 # Domain 2 Findings — composition → commodity value mapping
 
-Backings: AsteroidCatalog `taxonomy_composition.csv` material fractions (metal, silicate, carbon, ice), `mineralogy.py` phase splits (`comp_phases_detailed`), `PGM_ENRICHMENT_BY_TYPE`, and economicspace `mineral_value.py` mineralogy and nickel-iron yields.
+Backings: AsteroidCatalog `taxonomy_composition.csv` material fractions (metal, silicate, carbon, ice), `mineralogy.py` phase splits (`comp_phases_detailed`), `PGM_ENRICHMENT_BY_TYPE`, and spacevalue `catalog.py` mineralogy and nickel-iron yields.
 
 ## R1 - First sources (2026-09-17)
 

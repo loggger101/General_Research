@@ -28,6 +28,8 @@ Escalated with the d23 World Bank chain (`world_bank_usa_annual_cpi_inflation`):
 
 **Hydrazine:** the row's "commercial $75.8/kg (AIAA 2024)" resolves to no paper (Crossref sweep of AIAA JPC proceedings and NTRS searches); the DLA FY20 $30.5/kg stays its only anchor.
 
+Extracted data: `extracted_data/r101_lh2_production_cost_key_numbers.csv`.
+
 ## R110 - Peroxide (HTP) programme context; rc-061 opened (2026-10-03)
 
 The Evonik quote behind the HTP ~$5/kg is unrecoverable (hijacked domain, no archive reachable). Three NASA peroxide-programme decks, hosted, none with a per-kg price (context only):
@@ -100,9 +102,13 @@ New seam opened as rc-200: the quote-snapshot doctrine (quotes.py docstring, spa
 
 Skip-note for future rounds: the Oct-26 snapshot is proven faithful to Yahoo as of 2026-10-26 - do not re-flag those three values. Remaining launch-row payload-band targets (Soyuz-5 / Long March 12 / Kuaizhou family) still unprobed.
 
+Extracted data: `extracted_data/r257_quote_snapshot_key_numbers.csv`.
+
 ## R283 - propellants.csv Iodine row - self-citation contract audit result (rc-226 opened) (2026-10-27)
 
 The row stores a value-bearing price cell, Cost $60/kg., naming no document; CITATIONS.md at spacecost@860bef9 has zero entries for iodine anywhere in the file. The same note attributes the flight record to Rafalskyi et al., Nature 599, 2021 - registered in this repo as rafalskyi_2021_iodine_ep_in_orbit with a hosted CC-BY full text - yet that work likewise has no CITATIONS.md entry. Market context now on file: USGS Mineral Commodity Summaries for iodine (February 2026, newly registered this round, public domain) puts the crude import unit value at an estimated $68 per kilogram for 2025 with a five-year series rising from $32.72 in 2021, and crystal spot prices averaging about $73 per kilogram over the first ten months of 2025 against a $70.24 average for 2024. The stored $60/kg therefore reads as circa-2022 to 2023 market level, roughly 12 percent below the current institutional estimate - a dollar-vintage observation in the rc-168 family, not adjudicated here. Caveat recorded on both key-numbers files: the Rafalskyi paper states only total propellant cost figures (US$60 for iodine at 99.5% purity; US$1,275 of xenon for the same mass) with no mass basis printed anywhere in it and a system total mass including propellant of 1.2 kg, so neither figure converts to a per-kilogram price from that document alone; under any consistent unit-price reading its xenon value contradicts the Xenon row stored $10k/kg by roughly an order of magnitude. Future rounds: do not cite Rafalskyi as a per-kg iodine or xenon price source without resolving this convention question with the owner.
+
+Extracted data: `extracted_data/r283_usgs_iodine_price_key_numbers.csv`.
 
 ## R293 - spacecost propellants.csv physics layer, skip-note (2026-10-28)
 
@@ -117,6 +123,8 @@ Do not re-sweep unless isp_vac_s, exhaust_vel_m_per_s, density or the cost colum
 ## R301 - rc-200 dated reconfirmation; snapshot-stability proof (2026-10-29)
 
 Fresh chart-API pulls on 2026-10-29 (saved copies, full sha256 in the r301 key-numbers file): HO=F close for 2026-09-28 reads 4.755300045013428 and NG=F reads exactly 3.0 - identical to the R257 pulls, so the divergence from the two back-solved closes in spacecost quotes/fuel-2026-10-17.csv persists on a third calendar day with unchanged magnitudes (-4.11 percent / +4.50 percent). New fact this round: all three closes of fuel-2026-10-26.csv (the 2026-10-23 session) still equal the current feed bit-for-bit six days after recording - once a close is written into a snapshot it never drifts in this source, which weakens a later revision of the Sep-28 rows by the feed as the explanation and strengthens a build-vintage difference: the Stage 3 tables of 2026-10-17 were built from closes that differ from what the feed shows for that date. Adjudication still needs an independent settlement print. Separately, the snapshot integrity mechanism itself checks out at spacecost@860bef9: recomputed sha256 of both quoted CSVs equals their SHA256SUMS lines exactly and no file lacks a line. rc-200 stays open for the owner; nothing in this round changes its status.
+
+Extracted data: `extracted_data/r301_yahoo_quote_reconfirmation_key_numbers.csv`.
 
 ## R302 - rc-200 conversion-consistency audit; front-month roll mechanism hypothesis (2026-10-29)
 

@@ -14,16 +14,18 @@ sources".
 This repo backs the cells that `economicspace/CITATIONS.md` leaves weakly
 sourced, one domain per group of cells; domains 1–5 were the weakest, the rest
 were added as rounds found uncovered cells. Each domain's FINDINGS.md names its
-cells, their values and what a source must supply.
+cells, their values and what a source must supply. Stage 2 pricing moved from economicspace
+`modules/mineral_value.py` to spacevalue: this table and each `Backings:` line say where a cell lives now, while
+dated blocks and `access_status` notes keep the path they read.
 
 | # | domain | pipeline cell(s) it could back or replace |
 |---|---|---|
 | 1 | Bulk density by spectral type, PGM factors, population statistics | AsteroidCatalog `taxonomy_composition.csv` density/PGM columns; ranking quality |
-| 2 | Composition → commodity value mapping (what an S/C/X/K/Q body actually contains) | `taxonomy_composition.csv` material fractions, `mineral_value.py` mineralogy |
+| 2 | Composition → commodity value mapping (what an S/C/X/K/Q body actually contains) | `taxonomy_composition.csv` material fractions, spacevalue `catalog.py` mineralogy |
 | 3 | Δv budgets and propulsion performance tables | `spacecost/reference/delta_v_segments.csv`, `propellants.csv` Isp rows |
 | 4 | Launch $/kg to LEO/GTO — history and projections | `spacecost/reference/launch_vehicles.csv` price rows, cost cascade |
 | 5 | In-space storage (boil-off), ISRU, operational costs | `storage_systems.csv`; the volatile-ISRU, power and electric-propulsion rows of `operational_costs.csv` (power and EP overlap domain 11; the sources for its finance, licensing, operations, mining and hardware-rate rows moved to 16–21 in Round 77); environment penalties |
-| 6 | Commodity market prices (the value side) | `mineral_value.py` `ref_price_usd_per_kg`, which feeds every profitability row |
+| 6 | Commodity market prices (the value side) | spacevalue `catalog.py` `ref_price_usd_per_kg`, which feeds every profitability row |
 | 7 | Mission program-cost benchmarks (NRE / development) | `operational_costs.csv` NRE rows (spacecraft development, autonomous mining control), sample-recovery ops envelope |
 | 8 | NEA accessibility oracles (round-trip Δv ground truth) | distribution/rank reference for the NEA rows of `delta_v_segments.csv` (starred-repos `probe_nhats.py`) |
 | 9 | In-space delivery mass fractions & EDL survival | spacecost `delivery.py` constants such as `MARS_LANDED_MASS_FRACTION` |
@@ -32,20 +34,20 @@ cells, their values and what a source must supply.
 | 12 | Destination environments & physical constants | spacecost `environments.csv` (flux, gravity, escape velocity, light time, eclipse) and `units.py` constants |
 | 13 | Astrodynamics methods, ephemerides & audited software | economicspace `orbital.py` (`elements_to_state`), its verification worksheet's textbook relations, JPL ephemeris services |
 | 14 | Propellant & consumable prices | `propellants.csv` `ref_cost_usd_per_kg` and its component prices |
-| 15 | In-space demand & market absorption | economicspace `mineral_value.py` in-space utility (market side; the engineering basis of each row is in 28–30 since Round 161), annual-demand and class-share tables; `calc.py` `demand_elasticity`, `surplus_price_fraction` |
+| 15 | In-space demand & market absorption | spacevalue `catalog.py` in-space utility (market side; the engineering basis of each row is in 28–30 since Round 161), annual-demand and class-share tables; `calc.py` `demand_elasticity`, `surplus_price_fraction` |
 | 16 | Reliability, learning curves & hardware service life | `operational_costs.csv` launch reliability, spacecraft MTBF, mining success and growth, rig life, trips and salvage rows; `calc.py` `learning_curve_rate` |
 | 17 | Cost of capital, contingency & insurance | `operational_costs.csv` WACC, contingency, launch and third-party insurance rows; `calc.py` `contingency_fraction` |
 | 18 | Licensing, planetary protection & space-resource law | `operational_costs.csv` FAA Part 450 licensing rows and the MPL behind third-party liability; the Earth-return and right-to-sell premises (context-only) |
-| 19 | Asteroid excavation throughput & beneficiation | `calc.py` mining rate, rig mass, beneficiation recovery and concentration cap; `operational_costs.csv` drilling and beneficiation energy, plant throughput; `mineral_value.py` in-space refining energy |
+| 19 | Asteroid excavation throughput & beneficiation | `calc.py` mining rate, rig mass, beneficiation recovery and concentration cap; `operational_costs.csv` drilling and beneficiation energy, plant throughput; spacevalue `catalog.py` in-space refining energy |
 | 20 | Mission operations, communications & ground segment | `operational_costs.csv` mission operations, DSN time, downlink and depot berthing rows |
 | 21 | Spacecraft mass & recurring-cost estimating relationships | `operational_costs.csv` recurring $/kg rows by hardware class; `calc.py` return-structure and heat-shield fractions, NRE/recurring overlap |
 | 22 | Prior-art techno-economic benchmarks | economicspace's headline answer (`campaign/results.csv` `best_obj`, `winner`): an external oracle for profitability, as domain 8 is for Δv |
 | 23 | Cost indices, dollar years & exchange rates | the `reference_year` of every spacecost table, the CPI factors in row notes, and the exchange rates behind non-US prices |
 | 24 | Aerocapture & aerobraking | `calc.py` aero-assisted returns (LEO/Mars trim, GEO aerocapture, fallback saving); `delta_v_segments.csv` aerocapture and aerobraked rows |
-| 25 | Net smelter return: refining charges & payable terms | `calc.py` `_mineral_implied_value` (100% of contained metal at refined prices) and the refined-metal basis of element prices |
+| 25 | Net smelter return: refining charges & payable terms | spacevalue `cargo.py` `_mineral_implied_value` (100% of contained metal at refined prices) and the refined-metal basis of element prices |
 | 26 | Spacecraft storage & energy-system physical properties (propellant tankage / COPV / MLI / cryocooler; RTG / fission surface power) | `storage_systems.csv` propellant-storage + energy-storage cells (COPV burst performance factor, MLI passive, orbital-depot boil-off, RTG specific power, Kilopower-class fission W-elec/kg); the cargo-containment cells stay upstream judgement rows for now |
 | 27 | Orbital debris & collision risk | the debris environment behind `operational_costs.csv` launch-insurance premium drivers (domain 17), economicspace's satellite-lifetime and disposal assumptions, and the depot mission durations of domain 26 |
-| 28 | Radiation-shielding value of in-space materials | the rock rows of economicspace `mineral_value.py` `IN_SPACE_UTILITY` (silicates, oxides, rock-valued carbonates and phosphates), the shielding part of water's row, and their destination overrides |
+| 28 | Radiation-shielding value of in-space materials | the rock rows of spacevalue `catalog.py` `IN_SPACE_UTILITY` (silicates, oxides, rock-valued carbonates and phosphates), the shielding part of water's row, and their destination overrides |
 | 29 | Structural metals, alloys & in-space manufacturing | the structural-class rows of `IN_SPACE_UTILITY` (Fe, Ni, Co, Cu, Cr, Ti, Fe-Ni alloy phases and their ores): the manufacturing-gap discount and its destination overrides |
 | 30 | Volatiles, process chemicals & catalyst metals in space | the propellant, chemical and trace-class rows of `IN_SPACE_UTILITY` (water, ammonia, CO2, carbon, organics, S, P, PGMs and other trace metals) and the rejected PGM catalyst utility |
 
@@ -62,7 +64,7 @@ revision_candidates_closed.csv           Closed candidates (applied, declined, s
 upstream_commit_map.csv                  Upstream commits cited by checked_against that a history rewrite took off main, mapped to their main equivalents
 DOWNLOADS.md                             Non-hosted sources still to fetch, with links
 AGENTS.md                                Working rules for research rounds
-tools/                                   build_registry.py, validate.py, tests/ (planted-defect tests, coverage gate, debug script)
+tools/                                   build_registry.py, validate.py, common.py, tests/ (planted-defect tests, coverage gate, debug script)
 01_density_and_population/               Domain 1: density by spectral type, PGM factors, population stats
 02_composition_value/                    Domain 2: composition → commodity value mapping
 03_dv_propulsion/                        Domain 3: Δv budgets, propulsion performance tables
@@ -212,7 +214,7 @@ python tools/tests/debug_case.py CODE   # plant a code's cases and show each rep
 `validate.py` checks encoding and line ends; that the root and domain folders hold only what "Layout" lists; the
 registry files and `sources.csv`; INDEX tables against the registry; the research log (Round 0 to the latest, no
 gaps, real dates, and the committed log kept unchanged as its tail, also across merges); hosted files against the
-manifest and `.gitattributes`; extracted-data CSVs and the citation of every read source; revision candidates (each
+manifest and `.gitattributes`; extracted-data files (each named by a FINDINGS.md) and the citation of every read source; revision candidates (each
 in the file its status belongs to) and `upstream_commit_map.csv`; that every cited `extracted_data/` or
 `full_texts/` path and every cited `rc-NNN` exists; and rejected ids. It
 only warns where the decision is the owner's (licence, file size, an `access_status` sha256 matching no hosted

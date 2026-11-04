@@ -1,6 +1,6 @@
 # Domain 19 — Asteroid excavation throughput & beneficiation
 
-Backings: economicspace `modules/calc.py` mining and beneficiation fields (`mining_rate_kg_per_day_per_kg_rig`, `mining_hardware_kg`, `max_mining_duration_yr`, `station_keeping_floor_yr`, `beneficiation_recovery`, `max_concentration_ratio`) and spacecost `reference/operational_costs.csv` rows `Drilling / excavation energy`, `Beneficiation / on-site processing energy` and `In-space processing plant throughput`; since R76 also economicspace `modules/mineral_value.py` `IN_SPACE_PROCESSING_KWH_PER_KG` (in-space refining energy).
+Backings: economicspace `modules/calc.py` mining and beneficiation fields (`mining_rate_kg_per_day_per_kg_rig`, `mining_hardware_kg`, `max_mining_duration_yr`, `station_keeping_floor_yr`, `beneficiation_recovery`, `max_concentration_ratio`) and spacecost `reference/operational_costs.csv` rows `Drilling / excavation energy`, `Beneficiation / on-site processing energy` and `In-space processing plant throughput`; since R76 also spacevalue `spacevalue/catalog.py` `IN_SPACE_PROCESSING_KWH_PER_KG` (in-space refining energy).
 
 Created in Round 75 (2026-09-27). Blocks are appended one per round, newest last.
 
@@ -95,6 +95,8 @@ Upstream's 200 Wh/kg is 3.7x a whole terrestrial metal mine including comminutio
 ## R164 / R165 - Candidates (2026-10-14)
 
 rc-097 (cite DOE's 19.3 Wh/kg beneficiation), rc-122 (cite Kabemba's 83.25-94.37% and Liddell's >95%), rc-136 (give the mining-rate dial its plant-scale references: 42.0 vs 2.3 kg/yr per kg of plant). Texts in `revision_candidates_closed.csv`.
+
+Extracted data: `extracted_data/r165_mining_rate_comparison.csv`.
 
 ## R207 - Refinery throughput row vs institutional ISRU bounds (rc-178)
 

@@ -203,7 +203,7 @@ CASES = [
     ('text-not-utf8', 'error', [], lambda r, s: put(r, '01_alpha/FINDINGS.md', b'# caf\xe9\n')),
     ('csv-blank-line', 'error', [], lambda r, s: edit(r, CLOSED, '\nrc-002', '\n\nrc-002')),
     ('csv-quoting', 'error', [], lambda r, s: edit(r, X_BETA, 'src_live,rate', 'src_live,"rate"x')),
-    ('csv-empty', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_empty.csv', b''), {'text-empty'}),
+    ('csv-empty', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_empty.csv', b''), {'text-empty', 'extracted-unnamed'}),
     ('csv-width', 'error', [], lambda r, s: edit(r, X_BETA, 'API,', 'API,extra,')),
     # An unreadable sources_domain.csv: its ids are not claimed unknown anywhere else (registry_partial).
     ('domain-header', 'error', [], lambda r, s: edit(r, BETA_CSV, 'short_title', 'title'), {'registry-stale'}),
@@ -367,8 +367,10 @@ CASES = [
     ('extracted-unknown-source', 'error', [], lambda r, s: edit(r, X_BETA, '\nsrc_live', '\nsrc_nope')),
     ('extracted-source-id-format', 'error', [], lambda r, s: edit(r, X_BETA, '\nsrc_live,', '\nsrc_live;,')),
     ('extracted-source-id-format', 'error', [], lambda r, s: edit(r, X_BETA, '\nsrc_live,', '\nsrc_live; src_live,')),
-    ('extracted-no-source-col', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_plain.csv', 'item,value\nsrc_live rate,2\n')),
-    ('extracted-no-rows', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_header_only.csv', 'source_id,item\n')),
+    ('extracted-no-source-col', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_plain.csv', 'item,value\nsrc_live rate,2\n'), {'extracted-unnamed'}),
+    ('extracted-no-rows', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_header_only.csv', 'source_id,item\n'), {'extracted-unnamed'}),
+    ('extracted-unnamed', 'error', [], lambda r, s: put(r, '02_beta/extracted_data/r2_unnamed.csv', 'source_id,item\nsrc_live,rate\n')),
+    ('extracted-unnamed', 'error', [], lambda r, s: edit(r, '02_beta/FINDINGS.md', 'extracted_data/r1_beta_response.json', 'its raw response')),
     ('extracted-row-empty', 'error', [], lambda r, s: put(r, X_BETA, (r / X_BETA).read_text(encoding='utf-8') + ',,,,,\n')),
     ('source-uncited', 'error', [], lambda r, s: edit(r, X_ALPHA, '\nsrc_hosted,', '\n,')),
     # check_references: a FINDINGS.md path, an INDEX.md domain section's bare path, a registry cell, a candidate cell
@@ -682,7 +684,7 @@ class TestValidate(FixtureCase):
         for expected in ('3 sources', '2 domain tables', '2 log entries', '3 committed log lines', '1 manifest rows',
                          '3 extracted files', '4 candidates', '1 map rows', '5 commits checked', '3 target files checked',
                          '1 targets named by model stage', 'compared with origin/main AsteroidCatalog@',
-                         '5 file references, 1 references into git history'):
+                         '7 file references, 1 references into git history'):
             self.assertIn(expected, out)
         rc, out = self.run_validate(self.copy(), '--verbose')
         self.assertEqual(rc, 0, out)

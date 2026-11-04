@@ -74,6 +74,8 @@ the mass cascade is code-consistent by construction (mass cascade runs before co
 no other runtime figure appears in the section. No key-numbers CSV needed beyond r295 file named below; all claims
 here carry this-round git-blob evidence per R264 rule.
 
+Extracted data: `extracted_data/r295_campaign_search_runtime_key_numbers.csv`.
+
 ## R296 - Self-correction: the R295 banked containment note was a misread - no seam exists (2026-10-28)
 
 The Round 295 paragraph above states: "BANKED (recorded, NOT opened): a comment block near model_volatile_containment
@@ -123,6 +125,8 @@ pair 4,967 s over 947 s = 5.24; README release-multiplier sentences name their r
 past mispredictions, not a live claim; MODEL.md krypton "13 cheaper than xenon" line cites spacecost pricing covered
 by applied rc-059; calc.py use_beneficiation comment and measured_cell_provenance machinery are de-typed and carry the
 stamp-on-staleness rule explicitly.
+
+Extracted data: `extracted_data/r297_beneficiation_label_key_numbers.csv`.
 
 ## R298 - runtime-ratio restatement sweep completed across economicspace - seam family closed, no RC (2026-10-28)
 
@@ -198,6 +202,8 @@ Skip-note: do not re-sweep the delivery table unless MODEL.md tables or the pinn
 Claim map checked before drafting: rc-185 (open) matched only on substring noise - it targets LOX component price in spacecost
 propellants, different repo/file/claim.
 
+Extracted data: `extracted_data/r300_delivery_chain_shares_key_numbers.csv`.
+
 ## R301 - economicspace pin enumeration and catalog shape claims verified at 3ba6f3a (skip-note) (2026-10-29)
 
 The README quantitative contract was last swept in full at be86297 (R231); pins moved since, so the enumeration was re-verified against published blobs only. spacecost v0.14.0 confirmed in all five places the README names: requirements.txt URL pin, modules/_runtime.py PIP_SPEC entry, README itself (L154), CLAUDE.md (L503) and CITATIONS.md (L297); tag v0.14.0 dereferences to commit edfd5bec (annotated tag object aa1118c). Catalog pin data-2026-10-21b confirmed at modules/catalog.py L121 and price release prices-2026-10-07 at modules/mineral_value.py L104. README L536 shape claims reproduce exactly on the R286-audited -21b parquet: rows 1,575,889; columns 102; comp_phases and comp_phases_detailed both present (comp_phases new at contract 1.7.0 per AC enrich.py comment at the release tag). README L1221 measured-diameter sentence matches the -21b manifest counts R286 reproduced from the shipped parquet; its single data-2026-09-29c mention (L1092) is a dated past-tense run record, accurate by design. Skip unless these pins move or MODEL.md prose changes.
@@ -210,6 +216,7 @@ Work-level pass over the whole file plus an accession-token pass: every named wo
 
 Every falsifiable numeric or cross-repo claim in the package CHANGELOG was tested against surviving committed bytes, all five repo tips static (spacecost 860bef9 / economicspace 3ba6f3a / AsteroidCatalog 92f7739 / spacevalue main 873b91c ahead of pin by tests-only commits; no tag newer than v0.2.0). Results: package version string equals 0.2.0 at the tag and all eight committed fixture tables carry pipeline_version stamp 1.17.0, matching the declared data contract; exactly eight destination CSVs are committed under tests/data/prices-2026-10-07/ as claimed; economicspace versions.md contains the named Stage 2 changelog section that the CHANGELOG points to for contracts before 1.17.0; the consumer-contract claim of twenty-five imported cargo names reproduces exactly - the from-import block in economicspace modules/calc.py at tip lists precisely those twenty-five distinct names; the golden recording holds thirteen distinct cells across sixteen recorded functions and 4,858 calls as stated (default raw, default benef+search, detailed_off benef, elasticity raw and benef+search, phases_off both, refinery_off both, single_mission both, surplus_wall, unbounded). The headline byte-for-byte claim was verified directly: economicspace tracks frozen Stage-2 tables under campaign/stage2/mineral_value-1.15.0/ for exactly seven destinations (no gto - that destination joined later per the #141 history at R203), and comparing each against the spacevalue fixture leaves precisely one differing column, pipeline_version, with 59 rows giving exactly 59 differing cells per table; every value cell including catalog_date is identical. The claim of equality for all eight destinations against a mineral_value 1.16.0 build has no surviving committed bytes on the economicspace side (zero files under mineral_value-1.16.0/, publication having moved to spacevalue), so that half stands as their CI-era assertion; the CHANGELOG wording is accurate about which seven are byte-frozen. The requires-python 3.12 rationale was reproduced mechanically on this machine: a mixed-magnitude float list summed naively gives bits 402f20345f3459f1 under CPython 3.11.16 (uv-managed) versus 402f20345f1ac05a under system 3.13, the latter equal to math.fsum - pre-3.12 builtin sum is genuinely uncompensated, so one-bit yield differences at lower interpreters are real; demonstrated at mechanism level on a synthetic list, not from their exact yield inputs. Registered spacevalue_release_record_v0_2_0 T4 in d13. Skip-note: this seam is fully mined while tips hold - do not re-sweep unless spacevalue tags beyond v0.2.0, economicspace unfreezes Stage-2 tables, or the CHANGELOG changes.
 
+Extracted data: `extracted_data/r306_spacevalue_release_record_key_numbers.csv`.
 
 ## R313 - A phase lookup overwrites the refinery composition-cache key (2026-11-01)
 

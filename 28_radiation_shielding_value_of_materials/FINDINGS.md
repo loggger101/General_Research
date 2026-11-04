@@ -1,6 +1,6 @@
 # Domain 28 — Radiation-shielding value of in-space materials
 
-Backings: economicspace `modules/mineral_value.py` `IN_SPACE_UTILITY` and `IN_SPACE_UTILITY_BY_DESTINATION`, the rows whose in-space use is bulk radiation shielding (every silicate and oxide phase, hibonite, and the rock-valued carbonates, oldhamite and phosphates), the shielding part of water's row, and the `"shielding"` default of `_COMMODITY_CLASS`: how much protection a delivered kilogram of each material buys compared with the same mass launched from Earth.
+Backings: spacevalue `spacevalue/catalog.py` `IN_SPACE_UTILITY` and `IN_SPACE_UTILITY_BY_DESTINATION`, the rows whose in-space use is bulk radiation shielding (every silicate and oxide phase, hibonite, and the rock-valued carbonates, oldhamite and phosphates), the shielding part of water's row, and the `"shielding"` default of `_COMMODITY_CLASS`: how much protection a delivered kilogram of each material buys compared with the same mass launched from Earth.
 
 Created in Round 161 (2026-10-13). Blocks are appended one per round, newest last.
 
