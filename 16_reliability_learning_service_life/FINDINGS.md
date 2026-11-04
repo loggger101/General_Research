@@ -246,3 +246,59 @@ switch to Wright cumulative-average theory would be a separate numerical
 model decision requiring its own justification. Neither family is shown
 empirically superior for asteroid spacecraft, and population/ranking effects
 were not measured. `extracted_data/r321_learning_curve_model_identity.csv`.
+
+## R351 - Parallel first-flight growth has no specified feedback schedule (2026-11-03)
+
+`mil_hdbk_189c_reliability_growth_management`, printed p8 (PDF p16),
+section 4.9.1 describes a "feedback loop": discovery, problem feedback,
+analysis, approval and implementation of corrective actions. It permits
+improvement in product or manufacturing-process design, including preflight
+work. Printed p9 (PDF p17), sections 4.9.3/4.9.5 link growth to corrections
+and their turnaround, including "physical implementation of approved
+corrective actions". These passages do not supply a new mining success
+probability, growth exponent or maturity ceiling.
+
+`economicspace_parallel_reliability_growth_record_2026` reads economicspace
+54e30b0ae82be71c987f08feb95630502b7f54f0. calc.py L4405-4437 correctly
+averages the adopted curve over missions 1..N and describes designed-out
+failure modes from flight heritage. Its cache (L4515-4524) and revenue
+consumer (L7232-7235) use N without fleet, wave or corrective-action timing.
+The source ladder (L4944-4951) permits W=1, F=N; all those missions share a
+single mission-duration programme span. MODEL.md L908-930 uses the same
+growth/heritage interpretation. Reliability is disabled by default (L568).
+
+The declared counterexample has no additional preflight analytical/test
+maturation and no in-cohort corrective changes. Twenty-one constructed
+fixtures run original, repeat, a scoped first-wave diagnostic and its repeat:
+84 complete evaluate_asteroid consumers using current reference-only Stage 2,
+real source vehicles/kerolox, geometric transfers, raw cislunar cargo and
+capacity caps. Each chosen (N,F,W) is asserted present in the original
+ladder before selecting that single tuple. This tests the cohort mechanism,
+not an unrestricted programme optimum or an observed asteroid population.
+The diagnostic uses the unchanged original helper at N=1 only for parallel
+W=1 cohorts; it changes no source probability, alpha, ceiling or unit rate.
+
+For the 1-km synthetic magnetite body (3 g/cm3, a=1.2 AU, e=i=0,
+10 h spin), Falcon 9 reusable/kerolox with (N,F,W)=(25,25,1) spans
+1.8008760870758898 years, exactly one mission. Native p_mining is
+0.9227022785808684 versus the adopted first-of-kind 0.85 in the declared
+no-added-maturation scenario. p_success is 0.842874617849371 versus
+0.7764621826596845; expected gross per mission is 2,960,936.0673144935
+versus 2,727,635.6801548093 USD, an 8.553209% uplift. Per-mission cost
+671,509,402.7011702 USD is exact. All fields outside the five risk/revenue/
+profit/ROI metrics are exact. Ten cases change, including N=2..100 and
+distance, vehicle and mineral sensitivities. Eleven full-book controls are
+exact: N=1, risk off, growth off and four serial cases. The serial cases are
+outside the conditional diagnosis; unchanged output does not certify their
+feedback timing. Both repeated pairs match native types/values/float.hex
+fingerprints, and returned books pass the source checks exercised by the
+harness. All examples remain unprofitable.
+
+Verdict: `rc-286`, qualify growth by available cohort feedback or explicitly
+justify additional preflight maturation and its resource/calendar basis.
+The existing curve arithmetic and defaults need not change. No universal
+absence of preflight learning, newly measured probability, current-population
+incidence or ranking effect is asserted. Twenty-four source blobs match
+pinned metadata; all four live main comparisons are identical.
+`extracted_data/r351_parallel_reliability_growth.csv` includes complete
+inputs, books, fingerprints and the self-contained reproduction harness.

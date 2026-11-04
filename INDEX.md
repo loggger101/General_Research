@@ -196,6 +196,7 @@ _Backings: spacecost `delta_v_segments.csv` and the Isp rows of `propellants.csv
 | zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing | T2 | Zalawski et al., "On-Orbit Testing of the EO-1 Pulsed Plasma Thruster" (NTRS) | full text hosted | PPT row thruster_kg_per_n=5000 anchored at +13 percent via flight mass 4.95 kg / max ~860 uN; key numbers in r189_eo1_ppt_kg_per_newton_key_numbers.csv |
 | sutton_biblarz_2017_rocket_propulsion_elements_ninth_edition | T4 | Rocket Propulsion Elements, 9th ed. (Wiley, 2017) — textbook | registered, not pulled | RELATIONS register of verification_sheet: rocket equation, exhaust velocity, thrust and jet power |
 | antreasian_et_al_2021_osirisrex_proxops_nav_performance | T2 | Antreasian et al., "OSIRIS-REx Proximity Operations and Navigation Performance at (101955) Bennu" (NTRS 20210025471) | read live via machine fulltext, not hosted | rc-231 evidence: maintenance-class delta-V scale near Bennu; key numbers in r288_osirisrex_proxops_dv_key_numbers.csv |
+| economicspace_target_surface_escape_record_2026 | T4 | target surface-escape scope audit | read, not hosted | finite-target gravity versus point transfer (rc-289) |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -626,6 +627,7 @@ _Backings: economicspace `mineral_value.py` `IN_SPACE_UTILITY` (market side), `I
 | economicspace_spacevalue_capacity_market_implementation_2026 | T4 | Capacity pricing and fleet bound, pinned implementation record | read, not hosted | half-price surplus does not guarantee an interior fleet optimum (rc-240) |
 | economicspace_market_capped_hold_engineering_record_2026 | T4 | Market-capped cargo versus engineering hold, pinned record | read, not hosted | priced mix differs from physical and exported cargo (rc-252) |
 | spacevalue_shared_class_market_budget_record_2026 | T4 | Shared class market budgets, pinned record | read, not hosted | substitute phases spend separate class allowances (rc-261) |
+| economicspace_spacevalue_programme_market_clock_record_2026 | T4 | programme market/calendar clock audit | read, not hosted | full-price horizon versus programme end (rc-287) |
 
 ## Domain 16 — Reliability, learning curves & hardware service life
 
@@ -660,6 +662,7 @@ _Backings: `operational_costs.csv` launch reliability, spacecraft MTBF, mining s
 | economicspace_spacecost_rig_calendar_cadence_record_2026 | T4 | Rig calendar life and campaign cadence, pinned implementation record | read, not hosted | 15-year rig cap omits idle intervals between campaigns (rc-239) |
 | economicspace_nonrectangular_rig_cost_allocation_record_2026 | T4 | integer rig allocation in partial fleets | read, not hosted | partially filled fleets underpay rig cost (rc-250) |
 | delionback_1975_guidelines_learning_cost_improvement_curves | T2 | NASA1975 learning/cost improvement curve guidelines | full text hosted | Wright/Crawford ordinate distinction (rc-251) |
+| economicspace_parallel_reliability_growth_record_2026 | T4 | parallel first-flight reliability-growth audit | read, not hosted | cohort feedback timing (rc-286) |
 
 ## Domain 17 — Cost of capital, contingency & insurance
 
@@ -871,6 +874,7 @@ _Backings: spacecost `storage_systems.csv` propellant-storage and energy-storage
 | lee_brown_2023_gateway_lunar_dust_mitigation_overview | T2 | Lee & Brown, "Overview of NASA Gateway Lunar Dust Mitigation and Contamination Modeling and Analysis" (NTRS 20230003126) - full text hosted + read R150 | full text hosted | institutional Gateway dust-mitigation program record: GOLDMAP physics-based framework + two-pronged mitigation strategy with cross-program coordination; context class for d26's contamination-risk premise |
 | jones_et_al_2026_artemis_suit_dust_exposed_fabrics | T2 | Jones et al. (Leidos/KBR HHPC + NASA JSC), "Artemis Suit Material Optical Property Testing of Dust Exposed Fabrics", ICES-2026-164 55th Int'l Conf on Environmental Systems Rio Grande PR Jul 2026 (NTRS 20260002937) - full text hosted + read R150 | full text hosted | measured EOL dust-soiling test process (rotary tumbler, simulant + ceramic media, 8 h at 80 rpm): institutional basis for cumulative-wear assumptions behind d26's dust-mitigation cell; context/bound class |
 | economicspace_return_cargo_volume_record_2026 | T4 | Returned-cargo density/volume closure, pinned consumer record | read, not hosted | rc-285: water cargo can exceed its volume allowance |
+| economicspace_outbound_propellant_volume_record_2026 | T4 | outbound liquid-volume audit | read, not hosted | launch propellant versus full fairing (rc-288) |
 
 ## Domain 27 — Orbital debris & collision risk
 

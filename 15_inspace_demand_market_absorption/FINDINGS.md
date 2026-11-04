@@ -304,3 +304,63 @@ checking each exported cap against its own function (test_tables.py L45-56)
 do not test aggregate class spending. This is a capacity-pricing witness;
 complete mission redesign, prevalence in the catalogue and ranking effects
 were not measured. `extracted_data/r330_shared_class_market_budget.csv`.
+
+## R352 - Market accumulation extends beyond the programme calendar (2026-11-03)
+
+`economicspace_spacevalue_programme_market_clock_record_2026` reads
+economicspace@54e30b0ae82be71c987f08feb95630502b7f54f0 and
+spacevalue@873b91c1ce51fd2f5fe9ead63ce171d755e73011. calc.py L4640
+states a wave sells at `T + w × cadence`; L5725-5726 and L7491 report
+programme span `T+(W-1)*cadence`. In contrast, cargo.py L990 totals
+`duration + (N - 1) x cadence / F` market years, described as "years in
+total" (L992), before dividing across N deliveries (L1041-1045).
+calc.py L7141-7142 consumes this window; MODEL.md L751-759 repeats it.
+
+For rectangular N=F*W, the market horizon exceeds the cost/reporting horizon
+by `cadence*(1-1/F)`. A uniformly staggered fleet can produce the longer
+horizon, but its within-fleet offsets do not appear in the stated wave
+calendar or reported end. The diagnostic retains the existing wave
+calendar and finite-programme capacity pooling, changing only the imported
+window to `[T+(W-1)*cadence]/N` for F>1. It introduces no demand, price,
+surplus, physical or financing coefficient.
+
+Twenty-five synthetic raw single-phase fixtures run native, repeat,
+clock-only diagnostic and repeat: 100 complete evaluate_asteroid consumers,
+using original numerical function bodies, reference-only Stage 2, actual
+source vehicles/kerolox and geometric transfers. Reliability, WACC, launch
+windows, refinery and ISRU are off. Each selected tuple is asserted present
+in the original ladder before restricting it; this is a mechanism test,
+not an unrestricted fleet optimum. Independent 50-digit Decimal enumeration
+of W sale epochs, each containing F deliveries, verifies the horizon
+identity and rate-times-end budget.
+
+For the 1-km magnetite fixture (3 g/cm3, a=1.2 AU, e=i=0, 10 h spin),
+Falcon 9 reusable/kerolox with (N,F,W)=(64,64,1) is one of forty original
+choices at the current 64-ship limit. Mission and programme duration are
+both 1.8008760870758898 yr, but native market accumulation lasts
+2.0469698370758898 yr. At the adopted 25,000 kg/yr full-price rate,
+the programme sells 51,174.245926897245 kg at full price against
+45,021.902176897245 kg accumulated by its reported end: 6,152.34375 kg
+extra. The clock-only diagnostic closes that budget. Current half-price
+surplus sales give per-mission gross 3,156,059.9973833505 versus
+2,987,794.2024844512 USD, a 5.631773% uplift. Payload
+1,003.4617809559003 kg, launch 17,400 kg and per-mission cost
+653,609,865.2011702 USD stay exact.
+
+Fifteen native books exceed the rate-times-reported-end budget, and all
+fifteen diagnostics close it. Changes persist across F=50..1000, W=2/3/5,
+distance, vehicle, mineral and hard-wall sensitivities. Ten full-book
+controls are exact: N=1, serial F=1, small nonbinding parallel fleets,
+elasticity and unbounded modes. Both repeated pairs match native
+types/values/float.hex fingerprints; every field outside seven
+price/clearing/profit metrics is exact. All returned books pass the source
+checks exercised by the harness, and all examples remain unprofitable.
+
+Verdict: `rc-287`, share one schedule across full-price accumulation,
+programme end and dated programme costs. Retaining the longer staggered
+schedule is an alternative if the associated calendar and reporting are
+made consistent. The evidence does not reject capacity pooling or re-pin
+demand; it measures no observed-body incidence or catalogue ranking.
+Twenty-four runtime/method blobs match pinned metadata; all four live main
+comparisons are identical. `extracted_data/r352_programme_market_clock.csv`
+contains full inputs/books, clock certificates and the reproduction harness.

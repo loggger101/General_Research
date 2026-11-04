@@ -311,3 +311,58 @@ like-for-like impulsive baseline from which to calibrate that ratio.
 Verdict: registry classification/scope correction and bounded abstract
 extraction; no new upstream value candidate follows from these figures.
 `extracted_data/r349_dawn_nstar_mission_scope.csv`.
+
+## R354 - Point-target transfers need a surface-escape validity bound (2026-11-03)
+
+`economicspace_target_surface_escape_record_2026` reads economicspace
+54e30b0ae82be71c987f08feb95630502b7f54f0 and spacecost
+860bef9902aa67fec705875cd52fdb8e6def159f. calc.py L2817-2835 matches
+heliocentric velocity at the target and reverses that burn for departure.
+L3314-3334 passes a/e/i alone and retains a 300 m/s return floor.
+MODEL.md L22-34 places mining between rendezvous and return. The source
+environment row for Ceres explicitly notes "leaving costs real propellant"
+(environments.py L353-354); its adopted mass, radius and spin are
+9.3835e20 kg, 469,730 m and 9.074 h. Its escape helper (L116-123) uses
+sqrt(2GM/R) and warns that rotation changes departure cost.
+
+Twenty-two constructed raw, direct-entry earth_surface fixtures run the
+original full evaluate_asteroid twice each: 44 consumers using current
+reference-only Stage 2, source vehicle/chemical-propellant pairs and the
+original geometry/architecture functions. N=1; refinery, ISRU, boil-off and
+launch windows are off. The physical-scale comparison transports the source
+Ceres mass/radius/spin to explicitly synthetic near-Earth circular coplanar
+orbits and hypothetical magnetite composition. It is not an actual Ceres
+mission or an observed catalogue body.
+
+For a=1.01 AU, e=i=0 at that physical scale, escape speed is
+516.3879981392188 m/s. Even maximal prograde equatorial rotation supplies
+only 90.34973655932295 m/s. Granting the entire 300 m/s return budget
+instantaneously at the surface, with no gravity/steering loss or later-burn
+reserve, gives at most 390.34973655932293 m/s and specific energy
+-57,141.82389514848 J/kg. At least 426.03826157989585 m/s impulse is
+needed merely to reach zero two-body energy under that favorable rotation.
+The settled source fuel/dry/cargo/TPS/tank book independently reconstructs
+300.00000000000006 m/s by the rocket equation. Nevertheless, the source
+returns 7,866.696505173187 kg cargo, 1,036.2367272123474 kg return fuel,
+17,400 kg launch and 2,011,640,770.4501808 USD total cost.
+
+Fourteen accepted books fail this optimistic spherical two-body
+surface-launch condition. The failures persist across orbital, size,
+density, spin, vehicle, propellant and rig sensitivities. Seven returned
+cases are not detected by the weak energy bound; that does not establish
+their trajectory feasibility. One farther case is an original solver
+refusal. All returned source books pass current mass/resource/throughput/
+time/return-volume checks and are unprofitable. Original repeated books and
+observers match native types/values/float.hex fingerprints; independent
+50-digit Decimal energy agrees. No numerical repair is performed.
+
+Verdict: `rc-289`, close local surface departure/material lifting or state
+and enforce the point-target approximation's regime. An orbiting/hovering
+capsule requires a material-transfer architecture; the observed surface
+failure assumes no unmodelled external launch assistance. Rotation/site and
+required excess velocity matter, so a blanket additive escape-speed term
+is not established. This is not an n-body trajectory, a corrected optimum,
+an actual Ceres result, or a population/ranking measurement. Twenty-four
+runtime/method blobs match pinned metadata; four live main comparisons are
+identical. `extracted_data/r354_target_surface_escape.csv` retains full
+inputs/books, energy observers and the reproduction harness.

@@ -103,3 +103,64 @@ to their tolerance; guarded books also pass the added material-volume check.
 Twenty-four blobs, including all 22 imported local modules, match fresh
 pinned metadata and all four live main comparisons are identical.
 `extracted_data/r350_return_cargo_volume.csv`.
+
+## R353 - Earth-loaded liquid can exceed the entire launch payload envelope (2026-11-03)
+
+`economicspace_outbound_propellant_volume_record_2026` reads economicspace
+54e30b0ae82be71c987f08feb95630502b7f54f0 and spacecost
+860bef9902aa67fec705875cd52fdb8e6def159f. calc.py L6530-6531 shares the
+fairing with "mission hardware and propellant tanks", but L6551-6552
+only caps returned cargo at a quarter of the envelope. Propellant density
+enters tank mass (L3629-3645), and settled Earth-loaded fuel is computed at
+L6646-6674 without a launch-volume gate. The source blend adds separate
+fuel and oxidiser volumes (propellants.py L398-424). All comparisons retain
+the source densities, tankage, fairing and quarter-return allowance.
+
+Twenty-three constructed raw single-phase fixtures run original, repeat,
+liquid-only guard and repeat: 92 complete evaluate_asteroid consumers, using
+original numerical bodies, reference-only Stage 2, actual source
+vehicle/propellant rows and geometric transfers. N=1; refinery, ISRU and
+launch windows are off. The guard reduces only the existing payload cap
+for an offending candidate through 48 original-kernel bracket steps, then
+lets the original objective reselect architectures. It grants the entire
+usable fairing to Earth-loaded liquids alone, assigning zero volume to tank
+walls, ullage, the empty return capsule and all other hardware. This is an
+optimistic necessary condition, not a complete packing solution.
+
+The main synthetic 1-km nickel-iron body has bulk density 3 g/cm3,
+a=1.2 AU, e=i=0, 10 h spin and the default 2,000 kg rig. The source SLS
+Block 1/hydrolox book flies 61,110.66841672852 kg outbound propellant and
+19,997.212052254883 kg Earth-loaded return propellant. At the adopted
+0.36114420743389963 kg/L, liquid alone needs 224.58585462381703 m3
+against the 216 m3 envelope. The 8.585854623817028 m3 excess remains even
+before any hardware occupies space. Returned cargo reports only
+7.785081767826991 m3 against 54 m3, and the 95,000 kg launch limit passes.
+The source vehicle is government_only and its cargo fairing is explicitly
+an unflown reference configuration; this does not describe a flown SLS
+cargo mission or a presently bookable commercial launcher.
+
+The restricted diagnostic selects 22,447.925536475905 kg cargo instead of
+23,355.245303480973 kg and reduces liquid from 81,107.8804689834 to
+78,007.14880564413 kg, just below 216 m3. Original-kernel recomputation
+reduces launch to 91,461.582494966 kg and cost from
+5,053,885,877.562077 to 4,922,996,444.801831 USD. This only closes the
+liquid lower bound; a complete stack needs further volume provision.
+Fourteen native selected books fail that lower bound and fourteen
+diagnostics close it. Distance, rig, body-density and mineral sensitivities,
+disabled eclipse and three disabled-boil-off cases retain the finding.
+Nine full-book controls are exact, including closer bodies, denser
+propellants, a smaller vehicle, body-limited cargo and two original refusals.
+Both repeated pairs match native types/values/float.hex fingerprints;
+50-digit Decimal volume checks agree. All returned books pass the source
+mass/resource/throughput/time/return-volume checks exercised by the harness
+and remain unprofitable.
+
+Verdict: `rc-288`, close the outgoing envelope using Earth-loaded liquid,
+tanks and other stowed hardware, or explicitly model an alternative ascent/
+orbital-assembly architecture with its capacity and cost basis. A scalar
+volume condition is necessary, not sufficient for geometry. No actual-body
+incidence, catalogue ranking, global packing optimum or full engineering
+feasibility is established. Twenty-four runtime/method blobs match pinned
+metadata; all four live main comparisons are identical.
+`extracted_data/r353_outbound_propellant_volume.csv` contains full inputs,
+books, brackets, volume observers and the reproduction harness.
