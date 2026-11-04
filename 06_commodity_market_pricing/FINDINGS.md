@@ -182,3 +182,36 @@ and the methane gross/net comparison are recorded in domain 14's R341 block.
 Verdict: `rc-275`, gross versus net basis in the methane proxy.
 Contract extraction: `extracted_data/r341_henry_hub_contract_basis.csv`.
 Calculation record: `14_propellant_consumable_prices/extracted_data/r341_methane_quote_heating_basis.csv`.
+
+## R355 - Open candidates re-checked at current upstream (2026-11-03)
+
+Read at economicspace 54e30b0, spacecost 860bef9, spacevalue 873b91c and
+AsteroidCatalog 66fb47a: the 72 open candidates last checked at older commits.
+None has been applied or superseded; all stay `open`. Every open row now
+stands at those commits. Row-by-row verdicts and locations are in
+`extracted_data/r355_candidate_recheck.csv`.
+
+- **Retargeted from economicspace to spacevalue (16), values unchanged.**
+  economicspace `modules/mineral_value.py` now says "STAGE 2 DOES NOT PRICE
+  ANYTHING ANY MORE" (L4) and re-exports `ANNUAL_WORLD_PRODUCTION_KG` from
+  spacevalue (L176). `spacevalue/catalog.py` holds rc-125 and rc-147 to rc-153
+  (production depths, L883-L903) and rc-126, rc-141, rc-142, rc-143, rc-145 and
+  rc-146 (price rows). rc-121 is now `catalog.py` L2688 with `cargo.py` L137; a
+  search of those two files and economicspace `calc.py` still finds no payable
+  fraction or treatment or refining charge. rc-177's constant is
+  `catalog.py` L342 and is gone from `master.py`; the spacecost figure pair is
+  unchanged.
+- **Line references updated.** rc-091 is `calc.py` L5320-5329 and L5343 and
+  `master.py` no longer holds a copy; the $800/W row is unchanged. rc-134 is
+  `calc.py` L845, and its `current_value` no longer sets "flat, whatever the
+  entry speed" inside the source comment, which never contained it. rc-135 is
+  `delivery.py` L409-412.
+- **Notes rewritten, point at issue unchanged.** rc-107: the third-party
+  liability note now cites 14 CFR 440.9 but gives no premium basis; value
+  1,500,000. rc-166: the hydrolox note re-sources its Isp sentence; 15,200 Wh/kg
+  unchanged and no plant-level bound added.
+- **Inputs behind wording candidates unchanged.** rc-233 and rc-234:
+  `MEASURED_CELL_SECONDS` stays 735, 1,439, 4,737 and 11,676. rc-236: stage
+  hardware is 8.0% (gto), 10.3% (cislunar), 11.1% (geo) and 11.4% (mars_orbit).
+- **All other reference-table rows** match the checked commit in every cell but
+  `pipeline_version`. The secondary homes of rc-185 to rc-190 are byte-identical.

@@ -1,0 +1,73 @@
+source_id,item,value,unit,location_in_source,notes
+,rc-027,still open,recheck verdict,spacecost@860bef9 reference/operational_costs.csv: Drilling / excavation energy,previous check spacecost@dbb2cde; row cells identical apart from pipeline_version
+,rc-090,still open,recheck verdict,spacecost@860bef9 reference/operational_costs.csv: Spacecraft mean time between failures,previous check spacecost@dbb2cde; row cells identical apart from pipeline_version
+,rc-091,still open,recheck verdict,"economicspace@54e30b0 modules/calc.py L5320-5329, L5343",previous check economicspace@4bd500c; verbatim cell found at HEAD
+,rc-107,still open,recheck verdict,spacecost@860bef9 reference/operational_costs.csv: Third-party liability insurance,previous check spacecost@dbb2cde; notes rewritten; the point at issue unchanged
+,rc-121,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L2688; spacevalue/cargo.py L137,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-125,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L883,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-126,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L1590-1592,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-128,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Falcon 9 (expendable),previous check spacecost@dbb2cde; row cells identical apart from pipeline_version
+,rc-129,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Falcon Heavy (expendable),previous check spacecost@dbb2cde; row cells identical apart from pipeline_version
+,rc-131,still open,recheck verdict,spacecost@860bef9 reference/environments.csv: Lunar surface (equatorial); Lunar surface (polar ridge),previous check spacecost@dbb2cde; row cells identical apart from pipeline_version
+,rc-132,still open,recheck verdict,spacecost@860bef9 reference/environments.csv: Mars surface (mid-latitude),previous check spacecost@dbb2cde; row cells identical apart from pipeline_version
+,rc-134,still open,recheck verdict,economicspace@54e30b0 modules/calc.py L845,previous check economicspace@4bd500c; verbatim cell found at HEAD
+,rc-135,still open,recheck verdict,spacecost@860bef9 spacecost/delivery.py L409-412,previous check spacecost@dbb2cde; verbatim cell found at HEAD
+,rc-141,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L1532,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-142,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L1491,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-143,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L1465,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-145,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L2005,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-146,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L1442,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-147,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L889,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-148,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L894,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-149,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L888,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-150,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L887,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-151,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L893,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-152,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L903,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-153,still open; retargeted,recheck verdict,spacevalue@873b91c spacevalue/catalog.py L902,previous check economicspace@4bd500c; moved from economicspace to spacevalue; value unchanged
+,rc-155,still open,recheck verdict,spacecost@860bef9 reference/propellants.csv: MMH / NTO  (hypergolic),previous check spacecost@dbb2cde; row cells identical apart from pipeline_version
+,rc-156,still open,recheck verdict,spacecost@860bef9 reference/propellants.csv: Aerozine-50 / NTO  (hypergolic),previous check spacecost@dbb2cde; row cells identical apart from pipeline_version
+,rc-166,still open,recheck verdict,spacecost@860bef9 reference/propellants.csv: hydrolox  (LH2 / LOX),previous check spacecost@d0595fa; notes rewritten; the point at issue unchanged
+,rc-168,still open,recheck verdict,spacecost@860bef9 reference/operational_costs.csv: Spacecraft development (NRE),previous check spacecost@29a7ced; row cells identical apart from pipeline_version
+,rc-169,still open,recheck verdict,spacecost@860bef9 reference/operational_costs.csv: Mission operations,previous check spacecost@29a7ced; row cells identical apart from pipeline_version
+,rc-171,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: H-IIA 204,previous check spacecost@29a7ced; row cells identical apart from pipeline_version
+,rc-177,still open; retargeted,recheck verdict,"spacevalue@873b91c spacevalue/catalog.py L342, printed L379; spacecost reference/delta_v_segments.csv L18",previous check economicspace@d77f1ce; moved from economicspace to spacevalue; value unchanged
+,rc-183,still open,recheck verdict,economicspace@54e30b0 README.md L1113-1128,previous check economicspace@675f0cf; verbatim cell found at HEAD
+,rc-185,still open,recheck verdict,spacecost@860bef9 reference/propellants.csv: kerolox  (RP-1 / LOX); hydrolox  (LH2 / LOX); methalox  (LCH4 / LOX); CO / LOX  (carbonaceous ISRU),previous check spacecost@b5eb32a; row cells identical apart from pipeline_version; secondary homes byte-identical
+,rc-186,still open,recheck verdict,spacecost@860bef9 reference/propellants.csv: Xenon  (Hall / ion),previous check spacecost@b5eb32a; row cells identical apart from pipeline_version; secondary homes byte-identical
+,rc-187,still open,recheck verdict,spacecost@860bef9 reference/propellants.csv: methalox  (LCH4 / LOX),previous check spacecost@b5eb32a; row cells identical apart from pipeline_version; secondary homes byte-identical
+,rc-188,still open,recheck verdict,spacecost@860bef9 reference/operational_costs.csv: Cost of capital (WACC),previous check spacecost@b5eb32a; row cells identical apart from pipeline_version; secondary homes byte-identical
+,rc-189,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Atlas V 551,previous check spacecost@b5eb32a; row cells identical apart from pipeline_version; secondary homes byte-identical
+,rc-190,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: SLS Block 1B (Cargo),previous check spacecost@b5eb32a; row cells identical apart from pipeline_version; secondary homes byte-identical
+,rc-191,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: PSLV-XL,previous check spacecost@b5eb32a; row cells identical apart from pipeline_version
+,rc-192,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Vega C,previous check spacecost@b5eb32a; row cells identical apart from pipeline_version
+,rc-193,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Minotaur IV,previous check spacecost@b5eb32a; row cells identical apart from pipeline_version
+,rc-194,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Electron,previous check spacecost@b5eb32a; row cells identical apart from pipeline_version
+,rc-195,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Ariane 6 (A62); Ariane 6 (A64),previous check spacecost@b5eb32a; row cells identical apart from pipeline_version
+,rc-196,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Saturn V,previous check spacecost@b5eb32a; row cells identical apart from pipeline_version
+,rc-197,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Vulcan Centaur VC2; Vulcan Centaur VC4; Vulcan Centaur VC6,previous check spacecost@f8bf1cc; row cells identical apart from pipeline_version
+,rc-198,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Proton-M,previous check spacecost@caed8ce; row cells identical apart from pipeline_version
+,rc-199,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Soyuz-2.1a,previous check spacecost@caed8ce; row cells identical apart from pipeline_version
+,rc-200,still open,recheck verdict,spacecost@860bef9 spacecost/quotes/fuel-2026-10-17.csv L2-3,previous check spacecost@5ea3f24; verbatim cell found at HEAD
+,rc-201,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Long March 12,previous check spacecost@5ea3f24; row cells identical apart from pipeline_version
+,rc-202,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Kuaizhou-11,previous check spacecost@2bd5e20; row cells identical apart from pipeline_version
+,rc-203,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Kuaizhou-1A,previous check spacecost@2bd5e20; row cells identical apart from pipeline_version
+,rc-204,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Nuri (KSLV-II),previous check spacecost@2bd5e20; row cells identical apart from pipeline_version
+,rc-205,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Zhuque-3,previous check spacecost@2bd5e20; row cells identical apart from pipeline_version
+,rc-206,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Angara A5,previous check spacecost@2bd5e20; row cells identical apart from pipeline_version
+,rc-207,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Long March 5,previous check spacecost@2bd5e20; row cells identical apart from pipeline_version
+,rc-208,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Hyperbola-3,previous check spacecost@2bd5e20; row cells identical apart from pipeline_version
+,rc-209,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Long March 8A,previous check spacecost@2bd5e20; row cells identical apart from pipeline_version
+,rc-210,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Gravity-1,previous check spacecost@c633a57; row cells identical apart from pipeline_version
+,rc-211,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Kinetica-1,previous check spacecost@c633a57; row cells identical apart from pipeline_version
+,rc-212,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: GSLV Mk II,previous check spacecost@c633a57; row cells identical apart from pipeline_version
+,rc-213,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Long March 7,previous check spacecost@c633a57; row cells identical apart from pipeline_version
+,rc-214,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Zhuque-2E,previous check spacecost@c633a57; row cells identical apart from pipeline_version
+,rc-215,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Long March 6A,previous check spacecost@c633a57; row cells identical apart from pipeline_version
+,rc-216,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Long March 4C,previous check spacecost@c633a57; row cells identical apart from pipeline_version
+,rc-217,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Tianlong-3,previous check spacecost@c633a57; row cells identical apart from pipeline_version
+,rc-218,still open,recheck verdict,spacecost@860bef9 reference/launch_vehicles.csv: Terran R,previous check spacecost@c633a57; row cells identical apart from pipeline_version
+,rc-229,still open,recheck verdict,AsteroidCatalog@66fb47a asteroid_catalog/release.py L355; README.md L78,previous check AsteroidCatalog@92f7739; verbatim cell found at HEAD
+,rc-233,still open,recheck verdict,economicspace@54e30b0 MODEL.md L579,previous check economicspace@3ba6f3a; verbatim cell found at HEAD
+,rc-234,still open,recheck verdict,"economicspace@54e30b0 README.md L378; verify.py L225, L484",previous check economicspace@3ba6f3a; verbatim cell found at HEAD
+,rc-235,still open,recheck verdict,economicspace@54e30b0 MODEL.md L686,previous check economicspace@3ba6f3a; verbatim cell found at HEAD
+,rc-236,still open,recheck verdict,economicspace@54e30b0 MODEL.md L234,previous check economicspace@3ba6f3a; verbatim cell found at HEAD
