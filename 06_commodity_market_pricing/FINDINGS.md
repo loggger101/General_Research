@@ -286,3 +286,37 @@ Still open, not applied:
   market-shaped hold is not built.
 - **spacecost 0.16.0** is now tagged `v0.16.0`, which supersedes R357's "not
   tagged". economicspace still pins spacecost v0.14.0.
+
+## R359 - Flag replays and all flags together (2026-11-05)
+
+No candidate changes status; 23 stay `open` and no row is re-stamped, because
+neither PR below is merged and every flag named here is off by default.
+
+- **spacevalue PR #9** (0.5.0, branch `rc-round-3`, not merged, data contract
+  unchanged): rc-279's spacevalue half, `sold_as_is`, a table a consumer evaluates
+  beside the original. Cargo's golden replay holds. The economicspace search of the
+  two routes is not built: it needs this release pinned, and so a `prices-*` release
+  at that contract.
+- **economicspace PR #197** (master 1.67.0, calc 1.40.0, branch `rc-round-7`):
+  `verify.py` matches 151/151 columns on all four cells.
+- **rc-281**: economicspace_rtg_payload_search_record_2026, all 23 cases replayed
+  from the record's inputs with `refit_rtg_ceiling` on, land on the record's bounded
+  cost over revenue to three decimals. The refit now reaches the floor stay first, so
+  three dig-limited cases refused at 4d6525f fly at the ceiling: 12,381.4 kg at
+  60,000 W against `60000 x 0.25 yr / 10620 Wh/kg`.
+- **rc-245**: economicspace_programme_cumulative_resource_budget_record_2026, 9 cases
+  match the record's N and load with the flag off. On, a dropped rung is also tried
+  at the load that fits it: the 1,000 kg body goes from the partial fix's N = 1 at
+  1,000 kg, ratio 16,623.654, to N = 2 at 500 kg, ratio 16,233.300, and fixed N = 5
+  flies 200 kg a load. Of 61 real bodies in the catalog's smallest 2%, 5 over-mine with the flag
+  off, and no smaller load wins on any of them.
+- **All flags**: 18 of the 19 together, without `carry_ep_home`: 136 of 136 rows stay
+  evaluable, cost per kg 0.845x to 1.824x, median 1.573x; never-worse has 0 worse rows
+  at four pairings; on the 60-row stride the pre-filter gives the same frame on and
+  off. All 19: 22 of 53 rows stay, the 31 lost as with `carry_ep_home` alone.
+- **rc-248** stays partial: re-solving freed capacity needs two loads in one
+  programme. **rc-246**'s separate return unit stays unbuilt.
+- **spacevalue 0.4.0** is tagged `v0.4.0`, which supersedes R358's "is not". No
+  repin or `prices-*` release was made.
+
+Extracted: `extracted_data/r359_flag_replays_and_interaction.csv`.

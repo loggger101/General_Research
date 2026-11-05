@@ -1,4 +1,5 @@
 # Research log
+- **Round 359** (2026-11-05): replayed R345 and R315 against rc-281 and rc-245 on economicspace PR #197, built rc-279's spacevalue half in PR #9, both unmerged, and ran the opt-in flags together for the first time; 23 candidates stay open, and spacevalue 0.4.0 is now tagged v0.4.0.
 - **Round 358** (2026-11-05): closed rc-261 and rc-263 through spacevalue #8 and re-stamped 19 candidates whose default-off flags landed through economicspace #193 to #196; 23 stay open. spacecost 0.16.0 is now tagged; spacevalue 0.4.0 is not.
 - **Round 357** (2026-11-05): closed ten candidates applied through spacecost #41 and economicspace #192; 25 stay open. spacecost 0.16.0 has no tag yet.
 - **Round 356** (2026-11-04): applied 104 candidates upstream through AsteroidCatalog #31, spacevalue #7, spacecost #40 and economicspace #191 and closed their rows; 35 stay open, including rc-134, which got only its minimum wording.
