@@ -251,3 +251,15 @@ Still open, not applied:
 - rc-261, rc-263, rc-279: move cargo floats, so need a calc release; rc-263 also
   needs an eligibility decision.
 - The other 27 economicspace method candidates are unchanged.
+
+## R357 - Candidates applied upstream (2026-11-05)
+
+10 candidates applied and moved to `revision_candidates_closed.csv`; 25 stay
+`open`. Each row's `checked_against` is the merge commit below.
+
+- **spacecost 19e1a31** (PR #41, 0.16.0, data contract 1.25.0, not tagged):
+  rc-185, rc-254. economicspace does not pin this release, so neither moves a
+  pipeline number until a tag and a repin.
+- **economicspace 2c3dfb4** (PR #192, master 1.62.0, calc 1.35.0): rc-247,
+  rc-249, rc-250, rc-255, rc-262, rc-264, rc-278, rc-286. No default number
+  moves; each changes a non-default path.

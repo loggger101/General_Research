@@ -1,4 +1,5 @@
 # Research log
+- **Round 357** (2026-11-05): closed ten candidates applied through spacecost #41 and economicspace #192; 25 stay open. spacecost 0.16.0 has no tag yet.
 - **Round 356** (2026-11-04): applied 104 candidates upstream through AsteroidCatalog #31, spacevalue #7, spacecost #40 and economicspace #191 and closed their rows; 35 stay open, including rc-134, which got only its minimum wording.
 - **Round 355** (2026-11-03): re-checked the 72 open candidates last read at older upstream commits: none applied, all stay open and are re-stamped at current heads. Retargeted sixteen from economicspace to spacevalue after Stage 2 pricing moved there, values unchanged, and updated line references on rc-091, rc-134 and rc-135; registry unchanged at 742.
 - **Round 354** (2026-11-03): opened rc-289 for point-target transfer budgets accepted beyond a surface-escape validity bound. Registered economicspace_target_surface_escape_record_2026 with 22 constructed fixtures/44 complete original consumers, fourteen optimistic escape-energy failures, seven nondetections and one original refusal; no actual Ceres trajectory or numerical repair is claimed.
