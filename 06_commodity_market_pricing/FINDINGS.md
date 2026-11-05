@@ -263,3 +263,26 @@ Still open, not applied:
 - **economicspace 2c3dfb4** (PR #192, master 1.62.0, calc 1.35.0): rc-247,
   rc-249, rc-250, rc-255, rc-262, rc-264, rc-278, rc-286. No default number
   moves; each changes a non-default path.
+
+## R358 - Candidates merged upstream (2026-11-05)
+
+2 candidates applied and moved to `revision_candidates_closed.csv`; 23 stay
+`open`. `checked_against` on the rows below is the merge commit named here.
+
+- **spacevalue e8ac659** (PR #8, 0.4.0, data contract 1.19.0, not tagged): rc-261,
+  rc-263 applied. economicspace pins spacevalue v0.2.0, and rc-261 reaches no
+  installed table until a `prices-*` release and a repin.
+- **economicspace 4d6525f** (PRs #193 to #196, master 1.66.0, calc 1.39.0): a flag
+  that is off by default for each of rc-091, rc-239, rc-241, rc-244, rc-245,
+  rc-246, rc-248, rc-252, rc-253, rc-265, rc-266, rc-280, rc-281, rc-282, rc-284,
+  rc-285, rc-287, rc-288, rc-289. All 19 stay `open`: the default path each row
+  describes has not moved, and `verify.py check --tag pre-gates` matches 151/151
+  columns on all four cells. Each flag's measured effect is in upstream
+  `versions.md`, releases v1.63.0 to v1.66.0.
+- **rc-246**: `carry_ep_home` models one shared stage. On 60 sampled rows, 53
+  evaluable, 31 stop closing. The candidate's separate return unit is not built.
+- **rc-252**: `price_engineered_hold` takes the candidate's constrained-pricing
+  option. R322's six recorded exported-hold sale values replay exactly. The
+  market-shaped hold is not built.
+- **spacecost 0.16.0** is now tagged `v0.16.0`, which supersedes R357's "not
+  tagged". economicspace still pins spacecost v0.14.0.
