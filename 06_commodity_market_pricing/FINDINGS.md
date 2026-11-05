@@ -320,3 +320,12 @@ neither PR below is merged and every flag named here is off by default.
   repin or `prices-*` release was made.
 
 Extracted: `extracted_data/r359_flag_replays_and_interaction.csv`.
+
+## R360 - R359's two PRs merged (2026-11-05)
+
+No candidate changes status; 23 stay `open`.
+
+- **spacevalue a13e378** (PR #9, 0.5.0, data contract unchanged, not tagged): rc-279
+  re-stamped. It still needs a `prices-*` release and a repin.
+- **economicspace c21a5e9** (PR #197, master 1.67.0, calc 1.40.0): rc-245 and rc-281
+  re-stamped. Both flags stay off by default, so both rows stay open.

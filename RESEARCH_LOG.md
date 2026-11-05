@@ -1,4 +1,5 @@
 # Research log
+- **Round 360** (2026-11-05): spacevalue PR #9 and economicspace PR #197 merged as a13e378 and c21a5e9; rc-245, rc-279 and rc-281 re-stamped, and all 23 candidates stay open.
 - **Round 359** (2026-11-05): replayed R345 and R315 against rc-281 and rc-245 on economicspace PR #197, built rc-279's spacevalue half in PR #9, both unmerged, and ran the opt-in flags together for the first time; 23 candidates stay open, and spacevalue 0.4.0 is now tagged v0.4.0.
 - **Round 358** (2026-11-05): closed rc-261 and rc-263 through spacevalue #8 and re-stamped 19 candidates whose default-off flags landed through economicspace #193 to #196; 23 stay open. spacecost 0.16.0 is now tagged; spacevalue 0.4.0 is not.
 - **Round 357** (2026-11-05): closed ten candidates applied through spacecost #41 and economicspace #192; 25 stay open. spacecost 0.16.0 has no tag yet.
