@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+cohen_2013_niac_rap_phase1_final_report,Spacecraft development NRE,500,million 2013 USD,§6.3,Explicitly excludes mining equipment and solar-thermal propulsion system
+cohen_2013_niac_rap_phase1_final_report,Mining technology development NRE,1000,million 2013 USD,§6.3; Table 6.1,First-approximation concept estimate
+cohen_2013_niac_rap_phase1_final_report,Solar-thermal propulsion development NRE,1000,million 2013 USD,§6.3; Table 6.1,Distinct subsystem estimate; separate from mining technology
+cohen_2013_niac_rap_phase1_final_report,Mining equipment recurring production cost,300,million 2013 USD per spacecraft,§6.3; Table 6.1,"First spacecraft; table lists later vehicles at 250, 175, 150 million; hardware mass not supplied"
+cohen_2013_niac_rap_phase1_final_report,Total non-recurring development estimate,2500,million 2013 USD,Table 6.1,"Spacecraft 500 + propulsion 1,000 + mining technology 1,000 million"
+,Current upstream spacecraft NRE,837700000,USD/program,spacecost/reference/operational_costs.csv,OSIRIS-REx-derived reference; different year and architecture; not normalized to RAP
+,Current upstream autonomy NRE,200000000,USD/program,spacecost/reference/operational_costs.csv,Separate AI/autonomy line; not mining equipment development

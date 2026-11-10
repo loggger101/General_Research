@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+fincannon_2007_lunar_south_pole_storage_hours,worst-case lunar-day energy storage requirement at Shackleton rim,73–117,hours,"Abstract, printed p. 1 (PDF p. 4)",Range depends on power-system type; not identified as battery-only and not a continuous-darkness endurance claim.
+fincannon_2007_lunar_south_pole_storage_hours,energy storage hours for A1+B linked sites,68,hours,"Abstract, printed p. 1 (PDF p. 4)","Linked-site comparator; power-beaming/cable architecture, not a standalone asteroid battery system."

@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_apsis_choice_flag_2026,offer_both_apsides default,False,boolean,modules/calc.py line 674,"Off, the candidate returns only offers[:1] after sorting by the sum of outbound and return delta-v."
+economicspace_apsis_choice_flag_2026,Apsis offers when flag enabled,offers,list,modules/calc.py lines 3495-3501,"With the flag on, every available apsis is offered to the existing mission search; the comment says the search chooses."

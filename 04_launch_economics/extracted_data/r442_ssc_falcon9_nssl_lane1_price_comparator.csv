@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+ssc_2026_sbst_falcon9_lane1_task_orders,Combined value of two NSSL Phase 3 Lane 1 task orders,"1,600,000,000",USD total,"SSC announcement, Jul. 29, 2026, opening paragraphs",Rounded aggregate award value; individual task-order and per-launch allocations are not stated.
+ssc_2026_sbst_falcon9_lane1_task_orders,Falcon 9 launches covered by the two task orders,18,launches,"SSC announcement, Jul. 29, 2026, opening paragraphs",SSC says launches are from Vandenberg and expected through end-2027.
+,Implied average task-order value per covered launch,88888888.89,USD/launch,Computed: $1.6B divided by 18 launches,Approximate arithmetic comparator only; numerator is rounded and may include service scope beyond a commercial list launch.
+,spacecost Falcon 9 (reusable) published list-price row,74000000,USD/launch,"spacecost/reference/launch_vehicles.csv, Falcon 9 (reusable), at spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9","Pipeline value, 2026 reference year; not a separate source observation."
+,Difference of implied task-order average from pipeline list price,20.12,%,"Computed: (88,888,888.89 / 74,000,000 - 1) × 100",Scope-sensitive review signal; not evidence of a commercial list-price change.

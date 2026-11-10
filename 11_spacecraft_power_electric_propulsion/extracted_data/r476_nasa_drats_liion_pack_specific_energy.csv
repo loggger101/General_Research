@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+bennett_baldwin_2010_drats_liion_battery_pack_specific_energy,Experimental battery pack mass range,498.5–522.1,g,"Table 5, printed p. 5 (PDF p. 8)",Five experimental battery packs; assembled four-cell packs with built-in protection electronics and adapter assembly.
+bennett_baldwin_2010_drats_liion_battery_pack_specific_energy,"Specific energy at maximum-power discharge, measured packs",124; 127; 132; 133; 132,Wh/kg,"Table 5, printed p. 5 (PDF p. 8)","38.4 W maximum-power discharge at 23 °C ambient; values shown in table for control, JPL5-1, JPL5-2, JPL2-1 and JPL2-2."
+,Mean of five measured specific-energy values,129.6,Wh/kg,"Computed from Table 5, printed p. 5 (PDF p. 8)","Arithmetic mean; rounds to 130 Wh/kg. These are D-RATS spacesuit liquid-air-backpack battery packs, not spacecraft bus batteries."
+,Rated nominal energy requirement,55,Wh,"Abstract, printed p. 1 (PDF p. 5)","Computed from the design requirement of 22 W for 2.5 h; the reported 130 Wh/kg is achieved under the separate maximum-power 38.5 W discharge condition, not the nominal design point."

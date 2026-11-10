@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,specific beneficiation energy,14.3,Wh/kg target fraction,"Table 1, PDF p.3",Target is screened <100 μm fraction; not a mineral-purity concentrate.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,whole integrated feedstock-preparation energy,126.2,Wh/kg target fraction,"Table 1, PDF p.3","Includes integrated excavation, transfer, and beneficiation accounting; not directly comparable to beneficiation-only energy."
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,beneficiation yield ratio,0.21,fraction,"Table 1, PDF p.3",Mass ratio to screened target fraction; does not represent mineral recovery or product grade.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,"system energy, trial duration and excavated mass",265 Wh; 2.5 h; 10.8 kg,reported campaign totals,"Table 1, PDF p.3",37-cycle LUNA trial using 1-g lunar regolith simulant.

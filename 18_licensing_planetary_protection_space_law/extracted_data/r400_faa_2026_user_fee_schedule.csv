@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+faa_2026_launch_reentry_licensing_user_fees_policy_statement,2026 rate,0.25,USD/lb payload,"Public Law 119-21, div. A, title IV, §40004; 51 U.S.C. 50924(a)(2)(A)",per licensed/permitted launch or reentry
+faa_2026_launch_reentry_licensing_user_fees_policy_statement,2026 cap,30000,USD/event,"Public Law 119-21, div. A, title IV, §40004; 51 U.S.C. 50924(a)(3)(A)",lesser of rate-times-payload or cap
+faa_2026_launch_reentry_licensing_user_fees_policy_statement,fee at 1500 kg payload,826.7333,USD/event,computed from §50924(a)(1)-(3),1500 kg × 2.20462262 lb/kg × $0.25/lb; below cap
+faa_2026_launch_reentry_licensing_user_fees_policy_statement,payload at cap,54431.1,kg,computed from §50924(a)(1)-(3),120000 lb × 0.45359237 kg/lb

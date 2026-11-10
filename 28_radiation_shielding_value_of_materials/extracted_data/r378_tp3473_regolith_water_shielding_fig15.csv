@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+kim_wilson_1994_gcr_shield_materials_performance_tp3473,Water T_Al/T_material at 10 g/cm2,1.38,dimensionless,"Fig. 15 left panel, printed p.28 / PDF p.30",Approximate visual read from one-year GCR cell-transformation plot; uncertainty about ±0.05.
+kim_wilson_1994_gcr_shield_materials_performance_tp3473,Regolith T_Al/T_material at 10 g/cm2,1.15,dimensionless,"Fig. 15 left panel, printed p.28 / PDF p.30",Approximate visual read; dry regolith marker; uncertainty about ±0.05.
+,Water/regolith cell-transformation ratio at 10 g/cm2,1.2,dimensionless,Computed from Fig. 15 approximate curve reads,"Comparison computed here: 1.38/1.15; approximate, not an economic utility value."
+kim_wilson_1994_gcr_shield_materials_performance_tp3473,Water T_Al/T_material at 30 g/cm2,1.58,dimensionless,"Fig. 15 left panel, printed p.28 / PDF p.30",Approximate visual read; uncertainty about ±0.05.
+kim_wilson_1994_gcr_shield_materials_performance_tp3473,Regolith T_Al/T_material at 30 g/cm2,1.28,dimensionless,"Fig. 15 left panel, printed p.28 / PDF p.30",Approximate visual read; dry regolith marker; uncertainty about ±0.05.
+,Water/regolith cell-transformation ratio at 30 g/cm2,1.23,dimensionless,Computed from Fig. 15 approximate curve reads,"Comparison computed here: 1.58/1.28; approximate, not an economic utility value."
+kim_wilson_1994_gcr_shield_materials_performance_tp3473,Regolith + 10 wt% epoxy T_Al/T_material at 30 g/cm2,1.32,dimensionless,"Fig. 15 left panel, printed p.28 / PDF p.30",Approximate visual read; composite marker; uncertainty about ±0.05.

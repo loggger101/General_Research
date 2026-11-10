@@ -1,4 +1,22 @@
+## R542 — Mars ascent Δv additional configuration comparator (2026-11-10)
+
+- **palaszewski_2022_mars_landing_ascent_delta_v** (NASA NTRS 20210026187; Bryan Palaszewski, *Mars Research*, IntechOpen): §2.5 Table 3 gives 4,200 m/s for ascent from the Martian surface to a 100 km circular low Mars orbit and states a 20% gravity-loss allowance; §3.0 repeats the 4,200 m/s ascent value. Table 3 separately gives 244.8 m/s for transfer to 500 km circular orbit, 4,444.8 m/s combined.
+- The current spacecost row remains 4,100 m/s and is described as an unsourced estimate including gravity and drag losses. The new LMO-only case is 100 m/s (2.4%) higher; it supports the scale of the estimate but is a human Mars landing vehicle case, not a generic mission requirement. Combined with the already registered 3,950 m/s Lewis et al. two-stage 100 × 100 km / 30° case, the comparisons bracket 4,100 m/s but do not establish a universal replacement. **rc-377** remains open.
+- Extracted: extracted_data/r542_palaszewski_mars_ascent_dv.csv.
+
 # Domain 3 Findings — Δv budgets and propulsion performance tables
+
+## R512 — Water resistojet specific-impulse range (2026-11-10)
+
+- **morren_1992_nasa_tm_105877_water_resistojet** (NASA TM-105877; AIAA 92-3533): the abstract (p. 1) reports a maximum measured 234 s for a water-vaporizer / engineering-model resistojet assembly at 6.8 MJ/kg combined specific power. Table II (p. 10) identifies 234 s in its final specific-impulse test point, with 1,043 W total power and 6.86 MJ/kg total specific power.
+- Current spacecost reference/propellants.csv gives the water electrothermal/resistojet row a 150–220 s estimated range and 190 s center for higher-power designs. The lab measurement is 14 s above the range ceiling; it was a narrow test of an engineering model, not a flight result. **rc-378** records the range-bound question without proposing a new center value.
+- Extracted: extracted_data/r512_morren_water_resistojet_isp.csv.
+
+## R511 — Mars surface-to-orbit ascent Δv comparator (2026-11-09)
+
+- **lewis_etal_2020_mars_ascent_vehicle_synergy** (NTRS 20205007701; NASA Langley, ASCEND 2020): Table 2 p. 3 reports 3,950 m/s from Mars surface to LMO. Table 1 p. 3 defines LMO as 100 × 100 km at 30° inclination. The paper says the value is for a two-stage vehicle, rounded to 50 m/s, and includes main-propulsion burns without reserves or residuals.
+- Current spacecost reference/delta_v_segments.csv still has 4,100 m/s for “Mars surface → low Mars orbit”; its note calls the value an unsourced estimate including gravity and drag losses. The source is a bounded configuration comparator, 150 m/s below the stored value; it does not establish a universal replacement. **rc-377** remains open.
+- Extracted: extracted_data/r511_mars_ascent_delta_v.csv.
 
 Backings: spacecost `reference/delta_v_segments.csv`, `reference/propellants.csv` (Isp, density, cost, EP sizing columns), `delivery.py` stage-mass fractions; economicspace `calc.py` `ep_target_thrust_yr`.
 
@@ -374,3 +392,47 @@ an actual Ceres result, or a population/ranking measurement. Twenty-four
 runtime/method blobs match pinned metadata; four live main comparisons are
 identical. `extracted_data/r354_target_surface_escape.csv` retains full
 inputs/books, energy observers and the reproduction harness.
+
+
+## R464 — Current surface-escape necessary-condition gate
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.gate_surface_escape` defaults to `False` (modules/calc.py:721), and the module consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). When enabled, `surface_escape_shortfall_m_s` computes spherical escape speed from `estimated_mass_kg` and mean radius (`diameter_km`), subtracts equatorial rotation from the measured period (or the configured default when missing), and returns zero when mass or diameter is unavailable (lines 2362-2386). `_asteroid_dv_options` then retains only offers with `dv_ret_m_s >= shortfall` (lines 3504-3506). The code comment calls this a necessary test and says passing is not a surface-launch design. The option can screen offers that fail this lower bound, but it does not add a local departure/arrival trajectory, site/vector geometry, gravity/steering losses, hover/orbit transfer, or reserve for later burns. It is default-off, so `rc-289` remains open for the default path and complete transport architecture. Extracted: `extracted_data/r464_current_surface_escape_gate.csv`.
+
+
+## R488 — NHATS trajectory time varies with the ΔV objective (2026-11-09)
+
+The existing registry source `jpl_nhats_nea_dv_oracle` links the NASA/JPL NHATS API, which reports separate minimum-ΔV and minimum-duration trajectories for 2000 SG344. Its object record, computed 2021-04-19, gives the minimum-ΔV solution as 3.549 km/s over 370 days and the minimum-duration solution as 11.402 km/s over 34 days; both include an 8-day stay. NHATS documentation defines total duration as outbound flight, stay and inbound flight, and its total ΔV as a round-trip mission quantity.
+
+The economicspace `asteroid_mission_duration_yr` function instead applies a fixed 0.00023 years per m/s separately to outbound and return ΔV, with a 0.5-year floor on each leg; its calibration comment lists four duration anchors whose `duration_yr` cells have no cited source. The NHATS pair confirms that time depends on the selected trajectory objective and launch opportunity, but it is one historical human-mission example with a different ΔV boundary. It cannot directly replace the model’s one-way proxy. `rc-354` asks for a documented trajectory basis or explicit scenario-prior treatment, and for duration-dependent boiloff and schedule effects to use a consistent mission clock; no coefficient or anchor is replaced. Extracted: `extracted_data/r488_nhats_delta_v_duration_trade.csv`.
+
+R490 — The current economicspace `modules/calc.py` sets `R_LEO_KM = 6_378.14 + 200.0`, the same radius used by the verification worksheet’s `r_LEO` input. IERS Conventions (2010), Table 1.1, gives “6378136.6 m” as Earth’s equatorial radius; NASA’s SLS capability table defines LEO as a “typical 200 km circular orbit at 28.5 degrees inclination.” The Earth-radius value rounds to 6,378.14 km, and the NASA definition supports the 200 km reference-orbit component. The citations establish a stated LEO scenario, not a uniquely required orbit for every mission. `rc-356` records the missing in-code attribution; no value change inferred. Extracted: `extracted_data/r490_leo_radius_provenance.csv`.
+
+R491 — The current spacecost `reference/delta_v_segments.csv` row `LEO → cislunar NRHO depot` stores 3,600 m/s and describes it only as “TLI + NRHO insertion.” NASA-CR-195527, printed p. 3, §2.3.1 and Table 2.1, gives a 3,140 m/s TLI burn from a 185 km, 33° parking orbit for a four-day lunar transfer. Benson, Asher & Reese (2025), slide 5, give 400–450 m/s “from TLI to NRHO” for fast Gateway transfers. Adding these values gives 3,540–3,590 m/s, near the stored rounded point, but the studies use different trajectory and mission assumptions. They provide component context, not a trajectory-matched replacement or precision validation of the current ±2% band. `rc-357` records the missing component provenance and scope; retain the value pending a matched transfer basis. Extracted: `extracted_data/r491_cislunar_nrho_transfer_dv_components.csv`.
+
+## R495 - Low-thrust delta-v penalty source basis
+
+- **woodcock_2000_in_space_transportation_propulsion_architecture_assessment** (printed p. 7, §5.2.5, Fig. 5.2-8): NASA reports high-thrust Earth-orbit escape at “about 3.2 km/sec” and typical low-thrust numerical results “between 5 and 6 km/sec”; the immediately stated infinite-low-thrust limit is about 7.5 km/sec. The typical Earth-escape ratio is 1.56–1.88. Current `spacecost` applies `dv_penalty_factor=1.5` across electric propellants; the economicspace verification worksheet marks the Krypton (Hall) penalty input as needing backing. These Earth-escape results support the scale only and do not establish a single multiplier for heliocentric or other mission legs. rc-361 records the source and scope gap. `extracted_data/r495_nasa_low_thrust_escape_dv_comparison.csv`.
+
+## R497 — Starlink krypton-use attribution (2026-11-09)
+
+- **spacex_2023_starlink_progress_report_thruster_propellants**: SpaceX states “On the first generation, the satellites used krypton gas” and that second-generation satellites switched “to argon gas” (Technology → Thrusters, printed p. 48). The next sentence reports 2.4× thrust and a 1.5× specific-impulse increase for the second-generation engine. This directly supports first-generation use and the later gas switch; it does not state that every v1.0 thruster used krypton, explain the switch as a xenon supply constraint, or give absolute Isp, efficiency, or specific-mass values. Extracted: extracted_data/r497_spacex_starlink_thruster_propellants.csv.
+
+## R498 — Krypton Hall device-performance comparators (2026-11-09)
+
+- **nasa_s3vi_2026_small_spacecraft_inspace_propulsion**: NASA’s current Small Spacecraft Systems Virtual Institute chapter lists Astra ASE Krypton at 18 mN, 1,300 s, 1.0 kg; ExoTerra Halo Krypton at 12 mN, 900 s, 0.83 kg; and Halo12 Krypton at 55 mN, 1,575 s, 3.4 kg (Table 4-10). Derived listed mass/thrust is 55.6, 69.2 and 61.8 kg/N, respectively. The upstream generic Krypton (Hall) row uses 2,000 s, 0.45 efficiency and 35 kg/N; the published small-spacecraft comparators place 2,000 s above the listed Kr points and 35 kg/N below the listed mass/thrust values. NASA limits Table 4-1’s Hall range (200–1,920 s) to small-spacecraft devices and says the chapter primarily compiles manufacturer data, which should not be assumed independently verified. These are class/scale comparators, not like-for-like asteroid mission replacements; the chapter gives no numeric efficiency for these Kr devices. Extracted: extracted_data/r498_nasa_kr_hall_thruster_comparators.csv.
+
+
+## R506 — Proximity-operations duration comparator for the stay floor (2026-11-09)
+
+At economicspace `modules/calc.py` `MiningConfig.station_keeping_floor_yr` is 0.25 years; the comment includes approach, characterization, proximity operations and departure phasing, but names no source. Antreasian et al. report that OSIRIS-REx close-proximity operations at Bennu began in December 2018 and ended in May 2021; the abstract describes “over 2 years” of navigation refinement (NASA NTRS 20210025471, abstract and §I, p. 1). The paper describes navigation, site-selection and sample-acquisition campaigns (Figure 1 and §I, p. 1). This sample-return mission is a duration comparator, not a mining stay and not evidence for a universal quarter-year minimum. `rc-372` records the scope gap; no numeric change is inferred. Extracted: `extracted_data/r506_osiris_rex_proximity_operations_duration.csv`.
+## R521 — Uncited asteroid-transfer ΔV floors (2026-11-10)
+
+The current economicspace `modules/calc.py` `asteroid_dv_options_km_s` path floors the outbound transfer estimate at 3,000 m/s and the selected return-leg estimate at 300 m/s before applying the configured 20,000 m/s ceiling. The economicspace verification sheet marks both constants as needing backing; the current code comment gives no source or physical interpretation for them.
+
+The registered source `jpl_nhats_nea_dv_oracle` reports NASA/JPL NHATS results for complete human round-trip missions. Its 2000 SG344 record gives a minimum-ΔV total of 3.549 km/s over 370 days (including an 8-day stay). The API labels this a total mission quantity and its trajectory records separate Earth departure, asteroid arrival/departure and Earth return terms; it does not establish either of economicspace’s universal per-leg floors. This is context for the missing attribution, not a trajectory-matched basis for either value. The return floor’s surface-launch limitation is separately covered by `rc-289`. `rc-387` records the citation gap; no value change is inferred. Extracted: `extracted_data/r521_economicspace_delta_v_floor_comparator.csv`.
+
+
+
+## R546 — Total mission-duration cutoff comparator
+
+Cohen et al.’s NASA RAP Phase I report requires a spacecraft “capable of operating for mission durations lasting between one and five years” (§5.1, report p. 65); it does not specify the asteroid stay or a maximum feasible mining mission. The NASA/JPL NHATS crewed-NEA filter uses a 450-day round-trip search constraint, a different mission class. At economicspace main `db863923f7793676e9a78583b97462ddd614f29e`, `CalcConfig.max_mission_duration_yr` remains 25.0; its comment gives no basis for the 25-year cutoff. Neither comparator establishes a universal limit. **rc-412** records the citation and scope gap; no value change is inferred. Existing extracts: `19_asteroid_excavation_beneficiation/extracted_data/r505_rap_mission_duration_requirement.csv`; `03_dv_propulsion/extracted_data/r488_nhats_delta_v_duration_trade.csv`.

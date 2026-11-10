@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+csank_2024_lunar_surface_power_rfc_system_specific_energy,RFC systems specific-energy range,approximately 100–600,Wh/kg,Slide 12 (PDF p. 12),NASA says the range depends on power level and discharge duration; it is not a universal constant.
+csank_2024_lunar_surface_power_rfc_system_specific_energy,"RFC specific energy, 1 kW lunar-polar case",400,Wh/kg,"Slide 12, table row “Lunar Polar” (PDF p. 12)",System-level metric; discharge time 120 h; RFC mass 300 kg for the 1 kW case.
+csank_2024_lunar_surface_power_rfc_system_specific_energy,"RFC system mass, 1 kW lunar-polar case",300,kg,"Slide 12, table row “Lunar Polar” (PDF p. 12)","For comparison, the same row lists Li-ion specific energy 160 Wh/kg and mass 750 kg."
+csank_2024_lunar_surface_power_rfc_system_specific_energy,"RFC specific energy, 1 kW lunar-equatorial case",550,Wh/kg,"Slide 12, table row “Lunar Equatorial” (PDF p. 12)",System-level metric; discharge time 350 h; system mass 600 kg.
+csank_2024_lunar_surface_power_rfc_system_specific_energy,"RFC specific energy, 1 kW Mars mid-latitude case",200,Wh/kg,"Slide 12, table row “Mars Mid-latitude” (PDF p. 12)",System-level metric; discharge time 13 h; system mass 60 kg.

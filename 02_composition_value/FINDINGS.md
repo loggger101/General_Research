@@ -315,3 +315,102 @@ preserving missing-mass exclusions and malformed-input reporting. This
 checks the model's declared rock-floor assumption, not the true composition
 of an unknown asteroid. Population incidence and ranking effects were not
 measured. `extracted_data/r332_full_residual_valuation.csv`.
+
+
+## R424 — Bennu B-type bound-water fraction review (2026-11-09)
+
+`lauretta_2024_bennu_in_the_laboratory` identifies Bennu as a B-type asteroid and reports the sample as “hydrated (0.84–0.95 wt% H)” (Conclusions, p. 2481); Table 4 reports 0.90 ± 0.04 wt% H for fines, 0.93 ± 0.05 for intermediates, and 0.93 ± 0.01 for an aggregate (p. 2471). If all measured hydrogen were in H2O, the range corresponds to 7.51–8.49 wt% H2O-equivalent. AsteroidCatalog’s B row assigns ice_fraction=0.20 and mineralogy.py maps that entire group to water, which the downstream cargo valuation prices as water. The measured sample H therefore motivates review of the 20% B-row water proxy; hydrogen is not a direct water/ice assay, and returned regolith does not determine the asteroid interior or all B types. Verdict: bounded review candidate rc-334; no replacement value inferred. `extracted_data/r424_bennu_bound_water_vs_b_type_fraction.csv`.
+
+
+## R437 — Bennu OH/H2O spectral distinction and sample context (2026-11-09)
+
+Kaplan et al. (first published 2026-10-14), in “New Evidence from the Sample,” distinguish Bennu’s OH-bearing 2.74-μm global surface feature from the H2O-related 3.0-μm feature. The returned bulk aggregate has a narrower hydration feature with a 2.710 ± 0.002 μm minimum, compared with 2.74 ± 0.01 μm for global OVIRS observations, and lacks the 3.0-μm H2O bending-mode overtone. The authors infer that the subsurface sample contains “less adsorbed and/or structural water” than the optical surface and is primarily hydroxyl-dominated. Their conclusion treats the possible phosphate origin of the surface 3.0-μm feature as inconclusive.
+
+This adds sample-versus-surface evidence to `rc-334`: Bennu’s hydration signatures do not establish a 20 wt% bulk water/ice fraction, and hydroxyl-bearing minerals must not be equated with free water. The paper does not quantify bulk H2O/ice abundance or establish Bennu’s interior or the B-type population. No replacement fraction is inferred. Extracted: `extracted_data/r437_bennu_water_hydroxyl_spectral_evidence.csv`.
+
+
+## R438 — Bennu interlayer water evidence (2026-11-09)
+
+King et al. (2026), “Hydration State of Bennu,” p. 1088, report pristine-sample smectite basal spacing of 12.6–12.4 Å, interpret it as monohydrated, and estimate “up to ~2 wt% water in the interlayer space” for saponite. They state that their XRD characteristics are consistent with a 1.25 wt% interlayer-water result reported by Yurimoto et al. (2026); that underlying study was not independently read in this round. On p. 1089, King et al. note OSIRIS-REx excavated material from as deep as ~50 cm and that this subsurface provenance could enhance apparent water relative to Bennu’s bulk surface.
+
+These are local, bound-water and sample-specific results, not a whole-asteroid or B-class ice fraction. They strengthen the evidentiary review in `rc-334` but do not supply a replacement for `ice_fraction=0.20`. Extracted: `extracted_data/r438_bennu_xrd_interlayer_water.csv`.
+
+
+## R477 — Tagish Lake accessory modes are sample-dependent (2026-11-09)
+
+Izawa et al. (2010), Table 3, reports XRD/Rietveld modal abundances for seven Tagish Lake samples and a comparison sample. Across the seven study samples, magnetite spans 6–17 wt%, siderite 4–24 wt%, and pyrrhotite 10–18 wt%; calcite and pentlandite are reported at or below the table’s detection/reporting threshold in several samples. The paper identifies distinct magnetite/sulfide-rich and carbonate-rich, siderite-dominated lithologies and describes the meteorite as heterogeneous. These measurements show why the D/Z/P `_ACC_TL` entries (magnetite 0.05, troilite 0.03, carbonates 0.03) cannot be treated as a uniquely established Tagish Lake bulk recipe. Pyrrhotite is not troilite, the samples are not a demonstrated population-level D/Z/P composition, and replacing values from selected modes risks double-counting against the model’s coarse fractions.
+
+`rc-343` asks for the upstream provenance and scope of these three absolute accessory fractions to be resolved; this paper supplies a relevant, quantitative comparator but no direct replacement for the modeled asteroid classes. The previously open `rc-085` was applied as a source-attribution correction and remains historical; this is new evidence. Extracted: `extracted_data/r477_izawa_tagish_lake_modal_ranges.csv`.
+
+
+## R478 — CI meteorite modal data bear on an unsourced silicate split (2026-11-09)
+
+King et al. (2015) used PSD-XRD on bulk samples of Alais, Orgueil and Ivuna. The abstract reports a “mixed serpentine/saponite phyllosilicate (81–84 vol%)” assemblage (printed p. 148). Table 1 (printed p. 154) gives Orgueil averages of 83.0 vol% phyllosilicate and 1.0 vol% olivine, and Ivuna averages of 82.5 and 2.0 vol%, respectively. The paper reports modal volume percentages for individual CI meteorite samples; AsteroidCatalog’s `_SIL_CI` is 95% phyllosilicates and 5% olivine as mass shares conditional on the silicate group, applied across CI-analogue classes. Those bases are not interchangeable without phase-density conversion and an explicit mapping of the modeled silicate subtotal.
+
+`rc-344` records a citation/basis review of `_SIL_CI`; the paper supports phyllosilicate dominance but does not directly establish the exact 95/5 model mass split. Keep the values unchanged pending a documented conversion or a source that reports the needed mass-share basis. The PDF states CC BY on printed p. 149. Extracted: `extracted_data/r478_king_ci_modal_mineralogy.csv`.
+
+
+## R479 — A Murchison comparator for the unsourced CM silicate split (2026-11-09)
+
+Lee and Lindgren (2016), Table 4 (printed p. 1007), reproduce XRD modal results attributed to Howard et al. (2011) for Murchison: 72.5 vol% phyllosilicates and 23.4 vol% olivine plus orthopyroxene, with sulfide 1.8%, calcite 1.2%, and magnetite 1.1%. The article identifies Murchison as among the least-altered CMs and reports its phyllosilicate class as type 1.5. Normalizing only its reported phyllosilicate and anhydrous-silicate modes gives 75.6 vol% phyllosilicates; this comparison is calculated here and remains a volume share.
+
+AsteroidCatalog `_SIL_CM` sets phyllosilicates/olivine/pyroxene to 0.85/0.10/0.05 as conditional mass shares and applies that fixed mix to Cg/Ch/G. The Murchison result is a sample-specific volume comparator, not a mass-based replacement or a measurement of all CM subclasses. `rc-345` asks for the missing source and the analogue/basis mapping to be documented; values remain unchanged pending evidence on that basis. The publisher footer states all rights reserved, so the paper is not hosted. Extracted: `extracted_data/r479_murchison_cm_modal_mineralogy.csv`.
+
+
+R480 — DeMeo and Carry (2015), pp. 16–18, describe X-complex spectra as “compositionally degenerate” because they span the darkest to brightest asteroid surfaces, with albedos from a few percent to 50%. They distinguish spectral classification from compositional inference and note that surface spectra are affected by grain size, temperature, geometry and space weathering. AsteroidCatalog assigns bulk `silicate_fraction` 0.44, 0.47, 0.65 and 0.45 to X, Xc, Xe and Xk. The source does not supply these bulk fractions; albedo and spectral grouping alone do not validate them. `rc-346` records this support/mapping gap without proposing replacement values. The cited PDF is hosted by MIT; no redistribution licence was identified, so no copy is hosted. Extracted: `extracted_data/r480_x_complex_taxonomic_degeneracy.csv`.
+
+R482 — Abell and Gaffey’s NASA NTRS record for their LPSC XXXI paper reports that 349 Dembowska has a surface OPX:olivine ratio of 45:55, with variation of approximately 20%. AsteroidCatalog’s unsourced R-type conditional silicate split assigns 0.60 olivine and 0.30 orthopyroxene, or 33.3:66.7 when normalized to those two phases; it also assigns 0.05 each to pyroxene and plagioclase. The reported Dembowska surface ratio differs from the model’s two-phase ratio, but it is one asteroid’s surface spectrum and does not determine bulk mass fractions or the whole R-type mix. `rc-348` records the comparison and asks for the surface-to-bulk and modal-to-mass mapping; no replacement is inferred. The NTRS record says the work is public use permitted but has no available download. Extracted: `extracted_data/r482_dembowska_surface_opx_olivine_ratio.csv`.
+
+
+R484 — Smith et al. (2004) report that CV chondrite carbon abundance ranges from 0.3 to 1.8 wt%, mean 0.77 wt% (printed p. 2028, citing Kerridge 1985 and Pearson 2003); their CV-affinity meteorite NWA 1152 was measured at 1.1 wt% bulk carbon on p. 2028. AsteroidCatalog labels K-type as a CV/CO chondrite analogue but sets bulk `carbon_fraction=0.08` (8 wt%) without a source. The comparison raises a substantial analogue/value gap, but a single CV-affinity meteorite and a literature range do not establish the composition of K-type asteroids or the CO end of the analogue. `rc-350` records the challenge without inferring a replacement. The paper cites the earlier sources for the group range; those references were not independently assessed in this round. Extracted: `extracted_data/r484_cv_carbon_comparator.csv`.
+
+
+R485 — Scott et al. (2015), Asteroids IV, p. 578, state that magnesian A-types tend to be olivine-rich at approximately 70–90% abundance, while ferroan A-types have spectra consistent with a monomineralic interpretation. AsteroidCatalog’s unsourced A-type conditional silicate split is 95% olivine and 5% orthopyroxene. The literature distinguishes A-type subgroups; the 95% assumption may fit some ferroan cases but exceeds the stated magnesian range and does not represent the group’s reported diversity. The chapter discusses spectral abundance, not bulk mass fraction, so it does not provide a direct replacement. `rc-351` records the need for a subtype- and basis-specific mapping. Extracted: `extracted_data/r485_a_type_olivine_abundance.csv`.
+
+
+R486 — Cloutis et al. (2006) infer from 3628 Božněmcová’s 0.35–1.65 µm reflectance spectrum that the surface contains about 55–75 wt% clinopyroxene, 20–33 wt% plagioclase, and 0–20 wt% olivine (printed p. 1159). The paper identifies 3628 Božněmcová as the archetype assigned to the O class (p. 1148). AsteroidCatalog assigns the O class an unsourced conditional silicate split of 50% olivine and 50% orthopyroxene, with no plagioclase or clinopyroxene specified. The spectral interpretation directly challenges that phase mapping, but this is one asteroid’s surface composition, not proof of the whole O class or bulk interior. `rc-352` records the missing archetype-to-phase and surface-to-bulk mapping; no replacement is inferred. The paper notes limited spectral coverage and observational quality. Extracted: `extracted_data/r486_boznemcova_o_type_surface_mineralogy.csv`.
+
+
+R487 — Kwon et al. (2022), p. A173 (printed p. 11), state that Tagish Lake “has been suggested as one of the best meteorites for D-, T-, and P-type red asteroids because their slopes are similar,” but their comparison finds Tagish Lake much darker and its VNIR/LNIR slopes unlike the large T-type spectrum. Their CI spectra best match the large T-type spectra across the compared VNIR–LNIR shape and OH-band properties (pp. A173, 11–12). The paper studied large T-type surface spectra and says T type is relatively ill-constrained as an independent group (p. A173, p. 1); these observations do not measure bulk carbon abundance. AsteroidCatalog assigns T carbon_fraction 0.04 and its note attributes that value to the D-type Tagish Lake 4.1 wt% reading while stating T has no meteorite analogue of its own. `rc-353` records the analogue-to-class and surface-spectrum-to-bulk-carbon mapping gap; no replacement value is inferred. The article states CC BY 4.0 (p. A173, p. 1). Extracted: `extracted_data/r487_large_t_type_surface_analogue.csv`.
+
+
+R501 — C-type returned-sample water comparator (2026-11-09)
+
+AsteroidCatalog at `9d971b5` assigns `reference/taxonomy_composition.csv` C `ice_fraction` = 0.15 and maps the C-class ice phase to water in `asteroid_catalog/mineralogy.py` `PHASE_SHARES`. Yokoyama et al. report for the returned C-type asteroid Ryugu sample “The total H2O is 6.84 wt.%” and distinguish 0.30 wt.% interlayer H2O from 6.54 wt.% structural-OH H2O (Science 379(6634), p. 8). Ryugu is a sample-level CI-like comparator, not a class mean; the result is mostly chemically bound water rather than free ice. It therefore does not directly replace or falsify the 15% class estimate, but exposes a boundary and representativeness gap in treating that estimate as an ice fraction. `rc-367` records the comparator and asks that the class-level proxy and water state be made explicit; no replacement value is inferred. Extracted: `extracted_data/r501_yokoyama_ryugu_c_type_water_content.csv`.
+
+
+R502 — Iron-meteorite PGM distribution comparator (2026-11-09)
+
+AsteroidCatalog `asteroid_catalog/taxonomy.py` sets `_PGM_BASELINE_PPM = 37.0`; the preceding comment calls it approximately 37 ppm total PGM+Au and a “mean iron meteorite” figure, while the code says this baseline has no source. Cannon, Gialich & Acain compile measured iron-meteorite PGM data and statistically resample ten samples per group 100 times (section 2.2, p. 4). Their Table 2 reports a 40.78 ppm median total PGM grade and 14.70–107.86 ppm 10th–90th percentiles (p. 4); these totals exclude Au, and the discussion says the iron-meteorite values represent 100% metal upper values and cannot locate a particular asteroid within the distribution (p. 6). This is a measured PGM-only comparator, not an Au-inclusive mean or a taxonomy-specific estimate. `rc-368` records the attribution and boundary gap; retain 37.0 ppm pending a compatible PGM+Au baseline and do not derive class factors from this distribution alone. Extracted: `extracted_data/r502_cannon_iron_meteorite_pgm_percentiles.csv`.
+
+
+R503 — Taxonomic PGM factors lack a published calibration (2026-11-09)
+
+AsteroidCatalog `asteroid_catalog/taxonomy.py` assigns fixed PGM factors of 2.0 to M/Xk/X/Xc, 1.5 to Xe/E, 0.5 to A/R/O, and 0.2 to V; its comment says none of the table’s own numbers has a source. Cannon, Gialich & Acain report broad iron-meteorite PGM-grade percentiles (Table 2, p. 4) and state that there is “no known way to remotely identify where an asteroid falls along the wide distributions” (p. 6). Their analysis supplies distributional context but no mapping from asteroid spectral classes to these factors. `rc-369` records the calibration gap; retain the factors only as explicit model scenarios pending a class-matched published basis. Extracted: `extracted_data/r503_cannon_pgm_remote_inference_limit.csv`.
+
+
+## R514 — CM sulfide split compared with ALH 83100 XRD modes (2026-11-10)
+
+`lindgren_lee_et_al_2020_alh83100_cm_sulfide_modal_xrd` — Lindgren et al., Table 2 (printed p. 74), report XRD modal mineralogy for unheated ALH 83100: pyrrhotite 0.9 vol%, pentlandite 1.2 vol%, and total Fe(Ni) sulphide 2.1 vol%. The paper labels ALH 83100 as petrologic type 1.2 and says the measurements are typically accurate to less than 5 vol% (pp. 74–75). The present-study modal values imply a 42.9/57.1 pyrrhotite/pentlandite split by volume within the reported sulphide modes; the paper notes the earlier Howard et al. (2011) analysis did not individually quantify the three sulphide minerals. AsteroidCatalog's `_SULFIDE_CM` applies a 65/35 split across CM-related taxonomy rows; the sample's volume modes differ, but they do not establish class-wide mass shares. Open **rc-380** to review the fixed split or label it as an assumed distribution; no replacement is inferred. Extracted: `extracted_data/r514_alh83100_cm_sulfide_modal_xrd.csv`.
+
+
+## R518 — Tagish Lake soluble-organic share comparator (2026-11-10)
+
+Grady et al. (2002), abstract (p. 713), report that a small pristine Tagish Lake chip contained 5.81 wt% total carbon, about 2.6 wt% organic carbon, and that “around 2% of the organic material is thermally labile and solvent soluble.” The abstract cautions that the chip’s carbon abundance may be artificially high because carbonate decomposition dominated its carbon inventory. AsteroidCatalog `asteroid_catalog/mineralogy.py` assigns `_CARBON_PRIMITIVE` shares of 0.60 to `organics` (soluble organic matter) and 0.40 to `carbon` (insoluble macromolecular organic matter) for P, D, Z and T; the 0.60 share is 30 times the Tagish Lake sample comparator. This single, heterogeneous meteorite sample does not establish a class-wide D/Z/P/T split or prove the measurement definitions match the model phases. rc-384 records the unsourced split for review; no replacement is inferred. `extracted_data/r518_tagish_lake_organic_matter_split.csv`.
+
+
+## R541 — Tagish Lake accessory-mode comparator (2026-11-10)
+
+`schrader_etal_2024_tarda_tagish_lake_modal_mineralogy`: §3.1.2 reports one Tagish Lake sample, ASU1684_C1, as most similar to the carbonate-rich lithology; Table 2 gives “Ca-carbonate (~3.2 vol.%; dolomite and calcite), magnetite (~4.6 vol.%), Fe-sulfide (~1.9 vol.%; pyrrhotite and pentlandite)” (accepted manuscript p. 42). The method is digital point counting; the paper treats area percent as equivalent to volume percent and notes identified mineral abundances are lower limits where fine-grained matrix falls below mapping resolution (§2.1; Table 2 notes).
+
+Upstream: AsteroidCatalog `asteroid_catalog/mineralogy.py` at `AsteroidCatalog@99781b65fb792a844140c49cdadfa123ebc9b505` keeps `_ACC_TL` at 0.05 magnetite, 0.03 troilite and 0.03 carbonates for D/Z/P; the module defines these as absolute body mass fractions. Verdict: this peer-reviewed study adds a direct, quantitative Tagish Lake sample comparator and strengthens the open basis review in `rc-343`; it reports volume modes for one carbonate-rich sample, with pyrrhotite/pentlandite rather than troilite, and does not establish representative D/Z/P mass fractions. No conversion or replacement value is inferred. Extracted: `extracted_data/r541_schrader_tagish_lake_modal_comparator.csv`.
+
+
+## R552 — CI sulfide species-split citation gap (2026-11-10)
+
+`harrison_etal_2025_ryugu_ci_sulfide_mineralogy` — Harrison et al. report 0.3–0.4 area% total Fe-sulfide in Orgueil and Ivuna; their Results describe Fe-sulfides as “predominantly pyrrhotite” and say “Pentlandite is rare” (printed p. 510). The article identifies rare cubanite as well, but gives no quantitative pyrrhotite/pentlandite ratio. At AsteroidCatalog@99781b65fb792a844140c49cdadfa123ebc9b505, `_SULFIDE_CI` assigns pyrrhotite 0.70 and pentlandite 0.30 to detailed-phase rows B, C, Cb and F. The measurements are sample-level, coarse-grain observations and do not set a class-wide mass ratio. Open **rc-418** to document the split’s basis or label it an estimate; no replacement is inferred. Extracted: `extracted_data/r552_harrison_ci_sulfide_species.csv`.
+
+
+## R553 — S-complex subtype phase-share basis (2026-11-10)
+
+DeMeo & Carry (2015), Table 1 (printed p. 17), maps the Gaffey seven-class mineralogical scheme to Bus and Bus-DeMeo S-complex taxonomy and describes the Gaffey system as primarily separating olivine-to-orthopyroxene ratio. The chapter distinguishes detailed mineralogical characterization from taxonomy (p. 14). AsteroidCatalog `asteroid_catalog/mineralogy.py` assigns conditional silicate mass shares of 75/12/3/10 to Sa, 45/35/8/12 to Sr, and 30/30/20/20 to Sv (olivine/orthopyroxene/pyroxene/plagioclase). The source supports mineralogical diversity but does not report these Bus-DeMeo subtype bulk mass fractions or the conversion basis. `rc-419` records the review gap; no replacement values are inferred. Extracted: `extracted_data/r553_s_complex_subtype_taxonomy_vs_phase_splits.csv`.

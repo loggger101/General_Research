@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+borowski_ryan_mccurdy_2019_rl10b2_performance_nasa_presentation,RL10B-2 LO2/LH2 specific impulse,~465.5,s,"slide 7, “Propulsion Options: RL10B-2…”",Engine-specific upper-stage benchmark; NASA slide gives 5.88:1 mixture ratio and cites Aerojet Rocketdyne RL10 specifications (March 2019).
+,spacecost generic tug specific impulse,465.0,s,"spacecost/spacecost/delivery.py, TUG_ISP_S",Model parameter; the code describes it as an upper-stage figure.
+borowski_ryan_mccurdy_2019_rl10b2_performance_nasa_presentation,Difference from rounded tug value,-0.5,s,computed here,465.0 - 465.5; close numeric match supports the benchmark mapping but does not make every generic tug an RL10B-2.

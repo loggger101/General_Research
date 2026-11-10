@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+scott_keil_goldstein_asphaug_bottke_moskovitz_2015_a_type_olivine_abundance,Magnesian A-type olivine abundance,approximately 70–90,percent abundance,"Asteroids IV, printed p. 578",Chapter says magnesian A-types tend to be olivine-rich; not a bulk mass fraction.
+scott_keil_goldstein_asphaug_bottke_moskovitz_2015_a_type_olivine_abundance,AsteroidCatalog A-type silicate olivine share,0.95,conditional mass fraction,asteroid_catalog/mineralogy.py PHASE_SHARES[A],Upstream model value quoted for comparison.
+scott_keil_goldstein_asphaug_bottke_moskovitz_2015_a_type_olivine_abundance,Ferroan A-type composition description,monomineralic interpretation,qualitative,"Asteroids IV, printed p. 578",Distinct subgroup from magnesian A-types; does not establish universal 95% abundance.

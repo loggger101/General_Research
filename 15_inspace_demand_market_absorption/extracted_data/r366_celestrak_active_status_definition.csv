@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+celestrak_satcat_operational_status_2026,Statuses included by CelesTrak ACTIVE flag,+;P;B;S;X,status codes,"Operational Status page, lines 36-37","ACTIVE includes operational, partially operational, backup/standby, spare, and extended mission."
+celestrak_satcat_operational_status_2026,Power or communications required for active status,no,boolean,"Operational Status page, lines 38-39",CelesTrak says active status does not require power or communications.
+celestrak_satcat_active_group_2026;celestrak_satcat_operational_status_2026,R365 GEO+/-300 km active-payload count status split,+ 554; P 22; B 7; S 2; X 0,payloads,"R365 aggregate; status code definitions from Operational Status page, lines 23-39",Counts total 585; no X-status payload is present in this filtered GEO band. Raw SATCAT response not retained.

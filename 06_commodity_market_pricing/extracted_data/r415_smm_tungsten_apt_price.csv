@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+smm_2026_11_05_tungsten_apt_price,CIF Rotterdam 88.5% APT tungsten assessment (2026-11-05) low,2500,USD/mtu WO3,"SMM Tungsten price page, CIF Rotterdam row, dated Nov. 5, 2026",Assessment range lower bound. SMM page terms prohibit redistribution; source not hosted.
+smm_2026_11_05_tungsten_apt_price,CIF Rotterdam 88.5% APT tungsten assessment (2026-11-05) midpoint,2800,USD/mtu WO3,"SMM Tungsten price page, CIF Rotterdam row, dated Nov. 5, 2026",Published range midpoint.
+smm_2026_11_05_tungsten_apt_price,CIF Rotterdam 88.5% APT tungsten assessment (2026-11-05) high,3100,USD/mtu WO3,"SMM Tungsten price page, CIF Rotterdam row, dated Nov. 5, 2026",Assessment range upper bound.
+usgs_mineral_commodity_summaries_2026,Rotterdam APT price rose during 2025,$331 to $675,USD/mtu WO3,"USGS MCS 2026, Tungsten chapter, events/trends/issues paragraph",USGS reports sharp 2025 increase; source is hosted in the registry.
+,spacevalue tungsten reference fallback,45,USD/kg W,"spacevalue/catalog.py, _new_element(""tungsten"")","Pipeline value, with note anchoring it to start-of-2025 APT $331/mtu; ref_price_date is 2025-01-31."
+,contained-W equivalent of SMM midpoint,353.09,USD/kg W,"Computed: $2,800/mtu divided by 7.93 kg W per mtu","Illustrative contained-W equivalent only; ignores refining, payables, and product-form differences."

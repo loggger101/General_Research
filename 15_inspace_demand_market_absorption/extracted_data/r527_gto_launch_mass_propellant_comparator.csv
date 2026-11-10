@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+mcdowell_2026_space_activities_2025_gto_launches,2025 launches classified GTO Transfer,34,launches,"Table 14(e), p. 38","McDowell total; this is an orbit/launch category, not a communications-satellite count."
+toson_etal_2016_draise_geo_platform_mass,Typical chemical GEO communications platform mass,6,metric tons,"IAF abstract, p. 1",Approximate typical mass; abstract says about half total weight is propellant.
+toson_etal_2016_draise_geo_platform_mass,Chemical-platform total mass fraction described as propellant,0.5,fraction,"IAF abstract, p. 1",Approximate statement; not applied in the catalog calculation.
+toson_etal_2016_draise_geo_platform_mass,Onboard propellant allocated to transfer to GEO,0.6666666666666666,fraction,"IAF abstract, p. 1",Abstract statement; not applied in the catalog calculation.
+byers_1989_advanced_onboard_propulsion_tm103174,Apogee propellant share of mass injected into GTO,0.40–0.50,fraction,"Introduction, p. 1; Fig. 1",Applies to GEO satellites in Byers sample.
+,"Catalog arithmetic: 34 × 6,000 kg × 0.40",81600,kg/yr,"spacevalue catalog.py IN_SPACE_ANNUAL_DEMAND_KG[""gto""]","Computed comparator, not source-reported demand; cohort match is unestablished."

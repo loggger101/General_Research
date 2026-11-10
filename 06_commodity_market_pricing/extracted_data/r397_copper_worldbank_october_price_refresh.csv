@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+worldbank_cmo_pink_sheet,Copper monthly average 2026M05,13543,USD/metric ton,"World Bank Pink Sheet September 2026 PDF, p.2, Copper row, 2026 monthly columns; also r70_worldbank_pink_sheet_monthly_energy_fertilizer_metals.csv",Same-source monthly-average reference documented in the upstream copper note.
+worldbank_cmo_pink_sheet,Copper monthly average 2026M10,14508,USD/metric ton,"World Bank Pink Sheet November 2026 PDF, p.2, Copper row, October 2026 column","Latest monthly average in the November 3, 2026 edition; LME standard grade A cathodes and wire-bar shapes, physical settlement (p.3)."
+,Upstream copper fallback,13.543,USD/kg,"spacevalue@a13e378efece102d3724ada18d3810a62f29432f, spacevalue/catalog.py copper entry","Reference note says $13,543/metric ton, World Bank Pink Sheet monthly average for May 2026; fallback stamped 2026-05-29."
+worldbank_cmo_pink_sheet,October World Bank average versus upstream May fallback,7.123,percent above,"Computed: ($14,508 / $13,543 - 1) × 100","Same World Bank monthly series; candidate review signal only, no fallback changed."
+worldbank_cmo_pink_sheet,October copper monthly average normalized to mass,14.508,USD/kg,"Computed: $14,508 per metric ton ÷ 1,000 kg per metric ton",Same unit basis as the upstream $13.543/kg fallback.

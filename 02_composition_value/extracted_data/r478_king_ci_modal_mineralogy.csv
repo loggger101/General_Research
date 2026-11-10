@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+king_schofield_2015_ci_modal_mineralogy_xrd,CI phyllosilicate range,81–84,vol%,"Abstract, printed p. 148","Alais, Orgueil and Ivuna; mixed serpentine/saponite."
+king_schofield_2015_ci_modal_mineralogy_xrd,Orgueil average phyllosilicate,83.0,vol%,"Table 1, printed p. 154",PSD-XRD modal average.
+king_schofield_2015_ci_modal_mineralogy_xrd,Orgueil average olivine,1.0,vol%,"Table 1, printed p. 154",PSD-XRD modal average.
+king_schofield_2015_ci_modal_mineralogy_xrd,Ivuna average phyllosilicate,82.5,vol%,"Table 1, printed p. 154",PSD-XRD modal average.
+king_schofield_2015_ci_modal_mineralogy_xrd,Ivuna average olivine,2.0,vol%,"Table 1, printed p. 154",PSD-XRD modal average.
+king_schofield_2015_ci_modal_mineralogy_xrd,volume-to-mass conversion,not reported,,"Table 1, printed p. 154","Article reports modal volume percentages, not the model’s conditional mass shares."

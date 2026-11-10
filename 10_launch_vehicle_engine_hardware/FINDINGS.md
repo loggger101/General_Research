@@ -53,3 +53,22 @@ NASA MSFC ECI RDRE report: best hot fire ~5,300 lbf at ~740 psia, Isp 246 s (p32
 ## R119 - meyer_2012_lox_lch4_reaction_control_thruster_altitude_combustion_stand hosted (2026-10-05)
 
 `meyer_2012_lox_lch4_reaction_control_thruster_altitude_combustion_stand` (NASA/TM-2012-217643) hosted as full_texts/meyer_arrington_kleinhenz_marshall_2012_lox_lch4_rcs_altitude_combustion_stand_ntrs20120009210.pdf: Glenn's Altitude Combustion Stand (activated 2009, up to 2000 lbf / 8.9 kN) ran the LOX/LCH4 RCS programme 2009-2010 and "delivered up to 24 hot fire tests in a single test day". Context only.
+
+
+## R419 — Raptor 2 RVAC modeled performance comparison (2026-11-09)
+
+Herberhold et al. (2026), Table 2, reports DLR RPA-calculated Raptor 2 RVAC vacuum Isp of 368.5 s at O/F 3.4 and 365.9 s at O/F 3.6. Section 2.1.1 says precise Raptor 2 performance is unpublished and describes assumptions including 300 bar chamber pressure and an approximately 100 expansion ratio. The upstream methalox row uses 380 s from a 2013 Raptor upper-stage development figure. The modeled values are 3.0% and 3.7% lower, respectively, but differ in engine generation and evidence basis; they do not establish that the stored family-level value is wrong. rc-329 records a scoped reconciliation review. `extracted_data/r419_raptor2_rvac_isp.csv`.
+
+## R430 — Raptor 3 modeled vacuum-Isp generation cross-check (2026-11-09)
+
+Herberhold et al. (2026), §2.1.1, says its 350-bar Raptor 3 performance estimate raises thrust while vacuum specific impulse “remain[s] almost constant” relative to Raptor 2. The paper does not state a standalone numeric Raptor 3 RVAC Isp in that passage; it says the announced 350 s for the Raptor 3 sea-level variant is in line with calculations under realistic assumptions. The Raptor 2 RVAC calculations in Table 2 are 368.5 s at O/F 3.4 and 365.9 s at O/F 3.6. This makes it less likely that the newer engine generation alone explains the upstream 380 s family reference, but remains model-based and does not give an exact Raptor 3 vacuum value. rc-329 remains open for engine-variant and source-basis reconciliation. Extracted: `extracted_data/r430_raptor3_isp_generation_context.csv`.
+
+R492 — NASA Glenn’s ‘Propulsion Options: RL10B-2…’ slide (slide 7) gives the RL10B-2 an LO₂/LH₂ mixture ratio of 5.88:1 and “Specific Impulse (Isp): ~465.5 s.” Current spacecost `spacecost/delivery.py` uses `TUG_ISP_S = 465.0` and describes it as an upper-stage figure, while its hydrolox propellant table separately uses 452 s. The RL10B-2 result supports 465 s as a rounded upper-stage-engine analogue, but does not establish that every generic tug stage has this performance. `rc-358` records the missing attribution and proxy mapping; no numeric change inferred. Extracted: `extracted_data/r492_rl10b2_tug_isp_benchmark.csv`.
+
+## R493 - Generic tug dry-mass fraction analogue
+
+- **nasa_2022_sls_reference_guide_icps_masses** (printed p. 9): NASA lists the Interim Cryogenic Propulsion Stage (ICPS), a modified Delta Cryogenic Second Stage, at 32.7 t fueled and 3.7 t unfueled. Their ratio is 0.11315 dry/fueled mass, close to `spacecost`’s cited DCSS ~0.11 comparison; the guide says values are approximate. NASA describes ICPS modifications including a lengthened LH2 tank, so this is not an exact DCSS configuration match. No primary Centaur V source for the code comment’s ~0.08 value was located. The generic `TUG_DRY_MASS_FRAC=0.10` midpoint is not contradicted; rc-359 records the source and analogue gap. `extracted_data/r493_icps_tug_dry_mass_fraction_analogue.csv`.
+
+## R494 - Apollo LM lander dry fraction
+
+- **nasa_1969_apollo10_press_kit_lm4_mass** (printed p. 44): NASA lists LM-4’s descent stage at 4,703 lb dry and its loaded descent propulsion system at 18,134 lb. The derived dry/(dry+propellant) fraction is 0.20599, close to `spacecost`’s `LANDER_DRY_MASS_FRAC=0.20` and its approximate Apollo LM benchmark. This is an Apollo lunar LM configuration; the same generic constant is used in other powered-descent chains. rc-360 records the source and scope gap; no numeric replacement inferred. `extracted_data/r494_apollo10_lm4_lander_dry_fraction.csv`.

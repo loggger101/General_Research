@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_surface_escape_gate_current_2026,gate_surface_escape default,False,boolean,modules/calc.py:721,Default consumer does not filter return offers by surface escape.
+economicspace_surface_escape_gate_current_2026,consumer configuration,CONFIG = CalcConfig(),code,modules/calc.py:1468,No override of gate_surface_escape found in current economicspace checkout.
+economicspace_surface_escape_gate_current_2026,spherical escape speed,sqrt(2 * G * mass_kg / (diameter_km * 500)),m/s,modules/calc.py:2378-2384,Uses estimated mass and mean radius from diameter; missing/nonpositive values produce zero shortfall.
+economicspace_surface_escape_gate_current_2026,rotation credit,2*pi*radius_m / (period_h*3600),m/s,modules/calc.py:2371-2386,"Uses measured rotation period or configured default when absent; shortfall is max(0, escape minus rotation)."
+economicspace_surface_escape_gate_current_2026,offer filter,dv_ret_m_s >= surface_escape_shortfall_m_s,condition,modules/calc.py:3504-3506,Filters offers when enabled; does not add a maneuver or losses.
+economicspace_surface_escape_gate_current_2026,gate scope statement,A necessary test: passing it is not a surface-launch design.,comment,modules/calc.py:718-721,Explicitly distinguishes this screening bound from a physical surface-launch architecture.

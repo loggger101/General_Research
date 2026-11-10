@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+impulse_space_moonbase_vadr_task_orders_2026,task_order_count,2,task orders,"Impulse Space release, opening paragraph",NASA Moon Base awards; missions scheduled to begin in 2028.
+impulse_space_moonbase_vadr_task_orders_2026,award_type,firm-fixed-price,contract type,"Impulse Space release, paragraph 3",VADR task orders.
+impulse_space_moonbase_vadr_task_orders_2026,first_task_order_launch_vehicle,SpaceX Falcon 9,vehicle,"Impulse Space release, paragraph 3",Impulse is prime; option for Mira cislunar delivery. Individual order price not disclosed.
+impulse_space_moonbase_vadr_task_orders_2026,second_task_order_launch_vehicle,Relativity Terran R,vehicle,"Impulse Space release, paragraph 4",Impulse Helios and lander deliver payloads; individual order price not disclosed.
+impulse_space_moonbase_vadr_task_orders_2026,mission_window,2028 onward,planned schedule,"Impulse Space release, opening paragraph",Press release says missions scheduled to begin in 2028.

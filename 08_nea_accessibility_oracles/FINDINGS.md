@@ -43,3 +43,10 @@ Ladder: 666 (Sep-2010) -> 765/590 (Feb-2011) -> 1,317 (Dec-2014) -> 4,658 (~Dec-
 ## R223 - probe_nhats.py is in starred-repos (2026-10-21)
 
 economicspace PR#159 (876cd44) moved `research/starred-repos/`, `probe_nhats.py` and SECOND-PASS.md F6 included, to [starred-repos](https://github.com/loggger101/starred-repos); at economicspace be86297 no `probe_nhats.py` exists. R219 updated domain 13's backings and not this domain's, which still named economicspace as the probe's home. The backings line here, in INDEX.md and in README.md, and jpl_nhats_nea_dv_oracle's mapping, now name starred-repos. The R53, R73 and R138 blocks and their extracted-data notes keep the path as read. No value or verdict moves.
+
+
+## R399 — JPL NHATS current snapshot (2026-11-08)
+
+`jpl_nhats_nea_dv_oracle` returned signature version `1.3`, source `NASA/JPL NHATS Data API`, and `count=7197` for the explicit R73 filter values: total delta-v <=12 km/s, duration <=450 days, stay >=8 days, launches 2020-2045. Across `data[*].min_dv.dv`, the linear-interpolated median is 9.369 km/s (p10 5.996, p90 11.546; range 3.345-11.999). The five minimum-delta-v bins (<4, 4-<5, 5-<8, 8-<10, >=10 km/s) total 7,197.
+
+The R73 per-body extraction has 7,094 records; recomputed median 9.3665 km/s (displayed 9.367), p10 5.9923, p90 11.5487. The current count is 103 higher while the median shifts +0.002 km/s (~0.021%); distribution bins change by +2, +3, +24, +34 and +40 bodies, respectively. The NHATS figures are round-trip trajectories; spacecost's easy/average/hard NEA rows remain one-way values, so this refresh supplies no direct value contradiction. No revision candidate opened. Extracted: `extracted_data/r399_jpl_nhats_current_snapshot.csv`.

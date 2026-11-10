@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+cnsa_2024_kuaizhou11_capacity_report,KZ-11 maiden-flight carrying capacity reported in 2024 article,"1,000",kg,paragraph beginning “The Kuaizhou-11”,CNSA/Xinhua reports the 2022 maiden flight had improved carrying capacity of one tonne; article does not specify orbit or say this is the maximum LEO rating.
+,"Illustrative price per carried kg if $12.2M were divided by 1,000 kg","12,200",USD/kg,comparison computed here; price from existing rc-202 upstream row,"Arithmetic only; the article gives no price, and its 1,000 kg maiden-flight capacity is not the catalog 1,500 kg LEO maximum."

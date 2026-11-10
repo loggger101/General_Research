@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2015_nextc_contract_award_price,total cost-share contract value,18410242,USD,"NASA release 15-011, opening paragraph","Contract total for two flight thrusters and two flight PPUs, plus design/fabrication/test and a prototype PPU; not a recurring per-string quote."
+nasa_2015_nextc_contract_award_price,flight deliverables,2 thrusters + 2 PPUs,units,"NASA release 15-011, opening paragraph",NEXT-C flight units.
+nasa_2015_nextc_contract_award_price,prototype PPU deliverable,1 PPU,unit,"NASA release 15-011, paragraph 3",Prototype PPU design/fabrication/test precedes production of flight units.
+nasa_2015_nextc_contract_award_price,period of performance,5,years,"NASA release 15-011, opening paragraph","Contract duration; scope includes design, fabrication and testing."

@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+uscode_51_usc_50924_launch_reentry_user_fees,2026 per-pound payload fee,0.25,USD/lb payload,51 U.S.C. §50924(a)(2)(A),Statutory rate applies to each covered launch or reentry.
+uscode_51_usc_50924_launch_reentry_user_fees,2026 maximum event fee,30000,USD/event,51 U.S.C. §50924(a)(3)(A),Fee is the lesser of the per-pound amount and this event cap.
+,Payload mass where 2026 cap is reached,54431.1,kg,"computed: $30,000 / ($0.25/lb) × 0.45359237 kg/lb",Threshold only; exact mass at/above this level triggers the cap.
+,"Fee at 1,500 kg payload",826.73,USD/event,computed from statutory rate and cap,Below cap.
+,"Fee at 17,400 kg payload",9589.51,USD/event,computed from statutory rate and cap,Illustrative payload only; below cap.
+,"Fee at 70,000 kg payload",30000,USD/event,computed from statutory rate and cap,Illustrative payload only; statutory cap applies.
+faa_2026_launch_reentry_licensing_user_fees_policy_statement,Fee assessment basis,payload weight on each launch or reentry,text,"FAA policy statement, 91 FR 21591, section II",FAA requests operator payload weight at least 60 days before each mission and issues an event-specific fee notification.
+,Economicspace fee treatment in inspected path,No separate per-event user-fee term found,text,modules/calc.py: _ops_values around 5398-5401; event cost selection around 5689-5693; upfront_lines around 6029-6032,The inspected path loads flat Part 450 program cost and liability values and includes one selected licensing_cost in upfront_lines; it has no cost term calculated from statutory payload weight or count of covered events.

@@ -278,3 +278,41 @@ population/ranking measurement. Thirty-one source/input blobs, including
 all 22 imported local modules, match fresh pinned GitHub metadata; all four
 live main comparisons are identical.
 `extracted_data/r345_rtg_power_constrained_payload.csv`.
+
+
+## R455 - Rated-array power cost option in current upstream (2026-11-09)
+
+`economicspace_rated_array_cost_option_2026`, economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, defines `CalcConfig.model_rated_array_cost` with default `False` (modules/calc.py, line 670). The code comment says the off mode prices the plant at watts delivered at the body, while the on mode prices the array at its 1-AU rating. When enabled, the caller passes the ratio of base to effective solar specific power, multiplied by `array_oversize_factor` for the solar plant (lines 7560-7563); the cost prologue applies that multiplier to the plant array and EP array terms (lines 5634-5651).
+
+This adds an explicit sensitivity path for the installed-array basis in `rc-091`, but its default remains off, so the candidate's baseline cost/mass asymmetry is still present unless a consuming configuration enables it. Keep `rc-091` open to review the default/consumer configuration and ensure any correction uses the same installed-power basis as mass sizing; do not treat the optional path alone as a default-model resolution. Extracted: `extracted_data/r455_rated_array_cost_option_audit.csv`.
+
+
+## R459 — Current RTG ceiling-refit option
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.refit_rtg_ceiling` defaults to `False` (modules/calc.py:706), and the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). When an RTG trial exceeds `rtg_max_power_w`, the sizing loop calls `_refit_to_plant_ceiling` only when the flag is enabled; otherwise it returns `None` (lines 6965-6971). The settled-power check applies the same opt-in rule (lines 7264-7271). Thus the smaller-payload recovery path is available for experiments but not active in the default consumer; `rc-281` remains open. Extracted: `extracted_data/r459_rtg_ceiling_refit_flag.csv`.
+
+
+## R466 — Current electric-stage sizing and return-mass options
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.size_ep_on_flown_load` and `carry_ep_home` both default to `False` (modules/calc.py:741-744), and the module-level consumer constructs `CONFIG = CalcConfig()` without overrides (line 1468). When `size_ep_on_flown_load` is enabled, the sizing loop computes EP from `_flown_propellant_kg` at the current trial payload (lines 6850-6858) and settlement recomputes thrust burn duration from the flown outbound and return propellant (lines 7342-7345); mission duration then includes that burn and is tested against the configured maximum (7422-7424). The v1.66.0/calc v1.39.0 changelog reports 44 of 53 evaluable sampled rows changed cost/kg (0.732x–0.999x, median 0.996x) and no change in evaluability; its 10,000 kg water example changes an 18.0-year implied burn reported as 3 years to 3.00 years at 3,562 W and 124.8 kg EP mass. When `carry_ep_home` is enabled, the same stage mass is removed from one-way hardware and added to return dry mass (6777-6783; settlement 7162-7172). The changelog reports that 31 of 53 sampled rows stop closing, while 22 move; it models one shared stage only, not separate outbound/return units. The four flags were not run all together, and the sample is not a full catalog result. Both corrections remain opt-in, so `rc-244` and `rc-246` remain open for default-path resolution and, for `rc-246`, the shared-versus-separate-stage architecture decision. Extracted: `extracted_data/r466_current_ep_sizing_and_return_mass_flags.csv`.
+
+## R476 — NASA D-RATS lithium-ion battery pack specific energy (2026-11-09)
+
+`bennett_baldwin_2010_drats_liion_battery_pack_specific_energy` — Bennett & Baldwin, NASA/TM-2010-216906, report that NASA Glenn built five lithium-ion battery packs for D-RATS spacesuit simulators, with internal over-current, over-discharge and over-temperature protection (abstract, printed p. 1; PDF p. 5). At the 38.4 W maximum-power discharge test and 23 °C ambient, Table 5 reports 124, 127, 132, 133 and 132 Wh/kg for the five packs (printed p. 5; PDF p. 8), averaging 129.6 Wh/kg. The table reports assembled masses of 498.5–522.1 g. The NTRS record states “Work of the US Gov. Public Use Permitted.” **Verdict:** this supplies a measured protected-pack analogue for spacecost’s 130 Wh/kg figure, but the D-RATS suit pack differs from spacecraft bus storage. It does not validate 0.80 depth of discharge, the 104 Wh/kg usable result, or the [70,160] band. `rc-342` asks for a cited scope-qualified note; leave the values untouched. Extracted: `extracted_data/r476_nasa_drats_liion_pack_specific_energy.csv`.
+
+
+R483 — NASA’s preliminary 1–10 kWe Kilopower scaling study reports 1,544 kg for the 10 kWe power system in Table I (printed p. 5). The same section says these are preliminary mass estimates extrapolated from the 2010 feasibility-study design parameters (printed p. 4), while the paper describes KRUSTY as a lower-power ground demonstration, not a 10 kWe flight unit. This supports the approximate 1,500 kg mass but exposes a wording/provenance gap in spacecost’s “10 kWe flight unit is designed around” claim. `rc-349` proposes citing the NASA estimate and labeling the 10 kWe configuration as a design point; no mass change is indicated. Extracted: `extracted_data/r483_kilopower_10kwe_mass.csv`.
+
+## R496 — JPL roll-out array specific-power benchmark (2026-11-09)
+
+- **nasa_jpl_2017_solar_power_technologies_planetary_missions** (JPL D-101316): Table 3-3 gives “Flexible roll-out array | 25 kW | 150 W/kg | 338 W/m² | 7” (printed p. 25; PDF p. 33). The report says the figures are approximate public-domain state-of-practice values; flexible roll-out maximum power is estimated from ground measurements and the specific-power comparison assumes current-production triple-junction cells. This is an array-level benchmark, not a flight measurement of ROSA/iROSA or a complete power-system mass. It supplies a registered citation for the ~150 W/kg scale while leaving spacecost’s 60 W/kg system-level estimate and the asserted battery/PMAD/structure reduction unsupported. Extracted data: extracted_data/r496_jpl_rollout_array_specific_power.csv.
+
+
+## R508 — JPL solar-array recurring-cost comparator (2026-11-09)
+
+Surampudi et al.’s JPL D-24454 report derives cost data from eight GSFC solar panels and states that these costs include the photovoltaic stack and associated electrical hardware and qualification tests, but exclude substrates, deployment mechanisms and drives (§2.6, printed p. 22). It gives a year-2001 estimate of $1,100 per test-condition watt and about $1,650 including deployment gear; the average of four typical 1990s panels is $2,544 per end-of-life watt. The current `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` row `Power system (solar + battery)` is $800 per end-of-life watt [500, 1,500] and describes a burdened PV+battery train. JPL’s array-only historical costs are a scope and scale comparator; they exclude batteries and are in an older dollar basis. **rc-374 remains open** for a current, same-boundary cost basis; no numeric replacement is supported. Extracted: `extracted_data/r508_jpl_solar_array_cost_comparator.csv`.
+
+
+## R548 — Duplicate system-level lithium-ion row (2026-11-10)
+
+Bennett and Baldwin’s five protected D-RATS packs measured 124–133 Wh/kg (mean 129.6; Table 5, printed p. 5 / PDF p. 8). At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, the 130 Wh/kg estimate appears both in `reference/storage_systems.csv` (“Li-ion battery (system level),” [90,200] Wh/kg) and as the input to `reference/operational_costs.csv` (“Energy storage usable specific energy,” 104 Wh/kg usable). The storage row itself says its 130 Wh/kg figure has no source; the same table-boundary caveat applies because the D-RATS equipment was a protected spacesuit pack, not spacecraft bus storage. **rc-342 remains open** for a cited, scope-qualified analogy; the 0.80 DoD, 104 usable value, and bands remain unsupported by this comparison. Extracted: `extracted_data/r476_nasa_drats_liion_pack_specific_energy.csv`.

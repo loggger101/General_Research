@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_mocs_2014_dsn_aperture_fee_algorithm,relay-cost allocation basis,pro-rata share of DSN station cost,method,"PDF p.17, §2.1.5",For data relayed from a landed object through an orbiting spacecraft to a DSN station.
+nasa_mocs_2014_dsn_aperture_fee_algorithm,relay pass duration basis,time required to return the total amount of relayed data; minimum 1 hour,method,"PDF p.17, §2.1.5","The source says to use the data-only transmission time or one hour, whichever is greater."
+nasa_mocs_2014_dsn_aperture_fee_algorithm,relay station-configuration time,excluded,cost-model scope,"PDF p.17, §2.1.5",This rule is specific to the relayed-data share; it does not establish a commercial $/Mbit quote.

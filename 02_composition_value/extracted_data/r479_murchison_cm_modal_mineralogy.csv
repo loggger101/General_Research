@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+lee_lindgren_2016_murchison_cm_mineralogy_chondrule_alteration,Murchison phyllosilicates (Fe-cronstedtite and Mg-serpentine),72.5,vol%,"Table 4, printed p. 1007",X-ray diffraction result attributed by Lee & Lindgren to Howard et al. (2011).
+lee_lindgren_2016_murchison_cm_mineralogy_chondrule_alteration,Murchison olivine and orthopyroxene,23.4,vol%,"Table 4, printed p. 1007",X-ray diffraction result attributed to Howard et al. (2011).
+lee_lindgren_2016_murchison_cm_mineralogy_chondrule_alteration,Murchison sulfide,1.8,vol%,"Table 4, printed p. 1007",X-ray diffraction result attributed to Howard et al. (2011).
+lee_lindgren_2016_murchison_cm_mineralogy_chondrule_alteration,Murchison calcite,1.2,vol%,"Table 4, printed p. 1007",X-ray diffraction result attributed to Howard et al. (2011).
+lee_lindgren_2016_murchison_cm_mineralogy_chondrule_alteration,Murchison magnetite,1.1,vol%,"Table 4, printed p. 1007",X-ray diffraction result attributed to Howard et al. (2011).
+,phyllosilicate share among listed silicates,75.6,vol% conditional share,"Computed from Table 4, printed p. 1007","72.5 / (72.5 + 23.4) × 100; blank source_id because this is a comparison calculated here, not a value reported by the paper."

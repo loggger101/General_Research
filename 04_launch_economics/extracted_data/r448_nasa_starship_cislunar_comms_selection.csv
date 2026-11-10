@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2026_starship_cislunar_comms_selection,mission_selection_date,2026-11-07,date,"NASA News Release 26-095, paragraph 300",NASA selected SpaceX under an existing lunar-logistics contract.
+nasa_2026_starship_cislunar_comms_selection,planned_launch_year,2028,year,"NASA News Release 26-095, paragraph 300",Communications satellites to cislunar space aboard Starship.
+nasa_2026_starship_cislunar_comms_selection,destination,cislunar space,destination,"NASA News Release 26-095, paragraph 300",Demonstration to inform future lunar communications networks; not a price or payload specification.

@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+liu_li_etal_2025_lunar_regolith_microwave_sintering_energy,mare simulant microwave sintering specific energy,69,MJ/kg,"Abstract, Journal of the European Ceramic Society 45(3), article 117047",CLRS-1; hybrid domestic microwave and ceramic-fiber microwave kiln; 11 minutes.
+liu_li_etal_2025_lunar_regolith_microwave_sintering_energy,highlands simulant microwave sintering specific energy,98,MJ/kg,"Abstract, Journal of the European Ceramic Society 45(3), article 117047",SC-080; hybrid domestic microwave and ceramic-fiber microwave kiln; 14 minutes.
+liu_li_etal_2025_lunar_regolith_microwave_sintering_energy,mare simulant energy converted,19.166666666666668,kWh/kg,Computed from Abstract value 69 MJ/kg,69 MJ/kg ÷ 3.6 MJ/kWh.
+liu_li_etal_2025_lunar_regolith_microwave_sintering_energy,highlands simulant energy converted,27.22222222222222,kWh/kg,Computed from Abstract value 98 MJ/kg,98 MJ/kg ÷ 3.6 MJ/kWh.
+,spacevalue silicates processing allowance,1,kWh/kg,"spacevalue/spacevalue/catalog.py, IN_SPACE_PROCESSING_KWH_PER_KG[""silicates""]",Pipeline value read in R524; registry-side comparison.

@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+howard_2021_common_habitat_dsev_leo_propellant_demand,Starship tanker payload assumed transferable as propellant,90,metric tonnes per flight,"Section IV.B, p. 4",Paper assumes 90 t of the predicted 100 t payload capacity can be transferred as propellant.
+howard_2021_common_habitat_dsev_leo_propellant_demand,LOX/CH4 tanker flights required for one Mars DSEV mission,27,flights per mission,"Section IV.B, p. 4; VIII.A, p. 13",Architecture-specific assumption.
+howard_2021_common_habitat_dsev_leo_propellant_demand,Xenon tanker flights required for one Mars DSEV mission,12,flights per mission,"Section IV.B, p. 4; VIII.A, p. 13",Architecture-specific assumption.
+howard_2021_common_habitat_dsev_leo_propellant_demand,Total tanker flights required for one Mars DSEV mission,39,flights per mission,"Section IV.B, p. 4; VIII.A, p. 13",The report states 39 total tanker flights to fully fuel the DSEV.
+howard_2021_common_habitat_dsev_leo_propellant_demand,Mars human landing departures in the study schedule,4,departures,"Table 1, p. 4","Earth departures listed: 23-Feb-2031, 17-Apr-2033, 26-Jun-2035, and 03-Sep-2037; the paper analyzes a 2028-2037 window."
+,Computed propellant transfer capacity per Mars mission,3510,metric tonnes per mission,Computed here: 39 flights x 90 t/flight,Uses the paper’s assumed transferable payload for every tanker flight; this is a scenario capacity calculation.
+,Computed annualized LEO propellant comparator,1404,metric tonnes per year,"Computed here: 3,510 t/mission x 4 departures / 10 years","Uniform annualization over the study window, not a reported market forecast or observed demand."
+,Current Spacevalue LEO in-space demand ceiling,500000,kg per year,"spacevalue/spacevalue/catalog.py, IN_SPACE_ANNUAL_DEMAND_KG[""leo""]",Upstream value read in the current local snapshot; this is a modeled capacity assumption.
+,NASA scenario annualized comparator divided by current LEO ceiling,2.808,ratio,"Computed here: 1,404,000 kg/yr / 500,000 kg/yr",Architecture and cadence differ; comparison flags the missing annualization basis and does not establish a replacement value.

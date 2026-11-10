@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+lauretta_2024_bennu_in_the_laboratory,Bennu sample hydrogen range,0.84–0.95,wt% H,"Lauretta et al. 2024, Conclusions, p. 2481",The paper describes the Bennu sample as hydrated; H abundance is not a direct ice measurement.
+lauretta_2024_bennu_in_the_laboratory,Bennu sample fines hydrogen,0.90 ± 0.04,wt% H,"Table 4, p. 2471; OREX-500002-0 fines","Error footnote: 1-r, highest variability observed in standards and replicate analyses."
+lauretta_2024_bennu_in_the_laboratory,Bennu sample intermediates hydrogen,0.93 ± 0.05,wt% H,"Table 4, p. 2471; OREX-500002-0 intermediates",Same analyzed sample identifier; separate particle-size fraction.
+lauretta_2024_bennu_in_the_laboratory,Bennu aggregate hydrogen,0.93 ± 0.01,wt% H,"Table 4, p. 2471; OREX-803007-0 aggregate",
+,H2O-equivalent range if all measured H is in H2O,7.51–8.49,wt% H2O-equivalent,Computed from 0.84–0.95 wt% H using 18.01528/2.01588,"Upper-bound conversion only; source measures hydrogen, not water or ice."
+,AsteroidCatalog B-row ice_fraction,0.20,kg/kg,"AsteroidCatalog reference/taxonomy_composition.csv, row B",AsteroidCatalog mineralogy.py maps the entire B-row ice group to water; downstream valuation treats this phase as water.
+,B-row fraction / Bennu H2O-equivalent upper-bound range,2.36–2.66,ratio,Computed from 0.20 / 0.0849 and 0.20 / 0.0751,Scope review only: one returned regolith sample cannot establish Bennu interior or all B-class composition.

@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+abell_gaffey_2000_dembowska_surface_mineralogy,349 Dembowska surface orthopyroxene:olivine abundance ratio,45:55,ratio,NASA NTRS record abstract,"Reported from reflectance spectra; surface estimate, variation approx. 20%."
+abell_gaffey_2000_dembowska_surface_mineralogy,"AsteroidCatalog R conditional silicate OPX:olivine ratio, normalized to those two phases",33.3:66.7,ratio,asteroid_catalog/mineralogy.py PHASE_SHARES[R],Calculated here from OPX 0.30 and olivine 0.60; excludes pyroxene 0.05 and plagioclase 0.05 and is not source-reported.

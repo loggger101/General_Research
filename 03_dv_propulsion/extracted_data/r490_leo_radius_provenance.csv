@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+iers_petit_luzum_2010_conventions_tn36,Earth equatorial radius,6378136.6,m,"Table 1.1, Earth constants",Rounds to 6378.14 km used by economicspace; component of the parking-orbit radius.
+askins_2021_sls_janaff_update,Typical LEO reference definition,200,km altitude,SLS capability table note,"NASA defines typical LEO as a circular 200 km orbit at 28.5 degrees inclination; supports the model’s stated reference orbit, not a universal mission requirement."
+,economicspace R_LEO_KM,6378.14 + 200 = 6578.14,km from Earth center,economicspace/modules/calc.py R_LEO_KM; campaign/worked_calculation.py R_LEO,Current implementation matches the rounded equatorial radius plus the selected 200 km altitude.

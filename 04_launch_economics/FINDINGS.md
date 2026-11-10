@@ -1,3 +1,9 @@
+## R543 — Falcon Heavy reusable-side-core LEO payload conflict (2026-11-10)
+
+- **spacex_2026_eu_prospectus_falcon_heavy_payload** (SpaceX EU Prospectus, June 5, 2026): §4.3.10.1 (printed p. 59) reports Falcon Heavy at “approximately 64 metric tons” to LEO and describes it as partially reusable. §4.3.10.2 (printed p. 96) identifies the reusable components, including the side boosters, and lists a 63,800 kg LEO capacity. The prospectus does not specify the exact recovery profile attached to that capacity.
+- At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/launch_vehicles.csv` stores 30,000 kg for “Falcon Heavy (reusable side cores)” and its low/high payload bounds; its note attributes 30 t to Wikipedia’s launcher comparison and says SpaceX publishes no LEO figure for this configuration. The prospectus is a direct company statement for a partially reusable Falcon Heavy, 33,800 kg above the stored value, but configuration scope remains unresolved. Review the payload value, public-source note, and dependent USD/kg cells together; **rc-408** remains open.
+- Extracted: extracted_data/r543_spacex_falcon_heavy_payload_capacity.csv.
+
 # Domain 4 Findings — launch cost per kg (history, projections)
 
 Backings: spacecost `reference/launch_vehicles.csv` (prices, payloads, fairing volumes) and the `Expendable upper stage recurring cost` row of `operational_costs.csv`; economicspace's "launch no longer dominates" framing.
@@ -540,3 +546,193 @@ loader does not consume this summary (the separate `spacecost_summary_consumer_c
 trace); no profitability or ranking change is claimed. Nineteen local
 source/reference blobs match pinned GitHub records; all four upstream main
 comparisons remain identical. `extracted_data/r340_transportation_summary_launch_mass.csv`.
+
+## R362 - FAA estimate corroborates the Kuaizhou-11 price basis (rc-202; 2026-11-08)
+
+`faa_ast_2017_compendium_kuaizhou_11_price`, Kuaizhou 11 fact-sheet table
+(unnumbered sheet; the accessible text has no printed page number), lists
+LEO capacity as 1,500 kg and estimated launch price as "$15M est"; its planned
+first-launch field is 2017. The report says its data are maintained in FAA
+AST's STAR database and credits preparation to The Tauri Group. This is a
+historical preflight estimate, not a current transaction price. It independently
+agrees with the ~$15M amount quoted in the current spacecost note and strengthens
+rc-202's evidence that the stored $12.2M / $8,133 per kg pair is inconsistent
+with that note. No current price is inferred. `extracted_data/r362_kuaizhou11_faa_estimate.csv`.
+
+## R363 - Kuaizhou-11's quoted ceiling does not pin an exact rate (rc-202; 2026-11-08)
+
+`cnsa_2018_kuaizhou_11_price_quote`, CNSA article dated 2018-03-05 and
+credited to Xinhua, body paragraph 3, says “报价不到1万美元” (“quoted below
+US$10,000”) in the per-kilogram price comparison; paragraph 2 gives a 1.5 t
+maximum LEO payload. This ceiling is compatible with spacecost's stored
+$8,133/kg ($12.2M / 1,500 kg, rounded), but it does not establish that exact
+price. Together with FAA AST's distinct 2017 $15M preflight estimate and the
+Wikipedia table's $10,000/kg figure, the sources show different price
+expressions, not a resolved current transaction price. rc-202 remains open to
+identify the stored value's provenance and make the note's price basis explicit;
+the $15M value is not an automatic correction. `extracted_data/r363_kuaizhou11_price_quote.csv`.
+
+
+## R368 - Later Kuaizhou-11 price report has an unspecified basis (rc-202; 2026-11-08)
+
+`beijing_business_daily_2023_kuaizhou_11_price_cap`, Beijing Business Daily
+report republished by China News Service Jingwei on 2023-07-10, paragraph 53,
+reports the Kuaizhou-11 launch price as “不超过600万美元” (not more than
+US$6 million) and the price per kilogram as “不到1万美元” (below US$10,000).
+The paragraph gives no payload capacity, exact quote date, mission configuration,
+or whether “price” means an advertised offer, contract, or cost. It is a later
+price report than the FAA's 2017 $15M preflight estimate, but cannot by itself
+reconcile either the stored $12.2M/$8,133 per kg pair or the note's ~$15M/full
+arithmetic. rc-202 stays open for the exact stored-price provenance and price
+basis; no replacement value is inferred. `extracted_data/r368_kuaizhou11_price_cap.csv`.
+
+
+## R369 - Kuaizhou-11 designer states a conditional bulk-order rate (rc-202; 2026-11-08)
+
+`hubei_daily_2022_kuaizhou_11_bulk_price_quote`, Hubei Daily's 2022-12-08
+interview with Kuaizhou-11 chief designer Liang Jiqiu, price paragraph, says
+KZ-11 “能做到每公斤1万美元以下，订单多的情况下，甚至可以做到6000美元以下”
+(can reach below US$10,000/kg, and below US$6,000/kg when order volume is high).
+This is a conditional rate attributed directly to the designer, but the article
+gives no exact payload, contracted price, or offer configuration. The $8,133/kg
+stored rate is within the general ceiling and above the stated high-volume
+ceiling; without a confirmed volume condition or exact quote, this does not
+establish an error in the generic row or the $12.2M source. rc-202 stays open.
+`extracted_data/r369_kuaizhou11_bulk_price_quote.csv`.
+
+
+## R372 - Kuaizhou-11 database price conflicts with reported quotes (rc-202; 2026-11-08)
+
+The live Next Spaceflight launch-details record for Kuaizhou-11's March 16,
+2026 mission lists a vehicle “Price” of US$28.30 million and “Payload to LEO:
+1,500 kg”; its May 21, 2024 Kuaizhou-11 record repeats US$28.3 million and
+1,500 kg. Dividing the listed vehicle price by the listed LEO capacity gives
+US$18,867/kg. That is 2.32 times the stored US$8,133/kg and exceeds the
+reported KZ-11 ceilings of below US$10,000/kg and no more than US$6M per
+launch. The site does not identify the price's source, whether it is a list
+price or transaction, or whether its mass is applicable to the mission's SSO
+payload. The two records are the same provider's static vehicle figure, not
+independent observations. Treat this as an explicit competing database
+estimate, not a verified transaction price; rc-202 stays open to reconcile the
+price basis before any value change. Extracted:
+`extracted_data/r372_kuaizhou11_nextspaceflight_listing.csv`.
+
+## R373 - CNSA distinguishes Kuaizhou-11 maiden-flight capacity from its catalog maximum (2026-11-08)
+
+CNSA's Xinhua-sourced 26 April 2024 report says the Kuaizhou-11 “made its maiden flight in 2022 with improved carrying capacity of one tonne” (paragraph beginning “The Kuaizhou-11”). The spacecost row read for rc-202 stores `payload_leo_kg=1500`; the report gives no orbit or maximum-capacity qualifier for the one-tonne figure. Verdict: this does not contradict the 1,500 kg LEO maximum, but it shows that the price-per-kg denominator must not be read as a flown mission payload. It does not resolve the provenance or basis of the stored $12.2M. rc-202 remains open. Extracted: `extracted_data/r373_kuaizhou11_capacity_context.csv`.
+
+## R402 - Electron revenue-per-launch range check against Q2 2026 SEC filing (2026-11-08)
+
+`rocket_lab_form_10q_fy2026_q2`, MD&A p. 37, defines revenue per launch as
+the “average transaction price attributable to launch contract performance
+obligations” in the launch period, regardless of revenue-recognition method;
+the filing says the metric varies with orbit, payload handling, launch
+location and mission timing. Q2 revenue per launch was $9.1M in 2026 and
+$7.9M in 2025; first-half values were $9.2M and $7.5M. At
+`spacecost@19e1a31`, Electron stores $8.13M with a $7.1M–$9.3M band, based on
+Q1 reported values. The new quarterly and first-half values fall within that
+band. No revision candidate. Extracted:
+`extracted_data/r402_rocket_lab_q2_2026_electron_launch_economics.csv`.
+
+
+## R403 - Long March 2D customer batch-fee review signal (2026-11-08)
+
+The Shanghai Stock Exchange-hosted Changguang Satellite IPO inquiry reply says the company bought Long March 2D launch service from China Great Wall Industry Corporation for wide-format satellite batches. Its p. 8-2-95 table reports batch rocket launch fees of RMB 81.0M (2020), RMB 82.5M (2021), and RMB 85.9M (2022), corresponding to listed batch satellite masses of 1,254, 1,389, and 1,421 kg. The note says each batch also carried other satellites. The next paragraph identifies these as Long March 2D services; the filing treats launch monitoring/control separately. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/launch_vehicles.csv` stores Long March 2D `price_usd=30,000,000`, with notes attributing it to a $30M Wikipedia price. The customer batch fees are materially different, but do not establish a like-for-like list-price replacement because customer, batch, rideshare, contract and year bases differ. Open rc-315 to reconcile those bases before changing the row. Extracted: `extracted_data/r403_lm2d_customer_batch_fees.csv`.
+
+
+## R404 - Long March 3B/E contract price scope (2026-11-08)
+
+Wu Xingyu’s 2025 *Aerospace China* article (pp. 49–50), based on publicly disclosed company contracts, defines domestic Long March “launch service price” as rocket price plus launch monitoring/control fees. It reports ChinaSat-6C’s Long March 3B/E rocket fee at RMB 260M and monitoring/control at RMB 115M; for ChinaSat-6D, 6E and 26, it reports planned rocket fees of RMB 260M, RMB 290M and RMB 290M, each with RMB 115M monitoring/control. Table 1 totals are RMB 375M, 375M, 405M and 405M; the article gives a four-mission average of RMB 390M. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, Long March 3B/E has `list_price_usd=59,200,000` and a $50M–$70M band, with notes citing Wikipedia. The bundled contract totals are in the same broad range after currency conversion, while rocket-only fees are materially lower. This does not establish a replacement list price: one fee is reported as contracted, three are planned, and contract year, exchange rate, and scope differ. Open rc-316 to resolve whether the upstream value represents rocket-only price or bundled launch service. Extracted: `extracted_data/r404_lm3be_chinasat_contract_fees.csv`.
+
+
+## R405 - Long March 2D bundled service-price cross-check (2026-11-08)
+
+Wu Xingyu’s *Aerospace China* paper (p. 50) states: “2022年采购‘长征’二号D火箭及测控费用为1.129亿元” (in 2022, the purchase of a Long March 2D rocket plus monitoring/control fees was RMB 112.9M). The article pairs this with 4 tonnes to LEO and calculates RMB 28,200/kg for launch service. The upstream `Long March 2D` row at `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` remains `list_price_usd=30,000,000`; the bundled customer amount is a material lower comparator, while R403’s rocket-only fees exclude monitoring/control. It is not a drop-in list-price replacement because it is a dated customer service bundle. **rc-315 remains open** for price and scope reconciliation. Extracted: `extracted_data/r405_lm2d_combined_service_fee.csv`.
+
+
+## R406 - Gravity-1 dedicated-charter price signal (2026-11-09)
+
+After the Gravity-1 Y2 launch, Jiemian News reports Orienspace co-founder and vice president Peng Haomin saying the vehicle could offer RMB 30,000/kg; he clarifies that this is the dedicated “包车” rate and rideshare service costs more. In the adjacent paragraph the article gives 6,500 kg to LEO and 4,200 kg to 500 km SSO, without specifying which orbit the quote prices. The PBOC/CFETS central parity on 2025-10-10 was RMB 7.1048/USD. Multiplying the dedicated rate by the full stated LEO capacity and converting at that midpoint gives about $27.45M, versus `price_usd=39,000,000` for Gravity-1 at `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`; this capacity-scaled comparison is about 29.6% lower. The price quote is a meaningful review signal but not a drop-in replacement: its orbit and utilization basis are unstated and the report does not identify a signed contract. Open rc-317 to reconcile the quote against the stored estimate. Extracted: `extracted_data/r406_gravity1_charter_price.csv`.
+
+
+## R407 - Long March 12 reported unit-price signal (2026-11-09)
+
+Guangzhou Daily’s Economic Weekly section “火箭发射成本：每公斤正从2万元向1万元迈进” reports: “根据公开信息，目前国产一次性火箭性价比较高的是长征十二号，单位报价已低于2万元/公斤” (according to public information, Long March 12’s unit quote is below RMB 20,000/kg; paragraph 2). It does not identify the underlying source or specify orbit, utilization, quote date basis or service scope. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, the Long March 12 row stores `list_price_usd=63,200,000` (range $50M–$80M; `price_basis=estimate`) and an 11,000 kg LEO midpoint. The per-kg report is a material price-scale review signal, but cannot establish a like-for-like replacement without its pricing basis. **rc-318 remains open** for scope reconciliation. Extracted: `extracted_data/r407_lm12_unit_quote.csv`.
+
+
+## R408 - eXTP Long March launch-service budget comparator (2026-11-09)
+
+The China Government Procurement Network’s 8 June 2026 pre-procurement consultation for the National Space Science Center’s eXTP launch service lists a proposed budget of RMB 245.2M and China Long March Rocket Co. as the intended provider; the notice does not name a rocket variant. The PBOC central parity on 2026-06-08 was RMB 6.8198/USD, giving a date-matched comparator of $35.95M. Polaris Intelligence’s eXTP launch forecast lists “Long March 3B/G5 or equivalent,” but this is a secondary model attribution. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, Long March 3B/E stores `list_price_usd=59,200,000` with a $50M–$70M reported band. The proposed budget is about 28% below that band’s lower bound, but it is not an awarded price and the exact vehicle/variant is unresolved. This is a scope-sensitive review signal, not a replacement value; **rc-316 remains open**. Extracted: `extracted_data/r408_extp_launch_budget_comparator.csv`.
+
+
+## R411 - ULA NSSL mission-service price comparator (2026-11-09)
+
+The Space Systems Command release dated 3 October 2025 assigns ULA two FY26 NSSL Phase 3 Lane 2 missions, NROL-88 and USSF-88/GPS IIIF-4, and reports “a total price of $428 million” (paragraph 2). The release gives no individual mission prices or exact Vulcan configurations. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/launch_vehicles.csv` lists Vulcan Centaur VC4 `list_price_usd=$120M`, with an estimated $110M-$130M range; its note says $110M is ULA’s starting price and $130M is an estimate. The combined NSSL price averages arithmetically to $214M per assigned mission, 1.78 times the VC4 estimate. NSSL launch-service scope, orbit, integration, assurance and configuration are not shown as like-for-like with the vehicle price. **rc-321 remains open** for scope and configuration reconciliation. Extracted: `extracted_data/r411_ssc_vulcan_nssl_mission_prices.csv`.
+
+
+## R412 - Firefly Alpha dedicated-launch price comparator (2026-11-09)
+
+Firefly’s official Alpha Payload User’s Guide v5.2 lists its revision date as July 2025 (PDF p. 2, revision-history table). Page 3 says Alpha is offered “at a price of $19M for a dedicated commercial launch service.” Table 1 on page 3 gives 1,030 kg to 300 km LEO and 630 kg to 500 km SSO. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/launch_vehicles.csv` lists Alpha at $16.2M with a published $15M-$17.6M range. The guide price is 17.3% above the midpoint and 8.0% above the high endpoint. Both sources describe dedicated commercial launch service; the guide does not state a price effective date and may predate a later upstream observation. **rc-322 remains open** for price-date reconciliation. Extracted: `extracted_data/r412_firefly_alpha_guide_price.csv`.
+
+## R413 - NASA Dragonfly Falcon Heavy award comparator (2026-11-09)
+
+NASA Contract Release C24-042, paragraph 2 (25 November 2024), says the Dragonfly firm-fixed-price contract is approximately $256.6M, “which includes launch services and other mission related costs,” for a mission assigned to Falcon Heavy. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/launch_vehicles.csv` lists Falcon Heavy (expendable) at $163M with a $150M-$178M band; its row note identifies the high end as NASA’s Europa Clipper full-service price. The Dragonfly award total is 44.2% above that high and 57.4% above the midpoint, but the NASA release does not separate launch service from other mission-related costs or specify the Falcon Heavy configuration. Its 2024 award date also differs from the upstream 2026 reference year. This is a review signal, not a replacement value. **rc-323 remains open** for scope, configuration and year reconciliation. Extracted: `extracted_data/r413_nasa_dragonfly_falcon_heavy_award.csv`.
+
+
+## R418 - NASA ESCAPADE New Glenn launch contract comparator (2026-11-09)
+
+GeekWire reports NASA's VADR task order for Blue Origin to provide New Glenn launch service for the two ESCAPADE spacecraft had a total contract value of $20 million, with $6 million obligated at the time (2023-02-09 article, lines 8-20). NASA's ESCAPADE mission page lists the flight as Nov. 13, 2025, on Blue Origin New Glenn 2. At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, `reference/launch_vehicles.csv` lists New Glenn at $68M-$110M (2026, reported). The $20M award is 70.6% below the range's low end. It is an early, mission-specific VADR award made while the vehicle was in development, so it does not establish a current commercial rate.
+
+Open `rc-328` to determine whether the reported range should include or explicitly distinguish this early-flight contract, and reconcile award date, risk discount and current commercial pricing before any change. No upstream value is changed. Extracted: `extracted_data/r418_escapade_new_glenn_price_comparator.csv`.
+
+## R442 — NSSL Lane 1 Falcon 9 task-order average versus published list row (2026-11-09)
+
+`ssc_2026_sbst_falcon9_lane1_task_orders` — Space Systems Command’s July 29, 2026 announcement says two NSSL Phase 3 Lane 1 task orders total $1.6 billion and assure 18 Falcon 9 launches from Vandenberg through the end of 2027. Dividing the rounded aggregate by 18 gives an approximate $88.9 million per covered launch. The reusable Falcon 9 row at `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` is $74 million, so the implied average is about 20.1% higher. SSC does not publish per-launch allocations, task-order values, or the services included in the aggregate. This is a government mission-service scope review signal, not a replacement for the commercial list price. Open `rc-338` to reconcile scope and price basis. Extracted: `extracted_data/r442_ssc_falcon9_nssl_lane1_price_comparator.csv`.
+
+
+## R443 — NASA NEO Surveyor Falcon 9 award comparator (2026-11-09)
+
+`nasa_2025_neo_surveyor_falcon9_launch_award` — NASA Contract Release C25-005 (Feb. 21, 2025), paragraph 3, reports a firm-fixed-price NLS II task order with an approximate total cost of $100 million for NEO Surveyor launch service on Falcon 9 from Florida, targeted no earlier than September 2027. NASA says the total includes “other mission related costs.” The Falcon 9 (reusable) row at `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` lists $74 million as its 2026 published price; the NASA award total is 35.1% higher. It is a scope-sensitive government award, not an isolated vehicle price. Together with the separate NSSL Lane 1 total in R442, it adds another check for `rc-338` while leaving the commercial list price unresolved. Extracted: `extracted_data/r443_nasa_neo_surveyor_falcon9_award.csv`.
+
+## R444 — Starship Flight 14 updates projected-vehicle status note (2026-11-09)
+
+`spacex_starship_flight_14_postflight_2026` — SpaceX’s post-flight page dates Flight 14 to September 28, 2026, calls it the first orbital Starship flight, and says it delivered 26 Starlink V3 satellites to orbit. The upstream `Starship (projected)` row at `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` still says “13 test flights to Jul 2026, 8 successful, all suborbital by design.” Flight 14 makes that flight-count and all-suborbital status note stale. It does not establish an operational service, a revised payload rating, or a launch price; keep the development status and price/payload projections unchanged pending separate evidence. Open `rc-339` to update the dated flight-status note. Extracted: `extracted_data/r444_starship_flight_14_update.csv`.
+
+## R445 — Neutron inaugural launch schedule update (2026-11-09)
+
+`rocket_lab_neutron_schedule_oct2026` — Rocket Lab’s October 14, 2026 SEC-filed release says Neutron’s inaugural launch “is now expected to occur in 2027” (paragraph 1). The upstream `Neutron` row at `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` still says “First flight has slipped from 2024 to NET Q4 2026.” The 2027 guidance supersedes that near-term schedule note, but remains a company expectation rather than a guarantee; no quarter is specified. Keep the development status, payload, and price estimates unchanged. Open `rc-340` to update the expected launch schedule. Extracted: `extracted_data/r445_rocket_lab_neutron_schedule.csv`.
+
+## R446 — Current Firefly Alpha guide omits price signal (2026-11-09)
+
+`firefly_alpha_payload_users_guide_v5p3_sep2026` — Firefly’s official Alpha Payload User’s Guide v5.3 revision history (PDF p. 2) dates the release to September 2026. Table 1 (PDF p. 4) lists 1,030 kg to 300 km LEO and 630 kg to 500 km SSO, matching the existing Alpha row’s payload point values. The 38-page guide contains no price entry; its Alpha section says the vehicle is for dedicated commercial launch service but does not state a price. This newer guide does not negate v5.2’s $19M price statement; it establishes only that v5.3 provides no newer price confirmation. `rc-322` remains open to reconcile the price date and basis. Extracted: `extracted_data/r446_firefly_alpha_guide_v5p3.csv`.
+
+## R447 — Firefly Alpha launch-count cutoff and success terminology (2026-11-09)
+
+`firefly_2025_10k_alpha_launch_history` — Firefly’s FY2025 Form 10-K says Alpha “has conducted seven launches” and describes “five launches completed successfully” (Item 1, Business, pp. 1–2). The filing also presents the seven-launch count as of December 31, 2025. `firefly_alpha_flta007_mission_page` — Firefly’s official Flight 7 page dates that mission to March 11, 2026. The upstream Alpha note at `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` dates seven flights to March 2026 and distinguishes three successes, two partial failures, and two failures. The filing’s year-end count conflicts with its own numbered Flight 7 date, and its unqualified five-success wording is not directly comparable to the upstream full/partial outcome categories. Open `rc-341` to reconcile the date cutoff and success definition; no outcome count is changed on this evidence alone. Extracted: `extracted_data/r447_firefly_alpha_launch_history.csv`.
+
+## R448 — NASA selects Starship for cislunar communications demonstration (2026-11-09)
+
+`nasa_2026_starship_cislunar_comms_selection` — NASA’s Nov. 7, 2026 release says it selected SpaceX under an existing lunar-logistics contract to launch communications satellites aboard Starship to cislunar space in 2028 (paragraph 300). This is a new mission selection and planned use; it does not establish operational service, a revised payload rating, or a launch price. The Starship projected-row notes at `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` already need the Flight 14 status update in open `rc-339`; add this NASA selection to the dated note while keeping status and price/payload projections unchanged. Extracted: `extracted_data/r448_nasa_starship_cislunar_comms_selection.csv`.
+
+## R449 — Arrow-led Falcon 9 and orbital-transfer award comparator (2026-11-09)
+
+`quantum_space_nasa_moonbase_falcon9_vadr_award_2026` — Quantum Space’s Nov. 7 release reports a $185 million NASA Moon Base Transportation award to an Arrow-led team. Arrow is prime and mission integrator; the team includes SpaceX Falcon 9 for launch and Quantum Space’s Ranger for orbital transfer of two CAPSTONE-2 spacecraft. Quantum says its expected portion is approximately 25% of total contract value, while subcontract terms were still being finalized. The award therefore adds an identified Falcon 9 mission-service comparator to `rc-338`, but its bundled OTV and integration scope and undisclosed launch allocation do not establish a Falcon 9 vehicle price. Extracted: `extracted_data/r449_quantum_space_falcon9_moonbase_award.csv`.
+
+## R450 — Impulse Space VADR task-order service scope (2026-11-09)
+
+`impulse_space_moonbase_vadr_task_orders_2026` — Impulse Space’s Nov. 7 announcement says NASA awarded it two firm-fixed-price VADR task orders for Moon Base missions scheduled to begin in 2028. One task order uses SpaceX Falcon 9 and may use Mira vehicles for cislunar delivery; the second uses Relativity Terran R, Impulse Helios, and its lander for cislunar payload delivery and a surface-delivery demonstration. The release gives no individual order values. This confirms another Falcon 9 integrated-service award structure relevant to `rc-338`, but supplies no isolated launch price. Extracted: `extracted_data/r450_impulse_space_moonbase_vadr_task_orders.csv`.
+
+
+## R513 — H3 configuration cost-target relationship (2026-11-10)
+
+`sacj_2026_h3_f6_prelaunch_cost_briefing` — In the June 8, 2026 H3 F6 prelaunch briefing transcript, JAXA H3 project manager Makoto Arita says the H3-22 target is about 20% above H3-30 and H3-24 is “6割くらい高い” (about 60% higher; transcript lines 76–83). The current H3-30 target in the upstream note is $33M at 2024 rates; applying the 1.6 relative-cost factor gives a derived comparator of about $52.8M, not an independently quoted H3-24 price. Spacecost’s `H3 (24L)` row stores an estimated $50M–$75M band and $61.2M center, so the comparator falls inside the band and about 13.7% below its center. The briefing supports calibration of the estimate, while its target-cost basis does not establish a flight-service selling price or require a replacement. Open **rc-379** to review the band and target-to-price distinction. Extracted: `extracted_data/r513_h3_configuration_cost_targets.csv`.
+
+
+## R544 — Green Launch light-gas-gun roadmap and cost target (2026-11-10)
+
+`greenlaunch_2025_phases_leo_roadmap` — Green Launch’s Phases page says Phase 3 will “Deliver 1 lb to Low Earth Orbit” and “Will be scaled up for larger 100 lb to 1000 lb payloads” (Phases 3, lines 24–27). The delivery sequence says the impulse-launched vehicle’s rocket motor burns for 100 seconds and delivers a cubesat to 300 km Earth orbit (Cubesat Orbital Delivery, lines 60–78). `greenlaunch_2026_nonrocket_launch_cost_target` — the company’s Apr. 14, 2026 blog says Green Launch “targets ~$220/kg ($100/lb)” and describes light-gas guns as requiring an upper stage (sections “Infrastructure vs. Per-Launch Cost Trade-Off” and “The Orbital Velocity Gap,” lines 124–137); it gives no cost model or configuration-specific payload-price pairing. Spacecost main stores 30 kg payload and $300,000 as the price target for “Light-gas gun (orbital),” implying $10,000/kg. The public roadmap and cost target are material comparators, but their relation to the row’s mass, system boundary, and target price is unresolved. Open **rc-409** for reconciliation; no replacement is inferred. Extracted: `extracted_data/r544_green_launch_light_gas_gun_roadmap_cost.csv`.
+
+
+## R549 — Jielong-3 reported unit launch-cost target (2026-11-10)
+
+`xinhuanet_2021_jielong3_unit_launch_cost` — Xinhua’s March 3, 2021 report attributes to chief designer Jiang Jie the statement that Jielong-3 could reduce unit payload launch cost to “1万美元每公斤” ($10,000/kg), and gives 1.5 t to 500 km sun-synchronous orbit (paragraph 6). Multiplying the two produces a roughly $15M per-flight cost comparator, not a quoted selling price. The upstream 2026 Jielong-3 row stores $14.1M as an estimate and 1.6 t as its LEO figure; its price basis, year, and orbit scope are not established as like-for-like with the 2021 statement. Open **rc-415** to review the estimate and sourcing; no replacement is inferred. Extracted: `extracted_data/r549_xinhuanet_jielong3_cost.csv`.

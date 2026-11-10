@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+beijing_business_daily_2023_kuaizhou_11_price_cap,launch price cap,6000000,USD/launch,paragraph 53,Report says no more than US$6M; payload and mission basis unspecified.
+beijing_business_daily_2023_kuaizhou_11_price_cap,price per mass cap,10000,USD/kg,paragraph 53,"Report says below US$10,000/kg; payload and quote basis unspecified."

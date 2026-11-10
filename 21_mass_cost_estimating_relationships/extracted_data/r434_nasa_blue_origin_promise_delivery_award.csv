@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2026_blue_origin_promise_lunar_delivery_award,base_contract_value,94000000,USD,"NASA release, Moon Base cargo landers / PROMISE, paragraph 7 (web lines 280–286)",NASA states award is to Blue Origin for delivery/deployment of PROMISE to lunar south pole; award expands May 2026 task order for two lunar terrain vehicles.
+nasa_2026_blue_origin_promise_lunar_delivery_award,performance_option_value,140000000,USD,Same paragraph,NASA describes option period as performance-based; not stated as exercised.
+nasa_2026_blue_origin_promise_lunar_delivery_award,lander,Blue Origin Mark 1,,Same paragraph,Named as delivery and deployment system; no dry mass reported.
+nasa_2026_blue_origin_promise_lunar_delivery_award,price_boundary,delivery and deployment of PROMISE; expanded task order previously covered delivery of two LTVs,,Same paragraph,"NASA release gives no allocation between prior and added scope, no recurring unit price, and no lander mass."

@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+mcmillan_etal_2016_nrel_lime_calcination_energy,Theoretical minimum energy for lime kiln,3.18,GJ/t CaO,"Appendix N, p. 162",Assumes complete conversion of limestone into lime.
+mcmillan_etal_2016_nrel_lime_calcination_energy,Approximate CaO output per CaCO3 input,0.56,mass ratio,"Appendix N, p. 165",Report states 1 tonne limestone produces 560 kg lime.
+mcmillan_etal_2016_nrel_lime_calcination_energy,Derived theoretical minimum per CaCO3 feed,0.4947,kWh/kg CaCO3,"computed from Appendix N pp. 162, 165",3.18 GJ/t CaO × 0.56 × 1 kWh/3.6 MJ; not an observed kiln consumption.
+mcmillan_etal_2016_nrel_lime_calcination_energy,Lime kiln net heat use range,3.6–7.5,MJ/kg lime,"Appendix N, Table N-1, p. 161",Range across listed kiln types; fuel heat.
+mcmillan_etal_2016_nrel_lime_calcination_energy,Lime kiln electricity use range,10–45,kWh/t lime,"Appendix N, Table N-1, p. 161",Separate electricity column by kiln type.
+,spacevalue carbonate processing allowance,1.0,kWh/kg,"spacevalue/catalog.py IN_SPACE_PROCESSING_KWH_PER_KG[""carbonates""]",Pipeline engineering allowance; comment says ~0.5 kWh/kg CaCO3 but does not cite its basis.

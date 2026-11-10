@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+gibson_mason_bowman_2015_kilopower_mass_scaling,10 kWe Kilopower power-system mass,1544,kg,"NASA/TM-2015-218460, Table I, printed p. 5",Preliminary design estimate; not flight-demonstrated.
+gibson_mason_bowman_2015_kilopower_mass_scaling,spacecost rounded system mass,1500,kg,spacecost/spacecost/storage.py Fission surface power (Kilopower class),"Approximate upstream value, close to the design estimate."

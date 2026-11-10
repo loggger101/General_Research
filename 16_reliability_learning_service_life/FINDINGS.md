@@ -304,3 +304,98 @@ incidence or ranking effect is asserted. Twenty-four source blobs match
 pinned metadata; all four live main comparisons are identical.
 `extracted_data/r351_parallel_reliability_growth.csv` includes complete
 inputs, books, fingerprints and the self-contained reproduction harness.
+
+
+## R470 — Current rig calendar-cadence option
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_rig_calendar_cadence` defaults to `False` (modules/calc.py:678). With it enabled, `rig_trips_per_ship` replaces the stay-only calendar bound with `1 + floor((life - stay) / cadence)` only when a cadence is present and `stay_yr <= life_yr`; if one stay exceeds life, it retains the legacy `max(1, floor(life / stay))` bound, permitting one campaign whose stay itself outlives the stated calendar life (lines 4841-4858). Cost calculation receives the flag and cadence (5796-5799). The release note reports the intended idle-time correction: at stay 2.5 yr/cadence 4 yr the cap falls 6 to 4, eight of 40 over-life programme options are removed, and 18 of 24 sampled rows in the narrow 1.02-1.35 AU/capital-cost sample move. `rc-239` remains open: the normal consumer leaves the cadence correction off, and the enabled helper preserves a one-campaign exception for stay greater than life; the release-note sample does not establish full consumer coverage outside its stated cases. Extracted: `extracted_data/r470_rig_calendar_cadence_flag_current.csv`.
+
+## R499 — Terrestrial mining-equipment rebuild intervals (2026-11-09)
+
+- **sandvik_2019_mining_equipment_rebuild_intervention_intervals**: Sandvik describes major-rebuild intervention timing as equipment-specific (printed p. 6): boom surface drills 14,000–18,000 operation hours; underground drills 18,000–25,000 operation hours; mass-mining loaders and trucks 12,000–18,000 operation hours; narrow-vein/low-profile loaders and trucks 10,000–16,000 operation hours; pedestal surface drills 6,000–12,000 drilling hours. The brochure describes rebuilds as mid-life services that extend operational life (pp. 2, 6); it does not give a universal 15,000–25,000 hour band, a count of rebuilds before frame retirement, or asteroid campaign life. Thus it supports citing the terrestrial maintenance analogue with machine-type scope, but does not directly establish the model’s 5-trip point or [2,12] band. Extracted: extracted_data/r499_sandvik_mining_rebuild_intervals.csv.
+
+
+## R509 — Rig salvage fraction evidence boundary (2026-11-09)
+
+Mas’s study reports that construction equipment produced during the Caterpillar labor dispute sold at an approximately 5% discount in the resale market (abstract, p. 4); its data description reports more than 48,000 used-equipment auction sales and condition ratings (p. 8). This measures a price effect associated with a quality shock in a liquid terrestrial market, not residual value as a fraction of remaining book value. NASA CR-3349 reports satellite salvage at 5–10% of capital cost (p. 20) and 60–90% of on-orbit cost for a demonstration satellite (p. 43), also different denominators. The current spacecost `Rig salvage fraction` value remains 0.5 [0, 0.8] of remaining book value. **rc-375 remains open** for a same-basis residual-value estimate; these analogues do not establish a numeric replacement. Existing extractions: `extracted_data/r94_regolith_wear_resale_key_numbers.csv`; `extracted_data/r114_gr_links_key_numbers.csv`.
+
+## R519 — Space launch within-family learning comparator (2026-11-10)
+
+Terzi and Nicoli report that average launch costs within rocket families declined “roughly 6% for each doubling of cumulative payload,” rising to 8% after the Cold War (Results, PNAS Nexus e-page pgag217). Their unit-flyaway cost basis includes direct and indirect manufacturing, recurring engineering, sustaining tooling and quality control, but excludes vehicle design R&D (Materials and methods, e-page pgag217). economicspace `CalcConfig.learning_curve_rate` remains 0.85 for the optional Crawford nth-unit production curve, with `model_learning_curve=False` by default. The study’s average dollars per kilogram against cumulative payload is not the same measure as nth-unit spacecraft cost against unit count, and does not establish a mining-rig rate. **rc-385** records the evidence as a scope comparator; no numeric replacement is inferred. Extracted: `extracted_data/r519_space_launch_learning_curve_comparator.csv`.
+
+
+## R530 — Hayabusa2 mechanism outcomes in the first-of-kind tally (2026-11-10)
+
+`nakamura_2025_sample_return_missions_rosetta_stones_small_bodies`: the review says the Hayabusa2 SCI impactor produced an artificial crater “with a diameter >10 m” (§4.3, p. 12), and that “the sample collection of Hayabusa2 was performed twice without problems” (§4.4, p. 13). It reports 5.4 g of returned samples (p. 13).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its tally includes the Hayabusa2 sampler and SCI impactor as successes, while the note says the other mission entries remain uncited. Verdict: the review directly supports those two Hayabusa2 outcome entries, but does not source the other outcomes or establish the 0.85 probability. `rc-396`. Extracted: `extracted_data/r530_hayabusa2_mechanism_outcomes.csv`.
+
+
+## R531 — OSIRIS-REx TAGSAM outcome citation (2026-11-10)
+
+`lauretta_2024_bennu_in_the_laboratory`: in “Sample Collection and Delivery,” the article reports that 70.3 g had been recovered, “exceeding the mission requirement of 60 g,” and gives the final returned amount as “at least 121.6 g” (p. 2459).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its OSIRIS-REx TAGSAM success entry states 121.6 g against a 60 g requirement without citing the article. Verdict: the article supports this sample-collection outcome only; it does not establish the 0.85 probability or source the other mission outcomes. `rc-397`. Extracted: `extracted_data/r531_osirisrex_tag_sample_mass_outcome.csv`.
+
+
+## R532 — Stardust sample-return outcome citation (2026-11-10)
+
+`nakamura_2025_sample_return_missions_rosetta_stones_small_bodies`: Table 1 gives Stardust’s Earth-return date as 2006/1/15, reports “many small particles” recovered, and lists “aerogel capture” as the sampling method (printed p. 44).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Stardust aerogel success entry has no cited source in the row note. Verdict: the table supports this sample-return outcome only; it does not establish the 0.85 probability or source the other mission outcomes. `rc-398`. Extracted: `extracted_data/r532_stardust_sample_return_outcome.csv`.
+
+
+## R533 — Perseverance coring outcome citation (2026-11-10)
+
+`nasa_2021_perseverance_first_mars_rock_sample`: NASA Release 21-117 states Perseverance “completed the collection of the first sample of Martian rock” (“First Sample” section, ¶1), then reports the core tube was hermetically sealed and stored (¶3).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Perseverance coring-drill success entry has no cited source in the row note. Verdict: the release supports this coring outcome only; it does not establish the 0.85 probability or source the other mission outcomes. `rc-399`. Extracted: `extracted_data/r533_perseverance_first_core_outcome.csv`.
+
+
+## R534 — Apollo drill-core outcome citation (2026-11-10)
+
+`carrier_1974_apollo_drill_core_depth_relationships`: the NTRS record abstract identifies “Apollo 15, 16, and 17 drill core samples” and reports original core bulk densities of 1.76, 1.59, and 1.87 g/cm³, respectively (abstract; no page in record).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; the note counts Apollo 15–17 drills and scoops as successful without a source. Verdict: the record supports the three drill-core outcomes only; it does not document the scoop outcomes, other missions, or the 0.85 probability. `rc-400`. Extracted: `extracted_data/r534_apollo_drill_core_outcomes.csv`.
+
+
+## R535 — Chang’e 5 and 6 sampling-outcome citations (2026-11-10)
+
+`jia_etal_2021_change5_regolith_properties`: §1.1 reports the Chang’e-5 “scooping device performed surface sample collections” and “drilling device conducted a core tube sampling”; it reports 1.731 kg returned (§1.1). `wang_etal_2024_change6_lunar_farside_samples_astronomical_journal`: §1 describes sampling “both scooping and drilling” and ~1,935.3 g returned.
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Chang’e 5 and 6 drill-and-scoop success entries have no cited sources in the row note. Verdict: the papers support those two mission outcomes only; they do not establish the 0.85 probability or source other mission outcomes. `rc-401`. Extracted: `extracted_data/r535_change5_change6_sampling_outcomes.csv`.
+
+
+## R536 — Luna drill-core outcome citations (2026-11-10)
+
+`shearer_etal_2023_luna_sample_return_drill_cores_jgr_planets`: §2 states the Luna sample-return program “collected drill cores” from Luna 16, 20, and 24, with approximately 101 g, 50 g, and 170 g returned, respectively (§2, ¶1–2).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Luna 16/20/24 drill successes have no cited sources in the row note. Verdict: the paper supports the three Luna drill-core outcomes only; it does not establish the 0.85 probability or source other mission outcomes. `rc-402`. Extracted: `extracted_data/r536_luna_drill_core_returns.csv`.
+
+
+## R537 — Phoenix robotic-arm outcome citation (2026-11-10)
+
+`bonitz_etal_2009_phoenix_mars_lander_robotic_arm`: §§ 3–4 report 17 soil-sample deliveries to TEGA/MECA (p. 7). After two icy samples congealed in the scoop, “a third icy sample was acquired and successfully delivered”; TEGA confirmed water ice (p. 8). A fourth attempted icy-sample delivery failed because the TEGA cell doors did not completely open (p. 8).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Phoenix robotic-arm success entry notes sticky soil but has no cited source. Verdict: the paper supports successful arm sampling and delivery despite sticky-soil difficulty; it does not establish the 0.85 probability or source other mission outcomes. `rc-403`. Extracted: `extracted_data/r537_phoenix_arm_sample_delivery.csv`.
+
+
+## R538 — Apollo scoop outcome citation (2026-11-10)
+
+`graf_1993_nasa_rp1265_apollo_soil_scoop_procedures`: Apollo 15 soil was collected with the adjustable scoop; Apollo 16 used “the same tools and procedures” as Apollo 15, and Apollo 17 used the same soil-collection methods as Apollo 15 and 16 (p. 3).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; Apollo 15–17 drills and scoops are counted successful without a cited source. Verdict: NASA RP-1265 supports the scoop outcomes only; drill-core evidence is covered separately, and this report does not establish the 0.85 probability or source other mission outcomes. `rc-404`. Extracted: `extracted_data/r538_apollo_scoop_outcomes.csv`.
+
+
+## R539 — Hayabusa partial sample-collection outcome citation (2026-11-10)
+
+`nakamura_etal_2012_hayabusa_partial_sample_collection`: the Introduction says “no projectile was fired,” but material was collected by “gentle flicking by the tip of the sampler horn”; the sample capsule returned to Earth on June 13, 2010 (pp. E624–E625).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its note classifies Hayabusa as partial because the projectile did not fire but contact dust was collected and returned. Verdict: the article supports this partial flight outcome only; it does not establish the 0.85 probability or other mission outcomes. `rc-405`. Extracted: `extracted_data/r539_hayabusa_partial_sample_collection.csv`.
+
+
+## R540 — Philae and InSight failed-mechanism outcome citations (2026-11-10)
+
+`esa_2024_philae_harpoon_failure_landing_review`: ESA reports Philae’s “harpoons hadn’t fired” after touchdown, after which the lander took flight again (“Welcome to a comet”). This supports the harpoon failure outcome only (`rc-406`). `nasa_2020_insight_hp3_mole_soil_friction_failure`: the InSight team says the mole “has been unable to dig because the soil doesn’t provide enough friction,” and explains that the soil must counter recoil from the hammer (“Why can’t you pick up the mole?”; “What do you suspect is preventing the mole from digging further?”). This supports the HP3 failure mechanism only (`rc-407`).
+
+Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its failed tally names Philae harpoon pyrotechnics and the InSight HP3 mole, with no citations in that note. Verdict: these mission sources document the two failure outcomes and the stated HP3 soil-friction mechanism; neither source establishes the 0.85 probability or other mission outcomes. Extracted: `extracted_data/r540_philae_hp3_failed_mechanisms.csv`.

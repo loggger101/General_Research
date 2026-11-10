@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+nakamura_2025_sample_return_missions_rosetta_stones_small_bodies,Earth return date,2006/1/15,date,"Table 1, printed p. 44",Mission summary date.
+nakamura_2025_sample_return_missions_rosetta_stones_small_bodies,Quantity of recovered sample,many small particles,qualitative,"Table 1, printed p. 44",Reported recovered sample quantity for Stardust.
+nakamura_2025_sample_return_missions_rosetta_stones_small_bodies,Sampling method,aerogel capture,method,"Table 1, printed p. 44",Sampling method listed for Stardust.

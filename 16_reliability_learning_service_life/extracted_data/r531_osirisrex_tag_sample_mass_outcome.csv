@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+lauretta_2024_bennu_in_the_laboratory,Mission science requirement,60,g,"§ “Sample Collection and Delivery,” p. 2459",Requirement cited by the article.
+lauretta_2024_bennu_in_the_laboratory,Sample recovered before complete TAGSAM disassembly,70.3,g,"§ “Sample Collection and Delivery,” p. 2459",Article states this amount already exceeded the 60 g requirement.
+lauretta_2024_bennu_in_the_laboratory,Total Bennu sample delivered to Earth,121.6,g,"§ “Sample Collection and Delivery,” p. 2459",Article reports at least 121.6 g after an additional 51.8 g was removed.

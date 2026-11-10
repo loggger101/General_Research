@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+sacj_2026_h3_f6_prelaunch_cost_briefing,H3-22 cost target relative to H3-30,~20,percent,briefing transcript lines 76–77,JAXA H3 project manager describes approximate target-cost difference.
+sacj_2026_h3_f6_prelaunch_cost_briefing,H3-24 cost target relative to H3-30,~60,percent,briefing transcript lines 79–83,JAXA H3 project manager confirms approximate difference; no absolute H3-24 price is given.
+,H3-24 derived target comparator,52800000,USD at 2024 rate,computed here from upstream H3-30 target and transcript multiplier,"1.6 × upstream H3-30 target of $33M at 2024 rates; derived comparison, not a source-quoted launch price."

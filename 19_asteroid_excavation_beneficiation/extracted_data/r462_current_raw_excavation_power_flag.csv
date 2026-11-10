@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_raw_excavation_power_flag_current_2026,model_raw_excavation_power default,False,boolean,modules/calc.py:664,Default CalcConfig omits raw-excavation power from array sizing.
+economicspace_raw_excavation_power_flag_current_2026,consumer configuration,CONFIG = CalcConfig(),code,modules/calc.py:1468,No override of model_raw_excavation_power found in the current economicspace checkout.
+economicspace_raw_excavation_power_flag_current_2026,sizing power-call condition,beneficiate or isru or model_raw_excavation_power,code condition,modules/calc.py:6877-6883,"With the flag on, the processing power call uses trial_feed + new_isru_feed; the default raw/non-ISRU path skips it."
+economicspace_raw_excavation_power_flag_current_2026,settled power-call condition,beneficiate or isru or model_raw_excavation_power,code condition,modules/calc.py:7229-7234,"With the flag on, settlement uses feed_kg + isru_feed_kg; the default raw/non-ISRU path skips it."
+economicspace_raw_excavation_power_flag_current_2026,excavation energy parameter,dig_wh,Wh/kg,modules/calc.py:6879-6882; 7231-7233,This flag uses the existing configured excavation energy and does not establish a new value or range.

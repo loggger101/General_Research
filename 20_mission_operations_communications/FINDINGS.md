@@ -121,3 +121,20 @@ charge without changing the recovery count or returned batch.
 `rc-254`: separate fixed ground recovery from departure-mass costs.
 Neither the adopted recovery estimate nor its empirical uncertainty is
 revised here. `extracted_data/r324_downleg_ground_recovery_mass_ratio.csv`.
+
+## R379 - DSN rate refreshed through September CPI-U (2026-11-08)
+
+At `spacecost@19e1a31`, the `Deep Space Network time` row is $2,082 per 34-m hour, calculated from the Rev H $1,792/hour rate base using CPI-U through August 2026 (factor 1.1617); its note gives ~$6,245/hour for a 70-m antenna at 3x weighting. The already-registered `fred_cpiuacsl_monthly_usd_series` reports CPIAUCSL 334.131 for August and 336.298 for September 2026. September was the latest published observation on this round's date.
+
+Carrying the stated August factor forward by 336.298 / 334.131 gives an approximate September factor of 1.169234. This yields about $2,095.27 per 34-m hour and $6,285.80 per 70-m hour, 0.64% above the current 34-m value; the result inherits the source note's four-decimal August factor. The $1,000-$4,000 range continues to bracket the point estimate.
+
+Verdict: `rc-297` proposes refreshing the rate note and point estimate to the latest published CPI-U month; no DSN base rate or uncertainty range changes. `extracted_data/r379_dsn_rate_cpi_refresh.csv`.
+
+
+## R380 - Relay-cost method depends on transmitted-data time (2026-11-08)
+
+At `spacecost@19e1a31`, `Communications relay & data downlink` is $50 per Mbit returned [10, 200], with the note “Ka-band; relevant only for high-rate science / 3-D maps.” No data rate, pass pattern, or service-cost basis is stated.
+
+The registered NASA/JPL `nasa_mocs_2014_dsn_aperture_fee_algorithm` §2.1.5 (PDF p.17) covers data from a landed object relayed through an orbiting spacecraft to a DSN station. It allocates a pro-rata share of DSN station cost using a one-hour minimum and excluding station configuration time; the guide calculates “the time required to return the total amount of relayed data.” This is a NASA DSN planning method for a specific relay architecture, not a commercial $/Mbit quote; it cannot set the upstream row’s numeric rate.
+
+Verdict: `rc-298` asks to separate relay and direct-downlink scope and state transfer-rate/pass assumptions before representing the estimate as a general $/Mbit cost. The value and range remain unchanged. `extracted_data/r380_nasa_mocs_relay_costing_method.csv`.

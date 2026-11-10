@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_volume_capped_boiloff_reclosure_flag_current_2026,reclose_volume_capped_hold default,False,boolean,modules/calc.py:682,Default module configuration uses CONFIG = CalcConfig() at line 1468.
+economicspace_volume_capped_boiloff_reclosure_flag_current_2026,reclosure trigger,boiloff modeled; payload demand exceeds volume capacity; capped payload equals volume capacity; repair depth < 3,conditions,modules/calc.py:7088-7098,Re-solves with volume_capacity_kg as payload ceiling.
+economicspace_volume_capped_boiloff_reclosure_flag_current_2026,reclosure fallback,continue with original capped result when reclosed is None,control flow,modules/calc.py:7098-7104,This branch does not reject or mark original result when the retry fails.
+economicspace_volume_capped_boiloff_reclosure_flag_current_2026,hydrolox witness boiloff factor,1.617 to 1.333,factor,versions.md:723-728,"Return fuel decreases 737.8 kg, launch mass 1,040 kg, total cost $5.97M; cargo and clocks unchanged."
+economicspace_volume_capped_boiloff_reclosure_flag_current_2026,sample rows changed,0 of 73,rows,versions.md:728,Feature was not observed to alter the stated catalog sample.
+economicspace_volume_capped_boiloff_reclosure_flag_current_2026,non-boiloff control effect,0.01% to 0.3% higher total cost on three witnesses,percent,versions.md:729-731,"At density 0.2, re-solving can resize electric stage without boiloff."
+economicspace_volume_capped_boiloff_reclosure_flag_current_2026,revision candidate,rc-253 remains open,candidate id,revision_candidates.csv,Default is off; failed retry falls through to original capped result.

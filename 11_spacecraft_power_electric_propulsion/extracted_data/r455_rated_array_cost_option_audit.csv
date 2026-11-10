@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_rated_array_cost_option_2026,CalcConfig.model_rated_array_cost default,False,boolean,modules/calc.py line 670,False preserves per-delivered-watt pricing unless a caller enables the option.
+economicspace_rated_array_cost_option_2026,Solar plant cost multiplier when option is enabled,base_w_per_kg / ep_w_per_kg * array_oversize_factor,expression,modules/calc.py lines 7560-7563,Applied for solar power source; radioisotope plant pricing is not distance-scaled.
+economicspace_rated_array_cost_option_2026,Plant array cost calculation,processing_power_w * plant_per_w * plant_rated_per_w,expression,modules/calc.py lines 5634-5636,plant_rated_per_w defaults to 1.0; the caller supplies the distance/oversize multiplier only when enabled.
+economicspace_rated_array_cost_option_2026,Electric propulsion array cost calculation,ep_power_w * power_per_w * ep_rated_per_w + ep_kw * ep_drive_per_kw,expression,modules/calc.py lines 5648-5651,"ep_rated_per_w defaults to 1.0; the rated-watt option scales the array term, not the per-kW drive term."

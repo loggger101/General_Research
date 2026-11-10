@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+umicore_pmm_daily_price_indications_2026,Umicore platinum 10am indicative price 2026-11-06,1540.00,USD/troy oz,"Umicore PMM platinum price page, 2026-11-06, Umicore 10am Price",Umicore says displayed prices are indicative only.
+,Platinum fallback value,1912.00,USD/troy oz,"spacevalue@a13e378efece102d3724ada18d3810a62f29432f, spacevalue/catalog.py platinum entry","Pipeline fallback is equivalent to $61,472.2/kg and is dated to LBMA 2026-05-29."
+umicore_pmm_daily_price_indications_2026;lbma_precious_metals_fixings,Umicore indication versus spacevalue fallback,-19.4561,percent,"Computed: ($1,540 / $1,912 - 1) × 100","Different publishers and dates; review signal only, not a replacement fixing."
+umicore_pmm_daily_price_indications_2026;lbma_precious_metals_fixings,Umicore platinum indication normalized to kg,49512.15,USD/kg,Computed from USD/troy oz using 32.150746568 troy oz/kg,For unit comparison only; fallback value unchanged.

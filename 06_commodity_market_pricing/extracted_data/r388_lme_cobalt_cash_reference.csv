@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+lme_official_reference_prices,LME cobalt cash official bid 2026-11-06,32595,USD/metric tonne,"LME Official Prices, Data valid 2026-11-06, Cobalt row, Cash/Bid",Daily official benchmark for physically delivered cobalt; stated minimum purity and delivery terms are governed by the LME contract.
+lme_official_reference_prices,LME cobalt cash official ask 2026-11-06,33095,USD/metric tonne,"LME Official Prices, Data valid 2026-11-06, Cobalt row, Cash/Ask",Daily official benchmark; ask side.
+lme_official_reference_prices,LME cobalt cash midpoint 2026-11-06,32845,USD/metric tonne,Computed as mean of official cash bid and ask,Comparison quote only; not a separate LME-set reference.
+lme_official_reference_prices,LME cobalt cash midpoint normalized,32.845,USD/kg,Computed from midpoint; 1 metric tonne = 1000 kg,"Catalog fallback is $33.00/kg, based on USGS 2025 U.S. cathode average of about $15/lb."
+,spacevalue cobalt fallback comparison,-0.47,percent,Computed: (32.845 / 33.00 - 1) × 100,"Near match; LME physical cash quote and USGS annual average have different date and market bases, so this does not establish a like-for-like repricing. No revision candidate warranted."

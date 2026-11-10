@@ -164,3 +164,43 @@ feasibility is established. Twenty-four runtime/method blobs match pinned
 metadata; all four live main comparisons are identical.
 `extracted_data/r353_outbound_propellant_volume.csv` contains full inputs,
 books, brackets, volume observers and the reproduction harness.
+
+
+## R410 - Cryogenic MLI areal-density comparator (2026-11-09)
+
+NASA KSC author Wesley Johnson reports in Table 3 (PDF p. 6) that the 60-layer Ball MLI test blanket A141 had an areal density of 2.98 kg/m²; the 40-layer A139 measured 2.41 kg/m² and the 20-layer Quest IMLI A142 measured 1.00 kg/m². The paper states that A139’s seam construction made it slightly heavier, and describes mass over the calorimeter surface. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/storage_systems.csv` uses 1.2 kg/m² for “Multi-layer insulation (passive)” and describes a 60-layer aluminised-Mylar blanket. The 60-layer comparison is about 2.48 times the stored value. The test articles do not establish a like-for-like flight-tank areal mass because their blanket construction and seam configuration may differ. **rc-320 remains open** for configuration and mass-boundary reconciliation. Extracted: `extracted_data/r410_johnson_mli_areal_density.csv`.
+
+
+## R463 — Current cargo and launch-volume options
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_cargo_volume` (line 725) and `model_launch_liquid_volume` (line 730) both default to `False`; the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). For `rc-285`, when enabled and phase data are present, the evaluator derives returned cargo volume from each selected phase's `phase_density_kg_per_L` after mix selection and refits a mix whose unpacked phase-volume sum exceeds the 0.25-fairing hold (lines 7390-7402; phase densities are loaded at 9054-9055). The initial mass cap still uses parent-body density (7051-7058), the check is default-off, and the source comment describes the phase volumes as unpacked; packing/state and a fully joint material-volume solve remain unrepresented. For `rc-288`, the opt-in branch sums outbound plus Earth-loaded return propellant liquid (excluding ISRU-made return fuel), compares that to the full fairing volume times the single propellant density, and refits payload when needed (lines 7322-7341). It does not include tank walls, ullage, return vessel, other stowed hardware, or geometric packing, and is also default-off. Both candidates remain open with their constraints distinguished. Extracted: `extracted_data/r463_current_cargo_and_launch_volume_flags.csv`.
+
+
+## R507 - Shuttle water-tank mass comparator for volatile containment (2026-11-09)
+
+Harry W. Jones (NASA Ames) estimates 0.2 kg of tank per kg of water and cites a Shuttle water tank weighing 21.2 kg for 103 kg of water (ICES-2017-87, §IV.C, PDF p. 4). The cited Shuttle figures imply 0.206 kg tank/kg water. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/operational_costs.csv` assigns “Volatile cargo containment” 0.05 kg/kg, with a 0.03–0.12 range; its note defines this as incremental sealed/shaded-hold mass beyond the ore-restraint fraction. The Shuttle value is for a potable-water tank, not the incremental passive shading and sealing structure, so it benchmarks scale without validating the row's fraction. **rc-373 remains open** for a source or derived mass budget with the same boundary. Extracted: `extracted_data/r507_jones_water_tank_mass_comparator.csv`.
+
+
+## R545 — ISS eclipse duration as the LEO power-system baseline (2026-11-10)
+
+`kascak_2001_iss_eclipse_nasa_tm_2001_211138` — Kascak et al.’s NASA technical memorandum says the ISS solar array cannot generate during the “35 minute eclipse period of the 92 minute ISS Earth orbit” (NASA/TM-2001-211138, p. 1). Converting 35 minutes gives 0.5833 hours, consistent with the 0.58 h baseline stored by spacecost. The memorandum supports an ISS eclipse comparator; it does not establish that 0.58 h is a standard design duration for conventional deep-space PV trains. Open **rc-410** to add the citation and qualify that broader wording while retaining the current value. Extracted: `extracted_data/r545_iss_eclipse_baseline.csv`.
+
+
+## R546 — Chemical-battery dark-period cap comparator (2026-11-10)
+
+Fincannon’s NASA technical memorandum reports “73 to 117 hours required for energy storage (depending on power system type)” at the worst-case lunar day for the Shackleton rim site (NASA/TM-2007-215025, abstract, printed p. 1 / PDF p. 4); a linked-site case reports 68 hours. Its introduction says lunar surface systems use storage “either batteries or fuel cell type systems” (printed p. 2 / PDF p. 5), so these figures do not establish battery-only endurance. At economicspace main `db863923f7793676e9a78583b97462ddd614f29e`, `CalcConfig.max_dark_period_h` is 72.0 h and the comment describes that as the outside edge for a chemically powered battery. The lunar analysis is a system-dependent storage comparator, not an asteroid-mining battery limit; no numeric replacement is inferred. **rc-411** records the uncited scope claim for review. Extracted: `extracted_data/r546_fincannon_lunar_storage_hours.csv`.
+
+
+## R548 — RFC system-level specific-energy comparator (2026-11-10)
+
+Jeffrey Csank’s NASA presentation reports that RFC systems range from approximately 100–600 Wh/kg depending on power level and duration (slide 12). Its system-level comparison table lists 400 Wh/kg and 300 kg for a 1 kW, 120-hour lunar-polar RFC case; the 1 kW lunar-equatorial case is 550 Wh/kg at 350 hours, while the Mars mid-latitude case is 200 Wh/kg at 13 hours. The table therefore supports 400 Wh/kg as a specific design comparator and shows mission dependence; it does not establish a generic asteroid RFC value or the full [250,700] range. At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, `reference/storage_systems.csv` labels 400 Wh/kg an estimate with no source, and `reference/operational_costs.csv` repeats it as the RFC comparator. **rc-414** records the citation and applicability review. Extracted: `extracted_data/r548_csank_rfc_specific_energy.csv`.
+
+
+## R550 — G2 flywheel module specific-energy comparator (2026-11-10)
+
+`ntrs_2006_g2_flywheel_module_design` — NASA/CR-2006-213862 reports 525 Wh usable energy and 218 lb module mass (printed p. 2, Table 1; confirmed in the summary on printed p. 12), yielding 5.31 Wh/kg at the full-module boundary. Its rotor table gives 50 lb (printed p. 3, Table 2), yielding 23.1 Wh/kg if only rotor mass is counted. The report says the module was for laboratory use and that weight was not a significant factor; these values are scale comparators, not like-for-like replacements for an optimized spacecraft or asteroid system. The spacecost `Flywheel energy storage` row estimates 100 Wh/kg with a [40,180] range and says the value has no source. Open **rc-416** to review the value, range, and mass boundary. Extracted: `extracted_data/r550_g2_flywheel_specific_energy.csv`.
+
+
+## R551 — NASA cryogenic COPV burst performance-factor comparator (2026-11-10)
+
+`ray_2008_cryogenic_copv_development_tests` — NASA’s test article table specifies a “minimum burst pressure” of 1.5×MOP (printed p. 4), and Tables 2–3 report a “Performance Efficiency Rating” of burst P_b V/W (printed pp. 6–7). Rechecking the six cryogenic tests reproduces each tabulated value from burst pressure, volume, and mass; conversion gives 326.5–416.6 kJ/kg. Spacecost’s COPV factor is 392 kJ/kg, within this interval, but the tests cover two liner materials in 1.8 ft³ cryogenic helium-pressurization vessels, not a generic supercritical-gas tank. The NASA data directly address the same parameter and replace the upstream note’s claim that no registered source gives PV/W; they do not establish the generic value or [250,600] range. Open **rc-417** for citation and applicability review. Extracted: `extracted_data/r551_nasa_copv_pressure_volume_weight_performance.csv`.

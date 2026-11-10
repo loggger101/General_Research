@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+babic_et_al_1993_extended_duration_lunar_lander,Earth departure TLI burn,3140,m/s,"printed p. 3, §2.3.1 and Table 2.1","185 km parking orbit, 33-degree inclination, four-day lunar transfer; not a direct NRHO trajectory."
+benson_asher_reese_2025_fast_transfer_nrho_presentation,Transfer from TLI to NRHO,400–450,m/s,slide 5,Fast Gateway transfer component; the source does not provide the LEO-to-TLI part.
+babic_et_al_1993_extended_duration_lunar_lander;benson_asher_reese_2025_fast_transfer_nrho_presentation,Cross-study component sum,3540–3590,m/s,computed here,3140 plus 400–450; arithmetic context only because the cited components are from different trajectory studies.
+,spacecost LEO to cislunar NRHO depot row,3600; uncertainty_frac=0.02,m/s,spacecost/reference/delta_v_segments.csv at spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9,The row notes only TLI plus NRHO insertion. Approximate cross-study component agreement does not validate this as one matched trajectory.

@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+matos_etal_2021_jrc_elemental_phosphorus_energy,Thermal P4 production energy upper figure,14,kWh/kg P4,"Phosphorus chapter §7.1, p. 30","JRC report says up to 14 MWh per tonne; process uses phosphate rock, coke and silica in an electric furnace."
+,spacevalue catalog value for phosphorus,8,kWh/kg,"spacevalue/catalog.py IN_SPACE_PROCESSING_KWH_PER_KG[""phosphorus""]",Pipeline allowance; no source or product boundary in comment.
+,Ratio of JRC upper comparator to catalog value,1.75,ratio,computed here: 14 / 8,Computed comparison only; different process/product boundaries prevent a direct replacement inference.

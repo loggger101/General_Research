@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+vogl_ahman_nilsson_2018_h2_dri_steel_energy,Hydrogen direct-reduction steelmaking electricity per tonne liquid steel,3.48,kWh/kg liquid steel,"Article abstract, p. 736 (also Lund University publication record)",3.48 MWh/t converted to kWh/kg; electricity demand is chiefly hydrogen electrolysis. Terrestrial modeled route; not direct asteroid refining energy or a like-for-like feedstock boundary.

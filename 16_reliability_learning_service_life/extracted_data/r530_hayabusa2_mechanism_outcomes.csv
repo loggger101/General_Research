@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nakamura_2025_sample_return_missions_rosetta_stones_small_bodies,Hayabusa2 SCI impact experiment velocity,2,km/s,"§4.3, p. 12",Review describes a ~30 cm impactor with a Cu plate released between the two sampling efforts.
+nakamura_2025_sample_return_missions_rosetta_stones_small_bodies,Artificial crater from impact experiment,>10,m diameter,"§4.3, p. 12",Direct evidence that the impact experiment produced a crater.
+nakamura_2025_sample_return_missions_rosetta_stones_small_bodies,Hayabusa2 sample-collection operations reported successful,2,operations,"§4.4, p. 13",Review says sample collection was performed twice without problems.
+nakamura_2025_sample_return_missions_rosetta_stones_small_bodies,Hayabusa2 returned sample mass,5.4,g,"§4.4, p. 13",Context confirming collected material was returned; not used as a reliability estimate.

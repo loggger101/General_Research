@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_rig_calendar_cadence_flag_current_2026,model_rig_calendar_cadence default,False,boolean,modules/calc.py:678,Default CONFIG is CalcConfig() at line 1468.
+economicspace_rig_calendar_cadence_flag_current_2026,enabled calendar bound when stay <= life,1 + floor((life_yr - stay_yr) / cadence_yr),campaigns per rig,modules/calc.py:4849-4851,Applied when flag is on and a truthy cadence is provided.
+economicspace_rig_calendar_cadence_flag_current_2026,enabled bound when stay > life,"max(1, floor(life_yr / stay_yr))",campaigns per rig,modules/calc.py:4848-4851,"The cadence formula is skipped, and max(1, ...) retains one campaign even though its stay exceeds calendar life."
+economicspace_rig_calendar_cadence_flag_current_2026,stay/cadence witness,2.5 / 4; cap falls 6 to 4,years; campaigns,versions.md:713-722,Eight of 40 programme options exceed life and are removed in described case.
+economicspace_rig_calendar_cadence_flag_current_2026,sampled rows with option effects,18 of 24,rows,versions.md:718-722,Sample confined to 1.02-1.35 AU with cost of capital on.
+economicspace_rig_calendar_cadence_flag_current_2026,revision candidate,rc-239 remains open,candidate id,revision_candidates.csv,Flag is default-off; stay longer than life edge case remains.

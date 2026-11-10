@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+kaplan_2026_bennu_water_hydroxyl_ovirs_sample,Bennu global surface hydration band minimum,2.74 ± 0.01,μm,HTML section “New Evidence from the Sample”,Global OVIRS spectra; assigned to OH in phyllosilicates.
+kaplan_2026_bennu_water_hydroxyl_ovirs_sample,Returned Bennu sample hydration band minimum,2.710 ± 0.002,μm,HTML section “New Evidence from the Sample”,Bulk aggregate sample spectrum; narrower feature than global OVIRS spectrum.
+kaplan_2026_bennu_water_hydroxyl_ovirs_sample,Returned sample 3.0-μm H2O bending-mode overtone,absent,qualitative,HTML section “New Evidence from the Sample”,Authors infer less adsorbed and/or structural water than optical surface and primarily hydroxyl-dominated subsurface material; not a mass fraction.
+kaplan_2026_bennu_water_hydroxyl_ovirs_sample,Returned sample interpretation,primarily hydroxyl-dominated,qualitative,HTML section “New Evidence from the Sample”,Spectral inference; does not quantify bulk H2O or ice content.
+kaplan_2026_bennu_water_hydroxyl_ovirs_sample,3.0-μm surface feature as phosphate indicator,inconclusive,qualitative,HTML sections “New Evidence from the Sample” and “Conclusion”,Potential link to phosphate minerals is not established by the reported correlations.

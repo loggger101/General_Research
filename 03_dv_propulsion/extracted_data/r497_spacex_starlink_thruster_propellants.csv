@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacex_2023_starlink_progress_report_thruster_propellants,First-generation Starlink satellite Hall-thruster propellant,krypton,propellant,"Technology → Thrusters, printed p. 48","SpaceX also says second-generation satellites switched to argon; this statement is about Starlink satellite generations, not a generic gas-property comparison."
+spacex_2023_starlink_progress_report_thruster_propellants,Second-generation engine thrust relative to first generation,2.4,×,"Technology → Thrusters, printed p. 48",Report’s relative performance statement; no absolute thrust value given in this passage.
+spacex_2023_starlink_progress_report_thruster_propellants,Second-generation specific impulse relative to first generation,1.5,×,"Technology → Thrusters, printed p. 48",Report’s relative performance statement; no absolute Isp value given in this passage.

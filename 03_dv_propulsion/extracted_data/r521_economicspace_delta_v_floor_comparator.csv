@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+,economicspace outbound ΔV floor,3000,m/s,modules/calc.py asteroid_dv_options_km_s lines 3499-3500,Pipeline safeguard; not an external measurement.
+,economicspace return ΔV floor,300,m/s,modules/calc.py asteroid_dv_options_km_s line 3501,Pipeline safeguard; return-floor feasibility concern separately recorded in rc-289.
+jpl_nhats_nea_dv_oracle,2000 SG344 minimum-ΔV round-trip mission,3.549; 370,km/s; days,NHATS API object-mode response fields min_dv.dv and min_dv.dur; extraction r488_nhats_delta_v_duration_trade.csv,"Computed 2021-04-19; 8-day stay; full human round-trip context, not a direct per-leg floor comparator."
+jpl_nhats_nea_dv_oracle,NHATS trajectory output components,Earth departure; asteroid arrival/departure; Earth return,component names,"NHATS API documentation, Data Output / Mode O; fields min_dv_traj.dv_dep_park, vrel_arr_neo, vrel_dep_neo, vrel_arr_earth",NHATS total mission ΔV aggregates mission components; it does not define the model’s outbound/return one-way floors.

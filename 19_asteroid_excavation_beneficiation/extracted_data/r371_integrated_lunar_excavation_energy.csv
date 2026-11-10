@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,trial_duration,2.5,h,"Table 1, PDF p.3",Continuous 37-cycle proof-of-concept LUNA trial.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,excavated_mass,10.8,kg,"Table 1, PDF p.3",Campaign total.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,mass_input_to_beneficiator,10.0,kg,"Table 1, PDF p.3",Campaign total.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,target_fraction_mass_lt_100um,2.1,kg,"Table 1, PDF p.3",Target fraction mass.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,total_system_energy,265,Wh,"Table 1, PDF p.3",Whole integrated system.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,excavation_energy_intensity,24.5,Wh/kg excavated,"Table 1, PDF p.3",Includes rover mobility; 1-g lunar simulant analogue.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,target_fraction_energy_intensity,126.2,Wh/kg target fraction,"Table 1, PDF p.3",Target fraction is <100 μm.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,specific_beneficiation_energy,14.3,Wh/kg target fraction,"Table 1, PDF p.3","Beneficiation energy intensity; target is screened size fraction, not a mineral-purity concentrate."
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,transfer_efficiency,0.93,fraction,"Table 1, PDF p.3",Ratio reported by authors.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,beneficiation_yield_ratio,0.21,fraction,"Table 1, PDF p.3",Target-fraction yield ratio reported by authors.

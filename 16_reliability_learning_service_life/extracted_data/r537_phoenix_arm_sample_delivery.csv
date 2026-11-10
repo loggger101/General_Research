@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+bonitz_etal_2009_phoenix_mars_lander_robotic_arm,Samples acquired and successfully delivered,17,samples,"§3, p. 7","Five to TEGA, four to MECA Wet Chemistry Lab, and eight to MECA Optical Microscope."
+bonitz_etal_2009_phoenix_mars_lander_robotic_arm,First icy-soil delivery attempts,2,attempts,"§4, p. 8",First two samples congealed in the scoop during delivery.
+bonitz_etal_2009_phoenix_mars_lander_robotic_arm,Third icy-soil sample delivery,successful,outcome,"§4, p. 8",Sample was delivered; TEGA confirmed water ice in it.
+bonitz_etal_2009_phoenix_mars_lander_robotic_arm,Fourth icy-soil delivery attempt,unsuccessful,outcome,"§4, p. 8",TEGA cell doors did not completely open.

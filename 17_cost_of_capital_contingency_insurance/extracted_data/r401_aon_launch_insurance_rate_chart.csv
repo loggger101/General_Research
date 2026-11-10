@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+aon_q1_2026_space_insurance_market_report,2026 minimum L+12/16-month rate,5.0,percent of insured value,"printed p. 11, chart “Theoretical Capacity and Estimated Rates”",approximate chart reading; chart labels rates normalized to launch plus one year; not vehicle-cohort-specific
+aon_q1_2026_space_insurance_market_report,2026 typical L+12/16-month rate,13.0,percent of insured value,"printed p. 11, chart “Theoretical Capacity and Estimated Rates”",approximate chart reading; chart labels rates normalized to launch plus one year; not vehicle-cohort-specific
+aon_q1_2026_space_insurance_market_report,2026 maximum L+12/16-month rate,25.0,percent of insured value,"printed p. 11, chart “Theoretical Capacity and Estimated Rates”",approximate chart reading; chart labels rates normalized to launch plus one year; not vehicle-cohort-specific

@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+jpl_nhats_nea_dv_oracle,"NHATS bodies (default constraints), R399",7197,bodies,API summary fields signature.version/source and count,"NASA/JPL NHATS Data API v1.3; query dv=12,dur=450,stay=8,launch=2020-2045; read 2026-11-08."
+jpl_nhats_nea_dv_oracle,"minimum total round-trip delta-v median, R399",9.369,km/s,data[*].min_dv.dv; linear-interpolated median,"Computed from 7,197 current API records."
+jpl_nhats_nea_dv_oracle,"minimum total round-trip delta-v p10, R399",5.996,km/s,data[*].min_dv.dv; linear-interpolated 10th percentile,"Computed from 7,197 current API records using (n-1)p interpolation."
+jpl_nhats_nea_dv_oracle,"minimum total round-trip delta-v p90, R399",11.546,km/s,data[*].min_dv.dv; linear-interpolated 90th percentile,"Computed from 7,197 current API records using (n-1)p interpolation."
+jpl_nhats_nea_dv_oracle,"minimum / maximum minimum-total-delta-v, R399",3.345 / 11.999,km/s,data[*].min_dv.dv,Minimum is 0.044 km/s below R73; maximum remains at the 12 km/s filter ceiling.
+jpl_nhats_nea_dv_oracle,"minimum total round-trip delta-v below 4 km/s, R399",40,bodies,data[*].min_dv.dv < 4 km/s,Count.
+jpl_nhats_nea_dv_oracle,"minimum total round-trip delta-v 4 to <5 km/s, R399",246,bodies,4 <= data[*].min_dv.dv < 5 km/s,Count.
+jpl_nhats_nea_dv_oracle,"minimum total round-trip delta-v 5 to <8 km/s, R399",1904,bodies,5 <= data[*].min_dv.dv < 8 km/s,Count.
+jpl_nhats_nea_dv_oracle,"minimum total round-trip delta-v 8 to <10 km/s, R399",2148,bodies,8 <= data[*].min_dv.dv < 10 km/s,Count.
+jpl_nhats_nea_dv_oracle,"minimum total round-trip delta-v at least 10 km/s, R399",2859,bodies,data[*].min_dv.dv >= 10 km/s,"Bins total 7,197; prior R73 bins were 38, 243, 1,880, 2,114, 2,819 (total 7,094)."
+jpl_nhats_nea_dv_oracle,median change from R73,0.002,km/s,R399 9.369 minus R73 computed 9.3665 (displayed 9.367),"Relative to R73, change is about 0.021%; no upstream one-way value follows directly."

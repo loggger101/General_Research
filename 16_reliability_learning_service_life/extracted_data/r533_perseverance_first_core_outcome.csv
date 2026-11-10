@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2021_perseverance_first_mars_rock_sample,First Mars rock sample collection,completed,outcome,"First Sample section, ¶1",NASA release reports the first rock sample collection was completed.
+nasa_2021_perseverance_first_mars_rock_sample,Sample acquisition tool,rotary-percussive drill,mechanism,"First Sample section, ¶2",Drill at the end of Perseverance’s robotic arm cored into the rock.
+nasa_2021_perseverance_first_mars_rock_sample,Core handling,hermetically sealed and stored,outcome,"First Sample section, ¶3","Sample tube serial number 266 and its Martian cargo were transferred inside, sealed, imaged, and stored."

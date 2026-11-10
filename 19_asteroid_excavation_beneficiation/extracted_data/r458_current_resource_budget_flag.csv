@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_programme_cumulative_resource_budget_current_2026,model_body_resource_budget default,False,boolean,modules/calc.py:694,Default configuration leaves cumulative asteroid resource budgeting disabled.
+economicspace_programme_cumulative_resource_budget_current_2026,consumer config construction,CONFIG = CalcConfig(),code,modules/calc.py:1468,No consumer override of model_body_resource_budget was found in the current economicspace checkout.
+economicspace_programme_cumulative_resource_budget_current_2026,programme cumulative cap,body_kg / (feed_kg + isru_feed_kg),expression,modules/calc.py:7837-7838,Used only when model_body_resource_budget is enabled.
+economicspace_programme_cumulative_resource_budget_current_2026,over-budget programme filter,p[0] == 1 or p[0] <= max_n,code condition,modules/calc.py:7849-7852,One-mission rung is retained even if max_n < 1; smaller loads are separately attempted for over-budget rungs.
+economicspace_programme_cumulative_resource_budget_current_2026,per-mission feed budget flag default,False,boolean,modules/calc.py:699,"Separate guard for mission feed versus min(mineable, throughput) is also disabled by default."

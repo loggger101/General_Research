@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+guo_et_al_2026_phobos_ellipsoidal_harmonic_gm,Phobos gravitational parameter (GM),709962.0,m^3/s^2,Table 3,Degree-1 ellipsoidal-harmonic estimate using Mars Express 2010 and 2013 Doppler data
+guo_et_al_2026_phobos_ellipsoidal_harmonic_gm,GM 3-sigma uncertainty,197.0812,m^3/s^2,Table 3,Article reports ±0.001970812 × 10^5 m^3/s^2 at 3σ
+,Gravitational constant used for GM-to-mass conversion,6.6743e-11,m^3 kg^-1 s^-2,Computed here; CODATA value,Used to derive mass; not a new measured source value
+,GM-derived Phobos mass,1.0637250348351138e+16,kg,Computed here from Table 3 GM / G,Not directly measured mass; G uncertainty negligible at shown precision
+,3-sigma mass uncertainty from GM,2952837001633.1304,kg,Computed here from Table 3 uncertainty / G,Does not include the much smaller G uncertainty
+,Current upstream Phobos mass,1.0659e+16,kg,"spacecost/reference/environments.csv, Phobos",Current row labels this value ESTIMATE
+,Current mass relative to new GM-derived mass,0.20446685878963144,%,Computed here,Stored value is above the new derived mass
+,Current mass implied GM,711413.637,m^3/s^2,Computed here,Using the same G for like-for-like comparison

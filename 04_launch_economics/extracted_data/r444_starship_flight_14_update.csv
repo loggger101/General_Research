@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacex_starship_flight_14_postflight_2026,flight_date,2026-09-28,date,"SpaceX mission page, opening paragraph",Flight 14; first orbital Starship flight; report says 26 Starlink V3 satellites delivered to orbit.
+spacex_starship_flight_14_postflight_2026,flight_number_and_orbital_milestone,14; first orbital Starship flight,count; status,"SpaceX mission page, opening paragraph",Supersedes upstream note that 13 flights through July 2026 were all suborbital.
+spacex_starship_flight_14_postflight_2026,Starlink V3 satellites delivered to orbit,26,satellites,"SpaceX mission page, opening paragraph",Reported payload deployment; does not establish commercial launch capability or price.

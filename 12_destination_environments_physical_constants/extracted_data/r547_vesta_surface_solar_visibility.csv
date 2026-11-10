@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+stubbs_wang_2012_vesta_illumination_conditions,Vesta tropical mean solar visibility,0.5,fraction of time,"§5.1, printed p. 275 (PDF p. 4)","Paper says the Sun is typically visible about half the time in the tropics, as expected for diurnal variation; this is the scoped comparator for the 0.50 night-side baseline."
+stubbs_wang_2012_vesta_illumination_conditions,Vesta global maximum mean solar visibility,0.566,fraction of time,"§5.1, printed p. 275 (PDF p. 4)","Highest value near 65°S, 100°W at the central peak."
+stubbs_wang_2012_vesta_illumination_conditions,Vesta global minimum mean solar visibility,0.363,fraction of time,"§5.1, printed p. 275 (PDF p. 4)","Lowest value near 70°S, 108°E at a topographic low."
+stubbs_wang_2012_vesta_illumination_conditions,Vesta axial tilt,27.2,degrees,"Table 1, printed p. 273 (PDF p. 2)","Source gives uncertainty ±5°; included to identify the comparator body, not as a model replacement."

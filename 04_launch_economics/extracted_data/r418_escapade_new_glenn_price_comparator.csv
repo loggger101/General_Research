@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+geekwire_2023_escapade_new_glenn_launch_award,NASA VADR ESCAPADE launch-service task order total contract value,20000000,USD,"GeekWire article, lines 8-20; paragraph states contract supports launch service and total value is $20M","Award reported Feb. 2023 while New Glenn remained under development; mission-specific early-flight award, not an asserted current commercial rate."
+geekwire_2023_escapade_new_glenn_launch_award,amount obligated at report date,6000000,USD,"GeekWire article, line 19",Reported obligation is not added to the total contract value.
+nasa_escapade_mission_page_2026,ESCAPADE launch date,2025-11-13,date,"NASA Science ESCAPADE mission page, Launch and mission specs",NASA lists Launch Vehicle as Blue Origin New Glenn 2.
+,spacecost New Glenn listed price range,68000000-110000000,USD per launch,"spacecost/reference/launch_vehicles.csv, New Glenn row",Current reference year 2026; price_basis=reported; source note attributes range to Blue Origin / Wikipedia.
+,contract value compared with reference low,-70.59,percent,Computed: $20M contract vs $68M lower endpoint,"Scope/date signal only; contract is an early, mission-specific award; do not treat as a current standard price."

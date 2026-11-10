@@ -364,3 +364,138 @@ demand; it measures no observed-body incidence or catalogue ranking.
 Twenty-four runtime/method blobs match pinned metadata; all four live main
 comparisons are identical. `extracted_data/r352_programme_market_clock.csv`
 contains full inputs/books, clock certificates and the reproduction harness.
+
+## R361 - Current GEO active-fleet count (2026-11-08)
+
+The `geo` row of `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG` is
+44,600 kg/yr. Its comment derives this from 613 active GEO payloads in GCAT's
+January 2026 Table 22 and the prior row's implied 72.76 kg/payload/yr.
+
+`celestrak_satcat_gpz_active_2026`: the current CelesTrak SATCAT query for
+active payloads in the GEO Protected Zone returned 565 records on 2026-11-08;
+the SATCAT page says its data are current through 2026-11-07 22:58:29 UTC.
+The response has 536 operational, 21 partially operational, 7 backup and 1
+spare payloads. CelesTrak defines the GEO Protected Zone as GEO altitude
+plus/minus 200 km. The GCAT Table 22 row is labelled GPZ plus/minus 100 km;
+Figure 8 clarifies that this means GEO plus/minus 300 km, not GEO plus/minus
+100 km. The GCAT band is therefore wider, and the 565 and 613 counts are not
+from matched spatial bands.
+
+Holding the existing per-payload rate fixed, 44,600 x 565 / 613 = 41,108
+kg/yr, 3,492 kg/yr (7.83%) below the current ceiling is only an arithmetic
+diagnostic: because the spatial bands differ, it is not a like-for-like demand
+revision. The count comparison does not independently validate the assumed
+72.76 kg/payload/yr. `rc-290` asks for matched-band fleet reconciliation before
+any re-pin. `extracted_data/r361_geo_satcat_active_count.csv` records the query
+count, status split and qualified arithmetic diagnostic.
+
+## R364 - GCAT's GEO count uses a wider band than CelesTrak GPZ (rc-290; 2026-11-08)
+
+`mc_dowell_2025_space_activities_gcat`, *Space Activities in 2025*, Figure 8
+p.65, defines the dashed GPZ+/-100 km result limits as GEO+/-300 km; Table 22
+p.66 labels its 613 active payload count `GPZ+/-100`. The registered
+`celestrak_satcat_gpz_active_2026` live query uses CelesTrak's GEO Protected
+Zone at GEO altitude+/-200 km. `celestrak_satcat_format_docs_2026`, updated
+2026-09-23, lists APOGEE and PERIGEE fields and query selectors/flags but no
+custom altitude-band selector. A matched count needs record-level filtering under a shared orbit
+boundary and status rule. The old 565/613 scaling is retained only as a
+diagnostic, not as an annual-demand correction. rc-290 is revised to require
+that matched comparison before changing the 44,600 kg/yr ceiling.
+`extracted_data/r361_geo_satcat_active_count.csv`.
+
+## R365 - Current record-level count within the GEO+/-300 km band (rc-290; 2026-11-08)
+
+`celestrak_satcat_active_group_2026`: one CelesTrak SATCAT active-group CSV
+query retrieved 2026-11-08 22:48:42 UTC returned 17,418 records. Using the
+documented `APOGEE` and `PERIGEE` fields, the 17,352 Earth-orbit payloads with
+both values present were filtered by full orbital envelope. GEO is 35,786 km;
+the 585 records with perigee >=35,486 km and apogee <=36,086 km are inside
+GEO+/-300 km. Their status codes are 554 operational, 22 partially operational,
+7 backup and 2 spare. The same whole-orbit filter at GEO+/-200 km yields 564,
+one fewer than `celestrak_satcat_gpz_active_2026`'s 565-query count, a useful
+consistency check. A mean-altitude filter instead yields 602 at GEO+/-300 km,
+so the altitude convention remains material.
+
+`mc_dowell_2025_space_activities_gcat` Table 22 p.66 gives 613 active payloads
+in its `GPZ+/-100` row, which Figure 8 p.65 defines as GEO+/-300 km. Holding the
+existing implied 72.7569 kg/payload/yr fixed, scaling 44,600 by 585/613 gives
+42,562.8059 kg/yr (42,563 rounded), 2,037.1941 kg/yr (4.5677%) below the
+current ceiling. The catalog snapshots differ by about ten months and use
+separate status sources; this does not remeasure per-payload demand. rc-290
+now carries a concrete alternate fleet basis while remaining open on the exact
+altitude-classification rule. `extracted_data/r365_geocount_matched_300km.csv`.
+
+
+## R366 - CelesTrak active-status definition for GEO count (rc-290; 2026-11-08)
+
+`celestrak_satcat_operational_status_2026`, Operational Status page, updated
+2026-10-12, defines active as statuses `+`, `P`, `B`, `S` or `X` and says
+active status does not require power or communications. The R365 whole-orbit
+GEO+/-300 km count contains 554 `+`, 22 `P`, 7 `B`, 2 `S` and no `X`
+records (585 total), so its status split is compatible with CelesTrak's
+`ACTIVE=1` definition. This defines the CelesTrak side only; it does not
+establish that CelesTrak and GCAT use the same active-status rules.
+`extracted_data/r366_celestrak_active_status_definition.csv`.
+
+
+## R367 - GCAT current-orbit GEO active count (rc-290; 2026-11-08)
+
+`mc_dowell_2026_gcat_active_current_catalog`: GCAT Release 1.8.9 data
+updated 2026-11-07 publishes `active.tsv` and `currentcat.tsv`. The active
+catalog documentation says entries are payloads that are or may be still
+transmitting and that active status is infrequently updated and sometimes a
+guess. The current-catalog documentation defines `Active=A` as active
+satellite and says its perigee/apogee are from the most recent available
+current orbit. In `currentcat.tsv`, 17,039 payloads have `Active=A`; 564 have
+`OpOrbit` beginning `GEO`, all with numerical current perigee/apogee. Requiring
+the entire current orbit to lie within GEO+/-300 km (35,486-36,086 km) gives
+524 payloads; classifying by the perigee/apogee midpoint gives 544. At
+GEO+/-200 km, the same rules give 511 and 541.
+
+Scaling the existing 44,600 kg/yr at the fixed rate implied by GCAT Table 22's
+613 January payloads gives 38,124.633 kg/yr from the full-envelope count and
+39,579.772 kg/yr from the midpoint count. The `active.tsv` release itself has
+575 `GEO*` representative early-operational-orbit entries; its full-envelope
+filter yields 496 and its midpoint filter 545, illustrating why currentcat's
+latest orbit is used for the current-orbit comparison. GCAT warns its active
+status is infrequently updated and sometimes guessed. Its November currentcat
+count differs from CelesTrak's 585 whole-envelope active payloads; the
+catalog/status and orbit-selection rules remain unresolved. No per-payload
+demand change is inferred, and `rc-290` stays open.
+`extracted_data/r367_gcat_current_geocount.csv`.
+
+
+## R461 — Current programme market-clock option
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_market_wave_clock` defaults to `False` (modules/calc.py:688), and the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). The default branch continues to call `_delivery_window_yr(n_missions, fleet, mission_duration_yr, cadence_yr)` (line 7727). With the flag enabled, the market window becomes `(mission_duration_yr + (waves - 1) * cadence_yr) / n_missions`, where `waves` is the campaigns-per-ship count or its ceiling (lines 7722-7726); for rectangular `N=F*W`, multiplying this window by N matches the cost calendar's reported span `T+(W-1)*cadence`. The change is opt-in and only alters the market-window calculation, leaving rc-287's default discrepancy and its broader shared treatment of programme timing unresolved. `rc-287` remains open. Extracted: `extracted_data/r461_current_market_clock_flag.csv`.
+
+
+## R467 — Current engineered-hold capped-market option
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.price_engineered_hold` defaults to `False` (modules/calc.py:753), and the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). In the capped-market branch, the default concentration path re-runs `optimal_payload_mix` with market caps after physical sizing (lines 7750-7789), so the sold mix can differ from the engineered `payload_mix`. With `price_engineered_hold=True`, the branch instead applies `_capped_sale_value` to `sale_terms` from the engineered hold (lines 7790-7797); it constrains pricing to the hold already flown but does not market-redesign the hold. The v1.66.0/calc v1.39.0 release notes say six of nine R322 cases with a recorded engineered-hold sale match this path; examples include the 1,000 kg solar case falling from $80,250 to $50,625 and the hard-ceiling case from $80,250 to $1,250. Across 53 sampled evaluable rows, two changed cost/kg (1.001x and 1.019x) with no evaluability change; three market-aware diagnostics were not replayed. The correction is opt-in, so `rc-252` remains open for default-path resolution and the remaining market-aware interaction checks. Extracted: `extracted_data/r467_current_engineered_hold_market_flag.csv`.
+
+
+## R515 — LEO annual propellant-demand comparator
+
+Howard’s NASA DSEV concept assumes 90 t of Starship’s predicted 100 t payload can be transferred as propellant and says 12 Xenon plus 27 LOX/CH4 tanker flights are needed to fuel one Mars mission (Section IV.B, p. 4); Section VIII.A (p. 13) repeats the 39-flight total. Table 1 (p. 4) lists four Mars departures in the 2028–2037 analysis window. Applying the assumed 90 t to all 39 flights gives 3,510 t per mission; evenly spread over four departures and ten years, that is 1,404 t/yr. Spacevalue’s `IN_SPACE_ANNUAL_DEMAND_KG["leo"]` is 500,000 kg/yr. This NASA concept’s schedule-based transfer capacity is 2.81 times the stored ceiling, but it is a single architecture and not a general or observed market forecast. `rc-381` records the annualization and scope review; no replacement value is established. Extracted: `extracted_data/r515_leo_mars_dsev_propellant_demand_comparator.csv`.
+
+
+## R525 — Mars-orbit annual-demand scale comparator (2026-11-10)
+
+`sanders_kleinhenz_2024_isru_space_mining_unoosa`: NASA JSC’s presentation gives “100s metric tons per year for human Mars transportation” as a notional production scale (NTRS 20240002713, PDF p. 3); the same slide states the activities shown are not currently funded or approved.
+
+Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["mars_orbit"]` = 60,000 kg/yr. Its comment frames this as one crewed mission’s in-space propellant per approximately 2.14-year synodic period. Verdict: the NASA transportation scale is larger, but is a notional production vision, not a Mars-orbit depot demand forecast; retain the mission-cycle value as a conservative scenario pending a like-for-like market basis. `rc-391`. Extracted: `extracted_data/r113_isru_production_targets.csv`.
+
+
+## R526 — Mars-surface demand scale citation (2026-11-10)
+
+`sanders_kleinhenz_2024_isru_space_mining_unoosa`: the NASA JSC presentation gives “10’s of metric tons of commodities per year for initial commercial usage” (NTRS 20240002713, PDF p. 3) and labels the slide a notional future direction, with depicted activities “not currently funded or approved.”
+
+Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["mars_surface"]` = 20,000 kg/yr; the module labels the in-space demand table judgment, not measurement. Verdict: the NASA goal supports the order of magnitude as a scenario citation, but it is not a Mars-specific market forecast or measured absorption rate. Retain 20 t/yr as a judgment-based surface-base ceiling. `rc-392`. Extracted: `extracted_data/r113_isru_production_targets.csv`.
+
+
+## R527 — GTO launch-based demand ceiling scope (2026-11-10)
+
+`mcdowell_2026_space_activities_2025_gto_launches`: Table 14(e) counts 34 launches in the 2025 “GTO Transfer” category (p. 38). `toson_etal_2016_draise_geo_platform_mass`: the IAF abstract describes chemical GEO communications platforms as typically about 6 tons, with about half their total weight as propellant (p. 1). `byers_1989_advanced_onboard_propulsion_tm103174`: NASA TM-103174 says apogee propellant for GEO satellites is 40–50% of mass injected into GTO (p. 1; Fig. 1).
+
+Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["gto"]` = 81,600 kg/yr, calculated as 34 × 6,000 × 0.40. Verdict: the cited sources support the launch count, a typical chemical GEO-platform mass, and the apogee-propellant fraction separately; they do not establish that every GTO Transfer launch carried one chemical GEO communications platform. Keep the arithmetic only as an idealized scenario pending a payload-cohort and mass-basis check; no replacement annual value is established. `rc-393`. Extracted: `extracted_data/r527_gto_launch_mass_propellant_comparator.csv`.

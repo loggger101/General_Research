@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+firefly_alpha_payload_users_guide_v5p3_sep2026,guide_revision,"v5.3, September 2026",version; date,"PDF p. 2, Revision History",Latest guide linked from Firefly official Alpha page as of 2026-11-09.
+firefly_alpha_payload_users_guide_v5p3_sep2026,payload_leo_kg,1030,kg,"PDF p. 4, Table 1, Payload [LEO, 300km]",Matches the current Alpha row point value.
+firefly_alpha_payload_users_guide_v5p3_sep2026,payload_sso_kg,630,kg,"PDF p. 4, Table 1, Payload [SSO, 500km]",Matches the current Alpha row point value.
+firefly_alpha_payload_users_guide_v5p3_sep2026,price_statement_found,no,boolean,PDF full text (38 pages); searches for “price” and “$19M”,The guide contains no price statement; absence does not imply the old guide price changed.

@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+palaszewski_2022_mars_landing_ascent_delta_v,"Mars surface ascent to low Mars orbit (LMO), 100 km circular",4200,m/s,"§2.5, Table 3; restated §3.0","Table 3 explicitly includes a 20% gravity-loss allowance; a human Mars landing vehicle sizing case, not a universal ascent requirement."
+palaszewski_2022_mars_landing_ascent_delta_v,Mars surface ascent to 100 km LMO plus transfer to 500 km circular orbit,4444.8,m/s,"§2.5, Table 3","Includes 4,200 m/s ascent plus 244.8 m/s transfer; do not compare this combined total directly with the LMO-only row."
+palaszewski_2022_mars_landing_ascent_delta_v,Current spacecost Mars surface to low Mars orbit comparator,4100,m/s,spacecost/reference/delta_v_segments.csv row “Mars surface → low Mars orbit”,Upstream note labels value an unsourced estimate including gravity and drag losses; source LMO-only estimate is 100 m/s (2.4%) higher.

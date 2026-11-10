@@ -194,3 +194,79 @@ Fourteen local blobs match pinned GitHub metadata and all four live main
 comparisons are identical to the commits read.
 `extracted_data/r341_methane_quote_heating_basis.csv`.
 Contract extract: `06_commodity_market_pricing/extracted_data/r341_henry_hub_contract_basis.csv`.
+
+## R374 - USGS 2025 iodine crystal price is above the propellant reference (2026-11-08)
+
+`usgs_mineral_commodity_summaries_2026_iodine`, PDF p. 2, says “spot prices for iodine crystal averaged about $73 per kilogram during the first 10 months of 2025”; it attributes the price to industry publications. PDF p. 1 gives a distinct 2025 estimated crude-iodine import unit value of $68/kg CIF. At spacecost@19e1a31, `reference/propellants.csv`, row `Iodine  (Hall / gridded)`, stores `ref_cost_usd_per_kg=60` and `reference_year=2026`; its note labels the value an estimate, and says Rafalskyi et al.'s US$60 is a total propellant cost with no mass stated. The crystal benchmark is 21.7% above the stored value, but the report does not establish propellant-grade purity or a procurement quote. Verdict: `rc-292` proposes considering ~$73/kg (2025 crystal spot) as the market reference, or retaining $60 only with a stated grade, year and discount basis; no value is changed here. Extracted: `extracted_data/r374_usgs_iodine_reference_price.csv`.
+
+## R428 — Producer iodine sales price cross-check (2026-11-09)
+
+SQM's 2025 Annual Report, p. 111, states average iodine prices reached approximately US$71.7/kg in 2025, 7.4% above 2024. On p. 114 it reports an average annual iodine price of US$72/kg, consistent after rounding, and describes iodine sales as spot orders or supply contracts with periodic price adjustment to prevailing market conditions. Reported 2025 iodine-and-derivatives revenue was US$1,042.8M on 14.5 kt sales; because the segment includes derivatives, its revenue/volume ratio is not treated as a pure iodine transaction price. The approximately $71.7/kg producer benchmark is 19.5% above spacecost@19e1a31's $60/kg iodine propellant reference. SQM is a primary producer source and independently corroborates the USGS $73/kg 2025 crystal-spot benchmark, but its general iodine sales mix does not establish propellant-grade purity, procurement scale, delivery or qualification premiums. rc-292 remains open for a grade and procurement-basis decision; no upstream value is changed. Extracted: `extracted_data/r428_sqm_iodine_producer_price.csv`.
+
+## R392 — DLA technical-argon standard price comparator (2026-11-08)
+
+The DLA FY2026 Aerospace Energy price letter (effective 1 October 2025) lists “ARGON,TECHNICAL” at $1.14/lb (attachment schedule, p. 2), or about $2.51/kg. Spacecost’s Argon (Hall / ion) row at spacecost@19e1a31 uses $10/kg, the midpoint of SETS Space’s quoted $7–15/kg bulk-industrial range. The DLA benchmark is 74.9% below the midpoint and 64.1% below that range’s low end; the schedule also lists liquid argon at $0.65/lb under a separate item.
+
+The price channels and grades are not established as equivalent: DLA’s DoD technical-argon standard may differ in packaging, purity and procurement scope from the SETS bulk-industrial estimate, and liquid argon is not the upstream supercritical storage form. Open `rc-310` to reconcile the $10/kg reference basis; no propellant price is changed. Extracted: `extracted_data/r392_argon_dla_fy2026_price_check.csv`.
+
+## R393 — FY2026 DLA oxygen-price refresh for LOX blends (2026-11-08)
+
+The DLA FY2026 Aerospace Energy schedule (effective 1 October 2025) lists two `PROPELLANT,OXYGEN` NSN pairs at $296.77/TN and $319.64/TN (attachment, p. 2). For the same respective NSN pairs, the FY2025 schedule listed $335.89/TN and $322.28/TN. Using the prior registry’s U.S.-short-ton conversion, the current pair normalizes to about $0.327–$0.352/kg; spacecost’s LOX component is $0.37/kg, the FY2025 higher-price value. One matched NSN pair fell 11.65%, while the other fell 0.82%.
+
+Open `rc-311` to review whether the LOX component and its kerolox, hydrolox, methalox and CO/LOX blend prices should track the newer DLA standard, with the ton definition and procurement basis checked. No component or blend value is changed. Extracted: `extracted_data/r393_lox_dla_fy2026_price_check.csv`.
+
+## R394 — DLA FY2026 RP-1 Bulk price comparator (2026-11-08)
+
+The DLA FY2026 Aerospace Energy schedule (effective 1 October 2025) lists “PROPELLANT,KEROSENE RP-1 Bulk” at $10.62/GL (attachment, p. 2). Using the upstream RP-1 density of 0.810 kg/L and 3.785411784 L per U.S. gallon gives about $3.46/kg. Spacecost’s component price is $2.50/kg; its code comment describes Haltermann Solutions / SpaceInsider as typical $2–3/kg in bulk. The DLA standard is 38.5% above the component point and 15.5% above the comment’s upper end.
+
+DLA’s standard is a forecasted DoD price, and the $2–3/kg comment draws on a commercial supplier and a SpaceInsider table tied to defense moving-average prices; the quote channels and date basis need reconciliation before any update. Open `rc-312` to review the RP-1 component and dependent kerolox / HTP-RP-1 blends. No values are changed. Extracted: `extracted_data/r394_rp1_dla_fy2026_price_check.csv`.
+
+## R398 — Xenon composite-price review signal (2026-11-08)
+
+`epignosis_2026_rare_gas_price_tracker` reports a xenon composite declining from $3,050/kg in January 2026 to $2,650/kg in August 2026 (Monthly Price Data Table, Xenon Composite row). Its “Methodology and Source Note” calls these “directional, analyst-informed estimates rather than transactable market prices” and says costs vary by “purity grade, contract structure, order volume, and delivery region” (web report, lines 63–67). The listed source categories are not itemized citations.
+
+At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/propellants.csv` uses $10,000/kg for Xenon (Hall / ion), citing SETS’s $5,000–$12,000/kg aerospace-grade range and INL’s Q1-2023 $60/L survey. Open `rc-314` to review this dated but non-like-for-like composite against the existing aerospace reference; resolve grade and procurement basis before any update. No price is changed. Extracted: `extracted_data/r398_xenon_composite_price_tracker.csv`.
+
+
+## R409 - HTP supplier price comparator (2026-11-09)
+
+Epic Aerospace’s official Capabilities page, under “HIGH TEST PEROXIDE,” lists: “98% HTP - Price per Kg | 65 USD” (product-properties block, lines 53–55). The same block gives a 280 kg minimum order and estimated shipping of $3,500–$8,500 (lines 56–57); the price effective date and shipping route/quantity basis are not stated. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/propellants.csv` stores `HTP  (98% peroxide monoprop)` `ref_cost_usd_per_kg=5.0`, with the row note identifying it as an unsourced estimate. The supplier’s $65/kg material quote is 13x that reference, a direct but scope-sensitive review signal; it does not establish delivered cost. **rc-319 remains open** for price-date, order-size and freight reconciliation. Extracted: `extracted_data/r409_epic_htp_supplier_price.csv`.
+
+
+## R416 — DLA FY2026 MMH/NTO component-price comparison (2026-11-09)
+
+The DLA FY2026 Aerospace Energy schedule, effective 2025-10-01, lists MMH at $219.10/lb and nitrogen tetroxide MON-3 at $95.53/lb (attachment, p. 2). Normalized using 0.45359237 kg/lb, those are about $483.03/kg and $210.61/kg. At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, `reference/propellants.csv`, row `MMH / NTO (hypergolic)`, stores $59.5283/kg blend, derived from $100/kg MMH and $35/kg NTO (DOD FY20 standards); the upstream oxidizer/fuel ratio is 1.65. Weighting the DLA component prices at that same ratio gives about $313.41/kg blend, 5.26 times the fallback. DLA prices are DoD standard prices for forecasted requirements, so they are procurement comparators rather than commercial delivered prices.
+
+Open `rc-326` to reconcile the FY2020 fallback basis with the FY2026 DLA standards, including procurement scope and price-year basis, before any change. No upstream value is changed. Extracted: `extracted_data/r416_dla_mmh_nto_price_review.csv`.
+
+
+## R417 - DLA technical nitrogen comparator for GN2 cold gas (2026-11-09)
+
+The DLA FY2026 Aerospace Energy schedule, effective 2025-10-01, lists "NITROGEN,TECHNICAL" at $0.16/lb (attachment, p. 2). This converts to about $0.353/kg using 0.45359237 kg/lb. At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, `reference/propellants.csv`, row `Cold gas (GN2)`, stores $1.00/kg with reference_year 2026. The DLA standard is 64.7% below that point, but its grade, packaging and delivery form are not shown to match high-pressure nitrogen used as propulsion mass.
+
+Open `rc-327` to review the $1/kg reference against the DLA comparator and reconcile procurement, purity and packaging basis before any change. No upstream value is changed. Extracted: `extracted_data/r417_dla_technical_nitrogen_comparator.csv`.
+
+
+## R426 - DLA FY2026 hydrazine HPH comparator refresh (2026-11-09)
+
+The DLA FY2026 Aerospace Energy schedule lists “PROPELLANT,HYDRAZINE. HPH” at $121.54/lb for NSN 9135012321852 and H70 hydrazine at the same price (attachment, p. 2). The corresponding FY2025 HPH standard was $165.75/lb. Converted at 0.45359237 kg/lb, the DoD comparator moves from $365.42/kg to $267.95/kg, a 26.7% nominal decrease.
+
+At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, the hydrazine row keeps a $75/kg commercial reference from Space Insider and labels DLA pricing as a separate DoD comparison. The FY2026 schedule is for forecasted DoD requirements and does not establish a new commercial quote. Open `rc-336` to decide whether to refresh the note’s government comparator; no price value is changed. Extracted: `extracted_data/r426_hydrazine_dla_fy2026_price_check.csv`.
+
+## R435 - SQM Q2 2026 iodine average price update (2026-11-09)
+
+`sqm_2026_q2_results_presentation_iodine_average_price`, SQM’s 2Q2026 results presentation, slide 6, charts quarterly iodine sales volume and average price. The chart reports $72.3/kg for 1Q2026 and $73.4/kg for 2Q2026, with corresponding sales volumes of 3.8 and 4.1 thousand metric tons. The presentation also says iodine average sales prices were up 3% year-on-year (slide 4).
+
+At `spacecost@19e1a31`, `reference/propellants.csv`, row `Iodine  (Hall / gridded)`, the reference is $60/kg for 2026. SQM’s 2Q average is 22.3% above that figure and 2.4% above SQM’s reported 2025 average of about $71.7/kg. These are producer-reported prices for its broad iodine sales mix; the presentation does not identify propellant-grade purity or procurement terms. The new benchmark strengthens the market-price comparison in `rc-292` but does not establish a grade-adjusted propellant cost. No upstream value is changed. Extracted: `extracted_data/r435_sqm_q2_2026_iodine_average_price.csv`.
+
+## R436 - NASA Glenn xenon purchase: procurement scope and award amount (2026-11-09)
+
+`nasa_glenn_2026_xenon_solicitation_80nssc26933373q`, NASA Glenn's amended SOW dated June 12, 2026, specifies xenon for electric-propulsion testing with purity of at least 99.999%. It asks for all-inclusive pricing, including cylinders and shipping, at 10,000, 15,000 and 20,000 liters (Specifications §1; §2 and Table 1). `highergov_2026_nasa_xenon_award_80nssc26p1064`, the HigherGov federal award record for NASA Shared Services Center purchase order 80NSSC26P1064, reports a fixed-price $117,500 award to Spectech Solutions dated August 4, 2026. The award record does not report the selected quantity.
+
+This procurement is a relevant aerospace-propulsion-grade purchasing example for the $10,000/kg xenon row, but its award total bundles gas, cylinders and shipping, and the accessible award record does not identify the selected quantity. Therefore no unit price is derived. The record adds a high-purity public procurement comparator to `rc-314` but does not settle the $/kg reference or its commercial basis. No upstream value is changed. Extracted: `extracted_data/r436_nasa_xenon_purchase_award_scope.csv`.
+
+
+
+## R454 - DLA aerospace schedule currency check (2026-11-09)
+
+DLA Energy’s Standard Prices page lists the current aerospace products standard-price PDF as effective October 1, 2025. The page says it is updated when standard prices are officially changed during a fiscal year; it lists no later aerospace schedule. The FY2026 MMH, MON-3 and technical-nitrogen prices recorded in R416 and R417 therefore remain the latest published DLA aerospace standard-price comparators found for rc-326 and rc-327. This confirms comparator currency, but supplies no FY2027 or commercial price and does not resolve grade, delivery or procurement-scope differences. No upstream value is changed. Extracted: `extracted_data/r454_dla_aerospace_schedule_currency.csv`.
