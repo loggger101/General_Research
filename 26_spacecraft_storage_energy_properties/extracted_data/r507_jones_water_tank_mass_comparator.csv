@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+jones_2017_resupply_life_support_water_tank_mass,Jones estimate of water tank dry mass per water mass,0.2,kg tank/kg water,"§IV.C, PDF p. 4","Rounded estimate, citing ILO (1991), p. 99; spacecraft potable-water tank comparator, not volatile cargo shading/sealing mass."
+jones_2017_resupply_life_support_water_tank_mass,Shuttle water tank dry mass,21.2,kg,"§IV.C, PDF p. 4","As cited by Jones from Carrasquillo, Reuter and Philistine (1997)."
+jones_2017_resupply_life_support_water_tank_mass,Shuttle water tank water capacity,103,kg water,"§IV.C, PDF p. 4","21.2/103 = 0.206 kg tank/kg water, computed here from the cited tank mass and capacity."
+jones_2017_resupply_life_support_water_tank_mass,Shuttle water tank mass ratio computed here,0.205825,kg tank/kg water,"§IV.C, PDF p. 4","Computed from cited Shuttle values; pressurized potable-water tank boundary, not incremental cargo containment."

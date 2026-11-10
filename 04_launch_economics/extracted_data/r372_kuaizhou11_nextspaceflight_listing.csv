@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+nextspaceflight_2026_kuaizhou11_price_record,2026_launch_date,2026-03-16,date,"Next Spaceflight mission details page, lines 36-40",Successful Kuaizhou-11 mission; eight satellites to SSO.
+nextspaceflight_2026_kuaizhou11_price_record,listed_vehicle_price,28300000,USD,"Next Spaceflight mission details page, lines 58-61",The same $28.30M vehicle listing appears in the 2024 mission record; price basis and provenance are not stated.
+nextspaceflight_2026_kuaizhou11_price_record,listed_leo_payload_capacity,1500,kg,"Next Spaceflight mission details page, lines 67-71","Generic LEO payload capacity, not the SSO mission payload mass."
+nextspaceflight_2026_kuaizhou11_price_record,computed_price_per_listed_leo_kg,18866.6667,USD/kg,Computed here from listed price / listed LEO capacity,Not an observed contract rate; generic database price and capacity.
+nextspaceflight_2026_kuaizhou11_price_record,2024_record_price,28300000,USD,"Next Spaceflight 2024 mission page, lines 22-30","Same provider repeats vehicle price and generic 1,500 kg LEO capacity."

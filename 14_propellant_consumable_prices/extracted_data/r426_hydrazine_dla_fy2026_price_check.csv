@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+dla_energy_aerospace_standard_prices_fy2025;dla_energy_aerospace_standard_prices_fy2026,"Hydrazine HPH standard price, FY2025",165.75,USD/lb,"FY2025 schedule, attachment p.2; NSN 9135012321852",DoD standard price; basis not the commercial benchmark.
+dla_energy_aerospace_standard_prices_fy2025;dla_energy_aerospace_standard_prices_fy2026,"Hydrazine HPH standard price, FY2026",121.54,USD/lb,"FY2026 schedule, attachment p.2; NSN 9135012321852",Effective 2025-10-01; normalized using 0.45359237 kg/lb.
+,FY2025 HPH normalized comparator,365.42,USD/kg,computed from DLA schedule values,FY2025 standard price per pound divided by kg per pound.
+,FY2026 HPH normalized comparator,267.95,USD/kg,computed from DLA schedule values,FY2026 standard price per pound divided by kg per pound.
+,FY2026 versus FY2025 change,-26.67,%,computed from DLA schedule values,Decrease in nominal DoD standard price; not a commercial-market change.
+,Spacecost commercial reference,75.0,USD/kg,"spacecost reference/propellants.csv Hydrazine (monoprop), spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9",The upstream notes cite Space Insider up to $75.8/kg; DLA standard is kept as a separate government comparator.

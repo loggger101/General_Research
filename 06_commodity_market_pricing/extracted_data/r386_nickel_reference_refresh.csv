@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+,spacevalue nickel ref_price_usd_per_kg,18.806,USD/kg,spacevalue@a13e378efece102d3724ada18d3810a62f29432f spacevalue/catalog.py nickel entry,"Pipeline fallback; note identifies the World Bank May 2026 monthly average ($18,806/metric ton)."
+worldbank_cmo_pink_sheet,Nickel monthly average 2026M05,18806,USD/metric ton,"CMO-Pink-Sheet November 2026 PDF, p.2, Nickel row, May 2026 monthly column",Same series and unit as the current fallback.
+worldbank_cmo_pink_sheet,Nickel monthly average 2026M08,16751,USD/metric ton,"CMO-Pink-Sheet November 2026 PDF, p.2, Nickel row, August 2026 monthly column",Same series and unit as the current fallback.
+worldbank_cmo_pink_sheet,Nickel monthly average 2026M09,16324,USD/metric ton,"CMO-Pink-Sheet November 2026 PDF, p.2, Nickel row, September 2026 monthly column",Same series and unit as the current fallback.
+worldbank_cmo_pink_sheet,Nickel monthly average 2026M10,15436,USD/metric ton,"CMO-Pink-Sheet November 2026 PDF, p.2, Nickel row, October 2026 monthly column","Latest month reported in the November 3, 2026 edition."
+worldbank_cmo_pink_sheet,Nickel monthly average 2026M10 normalized,15.436,USD/kg,"Computed from World Bank October 2026 nickel average, $15,436/metric ton","Conversion is /1,000."
+,Change in nickel monthly average from 2026M05 to 2026M10,-17.9,percent,Computed from World Bank May and October 2026 table values,Dated same-series comparison; not a daily live quote.

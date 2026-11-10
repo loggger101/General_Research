@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_oscillating_sizing_relaxation_flag_current_2026,relax_oscillating_sizing default,False,boolean,modules/calc.py:716,Default consumer constructs CONFIG = CalcConfig() at line 1468.
+economicspace_oscillating_sizing_relaxation_flag_current_2026,trigger,native run unconverged and top-level _relax is None,condition,modules/calc.py:7017-7024,Re-runs the solver in native and half-step-relaxed modes.
+economicspace_oscillating_sizing_relaxation_flag_current_2026,choice between reruns,maximum selection_key,objective ranking,modules/calc.py:7020-7024,"selection_key(None, config) returns negative infinity (lines 8165-8198); failed branch does not outrank a valid result."
+economicspace_oscillating_sizing_relaxation_flag_current_2026,controlled cases,23,cases,versions.md:562-571,22 replay native answer to six places; observed gains within 0.36% of closed form.
+economicspace_oscillating_sizing_relaxation_flag_current_2026,sample change rate,1 of 53,rows,versions.md:571,One sampled row changed at 0.997x cost/kg; not a population-wide incidence result.
+economicspace_oscillating_sizing_relaxation_flag_current_2026,revision candidate,rc-282 remains open,candidate id,revision_candidates.csv,Flag is opt-in; default can still accept unconverged native last pass.

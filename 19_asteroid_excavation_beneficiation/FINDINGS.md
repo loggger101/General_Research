@@ -365,3 +365,167 @@ match exactly, and all feasible recorded results satisfy body, launch,
 throughput, duration, volume and RTG limits. Nineteen local source/input
 blobs match pinned GitHub metadata; all four live main comparisons are
 identical. No full-catalog ranking or population effect is measured.
+
+
+## R370 - Lunar mineral-beneficiation testbed energy versus the unsourced asteroid estimate (rc-291; 2026-11-08)
+
+`kulkarni_2024_lunar_regolith_beneficiation_testbed_energy`, Kulkarni et al.,
+*Optimizing lunar regolith beneficiation for ilmenite enrichment*, Frontiers in
+Space Technologies 4:1328341. Table 4 (PDF p.8) gives Phase C yield 1.29 wt%,
+recovery 31.93 wt% and grade 11.95 wt% at 14 kV; the article defines yield as
+ilmenite mass in the output per input mass (Table 2, PDF p.3). Its conclusion
+(PDF p.10) reports 61 Wh for processing 300 g “for the entire testbed.”
+Those values imply 32.38 g of concentrate (0.300 kg × 0.0129 / 0.1195) and
+1,883.6 Wh/kg of concentrate, 3.77 times spacecost's 500 Wh/kg center for
+“Beneficiation / on-site processing energy.” The model row describes a target
+of about 50% purity; the testbed reached 11.95 wt% ilmenite. It is also a
+small-scale TRL 4 system: the authors say it has scalability limitations and
+expect residual losses to fall with throughput (Discussion, PDF p.9). Thus this
+measurement is a direct mineral-beneficiation benchmark but does not by itself
+set the asteroid-scale 50%-purity value. rc-291 remains open to re-estimate the
+center/range or document a quantified scale and purity adjustment.
+`extracted_data/r370_kulkarni_beneficiation_energy.csv`.
+
+
+## R371 - Integrated lunar excavation and beneficiation energy (rc-027; 2026-11-08)
+
+Arumugam et al., “Integrated robotic feedstock preparation for lunar oxygen
+production: system-level efficiency and design implications from analogue
+trials,” *npj Space Exploration* 2:33 (2026), DOI
+10.1038/s44453-026-00051-y. The full article is available on the publisher
+record and its CC BY 4.0 statement is explicit. Table 1 (PDF p.3) reports a
+2.5 h, 37-cycle LUNA trial: 10.8 kg excavated, 10.0 kg delivered to the
+beneficiator, 2.1 kg under 100 μm, and 265 Wh total system energy. The paper
+separates excavation energy intensity (24.5 Wh/kg excavated, including rover
+mobility), target-fraction energy intensity (126.2 Wh/kg target product), and
+specific beneficiation energy (14.3 Wh/kg target fraction). The 24.5 Wh/kg
+integrated excavation figure is below the current spacecost `Drilling /
+excavation energy` row's 50 Wh/kg low bound, but it is a 1-g lunar simulant
+campaign with different tool, gravity, and included-mobility boundaries; it
+does not directly set asteroid energy. It independently strengthens rc-027's
+case to lower or re-scope the row, while the asteroid-specific magnitude
+remains unresolved. Extracted data:
+`extracted_data/r371_integrated_lunar_excavation_energy.csv`.
+
+
+## R383 — NASA oxygen-production plant mass estimates
+
+Sanders, Kleinhenz & Linne, *NASA Plans for In Situ Resource Utilization (ISRU) Development, Demonstration, and Implementation* (COSPAR presentation, 14 July 2022), slide 11, table “Oxygen from Regolith Plant Mass and Power Estimates.” The four O2 production-rate cases are 1, 3.5, 7, and 10.5 t/year; the corresponding “Oxygen Production Plant” masses are 946, 1,679, 3,459, and 4,142 kg. The presentation says these results were scaled from a COMPASS study. Normalized product rates are 1.057, 2.085, 2.024, and 2.535 kg O2/year per kg of the named plant row. Source: `nasa_sanders_2022_isru_oxygen_plant_mass_estimates`.
+
+These conceptual lunar oxygen-production cases are materially below spacecost’s `In-space processing plant throughput` point of 100 kg processed/year/kg plant (range 20–500), but they report O2 product rather than raw feed processed and the table separates supporting-system and ISRU-system masses. They therefore motivate a basis and boundary review; they do not directly establish an asteroid mineral-refinery throughput or a replacement value. rc-301 asks for that reconciliation. Extracted data: `extracted_data/r383_nasa_isru_oxygen_plant_mass_estimates.csv`.
+
+
+## R384 — Lunar LUNOX raw-feed plant scales
+
+Borowski et al., “Robust Exploration and Commercial Missions to the Moon Using LANTR Propulsion and In-Situ Propellants Derived from Lunar Polar Ice Deposits” (NASA Glenn-hosted paper, NTRS 20180000405), Table 7 (printed p.30) and adjacent discussion. The table gives 1,000 t/year LUNOX plants: ilmenite feed at 3.3×10^5 t regolith/year with 244 t plant mass (mining, beneficiation, processing and power); iron-rich volcanic-glass feed at 2.5×10^4 t/year with 105 t plant mass (mining, processing and power). Those table values normalize to about 1,352 and 238 kg raw feed/year/kg plant. The discussion states the volcanic-glass case includes mining and processing equipment and a fission-reactor power source. Source: `borowski_ryan_burke_mccurdy_fittje_2018_lunox_scale`.
+
+These are conceptual lunar oxygen-production plants, not asteroid mineral refineries, but unlike the NASA 2022 cases in R383 they report raw regolith feed and plant mass. Their normalized rates exceed spacecost’s `In-space processing plant throughput` point of 100 kg/year/kg by factors of about 2.4 and 13.5. Thus R383’s low product-per-plant-mass comparison does not contradict the raw-feed estimate. rc-301 is withdrawn; the original mineral-refinery rate remains an estimate without an asteroid-specific plant design. Extracted data: `extracted_data/r384_lunox_raw_feed_throughput.csv`.
+
+
+## R390 — Liu et al. 2026 laser-mining abstract (2026-11-08)
+
+`liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum`, publisher abstract: continuous-wave fiber-laser tests at 300, 600 and 900 W for 30 s were run on C- and S-type simulants at 10^-2 Pa and 253 K. The abstract reports Fe-Ni content increasing from 16.7% in original simulant to 69.6% in ejected fine particles. It gives no sample mass loss, total ejected mass or energy normalized by output mass; the full article was not pulled. No mass-specific processing-energy value can be extracted from the abstract. Extracted: `extracted_data/r390_liu_laser_mining_abstract.csv`.
+
+## R391 — Whole-system regolith excavation rate analogue (2026-11-08)
+
+Mueller et al., *Design of an Excavation Robot: Regolith Advanced Surface Systems Operations Robot (RASSOR) 2.0* (NASA NTRS 20210011366), report a 66 kg system and “a minimum of 2.7 metric tons of regolith per day” (abstract, p. 1). Its Concept of Operations specifies 16 hours of mining and eight hours of recharge per 24-hour Earth day, and assumes 1,000,000 kg regolith/year for a 10,000 kg/year oxygen case at 1% yield (p. 2). The published ratio is about 40.91 kg/day/kg system mass, roughly 409 times economicspace’s 0.10 kg/day/kg rig assumption. Its published 0.38 kg system per (kg/hour) rate metric is consistent within rounding with 2.7 t/day over 16 mining hours and 66 kg system mass.
+
+This is a conceptual Mars/Lunar regolith design whose basic simulant-excavation function was demonstrated in a lab-scale gravity-offload test (abstract, p. 1); its annual production case is not a sustained flight result. It is a whole-system throughput comparator, unlike the tool-only MoonBot test or IPEx’s uncadenced mass target. Open `rc-309` to review whether the asteroid mining-rate coefficient should remain this far below a planetary regolith system analogue, with target-body gravity, material strength, duty cycle and maturity kept explicit. The comparison does not establish a replacement value. Extracted: `extracted_data/r391_rassor2_system_throughput.csv`.
+
+
+## R420 — RAP separates mining-system development from production cost (2026-11-09)
+
+Cohen et al., NASA NIAC Robotic Asteroid Prospector Phase I report, §6.3 and Table 6.1, presents a first-approximation 2013-dollar cost model. It states spacecraft development is “exclusive of the costs of the mining equipment” and estimates separate $1,000M development for mining technology and $300M recurring production cost for first-spacecraft mining equipment; the table lists $2,500M total NRE, including distinct $500M spacecraft, $1,000M propulsion and $1,000M mining-technology components. The report describes the mining-system estimate as highly uncertain and does not supply the equipment mass needed to normalize its recurring cost to dollars per kilogram. In the current economicspace evaluator, program NRE includes only spacecraft development and autonomous-control NRE; recurring mining hardware is charged separately by mass. rc-330 asks whether mining-equipment development NRE is intentionally inside either existing NRE input or is omitted. No direct value replacement is supported. `extracted_data/r420_rap_mining_system_cost_scope.csv`.
+
+## R431 — Integrated beneficiation energy boundary cross-check (2026-11-09)
+
+Arumugam et al., *Integrated robotic feedstock preparation for lunar oxygen production* (npj Space Exploration 2:33, 2026), Table 1 (p. 3), reports specific beneficiation energy of 14.3 Wh/kg of target fraction and 126.2 Wh/kg target fraction for the integrated excavation-and-feed-preparation system. The target fraction is screened material below 100 μm; the study reports a 21% beneficiation yield ratio, not a mineral grade or refined-purity assay. Spacecost's `Beneficiation / on-site processing energy` estimate is 500 Wh/kg refined product, with a note targeting approximately 50% purity. The numerical difference (14.3 vs 500 Wh/kg) therefore compares different product definitions and a 1-g lunar simulant field trial with an asteroid-scale estimate; it is a boundary/scaling signal, not a replacement value. rc-291 remains open for an explicit scale and purity conversion. Extracted: `extracted_data/r431_integrated_beneficiation_energy_crosscheck.csv`.
+
+
+## R458 — Current economicspace cumulative-resource-budget flag
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_body_resource_budget` defaults to `False` (modules/calc.py:694), and the module-level consumer constructs `CONFIG = CalcConfig()` without overriding it (line 1468). With the flag enabled, the programme code computes `max_n = body_kg / (feed_kg + isru_feed_kg)` (line 7838) and tries smaller loads for over-budget rungs, but its filter explicitly retains every one-mission rung (`p[0] == 1`) even when `max_n < 1` (lines 7849-7852). A separate per-mission feed-budget flag also defaults off. Thus the current default still permits cumulative over-extraction, and the opt-in programme guard does not itself enforce the body-mass limit when one mission's feed exceeds the body. `rc-245` remains open; this check identifies a single-mission edge case in addition to the default-off programme behavior. Extracted: `extracted_data/r458_current_resource_budget_flag.csv`.
+
+
+## R462 — Current raw-excavation power option
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_raw_excavation_power` defaults to `False` (modules/calc.py:664), and the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). In the default sizing and settlement paths, `processing_power_w` is called only when beneficiation or ISRU is active (lines 6877-6883 and 7229-7234), so raw non-ISRU excavation feed does not size an array for the configured drilling/excavation energy. With the flag enabled, both calls include raw feed (`trial_feed + new_isru_feed` during sizing; `feed_kg + isru_feed_kg` at settlement), with beneficiation payload energy still conditional on concentration. The correction is opt-in; it does not independently re-anchor the 200 Wh/kg energy input tracked in `rc-027`. `rc-280` remains open for the default path and full branch/control review. Extracted: `extracted_data/r462_current_raw_excavation_power_flag.csv`.
+
+
+## R468 — Current concentration search past purity option
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.search_concentration_past_purity` defaults to `False` (modules/calc.py:711), and the module consumer uses the default `CONFIG = CalcConfig()` (line 1468). When enabled, `_past_purity` runs only when `market_model` resolves to `capacity_cap`; it adds a geometric set of ratios above `saturation_ratio` through `max_concentration_ratio` and refines around its best added ratio (lines 8650-8677). It runs after the ordinary concentration grid and its refinement, preserving those earlier candidates; the `r_max <= 1` path also invokes it (lines 8679-8680, 8719). The release note reports that 24 of 53 sampled rows changed with the flag on, while the ample-market, unbounded and beneficiation-off controls did not move. This materially addresses the omitted-region mechanism, but only as an opt-in approximation: the default still leaves `rc-265` active, the extension samples a finite grid, and the sample does not establish population-wide coverage or prove that all beneficial ratios are found. `rc-265` remains open. Extracted: `extracted_data/r468_concentration_past_purity_flag.csv`.
+
+
+## R472 — Current flown-refinery route preselection
+
+At spacevalue main commit `a13e378efece102d3724ada18d3810a62f29432f`, `_phase_terms` returns exactly one `(gross price, refining energy)` pair per phase. With a refinery route available, it chooses as-is when `as_is_net` is missing or at least as high as the yield-derived `net`; otherwise it returns refined gross value and energy (spacevalue/cargo.py:482-511). `asteroid_refinery` builds one phase-energy map from those chosen terms (lines 514-559). Current economicspace calls `asteroid_refinery` once for the asteroid and passes that single configuration into both trial and settled hold-refining paths (modules/calc.py:6898, 7142, 9074); no mission-level as-is/refined alternatives are retained. This recheck confirms `rc-279`'s preselection mechanism remains in current main. No new numeric cases were run, so the R344 controlled outcomes remain the recorded quantitative evidence. `rc-279` remains open. Extracted: `extracted_data/r472_current_flown_refinery_route_selection.csv`.
+
+
+## R473 — Integrated excavation-energy denominator cross-check
+
+At spacecost main commit `19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/operational_costs.csv` still gives `Drilling / excavation energy` as 200 Wh/kg with a 50–500 Wh/kg range, per kg of regolith extracted. Arumugam et al., Table 1 (PDF p. 3), labels the measured row “Excavation energy intensity” at 24.5 Wh/kg, below that range's lower endpoint; the same table reports “Total system energy” of 265 Wh and 10.8 kg excavated. The table arithmetic checks: 265/10.8 = 24.54 Wh/kg. It also reports “Beneficiation energy” of 30 Wh and 2.1 kg target fraction, giving 14.29 Wh/kg, which matches its 14.3 Wh/kg specific-beneficiation value. The paper states (p. 2) that “Beneficiation consumed 11% of total system energy, while excavation and rover mobility accounted for the large remainder.” Thus 24.5 Wh/kg is an integrated-system-energy metric normalized by excavated mass, not an isolated excavation-energy measurement; the 1-g LUNA trial is an architecture-specific analogue. It raises a real scope question for the 50 Wh/kg lower bound but does not justify a direct asteroid-row substitution. `rc-027` remains open pending a matched excavation-only boundary and scale basis. Extracted: `extracted_data/r473_excavation_energy_boundary_comparison.csv`.
+
+
+## R474 — End-to-end lunar oxygen model omits separator energy
+
+At spacecost main commit `19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `Beneficiation / on-site processing energy` remains 500 Wh/kg refined product (range 100–2,000), with a note targeting approximately 50% purity. Leger et al., *PNAS* 122(8), e2306146122, model an electrostatic ilmenite-beneficiation route using sixfold enrichment, 50.5% ilmenite recovery, and a maximum 99 wt% concentrate grade (Methods, PDF p. 9). The authors state that electrostatic-separation energy “is negligible relative to other process units in the model and is therefore neglected”; they also exclude particle-size separation and crushing (Methods, p. 9). Their Table 2 gives 0.13 kWh/kg LOX for the beneficiation module (PDF p. 6), but Eq. 11 shows this module energy as lifting and gangue-transport handling, not measured separator energy (PDF p. 9). The numerator and denominator therefore do not match the spacecost row's physical separation energy per kg refined product. This source provides a grade/recovery scenario near the row's ~50% target but no direct process-energy value. `rc-291` remains open: current 500 Wh/kg still lacks a matched scale-and-grade measurement or a quantified scaling bridge. Extracted: `extracted_data/r474_pnas_beneficiation_energy_boundary.csv`.
+
+
+## R500 — Hydrogen direct-reduction energy comparator (2026-11-09)
+
+At spacevalue main commit `a13e378efece102d3724ada18d3810a62f29432f`, `spacevalue/catalog.py` `IN_SPACE_PROCESSING_KWH_PER_KG` assigns 5.0 kWh/kg to iron, nickel, cobalt, copper, nickel-iron and awaruite; its comment analogizes this to terrestrial electric-arc/direct-reduction steelmaking and electrowinning without citing a source. Vogl, Åhman & Nilsson report hydrogen direct reduction requiring “3.48 MWh electricity per tonne of liquid steel” (abstract, p. 736), equivalent to 3.48 kWh/kg liquid steel, chiefly for electrolyser hydrogen production. This is a boundary-specific terrestrial route and a useful comparator, not an asteroid refining measurement or a direct validation of the code’s feedstock-based allowance, which also contemplates melting and forming. `rc-366` records the missing citation and boundary qualification; no numeric replacement is supported. Extracted: `extracted_data/r500_vogl_hydrogen_dri_steel_energy.csv`.
+
+
+## R504 — Mining-rig mass scale comparator (2026-11-09)
+
+At economicspace `modules/calc.py` `MiningConfig.mining_hardware_kg` remains 2,000 kg and is described as the mining rig, communications and structure that stay at the asteroid; the domain opening records no stated basis for that mass (economicspace main snapshot `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`). Mueller et al. report a 66 kg RASSOR 2.0 system and “a minimum of 2.7 metric tons of regolith per day” (abstract, p. 1). This is a lunar/Martian regolith excavator concept, not an asteroid miner with the same anchoring, communications or processing scope; it does not validate or replace 2,000 kg. `rc-370` asks that the mass and included subsystems be sourced or kept explicitly as an engineering scenario. Existing extraction: `extracted_data/r391_rassor2_system_throughput.csv`.
+
+
+## R505 — Whole-mission duration comparator for the mining-stay cap (2026-11-09)
+
+At economicspace `modules/calc.py` `MiningConfig.max_mining_duration_yr` is 3.0 years; its comment calls this a hard ceiling on time spent at the asteroid and says it also limits operating cost and WACC accumulation. Cohen et al.’s NASA NIAC Robotic Asteroid Prospector system requirements state that the spacecraft should be “capable of operating for mission durations lasting between one and five years” (§5.1, report p. 65). The requirement is for the complete mission concept, whose ConOps includes outbound and return transfers; it does not isolate the asteroid stay. This provides a duration-scale comparator but does not support a three-year stay limit. `rc-371` records the citation and scope gap; no numeric change is inferred. Extracted: `extracted_data/r505_rap_mission_duration_requirement.csv`.
+
+
+## R510 — Asteroid sample-return spacecraft dry-mass comparator (2026-11-09)
+
+Bierhaus et al. report that the OSIRIS-REx spacecraft’s approximately 2,100 kg wet launch mass includes “∼880 kg” dry spacecraft mass (§3.1.1, PDF p. 6). The article describes a whole asteroid sample-return spacecraft with science, propulsion, power, thermal-control, telecommunications and sample-acquisition/return systems (§3.1). At economicspace `modules/calc.py`, `MiningConfig.return_vehicle_dry_kg` remains a 500 kg floor for irreducible vehicle hardware, with payload-scaled structure added separately. OSIRIS-REx is a capability-rich mission comparator, not a matched cargo carrier or a direct lower bound for that floor. **rc-376 remains open** pending a cargo-return architecture or subsystem mass budget; no numeric replacement is supported. Extracted: `extracted_data/r510_bierhaus_osirisrex_dry_mass.csv`.
+
+
+## R517 — Lunar beneficiation plant throughput comparator (2026-11-10)
+
+NASA’s LuSTR 2021 overview chart for Han’s lunar regolith beneficiation project (Development Objectives, p. 1; NASA page dated 2022-03-15) sets an expected final-brassboard throughput of ≥3 kg/h and mass of <35 kg for electrostatic sieving and magnetic separation of lunar simulant, targeting >70 wt% anorthite in 20–200 μm grains. The NASA page says the subsystems would be tested separately before integration, so these are design objectives rather than an integrated system’s measured annual performance. Continuous nameplate annualization is >750.9 kg/year/kg plant at 8,760 h/year; at the conservative 35 kg and 3 kg/h limits, the current spacecost point of 100 corresponds to <1,166.7 operating h/year and the 500 upper bound to <5,833.3 h/year. This is a relevant lunar beneficiation comparator, not an asteroid refinery or a duty-cycle measurement; it makes the annual operating basis and the still-unsourced 1,000× terrestrial analogy reviewable but does not establish a replacement value. rc-383 records that citation and boundary review. `extracted_data/r517_lustr_beneficiation_throughput_comparator.csv`.
+## R522 — PGM concentrator feed-to-concentrate ratio comparator (2026-11-10)
+
+The registered source `sibanye_stillwater_2026_rustenburg_technical_report`, the SEC-filed Sibanye-Stillwater Rustenburg Technical Report Summary, states that “The 2021 to 2025 data presented reflect the actual annual performance” (printed p. 154, §14.1.1.2) and Table 57 gives annual total feed and concentrate production for 2021–2025. Dividing feed by concentrate gives 62.44:1, 61.49:1, 59.94:1, 59.51:1 and 61.64:1, respectively.
+
+Current economicspace `CalcConfig.max_concentration_ratio` is 50:1. Its comment says terrestrial PGM mills run at 100:1–1000:1 and calls 50:1 deliberately conservative, but the cited plant’s measured annual ratios are below that stated range. At 50:1, concentrate mass may reach 2.0% of feed; the report’s five actual annual mass pulls are about 1.60–1.68%. This is an operating comparator for one conventional PGM concentrator, not an asteroid mineral-separation result or a like-for-like mineral-purity target. `rc-388` records the unsupported range statement and asks for a scoped citation; no cap change is inferred. Extracted: `extracted_data/r522_rustenburg_pgm_concentrator_mass_ratio.csv`.
+
+
+
+## R523 — FFC-Cambridge titanium extraction energy comparator (2026-11-10)
+
+`hu_dolganov_etal_2018_ffc_titanium_energy`: Hu et al. report “21.5 kWh/kg” for optimized FFC-Cambridge TiO2 electro-reduction yielding titanium at 1900 ppm oxygen and 32.3% current efficiency (JOM 70(2), p. 133); an inert-anode configuration is reported at about 17 kWh/kg and about 40% current efficiency (pp. 134–135). The 12.5 kWh/kg figure is stated as a projected target. These are laboratory extraction results; they do not establish asteroid ore preparation, beneficiation, or downstream melting/forming energy.
+
+Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_PROCESSING_KWH_PER_KG["titanium"]` = 20 kWh/kg; comment identifies FFC-Cambridge electrolysis but gives no supporting source or boundary. Verdict: citation/scope gap; the 20 kWh/kg allowance is consistent in scale with published FFC extraction results, but exact value and full processing boundary remain unvalidated. No numeric change proposed. `rc-389`. Extracted: `extracted_data/r523_ffc_titanium_electrolysis_energy.csv`.
+
+
+## R524 — Lunar-regolith sintering energy comparator (2026-11-10)
+
+`liu_li_etal_2025_lunar_regolith_microwave_sintering_energy`: Liu et al. report microwave sintering specific energy of 69 MJ/kg for mare simulant CLRS-1 and 98 MJ/kg for highlands simulant SC-080 (Journal of the European Ceramic Society 45(3), article 117047, Abstract). Converted values are 19.17 and 27.22 kWh/kg. The samples were consolidated for construction material using a domestic microwave and ceramic-fiber microwave kiln.
+
+Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_PROCESSING_KWH_PER_KG["silicates"]` and mapped silicate phases = 1 kWh/kg; the code comment says sintering for shielding blocks or print feedstock but gives no source or defined route. Verdict: large comparator gap, not a direct contradiction; lunar microwave construction processing does not establish asteroid refining energy. Keep 1 kWh/kg only as a scoped low-energy scenario pending a like-route basis. `rc-390`. Extracted: `extracted_data/r524_lunar_regolith_sintering_energy_comparator.csv`.
+
+
+## R528 — Phosphorus processing-energy citation and boundary (2026-11-10)
+
+`matos_etal_2021_jrc_elemental_phosphorus_energy`: the European Commission JRC report describes elemental P₄ production from phosphate rock (apatite), coke and silica in an electric furnace at 1500–1700 °C, reporting “up to 14 MWh per tonne of P₄” (§7.1, p. 30). This converts to 14 kWh/kg P₄. The report’s page 2 states reuse is authorized under CC BY 4.0.
+
+Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_PROCESSING_KWH_PER_KG["phosphorus"]` = 8 kWh/kg, without a source or defined product/feedstock boundary. Verdict: the JRC industrial thermal-process figure is a relevant comparator, but does not directly validate or replace the asteroid processing allowance. Keep 8 kWh/kg as a scoped engineering scenario until its process boundary is defined and supported by a like-boundary calculation. `rc-394`. Extracted: `extracted_data/r528_jrc_phosphorus_production_energy.csv`.
+
+
+## R529 — Carbonate processing-energy source and boundary (2026-11-10)
+
+`mcmillan_etal_2016_nrel_lime_calcination_energy`: NREL/INL Appendix N reports a theoretical lime-kiln minimum of 3.18 GJ/t CaO assuming complete limestone conversion (p. 162); its approximate 100:56 CaCO₃-to-CaO mass relation (p. 165) converts this to 0.4947 kWh/kg CaCO₃, computed here. The report separately lists kiln net heat of 3,600–7,500 kJ/kg lime and electricity of 10–45 kWh/t by kiln type (Table N-1, p. 161).
+
+Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_PROCESSING_KWH_PER_KG["carbonates"]` = 1 kWh/kg; its comment says carbonate calcination is approximately 0.5 kWh/kg CaCO₃ in a lime kiln but names no source or energy boundary. Verdict: the comment’s 0.5 figure matches the theoretical-minimum conversion, while actual kiln heat and electricity are distinct. These industrial values do not directly establish an asteroid-carbonate process allowance. Retain 1 kWh/kg only as an engineering scenario pending a defined process boundary. `rc-395`. Extracted: `extracted_data/r529_nrel_lime_calcination_energy.csv`.

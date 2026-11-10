@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+steel_market_update_2026_11_06_us_scrap_hms_negotiation_indication,reported U.S. mill increase requests,20 to 30,USD/gross ton change,paragraph 1,"Report says mills were divided; these are requests/market indications, not a settled national benchmark."
+steel_market_update_2026_11_06_us_scrap_hms_negotiation_indication,reported increase category for #1 HMS,mainly +30,USD/gross ton change,paragraph 1,Report groups #1 HMS with obsolete grades mainly seeing the $30/gt increase; no exact resulting price level is given.
+steel_market_update_2026_11_06_us_scrap_hms_negotiation_indication,Chicago source reported increase on shredded scrap,30,USD/gross ton change,paragraph 2,Source-specific report; shredded scrap is not the #1 HMS grade.
+steel_market_update_2026_11_06_us_scrap_hms_negotiation_indication,Chicago source reported increase on busheling,20,USD/gross ton change,paragraph 2,Source-specific report; busheling is a different scrap grade.

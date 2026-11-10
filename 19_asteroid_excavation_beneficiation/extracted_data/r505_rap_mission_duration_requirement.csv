@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+cohen_2013_niac_rap_phase1_final_report,RAP spacecraft operating mission-duration capability,1–5,years,"Robotic Asteroid Prospector NIAC Phase I Final Report, §5.1, report p. 65",Requirement is stated for spacecraft mission duration and does not isolate time spent at the asteroid from outbound/return travel or operations.

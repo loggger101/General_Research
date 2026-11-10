@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+steelbenchmarker_2026_10_28_us_hms_price,USA East of Mississippi #1 heavy melting scrap,374,USD per metric tonne,"Price History PDF, p. 2, report dated 2026-10-28",Delivered U.S. steel plant; regional point assessment. Heading gives metric tonne with gross-ton equivalent in brackets.
+steelbenchmarker_2026_10_28_us_hms_price,USA East of Mississippi #1 heavy melting scrap,380,USD per gross ton,"Price History PDF, p. 2, report dated 2026-10-28",Gross-ton equivalent printed in brackets.
+steelbenchmarker_2026_10_28_us_hms_price,#1 heavy melting scrap grade specification,demolition scrap >= 1/4 inch; dimensions <= 60 x 24 inches,text,"Price History PDF, p. 16","Excludes heavy plate/structural, according to specification."
+,difference from upstream iron reference,17.24,percent,Computed from $374/mt versus $319/mt,Not apples-to-apples: current regional point versus prior national annual average; review signal only.

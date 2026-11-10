@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+lindgren_lee_et_al_2020_alh83100_cm_sulfide_modal_xrd,Pyrrhotite in unheated ALH 83100,0.9,vol%,"Table 2, printed p. 74",XRD modal abundance; present study column.
+lindgren_lee_et_al_2020_alh83100_cm_sulfide_modal_xrd,Pentlandite in unheated ALH 83100,1.2,vol%,"Table 2, printed p. 74",XRD modal abundance; present study column.
+lindgren_lee_et_al_2020_alh83100_cm_sulfide_modal_xrd,Total Fe(Ni) sulphide in unheated ALH 83100,2.1,vol%,"Table 2, printed p. 74",Reported total.
+,Pyrrhotite share of measured pyrrhotite + pentlandite modes,0.428571,fraction by volume,"Computed from Table 2, printed p. 74","0.9/(0.9+1.2); volume share only, not mass fraction or class-wide estimate."
+,Pentlandite share of measured pyrrhotite + pentlandite modes,0.571429,fraction by volume,"Computed from Table 2, printed p. 74","1.2/(0.9+1.2); volume share only, not mass fraction or class-wide estimate."

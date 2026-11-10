@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+dla_energy_standard_prices_index_2026,Current aerospace standard-price schedule effective date,2025-10-01,date,"DLA Energy Standard Prices page, Current Standard Prices section",Official page checked 2026-11-09; identifies the FY2026 aerospace products PDF as current.
+dla_energy_standard_prices_index_2026,Later FY2027 aerospace schedule listed,no,yes/no,"DLA Energy Standard Prices page, Current Standard Prices section",Page lists aerospace products standard prices effective 2025-10-01; no later aerospace schedule is listed.

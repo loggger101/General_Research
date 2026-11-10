@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mineral_commodity_summaries_2026_iodine,"iodine crystal spot price, first 10 months of 2025",about 73,USD/kg,"PDF p.2, Events, Trends, and Issues",USGS says this figure is according to industry publications; not specifically propellant-grade iodine.
+usgs_mineral_commodity_summaries_2026_iodine,"iodine crystal spot price, 2024 annual average",70.24,USD/kg,"PDF p.2, Events, Trends, and Issues",Comparison value printed in the same sentence as the 2025 average.
+usgs_mineral_commodity_summaries_2026_iodine,"iodine crude import unit value, 2025 estimate",68,USD/kg CIF,"PDF p.1, Domestic Production and Use; Salient Statistics—United States","Estimated cost, insurance, and freight unit value for imports; distinct grade/trade basis from iodine crystal spot."
+,Difference between $73/kg 2025 crystal spot average and upstream $60/kg reference,21.7,percent,computed here from the two cited values,Calculation: (73/60 - 1) × 100; comparison does not establish matching purity or procurement basis.

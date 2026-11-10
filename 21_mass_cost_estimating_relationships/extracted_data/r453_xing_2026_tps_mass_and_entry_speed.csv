@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+xing_2026_mars_sample_return_tps_sizing,"Earth atmospheric entry speed, baseline Mars-sample-return ballistic coast",12.0–12.8,km/s,"§3.5.1, PDF p. 9",The paper says this is within Stardust sample-return heritage (12.9 km/s) and PICA-class TPS capability; this is Earth return.
+xing_2026_mars_sample_return_tps_sizing,"Stardust sample return capsule entry speed, cited heritage",12.9,km/s,"§3.5.1, PDF p. 9",Cited comparator for the Earth-return speed.
+xing_2026_mars_sample_return_tps_sizing,Mars EDL entry velocity used in Monte Carlo dispersion study,5.8,km/s,"Table 6, PDF p. 10",Separate Mars atmospheric entry event; not the 12.0–12.8 km/s Earth return.
+xing_2026_mars_sample_return_tps_sizing,Mars EDL total TPS mass estimate,350–500,kg,"§4.3.4, PDF p. 11","15 m² wetted area; Sutton–Graves first-order heating calculation; includes margin, bondline insulation, and structural backing. Not Earth-return TPS mass."
+xing_2026_mars_sample_return_tps_sizing,Mars EDL PICA forebody ablator,280,kg,"Table 8, PDF p. 12","Basis: 2.5 cm average thickness, density 270 kg/m³."
+xing_2026_mars_sample_return_tps_sizing,Mars EDL backshell TPS,80,kg,"Table 8, PDF p. 12",Basis: SLA-561V heritage.
+xing_2026_mars_sample_return_tps_sizing,Mars EDL TPS structure/bondline,90,kg,"Table 8, PDF p. 12","Table basis says “15% of TPS mass”; the listed total is 450 kg, for which 90 kg is 20%, not 15%."
+xing_2026_mars_sample_return_tps_sizing,Mars EDL table component sum,450,kg,"Computed from Table 8, PDF p. 12: 280 + 80 + 90",Matches the table total. Does not identify an Earth-return TPS mass.
+,90 kg structure/bondline share of 450 kg tabulated total,20,percent,"Computed from Table 8, PDF p. 12",Table labels the 90 kg item as 15% of TPS mass; ratio to the listed 450 kg total is 20%.

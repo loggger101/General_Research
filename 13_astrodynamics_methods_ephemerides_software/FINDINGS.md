@@ -1001,3 +1001,15 @@ remain unprofitable controlled compositions/reference burns; no observed
 trajectory, population effect or global optimum is claimed. Thirty-one
 source/input blobs match fresh pinned metadata and all four live main
 comparisons are identical. `extracted_data/r346_unconverged_sizing_iteration.csv`.
+
+
+## R456 - Apsis-choice option in current upstream (2026-11-09)
+
+`economicspace_apsis_choice_flag_2026`, economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, defines `CalcConfig.offer_both_apsides` with default `False` (modules/calc.py, line 674). The apsis selector sorts offers by the sum of outbound and return delta-v, then retains only the first offer while the flag is off; with it on, every available apsis is offered to the mission search (lines 3495-3501).
+
+This provides an opt-in route matching `rc-266`'s proposed full mission comparison, but the default still preselects by delta-v sum. Keep the candidate open to review the default and consuming configuration; the presence of the flag alone does not establish that normal evaluations compare both apsides. Extracted: `extracted_data/r456_apsis_choice_flag_audit.csv`.
+
+
+## R469 — Current oscillating-sizing relaxation option
+
+At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.relax_oscillating_sizing` defaults to `False` (modules/calc.py:716), and the module consumer constructs `CONFIG = CalcConfig()` (line 1468). When enabled, an unconverged native result is re-solved in native and half-step-relaxed modes; the better result is selected with the configured `selection_key`, which treats a failed solve as the lowest key (lines 7017-7024; 8165-8198). The upstream release note reports 23 controlled cases: 22 replay the native answer to six places, gains are within 0.36% of the closed-form result, and body-limit, volume-limit and profit-objective controls do not move; one of 53 sampled rows changes. This option addresses the recorded oscillation witness when enabled, but it leaves the default path accepting an unconverged, never-backed-off last iterate and the sampled comparisons do not establish convergence bounds across other regimes. `rc-282` remains open. Extracted: `extracted_data/r469_oscillating_sizing_relaxation_flag.csv`.

@@ -505,3 +505,7 @@ established. Both repeated pairs pass native type/value/float.hex checks
 and identical CSV hashes. Twenty-three source blobs, including all 21
 imported modules, match fresh pinned metadata; four live main comparisons
 are identical. `extracted_data/r347_geometric_albedo_ceiling.csv`.
+
+## R520 — Tholen-M albedo fallback comparator (2026-11-10)
+
+Mainzer et al.’s Table 1 reports “Tholen M | 33 | 0.125” for the NEOWISE geometric-albedo median (p. 22), with standard deviation 0.037. AsteroidCatalog `derive.py` sets `ALBEDO_BY_SPECTRAL_TYPE['M']` to 0.1330 from 139 labeled catalogue bodies; economicspace’s 2026-10-26 verification worksheet uses 0.133 for 2018 DT when deriving its diameter. The comparator differs by 0.008 (6.4%), within the paper’s sample dispersion. Mainzer et al. warn that “lower albedo objects are less likely to have been observed” in visible-selected taxonomic samples (p. 16), biasing class albedos upward. The benchmark supports the order of the current class fallback while leaving its sample/population basis open. **rc-386** records the citation and selection-bias review; no numeric change is inferred. Extracted: `extracted_data/r520_tholen_m_type_albedo_comparator.csv`.

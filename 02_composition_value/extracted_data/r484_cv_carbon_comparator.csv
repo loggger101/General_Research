@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+smith_russell_gounelle_greenwood_franchi_2004_cv_carbon,CV chondrite bulk carbon abundance range,0.3–1.8,wt%,printed p. 2028,Paper attributes group range to Kerridge 1985 and Pearson 2003; those works not independently assessed.
+smith_russell_gounelle_greenwood_franchi_2004_cv_carbon,CV chondrite mean bulk carbon abundance,0.77,wt%,printed p. 2028,"Literature summary, not a single sample measurement."
+smith_russell_gounelle_greenwood_franchi_2004_cv_carbon,NWA 1152 bulk carbon,1.1,wt%,printed p. 2028,Measured in this paper; authors describe CV affinity but say the specimen cannot be assigned to a recognized group.
+smith_russell_gounelle_greenwood_franchi_2004_cv_carbon,AsteroidCatalog K carbon_fraction,0.08,mass fraction,reference/taxonomy_composition.csv row K,"Upstream value equals 8 wt%; quoted for comparison, not from this source."

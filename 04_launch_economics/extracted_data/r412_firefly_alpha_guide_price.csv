@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+firefly_alpha_payload_users_guide_v5p2_jul2025_price,Dedicated commercial launch service price,19,USD million,"PDF p. 3, Alpha Launch Vehicle opening paragraph",Firefly states this price for a dedicated commercial launch service.
+firefly_alpha_payload_users_guide_v5p2_jul2025_price,LEO payload capability,1030,kg,"PDF p. 3, Table 1; 300 km LEO",Performance comparator; payload performance does not alter the price quote.
+firefly_alpha_payload_users_guide_v5p2_jul2025_price,SSO payload capability,630,kg,"PDF p. 3, Table 1; 500 km SSO",Performance comparator; payload performance does not alter the price quote.
+,Upstream Alpha price midpoint,16.2,USD million,spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/launch_vehicles.csv Alpha list_price_usd,Pipeline value; published range is $15M-$17.6M.
+,Guide quote / upstream midpoint,1.17284,ratio,Computed here: $19M / $16.2M,Guide quote is 17.28% above the upstream midpoint; guide’s July 2025 pricing date may be older than the current upstream observation.
+,Guide quote versus upstream high endpoint,1.07955,ratio,Computed here: $19M / $17.6M,Guide quote is 7.95% above upstream range high endpoint.

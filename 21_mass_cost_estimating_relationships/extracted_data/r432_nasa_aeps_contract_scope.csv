@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2016_aeps_67m_contract_release,AEPS contract total value,67,USD million,"NASA Glenn Release 16-044, Apr. 19, 2016",NASA describes a 36-month cost-plus-fixed-fee contract with performance incentive. Not a unit price.
+nasa_2016_aeps_67m_contract_release,contract period of performance,36,months,"NASA Glenn Release 16-044, paragraph 2",Contract scope includes integrated electric propulsion development.
+nasa_2016_aeps_67m_contract_release,integrated electric propulsion system components,thruster; PPU; low-pressure xenon flow controller; electrical harness,listed deliverables,"NASA Glenn Release 16-044, paragraph 5","Bundle includes development, not a recurring hardware-only price."
+nasa_2016_aeps_67m_contract_release,engineering development units,1,unit,"NASA Glenn Release 16-044, paragraph 6","Aerojet to construct, test and deliver an engineering development unit."
+nasa_2016_aeps_67m_contract_release,optional integrated flight units,4,units,"NASA Glenn Release 16-044, paragraph 6","Option period, if exercised; release does not state exercise status or allocate contract value."

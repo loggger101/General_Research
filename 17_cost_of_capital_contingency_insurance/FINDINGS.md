@@ -161,3 +161,27 @@ calendar calculation. The diagnostic preserves the nominal salvage rule,
 rate, contingency and current averaging convention. It does not replace
 that convention with NPV, redesign the mission or measure catalogue/ranking
 effects. `extracted_data/r331_terminal_salvage_timing.csv`.
+
+
+## R376 - Q3 2026 launch-insurance market outlook (2026-11-08)
+
+Gallagher Specialty, *Space Insurance Market Update Q3 2026* (published 2026-10-07), reports that depressed 2026 premium income has led underwriters to increase appetite for heritage launch-vehicle risks, and says competition may create more favourable buyer pricing for well-presented risks. The outlook is conditional and gives no premium-rate percentage.
+
+The pinned spacecost row at `spacecost@19e1a31`, `reference/operational_costs.csv`, remains 10% of launch plus payload value (range 5–15%); its note cites the Q1 2024 Plane Talking issue. The 2026 commentary postdates that anchor and is directionally different from a simple carry-forward of the 2023–24 hardening, but does not quantify a replacement or prove the 10% point is wrong.
+
+Verdict: `rc-294` requests a current, cohort-matched review of the point and range. Keep the estimate unchanged until numerical rate evidence is available. `extracted_data/r376_gallagher_q3_2026_launch_insurance_market.csv`.
+
+## R401 - Aon launch-plus-one-year rate chart (2026-11-08)
+
+**aon_q1_2026_space_insurance_market_report**: Aon’s chart “Theoretical
+Capacity and Estimated Rates” plots estimated minimum, typical and maximum
+satellite launch-plus-12/16-month rates normalized to launch plus one year
+(printed p. 11). Chart readings for 2026 are approximately 5%, 13% and 25%.
+Aon says “Premium rates have remained elevated throughout 2024 and 2025 and
+are expected to persist into 2026” (p. 11). The spacecost `Launch insurance`
+row remains 10%, range 5–15%, at `spacecost@19e1a31`: the point is below the
+plotted typical rate but within the broad market spread; the range does not
+cover the plotted maximum. Aon does not provide vehicle-heritage or individual
+risk cohorts in this chart, so it does not set a replacement value. `rc-294`
+remains open for a cohort-matched point and range review. Extracted data:
+`extracted_data/r401_aon_launch_insurance_rate_chart.csv`.

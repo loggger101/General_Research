@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+cloutis_binzel_burbine_gaffey_mccoy_2006_boznemcova_angrite_like_mineralogy,Božněmcová surface clinopyroxene,55–75,wt%,printed p. 1159,"Spectral interpretation; one O-type archetype, surface not bulk interior."
+cloutis_binzel_burbine_gaffey_mccoy_2006_boznemcova_angrite_like_mineralogy,Božněmcová surface plagioclase feldspar,20–33,wt%,printed p. 1159,Spectral interpretation; phase absent from modeled PHASE_SHARES[O].
+cloutis_binzel_burbine_gaffey_mccoy_2006_boznemcova_angrite_like_mineralogy,Božněmcová surface olivine,0–20,wt%,printed p. 1159,Spectral interpretation.
+cloutis_binzel_burbine_gaffey_mccoy_2006_boznemcova_angrite_like_mineralogy,AsteroidCatalog O conditional silicate split,0.50 olivine; 0.50 orthopyroxene,mass fraction,asteroid_catalog/mineralogy.py PHASE_SHARES[O],Quoted upstream conditional mass split; not reported by the source.

@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum,Continuous-wave fiber laser power,300,W,"Publisher abstract, experimental conditions",Simulants irradiated for 30 s at each stated power.
+liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum,Continuous-wave fiber laser power,600,W,"Publisher abstract, experimental conditions",Simulants irradiated for 30 s at each stated power.
+liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum,Continuous-wave fiber laser power,900,W,"Publisher abstract, experimental conditions",Simulants irradiated for 30 s at each stated power.
+liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum,Laser irradiation duration,30,s,"Publisher abstract, experimental conditions",Continuous-wave fiber laser.
+liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum,Test chamber pressure,0.01,Pa,"Publisher abstract, experimental conditions",Reported as 10^-2 Pa.
+liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum,Test temperature,253,K,"Publisher abstract, experimental conditions",Cryogenic-vacuum experiment.
+liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum,Fe-Ni content in original simulant,16.7,percent,"Publisher abstract, results",Composition basis in the accessible abstract.
+liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum,Fe-Ni content in ejected fine particles,69.6,percent,"Publisher abstract, results",Composition basis in the accessible abstract.
+liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum,Mass-normalized process energy,not reported,Wh/kg or J/kg,Publisher abstract,Abstract does not state sample mass loss or normalized energy; full text not pulled.

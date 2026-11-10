@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+cannon_gialich_acain_2023_asteroid_precious_structural_metals,Whether remote observations identify a particular asteroid’s position within the iron-meteorite PGM distribution,No,authors’ stated limitation,"Discussion, p. 6",The article says there is “no known way to remotely identify where an asteroid falls along the wide distributions of PGM grades”; source does not calibrate the AsteroidCatalog spectral-class multiplier values.

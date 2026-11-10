@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+,spacevalue platinum ref_price_usd_per_kg,61472.2,USD/kg,spacevalue@a13e378efece102d3724ada18d3810a62f29432f spacevalue/catalog.py platinum entry,"Pipeline fallback; $1,912/troy oz LBMA fixing dated 2026-05-29."
+lbma_precious_metals_fixings,LBMA platinum point fixing 2026-05-29,1912,USD/troy oz,06_commodity_market_pricing/extracted_data/r46_price_audit_key_numbers.csv,Same date as static fallback.
+worldbank_cmo_pink_sheet,World Bank platinum monthly average 2026M05,1998,USD/troy oz,06_commodity_market_pricing/extracted_data/r46_price_audit_key_numbers.csv,World Bank monthly series; close to May 29 point fixing (4.5% higher).
+worldbank_cmo_pink_sheet,World Bank platinum monthly average 2026M10,1621,USD/troy oz,"CMO-Pink-Sheet November 2026 PDF, p.2, Platinum row, October 2026 monthly column",Latest reported month; monthly average is not a daily fixing.
+worldbank_cmo_pink_sheet,World Bank platinum monthly average 2026M10 normalized,52116.4,USD/kg,Computed from the World Bank October 2026 monthly average,Troy ounces per kilogram conversion: 32.150746568.
+,October World Bank average relative to May 29 LBMA fallback,-15.2,percent,Computed from preceding source values in USD/troy oz,"Compares October monthly average with a May 29 daily point fixing; review signal, not a direct replacement quote."
+,World Bank platinum monthly average change 2026M05 to 2026M10,-18.9,percent,Computed from World Bank May and October monthly averages,Same monthly series and quote basis.

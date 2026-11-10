@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+faa_order_8800_4_launch_reentry_user_fees_2026,fee assessment timing,after launch or reentry is carried out,rule,"Order 8800.4 §4(b), p.1",No assessment for pre-operational events such as a scrub before operation.
+faa_order_8800_4_launch_reentry_user_fees_2026,scrub fee,not assessed,rule,"Order 8800.4 §4(b), p.1",Applies to scrubs prior to operation.
+faa_order_8800_4_launch_reentry_user_fees_2026,rideshare fee count,one,fee per licensed or permitted event,"Order 8800.4 §4(c), p.2","The fee uses the combined weight of all payloads on the event, not a separate charge per payload."
+faa_order_8800_4_launch_reentry_user_fees_2026,payload weight reporting lead time,60,calendar days before each mission,"Order 8800.4 §4(c), p.2",FAA relies on operator-provided payload weight; actual weight may be corrected after launch.
+faa_order_8800_4_launch_reentry_user_fees_2026,invoice payment deadline,30,calendar days after receiving invoice,"Order 8800.4 §4(d), p.3",FAA invoices after determining that the licensed or permitted event was carried out.

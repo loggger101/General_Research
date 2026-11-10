@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+grady_verchovsky_2002_tagish_lake_organic_matter_split,sample_total_carbon,5.81,wt%,"Abstract, p. 713",Small Tagish Lake chip analyzed by stepped-combustion mass spectrometry; the authors caution its carbon abundance may be artificially high because carbonates dominate this chip.
+grady_verchovsky_2002_tagish_lake_organic_matter_split,sample_organic_carbon,~2.6,wt%,"Abstract, p. 713",Same chip; reported alongside organic nitrogen and isotopic composition.
+grady_verchovsky_2002_tagish_lake_organic_matter_split,soluble_share_of_organic_material,~2,%,"Abstract, p. 713",The abstract states that around 2% of the organic material is thermally labile and solvent soluble.
+,asteroidcatalog_primitive_organics_share,0.60,fraction within carbon phase group,"AsteroidCatalog asteroid_catalog/mineralogy.py, _CARBON_PRIMITIVE","Used for P, D, Z and T; code defines organics as soluble organic matter and carbon as insoluble macromolecular organic matter."
+,asteroidcatalog_primitive_insoluble_carbon_share,0.40,fraction within carbon phase group,"AsteroidCatalog asteroid_catalog/mineralogy.py, _CARBON_PRIMITIVE",Complementary modeled share; no source identified in the code comment.
+,model_to_tagish_lake_soluble_share_ratio,30,x,Computed from source and upstream values,0.60 / 0.02. The source fraction is a single Tagish Lake sample comparator; definitions and analogue transfer are not proven identical.

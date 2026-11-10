@@ -80,3 +80,19 @@ Found by NTRS title search on "HZETRN" (142 hits), hosted:
 Why shielding utility tracks dose equivalent, not flux; no value pinned. `extracted_data/r181_hzetrn_chain_key_numbers.csv`.
 
 **Still open in this domain:** a text-stated or digitised per-kg ratio of silicate regolith to water; asteroid-specific compositions (CI/CM rock with bound water should shield better than dry silicate).
+
+
+## R378 - TP-3473 Figure 15: water and regolith shielding comparison (2026-11-08)
+
+`kim_wilson_1994_gcr_shield_materials_performance_tp3473`, NASA TP-3473, Figure 15 (printed p.28, PDF p.30), labels the ordinate as the cell-transformation ratio relative to aluminum and the abscissa as areal density. Approximate reads from the left panel are water 1.38 and dry regolith 1.15 at 10 g/cm2, and water 1.58 and dry regolith 1.28 at 30 g/cm2. Water/regolith ratios within this plotted measure are about 1.20 and 1.23. Visual uncertainty is roughly ±0.05 for each ordinate read. Figure 13 separately compares dose equivalent and transformations for 1-year exposure behind multiple materials; it remains undigitized.
+
+At `spacevalue@a13e378efece102d3724ada18d3810a62f29432f`, `spacevalue/catalog.py` assigns water 1.00 and silicates 0.25 in `IN_SPACE_UTILITY`. The comment assigns the silicate value to both bulk shielding and 3-D-printing/sintering feedstock, with destination scarcity also discussed elsewhere. The approximate figure does not validate an economic utility price, and its cell-transformation endpoint is specific to the paper's GCR model. If the 0.25 is interpreted as a shielding-only per-kg factor relative to water, however, the plotted water advantage is much nearer 1.2 than 4.
+
+Verdict: `rc-296` asks to separate or justify the shielding part of the composite utility; no utility value is changed. `extracted_data/r378_tp3473_regolith_water_shielding_fig15.csv`.
+
+## R433 - JAXA PHITS regolith-water shielding comparison (2026-11-09)
+
+`goto_shimazaki_2017_phits_regolith_water_mixture_jaxa`, JAXA Supercomputer System Annual Report R16E0080, §3, states the study simulated lunar regolith and a regolith-water mixture using PHITS under CREME962 GCR solar-minimum and GCR+SEP worst-day spectra. The endpoint was dose equivalent in a water target behind the shield. The report says “The shielding effects of regolith-water mixture were higher than those of regolith” and “increasing shielding thickness was more effective for shielding than addition of water” (§3, page lines 73–75). The stated mixture notation is “regolith/water = 1 (wt%)”; no plotted values were digitised.
+
+The comparison is a mixture-specific lunar simulation, not a pure water versus dry-regolith comparison or an economic value measure. It supports evaluating shielding contribution separately from the composite utility and reinforces that added thickness may dominate admixture; it does not establish a per-kilogram ratio. `rc-296` remains open and no upstream value is changed. Extracted: `extracted_data/r433_jaxa_regolith_water_shielding_comparison.csv`.
+

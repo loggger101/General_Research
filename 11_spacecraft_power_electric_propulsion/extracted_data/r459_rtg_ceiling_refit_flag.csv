@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_rtg_ceiling_refit_flag_2026,refit_rtg_ceiling default,False,boolean,modules/calc.py:706,Default CalcConfig does not activate smaller-payload retry for over-ceiling RTG power.
+economicspace_rtg_ceiling_refit_flag_2026,consumer configuration,CONFIG = CalcConfig(),code,modules/calc.py:1468,No override of refit_rtg_ceiling found in the current economicspace checkout.
+economicspace_rtg_ceiling_refit_flag_2026,sizing-loop over-ceiling branch,if flag: _refit_to_plant_ceiling(...); else: return None,code,modules/calc.py:6965-6971,Refit path exists but is opt-in.
+economicspace_rtg_ceiling_refit_flag_2026,settled-power over-ceiling branch,if flag: _refit_to_plant_ceiling(...); else: return None,code,modules/calc.py:7264-7271,Settled check uses the same default-off refit choice.

@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2025_neo_surveyor_falcon9_launch_award,award_date,2025-02-21,date,NASA release header,Contract Release C25-005
+nasa_2025_neo_surveyor_falcon9_launch_award,contract_type,firm-fixed-price launch-service task order,category,paragraph 3,Awarded under NASA Launch Services II (NLS II) IDIQ
+nasa_2025_neo_surveyor_falcon9_launch_award,contract_value_approx,100000000,USD,paragraph 3,NASA says total cost includes launch service and other mission-related costs
+nasa_2025_neo_surveyor_falcon9_launch_award,launch_vehicle,SpaceX Falcon 9,vehicle,paragraph 3,Launch from Florida; target no earlier than September 2027
+,award_total_vs_upstream_price,35.1% above $74M,percent,computed here from $100M / $74M - 1,"Scope-sensitive comparison only; award includes other mission-related costs and is a 2025 award, while upstream reference year is 2026"

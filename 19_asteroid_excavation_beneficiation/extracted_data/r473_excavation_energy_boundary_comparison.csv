@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,Excavation energy intensity,24.5,Wh/kg (excavated mass),"Table 1, PDF p.3",Printed reported metric; table title is integrated performance metrics.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,Total system energy,265,Wh,"Table 1, PDF p.3",System energy numerator for integrated analogue.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,Excavated mass,10.8,kg,"Table 1, PDF p.3",Denominator used in consistency check.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,Beneficiation energy,30,Wh,"Table 1, PDF p.3",Reported component; article says beneficiation consumed 11% of total system energy.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,Target fraction mass,2.1,kg,"Table 1, PDF p.3","<100 μm fraction, not mineral-grade concentrate."
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,Specific beneficiation energy,14.3,Wh/kg target fraction,"Table 1, PDF p.3",Different denominator than upstream excavation-energy row.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,Integrated-system scope statement,"“Beneficiation consumed 11% of total system energy, while excavation and rover mobility accounted for the large remainder.”",quote,"PDF p.2, Results: energy budget",Short quote identifies the reported energy boundary.
+,Calculated total-system energy per excavated mass,24.537037037037035,Wh/kg,Computed from Table 1 p.3,Comparison computed here; equals reported 24.5 within rounding.
+,Current spacecost value; range_low; range_high,200;50;500,Wh/kg regolith extracted,"spacecost reference/operational_costs.csv, Drilling / excavation energy",Read at spacecost main 19e1a31ae280301c6fd5c3a7b57b73f44122e1d9.

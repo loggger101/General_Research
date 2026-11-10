@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_cargo_and_launch_volume_flags_current_2026,model_cargo_volume default,False,boolean,modules/calc.py:725,Returned concentrate phase-density check is disabled by default.
+economicspace_cargo_and_launch_volume_flags_current_2026,model_launch_liquid_volume default,False,boolean,modules/calc.py:730,Earth-loaded propellant liquid-volume check is disabled by default.
+economicspace_cargo_and_launch_volume_flags_current_2026,consumer configuration,CONFIG = CalcConfig(),code,modules/calc.py:1468,No override of either volume flag found in current economicspace checkout.
+economicspace_cargo_and_launch_volume_flags_current_2026,initial return-cargo cap,0.25 * fairing_m3 * 1000 * parent_body_density,kg,modules/calc.py:7051-7058,Initial sizing still uses asteroid bulk density.
+economicspace_cargo_and_launch_volume_flags_current_2026,settled cargo-volume calculation,sum(phase kg / phase density) / 1000,m3,modules/calc.py:7390-7394,Used only when model_cargo_volume is on and payload_mix plus phase densities are available; unpacked component volumes.
+economicspace_cargo_and_launch_volume_flags_current_2026,cargo volume refit,payload * usable_return_m3 / return_volume_m3,kg cap,modules/calc.py:7395-7402,"If over hold volume, reruns the solve under a proportionally reduced payload cap."
+economicspace_cargo_and_launch_volume_flags_current_2026,launch liquid volume,m_outbound_prop + (0 if ISRU else m_return_prop),kg liquid,modules/calc.py:7322-7325,Checks only when model_launch_liquid_volume is on.
+economicspace_cargo_and_launch_volume_flags_current_2026,launch liquid volume capacity,fairing_m3 * 1000 * propellant density,kg liquid,modules/calc.py:7324-7325,"Uses the full fairing and a single propellant density; tank, ullage and stowed hardware volumes are not included."
+economicspace_cargo_and_launch_volume_flags_current_2026,launch payload refit,m_payload - (liquid_kg - room_kg) / per_kg_liquid,kg cap,modules/calc.py:7326-7341,Refits at a smaller payload if liquid volume exceeds the fairing volume.

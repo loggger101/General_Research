@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+dla_energy_aerospace_standard_prices_fy2026,"NITROGEN,TECHNICAL DLA FY2026 standard price",0.16,USD/lb,"DLA FY2026 Aerospace Energy schedule, attachment p. 2, NITROGEN,TECHNICAL line",DoD standard price for forecasted requirements; NSN 6830002854769 / 6830016442557.
+dla_energy_aerospace_standard_prices_fy2026,"NITROGEN,TECHNICAL normalized price",0.35274,USD/kg,Computed from attachment p. 2 using 1 lb = 0.45359237 kg,Procurement comparator; grade and delivery form not established as equivalent to high-pressure GN2 propellant.
+,spacecost Cold gas (GN2) reference,1.0,USD/kg,"spacecost/reference/propellants.csv, Cold gas (GN2) row",Pipeline value; reference_year=2026.
+,DLA comparator difference from pipeline reference,-64.73,percent,Computed: $0.35274/kg versus $1.00/kg,Screening signal only; price scope and form require reconciliation.

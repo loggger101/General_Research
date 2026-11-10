@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,"Fe-sulfide abundance, Orgueil",0.3–0.4,area%,"Results, “CI Chondrites,” printed p. 510","This is total Fe-sulfide abundance, not a pyrrhotite/pentlandite split; coarse grains (>100 μm²) account for about 70% of sulfide area."
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,"Dominant Fe-sulfide species, Orgueil and Ivuna",predominantly pyrrhotite,qualitative,"Results, “CI Chondrites,” printed p. 510",Authors describe the observed Fe-sulfides qualitatively; no quantitative species share reported.
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,"Pentlandite occurrence, Orgueil and Ivuna",rare; occasional <10 μm patches and blebs,qualitative,"Results, “CI Chondrites,” printed p. 510",Occurrence description is sample- and grain-size-specific; it is not a mass or modal percentage.
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,"Copper-rich sulfide phase, Orgueil and Ivuna",rare cubanite,qualitative,"Results, “CI Chondrites,” printed p. 510",Shows the CI sulfide assemblage is not represented by only the two phases in the upstream split; no bulk share is quantified.

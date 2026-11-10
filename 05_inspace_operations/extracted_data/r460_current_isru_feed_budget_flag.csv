@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_isru_feed_resource_budget_current_2026,model_isru_feed_budget default,False,boolean,modules/calc.py:699,Default CalcConfig leaves corrected per-mission ISRU feed accounting disabled.
+economicspace_isru_feed_resource_budget_current_2026,consumer configuration,CONFIG = CalcConfig(),code,modules/calc.py:1468,No consumer override of model_isru_feed_budget found in the current economicspace checkout.
+economicspace_isru_feed_resource_budget_current_2026,trial return-fuel tank closure,new_isru_prop *= cascade.k_ret when enabled,code,modules/calc.py:6839-6843,"With the flag off, trial ISRU fuel omits the return tank multiplier."
+economicspace_isru_feed_resource_budget_current_2026,trial mission feed boundary,"cargo and ISRU feed <= min(throughput_cap_kg, mineable_kg) when enabled",code,modules/calc.py:6844-6849; 7077-7084,Over-budget cases try a smaller payload when the flag is enabled.
+economicspace_isru_feed_resource_budget_current_2026,settled mission feed boundary,"ISRU feed + cargo feed <= min(throughput_cap_kg, mineable_kg) when enabled",code,modules/calc.py:7203-7209,"With the flag off, the settled check compares combined feed with throughput only."
+economicspace_isru_feed_resource_budget_current_2026,programme cumulative resource flag,model_body_resource_budget=False,boolean,modules/calc.py:694,A separate flag controls multi-mission cumulative extraction; do not conflate it with this mission-level guard.

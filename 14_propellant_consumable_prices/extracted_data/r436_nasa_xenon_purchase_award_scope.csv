@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_glenn_2026_xenon_solicitation_80nssc26933373q,application,electric propulsion testing,,"NASA Glenn SOW, Specifications, §1; SOW dated June 12, 2026",The amended SOW identifies NASA Glenn testing use.
+nasa_glenn_2026_xenon_solicitation_80nssc26933373q,minimum_xenon_purity,99.999,percent,"NASA Glenn SOW, Specifications, §2; Table 1",The same table sets individual impurity limits; balance xenon.
+nasa_glenn_2026_xenon_solicitation_80nssc26933373q,quantity_price_evaluation_options,"10,000; 15,000; 20,000",liters,"NASA Glenn SOW, Specifications, §1",Total pricing at these quantities is requested for evaluation; cylinders and shipping are included. This does not establish the selected award quantity.
+nasa_glenn_2026_xenon_solicitation_80nssc26933373q,included_costs,xenon; cylinders; shipping,,"NASA Glenn SOW, Specifications, §1",All-inclusive requested pricing; not a pure-gas price.
+highergov_2026_nasa_xenon_award_80nssc26p1064,award_amount,117500,USD,"HigherGov record, Overview / Current Award; award id 80NSSC26P1064","Fixed-price purchase order; awarded Aug. 4, 2026. Record does not report the selected quantity or cost components."
+highergov_2026_nasa_xenon_award_80nssc26p1064,award_recipient,Spectech Solutions LLC,,"HigherGov record, Overview",NASA Shared Services Center award; procurement record describes Xenon Gas Purchase.
+,unit_price_conversion,not calculated,,comparison between SOW and award records,"Quantity alternatives and awarded quantity are not reconciled; cylinders and shipping are bundled. Do not divide $117,500 by a solicitation option or infer a xenon $/kg value."

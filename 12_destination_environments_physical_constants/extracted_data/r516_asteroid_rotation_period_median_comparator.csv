@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+marciniak_etal_2015_asteroid_spin_period_median,sample_size,1230,asteroids,"Table 1, p. 257",Warner et al. LCDB; period quality code ≥2−; bright H≤11 main-belt population.
+marciniak_etal_2015_asteroid_spin_period_median,median_rotation_period,10.986,h,"Table 1, p. 257",Filtered sample median; not asserted to represent all asteroids.
+,economicspace_default_rotation_period_h,10.222,h,"economicspace/modules/calc.py, CalcConfig",Current fallback used when a rotation period is unavailable; snapshot 0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939.
+,difference_from_default,0.764,h,Computed from Table 1 and upstream default,10.986 − 10.222.
+,relative_difference_from_default,7.47,%,Computed from Table 1 and upstream default,(10.986 − 10.222) / 10.222 × 100.
+marciniak_etal_2015_asteroid_spin_period_median,selection_bias_caveat,long-period asteroids are underrepresented,qualitative,"Abstract, p. 256; discussion, p. 257",The source discusses observation and selection effects; comparator is not a like-for-like generic population estimate.

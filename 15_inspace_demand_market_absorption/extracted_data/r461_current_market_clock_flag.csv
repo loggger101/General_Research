@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_spacevalue_programme_market_clock_current_2026,model_market_wave_clock default,False,boolean,modules/calc.py:688,Default CalcConfig retains the per-delivery market window.
+economicspace_spacevalue_programme_market_clock_current_2026,consumer configuration,CONFIG = CalcConfig(),code,modules/calc.py:1468,No consumer override found in current economicspace checkout.
+economicspace_spacevalue_programme_market_clock_current_2026,default market-window branch,"_delivery_window_yr(n_missions, fleet, mission_duration_yr, cadence_yr)",code,modules/calc.py:7727,Retains the mismatch documented in rc-287 for fleets with more than one ship.
+economicspace_spacevalue_programme_market_clock_current_2026,opt-in market-window branch,(mission_duration_yr + (waves - 1) * cadence_yr) / n_missions,formula,modules/calc.py:7722-7726,"For rectangular N=F*W, aggregate full-price horizon equals T+(W-1)*cadence; the flag changes this market-window calculation."
+economicspace_spacevalue_programme_market_clock_current_2026,programme reported end horizon,T + (W - 1) * cadence,formula,rc-287 current_value and R352 evidence,The candidate records the cost calendar and reported end date; no common schedule for all dated terms is established by this flag.

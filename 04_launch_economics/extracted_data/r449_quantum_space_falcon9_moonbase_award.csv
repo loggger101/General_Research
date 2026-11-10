@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+quantum_space_nasa_moonbase_falcon9_vadr_award_2026,award_total,185000000,USD,"Quantum Space release, opening paragraphs",Award to Arrow-led team; includes launch and orbital-transfer services.
+quantum_space_nasa_moonbase_falcon9_vadr_award_2026,launch_vehicle,SpaceX Falcon 9,vehicle,"Quantum Space release, paragraph 2",Named as launch vehicle; no launch-only price allocation disclosed.
+quantum_space_nasa_moonbase_falcon9_vadr_award_2026,orbital_transfer_vehicle,Quantum Space Ranger,vehicle,"Quantum Space release, paragraph 2",OTV to deliver two CAPSTONE-2 spacecraft; company says subcontract terms remain in finalization.
+quantum_space_nasa_moonbase_falcon9_vadr_award_2026,prime_and_integrator,Arrow Science and Technology,organization,"Quantum Space release, paragraph 2",Prime contractor and mission integrator.
+quantum_space_nasa_moonbase_falcon9_vadr_award_2026,Quantum estimated share,approximately 25%,fraction of total award,"Quantum Space release, opening paragraphs",Company estimate; subcontract terms were still being finalized.

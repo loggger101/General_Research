@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+wu_2025_long_march_3b_contract_prices,2022 Changguang Long March 2D rocket plus launch monitoring/control spend,112.9,million RMB,"p. 50, paragraph “低轨卫星发射价格”",Combined amount; the paper does not split the rocket and monitoring/control components here
+wu_2025_long_march_3b_contract_prices,Long March 2D payload capacity used in source comparison,4,tonne to LEO,"p. 50, same paragraph","Paper derives 28,200 RMB/kg combined service price; this is not a dedicated launch list price"

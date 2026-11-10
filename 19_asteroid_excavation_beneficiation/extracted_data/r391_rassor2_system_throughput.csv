@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+mueller_smith_schuler_2016_rassor_2_excavation_robot,RASSOR 2.0 total system mass,66,kg,"NASA NTRS full PDF, abstract, p. 1",NASA paper describes the designed planetary excavator system.
+mueller_smith_schuler_2016_rassor_2_excavation_robot,Minimum regolith excavation throughput,2700,kg per Earth day,"NASA NTRS full PDF, abstract, p. 1; source states 2.7 metric tons/day","Design capability, not a sustained flight measurement."
+mueller_smith_schuler_2016_rassor_2_excavation_robot,Mining time in daily concept of operations,16,hours per 24-hour Earth day,"NASA NTRS full PDF, Concept of Operations, p. 2",The remaining 8 h are assigned to recharging.
+mueller_smith_schuler_2016_rassor_2_excavation_robot,Regolith throughput assumed for oxygen-production concept,1000000,kg per Earth year,"NASA NTRS full PDF, Concept of Operations, p. 2","From 10,000 kg O2/year at an assumed 1% regolith-processing yield."
+,Derived minimum rate normalized by whole-system mass,40.91,kg/day/kg system,Computed here: 2700 kg/day ÷ 66 kg,About 409× economicspace’s 0.10 kg/day/kg rig coefficient. Cross-environment design comparison only; no replacement value inferred.
+mueller_smith_schuler_2016_rassor_2_excavation_robot,Published vehicle mass per hourly excavation rate,0.38,kg system per (kg/hour),"NASA NTRS full PDF, abstract, p. 1",Source states 0.38; used as an internal consistency check against the daily rate and 16 h/day schedule.
+,Derived hourly rate during scheduled mining,168.75,kg/hour,Computed here: 2700 kg/day ÷ 16 mining hours/day,"Corresponds to 0.391 kg system per (kg/hour) at 66 kg system mass, close to the paper’s rounded 0.38."

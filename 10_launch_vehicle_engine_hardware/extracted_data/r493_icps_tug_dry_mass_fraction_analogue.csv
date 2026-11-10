@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2022_sls_reference_guide_icps_masses,ICPS unfueled weight,3.7,metric tonnes,"printed p. 9, SLS Block 1 by the numbers",NASA says ICPS is a modified DCSS; guide marks data approximate.
+nasa_2022_sls_reference_guide_icps_masses,ICPS fueled weight,32.7,metric tonnes,"printed p. 9, SLS Block 1 by the numbers",NASA guide lists stage weight fueled.
+nasa_2022_sls_reference_guide_icps_masses,Derived ICPS dry fraction,0.11315,fraction,computed here from printed p. 9 values,"3.7 / 32.7 = 0.11315; fueled weight is used as total mass, so this is dry/(dry+propellant) per the model definition. Modified DCSS-derived ICPS configuration."
+,spacecost generic tug dry fraction,0.1,fraction,"spacecost/spacecost/delivery.py, TUG_DRY_MASS_FRAC",Existing midpoint proxy; NASA analogue is not a direct stage match and does not establish Centaur V.

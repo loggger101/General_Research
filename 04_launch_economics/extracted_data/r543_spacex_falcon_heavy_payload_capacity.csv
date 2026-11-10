@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacex_2026_eu_prospectus_falcon_heavy_payload,Falcon Heavy payload capacity to LEO,63800,kg,"Printed p. 96, §§4.3.10.1–4.3.10.2",Prospectus describes Falcon Heavy as partially reusable and discusses side-booster recovery in the same vehicle section; it does not specify the exact core-recovery profile for this capacity figure.
+,Current upstream Falcon Heavy (reusable side cores) payload_leo_kg,30000,kg,spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/launch_vehicles.csv,Row note attributes 30 t to Wikipedia’s launcher comparison and says SpaceX publishes no LEO figure for this configuration.
+,Difference between SpaceX prospectus capacity and current row,33800,kg,"Computed: 63,800 - 30,000",Official capacity is 2.13 times the current row value; do not apply it without resolving configuration and orbit-basis scope.

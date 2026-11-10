@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+sqm_2026_q2_results_presentation_iodine_average_price,iodine_average_sales_price_Q1_2026,72.3,USD/kg,"slide 6, quarterly sales volumes and average price chart","SQM investor presentation; general iodine and derivatives sales mix, not propellant grade."
+sqm_2026_q2_results_presentation_iodine_average_price,iodine_sales_volume_Q1_2026,3.8,thousand metric tons,"slide 6, same chart",Chart bar label.
+sqm_2026_q2_results_presentation_iodine_average_price,iodine_average_sales_price_Q2_2026,73.4,USD/kg,"slide 6, same chart",SQM presentation also says iodine average sales prices rose 3% year-on-year; price is a broad producer benchmark.
+sqm_2026_q2_results_presentation_iodine_average_price,iodine_sales_volume_Q2_2026,4.1,thousand metric tons,"slide 6, same chart",Chart bar label.
+,Q2 2026 price difference vs upstream iodine reference,22.3,percent,computed from slide 6 Q2 2026 average price ($73.4/kg) and spacecost@19e1a31 iodine ref_cost ($60/kg),"(73.4/60-1)*100; comparison only, not a grade-adjusted replacement."
+sqm_2025_annual_report_iodine_sales_price;sqm_2026_q2_results_presentation_iodine_average_price,producer price change Q2 2026 vs 2025 annual report average,2.4,percent,computed from slide 6 Q2 2026 average ($73.4/kg) and SQM 2025 annual report average ($71.7/kg),(73.4/71.7-1)*100; periods and sales mix differ.

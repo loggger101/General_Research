@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+alpert_et_al_2024_high_velocity_earth_entry_tps,Earth-entry velocities evaluated,12.8; 16.5,km/s,"Trade Study Parameters, PDF p. 1",Two configurations (Stardust and MSR-EES); 16.5 km/s described as relevant to destinations such as near-Earth asteroids.
+alpert_et_al_2024_high_velocity_earth_entry_tps,"Entry-mass sweep, Stardust geometry",30–60,kg,"Trade Study Parameters, PDF p. 1","Study sweeps mass from 30% below to 30% above nominal; this is entry-vehicle mass, not returned payload mass."
+alpert_et_al_2024_high_velocity_earth_entry_tps,"Entry-mass sweep, MSR-EES geometry",75–135,kg,"Trade Study Parameters, PDF p. 1","Study sweeps mass from 30% below to 30% above nominal; this is entry-vehicle mass, not returned payload mass."
+alpert_et_al_2024_high_velocity_earth_entry_tps,TPS-sizing procedure,RSS thickness with 1.25 factor of safety,method,"TPS Sizing, PDF p. 2",Study reports required material thickness; it does not report heatshield mass or a TPS-to-returned-payload fraction.
+alpert_et_al_2024_high_velocity_earth_entry_tps,PICA maximum manufacturing thickness considered,12.7,cm,"Table 1, PDF p. 1","Capability/manufacturing limit, not a sized shield thickness or mass."

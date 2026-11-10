@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+kascak_2001_iss_eclipse_nasa_tm_2001_211138,ISS Earth orbit eclipse duration,35,min,"NASA/TM-2001-211138, p. 1",The report states the station solar array cannot generate during the eclipse.
+kascak_2001_iss_eclipse_nasa_tm_2001_211138,ISS Earth orbit period,92,min,"NASA/TM-2001-211138, p. 1",Quoted as an ISS Earth orbit.
+kascak_2001_iss_eclipse_nasa_tm_2001_211138,Eclipse duration converted to hours,0.5833333333,h,Derived from p. 1: 35 min / 60 min per hour,Rounds to the upstream 0.58 h; the conversion does not establish a deep-space standard.
+,spacecost Power-system row baseline dark period,0.58,h,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, reference/operational_costs.csv",Current upstream value; comparison computed here.

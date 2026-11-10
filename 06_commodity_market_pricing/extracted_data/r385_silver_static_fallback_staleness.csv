@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+,spacevalue silver ref_price_usd_per_kg,2436.5,USD/kg,spacevalue@a13e378efece102d3724ada18d3810a62f29432f spacevalue/catalog.py silver entry,Pipeline fallback; note dates the equivalent $75.78/troy oz LBMA price to 2026-05-29.
+lbma_precious_metals_fixings,LBMA silver benchmark on 2026-05-29,2436.5,USD/kg,06_commodity_market_pricing/extracted_data/r45_lbma_precious_metals_key_numbers.csv,Same-date benchmark; equals the fallback at its stated date.
+lbma_precious_metals_fixings,LBMA silver benchmark on 2026-09-22,2110.2,USD/kg,06_commodity_market_pricing/extracted_data/r45_lbma_precious_metals_key_numbers.csv,Latest fixing in the registered LBMA series extraction.
+,Change from 2026-05-29 fallback to 2026-09-22 LBMA benchmark,-13.4,percent,Computed from the two preceding rows,A dated staleness comparison; 2026-09-22 is not asserted to be the latest November fixing.

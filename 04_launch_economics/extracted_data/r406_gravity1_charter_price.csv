@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+jiemian_2025_gravity1_charter_price,Gravity-1 dedicated charter service quote,30000,RMB/kg,"Jiemian article, paragraph beginning “彭昊旻称” (12 Oct 2025)",Interviewee says this is the “包车” price; rideshare is higher. Orbit for the quote is not specified.
+jiemian_2025_gravity1_charter_price,Gravity-1 LEO payload capacity,6500,kg,"Jiemian article, paragraph after the price quote","Published capacity, not a claim that the quoted service fills the vehicle."
+jiemian_2025_gravity1_charter_price,Gravity-1 500 km SSO payload capacity,4200,kg,"Jiemian article, same paragraph",Published capacity; quote orbit not specified.
+pbc_2025_10_10_usd_cny_midpoint,USD/CNY central parity,7.1048,CNY per USD,"PBOC/CFETS historical service, 2025-10-10",Official central parity; prior business day to the 2025-10-11 interview.
+jiemian_2025_gravity1_charter_price;pbc_2025_10_10_usd_cny_midpoint,Dedicated quote converted to USD,4222.5,USD/kg,Derived from Jiemian RMB/kg quote divided by PBOC 2025-10-10 parity,Derived currency comparison; not a transacted price.
+jiemian_2025_gravity1_charter_price;pbc_2025_10_10_usd_cny_midpoint,"Dedicated quote times stated full LEO capacity, converted to USD",27446233.53,USD,"Derived from 30,000 RMB/kg × 6,500 kg ÷ 7.1048 CNY/USD",Capacity-scaled comparator only; quote orbit and actual payload utilization are not specified.
+,Upstream implied price per LEO kg,6000.0,USD/kg,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/launch_vehicles.csv, Gravity-1 row","Derived in-repo comparison: $39M divided by its 6,500 kg LEO rating."
+,Difference from upstream stored price,29.63,percent,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/launch_vehicles.csv, Gravity-1 row",Derived in-repo comparison: capacity-scaled charter quote is this percent below the stored $39M; basis mismatch remains unresolved.

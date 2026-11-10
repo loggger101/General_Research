@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+dla_energy_aerospace_standard_prices_fy2026,MMH DLA FY2026 standard price,219.1,USD/lb,"DLA FY2026 Aerospace Energy schedule, attachment p. 2, first MMH line (FY2026; effective 2025-10-01)",DoD standard price for forecasted requirements; NSN 9135000822455 / 9135016660625.
+dla_energy_aerospace_standard_prices_fy2026,N2O4 MON-3 DLA FY2026 standard price,95.53,USD/lb,"DLA FY2026 Aerospace Energy schedule, attachment p. 2, MON-3 line",DoD standard price for forecasted requirements; NSN 9135011465135 / 9135016659301.
+dla_energy_aerospace_standard_prices_fy2026,MMH normalized price,483.03,USD/kg,Computed from attachment p. 2 using 1 lb = 0.45359237 kg,Component benchmark; DLA procurement basis.
+dla_energy_aerospace_standard_prices_fy2026,N2O4 MON-3 normalized price,210.61,USD/kg,Computed from attachment p. 2 using 1 lb = 0.45359237 kg,Component benchmark; DLA procurement basis.
+,spacecost MMH/NTO blended fallback,59.5283,USD/kg blend,"spacecost/reference/propellants.csv, MMH / NTO (hypergolic) row",Pipeline value based on MMH $100/kg and NTO $35/kg; upstream O/F ratio is 1.65.
+,DLA weighted MMH/NTO blend comparator,313.41,USD/kg blend,"Computed at upstream O/F ratio 1.65, fuel share 1/2.65","DoD comparator, not a commercial delivered quote. About 5.26x the pipeline fallback (+426.5%)."

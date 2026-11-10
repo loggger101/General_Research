@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+ssc_2025_fy26_nssl_vulcan_mission_assignments,ULA FY26 NSSL Lane 2 missions assigned,2,missions,"SSC release, paragraph 2, 3 Oct 2025",Identifies NROL-88 and USSF-88/GPS IIIF-4.
+ssc_2025_fy26_nssl_vulcan_mission_assignments,Combined total price of ULA assigned missions,428,USD million,"SSC release, paragraph 2, 3 Oct 2025",Reported combined launch-service mission price; no individual mission allocation.
+,Average reported price per assigned ULA mission,214,USD million,Computed here: $428M / 2 missions,Arithmetic mean only; actual task-order price for each mission is not stated.
+,spacecost Vulcan Centaur VC4 estimate,120,USD million,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/launch_vehicles.csv, Vulcan Centaur VC4, list_price_usd","Pipeline value; estimate range $110M-$130M, notes call $110M ULA starting price and $130M estimate."
+,Average mission-service price / VC4 estimate,1.7833,ratio,Computed here: $214M / $120M,Not like-for-like; contract includes mission-specific launch service and may include assurance/integration; vehicle configuration and individual mission amounts not disclosed.

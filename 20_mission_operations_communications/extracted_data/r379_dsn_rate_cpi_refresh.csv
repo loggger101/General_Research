@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+fred_cpiuacsl_monthly_usd_series,CPIAUCSL Aug 2026,334.131,"index 1982-84=100, seasonally adjusted",FRED table date 2026-08-01,BLS-source CPIAUCSL; value already recorded in R78 and upstream rate note.
+fred_cpiuacsl_monthly_usd_series,CPIAUCSL Sep 2026,336.298,"index 1982-84=100, seasonally adjusted",FRED table date 2026-09-01,Latest published observation on 2026-11-08; FRED series page updated 2026-10-14.
+,September CPI factor from August factor,1.1692341824015131,multiplier,computed here: 1.1617 x (336.298 / 334.131),Carries the upstream Rev H CPI factor forward one month; the source note rounds the August factor to four decimals.
+,DSN 34-m hourly rate carried to Sep 2026,2095.2676548635113,USD/hour,computed here: 1792 x September CPI factor,"Approximate because the inherited August factor is rounded; rounds to about $2,095/hour."
+,DSN 70-m hourly rate carried to Sep 2026,6285.8029645905335,USD/hour,computed here: 3 x September 34-m rate,"Uses the Rev H three-times aperture weighting stated in the upstream note; rounds to about $6,286/hour."

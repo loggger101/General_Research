@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_flown_refinery_route_current_2026,route returned by _phase_terms,one selected route per phase,route count,spacevalue/cargo.py:482-511,Compares Stage 2 net values; returns a single gross-value/refining-energy pair.
+spacevalue_flown_refinery_route_current_2026,as-is selection condition,as_is_net missing or yield-derived net <= as_is_net,condition,spacevalue/cargo.py:504-511,Otherwise selected route is refined; no alternate pair returned.
+spacevalue_flown_refinery_route_current_2026,phase energy map,built from single selected route terms,energy map,spacevalue/cargo.py:537-559,asteroid_refinery calls _phase_terms for each phase or blended product.
+spacevalue_flown_refinery_route_current_2026,economicspace consumer,one asteroid_refinery result passed into trial and settled hold-refining,call path,"economicspace/modules/calc.py:6898, 7142, 9074",No mission-level route alternatives observed in current path.
+spacevalue_flown_refinery_route_current_2026,candidate disposition,rc-279 remains open,candidate id,revision_candidates.csv,Current route preselection persists; quantitative evidence remains from R344.

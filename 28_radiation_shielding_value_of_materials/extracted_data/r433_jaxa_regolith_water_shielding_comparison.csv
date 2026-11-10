@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+goto_shimazaki_2017_phits_regolith_water_mixture_jaxa,simulation_method,PHITS Monte Carlo,,"Achievements of the Year, §§2–3 (page lines 49–53, 70–75)",JAXA states PHITS; CREME962 spectra; dose equivalent in a water target behind shield.
+goto_shimazaki_2017_phits_regolith_water_mixture_jaxa,regolith_water_mixture,regolith/water = 1 (wt%),,"§3, lines 72–74",As rendered on page; comparison is mixture-specific and is not an equal-mass pure-water-vs-regolith comparison.
+goto_shimazaki_2017_phits_regolith_water_mixture_jaxa,GCR_spectrum,"Solar-Quiet (no flare), Solar Minimum",,"§3, line 73",CREME962 adopted.
+goto_shimazaki_2017_phits_regolith_water_mixture_jaxa,GCR_SEP_spectrum,"Solar Energetic Particle (flare), Worst-Day",,"§3, line 73",CREME962 adopted.
+goto_shimazaki_2017_phits_regolith_water_mixture_jaxa,qualitative_result,mixture better than regolith; increasing thickness more effective than adding water,,"§3, lines 75, Fig. 4 caption line 85",No numeric curve data transcribed; qualitative finding only.

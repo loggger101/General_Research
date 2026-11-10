@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+yokoyama_2023_ryugu_c_type_sample_water_content,Total H2O in analyzed Ryugu sample,6.84,wt%,"Science paper p. 8; NASA NTRS accepted manuscript, section “Inorganic/organic correlations for hydrogen and carbon contents”","Sample-level total H2O; composed of interlayer and structural-OH water, not free ice or a C-class bulk mean."
+yokoyama_2023_ryugu_c_type_sample_water_content,Structural-OH H2O in analyzed Ryugu sample,6.54,wt%,"Science paper p. 8; NASA NTRS accepted manuscript, same section",The paper reports 0.30 wt% interlayer H2O; structural-OH water dominates the sample total.
+yokoyama_2023_ryugu_c_type_sample_water_content,Interlayer H2O in analyzed Ryugu sample,0.3,wt%,"Science paper p. 8; NASA NTRS accepted manuscript, same section",Distinct from structural-OH H2O; material-specific sample result.

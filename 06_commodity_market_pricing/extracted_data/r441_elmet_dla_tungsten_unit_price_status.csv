@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+elmet_dla_tungsten_offtake_agreement_2026,DLA IDIQ guaranteed minimum,"$150,000,000",USD total,"Contract §A.1.2.2, printed p. 3",Guaranteed contract amount; not a unit price and not a priced delivery order.
+elmet_dla_tungsten_offtake_agreement_2026,DLA IDIQ maximum,"$2,000,000,000",USD total,"Contract form notes, printed p. 2; §A.1.2.2, printed p. 3",IDIQ ceiling; award does not obligate this amount.
+elmet_dla_tungsten_offtake_agreement_2026,Tungsten ores and concentrates unit price,TBD,USD/kg,"Contract §B, CLIN 0001 price table, printed p. 5","Contract states prices are established at each delivery order; table shows 1 kg and TBD, not an awarded unit rate."
+elmet_dla_tungsten_offtake_agreement_2026,Sodium tungstate unit price,TBD,USD/kg,"Contract §B, CLIN 0002 price table, printed p. 5","Contract states prices are established at each delivery order; table shows 1 kg and TBD, not an awarded unit rate."

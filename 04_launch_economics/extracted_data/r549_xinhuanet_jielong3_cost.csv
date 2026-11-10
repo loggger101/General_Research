@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+xinhuanet_2021_jielong3_unit_launch_cost,Jielong-3 payload to SSO,1.5,t,paragraph 6,500 km sun-synchronous orbit; as reported in 2021
+xinhuanet_2021_jielong3_unit_launch_cost,Unit payload launch cost target,10000,USD/kg,paragraph 6,Xinhua reports this as a cost that the vehicle could reduce to; source does not call it a customer list price
+xinhuanet_2021_jielong3_unit_launch_cost,Derived flight-cost comparator,15000000,USD/launch,paragraph 6; derived here,"1.5 t × 1,000 kg/t × $10,000/kg; same-source arithmetic, not a quoted flight price"

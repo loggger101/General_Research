@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+dla_energy_aerospace_standard_prices_fy2026,FY2026 RP-1 Bulk standard price,10.62,USD/US gal,"DLA FY2026 schedule, attachment p.2, PROPELLANT,KEROSENE RP-1 Bulk row",DLA DoD standard price effective 2025-10-01; schedule lists unit GL.
+,Upstream RP-1 density used for conversion,0.810,kg/L,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, spacecost/propellants.py _COMPONENTS[""RP-1""]","Pipeline input, not DLA product specification."
+,RP-1 mass per U.S. gallon at upstream density,3.06618,kg/US gal,Computed here: 3.785411784 L/US gal × 0.810 kg/L,Uses the upstream liquid density for apples-to-apples mass normalization.
+,FY2026 DLA RP-1 Bulk price normalized,3.4636,USD/kg,Computed here: $10.62/US gal ÷ 3.06618 kg/US gal,About 38.54% above the $2.50/kg upstream component center; about 15.45% above the $3/kg top of the code comment’s typical $2-3/kg range.
+spaceinsider_rp1_price,Current spacecost RP-1 component value,2.50,USD/kg,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, spacecost/propellants.py _COMPONENTS[""RP-1""]",Code comment summarizes Haltermann Solutions / SpaceInsider as typical $2-3/kg in bulk; SpaceInsider article is a 2023 page with values tied to Defense Working Capital Fund moving-average prices.
+,DLA normalized price versus current RP-1 component,38.54,percent above,Computed here: $3.4636/kg vs $2.50/kg,"DLA DoD standard and historical/typical bulk range have different basis; review signal, not direct replacement."

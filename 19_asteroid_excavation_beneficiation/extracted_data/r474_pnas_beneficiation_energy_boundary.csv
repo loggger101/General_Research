@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+leger_et_al_2025_pnas_moon_oxygen_energy_model,electrostatic separation energy treatment,neglected as negligible relative to other process units,model assumption,"Methods, PDF p.9",Not an empirical measurement of zero energy; authors state it is omitted.
+leger_et_al_2025_pnas_moon_oxygen_energy_model,particle size separation and crushing,not included,model boundary,"Methods, PDF p.9",More energy-intensive beneficiation methods would need separate accounting.
+leger_et_al_2025_pnas_moon_oxygen_energy_model,ilmenite enrichment factor,6,dimensionless,"Methods, PDF p.9","Concentrate grade/head grade. At 10 wt% head grade, sixfold enrichment implies a 60 wt% grade before the stated 99 wt% cap."
+leger_et_al_2025_pnas_moon_oxygen_energy_model,ilmenite recovery,50.5,wt% of feed ilmenite,"Methods, PDF p.9",Recovery definition is mass of ilmenite in concentrate divided by feed ilmenite mass.
+leger_et_al_2025_pnas_moon_oxygen_energy_model,maximum concentrate grade,99,wt% ilmenite,"Methods, PDF p.9",Input head grade assumed not to exceed 15 wt%.
+leger_et_al_2025_pnas_moon_oxygen_energy_model,beneficiation-module energy at baseline,0.13,kWh/kg LOX,"Table 2, PDF p.6","End-to-end output basis, not per kg refined concentrate."
+leger_et_al_2025_pnas_moon_oxygen_energy_model,modeled beneficiation energy equation,E = m_regolith*g_lunar*h + m_gangue*P_transport*d,equation,"Eq. 11, Methods PDF p.9",Represents lift and gangue handling/transport. Electrostatic separation energy itself is neglected.
+leger_et_al_2025_pnas_moon_oxygen_energy_model,spacecost row value; low; high,500;100;2000,Wh/kg refined product,"spacecost reference/operational_costs.csv, Beneficiation / on-site processing energy",Current row read at spacecost main 19e1a31ae280301c6fd5c3a7b57b73f44122e1d9. Note targets ~50% purity.
+,candidate disposition,retain open; no direct replacement supported,rc-291,General_Research revision_candidates.csv,Grade/recovery model does not supply the process-energy numerator on the product-mass denominator required by the upstream row.

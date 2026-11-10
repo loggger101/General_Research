@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+firefly_2025_10k_alpha_launch_history,Alpha launches conducted,7,launches,"Form 10-K, Item 1 Business, pp. 1-2","Filing sentence places launch count alongside more than 30 planned launches under contract as of Dec. 31, 2025."
+firefly_2025_10k_alpha_launch_history,launches completed successfully,5,launches,"Form 10-K, Item 1 Business, p. 1",The filing does not define whether “successfully completed” includes partial mission outcomes.
+firefly_alpha_flta007_mission_page,Flight 7 launch date,2026-03-11,date,"Mission Details, Launch Date",Official Firefly page identifies vehicle as Alpha FLTA007.
+,computed comparison,"Flight 7 postdates the Form 10-K stated Dec. 31, 2025 cutoff for seven launches",date comparison,Computed from the two source rows above,This flags a source-record reconciliation issue; no revised success count is inferred.

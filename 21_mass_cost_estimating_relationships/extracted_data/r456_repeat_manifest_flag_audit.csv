@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_stationary_rig_repeat_manifest_flag_2026,model_repeat_manifest default,False,boolean,modules/calc.py line 749,The off mode prices all programme flights with a rig aboard.
+economicspace_stationary_rig_repeat_manifest_flag_2026,Repeat-flight savings when enabled,rig + proportional outbound propellant + proportional outbound tank,cost components,modules/calc.py lines 5767-5774,Savings are applied to N-F repeat flights in the cost tail.
+economicspace_stationary_rig_repeat_manifest_flag_2026,Repeat-flight rig mass when enabled,0.0,kg in manifest,modules/calc.py line 8502,"The physical manifest omits the rig, but cargo is explicitly not re-solved into the freed capacity (CalcConfig comment, lines 746-749)."

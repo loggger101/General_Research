@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_jpl_2017_solar_power_technologies_planetary_missions,"Flexible roll-out array specific power at 1 AU, beginning of life",150,W/kg,"Table 3-3, printed p. 25 (PDF p. 33)","Approximate state-of-practice array-level estimate; report says flexible roll-out maximum power estimated from ground measurements, and specific-power values assume current-production triple-junction solar cells; TRL 7. Not complete power-system mass."

@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2024_dragonfly_falcon_heavy_launch_award,Dragonfly firm-fixed-price contract total,256.6,USD million,"NASA release paragraph 2, 2024-11-25",NASA says total includes launch services and other mission-related costs.
+nasa_2024_dragonfly_falcon_heavy_launch_award,Launch vehicle,Falcon Heavy,vehicle,NASA release paragraph 2,Release does not specify expendable/reusable configuration.
+,Falcon Heavy expendable midpoint,163,USD million,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/launch_vehicles.csv, Falcon Heavy (expendable)",Upstream published band is $150M-$178M; comparison only.
+,Falcon Heavy expendable band high,178,USD million,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/launch_vehicles.csv, Falcon Heavy (expendable)",Upstream row note ties high end to NASA Europa Clipper full-service price.
+,Dragonfly total / band high,1.44157,ratio,Computed here: $256.6M / $178M,44.2% above the upstream high before scope and date reconciliation.
+,Dragonfly total / midpoint,1.57423,ratio,Computed here: $256.6M / $163M,57.4% above midpoint before scope and date reconciliation.

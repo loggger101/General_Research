@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+ccgp_2026_extp_launch_budget,eXTP rocket launch-service proposed procurement budget,245200000,CNY,"China Government Procurement Network, 2026-06-08 pre-procurement consultation, opening paragraph",Proposed single-source procurement budget; intended provider China Long March Rocket Co.; no rocket variant stated. Budget is not an awarded contract price.
+pbc_2026_06_08_usd_cny_midpoint,USD/CNY central parity,6.8198,CNY per USD,"PBOC FX midpoint table, row 2026-06-08",Official rate used for date-matched conversion.
+ccgp_2026_extp_launch_budget;pbc_2026_06_08_usd_cny_midpoint,Converted eXTP launch-service budget,35954133.55,USD,Computed here from CCGP budget and PBOC 2026-06-08 central parity,Comparator only; procurement notice does not identify vehicle model.
+polaris_2026_extp_launch_forecast,eXTP forecast launch vehicle,Long March 3B/G5 or equivalent,text,"Polaris Intelligence forecast page, Launch Plan, lines 73-75",Secondary attribution; not an exact match to the upstream Long March 3B/E variant.
+wu_2025_long_march_3b_contract_prices,Upstream Long March 3B/E stored price,59200000,USD,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/launch_vehicles.csv, Long March 3B/E row",Baseline only; reported price with $50M–$70M range.

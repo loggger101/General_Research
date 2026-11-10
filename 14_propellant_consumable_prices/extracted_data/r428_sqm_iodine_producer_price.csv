@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+sqm_2025_annual_report_iodine_sales_price,"average iodine sales price, 2025",about 71.7,USD/kg,"p.111, Iodine and Derivatives","SQM reports +7.4% vs 2024. The report p.114 rounds this to $72/kg. Broad producer iodine sales benchmark, not propellant-grade quote."
+sqm_2025_annual_report_iodine_sales_price,"average iodine sales price, 2024",about 66.8,USD/kg,"p.111, Iodine and Derivatives","Derived from 71.7/1.074; use only as arithmetic implication, not a directly quoted price."
+sqm_2025_annual_report_iodine_sales_price,"iodine and derivatives sales revenue, 2025",1042.8,USD million,"p.112, table Iodine and Derivatives",Segment includes derivatives; not used to derive pure iodine price.
+sqm_2025_annual_report_iodine_sales_price,"iodine and derivatives sales volume, 2025",14.5,thousand metric tons,"p.112, table Iodine and Derivatives",Segment includes derivatives; not used to derive pure iodine price.
+,"difference vs upstream iodine reference, 2025",19.5,percent,computed from 71.7 and 60 USD/kg,"(71.7/60-1)*100; a broad-market comparison, not a propellant-grade replacement."

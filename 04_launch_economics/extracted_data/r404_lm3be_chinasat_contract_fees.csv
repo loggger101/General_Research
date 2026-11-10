@@ -1,0 +1,13 @@
+source_id,item,value,unit,location_in_source,notes
+wu_2025_long_march_3b_contract_prices,ChinaSat-6C Long March 3B/E rocket launch fee,260,million RMB,"p. 50, Table 1 and adjacent text",6C amount reported as contract; 6D/6E/26 amounts described as planned/drafted
+wu_2025_long_march_3b_contract_prices,ChinaSat-6C launch monitoring/control fee,115,million RMB,"p. 50, Table 1 and adjacent text",Paper defines domestic Long March launch-service price as rocket price plus launch monitoring/control
+wu_2025_long_march_3b_contract_prices,ChinaSat-6C combined launch-service fee,375,million RMB,"p. 50, Table 1",Sum of rocket fee and monitoring/control fee
+wu_2025_long_march_3b_contract_prices,ChinaSat-6D Long March 3B/E rocket launch fee,260,million RMB,"p. 50, Table 1 and adjacent text",6C amount reported as contract; 6D/6E/26 amounts described as planned/drafted
+wu_2025_long_march_3b_contract_prices,ChinaSat-6D launch monitoring/control fee,115,million RMB,"p. 50, Table 1 and adjacent text",Paper defines domestic Long March launch-service price as rocket price plus launch monitoring/control
+wu_2025_long_march_3b_contract_prices,ChinaSat-6D combined launch-service fee,375,million RMB,"p. 50, Table 1",Sum of rocket fee and monitoring/control fee
+wu_2025_long_march_3b_contract_prices,ChinaSat-6E Long March 3B/E rocket launch fee,290,million RMB,"p. 50, Table 1 and adjacent text",6C amount reported as contract; 6D/6E/26 amounts described as planned/drafted
+wu_2025_long_march_3b_contract_prices,ChinaSat-6E launch monitoring/control fee,115,million RMB,"p. 50, Table 1 and adjacent text",Paper defines domestic Long March launch-service price as rocket price plus launch monitoring/control
+wu_2025_long_march_3b_contract_prices,ChinaSat-6E combined launch-service fee,405,million RMB,"p. 50, Table 1",Sum of rocket fee and monitoring/control fee
+wu_2025_long_march_3b_contract_prices,ChinaSat-26 Long March 3B/E rocket launch fee,290,million RMB,"p. 50, Table 1 and adjacent text",6C amount reported as contract; 6D/6E/26 amounts described as planned/drafted
+wu_2025_long_march_3b_contract_prices,ChinaSat-26 launch monitoring/control fee,115,million RMB,"p. 50, Table 1 and adjacent text",Paper defines domestic Long March launch-service price as rocket price plus launch monitoring/control
+wu_2025_long_march_3b_contract_prices,ChinaSat-26 combined launch-service fee,405,million RMB,"p. 50, Table 1",Sum of rocket fee and monitoring/control fee

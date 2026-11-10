@@ -1,0 +1,17 @@
+source_id,item,value,unit,location_in_source,notes
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 concentrator total feed, 2021",4808,kt/year,"Table 57, printed p. 154, 2021 column",Report states 2021–2025 rows are actual annual performance.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 final concentrate produced, 2021",77,kt/year,"Table 57, printed p. 154, 2021 column",Actual annual production.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 feed:concentrate ratio, 2021",62.441558,mass ratio,"Computed from Table 57, printed p. 154: 4808 / 77",Computed here; corresponding concentrate mass pull is 1.6015%.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 concentrator total feed, 2022",4858,kt/year,"Table 57, printed p. 154, 2022 column",Actual annual production.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 final concentrate produced, 2022",79,kt/year,"Table 57, printed p. 154, 2022 column",Actual annual production.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 feed:concentrate ratio, 2022",61.493671,mass ratio,"Computed from Table 57, printed p. 154: 4858 / 79",Computed here; corresponding concentrate mass pull is 1.6266%.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 concentrator total feed, 2023",4675,kt/year,"Table 57, printed p. 154, 2023 column",Actual annual production.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 final concentrate produced, 2023",78,kt/year,"Table 57, printed p. 154, 2023 column",Actual annual production.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 feed:concentrate ratio, 2023",59.935897,mass ratio,"Computed from Table 57, printed p. 154: 4675 / 78",Computed here; corresponding concentrate mass pull is 1.6684%.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 concentrator total feed, 2024",4939,kt/year,"Table 57, printed p. 154, 2024 column",Actual annual production.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 final concentrate produced, 2024",83,kt/year,"Table 57, printed p. 154, 2024 column",Actual annual production.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 feed:concentrate ratio, 2024",59.506024,mass ratio,"Computed from Table 57, printed p. 154: 4939 / 83",Computed here; corresponding concentrate mass pull is 1.6801%.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 concentrator total feed, 2025",5609,kt/year,"Table 57, printed p. 154, 2025 column",Actual annual production.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 final concentrate produced, 2025",91,kt/year,"Table 57, printed p. 154, 2025 column",Actual annual production.
+sibanye_stillwater_2026_rustenburg_technical_report,"Rustenburg Waterval UG2 feed:concentrate ratio, 2025",61.637363,mass ratio,"Computed from Table 57, printed p. 154: 5609 / 91",Computed here; corresponding concentrate mass pull is 1.6224%.
+sibanye_stillwater_2026_rustenburg_technical_report,economicspace max_concentration_ratio cap,50,feed:concentrate mass ratio,modules/calc.py CalcConfig.max_concentration_ratio,Pipeline setting; a cap of 50 allows concentrate mass up to 2.0% of feed and is not a measured asteroid value.

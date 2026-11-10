@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+epic_aerospace_htp_product_price,98% high-test peroxide listed price,65,USD/kg,"Epic Aerospace Capabilities page, HIGH TEST PEROXIDE > Product properties, lines 53–55","Company states it can produce, store and export highly concentrated HTP for rocket engines; price effective date not stated."
+epic_aerospace_htp_product_price,Minimum order quantity,280,kg,"Same product properties block, line 56",Supplier minimum order quantity.
+epic_aerospace_htp_product_price,Estimated shipping cost low,3500,USD,"Same product properties block, line 57",Shipping estimate; route and quantity basis not stated.
+epic_aerospace_htp_product_price,Estimated shipping cost high,8500,USD,"Same product properties block, line 57",Shipping estimate; route and quantity basis not stated.
+,Upstream HTP reference value,5,USD/kg,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/propellants.csv, HTP (98% peroxide monoprop), ref_cost_usd_per_kg",Pipeline value; row notes label it an unsourced estimate.
+,Supplier quote / upstream reference ratio,13,ratio,Computed here: $65/kg divided by $5/kg,Material-only comparator; excludes freight and does not establish delivered cost.

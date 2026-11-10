@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+ntrs_2006_g2_flywheel_module_design,G2 usable energy,525,Wh,"printed p. 2, Table 1; printed p. 12 (PDF pp. 6 and 16)",The table gives 525 Wh design and module mass 218 lb; report says laboratory environment and weight is not a significant factor.
+ntrs_2006_g2_flywheel_module_design,G2 module mass,218,lb,"printed p. 2, Table 1; printed p. 12 (PDF pp. 6 and 16)",Convert using 1 lb = 0.45359237 kg; calculated module specific energy is 5.31 Wh/kg.
+ntrs_2006_g2_flywheel_module_design,G2 module specific energy (derived),5.31,Wh/kg,"printed p. 2, Table 1; printed p. 12 (PDF pp. 6 and 16)",525 Wh / (218 lb × 0.45359237 kg/lb); usable energy divided by full module mass.
+ntrs_2006_g2_flywheel_module_design,G2 rotor mass,50,lb,"printed p. 3, Table 2 (PDF p. 7)","Rotor-only mass excludes motor/generator, bearings, housing, and electronics."
+ntrs_2006_g2_flywheel_module_design,G2 rotor-only specific energy (derived),23.1,Wh/kg,"printed p. 3, Table 2 (PDF p. 7)","525 Wh / (50 lb × 0.45359237 kg/lb); rotor-only boundary, not whole flywheel system."

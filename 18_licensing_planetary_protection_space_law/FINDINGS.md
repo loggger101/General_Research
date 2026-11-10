@@ -80,3 +80,42 @@ Upstream note reads (count==1 at spacecost@860bef9): "FAA does not charge an app
 - **Consumer impact:** spacecost/operations.py L239 embeds the category directly; economicspace campaign/stage3/operational_costs.csv carries an embedded copy of the row at reference_year=2026 (catalog_date 2026-09-17). Proposal changes attribution only, no value moved.
 
 Extracted data: `extracted_data/r290_faa_part450_compliance_cost_key_numbers.csv`.
+
+## R400 - Statutory FAA launch and reentry user-fee schedule (2026-11-08)
+
+**faa_2026_launch_reentry_licensing_user_fees_policy_statement**: Public Law
+119-21, div. A, title IV, §40004 (51 U.S.C. 50924) requires a fee on each
+licensed or permitted launch or reentry in 2026. The fee is the lesser of
+"$0.25" per pound of payload or "$30,000" (§50924(a)(1)-(3), 139 Stat.
+132-133). For a 1,500 kg payload, the statutory charge is $826.73; the
+cap begins at 54,431.1 kg. This per-event fee is expressly excluded from the
+spacecost programme-level $2.5M and $1.2M licensing estimates, so it does not
+contradict those values or their notes. No revision candidate. Extracted data:
+`extracted_data/r400_faa_2026_user_fee_schedule.csv`.
+
+
+## R427 - Statutory launch/reentry fee absent from inspected mission-cost aggregation (2026-11-09)
+
+51 U.S.C. § 50924(a)(1)-(3), current through Pub. L. 119-121 (2026-10-09), requires a fee on each launch or reentry under a § 50904 license or permit. For 2026 the fee is the lesser of $0.25 per pound of payload or $30,000 per event; the statute lists new rates and caps for later years. The FAA policy statement (91 FR 21591, section II) confirms payload weight is the assessment basis for each event. At 1,500 kg the 2026 charge is $826.73; at 17,400 kg it is $9,589.51; at 70,000 kg it is capped at $30,000.
+
+In `economicspace@0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `modules/calc.py` loads flat Part 450 licensing program costs, selects one based on Earth return versus depot delivery, and includes the selected `licensing_cost` in `upfront_lines`. The inspected path has no separate payload-weight/event-count user-fee term. This does not contradict the flat licensing estimates; it flags a possible omitted per-event cost. Open `rc-337` to review FAA jurisdiction, event count, payload basis, fee-year schedule and cost pass-through before adding a conditional charge. Extracted: `extracted_data/r427_faa_per_event_user_fee_model_check.csv`.
+
+
+## R439 — FAA order clarifies per-event user-fee assessment (2026-11-09)
+
+FAA Order 8800.4 (effective June 11, 2026), sections 4(a)-(c), pp. 1-2,
+states that FAA assesses the statutory fee for each covered launch or reentry
+after the operation is carried out; pre-operational scrubs are excluded. For
+rideshares, it says “one user fee” is assessed on the “cumulative weight of all
+payloads,” rather than one fee per payload (p. 2). The order also explains that
+the operator provides payload weight at least 60 days before each mission and
+that FAA invoices after the event (pp. 2-3). The order describes FAA
+implementation policy; the statutory obligation and rate remain in 51 U.S.C.
+§ 50924.
+
+This clarifies event counting and the payload basis for the missing separate
+term in the inspected economicspace mission-cost aggregation. It does not
+change the flat Part 450 programme-compliance estimates, and it does not by
+itself establish which modeled events fall under FAA jurisdiction or who bears
+the cost. Keep rc-337 open for those mission-specific decisions. Extracted:
+extracted_data/r439_faa_order_8800_4_fee_assessment_scope.csv.

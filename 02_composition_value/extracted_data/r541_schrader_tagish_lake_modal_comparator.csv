@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+schrader_etal_2024_tarda_tagish_lake_modal_mineralogy,Tagish Lake sample,ASU1684_C1,,§3.1.2,Single analyzed sample; authors say it most closely resembles the carbonate-rich Tagish Lake lithology.
+schrader_etal_2024_tarda_tagish_lake_modal_mineralogy,sample area,125.4,mm²,"Table 2, p. 42",Digital point-counted sample area.
+schrader_etal_2024_tarda_tagish_lake_modal_mineralogy,Ca-carbonate,3.20 ± 0.83,vol.%,"Table 2, p. 42","Dolomite and calcite; volume percentage, not mass fraction."
+schrader_etal_2024_tarda_tagish_lake_modal_mineralogy,magnetite,4.59 ± 0.63,vol.%,"Table 2, p. 42","Volume percentage, not mass fraction."
+schrader_etal_2024_tarda_tagish_lake_modal_mineralogy,Fe-sulfide,1.86 ± 0.81,vol.%,"Table 2, p. 42",Pyrrhotite and pentlandite; not troilite; volume percentage.
+schrader_etal_2024_tarda_tagish_lake_modal_mineralogy,identified minerals total,13.79 ± 1.59,vol.%,"Table 2, p. 42",Reported total; missing fine-grained matrix limits mineral identification.

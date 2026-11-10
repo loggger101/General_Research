@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+herberhold_et_al_2025_starship_raptor2_performance,Raptor 2 RVAC vacuum Isp at O/F 3.4,368.5,s,Table 2,DLR RPA-calculated; 300 bar; assumed nozzle expansion ratio ~100
+herberhold_et_al_2025_starship_raptor2_performance,Raptor 2 RVAC vacuum Isp at O/F 3.6,365.9,s,Table 2,DLR RPA-calculated; 300 bar; assumed nozzle expansion ratio ~100
+,Upstream methalox family-level vacuum Isp,380.0,s,"spacecost/reference/propellants.csv, methalox row","Pipeline value, attributed to Kim et al. 2013 Raptor upper-stage development figure"
+,Difference of modeled 368.5 s estimate from upstream value,-3.03,%,Computed here,Not a direct replacement comparison
+,Difference of modeled 365.9 s estimate from upstream value,-3.71,%,Computed here,Not a direct replacement comparison

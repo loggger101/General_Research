@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+jpl_ssd_planetary_satellite_physical_parameters_phobos_gm,Phobos GM,0.0007087,km^3/s^2,"Planetary Satellite Physical Parameters table, Mars / Phobos row",Reference column is MAR097; sigma printed as 0.0000006 km^3/s^2.
+jpl_ssd_planetary_satellite_physical_parameters_phobos_gm,Phobos GM uncertainty,6e-07,km^3/s^2,"Planetary Satellite Physical Parameters table, Mars / Phobos row",JPL table sigma; confidence convention not specified in this table.
+jpl_ssd_planetary_satellite_physical_parameters_phobos_gm,Phobos mean radius,11.08,km,"Planetary Satellite Physical Parameters table, Mars / Phobos row",Sigma 0.04 km; radius reference [1] is Archinal et al. 2018.
+jpl_ssd_planetary_satellite_physical_parameters_phobos_gm,Martian satellite ephemeris listed on page,MAR099,identifier,page lines 87-92,"Page cites Brozovic, Jacobson & Park (2025) as the MAR099 reference; Phobos GM table row still cites MAR097."
+,GM-derived mass using G=6.67430e-11,1.061834199841182e+16,kg,computed from JPL GM,"Derived, not directly printed by JPL."
+,JPL GM-derived mass difference from upstream Phobos mass,-0.3814429269929587,percent,computed from JPL GM and spacecost@19e1a31 stored mass,Upstream value 1.0659e16 kg.
+,JPL GM difference from Guo et al. 2026,-0.17775599257424668,percent,computed from JPL MAR097 value and Guo Table 3 central GM,Guo et al. central GM 7.09962e5 m^3/s^2; JPL listed central value is 0.1778% lower.

@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+fred_cpiuacsl_monthly_usd_series,CPIAUCSL Dec 2018,252.767,"index 1982-84=100, seasonally adjusted",FRED table date 2018-12-01,BLS source series CPIAUCSL; levels read from live FRED table 2026-11-08.
+fred_cpiuacsl_monthly_usd_series,CPIAUCSL Dec 2019,258.63,"index 1982-84=100, seasonally adjusted",FRED table date 2019-12-01,BLS source series CPIAUCSL; levels read from live FRED table 2026-11-08.
+fred_cpiuacsl_monthly_usd_series,CPIAUCSL Dec 2020,262.045,"index 1982-84=100, seasonally adjusted",FRED table date 2020-12-01,BLS source series CPIAUCSL; levels read from live FRED table 2026-11-08.
+fred_cpiuacsl_monthly_usd_series,CPIAUCSL Sep 2026,336.298,"index 1982-84=100, seasonally adjusted",FRED table date 2026-09-01,BLS source series CPIAUCSL; levels read from live FRED table 2026-11-08.
+,Mission operations base rate,31.4,USD million per mission-year,"spacecost reference/operational_costs.csv row Mission operations, pinned at spacecost@19e1a31",Upstream stated nominal plan basis: $283M over 9 years = $31.4M/yr.
+,"Dec 2018 base, carried to Sep 2026",41.77664489430978,USD million per mission-year,comparison computed here: 31.4 × (336.298 / 252.767),"Using the same seasonally adjusted CPIAUCSL series, factor 1.330466; rounds to $41.8M, versus upstream note $41.5M."
+,"Dec 2019 base, carried to Sep 2026",40.82959130804625,USD million per mission-year,comparison computed here: 31.4 × (336.298 / 258.630),"Factor 1.300305; rounds to $40.8M, same displayed main point estimate."
+,"Dec 2020 base, carried to Sep 2026",40.29749546833559,USD million per mission-year,comparison computed here: 31.4 × (336.298 / 262.045),"Factor 1.283360; rounds to $40.3M, consistent with upstream note."

@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+shearer_etal_2023_luna_sample_return_drill_cores_jgr_planets,Luna 16 drill-core sample returned,101,g,"§2, ¶1–2",Approximate mission-specific core mass reported by the article.
+shearer_etal_2023_luna_sample_return_drill_cores_jgr_planets,Luna 20 drill-core sample returned,50,g,"§2, ¶1–2",Approximate mission-specific core mass reported by the article.
+shearer_etal_2023_luna_sample_return_drill_cores_jgr_planets,Luna 24 drill-core sample returned,170,g,"§2, ¶1–2",Approximate mission-specific core mass reported by the article.
+shearer_etal_2023_luna_sample_return_drill_cores_jgr_planets,"Total cores returned across Luna 16, 20, and 24",321,g,"§2, ¶1–2",Article reports total approximately 321 g.

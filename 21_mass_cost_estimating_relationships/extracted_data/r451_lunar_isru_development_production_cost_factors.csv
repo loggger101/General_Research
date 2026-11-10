@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+johnson_2026_lunar_isru_lifecycle_cost_factors,lifecycle cost categories,DDT&E + production + delivery + operations,equation components,"Eq. 3, PDF p. 9",The paper defines DDT&E as non-recurring initial system development and production as flight-unit cost.
+johnson_2026_lunar_isru_lifecycle_cost_factors,initial ISRU system development cost factor,63000,USD_2026/kg system,"Industry cost factors, PDF p. 12",Heuristic factor adjusted from Sowers (2021) and Kornuta et al. (2019); complexity factor k=1.0 applied to ISRU systems.
+johnson_2026_lunar_isru_lifecycle_cost_factors,ISRU flight-unit production cost factor,25200,USD_2026/kg system,"Industry cost factors, PDF p. 12",Heuristic factor adjusted from Sowers (2021) and Kornuta et al. (2019); distinct from initial development.

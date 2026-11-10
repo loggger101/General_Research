@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+celestrak_satcat_gpz_active_2026,active_payloads_in_GEO_Protected_Zone,565,records,"CelesTrak SATCAT CSV response, header excluded; query SPECIAL=gpz&FORMAT=CSV&ACTIVE=1",Live GET retrieved 2026-11-08; CelesTrak SATCAT page reports current through 2026-11-07 22:58:29 UTC.
+celestrak_satcat_gpz_active_2026,operational_status_plus,536,records,"CelesTrak SATCAT CSV response, OPS_STATUS_CODE=+","Active status definitions: operational, partially operational, backup/standby, spare, extended mission; this response has +, P, B, S only."
+celestrak_satcat_gpz_active_2026,operational_status_partially_operational,21,records,"CelesTrak SATCAT CSV response, OPS_STATUS_CODE=P",
+celestrak_satcat_gpz_active_2026,operational_status_backup,7,records,"CelesTrak SATCAT CSV response, OPS_STATUS_CODE=B",
+celestrak_satcat_gpz_active_2026,operational_status_spare,1,records,"CelesTrak SATCAT CSV response, OPS_STATUS_CODE=S",
+mc_dowell_2025_space_activities_gcat,active_payloads_GEO_plusminus_300km_GCAT_Jan_2026,613,records,"Space Activities in 2025, Table 22 p.66; Figure 8 p.65 defines GPZ+/-100 as GEO+/-300 km","Table row label is GPZ+/-100 (offset from the +/-200 km protected-zone boundary), not GEO+/-100; broader band than CelesTrak GPZ."
+,annual_demand_scaled_to_CelesTrak_count,41108,kg/yr,"Computed here: 44,600 x 565 / 613",Arithmetic diagnostic only: not a like-for-like revision because 565 is for GEO+/-200 km and 613 is for GEO+/-300 km.
+,difference_from_current_upstream_geo_ceiling,-3492,kg/yr,"Computed here: 41,108 - 44,600",Arithmetic diagnostic only on unlike bands; not a recommended demand revision.

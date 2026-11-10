@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_return_capture_boiloff_current_2026,model_return_coast_boiloff default,False,boolean,modules/calc.py:734,Default CalcConfig does not expose later-capture propellant to return-coast boiloff.
+economicspace_return_capture_boiloff_current_2026,consumer configuration,CONFIG = CalcConfig(),code,modules/calc.py:1468,No override of model_return_coast_boiloff found in current economicspace checkout.
+economicspace_return_capture_boiloff_current_2026,feature gate,model_return_coast_boiloff and model_propellant_boiloff and boiloff_pct > 0 and dv_capture_m_s > 0,condition,modules/calc.py:6662-6663,"No adjustment for disabled boiloff, zero rate, or no later capture burn."
+economicspace_return_capture_boiloff_current_2026,estimated return cruise duration,"max(0.5, 0.00023 * dv_ret_m_s)",years,modules/calc.py:6666,"Duration is a model estimate derived from return Δv, not a trajectory-derived storage interval."
+economicspace_return_capture_boiloff_current_2026,capture-fuel coast storage ratio,r_return/r_capture * (1 + exp(rate * cruise_days) * (r_capture - 1)),ratio,modules/calc.py:6667-6672,Only capture-burn propellant is multiplied by the cruise loss factor in this storage-equivalent calculation.
+economicspace_return_capture_boiloff_current_2026,physical return Δv and duration,remain dv_ret_m_s,m/s; years,modules/calc.py:6664-6673,The code comment states the storage ratio does not change physical Δv or the travel clock.
+economicspace_return_capture_boiloff_current_2026,cascade use,dv_ret_eff,m/s equivalent,modules/calc.py:6767-6783,The effective storage-equivalent return term is used in rocket-equation sizing.
+economicspace_return_capture_boiloff_current_2026,separate production-window storage,not changed by this option,scope,MODEL.md return-coast boiloff section,Candidate rc-284 explicitly keeps the separately acknowledged production-window omission distinct.

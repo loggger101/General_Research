@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_1969_apollo10_press_kit_lm4_mass,LM-4 descent stage dry mass,4703,lb,printed p. 44,NASA Press Kit mass breakdown for LM-4 flown on Apollo 10.
+nasa_1969_apollo10_press_kit_lm4_mass,LM-4 loaded descent propulsion system propellant,18134,lb,printed p. 44,DPS propellants (loaded); used for the descent-stage comparison.
+nasa_1969_apollo10_press_kit_lm4_mass,Derived LM-4 dry fraction,0.205938,fraction,computed here from printed p. 44 values,"4703 / (4703 + 18134) = 0.20599; same dry/(dry+propellant) definition as the model. Source reports mass breakdown for a flown flight vehicle, though Apollo 10 did not perform a lunar landing."
+,spacecost generic lander dry fraction,0.2,fraction,"spacecost/spacecost/delivery.py, LANDER_DRY_MASS_FRAC",Rounded model assumption; Apollo 10 lunar LM-4 benchmark is architecture-specific.

@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+leucht_prater_vetcha_2024_break_the_ice_lunar_challenge,Lunar regolith/resource delivery system lifetime target,5,years,printed p. 2; NTRS lines 47–53,NASA technology-shortfall target; not demonstrated service life and not asteroid-specific.
+leucht_prater_vetcha_2024_break_the_ice_lunar_challenge,Continuous excavation and transport demonstration,15,days,printed pp. 6–7; NTRS lines 180–199,Earth-based lunar challenge demonstration.
+leucht_prater_vetcha_2024_break_the_ice_lunar_challenge,Teams meeting the 800 kg/day target for all 15 days,2 of 8,teams,printed p. 7; NTRS line 199,"Demonstration performance statistic, not lifetime distribution."
+leucht_prater_vetcha_2024_break_the_ice_lunar_challenge,spacecost Mining rig service life,15 (range 5–30),years,spacecost/spacecost/operations.py Mining rig service life entry,Upstream value and range cited for comparison; not reported by NASA sources.

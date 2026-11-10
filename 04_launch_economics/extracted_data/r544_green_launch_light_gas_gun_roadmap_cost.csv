@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+greenlaunch_2025_phases_leo_roadmap,Phase 3 payload to low Earth orbit,1,lb,"Phases page, “Phase 3: Deliver 1 lb to Low Earth Orbit,” lines 24–25",Company roadmap statement; not a demonstrated orbital payload.
+greenlaunch_2025_phases_leo_roadmap,Planned scaled payload range,100–1000,lb,"Phases page, Phase 3, lines 24–27",Page says the 1 lb Phase 3 system will be scaled up; exact configuration and date unstated.
+greenlaunch_2025_phases_leo_roadmap,Orbital delivery sequence,100 s motor burn; cubesat to 300 km Earth orbit,description,"Phases page, Cubesat Orbital Delivery, lines 60–78",Roadmap description; no payload mass or price specified for this sequence.
+greenlaunch_2026_nonrocket_launch_cost_target,Green Launch orbital-delivery cost target,~220,USD/kg,"Company blog, “Infrastructure vs. Per-Launch Cost Trade-Off,” line 129; “Cost Reduction Potential,” lines 143–146","Company target; cost model, target date, and payload/configuration basis not disclosed."
+,spacecost Light-gas gun (orbital) row,"30 kg; $300,000; $10,000/kg",payload; USD; USD/kg,spacecost reference/launch_vehicles.csv at 19e1a31ae280301c6fd5c3a7b57b73f44122e1d9,Comparison computed from the upstream row; source_id blank for pipeline value/comparison.

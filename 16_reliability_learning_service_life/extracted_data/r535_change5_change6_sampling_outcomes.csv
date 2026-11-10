@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+jia_etal_2021_change5_regolith_properties,Surface sampling mechanism,scooping device,mechanism,"§1.1, ¶1",The paper describes the device as collecting surface samples.
+jia_etal_2021_change5_regolith_properties,Subsurface sampling mechanism,drilling device with core tube,mechanism,"§1.1, ¶1",The paper reports core-tube sampling to ~0.9 m.
+jia_etal_2021_change5_regolith_properties,Returned lunar sample mass,1.731,kg,"§1.1, ¶2",Paper reports successful Earth return of samples.
+wang_etal_2024_change6_lunar_farside_samples_astronomical_journal,Sampling methods,scooping and drilling,mechanisms,"§1, ¶2",The lander conducted both surface scooping and drilling during ground operations.
+wang_etal_2024_change6_lunar_farside_samples_astronomical_journal,Returned lunar farside sample mass,1935.3,g,"§1, ¶3","The paper reports approximately 1,935.3 g successfully returned."

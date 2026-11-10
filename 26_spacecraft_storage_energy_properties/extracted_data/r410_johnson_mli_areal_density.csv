@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_johnson_2011_low_layer_density_mli_test_results,A141 Ball MLI blanket areal density,2.98,kg/m2,"Table 3, PDF p. 6; 60 layers, 1.45 layer/mm",NASA reports mass 1565 g and areal density 2.98 kg/m2 for the tested blanket.
+nasa_johnson_2011_low_layer_density_mli_test_results,A139 Ball MLI blanket areal density,2.41,kg/m2,"Table 3, PDF p. 6; 40 layers, 0.94 layer/mm",NASA reports mass 1265 g and areal density 2.41 kg/m2; seam construction made this article slightly heavier.
+nasa_johnson_2011_low_layer_density_mli_test_results,A142 Quest IMLI blanket areal density,1.00,kg/m2,"Table 3, PDF p. 6; 20 layers, 0.52 layer/mm",Different supplier and 20-layer configuration; context only.
+,Upstream MLI baseline,1.2,kg/m2,"spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9 reference/storage_systems.csv, Multi-layer insulation (passive)",Pipeline value; row describes a 60-layer aluminised-Mylar blanket.
+,A141 / upstream baseline ratio,2.4833,ratio,Computed here: 2.98 / 1.2,Comparison only; NASA test coupon seam/configuration and tank installation may differ.
+,A139 / upstream baseline ratio,2.0083,ratio,Computed here: 2.41 / 1.2,Comparison only; source article has 40 layers and distinct seam construction.

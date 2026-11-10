@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,processed regolith mass,300,g,"PDF p.10, conclusion",Source reports total testbed energy for processing this mass.
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,total testbed energy,61,Wh,"PDF p.10, conclusion","Entire small-scale TRL 4 testbed; gravity, magnetic and electrostatic stages."
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,concentrate yield as ilmenite mass per feed mass,1.29,wt%,"PDF p.8, Table 4, 14 kV row",Direct paper value; Table 2 defines yield as ilmenite mass in output per input mass.
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,concentrate grade,11.95,wt%,"PDF p.8, Table 4, 14 kV row",Direct paper value.
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,concentrate mass calculated,0.03238494,kg,computed from PDF p.8 Table 4 yield/grade and p.10 300 g input,0.300 kg * 0.0129 / 0.1195; computed comparison value.
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,testbed energy per kg concentrate calculated,1883.59,Wh/kg product,computed from PDF p.10 energy and concentrate mass above,61 Wh / 0.03238494 kg; 3.77x spacecost 500 Wh/kg central estimate.
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,beneficiation recovery,31.93,wt%,"PDF p.8, Table 4, 14 kV row",Direct paper value; small-sample test with standard error 6.69 percentage points.

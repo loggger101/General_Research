@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_concentration_past_purity_flag_current_2026,search_concentration_past_purity default,False,boolean,modules/calc.py:711,CalcConfig default; module consumer uses CONFIG = CalcConfig() at line 1468.
+economicspace_concentration_past_purity_flag_current_2026,enabled market mode,capacity_cap only,market model,modules/calc.py:8650-8658,"Returns without extension when flag is false, max ratio is not above purity, or market mode is not capacity_cap."
+economicspace_concentration_past_purity_flag_current_2026,added search range,saturation_ratio to max_concentration_ratio,feed:concentrate ratio,modules/calc.py:8659-8677,"Geometric sample uses concentration_search_steps (at least 2), followed by one local refinement around best added sample."
+economicspace_concentration_past_purity_flag_current_2026,search order,after ordinary grid and refinement,execution order,"modules/calc.py:8679-8680, 8719",Purity edge path and normal path both call extension; ordinary candidates are evaluated first.
+economicspace_concentration_past_purity_flag_current_2026,sample rows changed,24 of 53,rows,versions.md:544-558,Upstream release-note sample; not evidence of whole-catalog incidence or exhaustive optimality.
+economicspace_concentration_past_purity_flag_current_2026,revision candidate,rc-265 remains open,candidate id,revision_candidates.csv,Current option is opt-in and finite-grid; no default adoption recorded.

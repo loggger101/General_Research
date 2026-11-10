@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+herberhold_et_al_2025_starship_raptor2_performance,Raptor 3 vacuum specific impulse relative to Raptor 2,almost constant,qualitative,"§2.1.1, paragraph beginning “Recently, SpaceX announced the production start...”",DLR estimate at 350 bar; no standalone numeric Raptor 3 RVAC Isp is stated in this passage.
+herberhold_et_al_2025_starship_raptor2_performance,announced Raptor 3 sea-level-variant specific impulse,350,s,"§2.1.1, same paragraph, citing reference [22]",The paper says this is in line with calculations under realistic assumptions; do not treat as a numeric RVAC Isp.
+herberhold_et_al_2025_starship_raptor2_performance,Raptor 2 RVAC calculated vacuum-Isp cases,368.5 at O/F 3.4; 365.9 at O/F 3.6,s,Table 2,Previously extracted in R419; repeated here to make the generation-context comparison explicit.

@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+king_2026_bennu_xrd_interlayer_water,Pristine Bennu smectite 001 basal spacing,12.6–12.4,Å,"p. 1088, “Hydration State of Bennu”",Interpreted as a monohydrated state; one water sheet in the interlayer.
+king_2026_bennu_xrd_interlayer_water,Estimated water in monohydrated saponite interlayer,~2,wt% of saponite,"p. 1088, “Hydration State of Bennu”","Mineral-specific estimate from cited analog literature, not whole-sample or whole-asteroid water fraction."
+king_2026_bennu_xrd_interlayer_water,Bennu-sample interlayer water cited by King et al.,1.25,wt%,"p. 1088, “Hydration State of Bennu”",King et al. say their XRD is consistent with this result from Yurimoto et al. (2026); that underlying paper was not independently read in this round.
+king_2026_bennu_xrd_interlayer_water,OSIRIS-REx sample excavation depth,up to ~50,cm below surface,"p. 1089, “Hydration State of Bennu”",Authors say subsurface provenance could enhance apparent water relative to Bennu’s bulk surface.

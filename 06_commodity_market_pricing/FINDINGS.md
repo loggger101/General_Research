@@ -329,3 +329,97 @@ No candidate changes status; 23 stay `open`.
   re-stamped. It still needs a `prices-*` release and a repin.
 - **economicspace c21a5e9** (PR #197, master 1.67.0, calc 1.40.0): rc-245 and rc-281
   re-stamped. Both flags stay off by default, so both rows stay open.
+
+
+## R385 — Silver static fallback after the May fixing
+
+The current `spacevalue/catalog.py` silver entry at `spacevalue@a13e378efece102d3724ada18d3810a62f29432f` carries `ref_price_usd_per_kg = 2,436.5` and states that this equals the LBMA silver fixing of $75.78/troy oz on 2026-05-29. The registered LBMA series extraction records $2,436.5/kg on that date and $2,110.2/kg on 2026-09-22, a 13.4% decline from the May fallback. Source: `lbma_precious_metals_fixings`.
+
+Verdict: the static offline/API-down fallback may materially lag the registered benchmark series; review whether to refresh its value and date. The September fixing is evidence of drift, not a November fixing, and the catalog has a separate live COMEX futures path. `rc-302` asks to verify the latest LBMA fixing before updating the fallback, while preserving quote basis and date. Extracted: `extracted_data/r385_silver_static_fallback_staleness.csv`.
+
+
+## R386 — Nickel fallback after the October Pink Sheet
+
+The current `spacevalue/catalog.py` nickel entry at `spacevalue@a13e378efece102d3724ada18d3810a62f29432f` sets `ref_price_usd_per_kg = 18.806` and identifies the World Bank Pink Sheet May 2026 monthly average. The World Bank CMO-Pink-Sheet November 2026 edition (published November 3), p.2, Nickel row, reports $18,806/mt in May, $16,751/mt in August, $16,324/mt in September, and $15,436/mt in October. The October average is $15.436/kg, 17.9% below the May fallback. Source: `worldbank_cmo_pink_sheet`.
+
+Verdict: the static nickel fallback for offline/API-down builds is stale against the same World Bank monthly series; review refreshing the value and date to the October 2026 average, or explain why the fallback remains intentionally fixed at May. Keep the separate live Metals.Dev path distinct. Extracted: `extracted_data/r386_nickel_reference_refresh.csv`.
+
+
+## R387 — Platinum fallback after the October Pink Sheet
+
+The current `spacevalue/catalog.py` platinum entry at `spacevalue@a13e378efece102d3724ada18d3810a62f29432f` stores $61,472.2/kg, equivalent to the LBMA $1,912/troy oz fixing on 2026-05-29. The World Bank May 2026 monthly average was $1,998/troy oz, within 4.5% of that point; the November 2026 Pink Sheet (published November 3), p.2, Platinum row, reports an October 2026 monthly average of $1,621/troy oz ($52,116.4/kg). October is 15.2% below the May 29 point, and the World Bank monthly series fell 18.9% from May to October. Sources: `lbma_precious_metals_fixings`; `worldbank_cmo_pink_sheet`.
+
+Verdict: review whether to refresh the static offline/API-down fallback and its date. October’s monthly average is not a November daily LBMA fixing, and the catalog separately carries a live NYMEX quote path; verify the latest benchmark and preserve the quote basis before changing the fallback. `rc-304` records that review. Extracted: `extracted_data/r387_platinum_reference_refresh.csv`.
+
+
+## R388 — LME cobalt cash benchmark check (2026-11-08)
+
+The LME Official Prices page describes its daily prices as global references for physically delivered metals, determined from the final bid and offer in the second Ring session. Its 2026-11-06 table reports cobalt cash bid $32,595/mt and ask $33,095/mt. Their $32,845/mt midpoint is $32.845/kg, about 0.47% below spacevalue's $33.00/kg cobalt fallback. The fallback note derives that value from the USGS 2025 U.S. cathode average; this annual U.S. cathode price and a dated LME physical cash quote have different periods and bases. The check shows no material divergence and does not support a new revision candidate. Extracted: `extracted_data/r388_lme_cobalt_cash_reference.csv`.
+
+
+## R389 — Umicore daily precious-metal indications and dated fallbacks
+
+Umicore Precious Metals Management's daily pages label these as 10am prices in USD/troy oz and caution that the displayed values are indicative only. On 2026-11-06 it reported gold $4,052.60, palladium $1,039, rhodium $9,200, iridium $10,050 and ruthenium $1,950. Compared with spacevalue's dated static references, Umicore's gold quote ($4,052.60/oz) is 10.45% below the fallback ($4,525.75/oz, LBMA 2026-05-29); its palladium quote ($1,039/oz) is 23.83% below the fallback ($1,364/oz, LBMA 2026-05-29); its iridium quote is 25.63% above the fallback ($8,000/oz, JM Q1 2026); and its ruthenium quote is 11.43% above the fallback ($1,750/oz, JM Q1 2026). Rhodium's quote is 7.54% below its fallback equivalent (~$9,950/oz, May 2026), below the review threshold. These publisher/date differences are screening signals; no fallback values are changed.
+
+Verdict: open `rc-305` (gold), `rc-306` (palladium), `rc-307` (iridium) and `rc-308` (ruthenium) to verify the latest agreed benchmarks before any static fallback refresh. Extracted: `extracted_data/r389_umicore_pgm_price_check.csv`.
+
+## R395 — Umicore platinum indication and open fallback review (2026-11-08)
+
+Umicore PMM’s platinum page reports an “Umicore 10am Price” of $1,540/troy oz for 6 November 2026 and describes displayed prices as indications only. Spacevalue’s platinum fallback at spacevalue@a13e378efece102d3724ada18d3810a62f29432f is $61,472.2/kg, equivalent to $1,912/troy oz, dated to the 29 May LBMA fixing. The Umicore indication is 19.46% lower; normalized to mass it is $49,512.15/kg. This is a dated cross-publisher signal, not a replacement LBMA fixing.
+
+Update existing open `rc-304` to include the new indication and request a latest LBMA point check plus a publisher/method basis review. The fallback and live NYMEX path remain unchanged. Extracted: `extracted_data/r395_platinum_umicore_indication.csv`.
+
+## R396 — Umicore silver indication and open fallback review (2026-11-08)
+
+Umicore PMM’s silver page reports an “Umicore 10am Price” of $52.10/troy oz for 6 November 2026 and says displayed prices are indications only. Spacevalue’s silver fallback at spacevalue@a13e378efece102d3724ada18d3810a62f29432f is $2,436.5/kg, equivalent to $75.78/troy oz, dated to the 29 May LBMA fixing. The Umicore indication is 31.25% lower; normalized to mass it is $1,675.05/kg. This is a dated cross-publisher signal, not a replacement LBMA fixing.
+
+Update existing open `rc-302` with the new indication and retain the request to verify the latest official LBMA fixing and reconcile the fallback’s date and publisher basis. The fallback and live COMEX-futures path remain unchanged. Extracted: `extracted_data/r396_silver_umicore_indication.csv`.
+
+## R397 — World Bank October copper average and static fallback (2026-11-08)
+
+The World Bank November 2026 Pink Sheet, p. 2, Copper row, lists the October monthly average as “$14,508/mt”; p. 3 identifies the series as LME standard-grade-A cathodes and wire-bar shapes, physical settlement. The same-source September 2026 Pink Sheet p. 2 lists May 2026 at $13,543/mt (r70 extracted-data table). Spacevalue’s copper entry at spacevalue@a13e378efece102d3724ada18d3810a62f29432f is $13.543/kg, and its note identifies the World Bank May 2026 monthly average. The October monthly average is 7.12% higher.
+
+Open `rc-313` to review the offline fallback date/value against the newer monthly benchmark and retain the separate live COMEX-futures path. No upstream value is changed. Extracted: `extracted_data/r397_copper_worldbank_october_price_refresh.csv`.
+
+
+## R414 — SteelBenchmarker iron price basis check (2026-11-09)
+
+SteelBenchmarker’s Price History report dated 2026-10-28, p. 2, lists U.S. East of Mississippi “#1 Heavy melting scrap” at “$374 [380]” under its metric-tonne (gross-ton equivalent in brackets) heading; p. 16 specifies the grade as demolition scrap at least 1/4 inch thick and no larger than 60 x 24 inches. The upstream spacevalue iron fallback at spacevalue@a13e378efece102d3724ada18d3810a62f29432f is $0.319/kg ($319/metric tonne), based on the 2025 USGS national annual average, while its reference date is 2026-05-29. The SteelBenchmarker point is 17.24% higher, but it is regional and dated versus a national annual average, so this is a freshness and basis review signal only.
+
+Open `rc-324` to reconcile the current benchmark, geographic coverage, period and tonne basis before any fallback change. The static reference and live-price behavior remain unchanged. Extracted: `extracted_data/r414_steelbenchmarker_iron_price.csv`.
+
+
+## R415 — SMM tungsten APT benchmark and dated fallback (2026-11-09)
+
+SMM’s tungsten price page lists “CIF Rotterdam 88.5% APT” at $2,500–3,100/mtu, midpoint $2,800/mtu, dated 2026-11-05. One mtu of WO3 contains about 7.93 kg tungsten, making the midpoint about $353/kg of contained W before conversion costs, payables, or product-form adjustments. USGS MCS 2026, Tungsten chapter, reports Rotterdam APT increased from $331 to $675/mtu during 2025. Spacevalue’s tungsten fallback at spacevalue@a13e378efece102d3724ada18d3810a62f29432f is $45/kg and its note identifies the start-of-2025 $331/mtu APT level; the fallback date is 2025-01-31. The current SMM contained-W equivalent is about 7.85 times the fallback, but this is a dated cross-benchmark signal, not a direct refined-metal quote.
+
+Open `rc-325` to reconcile the fallback’s date and APT-to-element basis against current market assessments before any change. No upstream value is changed. SMM’s page prohibits copying or reproducing its content without written consent; it is not hosted. Extracted: `extracted_data/r415_smm_tungsten_apt_price.csv`.
+
+
+## R440 — November U.S. HMS negotiation signal (2026-11-09)
+
+Steel Market Update’s November 6 report says U.S. mills were seeking
+increases of $20–$30 per gross ton; it says the $30/gt increase mainly
+applied to obsolete grades including #1 HMS (paragraph 1). A Chicago source
+reported +$30/gt on shredded scrap and +$20/gt on busheling (paragraph 2).
+These are reported negotiation indications, not an exact settled #1 HMS
+benchmark or a replacement for the SteelBenchmarker East-of-Mississippi
+assessment. The existing spacevalue iron fallback is $0.319/kg, based on the
+2025 annual U.S. No.1 HMS composite. This newer report strengthens rc-324’s
+freshness review but does not establish a comparable value or show the annual
+fallback is wrong. Extracted:
+extracted_data/r440_smu_november_hms_negotiation_signal.csv.
+
+## R441 — DLA tungsten stockpile contract discloses no unit price (2026-11-09)
+
+`elmet_dla_tungsten_offtake_agreement_2026` — the SEC-filed DLA–Elmet agreement covers tungsten ores and concentrates and sodium tungstate. It sets a $150 million guaranteed minimum and a $2 billion IDIQ ceiling, but says material unit prices will be determined when delivery orders are issued; the sample CLIN tables list 1 kg at “TBD” (printed pp. 3, 5). The contract therefore confirms a procurement channel and future demand, but supplies no current tungsten USD/kg observation. It cannot resolve the $45/kg static tungsten fallback or replace the dated APT comparison in rc-325. Extracted: `extracted_data/r441_elmet_dla_tungsten_unit_price_status.csv`.
+
+
+## R452 — Johnson Matthey-attributed iridium quarter-end price (2026-11-09)
+
+`podium_2026_q3_jm_iridium_price` — Podium Minerals’ September 2026 Quarterly Activities Report, published 2026-10-14, reports that iridium rose 12% and “closing at its quarterly high” of US$8,150/oz (p. 6); the report attributes the price data to Johnson Matthey. This is about US$262,028.58/kg, 1.875% above the $8,000/oz Johnson Matthey Q1 2026 high used for the spacevalue fallback in rc-307. It provides a dated quarterly benchmark comparison, not a November spot quote, and does not establish that the static fallback should use the quarter-end value. The candidate remains open for benchmark-date and basis review. Extracted: `extracted_data/r452_podium_jm_iridium_quarterly_price.csv`.
+
+
+## R457 - Correct spacevalue catalog target paths (2026-11-09)
+
+`spacevalue_catalog_target_path_2026` — the cited `spacevalue@a13e378efece102d3724ada18d3810a62f29432f` commit is also fetched `origin/main`. Its tree contains `spacevalue/catalog.py`; it does not contain a repository-root `catalog.py`. Candidate records `rc-324` and `rc-325` had `target_file=catalog.py`, which caused `validate.py --upstream` to report `upstream-target-file-missing` for both rows. Their target is corrected to `spacevalue/catalog.py`; the price evidence and open status are unchanged. Extracted: `extracted_data/r457_spacevalue_catalog_target_path.csv`.

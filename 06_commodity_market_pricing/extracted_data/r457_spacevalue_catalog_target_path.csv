@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_catalog_target_path_2026,Target path at cited commit,spacevalue/catalog.py,repository path,a13e378efece102d3724ada18d3810a62f29432f,Git tree contains this path; no root-level catalog.py.
+spacevalue_catalog_target_path_2026,Current fetched origin/main short commit,a13e378,commit,spacevalue origin/main after fetch,The current branch resolves to the same commit recorded by rc-324 and rc-325.
