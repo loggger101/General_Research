@@ -423,3 +423,30 @@ extracted_data/r440_smu_november_hms_negotiation_signal.csv.
 ## R457 - Correct spacevalue catalog target paths (2026-11-09)
 
 `spacevalue_catalog_target_path_2026` — the cited `spacevalue@a13e378efece102d3724ada18d3810a62f29432f` commit is also fetched `origin/main`. Its tree contains `spacevalue/catalog.py`; it does not contain a repository-root `catalog.py`. Candidate records `rc-324` and `rc-325` had `target_file=catalog.py`, which caused `validate.py --upstream` to report `upstream-target-file-missing` for both rows. Their target is corrected to `spacevalue/catalog.py`; the price evidence and open status are unchanged. Extracted: `extracted_data/r457_spacevalue_catalog_target_path.csv`.
+
+## R572 - Candidates applied upstream, after R554-R571 (2026-11-10)
+
+R562-R565 closed 65 candidates applied through the 2026-11-10 upstream PRs.
+This block records the rest of what those PRs did.
+
+- **AsteroidCatalog 800a4ca** (PR #32, 0.13.1): applied as comments, CITATIONS
+  and README text: rc-343, rc-344, rc-345, rc-367, rc-368, rc-369, rc-418.
+  Re-stamped, still `open`, values kept and annotated: rc-334, rc-346, rc-348,
+  rc-350, rc-351, rc-352, rc-353, rc-380, rc-384, rc-419.
+- **spacecost aaed272** (PR #43, 0.17.0, data contract 1.26.0): rc-336, rc-339,
+  rc-340, rc-341 applied as the dated note updates they asked for. Re-stamped,
+  still `open`, each note naming its comparator: rc-202, rc-294, rc-298,
+  rc-299, rc-300, rc-310, rc-314 to rc-323, rc-326 to rc-329, rc-333, rc-335,
+  rc-338, rc-347, rc-355, rc-379, rc-383, rc-409, rc-415, rc-416.
+- **spacevalue f836611** (PR #11, 0.6.1): re-stamped, still `open`, values kept
+  and annotated: rc-290, rc-381, rc-296; rc-279's economicspace search is not
+  built.
+- **economicspace 3ed7b36** (PR #202, calc 1.44.0, master 1.72.0): rc-337
+  applied as `charge_faa_event_fee`, off by default: $0.25/lb capped at $30,000
+  per FAA-licensed launch on a US, non-NASA vehicle and per Earth reentry
+  (51 U.S.C. 50924, 2026 values). Default cells bit-identical; flag on, the
+  cislunar sample's licensing line rises $30,000 on most rows and no ranking
+  moves. rc-354 applied: v1.71.0 labels the delta-v-to-duration line a scenario
+  prior. rc-239 re-stamped: `model_rig_calendar_cadence` covers it, and its
+  stay-longer-than-rig-life case is unreachable while stays stay near 3.25 yr
+  and rig life is 5 yr or more.

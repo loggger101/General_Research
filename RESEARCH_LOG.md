@@ -1,4 +1,5 @@
 # Research log
+- **Round 572** (2026-11-10): closed 13 more candidates applied upstream (AsteroidCatalog #32, spacecost #43, economicspace #202's opt-in FAA per-event fee) and re-stamped 45 that stay open; R562-R565 had closed the other 65.
 - **Round 571** (2026-11-10): spacecost applies a median usable-envelope fill ratio from ten guide-based launchers to six fairings with outer dimensions only; rc-436 records the calibration-transfer gap without inferring replacement volumes.
 - **Round 570** (2026-11-10): spacecost retains an unsourced $50/kg ISRU fee for propellant made on site while current economicspace has replaced that flat charge with energy and plant costs, so rc-435 records the standalone provenance and scope gap.
 - **Round 569** (2026-11-10): NASA’s lunar-water assessment specifies freeze-distillation and filtration steps but gives no purification-energy figure, so rc-434 records the missing process-boundary basis for spacevalue’s 0.5 kWh/kg water allowance.
