@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+lewis_2016_in_space_production_storable_propellants_niac_report,CO2 required per 1000 t storable propellant,352,tonnes,printed p. 30,Report stoichiometry for DME and H2O2; not carbonate-specific.
+lewis_2016_in_space_production_storable_propellants_niac_report,water required per tonne CO2,1.84,tonnes water / tonne CO2,printed p. 30,Computed in report from 9:2 molar ratio; not a destination demand estimate.
+lewis_2016_in_space_production_storable_propellants_niac_report,asteroid material processing product gas,mainly carbon dioxide and water vapor,qualitative,printed p. 33,Solar calciner concept heats raw asteroid material; report does not identify carbonate mineral as the CO2 source.

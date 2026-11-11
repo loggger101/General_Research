@@ -2,6 +2,10 @@
 
 Backings: AsteroidCatalog `taxonomy_composition.csv` material fractions (metal, silicate, carbon, ice), `mineralogy.py` phase splits (`comp_phases_detailed`), `PGM_ENRICHMENT_BY_TYPE`, and spacevalue `catalog.py` mineralogy and nickel-iron yields.
 
+## R568 — Ordinary-chondrite PGE phase-partition comparator (2026-11-10)
+
+`gilmour_herd_2020_ordinary_chondrite_pge_partition` — Gilmour & Herd, Table 4 (journal pp. 679–702), report taenite/kamacite PGE partition coefficients by chondrite group: H has Ru 3.3, Pd 5.4, Os 2.1, Ir 1.9 and Pt 3.0; L has Ru 1.9, Rh 1.5, Pd 3.3, Os 2.4, Ir 2.2 and Pt 2.2; LL has Ru 3.5, Rh 3.0, Pd 4.5, Os 1.9, Ir 1.9 and Pt 2.2. The study reports higher PGE concentrations in taenite, with within- and between-grain variation. At spacevalue `catalog.py` (`spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16`), `_TAENITE_OVER_KAMACITE` uses Co=0.4, Cu=3.0, Pt=2.0, Pd=3.0, Au=3.0, Rh=1.5 and defaults other elements to 1.0 in deriving alloy-phase yields. The measured PGE coefficients differ from several settings and vary across H/L/LL groups; ordinary-chondrite data do not establish representative coefficients for asteroid metal classes. Verdict: comparator supports review of the generic multipliers, but no universal replacement is inferred; open `rc-433`. Extracted: `extracted_data/r568_gilmour_herd_pge_partition_coefficients.csv`.
+
 ## R1 - First sources (2026-09-17)
 
 - **hein2020** [T1] (Acta Astronautica 174:59-71; arXiv v11 hosted until 2026-09-26, then un-hosted; moved to d22 in R77): the peer-reviewed TEA of asteroid mining, with water for space and platinum for Earth as separate markets (as the pipeline splits them). Pt demand anchored at $40,449/kg and 254,582 kg/yr, PED -0.6 to -0.5; sensitivity at $30k and $70k/kg. `extracted_data/composition_value_key_numbers.csv`. (Its "150 kg/s/kg" was a misreading: 150 kg is the craft dry mass; see R61.)
@@ -414,3 +418,13 @@ Upstream: AsteroidCatalog `asteroid_catalog/mineralogy.py` at `AsteroidCatalog@9
 ## R553 — S-complex subtype phase-share basis (2026-11-10)
 
 DeMeo & Carry (2015), Table 1 (printed p. 17), maps the Gaffey seven-class mineralogical scheme to Bus and Bus-DeMeo S-complex taxonomy and describes the Gaffey system as primarily separating olivine-to-orthopyroxene ratio. The chapter distinguishes detailed mineralogical characterization from taxonomy (p. 14). AsteroidCatalog `asteroid_catalog/mineralogy.py` assigns conditional silicate mass shares of 75/12/3/10 to Sa, 45/35/8/12 to Sr, and 30/30/20/20 to Sv (olivine/orthopyroxene/pyroxene/plagioclase). The source supports mineralogical diversity but does not report these Bus-DeMeo subtype bulk mass fractions or the conversion basis. `rc-419` records the review gap; no replacement values are inferred. Extracted: `extracted_data/r553_s_complex_subtype_taxonomy_vs_phase_splits.csv`.
+
+
+## R554 — Aubrite sulfide-share sample comparison (2026-11-10)
+
+Wilbur et al. (2022), Table 2, report modal sulfide abundances for 16 aubrite meteorite samples in vol.% with stated uncertainty of ±2.3–7.2 vol.%; total sulfides range from 0.1 to 61 vol.%. Modes include alabandite in addition to troilite, daubréelite and oldhamite. Bishopville A reports 0.6 vol.% troilite and 1.9 vol.% oldhamite; Norton County 983 reports 3.7 troilite, 5.6 alabandite, 0.5 daubréelite and 51 oldhamite vol.%. AsteroidCatalog `PHASE_DETAIL[E]` applies 0.60/0.30/0.10 conditional mass shares to troilite/oldhamite/daubréelite and omits alabandite. These sample-specific volume modes show heterogeneity and do not set representative mass shares for E-type bodies. `rc-420` records the scope and conversion review; no replacement is inferred. Extracted: `extracted_data/r554_wilbur_aubrite_sulfide_modal_modes.csv`.
+
+
+## R558 — CV/CO CAI population comparator (2026-11-10)
+
+Dunham et al. (2023), Table 3, compile 3,027 CAIs from 12 CV chondrites (mean 5.4 area%, range 0.7–13.1) and 1,332 CAIs from 15 CO chondrites (mean 1.5 area%, range 0.5–3.6); hibonite-rich CAIs are classed as rare in CV and common in CO. At AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63, `asteroid_catalog/mineralogy.py` maps K to CV/CO and L to a CV3 possibility; `DETAIL_ACCESSORIES` assigns perovskite/hibonite absolute body mass fractions of 0.002/0.003 for K and 0.003/0.005 for L. Total CAI area abundance and qualitative hibonite-rich frequency do not quantify those individual phases or convert area to body mass. Verdict: population context only; no contradiction or replacement value is established, so no new revision candidate is opened; the unsourced CAI oxide fractions remain within the prior scope of rc-172. Extracted: `extracted_data/r558_dunham_2023_cai_population_cv_co.csv`.

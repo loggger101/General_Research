@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+orbital_sciences_2014_cygnus_configuration_mass,Standard Cygnus pressurized cargo module dry mass,1677,kg,PDF p. 4,Orbital labels this as PCM dry mass; excludes the service module and whole-spacecraft mass basis.
+orbital_sciences_2014_cygnus_configuration_mass,Standard Cygnus listed payload mass,2000,kg,PDF p. 4,Configuration-specific cargo mass from the same diagram.
+orbital_sciences_2014_cygnus_configuration_mass,Standard PCM dry mass divided by listed payload mass,0.8385,kg/kg,PDF p. 4,"Computed from same-source configuration values; PCM-only ratio, not an ore-hopper or whole-spacecraft ratio."
+orbital_sciences_2014_cygnus_configuration_mass,Enhanced Cygnus pressurized cargo module dry mass,1995,kg,PDF p. 4,Orbital labels this as PCM dry mass; excludes the service module and whole-spacecraft mass basis.
+orbital_sciences_2014_cygnus_configuration_mass,Enhanced Cygnus listed payload mass,2700,kg,PDF p. 4,Configuration-specific cargo mass from the same diagram.
+orbital_sciences_2014_cygnus_configuration_mass,Enhanced PCM dry mass divided by listed payload mass,0.7388888888888889,kg/kg,PDF p. 4,"Computed from same-source configuration values; PCM-only ratio, not an ore-hopper or whole-spacecraft ratio."
+orbital_sciences_2014_cygnus_configuration_mass,"Cygnus service-module mass, Standard and Enhanced configurations",1700,kg,PDF p. 4,Source labels SM mass but does not specify dry or wet mass; not included in the ratios above.
+orbital_sciences_2014_cygnus_configuration_mass,"Cygnus total cargo mass, Standard and Enhanced configurations",2000;2700,kg,PDF p. 3,Slide 3 lists total cargo mass for the two configurations; slide 4 provides the corresponding payload mass labels.

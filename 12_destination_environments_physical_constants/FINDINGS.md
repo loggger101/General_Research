@@ -134,3 +134,13 @@ Marciniak et al. (2015), “Against the biases in spins and shapes of asteroids,
 ## R547 — Surface solar dark-fraction comparator (2026-11-10)
 
 Stubbs and Wang’s Vesta illumination model reports that the Sun is typically visible about half the time in the tropics, as expected for diurnal variation (§5.1, printed p. 275). Their annual mean solar-visibility values range from 0.363 to 0.566 across Vesta, with departures tied to latitude, axial tilt, shape, and topography. This supports 0.50 as a scoped equatorial/tropical comparator; it does not establish the same fraction or the [0.35, 0.55] range as a generic asteroid-site value. At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, `reference/operational_costs.csv` stores `Eclipse / night-side dark fraction` = 0.50 [0.35, 0.55], and `reference/storage_systems.csv` duplicates it as `Eclipse / night-side power fraction`; both notes describe the geometry without naming a source for the baseline or range. rc-413 records the attribution and scope review. Extracted: `extracted_data/r547_vesta_surface_solar_visibility.csv`.
+## R562 — rotation-period citation and population scope applied (2026-11-10)
+
+At economicspace@e2ad48767b0e81489031b724417b1a03e6dfc1fb, the fallback rotation-period comment cites Marciniak et al.’s 10.986 h median and flags the population mismatch against the model’s generic value (rc-382). Citation and scope request applied; no numeric replacement inferred.
+## R564 — Phobos and Psyche masses refreshed; illumination scope qualified (2026-11-10)
+
+At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Guo et al.’s Mars Express Phobos GM gives a mass of 1.063725×10¹⁶ kg and the dependent gravity/escape values are recomputed (rc-331); Farnocchia et al.’s Psyche GM gives 2.399×10¹⁹ kg and dependent values are recomputed at the existing radius (rc-332). `stubbs_wang_2012_vesta_illumination_conditions` is cited as a Vesta comparator and 0.50 is described as a scenario baseline rather than a generic asteroid-site fraction (rc-413).
+
+## R565 — Phobos and Psyche mass candidates rechecked (2026-11-10)
+
+Spacecost 0.17.0 / data contract 1.26.0, at main commit `aaed2720ee44610c5cf90fc204db160deb5669bb`, carries the Guo et al. (2026) Phobos GM mass of 1.063725×10¹⁶ kg and the Farnocchia et al. (2024) Psyche GM mass of 2.399×10¹⁹ kg, with dependent gravity and escape values updated. The current rows agree with rc-331 and rc-332; candidate records rechecked against the release commit and remain applied.

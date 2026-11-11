@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+moses_bushnell_2016_frontier_isru_sustained_presence_mars_tm219182,Mars carbon-to-plastics pathway,H2 + CO2 feed can produce ethylene for plastics,qualitative,"§3.1.2, printed p. 6, reactions (3)–(5)",Proposed Mars process; it does not quantify production demand or utility.
+moses_bushnell_2016_frontier_isru_sustained_presence_mars_tm219182,Propylene by-product,described as valuable plastic-making stock,qualitative,"§3.1.2, printed p. 6",Use context only; not a measured market or asteroid-carbon product basis.
+moses_bushnell_2016_frontier_isru_sustained_presence_mars_tm219182,Mars carbon availability,"carbon, oxygen and hydrogen described as abundant",qualitative,"§3.1.2, printed p. 6",Mars atmospheric/process context; does not establish the value of asteroid-derived carbon.

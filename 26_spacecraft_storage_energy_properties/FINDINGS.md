@@ -204,3 +204,9 @@ Jeffrey Csank’s NASA presentation reports that RFC systems range from approxim
 ## R551 — NASA cryogenic COPV burst performance-factor comparator (2026-11-10)
 
 `ray_2008_cryogenic_copv_development_tests` — NASA’s test article table specifies a “minimum burst pressure” of 1.5×MOP (printed p. 4), and Tables 2–3 report a “Performance Efficiency Rating” of burst P_b V/W (printed pp. 6–7). Rechecking the six cryogenic tests reproduces each tabulated value from burst pressure, volume, and mass; conversion gives 326.5–416.6 kJ/kg. Spacecost’s COPV factor is 392 kJ/kg, within this interval, but the tests cover two liner materials in 1.8 ft³ cryogenic helium-pressurization vessels, not a generic supercritical-gas tank. The NASA data directly address the same parameter and replace the upstream note’s claim that no registered source gives PV/W; they do not establish the generic value or [250,600] range. Open **rc-417** for citation and applicability review. Extracted: `extracted_data/r551_nasa_copv_pressure_volume_weight_performance.csv`.
+## R562 — storage duration comparator and scenario scope applied (2026-11-10)
+
+At economicspace@e2ad48767b0e81489031b724417b1a03e6dfc1fb, the 72 h dark-period note cites Fincannon’s lunar storage requirements and describes 72 h as a scenario cap rather than a battery limit (rc-411). Citation and scope request applied; value unchanged.
+## R564 — Storage and tank comparators now carry scope limits (2026-11-10)
+
+At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Jones’s Shuttle water-tank mass is identified as pressurized-tank mass, not passive shade/seal mass (rc-373); Kascak et al.’s 35-minute eclipse is limited to a 92-minute ISS orbit (rc-410); NASA’s 400 Wh/kg RFC result is scoped to a 1 kW, 120 h lunar-polar design rather than a general system value (rc-414); and Ray’s six cryogenic COPV tests are distinguished from a generic vessel (rc-417). The storage and containment estimates remain unchanged.

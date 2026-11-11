@@ -72,3 +72,6 @@ R492 — NASA Glenn’s ‘Propulsion Options: RL10B-2…’ slide (slide 7) giv
 ## R494 - Apollo LM lander dry fraction
 
 - **nasa_1969_apollo10_press_kit_lm4_mass** (printed p. 44): NASA lists LM-4’s descent stage at 4,703 lb dry and its loaded descent propulsion system at 18,134 lb. The derived dry/(dry+propellant) fraction is 0.20599, close to `spacecost`’s `LANDER_DRY_MASS_FRAC=0.20` and its approximate Apollo LM benchmark. This is an Apollo lunar LM configuration; the same generic constant is used in other powered-descent chains. rc-360 records the source and scope gap; no numeric replacement inferred. `extracted_data/r494_apollo10_lm4_lander_dry_fraction.csv`.
+## R564 — Tug and lander mass proxies now name their bases (2026-11-10)
+
+At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, the 465 s tug Isp is identified as an RL10B-2 representative proxy distinct from the 452 s hydrolox row (rc-358); the 0.10 tug dry fraction cites the ICPS/DCSS analogue and removes the unsupported Centaur V comparison (rc-359); and the 0.20 generic lander proxy cites Apollo 10 LM-4 masses and narrows its scope (rc-360). Numeric values remain unchanged.

@@ -529,3 +529,16 @@ Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_PROCESSING_KWH_PER_KG["ph
 `mcmillan_etal_2016_nrel_lime_calcination_energy`: NREL/INL Appendix N reports a theoretical lime-kiln minimum of 3.18 GJ/t CaO assuming complete limestone conversion (p. 162); its approximate 100:56 CaCO₃-to-CaO mass relation (p. 165) converts this to 0.4947 kWh/kg CaCO₃, computed here. The report separately lists kiln net heat of 3,600–7,500 kJ/kg lime and electricity of 10–45 kWh/t by kiln type (Table N-1, p. 161).
 
 Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_PROCESSING_KWH_PER_KG["carbonates"]` = 1 kWh/kg; its comment says carbonate calcination is approximately 0.5 kWh/kg CaCO₃ in a lime kiln but names no source or energy boundary. Verdict: the comment’s 0.5 figure matches the theoretical-minimum conversion, while actual kiln heat and electricity are distinct. These industrial values do not directly establish an asteroid-carbonate process allowance. Retain 1 kWh/kg only as an engineering scenario pending a defined process boundary. `rc-395`. Extracted: `extracted_data/r529_nrel_lime_calcination_energy.csv`.
+## R562 — economicspace comparator comments applied to excavation candidates (2026-11-10)
+
+At economicspace@e2ad48767b0e81489031b724417b1a03e6dfc1fb, RASSOR 2.0 is identified as a planetary-excavator comparator while 2,000 kg remains a scenario (rc-370); RAP mission duration is distinguished from asteroid stay (rc-371); OSIRIS-REx dry mass is distinguished from a 500 kg floor (rc-376); and Rustenburg plant ratio replaces the unsupported PGM ratio generalization with scope limits (rc-388). These citation/scope requests are applied without changing values. The 0.10 mining-rate review remains open: the RASSOR comparator is not a matched asteroid throughput measurement (rc-309).
+## R563 — Default per-mission mining cap remains an unmeasured bound (2026-11-10)
+
+At economicspace@e2ad48767b0e81489031b724417b1a03e6dfc1fb, `verification_sheet.py --check` flags I12 `max_mining_fraction=1.0` as needing backing; the configured 100% is a model cap on per-mission extraction, not a measured accessible fraction for a body. **rc-245** remains open and distinguishes this per-mission cap from cumulative programme depletion.
+
+
+## R569 — NASA lunar-water purification boundary (2026-11-10)
+
+`paz_2023_lunar_water_propellant_processing_assessment`: NASA’s assessment says water from a lunar permanently shadowed region must be separated and purified before electrolysis (PDF p. 1). It identifies freeze distillation and sub-micronic filtration; PEM electrolysis requires ultrapure/deionized water, while SOE does not, and system comparisons should include purification and gas drying (PDF pp. 1–2). The two-page assessment gives no specific energy per kilogram.
+
+Upstream: spacevalue `spacevalue/catalog.py` sets `IN_SPACE_PROCESSING_KWH_PER_KG["water"]` to 0.5 kWh/kg and describes “filtration and phase change only,” without a cited calculation. Verdict: process-boundary citation gap; NASA’s lunar assessment clarifies purification steps but supplies no numerical comparator for this allowance. Keep the value pending a sourced calculation with a defined feed/product boundary; no replacement inferred. **rc-434**. Extracted: `extracted_data/r569_nasa_lunar_water_purification_boundary.csv`.

@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+paz_2023_lunar_water_propellant_processing_assessment,separation and purification precede electrolysis,not reported,process sequence,"PDF p. 1, Introduction","No energy per kg is stated. The assessment treats extraction, capture, purification, and electrolysis as an end-to-end chain."
+paz_2023_lunar_water_propellant_processing_assessment,freeze distillation for volatile separation,not reported,process step,"PDF p. 1, Water Purification",Purification route for lunar PSR water; not an energy measurement.
+paz_2023_lunar_water_propellant_processing_assessment,sub-micronic filtration for dust removal,not reported,process step,"PDF p. 1, Water Purification",The assessment says a filter may reduce dust in captured water; no specific energy is reported.
+paz_2023_lunar_water_propellant_processing_assessment,purification requirements depend on electrolyzer type,not reported,process boundary,"PDF pp. 1–2, Water Purification and Water Electrolysis",PEM requires ultrapure/deionized water; SOE does not. A comparison should include purification and gas drying at system level.
