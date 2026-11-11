@@ -72,3 +72,6 @@ The $588.5M 'Spacecraft development (NRE)' anchor is nominal FY2011-FY2016 oblig
 At `spacecost@19e1a31`, the `Mission operations` row is $40.8M per mission-year, based on $31.4M nominal and a Dec-2019-to-Sep-2026 CPI factor stated as 1.2992. The note also says a Dec 2018 base gives ~$41.5M (factor 1.3228) and a Dec 2020 base gives ~$40.3M (factor 1.2834). Using the same CPIAUCSL series consistently, Dec 2018 gives 1.330466 and $41.7766M (~$41.8M); Dec 2019 gives $40.8296M (~$40.8M); Dec 2020 gives $40.2975M (~$40.3M). Thus the discrepancy is isolated to the Dec-2018 alternative sensitivity; the central value and Dec-2020 comparison still round as written.
 
 Verdict: `rc-295` asks to correct the Dec-2018 alternative-base figure only. The $40.8M point estimate is unchanged. `extracted_data/r377_mission_ops_cpi_sensitivity.csv`.
+## R564 — Mission-operations CPI sensitivity corrected (2026-11-10)
+
+The BLS CPI-U monthly series gives the December 2018 factor 336.298/252.767 = 1.330466; applied to the $31.4M/year base, the alternative is about $41.8M. The main $40.8M point estimate remains unchanged. `rc-295` is applied in spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c. Extracted: `extracted_data/r377_mission_ops_cpi_sensitivity.csv`.

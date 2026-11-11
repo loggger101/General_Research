@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_discovery_2014_ao_qa_heeet_cost,Preferred costing basis for HEEET,Generic cost-per-kilogram is not ideal,statement,"PDF p. 9, T-21",NASA response to projected $/kg question; applies to HEEET TPS.
+nasa_discovery_2014_ao_qa_heeet_cost,"Current best-estimate HEEET heat-shield cost, 1 m diameter",3,million USD,"PDF p. 9, T-21",Size-based estimate; not a material $/kg rate and not PICA-X.
+nasa_discovery_2014_ao_qa_heeet_cost,"Current best-estimate HEEET heat-shield cost, 2 m diameter",6,million USD,"PDF p. 9, T-21",Size-based estimate; not a material $/kg rate and not PICA-X.
+nasa_discovery_2014_ao_qa_heeet_cost,"Current best-estimate HEEET heat-shield cost, 3 m diameter",11,million USD,"PDF p. 9, T-21",Size-based estimate; not a material $/kg rate and not PICA-X.

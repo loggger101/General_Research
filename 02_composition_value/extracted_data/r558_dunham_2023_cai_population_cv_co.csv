@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+dunham_etal_2023_cai_populations,CV CAIs counted,3027,inclusions,Table 3,"Compiled literature population; majority (2,479) found in Allende."
+dunham_etal_2023_cai_populations,CV chondrites represented,12,chondrites,Table 3,
+dunham_etal_2023_cai_populations,CV average CAI modal abundance,5.4,area%,Table 3,Total CAIs; not an individual mineral fraction or body mass fraction.
+dunham_etal_2023_cai_populations,CV CAI modal abundance range,0.7–13.1,area%,Table 3,Min–max across compiled literature.
+dunham_etal_2023_cai_populations,CO CAIs counted,1332,inclusions,Table 3,Compiled literature population.
+dunham_etal_2023_cai_populations,CO chondrites represented,15,chondrites,Table 3,
+dunham_etal_2023_cai_populations,CO average CAI modal abundance,1.5,area%,Table 3,Total CAIs; not an individual mineral fraction or body mass fraction.
+dunham_etal_2023_cai_populations,CO CAI modal abundance range,0.5–3.6,area%,Table 3,Min–max across compiled literature.
+dunham_etal_2023_cai_populations,"Hibonite-rich CAIs, CV",Rare,qualitative category,Table 3,CV group classification.
+dunham_etal_2023_cai_populations,"Hibonite-rich CAIs, CO",Common,qualitative category,Table 3,CO group classification.

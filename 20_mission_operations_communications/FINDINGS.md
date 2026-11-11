@@ -138,3 +138,10 @@ At `spacecost@19e1a31`, `Communications relay & data downlink` is $50 per Mbit r
 The registered NASA/JPL `nasa_mocs_2014_dsn_aperture_fee_algorithm` §2.1.5 (PDF p.17) covers data from a landed object relayed through an orbiting spacecraft to a DSN station. It allocates a pro-rata share of DSN station cost using a one-hour minimum and excluding station configuration time; the guide calculates “the time required to return the total amount of relayed data.” This is a NASA DSN planning method for a specific relay architecture, not a commercial $/Mbit quote; it cannot set the upstream row’s numeric rate.
 
 Verdict: `rc-298` asks to separate relay and direct-downlink scope and state transfer-rate/pass assumptions before representing the estimate as a general $/Mbit cost. The value and range remain unchanged. `extracted_data/r380_nasa_mocs_relay_costing_method.csv`.
+## R564 — DSN rate uses the latest published CPI-U month (2026-11-10)
+
+At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, the 34-m DSN hour is $2,095 using the September 2026 CPI-U factor; the 70-m comparator is about $6,286. `rc-297` applies the same-quantity price update; the source is the JPL Rev H hourly rate carried by the BLS CPI-U series.
+
+## R565 — DSN rate rechecked against the applied release (2026-11-10)
+
+Spacecost 0.17.0 / data contract 1.26.0, at main commit `aaed2720ee44610c5cf90fc204db160deb5669bb`, carries the JPL Rev H $1,792 34-m rate to September 2026 CPI-U as $2,095; its 70-m comparator is about $6,286. The current row agrees with the rc-297 proposal. Candidate rechecked against the release commit; applied.

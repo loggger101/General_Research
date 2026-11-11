@@ -47,6 +47,10 @@ Four NTRS papers hosted, one companion registered:
 
 **rc-056** opened as a note recording these. `extracted_data/r84_cislunar_demand_forecasts_key_numbers.csv`.
 
+## R567 — Demand-class shares lack a mass-allocation basis (2026-11-10)
+
+Kornuta et al., “Commercial Lunar Propellant Architecture,” p. 3, reports near-term lunar-derived propellant demand of 450 MT/yr and customer-input demand of nearly 1,640 MT/yr. Northrop Grumman’s LunA-10 study, p. 5, gives 100 MT of projected construction mass and 500–2,500 MT/yr of propellant transport under its Starship price assumptions. At spacevalue main `f836611f15dbb0ef511fe134bd5ac8192e3bea16`, `_DEMAND_SHARE_BY_CLASS` assigns 0.55 to propellant, 0.25 to structural, 0.15 to shielding, 0.05 to chemical, and an additive 0.0005 to trace; the code calls these judgments and says the four bulk shares partition the import budget. The cited forecasts do not provide those destination-level class shares or the trace fraction. **rc-432** records the citation and scenario-allocation gap; no share change is inferred. Existing extraction: `extracted_data/r84_cislunar_demand_forecasts_key_numbers.csv`.
+
 ## R92 - Per-satellite GEO station-keeping mass (2026-10-01)
 
 - **rawlin_majcher_1991_nssk_mass_comparisons_ep_systems** (TM-105153, hosted): 46 m/s/yr NSSK over 15 years, 1640 kg dry: chemical 459.3043 kg (30.62 kg/yr, Isp 310 s; Tsiolkovsky check within +0.18%), ion 69.28853 kg (4.62 kg/yr, Isp 2,467 s) at ~+210.8 kg dry mass.
