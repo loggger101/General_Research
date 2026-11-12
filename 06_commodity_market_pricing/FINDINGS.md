@@ -497,3 +497,24 @@ This block records the rest of what those PRs did.
 - No candidate found a like-for-like source; each stays a scenario upstream.
   rc-455 and rc-456 (spacevalue source label), rc-433, rc-484, rc-481 and
   rc-386 stay `open`.
+
+## R671 - economicspace citation candidates applied as scenario labels (2026-11-12)
+
+economicspace 46e0315 (PR #204, master 1.74.0, comments only). Ignoring docstrings, modules/calc.py and
+campaign/worked_calculation.py parse to the same ASTs as master 1.73.0.
+
+- rc-423: the return-structure comment and MODEL.md now give Orbital's Cygnus
+  PCM figures (1,677 kg dry for 2,000 kg payload; 1,995 kg for 2,700 kg) in
+  place of the unsourced ~1,500 kg and 0.40; 0.15 stays an engineering
+  estimate.
+- rc-463: the TAU_CRUISE_FIT_YR_PER_M_S comment names its spacecost delta-v
+  cases and calls the fit a scenario prior; the 0.5-yr floor is a separate
+  judgement.
+- rc-465: the surplus_price_fraction comment calls 0.5 a scenario dial with no
+  price-response evidence.
+- rc-491: the max_mining_fraction comment calls 1.0 a no-depletion ceiling, not
+  a recoverable-reserve claim (USGS OFR 2017-1041).
+- rc-518: the nre_recurring_overlap_fraction comments make the cost-regression
+  rationale conditional and call 0.30 a scenario.
+- rc-519: the aerocapture_dv_savings_m_s comment calls 4,000 m/s a generic
+  fallback scenario with no trajectory behind it.
