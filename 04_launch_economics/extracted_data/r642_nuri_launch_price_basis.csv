@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_nuri_price_estimate_code_current_2026,list_price_usd,36700000,USD,reference/launch_vehicles.csv row 29,2026 reference year; estimate; geometric center of stored $30M-$45M endpoints
+spacecost_nuri_price_estimate_code_current_2026,list_price_usd_low,30000000,USD,reference/launch_vehicles.csv row 29,Estimate low endpoint
+spacecost_nuri_price_estimate_code_current_2026,list_price_usd_high,45000000,USD,reference/launch_vehicles.csv row 29,Note says there is room for an unpriced government vehicle; it gives no calculation
+wikipedia_nuri_rocket_article,estimated launch cost,around US$30 million,USD,Usage section,Article reports approximate point estimate and cites SBS Korean-language article dated 2021-10-30; source does not state a range or 2026 conversion

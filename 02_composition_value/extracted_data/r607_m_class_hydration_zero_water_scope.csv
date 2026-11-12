@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+rivkin_howell_lebofsky_clark_britt_2000_m_class_hydration,M-class observed sample with 3 μm hydration feature,>35%,of 27 asteroids,"Abstract, printed p. 351",The authors observed 20 M-class asteroids and combined these with earlier surveys for 27 total; surface hydration-feature frequency is not a bulk water mass fraction.
+rivkin_howell_lebofsky_clark_britt_2000_m_class_hydration,Large M-class objects with hydration features,75,% for D>65 km,"Abstract, printed p. 351",Size-dependent surface-feature result; not a class-wide bulk fraction.
+rivkin_howell_lebofsky_clark_britt_2000_m_class_hydration,Small M-class objects with hydration features,10,% for D<65 km,"Abstract, printed p. 351",Size-dependent surface-feature result; not a class-wide bulk fraction.
+asteroidcatalog_m_class_zero_ice_fraction_code_current_2026,M ice_fraction,0.0,mass fraction,"taxonomy_composition.csv row M; taxonomy.py TAXONOMY_COMPOSITION[""M""]",Zero is assigned without a fraction-specific source; module explicitly says every ice fraction has no source.

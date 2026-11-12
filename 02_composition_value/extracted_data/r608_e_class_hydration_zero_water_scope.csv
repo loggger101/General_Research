@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+rivkin_howell_lebofsky_clark_britt_nolan_branston_1995_e_class_hydration,E-class asteroid 44 Nysa,confirmed 3-μm absorption band,qualitative,"Abstract, printed p. 90",Surface spectral evidence of hydrated minerals; does not quantify bulk or accessible water.
+rivkin_howell_lebofsky_clark_britt_nolan_branston_1995_e_class_hydration,E-class asteroid 64 Angelina,possible 3-μm absorption,qualitative,"Abstract, printed p. 90",Possible surface feature; not a class-wide water fraction.
+asteroidcatalog_e_zero_ice_fraction_code_current_2026,Tholen E ice_fraction,0.0,mass fraction,"taxonomy_composition.csv row E; taxonomy.py TAXONOMY_COMPOSITION[""E""]",The E row is an aubrite/enstatite analog and receives a hard zero; the module says every ice fraction lacks a source.

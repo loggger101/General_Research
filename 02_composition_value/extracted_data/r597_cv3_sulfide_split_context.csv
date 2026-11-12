@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235,CV3 reduced samples: total sulfide modal range,2.4–5.1,vol%,"PDF p. 1, Results",Aggregate total sulfide abundance; not a species ratio.
+howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235,CV3 oxidized samples: total sulfide modal range,2.9–8.1,vol%,"PDF p. 1, Results",Aggregate total sulfide abundance; does not quantify pyrrhotite versus pentlandite.
+howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235,CV3 subgroup classification criterion,Ni content of sulphide,text,"PDF p. 1, Introduction",The criterion distinguishes reduced/oxidized CV3 subgroups; it is not a pyrrhotite/pentlandite abundance split.
+asteroidcatalog_detailed_sulfide_split_code_current_2026,_SULFIDE_NI assignment,pentlandite=0.50; pyrrhotite=0.50,fraction of modeled sulfide,"mineralogy.py lines 507, 532, 551","Code assigns the split to Cgh (CK) and K (oxidized CV); preserved here as the upstream value, not a measured datum."

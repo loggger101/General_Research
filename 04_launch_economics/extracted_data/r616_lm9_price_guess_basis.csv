@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm9_price_guess_code_current_2026,Long March 9 estimated price point,707000000,USD,"reference/launch_vehicles.csv, Long March 9 row",price_basis=estimate; row states price is a guess; reference_year=2026
+spacecost_lm9_price_guess_code_current_2026,Long March 9 estimated price low,500000000,USD,"reference/launch_vehicles.csv, Long March 9 row",low endpoint; derivation not stated
+spacecost_lm9_price_guess_code_current_2026,Long March 9 estimated price high,1000000000,USD,"reference/launch_vehicles.csv, Long March 9 row",high endpoint; derivation not stated
+,Long March 9 planned first flight year,2033,year,"reference/launch_vehicles.csv, Long March 9 row",Pipeline’s own scenario/provenance record

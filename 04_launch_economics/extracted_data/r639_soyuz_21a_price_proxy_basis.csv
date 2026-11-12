@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_soyuz_21a_price_estimate_code_current_2026,list_price_usd,32400000,USD; reference year 2026,"reference/launch_vehicles.csv, Soyuz-2.1a row 15",Stored estimate; note anchors it to a 2018 $35M quote for Soyuz-2.1b without an upper stage.
+spacecost_soyuz_21a_price_estimate_code_current_2026,list_price_usd_low,30000000,USD; reference year 2026,"reference/launch_vehicles.csv, Soyuz-2.1a row 15",Stored low endpoint; derivation is not stated.
+spacecost_soyuz_21a_price_estimate_code_current_2026,list_price_usd_high,35000000,USD; reference year 2026,"reference/launch_vehicles.csv, Soyuz-2.1a row 15",Stored high endpoint; derivation is not stated.
+spacecost_soyuz_21a_price_estimate_code_current_2026,price_basis,estimate,category,"reference/launch_vehicles.csv, Soyuz-2.1a row 15",The row says the estimate is against a 2018 quote; no inflation or currency conversion is specified.
+glavkosmos_tass_2018_soyuz_price,Soyuz-2.1 without Fregat price,about 35 million,USD; 2018 report,"TASS article body, sentence beginning “The launch of the Soyuz-2.1 without the Fregat booster...”",The report does not identify 2.1a versus 2.1b or define whether all launch services are included.

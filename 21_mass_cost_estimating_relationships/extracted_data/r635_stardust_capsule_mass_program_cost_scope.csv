@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+jpl_2006_stardust_return_capsule_mass_cost_scope,Stardust sample return capsule mass,46,kg,"Quick Facts, printed p. 6 (PDF page 8)",Component mass only; the press kit does not give a capsule production cost.
+jpl_2006_stardust_return_capsule_mass_cost_scope,Stardust spacecraft development cost,128400000,USD (as reported; dollar year unspecified),"Quick Facts, printed p. 6 (PDF page 8)",Whole-spacecraft development cost; no capsule allocation.
+jpl_2006_stardust_return_capsule_mass_cost_scope,Stardust mission operations cost,40000000,USD (as reported; dollar year unspecified),"Quick Facts, printed p. 6 (PDF page 8)","Mission operations, not recurring capsule manufacturing."
+jpl_2006_stardust_return_capsule_mass_cost_scope,Stardust total program cost excluding launch vehicle,168400000,USD (as reported; dollar year unspecified),"Quick Facts, printed p. 6 (PDF page 8)",Whole-program total; no capsule allocation.

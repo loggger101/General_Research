@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm4c_price_proxy_code_current_2026,list_price_usd,38700000,USD; reference year 2026,"reference/launch_vehicles.csv, Long March 4C row 33",Stored estimate; note proxies from a $50M (2006) Long March 4B price without a named source or conversion.
+spacecost_lm4c_price_proxy_code_current_2026,list_price_usd_low,30000000,USD; reference year 2026,"reference/launch_vehicles.csv, Long March 4C row 33",Stored low endpoint; derivation is not stated.
+spacecost_lm4c_price_proxy_code_current_2026,list_price_usd_high,50000000,USD; reference year 2026,"reference/launch_vehicles.csv, Long March 4C row 33",Stored high endpoint; derivation is not stated.
+spacecost_lm4c_price_proxy_code_current_2026,price_basis,estimate,category,"reference/launch_vehicles.csv, Long March 4C row 33",The code does not identify the underlying Long March 4B quote or adjustment method.
+wikipedia_long_march_4c_article,price statement,None in the read article,statement,R273; article capacity and launch-statistics passages,Existing source record notes the article supports capacity/statistics; R273 says no available cost statement.
+casc_cz4c_product_page_2015,official published price,No price stated,statement,R273; official product-page content,"Supports SSO capability, not price."
+casc_cz4c_launch_report_20260417,official published price,No price stated,statement,R273; official launch-report content,"Supports current 3 t at 700 km SSO and launch date, not price."

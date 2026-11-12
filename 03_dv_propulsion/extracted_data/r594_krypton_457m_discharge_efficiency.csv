@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2003_tm_212700_krypton_457m_performance,NASA-457M krypton discharge specific impulse,2039,s,"Appendix, printed p. 8, 299.7 V operating point",Measured discharge Isp excludes cathode flow.
+nasa_2003_tm_212700_krypton_457m_performance,NASA-457M krypton discharge efficiency,0.50,fraction,"Appendix, printed p. 8, same 299.7 V operating point",Reported discharge efficiency; the paper defines it using anode flow and discharge power (printed p. 4). Not a generic total-efficiency measurement.
+nasa_2003_tm_212700_krypton_457m_performance,NASA-457M test class and power range,50 kW class; 6.4–72.5,kW,"Abstract, printed p. 1",NASA-457M was designed for xenon; experiment measured krypton. Scope comparator only.

@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_sulfur_processing_energy_code_current_2026,sulfur in-space processing-energy allowance,1.0,kWh/kg raw feedstock (catalog map header),"spacevalue/spacevalue/catalog.py, IN_SPACE_PROCESSING_KWH_PER_KG, sulfur entry and v1.11.0 comment",Comment says “melting and filtering”; no feed composition or calculation is given.
+li_yao_2014_zinc_residue_sulfur_distillation_energy,electricity to handle zinc direct-leach residue,0.59,kWh/kg residue,"Li et al. (2014), abstract, journal p. 95; 1,200 kg batch at 460°C",Water-rich industrial residue; denominator is raw residue handled.
+li_yao_2014_zinc_residue_sulfur_distillation_energy,electricity to produce elemental sulfur,1.24,kWh/kg elemental sulfur,"Li et al. (2014), abstract, journal p. 95; 1,200 kg batch at 460°C","Reported purity 96.22%, recovery >85%; denominator is recovered sulfur product, not asteroid sulfur-bearing raw feed."

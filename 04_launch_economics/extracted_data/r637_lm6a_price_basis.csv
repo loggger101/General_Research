@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm6a_price_estimate_code_current_2026,list_price_usd,45800000,USD; reference year 2026,"reference/launch_vehicles.csv, Long March 6A row",Geometric center derived from the stated low/high band; price_basis=estimate.
+spacecost_lm6a_price_estimate_code_current_2026,list_price_usd_low,35000000,USD; reference year 2026,"reference/launch_vehicles.csv, Long March 6A row",Band endpoint; no derivation named in the row note.
+spacecost_lm6a_price_estimate_code_current_2026,list_price_usd_high,60000000,USD; reference year 2026,"reference/launch_vehicles.csv, Long March 6A row",Band endpoint; no derivation named in the row note.
+spacecost_lm6a_price_estimate_code_current_2026,price_basis,estimate,category,"reference/launch_vehicles.csv, Long March 6A row",The same row note says only “Price estimated.”
+spacecost_lm6a_price_estimate_code_current_2026,reference_year,2026,year,"reference/launch_vehicles.csv, Long March 6A row",No price source or conversion/inflation basis is identified.
+spacecost_lm6a_price_estimate_code_current_2026,usd_per_kg_to_leo,5725,USD/kg,"reference/launch_vehicles.csv, Long March 6A row","Derived as 45,800,000 USD / 8,000 kg; follows the price input."
+,geometric_band_center_check,sqrt(35000000 * 60000000) = 45825756.8; rounds to 45800000,USD,comparison computed here from the two stored endpoints,"Arithmetic verifies the center-of-band calculation, not the endpoint evidence."
+spacenexus_lm6a_price_status_2026,published_launch_price_status,Not published,statement,"Launch price field, lines 96-98; FAQ, lines 174-176",Third-party status statement; no price estimate or cost boundary is supplied.
+casc_cz6a_product_page,official_product_page_price,No price stated in the previously read product-page content,statement,existing registry record; official capacity passage,CASC product page is registered as supporting official capacity context under rc-215; it does not provide a price basis.

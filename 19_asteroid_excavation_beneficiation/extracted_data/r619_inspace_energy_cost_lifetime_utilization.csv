@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_inspace_energy_lifetime_utilization_code_current_2026,power-system capital cost,800,USD per installed W,"spacevalue/catalog.py, _INSPACE_POWER_USD_PER_W",The code identifies this with the spacecost Power system (solar + battery) row.
+spacevalue_inspace_energy_lifetime_utilization_code_current_2026,assumed operating life,15,years,"spacevalue/catalog.py, _INSPACE_PLANT_LIFE_YR",Shared denominator for in-space energy capital cost and refinery capital amortization.
+spacevalue_inspace_energy_lifetime_utilization_code_current_2026,assumed hours per year,8766,hours/year,spacevalue/catalog.py lines 1140-1146; 365.25 × 24,Formula assumes every hour in each year produces rated output.
+,lifetime energy per installed watt,131490.0,Wh/W,"Calculated here: 15 × 8,766","No availability, degradation, or maintenance multiplier is applied."
+,lifetime energy per installed watt,131.49,kWh/W,"Calculated here: lifetime Wh divided by 1,000",Derived from the code inputs.
+,capital energy cost at full utilization,6.084112860293558,USD/kWh,Calculated here: $800/W divided by 131.49 kWh/W,Implicit 100% effective output across the assumed 15-year life.
+,capital energy cost at 80% effective output,7.605141075366948,USD/kWh,Calculated here: full-utilization cost divided by 0.80,Sensitivity only; not an asserted solar availability estimate.
+,capital energy cost at 50% effective output,12.168225720587117,USD/kWh,Calculated here: full-utilization cost divided by 0.50,Sensitivity only; not an asserted solar availability estimate.
+spacevalue_inspace_energy_lifetime_utilization_code_current_2026,refining cost formula,process kWh/kg × capital USD/kWh + plant USD/kg processed,formula,spacevalue/catalog.py lines 1243-1256,The helper is used to derive in_space_processing_usd_per_kg for listed commodities.

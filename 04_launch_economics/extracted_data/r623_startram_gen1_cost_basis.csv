@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+powell_maise_rather_2010_startram_gen1_cost,Gen-1 total cargo craft mass,40,metric tons,"Table 5.3, PDF p. 8",Reference design; Table 5.4 cost basis uses a 35-ton payload per launch.
+powell_maise_rather_2010_startram_gen1_cost,Gen-1 payload mass,35,metric tons per launch,"Tables 5.3–5.4, PDF pp. 8, 10",Reference design / Table 5.4 cost basis.
+powell_maise_rather_2010_startram_gen1_cost,Gen-1 acceleration,30,g,"Table 5.3, PDF p. 8",Reference design; range of potential designs 20–50 g.
+powell_maise_rather_2010_startram_gen1_cost,Launch cadence,10,launches per day,"Tables 5.3–5.4, PDF pp. 8, 10",Table 5.4 cost basis.
+powell_maise_rather_2010_startram_gen1_cost,Annual payload throughput,128000,metric tons per year,"Table 5.3, PDF p. 8",Projected reference design throughput.
+powell_maise_rather_2010_startram_gen1_cost,Projected facility construction cost,19.25,billion dollars,"Table 5.4, PDF p. 10","Projected construction cost, not an incurred cost."
+powell_maise_rather_2010_startram_gen1_cost,Amortized capital cost,0.52,million dollars per launch,"Table 5.4, PDF p. 10",10-year amortization; table specifies 3650 launches/year.
+powell_maise_rather_2010_startram_gen1_cost,Total cost per launch,1.50,million dollars per launch,"Table 5.4, PDF p. 10",Projected operating plus amortized capital cost for 35-ton payload.
+powell_maise_rather_2010_startram_gen1_cost,Total cost per payload mass,43,dollars per kilogram,"Table 5.4, PDF p. 10",Proponent model estimate; not an observed or quoted service price.

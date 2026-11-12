@@ -74,6 +74,8 @@ _Backings: per-spectral-type density and PGM factors in AsteroidCatalog `referen
 | verbiscer_et_al_2007_enceladus_geometric_albedos | T1 | Verbiscer etal2007: HST opposition photometry | abstract read | rc-283: observed geometric albedos above unity |
 | asteroidcatalog_geometric_albedo_ceiling_record_2026 | T4 | geometric-albedo upper-bound witness | read, not hosted | rc-283: quality policy versus physical limit |
 | mainzer_etal_2011_neowise_spectrophotometric_taxonomic_albedos | T1 | Mainzer et al. 2011 NEOWISE albedo medians by asteroid taxonomy | verified live, not hosted | Tholen-M albedo fallback comparator (rc-386) |
+| asteroidcatalog_m_class_density_fallback_current_2026 | T4 | AsteroidCatalog M-class density fallback, pinned main snapshot | verified live, not hosted | rc-496: 3.9 g/cm³ is a Psyche-anchored point applied to unmeasured M-class bodies |
+| zhang_etal_2023_m_type_density_variation | T1 | Zhang et al. 2023, individual M-type asteroid density variation | verified live, not hosted | Table 5 compiles heterogeneous Psyche/Kalliope/Klotho density estimates; not a class fit |
 
 ## Domain 2 — Composition → commodity value mapping
 
@@ -107,7 +109,7 @@ _Backings: AsteroidCatalog material fractions and spacevalue `catalog.py` minera
 |  wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals | T3 | Geochemistry of the platinum metals (USGS Bulletin 1214-A) — U.S. Geological Survey Bulletin 1214-A | full text hosted (USGS Bulletin 1214-A chapter, public domain; 1,809,279 B) | spacevalue catalog.py nickel-iron yields: siderite total-PGM concentration |
 | nichiporuk_brown_1965_pt_pd_iron_meteorites | T1 | The distribution of platinum and palladium metals in iron meteorites and in the metal phase of ordinary chondrites — Journal of Geophysical Research 70:459-470 | registered, not pulled | spacevalue catalog.py nickel-iron yields: siderite total-PGM concentration |
 | scott_wasson_1975_classification_properties_iron_meteorites | T1 | Classification and properties of iron meteorites — Reviews of Geophysics and Space Physics 13(4):527-546 (1975) | registered, not pulled | spacevalue catalog.py nickel-iron yields: order-of-magnitude mean trace metals (Ga/Ge/Mo/W/Re) over the common iron meteorite groups |
-| dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites | T1 | Analysis of ordinary chondrites using powder X-ray diffraction: 1. Modal mineral abundances in L and LL chondrites — Meteoritics & Planetary Science (MAPS 45, 123 per upstream citation) | registered, not pulled | AsteroidCatalog comp_phases_detailed: S/Sq/Q silicate split olivine ~0.58 / orthopyroxene ~0.24 / pyroxene ~0.06 / plagioclase ~0.12 + troilite and chromite body fractions |
+| dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites | T1 | Analysis of ordinary chondrites using powder X-ray diffraction: 1. Modal mineral abundances — Meteoritics & Planetary Science 45(1):123–134 | verified live, not hosted | Comparator for AsteroidCatalog _SIL_OC shares assigned to S/Sq/Q/Sk/Sl; no direct class-wide vector derivation (rc-466) |
 | king_schofield_2015_ci_modal_mineralogy_xrd | T1 | King et al., CI and CI-like chondrite modal mineralogy (GCA 165:148-160, 2015) | read, not hosted | CI XRD modes: 81–84 vol% phyllosilicate; comparator for the unsourced AsteroidCatalog `_SIL_CI` 95/5 mass split |
 | howard_alexander_2015_hydrous_meteorite_phyllosilicate_classification | T1 | Classification of hydrous meteorites (CR, CM and C2 ungrouped) by phyllosilicate fraction — Geochimica et Cosmochimica Acta 149:206-222 (2015) | registered, not pulled | AsteroidCatalog comp_phases_detailed: CM (Cg/Ch/G) phase split — phyllosilicate 70-90 wt%, olivine + pyroxene most of the rest |
 | alexander_fogel_2007_macromolecular_organic_matter_chondrites | T1 | The origin and evolution of chondrites recorded in the elemental and isotopic compositions of their macromolecular organic matter — Geochimica et Cosmochimica Acta 71(19):4380-4403 (2007) | registered, not pulled | AsteroidCatalog comp_phases_detailed: carbon (C complex) IOM:soluble split 0.70:0.30 — the low end so the cheaper row is not over-credited |
@@ -152,6 +154,35 @@ _Backings: AsteroidCatalog material fractions and spacevalue `catalog.py` minera
 | wilbur_etal_2022_aubrite_sulfide_modes | T1 | Wilbur et al., aubrite modal sulfides (MAPS 57, 2022) | verified live, not hosted | 16-sample modal comparator for the E-type fixed sulfide shares (rc-420) |
 | dunham_etal_2023_cai_populations | T1 | Dunham et al. (2023), CV/CO CAI populations (MAPS 58:643–671) | verified live, not hosted | Table 3 gives total CAI area abundance and hibonite-rich frequency; population context only for rc-172, no individual oxide mass fractions |
 | gilmour_herd_2020_ordinary_chondrite_pge_partition | T1 | Gilmour & Herd, ordinary-chondrite PGE partitioning (MAPS 55:679–702) | verified live, not hosted | Table 4: measured group-specific PGE D_T/K ratios; comparator for current generic alloy phase multipliers (rc-433) |
+| asteroidcatalog_ttype_ice_fraction_code_current_2026 | T4 | AsteroidCatalog T-type ice-fraction code record | verified live, not hosted | rc-444: T row assigns 0.10 with no fraction-specific basis |
+| beck_etal_2021_c_complex_surface_water_abundance | T1 | Beck et al., C-complex surface-equivalent water abundance (Icarus 357:114125) | verified live, not hosted | 4.5 wt% population mean with ~4 wt% calibration uncertainty; not class-specific interior fractions (rc-445) |
+| asteroidcatalog_c_subtype_ice_fraction_code_current_2026 | T4 | AsteroidCatalog C-complex subclass ice-fraction code record | verified live, not hosted | rc-445: Cb/Cg/Cgh/Ch/F/G values lack subtype-specific basis |
+| mcadam_thomas_mcgraw_rivkin_emery_2024_s_complex_hydration | T1 | McAdam et al., hydration on nominally anhydrous S-complex asteroids (PSJ 5:254) | verified live, not hosted | 27/33 observations show 3 μm hydration signatures; possible surface sources do not quantify bulk water (rc-446) |
+| asteroidcatalog_s_complex_zero_water_code_current_2026 | T4 | AsteroidCatalog S-complex zero-water code record | verified live, not hosted | rc-446: zero-water boundary is undefined; surface hydration is not a bulk fraction |
+| jones_lebofsky_lewis_marley_1990_cpd_water_thermal_evolution | T1 | Jones et al. 1990, C/P/D water and thermal evolution (Icarus 88) | verified live, not hosted | D/P possible interior ice; D ≈50% is a hypothesis, not a measured current fraction (rc-448) |
+| asteroidcatalog_dz_ice_fraction_code_current_2026 | T4 | AsteroidCatalog pinned D/Z ice-fraction code record | verified live, not hosted | D/Z `ice_fraction=0.25`; unverified model default (rc-448) |
+| asteroidcatalog_p_ice_fraction_code_current_2026 | T4 | AsteroidCatalog pinned P ice-fraction code record | verified live, not hosted | P `ice_fraction=0.15`; unverified model default (rc-449) |
+| spacevalue_silicate_reference_price_code_current_2026 | T4 | Spacevalue silicate terrestrial price code record | verified live, not hosted | rc-455: five silicate rows use 0.05 USD/kg with generic source label |
+| indian_bureau_mines_december_2025_mineral_asp | T3 | Indian Bureau of Mines December 2025 average sale prices | verified live, not hosted | Table 6(a) lists selected mineral grades; no olivine/silicate price, comparator only (rc-455) |
+| spacevalue_unpriced_fe_ni_alloy_code_current_2026 | T4 | Spacevalue unpriced Fe-Ni alloy phase code record | verified live, not hosted | rc-456: kamacite and taenite have Fe/Ni yields but no terrestrial quote; Stage 2 marks unpriced |
+| asteroidcatalog_detailed_sulfide_split_code_current_2026 | T4 | AsteroidCatalog detailed sulfide split code record (0.13.1) | read, not hosted | `_SULFIDE_NI` 50/50 for Cgh and K; numerical species split is explicitly unsourced (rc-460) |
+| howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235 | T2 | Howard et al., CV3 modal mineralogy by PSD-XRD (LPSC 40, abstract 1235) | read, not hosted | Aggregate reduced/oxidized CV3 sulfide modes; comparator for the unsupported species split in rc-460 |
+| asteroidcatalog_ck_cgh_silicate_split_code_current_2026 | T4 | AsteroidCatalog CK/Cgh silicate split code record | read, not hosted | Cgh 50/40/10 conditional silicate shares; comment gives only a qualitative CK analogy (rc-461) |
+| martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools | T1 | Martin et al., CV–CK modal mineralogy (GCA 120:496–513) | read, not hosted | CK4 sample-level modal comparator; mapped-area caveat, not a class-wide split (rc-461) |
+| asteroidcatalog_k_silicate_split_code_current_2026 | T4 | AsteroidCatalog K/CV silicate split code record | read, not hosted | K `_SIL_CV` 75/20/5 conditional shares; comment gives no numerical derivation (rc-462) |
+| asteroidcatalog_l_silicate_split_code_current_2026 | T4 | AsteroidCatalog L-type conditional silicate split code record | read, not hosted | L 60/30/10 shares lack a numeric derivation; JWST surface spectra are qualitative (rc-464) |
+| asteroidcatalog_oc_silicate_split_code_current_2026 | T4 | AsteroidCatalog ordinary-chondrite silicate-split code record | verified live, not hosted | _SIL_OC 58/24/6/12 vector for S/Sq/Q/Sk/Sl lacks documented numeric mapping (rc-466) |
+| li_milliken_2015_hed_modal_mineralogy_spectral_models | T1 | Li & Milliken, HED modal mineralogy from spectral models (MAPS 50:1821–1850) | verified live, not hosted | 14 eucrite / 13 diogenite sample ranges; comparator, no whole-V-type mixture (rc-467) |
+| asteroidcatalog_v_silicate_split_code_current_2026 | T4 | AsteroidCatalog V-type silicate-split code record | verified live, not hosted | V 45/15/37/3 vector has no documented eucrite/diogenite mixture derivation (rc-467) |
+| asteroidcatalog_x_complex_ice_fraction_code_current_2026 | T4 | AsteroidCatalog X-complex ice-fraction code record | verified live, not hosted | X/Xc 0.05/0.04 have no documented P/M/E mixture basis (rc-468) |
+| asteroidcatalog_q_zero_ice_fraction_code_current_2026 | T4 | AsteroidCatalog Q-type zero-water code record | verified live, not hosted | Q `ice_fraction=0.00` has no class-specific water-boundary basis (rc-469) |
+| rivkin_howell_lebofsky_clark_britt_2000_m_class_hydration | T1 | Rivkin et al., 3-μm hydration features on M-class asteroids (Icarus 145) | verified live, not hosted | 27-object survey finds hydration features; surface evidence, not a bulk fraction (rc-470) |
+| asteroidcatalog_m_class_zero_ice_fraction_code_current_2026 | T4 | AsteroidCatalog M-type zero-water code record | verified live, not hosted | M `ice_fraction=0.00` lacks a defined water boundary (rc-470) |
+| rivkin_howell_lebofsky_clark_britt_nolan_branston_1995_e_class_hydration | T1 | Rivkin et al., 3-μm survey of E- and M-class asteroids (Icarus 117) | verified live, not hosted | E-class hydration features show surface context, not bulk water (rc-471) |
+| asteroidcatalog_e_zero_ice_fraction_code_current_2026 | T4 | AsteroidCatalog E-type zero-water code record | verified live, not hosted | Tholen E `ice_fraction=0.00` has no water-boundary basis (rc-471) |
+| asteroidcatalog_ttype_accessory_phase_code_current_2026 | T4 | AsteroidCatalog T-type accessory phase code record | verified live, not hosted | T accessory values troilite 8%, magnetite 3%; numerical basis open (rc-480) |
+| kwon_et_al_2022_t_type_asteroid_surface_environment | T1 | Kwon et al., large T-type asteroid surface environment (A&A 666, 2022) | verified live, not hosted | Surface spectra show OH/hydration and organics; no bulk wt% accessories (rc-480) |
+| asteroidcatalog_x_complex_albedo_mix_code_current_2026 | T4 | AsteroidCatalog X/Xc albedo-mixture code record | verified live, not hosted | Measured-albedo P/M/E split may not represent no-albedo population (rc-481) |
 
 ## Domain 3 — Δv budgets and propulsion performance tables
 
@@ -226,6 +257,12 @@ _Backings: spacecost `delta_v_segments.csv` and the Isp rows of `propellants.csv
 | lewis_etal_2020_mars_ascent_vehicle_synergy | T2 | Lewis et al., NASA Langley, “A Parametric Assessment of Lunar and Mars Ascent Vehicle Synergy” (ASCEND 2020; NTRS 20205007701) | verified live, not hosted | Table 2 p. 3: Mars surface → 100 × 100 km LMO = 3,950 m/s; bounded comparator for rc-377 |
 | morren_1992_nasa_tm_105877_water_resistojet | T2 | Morren, NASA TM-105877, “Preliminary Characterization of a Water Vaporizer for Resistojet Applications” (AIAA 92-3533) | verified live, not hosted | Abstract p. 1 / Table II p. 10: lab water-resistojet engineering model reached 234 s at 6.8 MJ/kg; comparator for rc-378 |
 | palaszewski_2022_mars_landing_ascent_delta_v | T2 | Palaszewski, NASA NTRS, “Mars Landing Vehicles: Descent and Ascent Propulsion Design Issues” | verified live, not hosted | §2.5 Table 3: 4,200 m/s to 100 km LMO including 20% gravity losses; configuration comparator for rc-377 |
+| nasa_2003_tm_212700_krypton_457m_performance | T2 | Jacobson & Manzella, NASA/TM-2003-212700, 50 kW Class Krypton Hall Thruster Performance | verified live, not hosted | rc-458: 0.50 discharge efficiency at 2,039 s on NASA-457M; not a generic total-efficiency calibration |
+| economicspace_dv_sanity_ceiling_current_2026 | T4 | economicspace current CalcConfig Δv ceiling (main 3ed7b36) | verified live, not hosted | rc-459: 20,000 m/s upper clamp is a sanity guard; check its effect on high-Δv candidates |
+| economicspace_cruise_time_fit_code_current_2026 | T4 | economicspace current chemical cruise-time fit (main 3ed7b36) | verified live, not hosted | rc-463: 0.00023 yr/(m/s); code says calibrated but identifies no sample, fit or error |
+| economicspace_verification_sheet_cruise_time_input_current_2026 | T4 | economicspace current verification worksheet backing audit (main 3ed7b36) | verified live, not hosted | rc-463: best-case input I5 is explicitly marked NEED BACKING |
+| arbit_clapp_dickerson_nagai_1968_li_f2_h2_cr72325 | T2 | Arbit et al., NASA-CR-72325, lithium–fluorine–hydrogen propellant study | verified live, not hosted | NTRS abstract: 542 lbf-s/lbm is theoretical; not measured (rc-485) |
+| nasa_1970_hydrogen_fluorine_lithium_upper_stages_cr110530 | T2 | NASA-CR-110530, hydrogen/fluorine/lithium upper-stage evaluation | verified live, not hosted | §3.3.4 p. 3-2: theoretical 540; experimental 509 lbf/lbm (rc-485) |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -260,7 +297,7 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | isro_nsil_launch_pricing_and_user_manuals | T4 | ISRO / NewSpace India Ltd launch pricing and LVM3 user manual — ISRO / NSIL (agency and commercial-arm web pages) | registered, not pulled | launch_vehicles.csv LVM3, PSLV-XL and SSLV prices and payloads |
 | cas_space_2026_kinetica2_price_per_kg | T4 | CAS Space Kinetica-2 launch price of 30,000 yuan/kg (announced after the Mar 2026 maiden flight) — CAS Space statement, reported by SCMP and SatNews | read, not hosted | launch_vehicles.csv Kinetica-2 price, the only published Chinese per-kg rate |
 | esa_ariane6_overview | T3 | Ariane 6 overview — European Space Agency (agency web page) | read, not hosted | launch_vehicles.csv Ariane 6 A62/A64 payload cells match the page; its cited €100M/€115M prices are NOT on the page — misattribution (rc-080) |
-| jaxa_h3_launch_vehicle | T3 | H3 Launch Vehicle project page — JAXA (agency web page) | registered, not pulled | launch_vehicles.csv H3 price target and payloads - ¥5B H3-30 target unverifiable from this machine |
+| jaxa_h3_launch_vehicle | T3 | H3 Launch Vehicle project page — JAXA (agency web page) | verified live, not hosted | JAXA says ~¥5B target for light configuration without SRBs; supports H3-30 target, not a contracted price |
 | firefly_alpha_published_price | T4 | Firefly Aerospace Alpha published price — Firefly Aerospace (manufacturer web page) | registered, not pulled | launch_vehicles.csv Alpha price |
 | isar_aerospace_spectrum_price_target | T4 | Isar Aerospace Spectrum price target (EUR 10,000/kg) — Isar Aerospace (manufacturer web page) | registered, not pulled | launch_vehicles.csv Spectrum price |
 | wikipedia_launch_vehicle_articles | T4 | Wikipedia "Comparison of orbital launch systems" and the per-vehicle articles (accessed Sep 2026) — Wikipedia | read, not hosted | launch_vehicles.csv payload masses by configuration and orbit, and the price of every row whose notes say "Source: Wikipedia" |
@@ -422,7 +459,33 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | greenlaunch_2026_nonrocket_launch_cost_target | T4 | Green Launch non-rocket launch cost target (Apr. 2026) | verified live, not hosted | ~$220/kg target; method/configuration unclear against $10,000/kg table target (rc-409) |
 | xinhuanet_2021_jielong3_unit_launch_cost | T4 | Xinhua Jielong-3 capability and unit-cost target (2021) | verified live, not hosted | 1.5 t to 500 km SSO; $10,000/kg target, roughly $15M derived comparator for rc-415 |
 | spacecost_fairing_fill_ratio_working_tree_2026 | T4 | Spacecost fairing-volume estimator and reference rows (working tree) | verified live, not hosted | rc-436: six fairing estimates use a 0.482 median from ten guide ratios; review calibration transferability |
-
+| esa_copernicus_mff21_article14_2025_contract_awards | T3 | ESA Copernicus Space Component contracts awarded in 2025 (Article 14 list) | verified live, not hosted | rc-457: €82.07M contract value for Sentinel-1D alternative launcher service; scope is not itemized |
+| esa_sentinel1d_ariane62_contract_announcement_2025 | T3 | ESA announcement: Ariane 6 to take Sentinel-1D into orbit (28 Jan 2025) | verified live, not hosted | confirms Sentinel-1D’s contract is for Ariane 62; no price stated; rc-457 context |
+| spacecost_lm7_launch_price_code_current_2026 | T4 | Spacecost Long March 7 price estimate row | verified live, not hosted | rc-474: $59.2M [50M,70M] marked estimate; no price source or calculation is named |
+| spacecost_pallas1_price_estimate_code_current_2026 | T4 | Spacecost Pallas-1 price estimate row | verified live, not hosted | rc-475: $28.3M [20M,40M] marked estimate; no price source or calculation is named |
+| galactic_energy_pallas1_first_flight_release_2026 | T4 | Galactic Energy Pallas-1 official maiden-flight release (2026) | verified live, not hosted | 5–7 t LEO and staged recovery/reuse plan; no absolute launch price (rc-475) |
+| beijing_e_town_pallas1_reuse_cost_share_2026 | T4 | Beijing E-Town Pallas-1 recovery-cost interview (2026) | verified live, not hosted | Company chairman: recovery component is two-thirds of cost; target of 50 recoveries; no launch price (rc-475) |
+| spacecost_lm2c_price_proxy_code_current_2026 | T4 | Spacecost Long March 2C price-proxy row | verified live, not hosted | rc-476: $29.6M [25M,35M] estimated from the Long March 2D point; proxy and range basis open |
+| spacecost_epsilon_s_price_estimate_code_current_2026 | T4 | Spacecost Epsilon S price-estimate row | verified live, not hosted | rc-477: $30.8M [25M,38M], reference_year=2026; source and price scope open |
+| newspace_im_epsilon_s_price_chart_2024 | T4 | NewSpace Index small-launcher price/performance chart (2024) | verified live, not hosted | Epsilon S plotted at about $25M and 600 kg; scope/year unstated (rc-477) |
+| faa_ast_2016_compendium_epsilon_price | T2 | FAA AST 2016 Compendium Epsilon fact sheet | verified live, not hosted | predecessor Epsilon estimated at $39M, 700–1,200 kg LEO; historical comparator (rc-477) |
+| spacecost_ariane5_eca_price_estimate_code_current_2026 | T4 | Spacecost Ariane 5 ECA price-estimate row | verified live, not hosted | rc-478: $191M [$165M,$220M] in 2026 USD; note says range brackets vehicle cost |
+| esa_2003_ariane5_service_cost_atv_price | T3 | ESA 2003 Ariane 5 service cost and ATV launch price | verified live, not hosted | €170M Ariane 5 ES service cost; €129M paid for ATV (2003 euros), not ECA current price (rc-478) |
+| spacecost_lm9_price_guess_code_current_2026 | T4 | Spacecost Long March 9 price-guess row | verified live, not hosted | rc-479: $707M [$500M,$1B] explicitly identified as a guess; scenario basis open |
+| powell_maise_rather_2010_startram_gen1_cost | T4 | Powell, Maise & Rather, StarTram Gen-1 launch-cost study (SPESIF-2010) | verified live, not hosted | Table 5.4: projected $43/kg at 35 t/launch, 10 launches/day, 10-year amortization (rc-486) |
+| spacecost_lm10b_launch_price_code_current_2026 | T4 | Spacecost Long March 10B price-estimate row | verified live, not hosted | rc-487: $52.9M [$40M,$70M] estimate; price source and calculation absent |
+| xinhuanet_2026_lm10b_reuse_launch_context | T4 | Xinhua Long March 10B maiden flight and controlled recovery (2026) | verified live, not hosted | 16 t LEO reusable commercial vehicle; reuse lowers cost qualitatively, no price (rc-487) |
+| spacecost_lm10_launch_price_code_current_2026 | T4 | Spacecost Long March 10 price-estimate row | verified live, not hosted | rc-488: $212M [$150M,$300M] estimate; source and calculation absent |
+| spacecost_lm6a_price_estimate_code_current_2026 | T4 | Spacecost Long March 6A price-estimate row | verified live, not hosted | rc-499: $45.8M [$35M,$60M] estimate; endpoints and price boundary lack a stated basis |
+| spacenexus_lm6a_price_status_2026 | T4 | SpaceNexus Long March 6A launch-price status | verified live, not hosted | says SAST/CASC has not published a list price; no replacement estimate (rc-499) |
+| spacecost_vulcan_vc6_current_record_2026 | T4 | Spacecost Vulcan Centaur VC6 price and note | verified live, not hosted | rc-500 price band lacks a VC6-specific derivation; rc-501 note’s October 2026 manifest is stale |
+| reuters_2024_vulcan_starting_price | T3 | Reuters report on Vulcan starting price (2024) | verified live, not hosted | roughly $110M generic Vulcan starting price; no VC6-specific adder (rc-500) |
+| ula_vulcan_leo1_vc6l_schedule_2026 | T4 | ULA Vulcan Leo 1 mission schedule and configuration | verified live, not hosted | first VC6L scheduled for 13 Nov 2026; V-012, six SRBs (rc-501) |
+| spacecost_soyuz_21a_price_estimate_code_current_2026 | T4 | Spacecost Soyuz-2.1a price proxy | verified live, not hosted | rc-502: $32.4M [$30M,$35M] estimate anchored to 2018 2.1b quote; variant match and 2026 conversion open |
+| spacecost_lm8a_price_estimate_code_current_2026 | T4 | Spacecost Long March 8A price estimate | verified live, not hosted | rc-503: $52.9M [$40M,$70M] estimate; price method and scope absent |
+| spacecost_kinetica1_price_estimate_code_current_2026 | T4 | Spacecost Kinetica-1 price-estimate row | verified live, not hosted | rc-504: $11M [$8M,$15M] estimate; source, calculation and price scope absent |
+| spacecost_lm4c_price_proxy_code_current_2026 | T4 | Spacecost Long March 4C price-proxy row | verified live, not hosted | rc-505: $38.7M [$30M,$50M] proxy from Long March 4B; quote, 2026 conversion and range basis open |
+| spacecost_nuri_price_estimate_code_current_2026 | T4 | Spacecost Nuri launch-price estimate row | verified live, not hosted | rc-506: $36.7M [$30M,$45M] band; source supports about $30M only, with price year, scope and high endpoint unresolved |
 ## Domain 5 — In-space storage / ISRU / operational costs
 
 _Backings: spacecost `storage_systems.csv`; the volatile-ISRU, power and electric-propulsion rows of `operational_costs.csv`; environment penalties._
@@ -655,6 +718,7 @@ _Backings: economicspace `orbital.py` (`elements_to_state`, for the dashboard's 
 | economicspace_unconverged_sizing_iteration_record_2026 | T4 | unconverged sizing-loop mass-closure witness | read, not hosted | rc-282: accepted oscillation misses feasible cargo |
 | economicspace_apsis_choice_flag_2026 | T4 | economicspace CalcConfig apsis-choice flag (main at 0c9e1bb) | verified live, not hosted | rc-266: all apsides reach the mission search only when the default-off flag is enabled |
 | economicspace_oscillating_sizing_relaxation_flag_current_2026 | T4 | Current unconverged sizing relaxation flag | read, not hosted | rc-282: default still accepts unconverged sizing result |
+| economicspace_search_resolution_controls_2026 | T4 | economicspace optimizer search-resolution controls (main at 3ed7b36) | verified live, not hosted | 7 concentration and 8 fleet samples; no convergence bound (rc-498) |
 
 ## Domain 14 — Propellant & consumable prices
 
@@ -744,6 +808,8 @@ _Backings: spacevalue `catalog.py` `IN_SPACE_UTILITY` (market side), `IN_SPACE_A
 | mcdowell_2026_space_activities_2025_gto_launches | T4 | McDowell, Space Activities in 2025, Table 14(e) | verified live | 34 GTO Transfer launches in 2025; launch cohort count |
 | toson_etal_2016_draise_geo_platform_mass | T2 | Toson et al., D-RAISE IAC 2016 abstract | verified live | Typical ~6 t chemical GEO platform mass |
 | byers_1989_advanced_onboard_propulsion_tm103174 | T2 | Byers, NASA TM-103174 | verified live | 40–50% apogee propellant share of GTO injected mass |
+| economicspace_surplus_price_fraction_code_current_2026 | T4 | economicspace current surplus-price fraction (main 3ed7b36) | read, not hosted | rc-465: default 0.5 has no market-study basis; review as a scenario or supply matched evidence |
+| economicspace_surplus_price_fraction_verification_current_2026 | T4 | economicspace verification worksheet backing audit (main 3ed7b36) | read, not hosted | rc-465: input I110=0.5 is marked NEED BACKING |
 
 ## Domain 16 — Reliability, learning curves & hardware service life
 
@@ -792,6 +858,13 @@ _Backings: `operational_costs.csv` launch reliability, spacecraft MTBF, mining s
 | nakamura_etal_2012_hayabusa_partial_sample_collection | T1 | Nakamura et al., Hayabusa returned-grain outcome (PNAS, 2012) | read live, not hosted | Hayabusa partial sample-collection outcome (rc-405) |
 | esa_2024_philae_harpoon_failure_landing_review | T2 | ESA, Philae landing and harpoon failure (2024) | verified live, not hosted | Philae harpoon failure (rc-406) |
 | nasa_2020_insight_hp3_mole_soil_friction_failure | T2 | NASA InSight team, HP3 mole friction failure | verified live, not hosted | InSight HP3 failure (rc-407) |
+| spacecost_mining_mature_success_probability_current_2026 | T4 | Spacecost mining mature-success ceiling and range | verified live, not hosted | rc-493: 0.95 [0.85,0.99] lacks a numeric derivation; current code uses it as a cap |
+| evans_gallo_kaminskiy_2012_bayesian_spacecraft_deployment_reliability | T2 | Evans, Gallo & Kaminskiy, Bayesian spacecraft deployment reliability (NTRS 20120013705) | verified live, not hosted | 19/123 deployable-subsystem anomaly comparator and event-based uncertainty method; not a mining success rate |
+| spacecost_spacecraft_mtbf_current_2026 | T4 | Spacecraft MTBF row and consuming model, pinned Spacecost snapshot | verified live, not hosted | rc-494: 30 yr [15,60] has no fitted cohort or numeric derivation |
+| grile_bettinger_2024_deep_space_satellite_reliability | T1 | Grile & Bettinger 2024, deep-space satellite lifetime reliability analysis | verified live, not hosted | Kaplan-Meier/Weibull cohort comparator; abstract gives no fitted values for the 30-year MTBF |
+| spacecost_launch_vehicle_reliability_current_2026 | T4 | Launch vehicle reliability input, pinned Spacecost snapshot | verified live, not hosted | rc-495: 0.97 point and [0.90,0.99] range lack a fleet-specific derivation |
+| nasa_2024_ipex_trl5_actuator_life_test | T2 | NASA IPEx TRL-5 design and actuator life test (NTRS 20240008162) | verified live, not hosted | Context-only: one wheel-actuator test exposure and failure; rc-493 whole-rig success probability remains unestimated |
+
 
 ## Domain 17 — Cost of capital, contingency & insurance
 
@@ -886,7 +959,23 @@ _Backings: `calc.py` mining and beneficiation fields (mining rate, rig mass, dur
 | matos_etal_2021_jrc_elemental_phosphorus_energy | T3 | Matos et al., JRC elemental phosphorus material-system report | verified live | P4 thermal-production energy comparator (up to 14 kWh/kg) for rc-394 |
 | mcmillan_etal_2016_nrel_lime_calcination_energy | T4 | McMillan et al., NREL/INL industrial lime-energy report | verified live | Carbonate calcination and lime-kiln energy comparator for rc-395 |
 | paz_2023_lunar_water_propellant_processing_assessment | T2 | Paz (2023), NASA lunar-water propellant processing assessment (NTRS 20230005189) | verified live, not hosted | spacevalue water refining-energy boundary: freeze distillation/filtering steps; no energy figure (rc-434) |
-
+| spacevalue_carbon_organic_processing_energy_current_2026 | T4 | Spacevalue carbon and organic processing-energy code record | verified live, not hosted | rc-437: 2.0 kWh/kg each; route and feed/product energy basis not sourced |
+| spacevalue_sulfide_processing_energy_code_current_2026 | T4 | Spacevalue sulfide processing-energy code record | verified live, not hosted | rc-438: a 4.0 kWh/kg troilite value is transferred to five other sulfides without a process calculation |
+| spacevalue_volatile_processing_energy_code_current_2026 | T4 | Spacevalue volatile processing-energy code record | verified live, not hosted | rc-439: ammonia and CO2 use a water-ice distillation analogy; no commodity-specific energy calculation |
+| spacevalue_oxide_processing_energy_code_current_2026 | T4 | Spacevalue oxide processing-energy code record | verified live, not hosted | rc-440: magnetite, chromite, ilmenite and perovskite use the 7.0 kWh/kg raw-feed allowance |
+| nasa_1987_hydrogen_reduction_ilmenite_energy | T2 | NASA-CR-171982-VOL-1, lunar hydrogen reduction of ilmenite | verified live, not hosted | R576 comparator: 50,839 kWh for 10 t O2 from 662.2 t lunar mare; different feed/product boundary |
+| nasa_2013_lunar_oxygen_energy_estimate | T2 | NASA Tech Brief MFS-32933-1, lunar oxygen extraction | verified live, not hosted | R576 comparator: 30–60 MJ/kg O for a separate high-temperature regolith route |
+| spacevalue_chromium_processing_energy_code_current_2026 | T4 | Spacevalue chromium processing-energy code record | verified live, not hosted | rc-441: 10.0 kWh/kg route and boundary unspecified |
+| bleiwas_2011_chromium_electrolysis_energy | T2 | Bleiwas 2011, USGS OFR 2011–1253, Table 19 chromium electrolysis | verified live, not hosted | R577 comparator: 18.5 kWh/kg Cr for downstream electrolysis after ferrochrome; not total feed-to-metal energy |
+| spacevalue_sulfur_processing_energy_code_current_2026 | T4 | Spacevalue sulfur processing-energy code record | verified live, not hosted | rc-442: 1.0 kWh/kg raw-feed allowance; “melting and filtering” without calculation |
+| li_yao_2014_zinc_residue_sulfur_distillation_energy | T2 | Li et al. 2014, sulfur recovery by atmospheric distillation of zinc leach residue | verified live, not hosted | R578 comparator: 0.59 kWh/kg residue; 1.24 kWh/kg sulfur product, different feed and denominator |
+| spacevalue_schreibersite_processing_energy_code_current_2026 | T4 | Spacevalue schreibersite processing-energy code record | verified live, not hosted | rc-443: 6.0 kWh/kg raw-feed allowance; alloy/leaching route not calculated |
+| gull_feng_pasek_2022_seymchan_schreibersite_corrosion | T2 | Gull, Feng & Pasek 2022, Seymchan schreibersite corrosion | verified live, not hosted | R580 route context: aqueous corrosion yields P species; no energy intensity reported |
+| spacevalue_cohenite_processing_energy_code_current_2026 | T4 | Spacevalue cohenite processing-energy code record | verified live, not hosted | rc-452: cohenite at 5.0 kWh/kg grouped with nickel-iron; no carbide-specific process boundary |
+| spacevalue_phosphate_grinding_energy_code_current_2026 | T4 | Spacevalue phosphate-phase processing-energy code record | verified live, not hosted | rc-453: 1.0 kWh/kg for phosphates and hibonite; phosphate comparator does not establish asteroid or hibonite process energy |
+| spacevalue_inspace_energy_lifetime_utilization_code_current_2026 | T4 | Spacevalue in-space energy-cost lifetime and utilization code record | verified live, not hosted | $800/W divided by 15 years of full output gives ≈$6.08/kWh; no availability factor (rc-482) |
+| economicspace_max_mining_fraction_current_2026 | T4 | Economicspace maximum mining fraction input | verified live, not hosted | rc-491: default 1.0 is a mission ceiling, not sourced recoverable reserves |
+| usgs_keszthelyi_etal_2017_asteroid_resource_assessment_feasibility | T2 | USGS asteroid mineral-resource feasibility study (OFR 2017-1041) | verified live, not hosted | resource assessment is incomplete; no universal one-mission extraction fraction (rc-491) |
 ## Domain 20 — Mission operations, communications & ground segment
 
 _Backings: `operational_costs.csv` mission operations, DSN time, downlink and depot berthing rows. Also relevant: `planetary_society_pebd_mission_costs` (d07)._
@@ -940,6 +1029,7 @@ _Backings: `operational_costs.csv` recurring $/kg rows by hardware class; `calc.
 | alpert_et_al_2024_high_velocity_earth_entry_tps | T2 | Alpert et al. 2024 NASA high-velocity Earth-entry TPS trade study | verified live, not hosted | rc-134: 12.8/16.5 km/s and mass sweep; TPS thickness only, no shield mass fraction |
 | nasa_discovery_2014_ao_qa_heeet_cost | T2 | NASA Discovery 2014 AO Q&A (T-21, HEEET TPS cost; updated Feb. 2015) | verified live, not hosted | HEEET shield estimates $3M/$6M/$11M at 1/2/3 m; says $/kg is not ideal; distinct material, rc-422 |
 | orbital_sciences_2014_cygnus_configuration_mass | T4 | Orbital Sciences, *Commercial Cargo Operations for the ISS* (2014), Cygnus configuration mass slide | verified live, not hosted | Standard/Enhanced PCM dry mass 1,677/1,995 kg and payload 2,000/2,700 kg; component-level only, rc-423 |
+| jpl_2006_stardust_return_capsule_mass_cost_scope | T2 | NASA/JPL Stardust Sample Return Press Kit (2006), Quick Facts | verified live, not hosted | 46 kg capsule; whole-spacecraft/program cost only; no capsule unit cost (rc-497) |
 
 ## Domain 22 — Prior-art techno-economic benchmarks
 
@@ -1046,6 +1136,13 @@ _Backings: spacecost `storage_systems.csv` propellant-storage and energy-storage
 | fincannon_2007_lunar_south_pole_storage_hours | T2 | Lunar South Pole Illumination: energy-storage requirements (NASA/TM-2007-215025), 2007 — NTRS | verified live, not hosted | rc-411: 73–117 h lunar surface energy-storage comparator; system type differs, not a battery-only limit |
 | csank_2024_lunar_surface_power_rfc_system_specific_energy | T2 | Electric Power on the Lunar Surface — APETS 2024 / NASA NTRS | verified live, not hosted (NASA public use permitted) | spacecost RFC 400 Wh/kg comparator: specific lunar cases; not a generic asteroid value |
 | ray_2008_cryogenic_copv_development_tests | T2 | NASA cryogenic COPV burst tests (2008) | verified live, not hosted | Tables 2–3: measured burst P_b V/W of 326.5–416.6 kJ/kg; scope review rc-417 |
+| spacecost_vapour_cooled_shield_row_current_2026 | T4 | Spacecost vapor-cooled shield estimate row | verified live, not hosted | rc-489: 40% [25%,60%] of passive boil-off; no source or conditions stated |
+| johnson_et_al_2021_shiiver_vapor_cooling_tp | T2 | NASA SHIIVER cryogenic vapor-cooling tests (NASA TP-20205008233) | verified live, not hosted | fill/MLI-specific boil-off results; not a universal 40% total-tank reduction (rc-489) |
+| johnson_stephens_2018_cfm_technology_roadmaps | T2 | NASA Cryogenic Fluid Management Technology Development Roadmaps (2018) | verified live, not hosted | p. 5 lists vapor cooling TRL 5, ground-test path to TRL 6; historical maturity context (rc-489) |
+| spacecost_hydrolox_depot_boiloff_row_current_2026 | T4 | Spacecost Hydrolox and depot boil-off rows | verified live, not hosted | rc-490: 0.05%/day Hydrolox; depot row 0.03% [0.01,0.10], no matched basis stated |
+| honour_kwas_oneil_kutter_2012_long_duration_cryo_depot_thermal | T2 | Honour et al., long-duration cryogenic propellant depot (2012) | verified live, not hosted | specific passive shielded LEO model reports <0.05%/day (rc-490) |
+| perrin_casler_2016_fuel_depot_architecture_study | T2 | Perrin & Casler, lunar-supplied fuel-depot architecture (2016) | verified live, not hosted | 60-layer MLI estimates vary by fuel, orbit and tank (rc-490) |
+| spacecost_sintered_consolidated_cargo_row_current_2026 | T4 | Spacecost sintered-cargo energy estimate | verified live, not hosted | rc-492: 350 Wh/kg [150,800] has no derivation; NASA sintering sources do not report specific energy |
 ## Domain 27 — Orbital debris & collision risk
 
 _Backings: the debris environment behind launch-insurance premium drivers (d17), economicspace's satellite-lifetime and disposal assumptions, and depot mission durations (d26)._
@@ -1108,6 +1205,12 @@ _Backings: the structural-class rows of `IN_SPACE_UTILITY` (Fe, Ni, Co, Cu, Cr, 
 | mulford_ei_dasher_2011_fe_ni_meteorite_strength_indentation | T2 | Mulford & EI-Dasher 2011 (LANL/LLNL LA-UR), "Mechanical Properties of Several Fe-Ni Meteorites" - Int'l Symposium on Plasticity, OSTI purl/1038894 | full text hosted | d29 open item Fe-Ni mechanical properties: government-lab indentation record - composite strength 'higher by almost an order of magnitude' than lab-prepared Fe-Ni alloys in every sample; yield tracks localized crystallite strain |
 | knox_1970_yield_strength_meteoritic_iron | T1 | Knox 1970 (Meteoritics 5(2):63-74), "The Yield Strength of Meteoritic Iron" - DOI Crossref-verified, Wiley paywall + Cloudflare | registered, not pulled | d29 open item Fe-Ni mechanical properties: THE original measured yield-strength study (Canyon Diablo / Odessa / Brenham metal phase); queued in DOWNLOADS.md R173 for an institutional pull |
 | iyer_kelly_2022_lci_critical_materials_ni_cu_ti_ree | T3 | Iyer & Kelly 2022 (Argonne National Laboratory), "Life-Cycle Inventory of Critical Materials: Nickel, Copper, Titanium, and Rare-Earth Elements" - OSTI 1905473 | registered, not pulled | d29 open item carbonyl refining of asteroidal Fe-Ni: THE GREET nickel LCI incl. the carbonyl step; both PDF routes Cloudflare-challenged this round, queued in DOWNLOADS.md R173 |
+| grugel_2008_sulfur_concrete_troilite_lunar_applications | T2 | Grugel, NASA/TM-2008-215250, sulfur concrete and lunar troilite | verified live, not hosted | Conditional lunar construction comparator after troilite reduction; performance limits and no utility factor (rc-447) |
+| spacevalue_troilite_utility_code_current_2026 | T4 | Spacevalue troilite utility code record | verified live, not hosted | rc-447: Fe/Ni sulfides inherit 0.30 base utility with destination overrides and no quantitative basis |
+| spacevalue_oxide_utility_code_current_2026 | T4 | Spacevalue pinned oxide-ore utility code record | verified live, not hosted | Magnetite/chromite/ilmenite/perovskite base and destination factors; scenario basis open (rc-450) |
+| spacevalue_hibonite_utility_code_current_2026 | T4 | Spacevalue hibonite utility code record | verified live, not hosted | rc-454: hibonite base 0.25 and destination factors; no hibonite-specific utility basis |
+| spacevalue_fe_ni_phase_utility_code_current_2026 | T4 | Spacevalue Fe-Ni detailed-phase utility code record | verified live, not hosted | rc-472: kamacite, taenite, tetrataenite and cohenite inherit nickel-iron 0.70 without a phase-specific utility basis |
+| spacevalue_schreibersite_utility_code_current_2026 | T4 | Spacevalue schreibersite in-space utility code record | verified live, not hosted | Inherits structural-metal utility 0.70; destination factors lack a schreibersite product and mass balance (rc-483) |
 
 ## Domain 30 — Volatiles, process chemicals & catalyst metals in space
 
@@ -1130,6 +1233,8 @@ _Backings: the propellant, chemical and trace-class rows of `IN_SPACE_UTILITY` (
 | zeitlin_wheeler_lunn_2015_plant_biomass_leaching_nutrient_recovery_ksc_cif | T2 | Zeitlin, Wheeler & Lunn (NASA KSC), "Plant Biomass Leaching for Nutrient Recovery in Closed Loop Systems Project" - NTRS 20160006646, KSC Center Innovation Fund record (printed 11/5/2015) | full text hosted | d30: recovery side of the P mass loop from inedible plant biomass - 'improving the recovery of Fe, Ca, and P would help further close the mass loop' with a 60% nutrient-recovery target |
 | moses_bushnell_2016_frontier_isru_sustained_presence_mars_tm219182 | T2 | Moses & Bushnell 2016, NASA/TM-2016-219182, Frontier Mars ISRU | full text hosted | d30: Mars CO2/H2-to-plastics pathway; not a utility-fraction basis |
 | lewis_2016_in_space_production_storable_propellants_niac_report | T2 | Lewis 2016 (Deep Space Industries), "In-Space Production of Storable Propellants" - NIAC Phase I Final Report NNX15AL85G, NTRS 20190001542 | verified live, not pulled | d30: asteroid-derived CO2 as storable-propellant feedstock; report does not identify carbonate-derived CO2 or establish utility fractions |
+| spacevalue_phosphate_mineral_utility_code_current_2026 | T4 | Spacevalue phosphate-mineral utility code record | verified live, not hosted | rc-473: oldhamite and phosphates inherit carbonate factors; product and destination basis open |
+| spacevalue_pgm_surface_route_choice_code_current_2026 | T4 | Spacevalue precious-metal surface route-choice code record | verified live, not hosted | rc-484: all-or-nothing unit-price routing cannot blend surface catalyst demand with Earth surplus |
 
 ## Sources to replace
 

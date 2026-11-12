@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_kinetica1_price_estimate_code_current_2026,list_price_usd,11000000,USD; reference year 2026,"reference/launch_vehicles.csv, Kinetica-1 row 44",Stored point estimate; the price note supplies no source or derivation.
+spacecost_kinetica1_price_estimate_code_current_2026,list_price_usd_low,8000000,USD; reference year 2026,"reference/launch_vehicles.csv, Kinetica-1 row 44",Stored low endpoint; derivation is not stated.
+spacecost_kinetica1_price_estimate_code_current_2026,list_price_usd_high,15000000,USD; reference year 2026,"reference/launch_vehicles.csv, Kinetica-1 row 44",Stored high endpoint; derivation is not stated.
+spacecost_kinetica1_price_estimate_code_current_2026,price_basis,estimate,category,"reference/launch_vehicles.csv, Kinetica-1 row 44",No price witness or calculation appears in the row note.
+wikipedia_kinetica_1_article,price statement,None in the read article,statement,R268; article infobox and body reviewed for payload and launch history,Existing review R268 records that the article carries no cost statement; the article does not validate the price band.

@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,"NWA 5798 (CK4), olivine",54.1,modal %,"Table 2, printed p. 500, NWA 5798 column",Sample-specific mapped-area modal abundance; not a class-wide fraction.
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,"NWA 5798 (CK4), low-Ca pyroxene",14.6,modal %,"Table 2, printed p. 500, NWA 5798 column",Sample-specific mapped-area modal abundance; model combines pyroxene categories.
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,"NWA 5798 (CK4), high-Ca pyroxene",5.3,modal %,"Table 2, printed p. 500, NWA 5798 column",Sample-specific mapped-area modal abundance.
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,"NWA 5798 (CK4), plagioclase",4.2,modal %,"Table 2, printed p. 500, NWA 5798 column",A measured phase not represented as a separate member of the model Cgh split.
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,"NWA 5798 (CK4), matrix",9.4,modal %,"Table 2, printed p. 500, NWA 5798 column",Text says phyllosilicate-rich matrix was almost totally recrystallized into olivine; do not equate matrix with the modeled phyllosilicate share.
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,NWA 5798 mapped area representativeness,only ±1 mm²; may not be entirely representative,text,"§4.2, printed p. 511",Authors caution that mapped areas may not represent the whole rock.
+asteroidcatalog_ck_cgh_silicate_split_code_current_2026,Cgh modeled silicate-group shares,phyllosilicates=0.50; olivine=0.40; pyroxene=0.10,fraction,mineralogy.py lines 234–237,Upstream class-level conditional shares; the source comparator is sample-level and has additional phase categories.

@@ -6,6 +6,13 @@
 
 # Domain 3 Findings — Δv budgets and propulsion performance tables
 
+## R600 — Chemical cruise-time fit provenance (2026-11-11)
+
+- **economicspace_cruise_time_fit_code_current_2026**: `campaign/worked_calculation.py` defines `TAU_CRUISE_FIT_YR_PER_M_S = 0.00023` and calls it calibrated on chemical transfers, but names no calibration cases, dataset, fitting procedure, residual, uncertainty, or transfer range. `mass_and_clock` applies `max(0.5, coefficient × Δv)` separately to chemical outbound and return legs; electric missions use a separate thrust-time floor.
+- **economicspace_verification_sheet_cruise_time_input_current_2026**: the current `verification_sheet.py --check` run identifies input I5 as 0.00023 yr/(m/s) and marks it NEED BACKING. The worksheet reports 85 inputs needing backing overall. Its selected calculation is 2018 DT using archived Stage 2 and Stage 3 tables, so it is used here to locate the code input and its provenance status, not as a current calibration dataset.
+- The code’s “calibrated” description needs an identified sample, method, fit error and scope; if no calibration exists, the coefficient should be described as a scenario proxy. Preserve the value pending that basis; no replacement is inferred. **rc-463** records the citation gap.
+- Extracted: `extracted_data/r600_chemical_cruise_time_fit_provenance.csv`.
+
 ## R512 — Water resistojet specific-impulse range (2026-11-10)
 
 - **morren_1992_nasa_tm_105877_water_resistojet** (NASA TM-105877; AIAA 92-3533): the abstract (p. 1) reports a maximum measured 234 s for a water-vaporizer / engineering-model resistojet assembly at 6.8 MJ/kg combined specific power. Table II (p. 10) identifies 234 s in its final specific-impulse test point, with 1,043 W total power and 6.86 MJ/kg total specific power.
@@ -446,3 +453,16 @@ At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, `babic_et_al_1993_extende
 ## R565 — Mars and resistojet candidates rechecked against the applied release (2026-11-10)
 
 At spacecost main commit `aaed2720ee44610c5cf90fc204db160deb5669bb` (0.17.0 / data contract 1.26.0), the 4,100 m/s Mars surface-to-LMO value remains and its note now calls it a margin scenario; the water resistojet ceiling is 234 s from Morren (1992) lab data while the 190 s center remains. The current rows agree with rc-377 and rc-378; both candidates were rechecked against the release commit and remain applied.
+## R594 — Krypton Hall efficiency comparator
+
+- **nasa_2003_tm_212700_krypton_457m_performance** (Appendix, printed p. 8; NASA/TM-2003-212700): NASA’s NASA-457M krypton test reports a discharge efficiency of 0.50 at 2,039 s and 300 V. The paper describes this as a 50 kW class thruster and defines the reported discharge efficiency using anode flow and discharge power (§Results and Discussion, printed p. 4). This is a relevant experimental comparator for spacecost’s generic Krypton (Hall) `thruster_efficiency=0.45`, but it is discharge efficiency from a high-power device, not evidence that 0.45 is a generic total-efficiency value. rc-458 records the remaining definition and hardware-scope gap; no replacement is inferred. `extracted_data/r594_krypton_457m_discharge_efficiency.csv`.
+## R596 — economicspace delta-v ceiling
+
+- **economicspace_dv_sanity_ceiling_current_2026**: At economicspace main `3ed7b36f756899a0c78a22876555490281e74f51`, `CalcConfig.max_dv_outbound_m_s` is 20,000 m/s. Its comment calls it a “Sanity ceiling” for values “mangled” upstream and points to the 10.5 km/s LEO-to-main-belt reference segment. The per-asteroid path applies `min(max(raw_leg, floor), ceiling)` to outbound and return Δv, so a raw leg above 20 km/s becomes 20 km/s before the low-thrust penalty is applied. The cap is about 1.90 times the cited reference segment; that comparison does not establish a physical maximum mission Δv or show whether valid catalogue cases reach the clamp. **rc-459** asks to distinguish a defensive data guard from a mission-validity bound and review its effect on candidates. Extracted: `extracted_data/r596_economicspace_dv_ceiling.csv`.
+
+
+## R622 — Li/F2/H2 row confuses the theoretical ceiling with measured performance (2026-11-11)
+
+At spacecost main `aaed2720ee44610c5cf90fc204db160deb5669bb`, `reference/propellants.csv` assigns the concept/TRL 3 `Li / F2 / H2 (tripropellant)` row 542 s and says this was “the highest specific impulse ever MEASURED” on a Rocketdyne test stand. The row identifies 542 s as a chemistry ceiling and is excluded from the operational-propellant run.
+
+The primary records separate the figures. Arbit et al. (NASA-CR-72325, NTRS abstract) describe the 542 lbf-s/lbm maximum as theoretical performance. NASA-CR-110530 §3.3.4, printed p. 3-2, gives “theoretical vacuum specific impulse of 5,300 N/kg/s (540 lbf/lbm/s)” and says Rocketdyne “achieved ... 4,990 N/kg/s (509 lbf/lbm/s) in experimental tests.” Verdict: cite the theoretical ceiling and correct the row’s measured-performance wording; retain 542 s as a theoretical ceiling, separate it from the approximately 508–509 s experimental result, and do not infer a replacement for the model’s ceiling value. **rc-485**. Extracted: `extracted_data/r622_li_f2_h2_isp_theory_vs_test.csv`.
