@@ -78,9 +78,7 @@ _Backings: per-spectral-type density and PGM factors in AsteroidCatalog `referen
 | zhang_etal_2023_m_type_density_variation | T1 | Zhang et al. 2023, individual M-type asteroid density variation | verified live, not hosted | Table 5 compiles heterogeneous Psyche/Kalliope/Klotho density estimates; not a class fit |
 
 ## Domain 2 — Composition → commodity value mapping
-
 _Backings: AsteroidCatalog material fractions and spacevalue `catalog.py` mineralogy and destination pricing._
-
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
 | nat_dms2023 | T1 | DES metal extraction from asteroid proxies (Sci Rep 13:6497, CC-BY-4.0) | full text hosted | **85% surface metal / 15% silicate** for Psyche-like NEAs vs our M-row `metal_fraction=0.50` — the biggest value-side discrepancy found in round 1; also first lab proof of space-feasible beneficiation chemistry |
@@ -193,6 +191,25 @@ _Backings: AsteroidCatalog material fractions and spacevalue `catalog.py` minera
 | cabri_harris_weiser_1996_pgm_placer_compositions | T1 | Cabri et al., worldwide PGM placer mineralogy (1996) | verified live, not hosted | Locality-specific PGM phases and composition ranges; comparator for rc-512 |
 | spacevalue_awaruite_trace_yields_code_current_2026 | T4 | Spacevalue awaruite trace-yield code record | verified live, not hosted | rc-513: seven PGE/Au yields lack a population and averaging basis |
 | kutyrev_et_al_2023_awaruite_pge_behavior | T1 | Kutyrev et al., PGE behavior in awaruite (2023) | verified live, not hosted | Locality-dependent awaruite-host PGE results; comparator for rc-513 |
+| usgs_mcs2026_silver_chapter | T3 | USGS Mineral Commodity Summaries 2026, Silver chapter | read live, not hosted | 26,000 metric tons estimated 2025 world mine production; specific citation for Spacevalue market ceiling (rc-523) |
+| spacevalue_silver_annual_market_code_current_2026 | T4 | Spacevalue silver annual-market row (pinned code snapshot) | verified live, not hosted | 26,000,000 kg/yr; specific source year missing on row (rc-523) |
+| spacevalue_pgm_annual_production_code_current_2026 | T4 | Spacevalue minor-PGM annual-production rows (pinned code snapshot) | verified live, not hosted | Ir/Rh/Ru values lack row-level source year and production measure (rc-524) |
+| iea_2019_putting_co2_to_use | T2 | IEA, *Putting CO2 to Use* (2019) | verified live, not hosted | ~230 Mt/yr total global use; mainly EOR and on-site urea, not merchant-only production (rc-526) |
+| spacevalue_co2_annual_market_code_current_2026 | T4 | Spacevalue CO2 annual-market row and cap function | verified live, not hosted | 230 Mt/yr terrestrial cap labelled “merchant CO2”; source/year/market boundary unresolved (rc-526) |
+| usgs_mcs2026_sulfur_chapter | T3 | USGS Mineral Commodity Summaries 2026, Sulfur chapter | verified live, not hosted | World sulfur production: 83.9 Mt in 2024, 84.0 Mt in 2025e; comparator for rc-527 |
+| spacevalue_sulfur_annual_market_code_current_2026 | T4 | Spacevalue sulfur annual-market row (current code snapshot) | verified live, not hosted | 83 Mt/year; source edition and production year absent from the row (rc-527) |
+| usgs_mcs2026_ammonia_chapter | T3 | USGS Mineral Commodity Summaries 2026, Nitrogen (fixed)—ammonia | verified live, not hosted | World plant production, nitrogen content: 156 Mt 2024 / 160 Mt 2025e; rc-528 |
+| spacevalue_ammonia_annual_market_code_current_2026 | T4 | Spacevalue ammonia annual-market row (current code snapshot) | verified live, not hosted | 150 Mt N/year; code row lacks the source edition and year (rc-528) |
+| usgs_mcs2026_phosphate_rock_chapter | T3 | USGS Mineral Commodity Summaries 2026, Phosphate Rock | verified live, not hosted | Marketable phosphate-rock mine production: 239 Mt 2024 / 250 Mt 2025e; distinct from elemental P₄ (rc-529) |
+| spacevalue_phosphorus_annual_market_code_current_2026 | T4 | Spacevalue phosphorus annual-market row (current code snapshot) | verified live, not hosted | 1 Mt/year elemental P₄; within JRC’s 0.9–1.2 Mt estimate, source vintage not identified (rc-529) |
+| usgs_mcs2026_tungsten_chapter | T3 | USGS Mineral Commodity Summaries 2026, Tungsten | verified live, not hosted | World mine production: 82,000 t tungsten content in 2024 / 85,000 t in 2025e (rc-530) |
+| spacevalue_tungsten_annual_market_code_current_2026 | T4 | Spacevalue tungsten annual-market row (current code snapshot) | verified live, not hosted | 81,000 t/year; inherited MCS 2025 2024 value, below latest MCS estimate (rc-530) |
+| usgs_mcs2026_titanium_chapter | T3 | USGS Mineral Commodity Summaries 2026, Titanium and Titanium Dioxide | verified live, not hosted | Sponge production: 380,000 t in revised 2024 / 370,000 t in 2025e; footnote excludes Utah production (rc-531) |
+| spacevalue_titanium_annual_market_code_current_2026 | T4 | Spacevalue titanium annual-market row (current code snapshot) | verified live, not hosted | 320,000 t/year; MCS 2026 is 370,000 t for 2025e (rc-531) |
+| usgs_mcs2026_rhenium_chapter | T3 | USGS Mineral Commodity Summaries 2026, Rhenium | verified live, not hosted | World mine production: 79.8 t 2024 / 81 t 2025e; excludes secondary (rc-532) |
+| spacevalue_rhenium_annual_market_code_current_2026 | T4 | Spacevalue rhenium annual-market row (current code snapshot) | verified live, not hosted | 62 t/year; below MCS 2026 estimate (rc-532) |
+| usgs_mcs2026_gallium_chapter | T3 | USGS Mineral Commodity Summaries 2026, Gallium | verified live, not hosted | Primary low-purity production: 848,000 kg 2024 / 900,000 kg 2025e (rc-533) |
+| spacevalue_gallium_annual_market_code_current_2026 | T4 | Spacevalue gallium annual-market row (current code snapshot) | verified live, not hosted | 760,000 kg/year; below MCS 2026 estimate (rc-533) |
 
 ## Domain 3 — Δv budgets and propulsion performance tables
 
@@ -274,6 +291,7 @@ _Backings: spacecost `delta_v_segments.csv` and the Isp rows of `propellants.csv
 | arbit_clapp_dickerson_nagai_1968_li_f2_h2_cr72325 | T2 | Arbit et al., NASA-CR-72325, lithium–fluorine–hydrogen propellant study | verified live, not hosted | NTRS abstract: 542 lbf-s/lbm is theoretical; not measured (rc-485) |
 | nasa_1970_hydrogen_fluorine_lithium_upper_stages_cr110530 | T2 | NASA-CR-110530, hydrogen/fluorine/lithium upper-stage evaluation | verified live, not hosted | §3.3.4 p. 3-2: theoretical 540; experimental 509 lbf/lbm (rc-485) |
 | economicspace_aerocapture_no_elements_fallback_code_current_2026 | T4 | Economicspace aerocapture fallback code record, pinned main snapshot | verified live, not hosted | modules/calc.py 5,500 m/s return default use (rc-514); 4,000 m/s fallback saving lacks trajectory/residual basis (rc-519) |
+| spacecost_htp_rp1_specific_impulse_code_current_2026 | T4 | Spacecost HTP/RP-1 vacuum-Isp row (pinned code snapshot) | verified live, not hosted | 320 s at nominal O/F 7; cite performance basis and separate from Black Arrow’s 265 s Gamma-2 (rc-525) |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -308,9 +326,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | isro_nsil_launch_pricing_and_user_manuals | T4 | ISRO / NewSpace India Ltd launch pricing and LVM3 user manual — ISRO / NSIL (agency and commercial-arm web pages) | registered, not pulled | launch_vehicles.csv LVM3, PSLV-XL and SSLV prices and payloads |
 | cas_space_2026_kinetica2_price_per_kg | T4 | CAS Space Kinetica-2 launch price of 30,000 yuan/kg (announced after the Mar 2026 maiden flight) — CAS Space statement, reported by SCMP and SatNews | read, not hosted | launch_vehicles.csv Kinetica-2 price, the only published Chinese per-kg rate |
 | esa_ariane6_overview | T3 | Ariane 6 overview — European Space Agency (agency web page) | read, not hosted | launch_vehicles.csv Ariane 6 A62/A64 payload cells match the page; its cited €100M/€115M prices are NOT on the page — misattribution (rc-080) |
-| jaxa_h3_launch_vehicle | T3 | H3 Launch Vehicle project page — JAXA (agency web page) | verified live, not hosted | JAXA says ~¥5B target for light configuration without SRBs; supports H3-30 target, not a contracted price |
+| jaxa_h3_launch_vehicle | T3 | H3 Launch Vehicle project page — JAXA (agency web page) | verified live, not hosted | JAXA states ~¥5B target, with no USD conversion year; row basis open (rc-522) |
 | firefly_alpha_published_price | T4 | Firefly Aerospace Alpha published price — Firefly Aerospace (manufacturer web page) | registered, not pulled | launch_vehicles.csv Alpha price |
-| isar_aerospace_spectrum_price_target | T4 | Isar Aerospace Spectrum price target (EUR 10,000/kg) — Isar Aerospace (manufacturer web page) | registered, not pulled | launch_vehicles.csv Spectrum price |
+| isar_aerospace_spectrum_price_target | T4 | Isar Aerospace current Spectrum product and service pages | read live, not hosted (verified 2026-11-12) | Current pages give pricing options but no numeric target; source attribution in Spectrum row reviewed (rc-521) |
 | wikipedia_launch_vehicle_articles | T4 | Wikipedia "Comparison of orbital launch systems" and the per-vehicle articles (accessed Sep 2026) — Wikipedia | read, not hosted | launch_vehicles.csv payload masses by configuration and orbit, and the price of every row whose notes say "Source: Wikipedia" |
 | spacenews_launch_reporting_2024_2026 | T4 | SpaceNews launch, pricing and programme reporting 2024-2026 (articles not named upstream) — SpaceNews (trade press) | registered, not pulled | launch_vehicles.csv Atlas V mission-assurance adder, Artemis restructuring, and 2025-2026 flight outcomes |
 | spaceflight_now_launch_reporting_2025_2026 | T4 | Spaceflight Now launch reporting 2025-2026 (articles not named upstream) — Spaceflight Now (trade press) | registered, not pulled | launch_vehicles.csv New Glenn flight record, Neutron schedule and price, 2025-2026 flight outcomes |
@@ -423,7 +441,7 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | cas_space_kinetica2_y2_rollout_release_2026 | T4 | CAS Space Chinese release, Kinetica-2 Y2 factory acceptance and October launch plan (Aug 25, 2026) | full text read live, not hosted | second-flight status and cadence context |
 | guangming_daily_cas_reprint_kinetica2_maiden | T4 | Guangming Daily maiden-flight report reprinted on Chinese Academy of Sciences site (Mar 31, 2026) | full text read live, not hosted | institutional maiden-flight capacity statement |
 | wikipedia_kinetica_2_article | T4 | Wikipedia article Kinetica 2 (current revision) | full text read live, not hosted | Kinetica-2 figures and launch-record currency |
-| blueorigin_new_glenn_9x4_page | T4 | Blue Origin New Glenn 9x4 product page (undated) | read, not hosted (verified live 2026-10-27) | New Glenn 9x4 fairing volume and capability triple|
+| blueorigin_new_glenn_9x4_page | T4 | Blue Origin New Glenn 9x4 product page (undated) | read, not hosted (verified live 2026-11-12) | 9x4 capability; fairing volume rc-221; no price basis rc-520 |
 | blueorigin_new_glenn_vehicle_page | T4 | Blue Origin New Glenn vehicle page (undated) | read, not hosted (verified live 2026-10-27) | base-variant LEO/GTO manufacturer statement|
 | wikipedia_new_glenn_article | T4 | Wikipedia article New Glenn (current revision) | read, not hosted (verified live 2026-10-27) | New Glenn figures, price range and flight-record currency|
 | interfax_2025_soyuz5_baiterek_roscosmos_statement | T4 | Interfax: Roscosmos press service on Baiterek and Soyuz-5 (Feb 27, 2025) | read, not hosted (verified live 2026-10-27) | Roscosmos up-to-17-tonne statement, Energia head-developer and Samara manufacture|
@@ -497,6 +515,9 @@ _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost casca
 | spacecost_kinetica1_price_estimate_code_current_2026 | T4 | Spacecost Kinetica-1 price-estimate row | verified live, not hosted | rc-504: $11M [$8M,$15M] estimate; source, calculation and price scope absent |
 | spacecost_lm4c_price_proxy_code_current_2026 | T4 | Spacecost Long March 4C price-proxy row | verified live, not hosted | rc-505: $38.7M [$30M,$50M] proxy from Long March 4B; quote, 2026 conversion and range basis open |
 | spacecost_nuri_price_estimate_code_current_2026 | T4 | Spacecost Nuri launch-price estimate row | verified live, not hosted | rc-506: $36.7M [$30M,$45M] band; source supports about $30M only, with price year, scope and high endpoint unresolved |
+| eu_commission_eic_isaero_2022_factsheet | T4 | European Commission EIC Horizon Prize ISAERO factsheet (2022) | read live, not hosted | Historical Spectrum target around €10,000/kg and capacity up to 1,000 kg (rc-521) |
+| spacecost_spectrum_price_code_current_2026 | T4 | Spacecost Spectrum price-target row (pinned reference snapshot) | verified live, not hosted | $11.5M/$11,500 per kg, 2026 target; FX date/source unrecorded (rc-521) |
+| spacecost_h3_30_target_price_code_current_2026 | T4 | Spacecost H3 (30) target-price row (pinned reference snapshot) | verified live, not hosted | $36.3M [$33M,$40M], 2026 target; conversion and range basis unresolved (rc-522) |
 ## Domain 5 — In-space storage / ISRU / operational costs
 
 _Backings: spacecost `storage_systems.csv`; the volatile-ISRU, power and electric-propulsion rows of `operational_costs.csv`; environment penalties._
@@ -968,7 +989,7 @@ _Backings: `calc.py` mining and beneficiation fields (mining rate, rig mass, dur
 | sibanye_stillwater_2026_rustenburg_technical_report | T4 | Sibanye-Stillwater, Rustenburg Technical Report Summary (SEC Exhibit 96.3, 2026) | read live, not hosted | economicspace `max_concentration_ratio`: actual PGM concentrator feed/concentrate ratio about 59.5–62.4:1; challenges the uncited 100:1–1000:1 claim |
 | hu_dolganov_etal_2018_ffc_titanium_energy | T1 | Hu et al. 2018, FFC-Cambridge titanium process review (JOM 70:129–137) | verified live, not hosted | spacevalue titanium processing allowance: 21.5 and 17 kWh/kg extraction comparators; rc-389, with feedstock and downstream scope caveats |
 | liu_li_etal_2025_lunar_regolith_microwave_sintering_energy | T1 | Liu et al. 2025, lunar-regolith microwave sintering energy (JECS 45:117047) | open abstract; full text not pulled | 69–98 MJ/kg (19.2–27.2 kWh/kg) simulator comparator for spacevalue’s 1 kWh/kg silicate sintering allowance; rc-390, scope mismatch |
-| matos_etal_2021_jrc_elemental_phosphorus_energy | T3 | Matos et al., JRC elemental phosphorus material-system report | verified live | P4 thermal-production energy comparator (up to 14 kWh/kg) for rc-394 |
+| matos_etal_2021_jrc_elemental_phosphorus_energy | T3 | Matos et al., JRC elemental phosphorus material-system report | verified live | P4 production estimate 0.9–1.2 Mt/year (rc-529); thermal-energy comparator (rc-394) |
 | mcmillan_etal_2016_nrel_lime_calcination_energy | T4 | McMillan et al., NREL/INL industrial lime-energy report | verified live | Carbonate calcination and lime-kiln energy comparator for rc-395 |
 | paz_2023_lunar_water_propellant_processing_assessment | T2 | Paz (2023), NASA lunar-water propellant processing assessment (NTRS 20230005189) | verified live, not hosted | spacevalue water refining-energy boundary: freeze distillation/filtering steps; no energy figure (rc-434) |
 | spacevalue_carbon_organic_processing_energy_current_2026 | T4 | Spacevalue carbon and organic processing-energy code record | verified live, not hosted | rc-437: 2.0 kWh/kg each; route and feed/product energy basis not sourced |

@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mcs2026_ammonia_chapter,"World ammonia plant production, nitrogen content, 2024",156000,thousand metric tons N,"Nitrogen (fixed)—ammonia chapter, printed p. 136, World Ammonia Production and Reserves table, 2024 column",Revised 2024 world total; source notes significant revisions for Egypt and Germany.
+usgs_mcs2026_ammonia_chapter,"World ammonia plant production, nitrogen content, estimated 2025",160000,thousand metric tons N,"Nitrogen (fixed)—ammonia chapter, printed p. 136, World Ammonia Production and Reserves table, 2025e column",Estimated world total; use as the current annual-production ceiling if the model adopts the latest year.
+spacevalue_ammonia_annual_market_code_current_2026,"ANNUAL_WORLD_PRODUCTION_KG[""ammonia""]",150000000000,kg N per year,"spacevalue/catalog.py, ANNUAL_WORLD_PRODUCTION_KG row",Row comment says ~150 Mt N; historical basis is the MCS 2025 estimate for 2024e.

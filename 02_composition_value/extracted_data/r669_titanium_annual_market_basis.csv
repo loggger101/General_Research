@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mcs2026_titanium_chapter,"World sponge production, world total (rounded)","380,000 (2024 revised); 370,000 (2025e)",metric tons,"World Sponge Metal Production and Sponge and Pigment Capacity table, printed p. 197, world total row",Metric tons titanium sponge content; footnote 3 excludes domestic production in Utah.
+spacevalue_titanium_annual_market_code_current_2026,ANNUAL_WORLD_PRODUCTION_KG titanium value,3.2e8,kg/year,"spacevalue/catalog.py ANNUAL_WORLD_PRODUCTION_KG[""titanium""]","Code comment traces value to MCS 2025 world production for 2024, rounded; describes exclusion as U.S.-wide."

@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mcs2026_silver_chapter,"World silver mine production, 2024",25300,metric tons,"Silver chapter, “World Mine Production and Reserves” table, World total (rounded)",USGS MCS 2026.
+usgs_mcs2026_silver_chapter,"World silver mine production, 2025 estimate",26000,metric tons,"Silver chapter, “World Mine Production and Reserves” table, World total (rounded)","USGS states 2025 world mine production was estimated at 26,000 tons."
+spacevalue_silver_annual_market_code_current_2026,Silver annual market ceiling,26000000,kg per year,"spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16, spacevalue/catalog.py, ANNUAL_WORLD_PRODUCTION_KG[""silver""]","Matches 26,000 metric tons after unit conversion; row comment does not identify edition/year."

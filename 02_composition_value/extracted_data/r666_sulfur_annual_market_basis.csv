@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mcs2026_sulfur_chapter,"World sulfur production, reported 2024",83900,thousand metric tons,"Sulfur chapter PDF p. 2, World Production and Reserves table, 2024 column",All forms; 83.9 Mt.
+usgs_mcs2026_sulfur_chapter,"World sulfur production, estimated 2025",84000,thousand metric tons,"Sulfur chapter PDF p. 2, World Production and Reserves table, 2025 column",All forms; rounded 84.0 Mt; estimate.
+spacevalue_sulfur_annual_market_code_current_2026,"ANNUAL_WORLD_PRODUCTION_KG[""sulfur""]",83000000000,kg per year,"spacevalue/catalog.py, ANNUAL_WORLD_PRODUCTION_KG row",Comment says ~83 Mt; no source edition or production year on the row.

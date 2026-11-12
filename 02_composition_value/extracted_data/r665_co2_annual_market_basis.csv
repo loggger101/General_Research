@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+iea_2019_putting_co2_to_use,Global CO2 use,230,Mt per year,"PDF printed p. 3, Executive summary; pp. 5–6, “Millions of tonnes of CO2 are being used today”",Approximate total use; 130 Mt urea and 70–80 Mt EOR. The report says the underlying estimate uses IHS Markit (2018); Figure 1 breakdown is for 2015. Not merchant-only production.
+spacevalue_co2_annual_market_code_current_2026,"ANNUAL_WORLD_PRODUCTION_KG[""carbon dioxide""]",230000000000,kg per year,"spacevalue/catalog.py, ANNUAL_WORLD_PRODUCTION_KG row; annual_market_kg route=""shipped to Earth""",Code annotates ~230 Mt merchant CO2; the cap is applied to terrestrial annual sales.

@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mcs2026_rhenium_chapter,"World mine production, rhenium content","79,800 (2024); 81,000 (2025e)",kg,"Rhenium chapter, printed p. 157, World Mine Production and Reserves, world total row",Mine production; footnote 7 excludes secondary production.
+spacevalue_rhenium_annual_market_code_current_2026,ANNUAL_WORLD_PRODUCTION_KG rhenium value,6.2e4,kg/year,spacevalue/catalog.py ANNUAL_WORLD_PRODUCTION_KG rhenium,Current value is about 62 metric tons per year; surrounding source note says MCS 2025.

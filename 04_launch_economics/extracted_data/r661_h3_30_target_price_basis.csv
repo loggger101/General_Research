@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+jaxa_h3_launch_vehicle,H3 light configuration launch-price target,about 5 billion,JPY,"JAXA H3 Launch Vehicle page, “High cost-performance” section",JAXA says the light configuration has no solid rocket booster and is mainly for LEO; target date and USD conversion not stated.
+spacecost_h3_30_target_price_code_current_2026,H3 (30) stored price point and band,36.3; low 33; high 40,million USD; reference_year 2026,"spacecost@aaed2720ee44610c5cf90fc204db160deb5669bb, reference/launch_vehicles.csv, H3 (30) row",price_basis=target; note cites about $33M at 2024 rates but gives no 2026 conversion or high-end method.
