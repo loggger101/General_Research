@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mcs2026_tungsten_chapter,"World mine production, tungsten content","82,000 (2024); 85,000 (2025e)",metric tons,"Tungsten chapter, printed p. 201, World Mine Production and Reserves table, “World total (rounded)” row","This is the world production total and tungsten-content unit, checked by row label."
+spacevalue_tungsten_annual_market_code_current_2026,ANNUAL_WORLD_PRODUCTION_KG tungsten value,8.1e7,kg/year,"spacevalue/catalog.py ANNUAL_WORLD_PRODUCTION_KG[""tungsten""]","Code comment identifies USGS MCS 2025 world production for 2024, rounded."

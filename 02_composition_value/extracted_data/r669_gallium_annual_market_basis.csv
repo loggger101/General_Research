@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mcs2026_gallium_chapter,World primary low-purity gallium production,"848,000 (2024 revised); 900,000 (2025e)",kg gallium content,"Gallium chapter, printed p. 83, World Low-Purity Production and Production Capacity, world total row",Primary low-purity production; distinct from high-purity refinery output.
+spacevalue_gallium_annual_market_code_current_2026,ANNUAL_WORLD_PRODUCTION_KG gallium value,7.6e5,kg/year,spacevalue/catalog.py ANNUAL_WORLD_PRODUCTION_KG gallium,"Current value matches MCS 2025 estimate of 760,000 kg for 2024."

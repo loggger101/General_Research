@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+eu_commission_eic_isaero_2022_factsheet,Spectrum price target,around 10000,EUR/kg,"printed p. 2, “Launcher characteristics”",European Commission factsheet states the ISAERO proposal target; not a launch offer.
+eu_commission_eic_isaero_2022_factsheet,Spectrum payload capacity,up to 1000,kg to LEO,"printed p. 2, “Launcher characteristics”","Factsheet footer © European Union, 2022; first flight was still planned for end-2022."
+isar_aerospace_spectrum_price_target,Current published numeric Spectrum price/target,not stated,currency per launch or kg,"Isar Aerospace homepage and Spectrum page, accessed 2026-11-12",Pages advertise pricing options / competitive prices and provide a booking flow but no numeric amount.
+spacecost_spectrum_price_code_current_2026,Spectrum stored launch price,11500000,USD; reference_year 2026,"spacecost@aaed2720ee44610c5cf90fc204db160deb5669bb, reference/launch_vehicles.csv, Spectrum row","price_basis=target; note converts the approximately €10,000/kg target using $1.15/€; stored unit rate is $11,500/kg at 1,000 kg LEO."

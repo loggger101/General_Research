@@ -426,3 +426,8 @@ The spacecost note groups 13 mission/mechanism categories as 10 successful, one 
 ## R634 — IPEx actuator life test as mining-success context (2026-11-11)
 
 `nasa_2024_ipex_trl5_actuator_life_test` describes NASA’s 30 kg-class IPEx lunar excavator and a notional 11-day mission profile targeting 10,000 kg of regolith (PDF p. 2). For its wheel actuator, the paper says the ConOps requires 5.7 million input revolutions; the accelerated test recorded 6,547,036 before axial rotor movement caused a bearing failure, and the authors state that further testing and design changes are required (PDF p. 8, §III.B). These are component-level qualification results from one actuator, not a mature whole-mining-rig success rate. They do not replace the 0.95 [0.85, 0.99] ceiling and range in spacecost’s `Mining system mature success probability` row. Keep `rc-493` open; the source supplies an operationally relevant failure-mode comparator, not a probability estimate. Extracted: `extracted_data/r634_ipex_actuator_life_test.csv`.
+
+
+## R658 — economicspace learning-rate candidate rechecked (2026-11-12)
+
+At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `CalcConfig.learning_curve_rate` remains 0.85 and `model_learning_curve` remains `False`; the default change did not enable the feature or add a mining-hardware learning-rate basis. **rc-385** remains open. Existing comparator: `extracted_data/r519_space_launch_learning_curve_comparator.csv`.

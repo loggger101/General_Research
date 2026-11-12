@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+blueorigin_new_glenn_9x4_page,New Glenn 9x4 LEO payload capability,70,metric tons,"Blue Origin 9x4 page, “Superpowered Second Stage Performance”",Manufacturer-stated capability.
+blueorigin_new_glenn_9x4_page,New Glenn 9x4 direct-to-GSO payload capability,14,metric tons,"Blue Origin 9x4 page, “Superpowered Second Stage Performance”","GSO direct, not GTO."
+blueorigin_new_glenn_9x4_page,New Glenn 9x4 TLI payload capability,20,metric tons,"Blue Origin 9x4 page, “Superpowered Second Stage Performance”",Manufacturer-stated capability.
+blueorigin_new_glenn_9x4_page,Commercial launch price on product page,not stated,USD per launch,Blue Origin 9x4 page; “Contact Sales” link,Page states performance and configuration but does not publish a price.
+,Pipeline 9x4 price estimate,194000000; low 150000000; high 250000000,"USD, 2026 reference year","spacecost@aaed2720ee44610c5cf90fc204db160deb5669bb, reference/launch_vehicles.csv, New Glenn 9x4 row",Pipeline values; row labels basis estimate and says no price published.

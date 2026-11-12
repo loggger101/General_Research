@@ -472,3 +472,28 @@ This block records the rest of what those PRs did.
   outside the check).
 - **Still `open`, flag still off**: rc-091 `model_rated_array_cost`, rc-244
   `size_ep_on_flown_load`, rc-246 `carry_ep_home`.
+
+## R670 - Citation candidates applied upstream as scenario labels (2026-11-12)
+
+- **spacecost a401930** (PR #44, 0.17.1, data contract 1.26.1): the row's note
+  now labels the value a scenario where no like-for-like source exists and
+  names the comparator; no value moved. Applied: rc-451, rc-457, rc-458,
+  rc-474, rc-475, rc-476, rc-477, rc-478, rc-479, rc-485, rc-486, rc-487,
+  rc-488, rc-489, rc-490, rc-492, rc-493, rc-494, rc-495, rc-497, rc-499,
+  rc-500, rc-501, rc-502, rc-503, rc-504, rc-505, rc-506, rc-514, rc-515,
+  rc-516, rc-517.
+- **spacevalue 74064e8** (PR #12, 0.6.2, data contract 1.20.0 unchanged): the
+  code comment now labels the value a scenario and names the comparator;
+  catalog.py parses to an identical AST. Applied: rc-424, rc-425, rc-426,
+  rc-427, rc-428, rc-429, rc-430, rc-431, rc-432, rc-434, rc-437, rc-438,
+  rc-439, rc-440, rc-441, rc-442, rc-443, rc-447, rc-450, rc-452, rc-453,
+  rc-454, rc-472, rc-473, rc-482, rc-483, rc-507, rc-508, rc-509, rc-510,
+  rc-511, rc-512, rc-513.
+- **AsteroidCatalog a2c527c** (PR #33, 0.13.2, data contract 1.11.0 unchanged):
+  the code comment now defines the quantity, labels the value a scenario and
+  names the comparator; no output changed. Applied: rc-444, rc-445, rc-446,
+  rc-448, rc-449, rc-460, rc-461, rc-462, rc-464, rc-466, rc-467, rc-468,
+  rc-469, rc-470, rc-471, rc-480, rc-496.
+- No candidate found a like-for-like source; each stays a scenario upstream.
+  rc-455 and rc-456 (spacevalue source label), rc-433, rc-484, rc-481 and
+  rc-386 stay `open`.

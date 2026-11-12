@@ -517,3 +517,8 @@ Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["gto"]` 
 `bogmans_2024_power_of_prices_commodity_supply_demand_elasticities`: the registered IMF study reports demand-elasticity estimates for copper, zinc, lead and tin, not PGMs. `vertier_2025_banque_de_france_eco_notepad_419_price_elasticity_critical_mineral_supply`: its approximately 0.5 estimate is a mine-output supply response, not demand elasticity.
 
 Upstream: `spacevalue/cargo.py` `saturation_price_multiplier` retains the statement “Precious-metal demand is inelastic, ε ≈ 0.5” above the constant-elasticity formula; the helper receives `elasticity` as an argument. The file says the elasticity path remains the v1.14.0 curve in the no-caps compatibility path. The independent economicspace copy was corrected under rc-123; this spacevalue copy still has the prior claim. Verdict: the registered sources do not establish PGM demand elasticity. Treat 0.5 as a scenario if used; retain the formula and caller input pending PGM-specific evidence, with no replacement inferred. **rc-507**. Existing extraction: `extracted_data/r114_gr_links_key_numbers.csv`.
+
+
+## R658 — economicspace surplus-price fraction rechecked (2026-11-12)
+
+At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `surplus_price_fraction` remains 0.5 while `sell_surplus_at_discount` is enabled. The new default market-wave clock changes programme timing, but no empirical price-response basis for the half-price assumption was added. **rc-465** remains open. Existing extract: `extracted_data/r602_surplus_price_fraction_basis.csv`.

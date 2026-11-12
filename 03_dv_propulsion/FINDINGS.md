@@ -6,6 +6,14 @@
 
 # Domain 3 Findings — Δv budgets and propulsion performance tables
 
+## R664 — HTP/RP-1 vacuum-Isp basis is not identified in Spacecost (2026-11-12)
+
+- **krishnan_2010_h2o2_rp1_upper_stage**: Table 3 (PDF p. 9) reports an H2O2 (~97%)/RP-1 RD-161P development engine at O/F 5.9 with 3,128 N-s/kg (~319 s), and the flown Gamma-2 at O/F 8.23 with 2,599 N-s/kg (~265 s). Table 2 (p. 8) gives theoretical 98% H2O2/RP-1 frozen Isp of 3,268 N-s/kg (~333 s) at the maximum-frozen point.
+- **pietrobon_1999_h2o2_kero_shuttle_boosters**: Table 2 (PDF p. 4) gives 3,016 m/s (~308 s) for a hypothetical 98% H2O2/kerosene RD-170 derivative at O/F 7.30.
+- **spacecost_htp_rp1_specific_impulse_code_current_2026**: at `spacecost@aaed2720ee44610c5cf90fc204db160deb5669bb`, `spacecost/propellants.py` lines 1068–1084 stores 320 s at nominal O/F 7 and mentions Black Arrow heritage without identifying the performance basis.
+
+The references support distinct development, flown, and theoretical performance cases; the flown Black Arrow Gamma-2 comparator is ~265 s, not 320 s. Verdict: cite the basis for 320 s and distinguish it from Black Arrow’s flight performance; retain the numeric value pending a like-for-like basis. **rc-525**. Extracted: `extracted_data/r664_htp_rp1_isp_basis.csv`.
+
 ## R600 — Chemical cruise-time fit provenance (2026-11-11)
 
 - **economicspace_cruise_time_fit_code_current_2026**: `campaign/worked_calculation.py` defines `TAU_CRUISE_FIT_YR_PER_M_S = 0.00023` and calls it calibrated on chemical transfers, but names no calibration cases, dataset, fitting procedure, residual, uncertainty, or transfer range. `mass_and_clock` applies `max(0.5, coefficient × Δv)` separately to chemical outbound and return legs; electric missions use a separate thrust-time floor.
@@ -486,3 +494,8 @@ The primary records separate the figures. Arbit et al. (NASA-CR-72325, NTRS abst
 ## R656 — economicspace fallback return reference linkage (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831`, `CalcConfig.default_dv_return_m_s` is 5,500 m/s and `_dv_fallback_m_s` uses that value for propulsive return when orbital elements are unusable. This is the same 5,500 m/s value in spacecost’s “NEA → Earth return (propulsive)” row, whose trajectory and endpoint basis gap is already recorded in **rc-514**. The 6,500 m/s outbound fallback maps to the cited “LEO → average NEA” segment; the 4,000 m/s aerocapture saving remains separately tracked in **rc-519**. Rechecked rc-514 against both current repository commits; no new candidate or numeric replacement inferred. Extracted: `extracted_data/r656_economicspace_dv_fallback_reference_link.csv`.
+
+
+## R658 — economicspace Δv controls rechecked (2026-11-12)
+
+At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `CalcConfig.max_dv_outbound_m_s` remains 20,000 m/s; the newly default-on surface-escape gate is a separate necessary-condition screen and does not establish that clamp as a mission-validity limit (**rc-459**). `campaign/worked_calculation.py` retains `TAU_CRUISE_FIT_YR_PER_M_S=0.00023`, applied as `max(0.5, tau × Δv)` to chemical transfer time; no calibration cases, fit method, or error range were added (**rc-463**). Both candidates remain open. Existing extracts: `extracted_data/r596_economicspace_dv_ceiling.csv`; `extracted_data/r600_chemical_cruise_time_fit_provenance.csv`.

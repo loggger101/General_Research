@@ -222,3 +222,8 @@ This adds an opt-in partial path for `rc-248`, but the default still charges a r
 ## R654 — NRE overlap fraction in the cost model (2026-11-11)
 
 `economicspace_nre_recurring_overlap_fraction_code_current_2026` — economicspace sets `nre_recurring_overlap_fraction` to 0.30, described as a “mid-range de-duplication.” The code says the recurring-cost brackets are regressions on total program cost and therefore include development; its cost formula charges the spacecraft NRE at `1 − overlap_fraction` per mission. The related spacecost mining-payload row now says its $100,000–$1,000,000/kg bracket has no registered source, and the SSCM/NICM records remain `registered_not_pulled`. **Verdict:** the 0.30 share has no checked derivation from a cost model or matched hardware class. Open `rc-518`; no replacement fraction inferred. Extracted: `extracted_data/r654_nre_recurring_overlap_fraction_code_audit.csv`.
+
+
+## R658 — economicspace return-structure candidates rechecked (2026-11-12)
+
+At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `heat_shield_frac_of_payload` remains 0.15 as a flat returned-payload fraction, with no entry-speed scaling basis (**rc-134**). The current comment still states that Cygnus’s approximately 1,500 kg dry mass has no source; `return_structure_frac_of_payload` remains 0.15 and the configuration-specific PCM mass basis remains unresolved (**rc-423**). Both candidates remain open. Existing extracts: `extracted_data/r453_xing_2026_tps_mass_and_entry_speed.csv`; `extracted_data/r475_alpert_high_velocity_tps_sizing.csv`; `extracted_data/r557_orbital_cygnus_pcm_mass_by_configuration.csv`.

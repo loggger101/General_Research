@@ -1,6 +1,55 @@
+## R669 — Titanium sponge annual-market source and vintage (2026-11-12)
+
+- `spacevalue_titanium_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["titanium"] = 3.2e8` kg/year (~320,000 metric tons sponge), attributed to MCS 2025 for 2024 and described as excluding the U.S.
+- `usgs_mcs2026_titanium_chapter`: the World Sponge Metal Production table (“World total (rounded)” row, printed p. 197) reports 380,000 metric tons for revised 2024 and 370,000 for 2025e. Footnote 3 excludes Utah production; the U.S. row is zero in 2025.
+- Verdict: re-pin the ceiling to a named year and update the exclusion wording. The latest estimate of 370,000 metric tons is 50,000 metric tons (15.6%) above the current value. **rc-531**. Extracted: `extracted_data/r669_titanium_annual_market_basis.csv`.
+- `spacevalue_rhenium_annual_market_code_current_2026`: `catalog.py` sets 62,000 kg/year (~62 t), attributed to MCS 2025 for 2024. `usgs_mcs2026_rhenium_chapter` reports 79,800 kg for revised 2024 and 81,000 kg for 2025e in its world mine-production table (printed p. 157); footnote 7 excludes secondary rhenium.
+- Verdict: re-pin to the selected year; 81,000 kg is 19,000 kg (30.6%) above the current value. **rc-532**. Extracted: `extracted_data/r669_rhenium_annual_market_basis.csv`.
+- `spacevalue_gallium_annual_market_code_current_2026`: `catalog.py` sets 760,000 kg/year of primary gallium, matching MCS 2025 for 2024. `usgs_mcs2026_gallium_chapter` reports 848,000 kg for revised 2024 and 900,000 kg for 2025e in its world low-purity primary-production table (printed p. 83).
+- Verdict: re-pin to the selected year and preserve the low-purity primary measure; 900,000 kg is 140,000 kg (18.4%) above the current value. **rc-533**. Extracted: `extracted_data/r669_gallium_annual_market_basis.csv`.
+
+## R668 — Elemental phosphorus annual-production basis (2026-11-12)
+
+- `spacevalue_phosphorus_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["phosphorus"] = 1.0e9` kg/year (~1 Mt elemental P₄). A table-level note attributes terrestrial figures broadly to USGS MCS annual primary production.
+- `matos_etal_2021_jrc_elemental_phosphorus_energy`: the European Commission JRC report says “The precise world production of elemental phosphorus is not known” and estimates 900–1,200 kt/year (§7.2, printed p. 31).
+- `usgs_mcs2026_phosphate_rock_chapter`: the World Mine Production and Reserves table (“World total (rounded)” row, printed p. 143) reports 239,000 thousand metric tons of marketable phosphate rock for 2024 and 250,000 for 2025e; this is a different product measure and does not establish global elemental-P₄ production.
+- Verdict: 1 Mt/year is within the JRC range, so no numeric replacement is supported. Identify the elemental-P₄ source and estimate vintage or label the current value as an approximate scenario. **rc-529**. Extracted: `extracted_data/r668_phosphorus_annual_market_basis.csv`.
+- `usgs_mcs2026_tungsten_chapter`: the “World total (rounded)” row reports 82,000 metric tons tungsten content for 2024 and 85,000 for 2025e (printed p. 201). `spacevalue_tungsten_annual_market_code_current_2026` records the current 81,000 t/year ceiling, which the code attributes to MCS 2025 for 2024.
+- Verdict: use 85,000 t/year and label 2025e if the model intends the latest MCS estimate; this is 4,000 t (computed here), or 4.7%, above the current rounded value. **rc-530**. Extracted: `extracted_data/r668_tungsten_annual_market_basis.csv`.
+
+## R667 — Ammonia annual-market estimate re-pin (2026-11-12)
+
+- `usgs_mcs2026_ammonia_chapter`: *Mineral Commodity Summaries 2026*, Nitrogen (fixed)—ammonia, printed p. 136, defines data in thousand metric tons of nitrogen content. The World Ammonia Production and Reserves table reports 156,000 for 2024 and 160,000 for 2025e; the text notes “Significant revisions were made to the 2024 production” for Egypt and Germany.
+- `spacevalue_ammonia_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["ammonia"] = 1.5e11` kg N/yr (~150 Mt N), with no source edition or production year on the row. The source row in registry history is MCS 2025 world plant production for 2024e; rc-055 applied the same 150 Mt N re-pin in economicspace.
+- Verdict: MCS 2026 revises 2024 production to 156 Mt N and estimates 160 Mt N for 2025. Re-pin the Spacevalue ceiling to a named year and current edition; both values use nitrogen content and world plant production. **rc-528**. Extracted: `extracted_data/r667_ammonia_annual_market_basis.csv`.
+
+## R666 — Sulfur annual-market source and year (2026-11-12)
+
+- `usgs_mcs2026_sulfur_chapter`: the World Production and Reserves table (chapter PDF p. 2) reports 83,900 thousand metric tons for 2024 and 84,000 for 2025e; the text says “World sulfur production in 2025 was an estimated 84 million tons compared with 83.9 million tons in 2024.” The previously registered MCS 2025 sulfur chapter reports 85 million tons for 2024 (printed p. 173).
+- `spacevalue_sulfur_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["sulfur"] = 8.3e10` (~83 Mt/yr) without a source edition or production year on the row. The table-level note attributes terrestrial figures broadly to MCS annual primary production; INDEX maps this inherited sulfur row to MCS 2025.
+- Verdict: the current value is close to the 2026 USGS estimates but does not match the rounded 2024 or 2025 MCS 2026 world totals. Identify its source vintage and whether 83 Mt is a scenario or a stale annual production figure; no numeric replacement inferred. **rc-527**. Extracted: `extracted_data/r666_sulfur_annual_market_basis.csv`.
+
+## R665 — Carbon dioxide terrestrial annual-market basis (2026-11-12)
+
+- `iea_2019_putting_co2_to_use`: IEA, *Putting CO2 to Use* (2019), Executive summary p. 3, estimates “some 230 million tonnes (Mt)” of CO2 are used annually, including 130 Mt for urea and 70–80 Mt for enhanced oil recovery. Printed pp. 5–6 identify IHS Markit (2018) among the inputs and describe the 2015 demand breakdown as mainly EOR and on-site urea production.
+- `spacevalue_co2_annual_market_code_current_2026`: Spacevalue `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["carbon dioxide"] = 2.3e11` (~230 Mt/yr), comments “merchant CO2,” and uses this terrestrial ceiling for `shipped to Earth` in `annual_market_kg`. The table-level note describes terrestrial figures as USGS MCS annual primary production, which does not establish this CO2 row’s basis.
+- Verdict: the IEA value is a close numerical match but represents total use, not merchant-only production; the report attributes most of it to on-site urea use and EOR. Record the missing source year and market boundary, and establish whether total use is an intentional sales-cap scenario or whether a merchant-specific measure is intended. No numeric replacement inferred. **rc-526**. Extracted: `extracted_data/r665_co2_annual_market_basis.csv`.
+
 # Domain 2 Findings — composition → commodity value mapping
 
 Backings: AsteroidCatalog `taxonomy_composition.csv` material fractions (metal, silicate, carbon, ice), `mineralogy.py` phase splits (`comp_phases_detailed`), `PGM_ENRICHMENT_BY_TYPE`, and spacevalue `catalog.py` mineralogy and nickel-iron yields.
+
+## R663 — Minor-PGM annual market values lack row-level source years and measures (2026-11-12)
+
+- **jm_pgm_market_report_2026**: the tables label the metric “Total primary supply” and report 2025 values of 7.1 t iridium (PDF p. 34), 21.8 t rhodium (p. 32), and 30.2 t ruthenium (p. 33).
+- **spacevalue_pgm_annual_production_code_current_2026**: at `spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16`, `catalog.py` lines 897–899 stores 7.5, 23, and 30 tonnes per year, respectively. The table-level comment attributes terrestrial figures to USGS MCS annual primary production; these rows give no edition, year, or specific production measure.
+
+The JM values are close comparators but use a separately named primary-supply series, and are not established as the code values’ source or as like-for-like mine-production replacements. Verdict: retain the numeric cells; identify the source, year, and measure for each row. **rc-524**. Extracted: `extracted_data/r663_pgm_annual_market_basis.csv`.
+
+## R662 — Spacevalue silver market ceiling lacks its specific USGS edition and year (2026-11-12)
+
+- **usgs_mcs2026_silver_chapter**: USGS MCS 2026, Silver chapter, printed pp. 172–173, “World Mine Production and Reserves” table, reports a rounded world total of 25,300 metric tons in 2024 and 26,000 in 2025e; its prose says “World silver mine production increased slightly in 2025 to an estimated 26,000 tons.”
+- **spacevalue_silver_annual_market_code_current_2026**: at `spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16`, `spacevalue/catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["silver"] = 2.6e7` (~26,000 metric tons) without identifying the USGS edition or production year on the row. The table-level comment names the USGS MCS series generally. Existing rc-302 concerns silver’s reference price and does not cover this annual market-ceiling field. Verdict: cite MCS 2026 and label the value as estimated 2025 world mine production; the published value matches, so no replacement inferred. **rc-523**. Extracted: `extracted_data/r662_silver_annual_market_basis.csv`.
 
 ## R601 — L-type conditional silicate split (2026-11-11)
 
@@ -466,7 +515,7 @@ Dunham et al. (2023), Table 3, compile 3,027 CAIs from 12 CV chondrites (mean 5.
 
 ## R583 — S-complex zero-water scope (2026-11-11)
 
-`asteroidcatalog_s_complex_zero_water_code_current_2026`: AsteroidCatalog assigns `ice_fraction=0.00` to S, Sa, Sk, Sl, Sq, Sr and Sv, and `mineralogy.py` maps this group to water. McAdam et al. (2024), *The Planetary Science Journal* 5:254, report 27 of 33 observations with detectable 3 μm features at ≥1% band depth within error (Abstract, printed p. 1); the discussion identifies OH/H2O signatures on 23 nominally anhydrous S-type asteroids (§4.3, printed p. 13). The article says the 3 μm region cannot distinguish OH from H2O and lists endogenic hydrated minerals, solar-wind OH and exogenic hydrated minerals as possible origins (§2, printed p. 2). These surface detections challenge an unqualified zero-water interpretation but establish no bulk or class-level extractable-water amount. Verdict: define what the zero excludes and retain it only for that stated boundary until matched evidence is available; no replacement inferred. **rc-446**. Extracted: `extracted_data/r583_s_complex_hydration_context.csv`.
+`asteroidcatalog_s_complex_zero_water_code_current_2026`: AsteroidCatalog assigns `ice_fraction=0.00` to S, Sa, Sk, Sl, Sq, Sr and Sv, and `mineralogy.py` maps this group to water. McAdam et al. (2024), *The Planetary Science Journal* 5:254, report 27 of 33 observations with detectable 3 μm features at ≥1% band depth within error (Abstract, printed p. 1); the discussion identifies OH/H2O signatures on 23 nominally anhydrous S-type asteroids (§4.3, printed p. 13). The article says the 3 μm region cannot distinguish OH from H2O and lists endogenic hydrated minerals, solar-wind OH and exogenic hydrated minerals as possible origins (§2, printed p. 201). These surface detections challenge an unqualified zero-water interpretation but establish no bulk or class-level extractable-water amount. Verdict: define what the zero excludes and retain it only for that stated boundary until matched evidence is available; no replacement inferred. **rc-446**. Extracted: `extracted_data/r583_s_complex_hydration_context.csv`.
 
 
 ## R585 — P/D/Z interior ice fraction basis (2026-11-11)

@@ -1018,3 +1018,8 @@ At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcCo
 ## R636 — Coarse optimizer search resolution (2026-11-11)
 
 `economicspace_search_resolution_controls_2026` — economicspace main sets `concentration_search_steps=7` and says “7 puts the optimum within a few percent” (modules/calc.py:396-403). It sets `programme_search_steps=8` for a geometric fleet sweep followed by refinement (lines 1102-1106), but records no convergence bound. The current best-case verification worksheet flags its corresponding inputs I112 and I114 as needing backing; its checks reproduce calculations and trace inputs, not grid convergence. **Verdict:** these are algorithmic settings, so an external physical citation would not validate them; require a documented dense-search comparison and qualify or substantiate the accuracy claim. Open `rc-498`. Extracted data: `extracted_data/r636_economicspace_search_resolution_controls.csv`.
+
+
+## R658 — economicspace search-resolution candidate rechecked (2026-11-12)
+
+At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `concentration_search_steps` remains 7 and `programme_search_steps` remains 8. The new-default verification checks result reproduction and invariants; it does not measure selected-result error against denser concentration and fleet searches. **rc-498** remains open. Existing extract: `extracted_data/r636_economicspace_search_resolution_controls.csv`.
