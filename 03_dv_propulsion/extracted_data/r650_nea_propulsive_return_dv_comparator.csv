@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+cohen_2013_niac_rap_phase1_final_report,LEO-staged round-trip NEA post-departure Δv,6.000,km/s,"§4.2.2, printed p. 49","10,000 kg sizing case; C3=12 km³/s²; includes post-departure maneuvers and propulsive capture back at LEO; not an inbound-only return leg."
+cohen_2013_niac_rap_phase1_final_report,RAP Earth-departure maneuver,3.50,km/s,"§4.4, Table 4.1, printed p. 52",LEO-departure allowance; excluded from the post-departure subtotal below.
+cohen_2013_niac_rap_phase1_final_report,RAP asteroid-arrival maneuver,1.25,km/s,"§4.4, Table 4.1, printed p. 52",RAP preliminary round-trip budget.
+cohen_2013_niac_rap_phase1_final_report,RAP asteroid-departure maneuver,1.35,km/s,"§4.4, Table 4.1, printed p. 52",Report says asteroid-departure and Earth-arrival propellant can be provided by mined water.
+cohen_2013_niac_rap_phase1_final_report,RAP Earth-arrival maneuver,2.50,km/s,"§4.4, Table 4.1, printed p. 52",Does not include a lunar gravity assist.
+cohen_2013_niac_rap_phase1_final_report,RAP post-departure subtotal computed here,5.10,km/s,"§4.4, Table 4.1, printed p. 52","Computed here: 1.25 + 1.35 + 2.50; table-based mission-budget subtotal, not a generic return-segment value."
+,spacecost NEA → Earth return (propulsive),5500,m/s; duration 1.5 yr,"reference/delta_v_segments.csv, row NEA → Earth return (propulsive)",spacecost main commit aaed2720ee44610c5cf90fc204db160deb5669bb; file SHA-256 A5C847F3A43F650DAB9CCA08658106B1AD3F8E63DDB3C8DE589AD99CA833F8C0; note: “Symmetric to outbound; powered Earth-return with no aerobraking.”

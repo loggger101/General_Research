@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_awaruite_trace_yields_code_current_2026,awaruite platinum yield,75,ppm by mass,spacevalue/catalog.py awaruite yields,Code comment: PGMs concentrated ~5× nickel-iron baseline.
+spacevalue_awaruite_trace_yields_code_current_2026,awaruite palladium yield,50,ppm by mass,spacevalue/catalog.py awaruite yields,
+spacevalue_awaruite_trace_yields_code_current_2026,awaruite iridium yield,20,ppm by mass,spacevalue/catalog.py awaruite yields,
+spacevalue_awaruite_trace_yields_code_current_2026,awaruite ruthenium yield,15,ppm by mass,spacevalue/catalog.py awaruite yields,
+spacevalue_awaruite_trace_yields_code_current_2026,awaruite osmium yield,10,ppm by mass,spacevalue/catalog.py awaruite yields,
+spacevalue_awaruite_trace_yields_code_current_2026,awaruite rhodium yield,7.5,ppm by mass,spacevalue/catalog.py awaruite yields,
+spacevalue_awaruite_trace_yields_code_current_2026,awaruite gold yield,5,ppm by mass,spacevalue/catalog.py awaruite yields,
+,sum of coded trace yields,182.5,ppm by mass,computed from catalog entries,"Arithmetic sum of coded Pt, Pd, Ir, Ru, Os, Rh and Au; computed here."
+kutyrev_et_al_2023_awaruite_pge_behavior,"Kamchatsky Mys, Karaginsky Island and Mamet awaruite PGE result",no significant PGE concentrations measured,qualitative result,"abstract, ORCA record",The article separately reports PGM inclusions associated with awaruite; inclusion presence does not establish bulk-host concentration.
+kutyrev_et_al_2023_awaruite_pge_behavior,Galmoenan awaruite palladium maximum,3,ppm,"abstract, ORCA record",Rare analyses; the article says awaruite did not show significant Os enrichment despite pentlandite relicts up to 540 ppm Os.
+kutyrev_et_al_2023_awaruite_pge_behavior,previously reported awaruite PGE content,up to first 10,ppm,"abstract, ORCA record",The authors say their new data are not in complete accordance with these earlier reports.

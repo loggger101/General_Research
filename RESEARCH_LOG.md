@@ -1,4 +1,18 @@
 # Research log
+- **Round 657** (2026-11-12): economicspace calc 1.45.0 (PR #203) turns sixteen method flags on by default; 14 candidates closed as applied, rc-285 and rc-288 stay open on what their checks leave out, and rc-091, rc-244 and rc-246 are re-stamped with their flags still off.
+- **Round 656** (2026-11-12): Rechecked rc-514 against economicspace’s use of the 5,500 m/s return fallback; its outbound fallback maps to a cited reference row, and the aerocapture saving remains separately tracked by rc-519.
+- **Round 655** (2026-11-11): Opened rc-519 because the 4,000 m/s aerocapture saving used when orbital elements are unusable has no trajectory-matched or endpoint-specific basis.
+- **Round 654** (2026-11-11): Opened rc-518 because economicspace’s 0.30 NRE overlap fraction has no checked cost-model or hardware-class derivation, and its cited recurring-cost bracket is itself unverified.
+- **Round 653** (2026-11-11): Opened rc-517 because the mining-payload hardware rate and range remain an explicit estimate without a checked, hardware-matched cost-estimating basis.
+- **Round 652** (2026-11-11): Opened rc-516 because the depot berthing/handover estimate has no component-level cost basis, and ISS cargo-mission totals do not price that service separately.
+- **Round 651** (2026-11-11): Opened rc-515 because Taylor et al. calculate outbound main-belt rendezvous trajectories, not the return Δv and duration the spacecost row attributes to the paper.
+- **Round 650** (2026-11-11): Opened rc-514 because spacecost’s propulsive NEA-return Δv and duration are assigned without a trajectory or endpoint basis.
+- **Round 649** (2026-11-11): Opened rc-513 because awaruite trace yields do not identify their host/inclusion boundary or population basis.
+- **Round 648** (2026-11-11): Opened rc-512 because the generic native-PGM yield vector has no cited population or averaging basis.
+- **Round 647** (2026-11-11): Opened rc-511 because cohenite’s yield-based terrestrial price omits its formula carbon without a documented product boundary.
+- **Round 646** (2026-11-11): Opened rc-510 because three spacevalue mineral reference prices lack product-matched sources and quote bases.
+- **Round 645** (2026-11-11): Opened rc-509 because spacevalue assigns a terrestrial price to “kerogen-like” organics without identifying a saleable product or price basis.
+- **Round 644** (2026-11-11): Opened rc-508 because spacevalue gives its carbon reference price as “bulk industrial carbon black” without a matched source, grade, quote date, or delivery basis.
 - **Round 643** (2026-11-11): Opened rc-507 because spacevalue retains the unsupported precious-metal demand-elasticity claim that economicspace corrected under rc-123.
 - **Round 642** (2026-11-11): Opened rc-506 because Nuri’s approximate $30M historical estimate does not establish the $45M endpoint, the 2026 adjustment, or the price boundary.
 - **Round 641** (2026-11-11): Opened rc-505 because the Long March 4C estimate relies on an untraced 2006 Long March 4B price but records a 2026 band without a source or conversion method.

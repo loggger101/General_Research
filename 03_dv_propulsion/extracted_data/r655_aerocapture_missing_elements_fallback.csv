@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_aerocapture_no_elements_fallback_code_current_2026,aerocapture_dv_savings_m_s,4000,m/s,modules/calc.py CalcConfig field,Comment restricts the fixed saving to fallback cases where orbital elements are unusable.
+economicspace_aerocapture_no_elements_fallback_code_current_2026,default_dv_return_m_s,5500,m/s,modules/calc.py CalcConfig field,Fallback baseline for a propulsive Earth return.
+economicspace_aerocapture_no_elements_fallback_code_current_2026,aerocapture return fallback,1500,m/s,modules/calc.py _dv_fallback_m_s,"Computed as max(500, 5500-4000); no trajectory or endpoint derivation is given."
+nasa_ispt_2010_aerocapture_discovery_mission_briefing,NEO all-propulsive circular-insertion comparator,approximately 4–5,km/s,"NASA ISPT 2010 briefing, PDF p. 12, “Examples for Circular Orbit Insertion”",The chart is for propulsive circular insertion and gives no aerocapture residual; see rc-293.
