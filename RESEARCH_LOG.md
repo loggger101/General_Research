@@ -1,4 +1,5 @@
 # Research log
+- **Round 671** (2026-11-12): closed 6 economicspace citation candidates applied upstream as comments that label each value a scenario beside its comparator (economicspace #204, master 1.74.0); no upstream value moved.
 - **Round 670** (2026-11-12): closed 82 citation candidates applied upstream as notes and comments that label each value a scenario beside its comparator (spacecost #44, spacevalue #12, AsteroidCatalog #33); no upstream value moved.
 - **Round 669** (2026-11-12): Opened rc-531 because Spacevalue’s titanium-sponge ceiling is pinned to MCS 2025 and says “excluding the U.S.”; MCS 2026 revises 2024 to 380,000 t and estimates 370,000 t for 2025, with a Utah-specific exclusion. Opened rc-532 and rc-533 to re-pin rhenium and gallium primary-production ceilings to MCS 2026.
 - **Round 668** (2026-11-12): Opened rc-529 for Spacevalue’s 1 Mt/year elemental-P₄ ceiling, which falls within the JRC’s 0.9–1.2 Mt/year estimate but lacks a clear source vintage. Opened rc-530 because the 81,000-tonne tungsten ceiling from MCS 2025 is below MCS 2026’s 85,000-tonne estimate for 2025.
