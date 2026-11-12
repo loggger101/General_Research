@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_vulcan_vc6_current_record_2026,current_manifest_note,first VC6 is manifested for Oct 2026,statement,"reference/launch_vehicles.csv, Vulcan Centaur VC6 note",This date has passed and is not consistent with the current ULA schedule.
+ula_vulcan_leo1_vc6l_schedule_2026,scheduled_first_VC6L_mission,13 Nov 2026,date,"ULA blog post dated 10 Nov 2026, lines 10-11; mission page line 45","As of 11 Nov 2026 this remains a scheduled mission, not a flown VC6."
+ula_vulcan_leo1_vc6l_schedule_2026,vehicle_configuration,V-012; VC6L; six SRBs; LEO-optimized Centaur V,configuration,"ULA blog post, lines 25-28; mission page lines 58-73",Directly identifies the first planned six-booster long-fairing mission.

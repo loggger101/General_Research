@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_pallas1_price_estimate_code_current_2026,Pallas-1 list price and range,"28,300,000 [20,000,000, 40,000,000]",USD per launch,"spacecost/reference/launch_vehicles.csv, Pallas-1 row, list_price_usd/list_price_usd_low/list_price_usd_high",price_basis=estimate; row note does not identify source or calculation.
+galactic_energy_pallas1_first_flight_release_2026,Pallas-1 LEO payload capability,"5,000–7,000",kg,"Galactic Energy official release, lines 59–62",Vehicle capability context; the release gives no absolute launch price.
+galactic_energy_pallas1_first_flight_release_2026,Pallas-1 design reuse count and commercialization sequence,"at least 25; staged recovery, then high-frequency reuse",flights / development stages,"Galactic Energy official release, lines 61 and 84–91","These are design and programme claims, not a published reusable-launch price."
+beijing_e_town_pallas1_reuse_cost_share_2026,Recovery component share of total cost,two-thirds,fraction,"Beijing E-Town interview, line 24",Direct company-chairman interview quote; no absolute cost or per-launch price.
+beijing_e_town_pallas1_reuse_cost_share_2026,Reuse count aspiration,50,recoveries,"Beijing E-Town interview, line 24",Company target; not the release’s design minimum and not a launch-price basis.

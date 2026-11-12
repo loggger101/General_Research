@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,"NWA 5772 (CV3), olivine",17.0,modal %,"Table 2, printed p. 500, NWA 5772 column",Single sample mapped-area modal abundance; not class-wide conditional mass share.
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,"NWA 5772 (CV3), low-Ca pyroxene",25.4,modal %,"Table 2, printed p. 500, NWA 5772 column",Single sample mapped-area modal abundance; model combines pyroxene categories.
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,"NWA 5772 (CV3), matrix",47.3,modal %,"Table 2, printed p. 500, NWA 5772 column",Text says the fine-grained matrix is rich in phyllosilicates; not directly equivalent to a conditional phase share.
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,"NWA 5772 (CV3), mesostasis",8.7,modal %,"Table 2, printed p. 500, NWA 5772 column",A sample-specific phase category not separately represented in the model C-group split.
+martin_debaille_etal_2013_ck_modal_mineralogy_xmaptools,mapped area representativeness,only ±1 mm²; may not be entirely representative,text,"§4.2, printed p. 511",Authors caution that mapped areas may not represent the whole rock.
+asteroidcatalog_k_silicate_split_code_current_2026,K modeled silicate-group shares,olivine=0.75; pyroxene=0.20; plagioclase=0.05,fraction,"mineralogy.py lines 194, 197, 284","Upstream K value uses `_SIL_CV`; Martin et al. provide a single CV3 sample, not a CV/CO class-wide conditional split."

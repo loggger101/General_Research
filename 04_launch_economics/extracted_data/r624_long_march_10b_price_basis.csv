@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm10b_launch_price_code_current_2026,Stored point price,52900000,USD per launch,"reference/launch_vehicles.csv, Long March 10B row: list_price_usd",price_basis=estimate; reference_year=2026; row says “Price estimated” with no method or citation.
+spacecost_lm10b_launch_price_code_current_2026,Stored price band,40000000–70000000,USD per launch,"reference/launch_vehicles.csv, Long March 10B row: list_price_usd_low/high","No range method, price year basis, or configuration-specific derivation stated."
+spacecost_lm10b_launch_price_code_current_2026,Derived LEO price point,3306,USD per kg,"reference/launch_vehicles.csv, Long March 10B row: usd_per_kg_to_leo","Stored alongside 16,000 kg LEO payload."
+spacecost_lm10b_launch_price_code_current_2026,Derived LEO price range,2500–4375,USD per kg,"reference/launch_vehicles.csv, Long March 10B row: usd_per_kg_to_leo_low/high","Matches $40M–$70M divided by 16,000 kg, rounded to dollars/kg."
+xinhuanet_2026_lm10b_reuse_launch_context,Reusable LEO payload capacity,16,metric tons,"Xinhua, 10 Jul 2026, lines 35–38",The report calls Long March 10B a reusable commercial launch vehicle.
+xinhuanet_2026_lm10b_reuse_launch_context,Published absolute launch price,not stated,—,"Xinhua, 10 Jul 2026, lines 25–38","Reuse is said to reduce launch cost substantially, but no per-flight price or price target is given."

@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_c_subtype_ice_fraction_code_current_2026,Cb ice_fraction,0.18,class-level fraction,AsteroidCatalog asteroid_catalog/taxonomy.py Cb row,No row-specific evidence identified; module header says every ice fraction lacks a source.
+asteroidcatalog_c_subtype_ice_fraction_code_current_2026,Cg ice_fraction,0.12,class-level fraction,AsteroidCatalog asteroid_catalog/taxonomy.py Cg row,No row-specific evidence identified; module header says every ice fraction lacks a source.
+asteroidcatalog_c_subtype_ice_fraction_code_current_2026,Cgh ice_fraction,0.10,class-level fraction,AsteroidCatalog asteroid_catalog/taxonomy.py Cgh row,No row-specific evidence identified; module header says every ice fraction lacks a source.
+asteroidcatalog_c_subtype_ice_fraction_code_current_2026,Ch ice_fraction,0.10,class-level fraction,AsteroidCatalog asteroid_catalog/taxonomy.py Ch row,No row-specific evidence identified; module header says every ice fraction lacks a source.
+asteroidcatalog_c_subtype_ice_fraction_code_current_2026,F ice_fraction,0.15,class-level fraction,AsteroidCatalog asteroid_catalog/taxonomy.py F row,No row-specific evidence identified; F is described as dehydrated CM in its composition note.
+asteroidcatalog_c_subtype_ice_fraction_code_current_2026,G ice_fraction,0.12,class-level fraction,AsteroidCatalog asteroid_catalog/taxonomy.py G row,No row-specific evidence identified; G is described as Ceres-like in its composition note.
+beck_etal_2021_c_complex_surface_water_abundance,C-complex main-belt mean water content,4.5,wt%,Abstract,Volume-average surface-equivalent water estimate; Ceres excluded.
+beck_etal_2021_c_complex_surface_water_abundance,spectral water-content calibration uncertainty,4,wt% H2O,Abstract,The combined 2.75/2.80 μm metric has high uncertainty; not a class-specific interval.

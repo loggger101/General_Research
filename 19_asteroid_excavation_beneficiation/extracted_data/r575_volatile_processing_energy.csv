@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_volatile_processing_energy_code_current_2026,ammonia,0.5,kWh/kg raw feedstock,spacevalue/catalog.py IN_SPACE_PROCESSING_KWH_PER_KG; volatile-process comment,Code analogy to fractional distillation of water ice; no commodity-specific process calculation or energy boundary is recorded.
+spacevalue_volatile_processing_energy_code_current_2026,carbon dioxide,0.5,kWh/kg raw feedstock,spacevalue/catalog.py IN_SPACE_PROCESSING_KWH_PER_KG; volatile-process comment,Code analogy to fractional distillation of water ice; no commodity-specific process calculation or energy boundary is recorded.

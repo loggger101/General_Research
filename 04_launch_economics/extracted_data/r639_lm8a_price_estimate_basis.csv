@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm8a_price_estimate_code_current_2026,list_price_usd,52900000,USD; reference year 2026,"reference/launch_vehicles.csv, Long March 8A row 37",Stored estimate; price note says only “Price estimated.”
+spacecost_lm8a_price_estimate_code_current_2026,list_price_usd_low,40000000,USD; reference year 2026,"reference/launch_vehicles.csv, Long March 8A row 37",Stored low endpoint; derivation is not stated.
+spacecost_lm8a_price_estimate_code_current_2026,list_price_usd_high,70000000,USD; reference year 2026,"reference/launch_vehicles.csv, Long March 8A row 37",Stored high endpoint; derivation is not stated.
+spacecost_lm8a_price_estimate_code_current_2026,geometric band center,52915026,USD; comparison computed here,"Computed as sqrt(40,000,000 × 70,000,000)","Rounds to the stored $52.9M point; confirms arithmetic only, not the evidence for endpoints."
+ccgp_2026_extp_launch_budget,proposed eXTP launch-service budget,245200000,CNY,"CCGP notice, notice body","Names China Long March Rocket Co. as intended provider; no launch vehicle variant is stated. Proposed budget, not an awarded price."
+pbc_2026_06_08_usd_cny_midpoint,USD-CNY central parity,6.8198,CNY per USD,PBOC 2026-06-08 parity record,Existing R408 conversion of the proposed eXTP budget gives approximately $35.95M; not a Long March 8A list price.

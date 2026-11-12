@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_cohenite_processing_energy_code_current_2026,cohenite processing energy,5.0,kWh/kg,"spacevalue/catalog.py, IN_SPACE_PROCESSING_KWH_PER_KG[""cohenite""]",Code groups the phase with nickel-iron alloys; no cohenite-specific energy route or carbon/product boundary is stated.
+spacevalue_cohenite_processing_energy_code_current_2026,cohenite composition,"(Fe,Ni)3C",formula,"spacevalue/catalog.py, _new_mineral(""cohenite"", ...)",The assigned process allowance is not supported by a carbide-specific route calculation.
+vogl_ahman_nilsson_2018_h2_dri_steel_energy,hydrogen direct-reduction liquid-steel comparator,3.48,kWh/kg liquid steel,"Journal of Cleaner Production 203 (2018), abstract p. 736","Comparator is for modeled hydrogen direct reduction to liquid steel, with most electricity attributed to hydrogen electrolysis; it is not a cohenite feed-to-product energy measurement."

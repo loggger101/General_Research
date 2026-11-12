@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_q_zero_ice_fraction_code_current_2026,Q ice_fraction,0.0,mass fraction,"taxonomy_composition.csv row Q; taxonomy.py TAXONOMY_COMPOSITION[""Q""]","Q is described as a fresh/unweathered ordinary-chondrite analog; the module says every ice fraction lacks a source, and no Q-specific water boundary is stated. mineralogy.py maps nonzero ice-group content to water."

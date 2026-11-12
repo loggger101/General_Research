@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_search_resolution_controls_2026,CalcConfig.concentration_search_steps,7,sample points,modules/calc.py:396-403,Code comment says the optimum is within a few percent; no convergence comparison or error bound is recorded there.
+economicspace_search_resolution_controls_2026,CalcConfig.programme_search_steps,8,sample points,modules/calc.py:1102-1106,Geometric coarse fleet sweep plus refinement; comment gives no convergence error bound.

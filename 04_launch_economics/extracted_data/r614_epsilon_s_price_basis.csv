@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_epsilon_s_price_estimate_code_current_2026,Epsilon S list_price_usd point,30800000,USD,"reference/launch_vehicles.csv, Epsilon S row",price_basis=estimate; reference_year=2026; derivation not stated
+spacecost_epsilon_s_price_estimate_code_current_2026,Epsilon S list_price_usd low,25000000,USD,"reference/launch_vehicles.csv, Epsilon S row",range low
+spacecost_epsilon_s_price_estimate_code_current_2026,Epsilon S list_price_usd high,38000000,USD,"reference/launch_vehicles.csv, Epsilon S row",row note attributes ceiling to original Epsilon; no source named
+newspace_im_epsilon_s_price_chart_2024,IHI Epsilon S plotted price,about 25,USD million,PDF lines 0–12; dated 2024-06-15,"Chart also plots about 600 kg; price year, contract status and service scope unstated"
+faa_ast_2016_compendium_epsilon_price,Epsilon estimated price per launch,39,USD million,PDF fact sheet lines 3677–3739,Historical predecessor Epsilon estimate; not an Epsilon S price
+faa_ast_2016_compendium_epsilon_price,Epsilon LEO capacity,700–1200,kg,PDF fact sheet lines 3734–3739,Predecessor configuration; not directly comparable to current Epsilon S row

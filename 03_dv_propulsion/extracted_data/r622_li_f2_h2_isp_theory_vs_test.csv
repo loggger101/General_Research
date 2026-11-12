@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+,spacecost Li / F2 / H2 row specific impulse,542,s,"spacecost/reference/propellants.csv, row Li / F2 / H2 (tripropellant)",Pipeline value is presented in its note as the highest measured chemical Isp; its concept status/TRL 3 row is used as a chemistry ceiling.
+arbit_clapp_dickerson_nagai_1968_li_f2_h2_cr72325,"maximum vacuum specific impulse, LF2/LLi/GH2",542,lbf-s/lbm,"NASA-CR-72325, NTRS abstract","NTRS abstract calls this a theoretical performance calculation (500 psia, expansion ratio 60); supports a theoretical ceiling, not a measured test value."
+nasa_1970_hydrogen_fluorine_lithium_upper_stages_cr110530,"theoretical vacuum specific impulse, Li/F2/H2",5300,N-s/kg,"NASA-CR-110530, §3.3.4, printed p. 3-2",Report gives 540 lbf/lbm as the theoretical value.
+nasa_1970_hydrogen_fluorine_lithium_upper_stages_cr110530,"experimental vacuum specific impulse, Li/F2/H2",4990,N-s/kg,"NASA-CR-110530, §3.3.4, printed p. 3-2",Report says a Rocketdyne study achieved this in experimental tests; it also gives 509 lbf/lbm.
+,difference between modeled ceiling and report experimental result,33,s,calculated here from 542 - 509,Comparison only; do not substitute 509 for the table’s theoretical-ceiling use.

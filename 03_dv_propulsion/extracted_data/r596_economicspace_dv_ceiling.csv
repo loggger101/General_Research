@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_dv_sanity_ceiling_current_2026,max_dv_outbound_m_s,20000,m/s,"modules/calc.py CalcConfig, main 3ed7b36, lines 873-877",The same ceiling is applied to outbound and selected return legs in asteroid_dv_options.
+,LEO to main-belt reference segment,10500,m/s,"spacecost/reference/delta_v_segments.csv row LEO to main-belt asteroid, main aaed2720ee44610c5cf90fc204db160deb5669bb","Current row notes cite Taylor et al. 2018; this extraction records the pipeline comparator, not a fresh read of that paper."
+,Ceiling/reference-segment ratio,1.9047619047619047,ratio,Computed from the two preceding rows,Comparison only; not a physical bound.

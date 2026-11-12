@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm10_launch_price_code_current_2026,List price point,212000000,USD per launch,"reference/launch_vehicles.csv, Long March 10 row: list_price_usd",Development vehicle; price_basis=estimate; reference_year=2026.
+spacecost_lm10_launch_price_code_current_2026,List price range,150000000–300000000,USD per launch,"reference/launch_vehicles.csv, Long March 10 row: list_price_usd_low/high",No range derivation or cost boundary stated in the row note.
+spacecost_lm10_launch_price_code_current_2026,Derived LEO price point,3029,USD per kg,"reference/launch_vehicles.csv, Long March 10 row: usd_per_kg_to_leo","70,000 kg LEO payload; point price divided by payload then rounded."
+spacecost_lm10_launch_price_code_current_2026,Derived LEO price range,2143–4286,USD per kg,"reference/launch_vehicles.csv, Long March 10 row: usd_per_kg_to_leo_low/high","$150M–$300M divided by 70,000 kg, rounded to dollars/kg."
+spacecost_lm10_launch_price_code_current_2026,Lunar-transfer payload,27000,kg,"reference/launch_vehicles.csv, Long March 10 row: payload_escape_kg",CASC/SCIO wording describes lunar-transfer capability; row names 27 t TLI. Price per kg for this destination is stored separately.
+spacecost_lm10_launch_price_code_current_2026,Price attribution note,Price estimated,text,"reference/launch_vehicles.csv, Long March 10 row: notes",No source or estimation method accompanies this phrase.

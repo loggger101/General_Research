@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+yokoyama_2023_ryugu_c_type_sample_water_content,C-class comparator already recorded as applied rc-367,6.84,wt% total H2O,"Science 379(6634), p. 8","Ryugu sample: 6.54 wt% structural-OH and 0.30 wt% interlayer water; it is a bound-water sample comparator, not a class-wide C fraction. The current taxonomy code includes this scope note."
+beck_etal_2021_c_complex_surface_water_abundance,C-complex MBA surface-equivalent population mean,4.5,wt%,"Abstract, printed p. 1",Volume-average estimate excludes Ceres; not a C-class interior/accessibility fraction and does not contradict the already scoped 0.15 scenario.

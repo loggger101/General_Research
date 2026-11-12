@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_ttype_accessory_phase_code_current_2026,T-type troilite accessory share,0.08,fraction,"asteroid_catalog/mineralogy.py, ACCESSORY_PHASES[""T""]",No numeric source-to-model derivation documented
+asteroidcatalog_ttype_accessory_phase_code_current_2026,T-type magnetite accessory share,0.03,fraction,"asteroid_catalog/mineralogy.py, ACCESSORY_PHASES[""T""]",Magnetite is not named in the coarse T-row minerals field
+asteroidcatalog_ttype_accessory_phase_code_current_2026,Coarse T-row material list,troilite; organics; silicates,text,"reference/taxonomy_composition.csv, T row, minerals column",T row notes no meteorite analogue of its own
+kwon_et_al_2022_t_type_asteroid_surface_environment,Subaru T-type targets,(96) Aegle; (570) Kythera,objects,"printed p. 1, abstract",Two large T-type surface observations; not a class-wide bulk abundance sample
+kwon_et_al_2022_t_type_asteroid_surface_environment,Large T-type sample with 0.6–0.65 μm absorption band,about 50,percent,"printed p. 1, abstract","Likely hydrated minerals; surface spectral context, not accessory mineral wt%"
+kwon_et_al_2022_t_type_asteroid_surface_environment,T-type spectra comparator,"CI chondrites, ~25–35",micrometre grain size,"printed p. 1, abstract",Spectral similarity; does not quantify T-type bulk accessory shares

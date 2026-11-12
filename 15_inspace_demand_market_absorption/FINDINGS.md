@@ -503,3 +503,17 @@ Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["mars_su
 `mcdowell_2026_space_activities_2025_gto_launches`: Table 14(e) counts 34 launches in the 2025 “GTO Transfer” category (p. 38). `toson_etal_2016_draise_geo_platform_mass`: the IAF abstract describes chemical GEO communications platforms as typically about 6 tons, with about half their total weight as propellant (p. 1). `byers_1989_advanced_onboard_propulsion_tm103174`: NASA TM-103174 says apogee propellant for GEO satellites is 40–50% of mass injected into GTO (p. 1; Fig. 1).
 
 Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["gto"]` = 81,600 kg/yr, calculated as 34 × 6,000 × 0.40. Verdict: the cited sources support the launch count, a typical chemical GEO-platform mass, and the apogee-propellant fraction separately; they do not establish that every GTO Transfer launch carried one chemical GEO communications platform. Keep the arithmetic only as an idealized scenario pending a payload-cohort and mass-basis check; no replacement annual value is established. `rc-393`. Extracted: `extracted_data/r527_gto_launch_mass_propellant_comparator.csv`.
+
+
+## R602 — Surplus-price fraction lacks market basis (2026-11-11)
+
+`economicspace_surplus_price_fraction_code_current_2026`: economicspace `CalcConfig.surplus_price_fraction` is 0.5. Its code describes this as a deliberately round number and says no market study supports it; the fraction is applied only when surplus discounting is enabled under the `capacity_cap` market model.
+
+`economicspace_surplus_price_fraction_verification_current_2026`: the current verification-sheet extraction marks input I110, 0.5, NEED BACKING. Its archived Stage 2/3 tables are not current market evidence. Verdict: ask for price-response or market-clearing evidence with commodity and destination scope, or identify 0.5 explicitly as a scenario dial and show sensitivity bounds. Preserve the value; no replacement inferred. This is distinct from rc-240’s fleet-optimum wording issue. **rc-465** records the missing basis. Extracted: `extracted_data/r602_surplus_price_fraction_basis.csv`.
+
+
+## R643 — Spacevalue elasticity comment retains unsupported PGM claim
+
+`bogmans_2024_power_of_prices_commodity_supply_demand_elasticities`: the registered IMF study reports demand-elasticity estimates for copper, zinc, lead and tin, not PGMs. `vertier_2025_banque_de_france_eco_notepad_419_price_elasticity_critical_mineral_supply`: its approximately 0.5 estimate is a mine-output supply response, not demand elasticity.
+
+Upstream: `spacevalue/cargo.py` `saturation_price_multiplier` retains the statement “Precious-metal demand is inelastic, ε ≈ 0.5” above the constant-elasticity formula; the helper receives `elasticity` as an argument. The file says the elasticity path remains the v1.14.0 curve in the no-caps compatibility path. The independent economicspace copy was corrected under rc-123; this spacevalue copy still has the prior claim. Verdict: the registered sources do not establish PGM demand elasticity. Treat 0.5 as a scenario if used; retain the formula and caller input pending PGM-specific evidence, with no replacement inferred. **rc-507**. Existing extraction: `extracted_data/r114_gr_links_key_numbers.csv`.

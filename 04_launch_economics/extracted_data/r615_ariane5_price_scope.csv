@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_ariane5_eca_price_estimate_code_current_2026,Ariane 5 ECA estimated point price,191000000,USD,"reference/launch_vehicles.csv, Ariane 5 ECA row",reference_year=2026; notes say band brackets €150–190M vehicle cost
+spacecost_ariane5_eca_price_estimate_code_current_2026,Ariane 5 ECA estimated low price,165000000,USD,"reference/launch_vehicles.csv, Ariane 5 ECA row",reference_year=2026
+spacecost_ariane5_eca_price_estimate_code_current_2026,Ariane 5 ECA estimated high price,220000000,USD,"reference/launch_vehicles.csv, Ariane 5 ECA row",reference_year=2026
+esa_2003_ariane5_service_cost_atv_price,Ariane 5 ES launch-service cost,170,EUR million,"ESA INFO 10-2003, page text lines 218–225","2003 economic conditions; ES service cost, not ECA vehicle-production cost"
+esa_2003_ariane5_service_cost_atv_price,Price paid for first ATV launch,129,EUR million,"ESA INFO 10-2003, page text lines 218–225",2003 economic conditions; Space Station Programme price paid to Arianespace

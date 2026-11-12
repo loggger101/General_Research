@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_vulcan_vc6_current_record_2026,list_price_usd,128000000,USD; reference year 2026,"reference/launch_vehicles.csv, Vulcan Centaur VC6 row",Geometric center derived from stated range; price_basis=estimate.
+spacecost_vulcan_vc6_current_record_2026,list_price_usd_low,110000000,USD,"reference/launch_vehicles.csv, Vulcan Centaur VC6 row",Row attributes this to ULA starting price for the smallest configuration; no VC6-specific price basis is supplied.
+spacecost_vulcan_vc6_current_record_2026,list_price_usd_high,150000000,USD,"reference/launch_vehicles.csv, Vulcan Centaur VC6 row",Row labels this an estimate and says six GEM 63XL boosters are not free; no calculation is given.
+spacecost_vulcan_vc6_current_record_2026,price_basis,estimate,category,"reference/launch_vehicles.csv, Vulcan Centaur VC6 row",Band center and LEO $/kg are derived from the endpoints and payload.
+spacecost_vulcan_vc6_current_record_2026,reference_year,2026,year,"reference/launch_vehicles.csv, Vulcan Centaur VC6 row",No update method from earlier public starting-price evidence is stated.
+spacecost_vulcan_vc6_current_record_2026,usd_per_kg_to_leo,4848,USD/kg,"reference/launch_vehicles.csv, Vulcan Centaur VC6 row","Derived headline price divided by the stored 26,400 kg LEO payload."
+reuters_2024_vulcan_starting_price,Vulcan starting price,roughly $110 million per launch,USD per launch,"Reuters article, paragraph 13 (StreetInsider lines 195-198)",Generic starting price; no SRB configuration or 2026 update basis specified.
+reuters_2024_vulcan_starting_price,maximum SRB configuration,up to six solid rocket motors,configuration,"Reuters article, paragraph 14 (StreetInsider line 198)",Capability statement is not a configuration-specific price.
+vulcan_launch_systems_users_guide_oct2023,VC6 configuration,six solid rocket boosters; long/standard fairing code in name,configuration,"Table 1.4-1 / naming convention, printed p. 1-4",Defines configuration; does not publish a VC6 price.

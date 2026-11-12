@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_pgm_surface_route_choice_code_current_2026,PGM default utility,0.00,fraction,catalog.py:561-569,Every unlisted precious metal defaults to zero in-space utility; code says this routes value through terrestrial sale.
+spacevalue_pgm_surface_route_choice_code_current_2026,considered PGM surface utility,0.05,fraction,catalog.py:603-606,Rejected alternative for lunar and Mars surface destinations; code states the physical catalyst-use argument is sound.
+spacevalue_pgm_surface_route_choice_code_current_2026,illustrative lunar-base gold route price,76060,USD/kg,catalog.py:607-614,Code example used to explain route-choice limitation; gold is not a PGM catalyst.
+spacevalue_pgm_surface_route_choice_code_current_2026,illustrative terrestrial gold route price,30061,USD/kg,catalog.py:607-614,"Code example used to explain route-choice limitation; terrestrial market depth is 3,000,000 kg/yr."
+spacevalue_pgm_surface_route_choice_code_current_2026,illustrative lunar catalyst market depth,25,kg/yr,catalog.py:607-614,Code example: small catalyst market versus terrestrial market; not an independently validated demand estimate.
+franco_2019_sabatier_catalyst_mars_isru_ices2019_077,Sabatier catalyst types,ruthenium or nickel,-,ICES-2019-077 p.2,Nickel was tested against 0.5% and 2% Ru on alumina; source supports use but not installed mass or annual replacement demand.
+srinivasan_et_al_1994_pemfc_space_electric_vehicle_dual_use_transfer_vol2,PEM fuel-cell platinum intensity,~1.2,g/kW,Dual-Use Vol. 2 p.3 / printed p.411,"Existing Domain 30 extraction; provides a per-power intensity, not a destination capacity or annual PGM demand."

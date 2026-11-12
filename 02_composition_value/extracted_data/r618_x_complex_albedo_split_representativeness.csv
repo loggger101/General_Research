@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_x_complex_albedo_mix_code_current_2026,X P/M/E albedo counts,4741/3022/350,objects,"asteroid_catalog/taxonomy.py, X_SPLIT_COUNTS; data-2026-09-26b, within 5.5 AU",Counts drive X mixture for bodies without measured albedo.
+asteroidcatalog_x_complex_albedo_mix_code_current_2026,Xc P/M/E albedo counts,40/27/7,objects,"asteroid_catalog/taxonomy.py, X_SPLIT_COUNTS; data-2026-09-26b, within 5.5 AU",Counts drive Xc mixture for bodies without measured albedo.
+,X P/M/E count shares,58.4/37.2/4.3,percent,Calculated here from X_SPLIT_COUNTS (sum 8113),"Rounded to one decimal; computed shares, not separately sourced."
+,Xc P/M/E count shares,54.1/36.5/9.5,percent,Calculated here from X_SPLIT_COUNTS (sum 74),"Rounded to one decimal; computed shares, not separately sourced."
+asteroidcatalog_x_complex_albedo_mix_code_current_2026,Mixture rules,"density by count; fractions, PGM factor, phase/accessory mixtures by mass",method,"taxonomy.py lines 292-295 and 1022-1028; mineralogy.py lines 317-323, 565-581",Outputs depend on these observed-albedo proportions.
+asteroidcatalog_x_complex_albedo_mix_code_current_2026,Representativeness warning,measured sample over-represents dark bodies; no-albedo bodies may lean more M,qualitative warning,taxonomy.py lines 1026-1027; derive.py lines 55-63,Upstream flags the measured-albedo sample as biased relative to bodies without measured albedo.

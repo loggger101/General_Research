@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_2024_ipex_trl5_actuator_life_test,IPEx reference demonstration duration,11,days,"PDF p. 2, Introduction",Notional lunar demonstration profile; not asteroid-mining operations.
+nasa_2024_ipex_trl5_actuator_life_test,Wheel actuator ConOps mission revolutions,5700000,input revolutions,"PDF p. 8, §III.B, TC3 accelerated life testing",The paper says the mission ConOps requires 5.7 million input revolutions.
+nasa_2024_ipex_trl5_actuator_life_test,Wheel actuator test exposure,6547036,input revolutions,"PDF p. 8, §III.B, TC3 accelerated life testing",Reported over one mission-equivalent exposure with inspections and disassembly.
+nasa_2024_ipex_trl5_actuator_life_test,Wheel actuator test outcome,bearing failure after axial rotor movement,,"PDF p. 8, §III.B, TC3 accelerated life testing","The paper calls for additional testing and design changes; this is one actuator qualification test, not a fleet or whole-system probability."
+nasa_2024_ipex_trl5_actuator_life_test,IPEx intended excavation demonstration,10000,kg regolith,"PDF p. 2, Introduction","Design target, not completed flight performance or a reliability denominator."

@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_launch_vehicle_reliability_current_2026,Launch vehicle reliability,"0.97 [0.90,0.99]",probability of a successful launch,reference/operational_costs.csv row 55,Current row note attributes first-flight context to Cross & Vesely but supplies no derivation for the operational-fleet point or definition of the range.
+spacex_2026_eu_prospectus_falcon_heavy_payload,Falcon 9 fleet mission-success statement,>99% across approximately 620 orbital launches,mission success rate; launches,"SpaceX June 2026 EU Prospectus, printed p. 58","First-party fleet-level statement; no exact numerator, uncertainty interval, outcome definition, or high-value-payload-specific rate stated. Registered in domain 04."

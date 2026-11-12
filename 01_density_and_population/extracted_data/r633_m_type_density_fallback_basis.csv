@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_m_class_density_fallback_current_2026,M-class density fallback applied to 2018 DT,3.9,g/cm3,AsteroidCatalog reference/taxonomy_composition.csv row M; economicspace verification worksheet I11,"2018 DT density is unmeasured; the worksheet uses the taxonomy point. AsteroidCatalog row note cites Psyche, not an M-class distribution."
+siltala_granvik_2021,16 Psyche bulk density,3.88 ± 0.25,g/cm3,Astrophysical Journal Letters 913:L7; cited in AsteroidCatalog M row,Single-body measurement supporting the point anchor; not an estimate of the density of 2018 DT.
+zhang_etal_2023_m_type_density_variation,16 Psyche M-type density estimates compiled,3.70 ± 0.60 to 4.20 ± 0.60,g/cm3,"Table 5, printed p. 11",Range of published individual-body estimates compiled from cited studies; not a class-level interval.
+zhang_etal_2023_m_type_density_variation,22 Kalliope M-type density estimates compiled,3.35 ± 0.33 to 4.36 ± 0.50,g/cm3,"Table 5, printed p. 11",Range of published individual-body estimates compiled from cited studies; illustrates spread among M-type objects.
+zhang_etal_2023_m_type_density_variation,97 Klotho M-type density estimate compiled,4.16 ± 0.62,g/cm3,"Table 5, printed p. 11",Individual-body estimate compiled from Carry (2012); not a class-level statistic.
