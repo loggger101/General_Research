@@ -512,3 +512,45 @@ AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 `taxonomy.py` assigns X
 ## R618 — X/Xc albedo-split representativeness (2026-11-11)
 
 `asteroidcatalog_x_complex_albedo_mix_code_current_2026`: AsteroidCatalog builds no-albedo X and Xc rows from the P/M/E proportions among bodies with measured albedo in `data-2026-09-26b` inside 5.5 AU: X 4,741/3,022/350 and Xc 40/27/7. Density is number-weighted; fractions, PGM factor and mineral phase/accessory mixtures are mass-weighted from those counts. The code itself warns that the measured sample “over-represents dark bodies” and that bodies without albedo “may lean more M” (`taxonomy.py`, lines 1022–1028; see also `derive.py`, lines 55–63). Verdict: establish whether those measured-albedo shares represent the no-albedo population, or retain them as a stated prior/scenario with sensitivity for the affected density and material-mixture fields; no replacement weights inferred. This is distinct from rc-468’s ice-fraction derivation and rc-346’s silicate-fraction attribution. **rc-481**. Extracted: `extracted_data/r618_x_complex_albedo_split_representativeness.csv`.
+
+
+## R644 — Carbon terrestrial reference price lacks a matched basis
+
+`spacevalue_carbon_reference_price_code_current_2026`: `MINERAL_REFERENCE["carbon"]` assigns 0.20 USD/kg, calls the material “bulk industrial carbon black,” and gives the catalog review date 2026-05-29 without a price source or quote date.
+
+`usgs_mcs2025_natural_graphite_amorphous_price`: USGS MCS 2025, Graphite (Natural), printed p. 83, lists the 2024 U.S. amorphous natural-graphite import average unit value as $640/metric ton at foreign ports ($0.64/kg). `sp_global_2025_us_n330_carbon_black_spot_price`: Platts reports N330 carbon black at $0.83/lb ex-works US Gulf Coast on May 30, 2025 (~$1.83/kg). These comparators have different product and delivery bases and do not establish an asteroid-carbon price. Verdict: request a matched product, grade, date, and delivery basis; preserve $0.20/kg as an explicit scenario pending that basis, with no replacement inferred. **rc-508**. Extracted: `extracted_data/r644_carbon_reference_price_comparators.csv`.
+
+
+## R645 — Organics terrestrial reference price has no product basis
+
+`spacevalue_organics_reference_price_code_current_2026`: `MINERAL_REFERENCE["organics"]` assigns 0.50 USD/kg and describes the item as “Complex organic macromolecules (kerogen-like).” The row gives the catalog review stamp 2026-05-29 but no saleable product form, price source, grade, quote basis, or quote date.
+
+Verdict: request a matched terrestrial product and price basis, or identify 0.50 USD/kg as a scenario with sensitivity bounds. The existing candidates rc-384, rc-429, and rc-437 address asteroid composition shares, in-space utility, and processing energy; they do not establish this terrestrial reference price. Retain the value pending that basis; no replacement inferred. **rc-509**. Extracted: `extracted_data/r645_organics_reference_price_basis.csv`.
+
+
+## R646 — Three mineral reference prices lack product-matched bases
+
+`spacevalue_other_mineral_reference_price_code_current_2026`: `MINERAL_REFERENCE` sets spinel to 0.50 USD/kg (“Mg-Al oxide; high-T refractory”), phyllosilicates to 0.05 USD/kg (“hydrated clays, priced as dehydrated rock”), and generic oxides to 0.10 USD/kg (“Generic metal-oxide bulk”). Each row carries the catalog review date but names no price source, grade, or quote basis.
+
+Verdict: these are distinct products, so identify and cite each matching terrestrial product and price basis; otherwise retain each value only as an explicit scenario with sensitivity bounds. rc-455 covers five other silicate rows and rc-145 covers plagioclase; neither covers these rows. No replacement values inferred. **rc-510**. Extracted: `extracted_data/r646_other_mineral_reference_price_basis.csv`.
+
+
+## R649 — Awaruite trace yields lack a host-population basis
+
+- `spacevalue_awaruite_trace_yields_code_current_2026`: Spacevalue `catalog.py` at main commit `f836611f15dbb0ef511fe134bd5ac8192e3bea16` assigns awaruite Pt 75, Pd 50, Ir 20, Ru 15, Os 10, Rh 7.5 and Au 5 ppm by mass; these sum to 182.5 ppm. The code calls the PGM levels “~5× the nickel-iron baseline” and describes terrestrial ophiolite PGM enrichment as 10–100× chondritic, without identifying the population or showing how either statement yields these numbers.
+- `kutyrev_et_al_2023_awaruite_pge_behavior`: Kutyrev et al., “Behavior of platinum-group elements during hydrous metamorphism: constraints from awaruite (Ni3Fe) mineralization,” *Lithosphere* 2023(1):126, abstract: three studied ophiolite awaruite populations had “no significant PGE concentrations measured,” despite associated, separate PGM inclusion groups. The abstract reports rare Galmoenan awaruite analyses up to 3 ppm Pd and notes the new data differ from earlier reports of up to the first 10 ppm PGE. This is a locality-specific comparator and does not establish an asteroid awaruite composition.
+- Upstream cell: `spacevalue.catalog.MINERAL_DB["awaruite"]["yields"]`. Verdict: identify whether the yields describe trace elements dissolved in the Ni3Fe host or separate included PGM, provide the population and derivation for the 5× vector, or label it as a scenario with sensitivity. The terrestrial studies are not direct asteroid composition measurements; no replacement inferred. Distinct from rc-368 (bulk PGM enrichment), rc-433 (kamacite/taenite trace partition), and rc-512 (native-PGM alloy composition). **rc-513**.
+- Extracted: `extracted_data/r649_awaruite_trace_yield_scope.csv`.
+
+## R648 — Native-PGM alloy yield vector lacks a traceable population basis
+
+- `spacevalue_native_pgm_yield_vector_code_current_2026`: Spacevalue `catalog.py` at main commit `f836611f15dbb0ef511fe134bd5ac8192e3bea16` defines `native-pgm` yields of Pt 0.70, Pd 0.15, Ir 0.08, Os 0.05, Ru 0.01 and Rh 0.01. Its comment calls this a “Composition midpoint of placer-class native platinum compositions”; the record names no dataset or averaging method and says the phase is reserved for high-confidence per-asteroid overrides.
+- `cabri_harris_weiser_1996_pgm_placer_compositions`: Cabri, Harris & Weiser, “Mineralogy and distribution of platinum-group mineral (PGM) placer deposits of the world,” *Exploration and Mining Geology* 5(2) (1996), printed p. 83, report 211 Liard River grains: 197 Pt–Fe alloys, 3 native platinum, 10 Os–Ir–Ru–Pt alloys and 1 sperrylite. They report grain maxima including 5.6% Pd, 12.6% Ir, 3.2% Os, 4.1% Rh and 1.6% Ru. On printed p. 96, 178 Nawngpusawng grains are 70% Pt–Fe, 26% Os–Ir–Ru–Pt and 4% sulfide/sulfarsenide; Pt–Fe compositions have variable minor elements. These are locality-specific grain populations and maxima, not a single generic yield vector.
+- Upstream cell: `spacevalue.catalog.MINERAL_DB["native-pgm"]["yields"]`, consumed in the per-mineral value path. Verdict: identify the cited population and averaging method for the midpoint, or label the vector as an explicit scenario and show sensitivity for override use. The cited placer survey does not establish this vector as a universal native-PGM composition; no replacement inferred. Distinct from rc-368 (bulk PGM enrichment), rc-433 (Fe-Ni trace partition), and rc-511 (cohenite yield boundary). **rc-512**.
+- Extracted: `extracted_data/r648_native_pgm_composition_scope.csv`.
+
+## R647 — Cohenite terrestrial value omits its formula carbon
+
+`spacevalue_cohenite_product_value_code_current_2026`: `catalog.py` describes cohenite as `(Fe,Ni)3C`, says “The carbon is not a yield” (lines 1907–1912), and supplies only iron=0.904 and nickel=0.029 yields, with no direct price. `cargo.py` computes mineral value by summing only the listed yield components against their elemental prices (lines 157–200). The yield fractions total 0.933, leaving 0.067 outside the price sum; the formula’s stoichiometric carbon fraction is 0.0668, computed from the code’s atomic masses.
+
+Upstream cell: `MINERAL_REFERENCE["cohenite"]` (`ref_price_usd_per_kg=None`) and `cargo._mineral_implied_value`. Verdict: define whether Earth return sells cohenite as carbide or separates Fe/Ni, and account for or explicitly exclude the carbon under that product boundary. No matched cohenite price or netback is given in the code; no numeric replacement inferred. Distinct from rc-456 (kamacite/taenite Earth-sale route), rc-452 (cohenite processing energy), and rc-508 (carbon reference price). **rc-511**. Extracted: `extracted_data/r647_cohenite_earth_sale_value_basis.csv`.

@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_aerocapture_no_elements_fallback_code_current_2026,default_dv_return_m_s,5500,m/s,modules/calc.py CalcConfig field and _dv_fallback_m_s,Fallback propulsive-return default when orbital elements are unusable; underlying basis gap is tracked by rc-514.
+economicspace_aerocapture_no_elements_fallback_code_current_2026,default_dv_outbound_m_s,6500,m/s,modules/calc.py CalcConfig field and _dv_fallback_m_s,Corresponds to the separately cited spacecost “LEO → average NEA” reference segment; no additional candidate opened.
+economicspace_aerocapture_no_elements_fallback_code_current_2026,aerocapture_dv_savings_m_s,4000,m/s,modules/calc.py CalcConfig field and _dv_fallback_m_s,"Applied only in this unusable-elements fallback; the saving and 1,500 m/s result remain tracked by rc-519."

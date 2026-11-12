@@ -1,0 +1,18 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_native_pgm_yield_vector_code_current_2026,native-pgm platinum yield,0.70,mass fraction,spacevalue/catalog.py native-pgm yields,Code calls composition a placer-class midpoint; no derivation cited in record.
+spacevalue_native_pgm_yield_vector_code_current_2026,native-pgm palladium yield,0.15,mass fraction,spacevalue/catalog.py native-pgm yields,Reserved for high-confidence per-asteroid override use cases.
+spacevalue_native_pgm_yield_vector_code_current_2026,native-pgm iridium yield,0.08,mass fraction,spacevalue/catalog.py native-pgm yields,
+spacevalue_native_pgm_yield_vector_code_current_2026,native-pgm osmium yield,0.05,mass fraction,spacevalue/catalog.py native-pgm yields,
+spacevalue_native_pgm_yield_vector_code_current_2026,native-pgm ruthenium yield,0.01,mass fraction,spacevalue/catalog.py native-pgm yields,
+spacevalue_native_pgm_yield_vector_code_current_2026,native-pgm rhodium yield,0.01,mass fraction,spacevalue/catalog.py native-pgm yields,
+cabri_harris_weiser_1996_pgm_placer_compositions,Liard River grains analyzed,211,grains,printed p. 83,197 Pt-Fe alloys; 3 native platinum; 10 Os-Ir-Ru-Pt alloys; 1 sperrylite.
+cabri_harris_weiser_1996_pgm_placer_compositions,Liard Pt-Fe alloy minor-element range,11-31,"at.% (Fe,Cu,Ni)",printed p. 83,"Separate alloy population; paper reports up to 5.6% Pd, 12.6% Ir, 3.2% Os, 4.1% Rh, 1.6% Ru in grains."
+cabri_harris_weiser_1996_pgm_placer_compositions,Liard grain maximum Pd,5.6,%,printed p. 83,"Reported maximum among grains, not a mean alloy vector."
+cabri_harris_weiser_1996_pgm_placer_compositions,Liard grain maximum Ir,12.6,%,printed p. 83,"Reported maximum among grains, not a mean alloy vector."
+cabri_harris_weiser_1996_pgm_placer_compositions,Liard grain maximum Os,3.2,%,printed p. 83,"Reported maximum among grains, not a mean alloy vector."
+cabri_harris_weiser_1996_pgm_placer_compositions,Liard grain maximum Rh,4.1,%,printed p. 83,"Reported maximum among grains, not a mean alloy vector."
+cabri_harris_weiser_1996_pgm_placer_compositions,Liard grain maximum Ru,1.6,%,printed p. 83,"Reported maximum among grains, not a mean alloy vector."
+cabri_harris_weiser_1996_pgm_placer_compositions,Nawngpusawng grains analyzed,178,grains,printed p. 96,"70% Pt-Fe, 26% Os-Ir-Ru-Pt, 4% sulfide/sulfarsenide: distinct phase groups."
+cabri_harris_weiser_1996_pgm_placer_compositions,"Nawngpusawng Pt-Fe grains, typical Ir",2-3,wt.%,printed p. 96,"Paper reports up to 14% Ir, up to 8% Pd, 1-2% each Rh and Os, and <0.5% Ru; these are within-population ranges, not a pooled mean."
+cabri_harris_weiser_1996_pgm_placer_compositions,Nawngpusawng Pt-Fe grain maximum Ir,14,wt.%,printed p. 96,Maximum reported; distinct from the generic catalog vector.
+,computed total of code yield vector,1.00,mass fraction,computed from six catalog yields,"Computed here; arithmetic only, not independent evidence of representativeness."

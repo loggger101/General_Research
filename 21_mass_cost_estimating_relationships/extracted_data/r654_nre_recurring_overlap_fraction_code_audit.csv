@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_nre_recurring_overlap_fraction_code_current_2026,nre_recurring_overlap_fraction default,0.3,fraction,modules/calc.py CalcConfig field at current snapshot,Comment describes this as a mid-range de-duplication; no fit or derivation is supplied.
+economicspace_nre_recurring_overlap_fraction_code_current_2026,NRE share charged by formula at default,0.7,fraction,campaign/worked_calculation.py nre calculation,"Computed as 1 - 0.30, before division by mission count."
+economicspace_nre_recurring_overlap_fraction_code_current_2026,Recurring-rate basis stated in code,NICM / SSCM / Aerospace Corp SMCM,model names,modules/calc.py comment and campaign/worked_calculation.py cost calculation,Code says these are regressions on total program cost with a development component.
+spacecost_mining_payload_recurring_cost_current_2026,Mining payload recurring rate used as relevant bracket,"300000 [100000, 1000000]",USD/kg,spacecost reference/operational_costs.csv Mining payload recurring cost row,Its current note states the range has no registered source; see R653 / rc-517.

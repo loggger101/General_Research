@@ -212,3 +212,13 @@ This adds an opt-in partial path for `rc-248`, but the default still charges a r
 ## R635 — Stardust capsule mass and cost scope (2026-11-11)
 
 `jpl_2006_stardust_return_capsule_mass_cost_scope` — NASA/JPL’s Stardust press kit reports a “46-kilogram (101-pound) return capsule” and $128.4 million in spacecraft development within a $168.4 million program total excluding launch (Quick Facts, printed p. 6). The source gives no capsule cost allocation or recurring production rate. Spacecost’s `Return capsule recurring cost` row stores $150,000/kg [$50,000, $400,000], described as half the mining-rig rate with Stardust and OSIRIS-REx SRC heritage, but provides no cost derivation. **Verdict:** the source supplies mass and program-cost scope only; no replacement rate can be inferred. Open `rc-497`. Extracted data: `extracted_data/r635_stardust_capsule_mass_program_cost_scope.csv`.
+
+
+## R653 — Mining-payload recurring cost basis (2026-11-11)
+
+`spacecost_mining_payload_recurring_cost_current_2026` — spacecost’s `Mining payload recurring cost` row stores $300,000/kg [$100,000, $1,000,000] for burdened deep-space mining equipment. Its note says the bracket “has no registered source”; it says the prior SSCM and NICM anchors were removed because they could not be checked, and that NICM is an instrument model rather than a structures or mechanisms model. The SSCM and NICM registry records remain `registered_not_pulled`. **Verdict:** the estimate has no checked CER or cost basis matched to mining hardware; no replacement rate is inferred. Open `rc-517`. Extracted: `extracted_data/r653_mining_payload_recurring_cost_code_audit.csv`.
+
+
+## R654 — NRE overlap fraction in the cost model (2026-11-11)
+
+`economicspace_nre_recurring_overlap_fraction_code_current_2026` — economicspace sets `nre_recurring_overlap_fraction` to 0.30, described as a “mid-range de-duplication.” The code says the recurring-cost brackets are regressions on total program cost and therefore include development; its cost formula charges the spacecraft NRE at `1 − overlap_fraction` per mission. The related spacecost mining-payload row now says its $100,000–$1,000,000/kg bracket has no registered source, and the SSCM/NICM records remain `registered_not_pulled`. **Verdict:** the 0.30 share has no checked derivation from a cost model or matched hardware class. Open `rc-518`; no replacement fraction inferred. Extracted: `extracted_data/r654_nre_recurring_overlap_fraction_code_audit.csv`.

@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_other_mineral_reference_price_code_current_2026,spinel ref_price_usd_per_kg,0.5,USD/kg,MINERAL_REFERENCE spinel row (around L2110),"Mg-Al oxide; high-T refractory No underlying price source, grade, or quote basis is named."
+spacevalue_other_mineral_reference_price_code_current_2026,phyllosilicates ref_price_usd_per_kg,0.05,USD/kg,MINERAL_REFERENCE phyllosilicates row (around L2128),"Hydrated clays, priced as dehydrated rock; bound water is carried in the taxonomy ice fraction No underlying price source, grade, or quote basis is named."
+spacevalue_other_mineral_reference_price_code_current_2026,generic oxides ref_price_usd_per_kg,0.1,USD/kg,MINERAL_REFERENCE oxides row (around L2140),"Generic metal-oxide bulk; iron yield 0.50 No underlying price source, grade, or quote basis is named."

@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+taylor2018,method endpoints,LEO to successful MBA rendezvous,scope,abstract p. 73; §2-3 pp. 73-75,Both methods are outbound rendezvous calculations; no Earth return is modeled.
+taylor2018,low-delta-v target count,96,asteroids,"§6.3, Table 2 p. 79",Count with outbound Δv <7.5 km/s; does not establish return Δv.
+taylor2018,low-delta-v target transfer time,282–535; median 462,days,Table 3 p. 80,"Outbound transfer times for 19 low-Δv MBAs; target-specific, not a generic 4-year round trip."
+taylor2018,illustrative transfer,352,days,§7.1 p. 80,Explicitly called LEO-to-asteroid rendezvous transit.
+,spacecost main-belt return row,7500; 4.0,m/s; yr,"reference/delta_v_segments.csv, Main belt → Earth return",Pipeline values; note cites Taylor 2018 but the paper scope is outbound rendezvous.

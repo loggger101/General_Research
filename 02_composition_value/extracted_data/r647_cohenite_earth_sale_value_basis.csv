@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_cohenite_product_value_code_current_2026,cohenite_formula,"(Fe,Ni)3C",formula,spacevalue/catalog.py:1907-1912,Code gives the formula and says carbon is not included as a yield.
+spacevalue_cohenite_product_value_code_current_2026,iron_yield_fraction,0.904,mass fraction,spacevalue/catalog.py:1909,Only iron component in the cohenite yield map.
+spacevalue_cohenite_product_value_code_current_2026,nickel_yield_fraction,0.029,mass fraction,spacevalue/catalog.py:1909,Only nickel component in the cohenite yield map.
+spacevalue_cohenite_product_value_code_current_2026,direct_reference_price,None,USD/kg,spacevalue/catalog.py:1909,Argument passed for cohenite direct price.
+,priced_component_fraction_sum,0.933,mass fraction,computed from spacevalue/catalog.py:1909,0.904 + 0.029; computed here.
+,unrepresented_component_fraction,0.067,mass fraction,computed from spacevalue/catalog.py:1909,1 - 0.904 - 0.029; model yield map leaves this share unpriced.
+,stoichiometric_carbon_fraction,0.0668,mass fraction,computed from spacevalue/catalog.py:1907,12.011/(162.509 + 5.282 + 12.011); comparator to the 0.067 yield-map residual.

@@ -450,3 +450,25 @@ This block records the rest of what those PRs did.
   prior. rc-239 re-stamped: `model_rig_calendar_cadence` covers it, and its
   stay-longer-than-rig-life case is unreachable while stays stay near 3.25 yr
   and rig life is 5 yr or more.
+
+## R657 - Sixteen method flags become the economicspace default (2026-11-12)
+
+- **economicspace c1a6333** (PR #203, calc 1.45.0, master 1.73.0): sixteen
+  flags from calc 1.36.0 to 1.39.0 default to `True`. Setting them to `False`
+  reproduces calc 1.44.0 bit for bit. Cost over revenue against the old
+  defaults, median: `raw` 1.016x, `raw+search` 1.003x, `benef` 0.970x,
+  `benef+search` 0.978x.
+- **Applied**, each by its flag: rc-239 `model_rig_calendar_cadence`, rc-241
+  `model_isru_feed_budget`, rc-245 `model_body_resource_budget`, rc-248
+  `model_repeat_manifest`, rc-252 `price_engineered_hold`, rc-253
+  `reclose_volume_capped_hold`, rc-265 `search_concentration_past_purity`,
+  rc-266 `offer_both_apsides`, rc-280 `model_raw_excavation_power`, rc-281
+  `refit_rtg_ceiling`, rc-282 `relax_oscillating_sizing`, rc-284
+  `model_return_coast_boiloff`, rc-287 `model_market_wave_clock`, rc-289
+  `gate_surface_escape`.
+- **Still `open`, re-stamped**: rc-285 (`model_cargo_volume` is on; the volume
+  is unpacked and the initial cap uses body density) and rc-288
+  (`model_launch_liquid_volume` is on; tanks, ullage and stowed hardware are
+  outside the check).
+- **Still `open`, flag still off**: rc-091 `model_rated_array_cost`, rc-244
+  `size_ep_on_flown_load`, rc-246 `carry_ep_home`.

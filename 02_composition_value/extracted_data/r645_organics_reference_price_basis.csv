@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_organics_reference_price_code_current_2026,spacevalue MINERAL_REFERENCE organics ref_price_usd_per_kg,0.5,USD/kg,catalog.py MINERAL_REFERENCE organics row (around L2166),"Notes identify “Complex organic macromolecules (kerogen-like)”; no underlying quote, product, grade, or quote date is named."
+spacevalue_organics_reference_price_code_current_2026,spacevalue catalog reference-price review stamp,2026-05-29,date,catalog.py _REF_PRICE_DATE (around L176),Catalog review date; not a source price date.

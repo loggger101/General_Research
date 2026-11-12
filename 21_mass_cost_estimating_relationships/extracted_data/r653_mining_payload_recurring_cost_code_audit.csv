@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_mining_payload_recurring_cost_current_2026,Mining payload recurring cost midpoint,300000,USD/kg,operational_costs.csv row “Mining payload recurring cost”,"Burdened recurring hardware cost; estimate, not an observed price."
+spacecost_mining_payload_recurring_cost_current_2026,Mining payload recurring cost range low,100000,USD/kg,operational_costs.csv row “Mining payload recurring cost”,Row note says the bracket has no registered source.
+spacecost_mining_payload_recurring_cost_current_2026,Mining payload recurring cost range high,1000000,USD/kg,operational_costs.csv row “Mining payload recurring cost”,Row note says the bracket has no registered source.
+spacecost_mining_payload_recurring_cost_current_2026,SSCM cited access state,registered_not_pulled,status,sources.csv row aerospace_corp_small_satellite_cost_model,Prior model anchor cannot be checked from the registered record.
+spacecost_mining_payload_recurring_cost_current_2026,NICM cited access state,registered_not_pulled,status,sources.csv row nasa_instrument_cost_model_nicm,Prior model anchor cannot be checked from the registered record; upstream notes it is an instrument model.
