@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+gerrish_schmidt_1999_antimatter_production_near_term_propulsion,reported_current_infrastructure_cost_per_gram_antiprotons,62500000000000,USD/g,NTRS abstract; unpaginated,NASA NTRS 19990080056 reports $62.5 trillion per gram; production-cost estimate.
+gerrish_schmidt_1999_antimatter_production_near_term_propulsion,reported_current_infrastructure_cost_per_microgram_antiprotons,62500000,USD/µg,NTRS abstract; unpaginated,NASA NTRS 19990080056 reports $62.5 million per microgram.
+,converted_report_cost_per_kg,62500000000000000,USD/kg,"Computed here from reported USD/g × 1,000 g/kg",Arithmetic conversion; not a market price.
+spacecost_antimatter_propellant_row_current_2026,reference_row_ref_cost_usd_per_kg,62500000000000000,USD/kg,"reference/propellants.csv, Antimatter-catalysed, ref_cost_usd_per_kg",Exported value equals 6.25e16/kg.
+spacecost_antimatter_propellant_row_current_2026,row_note_cost_scale,1000000000000000,USD/kg,"spacecost/propellants.py, Antimatter-catalysed notes",Text says near $10^15/kg; factor 62.5 below the stored field and code comment.
+gerrish_schmidt_1999_antimatter_production_near_term_propulsion;spacecost_antimatter_propellant_row_current_2026,reported_to_note_ratio,62.5,dimensionless,Computed here from NASA $62.5T/g conversion and current $1e15/kg note,Internal numeric discrepancy; compare the source’s antiproton production-cost basis with the row’s antihydrogen wording.

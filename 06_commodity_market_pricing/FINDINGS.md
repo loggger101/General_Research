@@ -1,3 +1,41 @@
+## R724 - Pyrrhotite terrestrial sale-price route
+
+- **spacevalue_pyrrhotite_reference_price_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1989-1994): pyrrhotite (Fe7S8) has ref_price_usd_per_kg=None and ref_price_date=None; the yield map is Fe 0.604 and S 0.396. The row describes a sulfide found in CI, CM and Tagish Lake meteorites but gives no terrestrial sale product or price basis.
+- **economicspace_unquoted_mineral_zero_price_rule_current_2026** (economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/verification_sheet.py lines 1418-1430): the phase worksheet path assigns 0.0 USD/kg when a mineral row has no terrestrial quote.
+- **turnagain_2020_nickel_concentrate_terms** (NI 43-101 report, section 13.4 p.84; section 13.5 p.85): for the Turnagain deposit, the report says pyrrhotite recovery is "not economic" and describes its rejection as necessary to produce a saleable nickel concentrate. This is deposit-specific process evidence, not a price for raw asteroid pyrrhotite or a separated Fe/S product.
+- **rc-591**: open; no matched terrestrial pyrrhotite product price or supported netback is established. Distinct from rc-380, rc-438, rc-589 and rc-590. No numeric replacement inferred. Extracted: extracted_data/r724_pyrrhotite_earth_sale_boundary.csv.
+
+## R723 - Pentlandite terrestrial sale-price basis
+
+- **spacevalue_pentlandite_reference_price_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1994-1997): pentlandite (Fe,Ni)9S8 has ref_price_usd_per_kg=None and ref_price_date=None; the yield map is Fe 0.326, Ni 0.342 and S 0.332. The row note calls it "the terrestrial Ni ore mineral." The _new_mineral constructor at lines 1544-1563 preserves None as the price and date.
+- **economicspace_unquoted_mineral_zero_price_rule_current_2026** (economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/verification_sheet.py lines 1418-1430): the phase worksheet path assigns 0.0 USD/kg when a mineral row has no terrestrial quote.
+- **usgs_mcs2026_nickel_chapter** (USGS MCS 2026 Nickel chapter, p. 1): Eagle Mine produced 10,000 metric tons of nickel in concentrate in 2025 and exported it to smelters; the annual average LME nickel cash price was $15,000 per metric ton. These market-form and metal-price data do not directly price unprocessed pentlandite.
+- **turnagain_2020_nickel_concentrate_terms** (NI 43-101 report, section 13.4 p. 83; section 19.3.2 p. 190): the report says "the only economically recoverable nickel is hosted in pentlandite" and that there are "no global benchmark treatment and refining charges" for nickel concentrates; terms are negotiated individually and privately. Its concentrate payability discussion is project-market context, not a transfer value for the modeled phase.
+- **lifezone_2025_kabanga_nickel_concentrate_terms** (Kabanga Feasibility Study Technical Report Summary, section 16.5 p. 310): project-model concentrate payabilities use "confidential commercial terms" after customer proposals are normalized for payability, metal prices, and treatment/refining charges. No numeric pentlandite price follows from those terms.
+- **rc-590**: open; these sources establish no product- and grade-matched price or concentrate netback for asteroid pentlandite. No numeric replacement inferred. Extracted: extracted_data/r723_pentlandite_nickel_concentrate_boundary.csv.
+
+## R722 — Unquoted schreibersite and troilite Earth-sale rows
+
+- **spacevalue_schreibersite_troilite_reference_prices_current_2026** (Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `catalog.py` lines 1888–1913): `troilite` (FeS) stores no `ref_price_usd_per_kg` or `ref_price_date` and yields Fe 0.635/S 0.365; `schreibersite` stores neither price nor date and yields Fe 0.555/Ni 0.291/P 0.154.
+- **economicspace_schreibersite_troilite_zero_quote_verification_current_2026** (economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `verification_sheet.py` lines 1418–1430): the sheet marks I29 (schreibersite) and I44 (troilite) NEED BACKING and displays $0/kg because “prices a missing terrestrial price as zero.”
+- **usgs_mcs2026_sulfur_chapter** (Sulfur chapter PDF p. 1): USGS reports the 2025 average unit value of elemental sulfur as $180 per metric ton. This is a processed elemental-sulfur price, not a direct troilite or schreibersite quote.
+- **Verdict:** `rc-589` records the missing Earth-sale product and price basis for the two null entries, including whether any constituent netback has an explicit recovery and cost boundary. The elemental-sulfur comparator does not support a numeric replacement.
+- **Extracted:** `extracted_data/r722_schreibersite_troilite_earth_price_boundary.csv`.
+
+## R684 — Germanium annual production ceiling
+
+- **Sources:** `world_mining_data_2026_germanium` reports a 2024 table total of 150 metric tons (printed p. 121), including 140 t for China alone; its production definition and estimate/source codes are on p. 13. `usgs_mineral_commodity_summaries_2026` says “global production data were limited” and estimates “were difficult to verify” (Germanium chapter, printed p. 96); it gives no world total.
+- **Upstream cell:** Spacevalue `ANNUAL_WORLD_PRODUCTION_KG["germanium"]` is 1.4e5 kg/year (~140 t refinery), under a block comment attributing the grouped rows to USGS MCS 2025 world production for 2024. The MCS 2025 Germanium extraction records no world production total (existing `extracted_data/r83_mcs2025_world_production_key_numbers.csv`, p. 84).
+- **Verdict:** The WMD 2026 150 t total is a current comparator, but WMD’s estimates and refinery boundary require review before numerical substitution. Open `rc-542` for provenance, year, scope, and the 10 t difference; no upstream edit made.
+- **Extracted data:** `extracted_data/r684_germanium_world_production.csv`.
+
+## R683 — Chromium annual production ceiling
+
+- **Source:** `usgs_mcs2026_chromium_chapter`. The “World Mine Production and Reserves” table gives a world total of “51,000” thousand metric tons for 2025e (printed p. 66); footnote 12 states mine production is reported in gross weight.
+- **Upstream cell:** Spacevalue `ANNUAL_WORLD_PRODUCTION_KG["chromium"]` is 4.7e10 kg (~47 Mt shipping-grade chromite ore), under a block comment identifying MCS 2025 world production for 2024.
+- **Verdict:** The current MCS 2026 comparator is 5.1e10 kg gross-weight chromite ore, 8.5% above the stored figure. Open `rc-541` for review; no upstream edit made.
+- **Extracted data:** `extracted_data/r683_chromium_annual_production.csv`.
+
 # Domain 6 — Commodity / mineral market pricing (value side of the pipeline)
 
 Backings: spacevalue `spacevalue/catalog.py` `ref_price_usd_per_kg` for every tradable element and mineral (multiplied by per-asteroid yields into every row of `profitability_catalog.csv`) and `ANNUAL_WORLD_PRODUCTION_KG`. Until R39 the prices carried only "USGS/LME/mineralogy reference", with no registered source.
@@ -518,3 +556,9 @@ campaign/worked_calculation.py parse to the same ASTs as master 1.73.0.
   rationale conditional and call 0.30 a scenario.
 - rc-519: the aerocapture_dv_savings_m_s comment calls 4,000 m/s a generic
   fallback scenario with no trajectory behind it.
+
+## R735 — Earth-surface water reference-price basis (2026-11-14)
+
+- spacevalue_water_reference_price_code_current_2026: spacevalue catalog.py lines 332-336 sets _EARTH_SURFACE_WATER_USD_PER_KG to $0.001/kg and states a $0.0005-0.002/kg municipal/industrial range without naming a price source.
+- mud_omaha_2026_large_volume_industrial_water_schedule: Schedule W-3 p.1 lists “Over 5,000 CCF (per 100 cubic feet) $1.9657” and defines 1 CCF as 748 gallons. At the published marginal rate, 1.9657 / (748 × 3.785411784) = $0.000694/kg; the schedule also sets a $11,456 monthly minimum plus service charge (p.1) and a 2% in-city addition (p.2). This is one industrial utility tariff, not an asteroid-water netback or a national rate range.
+- The tariff does not establish an Earth-return sale price; rc-602 records the missing sale-point basis and no numeric replacement. Extracted: extracted_data/r735_mud_water_tariff_comparator.csv.

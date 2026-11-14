@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4,Hayabusa Earth-entry vehicle mass,18,kg,"PDF p. 23, Hayabusa mission table, Vehicle mass",Sample-return capsule architecture; not a bulk-cargo carrier comparator.
+parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4,Hayabusa science payload mass,1.04,kg,"PDF p. 23, Hayabusa mission table, Payload mass",Small sample-return payload; does not define a generic cargo-container mass ratio.
+parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4,Hayabusa TPS mass fraction including insulation,43,percent,"PDF p. 23, Hayabusa mission table, TPS mass fraction, inc. insul.",TPS is separately tabulated; no generic downleg capsule dry-mass rule is provided.
+spacecost_downleg_capsule_dry_fraction_record_2026,DOWNLEG_CAPSULE_DRY_FRAC,0.10,kg dry capsule mass per kg cargo,spacecost/delivery.py line 420 at spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841,"Code declaration does not state a geometry, component scope, source, or uncertainty."
+spacecost_downleg_capsule_dry_fraction_record_2026,Active downleg capsule mass assignment,capsule_kg = DOWNLEG_CAPSULE_DRY_FRAC,code,spacecost/delivery.py line 703 at spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841,The constant feeds the active capsule and TPS hardware cost calculation.

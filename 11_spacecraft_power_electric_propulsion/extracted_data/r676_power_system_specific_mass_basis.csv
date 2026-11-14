@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_power_system_specific_mass_code_current_2026,complete_power_system_specific_mass_point;low;high,60;30;150,W/kg at 1 AU,reference/operational_costs.csv row; spacecost/operations.py note,"Complete PV wing, PMAD, battery and deployment structure; code gives no calculation or BOL/EOL basis."
+nasa_jpl_2017_solar_power_technologies_planetary_missions,flexible_roll_out_array_specific_power,150,W/kg BOL at 1 AU,"JPL D-101316 Table 3-3, printed p.25; existing extraction r496_jpl_rollout_array_specific_power.csv","Approximate array-level class value, not complete power-system mass."
+hoffman_2000,Main Belt Asteroid Tour solar array,121 kg; 7.5 kW EOL,mass; power at 1.5 AU,"NASA/TM-2000-210342, p.9; existing evidence in Domain 5 R164",Array-only mission design; not complete-system mass or 1-AU system specific power.
+schmitz_2023_rps_vs_solar_array_comparison,Lucy solar array specific power,184,W/kg at 1 AU,"Schmitz et al. 2023, p.8","Modern array comparator; does not establish battery, PMAD or system mass."

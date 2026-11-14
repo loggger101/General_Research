@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_l_spinel_accessory_code_current_2026,K spinel accessory fraction,0.03,fraction of whole-body mass,mineralogy.py ACCESSORY_PHASES[K]; mineral_phases.csv,Current model value; code calls these accessory fractions absolute body-mass shares.
+asteroidcatalog_l_spinel_accessory_code_current_2026,L spinel accessory fraction,0.05,fraction of whole-body mass,mineralogy.py ACCESSORY_PHASES[L]; mineral_phases.csv,Current model value; code comment says L needs the most CAI of any spectrum and cites Sunshine et al. 2008.
+de_kleer_2026_jwst_spinel_rich_l_type_mineralogy,L-type CAI enhancement relative to CV3,not required,qualitative,"Abstract, printed p. 1","JWST MIRI spectra for five L-types resemble CV3 (possibly CO3); paper says the spectra do not require enhancement, but lab-data limitations prevent quantitative CAI constraints."
+de_kleer_2026_jwst_spinel_rich_l_type_mineralogy,spinel as a fraction of CAIs,tens of percent,qualitative,"Introduction, printed p. 2","Paper summarizes that CAIs are at most a few percent of meteorite composition; this is context, not a direct asteroid bulk measurement."
+de_kleer_2026_jwst_spinel_rich_l_type_mineralogy,CAI abundance in meteorites,at most a few percent,qualitative,"Introduction, printed p. 2",Source text; no numeric percentage was asserted here.

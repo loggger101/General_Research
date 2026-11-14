@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_std_8719_14c_geostationary_altitude,Nominal altitude of a circular GEO,"35,786",km,"NASA-STD-8719.14C §3.2, printed p. 13","NASA defines a circular GEO at 0° inclination as geostationary; this is an altitude, not a geocentric radius."
+iers_petit_luzum_2010_conventions_tn36,Earth equatorial radius,"6,378,136.6",m,"Table 1.1, Earth constants","6,378.1366 km; existing source registered in Domain 12."
+,Computed nominal geocentric radius,"35,786 + 6,378.1366 = 42,164.1366",km,Comparison computed in R733,"Rounds to 42,164.14 km; not an independently derived exact dynamical GEO radius."
+economicspace_geostationary_radius_code_current_2026,Economicspace model GEO-radius constants,"42,164.14",km,modules/calc.py line 2814; campaign/worked_calculation.py line 154,R_GEO_KM and R_GEO store the same value.
+economicspace_geostationary_radius_verification_sheet_code_current_2026,Worksheet source tag,"cite_here(""R_GEO"")",text,campaign/verification_sheet.py lines 2200-2203 and 2234-2238,ret_gto_prop and circularise_prep register the radius without naming an external source.

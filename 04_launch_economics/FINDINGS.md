@@ -1,3 +1,62 @@
+## R730 - Default fairing volume for blank vehicle rows (2026-11-14)
+
+economicspace_missing_fairing_volume_fallback_code_current_2026: economicspace modules/calc.py line 3950 states `DEFAULT_FAIRING_VOLUME_M3 = 100.0`; _vehicle_consts() line 3974 selects `DEFAULT_FAIRING_VOLUME_M3` when the Spacecost row's fairing_volume_m3 is missing. model_launch_liquid_volume defaults to true (line 779), and the launch-volume check uses the substituted envelope (line 7437).
+
+spacecost_launch_vehicle_fairing_rows_current_2026: Spacecost reference/launch_vehicles.csv has 34 of 76 rows with blank fairing_volume_m3, including 17 of 48 operational vehicles. The affected rows are listed in extracted_data/r730_missing_fairing_volume_fallback.csv.
+
+Upstream cell/value: economicspace modules/calc.py DEFAULT_FAIRING_VOLUME_M3, 100.0 m³, used as the usable fairing envelope for a row with no volume. The code gives no source or derivation for the fallback.
+
+Verdict: provide a source for each usable fairing envelope or derive a documented vehicle-specific value from published geometry and a justified packing method. If matched evidence is unavailable, expose this as a scenario with uncertainty and sensitivity, or treat the volume as unknown; no replacement inferred. Distinct from rc-436 (six estimates built from known outer dimensions) and rc-288 (launch-volume closure method). Open rc-597. Extracted: extracted_data/r730_missing_fairing_volume_fallback.csv.
+
+## R725 — Long March 5 price estimate and band basis (2026-11-13)
+
+`faa_ast_2018_compendium_long_march_5_price` — FAA AST’s 2018 *Annual Compendium of Commercial Space Transportation*, Long March 5 fact sheet, “Launch Vehicle Specifications” table: the “Estimated Price per Launch” entry is “Undisclosed”; the same table pairs that price row with 25,000 kg to LEO and 14,000 kg to GTO. This records a 2018 disclosure status, not a current price.
+
+`spacecost_lm5_launch_price_code_current_2026` — at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/launch_vehicles.csv` stores Long March 5 at $133M [$110M,$160M], `reference_year=2026`, `price_basis=estimate`, and derived $5,320/kg to LEO. Its note attributes the high end to a Wikipedia estimate and says $110M is what the row used to carry. `CITATIONS.md` says estimate bands are “chosen against the nearest vehicle that does have a price”; the row does not identify that comparator or the band calculation.
+
+`hf_dataset` — the hosted dataset’s Long March 5 row (row 4, extracted in `extracted_data/r70_hf_dataset_full_table.csv`) lists $60M and $2,400/kg with source “CASC / industry estimates.” Its recorded source note says the dataset mixes years and list-price versus estimate bases; it is not a like-for-like replacement without a dated source and boundary.
+
+Verdict: document the source/calculation for both endpoints, the named comparator, price year and vehicle-cost versus launch-service boundary; retain the current values only as explicit scenario estimates until that basis is recorded. No replacement inferred. Distinct from **rc-019** (dataset $/kg comparison), **rc-207** (payload variant attribution), and **rc-436** (fairing-volume transfer). Open **rc-592**. Extracted: `extracted_data/r725_long_march_5_price_basis.csv`.
+
+## R708 — Space Shuttle launch-price band has mixed cost boundaries (2026-11-12)
+
+`spacecost_space_shuttle_price_band_code_current_2026`: Spacecost `reference/launch_vehicles.csv` records `list_price_usd=$972M`, low/high `$450M/$2.1B`, and `reference_year=2026`. Its note describes the low endpoint as the marginal cost of one more flight and the high endpoint as whole-programme cost per flight, escalated from ~$1.5B in 2011 dollars by ~1.44. It explicitly says the band mixes dollar years. NASA’s Resource Significance Framework says “By 2011, the incremental cost-per-flight ... was estimated at $450 million” (Space Shuttle Program, p. B-17); it does not state a price-year convention in that passage. NASA OIG IG-24-001 separately estimates Shuttle operations cost increased “to $1.45 billion per launch” (p. 17), without stating the dollar year there. The note does not label the low endpoint’s dollar year or identify the CPI series and observation dates for its high-end conversion. The stored $972M centre is the geometric midpoint of the listed endpoints, which mix distinct cost boundaries and dollar-year treatment.
+
+- **rc-578**: define a comparable cost boundary and dollar year for the band, or explain the deliberately mixed interval and how `reference_year=2026` and the $972M centre should be interpreted; identify the inflation conversion. No replacement inferred.
+
+Extracted: `extracted_data/r708_shuttle_price_band_basis.csv`.
+
+## R693 — Six target launch-price rows lack a traceable basis (2026-11-12)
+
+`spacecost_target_launch_prices_code_current_2026`: Spacecost `reference/launch_vehicles.csv` records `price_basis=target`, `reference_year=2026` and a single-point price for SpinLaunch Orbital, Skylon / SABRE, Sea Dragon, Lunar mass driver, Lunar space elevator and Earth space elevator. Their row notes do not give a numeric price source or calculation. SpinLaunch's code note calls its amount a “published target” (line 1826) without identifying a publication. `vehicles.py` annotates the three infrastructure payload fields as per year (lines 1944, 1975, 2003); the exported table derives $/kg from the stored price and payload columns.
+
+- **rc-556** SpinLaunch Orbital: $1.25M / 200 kg = $6,250/kg; the note calls it a published target without identifying the publication.
+- **rc-557** Skylon / SABRE: $15M / 15,000 kg = $1,000/kg.
+- **rc-558** Sea Dragon: $300M / 550,000 kg = about $545/kg.
+- **rc-559** Lunar mass driver: $1M and 100,000 kg/year, exported as $10/kg.
+- **rc-560** Lunar space elevator: $500,000 and 50,000 kg/year, exported as $10/kg.
+- **rc-561** Earth space elevator: $2M and 20,000 kg/year, exported as $100/kg.
+
+Verdict: document each target's source, calculation, dollar year and service/cost boundary; resolve annual-throughput versus per-launch units for the infrastructure rows. No replacement inferred. Extracted: `extracted_data/r693_target_launch_price_rows.csv`.
+
+## R691 - Falcon Heavy reusable-side-core price basis (2026-11-12)
+
+- **nasa_xhab_2025_spacex_falcon_heavy_price**: X-Hab 2025 report Table 19, printed p. 109, identifies its cost inputs as SpaceX website data from 2022-2024 and lists Falcon Heavy at $97M (2022) and $107.9M adjusted to 2025 dollars. The table does not state its adjustment method.
+- **spacecost_falcon_heavy_reusable_price_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/launch_vehicles.csv` stores $100M [$97M,$103M], `price_basis=published`, `reference_year=2026`. Its note identifies $97M (2022) for up to 8 t GTO with boosters recovered, then carries forward Falcon 9's $70M-to-$74M increase to produce $103M; $100M is the band midpoint. The existing Falcon 9 price-increase source does not establish a Falcon Heavy increase. Verdict: document the 2026 basis and service/configuration boundary; distinguish the dated $97M anchor from derived endpoints and midpoint. No replacement inferred. **rc-554**, distinct from rc-408 (payload configuration). Extracted: `extracted_data/r691_falcon_heavy_reusable_price_basis.csv`.
+
+## R690 — SSLV per-launch price attribution and conversion basis (2026-11-12)
+
+- **indianexpress_2022_sslv_30crore_quote**: paragraph 34 attributes to former ISRO chairman K. Sivan a 2019 press-conference statement that the SSLV “cost will be only around Rs 30 crore.” This supports an approximate ₹30 crore statement, not the ₹35 crore upper endpoint or a 2026 USD conversion.
+- **isro_2021_sslv_development_cost_parliament**: Rajya Sabha Unstarred Question 2164, answer (b), reports ₹169.07 crore for SSLV development, qualification and three development flights; this is a project total, not a per-launch price.
+- **spacecost_estimated_launch_prices_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/launch_vehicles.csv` row `SSLV` stores $3.74M [$3.5M,$4M], `price_basis=reported`, `reference_year=2026`, and says “Source: ISRO, Rs 30-35 crore (~$3.5-4M) per launch.” The located statement does not establish the range endpoint, commercial-service boundary, FX date/method, or 2026 dollar treatment. Verdict: cite and date both INR endpoints and define the price boundary and conversion basis; no replacement inferred. **rc-553**. Extracted: `extracted_data/r690_sslv_price_attribution.csv`.
+
+## R689 — Spacecost launch-price estimates without a recorded basis (2026-11-12)
+
+- **spacecost_estimated_launch_prices_code_current_2026** [T4]: Spacecost@a401930 stores 2026 list-price estimates for Zhuque-2E ($26.5M, $20M–$35M), Zhuque-3 ($35.4M, $25M–$50M), Hyperbola-3 ($42.4M, $30M–$60M), Soyuz-5 ($49M, $40M–$60M), Nova ($24.5M, $20M–$30M), and Eclipse ($80M, a zero-width band). Their notes call the prices estimates or state that the provider publishes no price, but give no numerical method.
+- **carrier_space_zhuque2e_price_request_current_2026** [T4]: the Zhuque-2E listing says “Price on request”; it provides no amount and does not support Spacecost’s estimate.
+
+The six price estimates need a traceable price basis and a configuration/service boundary; payload, flight-history, and configuration citations do not supply one. **rc-547** Zhuque-2E; **rc-548** Zhuque-3; **rc-549** Hyperbola-3; **rc-550** Soyuz-5; **rc-551** Nova; **rc-552** Eclipse. No replacement prices inferred. Extracted: `extracted_data/r689_launch_price_estimate_rows.csv`.
+
 ## R661 — H3-30 target price year and range are unresolved (2026-11-12)
 
 - **jaxa_h3_launch_vehicle**: JAXA’s “High cost-performance” section says its target is “about 5 billion yen” for the light configuration without solid boosters, mainly for LEO; the page gives no target date or USD conversion. **spacecost_h3_30_target_price_code_current_2026**: at `spacecost@aaed2720ee44610c5cf90fc204db160deb5669bb`, `reference/launch_vehicles.csv` row `H3 (30)` stores `$36.3M` [$33M,$40M], `$9,075/kg`, `reference_year=2026` and `price_basis=target`; the note converts ¥5B to about $33M at 2024 rates, without explaining the 2026 treatment or the $40M endpoint. The separate **rc-379** concerns the H3 (24L) estimate relative to this target, not this target row’s conversion or band. Verdict: state the price year and FX basis and explain the interval, or label it as scenario sensitivity; no replacement inferred. **rc-522**. Extracted: `extracted_data/r661_h3_30_target_price_basis.csv`.
@@ -828,3 +887,9 @@ spacecost_lm9_price_guess_code_current_2026: spacecost stores Long March 9 at $7
 
 - **spacecost_vulcan_vc6_current_record_2026**: at `spacecost@aaed2720ee44610c5cf90fc204db160deb5669bb`, the VC6 row stores $128M [$110M,$150M], `price_basis=estimate`, and `reference_year=2026`. Its note attributes $110M to ULA’s starting price for the smallest configuration and says six GEM 63XL boosters “are not free”; it calls $150M an estimate without giving a calculation. Reuters reports a generic Vulcan starting price of “roughly $110 million” (10 Jan 2024, paragraph 13) and says the vehicle can use up to six solid rocket motors (paragraph 14); it gives neither a VC6-specific price nor a six-booster adder. ULA’s guide defines VC6 as the six-SRB configuration (printed pp. 1–4). Existing rc-321 concerns VC4 and NSSL mission-service prices, not the VC6 vehicle-price basis. Verdict: document a VC6-specific band derivation and 2026 price boundary or label it as an explicit scenario; no replacement inferred. **rc-500**. Extracted: `extracted_data/r638_vc6_price_basis.csv`.
 - **spacecost_vulcan_vc6_current_record_2026**: the same row says the first VC6 is manifested for October 2026. ULA’s 10 Nov 2026 blog post says the first Vulcan Leo 1 is planned for 13 Nov (lines 10–11) and identifies V-012 as VC6L with six SRBs and a LEO-optimized Centaur V (line 25); the current mission page gives the same date and variant (lines 45, 60). As of 11 Nov, it remains scheduled, not flown. Verdict: update the stale manifest date and retain scheduled status pending outcome. **rc-501**. Extracted: `extracted_data/r638_vc6_manifest_schedule.csv`.
+
+## R685 — Tianlong-3 launch-price estimate has no derivation (rc-543) (2026-11-12)
+
+- **spacecost_tianlong3_price_code_current_2026**: the Tianlong-3 row stores $33.5 million [$25 million, $45 million], price_basis=estimate, reference_year=2026; its note says “price estimated” without a source or calculation.
+- **space_pioneer_tianlong3_product_page_current_2026**: the official TL-3 specification lists “17~22（t）” LEO and “10~17（t）” SSO capacity, but no launch price (payload fields). **carrier_space_tianlong3_price_request_current_2026** lists “Price on request” (Price section), with no amount.
+- **Verdict**: neither page supports the stored numeric range or its center. Request a traceable basis and define configuration, service scope, and price year; otherwise state that the band is a scenario estimate. No replacement inferred. Distinct from rc-217, which addressed flight chronology and left the price cells unchanged. Extracted: `extracted_data/r685_tianlong3_price_basis.csv`.

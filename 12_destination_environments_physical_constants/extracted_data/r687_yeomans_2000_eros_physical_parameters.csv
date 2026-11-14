@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+yeomans_2000_near_eros_radio_science,Estimated mass,6.687e18,g,"PDF pp. 1, 4 (Table 1)",1σ uncertainty 0.003e18 g
+yeomans_2000_near_eros_radio_science,Shape-model volume,2503,km^3,"PDF pp. 2, 4 (Table 1)",1σ uncertainty 25 km^3
+yeomans_2000_near_eros_radio_science,Volume-equivalent spherical radius,8422.8,m,Calculated from PDF p. 4 volume,(3V/4π)^(1/3); rounds to upstream mean_radius_m=8420 m
+yeomans_2000_near_eros_radio_science,Local surface escape-speed range,3.1–17.2,m/s,PDF p. 2,Rotating irregular shape; range brackets upstream spherical escape_velocity_m_per_s=10.296

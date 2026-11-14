@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_default_rotation_period_code_current_2026,Default rotation period fallback,10.222,h,"economicspace modules/calc.py, CalcConfig.default_rotation_period_h","Code comment describes a median over 29,288 measured catalog periods dated 2026-08-08."
+asteroidcatalog_release_data_2026_10_21b,AsteroidCatalog Stage 1 release row count,1575889,rows,data-2026-10-21b catalog manifest,Installed by current economicspace Stage 1 configuration.
+asteroidcatalog_release_data_2026_10_21b,Rows with non-null rotation_period_h,46159,asteroids,data-2026-10-21b installed asteroid_catalog.csv; rotation_period_h; no additional filter,Counted after numeric coercion and null removal.
+asteroidcatalog_release_data_2026_10_21b,Median of non-null rotation_period_h,8.068,h,data-2026-10-21b installed asteroid_catalog.csv; rotation_period_h; no additional filter,Median computed from the current installed catalog release.
+,Current-release median minus code fallback,-2.154,h,Computed here,8.068 − 10.222.
+,Difference as a fraction of fallback,-21.07,%,Computed here,(8.068 − 10.222) / 10.222 × 100.

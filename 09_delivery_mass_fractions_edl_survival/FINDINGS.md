@@ -1,5 +1,13 @@
 # Domain 9 — In-space delivery mass fractions & EDL survival (R54)
 
+## R731 — Downleg capsule dry-mass factor (2026-11-14)
+
+`parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4` — NASA’s Hayabusa entry-vehicle table lists “Vehicle mass 18 kg,” “Payload mass 1.04 kg,” and “TPS mass fraction, inc. insul. 43%” (PDF p. 23). This is a small sample-return entry vehicle, not a bulk-cargo container, and supplies no generic cargo-container scaling.
+
+`spacecost_downleg_capsule_dry_fraction_record_2026` — at spacecost `a401930efe30aaad01aafd2b3cb332ad0438c841`, `delivery.py` sets `DOWNLEG_CAPSULE_DRY_FRAC = 0.10` as “capsule dry mass per kg of cargo” (line 420); `downleg_cost_usd_per_kg` uses it directly for `capsule_kg` in the hardware cost term (lines 703–705). The declaration gives no geometry, component scope, source, or sensitivity for the 0.10 value.
+
+**Verdict:** Hayabusa provides a non-like-for-like context comparator, not a replacement. No bulk-cargo capsule sizing source or uncertainty is stated for the 0.10 factor. Open `rc-598`; distinct from rc-497’s capsule recurring cost, rc-135’s TPS fraction, and rc-134’s TPS mass scaling. Extracted data: `extracted_data/r731_hayabusa_and_downleg_capsule_mass_basis.csv`.
+
 Backings: spacecost `delivery.py` typed constants with no table row: `MARS_LANDED_MASS_FRACTION = 0.30` (sets the published mars_surface price; the comment calls it "Measured, not assumed" from MSL and Perseverance), `LANDER_DRY_MASS_FRAC = 0.20` and `TUG_DRY_MASS_FRAC = 0.10`.
 
 **Sources (R54):**

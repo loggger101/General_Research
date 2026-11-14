@@ -1,3 +1,54 @@
+## R734 — GEO plane-change angle uses an uncited obliquity input (2026-11-14)
+
+- **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 (printed p. 17) lists the initial value at J2000.0 as epsilon_0 = 84,381.406 arcsec, uncertainty 0.001 arcsec, with description “Obliquity of the ecliptic at J2000.0.” This converts to 23.4392794 degrees, which rounds to 23.44 degrees.
+- **economicspace_ecliptic_tilt_code_current_2026**: at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, modules/calc.py lines 2815-2818 describe an asteroid arrival near the ecliptic and GEO's equatorial plane, then compute the capture geometry with 23.44 degrees; campaign/worked_calculation.py lines 151-155 repeats the same constant. Neither names a source or epoch.
+- **economicspace_ecliptic_tilt_verification_sheet_code_current_2026**: campaign/verification_sheet.py lines 2240-2243 registers worksheet input tilt = 23.44 degrees and gives the geometry rationale through cite_here, but no external source. input_backing lines 5794-5805 classifies an own-source constant with no named reference as needs.
+- Verdict: the registered J2000 obliquity rounds to the model's 23.44-degree input. Cite the IERS value and epoch in the model and worksheet, and label the arrival-plane geometry as a nominal near-ecliptic assumption rather than each asteroid's measured inclination. Keep the rounded value; no numeric replacement inferred. **rc-601**. Extracted: extracted_data/r734_ecliptic_tilt_basis.csv.
+
+## R733 — GEO radius matches nominal altitude plus Earth radius but lacks attribution (2026-11-14)
+
+- **nasa_std_8719_14c_geostationary_altitude**: NASA-STD-8719.14C Revision C (2021-11-05) defines a circular GEO at 0° inclination as geostationary and states “The nominal altitude of a circular GEO is 35,786 km” (§3.2, printed p. 13).
+- **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 gives Earth’s equatorial radius as 6,378,136.6 m (6,378.1366 km); this existing source is registered in Domain 12.
+- **economicspace_geostationary_radius_code_current_2026**: at economicspace commit e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, modules/calc.py line 2814 sets R_GEO_KM = 42_164.14 and campaign/worked_calculation.py line 154 repeats R_GEO = 42_164.14, with no named source.
+- **economicspace_geostationary_radius_verification_sheet_code_current_2026**: campaign/verification_sheet.py lines 2200–2203 and 2234–2238 register R_GEO through cite_here("R_GEO") in ret_gto_prop and circularise_prep, without naming external references.
+- Verdict: adding the IERS equatorial radius to NASA’s nominal GEO altitude gives 42,164.1366 km, which rounds to 42,164.14 km. This supports the stored value as a nominal geocentric-radius reconstruction; it does not establish a more precise dynamical GEO radius. Cite both inputs beside the model constants and in the worksheet; retain the value. Distinct from closed rc-177, which concerns GTO burn rounding rather than the GEO-radius source. **rc-600**. Extracted: extracted_data/r733_geostationary_radius_provenance.csv.
+
+## R732 — Earth-return LEO deorbit allowance needs a documented entry target (2026-11-14)
+
+- **iaa_2006_space_debris_mitigation_sp1301**: ESA SP-1301 says “a perigee altitude of about 60 km ascertains a safe atmospheric capture” for a non-lifting body (printed p. 36). Figure 3.2 gives about 40 m/s for a controlled direct deorbit from a near-circular 200 km orbit to that perigee. The text says perigee selection depends on mass-to-area ratio and drag/lift; a heavy compact or high-lift-to-drag object may require a lower perigee.
+- **hopkins_2009_xenia_deorbit_analysis**: NASA/TM-2009-216270 Figure 2 (printed p. 9) plots required deorbit Δv against initial circular altitude and target reentry flight-path angle. For the Xenia design, Table 5 (p. 8) sets a 122 km reentry interface and “Target reentry flight path angle, γ” of −1.75° from a 500–600 km orbit; Table 6 (p. 10) gives 161.3 m/s impulsive plus 1.7 m/s gravity loss, 163 m/s total. This is a mission-specific case, not the 200 km return case.
+- **economicspace_leo_deorbit_code_current_2026**: at `economicspace@e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `modules/calc.py` sets `DV_LEO_DEORBIT_KM_S = 0.100` and calls it a “Standard figure” for lowering perigee from a 200 km circular orbit to about 50 km, without naming a source or entry corridor.
+- **economicspace_leo_deorbit_verification_sheet_code_current_2026**: the Earth-surface propulsive return worksheet registers this constant as its deorbit burn. `DV_LEO_DEORBIT` is absent from `DERIVATION_ROWS`, so `cite_constant` falls back to the local `cite_here` citation rather than an external delta-v row.
+- **spacecost_leo_deorbit_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/delivery.py` assigns 120 m/s for deorbiting from a 200 km circular orbit onto an entry trajectory and identifies it as a hand figure with no table row.
+- Verdict: a two-body impulsive burn from the model’s 200 km circular reference orbit to a 50 km perigee is 45.018 m/s; to 60 km it is 41.976 m/s. These are geometry-only checks, not capsule entry solutions. The 100 m/s and 120 m/s values use differently worded targets, with no shared entry condition stated for comparison. Document the intended trajectory and source or derivation, and reconcile the two project assumptions. No numeric replacement inferred. **rc-599**. Extracted: `extracted_data/r732_leo_deorbit_target_comparators.csv`.
+
+## R705 — Direct-fusion D-He3 price has an unresolved unit and mixture basis (2026-11-12)
+
+- **galea_etal_2023_pfrc_fusion_fuel_cost**: Galea et al. state a terrestrial He-3 price assumption of “$2000 per liter, or $15M per kg,” and about $14,000/kg for deuterium (Journal p. 10). Figure 7 uses a 1:1 fuel ratio in its PFRC example (p. 5); the text says the ³He:D ratio can be adjusted up to 3:1 (p. 6). These are reactor-economics assumptions, not a propulsion-fuel quote.
+- **spacecost_direct_fusion_drive_cost_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` stores $1,000,000/kg for the Direct fusion drive row. Its note calls this an order-of-magnitude D-He3 blend estimate, gives an uncited $1,400–2,000/g He-3 figure and does not define the mixture ratio or gas reference conditions.
+- Verdict: reconcile the price unit, gas basis and mixture boundary before changing the value. Galea et al.’s reactor assumptions challenge the undocumented basis but do not establish a like-for-like propulsion-fuel replacement. No numeric replacement inferred. **rc-575**. Extracted: `extracted_data/r705_dhe3_fuel_cost_basis.csv`.
+
+## R703 — Iodine thruster mass scaling remains a cargo-scale scenario (2026-11-12)
+
+- **rafalskyi_2021_iodine_ep_in_orbit**: the integrated NPT30-I2 propulsion system has “total mass (including propellant)” of 1.2 kg (Nature p. 412); its maximum thrust is “about 1.3 mN” at total power below 65 W (p. 413). The system includes propellant storage, delivery/control, thruster, neutralizers, power processing and thermal management (p. 412).
+- **spacecost_iodine_thruster_mass_to_thrust_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` assigns 60 kg/N to `_THRUSTER_SYSTEMS["Iodine  (Hall / gridded)"]`. The block defines this field as thruster-head mass per demonstrated thrust and labels iodine's value a Hall-class scale-up judgement. The 1.2 kg / 1.3 mN CubeSat figure is about 923 kg/N for the complete integrated system, including propellant.
+- Verdict: the flight article is not a like-for-like thruster-head or cargo-scale comparator. Keep 60 kg/N only as an explicit scenario pending cargo-scale iodine Hall/gridded thruster-head mass/thrust evidence; no numeric replacement inferred. **rc-573**. Extracted: `extracted_data/r703_iodine_thruster_mass_to_thrust.csv`.
+
+## R682 — LEO-radius source remains absent from the verification worksheet (2026-11-12)
+
+- **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 gives the equatorial radius as 6,378,136.6 m; this rounds to the 6,378.14 km component of the model’s reference-orbit radius.
+- **askins_2021_sls_janaff_update**: the SLS capability-table footnote defines LEO as a “typical 200 km circular orbit at 28.5 degrees inclination”; it supports a reference-orbit convention, not a universal mission orbit.
+- **economicspace_leo_radius_verification_sheet_code_current_2026**: at economicspace main `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` lines 2803–2806 name both sources, while `campaign/verification_sheet.py` lines 1928–1930 gives the 6,378.14 km plus 200 km construction without naming either. The refreshed `--check` passed; direct backing extraction marks worksheet input I4 (6,578.14 km) NEED BACKING.
+- Verdict: the worksheet attribution requested by **rc-356** is still missing, so rc-356 is open again. The reference-orbit value is unchanged. Extracted: `extracted_data/r490_leo_radius_provenance.csv`.
+
+## R680 — Asteroid station-keeping allocation remains an estimate without a mission budget (2026-11-12)
+
+`spacecost_asteroid_stationkeeping_delta_v_code_current_2026`: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` stores an “Asteroid station-keeping” segment with `dv_m_per_s=200` and `duration_yr=0.5`. The current note labels the 200 m/s an engineering estimate and says no document gives it; the half-year duration is not given a mission-design source.
+
+`antreasian_et_al_2021_osirisrex_proxops_nav_performance`: the Bennu proximity-operations paper reports a desaturation weighted mean and standard deviation of “0.21 ± 0.20 mm/s” (printed p. 29); it reports 2.5 years in close proximity, 114 maneuvers with 140 burn components, and a smallest maneuver of 0.09 mm/s (printed p. 30). These are mission-specific elapsed time and event-level/navigation statistics, not a summed propulsion budget for station-keeping, proximity operations, sample collection and departure. They neither derive nor directly contradict the model’s 200 m/s and 0.5-year inputs.
+
+Verdict: review the segment against a mission-class maneuver budget and a defined stay-duration scenario, or keep both values explicitly as scenario inputs. No numeric replacement inferred. This is distinct from rc-231, which applied a note correction while leaving the 200 m/s and 0.5-year cells untouched; no direct downstream consumer for this segment was found by an exact-name search across the checked project worktrees, so the data row’s current operational use remains to be verified. **rc-539**. Extracted: `extracted_data/r680_osirisrex_stationkeeping_dv_comparator.csv`.
+
 ## R542 — Mars ascent Δv additional configuration comparator (2026-11-10)
 
 - **palaszewski_2022_mars_landing_ascent_delta_v** (NASA NTRS 20210026187; Bryan Palaszewski, *Mars Research*, IntechOpen): §2.5 Table 3 gives 4,200 m/s for ascent from the Martian surface to a 100 km circular low Mars orbit and states a 20% gravity-loss allowance; §3.0 repeats the 4,200 m/s ascent value. Table 3 separately gives 244.8 m/s for transfer to 500 km circular orbit, 4,444.8 m/s combined.
@@ -499,3 +550,42 @@ At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831`, `CalcConfig.de
 ## R658 — economicspace Δv controls rechecked (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `CalcConfig.max_dv_outbound_m_s` remains 20,000 m/s; the newly default-on surface-escape gate is a separate necessary-condition screen and does not establish that clamp as a mission-validity limit (**rc-459**). `campaign/worked_calculation.py` retains `TAU_CRUISE_FIT_YR_PER_M_S=0.00023`, applied as `max(0.5, tau × Δv)` to chemical transfer time; no calibration cases, fit method, or error range were added (**rc-463**). Both candidates remain open. Existing extracts: `extracted_data/r596_economicspace_dv_ceiling.csv`; `extracted_data/r600_chemical_cruise_time_fit_provenance.csv`.
+
+
+## R672 — Chemical cruise-leg minimum duration basis (2026-11-12)
+
+- **economicspace_chemical_cruise_leg_floor_code_current_2026**: at economicspace commit `46e0315d12f3fc876b022fdb5270016c7c539080`, `campaign/worked_calculation.py` says the 0.5-year floor per leg is a “separate judgement, not part of the fit” (lines 213-214). `mass_and_clock` applies `max(0.5, τ × ΔV)` independently to outbound and return legs (lines 3807-3808).
+- With τ = 0.00023 yr/(m/s), the minimum binds below 2,173.913 m/s per leg (computed here). The code identifies no mission-design basis for the floor. This is distinct from rc-463’s coefficient provenance, the fixed-stay fallback and the total mission minimum. Verdict: retain 0.5 years pending a matched basis or explicit scenario sensitivity; no replacement inferred. **rc-534**.
+- Extracted: `extracted_data/r672_chemical_cruise_leg_floor.csv`.
+
+## R681 — Antimatter propellant cost basis and note disagree (2026-11-12)
+
+`spacecost_antimatter_propellant_row_current_2026`: Spacecost’s `Antimatter-catalysed` row stores `ref_cost_usd_per_kg=6.25e16`. Its code comment calls this $62.5 trillion per gram, while the row note says CERN production, scaled, prices antihydrogen near $10^15/kg.
+
+`gerrish_schmidt_1999_antimatter_production_near_term_propulsion`: NASA NTRS 19990080056, Gerrish & Schmidt, NTRS abstract, reports “The cost for 1 gram of antiprotons is estimated at 62.5 trillion dollars” and “cost for 1 microgram of p-bars is $62.5 million” under current infrastructure. The first amount converts to $6.25e16/kg. It is a historical antiproton-production estimate; the abstract does not establish an antihydrogen market price or the cost of the larger antimatter-catalysed propellant mixture.
+
+Verdict: retain the cell only as a historical production-cost proxy pending a matched product and cost boundary; reconcile its attribution and the note’s per-kilogram scale. No numeric replacement inferred. **rc-540**. Extracted: `03_dv_propulsion/extracted_data/r681_antimatter_cost_basis.csv`.
+
+## R686 — NEA-to-NRHO duration field has no stated basis (rc-544) (2026-11-12)
+
+- **spacecost_nea_nrho_transfer_duration_code_current_2026**: the `NEA → cislunar NRHO (Oberth capture)` row stores `duration_yr=1.6`; its note describes the 494 m/s low-perigee capture and 450 m/s NRHO insertion but gives no duration basis or route boundary.
+- **kess_2012_asteroid_retrieval_feasibility_study**: the KISS study’s 40-kW SEP example gives a 6.0-year 2008 HU4 transfer to the Earth–Moon system and 10.2 years total (printed p. 28); the report’s overall mission range is 6–10 years (printed p. 27). Its captured-asteroid SEP architecture differs from this row, so it is a comparator only.
+- **Verdict**: request a matched trajectory or calculation and define the duration’s start/end events and propulsion assumptions; otherwise label 1.6 years as a scenario. No replacement inferred. Extracted: `extracted_data/r686_nea_nrho_duration_basis.csv`.
+
+
+## R712 — LEO-radius attribution still missing from verification worksheet (2026-11-12)
+
+At economicspace `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` lines 2803–2806 cite the IERS equatorial radius (6,378,136.6 m; Table 1.1) and NASA’s typical 200 km circular LEO definition. `campaign/verification_sheet.py` lines 1928–1930 still describes `r_LEO` as “6,378.14 km of Earth radius plus a 200 km parking orbit” without naming either source. The current `verification_sheet.py --check` run reports 85 NEED BACKING inputs. **rc-356** remains open for the missing worksheet attribution; the 6,578.14 km reference-orbit value is unchanged. Existing extraction: `extracted_data/r490_leo_radius_provenance.csv`.
+
+
+## R714 — Low-thrust Δv factor missing from exported row notes (2026-11-12)
+
+**economicspace_low_thrust_delta_v_verification_sheet_code_current_2026** (T4): the live worksheet reads I53 from `propellants.csv` fields `dv_penalty_factor` and `thrust_scaling`; its current backing extraction marks I53=1.5 NEED BACKING because the row notes do not cite the multiplier. **spacecost_low_thrust_delta_v_penalty_current_2026** (T4): current code sets `_LOW_THRUST_DV_PENALTY=1.5` and cites Woodcock as a scenario proxy, but the generated propellant-row notes omit that field’s source and scope. **woodcock_2000_in_space_transportation_propulsion_architecture_assessment** (T2), printed p. 7 §5.2.5, says “High-thrust escape from Earth orbit requires about 3.2 km/sec” and reports typical low-thrust results of 5–6 km/s. The ratio is 1.56–1.88 by calculation here, for Earth escape. Seventeen exported rows use 1.5 across electric, nuclear-electric, fusion and antimatter categories. Verdict: **rc-361** is open again for propagating its source/scope into the exported row notes consumed by the worksheet; retain the factor pending review, with no numeric replacement inferred. Extracted: `extracted_data/r714_low_thrust_penalty_row_citation.csv`.
+
+## R715 — Mission-duration cap scope omitted from verification worksheet (2026-11-13)
+
+**economicspace_max_mission_duration_code_current_2026** (T4): at main `e0dd9a01df7df5dd8fa113b1e9c39e9e5ddcb8d6`, `max_mission_duration_yr=25.0`; code calls it a “model eligibility cap, not a physical limit” and says “no source sets it” (lines 438–442). **economicspace_max_mission_duration_verification_sheet_code_current_2026** (T4): the worksheet labels I54 only as “the longest mission the model flies” and `cite_config` leaves it NEED BACKING in a fresh archived-cell check. **cohen_2013_niac_rap_phase1_final_report** (T2), NASA RAP Phase I §5.1 (p. 65), requires concept-spacecraft capability for mission durations of 1–5 years; **jpl_nhats_nea_dv_oracle** (T4) uses a 450-day crewed-NEA round-trip screen. Neither comparator establishes a universal asteroid-mining duration limit. Verdict: **rc-583** records the remaining worksheet scope disclosure after rc-412’s model-comment change; no numeric replacement inferred. Extracted: `extracted_data/r715_mission_duration_cap_worksheet_scope.csv`.
+
+## R716 — Krypton Hall thruster comparators absent from verification inputs (2026-11-13)
+
+**economicspace_krypton_hall_verification_sheet_code_current_2026** (T4): current main’s best-case worksheet build for 2018 DT uses frozen Stage 3 `spacecost-0.5.0`; it marks I91=0.45 total-efficiency and I92=35 kg/N NEED BACKING. The frozen Krypton row does not cite those fields. **spacecost_krypton_hall_thruster_row_current_2026** (T4): current Spacecost calls them a generic mission-model selection and efficiency scenario. **nasa_s3vi_2026_small_spacecraft_inspace_propulsion** (T2), Table 4-10, lists krypton Hall comparators at 55.6, 69.2 and 61.8 kg/N; it reports no efficiency and these are small-spacecraft devices. **nasa_2003_tm_212700_krypton_457m_performance** (T2), Appendix p. 8, reports 0.50 discharge efficiency at 2,039 s and 300 V; its boundary and 50 kW device differ from the generic total-efficiency value. Verdict: **rc-584** tracks carrying the comparator scope and scenario status into the verification sheet after rc-364 and rc-458’s Spacecost-row updates; neither comparator supplies a direct replacement. Extracted: `extracted_data/r716_krypton_thruster_worksheet_citation_scope.csv`.

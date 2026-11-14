@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+watanabe_2019_hayabusa2_ryugu_spinning_top,Estimated mass,4.50e11,kg,PDF p. 3,"1.3% uncertainty; author version says personal use, not for redistribution"
+watanabe_2019_hayabusa2_ryugu_spinning_top,Shape-model volume,0.377,km^3,PDF p. 3,SPC-based shape model; uncertainty 1.3%
+watanabe_2019_hayabusa2_ryugu_spinning_top,Volume-equivalent spherical radius,448.3,m,Calculated from PDF p. 3 volume,(3V/4π)^(1/3); agrees with upstream mean_radius_m=448 m after rounding

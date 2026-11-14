@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_other_zero_ice_fraction_code_current_2026,A,0.00,fraction,taxonomy.py:402,"A-type, olivine-rich mantle fragment; row has no ice-specific citation."
+asteroidcatalog_other_zero_ice_fraction_code_current_2026,K,0.00,fraction,taxonomy.py:444,CV/CO chondrite analogue; row has no ice-specific citation.
+asteroidcatalog_other_zero_ice_fraction_code_current_2026,L,0.00,fraction,taxonomy.py:455,"Spinel-bearing, described as anhydrous silicates; no ice-specific citation."
+asteroidcatalog_other_zero_ice_fraction_code_current_2026,O,0.00,fraction,taxonomy.py:466,Olivine-orthopyroxene mixture; row has no ice-specific citation.
+asteroidcatalog_other_zero_ice_fraction_code_current_2026,R,0.00,fraction,taxonomy.py:494,Olivine-pyroxene mantle fragment; row has no ice-specific citation.
+asteroidcatalog_other_zero_ice_fraction_code_current_2026,V,0.00,fraction,taxonomy.py:522,Basaltic HED analogue; row has no ice-specific citation.
+asteroidcatalog_other_zero_ice_fraction_code_current_2026,Xe,0.00,fraction,taxonomy.py:367,Enstatite-group analogue; row has no ice-specific citation.
+asteroidcatalog_other_zero_ice_fraction_code_current_2026,Xk,0.00,fraction,taxonomy.py:384,Metal-rich X-complex type; row has no ice-specific citation.

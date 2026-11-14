@@ -2,6 +2,20 @@
 
 Backings: per-spectral-type density and PGM factors in AsteroidCatalog `reference/taxonomy_composition.csv` (`TAXONOMY_COMPOSITION`, loaded by economicspace `catalog.py`); diameter, albedo and taxonomy inputs; ranking quality of the whole pipeline.
 
+## R694 - Cb density estimate (2026-11-12)
+
+- **simda2024** [T3]: the committed per-class extract reports Cb median 1.790 g/cm3 (N=13; mean 1.721).
+- **carry2012** [T1]: Table 3 p.26 reports Cb density 1.43 +/- 0.74 at the 50% tier (N=6), and 1.25 +/- 0.21 at the 20% tier (N=3).
+
+AsteroidCatalog@a2c527c09eb39618d7fd26b2b180f730ea906b8b sets TAXONOMY_COMPOSITION[Cb].density_est_gcm3 to 1.40. SiMDA's median is 0.39 g/cm3 higher, while Carry's higher-precision subsets are closer to the current value. rc-562 asks for the class anchor and sample-selection difference to be reconciled; neither summary alone establishes a replacement. Extracted: extracted_data/simda2024_density_by_class.csv; extracted_data/carry2012_density_by_type.csv.
+
+## R688 - Z-type density proxy (2026-11-12)
+
+- **mahlke_2022_asteroid_taxonomy_spectra_albedo** [T1]: §4.2.2 p. 15 describes Z as a “low-number diffuse cluster” with larger spectral slopes than D and a distinct orbital distribution; the paper establishes taxonomy, not density.
+- **simda2024** [T3]: the extracted class summary gives D N=3 and median density 1.270 g/cm³, agreeing with the D row's 1.20; it has no Z density row.
+
+AsteroidCatalog@a2c527c09eb39618d7fd26b2b180f730ea906b8b assigns Z 1.20 g/cm³ and says its composition is taken as D, without stating that the density is also inherited from D. The D-class statistic does not measure Z; `rc-546` asks for the proxy transfer and its scope to be documented, with no replacement inferred. Extracted: `extracted_data/r688_z_density_proxy.csv`.
+
 ## R1 - First sources (2026-09-17)
 
 ### carry2012 [T1] — Carry (2012), "Density of asteroids", PSS 73:98-118
@@ -517,3 +531,17 @@ The current AsteroidCatalog main (800a4ca377823edc3ea205b9069b29db147f2b63) reta
 ## R633 - M-class density fallback has no population uncertainty (2026-11-11)
 
 - **asteroidcatalog_m_class_density_fallback_current_2026**: AsteroidCatalog's M-class row stores `density_est_gcm3=3.9` and cites published estimates for 16 Psyche. The economicspace verification worksheet applies 3.9 g/cm³ to 2018 DT, marks its density unmeasured, and labels the cell a taxonomy estimate. **zhang_etal_2023_m_type_density_variation**: Table 5 compiles published estimates for several individual M-type bodies: Psyche 3.70±0.60 to 4.20±0.60, Kalliope 3.35±0.33 to 4.36±0.50, and Klotho 4.16±0.62 g/cm³ (printed p. 11). Section 4.2 describes compositional variation among M-type asteroids and distinguishes possible metal-rich and metal-poor bodies (printed pp. 10-11). These measurements show individual-body spread and heterogeneous source estimates; they do not constitute a class-level probability distribution or establish a replacement point for 2018 DT. Verdict: derive or cite a population-matched class estimate and uncertainty, or expose 3.9 as a scenario/prior when a body's density is unmeasured. Keep the current point pending better population evidence. This is distinct from rc-386, which concerns M-class albedo and diameter inference. **rc-496**. Extracted: `extracted_data/r633_m_type_density_fallback_basis.csv`.
+
+
+## R710 — Orbit-only outer-body class inference (2026-11-12)
+
+At AsteroidCatalog 0.13.2 (`a2c527c`), `physics.py` sets `OUTER_SOLAR_SYSTEM_AU=4.6` and `OUTER_SOLAR_SYSTEM_CLASS="D"`; `enrich.py` assigns D to otherwise-unclassified rows solely when semimajor axis exceeds 4.6 AU. El-Bez-Sebastien et al. report “318 new D-types across the main belt” (Abstract, p. 1), alongside 124 Z-types and 265 P-types. In §5 and Fig. 9, their selected 180-object Hilda sample includes 47.3% D, 21.4% Z, 15.4% P, and other classes. These Gaia DR3 spectral samples challenge a single orbital class proxy but do not classify every untyped catalog body.
+
+The installed `data-2026-10-21b` catalog has 1,575,889 rows. In the current Stage 1 input, 23,363 rows carry `spectral_type_source=orbit`; 266 of those have 4.6<a<5.05 AU, including 61 at 4.6–4.8 and 205 at 4.8–5.05. The semimajor-axis-only threshold therefore assigns D in a boundary region outside the paper’s Hilda definition and short of the commonly used 5.05–5.35 AU Trojan span; the local count is not a dynamical-membership test. **rc-580** asks for a cited dynamical basis or explicit heuristic scope and sensitivity; no class replacement is inferred. Extracted: `extracted_data/r710_outer_solar_system_taxonomy_threshold.csv`.
+
+
+## R711 — 5.5 AU composition override scope (2026-11-12)
+
+AsteroidCatalog 0.13.2 sets `ICY_COMPOSITION_AU=5.5` and states that past Jupiter’s aphelion taxonomy stops describing composition; `enrich._row_keys` substitutes D for every stored spectral label when semimajor axis exceeds the threshold. Fernández-Valenzuela et al. studied photometric **surface** composition in 100 trans-Neptunian objects. The abstract reports “86% of our sample” as consistent with some water ice and a 73% surface mixture of water ice, amorphous silicates and complex organics (p. 1). This TNO surface sample does not establish bulk composition for every body above 5.5 AU.
+
+In the installed AsteroidCatalog `data-2026-10-21b` Stage 1 input, 8,382 rows have `a>5.5 AU` and `comp_class=D`; 8,340 have `spectral_type_source=orbit`. Thirty-one rows with a source-labeled non-D class are also overridden: S (15), C (10), and one each Cb, Z, K, L, Bk and Ld. These are installed-catalog counts, not population incidence estimates. **rc-581** asks for a population-matched basis and explicit scope for the composition/density fallback; no replacement threshold or class is inferred. This is distinct from **rc-580**, which concerns the 4.6 AU orbit-only spectral-type inference. Extracted: `extracted_data/r711_icy_composition_cutoff_scope.csv`.

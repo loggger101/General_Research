@@ -1023,3 +1023,9 @@ At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcCo
 ## R658 — economicspace search-resolution candidate rechecked (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `concentration_search_steps` remains 7 and `programme_search_steps` remains 8. The new-default verification checks result reproduction and invariants; it does not measure selected-result error against denser concentration and fleet searches. **rc-498** remains open. Existing extract: `extracted_data/r636_economicspace_search_resolution_controls.csv`.
+
+## R704 — Fleet search cap sensitivity is not shown across the catalog (2026-11-12)
+
+- **economicspace_fleet_search_cap_code_current_2026**: at economicspace main `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` says `max_fleet_ships=64` is where the ladder stops, “not a physical limit,” and that cap sensitivity is needed to show an interior optimum (lines 1113–1120). The same module reports how often selected winners land on the bound (lines 10090–10106).
+- The refreshed verification sheet reports 2018 DT at 4.8379×, with a selected program of one ship and a coarse fleet ladder of 1, 2, 3, 6, 11, 20, 35 and 64 ships. Its Stage 2 and Stage 3 inputs are frozen historical exports (mineral_value 1.12.0 and spacecost 0.5.0), and Stage 1 data-2026-10-21b was installed after that run ended; it is not a current all-catalog cap-sensitivity result.
+- Verdict: keep 64 as a search setting, not a physical fleet limit, and audit current winners at the cap; rerun capped winners with a higher limit until the optimum is interior or objective sensitivity is recorded. This is separate from **rc-498**, which covers ladder resolution rather than the fleet ceiling. No external replacement value inferred. **rc-574**. Extracted: `extracted_data/r704_fleet_search_cap_sensitivity_status.csv`.

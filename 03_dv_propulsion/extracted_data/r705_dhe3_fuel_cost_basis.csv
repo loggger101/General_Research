@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+galea_etal_2023_pfrc_fusion_fuel_cost,assumed terrestrial 3He spot price,2000,USD/L,Journal p. 10,"Authors state this is an assumption in their PFRC reactor LCOE model, not a transaction quote."
+galea_etal_2023_pfrc_fusion_fuel_cost,authors' conversion of assumed 3He price,15000000,USD/kg,Journal p. 10,"Printed as $2,000/L or $15M/kg; gas reference conditions are not stated in that sentence."
+galea_etal_2023_pfrc_fusion_fuel_cost,assumed deuterium price,14000,USD/kg,Journal p. 10,"Printed as about $14,000/kg."
+galea_etal_2023_pfrc_fusion_fuel_cost,example reactor fuel ratio,1:1,fuel ratio,"Figure 7 caption, Journal p. 5",The caption does not specify in the quoted phrase whether the ratio is by mass or particle count.
+galea_etal_2023_pfrc_fusion_fuel_cost,available reactor fuel-mix adjustment,3He:D up to 3:1,fuel-mix ratio,Journal p. 6,Paper describes this as adjustable for reducing neutron production; not a propulsion fuel cost basis.
+spacecost_direct_fusion_drive_cost_code_current_2026,Spacecost Direct fusion drive reference cost,1000000,USD/kg,spacecost/propellants.py:1940-1952 at a401930efe30aaad01aafd2b3cb332ad0438c841,D-He3 blend estimate; adjacent comment states no market and gives no named price source or mix boundary.

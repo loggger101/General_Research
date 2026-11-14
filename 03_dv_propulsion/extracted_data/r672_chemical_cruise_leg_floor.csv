@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_chemical_cruise_leg_floor_code_current_2026,minimum_duration_per_chemical_cruise_leg,0.5,years,"campaign/worked_calculation.py:213-214, 3807-3808","The code comment calls this a separate judgement, not part of the tau fit."
+economicspace_chemical_cruise_leg_floor_code_current_2026,chemical_leg_time_formula,"max(0.5, 0.00023 × delta_v)",years; delta_v in m/s,campaign/worked_calculation.py:3807-3808,Applied independently to outbound and return legs.
+economicspace_chemical_cruise_leg_floor_code_current_2026,delta_v_below_which_floor_binds,2173.913,m/s,computed from 0.5 years / 0.00023 years per (m/s),Computed here; the code does not identify a mission basis for the minimum.

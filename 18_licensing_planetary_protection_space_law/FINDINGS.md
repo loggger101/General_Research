@@ -1,3 +1,11 @@
+## R679 — FAA Part 450 licensing-compliance estimate has no cost build-up (2026-11-12)
+
+`spacecost_faa_part450_compliance_cost_code_current_2026`: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` (0.17.1) stores $2,500,000 per programme with a $1,000,000–$5,000,000 range for combined launch and re-entry licensing compliance. Its note now labels the amount an engineering estimate, but names no cost build-up; it says the low-end rationale starts from FAA paperwork hours before additional safety-case engineering.
+
+`faa_pra_notice_2019_streamlined_license_burden_hours`: the FAA’s 2019 notice estimates “Each initial application is estimated to take 2,903 hours” (Federal Register printed p. 4913). This is a paperwork-burden estimate for an initial application, not a dollar cost, a completed application’s observed labor, or a breakdown of the engineering, legal and safety-case work in the upstream programme estimate. Dividing the current point and bounds by those hours gives approximately $861, $344 and $1,722 per paperwork hour, respectively; these are diagnostic quotients only and not valid wage estimates because the cost boundary includes additional work. The notice does not establish the programme estimate or its range.
+
+Verdict: require a documented cost build-up matched to the licensing work and programme boundary, or retain the figures explicitly as scenario estimates with a stated basis for the bounds. No numeric replacement inferred. This is separate from rc-232, which applied a wording/citation-label correction and left the numeric estimate unchanged. **rc-538**. Extracted: `extracted_data/r679_faa_part450_compliance_cost_basis.csv`.
+
 # Domain 18 — Licensing, planetary protection & space-resource law
 
 Backings: spacecost `reference/operational_costs.csv` rows `FAA Part 450 licensing compliance` and `FAA Part 450 licensing (launch only)`, the MPL requirement behind `Third-party liability insurance`, and the licence split by `delivery_destination` in economicspace `modules/calc.py`.

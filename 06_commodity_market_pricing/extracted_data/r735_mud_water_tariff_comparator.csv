@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+mud_omaha_2026_large_volume_industrial_water_schedule,industrial tariff eligibility,"normal consumption of 5,000 CCF or more per month; minimum one-year term",eligibility,"p.1, Availability",Schedule W-3 applies to qualifying industrial process customers.
+mud_omaha_2026_large_volume_industrial_water_schedule,over-threshold commodity tariff,1.9657,USD/CCF,"p.1, Commodity Charge",Published marginal commodity rate; fixed monthly charges excluded.
+mud_omaha_2026_large_volume_industrial_water_schedule,CCF volume conversion,748,US gal/CCF,"p.1, Metering",Schedule defines 1 CCF = 100 cubic feet = 748 gallons.
+mud_omaha_2026_large_volume_industrial_water_schedule,minimum monthly bill,11456 plus monthly service charge,USD/month,"p.1, Minimum Monthly Bill",Fixed charge excluded from marginal tariff conversion.
+mud_omaha_2026_large_volume_industrial_water_schedule,in-city statutory addition,2,percent,"p.2, Statutory Payment to Cities and Villages",Addition applies to customers within the stated city limits.
+mud_omaha_2026_large_volume_industrial_water_schedule,derived marginal tariff,0.0006942286,USD/kg,computed from p.1 Commodity Charge and Metering,"1.9657 USD/CCF divided by (748 US gal/CCF * 3.785411784 kg/US gal), using 1.0 kg/L water density; excludes fixed and in-city charges."
+spacevalue_water_reference_price_code_current_2026,upstream earth-surface water reference price,0.001,USD/kg,spacevalue/catalog.py lines 332-336 at spacevalue@5f84fbf36709e3c2b09356a65cb34c9890ff8904,Pipeline value compared with the tariff; not stated by the tariff source.
+spacevalue_water_reference_price_code_current_2026,upstream stated municipal/industrial range,0.0005-0.002,USD/kg,spacevalue/catalog.py lines 332-336 at spacevalue@5f84fbf36709e3c2b09356a65cb34c9890ff8904,Range has no named price source in the code.

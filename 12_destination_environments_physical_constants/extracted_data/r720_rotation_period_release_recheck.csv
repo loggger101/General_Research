@@ -1,0 +1,16 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_release_data_2026_11_13,release_tag,data-2026-11-13,catalog release,economicspace asteroid_pipeline/catalog_manifest.json: release_tag,Current Stage 1 release pinned by economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7.
+asteroidcatalog_release_data_2026_11_13,catalog_rows,1580325,rows,economicspace asteroid_pipeline/catalog_manifest.json: rows,Installed release manifest.
+asteroidcatalog_release_data_2026_11_13,pipeline_version,1.11.0,version,economicspace asteroid_pipeline/catalog_manifest.json: pipeline_version,Stage 1 data contract.
+asteroidcatalog_release_data_2026_11_13,package_version,0.13.2,version,economicspace asteroid_pipeline/catalog_manifest.json: package_version,AsteroidCatalog package version.
+asteroidcatalog_release_data_2026_11_13,source_commit,a2c527c09eb39618d7fd26b2b180f730ea906b8b,git commit,economicspace asteroid_pipeline/catalog_manifest.json: source_commit,AsteroidCatalog source revision for the release.
+asteroidcatalog_release_data_2026_11_13,compressed_catalog_bytes,335494759,bytes,economicspace asteroid_pipeline/catalog_manifest.json: files.asteroid_catalog.csv.gz.bytes,Compressed release asset declared by the installed manifest.
+asteroidcatalog_release_data_2026_11_13,compressed_catalog_sha256,3a528cb449ed3132095e9dd9023dbfeb67a9073fe4f408593d767046d0c069b0,sha256,economicspace asteroid_pipeline/catalog_manifest.json: files.asteroid_catalog.csv.gz.sha256,Compressed release asset hash declared by the installed manifest.
+asteroidcatalog_release_data_2026_11_13,installed_catalog_csv_bytes,2413743360,bytes,economicspace asteroid_pipeline/catalog_manifest.json: catalog_csv.bytes,Decompressed installed catalog size declared by the manifest.
+asteroidcatalog_release_data_2026_11_13,installed_catalog_csv_sha256,ce548ef9b7582818fa7e3fb5a9e7107b0feb95928430d90bfce4f09bcbf4d4ed,sha256,economicspace asteroid_pipeline/catalog_manifest.json: catalog_csv.sha256,Decompressed installed catalog hash declared by the manifest.
+asteroidcatalog_release_data_2026_11_13,rotation_period_h_non_null_count,46159,catalog rows,economicspace asteroid_pipeline/asteroid_catalog.csv: rotation_period_h,No class or size filter applied.
+asteroidcatalog_release_data_2026_11_13,rotation_period_h_median,8.068,h,economicspace asteroid_pipeline/asteroid_catalog.csv: rotation_period_h,No class or size filter applied; matches the data-2026-10-21b comparator.
+economicspace_default_rotation_period_code_current_2026,default_rotation_period_h,10.222,h,economicspace modules/calc.py:676-684,Fallback used when the asteroid row has no stated rotation period; code comment dates its measured-period sample to 2026-08-08.
+,difference_from_fallback,2.154,h,Computed here: 10.222 - 8.068,Fallback minus unfiltered installed-catalog median.
+,difference_as_fraction_of_fallback,21.1,%,Computed here: (10.222 - 8.068) / 10.222 × 100,Rounded to one decimal place.
+economicspace_default_rotation_period_code_current_2026,verification_input_I65,NEED BACKING,status,"economicspace campaign/verification_sheet.py --check: archived 2018 DT, I65",Worksheet reports 85 NEED BACKING inputs; Stage 2 and Stage 3 tables are frozen historical exports.

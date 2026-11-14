@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+lodders_1996_oldhamite_enstatite_achondrites,troilite,5.8-13,wt% of meteorite,"Table 1, printed p. 128, EH3/4 column",current AsteroidCatalog Xe body estimate is 5 wt%; below this compilation range
+lodders_1996_oldhamite_enstatite_achondrites,niningerite,0.2-11.2,wt% of meteorite,"Table 1, printed p. 128, EH3/4 column",current AsteroidCatalog Xe body estimate is 2 wt%; within this compilation range
+lodders_1996_oldhamite_enstatite_achondrites,oldhamite,<0.1-2,wt% of meteorite,"Table 1, printed p. 128, EH3/4 column",current AsteroidCatalog Xe body estimate is 0.7 wt%; within this compilation range
+lodders_1996_oldhamite_enstatite_achondrites,daubreelite,0-0.2,wt% of meteorite,"Table 1, printed p. 128, EH3/4 column",current AsteroidCatalog Xe body estimate is 0.3 wt%; above this compilation range
+asteroidcatalog_eh_sulfide_split_code_current_2026,_SULFIDE_EH conditional share vector,troilite 0.625; niningerite 0.25; oldhamite 0.0875; daubreelite 0.0375,share of modeled sulfide,"asteroid_catalog/mineralogy.py; _SULFIDE_EH and PHASE_DETAIL[""Xe""]","Xe accessory sulfide is 0.08 body fraction; multiplying gives 5, 2, 0.7 and 0.3 wt% body, respectively."

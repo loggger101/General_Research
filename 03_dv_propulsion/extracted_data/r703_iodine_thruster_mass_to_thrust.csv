@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+rafalskyi_2021_iodine_ep_in_orbit,integrated NPT30-I2 total system mass including propellant,1.2,kg,Nature p. 412 (PDF p. 2),"Paper describes propulsion system including storage, delivery/control, gridded thruster, neutralizers, PPU and passive thermal management."
+rafalskyi_2021_iodine_ep_in_orbit,NPT30-I2 maximum thrust,1.3,mN,Nature p. 413 (PDF p. 3),Reported for total power below 65 W; maximum thrust and maximum Isp are performance-map endpoints.
+rafalskyi_2021_iodine_ep_in_orbit,computed total system mass / maximum thrust,923.0769230769231,kg/N,Computed from Nature pp. 412-413,"Uses total mass including propellant divided by published maximum thrust; CubeSat integrated-system comparator, not a cargo-scale replacement."
+spacecost_iodine_thruster_mass_to_thrust_code_current_2026,Spacecost iodine thruster-head mass per demonstrated thrust,60,kg/N,spacecost/propellants.py:205-232 at a401930efe30aaad01aafd2b3cb332ad0438c841,Mapped input is explicitly a cargo-scale Hall-class scenario; the Nature article reports a different integrated-system mass boundary.
