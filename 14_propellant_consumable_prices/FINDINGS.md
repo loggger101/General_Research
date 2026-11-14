@@ -270,3 +270,16 @@ This procurement is a relevant aerospace-propulsion-grade purchasing example for
 ## R454 - DLA aerospace schedule currency check (2026-11-09)
 
 DLA Energy’s Standard Prices page lists the current aerospace products standard-price PDF as effective October 1, 2025. The page says it is updated when standard prices are officially changed during a fiscal year; it lists no later aerospace schedule. The FY2026 MMH, MON-3 and technical-nitrogen prices recorded in R416 and R417 therefore remain the latest published DLA aerospace standard-price comparators found for rc-326 and rc-327. This confirms comparator currency, but supplies no FY2027 or commercial price and does not resolve grade, delivery or procurement-scope differences. No upstream value is changed. Extracted: `extracted_data/r454_dla_aerospace_schedule_currency.csv`.
+
+
+## R706 — Liquid-hydrogen component price basis (2026-11-12)
+
+At `spacecost/propellants.py`, `_COMPONENTS["LH2"].cost_usd_per_kg` is 10.00; its adjacent note says “NASA contract pricing 2024-25, ~$6/kg base + handling overhead” but names no contract or handling amount. The current hydrolox reference row is $1.745714/kg, computed from this input, the $0.37/kg LOX input and O/F=6.
+
+`spaceinsider_rp1_price` reports LH2 at about $6.1/kg on a moving-average U.S. defense-price basis; `dla_energy_aerospace_standard_prices_fy2025` lists “PROPELLANT,HYDROGEN LB $10.69” (~$23.57/kg, computed), a distinct DoD aerospace-standard basis. NASA CR 159163’s escalated $3.32-$4.19/kg 2024 estimate is a plant-gate production cost, not procurement plus handling. These comparators do not establish a matched replacement. `rc-576` requests the contract, dollar year, delivery boundary and handling basis; retain $10/kg pending that review, with no numeric replacement inferred. Extracted: `extracted_data/r706_lh2_component_price_basis.csv`.
+
+## R707 — Water component price basis (2026-11-12)
+
+`spacecost_water_component_price_code_current_2026` records `_COMPONENTS["Water"].cost_usd_per_kg = 2.00` in `spacecost/propellants.py` (line 571). The value feeds the Water electrothermal/resistojet and gridded-ion/ECR `ref_cost_usd_per_kg` rows and the water component of the ALICE blend. The two spacecraft water-propulsion reference rows state `ref_cost_usd_per_kg = 2.0` and `reference_year = 2026`, but their notes cite propulsion performance and applications rather than a water procurement price.
+
+The existing candidates `rc-118` and `rc-378` concern Water resistojet specific impulse; `rc-435` concerns asteroid-water ISRU processing fees. None supports this terrestrial water component price. No propellant-grade water quote or matched delivered-price evidence was identified in this review. `rc-577` requests the source and basis for the $2/kg input; no replacement value is inferred. Extracted: `extracted_data/r707_water_component_price.csv`.

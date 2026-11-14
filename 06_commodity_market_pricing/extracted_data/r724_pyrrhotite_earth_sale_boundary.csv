@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_pyrrhotite_reference_price_code_current_2026,pyrrhotite terrestrial reference price,None,USD/kg,catalog.py lines 1989-1994; _new_mineral constructor lines 1544-1563,Constructor preserves price=None as ref_price_usd_per_kg=None and ref_price_date=None.
+spacevalue_pyrrhotite_reference_price_code_current_2026,pyrrhotite elemental yield map,iron=0.604; sulfur=0.396,mass fraction,catalog.py lines 1989-1994,No separated iron or sulfur product form is specified in this row.
+economicspace_unquoted_mineral_zero_price_rule_current_2026,missing terrestrial quote in worksheet phase path,0.0,USD/kg,campaign/verification_sheet.py lines 1418-1430,Generic worksheet branch fills a missing quote with zero for a phase included in the body.
+turnagain_2020_nickel_concentrate_terms,pyrrhotite share of nickel deportment in Turnagain samples,0.42,percent of nickel,"NI 43-101 report section 13.4, printed p.82",Specific to 23 Turnagain samples; not a class-wide asteroid value.
+turnagain_2020_nickel_concentrate_terms,pyrrhotite recovery in Turnagain flotation,Not economic; rejected to tails,qualitative,"NI 43-101 report section 13.4, printed p.84; section 13.5, printed p.85",Deposit-specific product boundary; the report says pyrrhotite rejection is required for a saleable nickel concentrate.

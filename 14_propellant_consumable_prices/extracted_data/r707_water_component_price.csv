@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_water_component_price_code_current_2026,Water component price input,2.00,USD/kg,"spacecost/propellants.py, line 571, _COMPONENTS[""Water""].cost_usd_per_kg",Copied to Water electrothermal/resistojet and gridded-ion/ECR reference rows; also used for the water component of ALICE. The note/citation chain does not identify a propellant-grade purchase source or cost boundary.

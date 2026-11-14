@@ -1,0 +1,6 @@
+source_id,spectral_type,phase,value,unit,location_in_source,notes
+asteroidcatalog_mantle_accessory_phase_code_current_2026,A,chromite,0.01,fraction of body by mass,asteroid_catalog/mineralogy.py:327-329; reference/mineral_phases.csv,Absolute accessory-phase fraction; numerical class derivation not stated in code.
+asteroidcatalog_mantle_accessory_phase_code_current_2026,A,troilite,0.01,fraction of body by mass,asteroid_catalog/mineralogy.py:327-329; reference/mineral_phases.csv,Absolute accessory-phase fraction; numerical class derivation not stated in code.
+asteroidcatalog_mantle_accessory_phase_code_current_2026,R,troilite,0.01,fraction of body by mass,asteroid_catalog/mineralogy.py:327-329; reference/mineral_phases.csv,Absolute accessory-phase fraction; numerical class derivation not stated in code.
+asteroidcatalog_mantle_accessory_phase_code_current_2026,R,chromite,0.005,fraction of body by mass,asteroid_catalog/mineralogy.py:327-329; reference/mineral_phases.csv,Absolute accessory-phase fraction; numerical class derivation not stated in code.
+asteroidcatalog_mantle_accessory_phase_code_current_2026,O,troilite,0.02,fraction of body by mass,asteroid_catalog/mineralogy.py:327-329; reference/mineral_phases.csv,Absolute accessory-phase fraction; numerical class derivation not stated in code.

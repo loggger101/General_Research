@@ -1,0 +1,3 @@
+source_id,spectral_type,phase,value,unit,location_in_source,notes
+asteroidcatalog_cgh_accessory_phase_code_current_2026,Cgh,magnetite,0.05,fraction of body by mass,asteroid_catalog/mineralogy.py:312; reference/mineral_phases.csv,Inline comment says CK: magnetite-rich; numerical derivation not stated.
+asteroidcatalog_cgh_accessory_phase_code_current_2026,Cgh,troilite,0.02,fraction of body by mass,asteroid_catalog/mineralogy.py:312; reference/mineral_phases.csv,Absolute accessory value; numerical derivation not stated.

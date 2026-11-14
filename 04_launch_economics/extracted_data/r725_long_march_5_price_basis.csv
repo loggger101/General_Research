@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm5_launch_price_code_current_2026,list_price_usd,133000000,USD (2026),"reference/launch_vehicles.csv, Long March 5 row",Geometric center of the stored $110M–$160M range.
+spacecost_lm5_launch_price_code_current_2026,list_price_usd_low,110000000,USD (2026),"reference/launch_vehicles.csv, Long March 5 row",Low endpoint; row note says this is the value the row used to carry.
+spacecost_lm5_launch_price_code_current_2026,list_price_usd_high,160000000,USD (2026),"reference/launch_vehicles.csv, Long March 5 row",Row note attributes this high endpoint to a Wikipedia estimate.
+spacecost_lm5_launch_price_code_current_2026,price_basis,estimate,category,"reference/launch_vehicles.csv, Long March 5 row",As exported in the pinned current row.
+spacecost_lm5_launch_price_code_current_2026,reference_year,2026,year,"reference/launch_vehicles.csv, Long March 5 row",Stored price year.
+spacecost_lm5_launch_price_code_current_2026,usd_per_kg_to_leo,5320,USD/kg,"reference/launch_vehicles.csv, Long March 5 row","Derived from $133M divided by 25,000 kg LEO capacity; not an independent price quote."
+faa_ast_2018_compendium_long_march_5_price,estimated_price_per_launch,Undisclosed,status,"Long March 5 fact sheet, Launch Vehicle Specifications table","The table row is paired by the “Estimated Price per Launch” label; same table lists 25,000 kg LEO and 14,000 kg GTO."
+faa_ast_2018_compendium_long_march_5_price,payload_leo,25000,kg,"Long March 5 fact sheet, Launch Vehicle Specifications table",Official table capability; identifies the vehicle row.
+faa_ast_2018_compendium_long_march_5_price,payload_gto,14000,kg,"Long March 5 fact sheet, Launch Vehicle Specifications table",Official table capability; identifies the vehicle row.

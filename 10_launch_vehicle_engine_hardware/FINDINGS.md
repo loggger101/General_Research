@@ -75,3 +75,8 @@ R492 — NASA Glenn’s ‘Propulsion Options: RL10B-2…’ slide (slide 7) giv
 ## R564 — Tug and lander mass proxies now name their bases (2026-11-10)
 
 At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, the 465 s tug Isp is identified as an RL10B-2 representative proxy distinct from the 452 s hydrolox row (rc-358); the 0.10 tug dry fraction cites the ICPS/DCSS analogue and removes the unsupported Centaur V comparison (rc-359); and the 0.20 generic lander proxy cites Apollo 10 LM-4 masses and narrows its scope (rc-360). Numeric values remain unchanged.
+
+
+## R713 — Delivery-chain worksheet inputs omit existing source citations (2026-11-12)
+
+The live economicspace worksheet flags I17 (`TUG_ISP_S=465.0 s`) and I18 (delivery-stage dry fraction `0.10`) as NEED BACKING. **economicspace_tug_parameters_verification_sheet_code_current_2026** (T4) reads `campaign/verification_sheet.py` lines 1274–1281: it names Spacecost’s `TUG_ISP_S` and `DELIVERY_CHAINS` but does not name the citations in the underlying code. **borowski_ryan_mccurdy_2019_rl10b2_performance_nasa_presentation** (T2) reports “~465.5 s” for the RL10B-2 (NASA GRC NTRS 20200002036, slide 7); Spacecost uses 465.0 s as an upper-stage analogue, distinct from the 452 s hydrolox row. **nasa_2022_sls_reference_guide_icps_masses** (T2) lists the ICPS at 3.7 t unfueled and 32.7 t fueled (printed p. 9), yielding 0.11315 dry fraction by calculation here; Spacecost describes 0.10 as a scenario midpoint. These comparators do not establish generic tug specifications. Verdict: **rc-582** records the separate worksheet attribution gap; no model value changes. Extracted: `extracted_data/r713_tug_parameters_worksheet_citation_gap.csv`.

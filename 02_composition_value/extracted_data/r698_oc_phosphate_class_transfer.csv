@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+jones_mccubbin_guan_2016_h_chondrite_phosphate_abundances,type 4–6 H/L/LL total phosphate abundance,0.4–0.5,vol%,"Discussion, comparison of H/L/LL; printed pp. 2460–2461","Apatite + merrillite; context across ordinary-chondrite groups, not body-mass fractions."
+jones_mccubbin_guan_2016_h_chondrite_phosphate_abundances,H chondrite apatite/merrillite ratio,0.4–1.5,ratio,Discussion; printed p. 2461,Observed range; within-group ratios vary.
+jones_mccubbin_guan_2016_h_chondrite_phosphate_abundances,L chondrite apatite/merrillite ratio,0.25–1.0,ratio,Discussion; printed p. 2461,Range cited from Lewis & Jones 2016; not a single class mean.
+jones_mccubbin_guan_2016_h_chondrite_phosphate_abundances,LL chondrite apatite/merrillite ratio,0.1–0.5,ratio,Discussion; printed p. 2461,Range cited from Jones et al. 2014; not a single class mean.
+asteroidcatalog_oc_phosphate_accessory_code_current_2026,_PHOSPHATE_OC merrillite,0.004,fraction of body mass,mineralogy.py line 538; DETAIL_ACCESSORIES lines 583–585,"Applied identically to S, Sq, Q, Sa, Sr, Sv, Sk and Sl."
+asteroidcatalog_oc_phosphate_accessory_code_current_2026,_PHOSPHATE_OC chlorapatite,0.002,fraction of body mass,mineralogy.py line 538; DETAIL_ACCESSORIES lines 583–585,"Applied identically to S, Sq, Q, Sa, Sr, Sv, Sk and Sl."
+asteroidcatalog_oc_phosphate_accessory_code_current_2026,code attribution and scope,Jones et al. 2014; LL chondrites,code comment,mineralogy.py lines 464–465,Does not state how the LL source is transferred to each S-complex subtype or Q.

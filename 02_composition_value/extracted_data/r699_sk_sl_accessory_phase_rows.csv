@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_sk_sl_accessory_phase_code_current_2026,Sk added magnetite,0.02,fraction of body mass,"mineralogy.py ACCESSORY_PHASES[""Sk""]",Additional to _ACC_OC troilite=0.055 and chromite=0.005; code records no quantitative derivation.
+asteroidcatalog_sk_sl_accessory_phase_code_current_2026,Sl added spinel,0.03,fraction of body mass,"mineralogy.py ACCESSORY_PHASES[""Sl""]",Additional to _ACC_OC troilite=0.055 and chromite=0.005; code records no quantitative derivation.

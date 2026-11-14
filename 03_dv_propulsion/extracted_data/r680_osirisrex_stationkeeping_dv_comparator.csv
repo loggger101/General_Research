@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_asteroid_stationkeeping_delta_v_code_current_2026,Asteroid station-keeping dv_m_per_s,200,m/s,spacecost/deltav.py row; also exported delta_v_segments.csv,Engineering estimate; note states no document gives this 200 m/s.
+spacecost_asteroid_stationkeeping_delta_v_code_current_2026,Asteroid station-keeping duration_yr,0.5,yr,spacecost/deltav.py row; also exported delta_v_segments.csv,Scenario duration; current code comment does not cite an operational duration.
+antreasian_et_al_2021_osirisrex_proxops_nav_performance,"desaturation imparted delta-v, weighted mean and standard deviation",0.21 ± 0.20,mm/s per event,printed p. 29,OSIRIS-REx Bennu desaturation events only; not the mission total or a station-keeping budget.
+antreasian_et_al_2021_osirisrex_proxops_nav_performance,close-proximity operations elapsed duration,2.5,yr,"printed p. 30, notable statistics",Bennu mission duration comparator; not a mining-stay duration.
+antreasian_et_al_2021_osirisrex_proxops_nav_performance,maneuver count and components,114 maneuvers; 140 burn components,count,"printed p. 30, notable statistics",Counts include multiple maneuver classes and do not state a summed delta-v budget.
+antreasian_et_al_2021_osirisrex_proxops_nav_performance,smallest executed maneuver,0.09,mm/s,"printed p. 30, notable statistics","Second phasing burn CP/R TR1P2; a single event, not a total-budget comparator."

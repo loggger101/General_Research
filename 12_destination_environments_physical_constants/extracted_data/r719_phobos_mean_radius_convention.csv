@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+quillen_lane_nakajima_wright_2020_excitation_phobos_deimos_tumbling,Phobos mean radius,11.2667,km,"§1.1, Table 1 (PMC author manuscript HTML)",Matches the current Spacecost 11.267 km after rounding; the table does not state its derivation.
+quillen_lane_nakajima_wright_2020_excitation_phobos_deimos_tumbling,Phobos mass (historical table input),1.0659 × 10^16,kg,"§1.1, Table 1 (PMC author manuscript HTML)",Matches the former Spacecost mass reviewed in rc-331; current mass was updated from Guo et al. 2026.
+ernst_et_al_2023_phobos_deimos_spc_shape_models,Phobos best-fit ellipsoid radii,12.95 ± 0.04 × 11.30 ± 0.04 × 9.16 ± 0.03,km,"Abstract; Phobos model section, Table 5 (article 103)",Higher-resolution stereophotoclinometry model.
+ernst_et_al_2023_phobos_deimos_spc_shape_models,Phobos average radius,11.08 ± 0.04,km,"Abstract; Phobos model section, Table 5 (article 103)",Explicitly computed from an equivalent-volume sphere.
+ernst_et_al_2023_phobos_deimos_spc_shape_models,Phobos global model volume,5695 ± 32,km³,Phobos model section (article 103),Volume underlying the reported equivalent-volume average radius.
+,Equivalent-volume radius difference from current Spacecost radius,-187 (-1.660%),m; percent of current radius,Comparison computed from Spacecost origin/main and Ernst et al. 2023,The comparison concerns different radius conventions; it does not alone establish an error.
+,Phobos gravity at 11267 m using current mass,0.005592661077,m/s²,Recomputed as G*M/R² using the current mass and current radius,Reproduces the current Spacecost row.
+,Phobos gravity at 11080 m using current mass,0.005783031650,m/s²,Recomputed as G*M/R² using the current mass and Ernst et al. equivalent-volume radius,Candidate sensitivity only; not an upstream value.
+,Phobos escape speed at 11267 m using current mass,11.226086794525,m/s,Recomputed as sqrt(2*G*M/R) using the current mass and current radius,Reproduces the current Spacecost row.
+,Phobos escape speed at 11080 m using current mass,11.320423197161,m/s,Recomputed as sqrt(2*G*M/R) using the current mass and Ernst et al. equivalent-volume radius,Candidate sensitivity only; not an upstream value.

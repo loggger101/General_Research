@@ -144,3 +144,42 @@ At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Guo et al.’s Mars Expre
 ## R565 — Phobos and Psyche mass candidates rechecked (2026-11-10)
 
 Spacecost 0.17.0 / data contract 1.26.0, at main commit `aaed2720ee44610c5cf90fc204db160deb5669bb`, carries the Guo et al. (2026) Phobos GM mass of 1.063725×10¹⁶ kg and the Farnocchia et al. (2024) Psyche GM mass of 2.399×10¹⁹ kg, with dependent gravity and escape values updated. The current rows agree with rc-331 and rc-332; candidate records rechecked against the release commit and remain applied.
+
+
+## R687 - Ryugu physical constants and returned-sample note citation (2026-11-12)
+
+Watanabe et al. (2019), author-version PDF p. 3, reports shape-model volume 0.377 km³ and estimated mass 4.50 × 10^11 kg (1.3% uncertainty). The volume-equivalent spherical radius calculated from that volume is 448.3 m, consistent with the upstream 448 m after rounding; no mass or radius revision is indicated. The copy’s first page says “Copyright Owner: Authors” and that it is posted “for personal use, not for redistribution,” so no copy is hosted.
+
+In the current spacecost Ryugu row, the Watanabe citation accompanies physical parameters, followed by an uncited statement that the two returned samples agree on hydrated carbonaceous composition and that this is empirical evidence for asteroid water as a resource. The 2019 paper predates sample return; the sample-composition assertion therefore needs a post-return source and a defined comparison. Existing registry sources ryugu_ivuna_2023 and yokoyama_2023_ryugu_c_type_sample_water_content report returned-sample chemistry, including predominantly structural-OH water; those measurements alone do not establish free or extractable water or resource yield. Opened rc-545 for citation and scope review; no replacement value inferred. Extracted: `extracted_data/r687_watanabe_2019_ryugu_physical_parameters.csv`.
+
+
+Yeomans et al. (2000), Table 1 p. 4, reports Eros mass (6.687 ± 0.003) × 10^18 g and volume 2503 ± 25 km³. The volume-equivalent radius calculated from the volume is 8.42 km, consistent with upstream mean_radius_m=8420 m after rounding. The paper reports local escape speeds 3.1–17.2 m/s (p. 2), bracketing the row’s 10.296 m/s spherical estimate. The retrieved author-version PDF footer limits use to personal, non-commercial use; no copy is hosted. This check found no candidate. Extracted: `extracted_data/r687_yeomans_2000_eros_physical_parameters.csv`.
+
+
+## R709 — Rotation-period fallback statistic and catalog vintage (2026-11-12)
+
+economicspace main `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` lines 676–684, sets `default_rotation_period_h=10.222` and describes it as the median of 29,288 catalog bodies with a measured period on 2026-08-08; the code does not name that catalog release or give the selection calculation. The installed AsteroidCatalog Stage 1 release is `data-2026-10-21b` (1,575,889 rows). Reading its `rotation_period_h` field with no class or size filter gives 46,159 non-null values and a median of 8.068 h. Current `verification_sheet.py --check` marks input I65 as NEED BACKING among 85 inputs for the archived 2018 DT sheet; the worksheet uses frozen Stage 2 `mineral_value 1.12.0` and Stage 3 `spacecost 0.5.0` exports.
+
+- **rc-579**: pin the 10.222 h statistic to its data release and population/filter, and assess whether the fallback should remain a historical prior against the later catalog distribution. No replacement inferred.
+
+Extracted: `extracted_data/r709_rotation_period_fallback_population.csv`.
+
+
+## R719 — Phobos mean-radius convention (2026-11-13)
+
+quillen_lane_nakajima_wright_2020_excitation_phobos_deimos_tumbling (Quillen et al. 2020, Icarus 340:113641), §1.1, Table 1, reports “Mean Radius, R, 11.2667 km” and a Phobos mass of 1.0659×10^16 kg; the table does not state the radius derivation. The radius rounds to Spacecost’s current 11,267 m.
+
+ernst_et_al_2023_phobos_deimos_spc_shape_models (Ernst et al. 2023, Earth, Planets and Space 75:103), Abstract and Phobos model section/Table 5, reports best-fit ellipsoid radii of 12.95 ± 0.04 × 11.30 ± 0.04 × 9.16 ± 0.03 km and an “average radius of 11.08 ± 0.04 km” computed from an equivalent-volume sphere. The 11.08 km equivalent-volume radius is 187 m (1.660%) below Spacecost’s current radius. Holding the current mass fixed, replacing the radius with 11,080 m changes the formula-derived surface gravity from 0.005592661 to 0.005783032 m/s² and escape speed from 11.226087 to 11.320423 m/s. These sources report different radius conventions; the comparison does not by itself establish an error. rc-587: review the intended radius convention and dependent fields. Extracted: extracted_data/r719_phobos_mean_radius_convention.csv.
+
+## R720 — Rotation-period fallback recheck (2026-11-13)
+
+At economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `modules/calc.py` lines 676–684 still sets `default_rotation_period_h=10.222` and describes a median of 29,288 measured-period catalog bodies dated 2026-08-08; the file SHA-256 is unchanged from the registered code snapshot. `modules/catalog.py` line 121 pins Stage 1 to `data-2026-11-13`. The registered source `asteroidcatalog_release_data_2026_11_13` points to the installed manifest, which reports pipeline 1.11.0, package 0.13.2, AsteroidCatalog source commit `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, and 1,580,325 rows. The unfiltered `rotation_period_h` field has 46,159 non-null values and median 8.068 h, unchanged from `data-2026-10-21b`; the gap from the fallback remains 2.154 h (21.1%). The archived 2018 DT verification sheet still marks I65 NEED BACKING and reports 85 NEED BACKING inputs; its Stage 2 and 3 tables are frozen historical exports. rc-579 remains open; no replacement inferred. Extracted: `extracted_data/r720_rotation_period_release_recheck.csv`.
+
+
+## R729 — Didymos mass and radius still lack a row-specific source (2026-11-13)
+
+`spacecost_didymos_mass_radius_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` row 65803 records mass 5.28e11 kg and mean radius 390.0 m. Its note says neither figure is in Daly et al. (2023) and the source is not recorded; `CITATIONS.md` likewise calls the mass and radius unsourced.
+
+`daly_2023_dart_kinetic_impact`: Table 1, PDF p. 3, gives “Mass of the Didymos system” as (5.6 ± 0.5) × 10^11 kg and “Diameter of volume-equivalent sphere for Didymos” as 761 ± 26 m. Those system and shape comparators place the stored values within the reported 1σ bands but do not document their exact source or primary/system basis. The current mass and radius yield the row’s surface gravity 2.3169e-4 m/s² and escape velocity 0.4251 m/s.
+
+Verdict: identify a primary-body-specific source and radius convention for the stored mass and radius, or label them as estimates with an uncertainty and method; keep Daly’s system-level quantities separate. Recompute dependent gravity and escape velocity if either input changes. No numeric replacement inferred. Distinct from rc-067, which corrected the Daly attribution but left the row values’ source unresolved. **rc-596**. Extracted: `extracted_data/r729_didymos_mass_radius_citation_gap.csv`.

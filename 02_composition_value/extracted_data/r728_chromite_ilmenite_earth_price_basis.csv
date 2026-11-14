@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_chromite_ilmenite_price_route_code_current_2026,Chromite direct terrestrial reference price,None,USD/kg,spacevalue/catalog.py:1917-1923,FeCr2O4 row has no direct price or date.
+spacevalue_chromite_ilmenite_price_route_code_current_2026,Chromite chromium elemental yield,0.465,mass fraction,spacevalue/catalog.py:1917-1921,Contained-element yield used by the modeled derived-value route.
+spacevalue_chromite_ilmenite_price_route_code_current_2026,Chromite iron elemental yield,0.250,mass fraction,spacevalue/catalog.py:1917-1921,Contained-element yield used by the modeled derived-value route.
+spacevalue_chromite_ilmenite_price_route_code_current_2026,Ilmenite direct terrestrial reference price,None,USD/kg,spacevalue/catalog.py:1929-1935,FeTiO3 row has no direct price or date.
+spacevalue_chromite_ilmenite_price_route_code_current_2026,Ilmenite titanium elemental yield,0.316,mass fraction,spacevalue/catalog.py:1929-1933,Contained-element yield used by the modeled derived-value route.
+spacevalue_chromite_ilmenite_price_route_code_current_2026,Ilmenite iron elemental yield,0.368,mass fraction,spacevalue/catalog.py:1929-1933,Contained-element yield used by the modeled derived-value route.
+spacevalue_chromite_ilmenite_price_route_code_current_2026,Generic reference source label,USGS/LME/mineralogy reference,text,spacevalue/catalog.py:2485-2510,The builder assigns this label to reference rows irrespective of whether the row has a direct quote.
+spacevalue_chromite_ilmenite_price_route_code_current_2026,Yield-derived valuation boundary,"Refined metal at refined prices, with no payable fraction, treatment charge or refining charge",code statement,spacevalue/cargo.py:157-176,This route derives constituent-element value; it is not an ore/concentrate quote or netback.

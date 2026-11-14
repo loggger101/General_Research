@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_schreibersite_troilite_reference_prices_current_2026,troilite ref_price_usd_per_kg; ref_price_date,None; None,USD/kg; date,spacevalue/catalog.py lines 1888-1900,FeS yields Fe 0.635 and S 0.365; notes identify the sulfide family but give no terrestrial price.
+spacevalue_schreibersite_troilite_reference_prices_current_2026,schreibersite ref_price_usd_per_kg; ref_price_date,None; None,USD/kg; date,spacevalue/catalog.py lines 1902-1913,"(Fe,Ni)3P yields Fe 0.555, Ni 0.291 and P 0.154; no terrestrial price is stored."
+economicspace_schreibersite_troilite_zero_quote_verification_current_2026,I29 schreibersite terrestrial quote,0; NEED BACKING,USD/kg,current best-case verification-sheet input I29,The worksheet states that Stage 2 prices a missing terrestrial quote as zero.
+economicspace_schreibersite_troilite_zero_quote_verification_current_2026,I44 troilite terrestrial quote,0; NEED BACKING,USD/kg,current best-case verification-sheet input I44,The worksheet states that Stage 2 prices a missing terrestrial quote as zero.
+usgs_mcs2026_sulfur_chapter,"2025 average unit value, elemental sulfur",180,USD per metric ton,"chapter PDF p. 1, Salient Statistics—United States","Comparator is recovered elemental sulfur, not a direct FeS/troilite price; no recovery or netback costs included."

@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+king_schofield_2015_ci_modal_mineralogy_xrd,CI magnetite abundance range,6–10,vol%,"Abstract, printed p. 148","PSD-XRD modal volume percentage for Alais, Orgueil and Ivuna."
+king_schofield_2015_ci_modal_mineralogy_xrd,CI sulphide abundance range,4–7,vol%,"Abstract, printed p. 148","PSD-XRD modal volume percentage for Alais, Orgueil and Ivuna."
+king_schofield_2015_ci_modal_mineralogy_xrd,CI carbonate abundance range,<3,vol%,"Abstract, printed p. 148",PSD-XRD modal percentage; Table 1 shows carbonate among modal volume-percent columns.
+king_schofield_2015_ci_modal_mineralogy_xrd,Orgueil mean sulphide,5.7,vol%,"Table 1, printed p. 154",Mean modal abundance in vol%.
+king_schofield_2015_ci_modal_mineralogy_xrd,Orgueil mean magnetite,6.7,vol%,"Table 1, printed p. 154",Mean modal abundance in vol%.
+king_schofield_2015_ci_modal_mineralogy_xrd,Orgueil mean carbonate,3.3,vol%,"Table 1, printed p. 154",Mean modal abundance in vol%.
+king_schofield_2015_ci_modal_mineralogy_xrd,Ivuna mean sulphide,6.5,vol%,"Table 1, printed p. 154",Mean modal abundance in vol%.
+king_schofield_2015_ci_modal_mineralogy_xrd,Ivuna mean magnetite,9.0,vol%,"Table 1, printed p. 154",Mean modal abundance in vol%.
+asteroidcatalog_ci_accessory_mass_mapping_code_current_2026,_ACC_CI magnetite assigned to B/C/Cb/F,0.07,body-mass fraction,AsteroidCatalog asteroid_catalog/mineralogy.py; generated reference/mineral_phases.csv,Pipeline value; no volume-to-mass conversion or class transfer calculation stated.
+asteroidcatalog_ci_accessory_mass_mapping_code_current_2026,_ACC_CI troilite assigned to B/C/Cb/F,0.05,body-mass fraction,AsteroidCatalog asteroid_catalog/mineralogy.py; generated reference/mineral_phases.csv,Pipeline value; no volume-to-mass conversion or class transfer calculation stated.
+asteroidcatalog_ci_accessory_mass_mapping_code_current_2026,_ACC_CI carbonates assigned to B/C/Cb/F,0.03,body-mass fraction,AsteroidCatalog asteroid_catalog/mineralogy.py; generated reference/mineral_phases.csv,Pipeline value; no volume-to-mass conversion or class transfer calculation stated.

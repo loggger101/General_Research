@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+gao_b419783_spacex_hls_launch_count,SpaceX HLS concept total launch count,16,launches,"GAO B-419783 et al., printed p. 27 footnote 13; p. 71","Lunar HLS campaign total, not tanker subtotal."
+gao_b419783_spacex_hls_launch_count,Tanker Starship launch count,14,launches,"GAO B-419783 et al., printed p. 27 footnote 13; p. 71",The same total also includes one redacted launch and one HLS Lander launch.
+spacecost_depot_tanker_launch_count_code_current_2026,Spacecost depot refuelling flights to escape,"12 [8, 16]",tanker launches per fully-fuelled departure,reference/storage_systems.csv; spacecost/storage.py,The code note says the range high of 16 has no source; scope is an asteroid/high-energy departure scenario.
+nasa_oig_2026_ig-26-010_launch_infrastructure,Lunar HLS propellant-aggregation tanker plan,at least 15,tanker Starships,"NASA OIG IG-26-010, printed p. 11",Different lunar HLS architecture; context only.

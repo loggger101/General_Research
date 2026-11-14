@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_tianlong3_price_code_current_2026,Tianlong-3 modeled launch price and band,33500000;25000000;45000000,USD per launch; USD per launch; USD per launch,"reference/launch_vehicles.csv, Tianlong-3 row: list_price_usd; list_price_usd_low; list_price_usd_high",price_basis=estimate; reference_year=2026; note says price estimated but gives no source or method
+space_pioneer_tianlong3_product_page_current_2026,Official payload capability,17–22 LEO; 10–17 SSO at 500 km,metric tons,"TL-3 product specification, payload fields",Capability context only; page gives no commercial launch price
+carrier_space_tianlong3_price_request_current_2026,Listed launch price status,Price on request,"USD per launch, amount not stated","Price section, lines 58–60; provider source link and pricing note lines 37, 76",No numeric quote or estimate method is supplied

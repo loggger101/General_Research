@@ -227,3 +227,10 @@ This adds an opt-in partial path for `rc-248`, but the default still charges a r
 ## R658 — economicspace return-structure candidates rechecked (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `heat_shield_frac_of_payload` remains 0.15 as a flat returned-payload fraction, with no entry-speed scaling basis (**rc-134**). The current comment still states that Cygnus’s approximately 1,500 kg dry mass has no source; `return_structure_frac_of_payload` remains 0.15 and the configuration-specific PCM mass basis remains unresolved (**rc-423**). Both candidates remain open. Existing extracts: `extracted_data/r453_xing_2026_tps_mass_and_entry_speed.csv`; `extracted_data/r475_alpert_high_velocity_tps_sizing.csv`; `extracted_data/r557_orbital_cygnus_pcm_mass_by_configuration.csv`.
+
+
+## R677 — Upper-stage and tank recurring-cost anchors rechecked (2026-11-12)
+
+- **spacecost_stage_and_tank_recurring_cost_code_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` retains an expendable upper-stage rate of $4,800/kg [$1,750,$13,400]. Its note derives the point as the geometric centre of ~$10M (Musk 2018) or an unnamed ~$7M 2026 third-party estimate for a ~4,000 kg Falcon 9 upper stage, and ~$30M for a ~2,250 kg Centaur III; it states no institutional document prices either stage. The tank-only row remains $6,000/kg [$3,000,$25,000], based on ~$30M Centaur III less an assumed ~$20M RL10, divided by ~1,880 kg of structure, then rounded upward; the high end is called plausible rather than sourced.
+- **nasa_oig_2020_ig-20-012_sls_program_costs_contracts**: NASA OIG p. 23 reports an opportunity to buy “the hardware for a second ICPS for $29 million.” This is a whole-stage comparator for a different configuration, not a Centaur III price or a tank-component allocation.
+- Verdict: keep both numeric rates pending separate matched bases for whole-stage and tank-only costs; no replacement inferred. **rc-421** remains open. Existing extraction: `extracted_data/r555_nasa_oig_icps_price_vs_centaur_tank_cost_anchor.csv`; new extraction: `extracted_data/r677_stage_tank_cost_basis.csv`.

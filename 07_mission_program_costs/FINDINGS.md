@@ -151,3 +151,10 @@ coarse and refined candidates, preserving explicit overrides, or redefine
 the control consistently. The default N=1 is not shown to fail, and
 current-population incidence and ranking effects were not measured.
 `extracted_data/r319_programme_minimum_missions.csv`.
+
+
+## R675 — Autonomous mining-control NRE lacks a cost build-up (2026-11-12)
+
+- **spacecost_autonomous_mining_nre_code_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` stores $200M/program [$50M,$500M] for autonomous mining control and AI (reference year 2026). The row lists regolith-assessment vision, sample-collection control logic, station-keeping autonomy and remote fault recovery, but provides no build-up for the point or range. Its Perseverance anchor is “≈ $150M” and the same note says “The $150M is unsourced.”
+- **planetary_society_pebd_mission_costs**: the registered PEBD extract gives Perseverance development-plus-launch of $2,462.6M and official LCC of $2,725.8M (R48, rows 9–10); it records the autonomy-stack subset as “NOT IN PEBD” because the dataset is mission-level with no software NRE breakdown (row 13). The mission total does not support the autonomy subset or the asteroid-mining estimate.
+- Verdict: retain $200M and the range pending a matched cost basis or label them as scenario inputs with sensitivity; no replacement inferred. **rc-535**. Extracted: `extracted_data/r675_autonomous_mining_nre_basis.csv`; existing PEBD extraction: `extracted_data/r48_pebd_mission_cost_key_numbers.csv`.

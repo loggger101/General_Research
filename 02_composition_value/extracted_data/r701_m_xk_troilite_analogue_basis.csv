@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+zhang_etal_2023_m_type_asteroid_meteorite_analogues,M-type meteorite analogue groups,enstatite chondrites; iron meteorites,qualitative,"Abstract, A&A 671 A77, printed p. 1",The source names two linked populations; it does not assign a troilite mass fraction.
+zhang_etal_2023_m_type_asteroid_meteorite_analogues,M-type subsurface interpretation in 14-object sample,5 likely IM/EH; 9 likely EH/EL,objects and qualitative analogue,"Discussion, printed p. 11; Fig. 6 and Table 5",Authors infer likely compositions from radar albedo and spectral slope; these are not universal subtype abundances.
+asteroidcatalog_m_xk_troilite_code_current_2026,M troilite,0.02,fraction of body mass,"asteroid_catalog/mineralogy.py, ACCESSORY_PHASES, line 317; reference/mineral_phases.csv",Absolute accessory amount; no numeric derivation stated beside the row.
+asteroidcatalog_m_xk_troilite_code_current_2026,Xk troilite,0.02,fraction of body mass,"asteroid_catalog/mineralogy.py, ACCESSORY_PHASES, line 318; reference/mineral_phases.csv",Absolute accessory amount; no numeric derivation stated beside the row.

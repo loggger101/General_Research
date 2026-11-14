@@ -1,4 +1,68 @@
 # Research log
+- **Round 735** (2026-11-14): Opened rc-602 to review spacevalue's uncited $0.001/kg Earth-surface water price against a high-volume industrial tariff; it is a comparator, not an asteroid-water netback.
+- **Round 734** (2026-11-14): Opened rc-601 for economicspace’s uncited 23.44-degree GEO plane-change angle; the IERS J2000 obliquity rounds to that input, but the model and worksheet name no source or epoch.
+- **Round 733** (2026-11-14): Opened rc-600 for economicspace’s uncited 42,164.14 km GEO radius; NASA’s nominal altitude plus the IERS equatorial radius rounds to the stored value, while the verification worksheet still cites only itself.
+- **Round 732** (2026-11-14): Opened rc-599 to document the missing trajectory target behind economicspace’s 100 m/s LEO deorbit allowance; NASA and ESA comparators describe different entry conditions, so no numeric replacement was inferred.
+- **Round 731** (2026-11-14): Opened rc-598 for Spacecost’s uncited 0.10 capsule dry-mass-per-cargo factor; Hayabusa’s small sample-return vehicle is a context comparator, not a replacement basis.
+- **Round 730** (2026-11-14): Opened rc-597 because economicspace substitutes an unsourced 100 m³ fairing envelope when a Spacecost vehicle row has no usable volume.
+- **Round 729** (2026-11-13): Opened rc-596 because Spacecost’s Didymos mass and radius remain explicitly unsourced; Daly et al. supplies system-level comparators, not the stored row’s source.
+- **Round 728** (2026-11-13): Opened rc-595 for Spacevalue’s unpriced chromite and ilmenite rows, where cargo derives contained-element values from refined-metal prices without ore-sale terms.
+- **Round 727** (2026-11-13): Opened rc-594 for AsteroidCatalog’s unsourced X-complex conditional silicate shares in M, Xk and Xe; no replacement split inferred.
+- **Round 726** (2026-11-13): Opened rc-593 to distinguish the unpriced direct magnetite row from Spacevalue’s separate yield-derived refined-iron valuation; USGS iron-ore comparators do not establish a magnetite-specific price.
+- **Round 725** (2026-11-13): Opened rc-592 to review Spacecost’s Long March 5 $110M–$160M price estimate: the row names no band comparator, FAA AST listed its 2018 price as undisclosed, and the hosted external dataset reports a separate undated estimate.
+- **Round 724** (2026-11-13): Opened rc-591 after Spacevalue's pyrrhotite row had no terrestrial price and economicspace's worksheet logic priced missing quotes at zero; a nickel-concentrate technical report describes pyrrhotite rejection in one deposit but provides no direct price basis.
+- **Round 723** (2026-11-13): Opened rc-590 after Spacevalue's terrestrial nickel-ore pentlandite row had no reference price and economicspace's worksheet logic priced missing quotes at zero; nickel-concentrate studies identify the sale product and confidential, project-specific terms but establish no pentlandite price.
+- **Round 722** (2026-11-13): Opened rc-589 after economicspace’s verification sheet rendered schreibersite and troilite’s missing terrestrial quotes as $0/kg; the USGS elemental-sulfur price is a product-boundary comparator, not a direct mineral quote.
+- **Round 721** (2026-11-13): Opened rc-588 after a primary serpentine calorimetry study reported polymorph-specific dehydration heats above Spacecost’s 250 kJ/kg-rock term, while the matched whole-system asteroid-water basis remains unresolved.
+- **Round 720** (2026-11-13): Rechecked rc-579 against economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7` and `asteroidcatalog_release_data_2026_11_13`; the installed `rotation_period_h` distribution remains 46,159 non-null rows with median 8.068 h, so no numeric replacement is inferred.
+- **Round 719** (2026-11-13): Opened rc-587 after quillen_lane_nakajima_wright_2020_excitation_phobos_deimos_tumbling reports the current 11.267 km mean radius and ernst_et_al_2023_phobos_deimos_spc_shape_models reports a distinct 11.08 km equivalent-volume radius; derived gravity and escape speed depend on the convention.
+- **Round 718** (2026-11-13): Opened rc-586 for five Spacecost storage-class tank multipliers whose supporting article or scenario basis is absent from the exported propellant rows.
+- **Round 717** (2026-11-13): Opened rc-585 for the low-pressure tankage baseline whose flight-article anchors and worksheet input lack vehicle-variant and mass/volume-boundary provenance.
+- **Round 716** (2026-11-13): Opened rc-584 for the Krypton Hall efficiency and mass-per-thrust inputs that remain NEED BACKING in the current best-case worksheet.
+- **Round 715** (2026-11-13): Opened rc-583 because the verification worksheet still flags the 25-year eligibility cap without carrying the model’s scope disclosure into the worksheet.
+- **Round 714** (2026-11-12): Reopened rc-361 after verifying that its code-comment citation did not propagate to the generated propellant rows consumed by the economicspace worksheet.
+- **Round 713** (2026-11-12): Opened rc-582 for source citations omitted from the live verification worksheet’s delivery-stage Isp and dry-fraction inputs.
+- **Round 712** (2026-11-12): Rechecked rc-356 and confirmed the LEO-radius sources remain absent from economicspace’s verification worksheet although its model code cites them.
+- **Round 711** (2026-11-12): Opened rc-581 to review AsteroidCatalog’s 5.5 AU D-composition override against the scope of TNO surface-composition evidence and its installed-catalog impact.
+- **Round 710** (2026-11-12): Opened rc-580 to review AsteroidCatalog’s 4.6 AU orbit-only D-type fallback against Gaia DR3 spectral classes in the main belt and Hilda population.
+- **Round 709** (2026-11-12): Opened rc-579 to trace the 10.222-hour rotation fallback to its catalog vintage and reconcile it with the newer pinned AsteroidCatalog distribution.
+- **Round 708** (2026-11-12): Opened rc-578 to resolve the Space Shuttle price band’s mixed marginal and whole-programme cost boundaries and dollar years.
+- **Round 707** (2026-11-12): Opened rc-577 for the unsupported $2/kg Water component input shared by Spacecost’s water propulsion and ALICE rows; no matched propellant-grade purchase price was identified.
+- **Round 706** (2026-11-12): Opened rc-576 to document the unsupported handling premium in Spacecost’s $10/kg LH2 component input; current registered prices use unlike procurement boundaries and do not establish a replacement.
+- **Round 705** (2026-11-12): Opened rc-575 to reconcile the direct-fusion D-He3 propellant cost’s isotope-price units and mixture boundary.
+- **Round 704** (2026-11-12): Opened rc-574 to audit whether the economicspace fleet-search cap of 64 binds for any current catalog winner.
+- **Round 703** (2026-11-12): Opened rc-573 to review Spacecost’s iodine thruster mass-per-thrust scale-up against the integrated NPT30-I2 flight article.
+- **Round 702** (2026-11-12): Opened rc-572 to review the K/L spinel body-mass shares against a five-target JWST study that does not require CAI enrichment above CV3 but cannot quantify bulk CAI abundance.
+- **Round 701** (2026-11-12): Opened rc-571 to review the shared 2% body-mass troilite assignment to M and Xk against evidence that M-type asteroids span iron-meteorite and enstatite-chondrite analogues.
+- **Round 700** (2026-11-12): Opened rc-570 because one fixed CM accessory vector is applied across Cg/Ch/G as body-mass fractions, while the comparator reports subtype-specific modal volume ranges.
+- **Round 699** (2026-11-12): Opened rc-569 for the additional Sk magnetite and Sl spinel accessory fractions, whose code gives no quantitative basis.
+- **Round 698** (2026-11-12): Opened rc-568 to review the shared LL-derived phosphate vector applied as body-mass fractions across S-complex and Q asteroid classes.
+- **Round 697** (2026-11-12): Opened rc-567 for Cgh magnetite and troilite accessory fractions whose only code rationale is a qualitative CK note.
+- **Round 696** (2026-11-12): Opened rc-566 because CI meteorite accessory modes reported in volume percent are applied as body-mass fractions across four AsteroidCatalog classes without a conversion.
+- **Round 695** (2026-11-12): Opened rc-563–rc-565 for AsteroidCatalog A/R/O accessory-phase percentages with no quantitative source or derivation.
+- **Round 694** (2026-11-12): Opened rc-562 to reconcile AsteroidCatalog’s Cb density of 1.40 g/cm3 with the higher SiMDA median and closer Carry high-precision subsets.
+- **Round 693** (2026-11-12): Opened rc-556–rc-561 for six Spacecost target-price rows with no traceable price basis; the three infrastructure concepts also mix annual throughput and per-launch pricing.
+- **Round 692** (2026-11-12): Opened rc-555 for eight AsteroidCatalog taxonomy rows whose zero ice fractions have no publication basis or defined water boundary.
+- **Round 691** (2026-11-12): Opened rc-554 to review the Falcon Heavy reusable price row 2022 anchor, derived 2026 range and published-price classification.
+- **Round 690** (2026-11-12): Opened rc-553 to resolve the SSLV row’s ₹30–35 crore attribution, upper endpoint and 2026 USD conversion basis.
+- **Round 689** (2026-11-12): Opened rc-547–rc-552 for six Spacecost launch-price estimates that lack a price calculation or matching launch-service basis.
+- **Round 688** (2026-11-12): Opened rc-546 because AsteroidCatalog assigns Z the D-type density default without identifying it as a proxy transfer; the available D-class statistic does not measure Z.
+- **Round 687** (2026-11-12): Opened rc-545 because Spacecost’s Ryugu environment note uses a pre-return physical-parameter paper for an uncited returned-sample composition and water-resource rationale.
+- **Round 686** (2026-11-12): Opened rc-544 after Spacecost’s NEA-to-NRHO segment listed a 1.6-year duration without a trajectory basis or defined duration scope.
+- **Round 685** (2026-11-12): Opened rc-543 because Spacecost’s Tianlong-3 launch-price band has no stated source or derivation; the official specification gives payload capability only, and a current launch listing says price on request.
+- **Round 684** (2026-11-12): Opened rc-542 after Spacevalue’s 140 t germanium refinery ceiling lacked a published world-total basis; USGS reports no total and World Mining Data 2026 lists 150 t for 2024, subject to scope and quality review.
+- **Round 683** (2026-11-12): Opened rc-541 after USGS MCS 2026 put 2025e world chromite ore mine production at 51 Mt, above Spacevalue’s inherited 47 Mt (2024) annual ceiling.
+- **Round 682** (2026-11-12): Reopened rc-356 after the live verification worksheet still flags LEO-radius input I4 as NEED BACKING, although the model constant now names its IERS and NASA basis.
+- **Round 681** (2026-11-12): Opened rc-540 to reconcile Spacecost’s $6.25e16/kg antimatter cost cell with its “near $1e15/kg” note; Gerrish and Schmidt’s 1999 NASA estimate supports the code comment’s $62.5 trillion/g conversion as a historical antiproton-production cost.
+- **Round 680** (2026-11-12): Opened rc-539 to review Spacecost’s unsourced 200 m/s asteroid station-keeping allocation and 0.5-year duration; Antreasian et al. supply mission event context, not an aggregate budget.
+- **Round 679** (2026-11-12): Opened rc-538 for Spacecost’s $2.5M Part 450 licensing-compliance estimate and $1M–$5M range, which the FAA paperwork-hours source does not derive.
+- **Round 678** (2026-11-12): Opened rc-537 after Lodders’ compiled EH3/4 sulfide ranges fell outside AsteroidCatalog’s fixed Xe troilite and daubreelite amounts.
+- **Round 677** (2026-11-12): Rechecked rc-421 against current Spacecost; its Falcon 9/Centaur whole-stage price anchors and Centaur tank-cost allocation remain unsupported, with no value changed.
+- **Round 676** (2026-11-12): Opened rc-536 for Spacecost’s 60 W/kg complete power-system specific-mass estimate and [30, 150] range, which are not derived by the cited array-level sources.
+- **Round 675** (2026-11-12): Opened rc-535 for Spacecost’s $200M [$50M, $500M] autonomous mining NRE estimate; its Perseverance autonomy-stack anchor is not in the registered mission-cost dataset.
+- **Round 674** (2026-11-12): Rechecked rc-355 against current Spacecost and GAO B-419783; the reported 16 is a lunar HLS campaign total including 14 tanker launches, not a sourced 16-tanker count.
+- **Round 673** (2026-11-12): Rechecked rc-383 against current Spacecost main; the 100 [20, 500] kg/year/kg plant throughput is unchanged and its 1,000× terrestrial smelter anchor remains explicitly unsourced.
+- **Round 672** (2026-11-12): Opened rc-534 for economicspace’s separate 0.5-year minimum per chemical cruise leg; the current code calls it a judgment distinct from the cruise-time scenario prior.
 - **Round 671** (2026-11-12): closed 6 economicspace citation candidates applied upstream as comments that label each value a scenario beside its comparator (economicspace #204, master 1.74.0); no upstream value moved.
 - **Round 670** (2026-11-12): closed 82 citation candidates applied upstream as notes and comments that label each value a scenario beside its comparator (spacecost #44, spacevalue #12, AsteroidCatalog #33); no upstream value moved.
 - **Round 669** (2026-11-12): Opened rc-531 because Spacevalue’s titanium-sponge ceiling is pinned to MCS 2025 and says “excluding the U.S.”; MCS 2026 revises 2024 to 380,000 t and estimates 370,000 t for 2025, with a Utah-specific exclusion. Opened rc-532 and rc-533 to re-pin rhenium and gallium primary-production ceilings to MCS 2026.

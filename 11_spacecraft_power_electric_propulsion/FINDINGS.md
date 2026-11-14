@@ -319,3 +319,10 @@ Bennett and Baldwin’s five protected D-RATS packs measured 124–133 Wh/kg (me
 ## R564 — Power estimates now distinguish measured comparators from model values (2026-11-10)
 
 At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Bennett & Baldwin’s five D-RATS battery packs (124–133 Wh/kg, Table 5) are identified as a system-level comparator, not a spacecraft storage test (rc-342); NASA/TM-2015-218460’s 1,544 kg 10-kWe Kilopower entry is labeled a preliminary design estimate (rc-349); JPL D-101316’s approximately 150 W/kg is scoped as a class estimate, not a ROSA flight result (rc-362); and Surampudi’s array-only cost data are distinguished from the current solar-plus-battery estimate (rc-374). Values remain unchanged.
+
+
+## R676 — Complete power-system specific mass basis (2026-11-12)
+
+- **spacecost_power_system_specific_mass_code_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` retains 60 W/kg [30,150] for a complete photovoltaic wing, PMAD, battery and deployment structure at 1 AU. The note says the system-level halving of the array figure is an engineering judgment with no source and gives no mass calculation or BOL/EOL basis.
+- **nasa_jpl_2017_solar_power_technologies_planetary_missions**: JPL D-101316 Table 3-3 (printed p. 25) gives approximately 150 W/kg BOL at 1 AU for a flexible roll-out array; it does not include a complete power-system mass. **hoffman_2000** reports a 121 kg, 7.5 kW EOL array at 1.5 AU (printed p. 9); **schmitz_2023_rps_vs_solar_array_comparison** gives Lucy array specific power of 184 W/kg at 1 AU (p. 8). These are array-level comparisons and do not establish the 60 W/kg system point or [30,150] band.
+- Verdict: retain the numeric inputs pending a complete-system mass basis or document them as scenarios with sensitivity. **rc-536**. Extracted: `extracted_data/r676_power_system_specific_mass_basis.csv`; existing JPL extraction: `extracted_data/r496_jpl_rollout_array_specific_power.csv`.

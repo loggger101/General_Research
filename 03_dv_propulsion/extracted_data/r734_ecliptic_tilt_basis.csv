@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+iers_petit_luzum_2010_conventions_tn36,Initial obliquity of the ecliptic at J2000.0,"84,381.406",arcsec,"Table 1.1, printed p. 17","IERS gives uncertainty 0.001 arcsec; this is the J2000 initial value, not a date-specific obliquity series."
+,Converted obliquity,"84,381.406 / 3,600 = 23.4392794",degrees,Comparison computed in R734,Rounds to 23.44 degrees; not a measurement of any individual asteroid's orbital inclination.
+economicspace_ecliptic_tilt_code_current_2026,GEO capture-plane-change input,23.44,degrees,modules/calc.py lines 2815-2818; campaign/worked_calculation.py lines 151-155,The model describes near-ecliptic arrival and equatorial GEO but names no source or epoch.
+economicspace_ecliptic_tilt_verification_sheet_code_current_2026,Verification-sheet tilt input,23.44,degrees,campaign/verification_sheet.py lines 2240-2243,The worksheet gives a geometry rationale but no named external reference or epoch; input_backing classifies an own-source constant without a named reference as needs.
