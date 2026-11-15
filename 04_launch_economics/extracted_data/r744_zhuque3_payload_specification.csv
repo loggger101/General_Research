@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+landspace_zhuque3_product_page_current_2026,LEO reference altitude,450,km,"LandSpace product page, ZQ-3 specification block, “LEO @450km”",Reference orbit printed with the three payload configurations.
+landspace_zhuque3_product_page_current_2026,ZQ-3 expendable payload,21.3,t,"LandSpace product page, ZQ-3 specification block, payload by recovery mode",Manufacturer current capacity.
+landspace_zhuque3_product_page_current_2026,ZQ-3 downrange-recovery payload,18.3,t,"LandSpace product page, ZQ-3 specification block, payload by recovery mode",Manufacturer current capacity.
+landspace_zhuque3_product_page_current_2026,ZQ-3 return-site-recovery payload,12.5,t,"LandSpace product page, ZQ-3 specification block, payload by recovery mode",Distinct from downrange recovery.
+spacecost_zhuque3_payload_code_current_2026,Stored payload_leo_kg; low; high,"8,000; 8,000; 8,000",kg,"Spacecost reference/launch_vehicles.csv, Zhuque-3 row at a401930efe30aaad01aafd2b3cb332ad0438c841",Row note calls it the reusable/downrange mode and cites Wikipedia.
+spacecost_zhuque3_payload_code_current_2026,Stored usd_per_kg_to_leo,"4,425",USD/kg,"Spacecost reference/launch_vehicles.csv, Zhuque-3 row at a401930efe30aaad01aafd2b3cb332ad0438c841",Dependent on stored payload and separately open price estimate rc-548.
+spacecost_zhuque3_payload_code_current_2026;landspace_zhuque3_product_page_current_2026,Capacity gaps versus stored 8 t value,12.5−8.0=4.5; 18.3−8.0=10.3,t,Comparison computed here from Spacecost row and LandSpace mode-specific product specifications,Comparators only; do not infer same vehicle version or recovery mode.

@@ -183,3 +183,14 @@ At economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `modules/calc.
 `daly_2023_dart_kinetic_impact`: Table 1, PDF p. 3, gives “Mass of the Didymos system” as (5.6 ± 0.5) × 10^11 kg and “Diameter of volume-equivalent sphere for Didymos” as 761 ± 26 m. Those system and shape comparators place the stored values within the reported 1σ bands but do not document their exact source or primary/system basis. The current mass and radius yield the row’s surface gravity 2.3169e-4 m/s² and escape velocity 0.4251 m/s.
 
 Verdict: identify a primary-body-specific source and radius convention for the stored mass and radius, or label them as estimates with an uncertainty and method; keep Daly’s system-level quantities separate. Recompute dependent gravity and escape velocity if either input changes. No numeric replacement inferred. Distinct from rc-067, which corrected the Daly attribution but left the row values’ source unresolved. **rc-596**. Extracted: `extracted_data/r729_didymos_mass_radius_citation_gap.csv`.
+
+
+## R736 — Mars semimajor-axis provenance (2026-11-14)
+
+`economicspace_mars_semimajor_axis_code_current_2026`: at pinned economicspace main commit `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `modules/calc.py` sets `A_MARS_AU = 1.523679` and reuses it as `window_phasing_au` for the Mars-orbit and Mars-surface architectures. The `a_dest` note in `campaign/verification_sheet.py` says the Mars figure is not the fact sheet value to five places and is left uncited.
+
+`jpl_tr_32_77_mean_planet_elements_1966`: Table 2-1, printed p. 12, is headed “Mean planet elements”; its Mars row gives semimajor axis `1.523679 au`. The table footnote says T is measured in Julian centuries from 1950.0; it does not identify this semimajor-axis value as a J2000 figure.
+
+`nasa_nssdca_mars_fact_sheet`: the current page section “Mars Mean Orbital Elements (J2000)” gives `1.52366231 AU`, distinct from the stored code value.
+
+Verdict: identify the intended planetary-element basis and cite it for the Mars phasing input; the exact historical match supplies provenance but does not establish the code’s intended convention. No numeric replacement inferred. **rc-603**. Extracted: `extracted_data/r736_mars_semimajor_axis_provenance.csv`.

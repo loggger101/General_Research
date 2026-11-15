@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_rig_trip_limit_verification_sheet_code_current_2026;economicspace_rig_trip_limit_stage3_frozen_row_current_2026;spacecost_rig_trip_limit_current_row_2026;sandvik_2019_mining_equipment_rebuild_intervention_intervals,I97 maximum campaigns per rig,5,campaigns,"Mining rig maximum trips, value and [range_low,range_high]","Frozen range [2,12]. Current row cites terrestrial rebuild intervals and labels 5 campaigns an engineering judgement; no asteroid rig has repeated flight heritage."

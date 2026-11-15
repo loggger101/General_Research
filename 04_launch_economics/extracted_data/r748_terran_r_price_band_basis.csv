@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_terran_r_price_band_code_current_2026,list_price_usd,62000000,USD,"reference/launch_vehicles.csv, Terran R row",price_basis=target; reference_year=2026
+spacecost_terran_r_price_band_code_current_2026,list_price_usd_low,55000000,USD,"reference/launch_vehicles.csv, Terran R row",lower endpoint
+spacecost_terran_r_price_band_code_current_2026,list_price_usd_high,70000000,USD,"reference/launch_vehicles.csv, Terran R row",upper endpoint; source/derivation not identified in row note
+spacecost_terran_r_price_band_code_current_2026,usd_per_kg_to_leo,2638,USD/kg,"reference/launch_vehicles.csv, Terran R row",derived central rate
+spacecost_terran_r_price_band_code_current_2026,usd_per_kg_to_leo_low/high,2340/2979,USD/kg,"reference/launch_vehicles.csv, Terran R row","derived from $55M/$70M endpoints and 23,500 kg LEO payload"
+wikipedia_terran_r_article,cost_per_launch,55 million,USD,"infobox, Cost per launch","Current article marks reference [1], Manhattan Venture Partners"
+mvp_terran_r_expected_launch_price_2023,expected_terran_r_cost,55 million,USD,"section “Strong Pre-Launch Sales Validate Market Demand,” pricing paragraph, first sentence (webpage; unpaginated)",Report dated 30 Nov 2023; sentence compares with SpaceX standard price of $62M
+,geometric_mean_of_band_endpoints,62.05 million,USD,computed from Spacecost low/high endpoints,sqrt(55 million × 70 million); agrees with rounded $62M centre but does not evidence endpoints

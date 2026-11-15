@@ -1,0 +1,19 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_mineral_density_catalog_code_current_2026,troilite_density_gcm3,4.61,g/cm3,spacevalue/catalog.py; MINERAL_REFERENCE troilite,Catalog value; no individual density citation in CITATIONS.md.
+spacevalue_mineral_density_catalog_code_current_2026,carbon_density_gcm3,2.10,g/cm3,spacevalue/catalog.py; MINERAL_REFERENCE carbon,"Catalog describes amorphous / graphitic carbon, not diamond."
+spacevalue_mineral_density_catalog_code_current_2026,plagioclase_density_gcm3,2.69,g/cm3,spacevalue/catalog.py; MINERAL_REFERENCE plagioclase,"Generic (Na,Ca) solid-solution formula; notes call it a feldspar-group basaltic-crust marker."
+economicspace_mineral_density_verification_sheet_code_current_2026,I101_troilite_density_status,NEED BACKING,citation-status,"campaign verification sheet, input I101",Source row says no published source for density_gcm3; feeds S168 return-volume sum.
+economicspace_mineral_density_verification_sheet_code_current_2026,I102_carbon_density_status,NEED BACKING,citation-status,"campaign verification sheet, input I102",Source row says no published source for density_gcm3; feeds S168 return-volume sum.
+economicspace_mineral_density_verification_sheet_code_current_2026,I103_plagioclase_density_status,NEED BACKING,citation-status,"campaign verification sheet, input I103",Source row says no published source for density_gcm3; feeds S168 return-volume sum.
+economicspace_mineral_value_catalog_input_rows_current_2026,troilite_density_gcm3,4.61,g/cm3,"asteroid_pipeline/mineral_value_catalog.csv; troilite row, density_gcm3",Generic source field: USGS/LME/mineralogy reference. Row note says this stands for all Fe sulfides.
+economicspace_mineral_value_catalog_input_rows_current_2026,carbon_density_gcm3,2.10,g/cm3,"asteroid_pipeline/mineral_value_catalog.csv; carbon row, density_gcm3",Generic source field: USGS/LME/mineralogy reference; note says amorphous / graphitic carbon.
+economicspace_mineral_value_catalog_input_rows_current_2026,plagioclase_density_gcm3,2.69,g/cm3,"asteroid_pipeline/mineral_value_catalog.csv; plagioclase row, density_gcm3",Generic source field: USGS/LME/mineralogy reference; formula does not state Na/Ca composition.
+agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties,troilite_density_table_value,4.61,g/cm3,"NASA NTRS PDF p. 20, Table 1",Table text renders formula as FeSi beside Troilite; confirm formula and underlying density source.
+agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties,feldspar_density_albite_comparator,2.62,g/cm3,"NASA NTRS PDF p. 20, Table 1","Listed as NaAlSi3O8 (albite), not a composition-general plagioclase value."
+mineral_data_publishing_troilite_density_2001,troilite_measured_density,4.67-4.79,g/cm3,"Handbook of Mineralogy, Troilite, p. 1",D(meas.); stoichiometric FeS mineral entry.
+mineral_data_publishing_troilite_density_2001,troilite_calculated_density,4.85,g/cm3,"Handbook of Mineralogy, Troilite, p. 1",D(calc.).
+mineral_data_publishing_graphite_density_2001,graphite_measured_density,2.09-2.23,g/cm3,"Handbook of Mineralogy, Graphite, p. 1",D(meas.); catalog value 2.10 is within this range.
+mineral_data_publishing_graphite_density_2001,graphite_calculated_density,2.26,g/cm3,"Handbook of Mineralogy, Graphite, p. 1",D(calc.).
+mineral_data_publishing_labradorite_density_2001,labradorite_measured_density,2.68-2.72,g/cm3,"Handbook of Mineralogy, Labradorite, p. 1",D(meas.); labradorite is a composition interval in the plagioclase series.
+mineral_data_publishing_labradorite_density_2001,labradorite_calculated_density,2.685-2.710,g/cm3,"Handbook of Mineralogy, Labradorite, p. 1",D(calc.).
+agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties;mineral_data_publishing_troilite_density_2001,troilite_input_below_handbook_measured_min,0.06,g/cm3,computed here: 4.67 - 4.61,Computed comparison; no replacement value inferred.

@@ -431,3 +431,24 @@ The spacecost note groups 13 mission/mechanism categories as 10 successful, one 
 ## R658 — economicspace learning-rate candidate rechecked (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `CalcConfig.learning_curve_rate` remains 0.85 and `model_learning_curve` remains `False`; the default change did not enable the feature or add a mining-hardware learning-rate basis. **rc-385** remains open. Existing comparator: `extracted_data/r519_space_launch_learning_curve_comparator.csv`.
+
+
+## R757 — Rig-salvage source scope missing from the verification sheet (2026-11-15)
+
+`economicspace_rig_salvage_verification_sheet_current_2026`: economicspace main calls `cite_ops` for “Rig salvage fraction” at `campaign/verification_sheet.py` lines 4501–4503. The current best-case 2018 DT `--check` flags I118 = 0.5 NEED BACKING because the frozen Stage 3 row’s notes name no published source. `economicspace_rig_salvage_stage3_frozen_row_2026` records the consumed value 0.5 [0.0, 0.8] and the note “Half of remaining book value is a deliberately unheroic haircut.”
+
+`spacecost_rig_salvage_current_row_2026`: the current Spacecost row retains 0.5 [0.0, 0.8], cites NASA CR-3349 and Mas (2007), and says “no source gives a residual fraction of book value”; this source/scope note was applied under `rc-375`. NASA CR-3349 reports average solar-power-satellite salvage at “5 to 10 percent of the satellite capital cost” (p. 20) and a demonstration satellite at 60–90% of on-orbit cost (p. 43). Mas (2007) reports an approximately 5% condition-related resale-price change in a terrestrial equipment auction market (abstract, p. 4). Neither comparator measures an asteroid rig’s residual fraction of remaining book value. Verdict: carry the current row’s citation and denominator limits into the historical verification worksheet; retain 0.5 [0.0, 0.8], with no numeric replacement inferred. `rc-624`. Extracted: `extracted_data/r757_rig_salvage_worksheet_citation_gap.csv`.
+
+## R760 — Mining-rig trip-limit worksheet citation gap (2026-11-15)
+
+The current economicspace verification-sheet check flags I97=5 mining-rig campaigns [2, 12] NEED BACKING. The sheet reads the frozen `Mining rig maximum trips` row in `campaign/stage3/spacecost-0.5.0/operational_costs.csv`.
+
+The current Spacecost row contains the source note applied under rc-365. It cites `sandvik_2019_mining_equipment_rebuild_intervention_intervals` (Rebuild Solutions brochure B15-1183ENG, p. 6) for equipment-specific overhaul intervals, separates those terrestrial intervals from asteroid flight heritage, and labels five campaigns an engineering judgement. The frozen row’s older note lacks that current source-and-scope passage. This worksheet gap is distinct from open `rc-347`, which reviews the separate calendar service-life input.
+
+Open `rc-628` for the frozen-row citation carry-through; the 5 [2, 12] campaign selection is unchanged. Extracted: `extracted_data/r760_mining_rig_trip_limit_verification_gap.csv`.
+
+## R776 — Reliability evidence scope missing from frozen worksheet (2026-11-15)
+
+`economicspace_mining_reliability_verification_sheet_current_2026`: the cislunar worksheet flags I65, I66 and I68 NEED BACKING. `economicspace_frozen_stage3_mining_reliability_rows_current_2026`: frozen rows 55, 56 and 63 store 30 years [15, 60], 0.85 [0.70, 0.95] and 0.95 [0.85, 0.99], with older notes that omit current source and scenario limits. `spacecost_mining_reliability_rows_current_2026`: current row 56 says “not fitted to a cohort”; row 57 says “none is sustained mining”; row 64 says “no data set or elicitation.” The current notes describe the 11/13 tally as selected outcomes and the deployment and actuator results as comparators; none is a whole-rig reliability estimate.
+
+The frozen Stage 3 copy is the source of worksheet I65, I66 and I68. Verdict: carry current source attribution and scope into the frozen rows and verification sheet; preserve all three values and ranges. Applied `rc-494`, `rc-451` and `rc-493` updated current Spacecost row notes but did not cover the frozen economicspace copy. Open `rc-646`; no numeric replacement inferred. Extracted: `extracted_data/r776_mining_reliability_worksheet_citation_scope.csv`.

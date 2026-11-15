@@ -283,3 +283,20 @@ At `spacecost/propellants.py`, `_COMPONENTS["LH2"].cost_usd_per_kg` is 10.00; it
 `spacecost_water_component_price_code_current_2026` records `_COMPONENTS["Water"].cost_usd_per_kg = 2.00` in `spacecost/propellants.py` (line 571). The value feeds the Water electrothermal/resistojet and gridded-ion/ECR `ref_cost_usd_per_kg` rows and the water component of the ALICE blend. The two spacecraft water-propulsion reference rows state `ref_cost_usd_per_kg = 2.0` and `reference_year = 2026`, but their notes cite propulsion performance and applications rather than a water procurement price.
 
 The existing candidates `rc-118` and `rc-378` concern Water resistojet specific impulse; `rc-435` concerns asteroid-water ISRU processing fees. None supports this terrestrial water component price. No propellant-grade water quote or matched delivered-price evidence was identified in this review. `rc-577` requests the source and basis for the $2/kg input; no replacement value is inferred. Extracted: `extracted_data/r707_water_component_price.csv`.
+
+
+## R759 — Hydrolox tug-propellant worksheet citation gap (2026-11-15)
+
+Economicspace’s current verification-sheet code at `campaign/verification_sheet.py` uses an equality-gated lookup for the current Spacecost Hydrolox row. When that row does not equal the run’s propellant rate, the I15 fallback cites `spacecost/delivery.py`’s `TUG_PROPELLANT_USD_PER_KG` but does not name the frozen Stage 3 table or row; the current check flags I15 = 1.5999999999999999 USD/kg NEED BACKING with “the model’s own constant, with no reference given.”
+
+The frozen `campaign/stage3/spacecost-0.5.0/propellants.csv` Hydrolox row stores 1.5999999999999999 USD/kg and says “LH2 base price $3-6/kg (NASA contracts); bulk-handling overhead lifts effective cost to ~$10/kg.” Spacecost’s current `reference/propellants.csv` Hydrolox row stores 1.7457142857142856 USD/kg with a more detailed but still broad component-price note. `spacecost/delivery.py` retains 1.5999999999999999 as its pre-v0.16.0 compatibility constant. The historic row, the current row and the tug code constant have distinct roles; the historic note does not identify a contract or document the blend calculation.
+
+Open `rc-626` for the missing worksheet citation lineage and historical-price basis; no numeric replacement is inferred. Extracted: `extracted_data/r759_hydrolox_tug_price_worksheet_gap.csv`.
+
+## R761 — Krypton Hall price worksheet citation gap (2026-11-15)
+
+The current economicspace verification-sheet check flags I116=$300/kg NEED BACKING. It reads `campaign/stage3/spacecost-0.5.0/propellants.csv`, where the frozen Krypton (Hall) row stores $300/kg and has no published price source in its note.
+
+Spacecost’s current `reference/propellants.csv` row stores $794/kg and describes it as the geometric centre of a band from bulk krypton near $300/kg to flight-grade quotes beginning at $2,100/kg. `inl_rpt_23_75203_krypton_xenon_recovery_cost_benefit` is cited for the bulk comparator “hover around $1/L” (2023, §1; approximately $267/kg using the row’s 3.75 kg/L density); `sets_space_2024_hall_propellant_prices` is cited for the $2,100-$4,800/kg flight-grade range. The historic $300/kg value and current $794/kg midpoint have different procurement scopes.
+
+Open `rc-630` for the frozen-row citation and version boundary; no numeric replacement is inferred. Extracted: `extracted_data/r761_krypton_hall_historical_price_worksheet_gap.csv`.

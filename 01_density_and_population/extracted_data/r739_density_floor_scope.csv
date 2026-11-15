@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_density_floor_policy_code_current_2026,Universal density floor,0.25,g/cm3,asteroid_catalog/physics.py lines 85-116,The same lower limit is assigned to all named taxonomy groups and the Unknown/fallback range.
+asteroidcatalog_density_floor_policy_code_current_2026,Comet density comparators stated in code,67P 0.533 +/- 0.006; 9P 0.47 +0.78/-0.24; comet mean 0.54 +/- 0.09,g/cm3,asteroid_catalog/physics.py lines 85-92,"Values transcribed from code rationale citing Pätzold 2016, Thomas et al. 2013 and Carry 2012; primary-source uncertainty treatment not re-evaluated in this entry."
+asteroidcatalog_density_floor_policy_code_current_2026,Computed 9P lower quoted endpoint,0.23,g/cm3,computed from physics.py lines 88-92: 0.47 - 0.24,Arithmetic comparison to 0.25 floor; no confidence level inferred.
+asteroidcatalog_density_floor_policy_code_current_2026,Density screen application,per-source mass/density candidate,,asteroid_catalog/merge.py lines 455-480,Uses class bounds with source and catalog diameters before value precedence.

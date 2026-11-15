@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_sls_cost_band_code_current_2026,SLS_Block_1_list_price_usd,2650000000,USD,"reference/launch_vehicles.csv, SLS Block 1 row",price_basis=reported; reference_year=2026
+spacecost_sls_cost_band_code_current_2026,SLS_Block_1_price_band_low/high,2500000000/2800000000,USD,"reference/launch_vehicles.csv, SLS Block 1 row",Current endpoints; note calls this launch vehicle only
+spacecost_sls_cost_band_code_current_2026,SLS_Block_1B_Cargo_list_price_usd,2650000000,USD,"reference/launch_vehicles.csv, SLS Block 1B (Cargo) row",price_basis=reported; reference_year=2026; row states Block 1B is cancelled
+spacecost_sls_cost_band_code_current_2026,SLS_Block_1B_Cargo_price_band_low/high,2500000000/2800000000,USD,"reference/launch_vehicles.csv, SLS Block 1B (Cargo) row",Same band as Block 1; note calls it a floor for the more expensive vehicle
+nasa_oig_2021_ig-22-003_artemis_missions,Estimated_cost_per_Artemis_launch,4100000000,USD,"IG-22-003, PDF p. 30, printed p. 24, Figure 7","Per-launch Artemis system cost split includes SLS, Orion, ESA service module and ground systems"
+nasa_oig_2021_ig-22-003_artemis_missions,SLS_production_component,2200000000,USD,"IG-22-003, PDF p. 30, printed p. 24, Figure 7",Component of the per-launch Artemis system cost split
+nasa_oig_2021_ig-22-003_artemis_missions,Orion_component,1000000000,USD,"IG-22-003, PDF p. 30, printed p. 24, Figure 7",Component of the per-launch Artemis system cost split
+nasa_oig_2021_ig-22-003_artemis_missions,ESA_service_module_component,300000000,USD,"IG-22-003, PDF p. 30, printed p. 24, Figure 7",Component of the per-launch Artemis system cost split
+nasa_oig_2021_ig-22-003_artemis_missions,Exploration_Ground_Systems_component,568000000,USD,"IG-22-003, PDF p. 30, printed p. 24, Figure 7",Component of the per-launch Artemis system cost split
+nasa_oig_2023_ig-24-001_sls_epoc_transition,SLS_Block_1B_cost_per_launch_table_total,2489700000,USD,"IG-24-001, PDF p. 17, printed p. 11, Table 1","Sum of the per-launch cost components in the table; report describes Block 1B production cost as at least $2.5B, excluding SE&I"
+,report_years_used_for_2026_reference,2021; 2023; code row reference_year=2026,years,Source report title/date and current code row,Comparison only; no dollar-year conversion is stated in the current code note

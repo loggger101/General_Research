@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_soyuz_21b_price_code_current_2026,list_price_usd,48500000,USD,"reference/launch_vehicles.csv, Soyuz-2.1b row",price_basis=reported; reference_year=2026
+spacecost_soyuz_21b_price_code_current_2026,list_price_usd_low/high,48500000/48500000,USD,"reference/launch_vehicles.csv, Soyuz-2.1b row",No price range is stored
+spacecost_soyuz_21b_price_code_current_2026,price_source_year,2018,year,"reference/launch_vehicles.csv, Soyuz-2.1b notes",Note attributes $48.5M to Glavkosmos/TASS 2018
+glavkosmos_tass_2018_soyuz_price,quoted_price,48.5 million,USD,"TASS article, 2018-10-03, pricing paragraph",Quote is for Soyuz-2.1 with Fregat; article’s statement does not name 2.1b
+glavkosmos_tass_2018_soyuz_price,quoted_configuration,Soyuz-2.1 with Fregat,configuration,"TASS article, 2018-10-03, pricing paragraph",Generic Soyuz-2.1 family name in quote; no 2.1a/2.1b distinction
+glavkosmos_tass_2018_soyuz_price,quote_date,2018-10-03,date,TASS article header,Reported launch price predates code row reference_year=2026

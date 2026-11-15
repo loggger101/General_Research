@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_nssdca_spacewarn_bulletin_613_launch_center_latitudes,Cape Canaveral geographic latitude,28.5,degrees north,"SPACEWARN Bulletin 613, Miscellaneous Items / Major Satellite Launch Centers",Launch-center coordinate; not the inclination of every launched vehicle or a specified GTO plane.
+askins_2021_sls_janaff_update,Typical LEO inclination,28.5,degrees,"PDF printed p. 3, LEO definition footnote",Typical 200 km circular LEO convention; not a mission-specific GEO transfer trajectory.
+spacecost_gto_geo_inclination_code_current_2026,GTO-to-GEO apogee plane-change inclination,28.5,degrees,reference/delta_v_segments.csv row 18,"Combined apogee burn stored as 1,836 m/s; note says the burn removes this inclination."
+spacecost_gto_geo_inclination_code_current_2026,GTO-to-GEO combined circularisation and plane-change burn,1836,m/s,reference/delta_v_segments.csv row 18,Stored row value at pinned spacecost main commit.
+spacevalue_gto_geo_inclination_code_current_2026,Parking inclination constant,28.5,degrees,spacevalue/catalog.py line 351; GEO notes lines 379-386,Comment equates the input with Cape Canaveral latitude; transfer-plane basis not specified.
+spacecost_gto_geo_inclination_code_current_2026,LEO-to-GEO depot combined delta-v,4291,m/s,reference/delta_v_segments.csv row 19,"Stored total is GTO 2,455 + apogee 1,836 m/s; the note says it sets GEO depot sale price in Module 2."

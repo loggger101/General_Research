@@ -1,3 +1,12 @@
+## R753 — E-type accessory sulfide Earth-sale basis
+
+- **spacevalue_eh_sulfide_reference_price_code_current_2026** (Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `catalog.py` lines 1999–2013): `niningerite`, `oldhamite`, and `daubreelite` pass `None` as the direct mineral price. Their listed yields are Fe 0.243/S 0.465; S 0.444; and Cr 0.361/Fe 0.194/S 0.445, respectively. The shared constructor defines `None` as no market price of the mineral itself, only its yields.
+- **spacevalue_mineral_yield_value_route_code_current_2026** (`cargo.py` lines 157–199): `_mineral_implied_value` multiplies each listed yield by the corresponding element price and sums the results. Its docstring says the calculation has no payable fraction, treatment charge, or refining charge.
+- **asteroidcatalog_eh_sulfide_split_code_current_2026** (AsteroidCatalog 0.13.2, `mineralogy.py`): the Xe row assigns 8 wt% accessory sulfide and splits it into 5 wt% troilite, 2 wt% niningerite, 0.7 wt% oldhamite, and 0.3 wt% daubreelite. The split's abundance basis remains under rc-537.
+- **Upstream cells:** Spacevalue `MINERAL_REFERENCE` direct price/date fields for the three phases; the Earth-sale yield-value route. The current code does not document a matched mineral product price or netback for these phases.
+- **Verdict:** Open rc-621 to review the saleable product, yield/recovery, and netback basis or label the constituent-value route as a scenario. This does not re-evaluate Xe abundance in rc-537. No numeric replacement inferred.
+- **Extracted data:** `extracted_data/r753_eh_sulfide_earth_sale_basis.csv`.
+
 ## R724 - Pyrrhotite terrestrial sale-price route
 
 - **spacevalue_pyrrhotite_reference_price_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1989-1994): pyrrhotite (Fe7S8) has ref_price_usd_per_kg=None and ref_price_date=None; the yield map is Fe 0.604 and S 0.396. The row describes a sulfide found in CI, CM and Tagish Lake meteorites but gives no terrestrial sale product or price basis.
