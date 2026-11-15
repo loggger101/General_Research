@@ -613,3 +613,49 @@ At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` (v0.17.1, data cont
 **calla_fries_welch_2019_asteroid_mining_small_spacecraft_economic_feasibility**: Section 3.3.1 reports “2 Wh/g, 7 Wh/g and 17 Wh/g” from microwave experiments using Mars simulants. **ethridge_2016_leag_rf_water_extraction_poster** (unpaginated poster, p. 1): a Mars-simulant test with 10% water ice reports about 2 Wh-hr/g; a separate carbonaceous-chondrite simulant run recovered all 15 ml of added water plus “3 ml of water chemically bound in the clay and other minerals.” The poster assigns no separate energy rate to that bound-water portion, and Calla’s reported rate does not isolate it.
 
 Verdict: the current point can be reconstructed from its stated scenario, but its serpentine reaction term is below the primary sample means and the cited 1–3 kWh/kg comparison is not scoped to isolated chemical-bound-water recovery. Reconcile the mineral phase, sample/feed mass basis, hydration fraction, initial and final temperatures, and whether the 2.26 MJ/kg vaporization term is already included in the reaction enthalpy for water vapor. Keep the current value and range as an explicit scenario pending a matched source; no numeric replacement inferred. **rc-588**. Extracted: `extracted_data/r721_water_liberation_energy_scope.csv`.
+
+## R763 — Refinery-energy worksheet citation lineage (2026-11-15)
+
+The current economicspace verification-sheet check flags I80-I88 NEED BACKING. The frozen `campaign/stage2/mineral_value-1.12.0/mineral_value_catalog.cislunar.csv` rows store 5.0 kWh/kg for kamacite, taenite and cohenite; 6.0 for schreibersite; 1.0 for olivine, enstatite, plagioclase and bulk silicates; and 2.0 for carbon. The row notes describe mineral composition but do not cite `refining_kwh_per_kg`.
+
+Spacevalue main 5f84fbf adds route notes beside the same `IN_SPACE_PROCESSING_KWH_PER_KG` values. The 5.0 metal value is an engineering allowance compared with Vogl, Åhman & Nilsson’s 3.48 kWh/kg liquid-steel route; the 1.0 silicate value is labelled a low-energy scenario compared with Liu et al.’s 19-27 kWh/kg lunar-simulant sintering results; cohenite inherits nickel-iron’s 5.0 without a carbon/product boundary; Gull, Feng & Pasek report schreibersite corrosion but no process energy; and carbon’s 2.0 remains an engineering scenario with no source. These comparators and limits are in current Spacevalue code comments, not the frozen Stage 2 rows.
+
+Open `rc-634` for the frozen worksheet’s source lineage and per-feed/product scope; no refinery-energy value is changed. Extracted: `extracted_data/r763_refinery_energy_worksheet_citation_gap.csv`.
+
+
+## R764 - Concentration-ratio worksheet backing attribution (2026-11-15)
+
+**economicspace_concentration_ratio_code_current_2026**: `modules/calc.py` sets `max_concentration_ratio` to 50.0 and calls it a scenario for a first autonomous rig. Its comment cites the Rustenburg PGM concentrators at 59.5:1-62.4:1 in 2021-2025 (Sibanye-Stillwater Table 57; printed p. 154). The existing `sibanye_stillwater_2026_rustenburg_technical_report` record states that the report describes those years as actual annual performance. This is a terrestrial PGM comparator, not asteroid mineral-separation evidence.
+
+**economicspace_concentration_ratio_verification_sheet_code_current_2026**: The current best-case verification sheet prints the source-bearing `max_concentration_ratio` comment beside dial I111, but its backing ledger flags I111 NEED BACKING and says the setting's comment names no published source. In `verification_sheet.py`, `named_sources` recognizes a fixed `SOURCE_NAMES` list that omits `Sibanye-Stillwater`; applying it to the full current field help returns no named sources. The worksheet therefore misclassifies a cited comparator, while the 50:1 value remains an explicit scenario.
+
+Verdict: carry recognition of the named report into I111's backing classification and keep the terrestrial comparator's scope explicit; no value change inferred. `rc-635`. Extracted: `extracted_data/r764_concentration_ratio_worksheet_backing_recognition.csv`.
+
+
+## R771 — Frozen cislunar refinery-cost deductions lack source lineage (2026-11-15)
+
+`economicspace_frozen_stage2_refining_cost_rows_current_2026`: the frozen Stage 2 cislunar rows store `in_space_processing_usd_per_kg` of 230.420564301 USD/kg for kamacite, taenite and cohenite; 236.504677162 for schreibersite; 206.084112860 for olivine, enstatite, plagioclase and silicates; 212.168225721 for carbon; and 224.336451441 for troilite. Their notes describe the minerals but do not cite this cost column.
+
+`economicspace_refining_cost_verification_sheet_code_current_2026`: the current verification sheet flags I21, I24, I27, I30, I33, I36, I39, I42, I45 and I48 NEED BACKING; the ledger says “the row's notes name no published source for this column.” The sheet's REFINING_NOTE identifies the deduction as an energy charge plus amortized plant, but it does not carry the component input scopes into these frozen rows.
+
+`spacevalue_inspace_refining_cost_model_current_2026`: Spacevalue `catalog.py` lines 1316-1329 says “Energy at the in-space capital rate, plus the amortised refinery.” Its formula adds `kWh/kg × in_space_energy_usd_per_kwh()` to `$300,000 / (100 kg/year/kg plant × 15 years)`. The code comments use `$800/W-EOL` over 15 years at full rated output, yielding about $6.084/kWh, and a $200/kg feed plant-amortization term. Material-specific kWh/kg inputs are separately covered by rc-634.
+
+`spacecost_power_system_cost_reference_row_current_2026`: Spacecost's power-system row says “An estimate with no same-boundary source”; `rc-631` tracks its comparator scope. `spacecost_mining_payload_recurring_cost_current_2026`: the $300,000/kg mining-hardware estimate has no registered source (`rc-517`). `spacecost_in_space_processing_plant_throughput_row_current_2026`: the 100 [20, 500] kg/year/kg plant input remains open under `rc-383`. These are model cost inputs; the resulting c_ref values are not published per-kg refinery quotes. Verdict: carry the formula and each input's source/scope limitation into the frozen rows or worksheet, preserving the historical values and distinguishing the calculated scenario from a direct market quote; no numeric replacement inferred. **rc-642**. Extracted: `extracted_data/r771_frozen_cislunar_refinery_cost_basis.csv`.
+
+
+## R772 - Frozen cislunar terrestrial-price lineage (2026-11-15)
+
+`economicspace_frozen_stage2_terrestrial_price_rows_current_2026`: the frozen Stage 2 cislunar rows have blank `terrestrial_price_usd_per_kg` for kamacite, taenite, cohenite, schreibersite and troilite; the catalog maps those blanks to zero. Olivine, enstatite and silicates carry 0.05 USD/kg, and carbon carries 0.20 USD/kg. Those populated rows label the reference generically as "USGS/LME/mineralogy reference"; their notes identify materials but do not state product grade, quote date or price basis.
+
+`economicspace_refining_cost_verification_sheet_code_current_2026`: the current verification sheet flags I20, I23, I26, I29, I32, I35, I41, I44 and I47 NEED BACKING. `spacevalue_silicate_reference_price_code_current_2026`, `spacevalue_unpriced_fe_ni_alloy_code_current_2026`, `spacevalue_carbon_reference_price_code_current_2026`, `spacevalue_cohenite_product_value_code_current_2026` and `spacevalue_schreibersite_troilite_reference_prices_current_2026` track related Spacevalue code-level price limits under rc-455, rc-456, rc-508, rc-511 and rc-589; this candidate concerns the separate frozen economicspace rows and their worksheet flags.
+
+Verdict: carry material-specific source status into the frozen rows and verification sheet, distinguish missing direct quotes mapped to zero from observed zero prices, and identify the product, grade and quote year for proxy prices or retain them explicitly as scenarios. Preserve the recorded values; no numeric replacement inferred. **rc-643**. Extracted: `extracted_data/r772_cislunar_terrestrial_price_lineage.csv`.
+
+
+## R774 - Plagioclase terrestrial-price lineage in the frozen worksheet (2026-11-15)
+
+`economicspace_frozen_stage2_terrestrial_price_rows_current_2026`: the frozen plagioclase row stores a terrestrial price of 0.10 USD/kg, the generic source label "USGS/LME/mineralogy reference", and the note "Feldspar group; basaltic-crust marker." The current worksheet flags I38 NEED BACKING.
+
+`usgs_mineral_commodity_summaries_2026`: Mineral Commodity Summaries 2026, p. 82, lists $110 per metric ton for 2025 estimated average unit value of marketable feldspar production. This is a comparator for the rounded $0.10/kg input, not a direct mineral-phase quote. The code-level price-source candidate rc-145 is applied; its source mapping is absent from the frozen row.
+
+Verdict: carry the USGS source and its marketable-feldspar scope into the frozen row and worksheet. Preserve the historical price and do not present the comparator as a direct plagioclase phase price. **rc-643**. Extracted: `extracted_data/r772_cislunar_terrestrial_price_lineage.csv`.

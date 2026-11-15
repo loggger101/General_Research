@@ -1,0 +1,13 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_neutron_price_band_code_current_2026,list_price_usd,52400000,USD,"reference/launch_vehicles.csv, Neutron row",price_basis=target; reference_year=2026; geometric band centre
+spacecost_neutron_price_band_code_current_2026,list_price_usd_low/high,50000000/55000000,USD,"reference/launch_vehicles.csv, Neutron row",existing target band
+spacecost_neutron_price_band_code_current_2026,payload_leo_kg,13000,kg,"reference/launch_vehicles.csv, Neutron row",LEO payload centre used for dependent USD/kg
+spacecost_neutron_price_band_code_current_2026,usd_per_kg_to_leo,4031,USD/kg,"reference/launch_vehicles.csv, Neutron row",existing price/payload-derived centre
+rocket_lab_neutron_base_price_increase_q3_2026,base_launch_price,70 million,USD,"Nov. 9, 2026 release, pricing paragraph, third paragraph","Company states current base price is $70M, up from $55M"
+rocket_lab_neutron_base_price_increase_q3_2026,Q3_neutron_contracts,8 missions; >515 million total,count; USD,"Nov. 9, 2026 release, opening paragraph",Eight missions across five constellation operators; only several were sold at the $70M elevated base price
+rocket_lab_neutron_base_price_increase_q3_2026,Neutron_payload_to_LEO,13000,kg,"Nov. 9, 2026 release, About Neutron paragraph","Company states capacity up to 13,000 kg to LEO"
+,usd_per_kg_at_announced_base_price,5385,USD/kg,"computed: 70,000,000 / 13,000 kg",Uses official current base price and existing payload centre; rounded to nearest USD/kg
+spacecost_neutron_price_band_code_current_2026,usd_per_kg_to_leo_low/high,3846/4231,USD/kg,"reference/launch_vehicles.csv, Neutron row","Existing derived endpoints from $50M/$55M divided by 13,000 kg, rounded to nearest USD/kg"
+rocket_lab_neutron_base_price_increase_q3_2026,previous_base_launch_price,55 million,USD,"Nov. 9, 2026 release, pricing paragraph, third paragraph",Company says the new $70M base launch price is up from $55M
+rocket_lab_neutron_base_price_increase_q3_2026,Q3_neutron_missions,8,missions,"Nov. 9, 2026 release, opening paragraph",Eight missions across five constellation operators
+rocket_lab_neutron_base_price_increase_q3_2026,Q3_contract_value,>515 million,USD,"Nov. 9, 2026 release, opening paragraph",Aggregate announced contract value; only several missions are stated to have sold at the elevated $70M base

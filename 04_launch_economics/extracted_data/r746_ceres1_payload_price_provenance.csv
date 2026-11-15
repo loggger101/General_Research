@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_ceres1_payload_price_code_current_2026,payload_leo_kg centre / low / high,400 / 400 / 400,kg,"reference/launch_vehicles.csv, Ceres-1 row",Pinned Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841; row note attributes payload to Wikipedia.
+spacecost_ceres1_payload_price_code_current_2026,list_price_usd centre / low / high,4500000 / 4500000 / 4500000,USD,"reference/launch_vehicles.csv, Ceres-1 row",price_basis=reported; reference_year=2026; note attributes price to Wikipedia.
+spacecost_ceres1_payload_price_code_current_2026,usd_per_kg_to_leo centre / low / high,11250 / 11250 / 11250,USD/kg,"reference/launch_vehicles.csv, Ceres-1 row",Stored derived values; 4500000 / 400 = 11250.
+galactic_energy_ceres1_specifications_page,payload_leo,420,kg,CERES-1 > Key Parameters > Payload capacity,The same line lists 300kg@SSO; no orbit altitude or specification date is given.
+wikipedia_ceres1_article_current_2026,payload_leo,400,kg,"Ceres-1 article, infobox and payload paragraph",Payload paragraph also states 300 kg to 500 km SSO and cites reference [1].
+wikipedia_ceres1_article_current_2026,cost_per_launch,4.5 million,USD,"Ceres-1 article, infobox Cost per launch",No visible citation marker on the cost field; dollar year not stated.
+ieee_spectrum_2020_ceres1_launch_price_quote,payload_leo,350 at 200 km altitude,kg; km,Article paragraph 2,Pre-first-flight specification reported by IEEE Spectrum.
+ieee_spectrum_2020_ceres1_launch_price_quote,launch_price_quote,4 million flat rate,USD,Article paragraph 4,Quote attributed to Galactic Energy CEO; dollar year and current service scope not stated.
+galactic_energy_ceres1_specifications_page;wikipedia_ceres1_article_current_2026,LEO payload comparison,420 vs 400,kg,Manufacturer payload block; Wikipedia payload statement,"Different stated capacities; orbit altitude, date and vehicle-version matching are not established."
+wikipedia_ceres1_article_current_2026;ieee_spectrum_2020_ceres1_launch_price_quote,launch price comparison,4.5 million vs 4 million,USD,Wikipedia infobox; IEEE Spectrum CEO quote,Different reported amounts and dates; dollar year and service boundary are unstated.

@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_minotaur_iv_price_band_code_current_2026,list_price_usd,61600000,USD,"reference/launch_vehicles.csv, Minotaur IV row",price_basis=estimate; reference_year=2026; geometric band centre
+spacecost_minotaur_iv_price_band_code_current_2026,list_price_usd_low,50000000,USD,"reference/launch_vehicles.csv, Minotaur IV row",note identifies the source as approximately $50M in 2010; stored value remains unadjusted
+spacecost_minotaur_iv_price_band_code_current_2026,list_price_usd_high,76000000,USD,"reference/launch_vehicles.csv, Minotaur IV row",same 2010 quote carried to 2026 by CPI-U factor 1.5155 in note
+spacecost_minotaur_iv_price_band_code_current_2026,usd_per_kg_to_leo,37108,USD/kg,"reference/launch_vehicles.csv, Minotaur IV row",derived centre rate
+spacecost_minotaur_iv_price_band_code_current_2026,usd_per_kg_to_leo_low/high,28818/47769,USD/kg,"reference/launch_vehicles.csv, Minotaur IV row",derived from price and payload bands; price-year issue affects the price numerator
+spaceflightnow_minotaur_iv_air_force_cost_2010,procurement_and_launch_cost,50 million,USD,paragraph on the 2010 Kodiak launch; unpaginated webpage,The report attributes the figure to the Air Force
+nasa_oig_2011_ig11012_minotaur_iv_launch_cost,launch_services_cost_2012,about 50 million,USD per launch,"PDF printed p. 12, Minotaur IV paragraph",Estimate for launch services in 2012
+nasa_oig_2011_ig11012_minotaur_iv_launch_cost,average_cost_2012_2020,63 million,USD per launch,"PDF printed p. 12, Table 4, Average Cost 2012–2020 row",Separate cost basis from the paragraph’s 2012 launch-services estimate
+faa_ast_2016_minotaur_iv_price,estimated_price_per_launch,46 million,USD,"2016 Compendium, Minotaur IV fact sheet, price table",Dated FAA AST estimate; scope/year basis not further stated in the row

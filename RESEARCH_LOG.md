@@ -1,4 +1,47 @@
 # Research log
+- **Round 778** (2026-11-15): Opened rc-648 for four AsteroidCatalog X-complex carbon fractions that its current taxonomy marks as unsourced and passes into economicspace detailed phases.
+- **Round 777** (2026-11-15): Opened rc-647 to identify I63=1 as a fixed run scenario for spacecraft NRE amortization, not an externally estimated fleet size.
+- **Round 776** (2026-11-15): Opened rc-646 for reliability inputs I65, I66 and I68, where the frozen worksheet omits current source and scenario limits.
+- **Round 775** (2026-11-15): Opened rc-645 for I70, where economicspace's frozen containment row still claims an unnamed citation covers an engineering estimate.
+- **Round 774** (2026-11-15): Expanded rc-643 to include the plagioclase price whose registered feldspar source is missing from the frozen worksheet row.
+- **Round 773** (2026-11-15): Opened rc-644 for the verification worksheet's missing scenario disclosure on the 0.30 spacecraft-NRE overlap input.
+- **Round 772** (2026-11-15): Opened rc-643 for frozen Stage 2 terrestrial-price inputs whose row lineage does not reach the verification sheet.
+- **Round 771** (2026-11-15): Opened rc-642 for frozen cislunar refinery-cost deductions whose source rows omit the formula’s power, plant-cost and throughput assumptions.
+- **Round 770** (2026-11-15): Opened rc-641 for AsteroidCatalog’s T-type metal and silicate fractions (0.05 and 0.40), which lack a class-specific bulk-composition basis.
+- **Round 769** (2026-11-15): Opened rc-640 for the unsourced troilite, carbon, and plagioclase density inputs I101-I103; available sources support distinct proxy scopes, while troilite needs value/source reconciliation.
+- **Round 768** (2026-11-15): Opened rc-639 for the frozen nickel-iron, cohenite, and schreibersite density inputs (I98-I100), whose worksheet lacks material-specific citations and measured/calculated scope.
+- **Round 767** (2026-11-15): Opened rc-638 for the cislunar utility worksheet's incomplete source path from its empty destination override to the base profile.
+- **Round 766** (2026-11-15): Opened rc-637 for the current I5 worksheet text, which omits the code's scenario-prior cases and limits.
+- **Round 765** (2026-11-15): Opened rc-636 for the frozen Stage 2 annual-market ceilings I101-I109, whose row notes omit the current Spacevalue scenario and class-share lineage.
+- **Round 764** (2026-11-15): Opened rc-635 for economicspace verification-sheet I111, where the backing ledger fails to recognize the Sibanye-Stillwater comparator already printed in the configuration comment.
+- **Round 763** (2026-11-15): Opened rc-634 for I80-I88, where the frozen Stage 2 refining-energy rows omit current Spacevalue source notes and scenario limits.
+- **Round 762** (2026-11-15): Opened rc-632 for the unmeasured M-type density in economicspace I11 and rc-633 for its unsourced 300 m/s return delta-v safeguard.
+- **Round 761** (2026-11-15): Opened rc-630 for the frozen $300/kg Krypton Hall worksheet input and rc-631 for the PV-battery cost estimate whose current row has no same-boundary source.
+- **Round 760** (2026-11-15): Opened rc-627 to rc-629 for frozen-row citation gaps in the power-storage worksheet inputs I61-I64, mining-rig trip limit I97 and depot handover cost I129.
+- **Round 759** (2026-11-15): Opened rc-626 for the historical Hydrolox price in economicspace verification-sheet I15, where a stale frozen-row value falls through to an uncited tug-propellant constant.
+- **Round 758** (2026-11-15): Opened rc-625 for the 2,000 s Krypton Hall Isp scope omitted from economicspace’s frozen-row verification sheet, and rechecked rc-584 with I91/I92 still flagged.
+- **Round 757** (2026-11-15): Opened rc-624 for the economicspace verification sheet’s rig-salvage input, where the frozen Stage 3 row omits the source and scope notes present in Spacecost’s current row.
+- **Round 756** (2026-11-15): Opened rc-623 because override-only rare PGM phases have no direct mineral prices, while Spacevalue values their elemental yields at refined-metal rates without a phase-specific Earth-sale basis.
+- **Round 755** (2026-11-15): Opened rc-622 because default K/L perovskite has no direct terrestrial quote, while Economicspace leaves Earth sale unpriced and publishes a titanium-yield-derived cislunar value.
+- **Round 754** (2026-11-15): Rechecked rc-456 against current Spacevalue and the economicspace verification sheet, adding the default nickel-iron yield route and merged Fe-Ni phases to the open sale-boundary review.
+- **Round 753** (2026-11-15): Opened rc-621 because Spacevalue values Xe accessory sulfides from constituent prices while their direct mineral prices are null and no product netback is documented.
+- **Round 752** (2026-11-14): Opened rc-620 because Spacecost assigns a generic 2018 Soyuz-2.1/Fregat quote to the 2.1b row with `reference_year=2026` and no stated conversion or variant basis.
+- **Round 751** (2026-11-14): Opened rc-619 because Spacecost labels the shared SLS $2.5B–$2.8B band as a 2026 reported price although the registered NASA cost sources use different configurations and cost boundaries.
+- **Round 750** (2026-11-14): Opened rc-618 after Rocket Lab announced Neutron’s $70M current base launch price, up from $55M; Spacecost still stores a $50M–$55M 2026 target band.
+- **Round 749** (2026-11-14): Opened rc-617 for Spacecost’s Minotaur IV price band, whose $50M low endpoint is a nominal 2010 quote while only the $76M high endpoint is CPI-adjusted to 2026.
+- **Round 748** (2026-11-14): Opened rc-616 for Spacecost's Terran R target-price band, whose 2023 $55M expected-price source does not explain the $70M high end or 2026 price-year basis.
+- **Round 747** (2026-11-14): Opened rc-615 for AsteroidCatalog's E-type 95/3/2 silicate split, whose whole-rock volume comparator does not establish conditional mass shares.
+- **Round 746** (2026-11-14): Opened rc-613 and rc-614 for Spacecost's Ceres-1 payload and $4.5M reported price, which lack matching dated source bases.
+- **Round 745** (2026-11-14): Opened rc-612 to trace Spacecost's 8,940 kg LVM3 LEO payload centre; ISRO's pages give an 8,000 kg/600 km figure and 10-tonne-class LEO context but do not derive that centre.
+- **Round 744** (2026-11-14): Opened rc-611 to review spacecost's 8,000 kg Zhuque-3 LEO payload row against LandSpace's current 450 km specification of 21.3 t expendable, 18.3 t downrange-recovery, or 12.5 t return-site-recovery capacity; no replacement inferred pending configuration matching.
+- **Round 743** (2026-11-14): Opened rc-610 after Macke et al. (2011) reported CO grain densities up to 3.78 g/cm³, above AsteroidCatalog’s 3.6 g/cm³ carbonaceous-class ceiling; the meteorite result does not directly set an asteroid bulk-density replacement.
+- **Round 742** (2026-11-14): Opened rc-609 to review AsteroidCatalog’s 8.0 g/cm³ global density ceiling; Rubin & Burbine (2026) directly state an approximate zero-porosity Fe-Ni asteroid upper limit near 8 g/cm³, while its code citation and scope remain unrecorded.
+- **Round 741** (2026-11-14): Opened rc-608 to review AsteroidCatalog's 5.0 g/cm3 realism ceiling, whose rationale cites a Kalliope measurement and older release statistics.
+- **Round 740** (2026-11-14): Opened rc-607 to review AsteroidCatalog's 0.01 geometric-albedo floor, which rejects measured values below the threshold despite a code rationale framed around albedos the catalog would otherwise invent.
+- **Round 739** (2026-11-14): Opened rc-606 to review AsteroidCatalog's universal 0.25 g/cm3 density floor; the code cites comet-nucleus comparators without establishing its all-taxonomy physical scope.
+- **Round 738** (2026-11-14): Opened rc-605 to review AsteroidCatalog’s 0.75-mag H-diameter plausibility window; the registered H-bias evidence reports a mean offset, not the residual coverage basis for that rejection window.
+- **Round 737** (2026-11-14): Opened rc-604 to document the unstated 28.5-degree GTO-to-GEO plane-change basis; Cape latitude and a typical LEO convention support a reference scenario, but do not specify the modeled transfer plane.
+- **Round 736** (2026-11-14): Opened rc-603 to document economicspace's uncited 1.523679 AU Mars semimajor axis; a 1966 JPL table matches it, while NASA's J2000 sheet gives 1.52366231 AU, so no numeric replacement is inferred.
 - **Round 735** (2026-11-14): Opened rc-602 to review spacevalue's uncited $0.001/kg Earth-surface water price against a high-volume industrial tariff; it is a comparator, not an asteroid-water netback.
 - **Round 734** (2026-11-14): Opened rc-601 for economicspace’s uncited 23.44-degree GEO plane-change angle; the IERS J2000 obliquity rounds to that input, but the model and worksheet name no source or epoch.
 - **Round 733** (2026-11-14): Opened rc-600 for economicspace’s uncited 42,164.14 km GEO radius; NASA’s nominal altitude plus the IERS equatorial radius rounds to the stored value, while the verification worksheet still cites only itself.

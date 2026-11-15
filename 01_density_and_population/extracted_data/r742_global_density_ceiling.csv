@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+rubin_burbine_2026_no_exotic_matter_asteroids,Approximate asteroid density upper limit,~8,g/cm3,"PDF p. 2 (printed p. 175), §2.2","For a non-porous, unfractured core fragment with approximately 90 wt% Fe and 10 wt% Ni; authors say higher reported asteroid densities are unrealistic."
+rubin_burbine_2026_no_exotic_matter_asteroids,Illustrative upper-limit core composition,~90 Fe / ~10 Ni,wt%,"PDF p. 2 (printed p. 175), §2.2",The paper presents this composition as the approximate non-porous metallic core-fragment case.
+asteroidcatalog_global_density_bound_code_current_2026,Global density upper bound,8.0,g/cm3,"asteroid_catalog/physics.py:98,115",_IRON_CEILING feeds DENSITY_LIMITS_ANY_GCM3.
+asteroidcatalog_global_density_bound_code_current_2026,Release density validation bound,8.0,g/cm3,asteroid_catalog/release.py:182-185,Validation checks both recorded density and implied mass/diameter density against DENSITY_LIMITS_ANY_GCM3.
+asteroidcatalog_global_density_bound_code_current_2026,Fallback group ceiling,8.0,g/cm3,asteroid_catalog/physics.py:245-251,density_limits() uses DENSITY_LIMITS_ANY_GCM3 for a group not present in DENSITY_LIMITS_GCM3; named groups have lower ceilings.

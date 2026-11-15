@@ -145,3 +145,11 @@ At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, the 34-m DSN hour is $2,0
 ## R565 — DSN rate rechecked against the applied release (2026-11-10)
 
 Spacecost 0.17.0 / data contract 1.26.0, at main commit `aaed2720ee44610c5cf90fc204db160deb5669bb`, carries the JPL Rev H $1,792 34-m rate to September 2026 CPI-U as $2,095; its 70-m comparator is about $6,286. The current row agrees with the rc-297 proposal. Candidate rechecked against the release commit; applied.
+
+## R760 — Depot-handover worksheet citation gap (2026-11-15)
+
+The current economicspace verification-sheet check flags I129=$2,000,000 [500,000, 8,000,000] NEED BACKING. The sheet reads the frozen `Depot berthing & handover operations` row in `campaign/stage3/spacecost-0.5.0/operational_costs.csv`, whose note labels the estimate but does not include the current cost-scope comparison.
+
+The current Spacecost row, updated under applied `rc-516`, says no commercial depot exists and no institutional document prices berthing or handover separately. It cites `nasa_oig_2018_ig-18-016_commercial_resupply_services_audit` for whole-mission CRS costs, identifies those as roughly 100 times the model value, and says the analogy to ISS visiting-vehicle berthing is not a component-level derivation of $2M [0.5M, 8M]. Those limits are not carried into the frozen-row worksheet input.
+
+Open `rc-629` for the worksheet citation and scenario boundary; no cost value or range is changed. Extracted: `extracted_data/r760_depot_handover_verification_sheet_gap.csv`.

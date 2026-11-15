@@ -545,3 +545,59 @@ The installed `data-2026-10-21b` catalog has 1,575,889 rows. In the current Stag
 AsteroidCatalog 0.13.2 sets `ICY_COMPOSITION_AU=5.5` and states that past Jupiter’s aphelion taxonomy stops describing composition; `enrich._row_keys` substitutes D for every stored spectral label when semimajor axis exceeds the threshold. Fernández-Valenzuela et al. studied photometric **surface** composition in 100 trans-Neptunian objects. The abstract reports “86% of our sample” as consistent with some water ice and a 73% surface mixture of water ice, amorphous silicates and complex organics (p. 1). This TNO surface sample does not establish bulk composition for every body above 5.5 AU.
 
 In the installed AsteroidCatalog `data-2026-10-21b` Stage 1 input, 8,382 rows have `a>5.5 AU` and `comp_class=D`; 8,340 have `spectral_type_source=orbit`. Thirty-one rows with a source-labeled non-D class are also overridden: S (15), C (10), and one each Cb, Z, K, L, Bk and Ld. These are installed-catalog counts, not population incidence estimates. **rc-581** asks for a population-matched basis and explicit scope for the composition/density fallback; no replacement threshold or class is inferred. This is distinct from **rc-580**, which concerns the 4.6 AU orbit-only spectral-type inference. Extracted: `extracted_data/r711_icy_composition_cutoff_scope.csv`.
+
+
+## R738 — H-to-diameter plausibility screen has no stated residual-coverage basis (2026-11-14)
+
+- **asteroidcatalog_h_diameter_plausibility_tolerance_code_current_2026**: AsteroidCatalog `physics.py` sets `H_DIAMETER_TOLERANCE_MAG=0.75` and expands the implied-albedo bounds to approximately 0.00501–1.99526. Its comment calls 0.75 mag a margin “not a measured worst case.” `merge.py` applies that range to screen each source diameter using catalog H. This differs from the separate 0.30-mag source-agreement tolerance for H.
+- **pravec_2012_absolute_magnitudes_wise_albedos**: the abstract (p. 3) reports “-0.4 to -0.5” mag mean catalog-H bias near H=14, and H uncertainties for 583 bodies below 0.21 mag (median 0.09). The existing extraction records a mean-offset and uncertainty summary, not residual coverage for the H-diameter screening window.
+- **Verdict**: document the paired-data basis and intended coverage of the 0.75-mag screen, or label it as a fit-quality policy and quantify how source-diameter rejections vary across a justified tolerance range. Retain the current margin pending that evidence; no numeric replacement inferred. **rc-605**.
+- Extracted: `extracted_data/r738_h_diameter_plausibility_tolerance.csv`.
+
+
+## R739 — universal 0.25 g/cm3 density floor has a cross-taxonomic scope gap (2026-11-14)
+
+- **asteroidcatalog_density_floor_policy_code_current_2026**: AsteroidCatalog `physics.py` says “The floor is the same for everyone” (lines 85-87), sets `DENSITY_FLOOR_GCM3=0.25` for every named group and `Unknown` (lines 95-116), and says “0.25 leaves margin under all of them” (lines 91-92). `merge.py` uses these limits in its density screen for source mass/density candidates (lines 455-480).
+- **patzold_2016_67p_homogeneous_nucleus_gravity**, **thomas_2013_tempel1_nucleus_two_flybys**, and **carry2012**: the code rationale cites comet-nucleus comparators of 67P at 0.533 +/- 0.006, 9P/Tempel 1 at 0.47 +0.78/-0.24, and a mean comet density of 0.54 +/- 0.09 g/cm3. The quoted lower extent for 9P is 0.23 by arithmetic; the code does not state the interval's confidence interpretation. These citations provide comet context, while the same floor applies across asteroid taxonomy groups.
+- **Verdict**: clarify whether 0.25 g/cm3 is a universal physical limit or a conservative data-quality screen. If universal, document a physical basis that covers the taxonomic groups and its uncertainty treatment; if a screen, label the policy and report its rejection sensitivity. Retain the current floor pending that review; no numeric replacement inferred. **rc-606**.
+- Extracted: `extracted_data/r739_density_floor_scope.csv`.
+
+
+## R740 — 0.01 geometric-albedo floor is applied to measured values (2026-11-14)
+
+- **asteroidcatalog_albedo_floor_policy_code_current_2026**: AsteroidCatalog `physics.py` sets `ALBEDO_FLOOR=0.01`. Its comment cites 19P/Borrelly at 0.029 +/- 0.006 and says 28P/Neujmin 1 has a similar albedo, then describes 0.01 as margin below the comet values and the darkest NEOWISE fits. The same comment says the floor initially judged otherwise-invented albedos, but since version 1.4.0 measured albedos below the floor are refused; it reports 43 such values in the 2026-09-23 release, down to 0.0007 for 2010 HK22. `merge.py` applies the lower bound to measured-albedo candidates.
+- **buratti_2004_ds1_borrelly_photometry** and **mainzer_2011_neowise_thermal_model_calibration**: cited comparator records remain without an extracted-data row for the low-albedo values named in this code comment. R740 does not independently assess those source fits or their uncertainties.
+- **Verdict**: document whether 0.01 is a quality screen or a physical lower bound, including its measured-population scope and uncertainty basis; reconcile the invented-albedo rationale with rejection of measured values and quantify sensitivity among the 43 reported below-floor values. Retain the current floor pending that review; no numeric replacement inferred. This measured-albedo screen is distinct from the H-diameter tolerance coverage in **rc-605**. **rc-607**.
+- Extracted: `extracted_data/r740_albedo_floor_scope.csv`.
+
+
+## R741 — 5.0 g/cm3 density ceiling is a realism screen (2026-11-14)
+
+- **asteroidcatalog_density_ceiling_policy_code_current_2026**: `physics.py` calls the 5.0 g/cm3 ceiling for most non-carbonaceous groups “REALISM, not physics”; it separately sets the global physical iron ceiling to 8.0 g/cm3. The rationale cites 22 Kalliope at 4.40 +/- 0.46 g/cm3, says the 77 bodies with mass known to 5% in data-2026-09-26 top out at Kalliope 4.18 and Psyche 4.14 g/cm3, and attributes all data-2026-09-23 values over 5 to 12-56% mass uncertainty or radiometric diameters. `merge.py` applies class density ceilings during source-mass screening.
+- **ferrais_2022_kalliope_tiny_mercury**: the existing registry entry remains registered but has no independent extraction of the Kalliope value used in the code rationale. The code’s catalog statistics use 2026-09 snapshots; R741 did not recompute them against the later release artifact.
+- **Verdict**: document 5.0 g/cm3 as a data-quality screen with its population, uncertainty and class scope; verify the Kalliope comparator and reassess the older-release over-5 values against current source records. Quantify rejection sensitivity under a justified policy. Retain the current cutoff pending that review; no numeric replacement inferred. **rc-608**.
+- Extracted: `extracted_data/r741_density_ceiling_scope.csv`.
+
+
+## R742 — Global density bound has a direct Fe-Ni comparator (2026-11-14)
+
+- **rubin_burbine_2026_no_exotic_matter_asteroids**: Rubin & Burbine, “No exotic matter in asteroids,” *European Physical Journal Plus* 141:175 (2026), printed p. 175 (PDF p. 2, §2.2), calls the asteroid upper limit “~8 g cm−3” for a non-porous, unfractured core fragment with approximately 90 wt% Fe and 10 wt% Ni; it says higher reported asteroid densities are unrealistic.
+- **asteroidcatalog_global_density_bound_code_current_2026**: AsteroidCatalog `physics.py` sets `_IRON_CEILING=8.0` and `DENSITY_LIMITS_ANY_GCM3=(DENSITY_FLOOR_GCM3, _IRON_CEILING)`; `density_limits()` uses that upper bound for unmapped groups. `release.py` checks recorded densities and implied mass/diameter densities against the same global 8.0 g/cm3 limit. Named groups use their separate lower class ceilings.
+- **Verdict**: the T1 comparator supports the existing approximate global 8.0 g/cm3 bound, but the code snapshot does not name it and the article frames it as an approximate Fe-Ni composition limit. Review the citation and clarify its scope relative to the stricter class-level screens; no numeric replacement inferred. **rc-609**.
+- Extracted: `extracted_data/r742_global_density_ceiling.csv`.
+
+
+## R743 — CO grain-density measurements exceed the 3.6 carbonaceous ceiling (2026-11-14)
+
+- **asteroidcatalog_density_ceiling_policy_code_current_2026**: AsteroidCatalog `physics.py` sets `_CARBONACEOUS_CEILING=3.6` and assigns it to the C-complex, D-type, K-type, and L-type groups. Its comment defines the group ceiling as “the grain density of the densest meteorite that could show that group's spectrum, at zero porosity”; `merge.py` uses the group-specific ceiling when screening source mass/density candidates.
+- **macke_2011_carbonaceous_chondrite_density_porosity**: Macke et al. report 33 stones from 14 CO meteorites (PDF p. 13, printed p. 1854) and state that, by stone, CO grain density ranged from “2.99 to 3.78 g cm−3” (printed p. 1854). Table 1's Lance CO3.5 row gives grain density “3.78 ± 0.04” (PDF p. 7, printed p. 1847). Table 2 places some CO meteorites in Type 3 alongside CV and Ningqiang (printed p. 1857) and reports the Type 3 grain-density average and maximum as 3.63 ± 0.03 and 3.74 g/cm3 (PDF p. 17, printed p. 1858). The table row and wrapped column headers were checked; these are meteorite grain-density values, not asteroid bulk-density measurements.
+- **Verdict**: the cited CO/CV-like meteorite analogues include grain-density observations above the code's 3.6 g/cm3 physical ceiling. Review the cap and the taxonomy-to-analogue mapping; do not substitute 3.78 g/cm3 directly as an asteroid bulk-density limit. No numeric replacement inferred. **rc-610**.
+- Extracted: `extracted_data/r743_carbonaceous_density_ceiling.csv`.
+
+## R762 — 2018 DT density worksheet citation gap (2026-11-15)
+
+The current economicspace verification-sheet check flags I11=3.9 g/cm3 as “NOT measured: the taxonomy estimate.” AsteroidCatalog’s current `reference/taxonomy_composition.csv` M row still stores `density_est_gcm3=3.9`; its note describes 16 Psyche and other M-type measurements as analogues, not a class-level density distribution.
+
+`asteroidcatalog_m_class_density_fallback_current_2026` records the M-class row reviewed under `rc-496`. `siltala_granvik_2021` reports 16 Psyche at 3.88 +/- 0.25 g/cm3; `zhang_etal_2023_m_type_density_variation` compiles individual M-type object estimates in Table 5 (printed p. 11). AsteroidCatalog main a2c527c labels 3.9 an explicit scenario and names those comparators; the economicspace worksheet still prints only “the taxonomy estimate.” Individual-object comparators do not establish a class distribution or 2018 DT measurement.
+
+Open `rc-632` for the worksheet citation path and class-scope limitation; the 3.9 g/cm3 value is unchanged. Extracted: `extracted_data/r762_2018_dt_density_worksheet_citation_gap.csv`.

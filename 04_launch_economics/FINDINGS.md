@@ -1,3 +1,64 @@
+## R752 — Soyuz-2.1b row maps a generic 2018 price quote (2026-11-14)
+
+- **spacecost_soyuz_21b_price_code_current_2026**: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the Soyuz-2.1b row stores $48.5M with `price_basis=reported` and `reference_year=2026`; its note attributes the amount to TASS (2018).
+- **glavkosmos_tass_2018_soyuz_price**: The article’s price statement, recorded in R175, names a “Soyuz-2.1 carrier rocket with the Fregat booster”; it does not name the 2.1b subvariant.
+- **Verdict**: the row does not say whether `reference_year=2026` means the quoted amount was adjusted to 2026 dollars or is only the record’s reference date, and the cited price statement is not variant-specific. Clarify the dollar-year and launch-service scope, and support the 2.1b mapping; otherwise label $48.5M as a historical generic Soyuz-2.1/Fregat quote. Distinct from **rc-502**, which reviews a Soyuz-2.1a estimate anchored to the $35M without-Fregat quote. Retain the amount pending clarification; no replacement inferred. Open **rc-620**. Extracted: `extracted_data/r752_soyuz_21b_price_year_variant.csv`.
+
+## R751 — SLS reported-price band combines different cost bases (2026-11-14)
+
+- **spacecost_sls_cost_band_code_current_2026**: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `SLS Block 1` stores $2.65B [$2.5B,$2.8B], `price_basis=reported`, `reference_year=2026`; the cancelled `SLS Block 1B (Cargo)` row reuses the same band as a floor for the more expensive configuration. The Block 1 note calls this “launch vehicle ONLY.”
+- **nasa_oig_2021_ig-22-003_artemis_missions**: IG-22-003 Figure 7 (PDF p. 30; printed p. 24) assigns $4.1B to an Artemis launch and splits out SLS $2.2B, Orion $1.0B, ESA service module $300M, and Exploration Ground Systems $568M.
+- **nasa_oig_2023_ig-24-001_sls_epoc_transition**: IG-24-001 Table 1 (PDF p. 17; printed p. 11) itemizes $2,489.7M of cost per Block 1B launch; the report’s production-cost floor excludes SE&I.
+- **Verdict**: the registered sources report NASA program costs, but they cover different configurations and cost boundaries; the current row does not show how those records support a comparable $2.5B–$2.8B 2026 vehicle-only band or the shared Block 1B floor. Clarify whether `list_price_usd` represents vehicle production cost or launch-service cost, document each endpoint and any dollar-year conversion, and explain the band’s use for Block 1B. Retain values pending reconciliation; no replacement inferred. Open **rc-619**. Extracted: `extracted_data/r751_sls_cost_band_basis.csv`.
+
+## R750 - Neutron's current base price exceeds Spacecost's target band (2026-11-14)
+
+- **spacecost_neutron_price_band_code_current_2026**: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the Neutron row stores a $52.4M centre, $50M/$55M bounds, `price_basis=target`, `reference_year=2026`, and $4,031/kg to LEO. Its note attributes the $50M–$55M price to Rocket Lab.
+- **rocket_lab_neutron_base_price_increase_q3_2026**: Rocket Lab’s Nov. 9, 2026 release says “The base launch price is now $70 million, up from $55 million,” and says several Q3 missions were sold at the elevated $70M base price. The release reports eight Neutron contracts worth more than $515M in total but does not give a new low-price bound.
+- **Verdict**: the company’s current base-price announcement postdates the $50M–$55M Spacecost band and directly supersedes its $55M upper endpoint as the announced base price. Re-anchor the current price to $70M, or retain $50M–$55M only as a dated early-pricing/contract range; state the price basis and date, then recalculate dependent $/kg fields. At the existing 13,000 kg LEO centre, $70M is $5,385/kg. The release does not establish a new uncertainty range. Distinct from applied rc-340, which updated the launch schedule only. Open **rc-618**; no upstream changes made.
+- Extracted: `extracted_data/r750_neutron_price_update.csv`.
+
+## R749 - Minotaur IV price band mixes historical and 2026 dollar endpoints (2026-11-14)
+
+- **spacecost_minotaur_iv_price_band_code_current_2026**: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the Minotaur IV row stores a $61.6M centre, $50M/$76M bounds, `price_basis=estimate`, and `reference_year=2026`. Its note identifies the ~$50M source as 2010 and says CPI-U carries that quote to 2026 for the high end only (factor 1.5155).
+- **spaceflightnow_minotaur_iv_air_force_cost_2010**: Stephen Clark’s 18 Nov 2010 report says the “cost of procuring and launching” Minotaur 4 was $50M “according to the Air Force” (launch-cost paragraph; unpaginated webpage).
+- **nasa_oig_2011_ig11012_minotaur_iv_launch_cost**: NASA OIG IG-11-012, printed p. 12, Table 4 gives Minotaur IV an average cost of $63M for 2012–2020; the paragraph below separately estimates “the cost for launch services in 2012” at about $50M per launch.
+- **faa_ast_2016_minotaur_iv_price**: FAA AST’s 2016 Compendium, Minotaur IV fact sheet, lists “Estimated Price per Launch” as $46M.
+- **Verdict**: the stored $50M low endpoint is nominal 2010 dollars, while the $76M high is the same quote escalated to 2026; both feed a row marked `reference_year=2026`. NASA OIG and FAA AST provide later dated estimates with differing stated scopes but do not establish a 2026 price. Clarify the range’s dollar-year and service basis, or label the mixed-year band as a scenario with its method; recalculate dependent $/kg values if the band changes. Distinct from applied rc-050, which corrected the CPI multiplier for the high endpoint, and rc-193, which reviewed payload provenance. No replacement inferred (**rc-617**).
+- Extracted: `extracted_data/r749_minotaur_iv_price_year_scope.csv`.
+
+## R748 - Terran R target-price band lacks an endpoint and price-year basis (2026-11-14)
+
+- **spacecost_terran_r_price_band_code_current_2026**: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the Terran R row stores $62M with low/high $55M/$70M, `price_basis=target`, `reference_year=2026`, and $2,638/kg to LEO. Its note says “$55M per Wikipedia.”
+- **wikipedia_terran_r_article**: The article's infobox lists “Cost per launch $55 million” and cites reference [1], Manhattan Venture Partners.
+- **mvp_terran_r_expected_launch_price_2023**: Manhattan Venture Partners' 30 Nov 2023 initiation report, “Strong Pre-Launch Sales Validate Market Demand,” pricing paragraph, says Terran R “is expected to cost $55 million,” compared with SpaceX's standard $62M price. The unpaginated webpage does not state a $70M upper range or a 2026 dollar conversion.
+- **Verdict**: the $55M source is an expected-price estimate from 2023; the $70M high end and the reason a 2023 figure sits in a 2026 target-price band are not documented. Record the band method, price year and target/service basis, or label the range as a scenario with its derivation. The geometric center reproduces $62M but does not substantiate either endpoint. Distinct from applied rc-218, which resolved the payload-mode citation in the notes. No replacement inferred (**rc-616**).
+- Extracted: extracted_data/r748_terran_r_price_band_basis.csv.
+
+## R746 - Ceres-1 payload and price sources need version and date matching (2026-11-14)
+
+- **spacecost_ceres1_payload_price_code_current_2026**: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the Ceres-1 row stores 400 kg LEO, low/high 400/400 kg, $4.5 million list price, `price_basis=reported`, and 2026 as `reference_year`. Its note attributes the $4.5 million and payload values to Wikipedia and identifies a sea-launched 1S variant.
+- **galactic_energy_ceres1_specifications_page**: Galactic Energy's CERES-1 product page lists “300kg@SSO、420kg@LEO” under Key Parameters > Payload capacity; it does not give the orbit altitude or a specification date.
+- **wikipedia_ceres1_article_current_2026**: The current Ceres-1 article lists “US$4.5 million” cost per launch and 400 kg to LEO; its prose specifies 300 kg to 500 km SSO. The article's LEO prose cites reference [1], while the cost field has no visible citation marker.
+- **ieee_spectrum_2020_ceres1_launch_price_quote**: IEEE Spectrum's pre-first-flight article reports 350 kg to 200 km LEO and quotes the CEO that a Ceres-1 launch “will cost clients a flat rate of US $4 million.”
+- **Verdict**: the current manufacturer page's 420 kg LEO figure does not identify the orbit/version represented by Spacecost's 400 kg centre; retain the stored value until the vehicle version, orbit and dated basis are matched, and recompute dependent LEO $/kg fields if it changes (**rc-613**). The $4.5 million price is repeated by Wikipedia, but the price field lacks a visible citation and the earlier $4 million quote has no stated dollar year or current-service basis; record the direct source, price date and scope or explain any adjustment (**rc-614**). No replacement inferred.
+- Extracted: extracted_data/r746_ceres1_payload_price_provenance.csv.
+
+## R745 - LVM3's LEO payload centre lacks an orbit-matched source (2026-11-14)
+
+- **spacecost_lvm3_payload_code_current_2026**: Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/launch_vehicles.csv, stores an 8,940 kg LEO centre and 8,000-10,000 kg bounds. Its note attributes payloads to “the ISRO user manual via Wikipedia” but names no manual version or LEO orbit.
+- **isro_lvm3_vehicle_specifications_page**: ISRO's LVM3 Technical Specification lists “Payload to LEO ... 8,000 kg”; the following sentence specifies a 600 km altitude. The same section lists 4,000 kg to GTO.
+- **isro_launchers_overview_lvm3_10t_leo**: ISRO's Launchers overview calls LVM3 capable of “10 tonne class of payloads to LEOs,” without an orbit altitude or a derivation for 8,940 kg.
+- **Verdict**: the official pages support broad 8-10 tonne LEO context but do not establish the stored centre or show that the figures share an orbit/configuration. Record the exact source, configuration and orbit basis for 8.94 tonnes; recalculate dependent LEO $/kg values if the centre or bounds change. Keep the values provisionally; no replacement inferred. **rc-612**.
+- Extracted: extracted_data/r745_lvm3_leo_payload_provenance.csv.
+
+## R744 — LandSpace's current ZQ-3 capacities do not match the 8 t payload row (2026-11-14)
+
+- **spacecost_zhuque3_payload_code_current_2026**: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/launch_vehicles.csv` stores Zhuque-3 at 8,000 kg LEO, with the low and high payload fields also 8,000 kg. Its note attributes 8 t recovered/downrange and 11.8 t expendable to Wikipedia, and says the row represents the reusable mode.
+- **landspace_zhuque3_product_page_current_2026**: LandSpace's current ZQ-3 product specification labels the payload block “LEO @450km” and lists 21.3 t expendable, 18.3 t downrange recovery, and 12.5 t return-site recovery. This is the maker's current page for its own vehicle, but it does not explain the older 8 t recovery figure or establish which vehicle version the table intends.
+- **Verdict**: document a dated, configuration-matched source for the 8 t row or align the payload value and recovery mode to LandSpace's current specification; recalculate payload-dependent $/kg values if the row changes. Keep the estimated launch price under the separate price-basis review in rc-548. No numeric replacement inferred. Distinct from applied rc-205, which recorded the earlier mode and variant attribution, and rc-548, which concerns price. **rc-611**.
+- Extracted: `extracted_data/r744_zhuque3_payload_specification.csv`.
+
 ## R730 - Default fairing volume for blank vehicle rows (2026-11-14)
 
 economicspace_missing_fairing_volume_fallback_code_current_2026: economicspace modules/calc.py line 3950 states `DEFAULT_FAIRING_VOLUME_M3 = 100.0`; _vehicle_consts() line 3974 selects `DEFAULT_FAIRING_VOLUME_M3` when the Spacecost row's fairing_volume_m3 is missing. model_launch_liquid_volume defaults to true (line 779), and the launch-volume check uses the substituted envelope (line 7437).

@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_mars_semimajor_axis_code_current_2026,A_MARS_AU,1.523679,AU,"modules/calc.py, Mars constants",Code comment says “Mars semi-major axis”; reused as DELIVERY_ARCHITECTURES window_phasing_au for mars_orbit and mars_surface.
+economicspace_mars_semimajor_axis_code_current_2026,a_dest verification-sheet citation note,Mars figure left uncited because it differs from the fact sheet to five places,,"campaign/verification_sheet.py, S.put(""a_dest"")",Basis and epoch for the modeled Mars destination semimajor axis are not named.
+jpl_tr_32_77_mean_planet_elements_1966,Mars semimajor axis,1.523679,AU,"Table 2-1, printed p. 12, Mars row",Table heading: “Mean planet elements”; footnote says T is measured in Julian centuries from 1950.0. Exact match to A_MARS_AU.
+nasa_nssdca_mars_fact_sheet,Mars mean orbital semimajor axis,1.52366231,AU,Mars Mean Orbital Elements (J2000),"Current NSSDCA page; comparator for the stored code input, not a numeric replacement."

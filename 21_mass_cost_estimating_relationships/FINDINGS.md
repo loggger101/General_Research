@@ -234,3 +234,18 @@ At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), 
 - **spacecost_stage_and_tank_recurring_cost_code_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` retains an expendable upper-stage rate of $4,800/kg [$1,750,$13,400]. Its note derives the point as the geometric centre of ~$10M (Musk 2018) or an unnamed ~$7M 2026 third-party estimate for a ~4,000 kg Falcon 9 upper stage, and ~$30M for a ~2,250 kg Centaur III; it states no institutional document prices either stage. The tank-only row remains $6,000/kg [$3,000,$25,000], based on ~$30M Centaur III less an assumed ~$20M RL10, divided by ~1,880 kg of structure, then rounded upward; the high end is called plausible rather than sourced.
 - **nasa_oig_2020_ig-20-012_sls_program_costs_contracts**: NASA OIG p. 23 reports an opportunity to buy “the hardware for a second ICPS for $29 million.” This is a whole-stage comparator for a different configuration, not a Centaur III price or a tank-component allocation.
 - Verdict: keep both numeric rates pending separate matched bases for whole-stage and tank-only costs; no replacement inferred. **rc-421** remains open. Existing extraction: `extracted_data/r555_nasa_oig_icps_price_vs_centaur_tank_cost_anchor.csv`; new extraction: `extracted_data/r677_stage_tank_cost_basis.csv`.
+
+
+## R773 - NRE overlap disclosure in the verification worksheet (2026-11-15)
+
+`economicspace_nre_overlap_verification_sheet_current_2026`: the current 2018 DT cislunar worksheet lists I126 as `overlap`, value 0.30, and flags it NEED BACKING. The input cites the configuration field but describes it only as "recurring overlap deducted from NRE".
+
+`economicspace_nre_recurring_overlap_fraction_code_current_2026`: `modules/calc.py` now says the recurring hardware bracket has no registered source and calls 0.30 a scenario with no derivation. The worksheet formula applies `NRE_bus * (1 - overlap) / mission_count` to spacecraft development NRE. `spacecost_mining_payload_recurring_cost_current_2026` records the related $300,000/kg [$100,000, $1,000,000] recurring mining-payload estimate; its matched cost basis remains open under rc-517. Closed rc-518 applied the code-comment clarification but did not target the worksheet input; rc-330 concerns a separate mining-technology development term.
+
+Verdict: carry the scenario status and missing-derivation limit into I126, and expose sensitivity to the overlap assumption. Preserve 0.30; no numeric replacement inferred. **rc-644**. Extracted: `extracted_data/r773_nre_overlap_verification_sheet_gap.csv`.
+
+## R777 — NRE mission-count input is a run scenario (2026-11-15)
+
+`economicspace_nre_mission_count_verification_sheet_current_2026`: the cislunar worksheet input I63 is 1 mission and is flagged NEED BACKING. `economicspace_nre_amortization_config_current_2026`: `CalcConfig.nre_amortization_missions` defaults to 1; its comment says “If 1, the first mission carries the full NRE; raise N to spread across a fleet” (lines 1055–1057). The comment describes the setting's effect but gives no empirical basis for choosing one mission as the run's programme size.
+
+Verdict: identify I63=1 as the fixed scenario used by this archived row and carry the configuration explanation into the worksheet; preserve 1 and do not present it as an externally estimated fleet size. Applied `rc-249` and `rc-250` concern programme search and fixed-N cost accounting; open `rc-644` concerns the separate NRE-overlap input I126. Open `rc-647`; no numeric replacement inferred. Extracted: `extracted_data/r777_nre_amortization_mission_scenario.csv`.
