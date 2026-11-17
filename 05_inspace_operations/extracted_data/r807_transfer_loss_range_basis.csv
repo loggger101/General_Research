@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_depot_transfer_loss_code_current_2026,In-space propellant transfer loss,"0.03 [0.01, 0.08]",fraction per transfer,spacecost/storage.py lines 504-521; reference/storage_systems.csv row “In-space propellant transfer loss”,Development row. Notes cite Krog & Berstad only for the 1% low-end comparator; Module 4 does not charge transfer losses.
+zero_bo_off_2025,Variable-speed pump LH2 transfer loss,0.00 to 0.24,wt%,arXiv abstract; PDF p. 1,"160,000 m3 / 11,248 t ground export-terminal transfer; this does not establish a space-stage loss value."
+zero_bo_off_2025,Fixed-speed pump LH2 transfer loss,0.76 to 1.06,wt%,arXiv abstract; PDF p. 1,"160,000 m3 / 11,248 t ground export-terminal transfer; this does not establish the model midpoint or upper endpoint."
+zero_bo_off_2025,Total pump-generated boil-off gas in the transfer scenario,VSD 3.9 to 8.6 t; fixed-speed 85.5 to 119.7 t,t,"PDF p. 5, Table 4",Existing full-text extraction r70_zero_bo_off_2025.csv; retained here to make the large ground-transfer boundary explicit.

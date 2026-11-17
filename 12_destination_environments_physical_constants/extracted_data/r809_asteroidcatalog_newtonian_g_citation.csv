@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+nist_sp961_2022_codata_constants,Newtonian constant of gravitation G,6.67430(15) × 10^-11,m^3 kg^-1 s^-2,"NIST SP 961 (May 2024), p. 1, table row Newtonian constant of gravitation",CODATA 2022 recommended value; parenthetical uncertainty applies to the last two digits.
+asteroidcatalog_gravitational_constant_code_current_2026,G_SI,6.67430e-11,m^3 kg^-1 s^-2,AsteroidCatalog asteroid_catalog/physics.py:197 at main a2c527c09eb39618d7fd26b2b180f730ea906b8b,Stored value matches CODATA 2022 at the stored precision.
+asteroidcatalog_gravitational_constant_code_current_2026,min_rotation_period_h use of G_SI,G_SI=6.67430e-11,m^3 kg^-1 s^-2,AsteroidCatalog asteroid_catalog/physics.py:310-312 at main a2c527c09eb39618d7fd26b2b180f730ea906b8b,Newtonian G is used in the spin-limit period expression.
+nist_sp961_2022_codata_constants;asteroidcatalog_gravitational_constant_code_current_2026,G value comparison,matches exactly to stored decimal precision,m^3 kg^-1 s^-2,NIST SP 961 p. 1 compared with physics.py:197,Citation gap; no numeric change indicated.

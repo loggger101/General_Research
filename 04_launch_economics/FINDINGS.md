@@ -1,3 +1,59 @@
+## R836 — Latest frozen launch-price rows retain unresolved bases (2026-11-17)
+
+- **spacecost_lm2c_price_proxy_code_current_2026_main** and **economicspace_latest_stage3_lm2c_price_row_2026** (pipeline 1.23.6, row 30): $29.6M [$25M,$35M], estimated against a $30M Long March 2D price; current Spacecost labels the proxy and band as a scenario, while rc-315 still reviews the 2D anchor. **rc-710**.
+- **spacecost_lm4c_price_proxy_code_current_2026_main** and **economicspace_latest_stage3_lm4c_price_row_2026** (row 33): $38.7M [$30M,$50M], estimated against a Long March 4B $50M (2006) price; current Spacecost says the comparator has no recorded source or inflation step. **rc-709**.
+- **spacecost_lm8a_price_estimate_code_current_2026_main** and **economicspace_latest_stage3_lm8a_price_row_2026** (row 37): $52.9M [$40M,$70M], with only “price estimated”; current Spacecost identifies the band as a scenario without source or calculation. **rc-711**.
+- **economicspace_latest_stage3_lm12_price_row_2026** (row 38): $63.2M [$50M,$80M], with only “price estimated”; the current open rc-318 comparator reports below RMB 20,000/kg but does not state orbit, utilization, date basis, or service scope. **rc-712**.
+- Each row is in Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.14.0/launch_vehicles.csv, blob 05689ea750fb2d1561ef3385c06faac05f0274a5, catalog date 2026-10-17. **Verdict:** the frozen rows do not carry the source/basis qualifications in current Spacecost; keep the estimates as scenarios pending comparable, documented evidence. No numeric replacements inferred.
+- **Extracted data:** extracted_data/r836_economicspace_frozen_launch_price_rows.csv.
+
+## R835 — Latest frozen Long March 5 price-band provenance (2026-11-17)
+
+- **economicspace_latest_stage3_lm5_price_row_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.14.0/launch_vehicles.csv, pipeline 1.23.6, catalog date 2026-10-17, row 34): stores $133M [$110M,$160M], price_basis=estimate, reference_year=2026 and derived $5,320/kg to LEO. Its note attributes about $160M to a Wikipedia estimate but does not identify the lower endpoint’s source or derivation.
+- **spacecost_lm5_launch_price_code_current_2026** (Spacecost origin/main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/launch_vehicles.csv row 34): stores the same band; current price review rc-592 finds no named comparator or endpoint calculation.
+- **faa_ast_2018_compendium_long_march_5_price**: FAA AST’s 2018 Long March 5 fact sheet lists the estimated price as “Undisclosed,” documenting historical disclosure status rather than a current price.
+- **hf_dataset**: existing extracted table row 4 lists $60M and $2,400/kg attributed to “CASC / industry estimates”; its date and price boundary are not matched to the frozen estimate.
+- **Upstream row:** Economicspace campaign/stage3/spacecost-0.14.0/launch_vehicles.csv, Long March 5.
+- **Verdict:** Open rc-708 for the latest frozen Economicspace copy, carrying forward the unresolved provenance and price-boundary questions from rc-592. The FAA status and HF dataset do not establish a replacement. No numeric replacement inferred.
+- **Extracted data:** extracted_data/r835_economicspace_latest_lm5_price_gap.csv.
+
+## R834 — Latest frozen Long March 8A GTO provenance
+
+- **economicspace_latest_stage3_lm8a_gto_payload_row_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.14.0/launch_vehicles.csv, pipeline 1.23.6, catalog date 2026-10-17, row 37): stores payload_gto_kg=3,500 (low/high both 3,500) and usd_per_kg_to_gto=$15,114 ($11,429-$20,000); note says “Source: Wikipedia payloads.”
+- **spacecost_lm8a_gto_payload_code_current_2026** (Spacecost origin/main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/launch_vehicles.csv row 37): stores the same values and says “The GTO figure has no current source.”
+- **nextspaceflight_lm8a_gto_payload_profile_2026** (Rocket Stats, lines 102-107): lists 3,500 kg GTO without a technical basis beside the entry.
+- **spacechina_2026_lm8a_sso_capacity** (CASC report, lines 25-32): identifies CZ-8A and reports 7 t to 700 km SSO; it gives no GTO payload.
+- **cnsa_2019_long_march_8_gto_capacity** (CNSA-hosted China Aerospace News, lines 58-64): reports 2.8 t GTO for base CZ-8, not the later CZ-8A.
+- **wikipedia_long_march_8_article** (current table, lines 141-158): lists 2,800 kg GTO without a variant label; separate 700 km SSO entries give 5,000 kg for CZ-8 and 7,000 kg for CZ-8A.
+- **Upstream rows:** Economicspace campaign/stage3/spacecost-0.14.0/launch_vehicles.csv; current Spacecost reference/launch_vehicles.csv.
+- **Verdict:** Open rc-707 for the latest frozen Economicspace copy (pipeline 1.23.6). The cited Wikipedia table and adjacent official SSO/base-variant figures do not establish 3,500 kg CZ-8A GTO capacity. Distinct from rc-703 (current Spacecost) and rc-704 (older frozen 1.22.0 copy). No numeric replacement inferred.
+- **Extracted data:** extracted_data/r834_economicspace_latest_lm8a_gto_gap.csv.
+
+## R831 — Long March 8A GTO payload provenance in current and frozen tables
+
+- **spacecost_lm8a_gto_payload_code_current_2026** (Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/launch_vehicles.csv` row 37): `payload_gto_kg=3,500`, low/high both 3,500, and `usd_per_kg_to_gto=$15,114` with low/high $11,429/$20,000. The note says “The GTO figure has no current source.”
+- **economicspace_lm8a_frozen_stage3_gto_payload_code_2026** (Economicspace `origin/main` `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `campaign/stage3/spacecost-0.10.0/launch_vehicles.csv` row 37): the frozen 1.22.0 table retains 3,500 kg GTO and $15,114/kg; its note says “Source: Wikipedia payloads.”
+- **nextspaceflight_lm8a_gto_payload_profile_2026** (Rocket Stats, “Payload to Orbit,” lines 102–107): lists “GTO: 3,500 kg,” but gives no technical basis beside the entry.
+- **spacechina_2026_lm8a_sso_capacity** (CASC report, 2026-03-25, lines 25–32): identifies CZ-8A as an improved Long March 8 variant and reports “700-kilometer SSO” capacity “7 tons”; it gives no GTO capacity.
+- **cnsa_2019_long_march_8_gto_capacity** (CNSA-hosted China Aerospace News article, 2019-11-29, lines 58–64): describes the base Long March 8 as 5 t SSO and 2.8 t GTO; it does not describe the later CZ-8A.
+- **wikipedia_long_march_8_article** (current table, lines 141–158): lists 2,800 kg GTO without a variant label; its 700 km SSO entries separately list 5,000 kg for CZ-8 and 7,000 kg for CZ-8A.
+- **Upstream rows:** Spacecost `reference/launch_vehicles.csv` and the frozen Economicspace Stage 3 copy at `campaign/stage3/spacecost-0.10.0/launch_vehicles.csv`.
+- **Verdict:** Open rc-703 for the current Spacecost payload and rc-704 for the frozen Economicspace copy. The secondary catalogue repeats 3,500 kg, but no variant-matched primary source for CZ-8A GTO capacity was found in this round. Distinct from applied rc-209 (LEO payload) and rc-503 (launch-price estimate). No numeric replacement inferred.
+- **Extracted data:** `extracted_data/r831_lm8a_gto_payload_basis.csv`.
+
+## R829 — Ariane 6 A64 launch-price basis (2026-11-17)
+
+- **assemblee_nationale_2018_rapport_info_1438_space_policy**: printed p. 36 describes the Ariane 64 “objectif de prix fixé en 2014” of €115 million in 2014 economic conditions, with a €90.6M cost target. Printed p. 62 reports a press-reported $130M Ariane 64 transition price through Ariane 5 retirement and says Arianespace does not publicly state commercial tariffs.
+- **euronews_davies_2024_ariane6_price**: Pascale Davies’s 9 July 2024 A64 paragraph states “It costs €115 million”; it gives no price-year or contract basis.
+- **oxford_economics_2025_project_kuiper_ariane6_cost_assumption**: printed p. 32 assumes €115M per Ariane 6 launch for the Project Kuiper model; footnote 62 cites Euronews July 2024.
+- At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/launch_vehicles.csv` row 20 stores the A64 at $123M [$115M,$132M], `price_basis=estimate`, `reference_year=2026`. Its note calls €115M a 2018 estimate, converts €115M at $1.15/€ to the $132M high end, and carries $115M forward as the low end.
+- At economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, frozen `campaign/stage3/spacecost-0.5.0/launch_vehicles.csv` stores the same band and still says “Source: ESA Ariane 6 overview; €115M (2018 est.).” The registered overview has no price figures; applied **rc-080** corrected Spacecost’s current row but not this frozen copy.
+- **Verdict**: the records identify a 2014 target, a 2017 press-reported transition price, and later €115M estimates; they do not establish a current tariff or the stored USD bounds and dollar-year basis. Reconcile provenance and update the frozen copy’s attribution; no numeric replacement inferred. Open **rc-700**, distinct from applied **rc-080** (Spacecost row correction) and **rc-457** (A62 contract award). Extracted: `extracted_data/r829_ariane6_a64_price_basis.csv`.
+
+## R820 — FAA report traces Minotaur IV’s 1,735 kg high endpoint (2026-11-16)
+
+At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/launch_vehicles.csv` line 14 stores `payload_leo_kg_high=1735` and says the high-end source is not recorded. **faa_ast_2010_minotaur_iv_payload_performance**: the FAA’s 2010 *U.S. Commercial Space Transportation Developments and Concepts* states on printed p. 24, “The Minotaur IV will be capable of delivering 1,735 kilograms (3,825 pounds) to LEO.” Printed p. 100 endnote 53 identifies Orbital Sciences Corporation’s “Minotaur IV Fact Sheet.” The FAA gives no altitude or inclination for this figure; the current 1,591 kg low endpoint is attributed to Wikipedia’s 200 km / 28.5° infobox, while the Minotaur guide’s section 3.3 defines its curve payload boundary. Cite the FAA/Orbital source and clarify the high endpoint’s orbit basis; no numeric replacement inferred. Reopened **rc-193**. Extracted: `extracted_data/r820_minotaur_iv_faa_payload.csv`.
+
 ## R752 — Soyuz-2.1b row maps a generic 2018 price quote (2026-11-14)
 
 - **spacecost_soyuz_21b_price_code_current_2026**: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the Soyuz-2.1b row stores $48.5M with `price_basis=reported` and `reference_year=2026`; its note attributes the amount to TASS (2018).

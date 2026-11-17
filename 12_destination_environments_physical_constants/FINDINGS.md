@@ -194,3 +194,55 @@ Verdict: identify a primary-body-specific source and radius convention for the s
 `nasa_nssdca_mars_fact_sheet`: the current page section “Mars Mean Orbital Elements (J2000)” gives `1.52366231 AU`, distinct from the stored code value.
 
 Verdict: identify the intended planetary-element basis and cite it for the Mars phasing input; the exact historical match supplies provenance but does not establish the code’s intended convention. No numeric replacement inferred. **rc-603**. Extracted: `extracted_data/r736_mars_semimajor_axis_provenance.csv`.
+
+## R784 — Mars gravitational-parameter ephemeris attribution (2026-11-15)
+
+**economicspace_mars_gravitational_parameter_code_current_2026**: At economicspace main 1cf2617f1a34e013e7f49bd9d908099e3e47354, modules/calc.py sets MU_MARS_KM3_S2=42,828.37 km³/s² and campaign/worked_calculation.py repeats MU_MARS=42,828.37. Both comments identify Mars GM but name no source or ephemeris.
+
+**jpl_ssd_planetary_satellite_physical_parameters_phobos_gm**: JPL's Planet and Pluto GM table lists “Mars | 42828.37362 ± 0.0008 | MAR097” (line 264). This rounds to the code's 42,828.37.
+
+**jpl_ssd_astrodynamic_parameters_mars_system_gm_de440_2026**: JPL's Astrodynamic Parameters page states that its planetary-mass values are from DE440 (lines 96-100) and lists Mars-system GM as 42,828.375816 km³/s² (line 106), which rounds to 42,828.38.
+
+**economicspace_mars_gm_verification_sheet_code_current_2026**: The mars_orbit__raw__search-off worksheet check passes and flags I27 NEED BACKING, reporting the derivation constant has no reference.
+
+Upstream: economicspace MU_MARS_KM3_S2, worked_calculation.MU_MARS and verification input I27 are 42,828.37 km³/s². Verdict: identify the intended ephemeris. The current two-decimal value is consistent with MAR097; DE440 rounds one hundredth higher. That numeric match does not establish which ephemeris was intended. Preserve the numeric value if MAR097 is the intended basis; no replacement inferred. **rc-654**. Extracted: extracted_data/r784_mars_gm_ephemeris_basis.csv.
+
+## R799 — Spacecost blackbody-temperature constant citation gap (2026-11-16; rc-669)
+
+At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, spacecost/units.py:37-42 states the rapid-rotator equilibrium relation (S/4sigma)^(1/4), sets S=1361 W/m2, gives sigma=5.670374419e-8 W m-2 K-4, and stores BLACKBODY_TEMP_1AU_K=278.3 K. environments.py:89-96 scales that constant by 1/sqrt(au) into blackbody_temp_k; the current reference/environments.csv has 23 environment rows. CITATIONS.md's Physical constants table maps Kopp & Lean to solar irradiance, CODATA 2018 to Newtonian G, and BIPM/IAU to AU and c; it does not identify sigma.
+
+nist_sp959_2018_codata_constants (NIST SP 959, p. 1) lists the Stefan-Boltzmann constant as 5.670 374 419 ... x 10^-8 W m^-2 K^-4. Using the code's 1361 W/m2 and first ten significant digits of the CODATA value gives 278.321399 K from (S/(4sigma))^(1/4), which rounds to the stored 278.3 K. Verdict: cite CODATA for sigma and document the stored precision and one-decimal rounding; no numeric replacement is inferred. Extracted: extracted_data/r799_blackbody_sigma_source.csv.
+
+## R809 — AsteroidCatalog Newtonian-constant citation gap (2026-11-16)
+
+asteroidcatalog_gravitational_constant_code_current_2026: At AsteroidCatalog main a2c527c09eb39618d7fd26b2b180f730ea906b8b, asteroid_catalog/physics.py line 197 sets G_SI = 6.67430e-11; min_rotation_period_h uses it at line 312. CITATIONS.md lists Pravec & Harris (2000) and Holsapple (2007) for spin-limit literature but no G/CODATA source.
+
+nist_sp961_2022_codata_constants: NIST SP 961 (May 2024), p. 1 lists “Newtonian constant of gravitation G 6.674 30(15) × 10⁻¹¹” m³ kg⁻¹ s⁻².
+
+Verdict: cite the Newtonian constant used by the spin-limit calculation; the current value matches CODATA 2022 at stored precision. No numeric replacement inferred. rc-681. Extracted: extracted_data/r809_asteroidcatalog_newtonian_g_citation.csv.
+
+## R810 — Lunar capture radius matches its cited source (2026-11-16)
+
+- **nasa_nssdca_moon_fact_sheet**: the orbital-parameters table (“for orbit about the Earth”) lists “Semimajor axis (10^6 km)” as 0.3844, equivalent to 384,400 km. The existing `extracted_data/r212_worksheet_constants_key_numbers.csv` records this value against the Economicspace `R_MOON` input.
+- Economicspace main `bc11908b8683836e25d572cbb5b54249f8cecb6d`, `modules/calc.py` line 2857 sets `R_MOON_ORBIT_KM=384_400.0`; `_cislunar_capture_dv_km_s` uses it at line 2941 to form the capture ellipse.
+- Economicspace `CITATIONS.md` lines 299-303 names the NASA NSSDCA Moon Fact Sheet as the source for `R_MOON`. `campaign/verification_sheet.py` lines 1945-1946 maps the worksheet input through `cite_here` and states that the fact sheet gives 0.3844 million km.
+- Verdict: the current value matches the registered source at its printed precision, and both Economicspace documentation and the verification sheet cite it. Draft rc-682 was withdrawn as a false positive; the registry mapping and INDEX now record this existing use.
+
+
+## R818 — Mars GM attribution and lunar-radius citation rechecks (2026-11-16)
+
+`economicspace_mars_gravitational_parameter_code_current_2026`: fetched economicspace origin/main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7` still sets `MU_MARS_KM3_S2` and `MU_MARS` to 42,828.37 km³/s². The MAR097 and DE440 source values still round differently at the stored precision; **rc-654** remains open pending the intended ephemeris basis. Existing extraction: `extracted_data/r784_mars_gm_ephemeris_basis.csv`.
+
+`nasa_nssdca_moon_fact_sheet`: current fetched main still names the Moon Fact Sheet for `R_MOON` in `CITATIONS.md`, and the verification sheet states 0.3844 million km. This confirms the rc-682 false-positive withdrawal; no revision gap remains. Existing extraction: `extracted_data/r212_worksheet_constants_key_numbers.csv`.
+
+## R819 — Mars 1-sol orbit worksheet backing (2026-11-16)
+
+**dra5_2009_human_exploration_of_mars** PDF p. 36 (printed p. 22) states: “At Mars, the vehicles are inserted into a 1-sol orbit (250 km × 33,793 km).” **nasa_nssdca_mars_fact_sheet**, Mars/Earth Comparison, Bulk parameters table, lists “Equatorial radius (km) 3396.2.”
+
+At economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `modules/calc.py` lines 2898-2899 form periapsis and apoapsis radii by adding 250 km and 33,793 km to 3,396.2 km. `campaign/verification_sheet.py` lines 2062-2067 record I28=3,646.2 km (“250 km altitude”) and I29=37,189.2 km (“33,793 km altitude”); the `mars_orbit__raw__search-off` check flags both NEED BACKING. The DRA altitude pair and NSSDCA equatorial radius support the stored values, but the worksheet does not name the sources or radius convention.
+
+**Verdict:** cite DRA 5.0 and the NSSDCA equatorial radius in the worksheet inputs, and preserve the derived values. **rc-693**. Extracted: `extracted_data/r819_mars_one_sol_orbit_worksheet_citation.csv`.
+
+## R825 — Current rotation-period fallback input (2026-11-17)
+
+The current worksheet maps I70=10.222 h to `CalcConfig.default_rotation_period_h` and explicitly says the 2018 DT period is not measured; the model uses the median of 29,288 AsteroidCatalog periods. It flags the fallback NEED BACKING. **rc-579** now carries the live input mapping. The earlier frozen Stage 3 I70 cargo-containment row in **rc-645** is a different field and remains a separate frozen-row issue. Extracted: `extracted_data/r825_rotation_period_live_input_i70.csv`.

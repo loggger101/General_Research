@@ -249,3 +249,18 @@ Verdict: carry the scenario status and missing-derivation limit into I126, and e
 `economicspace_nre_mission_count_verification_sheet_current_2026`: the cislunar worksheet input I63 is 1 mission and is flagged NEED BACKING. `economicspace_nre_amortization_config_current_2026`: `CalcConfig.nre_amortization_missions` defaults to 1; its comment says “If 1, the first mission carries the full NRE; raise N to spread across a fleet” (lines 1055–1057). The comment describes the setting's effect but gives no empirical basis for choosing one mission as the run's programme size.
 
 Verdict: identify I63=1 as the fixed scenario used by this archived row and carry the configuration explanation into the worksheet; preserve 1 and do not present it as an externally estimated fleet size. Applied `rc-249` and `rc-250` concern programme search and fixed-N cost accounting; open `rc-644` concerns the separate NRE-overlap input I126. Open `rc-647`; no numeric replacement inferred. Extracted: `extracted_data/r777_nre_amortization_mission_scenario.csv`.
+
+## R824 — NRE-overlap current worksheet input recheck (2026-11-17)
+
+- **economicspace_nre_overlap_verification_sheet_current_2026**: the current best-case worksheet maps nre_recurring_overlap_fraction=0.30 to I122 and marks it NEED BACKING. Its current I126 is contingency_fraction=0.20 with a separate NASA mission cost-growth citation; the prior rc-644 input number I126 no longer names the overlap.
+- **economicspace_nre_recurring_overlap_fraction_code_current_2026**: modules/calc.py lines 1163-1168 call 0.30 a scenario with no derivation because the recurring hardware bracket has no registered source.
+- **Verdict**: keep rc-644 open and carry its scenario/sensitivity scope into current I122; preserve 0.30.
+- Extracted: extracted_data/r824_nre_overlap_live_sheet_i122.csv.
+
+## R826 — Current worksheet mapping for propellant-tank cost (2026-11-17)
+
+**economicspace_current_bestcase_verification_sheet_2026**: input I119 maps to operational_costs.csv, row “Propellant tank recurring cost,” is marked NEED BACKING, and prints $6,000/kg tank dry mass [3,000, 25,000].
+
+**spacecost_stage_and_tank_recurring_cost_code_current_2026**: the current row derives its lower bound from an approximately $30M Centaur III stage anchor less an assumed approximately $20M RL10 cost; the sheet notes that the stage-cost anchor has no institutional source.
+
+Verdict: rc-421 remains open for the tank-only cost basis; the current sheet adds a live input mapping but no replacement value. Extracted: extracted_data/r826_live_sheet_propellant_tank_cost_i119.csv.

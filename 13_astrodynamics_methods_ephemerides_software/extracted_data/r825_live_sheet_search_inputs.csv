@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_current_bestcase_verification_sheet_2026;economicspace_search_resolution_controls_2026,I108 concentration_search_steps,7,points,current best-case verification worksheet I108,"NEED BACKING; current release validation checks reproduction and invariants, not objective error against a denser search."
+economicspace_current_bestcase_verification_sheet_2026;economicspace_fleet_search_cap_code_current_2026,I109 max_fleet_ships,64,ships,current best-case verification worksheet I109,NEED BACKING; the single 2018 DT winner uses F=1 and does not establish all-catalog cap sensitivity.
+economicspace_current_bestcase_verification_sheet_2026;economicspace_search_resolution_controls_2026,I110 programme_search_steps,8,points,current best-case verification worksheet I110,NEED BACKING; current worksheet contains no convergence/error comparison against a denser search.

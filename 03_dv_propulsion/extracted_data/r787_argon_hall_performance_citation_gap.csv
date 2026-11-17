@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_argon_hall_performance_current_2026,isp_vac_s,1500.0,s,reference/propellants.csv row 8,Current Argon Hall row; the note does not cite an absolute Isp source.
+spacecost_argon_hall_performance_current_2026,thruster_efficiency,0.40,fraction,spacecost/propellants.py lines 229-230; reference/propellants.csv row 8,Code mapping and data row; no efficiency boundary or matched source stated.
+spacecost_argon_hall_performance_current_2026,thruster_kg_per_n,40.0,kg/N,spacecost/propellants.py lines 229-230; reference/propellants.csv row 8,"Code comment says ""same body again; Ar lower still""; no matched hardware mass/thrust basis stated."
+spacecost_argon_hall_performance_current_2026,thrust_scaling,continuous,model scaling,spacecost/propellants.py lines 229-230; reference/propellants.csv row 8,Model mapping; no device/source basis stated.
+economicspace_argon_stage3_performance_row_current_2026,isp_vac_s; thruster_efficiency; thruster_kg_per_n; thrust_scaling,1500.0; 0.40; 40.0; continuous,s; fraction; kg/N; model scaling,campaign/stage3/spacecost-0.5.0/propellants.csv row 8,Frozen Stage 3 values; no absolute performance source in the note.
+spacex_2023_starlink_progress_report_thruster_propellants,relative generation-to-generation performance,2.4x thrust; 1.5x specific impulse,ratio to first-generation satellites,"printed p. 48, Thrusters section","Relative claim only; no absolute Isp, thruster efficiency or mass in this claim."
+nasa_s3vi_2026_small_spacecraft_inspace_propulsion,Starlink propellant,Argon Hall-effect thruster,qualitative,"chapter 4.0, printed p. 90",Confirms propellant choice; this passage gives no device performance figures.

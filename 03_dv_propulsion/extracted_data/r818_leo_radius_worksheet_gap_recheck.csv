@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+iers_petit_luzum_2010_conventions_tn36;askins_2021_sls_janaff_update;economicspace_leo_radius_verification_sheet_code_current_2026,LEO reference-orbit radius,6578.14,km,R_LEO_KM; worked_calculation.R_LEO; verification-sheet input I4,"Computed from the cited 6,378.14 km equatorial Earth radius and NASA typical 200 km circular LEO convention; this is a scenario reference, not a required orbit for all missions."
+,worksheet I4 backing status,NEED BACKING,status,Current write-free economicspace verification-sheet check; best case 2018 DT,Computed worksheet output. The check reports 85 inputs NEED BACKING; I4 remains the open source-attribution gap tracked by rc-356.

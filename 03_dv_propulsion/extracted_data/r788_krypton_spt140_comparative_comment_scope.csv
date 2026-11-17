@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_krypton_hall_thruster_row_current_2026,Krypton-vs-Xe comment,SPT-140 body; ~85% of Xe thrust; ~10 percentage points lower efficiency,comparative claim,spacecost/propellants.py line 228,"No citation, test point or efficiency boundary accompanies the comment."
+spacecost_krypton_hall_thruster_row_current_2026,Krypton Hall model selections,"2,000 s; 0.45; 35.0",s; fraction; kg/N,reference/propellants.csv row 18,"Current data note classifies these as generic mission-model selections, not measured Krypton Hall values."
+kim_et_al_2019_spt140pm_krypton_iepc465,modified SPT-140PM Krypton test,about 500; over 60%; over 2600; about 10 kW; 400,mN; efficiency fraction; s; kW; V,printed p. 4,Variant is modified SPT-140PM; not direct evidence for the unqualified code comment.
+kim_et_al_2019_spt140pm_krypton_iepc465,relative efficiency at same voltage,Krypton at least 15% higher than Xe,relative efficiency,printed p. 4,A single modified-model comparison; does not quantify 85% relative thrust or a 10-point efficiency deficit.

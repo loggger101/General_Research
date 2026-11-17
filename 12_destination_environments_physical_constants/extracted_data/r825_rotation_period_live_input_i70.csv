@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_current_bestcase_verification_sheet_2026;economicspace_default_rotation_period_code_current_2026;asteroidcatalog_release_data_2026_11_13,I70 2018 DT rotation_period_h fallback,10.222,h,current best-case verification worksheet I70; CalcConfig.default_rotation_period_h / AsteroidCatalog release median,"NOT measured for 2018 DT. The model substitutes the AsteroidCatalog median of 29,288 measured periods; flagged NEED BACKING. This is not the older frozen I70 cargo-containment input."

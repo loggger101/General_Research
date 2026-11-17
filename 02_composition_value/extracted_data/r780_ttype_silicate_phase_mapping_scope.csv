@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_ttype_silicate_phase_mapping_code_current_2026,PHASE_SHARES[T][silicate],silicates:1.0,share within coarse silicate group,asteroid_catalog/mineralogy.py:282,One generic material bucket; no mineral-specific split or numeric derivation.
+asteroidcatalog_ttype_metal_silicate_fraction_code_current_2026,T coarse silicate fraction,0.40,body mass fraction,reference/taxonomy_composition.csv row T,Bulk amount is tracked separately by rc-641.
+asteroidcatalog_ttype_silicate_phase_mapping_code_current_2026,T silicates in comp_phases,0.40,body mass fraction,reference/mineral_phases.csv row T,Generic silicates bucket equals 0.40 of body mass.
+asteroidcatalog_ttype_silicate_phase_mapping_code_current_2026,T silicates in comp_phases_detailed,0.40,body mass fraction,reference/mineral_phases_detailed.csv row T,The same generic phase passes through without a detailed silicate mapping.
+asteroidcatalog_ttype_silicate_phase_mapping_code_current_2026,PHASE_DETAIL[T] silicate mapping,none; generic phase passes through,mapping status,asteroid_catalog/mineralogy.py:571-652,PHASE_DETAIL[T] maps nickel-iron only; detailed_fractions passes through unlisted phases.
+kwon_hasegawa_fornasier_ishiguro_agarwal_2022_large_t_type_surfaces,T-type group scope,relatively ill-constrained as an independent group,qualitative statement,"Kwon et al. 2022, A&A 666:A173, printed p. 1",Surface spectroscopy and meteorite spectral comparison; no class-level bulk silicate mineral shares.
+economicspace_detailed_phase_carbon_consumer_current_2026,model_detailed_phases default,True,boolean,"economicspace/modules/calc.py:321-337, 1777-1795",The loader reads comp_phases_detailed when present.

@@ -1,0 +1,17 @@
+source_id,item,value,unit,location_in_source,notes
+squire_etal_2011_vx200_operation_200kw_iepc154,VX-200 specific impulse,4900 ± 300,s,"printed p. 1, abstract",Argon; 200 kW RF operating point.
+squire_etal_2011_vx200_operation_200kw_iepc154,VX-200 thruster efficiency,72 ± 9,%,"printed p. 1, abstract",Ratio of effective jet power to input RF power at 200 kW.
+squire_etal_2011_vx200_operation_200kw_iepc154,VX-200 thrust,5.8 ± 0.4,N,"printed p. 1, abstract",Measured at the high-power end; the paper does not pair this with a 300 kg thruster-head mass.
+squire_etal_2013_vasimr_system_mass_iepc149,TC-1 mass-model power domain,50–250,kW,"printed p. 1, abstract",Complete single-core spaceflight engine system model.
+squire_etal_2013_vasimr_system_mass_iepc149,TC-1 variable-Isp range,3000–5000,s,"printed p. 1, abstract",Argon propellant at selected constant total power.
+squire_etal_2013_vasimr_system_mass_iepc149,TC-1 specific-mass relationship,alpha = 1.2 ± 0.1 + (444 ± 44 kg)/Pe[kW],kg/kW,"printed p. 1, abstract",Power-dependent complete-system relationship; not a thruster-head kg/N value.
+squire_etal_2013_vasimr_system_mass_iepc149,TC-1 mass boundary,rocket core; RF power processing; HTS magnet; thermal management; propellant management; command and data handling,subsystems,"printed p. 3, system description","The authors say magnet, rocket core and high-temperature management together are analogous to a thruster; RF power processing is analogous to a PPU."
+chang_diaz_etal_2022_vasimr_recent_progress_iepc525,VX-200SS longest endurance firing,88,continuous hours,"printed p. 9, section VII",80 kW in 2021; the paper distinguishes this from the VX-200 200 kW performance benchmark.
+chang_diaz_etal_2022_vasimr_recent_progress_iepc525,VX-200 performance benchmark,4900; 70; 200,s; %; kW,"printed p. 1, abstract; p. 10, conclusions","Argon; performance benchmark belongs to VX-200, not the VX-200SS endurance run."
+chang_diaz_etal_2022_vasimr_recent_progress_iepc525,120 kW second-stage PPU mass,55.5,kg,"printed p. 10, conclusions","PPU mass only, not the full propulsion system."
+spacecost_vasimr_model_mapping_current_2026,code mapping: thruster_kg_per_n,53.0,kg/N,spacecost/propellants.py:237,Comment derives this from approximately 300 kg / 5.7 N; code header defines this column as thruster-head mass.
+spacecost_vasimr_model_mapping_current_2026,code mapping: efficiency and thrust scaling,0.50; continuous,fraction; class,spacecost/propellants.py:237,No device-matched operating-point citation in code.
+spacecost_vasimr_reference_row_current_2026,"current reference row: Isp, specific mass, efficiency, scaling",4000; 53.0; 0.50; continuous,s; kg/N; fraction; class,reference/propellants.csv:37,Single model Isp point and performance fields; note has no matched data source.
+spacecost_vasimr_reference_row_current_2026,current reference row: VX-200SS endurance claim,100,hours at 80 kW,"reference/propellants.csv:37, notes",Differs from the 88-hour longest firing reported in IEPC-2022-525.
+economicspace_vasimr_stage3_row_current_2026,"frozen Stage 3 row: Isp, specific mass, efficiency, scaling",4000; 53.0; 0.50; continuous,s; kg/N; fraction; class,campaign/stage3/spacecost-0.5.0/propellants.csv:37,Same inputs as the live Spacecost row.
+economicspace_vasimr_stage3_row_current_2026,frozen Stage 3 row: VX-200SS endurance claim,100,hours at 80 kW,"campaign/stage3/spacecost-0.5.0/propellants.csv:37, notes",Preserves the current note.

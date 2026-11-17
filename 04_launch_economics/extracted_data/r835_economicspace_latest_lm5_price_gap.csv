@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_latest_stage3_lm5_price_row_2026,Frozen Long March 5 list price,133000000,USD,campaign/stage3/spacecost-0.14.0/launch_vehicles.csv; row 34,Band $110M-$160M; price_basis=estimate; reference_year=2026. Note attributes about $160M to Wikipedia but does not document the low endpoint.
+economicspace_latest_stage3_lm5_price_row_2026,Frozen Long March 5 price lower endpoint,110000000,USD,campaign/stage3/spacecost-0.14.0/launch_vehicles.csv; row 34,No endpoint source or derivation identified in the row note.
+economicspace_latest_stage3_lm5_price_row_2026,Frozen Long March 5 price upper endpoint,160000000,USD,campaign/stage3/spacecost-0.14.0/launch_vehicles.csv; row 34,Note attributes approximately $160M to a Wikipedia estimate.
+economicspace_latest_stage3_lm5_price_row_2026,Frozen Long March 5 price per kg to LEO,5320,USD/kg,campaign/stage3/spacecost-0.14.0/launch_vehicles.csv; row 34,"Derived from $133M / 25,000 kg LEO."
+faa_ast_2018_compendium_long_march_5_price,FAA reported estimated price status,Undisclosed,text,2018 AST Compendium; Long March 5 fact sheet; Launch Vehicle Specifications table,"Historical disclosure status, not current price evidence."
+hf_dataset,Long March 5 comparator estimate,60000000,USD,existing extracted_data/r70_hf_dataset_full_table.csv; row 4,"Source label CASC / industry estimates; $2,400/kg; no matched date or price boundary."

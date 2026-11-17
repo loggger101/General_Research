@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_nrho_lunar_orbit_duration_code_current_2026,Spacecost NRHO → low lunar orbit delta-v,730,m/s,"reference/delta_v_segments.csv, row 22; spacecost/deltav.py:148",The row note cites Whitley & Martinez for this value.
+spacecost_nrho_lunar_orbit_duration_code_current_2026,Spacecost NRHO → low lunar orbit duration,0.01,yr,"reference/delta_v_segments.csv, row 22; spacecost/deltav.py:148","No duration, propulsion regime or timing boundary is stated in the row note."
+whitley_martinez_2015_nro_staging_orbits,NRO (Polar) to/from LLO transfer time,0.5,day,"Table 3, printed p. 4; NRO (Pol.) row, transfer-time column",The same row reports 730 m/s to/from LLO.
+whitley_martinez_2015_nro_staging_orbits,NRO lunar access to polar LLO,dV=730 m/s; dT=.5 day,,"Table 6, printed p. 8; Lunar Access to Polar LLO column",Same 730 m/s and 0.5-day transfer comparator.
+,Spacecost duration converted to days,3.6525,day,Computed here: 0.01 yr × 365.25 days/yr,Comparison computed from the exported row value.
+,Duration ratio: Spacecost / Whitley,7.305,ratio,Computed here: 3.6525 days / 0.5 day,Same route boundary must be verified before treating this as a numeric contradiction.

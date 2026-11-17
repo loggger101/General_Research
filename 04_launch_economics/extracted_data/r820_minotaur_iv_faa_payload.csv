@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+faa_ast_2010_minotaur_iv_payload_performance,Minotaur IV payload to LEO,1735,kg,printed p. 24,"FAA prose states the vehicle can deliver 1,735 kg (3,825 lb) to LEO; no orbit altitude or inclination is given."
+faa_ast_2010_minotaur_iv_payload_performance,Manufacturer source cited by FAA,Orbital Sciences Corporation Minotaur IV Fact Sheet,,"printed p. 100, endnote 53",Endnote 53 identifies the manufacturer fact sheet as the source.

@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_volume_conversion_citation_gap_code_current_2026,LITRES_PER_GAL,3.785411784,L/US gal,spacecost/units.py:18,Defined constant used by _per_gal_to_per_kg.
+spacecost_volume_conversion_citation_gap_code_current_2026,LITRES_PER_BBL,158.987294928,L/bbl,spacecost/units.py:19,Defined constant used by _per_bbl_to_per_kg.
+nist_hb133_2026_appendix_e_volume_conversion,U.S. gallon to liter,3.785411784,L/gal,"Appendix E, p. 248, Units of Volume table",NIST table reports 3.785 411 784 liters per gallon.
+thompson_taylor_2008_nist_sp811_si,Petroleum barrel size,42,U.S. gal/bbl,"Appendix B.9, Volume table",Definition is for a petroleum barrel.
+nist_hb133_2026_appendix_e_volume_conversion;thompson_taylor_2008_nist_sp811_si,Derived petroleum-barrel volume,158.987294928,L/bbl,Computed here: 42 × 3.785411784,Derived from the two source values; matches Spacecost LITRES_PER_BBL.

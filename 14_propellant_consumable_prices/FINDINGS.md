@@ -1,3 +1,21 @@
+## R833 — Latest frozen Stage 3 HTP price provenance
+
+- **economicspace_latest_stage3_htp_price_rows_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.14.0/propellants.csv, pipeline 1.23.6, catalog date 2026-10-17, rows 13-14): HTP monopropellant stores $5.00/kg and labels it an unsourced estimate pending re-sourcing; the HTP/RP-1 row stores $4.6875/kg and says it rests on the same unsourced HTP input.
+- **spacecost_htp_price_reference_row_current_2026** (Spacecost origin/main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/propellants.csv, rows 13-14): current component row still labels $5/kg unsourced and links the price comparator to rc-319; the HTP/RP-1 price derives from that component.
+- **epic_aerospace_htp_product_price** (official Epic Aerospace capabilities page, lines 53-57): lists 98% HTP at $65/kg, a 280 kg minimum order, and estimated shipping of $3,500-$8,500; no price effective date or bulk/delivered basis is stated.
+- **Upstream rows:** Economicspace campaign/stage3/spacecost-0.14.0/propellants.csv; current Spacecost reference/propellants.csv.
+- **Verdict:** Open rc-706 for the latest frozen Economicspace snapshot (pipeline 1.23.6). Distinct from rc-705 (earlier frozen 1.22.0 snapshot), rc-319 (current Spacecost price review), and rc-525 (impulse basis). No numeric replacement inferred.
+- **Extracted data:** extracted_data/r833_economicspace_latest_htp_price_gap.csv.
+
+## R832 — Frozen Stage 3 HTP price provenance
+
+- **economicspace_frozen_stage3_htp_price_rows_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.10.0/propellants.csv, pipeline 1.22.0, rows 13-14): HTP monopropellant stores $5.00/kg and calls it “an unsourced estimate pending re-sourcing”; the HTP/RP-1 row stores $4.6875/kg and says it rests on the HTP row's unsourced $5/kg.
+- **spacecost_htp_price_reference_row_current_2026** (Spacecost origin/main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/propellants.csv, rows 13-14): the current HTP row still labels $5/kg unsourced and links the supplier comparison to open rc-319; the derived HTP/RP-1 row inherits that component.
+- **epic_aerospace_htp_product_price** (official Epic Aerospace capabilities page, lines 53-57): lists “98% HTP - Price per Kg | 65 USD,” a 280 kg minimum order, and estimated shipping of $3,500-$8,500. The page gives no price effective date or bulk/delivered basis.
+- **Upstream rows:** Economicspace campaign/stage3/spacecost-0.10.0/propellants.csv; current Spacecost reference/propellants.csv.
+- **Verdict:** Open rc-705 for the frozen Economicspace HTP input and derived blend row. The Epic offer is a comparator, not a matched replacement. Distinct from open rc-319 (current Spacecost HTP price review) and rc-525 (HTP/RP-1 impulse basis). No numeric replacement inferred.
+- **Extracted data:** extracted_data/r832_economicspace_frozen_htp_price_gap.csv.
+
 # Domain 14 — Propellant & consumable prices
 
 Backings: spacecost `reference/propellants.csv` `ref_cost_usd_per_kg` and the component prices in the comment block above the combined rows in `spacecost/propellants.py`.
@@ -300,3 +318,107 @@ The current economicspace verification-sheet check flags I116=$300/kg NEED BACKI
 Spacecost’s current `reference/propellants.csv` row stores $794/kg and describes it as the geometric centre of a band from bulk krypton near $300/kg to flight-grade quotes beginning at $2,100/kg. `inl_rpt_23_75203_krypton_xenon_recovery_cost_benefit` is cited for the bulk comparator “hover around $1/L” (2023, §1; approximately $267/kg using the row’s 3.75 kg/L density); `sets_space_2024_hall_propellant_prices` is cited for the $2,100-$4,800/kg flight-grade range. The historic $300/kg value and current $794/kg midpoint have different procurement scopes.
 
 Open `rc-630` for the frozen-row citation and version boundary; no numeric replacement is inferred. Extracted: `extracted_data/r761_krypton_hall_historical_price_worksheet_gap.csv`.
+
+
+## R781 — FEEP indium price basis and worksheet citation gap (2026-11-15; rc-651)
+
+The economicspace Mars verification sheet consumes I73=$250/kg from its frozen Stage 3 FEEP row and flags the input NEED BACKING. The frozen row labels the price reference-year 2026 and price-basis `reference`; Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` repeats $250/kg in `_COMPONENTS["Indium"]` and the FEEP reference row, while the nearby code comment and row notes name no price source.
+
+USGS `usgs_mineral_commodity_summaries_2026_indium` (printed pp. 99–100) gives the annual average U.S. warehouse FOB refined-indium price as $250/kg in 2022, $351/kg in 2024, and $370/kg in 2025e; its footnote specifies 99.99%-minimum purity. The Events section separately reports $390/kg as the estimated 2025 annual average. The $250 value matches the USGS 2022 table entry but does not establish the provenance of the modeled price or a FEEP-specific procurement grade. **Verdict:** citation, date, grade, and procurement basis remain unresolved; keep the modeled value pending a matched source and infer no replacement. `rc-651`. Extracted: `extracted_data/r781_feep_indium_price_basis.csv`.
+
+## R798 — Spacecost gallon and petroleum-barrel conversion citation gap (2026-11-16; rc-668)
+
+Spacecost main at a401930efe30aaad01aafd2b3cb332ad0438c841 defines LITRES_PER_GAL = 3.785_411_784 and LITRES_PER_BBL = 158.987_294_928 in spacecost/units.py:18-19. _per_gal_to_per_kg and _per_bbl_to_per_kg use these factors with fluid density; prices.py:133-137 routes per-gallon and per-barrel quote closes through those helpers. tests/test_prices.py:92-95 checks that a barrel factor equals 42 gallons. CITATIONS.md names NIST SP 811 Appendix B.8 for the methane energy conversion but has no source mapping for these volume factors.
+
+nist_hb133_2026_appendix_e_volume_conversion (Appendix E, p. 248) reports 3.785 411 784 liters per gallon. thompson_taylor_2008_nist_sp811_si (Appendix B.9, Volume table) defines a petroleum barrel as 42 gallons (U.S.). The derived value 42 × 3.785411784 = 158.987294928 L/bbl matches the stored barrel factor. Verdict: both stored factors match the identified units; add the citations beside the constants and in CITATIONS.md. No numeric replacement is inferred. Extracted: extracted_data/r798_unit_conversion_factors.csv.
+
+
+## R800 — Spacecost live quote density basis (2026-11-16; rc-670, rc-671)
+
+`spacecost_volume_conversion_citation_gap_code_current_2026` records Spacecost main at `a401930efe30aaad01aafd2b3cb332ad0438c841`; its `units.py`, `prices.py` and `CITATIONS.md` snapshot defines `COMMODITY_DENSITY_KG_PER_L` and contains no source mapping for that dictionary. `heating_oil` is 0.845 kg/L; `prices.py` maps `HO=F` per-gallon quotes to that density, converts them to USD/kg, and applies the result to the kerolox fuel blend.
+
+`iea_energy_prices_2022_product_specifications` (p. 146, Product specifications > Oil products) lists “Fuel oil domestique” at 0.845 kg/L in the France household light-fuel-oil column. The table does not state a measurement temperature. `cme_comex_nymex_futures` (NYMEX Rulebook Chapter 150, p. 1, §§150101 and 150102.B–C) identifies HO as NY Harbor ULSD meeting Colonial Pipeline Fungible Grade 62; the contract volume is determined at 60°F and the price is quoted per gallon. The matching number does not establish that the IEA product or temperature basis applies to the Spacecost HO proxy. **Verdict:** open `rc-670` for the matched product and reference-temperature citation; no numeric replacement inferred.
+
+The same dictionary stores `crude_oil=0.870 kg/L` with comment “WTI ~32° API.” Spacecost maps `CL=F` to that density, while `prices.py` calls CL=F a cross-check that “prices nothing.” CME’s NYMEX Light Sweet Crude Oil futures FAQ, contract quality specifications (Gravity item), gives the deliverable WTI range as “Not less than 37 degrees API, nor more than 42 degrees API.” The code names neither a density source nor a reference temperature. **Verdict:** open `rc-671` to cite a temperature-matched WTI density and reconcile the API comment with the contract range; this is diagnostic-only and no propellant-price replacement is inferred. Extracted: `extracted_data/r800_spacecost_quote_density_basis.csv`.
+
+
+## R802 — Spacecost cryogenic component-density citations (2026-11-16; rc-673, rc-674)
+
+Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` sets `_COMPONENTS["LCH4"].density_kg_per_L=0.422` in `spacecost/propellants.py:522`. `_blend` calculates the combined density from reciprocal component volumes (`spacecost/propellants.py:407-415`), and the generated methalox row stores `0.8326100293211036 kg/L` (`reference/propellants.csv`, row 4). The component notes identify the LCH4 price basis but no density source or temperature; `CITATIONS.md` has no LCH4-density citation. The frozen economicspace Stage 3 row carries the same combined density, and the verification worksheet derives tank fraction as `tank_kg_per_L / density_kg_per_L` (`campaign/verification_sheet.py:2404-2417`).
+
+IMO Resolution MSC.420(97), Annex 18, Table 3, printed p. 7, lists methane “Liquid density (kg/m³)” as 422.5 and its boiling temperature as 111.6 K; the table identifies ISO Annex A, Table A.3 as the reference and footnote * says the liquid property is at normal boiling point. This is 0.4225 kg/L, 0.0005 kg/L (about 0.12%) above Spacecost's stored component value. The table supports a near-boiling pure-methane reference but does not establish the code's exact temperature, pressure, composition, or rounding convention. **Verdict:** open `rc-673` to cite the LCH4 density with its phase and reference conditions, and reconcile the displayed precision while retaining the existing value pending a matched basis. No numeric replacement is inferred. Extracted: `extracted_data/r802_lch4_density_citation_scope.csv`.
+
+The same IMO table gives hydrogen’s “Liquid density” as 70.8 kg/m³ at 20.3 K, the normal boiling point; this converts exactly to Spacecost’s `LH2=0.0708 kg/L`, which feeds hydrolox density.
+
+NIST S 7101.52 Ver. 3, Appendix B, Table 1, printed p. 17, labels the measurement “Liquid Density (g/L)” and lists oxygen 1,141 g/L at 90.2 K and argon 1,395 g/L at 87.3 K, at sea level (101.325 kPa). The Spacecost component constants are LOX 1.141 kg/L and ArgonLIQ 1.395 kg/L; the first feeds kerolox, hydrolox, methalox, and CO/LOX blend densities, while the second feeds the VASIMR and cryogenic-argon rows. Both values match after unit conversion. **Verdict:** open `rc-674` to cite the source and state the reference conditions beside these component inputs and generated rows; keep the existing values pending confirmation that the model uses the same storage state. No numeric replacement is inferred. Extracted: `extracted_data/r802_cryogen_component_density_citation_scope.csv`.
+
+## R803 — Spacecost storable propellant density citations (2026-11-16; rc-675, rc-676)
+
+Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841 sets _COMPONENTS["RP-1"].density_kg_per_L=0.810 in spacecost/propellants.py:520 without a density citation. The value feeds kerolox and HTP/RP-1 blend calculations; reference/propellants.csv publishes kerolox density as 1.0152772969374169 kg/L. Spacecost CITATIONS.md names RP-1 price references but no density source. The economicspace verification sheet at e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7 derives tank fraction using tank_kg_per_L / density_kg_per_L (campaign/verification_sheet.py:2404-2417).
+
+DoD Manual 4145.26, Appendix 2 Table AP2.T18, printed p. 214, gives RP-1 as 0.81 kg/L at 20.0°C; the stored 0.810 matches at the source's precision. Verdict: open rc-675 for a direct density citation, reference-condition statement, and source trail through the generated blend rows; no numeric replacement inferred. Extracted: extracted_data/r803_spacecost_storable_propellant_density_citation.csv.
+
+The same table reports “Monomethyl hydrazine” at 0.87, nitrogen tetroxide at 1.45, hydrazine at 1.01, and UDMH at 0.79 kg/L, each at 20.0°C. Spacecost stores MMH 0.870, N2O4 1.450, hydrazine 1.010, and UDMH 0.793 kg/L; the first three match at table precision, while the table does not establish the third decimal of UDMH. These inputs feed MMH/NTO, UDMH/NTO, Aerozine-50/NTO, hydrazine monopropellant, and hydrazine arcjet density rows. The current citation guide lists DoD price references for hypergolic components but no density source. Verdict: open rc-676 to cite the ambient storable-liquid density basis and reconcile UDMH precision before changing any value. No numeric replacement inferred. Extracted: extracted_data/r803_spacecost_storable_propellant_density_citation.csv.
+
+
+## R804 — Spacecost HTP-98 density citation and reference condition (2026-11-16; rc-677)
+
+Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841 sets _COMPONENTS["HTP-98"].density_kg_per_L=1.431 in spacecost/propellants.py:567 without a density citation. The input feeds the HTP monopropellant row and the HTP/RP-1 blend; reference/propellants.csv publishes densities of 1.431 kg/L and 1.3058555133079848 kg/L, respectively. CITATIONS.md cites Hitt et al. for HTP impulse but not density.
+
+nasa_ntrs_20030020732_98pct_h2o2_density (Appendix A section 6.2, Table 6.1, printed p. 165) gives “Density of 98 % hydrogen peroxide at different temperatures” and 1,430.9 kg/m3 at 25°C. The surrounding text says the 98% H2O2 property data at 1 atm and ambient temperature are from an FMC Chemicals technical bulletin. The report’s bibliography identifies [29] as C. W. Raleigh, Technical Bulletin 67, Hydrogen Peroxide Physical Properties (FMC Chemicals, 1969; printed p. 213). Converting 1,430.9 kg/m3 gives 1.4309 kg/L, which rounds to Spacecost’s 1.431 kg/L. The report supports a 25°C table match but does not show that Spacecost intended that temperature.
+
+Verdict: open rc-677 to cite the HTP-98 component density and record its reference temperature. The table is secondhand from the FMC bulletin, and the separate RP-1 density condition remains covered by rc-675; neither source independently establishes the HTP/RP-1 mixture basis. Keep the current input pending a matched condition. No numeric replacement inferred. Extracted: extracted_data/r804_htp98_density_reference_conditions.csv.
+
+
+## R805 — Spacecost Aerozine-50 density citation and selected basis (2026-11-16; rc-678)
+
+Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841 sets _COMPONENTS[Aerozine50].density_kg_per_L=0.903 in spacecost/propellants.py:566 without a density citation. The component feeds the Aerozine-50/NTO blend; reference/propellants.csv publishes the generated blend density as 1.2064035626535627 kg/L. CITATIONS.md has Aerozine-50 engine-performance sources but no component-density basis.
+
+arnett_1969_nasa_tm_x53859_aerozine50_properties (NASA TM-X-53859, Table 1, printed p. 8) identifies “Aerozine 50 (50/50 UDMH and hydrazine)” and lists specific gravity “0.894 to 0.903 (0.9 @ std. atm)” and liquid density “56.1 lb/cu. ft. @ 77°F.” The stored 0.903 equals the range maximum; the tabulated 77°F density converts to 0.898635795279 kg/L, about 0.486% below the stored value. The report therefore gives a possible basis for 0.903 as the high end of a range and a distinct 77°F density value, but does not show which basis Spacecost intended.
+
+Verdict: open rc-678 to cite the component and document which density point and temperature the model uses. The Aerozine-50/NTO row also depends on N2O4, whose density basis is tracked separately in rc-676. Keep the current input pending the basis check. No numeric replacement inferred. Extracted: extracted_data/r805_aerozine50_density_source_basis.csv.
+
+
+## R806 — Spacecost supercritical-argon density method and source (2026-11-16; rc-679)
+
+Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841 sets ArgonSC density to 0.300 kg/L at 18 MPa. Its code comment says a Peng-Robinson calculation at 293.15 K / 18 MPa gives Z=0.919 and 0.321 kg/L, while a generalized-compressibility reading at Tr=1.945 and Pr=3.70 gives Z≈0.99 and 0.298 kg/L; it calls 0.300 “the round figure between them.” The operational Argon Hall row exports 0.300 kg/L, and CITATIONS.md does not name sources for either density method.
+
+tegeler_span_wagner_1999_argon_equation_of_state (Journal of Physical and Chemical Reference Data 28(3), abstract printed p. 779) presents a reference equation of state for argon. The abstract states the density uncertainty is “less than ±0.03%” for pressures up to 30 MPa and temperatures from 235 to 520 K, which includes the code’s 293.15 K / 18 MPa state. The equation-of-state article provides a reference for checking the input but has not yet been used here to calculate a replacement density.
+
+Verdict: open rc-679 to source the methods and document how their results produce the stored round value, or compare the input with the reference EOS at the modeled state. Keep 0.300 kg/L pending that check. No numeric replacement inferred. Extracted: extracted_data/r806_supercritical_argon_density_eos_basis.csv.
+
+
+## R813 - Krypton supercritical density basis (2026-11-16; rc-686)
+
+Spacecost code source `spacecost_krypton_supercritical_density_code_current_2026` sets `_COMPONENTS["Krypton"]` to 0.550 kg/L at 18.0 MPa (`spacecost/propellants.py:569`); it states no temperature or density reference. The `Krypton (Hall)` output row carries density 0.55 kg/L and tank mass per litre 0.06887755102040816 kg/L. Its note compares 0.55 kg/L supercritical krypton with xenon at 2.0 kg/L and states a 12.5% COPV mass fraction, without a source or temperature for the krypton density.
+
+The source `economicspace_propellant_tank_fraction_sheet_code_current_2026` records verification-sheet input I58 as 0.0688775510204 / 0.55 = 0.125231910946 kg tank per kg propellant. Open rc-585 and rc-586 cover tank mass per volume and storage-class multipliers; rc-679 covers ArgonSC density. None addresses the krypton density state or its reference condition.
+
+**Verdict:** cite the equation-of-state/property basis and state the temperature/pressure condition for 0.550 kg/L, or identify it as an engineering scenario and bracket the dependent tank fraction. Preserve current output pending a matched basis; no replacement inferred. **rc-686**. Extracted: `extracted_data/r813_krypton_supercritical_density_scope.csv`.
+
+
+## R814 - GN2 supercritical density basis (2026-11-16; rc-687)
+
+Spacecost code source `spacecost_gn2_supercritical_density_code_current_2026` sets `_COMPONENTS["GN2"]` density to 0.250 kg/L at 30.0 MPa (`spacecost/propellants.py:568`); it states no temperature or density source. The `Cold gas (GN2)` row uses the supercritical-gas tank model at 30 MPa, exports tank_kg_per_L=0.11479591836734694 kg/L, and reports a 46% COPV mass fraction without citing the density basis. The implied fraction from the row values is 0.459183673469 kg tank per kg propellant.
+
+Open rc-327 targets the nitrogen price and reference year; rc-586 covers the storage-class tank mass per litre; rc-679 covers ArgonSC density; rc-686 covers Krypton density. None addresses the GN2 density state or its reference temperature.
+
+**Verdict:** cite the equation-of-state/property basis for 0.250 kg/L at 30 MPa and state the temperature, or identify it as an engineering scenario and bracket the dependent tank fraction. Preserve current output pending a matched basis; no replacement inferred. **rc-687**. Extracted: `extracted_data/r814_gn2_supercritical_density_scope.csv`.
+
+
+## R815 - Xenon supercritical density basis (2026-11-16; rc-688)
+
+Spacecost code source `spacecost_xenon_supercritical_density_code_current_2026` sets `_COMPONENTS["Xenon"]` to 2.000 kg/L at 10.0 MPa (`spacecost/propellants.py:527`). The `Xenon (Hall / ion)` row labels storage supercritical at ambient temperature but states no numeric temperature or density source. The row exports tank_kg_per_L=0.038265306122448974 kg/L and density 2.0 kg/L; their ratio is 0.019132653061 kg tank per kg propellant, matching the code comment's 1.9% comparison.
+
+The row note cites `inl_rpt_23_75203_krypton_xenon_recovery_cost_benefit` for a $60/L to $10,243/kg price conversion "at STP". That citation does not establish the 10 MPa supercritical storage density. Applied rc-186 concerns price attribution; rc-585/rc-586 cover tank mass per litre; rc-679 covers ArgonSC density; rc-686 and rc-687 cover Krypton and GN2 density. None targets Xenon density.
+
+**Verdict:** cite an equation-of-state/property source for 2.000 kg/L at 10 MPa and define the ambient reference temperature, or identify the density as an engineering scenario and bracket its effect on tank fraction. Preserve current output pending a matched basis; no replacement inferred. **rc-688**. Extracted: `extracted_data/r815_xenon_supercritical_density_scope.csv`.
+
+
+## R816 - Conceptual propellant density and storage-state gaps (2026-11-16; rc-689, rc-690)
+
+The `Direct fusion drive` and `Antimatter-catalysed` rows in Spacecost source `spacecost_concept_propellant_density_code_current_2026` each set `density_kg_per_L=0.100` and use `storage_class="supercritical_gas"` with the 10.0 MPa COPV tank model. The exported rows each carry `tank_kg_per_L=0.038265306122448974` kg/L; divided by the density, this implies 0.382653 kg tank per kg row propellant. Neither density has a cited property source or numeric reference temperature.
+
+The Direct fusion drive note identifies D-He3 / PFRC-2 and Isp context but does not give the blend ratio or storage-density basis. The Antimatter-catalysed note says a few micrograms initiate a much larger microfission charge, without identifying which material the row density represents. Existing rc-575 concerns D-He3 cost and blend mass basis and already calls for gas-density/pressure documentation as a per-litre cost basis; rc-689 separately records how that density sets the COPV tank-mass ratio. Rc-540 concerns antimatter production cost and does not target the microfission-charge density boundary.
+
+**Verdict:** define the composition or mass boundary and storage state for each row, then cite a matched property basis or label the density as a scenario and bracket its effect on tank mass. Preserve current values pending a defined basis; no replacement inferred. **rc-689** (D-He3 density/state); **rc-690** (antimatter propellant boundary/density). Extracted: `extracted_data/r816_concept_propellant_density_scope.csv`.
