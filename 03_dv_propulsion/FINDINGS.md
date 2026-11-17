@@ -608,7 +608,7 @@ At economicspace `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` l
 
 The current economicspace verification-sheet check flags I55=300 m/s NEED BACKING. `campaign/verification_sheet.py` renders the input from `DV["floor_ret"]` as `modules/calc.py`, `asteroid_dv_options`, “the return leg's floor, applied the same way.” The current `asteroid_dv_options` comment says “The 3,000 and 300 m/s floors are model safeguards, not typical leg requirements, and have no source.”
 
-The function applies `max(legs[leg] * 1,000, 300)` to the raw return leg, then applies the configured delta-v ceiling. The 300 m/s value is therefore a model floor, not a measured or typical return requirement. It is distinct from open `rc-583` for I54’s 3,000 m/s outbound floor and closed `rc-514` for the default propulsive return fallback.
+The function applies `max(legs[leg] * 1,000, 300)` to the raw return leg, then applies the configured delta-v ceiling. The 300 m/s value is therefore a model floor, not a measured or typical return requirement. It is distinct from applied `rc-387`, which covers both floor comments in `modules/calc.py`; open `rc-583` for the separate 25-year maximum-mission-duration cutoff (I54 in its recorded archived worksheet); and closed `rc-514` for the default propulsive return fallback.
 
 Open `rc-633` to document the safeguard’s scope and sensitivity; the 300 m/s floor is unchanged. Extracted: `extracted_data/r762_return_dv_floor_scope.csv`.
 
@@ -617,3 +617,125 @@ Open `rc-633` to document the safeguard’s scope and sensitivity; the 300 m/s f
 **economicspace_cruise_time_scenario_prior_code_current_2026**: at economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `campaign/worked_calculation.py` lines 206–215 sets `TAU_CRUISE_FIT_YR_PER_M_S=0.00023`. Its comment lists scenario points of 4,500 m/s / 1.0 yr, 6,500 / 1.5 and 8,500 / 2.0, giving 0.000222–0.000235 yr per m/s; 10,500 m/s / 3.5 yr is off the line. It says the values were read off by eye, no residual was recorded, and the durations are scenarios, so the coefficient is a scenario prior. The 0.5-year per-leg floor is a separate judgment.
 
 **economicspace_cruise_time_fit_verification_sheet_code_current_2026**: lines 1935–1943 still describe I5 as a “linear fit” calibrated on the delta-v table’s `duration_yr` values and say nothing sources those durations. A fresh `verification_sheet.py --check` passes and reports 85 inputs NEED BACKING; the current worksheet flags I5=0.00023 yr per m/s. Existing **rc-463** is applied for the code-comment change; open **rc-534** concerns the separate floor’s basis. Verdict: carry the scenario points, off-line case, absent residual and separate floor into I5’s explanation while retaining NEED BACKING unless an external calibration source is found. Keep the coefficient unchanged; no replacement inferred. Extracted: `extracted_data/r766_cruise_fit_worksheet_scope_gap.csv`.
+
+
+## R786 — Xenon thruster specific-mass provenance (2026-11-15)
+
+nasa_nextc_flight_ion_system_status_2020 (NTRS 20205005689), Table 1 p. 4, lists 235 mN at the highest throttle point; p. 5 says “weighs approximately 14kg.” The approximate mass/thrust ratio is 59.6 kg/N; that calculation is illustrative because the source gives an approximate mass, not a matched specific-mass value. oleson_mcguire_2011_compass_enceladus_sep_stage (NASA/TM-2011-216973), §4.6.5.1 p. 37, says “Mass is 12.7 kg (13.5 kg with cable harnesses)”; §4.6.5.2 p. 38 identifies the tested unit as PM1 and reports “producing 236 mN thrust” at full power. That mass/thrust ratio is 53.8 kg/N by calculation, but it is the predecessor NEXT PM1, not NEXT-C flight hardware.
+
+spacecost_xenon_thruster_specific_mass_current_2026 records the current Spacecost Xenon row: thruster_kg_per_n=54.0; its adjacent code comment pairs 12.7 kg and 236 mN and attributes them to NEXT-C. The reference row does not cite this kg/N field. economicspace_xenon_stage3_specific_mass_row_current_2026 records the frozen Stage 3 value, 54.0 kg/N. economicspace_xenon_specific_mass_verification_sheet_current_2026 maps the field to Mars-orbit input I56; the worksheet check flags I56=54 NEED BACKING.
+
+Verdict: open rc-656 to document the hardware generation and mass boundary for 54 kg/N in Spacecost and the frozen worksheet. If the value is a NEXT PM1 proxy, label that transfer; if it is intended as NEXT-C, cite its matched mass basis. Retain 54 pending direct matched evidence; no numeric replacement inferred. Extracted: extracted_data/r786_xenon_thruster_mass_per_thrust_citation.csv.
+
+
+## R787 — Argon Hall performance-input citation gap (2026-11-15)
+
+- **spacex_2023_starlink_progress_report_thruster_propellants**: the Thrusters section (printed p. 48) says the second-generation satellites produced “2.4x the thrust ... with a 1.5x increase in specific impulse” relative to first generation. The report gives a relative change, not an absolute Isp, efficiency or thruster mass.
+- **nasa_s3vi_2026_small_spacecraft_inspace_propulsion**: chapter 4.0 (printed p. 90) says second-generation Starlink “made another first using argon as a Hall thruster propellant”; this passage gives no performance values.
+- **spacecost_argon_hall_performance_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, `spacecost/propellants.py` lines 229–230 map Argon Hall to 40.0 kg/N, 0.40 efficiency and continuous scaling; `reference/propellants.csv` row 8 stores Isp=1,500 s and the same specific-mass, efficiency and scaling values. The row note names Starlink V2 but cites only the relative performance claim and Argon pricing.
+- **economicspace_argon_stage3_performance_row_current_2026**: the frozen Stage 3 row at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `campaign/stage3/spacecost-0.5.0/propellants.csv` row 8, carries 1,500 s, 0.40, 40.0 kg/N and continuous scaling without a source for these performance inputs.
+- Verdict: cite a matched Argon Hall device and state the efficiency and hardware-mass boundaries, or label the values as generic model scenarios; carry the scope into the frozen row. Retain the current values pending matched evidence, with no numeric replacement inferred. Distinct from rc-310 (Argon price) and rc-584/rc-625 (Krypton performance fields). **rc-657**. Extracted: extracted_data/r787_argon_hall_performance_citation_gap.csv.
+
+
+## R788 — Krypton Hall code comparison lacks a matched source (2026-11-15)
+
+- **kim_et_al_2019_spt140pm_krypton_iepc465**: IEPC-2019-465 (printed p. 4) reports a modified SPT-140PM krypton operating point at about 10 kW and 400 V with “thrust around 500 mN, thrust efficiency over 60% and specific impulse over 2600s.” The paper says the efficiency at that voltage was at least 15% higher than xenon for that modified model.
+- **spacecost_krypton_hall_thruster_row_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, `spacecost/propellants.py` line 228 describes the Krypton Hall anchor as an SPT-140 body with about 85% of xenon thrust and about 10 percentage points less efficiency, with no citation or test point. The current data row calls 2,000 s, 0.45 and 35 kg/N generic mission-model selections, not demonstrated Krypton Hall performance.
+- Verdict: the modified SPT-140PM result is not a direct source for the code comment's unqualified comparison; identify the matching test/configuration and efficiency boundary or label the ratios as assumptions. Preserve the comment values pending matched evidence, with no numeric replacement inferred. Distinct from rc-584 and rc-625, which target frozen worksheet inputs. **rc-658**. Extracted: extracted_data/r788_krypton_spt140_comparative_comment_scope.csv.
+
+
+## R790 — Water resistojet model mass and efficiency (2026-11-15)
+
+- **mirtich_1982_resistojet_large_spacecraft_systems**: NASA TM-83489, printed p. 4, gives a generic resistojet system-mass relation including thruster, PPU, and thermal-rejection mass. It states “PPU = 88 percent efficient” and “S = 20 percent assumed allowance for structure, feed lines, etc.” The power-based comparator is not a water-specific 10 kg/N or 0.75 total-thrust-efficiency result.
+- **spacecost_water_resistojet_model_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, `spacecost/propellants.py` line 233 maps Water electrothermal/resistojet to 10.0 kg/N, 0.75 efficiency, and continuous scaling. The comment says “high thrust density, low Isp” without a performance citation.
+- **spacecost_water_resistojet_reference_row_current_2026**: `reference/propellants.csv` row 20 stores the same three inputs; its notes discuss the Isp range and water use but give no source for these fields.
+- **economicspace_water_resistojet_stage3_row_current_2026**: at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `campaign/stage3/spacecost-0.5.0/propellants.csv` row 20 freezes the same values without a matched device citation.
+- Verdict: cite a device-matched water-resistojet mass and efficiency basis with clear head/system and power boundaries, or label the fields as model assumptions. Mirtich’s generic model is a scope comparator, not the basis for these inputs; no numeric replacement inferred. Distinct from rc-378 (water-resistojet Isp), rc-659 (water-ion inputs) and rc-577 (water price). **rc-660**. Extracted: extracted_data/r790_water_resistojet_mass_and_efficiency_citation_gap.csv.
+
+## R789 — Water ion performance and flight attribution (2026-11-15)
+
+- **nakagawa_koizumi_kawahara_komurasaki_2019_water_ion_performance**: Acta Astronautica 157, abstract p. 294, reports the miniature water microwave/ECR ion thruster's “highest specific impulse was 665 ± 59 s while neglecting the neutralizer.” The abstract reports maximum thrust 164 ± 13.4 μN below 2 W microwave input; it is a CubeSat-scale comparator.
+- **pale_blue_2023_water_resistojet_inorbit**: Pale Blue's March 13, 2023 release identifies the propulsion system operated on EYE as a water-vapor resistojet; EYE launched January 3, 2023 and the reported operation occurred March 3.
+- **pale_blue_2025_water_ion_first_inorbit**: Pale Blue's September 10, 2025 release reports its first successful in-orbit operation of a water ion thruster.
+- **spacecost_water_ion_performance_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, `spacecost/propellants.py` line 232 maps Water gridded ion/ECR to 80 kg/N and 0.35 efficiency; `reference/propellants.csv` row 22 stores Isp=900 s and describes 800–1,000 s. It names Pale Blue, ESA and JAXA but gives no source for the performance fields or the qualification claim.
+- **economicspace_water_ion_stage3_row_current_2026**: the frozen Stage 3 row at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `campaign/stage3/spacecost-0.5.0/propellants.csv` row 21, preserves the same performance values and 2023 Pale Blue ion-flight statement.
+- Verdict: the measured miniature ECR ion result does not establish the model's cargo-scale efficiency or mass per thrust. Separate the 2023 Pale Blue resistojet flight from its 2025 water-ion operation; cite named ESA/JAXA programs and their maturity if retained. Preserve numeric inputs pending matched evidence; no numeric replacement inferred. Distinct from rc-244, rc-378 and rc-577. **rc-659**. Extracted: extracted_data/r789_water_ion_performance_and_flight_attribution.csv.
+
+## R791 — VASIMR model point, mass boundary and endurance citation (2026-11-15)
+
+- **squire_etal_2011_vx200_operation_200kw_iepc154**: IEPC-2011-154, printed p. 1, reports the VX-200 argon operating point at 200 kW: “72 ± 9%” efficiency, “4900 ± 300 seconds” specific impulse and “5.8 ± 0.4 N” thrust. This does not identify a 4,000 s / 0.50 matched model point or the 300 kg hardware boundary.
+- **squire_etal_2013_vasimr_system_mass_iepc149**: IEPC-2013-149, printed p. 1, gives a 50–250 kW, 3,000–5,000 s power-dependent model for a complete TC-1 engine system. Printed p. 3 lists rocket core, RF power processing, HTS magnet, thermal management, propellant management and command/data handling; it treats the combined magnet/core/high-temperature management as analogous to a thruster and RF processing as analogous to a PPU. This system model does not establish 53 kg/N for thruster-head mass.
+- **chang_diaz_etal_2022_vasimr_recent_progress_iepc525**: IEPC-2022-525, printed p. 9, reports the VX-200SS longest firing as “88 hours of continuous operation at 80 kW” in 2021. The paper distinguishes this endurance test from the earlier VX-200 4,900 s / 70% performance benchmark at 200 kW; printed p. 10 identifies 55.5 kg as the mass of a 120 kW second-stage PPU alone.
+- **spacecost_vasimr_model_mapping_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, `spacecost/propellants.py` line 237 maps VASIMR to 53.0 kg/N, 0.50 efficiency and continuous scaling. The code comment derives 53.0 from approximately 300 kg / 5.7 N, while the file header defines `thruster_kg_per_n` as thruster-head mass per newton.
+- **spacecost_vasimr_reference_row_current_2026**: `reference/propellants.csv` row 37 stores 4,000 s and repeats the mass, efficiency and scaling fields. Its note says VX-200SS ran 100 hours at 80 kW and calls 4,000 s a single model point without citing the selected operating point.
+- **economicspace_vasimr_stage3_row_current_2026**: at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, the frozen `campaign/stage3/spacecost-0.5.0/propellants.csv` row 37 preserves the same inputs and endurance statement. The verification-sheet code reads `isp_vac_s` from this row and, for electric stages, reads `thruster_efficiency` and `thruster_kg_per_n` from it.
+- Verdict: cite the model's Isp/efficiency operating point or label the values as mission-model assumptions; define the hardware mass boundary and basis for 300 kg / 5.7 N before treating it as thruster-head kg/N. Correct the rounded endurance statement to the reported 88 hours if retained. Keep model values pending matched performance and mass evidence; no numeric replacement inferred. Distinct from rc-656, rc-657, rc-658 and rc-660. **rc-661**. Extracted: `extracted_data/r791_vasimr_performance_mass_boundary_and_endurance_citation.csv`.
+
+## R792 — Carbonaceous-asteroid CO/LOX claim needs a process citation (2026-11-15)
+
+- **ganguly_saxena_1989_volatile_bearing_carbonaceous_chondrites**: NASA NTRS 19910015908, Space Manufacturing 7, printed p. 97 abstract, reports about 135 g of modeled volatiles per kg of fixed-composition C2 chondrite heated at 1 bar over 400–800 °C, including CO among H2O, H2, CH4 and CO2. This is an equilibrium calculation, not a measured extraction yield or a process for recovering both CO and O2.
+- **spacecost_co_lox_propellant_row_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, spacecost/propellants.py line 1807 starts the CO/LOX row with isru_feed_kg_per_kg=None and isru_feed_material=None; reference/propellants.csv row 45 says both propellants come from carbonaceous regolith or a CO2 atmosphere and calls the route “makeable from a C-type asteroid.” The cited Hepp/Linne engine sources do not support carbonaceous-asteroid production of both propellants.
+- **economicspace_carbon_route_decline_current_2026**: at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, CLAUDE.md line 624 separately records the organics-to-methane route as declined because gasification has no source and its cost was charged nothing.
+- Verdict: cite Ganguly & Saxena only as a theoretical volatile-equilibrium comparator. A source for a practical route must establish feed composition and selective recovery of both CO and O2, with the process energy and mass boundary; C2 chondrite is not a direct assignment to asteroid C taxonomy. Keep the CO/LOX feed fields null and the 260 s value unchanged pending matched evidence. **rc-662**. Extracted: extracted_data/r792_carbonaceous_co_lox_route_scope.csv.
+
+## R793 — Mars methalox ISRU claim lacks a row citation (2026-11-16)
+
+- **muscatello_etal_2013_mars_atmospheric_processing_module**: the NASA SPACE 2013 abstract says the project aimed to “build and demonstrate a methane/oxygen propellant production system in a Mars analog environment” (NTRS abstract PDF p. 1). It reports a Sabatier reactor combining captured CO2 with H2, a test production rate of 31.7 g CH4/hr, and 2.22 kg CH4/O2 propellant per 14-hour day including oxygen from electrolysis of water recovered from regolith, which also supplies the H2 (p. 1).
+- **spacecost_methalox_isru_claim_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` line 777 and `reference/propellants.csv` row 4 state “ISRU-makeable on Mars” without a citation.
+- **economicspace_methalox_isru_stage3_row_current_2026**: at `economicspace@e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, frozen Stage 3 `propellants.csv` row 4 carries the same phrase without a citation.
+- Verdict: cite the NASA NTRS abstract in the Spacecost methalox note and its code comment, and scope the claim to the reported Mars-analog ground system and its atmosphere-CO2/water-derived-hydrogen route. The abstract does not establish an operating production system on Mars or a flight system. No numeric replacement inferred. **rc-663**. Extracted: `extracted_data/r793_mars_methalox_isru_citation_scope.csv`.
+
+## R797 — Spacecost standard-gravity citation (2026-11-16)
+
+- `bipm_1901_3rd_cgpm_standard_acceleration_gravity`: 3rd CGPM Declaration 2 (1901), Proceedings p. 70, gives the conventional standard acceleration due to gravity as “980.665 cm/s²”; unit conversion gives 9.80665 m/s².
+- `spacecost_standard_gravity_citation_gap_code_current_2026`: at Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/units.py` defines `G0_M_S2=9.806_65` and labels it standard gravity used in the rocket equation. `CITATIONS.md` lists CODATA 2018 for Newtonian G but has no standard-gravity entry. The economicspace worksheet at `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7` identifies its G0 input as the same Spacecost constant.
+- Verdict: the conventional standard value matches Spacecost’s stored constant, but Spacecost does not cite it in code or its citation list. `rc-667` requests citation metadata only; the value is unchanged.
+- Extracted: `extracted_data/r797_standard_gravity_constant_citation.csv`.
+
+
+## R808 — Delta-v candidate cross-reference corrected (2026-11-16)
+
+- **economicspace_return_dv_floor_verification_sheet_code_current_2026**: the R762 evidence record is for the worksheet’s 300 m/s return-floor input I55.
+- **rc-583** targets the 25-year `CalcConfig.max_mission_duration_yr` cutoff; it does not target an outbound delta-v floor. **rc-387** is applied for both the 3,000 m/s outbound and 300 m/s return floor comments.
+- Verdict: corrected the rc-633 evidence and R762 cross-reference. rc-633 remains open for worksheet treatment of the 300 m/s return floor; no candidate status or model value changed. Comparison: `extracted_data/r808_candidate_cross_reference_audit.csv`.
+
+## R810 — TLI-to-NRHO row cites a source that does not give its delta-v (2026-11-16)
+
+- **spacecost_tli_nrho_insertion_row_current_2026**: at Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/delta_v_segments.csv` row 15 stores 450 m/s and attributes the “~0.4-0.45 km/s” range to Whitley & Martinez 2016.
+- **whitley_martinez_2015_nro_staging_orbits**: Table 3 (printed p. 4), “Surface Access Costs from Various Orbits,” gives 730 m/s for “NRO (Pol.)” under transfer to/from LLO. Table 6 (printed p. 8) gives NRO lunar access to Polar LLO as 730 m/s and marks Earth access feasible; these tables do not give a one-way TLI-to-NRHO insertion value.
+- **benson_asher_reese_2025_fast_transfer_nrho_presentation**: NASA NTRS 20250000718, slide 5, states “400 – 450 m/s from TLI to NRHO” under easy access to and from Earth. This directly supports the row’s 450 m/s upper-end selection for fast Gateway access.
+- Spacecost `CITATIONS.md` already lists Benson, Asher & Reese (2025) among the cross-study components for the aggregate LEO-to-NRHO row (rc-357); the separate TLI-to-NRHO row note still attributes its value to Whitley & Martinez.
+- Verdict: cite Benson et al. slide 5 for the TLI-to-NRHO range, define 450 m/s as the selected upper end for this model row, and reserve Whitley & Martinez for the NRO-to-LLO access context. Preserve 450 m/s. No numeric replacement inferred. **rc-683**. Extracted: `extracted_data/r810_spacecost_tli_nrho_insertion_citation_scope.csv`.
+
+
+## R817 - NRHO-to-LLO duration basis (2026-11-16; rc-691)
+
+Spacecost source `spacecost_nrho_lunar_orbit_duration_code_current_2026` records 730 m/s and `duration_yr=0.01` for `NRHO → low lunar orbit` (`reference/delta_v_segments.csv`, row 22). The row note cites Whitley & Martinez for the delta-v but gives no duration, propulsion regime or phase boundary.
+
+The registered Whitley & Martinez source `whitley_martinez_2015_nro_staging_orbits` gives the NRO (Polar) to/from LLO case as 730 m/s with a 0.5-day transfer time (Table 3, printed p. 4); Table 6 (printed p. 8) states “dV = 730 m/s, dT = .5 day” for lunar access to polar LLO. Spacecost’s 0.01 yr converts to 3.6525 days, 7.305 times that source duration. Applied rc-357 concerns the aggregate LEO-to-NRHO benchmark; open rc-683 concerns TLI-to-NRHO insertion; rc-544 concerns NEA-to-NRHO duration. None targets this row’s time field.
+
+**Verdict:** match the propulsion and timing boundary. If this is the same one-way NRO-to-polar-LLO transfer, cite the 0.5-day source value and reconcile the stored 0.01 yr; otherwise define and source the different duration. Preserve the current value pending that match; no replacement inferred. **rc-691**. Extracted: `extracted_data/r817_nrho_lunar_orbit_transfer_duration.csv`.
+
+## R818 — economicspace worksheet citation gaps (2026-11-16)
+
+- **economicspace_outbound_dv_floor_code_current_2026**: at fetched economicspace origin/main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `modules/calc.py` lines 3573-3579 apply a 3,000 m/s lower clamp to outbound delta-v before the configured 20,000 m/s ceiling. The code comment says, “The 3,000 and 300 m/s floors are model safeguards, not typical leg requirements, and have no source.”
+- **economicspace_outbound_dv_floor_verification_sheet_code_current_2026**: `campaign/verification_sheet.py` lines 2363-2367 register worksheet input I54=3,000 m/s and cite the model function: “the outbound leg is floored before anything else touches it.” That input does not carry the code comment's safeguard and no-source scope.
+- The write-free worksheet check builds the 2018 DT case (calc 1.26.0; frozen Stage 2 1.12.0 and Stage 3 0.5.0) and reports 85 inputs marked NEED BACKING; I54 is among them. The check ran on the local economicspace prototype checkout with its opt-in Rust path unset; the worksheet file is byte-identical to fetched origin/main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`. Applied rc-387 records the code-comment scope for both floors; open rc-633 targets return input I55 only; open rc-459 covers the separate 20,000 m/s ceiling.
+- The same check flags I4=6,578.14 km NEED BACKING. Open rc-356 already tracks the missing attribution for the 6,378.14 km Earth radius plus the 200 km LEO convention. Fetched origin/main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7` has worksheet SHA-256 `27889e81536288cffa5fc5a2500691254e0f03894b9eb01aa824530b528a5e15`; the I4 description still omits the IERS and NASA sources. No reference-orbit value changed.
+
+**Verdict:** carry the model-safeguard and no-source status into worksheet I54 and show which cases bind or the sensitivity to the floor. Preserve 3,000 m/s pending a trajectory-matched basis; no numeric replacement inferred. **rc-692**. Extracted: `extracted_data/r818_outbound_dv_floor_worksheet_scope.csv`. For the rc-356 recheck, see `extracted_data/r818_leo_radius_worksheet_gap_recheck.csv`.
+
+
+`spacecost_xenon_thruster_specific_mass_current_2026`: at Spacecost origin/main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the Xenon row still assigns 54.0 kg/N and `spacecost/propellants.py` still labels the basis “NEXT-C 12.7 kg / 236 mN.” `economicspace_xenon_specific_mass_verification_sheet_current_2026` still maps that input to I56; the hardware mass boundary remains unresolved. **rc-656** remains open. Existing extraction: `extracted_data/r786_xenon_thruster_mass_per_thrust_citation.csv`.
+
+## R824 — Mission-duration current worksheet input recheck (2026-11-17)
+
+- **economicspace_max_mission_duration_verification_sheet_code_current_2026**: the current 2026-11-16 best-case worksheet maps the 25-year cap to I96 and marks it NEED BACKING. **economicspace_max_mission_duration_code_current_2026** records CalcConfig.max_mission_duration_yr at modules/calc.py line 442; the setting remains an eligibility cap with no source setting the 25-year limit. Earlier archived check I54 is the same setting.
+- **Verdict**: keep rc-583 open and carry the cap scope into current I96 as well as archived I54; no numeric replacement inferred.
+- Extracted: extracted_data/r824_mission_duration_live_sheet_i96.csv.
+
+## R825 — Current delivery-chain and delta-v worksheet inputs (2026-11-17)
+
+- The current best-case sheet maps the model's outbound and return delta-v floors to I59=3,000 m/s and I60=300 m/s, both NEED BACKING. The previous archived sheet references I54/I55 for the same safeguards. **rc-692** and **rc-633** now point to the current cells; applied **rc-387** covers the code comments but does not supply mission-specific floor values.
+- Current lunar_surface I20=4,050 m/s is formed in Spacecost's `DELIVERY_CHAINS` from LEO→TLI=3,150 m/s plus TLI→low lunar orbit (LOI)=900 m/s. Spacecost delta-v rows 14 and 21 cite Apollo data; Orloff's NASA SP-2000-4029 burn tables report TLI cutoffs around 3.04-3.20 km/s and LOI cutoffs around 889-922 m/s. I20 is flagged NEED BACKING because the worksheet names the chain but omits the component source trail. This is distinct from the 6,100 m/s LEO→lunar-surface composite, which also includes powered descent. **rc-697** records the worksheet citation gap; no numeric replacement inferred.
+- Extracted: `extracted_data/r825_live_sheet_delivery_dv_inputs.csv`.

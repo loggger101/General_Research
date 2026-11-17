@@ -601,3 +601,24 @@ The current economicspace verification-sheet check flags I11=3.9 g/cm3 as “NOT
 `asteroidcatalog_m_class_density_fallback_current_2026` records the M-class row reviewed under `rc-496`. `siltala_granvik_2021` reports 16 Psyche at 3.88 +/- 0.25 g/cm3; `zhang_etal_2023_m_type_density_variation` compiles individual M-type object estimates in Table 5 (printed p. 11). AsteroidCatalog main a2c527c labels 3.9 an explicit scenario and names those comparators; the economicspace worksheet still prints only “the taxonomy estimate.” Individual-object comparators do not establish a class distribution or 2018 DT measurement.
 
 Open `rc-632` for the worksheet citation path and class-scope limitation; the 3.9 g/cm3 value is unchanged. Extracted: `extracted_data/r762_2018_dt_density_worksheet_citation_gap.csv`.
+
+## R795 — Psyche bibliography entry for the M-row source (2026-11-16)
+
+- `elkins_tanton_2020_psyche_preflight`: Elkins-Tanton et al. (2020), PDF p. 19, conclusions: “between ~30 vol% metal ... and ~60 vol% metal.”
+- `asteroidcatalog_m_row_psyche_citation_list_code_current_2026`: at AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `taxonomy.py` lines 549-554 cite Elkins-Tanton et al. (2020) in the M-row Psyche note. `CITATIONS.md` section 3 lists Siltala & Granvik (2021) and Farnocchia et al. (2024) for Psyche but has no Elkins-Tanton entry; section 2 says section 3 lists literature behind sourced values.
+- Verdict: the paper supports a source cited by the M-row note, but its bibliographic entry is absent from the package citation list. `rc-665` requests a complete reference only; the stored values are unchanged.
+- Extracted: `extracted_data/r795_psyche_citation_bibliography_gap.csv`.
+
+## R796 — Tholen taxonomy source missing from AsteroidCatalog bibliography (2026-11-16)
+
+- `tholen_1984_asteroid_taxonomy_dissertation`: original dissertation PDF title page p. 1 identifies *Asteroid taxonomy from cluster analysis of photometry* by David James Tholen, University of Arizona Ph.D. dissertation, 1984.
+- `asteroidcatalog_tholen_taxonomy_citation_gap_code_current_2026`: at AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `taxonomy.py` describes `TAXONOMY_COMPOSITION` as covering Bus-DeMeo and Tholen classes. `CITATIONS.md` section 2 says Tholen classes are accepted and mapped but lists DeMeo et al. (2009) and the PDS taxonomy bundle without an original Tholen reference.
+- Verdict: the original taxonomy source is absent from the bibliography text accompanying the Tholen-class mapping. `rc-666` requests a complete reference only; class data and values are unchanged.
+- Extracted: `extracted_data/r796_tholen_taxonomy_bibliography_gap.csv`.
+
+## R823 — C/S albedo fallback citation scope (2026-11-16)
+
+- **trilling_mueller_et_al_2010_exploreneos_i**: ExploreNEOs I, PDF p. 5 (printed p. 7), describes S asteroids as “moderately high albedos (>0.15)” and C asteroids as “low albedos (<0.10).” This is Near-Earth Object survey context for a coarse albedo convention.
+- **asteroidcatalog_albedo_class_fallback_code_current_2026**: AsteroidCatalog enrich.py lines 95–106 at main a2c527c09eb39618d7fd26b2b180f730ea906b8b applies pV < 0.10 → C, otherwise S. Its comment reports 84.0% correct across 65,159 bodies with both source class and measured albedo; the best split, 0.13, reaches 85.2%. The package CITATIONS.md has no Trilling et al. entry.
+- **Verdict**: cite the near-Earth albedo description and identify 0.10 as a coarse fallback convention, not a universal taxonomy boundary. The paper describes C as below 0.10 and S as above 0.15, leaving 0.10 ≤ pV ≤ 0.15 outside those stated ranges even though the code maps that interval to S. It does not validate the classifier or its accuracy beyond its population; retain the code's sample result as a separate empirical check. No numeric replacement inferred. **rc-695**; distinct from **rc-386** (M-type fallback) and **rc-481** (X-complex proportions).
+- Extracted: extracted_data/r823_albedo_fallback_cutoff_citation.csv.

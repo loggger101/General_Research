@@ -257,3 +257,14 @@ Open `rc-627` for the worksheet citation path and scope; no model value or range
 `spacecost_volatile_cargo_containment_row_current_2026`: the current Spacecost row labels 0.05 [0.03, 0.12] kg/kg an engineering estimate and says no published source gives the containment fraction or the stability of a passive sealed, shaded water hold over a multi-year cruise. `jones_2017_resupply_life_support_water_tank_mass` p. 4 reports a Shuttle potable-water tank at 21.2 kg for 103 kg of water; it is a pressurized-tank comparator, not the incremental passive-hold fraction. `nasa_tm_2011_long_term_cryogenic_storage_microgravity` and `plachta_2017_cryo_zbo_goals` concern cryogenic propellant tanks with zero-boil-off hardware. Applied rc-184 and rc-373 changed Spacecost notes, not the frozen economicspace row or worksheet input.
 
 Verdict: carry the estimate status and comparator limits into I70 and remove the frozen row's unsupported citation claim. Preserve 0.05 [0.03, 0.12]; no numeric replacement inferred. **rc-645**. Extracted: `extracted_data/r775_volatile_cargo_containment_worksheet_gap.csv`.
+
+## R824 — Current dark-period worksheet input recheck (2026-11-17)
+
+- **economicspace_power_storage_verification_sheet_code_current_2026**: the current 2026-11-16 best-case worksheet maps dark_0=0.58 h to I69 and marks it NEED BACKING, with the generic reason that the row notes name no source.
+- **spacecost_power_storage_rows_current_2026**: the current Spacecost row notes cite Kascak et al. (NASA/TM-2001-211138, p. 1) for a 35-minute eclipse in a 92-minute ISS orbit, then state that no source shows deep-space trains are specified against that duration. This supports the ISS comparator, not a deep-space 1-AU baseline.
+- **Verdict**: extend rc-627 to current I69. Preserve the 0.58 h comparator and distinguish its unsupported deep-space baseline use; no numeric replacement inferred.
+- Extracted: extracted_data/r824_dark_period_live_sheet_i69.csv.
+
+## R825 — Current worksheet input numbers for storage and containment (2026-11-17)
+
+The current sheet's I61=20,000 m/s is the outbound delta-v ceiling, not the frozen power-storage I61=0.50 geometry factor. In the live sheet, `dark_0` is I69=0.58 h; frozen Stage 3 storage input I64 is the earlier 0.58 h row. Current I70=10.222 h is the rotation-period fallback, while frozen Stage 3 I70 is volatile cargo containment at 0.05 kg/kg. **rc-627** remains scoped to frozen I61-I64 plus current I69; **rc-645** remains scoped to the frozen containment row. Extracted: `extracted_data/r825_live_sheet_input_id_collisions.csv`.

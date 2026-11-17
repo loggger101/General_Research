@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_xenon_thruster_specific_mass_current_2026,Xenon thruster specific mass,54.0,kg/N,spacecost/spacecost/propellants.py line 227; reference/propellants.csv row 7,Code comment attributes 12.7 kg / 236 mN to NEXT-C; reference row has no source for the field.
+economicspace_xenon_stage3_specific_mass_row_current_2026,Frozen Stage 3 Xenon specific mass,54.0,kg/N,campaign/stage3/spacecost-0.5.0/propellants.csv row 7,Frozen input consumed by verification worksheet; row note does not cite the kg/N value.
+economicspace_xenon_specific_mass_verification_sheet_current_2026,Mars-orbit verification input I56,54,kg/N,campaign/verification_sheet.py line 3202; mars_orbit__raw__search-off check,Worksheet check flags NEED BACKING.
+nasa_nextc_flight_ion_system_status_2020,NEXT-C thruster mass,approximately 14,kg,"printed p. 5, NEXT-C Thruster Design Overview",Approximate thruster mass; not a direct mass-per-thrust value.
+nasa_nextc_flight_ion_system_status_2020,NEXT-C maximum thrust,235,mN,"printed p. 4, Table 1, highest throttle point",Table lists performance point; pair with approximate p. 5 mass only as an illustrative calculation.
+,NEXT-C illustrative mass/thrust ratio,59.6,kg/N,calculated here from approximately 14 kg / 0.235 N,Comparison computed here; approximate mass is not a numeric replacement for 54 kg/N.
+oleson_mcguire_2011_compass_enceladus_sep_stage,NEXT PM1 thruster mass,12.7,kg,"printed p. 37, §4.6.5.1",Earlier NEXT PM1 hardware; source says 13.5 kg with cable harnesses.
+oleson_mcguire_2011_compass_enceladus_sep_stage,NEXT PM1 thruster mass with cable harnesses,13.5,kg,"printed p. 37, §4.6.5.1",Earlier NEXT PM1 hardware; not NEXT-C.
+oleson_mcguire_2011_compass_enceladus_sep_stage,NEXT PM1 full-power thrust,236,mN,"printed p. 38, §4.6.5.2",The report identifies the tested thruster as PM1.
+,NEXT PM1 illustrative mass/thrust ratio,53.8,kg/N,calculated here from 12.7 kg / 0.236 N,Comparison computed here; helps identify the likely origin of 54 but is not a NEXT-C measure.

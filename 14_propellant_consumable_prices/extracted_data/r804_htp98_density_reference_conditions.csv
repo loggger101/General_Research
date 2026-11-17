@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_ntrs_20030020732_98pct_h2o2_density,98% hydrogen peroxide density at 0 C,1459.4,kg/m3,"Appendix A, section 6.2, Table 6.1, printed p. 165",Table value.
+nasa_ntrs_20030020732_98pct_h2o2_density,98% hydrogen peroxide density at 25 C,1430.9,kg/m3,"Appendix A, section 6.2, Table 6.1, printed p. 165",Surrounding text identifies the properties as 1 atm and ambient temperature; the table gives this value at 25 C.
+nasa_ntrs_20030020732_98pct_h2o2_density,98% hydrogen peroxide density at 50 C,1402.4,kg/m3,"Appendix A, section 6.2, Table 6.1, printed p. 165",Table value.
+nasa_ntrs_20030020732_98pct_h2o2_density,98% hydrogen peroxide density at 96 C,1347,kg/m3,"Appendix A, section 6.2, Table 6.1, printed p. 165",The table marks this value as extrapolated.
+spacecost_storable_component_densities_code_current_2026,Spacecost HTP-98 component density,1.431,kg/L,Spacecost spacecost/propellants.py:567 at main a401930efe30aaad01aafd2b3cb332ad0438c841,Stored input; code does not state a reference temperature.
+nasa_ntrs_20030020732_98pct_h2o2_density;spacecost_storable_component_densities_code_current_2026,25 C source-to-code comparison,1.4309 rounds to 1.431,kg/L,"NASA report Table 6.1, printed p. 165; Spacecost spacecost/propellants.py:567","1430.9 kg/m3 divided by 1000 equals 1.4309 kg/L, which rounds to the stored 1.431 kg/L."

@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+ganguly_saxena_1989_volatile_bearing_carbonaceous_chondrites,C2 total volatile yield under modeled equilibrium heating,about 135,g/kg C2 chondrite,"Abstract, printed p. 97","Fixed bulk composition at 1 bar and 400-800 C; a thermodynamic calculation, not a measured or selectively recovered propellant yield."
+ganguly_saxena_1989_volatile_bearing_carbonaceous_chondrites,C2 heating pressure,1,bar,"Abstract, printed p. 97",Condition for the reported volatile-yield prediction.
+ganguly_saxena_1989_volatile_bearing_carbonaceous_chondrites,C2 heating temperature interval,400-800,degrees C,"Abstract, printed p. 97",Condition for the reported total volatile yield.
+ganguly_saxena_1989_volatile_bearing_carbonaceous_chondrites,Major modeled C2 volatile species,H2O; H2; CH4; CO2; CO,species,"Abstract, printed p. 97",Relative abundances vary with temperature; no selective CO recovery or O2 product is reported.
+ganguly_saxena_1989_volatile_bearing_carbonaceous_chondrites,Most abundant modeled gas on a molar basis above 550 C,H2,qualitative,"Abstract, printed p. 97","Molar, not mass, basis."

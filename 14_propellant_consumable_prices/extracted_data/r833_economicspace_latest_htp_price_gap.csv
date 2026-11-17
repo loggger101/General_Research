@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_latest_stage3_htp_price_rows_2026,Latest frozen HTP monopropellant reference price,5.00,USD/kg,campaign/stage3/spacecost-0.14.0/propellants.csv; row 13,Pipeline 1.23.6; note labels it an unsourced estimate pending re-sourcing.
+economicspace_latest_stage3_htp_price_rows_2026,Latest frozen HTP/RP-1 blend reference price,4.6875,USD/kg,campaign/stage3/spacecost-0.14.0/propellants.csv; row 14,Low/high are 4.6875 and 6.121197718631179 USD/kg; note says price rests on the HTP row's unsourced $5/kg.
+spacecost_htp_price_reference_row_current_2026,Current Spacecost HTP monopropellant price,5.00,USD/kg,reference/propellants.csv; row 13,Current note labels the estimate unsourced and points to rc-319.
+epic_aerospace_htp_product_price,Epic listed 98% HTP price,65,USD/kg,Capabilities page; lines 53-57,"280 kg MOQ and estimated $3,500-$8,500 shipping; no effective date or matching basis stated."

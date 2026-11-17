@@ -1,3 +1,21 @@
+## R830 — Reconstructed 2026-09-29 metals closes versus current Yahoo history
+
+- **spacevalue_metals_snapshots_2026** (`spacevalue/quotes/metals-2026-10-07.csv`): five rows label `source=yfinance`, `close_date=2026-09-29`, and `recorded_date=2026-10-07`; the `note` says each close was recovered from Economicspace Stage 2 converted $/kg values. The snapshot SHA-256 is `62A1D20FF25B714D27908B48EFB3323D789CF6E3666201ACDB5A7702175BFE8B`.
+- **economicspace_mineral_value_1_15_live_quote_rows_2026** (frozen lunar_surface Stage 2 export): gold, copper, palladium, platinum and silver carry `live_price_date=2026-09-29` and `live_price_source=yfinance:<ticker>`, with converted prices of $134,239.00586592773, $14.65633066298999, $38,982.7802137, $55,087.08995454154 and $1,969.5546807917196/kg, respectively. The rows do not retain raw closes.
+- **yahoo_finance_futures_history_2026** (Historical Prices, each ticker’s 2026-09-29 row, Close column): current Yahoo history displays GC=F 4,179.70, HG=F 6.543, PA=F 1,201.60, PL=F 1,680.10 and SI=F 60.668. Each differs from its matching reconstructed snapshot close. The current pages do not preserve the original dated response or its contract/roll mapping.
+- **economicspace_verification_sheet_live_quote_citation_check_2026** (`campaign/verification_sheet.py` lines 5747–5759 and 6117–6119): the planted `live quote from yfinance:PL=F on 2026-09-29` example is classified as source-bearing; the check does not validate the numeric close against Yahoo history.
+- **Upstream fields:** Spacevalue `spacevalue/quotes/metals-2026-10-07.csv` close, source, close_date and recorded_date; Economicspace frozen Stage 2 `live_price_usd_per_kg`, `live_price_date` and `live_price_source` rows.
+- **Verdict:** Open rc-702 for the observed-close attribution and raw-close provenance. Current Yahoo historical rows conflict with all five reconstructed values, but the pages do not establish whether the difference reflects a changed continuous-futures history or a reconstruction error. No numeric replacement inferred.
+- **Extracted data:** `extracted_data/r830_metals_snapshot_historical_close_conflicts.csv`.
+
+## R801 — Johnson Matthey PGM base-price quote traceability
+
+- **johnson_matthey_base_prices_faq_2026** (Johnson Matthey PGM Management FAQ, questions on setting cadence, sponge form, and reuse): JM says Base Prices are set “4 times a day from Monday to Friday”; its FAQ gives the US scheduled setting as 09:30 Eastern Standard Time, allows interim adjustments, identifies sponge as the price form, and says Base Prices require express written consent for reproduction.
+- **spacevalue_pgm_reference_prices_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1680–1729; CITATIONS.md lines 38–42): platinum $1,562/oz, palladium $1,046/oz, rhodium $9,400/oz, iridium $10,100/oz, and ruthenium $1,900/oz, all dated 2026-11-10 and labeled New York. The citation list names JM base prices but supplies no exact daily quote-record locator or time.
+- **Upstream cells:** Spacevalue MINERAL_REFERENCE ref_price_usd_per_kg, ref_price_date, and notes for Pt/Pd/Rh/Ir/Ru.
+- **Verdict:** Open rc-672 to review the exact price record, quote time/time zone, product form, and reproduction permission. The date-only record cannot identify which scheduled US setting or interim adjustment the five figures represent. No numeric replacement inferred.
+- **Extracted data:** extracted_data/r801_jm_base_price_quote_traceability.csv.
+
 ## R753 — E-type accessory sulfide Earth-sale basis
 
 - **spacevalue_eh_sulfide_reference_price_code_current_2026** (Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `catalog.py` lines 1999–2013): `niningerite`, `oldhamite`, and `daubreelite` pass `None` as the direct mineral price. Their listed yields are Fe 0.243/S 0.465; S 0.444; and Cr 0.361/Fe 0.194/S 0.445, respectively. The shared constructor defines `None` as no market price of the mineral itself, only its yields.
@@ -571,3 +589,9 @@ campaign/worked_calculation.py parse to the same ASTs as master 1.73.0.
 - spacevalue_water_reference_price_code_current_2026: spacevalue catalog.py lines 332-336 sets _EARTH_SURFACE_WATER_USD_PER_KG to $0.001/kg and states a $0.0005-0.002/kg municipal/industrial range without naming a price source.
 - mud_omaha_2026_large_volume_industrial_water_schedule: Schedule W-3 p.1 lists “Over 5,000 CCF (per 100 cubic feet) $1.9657” and defines 1 CCF as 748 gallons. At the published marginal rate, 1.9657 / (748 × 3.785411784) = $0.000694/kg; the schedule also sets a $11,456 monthly minimum plus service charge (p.1) and a 2% in-city addition (p.2). This is one industrial utility tariff, not an asteroid-water netback or a national rate range.
 - The tariff does not establish an Earth-return sale price; rc-602 records the missing sale-point basis and no numeric replacement. Extracted: extracted_data/r735_mud_water_tariff_comparator.csv.
+
+## R794 — Osmium production citation metadata (2026-11-16)
+
+- ipa_sfa_2026_osmium_pgm_factsheet, PDF p. 10: “Annual global production of osmium is likely to therefore have been limited to about 500kg-550kg/annum over 2024 and 2025.”
+- spacevalue_osmium_annual_production_code_current_2026: at spacevalue@5f84fbf36709e3c2b09356a65cb34c9890ff8904, spacevalue/catalog.py line 934 sets ANNUAL_WORLD_PRODUCTION_KG["osmium"] to 5.0e2 kg/yr and gives “~500-550 kg/yr over 2024-25 (IPA/SFA factsheet, 2026).” CITATIONS.md at that commit has no IPA/SFA factsheet reference for this production source.
+- Verdict: the source supports the stored 500 kg/yr as the lower end of its estimate. The code gives an abbreviated citation while the package bibliography omits the source. rc-664 requests citation metadata only; no value change is proposed. Extracted: extracted_data/r794_osmium_source_bibliography_gap.csv; source quote: extracted_data/r182_osmium_production_price_key_numbers.csv.

@@ -452,3 +452,28 @@ Open `rc-628` for the frozen-row citation carry-through; the 5 [2, 12] campaign 
 `economicspace_mining_reliability_verification_sheet_current_2026`: the cislunar worksheet flags I65, I66 and I68 NEED BACKING. `economicspace_frozen_stage3_mining_reliability_rows_current_2026`: frozen rows 55, 56 and 63 store 30 years [15, 60], 0.85 [0.70, 0.95] and 0.95 [0.85, 0.99], with older notes that omit current source and scenario limits. `spacecost_mining_reliability_rows_current_2026`: current row 56 says “not fitted to a cohort”; row 57 says “none is sustained mining”; row 64 says “no data set or elicitation.” The current notes describe the 11/13 tally as selected outcomes and the deployment and actuator results as comparators; none is a whole-rig reliability estimate.
 
 The frozen Stage 3 copy is the source of worksheet I65, I66 and I68. Verdict: carry current source attribution and scope into the frozen rows and verification sheet; preserve all three values and ranges. Applied `rc-494`, `rc-451` and `rc-493` updated current Spacecost row notes but did not cover the frozen economicspace copy. Open `rc-646`; no numeric replacement inferred. Extracted: `extracted_data/r776_mining_reliability_worksheet_citation_scope.csv`.
+
+
+## R782 — Launch-reliability citation scope missing from frozen worksheet (2026-11-15; rc-652)
+
+The economicspace `cislunar__raw__search-off` verification check flags I64=0.97 launch-success probability NEED BACKING. The worksheet reads frozen `campaign/stage3/operational_costs.csv` row 52 (Spacecost 1.15.0): 0.97 [0.90,0.99], with an older note saying “a first-flight or low-cadence vehicle sits near 0.90.”
+
+Current Spacecost row 55 cites Cross & Vesely’s new-vehicle estimates (0.866 first-flight success; 0.910 with heritage credit, printed pp. 8 and 10) and SpaceX’s reported “over 99% mission success” across about 620 Falcon 9 launches (prospectus, printed p. 58). Cross & Vesely state that “new launch vehicles have historically had a significantly higher average failure probability than mature launch vehicles” (p. 11). The current row says 0.97 is not fitted to a cohort and [0.90,0.99] is a scenario envelope, not a confidence interval; neither comparator derives the 0.97 operational-fleet point. **Verdict:** carry the source scope and scenario limits into the historical worksheet; retain the value and range, with no numeric replacement inferred. `rc-652`. Extracted: `extracted_data/r782_launch_reliability_frozen_worksheet_citation_gap.csv`.
+
+
+## R818 — Frozen launch-reliability worksheet recheck (2026-11-16)
+
+At fetched economicspace origin/main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, the historical Stage 3 row still stores launch success 0.97 [0.90, 0.99], and the verification worksheet still routes I64 through the launch-reliability citation path. The 0.97 fleet point and scenario envelope remain without a fitted operational cohort; **rc-652** remains open. Existing extraction: `extracted_data/r782_launch_reliability_frozen_worksheet_citation_gap.csv`.
+
+## R825 — Current mining-rig trip-limit worksheet row (2026-11-17)
+
+The current worksheet reads the live Spacecost mining-rig maximum-trips row at I98=5 campaigns per rig [2,12] and flags it NEED BACKING. Its note cites Sandvik's underground mining rebuild intervals as a comparator, distinguishes rebuilds from total life, and calls five campaigns an engineering judgment because no asteroid-mining flight heritage exists. This supplies the current source-and-scope passage previously missing from the frozen Stage 3 I97 row; **rc-628** is applied for that worksheet-propagation issue, with the numeric limit still an explicit scenario. Current I66 is the eclipse/night-side dark fraction, not the earlier frozen reliability input I66=0.85 in **rc-646**. Extracted: `extracted_data/r825_live_sheet_rig_limit_and_input_id_scope.csv`.
+
+
+## R827 - Flight-history citations in the mining-rig trip-limit note (2026-11-17)
+
+The current Spacecost “Mining rig maximum trips” row retains 5 campaigns [2, 12] as an engineering judgement and cites Sandvik’s terrestrial rebuild intervals under applied **rc-365**. It also names four flight-history examples without identifying the sources in that row. Current economicspace best-case worksheet input I97 remains marked NEED BACKING; **rc-628** carried the current judgement scope into the worksheet but did not add citations for these event examples.
+
+**berry_et_al_2021_contact_with_bennu_osirisrex_tag_sample_collection**: NASA NTRS 20210025295 says “a sample was successfully collected on the first attempt” (abstract, printed p. 1); §I (p. 2) describes the contact-triggered nitrogen-bottle firing, and the conclusion (p. 8) reports one six-second TAGSAM-head contact. **esa_2024_philae_harpoon_failure_landing_review** reports Philae’s “harpoons hadn’t fired” after touchdown (section “Welcome to a comet”). **nasa_2020_insight_hp3_mole_soil_friction_failure** says the mole “has been unable to dig because the soil doesn’t provide enough friction” (NASA Science Q&A). **kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams** documents Curiosity’s feed stall at sol 1536; the authors report the “first feed-extended drilling sample was successfully collected on Sol 2057, 521 sols after the initial feed stall” (pp. 1, 13). These are one-event or failure-mode comparators, not repeated asteroid-mining campaigns or a measured rig lifetime.
+
+**Verdict:** cite the four flight examples in the trip-limit row or linked source documentation. Keep 5 [2, 12] as an explicit scenario; no numeric replacement inferred. **rc-698**. Extracted: `extracted_data/r827_rig_trip_limit_flight_analogues.csv`.

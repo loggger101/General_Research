@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_current_bestcase_verification_sheet_2026;economicspace_surplus_price_fraction_code_current_2026,surplus_price_fraction,0.5,fraction of full price,campaign/verification_sheet.html input I106; modules/calc.py CalcConfig.surplus_price_fraction,NEED BACKING; current code labels this a scenario dial with no price-response or market-clearing evidence and bounds it at 0.0 and 1.0; applied rc-465 remains the source-scope record.

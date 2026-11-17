@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+mirtich_1982_resistojet_large_spacecraft_systems,generic resistojet system mass relation,M_RS=(M_T+M_ppu+M_TH)(1+S),formula,"printed p. 4, Eq. (1)","Generic model includes thruster, PPU and thermal rejection; S is an assumed structure/feed allowance."
+mirtich_1982_resistojet_large_spacecraft_systems,PPU efficiency and assumed structure allowance,88%; 20%,percent,printed p. 4,PPU efficiency and structure allowance in the generic historical mass model; not total thrust efficiency or a water-specific mass/thrust datum.
+spacecost_water_resistojet_model_current_2026,water resistojet model mapping,10.0; 0.75; continuous,kg/N; fraction; scaling,spacecost/propellants.py line 233,Code comment gives no device-specific citation for the three values.
+spacecost_water_resistojet_reference_row_current_2026,current water resistojet reference row,10.0; 0.75; continuous,kg/N; fraction; scaling,reference/propellants.csv line 20,"Notes cover Isp and water use but no direct source for hardware mass per thrust, total efficiency or continuous scaling."
+economicspace_water_resistojet_stage3_row_current_2026,frozen Stage 3 water resistojet row,10.0; 0.75; continuous,kg/N; fraction; scaling,campaign/stage3/spacecost-0.5.0/propellants.csv line 20,Frozen model row carries these inputs without a device-matched source.

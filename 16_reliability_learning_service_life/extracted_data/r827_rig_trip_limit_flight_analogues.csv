@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+berry_et_al_2021_contact_with_bennu_osirisrex_tag_sample_collection,OSIRIS-REx asteroid sample collection,successful on first attempt; one TAG event,mission event,PDF p.1 abstract; §I p.2; conclusion p.8,A single sample-collection operation; not a repeated mining campaign or equipment-life test.
+esa_2024_philae_harpoon_failure_landing_review,Philae harpoons,did not fire after touchdown,mission outcome,"ESA mission feature, “Welcome to a comet”",Failure example only; does not establish asteroid-rig lifetime.
+nasa_2020_insight_hp3_mole_soil_friction_failure,InSight HP3 mole,unable to dig because the soil did not provide enough friction,mission outcome,"NASA Science Q&A, “Why can’t you pick up the mole?” and “What do you suspect is preventing the mole from digging further?”",Failure example only; does not establish asteroid-rig lifetime.
+kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams,Curiosity drill feed,stall at sol 1536; first feed-extended sample at sol 2057,sols,PDF p.1 abstract; p.13 Figure 11 caption,Failure and adapted recovery; not a repeated mining-campaign life test.

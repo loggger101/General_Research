@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_xenon_supercritical_density_code_current_2026,Xenon component density,2.000,kg/L,spacecost/propellants.py:527,Component records pressure_mpa=10.0; propellant row says supercritical at ambient temperature but does not give a numeric temperature or density source.
+spacecost_xenon_supercritical_density_code_current_2026,Xenon component pressure,10.0,MPa,spacecost/propellants.py:527,No numeric reference temperature accompanies the density.
+spacecost_xenon_supercritical_density_code_current_2026,Xenon row tank mass per litre,0.038265306122448974,kg/L,"spacecost/propellants.py:862-863; reference/propellants.csv, row Xenon (Hall / ion)",Generated with the supercritical_gas tank model at 10 MPa.
+spacecost_xenon_supercritical_density_code_current_2026,Xenon exported density,2.0,kg/L,"reference/propellants.csv, row Xenon (Hall / ion), density_kg_per_L",Row uses the density in tank sizing but cites no storage-density source.
+inl_rpt_23_75203_krypton_xenon_recovery_cost_benefit,Xenon price conversion,60 USD/L -> 10243 USD/kg,Q1 2023 at STP,"reference/propellants.csv, row Xenon (Hall / ion), notes; INL/RPT-23-75203 Sec. 2","Supports reference-price conversion at STP, not the 2.0 kg/L supercritical storage density."
+,Implied Xenon tank mass fraction,0.0191326530612,kg/kg,Computed from current row tank_kg_per_L / density_kg_per_L,Comparison computed here; rounds to the code comment's 1.9%.

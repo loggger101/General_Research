@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_gn2_supercritical_density_code_current_2026,GN2 component density,0.250,kg/L,spacecost/propellants.py:568,Component records pressure_mpa=30.0; no temperature or density source is stated.
+spacecost_gn2_supercritical_density_code_current_2026,GN2 component pressure,30.0,MPa,spacecost/propellants.py:568,Pressure is recorded without a temperature reference.
+spacecost_gn2_supercritical_density_code_current_2026,Cold gas GN2 tank mass per litre,0.11479591836734694,kg/L,"spacecost/propellants.py:1090-1091; reference/propellants.csv, row Cold gas (GN2)",Generated with the supercritical_gas tank model at 30 MPa.
+spacecost_gn2_supercritical_density_code_current_2026,Cold gas GN2 exported density,0.25,kg/L,"reference/propellants.csv, row Cold gas (GN2), density_kg_per_L",Row note reports a 46% COPV mass fraction without a density source or reference temperature.
+,Implied tank mass fraction,0.459183673469,kg/kg,Computed from current row tank_kg_per_L / density_kg_per_L,Comparison computed here; rounds to the row note's 46%.

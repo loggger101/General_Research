@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_ci_sulfide_split_code_current_2026,CI pyrrhotite share,0.70,mass fraction,asteroid_catalog/mineralogy.py; line 523,Conditional share within _SULFIDE_CI; comment says no source gives a ratio.
+asteroidcatalog_ci_sulfide_split_code_current_2026,CI pentlandite share,0.30,mass fraction,asteroid_catalog/mineralogy.py; line 523,Conditional share within _SULFIDE_CI; shares sum to 1.0.
+asteroidcatalog_ci_sulfide_split_code_current_2026,Taxonomy rows using CI split,B; C; Cb; F,class,asteroid_catalog/mineralogy.py; lines 551-554,Each PHASE_DETAIL row uses _SULFIDE_CI.
+economicspace_detailed_phase_carbon_consumer_current_2026,Economicspace detailed-phase loading,enabled by default; comp_phases_detailed read when present,code behavior,modules/calc.py; lines 321-337 and 1777-1795,AsteroidCatalog phase composition is consumed by the Economicspace calculation.

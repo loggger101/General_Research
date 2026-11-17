@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm8a_gto_payload_code_current_2026,"Spacecost current payload_gto_kg, Long March 8A",3500,kg,reference/launch_vehicles.csv; row 37,The same row stores low/high=3500 kg and says the GTO figure has no current source.
+spacecost_lm8a_gto_payload_code_current_2026,"Spacecost current usd_per_kg_to_gto, Long March 8A",15114,USD/kg,reference/launch_vehicles.csv; row 37,Low/high GTO rates are 11429 and 20000 USD/kg.
+economicspace_lm8a_frozen_stage3_gto_payload_code_2026,"Economicspace frozen payload_gto_kg, Long March 8A",3500,kg,campaign/stage3/spacecost-0.10.0/launch_vehicles.csv; row 37,pipeline_version=1.22.0; note says Source: Wikipedia payloads.
+economicspace_lm8a_frozen_stage3_gto_payload_code_2026,"Economicspace frozen usd_per_kg_to_gto, Long March 8A",15114,USD/kg,campaign/stage3/spacecost-0.10.0/launch_vehicles.csv; row 37,Derived from stored price and GTO payload.
+nextspaceflight_lm8a_gto_payload_profile_2026,Next Spaceflight Long March 8A GTO payload,3500,kg,Rocket Stats; Payload to Orbit; lines 102-107,Page gives no technical basis beside the entry and links a Wiki page.
+spacechina_2026_lm8a_sso_capacity,CASC Long March 8A 700 km SSO payload,7,t,Lines 25-32,Official report gives SSO capacity; it does not state a GTO payload.
+cnsa_2019_long_march_8_gto_capacity,Base Long March 8 GTO payload,2.8,t,Lines 58-64,"The same passage gives 5 t SSO; it describes the base CZ-8, not CZ-8A."
+wikipedia_long_march_8_article,Long March 8 family GTO payload,2800,kg,Current table lines 141-158; Payload to GTO row,GTO value is not variant-qualified; separate SSO entries list CZ-8 at 5000 kg and CZ-8A at 7000 kg.

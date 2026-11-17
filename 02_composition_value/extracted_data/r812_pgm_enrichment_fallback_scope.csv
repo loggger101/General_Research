@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_pgm_enrichment_fallback_code_current_2026,unmatched or absent spectral-type multiplier,1.0,dimensionless,asteroid_catalog/taxonomy.py:1073-1088,"Returns 1.0 for None, blank and wholly unlisted types; function docstring calls the default chondritic."
+asteroidcatalog_pgm_enrichment_fallback_code_current_2026,first-character inheritance,"PGM_ENRICHMENT_BY_TYPE.get(s[0], 1.0)",lookup rule,asteroid_catalog/taxonomy.py:1085-1088,Unlisted labels may inherit the factor for a mapped first character; no source or allowed-subtype rule is stated here.
+asteroidcatalog_pgm_enrichment_fallback_code_current_2026,exported field,comp_pgm_enrichment,catalog field,asteroid_catalog/enrich.py:265,The helper populates this field across catalog rows.
+cannon_gialich_acain_2023_asteroid_precious_structural_metals,"iron-meteorite PGM distribution, six PGMs excluding Au",median 40.78; 10th-90th percentile 14.70-107.86,ppm,"Table 2, p.4",Distributional comparator; it does not establish a multiplier for unknown or unlisted taxonomic classes.
+cannon_gialich_acain_2023_asteroid_precious_structural_metals,remote class-location limitation,“no known way to remotely identify where an asteroid falls along the wide distributions”,quote,p.6,Limits a class-specific inference; does not supply the fallback value.

@@ -1,3 +1,25 @@
+## R837 — Recheck of the CI sulfide split source status (2026-11-17)
+
+- **asteroidcatalog_ci_sulfide_split_code_current_2026** (AsteroidCatalog origin/main a2c527c09eb39618d7fd26b2b180f730ea906b8b, `asteroid_catalog/mineralogy.py`): `_SULFIDE_CI` remains pyrrhotite 0.70 / pentlandite 0.30 with the comment “estimate: no source gives a ratio”; PHASE_DETAIL applies it to B, C, Cb, and F.
+- **economicspace_detailed_phase_carbon_consumer_current_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `modules/calc.py`): detailed-phase modeling defaults on and the loader reads `comp_phases_detailed` when present.
+- **Verdict:** Rechecked the CI-sulfide portion of **rc-172**. The existing no-source/scenario treatment remains in current code; no subtype-matched ratio source or numeric change was found. Status remains applied; no new candidate added.
+- **Extracted data:** `extracted_data/r837_ci_sulfide_split_citation_gap.csv`.
+
+
+## R780 — T-type silicate phase mapping remains generic and unsourced (2026-11-15)
+
+`asteroidcatalog_ttype_silicate_phase_mapping_code_current_2026`: AsteroidCatalog `mineralogy.py` lists “every split for A, R, O and T” under “WHAT HAS NO SOURCE” (lines 116–118). `PHASE_SHARES["T"]["silicate"]` assigns `{"silicates": 1.0}`; with the T row’s `silicate_fraction=0.40`, `reference/mineral_phases.csv` records 0.40 body mass as generic `silicates`. `PHASE_DETAIL["T"]` has no silicate subphase and `detailed_fractions` passes phases without a detail entry through, so `reference/mineral_phases_detailed.csv` retains `silicates=0.40`. `economicspace_detailed_phase_carbon_consumer_current_2026`: economicspace defaults to `model_detailed_phases=True` and reads `comp_phases_detailed` when present.
+
+`kwon_hasegawa_fornasier_ishiguro_agarwal_2022_large_t_type_surfaces`: Kwon et al. call T type “relatively ill-constrained as an independent group” (A&A 666:A173, printed p. 1) and report surface spectra of two large T-type asteroids; they do not give class-level bulk silicate mineral shares.
+
+Verdict: provide T-type-matched evidence and document transfer to the class-level conditional silicate composition; if none supports mineral-specific shares, identify the generic `silicates` bucket as an intentional aggregate and preserve it as a scenario. Keep the current 0.40 output and infer no mineral-specific allocations. Distinct from rc-641 (bulk metal/silicate amount), rc-384 (primitive carbon split), rc-480 (T accessories), and rc-594 (X-complex conditional silicate vectors). **rc-650**. Extracted: `extracted_data/r780_ttype_silicate_phase_mapping_scope.csv`.
+
+## R779 — Bulk silicate fractions are marked unsourced (2026-11-15)
+
+`asteroidcatalog_taxonomy_silicate_fraction_code_current_2026`: AsteroidCatalog `taxonomy.py` labels “the silicate fractions” as having no source (lines 93-97). `asteroidcatalog_taxonomy_silicate_fraction_rows_current_2026`: `reference/taxonomy_composition.csv` assigns 27 bulk `silicate_fraction` values to B,C,Cb,Cg,Cgh,Ch,S,Sa,Sk,Sl,Sq,Sr,Sv,A,D,Z,K,L,O,Q,R,V,M,E,P,F,G; the row notes describe taxonomy and analogue context but do not derive these fractions. `asteroidcatalog_silicate_fraction_phase_mapping_current_2026`: `GROUP_FIELDS` maps silicate to `silicate_fraction`, and `phase_fractions` multiplies the bulk share by the class phase vector to form body-mass phase fractions. `economicspace_detailed_phase_carbon_consumer_current_2026`: economicspace defaults to reading `comp_phases_detailed` when present.
+
+Verdict: provide a class-matched basis and document analogue transfer and mass/volume conversion for each bulk fraction; where no matched basis exists, label it as a scenario and expose sensitivity. Preserve current values and infer no replacements. **rc-649**. Distinct from rc-346 (X-complex bulk fractions), rc-641 (T bulk fractions) and rc-615 (E within-silicate vector). Extracted: `extracted_data/r779_taxonomy_silicate_fraction_source_scope.csv`.
+
 ## R756 — Rare PGM override phases lack a matched Earth-sale basis (2026-11-15)
 
 `spacevalue_rare_pgm_sale_value_code_current_2026`: Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904` states that these phases are absent from Module 1 `TAXONOMY_COMPOSITION` and available for user overrides or future spectral identification. Direct price/date are `None` for sperrylite (Pt 0.566), laurite (Ru 0.612, Ir and Os 0.001 each), awaruite (Ni 0.759, Fe 0.241 plus the trace-PGE vector), and native-pgm (Pt 0.70, Pd 0.15, Ir 0.08, Os 0.05, Ru and Rh 0.01 each). The generated reference label remains “USGS/LME/mineralogy reference.” `cargo.py` sums listed yields at elemental reference prices and describes the result as refined metal at refined prices, with no payable fraction, treatment charge or refining charge.
@@ -761,3 +783,28 @@ Extracted: `extracted_data/r769_mineral_phase_density_source_scope.csv`.
 `asteroidcatalog_x_complex_carbon_fraction_taxonomy_current_2026`: the taxonomy comment says “carbon for K and the X-complex members” has no source (lines 93-96). `asteroidcatalog_x_complex_carbon_fraction_rows_current_2026`: the taxonomy rows assign carbon_fraction 0.02 to X and Xc and 0.01 to Xe and Xk. The citation guide says carbon outside the hydrated C-complex is an estimate with no publication behind it.
 
 `asteroidcatalog_carbon_fraction_phase_mapping_current_2026`: `GROUP_FIELDS` maps carbon to carbon_fraction and `phase_fractions` uses that field to build exported detailed phase shares. `economicspace_detailed_phase_carbon_consumer_current_2026`: economicspace defaults to reading `comp_phases_detailed` when present. Verdict: find a class-matched bulk-carbon basis or label the four values as scenarios with sensitivity; preserve the values and infer no replacements. This is distinct from rc-481's X/Xc population-weighting question and rc-346's silicate-fraction question. Open `rc-648`. Extracted: `extracted_data/r778_x_complex_carbon_fraction_scope.csv`.
+
+
+## R812 — PGM enrichment fallback scope (2026-11-16; rc-685)
+
+AsteroidCatalog `taxonomy.py` documents a 1.0 “chondritic” default for unknown or unlisted spectral types. `pgm_enrichment_for_type` returns 1.0 for missing or blank values and falls back to `PGM_ENRICHMENT_BY_TYPE.get(s[0], 1.0)` for other unmatched labels. The dictionary comment assigns the 1.0 baseline to C, Cb, Cg, Cgh, Ch, B, D, T, P, F, G and Unknown. `enrich.py` applies the helper to exported `comp_pgm_enrichment`.
+
+The same code sets `_PGM_BASELINE_PPM = 37.0` and labels it a PGM+Au model assumption. AsteroidCatalog’s citation guide describes that baseline as standing for iron-meteorite metal. Applied rc-368 documents the baseline assumption; applied rc-369 documents the named non-1.0 class factors as scenarios without class-matched calibration. Neither candidate targets the unknown/unlisted fallback or prefix-inheritance rule.
+
+Cannon, Gialich & Acain (2023), Table 2 p. 4, reports a 40.78 ppm median for six iron-meteorite PGMs, excluding Au. Page 6 says there is “no known way to remotely identify where an asteroid falls along the wide distributions.” The paper does not establish the 1.0 fallback for an unknown class.
+
+**Verdict:** document the basis and scope of the fallback and its subtype inheritance, and correct the “chondritic” label if it does not describe the model baseline. Preserve current output pending class-matched evidence; no numeric replacement inferred. **rc-685**. Extracted: `extracted_data/r812_pgm_enrichment_fallback_scope.csv`.
+
+## R825 — Current mineral-value worksheet mappings (2026-11-17)
+
+- The current lunar_surface worksheet flags I99 nickel-iron density=7.90 g/cm3 NEED BACKING. This is the live cell for the same material-property issue tracked under **rc-639**; its older I98-I100 references are frozen cislunar inputs. Current I98 is the mining-rig trip limit.
+- Current terrestrial-price inputs flagged NEED BACKING are I24/I27/I30/I33/I48 at $0/kg (no direct quote), I36/I39/I51 at $0.05/kg, and I45 at $0.20/kg. The same cells are now included in **rc-643**; the code-level product/quote questions remain tracked by **rc-455** (silicates), **rc-456** (Fe-Ni alloys), and **rc-589** (schreibersite/troilite). I42 plagioclase is $0.10/kg, cites the USGS 2025 feldspar marketable-production average as a comparator, and is not flagged NEED BACKING.
+- The frozen cislunar density inputs I101-I103 in **rc-640** are not the current worksheet I101-I103: current I103 is the in-space chemical annual-market ceiling, not plagioclase density. No density value was transferred between these worksheet vintages.
+- Extracted: `extracted_data/r825_live_sheet_mineral_values.csv`.
+
+
+## R828 — Class-level Ni-Fe fallback in detailed phases (2026-11-17; rc-699)
+
+`asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026`: AsteroidCatalog `mineralogy.py` says “WHAT HAS NO SOURCE” for the metal split of the C complex, P, D, Z, T, A, R, O, K and L (lines 495-498). `_ALLOY_OCTAHEDRITE` is kamacite=0.89 and taenite=0.11 of the nickel-iron parent (line 519), and `PHASE_DETAIL` assigns that fallback to B, C, Cb, F, Cg, Ch, G, Cgh, P, D, Z, T, A, R, O and L (lines 551-578). The exported table carries body-mass values; B is 0.0089 kamacite plus 0.0011 taenite, while A is 0.0445 plus 0.0055. The code calls this “~9 wt% Ni: no change,” but gives no class-specific metal split source. Economicspace’s current `CalcConfig` defaults detailed phases on and `calc.py` reads `comp_phases_detailed` (main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, lines 323-337). Applied rc-172 reverted K’s former 0.60/0.40 split; it does not cover the other direct class mappings.
+
+**Verdict:** find class-matched phase proportions and their mass/volume basis, or retain the shared fallback as an explicit scenario with sensitivity; preserve the coarse nickel-iron fractions and infer no numeric replacement. Open **rc-699**. Extracted: `extracted_data/r828_asteroidcatalog_unsourced_metal_alloy_fallback.csv`.

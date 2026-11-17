@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+,rc-633 scope,I55 = 300,m/s,"revision_candidates.csv, rc-633; 03_dv_propulsion/FINDINGS.md, R762",Open candidate concerns the verification-sheet return-floor citation and scope.
+,rc-583 scope,I54 = 25.0,years,"revision_candidates.csv, rc-583",Open candidate concerns CalcConfig.max_mission_duration_yr; it does not target the outbound delta-v floor.
+,rc-387 scope,"outbound = 3,000; return = 300",m/s,"revision_candidates_closed.csv, rc-387",Applied candidate covers the code-comment scope for both floors; no numeric value changed.

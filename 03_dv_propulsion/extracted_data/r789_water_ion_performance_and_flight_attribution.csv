@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_water_ion_performance_current_2026,isp_vac_s,900.0,s,reference/propellants.csv row 22,"Row prose gives 800-1,000 s; no device-specific source named."
+spacecost_water_ion_performance_current_2026,thruster_efficiency,0.35,fraction,spacecost/propellants.py line 232; reference/propellants.csv row 22,Code mapping and row have no efficiency definition or matched source.
+spacecost_water_ion_performance_current_2026,thruster_kg_per_n,80.0,kg/N,spacecost/propellants.py line 232; reference/propellants.csv row 22,No thruster-head mass or demonstrated-thrust boundary cited.
+economicspace_water_ion_stage3_row_current_2026,isp_vac_s; thruster_efficiency; thruster_kg_per_n,900.0; 0.35; 80.0,s; fraction; kg/N,campaign/stage3/spacecost-0.5.0/propellants.csv row 21,Frozen Stage 3 copy; note has no matched performance citation.
+nakagawa_koizumi_kawahara_komurasaki_2019_water_ion_performance,maximum specific impulse,665 +/- 59,s,"Acta Astronautica 157, abstract p. 294",Miniature microwave/ECR water ion thruster; measurement neglects the neutralizer.
+nakagawa_koizumi_kawahara_komurasaki_2019_water_ion_performance,maximum thrust and microwave input,164 +/- 13.4 at <2,micronewton; W,"Acta Astronautica 157, abstract p. 294",Miniature device; not a cargo-scale hardware mass/per-thrust source.
+pale_blue_2023_water_resistojet_inorbit,EYE in-orbit demonstration,water-vapor resistojet; launch 2023-01-03; operation 2023-03-03,system; date,"Pale Blue company release, 2023-03-13","The 2023 water system was a resistojet, not the later water ion thruster."
+pale_blue_2025_water_ion_first_inorbit,first successful water-ion in-orbit operation,2025-09-10,date,"Pale Blue company release, 2025-09-10",Company release reports first successful in-orbit operation of its water ion thruster; no performance metrics given.

@@ -659,3 +659,45 @@ Verdict: carry material-specific source status into the frozen rows and verifica
 `usgs_mineral_commodity_summaries_2026`: Mineral Commodity Summaries 2026, p. 82, lists $110 per metric ton for 2025 estimated average unit value of marketable feldspar production. This is a comparator for the rounded $0.10/kg input, not a direct mineral-phase quote. The code-level price-source candidate rc-145 is applied; its source mapping is absent from the frozen row.
 
 Verdict: carry the USGS source and its marketable-feldspar scope into the frozen row and worksheet. Preserve the historical price and do not present the comparator as a direct plagioclase phase price. **rc-643**. Extracted: `extracted_data/r772_cislunar_terrestrial_price_lineage.csv`.
+
+
+## R811 — frozen beneficiation-energy citation lineage (2026-11-16; rc-684)
+
+The frozen Economicspace Stage 3 row stores 500 [100, 2,000] Wh/kg refined product and cites a classroom worksheet that General_Research has rejected. The current verification-sheet check flags I79 NEED BACKING; `campaign/verification_sheet.py` maps this quantity through the beneficiation row citation path.
+
+DOE's Mining Industry Energy Bandwidth Study, Exhibit 24, printed p. 32 (PDF p. 36), labels the metal-mining operation “Beneficiation: crushing and grinding” and reports 59,800 Btu/ton of material. Separations and flotation are 4,300 and 900 Btu/ton. The existing short-ton conversions are 19.32, 1.39 and 0.29 Wh/kg of mined material. These are terrestrial feed-material comparators, not asteroid or refined-product energy measurements.
+
+The current Spacecost row retains 500 [100, 2,000] Wh/kg refined product, calls its asteroid point an engineering estimate, and states that the DOE comparison uses a feed-to-product scaling boundary. Applied rc-097 updated that current row note; open rc-291 reviews the current estimate and range. Neither covers the frozen Stage 3 citation lineage.
+
+**Verdict:** carry the current source scope and source-retraction status into the frozen row and verification sheet. Preserve 500 [100, 2,000] as the historical estimate; the DOE comparator does not establish that product-basis point or range. No numeric replacement inferred. **rc-684**. Extracted: `extracted_data/r811_frozen_beneficiation_energy_citation_lineage.csv`.
+
+
+## R818 — Frozen beneficiation-energy worksheet recheck (2026-11-16)
+
+At fetched economicspace origin/main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, the frozen Stage 3 row still stores 500 [100, 2,000] Wh/kg refined product with its older note, and the worksheet maps the input through the beneficiation citation path. DOE Exhibit 24 remains a terrestrial mined-feed comparator; it does not establish the asteroid refined-product estimate. **rc-684** remains open. Existing extraction: `extracted_data/r811_frozen_beneficiation_energy_citation_lineage.csv`.
+
+## R824 — Current worksheet input mapping for refining cost and concentration cap (2026-11-17)
+
+- **economicspace_refining_cost_verification_sheet_code_current_2026** and **economicspace_lunar_surface_stage2_release_rows_current_2026**: the current best-case worksheet flags all ten lunar_surface `in_space_processing_usd_per_kg` cells: I25/I28/I31=230.420564301 USD/kg (kamacite/taenite/cohenite), I34=236.504677162 (schreibersite), I37/I40/I43/I52=206.084112860 (olivine/enstatite/plagioclase/silicates), I46=212.168225721 (carbon), and I49=224.336451441 (troilite). It points to the shared c_ref formula at I25. These are rows in the `prices-2026-11-12` lunar_surface Stage 2 release.
+- **economicspace_concentration_ratio_verification_sheet_code_current_2026**: current input I107 is 50:1 and is marked NEED BACKING. **economicspace_concentration_ratio_code_current_2026** lines 398-403 call 50:1 a scenario and cite **sibanye_stillwater_2026_rustenburg_technical_report**, Table 57, as a terrestrial comparator. The prior input number I111 now identifies Falcon Heavy launch price.
+- **Verdict**: extend rc-642 to all ten current lunar_surface c_ref inputs and map rc-635 to current I107. Retain the c_ref and 50:1 values; no replacement inferred. The technical report does not validate asteroid mineral separation.
+- Extracted: `extracted_data/r824_lunar_surface_refining_cost_inputs_i25_i52.csv`; `extracted_data/r824_concentration_ratio_live_sheet_i107.csv`.
+
+## R825 — Current refining-energy worksheet inputs (2026-11-17)
+
+The live lunar_surface worksheet flags I85-I89 NEED BACKING: cohenite 5,000, enstatite 1,000, plagioclase 1,000, carbon 2,000, and silicates 1,000 Wh/kg raw feed. The current Stage 2 release stores 5, 1, 1, 2 and 1 kWh/kg respectively; the worksheet multiplies those figures by 1,000. Spacevalue's current source-limit comments identify the cohenite transfer, the low-energy silicate scenario, and the carbon scenario, but do not provide material-specific raw-feed refining measurements. **rc-634** remains open and now includes current I85-I89 as well as the frozen cislunar inputs I80-I88. Extracted: `extracted_data/r825_refining_energy_live_inputs_i85_i89.csv`.
+
+## R826 — Current worksheet mapping for beneficiation energy (2026-11-17)
+
+**economicspace_current_bestcase_verification_sheet_2026**: input I84 maps to operational_costs.csv, row “Beneficiation / on-site processing energy,” is marked NEED BACKING, and prints 500 Wh/kg refined product [100, 2,000].
+
+**spacecost_beneficiation_energy_row_current_2026**: Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841 retains the same center and range; its note calls the asteroid estimate “unsourced for asteroid material.”
+
+Verdict: the live input is covered by rc-291, which remains open for the scale and refined-product basis; no numeric replacement inferred. Extracted: extracted_data/r826_live_sheet_beneficiation_energy_i84.csv.
+
+
+## R827 - Lunar flight-test purity comparator for beneficiation energy review (2026-11-17)
+
+**coffman_etal_2026_lunar_regolith_beneficiation_flight_test**: the publisher abstract reports that XRD/Rietveld analysis found plagioclase increased from 35.5 wt% in the L2W60-g814 Mare simulant feed to 70.6 wt% in recovered product during reduced-gravity separation using magnetic and electrostatic stages. The tested objective was an anorthite-rich size fraction. The abstract gives no energy-intensity value; the full text was not retrieved.
+
+The upstream Spacecost row remains 500 [100, 2,000] Wh/kg refined product, with an approximately 50% purity note. The lunar-simulant test supports a purity comparator but does not provide an asteroid energy benchmark or quantified scale conversion. **rc-291** remains open; no numeric replacement inferred. Extracted: `extracted_data/r827_coffman_lunar_beneficiation_purity_comparator.csv`.

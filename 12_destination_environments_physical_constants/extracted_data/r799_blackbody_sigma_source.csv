@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+nist_sp959_2018_codata_constants,Stefan-Boltzmann constant,5.670374419...e-8,W m^-2 K^-4,"NIST SP 959, p. 1, first table, Stefan-Boltzmann row",NIST prints 5.670 374 419 ... × 10^-8.
+spacecost_blackbody_equilibrium_temperature_code_current_2026,SOLAR_CONSTANT_W_PER_M2,1361,W/m2,spacecost/units.py:30,Code comment maps this to Kopp & Lean 2011.
+spacecost_blackbody_equilibrium_temperature_code_current_2026,Stefan-Boltzmann value used in comment,5.670374419e-8,W m^-2 K^-4,spacecost/units.py:37-38,Stored digits match the first ten significant digits reported by NIST.
+spacecost_blackbody_equilibrium_temperature_code_current_2026,BLACKBODY_TEMP_1AU_K,278.3,K,spacecost/units.py:42,Used as the 1-AU temperature scale.
+,Recomputed rapid-rotator equilibrium temperature,278.32139935840047,K,Computed here: (1361/(4 × 5.670374419e-8))^(1/4),Rounds to 278.3 K at the stored one-decimal precision.

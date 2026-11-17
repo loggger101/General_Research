@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_krypton_supercritical_density_code_current_2026,Krypton component density,0.550,kg/L,spacecost/propellants.py:569,Component also records pressure_mpa=18.0; no temperature or density citation is stated.
+spacecost_krypton_supercritical_density_code_current_2026,Krypton component pressure,18.0,MPa,spacecost/propellants.py:569,Pressure is recorded without a temperature reference.
+spacecost_krypton_price_reference_row_current_2026,Krypton Hall output density,0.55,kg/L,"reference/propellants.csv, row Krypton (Hall), density_kg_per_L",The row note compares supercritical krypton with xenon and asserts a 12.5% tank fraction; it gives no density source or temperature.
+spacecost_krypton_supercritical_density_code_current_2026,Krypton Hall tank mass per litre,0.06887755102040816,kg/L,"spacecost/propellants.py:1154-1155; reference/propellants.csv, row Krypton (Hall)",Generated for the supercritical_gas storage class with the Krypton multiplier.
+economicspace_propellant_tank_fraction_sheet_code_current_2026,Krypton tank mass fraction in worksheet I58,0.125231910946,kg/kg,"economicspace/campaign/verification_sheet.html, I58",Derived as 0.0688775510204 / 0.55; the result depends on the unqualified krypton density input.

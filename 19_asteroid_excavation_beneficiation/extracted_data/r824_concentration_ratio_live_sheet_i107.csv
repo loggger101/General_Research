@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_concentration_ratio_code_current_2026,CalcConfig.max_concentration_ratio,50.0,feed:concentrate ratio,modules/calc.py lines 398-403 at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7,"Code calls 50:1 a scenario; it cites a terrestrial PGM concentrator comparator, not asteroid separation validation."
+sibanye_stillwater_2026_rustenburg_technical_report,Comparator range cited by code,59.5:1-62.4:1,feed:concentrate ratio,"Technical Report Table 57, as cited in modules/calc.py lines 398-402","Terrestrial Rustenburg PGM concentrators, 2021-2025."
+economicspace_concentration_ratio_verification_sheet_code_current_2026,Current worksheet input I107,50.0,feed:concentrate ratio,verification worksheet part 18; generated 2026-11-16,"Marked NEED BACKING; the ledger says the setting comment names no source, despite the comparator citation in code."

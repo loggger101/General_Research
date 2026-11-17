@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_volume_conversion_citation_gap_code_current_2026,"COMMODITY_DENSITY_KG_PER_L[""heating_oil""]",0.845,kg/L,spacecost/units.py; prices.py in Spacecost main @a401930efe30aaad01aafd2b3cb332ad0438c841,HO=F converts USD/gallon to USD/kg; the live fuel proxy feeds kerolox pricing.
+iea_energy_prices_2022_product_specifications,France household light fuel oil quality,Fuel oil domestique,product label,"p. 146, Product specifications > Oil products",IEA density table does not state a measurement temperature.
+iea_energy_prices_2022_product_specifications,France household light fuel oil density,0.845,kg/L,"p. 146, density row",Numerically matches the code constant but does not identify the NY Harbor HO contract product.
+cme_comex_nymex_futures,HO contract product,"NY Harbor ULSD, Colonial Pipeline Fungible Grade 62",grade,"NYMEX Rulebook Chapter 150, p. 1, §150101",CME contract scope for HO.
+cme_comex_nymex_futures,HO contract volume basis and quote unit,60°F; USD per gallon,basis/unit,"NYMEX Rulebook Chapter 150, p. 1, §§150102.B–C",Contract delivery volume is determined at 60°F.
+iea_energy_prices_2022_product_specifications;cme_comex_nymex_futures,HO proxy product-scope comparison,IEA France household light fuel oil is not identified as NY Harbor ULSD,scope comparison,"IEA p. 146; CME Rulebook Chapter 150, p. 1",Comparison of two sources; temperature match not established.
+spacecost_volume_conversion_citation_gap_code_current_2026,"COMMODITY_DENSITY_KG_PER_L[""crude_oil""]",0.870,kg/L,spacecost/units.py in Spacecost main @a401930efe30aaad01aafd2b3cb332ad0438c841,Comment labels this WTI at approximately 32° API.
+cme_comex_nymex_futures,NYMEX Light Sweet Crude Oil futures gravity specification,37–42,° API,"CME WTI FAQ, contract quality specifications, Gravity item",Range conflicts with the Spacecost “WTI ~32° API” comment.

@@ -62,3 +62,7 @@ Hosted as full_texts/girija_2023_aerocapture_design_reference_missions_arxiv2308
 ## R564 — Aerocapture saving claim removed pending a defined return trajectory (2026-11-10)
 
 NASA ISPT 2010, chart “Examples for Circular Orbit Insertion” (p. 12), gives an approximately 4–5 km/s all-propulsive Mars/NEO return marker, not an aerocapture ΔV residual. Spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c removes the unsourced ~4 km/s saving from the 1,500 m/s aerocapture row note; the value remains unchanged. `rc-293` is applied. Extracted: `extracted_data/r375_nasa_2010_neoreturn_aerocapture_chart.csv`.
+
+## R822 — NEA Earth-return aerocapture residual remains a placeholder (2026-11-16)
+
+At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the `NEA → Earth return (aerocap)` row stores 1,500 m/s and says the residual is unsourced and the endpoint orbit is undefined. **nasa_ispt_2010_aerocapture_discovery_mission_briefing** places Mars/NEO return at approximately 4–5 km/s on its all-propulsive circular-insertion chart (PDF p. 12); it gives no aerocapture residual. **dutta_et_al_2026_aerocapture_earth_demonstration_design_scitech** says fully-propulsive insertion “requires ΔV of 1–2 km/s” (p. 3), a program comparator rather than the NEA row’s post-aerocapture value. Verdict: open **rc-694** for the distinct 1,500 m/s value/endpoint citation gap. Existing **rc-293** corrected the note, and **rc-519** tracks Economicspace’s separate fallback; no numeric replacement inferred. Extracted: `extracted_data/r822_nea_earth_aerocapture_residual_basis.csv`.
