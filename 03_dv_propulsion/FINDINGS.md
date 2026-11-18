@@ -1,3 +1,14 @@
+## R931 — Spacecost constant and bibliography citations applied upstream (2026-11-18)
+
+spacecost 7ea729fb33a3cf37daa86b8baa6aa51b94a8ac98 (PR #45, package 0.17.2, data contract 1.26.1 unchanged). CITATIONS.md and comments; `units.py` and `delivery.py` parse to the same ASTs as a401930 and `tools/refresh_reference.py --check` reports `reference/` up to date.
+
+- rc-667, rc-668, rc-669: `bipm_1901_3rd_cgpm_standard_acceleration_gravity`, `nist_hb133_2026_appendix_e_volume_conversion`, `thompson_taylor_2008_nist_sp811_si` and `nist_sp959_2018_codata_constants` are cited where the constants are set. Computed here: 42 × 3.785411784 in IEEE double is 158.98729492799998, one ulp below the stored 158.987294928, so the barrel stays the written-out exact decimal.
+- rc-739: `dec_braun_2006_approximate_ablative_tps_sizing_tool` is listed; `DOWNLEG_TPS_FRAC` is called a scenario with its cargo-plus-capsule denominator and Table 2's thickness sensitivity.
+- rc-753, rc-754, rc-783, rc-785: full entries for `navard_1993_modelling_early_failures_space_station_freedom`, `jacklin_2019_small_satellite_mission_failure_rates`, `boyce_aj10_oral_history`, `cuffe_jacobs_1970`, `stackpoole_2013_pica_pica_x_postflight_eval` and `zero_bo_off_2025`, each with the scope its candidate names.
+- rc-805, rc-806: the two 0.17.1 comparator groups are one row per source with titles and links.
+
+Verdict: all ten closed as applied. Extracted data: none new.
+
 ## R928 — Spacecost iodine density source (2026-11-18)
 
 `spacecost_iodine_density_row_current_2026` — At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/propellants.csv` line 19 stores `density_kg_per_L=4.93`. Its note says iodine is stored as a solid at ambient pressure and repeats `ρ 4.93 kg/L`; its listed citations address flight history and price, not density. `CITATIONS.md` §2 line 106 lists the flight-history and market references.
