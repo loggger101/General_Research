@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+aerojet_1963_sea_dragon_concept_summary_lrp297_vol1,payload_leo_kg (nominal expendable payload),1121000,lb,"Vol. I, Table II-A-1 p. II-A-6, Configuration No. 135, row Payload (nominal), column Expendable","The table labels the adjacent recoverable value 1,100,000 lb; vehicle performance table lists altitude at injection as 299.8 nm."
+aerojet_1963_sea_dragon_concept_summary_lrp297_vol1,payload_leo_kg (expendable first-stage narrative),1121000,lb,"Vol. I, §II-C p. II-C-2","Report says 1,121,000 lb is a 30,000 lb increase for equivalent launch and orbit conditions."
+spacecost_target_launch_prices_code_current_2026,payload_leo_kg,550000,kg,Spacecost spacecost/vehicles.py Sea Dragon record; reference/launch_vehicles.csv row 74,Row marks reusability as expendable and notes 550 t to LEO; CITATIONS.md has no Sea Dragon/Aerojet LRP-297/NASA-CR-52817 entry.
+,converted expendable payload,508477.04677,kg,"Computed here: 1,121,000 lb × 0.45359237 kg/lb","Converted value is about 8.17% below the 550,000 kg code value; the source/configuration basis needs reconciliation."
+,code payload above report conversion,8.1661411255,percent,"Computed here: (550,000 / 508,477.04677 − 1) × 100",Comparison only; no replacement inferred.

@@ -1,3 +1,33 @@
+## R928 — Spacecost iodine density source (2026-11-18)
+
+`spacecost_iodine_density_row_current_2026` — At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/propellants.csv` line 19 stores `density_kg_per_L=4.93`. Its note says iodine is stored as a solid at ambient pressure and repeats `ρ 4.93 kg/L`; its listed citations address flight history and price, not density. `CITATIONS.md` §2 line 106 lists the flight-history and market references.
+
+`economicspace_current_bestcase_verification_sheet_2026` — Supplied `verification_sheet.pdf`, p. 39, maps I63 to iodine `tank_mass_frac` and repeats the density note without a named density source.
+
+`who_2020_iodine_drinking_water_density` — Table 1.1, printed p. 2, reports solid iodine density as “4.93 g/cm3 at 25 °C.” This supports solid material density, not a loose-packed reservoir density.
+
+**Verdict:** Open `rc-808` to cite the material-density value with its reference condition and clarify that the model uses solid iodine density. Retain 4.93 kg/L; no replacement inferred. Extracted data: `extracted_data/r928_spacecost_iodine_density_scope.csv`.
+
+## R927 — Spacecost iodine Isp citation scope (2026-11-18)
+
+`spacecost_iodine_isp_row_current_2026` — At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/propellants.csv` line 19 stores `isp_vac_s=2,000 s`. The row note cites Rafalskyi et al. for iodine electric propulsion’s first in-orbit flight and explains that the US$60 figure is a total propellant cost without a stated mass; it does not cite the Isp.
+
+`economicspace_current_bestcase_verification_sheet_2026` — Supplied `verification_sheet.pdf`, p. 39, maps I62 to Isp for the Iodine (Hall / gridded) row and repeats the row note as the basis. I62 is not separately marked NEED BACKING.
+
+`nasa_tm_2015_218829` — Printed p. 19 identifies the Busek iodine Hall full-scale system’s “high thrust (Isp ~2,000 s)” target. This is a target for that Hall system, not a measured value or a general gridded-thruster result.
+
+**Verdict:** Open `rc-807` to add this value-specific citation and label 2,000 s as a high-thrust scenario target; retain the number pending a matched operating-point basis. Keep Rafalskyi for flight history and the total-cost caveat. No replacement inferred. Extracted data: `extracted_data/r927_spacecost_iodine_isp_citation_scope.csv`.
+
+## R892 — Spacevalue cislunar and lunar-surface destination-note citations (2026-11-18)
+
+`spacevalue_cislunar_lunar_destination_notes_current_2026` — At `spacevalue/catalog.py` lines 393–400, the cislunar note prints 3,600 m/s as “TLI + NRHO insertion”; the lunar-surface note prints a 4,050 m/s TLI + LOI leg and 2,050 m/s powered descent. Neither note identifies a source or source figure. `spacevalue/CITATIONS.md` lines 3–6 says the notes identify each value’s source and figure; the file has no Apollo SP-4029, NASA-CR-195527, or Benson et al. 2025 citation.
+
+`spacecost_cislunar_nrho_depot_row_current_2026` — Spacecost’s LEO-to-cislunar-NRHO row stores 3,600 m/s and describes an approximate cross-study sum: NASA-CR-195527 gives 3,140 m/s for a 185 km, 33-degree parking orbit and four-day lunar transfer (printed p. 3, section 2.3.1 and Table 2.1); Benson, Asher & Reese (2025) gives “400–450 m/s from TLI to NRHO” (slide 5). Their 3,540–3,590 m/s sum is context from different trajectories, not a matched transfer.
+
+`spacecost_lunar_surface_delivery_chain_current_2026` — The lunar-surface chain composes 3,150 m/s TLI and 900 m/s LOI for 4,050 m/s, then a 2,050 m/s descent. `sp4029_apollo_by_the_numbers` records TLI cutoffs of about 3,040–3,200 m/s (printed pp. 55, 113, 135), LOI cutoffs of 889–922 m/s (printed pp. 56, 94, 114, 185, 213, 267), and Apollo 15/16/17 descent cutoffs of 2,076.9, 2,043.0 and 2,041.5 m/s (printed pp. 213, 241, 267).
+
+**Verdict:** The source trail exists in Spacecost and General_Research, but the Spacevalue destination notes omit it under their citation convention. Open `rc-771` for these downstream notes. Applied `rc-357` covers the Spacecost cross-study composite; open `rc-683` covers the separate TLI-to-NRHO component-row attribution. Neither targets the Spacevalue note. No replacement values inferred. Extracted data: `extracted_data/r892_spacevalue_cislunar_lunar_note_citation_gap.csv`.
+
 ## R734 — GEO plane-change angle uses an uncited obliquity input (2026-11-14)
 
 - **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 (printed p. 17) lists the initial value at J2000.0 as epsilon_0 = 84,381.406 arcsec, uncertainty 0.001 arcsec, with description “Obliquity of the ecliptic at J2000.0.” This converts to 23.4392794 degrees, which rounds to 23.44 degrees.
@@ -739,3 +769,124 @@ The registered Whitley & Martinez source `whitley_martinez_2015_nro_staging_orbi
 - The current best-case sheet maps the model's outbound and return delta-v floors to I59=3,000 m/s and I60=300 m/s, both NEED BACKING. The previous archived sheet references I54/I55 for the same safeguards. **rc-692** and **rc-633** now point to the current cells; applied **rc-387** covers the code comments but does not supply mission-specific floor values.
 - Current lunar_surface I20=4,050 m/s is formed in Spacecost's `DELIVERY_CHAINS` from LEO→TLI=3,150 m/s plus TLI→low lunar orbit (LOI)=900 m/s. Spacecost delta-v rows 14 and 21 cite Apollo data; Orloff's NASA SP-2000-4029 burn tables report TLI cutoffs around 3.04-3.20 km/s and LOI cutoffs around 889-922 m/s. I20 is flagged NEED BACKING because the worksheet names the chain but omits the component source trail. This is distinct from the 6,100 m/s LEO→lunar-surface composite, which also includes powered descent. **rc-697** records the worksheet citation gap; no numeric replacement inferred.
 - Extracted: `extracted_data/r825_live_sheet_delivery_dv_inputs.csv`.
+
+## R862 — Krypton Hall archive locator check (2026-11-17)
+
+- **economicspace_current_bestcase_verification_sheet_2026**: pp. 24–25 map I91 to 3-year thrust time and I92/I93 to Iodine (Hall / gridded) efficiency 0.45 and specific mass 60 kg/N.
+- **economicspace_krypton_hall_frozen_propellant_row_current_2026**: the frozen `spacecost-0.5.0` Krypton (Hall) row still stores 2,000 s, 0.45 and 35 kg/N without performance-source scope for those selections.
+- Verdict: the current sheet no longer selects Krypton; the archived row remains a citation gap. Keep **rc-584** and **rc-625** open for the historical row, with no numeric replacement inferred. Extracted: `extracted_data/r862_krypton_hall_current_sheet_locator_check.csv`.
+
+## R865 — Spacecost low-lunar-orbit return TEI scope (2026-11-17)
+
+**spacecost_lunar_surface_delivery_chain_current_2026** records Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`; `delivery.py` labels `_LLO_TEI_DV_M_S=850.0` untabulated and adds it to the 1,850 m/s lunar-surface-to-LLO ascent for a 2,700 m/s return downleg. Spacecost `CITATIONS.md` has no NTRS 19900016723 entry. **nasa_ntrs_19900016723_lctv_return_delta_v**, Table 4B (printed p. 25), gives “Trans-Earth injection 0.915 km/sec” and “Mid-course correction 0.060 km/sec” for an Apollo-based 200-km lunar-orbit to 400-km Earth-orbit return; printed p. 26 totals 0.975 km/s. The report’s next phase returns the crew from Earth orbit in a separate ACRV atmospheric-entry leg. This is a different endpoint from Spacecost’s return to Earth’s surface and does not establish 850 m/s. Verdict: cite an endpoint-matched trajectory or retain 850 m/s as a scenario with sensitivity; no numeric replacement inferred. **rc-741**. Extracted: `extracted_data/r865_lunar_llo_tei_return_comparator.csv`.
+
+## R876 — Aerozine-50/NTO performance bibliography scope (2026-11-18)
+
+At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the Aerozine-50/NTO row stores isp_vac_s=314.5 s and attributes the AJ10-137 rating to Boyce and injector measurements to Cuffe & Jacobs. **boyce_aj10_oral_history** (p. 3) says “specific impulse (Isp) of 314.5” and gives an area ratio of 62.5:1. **cuffe_jacobs_1970** (p. 32) reports “mean value of Isp of 312.8 sec with one thrust chamber and 311.4 sec with another”; the report allocates 0.2 s of AEDC measurement uncertainty. Spacecost CITATIONS.md §2 contains neither full reference. Boyce supports the rated 314.5 s figure; Cuffe & Jacobs supply injector-level measurements as a comparator. Applied rc-156 corrected the prior 320 s entry; open rc-676 and rc-678 cover component densities, not this bibliography gap. Verdict: add both full references and identify their separate scopes; retain 314.5 s, with no numeric replacement inferred. **rc-754**. Extracted: `extracted_data/r876_spacecost_aerozine50_bibliography_gap.csv`.
+
+
+## R877 — ALICE flight-performance citation scope (2026-11-18)
+
+At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the Metal / water (ALICE) row stores Isp=210 s and groups the ideal and static-test values with a Risha et al. (2014) citation. Spacecost CITATIONS.md §2 has no full entries for Risha et al. or Pourpoint et al. (2012). **pourpoint_2012_alice_feasibility**, §7, states: “the peak Isp of 210 s calculated from the ground test data is a good estimate for the flight Isp”; §7 identifies the demonstration flight as August 7, 2009. **risha_2014_alice_jpp**, Sec. I p. 2 and Table 7 p. 8, supports the ideal 207/230 s values and static-test values of 56/83/133 s. The 210 s is a ground-test-derived flight estimate, not a direct in-flight Isp measurement. Verdict: add both full bibliography entries and separate their source-to-claim scope; clarify the 210 s estimate while retaining the stored value. No numeric replacement inferred. **rc-755**. Extracted: `extracted_data/r877_spacecost_alice_citation_scope.csv`.
+
+
+## R878 — PRISMA/LMP-103S flight-citation scope (2026-11-18)
+
+At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the Green monopropellant note says “the Swedish LMP-103S equivalent flew earlier on PRISMA (2010)” but supplies no source marker. Spacecost CITATIONS.md §2 has no PRISMA or LMP-103S entry. **mulkey_cardiff_2024_green_propulsion_assessment**, PDF p. 10, calls PRISMA a 2010 launch and says its HPGP system “was a secondary mission objective”; PDF p. 11 labels LMP-103S in the PRISMA propulsion schematic. The report supports the historical comparison only; it does not bear on the separate 235 s ASCENT / AF-M315E entry, already attributed to Spores et al. Verdict: add the full NASA GSFC assessment entry and cite it on the PRISMA clause; retain all propulsion values. **rc-756**. Extracted: `extracted_data/r878_spacecost_prisma_lmp103s_citation.csv`.
+
+
+## R879 — Mercury-ion flight attribution and performance basis (2026-11-18)
+
+At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the Mercury ion (RETIRED) row stores isp_vac_s=3000 s and says “SERT-II (1970) and ATS-6 flew mercury ion engines.” Spacecost CITATIONS.md §2 has no SERT-II or ATS-6 entry. **kerslake_1970_sert_ii_flight_performance**, PDF p. 1 abstract, calls SERT II’s hardware a “15-cm diameter mercury electron bombardment ion thruster,” reports launch on February 3, 1970, and gives “specific impulse is about 4200 sec” at about 850 W and 28 mN. **worlock_1975_ats6_cesium_engine_experiment**, NTRS abstract, identifies “cesium bombardment ion thrusters” used for ATS-6 stationkeeping; this is a different propellant from SERT II’s mercury. Verdict: correct and cite the mission-to-propellant mapping (**rc-757**); decide whether 3,000 s is an intentionally conservative generic selection or should represent the reported SERT-II operating point (**rc-758**). No numeric replacement inferred. Extracted: `extracted_data/r879_spacecost_mercury_ion_scope.csv`.
+
+## R880 — Spacecost PPT flight-history citation gap (2026-11-18)
+
+- Backings: Spacecost `reference/propellants.csv`, row `PPT (PTFE pulsed plasma)`; `CITATIONS.md` §2; NASA/JPL TM 33-630; NASA NTRS 20030025690; NASA Science EO-1 mission page.
+- Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` stores `first_flight=1968` and the note “the oldest electric propulsion in service (LES-6, 1968; EO-1, 2000).” A complete read of `CITATIONS.md` §2 has no PPT, LES-6 or EO-1 entry.
+- Hamidian & Dahlgren, JPL Technical Memorandum 33-630, printed p. 1, Introduction: “used successfully in 1968 on the LES-6 station keeping satellite”; printed p. 2 describes the solid Teflon propellant bar.
+- Zalawski et al., “On-Orbit Testing of the EO-1 Pulsed Plasma Thruster,” PDF p. 1 abstract, reports more than 26 hours and 96,000 pulses of EO-1 pitch control. Table 1 p. 2 lists 8% efficiency, matching the stored 0.08, and 650–1,400 s as-flown specific impulse for the EO-1 hardware. NASA Science’s EO-1 mission page lists a Nov. 21, 2000 launch. The report is already hosted as `zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing`.
+- **Verdict:** Add full bibliography entries and cite each flight claim to the matching source. Cite the 8% efficiency to the EO-1 flight unit; the table’s Isp range is a comparator for the row’s 1,000 s, not a generic operating point. The report does not establish the “order below Hall” comparison or the claim that efficiency explains PPT’s limited role; source or qualify them. Define and source “oldest electric propulsion in service” or remove/qualify it. Retain current values; no numeric replacement inferred. **rc-759**. Extracted: `extracted_data/r880_spacecost_ppt_flight_history.csv`.
+
+## R881 — Spacecost methalox flight-history citation and scope (2026-11-18)
+
+- **Backings:** Spacecost `spacecost/propellants.py`, methalox row; `CITATIONS.md` §2 Propellants and propulsion.
+- At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, line 745 stores `first_flight=2023` with the uncited comment “Zhuque-2, first methalox vehicle to orbit (Jul 2023).” Section 2 cites Kim, Jung & Kim for methalox Isp but does not map this flight-history claim.
+- **landspace_2023_zhuque2_first_orbit**, About Us, “Milestones,” records Mission F1’s first launch in 2022. “New Power” and “Milestones” describe Mission F2 as successfully completed in 2023 and call it “the world’s first LOX/LCH4 rocket to reach orbit.” The source distinguishes the first launch from the first successful orbital use.
+- **Verdict:** Add a full bibliography entry and cite the flight-history claim. Define whether `first_flight` means first launch attempt or first successful orbital use; retain 2023 only if the latter is intended. No numeric replacement inferred pending that definition. **rc-760**. Extracted: `extracted_data/r881_spacecost_methalox_flight_history.csv`.
+
+## R882 - Spacecost HTP/RP-1 flight-history citation and event identity (2026-11-18)
+
+At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` line 1059 stores `first_flight=1969` with the comment `Black Arrow R1`; `reference/propellants.csv` repeats 1969 and says Black Arrow flew HTP/kerosene to orbit in 1971. `CITATIONS.md` Section 2 has no entry mapping either flight-history claim. **rc-525** remains scoped to the separate 320 s vacuum-Isp basis.
+
+**uksa_2020_black_arrow_history**, About Black Arrow, says the “first trial in 1969” and that Prospero was orbited in October 1971; it describes HTP/kerosene engines as earlier technology context. **wight_aviation_museum_black_arrow_history**, History and launch chronology, identifies Black Arrow's fuel as RP-1/kerosene and HTP, with R0 in 1969, R1 in 1970, and R3 placing Prospero in orbit in 1971. **english_heritage_2007_high_down_black_arrow_chronology**, printed p. 27, dates R1 to 4 March 1970; its p. 9 text and p. 27 chronology also give a conflicting 1968 first-launch date, so they are not used to establish R0's year.
+
+**Verdict:** Add complete bibliography entries and map the history citations to the Black Arrow claim. Define `first_flight`: 1969 is the first trial/R0, 1970 is R1, and 1971 is the first orbital success/R3. If the field means first launch attempt, retain 1969 and correct the comment to R0; if it means first successful orbital use, use 1971/R3. No numeric replacement inferred pending that definition. **rc-761**. Extracted: `extracted_data/r882_spacecost_black_arrow_flight_history.csv`.
+
+## R883 - Spacecost HTP monopropellant first-flight event and citation (2026-11-18)
+
+At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` line 1024 and `reference/propellants.csv` line 13 store `first_flight=1949` for HTP monopropellant; the note does not name the historical event behind this year. `CITATIONS.md` Section 2 cites Hitt et al. for HTP Isp limits but has no source mapped to the flight date.
+
+**science_museum_group_dehavilland_super_sprite_rocket_engine**, Science Museum Group Collection Online object 1962-104, says the complete Super Sprite engine was “first fired in 1949” and “flight trials began in 1951.” The page describes thrust from catalytic hydrogen-peroxide decomposition; it does not identify the Super Sprite as Spacecost's chosen date anchor.
+
+**Verdict:** Add a source and define what `first_flight` means for this row. If 1949 refers to the Sprite, it is the first firing date; the record places flight trials in 1951. Keep 1949 only if a different, sourced event establishes that year, or label it as a firing/development date. No numeric replacement inferred while the row's intended historical event is unspecified. **rc-762**. Extracted: `extracted_data/r883_spacecost_htp_monoprop_first_flight.csv`.
+
+
+## R884 — Spacecost hydrazine arcjet chronology and citation gap (2026-11-18)
+
+- **spacecost_hydrazine_arcjet_flight_history_code_current_2026** and **spacecost_hydrazine_arcjet_flight_history_data_current_2026**: at Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` line 1298 pairs `first_flight=1993` with “Telstar 401 / A2100 MR-510”; lines 1315-1316 say the MR-510 class flew on A2100 communications satellites since 1993. `reference/propellants.csv` line 23 repeats the date and pairing.
+- **spacecost_propellants_citations_section_current_2026**: `CITATIONS.md` §2 lists Morren & Curran, NASA TM-105149 / AIAA-91-2228, for hydrazine arcjet performance and Isp, but no flight-history source for the 1993 and MR-510/A2100 clauses.
+- **curren_byers_1994_nasa_hydrazine_arcjets_telstar401**: the NASA NTRS abstract says “First generation, kW-class arcjets are now operational for NSSK on the Telstar 401 satellite launched in December of 1993.” NTRS metadata identifies Curren and Byers, NASA-TM-106695 / AIAA 94-2463, and records “Work of the US Gov. Public Use Permitted.”
+- **hoskins_et_al_2013_aerojet_ep_flight_experience**: Hoskins et al., IEPC-2013-439, printed p. 2, say “The first ever hydrazine arcjet was launched in 1993” on Telstar 401, then call MR-510 “A subsequent upgrade to the arcjet system” that flies on Lockheed Martin A2100 spacecraft.
+- **lockheed_martin_2006_amc1_first_a2100_launch**: Lockheed Martin's release identifies AMC-1 as the first A2100 satellite and gives its launch as September 8, 1996.
+
+**Verdict:** Cite the 1993 first-generation Telstar 401 flight and distinguish it from the later MR-510/A2100 system. Retain 1993 only as the hydrazine-arcjet class's first flight; if the field is intended to date the MR-510/A2100 pairing, define that scope and use a sourced date. No numeric replacement inferred. Keep Morren & Curran for the Isp evidence. **rc-763**. Extracted: `extracted_data/r884_spacecost_hydrazine_arcjet_flight_history.csv`.
+
+## R885 — Spacecost water-propulsion flight-history citation and scope (2026-11-18)
+
+- **spacecost_water_resistojet_flight_history_code_current_2026** and **spacecost_water_resistojet_flight_history_data_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` line 1225 sets `first_flight=2022` and comments “HYDROS-C (Tethers Unlimited), Momentus Vigoride, Pale Blue.” Lines 1242–1254 describe HYDROS-C, Vigoride and Pale Blue as examples and attribute AQUARIUS on-orbit performance to Asakawa et al. `reference/propellants.csv` row 20 repeats 2022 and calls HYDROS-C an ISS deployment.
+- **economicspace_water_resistojet_stage3_row_current_2026**: the frozen Stage 3 row 20 carries the same `first_flight=2022` value and example note.
+- **spacecost_propellants_citations_section_current_2026**: `CITATIONS.md` §2 lists an AQUARIUS performance entry, but no event-specific flight-history source for `first_flight` or the named systems.
+- **asakawa_aquarius_onorbit_2024**: the hosted paper title page (printed p. 274) and J-STAGE article record identify Sekine, Ataka, Moriai et al., *On-orbit Performance Evaluation of AQUARIUS: a Water Resistojet Propulsion System during Initial Flight Operation of a 6U CubeSat EQUULEUS*, Trans. JSASS 67(5), 274–284 (2024). The record states “Copyright © 2024 The authors” and CC BY 4.0. Table 3 (printed p. 282) gives AQUARIUS Isp 91.7 ± 1.0 s (DV1) and 90.3 ± 3.0 s (TCM1); the abstract reports about 6 mN and under 14 W. Spacecost’s `CITATIONS.md` and inline note misattribute this paper to Asakawa et al. The paper describes the first water-propelled deep-space orbit transfer on EQUULEUS.
+- **jaxa_kibo_aqt_d_water_resistojet_deployment_2019**: JAXA reports AQT-D deployed from Kibo on 2019-11-20 and describes a “resistojet thruster module that uses 1U size of water as propellant” (page lines 37, 52–56). This establishes a demonstration deployment date; it does not report a measured firing event.
+- **nasa_ptd1_hydros_c_water_electrolysis_2021**: NASA dates PTD-1’s launch to 2021-01-24 and says HYDROS-C splits water into hydrogen and oxygen, then generates thrust by combustion; NASA calls this the first spacecraft demonstration of water-based electrolysis propulsion (page lines 279–281).
+- **momentus_2023_vigoride5_water_met_first_orbit_raise**: Momentus reports Vigoride-5’s first orbital raise with its distilled-water microwave electrothermal thruster on 2023-05-08, while the same release dates the Vigoride-3 mission launch to May 2022 (opening paragraph and paragraph beginning “Momentus has flown three…”).
+- **pale_blue_2023_water_resistojet_inorbit**: Pale Blue says EYE launched on 2023-01-03 and its water-vapor resistojet first operated on 2023-03-03 (page lines 20, 25).
+- **jaxa_raise3_kir_failed_launch_2022**: JAXA identifies Pale Blue’s KIR payload as an integrated water resistojet and ion thruster (lines 443–451) and says the RAISE-3 launch failed on 2022-10-12 (line 332).
+- **jaxa_2022_artemis1_equuleus_launch_record**: JAXA’s launch record lists EQUULEUS on Artemis I on 2022-11-16 (line 131), dating the deep-space AQUARIUS demonstration.
+
+**Verdict:** Correct the AQUARIUS bibliography identity to Sekine et al. and add event-specific flight citations. Define `first_flight`: if it means first flight/deployment of a water-resistojet demonstration, JAXA documents AQT-D in 2019; if it means successful in-space operation or deep-space transfer, state that event separately. Classify HYDROS-C as electrolysis propulsion, map Vigoride to its water MET, and date Pale Blue EYE’s flight and operation to 2023. No replacement year inferred until the event definition is specified. **rc-764**. Extracted: `extracted_data/r885_spacecost_water_resistojet_flight_history.csv`.
+
+## R887 — Spacecost surface-to-LEO ascent delta-v citation scope (2026-11-18)
+
+`spacecost_surface_to_leo_ascent_code_current_2026` records Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`: `reference/delta_v_segments.csv` stores 9,400 m/s for “surface → LEO ascent” and says “Textbook value including gravity + drag losses (Curtis 'Orbital Mechanics for Engineering Students')”; `spacecost/deltav.py` carries the same row. The registry entry `curtis_orbital_mechanics_engineering_students` remains `registered_not_pulled`, and the upstream note gives no edition, page or launch/orbit/loss assumptions.
+
+`beaurain_et_al_2003_earth_to_orbit_rocket_propulsion_ntrs20030066115`, NASA NTRS record abstract, says overcoming gravity and “high levels of atmospheric drag” is required for an Earth parking-orbit speed of about 9 km/s. This supports the scale and loss categories, not the exact 9,400 m/s. Closed **rc-060** corrected a false NASA SP-125 attribution but did not verify the Curtis page or the stored value. **Verdict:** identify the Curtis edition/page or give an auditable ascent delta-v derivation and define its target orbit and loss boundary; keep 9,400 m/s pending a matched basis. No replacement inferred. Open **rc-766**. Extracted: `extracted_data/r887_surface_to_leo_ascent_dv_citation_scope.csv`.
+
+## R888 — Spacecost ssoBFT citation-policy gap (2026-11-18)
+
+At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/delta_v_segments.csv` row 6 stores 6,500 m/s for “LEO → average NEA” and compares the NEA median in SsODNet ssoBFT (8.88 km/s); row 7 stores 8,500 m/s for “LEO → hard NEA” and cites the ssoBFT main-belt fifth percentile (8.49 km/s) and NEA median (8.88 km/s). `CITATIONS.md` §1 says the listed catalog sources “none ... feeds any table here,” and §3 Delta-v segments omits Berthier et al. (2023). The README “Citations and licence” section repeats that no table source imposes a citation condition and says none of the three sources “is here.” The official IMCCE ssoBFT documentation, “Usage and citation,” asks for citation of Berthier et al. (2023) for any use of the table; the official citation record gives DOI 10.1051/0004-6361/202244878. The article is already registered as `berthier_2023_ssodnet`; the official service documentation is registered as `imcce_ssodnet_orbital_metadata_api`. Applied **rc-015** corrected the average-NEA attribution and called 6.65 km/s a peak; applied **rc-230** corrected the hard-NEA accessibility label. Neither changes the bibliography omission or repeated policy statements. **Verdict:** add the requested article citation and reconcile both policy statements with the two NEA notes; no delta-v replacement inferred. Open **rc-767**. Extracted: `extracted_data/r888_spacecost_ssobft_citation_policy_gap.csv`.
+
+
+## R890 — Spacevalue Mars-orbit destination-note citation trail (2026-11-18)
+
+- `dra5_2009_human_exploration_of_mars`: NASA/SP-2009-566, PDF p. 36 (printed p. 22), states “At Mars, the vehicles are inserted into a 1-sol orbit (250 km × 33,793 km).” The same source is extracted in `extracted_data/r115_dra5_vs_spacecost_mars_rows.csv`.
+- `spacevalue_mars_orbit_note_citations_code_current_2026`: at Spacevalue main `80ec7549164fc1ed6c800ab0ef6205cde08ae9fd`, `catalog.py` sets `_MARS_1SOL_ORBIT_KM = (250, 33_793)` and names “NASA DRA 5.0” in the note, but gives no pinpoint page; `_MARS_200KM_CAPTURE_M_S = 2_100` is printed as the same-arrival circularization comparison without a source or linked derivation. `CITATIONS.md` has no NASA DRA 5.0 bibliography entry.
+- `spacecost_mars_moi_200km_comparator_current_2026`: at Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/delta_v_segments.csv` row 30 gives a two-body Hohmann arrival `v_inf = 2.65 km/s` and compares 2.10 km/s to circularize into a 200-km orbit; row 29 says the 2,100 m/s TEI row is not a DRA 5.0 figure. Spacevalue’s generated note does not point to this calculation.
+- Verdict: the DRA altitude pair is source-backed, but Spacevalue lacks the pinpoint bibliography and attribution path for its Mars-orbit context note. This is distinct from `rc-693` (economicspace worksheet inputs), applied `rc-073` (Spacecost TEI row), open `rc-604` (GTO plane basis), and applied `rc-177` (GEO coplanar burn). Preserve constants and destination prices; no numeric replacement inferred. `rc-769`.
+- Extracted: `extracted_data/r890_spacevalue_mars_orbit_note_citation_gap.csv`.
+
+## R895 — MPD propellant performance claims lack source attribution (2026-11-18)
+
+- `spacecost_mpd_propellant_row_citation_code_current_2026` [T4]: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `_THRUSTER_SYSTEMS` assigns MPD 40 kg/N and 0.40 efficiency; the MPD table row stores 4,000 s Isp. Its note says “Ground-tested at Princeton and by RIAME (Moscow) at 100+ kW” but identifies no study, test article or figure. CITATIONS.md §8 assigns each propellant's citations to its row notes.
+- `economicspace_stage3_spacecost_0_14_0_mpd_propellant_row_2026` [T4]: Economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7` frozen Stage 3 row 41 (pipeline 1.23.6; catalog_date 2026-10-17) repeats the same values and test claim.
+- `polk_et_al_2024_lithium_mpd_thruster_iepc_2024` [T2]: Polk et al., IEPC-2024-841, p. 2, reports a Princeton lithium test facility rated up to 100 kWe and lists lithium MPD key parameters of 4,000-7,000 s, over 60% efficiency, and 2-2.5 kg/kWe for thruster plus power processing at 500 kWe-1 MWe. Page 6 summarizes MAI results: 150 kW at 44% and 3,724 s; 200 kW at 50% and 4,240 s. The paper names Moscow Aviation Institute (MAI), not RIAME.
+
+Verdict: Polk et al. provide a traceable lithium-MPD performance history that can inform the Isp and high-power test notes, but do not directly substantiate the code's 40 kg/N specific-mass input or identify a RIAME test. The reported measurements and KPPs also use different operating points and boundaries from the generic 4,000 s / 0.40 row. Open `rc-774` for Spacecost and `rc-775` for the frozen Economicspace export; cite the exact test configuration and retain unsupported inputs as scenarios until like-for-like support is identified. Extracted: `extracted_data/r895_mpd_propellant_citation_gap.csv`.
+
+## R906 — Economicspace Apollo SP-4029 reference missing from its bibliography (2026-11-18)
+
+- **economicspace_apollo_sp4029_bibliography_gap_code_current_2026**: At Economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, modules/calc.py line 2873 attributes the 2,050 m/s Apollo 15–17 descent to NASA SP-4029. campaign/verification_sheet.py lines 824–828 also names SP-4029 for the Apollo descent row notes. CITATIONS.md identifies itself as the authority for references (lines 8–15), but contains no Apollo, Orloff, or SP-4029 entry.
+- **sp4029_apollo_by_the_numbers**: General_Research registers Orloff’s Apollo by the Numbers: A Statistical Reference (NASA SP-2000-4029; NTRS 20010008244) and its word-coordinate-verified mission tables.
+- **Upstream field**: Economicspace DV_NRHO_TO_LUNAR_SURFACE_KM_S descent component and its verification-sheet source note.
+- **Verdict**: rc-786 requests the complete Apollo SP-4029 bibliography entry in CITATIONS.md. The 2.050 km/s value is unchanged.
+- **Extracted data**: extracted_data/r906_economicspace_apollo_sp4029_bibliography_gap.csv.

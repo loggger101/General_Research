@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_grouped_comparator_bibliography_current_2026,Howard grouped entry,"Howard, K. T., et al. (2009), LPSC 40, 1235 (CV3 sulfide)",abbreviated citation,"CITATIONS.md §3, lines 420-421",No title or permanent link is given in this grouped entry.
+asteroidcatalog_grouped_comparator_bibliography_current_2026,Zhang grouped entry,"Zhang et al. (2023), A&A 671, A77, Table 5 (M-type densities)",abbreviated citation,"CITATIONS.md §3, lines 421-422","No title, DOI or direct article link is given in this grouped entry."
+howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235,Article title,Modal Mineralogy of CV3 Chondrites by PSD-XRD: Mineralogic Insights into a Complex Evolutionary History,title,"LPI abstract PDF, p. 1",Title and authors as printed in the official conference abstract.
+howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235,Conference record,"40th Lunar and Planetary Science Conference (2009), Abstract 1235","conference, abstract number","LPI abstract PDF, p. 1",https://www.lpi.usra.edu/meetings/lpsc2009/pdf/1235.pdf
+zhang_etal_2023_m_type_asteroid_meteorite_analogues,Article title,Compositional indication of E- and M-type asteroids by VIS-NIR reflectance spectra of meteorites,title,"A&A paper first page, A77",Title as printed in the article.
+zhang_etal_2023_m_type_asteroid_meteorite_analogues,Journal citation,Astronomy & Astrophysics 671:A77 (2023),"journal, volume:article number",A&A paper first page,Publisher paper record.
+zhang_etal_2023_m_type_asteroid_meteorite_analogues,DOI,10.1051/0004-6361/202245207,DOI,A&A paper first page,Permanent article identifier.

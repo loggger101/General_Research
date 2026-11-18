@@ -1,4 +1,95 @@
 # Research log
+- **Round 928** (2026-11-18): Opened rc-808 for Spacecost’s unsourced iodine solid density; the verification sheet carries the value into tank-mass fraction and WHO reports 4.93 g/cm3 at 25 °C.
+- **Round 927** (2026-11-18): Opened rc-807 for Spacecost’s iodine Isp row; the NASA Busek target is value-specific and distinct from the flight-history and price citations already in the row note.
+- **Round 926** (2026-11-18): Opened rc-806 to complete nine abbreviated Spacecost launch-comparator references with full titles and direct links.
+- **Round 925** (2026-11-18): Opened rc-805 to complete nine abbreviated Spacecost operational-comparator references with full titles and direct links.
+- **Round 924** (2026-11-18): Opened rc-804 to complete eight abbreviated AsteroidCatalog comparator references with full titles and DOI links.
+- **Round 923** (2026-11-18): Opened rc-803 to complete Spacevalue’s grouped bibliography entries for the Mars plastics, Sabatier, asteroid-CO2 and lunar sulfur-concrete comparators.
+- **Round 922** (2026-11-18): Opened rc-802 to complete Spacevalue’s grouped bibliography entries for the phosphorus and sulfur comparators.
+- **Round 921** (2026-11-18): Opened rc-801 to complete Spacevalue’s grouped bibliography entries for the ammonia arcjet and habitat-nitrogen sources.
+- **Round 920** (2026-11-18): Opened rc-800 to complete the Spacevalue bibliography records for the Lewis and Morren sources cited beside the organics utility scenario.
+- **Round 919** (2026-11-18): Opened rc-799 to complete the Howard et al. and Zhang et al. comparator references in AsteroidCatalog’s grouped bibliography.
+- **Round 918** (2026-11-18): Opened rc-798 to complete the AsteroidCatalog bibliography entry for the HED modal-mineralogy comparator.
+- **Round 917** (2026-11-18): Opened rc-797 to complete AsteroidCatalog’s bibliography entry for the five-target JWST L-type mineralogy comparator.
+- **Round 916** (2026-11-18): Opened rc-796 to complete the source trail for Spacevalue’s structural-metal manufacturing comparators.
+- **Round 915** (2026-11-18): Opened rc-795 to separate SpinLaunch’s orbital-system design claims from suborbital test history and refresh its dated company-status note.
+- **Round 914** (2026-11-18): Opened rc-794 to separate Skylon/SABRE’s 2015 precooler rate claim from its 2019 Mach-5 ground test and cite the programme and company status.
+- **Round 913** (2026-11-18): Opened rc-793 to correct the HARP event mass in Spacecost's light-gas-gun note and add scoped citations for its acceleration and laboratory-velocity claims.
+- **Round 912** (2026-11-18): Opened rc-792 for Spacecost's Lunar space-elevator material claims, whose cited evidence does not pinpoint the M5 comparison.
+- **Round 911** (2026-11-18): Opened rc-791 for Spacecost’s Earth space-elevator material claims and historical attribution, which lack pinpoint evidence.
+- **Round 910** (2026-11-18): Opened rc-790 for Spacecost’s Lunar mass-driver prototype note, which conflates build and demonstration location and lacks complete citations.
+- **Round 909** (2026-11-18): Opened rc-789 for Spacecost’s Sea Dragon payload and citation gaps after comparing its expendable LEO field with Aerojet’s 1963 NASA report.
+- **Round 908** (2026-11-18): Opened rc-788 for Spacevalue's Howard NASA DSEV source, cited as a LEO demand comparator but absent from its CITATIONS.md in-space demand section.
+- **Round 907** (2026-11-18): Opened rc-787 for Spacevalue’s NASA TP-3473 shielding citation absent from CITATIONS.md.
+- **Round 906** (2026-11-18): Opened rc-786 for Economicspace’s Apollo SP-4029 flight-data citation missing from CITATIONS.md.
+- **Round 905** (2026-11-18): Opened rc-785 for Krog & Berstad’s arXiv transfer study cited in Spacecost code but absent from its bibliography.
+- **Round 904** (2026-11-18): Opened rc-784 for the Kleinhenz & Paz 2017 paper cited in Economicspace code but missing from its reference bibliography.
+- **Round 903** (2026-11-18): Opened rc-783 for Spacecost's inline NTRS 20140005558 material-data reference, which is absent from CITATIONS.md §4.
+- **Round 902** (2026-11-18): Opened rc-782 for the generated Economicspace verification worksheet’s missing Git commit identifier required by CITATIONS.md §8.
+- **Round 901** (2026-11-18): Opened rc-781 for incomplete citations to Campins et al. and IAU Resolution B2 in AsteroidCatalog’s diameter-conversion chain.
+- **Round 900** (2026-11-18): Opened rc-780 for missing AsteroidCatalog bibliography entries behind its geometric-albedo ceiling rationale.
+- **Round 899** (2026-11-18): Opened rc-779 for the citation and population scope of AsteroidCatalog’s beyond-Jupiter albedo-by-H fallback.
+- **Round 898** (2026-11-18): Opened rc-778 for AsteroidCatalog’s MPC designation-link source, which the citation guide says to acknowledge but the release metadata and notes do not identify.
+- **Round 897** (2026-11-18): Opened rc-777 for Economicspace Stage 4 results, whose citation guide requires a Git commit that the CSV and GUI run manifest do not record.
+- **Round 896** (2026-11-18): Opened rc-776 for Spacevalue’s standalone destination build, whose CSV lacks the release tag and package version its citation guide asks users to cite.
+- **Round 895** (2026-11-18): Opened rc-774 and rc-775 for Spacecost’s uncited MPD performance inputs and high-power test claims, including the same gap in Economicspace’s frozen Stage 3 table.
+- **Round 894** (2026-11-18): Opened rc-773 for Spacecost’s output-citation gap: CSVs record the data contract but omit the separate package release identifier required by its citation guide.
+- **Round 893** (2026-11-18): Opened rc-772 for AsteroidCatalog’s MP3C provenance gap: its citation guide asks users to record the database version, but the fetcher and release manifest omit it.
+- **Round 892** (2026-11-18): Opened rc-771 for Spacevalue’s cislunar and lunar-surface delivery notes, which omit source identities for their inherited delta-v figures.
+- **Round 891** (2026-11-18): Opened rc-770 for Spacevalue’s Mars-surface note, which calls the 30% entry-survival figure “MSL / Perseverance measured” without naming the studies or figures.
+- **Round 890** (2026-11-18): Opened rc-769 for Spacevalue’s Mars-orbit context note: NASA DRA 5.0 is named without a pinpoint citation, and the 2,100 m/s comparator lacks a linked derivation.
+- **Round 889** (2026-11-18): Opened rc-768 for AsteroidCatalog’s ssoBFT-derived values: the output retains ssoCard IDs but does not publish the property-level bibrefs IMCCE asks users to include where possible.
+- **Round 888** (2026-11-18): Opened rc-767 for Spacecost's ssoBFT attribution gap: its NEA row notes use ssoBFT statistics, but the citation policy says no such source feeds a table and the Delta-v bibliography omits Berthier et al. (2023).
+- **Round 887** (2026-11-18): Opened rc-766 for Spacecost's 9,400 m/s surface-to-LEO value, whose Curtis citation has no edition/page and whose exact ascent-loss basis remains undocumented.
+- **Round 886** (2026-11-18): Opened rc-765 for Spacevalue's Cargo Rust/Python boundary speedup claims, which have no committed timing harness or raw benchmark output.
+- **Round 885** (2026-11-18): Opened rc-764 for Spacecost water-propulsion flight-history scope and citations: the 2022 examples mix different propulsion architectures and event dates, and the 2024 AQUARIUS paper is misattributed in the upstream bibliography.
+- **Round 884** (2026-11-18): Opened rc-763 for Spacecost hydrazine-arcjet chronology: NASA and IEPC place the first-generation Telstar 401 flight in 1993, while MR-510/A2100 was a subsequent system and Lockheed dates the first A2100 satellite to 1996.
+- **Round 883** (2026-11-18): Opened rc-762 for Spacecost HTP monopropellant first_flight=1949; the Science Museum Group distinguishes the Super Sprite engine first firing from the start of flight trials.
+- **Round 882** (2026-11-18): Opened rc-761 for Spacecost's uncited HTP/RP-1 flight history; UK Space Agency chronology separates the 1969 first trial from the 1971 orbital success, and the 1969 code comment mislabels R1.
+- **Round 881** (2026-11-18): Opened rc-760 for Spacecost’s uncited methalox flight-history claim; LandSpace’s milestones distinguish the 2022 first launch from the 2023 first successful orbit.
+- **Round 880** (2026-11-18): Opened rc-759 for Spacecost’s uncited LES-6/EO-1 PPT flight history; NASA reports document the LES-6 use and EO-1 on-orbit operation, while the propellant bibliography has no PPT entry.
+- **Round 879** (2026-11-18): Opened rc-757 to separate SERT-II’s mercury thrusters from ATS-6’s cesium thrusters and cite both; opened rc-758 to review Spacecost’s 3,000 s mercury-ion value against the SERT-II report’s ~4,200 s flight operating point.
+- **Round 878** (2026-11-18): Opened rc-756 for Spacecost’s uncited PRISMA/LMP-103S flight claim; NASA GSFC’s assessment identifies PRISMA’s 2010 launch and its HPGP/LMP-103S system.
+- **Round 877** (2026-11-18): Opened rc-755 for Spacecost’s ALICE bibliography and attribution gap; Pourpoint et al. say 210 s is calculated from ground-test data as an estimate for flight Isp, while Risha et al. support the ideal and static-test figures.
+- **Round 876** (2026-11-18): Opened rc-754 for Spacecost’s Aerozine-50/NTO bibliography gap; its current note cites Boyce and Cuffe & Jacobs, but CITATIONS.md has neither entry. The 314.5 s AJ10-137 rating and injector-level measurements remain distinct claims.
+- **Round 875** (2026-11-18): Opened rc-753 for Spacecost’s MTBF bibliography and source-scope gap; the current row cites Navard (1993) and Jacklin (2019), while CITATIONS.md omits both and neither source establishes the 30-year scenario.
+- **Round 874** (2026-11-18): Opened rc-752 for Spacecost’s Phobos cycle and 50% dark fraction; the NASA Mars Fact Sheet supports synchronous rotation but not the illumination or Mars-occultation scope.
+- **Round 873** (2026-11-18): Opened rc-751 for Spacecost’s mid-latitude Mars surface light/dark inputs; NASA NTRS supports the current rounded cycle and 50% illumination scenario, and supplies the missing citation and scope.
+- **Round 872** (2026-11-18): Opened rc-750 for the Spacecost low-dv NEA row’s 1.0–1.5 AU band and 1.2 AU representative value; Elvis et al. supports the accessibility class but does not establish the generic class-distance selection.
+- **Round 871** (2026-11-18): Opened rc-747 for Spacecost’s Gateway NRHO 1% eclipse fraction, rc-748 for the uncited Jupiter-Trojan distance band, and rc-749 for the generic main-belt AU bins; NASA/TM-2020-220481 supports the Gateway orbit and lunar eclipse bound, while the generic bands lack selection methods.
+- **Round 870** (2026-11-17): Opened rc-746 for Spacecost’s zero-eclipse Sun-Earth L2 row; NASA Webb and ESA Gaia sources support mission-specific eclipse-avoiding orbits, while the generic row does not identify which mission orbit it represents or whether lunar shadow is included.
+- **Round 869** (2026-11-17): Opened rc-745 for the 50% dark fraction shared by Spacecost’s small-body environment rows; the Vesta comparator is site-specific and the generic rotation citation does not establish the illumination fraction.
+- **Round 868** (2026-11-17): Opened rc-744 for Spacecost’s 100-km low lunar-orbit eclipse fraction; an idealized zero-beta geometry is compatible with 0.40, but the upstream row gives no orbit-plane or averaging basis.
+- **Round 867** (2026-11-17): Opened rc-743 for Spacecost’s Mars 1-sol eclipse fraction; DRA 5.0 supports the orbit dimensions but does not provide the stored 5% fraction or its geometry and averaging basis.
+- **Round 866** (2026-11-17): Opened rc-742 for Spacecost’s Venus and Mercury orbit eclipse fractions; NASA’s Magellan and MESSENGER records support mission-specific orbit periods and geometry but not the stored fixed fractions or their intended environment scope.
+- **Round 865** (2026-11-17): Opened rc-741 for Spacecost’s unsupported 850 m/s low-lunar-orbit return TEI input; NASA’s 915 m/s comparator ends at Earth orbit and does not establish the direct-to-entry value. The supplied 2026-11-16 verification sheet’s 63 unbacked input tags were cross-checked against existing open or applied candidate records, so the sheet adds no unmatched input gap.
+- **Round 864** (2026-11-17): Opened rc-740 for Spacecost’s unsupported 10,000 kg return-recovery batch denominator; the current $15M/recovery input becomes $1,500/kg at that nominal batch size, while the cost amount and batch basis remain separate issues.
+- **Round 863** (2026-11-17): Opened rc-739 for Spacecost’s destination-invariant 15% Earth-return TPS mass fraction; the cited sizing paper reports speed-specific thickness, not a universal TPS mass-per-cargo fraction. RC-134 continues to track Economicspace’s separate implementation.
+- **Round 862** (2026-11-17): Rechecked rc-584, rc-624/625, rc-629/630/631, rc-652, rc-684, rc-735 and rc-738 against Economicspace main and its current verification sheet; frozen rows retain citation gaps while current worksheet locators and notes have changed.
+- **Round 861** (2026-11-17): Opened rc-738 for the frozen 1.23.6 PV-battery cost row, whose $800/W EOL estimate lacks the current same-boundary source caveat and historical array-comparator limits.
+- **Round 860** (2026-11-17): Opened rc-737 for the frozen spacecraft-development row, whose 2026 label omits the nominal FY2011-FY2016 basis and CPI-U carry-forward.
+- **Round 859** (2026-11-17): Opened rc-736 for the frozen Mission operations row, whose 2026 label omits the nominal pre-return plan basis and current CPI-U carry-forward.
+- **Round 858** (2026-11-17): Opened rc-735 for the latest frozen depot-handover row, which omits the current no-component-derivation and scenario language; its value and range remain unchanged.
+- **Round 857** (2026-11-17): Opened rc-734 for the frozen FAA compliance row, which omits the current estimate disclosure and effort floor; its programme-cost value remains unchanged.
+- **Round 856** (2026-11-17): Opened rc-733 for the frozen surface-lander row, which omits the current CLPS comparator’s whole-service boundary; the historical hardware-rate range remains unchanged.
+- **Round 855** (2026-11-17): Opened rc-732 for the latest selectable frozen mining-payload row, which retains the older SSCM/NICM framing but omits the current no-matched-CER scenario qualification; the historical rate remains unchanged.
+- **Round 854** (2026-11-17): Opened rc-731 for the frozen return-capsule cost row, which omits the current no-unit-cost scenario qualification; the historical rate remains unchanged.
+- **Round 853** (2026-11-17): Opened rc-730 for the latest frozen Economicspace upper-stage and tank cost rows; both values remain estimates while their anchor prices and tank allocation are unsupported.
+- **Round 852** (2026-11-17): Opened rc-728 and rc-729 for frozen Economicspace electric-propulsion and battery-energy rows that omit current source limits; the current values remain historical scenarios.
+- **Round 851** (2026-11-17): Opened rc-727 for the archived Economicspace mining-payload cost row; the frozen SSCM/NICM attribution conflicts with the current no-matched-CER scenario note, while the historical rate remains unchanged.
+- **Round 850** (2026-11-17): Opened rc-726 for current lunar-surface annual-market inputs I103-I105; the 2,500/7,500/12,500 kg/yr ceilings are allocations from a 50,000 kg/yr scenario, not observed demand.
+- **Round 849** (2026-11-17): Added GAO’s historical Titan IV/Centaur unit-cost estimate as a scoped comparator for open rc-421; its contract configuration and cost allocation do not establish a current Centaur III or tank cost.
+- **Round 848** (2026-11-17): Opened rc-724 and rc-725 for Proton-M’s $65M price in current Spacecost and frozen Economicspace; FAA labels it an estimate, and GAO traces the same figure to FAA data while noting public-price and mission-scope uncertainty.
+- **Round 847** (2026-11-17): Opened rc-723 for the frozen Economicspace Long March 2D payload row; FAA supports 3,500 kg at 200 km LEO, but the stored note lacks that payload basis.
+- **Round 846** (2026-11-17): Opened rc-720–rc-722 to review the Vega C price basis across current Spacecost and Economicspace frozen inputs; ESA’s 2022 contract list reports a €48.62M Sentinel-1C service contract and a separate €232M Vega-C services line, neither a general current list price.
+- **Round 845** (2026-11-17): Opened rc-719 because Spacecost’s Long March 2D payload field lacked an orbit-specific source; FAA supports 3,500 kg at 200 km LEO, while CNSA gives a separate unqualified 4,000 kg near-Earth capability.
+- **Round 844** (2026-11-17): Opened rc-718 to review Spacecost’s $15M sample-recovery estimate and range, which are grounded in whole-mission operations totals rather than a recovery-specific build-up.
+- **Round 843** (2026-11-17): Rechecked rc-526 against S&P Global’s distinction between 270 MMt total 2024 demand and ~30 MMt/year merchant sales; the 230 Mt Spacevalue value remains open pending a market-boundary choice.
+- **Round 842** (2026-11-17): Opened rc-717 because the Long March 2C LEO value matches CASC’s official 3,850 kg specification, while the upstream note cites Wikipedia for payloads.
+- **Round 841** (2026-11-17): Opened rc-716 because the Epsilon S row’s 1,400 kg LEO figure traces to a JAXA mission requirement, while IHI’s current launch-service page lists a 1,200+ kg lower bound at the same orbit.
+- **Round 840** (2026-11-17): Opened rc-715 for the Jielong-3 payload attribution: Spacecost’s 1,600 kg LEO field is described as a 500 km SSO figure, while official CASC sources state 1,500 kg at 500 km SSO and provide no LEO rating.
+- **Round 839** (2026-11-17): Opened rc-714 for the Zhuque-2E payload note: LandSpace’s product page and Y5 release provide manufacturer support for the 6 t LEO and 4 t SSO figures, with orbit and configuration qualifiers.
+- **Round 838** (2026-11-17): Opened rc-713 for Spacecost’s Pallas-1 payload attribution: Galactic Energy gives broad 5–7 t LEO context and a 7 t optional-Eros maximum, not the row’s exact orbit-specific ratings.
 - **Round 837** (2026-11-17): Rechecked the CI sulfide-split portion of rc-172; AsteroidCatalog still labels its 70/30 pyrrhotite/pentlandite allocation source-free, with no value change.
 - **Round 836** (2026-11-17): Opened rc-709–rc-712 for the latest frozen Economicspace launch-price rows whose current Spacecost reviews clarified or continue to review their source and scenario bases.
 - **Round 835** (2026-11-17): Opened rc-708 for the latest frozen Economicspace Long March 5 row, which carries forward Spacecost’s $133M [$110M,$160M] estimate without endpoint derivation; the current Spacecost review remains rc-592.

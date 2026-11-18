@@ -1,3 +1,33 @@
+## R924 — AsteroidCatalog 0.13.2 comparator bibliography detail (2026-11-18)
+
+At AsteroidCatalog main commit `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `CITATIONS.md` §3 lines 412–420 lists Beck et al. (2021), Kwon et al. (2022), Jones et al. (1990), McAdam et al. (2024), Rivkin et al. (2000 and 1995), Dunn et al. (2010), and Martin et al. (2013) by abbreviated journal identifiers and topics, without article titles or DOI links. Kwon’s separate entry at line 298 is also abbreviated. Their registered source rows already contain full titles, publication details and DOI URLs.
+
+The sources are comparators for surface hydration, T-type spectra, outer-belt ice hypotheses and meteorite sample modes. Preserve their existing sample and surface boundaries; none of these bibliography entries establishes class-level bulk water or mineral fractions. Verdict: open **rc-804** to add complete references and permanent links. This bibliography gap is distinct from the evidence-to-value reviews rc-445, rc-446, rc-448, rc-449 and rc-569. No numeric replacement proposed. Extracted: `extracted_data/r924_asteroidcatalog_0132_comparator_bibliography.csv`.
+
+## R919 — AsteroidCatalog grouped comparator bibliography omits two titles and links (2026-11-18)
+
+`asteroidcatalog_grouped_comparator_bibliography_current_2026`: AsteroidCatalog `CITATIONS.md` §3 lists Howard et al. (2009) as “LPSC 40, 1235 (CV3 sulfide)” and Zhang et al. (2023) as “A&A 671, A77, Table 5 (M-type densities)” (lines 420–422), without the publication titles or permanent links.
+
+`howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235`: the LPI abstract title page (p. 1) gives “Modal Mineralogy of CV3 Chondrites by PSD-XRD: Mineralogic Insights into a Complex Evolutionary History,” by Howard, Benedix, Bland & Cressey, Abstract 1235. `zhang_etal_2023_m_type_asteroid_meteorite_analogues`: the A&A paper first page identifies “Compositional indication of E- and M-type asteroids by VIS-NIR reflectance spectra of meteorites,” *Astronomy & Astrophysics* 671:A77 (2023), DOI 10.1051/0004-6361/202245207.
+
+Verdict: add complete references and permanent retrieval links. Keep the CV3 sulfide and M-type density scopes attached to their respective sources. This is bibliography completeness only, distinct from rc-460 and rc-571; no numeric replacement inferred. **rc-799**. Extracted: `extracted_data/r919_grouped_comparator_bibliography.csv`.
+
+## R918 — AsteroidCatalog bibliography abbreviates the HED modal-mineralogy paper (2026-11-18)
+
+`asteroidcatalog_hed_modal_bibliography_entry_current_2026`: AsteroidCatalog `CITATIONS.md` §3 lists only “Li, S., and Milliken, R. E. (2015) (HED modes)” in its grouped comparator entry (lines 419–420). It is the bibliography reference associated with the V-type modal-mineralogy comparator; the entry does not supply full publication details.
+
+`li_milliken_2015_hed_modal_mineralogy_spectral_models`: Wiley’s publisher record identifies “Estimating the modal mineralogy of eucrite and diogenite meteorites using visible–near infrared reflectance spectroscopy,” *Meteoritics & Planetary Science* 50(11):1821–1850 (2015), DOI 10.1111/maps.12513. The existing source record and extraction characterize its results as sample-level modal ranges, not a derivation of the class-wide V-type mass vector.
+
+Verdict: add the complete reference and permanent DOI link to AsteroidCatalog CITATIONS.md. This bibliography-completeness issue is distinct from applied **rc-467**, which concerns the V-type vector’s source-to-model derivation. No numeric replacement inferred. **rc-798**. Extracted: `extracted_data/r918_li_milliken_bibliography_entry.csv`.
+
+## R917 — AsteroidCatalog bibliography abbreviates the L-type JWST study (2026-11-18)
+
+`asteroidcatalog_ltype_bibliography_entry_current_2026`: AsteroidCatalog `CITATIONS.md` §3 lists only “de Kleer, K., et al. (2026) (L-type JWST spectra)” in its grouped comparator entry (lines 419–420). The upstream item is the L-type JWST mineralogy comparator noted in `asteroid_catalog/mineralogy.py`; this bibliography row does not establish a numerical phase share.
+
+`de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: the title page gives “The Surface Mineralogy of the Spinel-rich Asteroids from Mid-infrared Spectroscopy with JWST” (printed p. 1); the publisher record identifies *The Planetary Science Journal* 7:36 (2026), DOI 10.3847/PSJ/ae374e. Its abstract describes five L-type targets and supplies no quantitative bulk CAI/spinel abundance.
+
+Verdict: add the complete reference and permanent DOI link to the AsteroidCatalog bibliography. This is a citation-completeness review, distinct from **rc-572**, which concerns whether the study supports the modeled bulk spinel mass fractions. No numeric replacement inferred. **rc-797**. Extracted: `extracted_data/r917_de_kleer_bibliography_entry.csv`.
+
 ## R837 — Recheck of the CI sulfide split source status (2026-11-17)
 
 - **asteroidcatalog_ci_sulfide_split_code_current_2026** (AsteroidCatalog origin/main a2c527c09eb39618d7fd26b2b180f730ea906b8b, `asteroid_catalog/mineralogy.py`): `_SULFIDE_CI` remains pyrrhotite 0.70 / pentlandite 0.30 with the comment “estimate: no source gives a ratio”; PHASE_DETAIL applies it to B, C, Cb, and F.
@@ -808,3 +838,14 @@ Cannon, Gialich & Acain (2023), Table 2 p. 4, reports a 40.78 ppm median for six
 `asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026`: AsteroidCatalog `mineralogy.py` says “WHAT HAS NO SOURCE” for the metal split of the C complex, P, D, Z, T, A, R, O, K and L (lines 495-498). `_ALLOY_OCTAHEDRITE` is kamacite=0.89 and taenite=0.11 of the nickel-iron parent (line 519), and `PHASE_DETAIL` assigns that fallback to B, C, Cb, F, Cg, Ch, G, Cgh, P, D, Z, T, A, R, O and L (lines 551-578). The exported table carries body-mass values; B is 0.0089 kamacite plus 0.0011 taenite, while A is 0.0445 plus 0.0055. The code calls this “~9 wt% Ni: no change,” but gives no class-specific metal split source. Economicspace’s current `CalcConfig` defaults detailed phases on and `calc.py` reads `comp_phases_detailed` (main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, lines 323-337). Applied rc-172 reverted K’s former 0.60/0.40 split; it does not cover the other direct class mappings.
 
 **Verdict:** find class-matched phase proportions and their mass/volume basis, or retain the shared fallback as an explicit scenario with sensitivity; preserve the coarse nickel-iron fractions and infer no numeric replacement. Open **rc-699**. Extracted: `extracted_data/r828_asteroidcatalog_unsourced_metal_alloy_fallback.csv`.
+
+
+## R843 — CO2 annual-market cap mixes total demand and merchant sales (2026-11-17; rc-526)
+
+`spglobal_2025_co2_commodity_market_demand`: S&P Global Commodity Insights, *Yes, CO2 is a Commodity* (March 2025), printed p. 7 labels its chart “Global 2024 CO2 demand by end use,” gives total demand of 270 MMt, and states that “The volume of CO2 sold on the merchant market is only around ~30 MMt/y.” The report’s p. 12 states that reproduction, extraction, and distribution require permission or a license.
+
+`iea_2019_putting_co2_to_use`: IEA, *Putting CO2 to Use* (2019), Executive summary p. 3 says “some 230 million tonnes (Mt) ... are used every year”; pp. 5–6 trace the total-use estimate to IHS Markit (2018) and describe the 2015 demand breakdown as mainly EOR and on-site urea use.
+
+`spacevalue_co2_annual_market_code_current_2026`: Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, `catalog.py` blob 222c7aae9004cb1fbf48e58d075a84188cef511b, sets `ANNUAL_WORLD_PRODUCTION_KG["carbon dioxide"]` to 2.3e11 kg/yr and comments “~230 Mt merchant CO2”; `annual_market_kg` returns the terrestrial ceiling for `route="shipped to Earth"`. The current 230 Mt value is about 7.7 times S&P Global’s merchant-sales estimate.
+
+**Verdict:** If the cell means merchant sales, ~30 Mt/yr is a directly matched candidate estimate; if it means total global physical use/demand, the metric and comment need to say so. Keep **rc-526** open until the market boundary is selected; no Spacevalue value changed. Extracted: `extracted_data/r843_co2_market_boundary.csv`.

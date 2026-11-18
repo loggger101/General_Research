@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_aerozine50_performance_citation_code_current_2026;spacecost_propellants_citations_section_current_2026,Current inline citations versus bibliography,Code names Boyce and Cuffe & Jacobs; CITATIONS.md has neither reference,,spacecost/propellants.py Aerozine-50/NTO row; CITATIONS.md §2; main a401930efe30aaad01aafd2b3cb332ad0438c841,Bibliography completeness comparison; no numeric field changed.
+boyce_aj10_oral_history,AJ10-137 Service Propulsion System specific impulse,314.5,s,PDF p. 3,Boyce states specific impulse (Isp) of 314.5 and area ratio 62.5:1.
+cuffe_jacobs_1970,AJ10-137 injector #115 mean Isp in two thrust chambers,312.8 / 311.4,s,PDF p. 32,Cuffe & Jacobs report 312.8 s in one chamber and 311.4 s in another; injector measurements are distinct from the 314.5 s rating.
+cuffe_jacobs_1970,Allocated AEDC Isp vacuum data uncertainty,0.2,s,PDF p. 32,Report says Aerojet allocates a best-guess possible error of 0.2 seconds.

@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_sun_earth_l2_eclipse_code_current_2026,Sun-Earth L2 eclipse fraction,0.0,fraction,reference/environments.csv row Sun-Earth L2; environments.py lines 204-209,Stored value; no cycle_period_hr is set.
+spacecost_sun_earth_l2_eclipse_code_current_2026,Sun-Earth L2 code note orbit family,halo orbit,-,environments.py lines 204-209,Current generic row note names JWST and Gaia as examples.
+nasa_webb_faq_l2_eclipse_avoidance,Webb eclipse-avoidance design,Earth and Moon eclipses avoided,mission design,"NASA Webb FAQs, lines 415-419",Applies to Webb’s flight to L2 and its 10-year mission.
+esa_gaia_operations_l2_orbit,Gaia operational orbit family,Lissajous-type orbit around L2,-,"ESA Gaia operations, Operational Orbit section, lines 284-286",Mission-specific orbit description.
+esa_gaia_operations_l2_orbit,Gaia Earth-eclipse scope,not affected by Earth eclipses,mission orbit,"ESA Gaia operations, Operational Orbit section, line 286",Mission-specific; does not describe Moon eclipses.

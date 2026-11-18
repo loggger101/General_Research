@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_stage3_spacecost_0_14_0_faa_part450_compliance_row_2026,programme cost point,2500000,USD per programme,"campaign/stage3/spacecost-0.14.0/operational_costs.csv, FAA Part 450 licensing compliance",Frozen value; note gives no estimate declaration or amount derivation.
+economicspace_stage3_spacecost_0_14_0_faa_part450_compliance_row_2026,range_low,1000000,USD per programme,"campaign/stage3/spacecost-0.14.0/operational_costs.csv, FAA Part 450 licensing compliance",Historical lower bound.
+economicspace_stage3_spacecost_0_14_0_faa_part450_compliance_row_2026,range_high,5000000,USD per programme,"campaign/stage3/spacecost-0.14.0/operational_costs.csv, FAA Part 450 licensing compliance",Historical upper bound.
+spacecost_faa_part450_compliance_cost_code_current_2026,current estimate qualification,No document gives this amount,,"Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/operational_costs.csv",Current note calls the point an engineering estimate.
+faa_pra_notice_2019_streamlined_license_burden_hours,initial application paperwork burden,2903,hours per initial application,"Federal Register 2019-09588, printed p.4913",Paperwork burden only; not a dollar cost and not total compliance engineering.
+crs_r48582_commercial_launch_reentry_regulations,application-processing fee amount,No amount stated,,"CRS R48582, full report; see rc-232",The source does not support a dollar estimate for the compliance work.

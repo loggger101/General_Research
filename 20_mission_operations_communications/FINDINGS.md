@@ -153,3 +153,26 @@ The current economicspace verification-sheet check flags I129=$2,000,000 [500,00
 The current Spacecost row, updated under applied `rc-516`, says no commercial depot exists and no institutional document prices berthing or handover separately. It cites `nasa_oig_2018_ig-18-016_commercial_resupply_services_audit` for whole-mission CRS costs, identifies those as roughly 100 times the model value, and says the analogy to ISS visiting-vehicle berthing is not a component-level derivation of $2M [0.5M, 8M]. Those limits are not carried into the frozen-row worksheet input.
 
 Open `rc-629` for the worksheet citation and scenario boundary; no cost value or range is changed. Extracted: `extracted_data/r760_depot_handover_verification_sheet_gap.csv`.
+
+
+## R858 — Frozen Stage 3 depot-handover cost derivation scope (2026-11-17)
+
+**economicspace_stage3_archive_table_selection_code_current_2026**: The archived-row selector includes `spacecost-0.14.0`, pipeline 1.23.6, catalog date 2026-10-17.
+
+**economicspace_stage3_spacecost_0_14_0_depot_handover_cost_row_2026**: The frozen row stores $2,000,000/delivery [$500,000, $8,000,000], says “Scaled from ISS visiting-vehicle berthing ops,” labels it ESTIMATE and states that no institutional document prices handover alone. It does not say the analogy is not a calculation or that no component-level derivation exists.
+
+**spacecost_depot_handover_cost_current_2026**: The current row adds “Scaled from names the analogy, not a calculation,” says no component-level derivation exists and labels the value/range a scenario input (rc-516).
+
+**nasa_oig_2018_ig-18-016_commercial_resupply_services_audit**: CRS-1 averaged $191.3M per full cargo mission (executive summary, p. 4); CRS-2 provider averages were $152.1M and $262.6M per mission (p. 9). These figures do not price the handover component.
+
+Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row Depot berthing & handover operations. Verdict: carry the no-derivation and scenario scope into the frozen note; preserve the historical value and range, with no numeric replacement inferred. **rc-735**. Extracted: `extracted_data/r858_stage3_depot_handover_cost_scope.csv`.
+
+## R862 — Depot handover worksheet locator check (2026-11-17)
+
+- **economicspace_current_bestcase_verification_sheet_2026**: p. 31 maps handover to I125=$2,000,000/delivery [500,000,8,000,000]. The note says no component-level derivation exists, describes ISS berthing as an analogy “not a calculation,” and labels the value a scenario input.
+- **economicspace_depot_handover_stage3_frozen_row_current_2026**: the frozen `spacecost-0.5.0` row retains the historical value without the current comparator and scenario clarification. The separate 1.23.6 frozen row remains covered by **rc-735**.
+- Verdict: current handover is I125, not I129; keep **rc-629** open for the archived 0.5.0 row and **rc-735** open for the archived 1.23.6 row. No numeric replacement inferred. Extracted: `extracted_data/r862_depot_handover_current_sheet_locator_check.csv`.
+
+## R864 — Spacecost recovery batch mass basis (2026-11-17)
+
+**spacecost_downleg_recovery_mass_ratio_record_2026** records the nominal batch and left its empirical basis open. At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `delivery.py` calls it the “nominal batch the recovery is spread over” and sets `DOWNLEG_BATCH_KG=10,000`; the function divides `DOWNLEG_RECOVERY_USD` by this value. **spacecost_sample_recovery_operations_row_current_2026** stores $15,000,000 per recovery [$5,000,000, $30,000,000], so the code’s point cost is $1,500/kg at the nominal batch. **economicspace_current_bestcase_verification_sheet_2026**'s current `campaign/verification_sheet.py` has no recovery-batch mass input. R324 measured the earlier multiplier’s price effects but did not source the batch size; applied **rc-254** explicitly left the nominal 10,000 kg pending separate evidence. Open **rc-718** addresses the per-recovery dollar amount and its cost basis, not the kilogram denominator. Verdict: support the 10,000 kg batch with a recovery-specific mass basis or keep it as an explicit scenario with sensitivity; do not alter the $15M/recovery amount under this candidate. **rc-740**. Extracted: `extracted_data/r864_spacecost_recovery_batch_mass_scope.csv`.

@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+gao_nsiad_1990_titan_iv_centaur_unit_cost,Centaur upper stage estimated unit cost,52.0,USD million (table dollars in millions),"Table 3.1, printed p. 16",General Dynamics Space Systems row; reported in the Estimated unit cost column. The value has a superscript h; no dollar-year is inferred.
+gao_nsiad_1990_titan_iv_centaur_unit_cost,Centaur upper stage subcontract price,951.8,USD million,"Table 3.1, printed p. 16; footnote a","Subcontract price, distinct from the estimated unit cost; footnote a dates this subcontract price as of May 1989."
+gao_nsiad_1990_titan_iv_centaur_unit_cost,Titan IV vehicle hardware cost with Centaur upper stage,128.9,USD million,"Table 3.2, printed p. 17","Whole Titan IV vehicle hardware example, not the Centaur component price."
+gao_nsiad_1990_titan_iv_centaur_unit_cost,Titan IV vehicle hardware cost without upper stage,71.9,USD million,"Table 3.2, printed p. 17",Whole Titan IV vehicle hardware example; not directly differenced as a Centaur component price.

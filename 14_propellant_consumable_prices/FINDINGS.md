@@ -422,3 +422,9 @@ The `Direct fusion drive` and `Antimatter-catalysed` rows in Spacecost source `s
 The Direct fusion drive note identifies D-He3 / PFRC-2 and Isp context but does not give the blend ratio or storage-density basis. The Antimatter-catalysed note says a few micrograms initiate a much larger microfission charge, without identifying which material the row density represents. Existing rc-575 concerns D-He3 cost and blend mass basis and already calls for gas-density/pressure documentation as a per-litre cost basis; rc-689 separately records how that density sets the COPV tank-mass ratio. Rc-540 concerns antimatter production cost and does not target the microfission-charge density boundary.
 
 **Verdict:** define the composition or mass boundary and storage state for each row, then cite a matched property basis or label the density as a scenario and bracket its effect on tank mass. Preserve current values pending a defined basis; no replacement inferred. **rc-689** (D-He3 density/state); **rc-690** (antimatter propellant boundary/density). Extracted: `extracted_data/r816_concept_propellant_density_scope.csv`.
+
+## R862 — Krypton price worksheet locator check (2026-11-17)
+
+- **economicspace_current_bestcase_verification_sheet_2026**: p. 29 maps I112 to Iodine (Hall / gridded) at $60/kg and I116 to the learning-curve factor, not Krypton price.
+- **economicspace_krypton_price_stage3_frozen_row_current_2026**: the frozen `spacecost-0.5.0` Krypton row retains $300/kg without a published price source in its note.
+- Verdict: the current sheet no longer selects Krypton price; the historical row remains a procurement-basis gap. Keep **rc-630** open; the current $794/kg midpoint does not supply a like-for-like replacement. Extracted: `extracted_data/r862_krypton_price_current_sheet_locator_check.csv`.

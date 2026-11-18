@@ -1,0 +1,18 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_water_resistojet_flight_history_code_current_2026,first_flight,2022,year,spacecost/propellants.py:1225,"Comment lists HYDROS-C, Momentus Vigoride and Pale Blue without defining the event."
+spacecost_water_resistojet_flight_history_code_current_2026,technology examples,HYDROS-C; Vigoride; Pale Blue,systems,spacecost/propellants.py:1242-1254,"Code groups electrolysis, microwave electrothermal and water-resistojet systems in one water row."
+spacecost_water_resistojet_flight_history_data_current_2026,first_flight,2022,year,reference/propellants.csv:20,Row note attributes an ISS deployment in 2022 to HYDROS-C.
+economicspace_water_resistojet_stage3_row_current_2026,first_flight,2022,year,campaign/stage3/spacecost-0.5.0/propellants.csv:20,Frozen Stage 3 row carries the 2022 value.
+spacecost_propellants_citations_section_current_2026,water flight-history bibliography entry,none mapped,citation gap,"CITATIONS.md §2, water-propellant entry",The AQUARIUS citation is for Isp and does not map the first_flight examples.
+asakawa_aquarius_onorbit_2024,2024 AQUARIUS performance paper identity,"Sekine et al.; Trans. JSASS 67(5), 274-284",bibliography,"J-STAGE article record; hosted PDF title page, printed p. 274",Current Spacecost entry credits Asakawa et al.; the 2024 on-orbit paper identifies Sekine et al.
+asakawa_aquarius_onorbit_2024,AQUARIUS water-resistojet Isp,91.7 +/- 1.0; 90.3 +/- 3.0,s,"Table 3, printed p. 282",DV1 and TCM1 values; about 6 mN and under 14 W.
+jaxa_kibo_aqt_d_water_resistojet_deployment_2019,AQT-D deployment from Kibo,2019-11-20,date,"JAXA deployment news, page lines 37, 52-56",JAXA describes AQT-D as a water-resistojet thruster-module technology demonstration.
+nasa_ptd1_hydros_c_water_electrolysis_2021,PTD-1 launch,2021-01-24,date,"NASA PTD mission page, lines 279-281",HYDROS-C was demonstrated on PTD-1.
+nasa_ptd1_hydros_c_water_electrolysis_2021,HYDROS-C operating principle,"water electrolysis to hydrogen and oxygen, then combustion",propulsion architecture,"NASA PTD mission page, lines 279-281",Supports classification separately from a resistojet.
+momentus_2023_vigoride5_water_met_first_orbit_raise,Vigoride-5 first MET orbital raise,2023-05-08,date,"Momentus release, opening paragraph",MET uses distilled water; this is an orbital-raise date.
+momentus_2023_vigoride5_water_met_first_orbit_raise,Vigoride-3 mission launch,2022-05,month,"Momentus release, paragraph beginning “Momentus has flown three…”",The release gives a separate mission-launch event.
+pale_blue_2023_water_resistojet_inorbit,EYE launch,2023-01-03,date,"Pale Blue release, paragraph 2",EYE carried Pale Blue water-vapor resistojet.
+pale_blue_2023_water_resistojet_inorbit,EYE resistojet first operation,2023-03-03,date,"Pale Blue release, paragraph 2",Release reports about two minutes of operation and successful thrust.
+jaxa_raise3_kir_failed_launch_2022,RAISE-3 launch outcome,launch failed; no orbit deployment,outcome,"JAXA page, lines 332-334",The attempt was on 2022-10-12.
+jaxa_raise3_kir_failed_launch_2022,KIR payload architecture,water resistojet and ion thruster integrated,propulsion architecture,"JAXA page, lines 443-451",Pale Blue proposed the integrated payload for orbital demonstration.
+jaxa_2022_artemis1_equuleus_launch_record,EQUULEUS launch,2022-11-16,date,"JAXA Launch Records, line 131",Artemis I launch record lists CubeSats OMOTENASHI and EQUULEUS.

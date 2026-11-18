@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+stackpoole_2013_pica_pica_x_postflight_eval,Source named in Heat shield / TPS note,NTRS 20140005558,NTRS record identifier,Spacecost spacecost/operations.py line 146 at main a401930efe30aaad01aafd2b3cb332ad0438c841,"General_Research source record identifies Stackpoole, Kao, Qu & Gonzales (2013); the source supports material heritage/performance, not a per-kg cost."
+spacecost_tps_bibliography_gap_code_current_2026,Spacecost bibliography coverage,No Stackpoole or NTRS 20140005558 entry,citation coverage,"CITATIONS.md §4 Operational costs, lines 166-233; whole-file search at pinned main",The file identifies itself as the project bibliography; the TPS note's material reference is absent.

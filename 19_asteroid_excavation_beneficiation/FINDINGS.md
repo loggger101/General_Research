@@ -701,3 +701,9 @@ Verdict: the live input is covered by rc-291, which remains open for the scale a
 **coffman_etal_2026_lunar_regolith_beneficiation_flight_test**: the publisher abstract reports that XRD/Rietveld analysis found plagioclase increased from 35.5 wt% in the L2W60-g814 Mare simulant feed to 70.6 wt% in recovered product during reduced-gravity separation using magnetic and electrostatic stages. The tested objective was an anorthite-rich size fraction. The abstract gives no energy-intensity value; the full text was not retrieved.
 
 The upstream Spacecost row remains 500 [100, 2,000] Wh/kg refined product, with an approximately 50% purity note. The lunar-simulant test supports a purity comparator but does not provide an asteroid energy benchmark or quantified scale conversion. **rc-291** remains open; no numeric replacement inferred. Extracted: `extracted_data/r827_coffman_lunar_beneficiation_purity_comparator.csv`.
+
+## R862 — Beneficiation worksheet locator check (2026-11-17)
+
+- **economicspace_current_bestcase_verification_sheet_2026**: p. 23 maps beneficiation to I84=500 Wh/kg refined product [100,2,000], marked NEED BACKING, and calls the asteroid-material estimate unsourced. Its DOE comparator is 19.3 Wh/kg of ore; the basis is not refined product. Current I79 is Falcon Heavy fairing volume, 157 m3.
+- **economicspace_beneficiation_energy_stage3_frozen_row_current_2026**: the frozen `spacecost-0.5.0` row retains 500 [100,2,000] Wh/kg refined product and cites a classroom worksheet rejected by General_Research.
+- Verdict: correct the locator from I79 to I84; preserve the distinction between DOE's terrestrial feed comparator and the unsupported asteroid product-basis estimate. Keep **rc-684** open for the archive lineage and **rc-291** open for the live value/range. Extracted: `extracted_data/r862_beneficiation_current_sheet_locator_check.csv`.

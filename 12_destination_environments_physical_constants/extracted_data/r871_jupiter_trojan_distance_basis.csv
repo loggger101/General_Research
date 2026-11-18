@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_jupiter_trojan_distance_code_current_2026,generic Jupiter-Trojan distance band,4.9 / 5.2044 / 5.5,AU; AU; AU,"reference/environments.csv, row 22",Values are stored as au_min / au_mean / au_max.
+spacecost_jupiter_trojan_distance_code_current_2026,environment code semantics,au_mean is the semimajor-axis proxy; au_min and au_max are perihelion and aphelion,text,"spacecost/environments.py, lines 43-46",The code does not state how the generic Trojan-class values were selected.
+spacecost_jupiter_trojan_distance_code_current_2026,derived environment outputs,solar_flux_w_per_m2=50.2477696; solar_array_mass_factor=27.0857794; blackbody_temp_k=121.9910227,W/m²; factor; K,"reference/environments.csv, row 22",The code derives these from au_mean; their source basis therefore inherits the distance-input gap.
+spacecost_jupiter_trojan_distance_code_current_2026,citation-map scope,"JPL Small-Body Database: perihelion, semimajor axis and aphelion for every named body",text,"CITATIONS.md, line 268",The generic Jupiter-Trojan population row is not a named body and is not mapped to a population source.

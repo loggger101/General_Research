@@ -246,3 +246,95 @@ At economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `modules/
 ## R825 — Current rotation-period fallback input (2026-11-17)
 
 The current worksheet maps I70=10.222 h to `CalcConfig.default_rotation_period_h` and explicitly says the 2018 DT period is not measured; the model uses the median of 29,288 AsteroidCatalog periods. It flags the fallback NEED BACKING. **rc-579** now carries the live input mapping. The earlier frozen Stage 3 I70 cargo-containment row in **rc-645** is a different field and remains a separate frozen-row issue. Extracted: `extracted_data/r825_rotation_period_live_input_i70.csv`.
+
+## R866 — Venus/Mercury orbit eclipse inputs lack geometry citation (2026-11-17; rc-742)
+
+`spacecost_venus_mercury_orbit_eclipse_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` stores Venus orbit `cycle_period_hr=3.30`, `eclipse_fraction=0.40`, and derived `dark_period_hr=1.32`; Mercury orbit stores `12.0`, `0.15`, and `1.80`. `environments.py` defines `planet_orbit` as “Around a planet.” Its Venus note refers to an “inner gravity-assist leg”; its Mercury note names MESSENGER and BepiColombo for solar-array pointing. `CITATIONS.md` contains no source entry for these two rows’ cycle or eclipse inputs.
+
+`nasa_nssdca_magellan_mission_plan`: The Mission Plan page states the initial Magellan orbit period was “3 hours, 15 minutes” and gives its elliptical periapsis and apoapsis altitudes as 294 and 8,540 km; after aerobraking, its period was 94 minutes. This supports a mission-specific 3.25-h Venus-orbit comparator, not the row’s eclipse fraction.
+
+`mcnutt_et_al_2012_messenger_early_orbital_operations`: printed p. 2 describes MESSENGER’s “nominal 12-h orbit,” with 200-km periapsis and 82.5° inclination. Printed p. 3 says each 88 days contains “one long-eclipse season, and one short-eclipse season.” This supports a mission-specific period and shows eclipse geometry varies by season; it does not establish a fixed 0.15 fraction.
+
+**Verdict:** identify whether each row represents a specific planetary orbiter, a generic planetocentric orbit, or a heliocentric gravity-assist environment. Cite and derive the eclipse fractions from the applicable orbit and solar-shadow geometry, or label them as scenario assumptions with an averaging basis. Preserve the current values pending that definition; no replacements inferred. **rc-742**. Extracted: `extracted_data/r866_venus_mercury_orbit_eclipse_scope.csv`.
+
+## R867 — Mars 1-sol staging-orbit eclipse fraction basis (2026-11-17; rc-743)
+
+`spacecost_mars_1sol_eclipse_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the Mars 1-sol staging-orbit row stores `cycle_period_hr=24.62`, `eclipse_fraction=0.05`, and `dark_period_hr=1.231`. The code note describes the fraction as “representative rather than fixed” and orientation-dependent. **CITATIONS.md** lists NASA DRA 5.0 for the staging orbit, but does not give a derivation or averaging basis for 0.05.
+
+`dra5_2009_human_exploration_of_mars` PDF p. 36 (printed p. 22) states: “At Mars, the vehicles are inserted into a 1-sol orbit (250 km × 33,793 km).” This supports the orbit dimensions; the report does not state the stored 5% eclipse fraction. The dark-period value is the arithmetic product 24.62 × 0.05 = 1.231 h.
+
+**Verdict:** retain DRA 5.0 for the orbit dimensions and document the orbit-plane/Sun geometry, season or epoch, and averaging interval used for the eclipse fraction, or label 0.05 as a representative scenario with sensitivity. Preserve the current value pending that basis; no numeric replacement inferred. **rc-743**. Extracted: `extracted_data/r867_mars_1sol_eclipse_scope.csv`.
+
+## R868 — Low lunar orbit eclipse geometry and citation (2026-11-17; rc-744)
+
+`spacecost_low_lunar_orbit_eclipse_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` stores `cycle_period_hr=1.965`, `eclipse_fraction=0.40`, and `dark_period_hr=0.786` for “Low lunar orbit (100 km).” The code note says “118-min period, ~40% of it behind the Moon.” **CITATIONS.md** Section 5 lists the NASA Moon Fact Sheet for lunar mass, radius, and synodic day; its “Illumination and orbits” list names LEO, GEO, NRHO, the lunar polar ridge, and Mars, but no low-lunar-orbit eclipse source.
+
+`nasa_nssdca_moon_fact_sheet`, Moon/Earth Comparison, Bulk parameters table, gives “Volumetric mean radius (km) 1737.4.” With the row’s 100-km altitude, a circular-orbit zero-beta cylindrical-shadow check gives `asin(1737.4 / 1837.4) / π = 0.3945`, near the stored 0.40. This comparison is consistent with one idealized geometry; the row does not state its inclination, solar beta angle, shadow model, or averaging interval. The stored dark period is the arithmetic product 1.965 × 0.40 = 0.786 h.
+
+**Verdict:** state the orbit and lunar-shadow geometry, solar beta angle, and averaging interval behind 0.40, with a citation or calculation; label it as an idealized scenario if that is the intended basis. Preserve the current values pending that definition; no numeric replacement inferred. **rc-744**. Extracted: `extracted_data/r868_low_lunar_orbit_eclipse_scope.csv`.
+
+## R869 — Small-body environment dark-fraction basis (2026-11-17; rc-745)
+
+`spacecost_small_body_environment_illumination_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` stores `eclipse_fraction=0.50` for eleven `neo`, `main_belt`, and `trojan` rows: the generic low-dv NEA, Bennu, Ryugu, Eros, Didymos, the three main-belt zones, Ceres, Psyche, and the Jupiter Trojans. Their cycle periods range from 2.26 to 10.0 h, producing dark periods of 1.13 to 5.00 h.
+
+`warner_harris_pravec_2009_asteroid_lightcurve_database`: **CITATIONS.md** maps the database to the 6–10 h rotation period used for generic asteroid rows. It does not identify a source or site-illumination method for the shared 0.50 fraction in `reference/environments.csv`.
+
+`stubbs_wang_2012_vesta_illumination_conditions`: §5.1, printed p. 275, says the solar disk is “typically seen about half the time in the tropics” on Vesta. Its annual mean visibility ranges from 0.363 to 0.566 across the body and varies with latitude, axial tilt, shape, and topography. This is a Vesta-specific comparator. Closed **rc-413** concerns the separate `operational_costs.csv` and `storage_systems.csv` inputs; it does not target the environment-table rows.
+
+**Verdict:** specify whether the cycle period is a surface solar-day proxy and document the latitude, body orientation, and averaging assumptions behind 0.50, or label it as a scenario with sensitivity. Preserve current values pending that scope; no numeric replacement inferred. **rc-745**. Extracted: `extracted_data/r869_small_body_dark_fraction_scope.csv`.
+
+## R870 — Sun-Earth L2 eclipse-free orbit scope (2026-11-17; rc-746)
+
+`spacecost_sun_earth_l2_eclipse_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` stores `eclipse_fraction=0.0` for “Sun-Earth L2”; `environments.py` describes a halo orbit chosen so the spacecraft “never enters Earth’s umbra” and names JWST and Gaia. **CITATIONS.md** does not list an L2 source in its illumination/orbits section.
+
+`nasa_webb_faq_l2_eclipse_avoidance`: NASA’s Webb FAQ states the mission avoids “Earth and Moon eclipses” during flight to L2 and the 10-year mission (lines 415–419). This is a mission-specific design basis.
+
+`esa_gaia_operations_l2_orbit`: ESA describes Gaia’s “Lissajous-type orbit” around L2 and says it “is not affected by Earth eclipses” (Operational Orbit section, lines 284–286). This is a separate mission-specific orbit family and only states Earth-eclipse scope.
+
+**Verdict:** cite the two mission-specific orbit records and define which eclipse-avoiding orbit the generic row represents; state whether the zero fraction includes both Earth and Moon shadows. Preserve 0.0 for that scoped orbit; no numeric replacement inferred. **rc-746**. Extracted: `extracted_data/r870_sun_earth_l2_eclipse_scope.csv`.
+
+## R871 — Gateway NRHO eclipse-fraction attribution (2026-11-18; rc-747)
+
+`spacecost_nrho_gateway_eclipse_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` stores `cycle_period_hr=157.4`, `eclipse_fraction=0.01`, and `dark_period_hr=1.574` for “Cislunar NRHO (Gateway).” `environments.py` defines the fraction as local-cycle time spent in darkness and derives the dark period by multiplying the cycle by that fraction. **CITATIONS.md** maps Whitley & Martinez 2016 to the NRHO period and qualitative near-continuous illumination, but does not identify a quantitative eclipse-duration source.
+
+`nasa_tm_2020_220481_ppe_reference_trajectory`, §3.1, printed p. 5, describes the Gateway reference as an L2 Southern 9:2 lunar-synodic NRHO with an average period of 6.56 days and says: “Eclipses by the moon are encountered regularly, but last less than 90 minutes.” The same page says the 15-year reference avoids Earth eclipses except for two partial events in years 14 and 15. A 90-minute single-event bound divided by 6.56 days is 0.00953; the row’s rounded 157.4-hour cycle multiplied by 0.01 implies 94.44 minutes. This is compatible with a rounded single-event upper-bound scenario, but the source does not state the event count or a cycle- or year-averaged duty fraction.
+
+**Verdict:** cite the NASA trajectory report and specify whether the 1% is a per-orbit lunar-eclipse interval or total dark time averaged over a period, and whether the two partial Earth eclipses are included. Preserve the current value pending that scope; no numeric replacement inferred. **rc-747**. Extracted: `extracted_data/r871_nrho_eclipse_fraction_scope.csv`.
+
+### Jupiter Trojan heliocentric distance basis (rc-748)
+
+`spacecost_jupiter_trojan_distance_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the “Jupiter Trojans (L4/L5)” row stores `au_min=4.9`, `au_mean=5.2044`, and `au_max=5.5`. `environments.py` defines `au_mean` as a semimajor-axis proxy, `au_min` and `au_max` as perihelion and aphelion, and computes solar flux, solar-array mass factor, and blackbody temperature from `au_mean`. The row note identifies Lucy and the L4/L5 population but gives no source or selection method for the class bounds or mean. **CITATIONS.md** maps JPL Small-Body Database orbital elements to named bodies, but not to this generic Trojan population.
+
+**Verdict:** cite the data and method for the 4.9–5.5 AU class envelope and 5.2044 AU mean; distinguish Jupiter’s orbit from a Trojan-population summary or a scenario band, and state the selection vintage if a catalog sample was used. Preserve the current values pending that basis; no numeric replacement inferred. **rc-748**. Extracted: `extracted_data/r871_jupiter_trojan_distance_basis.csv`.
+
+### Main-belt heliocentric distance bands (rc-749)
+
+`spacecost_main_belt_distance_bands_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the inner, mean, and outer main-belt rows store `au_min` / `au_mean` / `au_max` bands of 2.06/2.2/2.5, 2.2/2.7/3.2, and 3.0/3.2/3.5 AU. `environments.py` defines `au_mean` as a semimajor-axis proxy and `au_min`/`au_max` as perihelion/aphelion; the mean drives solar flux, array mass factor, and blackbody temperature. The inner-row note names the 3:1 Kirkwood gap at 2.5 AU, the mean-row note points to `DELTA_V_REFERENCE` at 2.7 AU, and the outer-row note names the 2:1 Kirkwood gap. These notes do not state a source or method for the full bands, means, or class selection. **CITATIONS.md** maps JPL Small-Body Database elements to named bodies, but not to generic main-belt class bands.
+
+**Verdict:** cite and define the source and method for the three class ranges and their means; distinguish resonance boundaries and the internal 2.7 AU destination from a population summary, or label the bins as scenarios. Preserve the current values pending that basis; no numeric replacement inferred. **rc-749**. Extracted: `extracted_data/r871_main_belt_distance_bands.csv`.
+
+## R872 — Low-dv NEA heliocentric distance band (2026-11-18; rc-750)
+
+`spacecost_low_dv_neo_distance_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` row “Near-Earth asteroid (low-dv class)” stores `au_min=1.0`, `au_mean=1.2`, and `au_max=1.5`. `environments.py` defines `au_mean` as the semimajor-axis proxy and `au_min`/`au_max` as perihelion/aphelion; the mean drives solar flux, solar-array mass factor, and blackbody temperature. The row note identifies the 4500 m/s `DELTA_V_REFERENCE` class as Earth-like, low-eccentricity, and low-inclination, and cites Elvis et al. 2011 for accessibility, but does not state the generic distance-band or representative-value method.
+
+`elvis2011`: §5, PDF p. 5, reports mean inclination 2.3° for its ultra-low-delta-v NEO set and says none exceed 7°. Table 1, PDF p. 6, lists six lowest-delta-v examples with semimajor axes 1.027–1.093 AU. These are selected examples and an inclination statistic; they do not identify a population summary or support the row’s 1.0–1.5 AU perihelion/aphelion envelope and 1.2 AU representative value. **CITATIONS.md** maps Elvis et al. to the NEO delta-v accessibility distribution and 6.65 km/s peak, and JPL Small-Body Database orbital elements to named bodies; neither map supplies a generic low-dv class distance selection.
+
+**Verdict:** cite and define the population selection or scenario method behind the 1.0–1.5 AU bounds and 1.2 AU representative value, distinguishing perihelion/aphelion bounds from the representative semimajor axis. Preserve the current values pending that basis; no numeric replacement inferred. **rc-750**. Extracted: `extracted_data/r872_low_dv_neo_distance_basis.csv`.
+
+## R873 — Mars surface day/night fraction attribution (2026-11-18; rc-751)
+
+`spacecost_mars_surface_dark_period_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` row “Mars surface (mid-latitude)” stores `cycle_period_hr=24.66`, `eclipse_fraction=0.50`, and `dark_period_hr=12.33`. The environment note says the sol is 24.66 h and describes a roughly 12 h night. `environments.py` derives `dark_period_hr` by multiplying the cycle by the fraction. **CITATIONS.md** maps the NASA Mars Fact Sheet to mass, radius, and rotation, and Appelbaum & Flood to surface insolation and dust; neither entry maps a source to this row’s illuminated-time fraction.
+
+`nasa_nssdca_mars_fact_sheet`: The orbital-parameters table lists a mean “Length of day” of 24.6597 h, consistent with the stored 24.66 h cycle.
+
+`rucker_2024_mars_surface_power_generation_challenges`: NASA NTRS 20230015763 records Rucker’s *Mars Surface Power Generation Challenges and Considerations*, a 2023 Moon to Mars Architecture Concept Review white paper. PDF p. 2 says typical mid-latitude missions have a 25-hour day/night cycle, with “approximately 50 percent of the time spent under illumination.” The report supports the stored 0.50 as a representative mission scenario and its rounded cycle; it is not a site- and season-independent illumination value. The NTRS record states that the work is a US Government work and public use is permitted.
+
+**Verdict:** cite the NASA white paper for the typical mid-latitude illumination scenario, keep 24.66 h tied to the NASA Mars Fact Sheet, and identify 12.33 h as the derived dark period. Preserve the current values; no numeric replacement inferred. **rc-751**. Extracted: `extracted_data/r873_mars_surface_dark_period_basis.csv`.
+
+## R874 — Phobos surface cycle and dark-fraction scope (2026-11-18; rc-752)
+
+`spacecost_phobos_surface_illumination_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` row “Phobos” stores `cycle_period_hr=7.653`, `eclipse_fraction=0.50`, and `dark_period_hr=3.8265`. The `environments.py` note says Phobos is tidally locked with a 7.65 h orbit and rotation; the code derives the dark period by multiplying the cycle by the fraction. **CITATIONS.md** maps the NASA Mars Fact Sheet to Phobos mass and axes, and Guo et al. 2026 to the GM, but does not map a source to the row’s dark-fraction basis.
+
+`nasa_nssdca_mars_fact_sheet`: The “Satellites of Mars” table gives Phobos sidereal orbital and rotation periods as 0.31891 days each (7.65384 h by conversion), supporting synchronous rotation and a cycle close to the stored value. It does not define the surface illumination fraction or whether it includes Mars occultations.
+
+**Verdict:** cite the fact sheet for Phobos’s synchronous period and state whether 0.50 represents the surface night alone or includes Mars eclipses; identify the geometry and averaging basis. Preserve the current values pending that scope; no numeric replacement inferred. **rc-752**. Extracted: `extracted_data/r874_phobos_surface_illumination_basis.csv`.

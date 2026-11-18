@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_iodine_isp_row_current_2026,isp_vac_s,"2,000",s,reference/propellants.csv: line 19,The row note cites Rafalskyi for iodine flight history and gives the US$60 total-cost caveat; it does not cite the Isp.
+economicspace_current_bestcase_verification_sheet_2026,I62 I_sp source scope,Iodine (Hall / gridded),,verification_sheet.pdf: PDF p. 39,"Maps I62 to the Spacecost row and repeats its note, without a value-specific Isp source."
+nasa_tm_2015_218829,Busek iodine Hall high-thrust full-scale target,"~2,000",s,NASA/TM-2015-218829: printed p. 19,"The NASA memorandum calls this a target, not a measured value; scope is the Busek iodine Hall system."

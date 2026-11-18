@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_current_bestcase_verification_sheet_2026,I84 beneficiation energy,"500 [100,2000]",Wh/kg refined product,verification_sheet.pdf p. 23,Marked NEED BACKING; the asteroid-material estimate is unsourced.
+economicspace_current_bestcase_verification_sheet_2026,I79 Falcon Heavy fairing volume,157,m3,verification_sheet.pdf p. 23,"Current I79 is fairing volume, not beneficiation."
+doe_2007_mining_industry_energy_bandwidth_study,Crushing and grinding comparator,19.3,Wh/kg ore,"Exhibit 24, PDF p. 36",Terrestrial mined-ore basis; not the refined-product basis of I84.
+economicspace_beneficiation_energy_stage3_frozen_row_current_2026,Frozen 0.5.0 beneficiation row,"500 [100,2000]",Wh/kg refined product,campaign/stage3/spacecost-0.5.0/operational_costs.csv,Historic row cites a classroom worksheet rejected by General_Research.

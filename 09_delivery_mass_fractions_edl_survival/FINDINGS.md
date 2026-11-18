@@ -1,5 +1,15 @@
 # Domain 9 — In-space delivery mass fractions & EDL survival (R54)
 
+## R891 — Spacevalue Mars-surface entry-survival citation trail (2026-11-18)
+
+`spacevalue_mars_surface_entry_survival_note_current_2026` — At `spacevalue/catalog.py` lines 412–417, the Mars-surface note interpolates the EDL leg as 30% and says “MSL / Perseverance measured”; it names no study or source figure. `spacevalue/CITATIONS.md` lines 3–6 says the `catalog.py` note beside a value identifies its source and figure.
+
+`spacecost_mars_landed_fraction_basis_current_2026` — At `spacecost/delivery.py` lines 298–307, the 0.30 fraction is paired with MSL entry 3,153 kg → rover 899 kg (28.5%) and Perseverance entry 3,369 kg → rover 1,026 kg (30.5%); the comment attributes the entry masses to Edquist et al. 2022. `spacecost/CITATIONS.md` §8 points readers to that comment.
+
+`edquist_2022_mars2020_aerothermal_entry_masses` — Table 3 (PDF p. 14) lists MSL BET entry mass 3,153 kg and Mars 2020 BET entry mass 3,369 kg. `jpl_msl_factsheet_curiosity_mass` gives Curiosity as 899 kg; `nasa_mars2020_flight_mech_edl_simulation` states “At 1026 kg, Perseverance is the largest” (PDF p. 1). The paired ratios are 28.51% and 30.45%; 0.30 lies between them.
+
+**Verdict:** The 30% destination-note figure has supporting measurements in the registry and a source trail in Spacecost, but the Spacevalue note does not identify those sources or figures under its own citation convention. Open `rc-770` for the downstream attribution gap; applied `rc-039` corrected the Spacecost comment figures and does not cover the Spacevalue note. No replacement value inferred. Extracted data: `extracted_data/r891_spacevalue_mars_surface_citation_gap.csv`.
+
 ## R731 — Downleg capsule dry-mass factor (2026-11-14)
 
 `parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4` — NASA’s Hayabusa entry-vehicle table lists “Vehicle mass 18 kg,” “Payload mass 1.04 kg,” and “TPS mass fraction, inc. insul. 43%” (PDF p. 23). This is a small sample-return entry vehicle, not a bulk-cargo container, and supplies no generic cargo-container scaling.

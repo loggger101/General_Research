@@ -1,3 +1,9 @@
+## R925 — Spacecost 0.17.1 grouped comparator bibliography detail (2026-11-18)
+
+At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `CITATIONS.md` §4 line 228 groups nine works from the 0.17.1 operational-cost notes: Evans et al. (NTRS 20120013705), Schuler et al. on IPEx (NTRS 20240008162), Grile and Bettinger (2024), SpaceX’s June 2026 EU prospectus, the Stardust press kit, NASA’s SHIIVER report (NTRS 20205008233), Johnson and Stephens (NTRS 20190000305), and NASA’s vacuum and microwave sintering work (NTRS 20230008596 and 20205010871). The group gives abbreviated names, report numbers or document shorthand rather than complete titles and direct links.
+
+The registered source records identify each work and its existing comparator scope. Verdict: open **rc-805** to complete the bibliography. This is distinct from rc-489, rc-492, rc-493 and rc-494, which review the comparator evidence and scenario values. No numeric replacement proposed. Extracted: `extracted_data/r925_spacecost_0171_comparator_bibliography.csv`.
+
 # Domain 16 — Reliability, learning curves & hardware service life
 
 Backings: spacecost `reference/operational_costs.csv` rows `Launch vehicle reliability`, `Spacecraft mean time between failures`, the three `Mining system` / `Mining reliability` rows, `Mining rig service life`, `Mining rig maximum trips` and `Rig salvage fraction`, and economicspace `modules/calc.py` `learning_curve_rate`.
@@ -477,3 +483,18 @@ The current Spacecost “Mining rig maximum trips” row retains 5 campaigns [2,
 **berry_et_al_2021_contact_with_bennu_osirisrex_tag_sample_collection**: NASA NTRS 20210025295 says “a sample was successfully collected on the first attempt” (abstract, printed p. 1); §I (p. 2) describes the contact-triggered nitrogen-bottle firing, and the conclusion (p. 8) reports one six-second TAGSAM-head contact. **esa_2024_philae_harpoon_failure_landing_review** reports Philae’s “harpoons hadn’t fired” after touchdown (section “Welcome to a comet”). **nasa_2020_insight_hp3_mole_soil_friction_failure** says the mole “has been unable to dig because the soil doesn’t provide enough friction” (NASA Science Q&A). **kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams** documents Curiosity’s feed stall at sol 1536; the authors report the “first feed-extended drilling sample was successfully collected on Sol 2057, 521 sols after the initial feed stall” (pp. 1, 13). These are one-event or failure-mode comparators, not repeated asteroid-mining campaigns or a measured rig lifetime.
 
 **Verdict:** cite the four flight examples in the trip-limit row or linked source documentation. Keep 5 [2, 12] as an explicit scenario; no numeric replacement inferred. **rc-698**. Extracted: `extracted_data/r827_rig_trip_limit_flight_analogues.csv`.
+
+## R862 — Salvage and reliability worksheet locator check (2026-11-17)
+
+- **economicspace_current_bestcase_verification_sheet_2026**: p. 29 maps rig salvage to I114=0.5. Its note cites NASA CR-3349 and Mas 2007 with denominator and market limits, then says “no source gives a residual fraction of book value”; the value and range are scenario inputs. The reliability section says all three factors are 1.0, so reliability is not charged on this run.
+- **economicspace_rig_salvage_stage3_frozen_row_2026**: the frozen `spacecost-0.5.0` row still has only the generic haircut note. **economicspace_launch_reliability_stage3_frozen_row_current_2026**: frozen Spacecost 1.15.0 row 52 remains 0.97 [0.90,0.99] without an estimator for that point or envelope.
+- Verdict: current salvage is I114, not I118; the old I64 reliability locator is not a current p_launch input. Keep **rc-624** and **rc-652** open for their archived rows. Extracted: `extracted_data/r862_salvage_reliability_current_sheet_locator_check.csv`.
+
+
+## R875 — Spacecost MTBF bibliography and source scope (2026-11-18)
+
+At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the “Spacecraft mean time between failures” row stores 30 years [15, 60]. Its note says the value is “not fitted to a cohort,” calls constant hazard an assumption, and cites Navard (1993) and Jacklin (2019) for early-life failure evidence.
+
+**navard_1993_modelling_early_failures_space_station_freedom**: the NASA/ASEE report’s fitted electronics-survival model “does not model the early failures very well” (NTRS 19940020890, p. 8). **jacklin_2019_small_satellite_mission_failure_rates** reports small-satellite mission failure rates for 2000–2016, including 41.3% total or partial mission failures (NASA/TM-2018-220034, p. 17) and annual success rates for 2000–2008 and 2009–2016 (p. 15). These are distinct populations and evidence types.
+
+**spacecost_mtbf_citations_section_current_2026**: CITATIONS.md §4 lists Grile & Bettinger (2024) among the reliability comparators, but has no entry for Navard (1993) or Jacklin (2019), although both are named in the current row note. Verdict: add their full bibliographic entries and distinguish their scopes; retain 30 [15, 60] years as the stated scenario. No numeric replacement inferred. **rc-753**. Extracted: extracted_data/r875_spacecost_mtbf_bibliography_gap.csv.

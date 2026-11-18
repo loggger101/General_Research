@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_current_bestcase_verification_sheet_2026,I117 PV-battery cost,800,USD/W EOL,verification_sheet.pdf p. 30,Current note says no same-boundary source; JPL figures are array-only without batteries.
+economicspace_current_bestcase_verification_sheet_2026,I121 spacecraft development NRE,837700000,USD/program,verification_sheet.pdf p. 30,Distinct input; current locator is not PV-battery cost.
+economicspace_power_system_cost_stage3_frozen_row_current_2026,0.5.0 Power system row,"800 [500,1500]",USD/W EOL,campaign/stage3/spacecost-0.5.0/operational_costs.csv,Archived note only says burdened recurring cost for a deep-space PV+battery train.
+economicspace_power_system_cost_stage3_spacecost_0_14_0_frozen_row_current_2026,1.23.6 Power system row,"800 [500,1500]",USD/W EOL,campaign/stage3/spacecost-0.14.0/operational_costs.csv,Archived note remains generic; current sheet I117 carries the caveat.

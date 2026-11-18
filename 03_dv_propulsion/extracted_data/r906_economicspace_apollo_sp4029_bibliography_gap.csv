@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+sp4029_apollo_by_the_numbers,Bibliographic identity cited for Apollo descent,Apollo by the Numbers: A Statistical Reference; Orloff; NASA SP-2000-4029; NTRS 20010008244,title and identifiers,NTRS record and General_Research Domain 03 source record,The mission tables and their word-coordinate extraction are already registered.
+economicspace_apollo_sp4029_bibliography_gap_code_current_2026,Economicspace bibliography coverage,"No Apollo, Orloff, or SP-4029 entry",citation coverage,CITATIONS.md lines 6-21 and whole-file search at main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7,modules/calc.py and the verification-sheet source note identify NASA SP-4029.

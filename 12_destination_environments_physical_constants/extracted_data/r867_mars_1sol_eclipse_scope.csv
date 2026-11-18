@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_mars_1sol_eclipse_code_current_2026,Mars 1-sol staging-orbit cycle period,24.62,h,reference/environments.csv Mars 1-sol staging orbit; environments.py lines 306-312,Stored period in pinned Spacecost main.
+spacecost_mars_1sol_eclipse_code_current_2026,Mars 1-sol staging-orbit eclipse fraction,0.05,fraction,environments.py lines 306-312; reference/environments.csv Mars 1-sol staging orbit,Code describes the fraction as representative rather than fixed and orientation-dependent; no geometry or averaging calculation is stated.
+spacecost_mars_1sol_eclipse_code_current_2026,Mars 1-sol staging-orbit dark period,1.231,h,reference/environments.csv Mars 1-sol staging orbit,Stored derived value; 24.62 h x 0.05 = 1.231 h.
+dra5_2009_human_exploration_of_mars,Mars 1-sol orbit dimensions,"250 x 33,793",km altitude,PDF p. 36 (printed p. 22),"“At Mars, the vehicles are inserted into a 1-sol orbit (250 km x 33,793 km).” The report supports orbit dimensions, not the stored 0.05 eclipse fraction."
