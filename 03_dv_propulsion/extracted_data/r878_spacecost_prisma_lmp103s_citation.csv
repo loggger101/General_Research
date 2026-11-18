@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_green_propellant_prisma_code_current_2026,PRISMA / LMP-103S claim,Swedish LMP-103S equivalent flew on PRISMA (2010),claim,Spacecost spacecost/propellants.py; Green monoprop row notes,No citation marker on the claim in the pinned source.
+spacecost_propellants_citations_section_current_2026,bibliography entry for PRISMA / LMP-103S,absent,presence/absence,CITATIONS.md §2 Propellants and propulsion,Full section checked at the pinned commit.
+mulkey_cardiff_2024_green_propulsion_assessment,PRISMA launch year,2010,year,PDF p. 10,The presentation identifies HPGP as a secondary mission objective.
+mulkey_cardiff_2024_green_propulsion_assessment,PRISMA propellant in system schematic,LMP-103S,propellant name,PDF p. 11; PRISMA fluid schematic,Supports mission association; does not establish ASCENT performance.

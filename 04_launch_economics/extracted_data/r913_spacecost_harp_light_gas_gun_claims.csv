@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_target_launch_prices_code_current_2026,upstream Light-gas gun (orbital) note,"HARP 180 kg to 180 km; record said to still stand; about 30,000 g load; hydrogen light-gas guns about 7 km/s in laboratory",text,spacecost/vehicles.py lines 1846-1850; reference/launch_vehicles.csv Light-gas gun (orbital) row,"Current row also carries 30 kg and $300,000, which are reviewed separately in rc-409."
+murphy_bull_1966_harp_brl1327,16-inch HARP shot flight weight,185,lb,"p. 12, Peak Performance for HARP Guns table",The table labels 185 lb as flight weight; its footnote gives the improved Yuma gun result in November 1966.
+murphy_bull_1966_harp_brl1327,16-inch light-shot acceleration,about 15000,g,"p. 12, section 2",BRL gives this as the order of magnitude for equivalent 16-inch light shots.
+murphy_bull_1966_harp_brl1327,large 16-inch rocket-system peak acceleration,about 5000,g,"p. 12, section 2",Separate load case from light projectile shots.
+murphy_bull_1966_harp_brl1327,basic Langmuir payload hardened for launch,30000,g,"p. 31, section 8.1 footnote 23",The report says this instrument payload was hardened for launch from both 7-inch and 16-inch guns.
+nasa_rism_phase1_2002_ntrs20110015675,Arizona 16-inch HARP record-shot mass and altitude,185 lb (84 kg); 111 miles (180 km),payload mass; altitude,p. 181,NASA RISM report dates the event to 19 Nov. 1966.
+army_yuma_proving_ground_2016_harp_record,Yuma HARP record shot,"Nov. 18, 1966; 111 miles; stated still-standing artillery altitude record",date; altitude; record status,article paragraphs 5-8,U.S. Army Yuma Proving Ground article; no mass given in this article.
+nasa_ames_avgr_light_gas_gun_guide_revj_2022,AVGR .301-cal light-gas-gun velocity range,2.5 to nearly 7,km/s,"p. 60, section 4.2.2.1.1",NASA Ames lab capability for a 7.5 mm gun; the guide says hydrogen drives the projectile.

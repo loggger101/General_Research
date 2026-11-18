@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm2c_payload_code_current_main_2026,payload_leo_kg,3850,kg,"reference/launch_vehicles.csv, Long March 2C row",R842; point value.
+spacecost_lm2c_payload_code_current_main_2026,payload_gto_kg,1250,kg,"reference/launch_vehicles.csv, Long March 2C row",R842 context only; this candidate does not review the GTO value.
+spacecost_lm2c_payload_code_current_main_2026,payload source note,Source: Wikipedia payloads,text,"reference/launch_vehicles.csv, Long March 2C row, notes",Spacecost main snapshot a401930efe30aaad01aafd2b3cb332ad0438c841.
+casc_lm2c_vehicle_specifications_2015,LEO payload capacity,3850,kg,"vehicle performance paragraph, lines 17–19",Official page dated 2015-09-15; the LEO figure exactly matches the Spacecost field.
+casc_lm2c_vehicle_specifications_2015,SSO payload capacity,1900,kg at 600 km,"vehicle performance paragraph, line 19",Separate orbit figure; not represented as a Spacecost row field.

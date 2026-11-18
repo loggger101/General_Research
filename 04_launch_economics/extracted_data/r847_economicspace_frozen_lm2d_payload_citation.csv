@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_latest_stage3_lm2d_payload_row_2026,stored payload_leo_kg,"3,500",kg,"Economicspace frozen Spacecost 0.14.0 table, Long March 2D row",Pipeline 1.23.6; matching payload low/high values; note does not cite payload provenance.
+economicspace_latest_stage3_lm2d_payload_row_2026,derived usd_per_kg_to_leo,"8,571",USD/kg,"Same row, derived field","Stored launch price $30,000,000 / 3,500 kg; dependent arithmetic, not independent payload evidence."
+spacecost_lm2d_payload_row_current_2026,live Spacecost payload_leo_kg,"3,500",kg,"Spacecost main reference/launch_vehicles.csv, Long March 2D row",Same current point is separately reviewed under rc-719.
+faa_ast_2018_compendium_long_march_2d,Long March 2D payload to LEO,"3,500 at 200 km",kg; orbit altitude,"2018 Commercial Space Transportation Compendium, Long March 2D fact sheet",Dated direct match for the frozen point; configuration identity still needs reconciliation.
+cnsa_2017_long_march_2d_specifications,Long March 2D payload to near-Earth orbit,"4,000",kg,"CNSA official Long March 2D specification page, 2017-08-01",No orbit altitude is stated; not directly interchangeable with the FAA 200 km rating.
+cgwic_lm2d_technical_data_fairing_dimensions,Long March 2D payload at 645 km SSO,"1,300",kg,CGWIC LM-2D technical data page,Different orbit; page gives no LEO payload value.

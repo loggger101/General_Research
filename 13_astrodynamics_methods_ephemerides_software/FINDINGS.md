@@ -1033,3 +1033,26 @@ At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), 
 ## R825 — Search-resolution and fleet-cap worksheet inputs (2026-11-17)
 
 The current best-case sheet flags I108=7 concentration-search steps, I110=8 programme-search steps, and I109=64 maximum fleet ships NEED BACKING. **rc-498** now maps the two resolution dials to current I108/I110 and retains the missing convergence/error comparison. **rc-574** maps the 64-ship cap to current I109; the worksheet's single 2018 DT winner at F=1 does not test cap sensitivity across the catalog. Extracted: `13_astrodynamics_methods_ephemerides_software/extracted_data/r825_live_sheet_search_inputs.csv`.
+
+## R886 — Spacevalue Rust/Python boundary timing claim (2026-11-18)
+
+`spacevalue_cargo_rust_python_boundary_speed_claim_current_2026` records the Spacevalue README's “1.9x / 1.3x / 3.7x faster” and “about 1 to 3.5 us saved per call” claim for three Cargo functions through the Python boundary (`rust/README.md:47,55`, Spacevalue commit `80ec7549164fc1ed6c800ab0ef6205cde08ae9fd`). The README identifies Windows and CPython 3.14 but gives no CPU, timing harness, workload fixture, repetitions or raw timings. The same commit's `tests/test_cargo_rust.py:175-228` contains seeded parity checks for 60,000, 30,000 and 30,000 cases; those tests compare outputs and do not measure call duration. No timing harness or raw benchmark output is present in the tracked repository.
+
+Verdict: the committed tests support the parity claims, but the reported latency ratios and per-call savings cannot be reproduced from the pinned repository. **rc-765** requests a runnable benchmark procedure and recorded timings, or qualification/removal of the speed claim; no replacement speed value inferred. Extracted: `extracted_data/r886_spacevalue_cargo_rust_boundary_benchmark_gap.csv`.
+
+
+## R889 — SsODNet property-level bibliography in AsteroidCatalog (2026-11-18)
+
+- `imcce_ssodnet_orbital_metadata_api`: the ssoBFT “Usage and citation” documentation asks users, “Whenever possible, please publish the bibliographic references,” and directs them to property `bibref` entries in each target’s ssoCard (lines 313-317). The ssoCard schema says each property has bibliographic references (line 125); the API accepts multiple targets and notes a large response volume (lines 40-48).
+- `asteroidcatalog_ssodnet_property_bibrefs_code_current_2026`: at AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `_SSODNET_WANTED` projects ssoBFT values and the identifier but no `bibref` fields; `_SSODNET_RENAME` maps `id` to `ssodnet_id` for ssoCard round-tripping. `merge_sources` passes supplement columns through and `build_catalog` writes the merged catalog to CSV. `CITATIONS.md` includes Berthier et al. (2023) and acknowledges the request for underlying property references.
+- Verdict: the current output retains an identifier route to ssoCard, but does not publish the imported property-level references. Whether and how to expose a scalable per-body/property bibref mapping remains unresolved; no catalog values are proposed for change. `rc-768`.
+- Extracted: `extracted_data/r889_ssodnet_property_bibrefs_citation_gap.csv`.
+
+## R898 — AsteroidCatalog MPC identity-link attribution in release artifacts
+
+- **mpc_mpcorb_extended_designation_links**: the registered Minor Planet Center designation-link dataset used for aliases JPL's columns cannot place.
+- **asteroidcatalog_mpc_identity_link_release_attribution_code_current_2026**: At AsteroidCatalog main `@a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `CITATIONS.md` lines 78–90 describes MPC designation links and says to acknowledge the MPC as their source. `README.md` lines 205–215 describes the alias-link step and its effect on full-build coverage. `build.py` lines 87–92 conditionally fetches and passes the map; `identity.py` lines 185–215 returns it. `merge.py` line 700 builds the `sources` column from measurement-provider flags. `release.py` lines 73–75 lists only JPL SBDB, SsODNet, NEOWISE and MP3C in `SOURCE_NAMES`; lines 307–334 generates release notes that call out SsODNet and NEOWISE but not MPC; lines 370–400 writes the release manifest and notes without an MPC identity-use field.
+- **Upstream fields:** AsteroidCatalog merged `sources`; release `manifest.sources`; generated `RELEASE_NOTES.md`.
+- **Verdict:** Open rc-778 to carry the MPC acknowledgement and whether its designation map was used with each published release. This is identity provenance, separate from which providers supplied measured values; no catalog values are changed.
+- **Extracted data:** `extracted_data/r898_asteroidcatalog_mpc_release_attribution.csv`.
+

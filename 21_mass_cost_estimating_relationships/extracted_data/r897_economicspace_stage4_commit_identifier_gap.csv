@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_profitability_output_git_commit_provenance_code_current_2026,citation guide identifiers,pipeline_version; catalog_date; git commit,identifiers,CITATIONS.md:376-379,Economicspace main @b7b7591ccb61b4825b4089a692b5b2c7501491f4
+economicspace_profitability_output_git_commit_provenance_code_current_2026,Stage 4 CSV fields stamped,catalog_date; pipeline_version,columns,modules/calc.py:10357-10373,No git commit field is added before CSV export.
+economicspace_profitability_output_git_commit_provenance_code_current_2026,GUI run-manifest fields,written_at; stages_run; delivery_destination; changes_from_defaults; versions; config,JSON keys,ui.py:937-965,"Manifest captures code data-contract versions and run configuration, but no commit identifier."
+economicspace_profitability_output_git_commit_provenance_code_current_2026,documented Stage 4 output,profitability_catalog.csv,file,README.md:1013-1028,Output layout lists this as Stage 4 headline output.

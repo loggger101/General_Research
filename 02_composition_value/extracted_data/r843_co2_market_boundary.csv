@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spglobal_2025_co2_commodity_market_demand,Global 2024 physical CO2 demand,270,MMt/year,"Printed p. 7, chart title and total-demand label",S&P Global Commodity Insights; data compiled March 2025.
+spglobal_2025_co2_commodity_market_demand,Merchant CO2 sales,approx. 30,MMt/year,Printed p. 7,S&P Global estimates volume sold on merchant market; directly matches code comment boundary.
+iea_2019_putting_co2_to_use,Total global CO2 use,230,MMt/year,Executive summary p. 3; sourcing discussion pp. 5–6,Older total-use comparator; not merchant-only.
+spacevalue_co2_annual_market_code_current_2026,Spacevalue annual CO2 market cap,230000000000,kg/year,spacevalue/catalog.py:958 and annual_market_kg; main commit 5f84fbf36709e3c2b09356a65cb34c9890ff8904,Current upstream value; comment labels it merchant CO2.
+spglobal_2025_co2_commodity_market_demand;spacevalue_co2_annual_market_code_current_2026,Current value / merchant-sales estimate,approx. 7.7,ratio,R843 comparison: 230/30,Scope comparison only; no upstream replacement applied.

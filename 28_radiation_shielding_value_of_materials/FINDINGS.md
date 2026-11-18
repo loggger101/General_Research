@@ -96,3 +96,10 @@ Verdict: `rc-296` asks to separate or justify the shielding part of the composit
 
 The comparison is a mixture-specific lunar simulation, not a pure water versus dry-regolith comparison or an economic value measure. It supports evaluating shielding contribution separately from the composite utility and reinforces that added thickness may dominate admixture; it does not establish a per-kilogram ratio. `rc-296` remains open and no upstream value is changed. Extracted: `extracted_data/r433_jaxa_regolith_water_shielding_comparison.csv`.
 
+## R907 — Spacevalue TP-3473 reference missing from its bibliography (2026-11-18)
+
+- **spacevalue_tp3473_bibliography_gap_code_current_2026**: At Spacevalue main 80ec7549164fc1ed6c800ab0ef6205cde08ae9fd, catalog.py line 539 cites NASA TP-3473 Fig. 15 for the GCR cell-transformation comparison of water and dry regolith. CITATIONS.md section “Facts the comments state” (lines 122–143) contains no Kim/TP-3473 entry; a whole-file search finds no Kim, Wilson, TP-3473, or NTRS 19950010497. The code describes 0.25 as a composite that includes feedstock and market judgement.
+- **kim_wilson_1994_gcr_shield_materials_performance_tp3473**: General_Research registers Kim, Wilson, Thibeault, Nealy, Badavi and Kiefer, Performance study of galactic cosmic ray shield materials (NASA TP-3473; NTRS 19950010497).
+- **Upstream field**: Spacevalue IN_SPACE_UTILITY silicate commentary and its reference bibliography.
+- **Verdict**: rc-787 requests the complete TP-3473 bibliography entry and the source’s shielding scope. The utility factor remains an engineering scenario; no value changes.
+- **Extracted data**: extracted_data/r907_spacevalue_tp3473_bibliography_gap.csv.

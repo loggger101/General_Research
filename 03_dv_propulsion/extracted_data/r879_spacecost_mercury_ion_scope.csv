@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_mercury_ion_retired_row_current_2026,stored specific impulse,3000,s,reference/propellants.csv; Mercury ion (RETIRED),Pinned Spacecost value; operating-point basis not stated in the row.
+spacecost_propellants_citations_section_current_2026,SERT-II / ATS-6 bibliography entries,absent,presence/absence,CITATIONS.md §2 Propellants and propulsion,No matching entries in the full pinned bibliography.
+kerslake_1970_sert_ii_flight_performance,SERT II launch date,1970-02-03,date,PDF p. 1 abstract,NASA report identifies the flight spacecraft and mercury thruster.
+kerslake_1970_sert_ii_flight_performance,flight specific impulse,about 4200,s,PDF p. 1 abstract,Reported for the SERT II flight thruster at about 850 W and 28 mN.
+worlock_1975_ats6_cesium_engine_experiment,ATS-6 stationkeeping thruster propellant,cesium,propellant,NTRS abstract,NTRS abstract says two cesium bombardment ion thrusters were used on ATS-6.

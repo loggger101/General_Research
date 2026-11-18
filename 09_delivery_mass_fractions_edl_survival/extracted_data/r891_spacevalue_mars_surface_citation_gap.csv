@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+edquist_2022_mars2020_aerothermal_entry_masses,MSL (Curiosity) BET entry-interface mass,3153,kg,"PDF p. 14, Table 3, MSL BET column, Entry mass",Entry-mass denominator used in the Spacecost MSL comparison.
+edquist_2022_mars2020_aerothermal_entry_masses,Mars 2020 BET entry-interface mass,3369,kg,"PDF p. 14, Table 3, Mars 2020 BET column, Entry mass",Entry-mass denominator used in the Spacecost Perseverance comparison.
+jpl_msl_factsheet_curiosity_mass,Curiosity landed rover mass,899,kg,"JPL MSL fact sheet, mass line (“in Earth gravity”)",Numerator paired with the MSL BET entry mass.
+nasa_mars2020_flight_mech_edl_simulation,Perseverance landed rover mass,1026,kg,PDF p. 1,Numerator paired with the Mars 2020 BET entry mass.
+jpl_msl_factsheet_curiosity_mass;edquist_2022_mars2020_aerothermal_entry_masses,MSL landed-mass fraction,28.51,%,Computed as 899 / 3153 × 100,Comparison: not an independent source value.
+nasa_mars2020_flight_mech_edl_simulation;edquist_2022_mars2020_aerothermal_entry_masses,Perseverance BET landed-mass fraction,30.45,%,Computed as 1026 / 3369 × 100,Comparison: not an independent source value.
+spacecost_mars_landed_fraction_basis_current_2026,MARS_LANDED_MASS_FRACTION,0.30,fraction,spacecost/delivery.py lines 298–307,Current code value; comment rounds the two mission ratios to 28.5% and 30.5%.
+spacevalue_mars_surface_entry_survival_note_current_2026,Mars-surface entry-survival note figure,30,% displayed,spacevalue/catalog.py lines 412–417,Interpolated from the EDL fraction and described as “MSL / Perseverance measured”; no study name or figure appears in this note.
+spacevalue_mars_surface_entry_survival_note_current_2026,Spacevalue citation convention,notes identify source and figure,text,spacevalue/CITATIONS.md lines 3–6,The note is the stated authority for the value; this citation convention is not reflected in the Mars-surface note.

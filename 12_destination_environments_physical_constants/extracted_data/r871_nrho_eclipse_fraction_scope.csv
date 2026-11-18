@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_tm_2020_220481_ppe_reference_trajectory,reference orbit family,"L2 Southern, 9:2 lunar synodic resonance",text,"§3.1, printed p. 5",NASA Gateway reference NRHO.
+nasa_tm_2020_220481_ppe_reference_trajectory,average NRHO period,6.56,days,"§3.1, printed p. 5",The report calls this the average period.
+nasa_tm_2020_220481_ppe_reference_trajectory,lunar eclipses,encountered regularly; each lasts less than 90 minutes,text,"§3.1, printed p. 5",The report does not give a per-orbit event count or average fraction.
+nasa_tm_2020_220481_ppe_reference_trajectory,Earth eclipses in 15-year reference,two partial eclipses in years 14 and 15; otherwise avoided,text,"§3.1, printed p. 5",Distinct from the recurring lunar-shadow events.
+spacecost_nrho_gateway_eclipse_code_current_2026,Spacecost environment row,cycle_period_hr=157.4; eclipse_fraction=0.01; dark_period_hr=1.574,h; fraction; h,"reference/environments.csv, row Cislunar NRHO (Gateway)",The code defines dark time as the cycle period multiplied by eclipse_fraction.
+nasa_tm_2020_220481_ppe_reference_trajectory;spacecost_nrho_gateway_eclipse_code_current_2026,90-minute bound as fraction of reported orbit,0.0095274,fraction,"computed here from §3.1, printed p. 5 and the reported average period",A single-event duration ratio; not an annual duty-cycle estimate.
+nasa_tm_2020_220481_ppe_reference_trajectory;spacecost_nrho_gateway_eclipse_code_current_2026,dark interval implied by stored fraction,94.44,minutes,computed here from reference/environments.csv row Cislunar NRHO (Gateway),"The stored 0.01 is close to the single-event bound rounded to two decimal places, but the row does not state the averaging/event basis."

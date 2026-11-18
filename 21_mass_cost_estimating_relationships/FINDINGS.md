@@ -264,3 +264,128 @@ Verdict: identify I63=1 as the fixed scenario used by this archived row and carr
 **spacecost_stage_and_tank_recurring_cost_code_current_2026**: the current row derives its lower bound from an approximately $30M Centaur III stage anchor less an assumed approximately $20M RL10 cost; the sheet notes that the stage-cost anchor has no institutional source.
 
 Verdict: rc-421 remains open for the tank-only cost basis; the current sheet adds a live input mapping but no replacement value. Extracted: extracted_data/r826_live_sheet_propellant_tank_cost_i119.csv.
+
+
+## R849 — Titan IV Centaur unit-cost comparator (2026-11-17)
+
+`gao_nsiad_1990_titan_iv_centaur_unit_cost`: GAO’s *Space Launch: Cost Increases and Schedule Delays in the Air Force’s Titan IV Program* (NSIAD-90-113), Table 3.1 (printed p. 16), labels the column “Estimated unit cost” and lists $52.0 million for General Dynamics’ Centaur upper stage; the same table lists a $951.8 million subcontract price, with footnote a dating that subcontract price as of May 1989. Table 3.2 (printed p. 17) lists $128.9 million for a complete Titan IV vehicle with Centaur, not for the Centaur component alone. On printed p. 12, GAO attributes per-vehicle cost differences partly to RDT&E cost sharing and the Centaur cost being spread over more vehicles and launches.
+
+At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/operational_costs.csv` still stores $4,800/kg [$1,750, $13,400] for “Expendable upper stage recurring cost” and $6,000/kg [$3,000, $25,000] for “Propellant tank recurring cost”; the tank note derives its point from an unsupported Centaur III stage estimate less an assumed RL10 cost.
+
+Verdict: the GAO figure is a historical Titan IV contract comparator for a Centaur upper stage, not a current Centaur III price and not a tank-only allocation. It does not establish a replacement for either stored rate; keep `rc-421` open. Extracted: `extracted_data/r849_titan_iv_centaur_unit_cost_comparator.csv`.
+
+## R851 — Archived mining-payload cost citation boundary (2026-11-17)
+
+**economicspace_stage3_archive_table_selection_code_current_2026**: At Economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `campaign/worked_calculation.py` `transport_tables_for()` selects the newest frozen Stage 3 set an archived row could have read. It identifies `campaign/stage3/spacecost-0.4.0/` as the set frozen when Spacecost v0.5.0 was adopted on 2026-09-28.
+
+**economicspace_stage3_spacecost_0_4_0_mining_payload_row_2026**: The frozen `Mining payload recurring cost` row stores $300,000/kg with a $100,000–$1,000,000 range and says “Aerospace Corp Small Mission Cost Model and NASA NICM bracket recurring deep-space hardware at $100k-$1M/kg.”
+
+**spacecost_mining_payload_recurring_cost_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` keeps the same values but says no published cost-estimating relationship or recurring unit cost matches mining hardware and labels the point and range a scenario. Its note says the prior SSCM and NICM anchors could not be checked and NICM is an instrument model, not a structures or mechanisms model. Applied rc-517 covers this current Spacecost row.
+
+**economicspace_current_bestcase_verification_sheet_2026**: The supplied 2026-11-16 verification sheet maps I113 to the current Mining payload recurring cost row and prints the scenario qualification on p. 29. It does not select the archived `spacecost-0.4.0` copy.
+
+Upstream: Economicspace's timestamped Stage 3 `spacecost-0.4.0/operational_costs.csv`, row `Mining payload recurring cost`, remains selected for archived runs that could have read that set. Verdict: carry the current no-matched-CER and scenario disclosure into the frozen row; preserve $300,000/kg [$100,000, $1,000,000] for historical reproducibility. No numeric replacement inferred. **rc-727**. Extracted: `extracted_data/r851_frozen_mining_payload_cost_note.csv`.
+
+## R852 — Archived Stage 3 electric-cost and battery-source lineage (2026-11-17)
+
+**economicspace_stage3_archive_table_selection_code_current_2026**: At Economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `campaign/worked_calculation.py` `transport_tables_for()` selects the newest frozen Stage 3 set an archived row could have read. The selected set can be `campaign/stage3/spacecost-0.4.0/`, frozen when Spacecost v0.5.0 was adopted on 2026-09-28.
+
+**economicspace_stage3_spacecost_0_4_0_electric_propulsion_recurring_cost_row_2026**: The frozen Electric propulsion system recurring cost row stores $1,500,000/kW [$500,000, $3,000,000]. Its note derives $1.5–2M/kW from a claimed $10–15M NEXT-C flight string but does not say that the per-string price has no published source.
+
+**spacecost_electric_propulsion_system_recurring_cost_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` retains the same values and now says no published source prices a NEXT-C string. NASA Glenn release 15-011 reports an $18,410,242 cost-share contract for design, fabrication and testing of two flight thrusters, two PPUs, and a prototype PPU. NASA OIG IG-24-003 Table 1 (printed p. 6) lists a $730.9M fixed-price Gateway Power and Propulsion Element contract. These contract scopes do not establish a recurring per-string price. The current verification sheet maps I118 to the live row and carries the caveat on p. 30. Open rc-299 addresses the live Spacecost row, not the frozen copy. **rc-728**.
+
+**economicspace_stage3_spacecost_0_4_0_energy_storage_usable_specific_energy_row_2026**: The frozen Energy storage usable specific energy row stores 104 Wh/kg [70, 160], calculated from 130 Wh/kg at system level times 0.80 depth of discharge. The frozen note attributes 130 Wh/kg to halving 250–300 Wh/kg cell values for packaging, harness, balancing and thermal, without naming a measured pack source.
+
+**spacecost_energy_storage_usable_specific_energy_current_2026**: The current Spacecost row identifies 130 Wh/kg as an engineering analogy from five protected NASA D-RATS spacesuit-simulator packs: 124–133 Wh/kg, mean 129.6 (Bennett & Baldwin 2010, Table 5). It says these are not spacecraft batteries. Schmitz et al. (2023), Table 3, report 175 Wh/kg at 80% depth of discharge and 90% charge/discharge efficiency, or 140 Wh/kg usable. The current verification sheet carries the source limits for I68 on pp. 21 and 40; these are absent from the frozen copy. Applied rc-342 updated the current Spacecost row, not this frozen copy. **rc-729**.
+
+Upstream: Economicspace's timestamped Stage 3 `spacecost-0.4.0/operational_costs.csv`, rows Electric propulsion system recurring cost and Energy storage usable specific energy, remains a possible input to archived runs selected by table date. Verdict: carry forward the current per-string price limitation and the D-RATS battery analogy's provenance and scope into the frozen rows. Preserve historical values and ranges; no numeric replacement inferred. Extracted: `extracted_data/r852_frozen_stage3_operational_cost_note_gaps.csv`.
+
+
+## R853 — Latest frozen Stage 3 stage and tank cost anchors (2026-11-17)
+
+**economicspace_stage3_spacecost_0_14_0_expendable_upper_stage_row_2026**: The `spacecost-0.14.0` row stores $4,800/kg [$1,750, $13,400] of stage dry mass. Its note takes a geometric centre from ~$10M (Musk 2018) or an unnamed ~$7M Falcon 9 upper-stage estimate and ~$30M for Centaur III, then says no institutional document prices either anchor.
+
+**economicspace_stage3_spacecost_0_14_0_propellant_tank_recurring_cost_row_2026**: The frozen row stores $6,000/kg [$3,000, $25,000] of tank dry mass. It derives about $5,300/kg from a ~$30M Centaur III stage less an assumed ~$20M RL10, states that the ~$30M has no institutional source, and calls the upper range endpoint plausible. Current Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` retains the same nominal values; open **rc-421** covers the price-anchor and tank-allocation gap.
+
+The archived table selector chooses the newest date-compatible frozen Stage 3 set; `spacecost-0.14.0` is pipeline 1.23.6, catalog date 2026-10-17. The supplied verification sheet p. 47 maps I119 to “Propellant tank recurring cost” and states “(needs backing) the row’s notes name no published source.” GAO NSIAD-90-113 Table 3.1 reports a $52.0M report-era Centaur unit-cost comparator (printed p. 16); NASA OIG IG-20-012 reports a $29M second-ICPS hardware-purchase opportunity (p. 23). Neither is a current Centaur III unit price or a tank-only allocation.
+
+Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, rows Expendable upper stage recurring cost and Propellant tank recurring cost. Verdict: retain the historical values as estimates; no numeric replacement inferred. **rc-730**. Extracted: `extracted_data/r853_stage3_upper_stage_and_tank_cost_rows.csv`.
+
+
+## R854 — Frozen return-capsule recurring-cost basis (2026-11-17)
+
+**spacecost_return_capsule_recurring_cost_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` retains $150,000/kg [$50,000, $400,000] and says “no capsule unit cost is published”; the point and range are an engineering scenario, not a derived recurring rate. The note limits JPL’s Stardust press-kit evidence to capsule mass and whole-spacecraft/program costs (Quick Facts, printed p. 6; **rc-497**).
+
+**economicspace_stage3_spacecost_0_14_0_return_capsule_recurring_cost_row_2026**: The frozen 1.23.6 row stores the same $150,000/kg [$50,000, $400,000], describes the value as half the mining-payload rate and names Stardust/OSIRIS-REx SRC heritage, but omits the current no-published-unit-cost and scenario qualification. The row is selected for compatible archived runs by the Stage 3 table selector.
+
+Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row Return capsule recurring cost. Verdict: preserve the historical rate, carry forward the current scenario and source-scope note, and infer no numeric replacement. **rc-731**. Extracted: `extracted_data/r854_frozen_stage3_return_capsule_cost_note.csv`.
+
+
+## R855 — Frozen Stage 3 mining-payload cost qualification (2026-11-17)
+
+**economicspace_stage3_archive_table_selection_code_current_2026**: `transport_tables_for()` selects the newest date-compatible frozen Stage 3 set for archived rows; the selector includes `spacecost-0.14.0` (pipeline 1.23.6, catalog date 2026-10-17).
+
+**economicspace_stage3_spacecost_0_14_0_mining_payload_row_2026**: The frozen Mining payload recurring cost row stores $300,000/kg [$100,000, $1,000,000] and says “the $100k-$1M/kg bracket has no registered source.” It retains the earlier SSCM/NICM framing but omits the current no-matched-CER scenario qualification.
+
+**economicspace_current_bestcase_verification_sheet_2026**: The supplied verification sheet, p. 29, maps I113 to Mining payload recurring cost and reproduces the current no-matched-CER scenario qualification.
+
+**spacecost_mining_payload_recurring_cost_current_2026**: The current row retains the same value and range; it says no published cost-estimating relationship or recurring unit cost matches mining hardware, labels the value a scenario input, and says generic spacecraft or instrument CERs are not applied without showing they fit (rc-517).
+
+Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row Mining payload recurring cost. Verdict: preserve the historical value and range while carrying the current source and fit limits into the frozen row; no numeric replacement inferred. **rc-732**. Extracted: `extracted_data/r855_frozen_stage3_mining_cost_source_caveat.csv`.
+
+
+## R856 — Frozen Stage 3 surface-lander cost comparator scope (2026-11-17)
+
+**economicspace_stage3_archive_table_selection_code_current_2026**: The archived-row selector includes `spacecost-0.14.0`, pipeline 1.23.6, catalog date 2026-10-17.
+
+**economicspace_stage3_spacecost_0_14_0_surface_lander_row_2026**: The frozen Surface lander recurring cost row stores $200,000/kg [$100,000, $500,000] and names Apollo LM and CLPS landers as heritage; it has no CLPS cost comparator or whole-service/hardware boundary.
+
+**nasa_oig_2024_ig_24_013_clps_delivery_costs**: CLPS task orders cover full-scope payload delivery through operation; OIG reports the TO2-IM value at $81.7M initially and $122.0M after growth (IG-24-013, pp. 3, 12).
+
+**kuettel_et_al_2024_im1_nova_c_dry_mass**: Nova-C dry mass is 677 kg (AAS 24-282, p. 2).
+
+**spacecost_surface_lander_recurring_cost_current_2026**: The current row adds derived CLPS ratios of ~$120.7k/kg initially and ~$180.2k/kg after growth, labels them “whole-service prices rather than hardware,” and cites rc-300. These package-price comparisons do not give recurring lander hardware rates.
+
+Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row Surface lander recurring cost. Verdict: carry the comparator’s scope into the frozen note; preserve the historical value and range, with no numeric replacement inferred. **rc-733**. Extracted: `extracted_data/r856_frozen_stage3_surface_lander_scope.csv`.
+
+## R857 — Frozen Stage 3 FAA compliance-cost qualification (2026-11-17)
+
+**economicspace_stage3_archive_table_selection_code_current_2026**: The archived-row selector includes `spacecost-0.14.0`, pipeline 1.23.6, catalog date 2026-10-17.
+
+**economicspace_stage3_spacecost_0_14_0_faa_part450_compliance_row_2026**: The frozen FAA Part 450 licensing compliance row stores $2,500,000/program [$1,000,000, $5,000,000], describes internal engineering, legal and safety-case work, and cites R48582 for the no-application-fee premise; it does not call the amount an estimate.
+
+**spacecost_faa_part450_compliance_cost_code_current_2026**: The current Spacecost note says “no document gives this amount” and cites 2,903 FAA paperwork hours per initial application as an effort floor before safety-case engineering (rc-538). **faa_pra_notice_2019_streamlined_license_burden_hours**: the notice reports 2,903 paperwork hours per initial application (printed p. 4913), not a dollar cost. **crs_r48582_commercial_launch_reentry_regulations**: the report supplies no application-processing fee amount (rc-232).
+
+Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row FAA Part 450 licensing compliance. Verdict: carry the estimate declaration and workload/source limits into the frozen note; retain the separate statutory per-launch fee boundary and the historical value/range, with no numeric replacement inferred. **rc-734**. Extracted: `extracted_data/r857_frozen_stage3_faa_cost_basis.csv`.
+
+## R863 — Spacecost downleg TPS mass fraction scope (2026-11-17)
+
+At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `delivery.py` calls 0.15 a modelling choice and says, “One fraction for every destination, at no stated entry speed.” Its downleg calculation uses 0.15 × (1 + 0.10) = 0.165 kg TPS per kg of delivered cargo. The code cites Dec & Braun (2006) inline, but Spacecost `CITATIONS.md` has no entry for the paper. **dec_braun_2006_approximate_ablative_tps_sizing_tool** (AIAA 2006-780), Table 2 (hosted PDF p. 12), labels “Lunar Return 11 km/s” and “Short-Transfer Mars Return 14 km/s”; PICA total thickness is 8.324 and 10.873 cm, with recession 0.726 and 3.828 cm. These trajectory-specific thicknesses do not provide a generic TPS mass-per-cargo fraction. **rc-134** tracks Economicspace’s separate 0.15 dial; this candidate covers Spacecost’s independently applied value. Verdict: add the bibliographic entry and keep the fraction as a scenario pending a trajectory/geometry basis or sensitivity; no numeric replacement inferred. **rc-739**. Extracted: `extracted_data/r863_spacecost_downleg_tps_fraction_scope.csv`.
+
+## R894 — Spacecost CSV citation omits the package release identifier (2026-11-18)
+
+- `spacecost_package_release_output_provenance_code_current_2026` [T4]: Spacecost `CITATIONS.md` §9 instructs users to cite both package release `vX.Y.Z` and data contract `pipeline_version` (lines 320-329). The guide identifies `spacecost.__version__` as the package release and states that output CSVs carry the data contract.
+- At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `build.py` stamps each output with `catalog_date` and `pipeline_version` only (lines 98-105). `config.py` says a package release can change without changing the data contract; `__init__.py` defines the current package release as 0.17.1 and data contract as 1.26.1. The adjacent `reference/summary_meta.json` contains no version fields.
+
+Verdict: the output tables carry the data-contract identifier but not the separate package release the citation guide asks users to cite. Open `rc-773` for per-build package-version provenance; table values are unchanged. Extracted: `extracted_data/r894_spacecost_package_release_csv_provenance.csv`.
+
+## R897 — Economicspace Stage 4 Git-commit citation metadata
+
+- **economicspace_profitability_output_git_commit_provenance_code_current_2026**: At Economicspace main `@b7b7591ccb61b4825b4089a692b5b2c7501491f4`, `CITATIONS.md` lines 376–379 says quoted results need `pipeline_version`, `catalog_date` and the Git commit. `modules/calc.py` lines 10357–10373 stamps `catalog_date` and `pipeline_version` before writing `profitability_catalog.csv`. `ui.py` lines 937–965 records run time, selected stages, destination, changes, stage versions and configuration in the GUI run manifest, without a commit field. `README.md` lines 1013–1028 lists the Stage 4 CSV output.
+- **Upstream fields:** Economicspace Stage 4 `profitability_catalog.csv` and GUI run-manifest metadata.
+- **Verdict:** Open rc-777 for a Git commit identifier carried with Stage 4 results. The documented CSV stamps and GUI manifest do not preserve it. No model values are changed.
+- **Extracted data:** `extracted_data/r897_economicspace_stage4_commit_identifier_gap.csv`.
+
+## R902 — Verification worksheet Git-commit provenance (2026-11-18)
+
+- **economicspace_verification_sheet_commit_provenance_code_current_2026**: At Economicspace main `@e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `CITATIONS.md` §8 requires the Git commit alongside the version and catalog date when quoting a result. The `campaign/verification_sheet.py` footer emits the generated date and source CSV name (lines 6573–6580), with no commit field. The supplied worksheet p. 1 identifies the catalog and price releases, Stage 3 contract, calc 1.46.0 and build date; p. 48 says “Generated 2026-11-16 from lunar_surface__benef__search-on__calc-1.46.0.csv.gz.” Neither page gives a commit.
+
+Upstream: generated verification worksheet provenance. Verdict: a separate output artifact lacks the required commit identifier; **rc-782**. No figures changed. Extracted: `extracted_data/r902_economicspace_verification_sheet_commit_gap.csv`.
+
+## R903 — Spacecost TPS heritage source omitted from its bibliography (2026-11-18)
+
+- **spacecost_tps_bibliography_gap_code_current_2026**: At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, spacecost/operations.py line 146 cites “NTRS 20140005558 for material data” in the Heat shield / TPS note. CITATIONS.md identifies itself as the project bibliography; §4 Operational costs (lines 166–233) has no Stackpoole entry. A whole-file search at this commit finds no Stackpoole or 20140005558.
+- **stackpoole_2013_pica_pica_x_postflight_eval**: General_Research registers Stackpoole, Kao, Qu & Gonzales (2013), NASA ARC-E-DAA-TN9994 / NTRS 20140005558. NTRS hosts only the title/summary slide; the recorded PICA and PICA-X material heritage/performance figures do not include a per-kg cost.
+- **Upstream row**: Spacecost reference/operational_costs.csv, “Heat shield / TPS for Earth return”; the source note is in spacecost/operations.py.
+- **Verdict**: rc-783 requests a complete bibliography entry in CITATIONS.md §4 scoped to material heritage/performance. No TPS cost value or range is changed.
+- **Extracted data**: extracted_data/r903_spacecost_tps_citation_bibliography_gap.csv.

@@ -329,8 +329,21 @@ At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Bennett & Baldwin’s fiv
 
 ## R761 — PV-battery recurring-cost worksheet citation gap (2026-11-15)
 
-The current economicspace verification-sheet check flags I121=$800/kg [500, 1,500] NEED BACKING. It reads the frozen `Power system (solar + battery)` row in `campaign/stage3/spacecost-0.5.0/operational_costs.csv`, whose note only calls the value a burdened recurring cost for a deep-space PV-battery train.
+The current economicspace verification-sheet check flags I121=$800/W EOL [500, 1,500] NEED BACKING. It reads the frozen `Power system (solar + battery)` row in `campaign/stage3/spacecost-0.5.0/operational_costs.csv`, whose note only calls the value a burdened recurring cost for a deep-space PV-battery train.
 
-Spacecost’s current `reference/operational_costs.csv` row, updated under applied `rc-374`, says the $800/kg figure is “an estimate with no same-boundary source.” Its `surampudi_2002_jpl_solar_array_costs` comparator is for array-only cost in older dollars: JPL’s 2001 test-condition array estimate is $1,100/W (about $1,650/W with deployment gear), and 1990s arrays averaged $2,544 per end-of-life watt; none includes the complete PV-battery train at the model’s cost boundary. The worksheet’s frozen row does not carry these limitations.
+Spacecost’s current `reference/operational_costs.csv` row, updated under applied `rc-374`, says the $800/W EOL figure is “an estimate with no same-boundary source.” Its `surampudi_2002_jpl_solar_array_costs` comparator is for array-only cost in older dollars: JPL’s 2001 test-condition array estimate is $1,100/W (about $1,650/W with deployment gear), and 1990s arrays averaged $2,544 per end-of-life watt; none includes the complete PV-battery train at the model’s cost boundary. The worksheet’s frozen row does not carry these limitations.
 
 Open `rc-631` for the citation and cost-boundary note; retain the scenario value and range, with no numeric replacement inferred. Extracted: `extracted_data/r761_power_system_cost_worksheet_gap.csv`.
+
+## R861 — Frozen PV-battery recurring-cost citation gap (2026-11-17)
+
+- **economicspace_stage3_archive_table_selection_code_current_2026**: the current date-compatible selector includes the frozen 1.23.6 Stage 3 table at `campaign/stage3/spacecost-0.14.0/operational_costs.csv`.
+- **economicspace_power_system_cost_stage3_spacecost_0_14_0_frozen_row_current_2026**: `Power system (solar + battery)` is $800/W end-of-life [500, 1,500], `reference_year=2026`; its note says only “Burdened recurring cost for a deep-space PV+battery train.”
+- **spacecost_power_system_cost_reference_row_current_2026**: current Spacecost keeps that value and range but calls it “an estimate with no same-boundary source.” **surampudi_2002_jpl_solar_array_costs** §2.6 (printed p. 22) reports $1,100 per test-condition W in 2001, about $1,650 with deployment gear, and $2,544 per EOL W for typical 1990s arrays; the figures exclude batteries and are historical array-only comparators.
+- Verdict: the selectable frozen row omits the estimate disclosure and comparator boundary. Preserve its historical value and range; no matched PV-battery price or numeric replacement is supported. **rc-738**. Extracted: `extracted_data/r861_stage3_frozen_pv_battery_cost_citation_gap.csv`.
+
+## R862 — PV-battery worksheet locator check (2026-11-17)
+
+- **economicspace_current_bestcase_verification_sheet_2026**: p. 30 maps PV-battery cost to I117=$800/W EOL [500,1,500] and says “An estimate with no same-boundary source.” The Surampudi/JPL comparison is historical array-only cost “without batteries, in older dollars.” I121 is the distinct $837.7M spacecraft-development NRE input.
+- **economicspace_power_system_cost_stage3_frozen_row_current_2026** and **economicspace_power_system_cost_stage3_spacecost_0_14_0_frozen_row_current_2026**: their archived rows retain the generic burdened PV-battery note.
+- Verdict: current I117 carries the boundary caveat; the 0.5.0 and 1.23.6 archive rows remain separate note gaps. Keep **rc-631** and **rc-738** open; no matched numeric replacement inferred. Extracted: `extracted_data/r862_power_cost_current_sheet_locator_check.csv`.

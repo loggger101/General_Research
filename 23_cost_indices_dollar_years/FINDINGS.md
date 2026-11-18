@@ -75,3 +75,25 @@ Verdict: `rc-295` asks to correct the Dec-2018 alternative-base figure only. The
 ## R564 — Mission-operations CPI sensitivity corrected (2026-11-10)
 
 The BLS CPI-U monthly series gives the December 2018 factor 336.298/252.767 = 1.330466; applied to the $31.4M/year base, the alternative is about $41.8M. The main $40.8M point estimate remains unchanged. `rc-295` is applied in spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c. Extracted: `extracted_data/r377_mission_ops_cpi_sensitivity.csv`.
+
+
+## R859 — Frozen Economicspace Mission operations dollar-year basis (2026-11-17)
+
+**economicspace_stage3_archive_table_selection_code_current_2026**: The date-compatible selector includes frozen `spacecost-0.14.0`, pipeline 1.23.6, catalog date 2026-10-17.
+
+**economicspace_stage3_spacecost_0_14_0_mission_operations_row_2026**: The frozen row stores $31,400,000 per mission-year and `reference_year=2026`; its note calls the $283M over nine years ($31.4M/year) a pre-return plan, without dating the dollar basis or stating an escalation.
+
+**spacecost_mission_operations_current_2026**: The current row identifies the $31.4M/year base as nominal FY2017-FY2025 obligations and carries it to $40.8M in Sep 2026 dollars by CPI-U Dec 2019-Sep 2026 x1.2992. It gives Dec 2018 and Dec 2020 alternatives of about $41.8M and $40.3M. **planetary_society_pebd_mission_costs** records final OSIRIS-REx operations obligations of $232.2M through FY2025, distinct from the $283M pre-return plan.
+
+Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row Mission operations. Verdict: disclose the nominal FY2017-FY2025 plan basis and CPI-U conversion for a 2026-dollar reading; the current comparable point is $40.8M/year. Keep the plan distinct from final obligations and do not infer a range adjustment. **rc-736**. Extracted: `extracted_data/r859_economicspace_mission_operations_cpi_basis.csv`.
+
+
+## R860 - Frozen Stage 3 spacecraft-development dollar-year basis (2026-11-17)
+
+**economicspace_stage3_archive_table_selection_code_current_2026**: The date-compatible selector includes frozen `spacecost-0.14.0`, pipeline 1.23.6, catalog date 2026-10-17.
+
+**economicspace_stage3_spacecost_0_14_0_spacecraft_development_nre_row_2026**: The frozen row stores $588,500,000/program and `reference_year=2026`; its note says "Anchor: OSIRIS-REx spacecraft development = $588.5M actual (Planetary Society / NASA budget breakdown)" but gives no dollar-year window or escalation.
+
+**spacecost_spacecraft_development_nre_current_2026**: The current row identifies $588.5M as nominal-dollar obligations over FY2011-FY2016, excluding launch vehicle, and carries it to $837.7M in 2026 dollars at CPI-U Dec 2014-Sep 2026 x1.4235. It gives Dec 2013 and Dec 2015 alternatives of about $843M and $832M. **economicspace_current_bestcase_verification_sheet_2026**: Current input I121 maps to this row and shows the $837.7M value with the same nominal window and CPI-U basis. **planetary_society_pebd_mission_costs**: OSIRIS-REx total cost $772.0M less $183.5M launch vehicle gives $588.5M through FY2016.
+
+Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row Spacecraft development (NRE). Verdict: disclose the nominal FY2011-FY2016 basis and CPI-U conversion for a 2026-dollar reading; the current comparable point is $837.7M/program. If preserving the frozen value, label it as the nominal historical amount. No range adjustment inferred. **rc-737**. Extracted: `extracted_data/r860_economicspace_frozen_nre_dollar_year.csv`.

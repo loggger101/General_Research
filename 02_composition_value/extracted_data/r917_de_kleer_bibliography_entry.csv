@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_ltype_bibliography_entry_current_2026,Current grouped bibliography entry,"de Kleer, K., et al. (2026) (L-type JWST spectra)",abbreviated citation,"CITATIONS.md §3, lines 419-420","The grouped entry omits the article title, journal, volume/article number, DOI and permanent link."
+de_kleer_2026_jwst_spinel_rich_l_type_mineralogy,Article title,The Surface Mineralogy of the Spinel-rich Asteroids from Mid-infrared Spectroscopy with JWST,title,Printed p. 1,Title as printed on the article title page.
+de_kleer_2026_jwst_spinel_rich_l_type_mineralogy,Journal citation,The Planetary Science Journal 7:36 (2026),"journal, volume:article number",Publisher DOI record,Publisher identifies this as the 2026 Planetary Science Journal article.
+de_kleer_2026_jwst_spinel_rich_l_type_mineralogy,DOI,10.3847/PSJ/ae374e,DOI,Publisher DOI record,Permanent article identifier.
+de_kleer_2026_jwst_spinel_rich_l_type_mineralogy,Authors,Katherine de Kleer; Bethany L. Ehlmann; Seth A. Jacobson; Ian Wong; François L.H. Tissot; Audrey C. Martin; Melissa D. Lane; Oliver R.T. King,author list,Publisher DOI record,Complete author list shown by the publisher.

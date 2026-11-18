@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_alice_performance_row_current_2026,stored vacuum specific impulse,210,s,Spacecost spacecost/propellants.py; Metal / water (ALICE) row,Current row value under citation-scope review; no replacement inferred.
+pourpoint_2012_alice_feasibility,demonstration flight date,2009-08-07,date,§7,Article gives the ALICE demonstration flight date.
+pourpoint_2012_alice_feasibility,peak specific impulse estimate for flight,210,s,§7,Calculated from ground-test data; article calls it a good estimate for flight Isp.
+risha_2014_alice_jpp,ideal specific impulse,207;230,s sea level; s vacuum,Sec. I p. 2,"1000 psia, perfect expansion, 74.5 wt% active Al."
+risha_2014_alice_jpp,static-test specific impulse,56;83;133,s,Table 7 p. 8,"Reported for 1.91; 3.81; and 7.62 cm motors, respectively."
+spacecost_alice_citations_section_current_2026,full ALICE bibliography entries for Risha and Pourpoint,absent,presence/absence,CITATIONS.md §2 Propellants and propulsion,Current pinned section read in full; citation-scope gap under review.

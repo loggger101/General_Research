@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_single_destination_build_output_provenance_code_current_2026,standalone build behavior,Writes one destination CSV by calling build_mineral_value_catalog; no manifest is written by this CLI branch,,"spacevalue/cli.py:6-11, 110-113",Spacevalue main @80ec7549164fc1ed6c800ab0ef6205cde08ae9fd
+spacevalue_single_destination_build_output_provenance_code_current_2026,CSV provenance fields,catalog_date; pipeline_version; delivery_destination,columns,spacevalue/catalog.py:2831-2850,No release_tag or package_version field is stamped before CSV output.
+spacevalue_single_destination_build_output_provenance_code_current_2026,citation instruction,"Cite table release tag prices-YYYY-MM-DD, code release tag vX.Y.Z, and the data contract",,CITATIONS.md:153-154,Applies to package outputs and code.
+spacevalue_single_destination_build_output_provenance_code_current_2026,release manifest comparison,release_tag; package_version; source_commit; quote_snapshot,manifest fields,spacevalue/release.py:166-172,These identifiers exist in the multi-table release flow.

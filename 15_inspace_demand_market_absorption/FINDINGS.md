@@ -578,3 +578,24 @@ At fetched economicspace origin/main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`,
 **economicspace_surplus_price_fraction_code_current_2026**: at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, the code labels 0.5 a scenario dial and says no price-response or market-clearing evidence supports it; 0.0 and 1.0 are the stated bounds.
 
 Verdict: the current worksheet confirms the empirical-backing gap while the code still identifies the number as a scenario. Applied rc-465 remains the scope record; no numeric replacement inferred. Extracted: extracted_data/r826_live_sheet_surplus_price_fraction_i106.csv.
+
+## R850 — Current lunar-surface annual-market worksheet lineage (2026-11-17)
+
+**spacevalue_annual_demand_class_share_code_current_2026**: Spacevalue main `9d5d0af0d7581ff74cb9a2f360f910d7b15c245d`, `catalog.py` SHA-256 `DBC7D95A940857BCC463E7E89D396C77BF4901C616B201021357ABBD92A1E1FD`, sets `IN_SPACE_ANNUAL_DEMAND_KG["lunar_surface"]` to 50,000 kg/yr. The code labels destination totals as judgments, not measurements. `_DEMAND_SHARE_BY_CLASS` says no source apportions the import budget by class and assigns 5% to chemical, 15% to shielding and 25% to structural; `annual_market_kg` multiplies the destination total by the share. The code's Kornuta and LunA-10 comparators concern lunar propellant demand and transport, not the total all-commodity market or those class shares.
+
+**sanders_kleinhenz_hilburger_2024_long_term_lunar_infrastructure**: NASA NTRS 20240008379, *Using ISRU and Surface Construction to Define Long-Term Lunar Infrastructure Needs* (AIAA ASCEND 2024), describes Table 1 as approximate development guidance for phase-specific mission-consumable production (printed p. 6) and gives an initial production-capacity range of 10–50 metric tons on p. 14. The report's NTRS copyright field says portions may include protected material; no copy is hosted. Production capacity does not establish market absorption or class allocations.
+
+**economicspace_lunar_surface_stage2_release_rows_current_2026**: At Economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, the current Stage 2 release file SHA-256 `516F1ED38A053DFA61BDFC42A9BBEBC6CCED6B945ACF2EAC447648774B157722` stores `annual_market_kg` values of 2,500 for carbon, 7,500 for silicates and 12,500 for nickel-iron. The row notes describe materials without sourcing annual market absorption.
+
+**economicspace_current_bestcase_verification_sheet_2026**: The supplied verification sheet, generated 2026-11-16, lists I103/I104/I105 as 2,500/7,500/12,500 kg/yr on p. 27 and marks each NEED BACKING. On p. 45 it says “the row’s notes name no published source for this column.” Page 48 reports 63 inputs and 51 steps marked NEED BACKING. These three outputs are 50,000 kg/yr multiplied by 5%/15%/25%, respectively.
+
+Upstream: current Economicspace worksheet inputs I103 chemical=2,500 kg/yr, I104 shielding=7,500 kg/yr and I105 structural=12,500 kg/yr. Verdict: carry the code-level scenario provenance into these current output rows and worksheet inputs; preserve the values, with no numeric replacement inferred. Applied rc-056 and rc-432 cover the Spacevalue code comments; open rc-636 covers frozen cislunar worksheet rows, not this current lunar-surface output. **rc-726**. Extracted: `extracted_data/r850_lunar_surface_market_ceiling_lineage.csv`.
+
+
+## R908 — Spacevalue LEO demand comparator bibliography (2026-11-18)
+
+**howard_2021_common_habitat_dsev_leo_propellant_demand**: Howard, A Common Habitat Deep Space Exploration Vehicle for Transit and Orbital Operations (AIAA ASCEND 2021; NASA NTRS 20210021084), p. 4, says “90 tons of Starship’s predicted 100-ton payload [4] capacity is transferrable propellant.” The registered extraction records 12 xenon and 27 LOX/CH4 tanker flights and four Mars departures in the paper's 2028–2037 schedule.
+
+**spacevalue_leo_dsev_citation_gap_code_current_2026**: At Spacevalue main 80ec7549164fc1ed6c800ab0ef6205cde08ae9fd, spacevalue/catalog.py cites Howard, pp. 4 and 13, as a 1,404 t/yr comparator for IN_SPACE_ANNUAL_DEMAND_KG["leo"] = 500,000 kg/yr; the comment calls it “one architecture's modelled capacity, not a market.” The CITATIONS.md In-space demand section lists other demand sources but has no Howard or NTRS 20210021084 entry.
+
+Verdict: add the complete Howard reference to the Spacevalue bibliography and label the DSEV figure as architecture-specific modeled capacity. The 500,000 kg/yr scenario value is unchanged; rc-381 separately reviews its annualization and scope. rc-788. Extracted: extracted_data/r908_spacevalue_dsev_bibliography_gap.csv.

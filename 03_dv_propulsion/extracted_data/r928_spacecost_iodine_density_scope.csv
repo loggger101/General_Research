@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_iodine_density_row_current_2026,density_kg_per_L,4.93,kg/L,reference/propellants.csv: line 19,The note states solid iodine at ambient pressure but does not identify a source for the density.
+economicspace_current_bestcase_verification_sheet_2026,I63 tank_mass_frac source scope,4.93,kg/L,verification_sheet.pdf: PDF p. 39,I63 reads the iodine tank-mass fraction from profitability_catalog; the displayed note repeats density without a source.
+who_2020_iodine_drinking_water_density,solid iodine density,4.93,g/cm3,"printed p. 2, Table 1.1",WHO reports the value at 25 °C; 1 g/cm3 equals 1 kg/L.

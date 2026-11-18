@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+campins_1985_absolute_calibration_1_5um,Solar visual magnitude (combined),-26.762 ± 0.017,mag,"Campins et al. (1985), AJ 90:896–900, p. 898",This is the solar input in the 1329 km constant; existing source record includes the full title and extracted calculation.
+iau_2012_resolution_b2_astronomical_unit,Astronomical unit definition,"149,597,870,700 exactly",m,"IAU 2012 General Assembly Resolution B2, p. 1",Defines the exact length used by physics.AU_KM.
+asteroidcatalog_diameter_constant_bibliography_gap_code_current_2026,AsteroidCatalog diameter conversion chain,D = (1329 / sqrt(p_V)) * 10**(-H/5); AU_KM=1.495978707e8; H_DIAMETER_CONSTANT=1329.0,formula and constants,AsteroidCatalog asteroid_catalog/physics.py lines 140–156 at main a2c527c09eb39618d7fd26b2b180f730ea906b8b,"CITATIONS.md documents Fowler & Chillemi and Pravec & Harris, gives only Campins author-year, and has no IAU Resolution B2 reference."

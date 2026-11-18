@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_ppt_flight_history_row_current_2026,stored first flight,1968,year,reference/propellants.csv; PPT (PTFE pulsed plasma) row,"The row also narrates LES-6 (1968) and EO-1 (2000), with no source marker."
+spacecost_ppt_flight_history_row_current_2026,stored vacuum specific impulse,1000,s,reference/propellants.csv; PPT (PTFE pulsed plasma) row,"Recorded as approximately 1,000 s; flight-history evidence below is not a generic operating-point source."
+spacecost_ppt_flight_history_row_current_2026,PPT citations in bibliography section 2,absent,presence/absence,CITATIONS.md §2 Propellants and propulsion,"Complete section review found no PPT, LES-6, or EO-1 entry."
+hamidian_dahlgren_1973_les6_ppt_report,LES-6 pulsed plasma thruster flight use,used successfully in 1968,short quote,"printed p. 1, Introduction",Supports the LES-6 date and use claim.
+hamidian_dahlgren_1973_les6_ppt_report,LES-6 propellant bar,solid Teflon,material,"printed p. 2, section II",The report describes a solid Teflon propellant bar.
+zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing,EO-1 PPT on-orbit operation,"over 26 hours; over 96,000 pulses",operational hours; pulses,"PDF p. 1, abstract",The report documents successful pitch attitude control.
+zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing,EO-1 PPT specific impulse range as flown,650-1400,s,"PDF p. 2, Table 1","Comparator range for the Spacecost row’s 1,000 s; not a generic PPT performance point."
+nasa_science_eo1_mission_page,EO-1 launch date,2000-11-21,date,NASA Science mission page; Launch field,Dates the spacecraft cited in the on-orbit PPT report.
+zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing,EO-1 PPT total efficiency as flown,8,percent,"PDF p. 2, Table 1",Matches Spacecost’s stored thruster_efficiency=0.08 for the EO-1 hardware; does not establish a generic PPT value or the Hall comparison.

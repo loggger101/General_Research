@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_hydrazine_arcjet_flight_history_code_current_2026,first_flight,1993,year,spacecost/propellants.py:1298,Comment pairs Telstar 401 with A2100 MR-510.
+spacecost_hydrazine_arcjet_flight_history_code_current_2026,MR-510/A2100 flight-history note,“flown on Lockheed A2100 comsats since 1993”,claim,spacecost/propellants.py:1315-1316,The 2013 IEPC paper identifies MR-510 as a subsequent upgrade.
+spacecost_hydrazine_arcjet_flight_history_data_current_2026,first_flight,1993,year,reference/propellants.csv:23,The row note repeats the MR-510/A2100 since-1993 claim.
+spacecost_propellants_citations_section_current_2026,hydrazine arcjet flight-history reference,no dedicated entry,bibliography gap,CITATIONS.md §2 Propellants and propulsion,"Morren & Curran is listed for performance and Isp, not for the Telstar 401/MR-510 chronology."
+curren_byers_1994_nasa_hydrazine_arcjets_telstar401,first-generation kW-class arcjet flight,Telstar 401 launched December 1993,platform/date,NASA NTRS abstract; NASA-TM-106695 / AIAA 94-2463,The abstract distinguishes the 1993 first-generation Telstar 401 installation.
+hoskins_et_al_2013_aerojet_ep_flight_experience,first hydrazine arcjet flight,1993 on Telstar 401,platform/date,"printed p. 2, §II.B",The authors separately call MR-510 a subsequent upgrade flying on Lockheed Martin A2100 spacecraft.
+hoskins_et_al_2013_aerojet_ep_flight_experience,MR-510 platform chronology,subsequent upgrade on A2100,sequence/platform,"printed p. 2, §II.B",Supports the generation distinction; does not give the MR-510 first-flight year.
+lockheed_martin_2006_amc1_first_a2100_launch,first A2100 satellite launch,1996-09-08,date,"release body, first A2100 satellite sentence",AMC-1 is identified as the first satellite of the A2100 series.

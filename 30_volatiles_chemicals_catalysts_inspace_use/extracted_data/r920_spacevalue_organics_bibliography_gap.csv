@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_organics_bibliography_gap_code_current_2026,CITATIONS grouped entries for the two comparators,"“NASA TM-100113 (resistojet fluids)”; “Lewis, NASA SP-509”",bibliography text,"CITATIONS.md §5, lines 128–137","No complete titles, NTRS IDs, direct record links or pinpoint pages in this grouped entry."
+spacevalue_organics_bibliography_gap_code_current_2026,Spacevalue base organics utility value,0.20,fraction,spacevalue/catalog.py line 553,Comment cites Lewis for C1 organic inventory and Morren for methane resistojet use.
+lewis_1992_asteroid_resources_sp509_vol3,C1 chondrite organic matter,up to 6,wt%,PDF p. 6,verbatim: “up to 6 percent organic matter”; chapter record is NTRS 19930007691.
+morren_1987_multipropellant_resistojet_space_station_tm100113,Excess station fluids used for drag make-up,"hydrogen, helium, methane, steam, nitrogen, air, argon and carbon dioxide",qualitative,PDF p. 2,Methane is one listed resistojet fluid; NTRS 19870014388.
+morren_1987_multipropellant_resistojet_space_station_tm100113,Resistojet performance across tested fluids,93–385,s specific impulse,PDF p. 2,Supporting context only; does not establish an organics utility fraction.

@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_small_body_environment_illumination_code_current_2026,Number of small-body environment rows using eclipse_fraction=0.50,11,rows,"reference/environments.csv rows for neo, main_belt and trojan kinds","Includes five NEA rows, five main-belt rows and one Trojan swarm row."
+spacecost_small_body_environment_illumination_code_current_2026,Small-body environment cycle-period range,2.26–10.0,h,reference/environments.csv; rows listed in the candidate,Cycle periods vary by row; the common fraction produces dark periods from 1.13 to 5.00 h.
+spacecost_small_body_environment_illumination_code_current_2026,Shared small-body eclipse_fraction,0.50,fraction,reference/environments.csv; 11 rows,Stored value; code calculates dark_period_hr as cycle_period_hr × eclipse_fraction.
+spacecost_small_body_environment_illumination_code_current_2026,Small-body dark-period range,1.13–5.00,h,reference/environments.csv; rows listed in the candidate,Computed here from each stored cycle_period_hr × 0.50.
+stubbs_wang_2012_vesta_illumination_conditions,Vesta tropical mean solar visibility,0.5,fraction of time,"§5.1, printed p. 275 (PDF p. 4)",Scoped Vesta tropical comparator; not a generic asteroid-site distribution.
+stubbs_wang_2012_vesta_illumination_conditions,Vesta global mean solar visibility range,0.363–0.566,fraction of time,"§5.1, printed p. 275 (PDF p. 4)","Reported values differ by location; source attributes departures to latitude, shape and topography, with axial tilt also relevant."

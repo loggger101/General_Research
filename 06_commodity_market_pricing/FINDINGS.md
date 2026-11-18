@@ -1,3 +1,10 @@
+## R896 — Spacevalue standalone-build citation metadata
+
+- **spacevalue_single_destination_build_output_provenance_code_current_2026**: Spacevalue main `@80ec7549164fc1ed6c800ab0ef6205cde08ae9fd`. `cli.py` lines 6–11 document `build` as writing one destination table and `release` as writing every destination plus `manifest.json`; lines 110–113 route `build` directly to `build_mineral_value_catalog`. `catalog.py` lines 2831–2850 stamp `catalog_date`, `pipeline_version` and `delivery_destination`, then write the CSV. `CITATIONS.md` lines 153–154 says to cite the table tag (`prices-YYYY-MM-DD`), code tag (`vX.Y.Z`) and row data contract. In contrast, `release.py` lines 166–172 records `release_tag`, `package_version`, `source_commit` and `quote_snapshot` in its manifest.
+- **Upstream fields:** Spacevalue standalone `build <destination>` CSV output and the package's release citation instructions.
+- **Verdict:** Open rc-776 for release/package metadata in standalone build outputs. The full release path records these identifiers; the single-destination path does not. No table values are changed.
+- **Extracted data:** `extracted_data/r896_spacevalue_single_build_output_provenance.csv`.
+
 ## R830 — Reconstructed 2026-09-29 metals closes versus current Yahoo history
 
 - **spacevalue_metals_snapshots_2026** (`spacevalue/quotes/metals-2026-10-07.csv`): five rows label `source=yfinance`, `close_date=2026-09-29`, and `recorded_date=2026-10-07`; the `note` says each close was recovered from Economicspace Stage 2 converted $/kg values. The snapshot SHA-256 is `62A1D20FF25B714D27908B48EFB3323D789CF6E3666201ACDB5A7702175BFE8B`.

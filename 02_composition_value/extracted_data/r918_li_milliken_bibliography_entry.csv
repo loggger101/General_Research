@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_hed_modal_bibliography_entry_current_2026,Current grouped bibliography entry,"Li, S., and Milliken, R. E. (2015) (HED modes)",abbreviated citation,"CITATIONS.md §3, lines 419-420","The grouped entry omits the full article title, journal, volume/issue/pages, DOI and permanent link."
+li_milliken_2015_hed_modal_mineralogy_spectral_models,Article title,Estimating the modal mineralogy of eucrite and diogenite meteorites using visible–near infrared reflectance spectroscopy,title,Wiley publisher article record,Title as listed by the publisher.
+li_milliken_2015_hed_modal_mineralogy_spectral_models,Journal citation,Meteoritics & Planetary Science 50(11):1821-1850 (2015),"journal, volume(issue):pages",Wiley publisher article record,Publisher citation.
+li_milliken_2015_hed_modal_mineralogy_spectral_models,DOI,10.1111/maps.12513,DOI,Wiley publisher article record,Permanent article identifier.
+li_milliken_2015_hed_modal_mineralogy_spectral_models,Authors,Shuai Li; Ralph E. Milliken,author list,Wiley publisher article record,Publisher lists the two authors.

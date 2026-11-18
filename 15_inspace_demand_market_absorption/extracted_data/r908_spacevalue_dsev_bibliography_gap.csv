@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+howard_2021_common_habitat_dsev_leo_propellant_demand;spacevalue_leo_dsev_citation_gap_code_current_2026,LEO demand scenario and DSEV comparator,500000; 1404,kg/year; tonnes/year,"spacevalue/catalog.py IN_SPACE_ANNUAL_DEMAND_KG[""leo""]; Howard 2021, pp. 4 and 13","Spacevalue calls 500,000 kg/year a judgment and describes 1,404 t/year as one architecture's modeled capacity, not a market. Howard is cited in catalog.py but omitted from the CITATIONS.md In-space demand section. No numeric replacement inferred."

@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_epsilon_s_payload_code_current_main_2026,payload_leo_kg,1400,kg,"reference/launch_vehicles.csv, Epsilon S row",R841; current point value; note states 1.4 t to 500 km.
+spacecost_epsilon_s_payload_code_current_main_2026,payload_leo_kg_low,1400,kg,"reference/launch_vehicles.csv, Epsilon S row",R841; lower band endpoint.
+spacecost_epsilon_s_payload_code_current_main_2026,payload_leo_kg_high,1400,kg,"reference/launch_vehicles.csv, Epsilon S row",R841; upper band endpoint.
+spacecost_epsilon_s_payload_code_current_main_2026,payload note attribution,Source: JAXA via Wikipedia; 1.4 t to 500 km,text,"reference/launch_vehicles.csv, Epsilon S row, notes",Spacecost main snapshot a401930efe30aaad01aafd2b3cb332ad0438c841.
+jaxa_epsilon_s_mission_requirements_2023,LEO mission requirement,"LEO orbit 1,400 kg or more; altitude 500 km; inclination 31.1 deg",kg; km; deg,"PDF p. 5, Epsilon S mission-requirements table",JAXA development mission requirement; not a reported achieved launch-service capability.
+ihi_epsilon_s_launch_service_capabilities,LEO launch-service specification,"1,200+ kg; 500 km; 31.1 deg",kg; km; deg,"Launch Capability > Spec > Capacity, lines 60–67",IHI page identifies the Epsilon S used for launch service; plus sign makes this a lower bound.
+ihi_epsilon_s_launch_service_capabilities,SSO launch-service specification,600+ kg; 700 km,kg; km,"Launch Capability > Spec > Capacity, lines 60–67",Same IHI current launch-service specification.

@@ -622,3 +622,36 @@ Open `rc-632` for the worksheet citation path and class-scope limitation; the 3.
 - **asteroidcatalog_albedo_class_fallback_code_current_2026**: AsteroidCatalog enrich.py lines 95–106 at main a2c527c09eb39618d7fd26b2b180f730ea906b8b applies pV < 0.10 → C, otherwise S. Its comment reports 84.0% correct across 65,159 bodies with both source class and measured albedo; the best split, 0.13, reaches 85.2%. The package CITATIONS.md has no Trilling et al. entry.
 - **Verdict**: cite the near-Earth albedo description and identify 0.10 as a coarse fallback convention, not a universal taxonomy boundary. The paper describes C as below 0.10 and S as above 0.15, leaving 0.10 ≤ pV ≤ 0.15 outside those stated ranges even though the code maps that interval to S. It does not validate the classifier or its accuracy beyond its population; retain the code's sample result as a separate empirical check. No numeric replacement inferred. **rc-695**; distinct from **rc-386** (M-type fallback) and **rc-481** (X-complex proportions).
 - Extracted: extracted_data/r823_albedo_fallback_cutoff_citation.csv.
+
+## R893 — MP3C database-version provenance in AsteroidCatalog releases (2026-11-18)
+
+- `mp3c_minor_planet_physical_properties_catalogue` [T3]: AsteroidCatalog `CITATIONS.md` §1 says the service asks users to record the database version and gives `SELECT * FROM mp3c_main.version`. The registry source row records a version-table observation; it is not associated with an individual catalog release.
+- `asteroidcatalog_mp3c_version_capture_code_current_2026` [T4]: at AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `mp3c.py` queries `mp3c_main.best` joined to `body` and the `name` table, while `release.py` records catalog date, pipeline/package versions, source commit and per-source row counts. Neither the fetcher nor manifest records the MP3C database version.
+
+Verdict: the release metadata does not meet the version-recording instruction in the package's citation guide. Open `rc-772` for per-build version provenance; no catalog value change is inferred. Extracted: `extracted_data/r893_mp3c_database_version_manifest.csv`.
+
+
+## R899 — Citation scope for the beyond-Jupiter albedo-by-H fallback (2026-11-18)
+
+- **asteroidcatalog_tno_albedo_h_citation_gap_code_current_2026:** At AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `derive.py` lines 206–221 calls the H-binned albedos release medians and cites a “TNOs are Cool” size/albedo trend without a specific paper. Lines 307–313 apply these values when outer objects lack an albedo or usable taxonomy. `CITATIONS.md` lines 135–138 explains that the albedo tables are release medians and recomputable, but its bibliography does not identify the survey.
+- **santos_sanz_2012_tnos_cool_iv_sdo_do_albedo_h_correlation:** Santos-Sanz et al. (2012), *Astronomy & Astrophysics* 541, A92, DOI 10.1051/0004-6361/201118541. Table 6 p. 12 reports pV versus H for 15 scattered-disk and detached objects (ρ = −0.88, p = 0.000027, confidence >99.9%). On p. 3 the authors note a “bias towards brighter (low H values) objects.” This is sample-specific context; it does not supply the catalog’s empirical H-bin medians or validate all TNO/Centaur populations.
+- **Verdict:** Open rc-779 for a complete citation and explicit population/sampling scope. Keep the catalog medians release-derived; no numeric replacement is inferred.
+- Extracted: extracted_data/r899_asteroidcatalog_tno_albedo_citation_gap.csv.
+
+
+## R900 — Missing bibliography entries for geometric-albedo ceiling evidence (2026-11-18)
+
+- **asteroidcatalog_albedo_ceiling_citation_gap_code_current_2026:** At AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `physics.py` lines 120–137 cites Buratti & Veverka (1984) and Verbiscer et al. (2007) as examples of geometric albedo above one; `CITATIONS.md` lines 169–192 lists neither reference.
+- **buratti_veverka_1984_voyager_satellite_photometry:** The publisher abstract reports Enceladus p_V = 1.04 ± 0.15 and Bond albedo 0.9 ± 0.1 (*Icarus* 58 (1984), pp. 254–264); registered and extracted in R347.
+- **verbiscer_et_al_2007_enceladus_geometric_albedos:** The abstract reports mean E-ring satellite geometric albedos “approximate or exceed unity” (*Science* 315(5813) (2007), p. 815); registered and extracted in R347.
+- **Verdict:** Open rc-780 to add the two complete references to `CITATIONS.md`. Applied rc-283 addressed the ceiling’s fit-quality-policy interpretation; this bibliography gap remains. No cutoff or data value is changed.
+- Extracted: extracted_data/r900_asteroidcatalog_albedo_ceiling_bibliography_gap.csv.
+
+
+## R901 — Incomplete references for the H-to-diameter constant (2026-11-18)
+
+- **asteroidcatalog_diameter_constant_bibliography_gap_code_current_2026:** At AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `physics.py` lines 140–156 names Campins et al. (1985) for V_sun and IAU 2012 Resolution B2 for AU_KM. `CITATIONS.md` lines 120–138 has only an author-year mention for Campins and no IAU-resolution entry.
+- **campins_1985_absolute_calibration_1_5um:** Campins et al. (1985), *The Astronomical Journal* 90:896–900, p. 898, reports the combined solar V magnitude −26.762 ± 0.017; the full source is registered and extracted in R155.
+- **iau_2012_resolution_b2_astronomical_unit:** IAU 2012 Resolution B2, p. 1, defines the astronomical unit as “149 597 870 700 m exactly”; full text and extraction are hosted in General_Research.
+- **Verdict:** Open rc-781 for the complete source chain behind the 1329 km diameter constant. No formula or value change is inferred.
+- Extracted: extracted_data/r901_asteroidcatalog_diameter_constant_citation_chain.csv.

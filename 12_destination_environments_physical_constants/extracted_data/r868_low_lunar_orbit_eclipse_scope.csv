@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_low_lunar_orbit_eclipse_code_current_2026,Low lunar orbit cycle period,1.965,h,reference/environments.csv Low lunar orbit (100 km); environments.py lines 218-222,Stored value; row note describes this as a 118-minute period.
+spacecost_low_lunar_orbit_eclipse_code_current_2026,Low lunar orbit eclipse fraction,0.40,fraction,reference/environments.csv Low lunar orbit (100 km); environments.py lines 218-222,Stored assumption; code note says ~40% of the period is behind the Moon but does not state beta angle or averaging basis.
+spacecost_low_lunar_orbit_eclipse_code_current_2026,Low lunar orbit dark period,0.786,h,reference/environments.csv Low lunar orbit (100 km),Stored derived field; 1.965 h x 0.40 = 0.786 h.
+nasa_nssdca_moon_fact_sheet,Moon volumetric mean radius,1737.4,km,"Moon/Earth Comparison, Bulk parameters table, row Volumetric mean radius (HTML)",NASA NSSDCA fact-sheet value used for the idealized geometry comparison.
+spacecost_low_lunar_orbit_eclipse_code_current_2026;nasa_nssdca_moon_fact_sheet,Idealized zero-beta cylindrical-shadow eclipse fraction,0.3944998883306166,fraction,"Computed here: asin(R/(R+h))/pi; R=1737.4 km, h=100 km",Geometry comparison only; it matches 0.40 approximately but does not prove the upstream's intended orbit plane or averaging scenario.

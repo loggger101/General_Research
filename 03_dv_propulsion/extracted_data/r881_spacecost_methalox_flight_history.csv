@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_methalox_first_flight_code_current_2026,Spacecost methalox first_flight field,2023,year,spacecost/propellants.py line 745 at main a401930efe30aaad01aafd2b3cb332ad0438c841,The inline comment calls 2023 the first methalox vehicle to orbit; the field does not define whether it means first launch or first successful orbit.
+landspace_2023_zhuque2_first_orbit,Zhuque-2 Mission F1 first launch,2022,year,LandSpace About Us > Milestones,LandSpace records the first ZQ-2 launch in 2022.
+landspace_2023_zhuque2_first_orbit,Zhuque-2 Mission F2 first successful LOX/LCH4 orbit,2023,year,LandSpace About Us > New Power and Milestones,The page calls F2 the first LOX/LCH4 rocket to reach orbit; it does not state the first launch failed.
+spacecost_methalox_first_flight_code_current_2026;landspace_2023_zhuque2_first_orbit,First-launch versus first-successful-orbit scope,2022 versus 2023,year comparison,Comparison computed here from the current code snapshot and LandSpace About Us > Milestones,The stored 2023 matches first successful orbital use; decide and document the meaning of first_flight before changing the value.

@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lunar_surface_delivery_chain_current_2026,_LLO_TEI_DV_M_S,850.0,m/s,Spacecost delivery.py:460-466,Code comment calls this untabulated; no Moon return delta-v row is listed.
+spacecost_lunar_surface_delivery_chain_current_2026,Lunar surface to LLO ascent,1850.0,m/s,Spacecost delivery.py:485-488,The code adds this ascent to the LLO TEI input for lunar-surface return.
+spacecost_lunar_surface_delivery_chain_current_2026,DOWNLEG_DEPARTURE_DV_M_S[lunar_surface],2700.0,m/s,Spacecost delivery.py:485-488,"Code return path sum: 1,850 m/s ascent + 850 m/s TEI."
+nasa_ntrs_19900016723_lctv_return_delta_v,Lunar parking orbit altitude,200,km,"NASA-CR-186677-VOL-1, printed pp.24-25; LCTV mission description",Comparator mission begins from a 200-km lunar orbit.
+nasa_ntrs_19900016723_lctv_return_delta_v,Earth parking orbit altitude,400,km,"NASA-CR-186677-VOL-1, printed pp.24-25; LCTV mission description",LCTV delivers the crew to a 400-km Earth orbit; a separate ACRV performs atmospheric entry.
+nasa_ntrs_19900016723_lctv_return_delta_v,Trans-Earth injection,0.915,km/s,"NASA-CR-186677-VOL-1, printed p.25, Table 4B",Table value for the Apollo-based LCTV lunar-orbit to Earth-orbit return.
+nasa_ntrs_19900016723_lctv_return_delta_v,Mid-course correction,0.060,km/s,"NASA-CR-186677-VOL-1, printed p.25, Table 4B",Table value on the same Earth-orbit delivery route.
+nasa_ntrs_19900016723_lctv_return_delta_v,Earth-orbit insertion,negligible,text,"NASA-CR-186677-VOL-1, printed p.25, Table 4B",Report marks insertion negligible for the stated LCTV route.
+nasa_ntrs_19900016723_lctv_return_delta_v,Lunar-orbit to Earth-orbit return total,0.975,km/s,"NASA-CR-186677-VOL-1, printed p.26, Table 4B total",Report total includes TEI and mid-course correction; this is not an Earth-entry total.
+nasa_ntrs_19900016723_lctv_return_delta_v,NTRS distribution and copyright statement,Public; Work of the US Gov. Public Use Permitted,record statement,"NTRS record 19900016723, record metadata",Recorded from the NTRS source record; no report copy is hosted in General_Research.

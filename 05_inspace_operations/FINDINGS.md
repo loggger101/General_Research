@@ -522,3 +522,19 @@ Current economicspace main (v1.71.0, `e2ad48767b0e81489031b724417b1a03e6dfc1fb`)
 - **spacecost_zero_boiloff_cryocooler_row_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/storage_systems.csv` row 7 stores 80 W/W [50, 150] at 20 K and labels the band an estimate.
 - **nugent_2022_rtb_cryocooler_test**: Table 1 (printed p. 2) says “Tested values were only able to be achieved at a heat rejection temperature of 285K.” It gives an 80 W/W programme threshold, 60 W/W goal, 91.6 W/W tested, and 86.3 W/W projected at 270 K. Table 3 (printed p. 3) reports 91.6 W/W at the 19.21 W, 19.99 K point; at lower lifts it reports 156.9 W/W for 7.02 W at 20.13 K and 247.2 W/W for 2.99 W at 19.99 K.
 - **Verdict**: the 80 W/W centre matches the cited threshold, and the near-20 W test point is 91.6 W/W. The paper does not establish the stored 50 or 150 endpoints; measured performance above 150 at lower lifts means the range needs a stated load and heat-rejection scope. Keep the current row pending a traceable basis and scope definition; no numeric replacement inferred. **rc-701**. Extracted: `extracted_data/r829_zero_boil_off_cryocooler_performance_range.csv`.
+
+## R904 — Economicspace omits its Kleinhenz & Paz 2017 reference (2026-11-18)
+
+- **economicspace_kleinhenz_2017_bibliography_gap_code_current_2026**: At Economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, CITATIONS.md calls itself the authority for references and says module values carry inline citations (lines 8–15). A whole-file search finds no Kleinhenz, 2017-0423 or 20170005179 entry. modules/calc.py line 3672 cites the paper for a 1.7 t, 35–52 kW Mars CH4/O2 plant; the adjacent comment says the modeled carbon-reduction step has no source.
+- **kleinhenz_paz_2017_isru_propellant_production_aiaa**: General_Research records Kleinhenz & Paz, the AIAA proceedings title and DOI, and the NTRS copy's title variant; the hosted paper is already registered and extracted in Domain 05 R184.
+- **Upstream field**: Economicspace CITATIONS.md bibliography entry for the source named in the reactor-scale context comment in modules/calc.py.
+- **Verdict**: rc-784 requests a complete Economicspace bibliography entry with both title variants, DOI and NTRS identifier. The cited paper remains scale context; no carbon-reduction yield or model value is inferred.
+- **Extracted data**: extracted_data/r904_economicspace_kleinhenz_bibliography_gap.csv.
+
+## R905 — Spacecost transfer-study reference missing from its bibliography (2026-11-18)
+
+- **spacecost_zero_bo_off_2025_bibliography_gap_code_current_2026**: At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, storage.py line 517 cites Krog & Berstad, arXiv:2512.04609, for the 1% low end of the “In-space propellant transfer loss” note. CITATIONS.md identifies itself as the bibliography; §4 Operational costs (lines 166–233) contains no Krog/Berstad entry. A whole-file search finds no author name or arXiv identifier.
+- **zero_bo_off_2025**: The registered source is Krog and Berstad’s arXiv preprint, Strategies for zero boil-off liquid hydrogen transfer: an export terminal case-study. The paper’s ground export-terminal boundary makes it a limited low-end comparator for the code note.
+- **Upstream row**: Spacecost reference/storage_systems.csv, “In-space propellant transfer loss”; the source note is in spacecost/storage.py.
+- **Verdict**: rc-785 requests a complete bibliography entry with the arXiv identifier and DOI. The 3% midpoint and 8% upper endpoint remain unchanged.
+- **Extracted data**: extracted_data/r905_spacecost_zero_boil_off_bibliography_gap.csv.
