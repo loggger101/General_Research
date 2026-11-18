@@ -1,4 +1,7 @@
 # Research log
+- **Round 931** (2026-11-18): Closed 10 spacecost citation candidates applied upstream (PR #45, 0.17.2, data contract 1.26.1 unchanged): constants cited where set, the downleg TPS fraction scoped as a scenario, and full bibliography entries; no value moved.
+- **Round 930** (2026-11-18): Closed 8 spacevalue citation candidates applied upstream (PR #15, 0.7.2, data contract 1.21.0 unchanged): the IN_SPACE_UTILITY comparators listed in full, and the Abney sulfur pinpoint corrected to PDF p. 2.
+- **Round 929** (2026-11-18): Closed 13 AsteroidCatalog citation candidates applied upstream (PR #34, 0.13.3, data contract 1.11.0 unchanged): full references, constant citations and two density-ceiling comparators; no output moved.
 - **Round 928** (2026-11-18): Opened rc-808 for Spacecost’s unsourced iodine solid density; the verification sheet carries the value into tank-mass fraction and WHO reports 4.93 g/cm3 at 25 °C.
 - **Round 927** (2026-11-18): Opened rc-807 for Spacecost’s iodine Isp row; the NASA Busek target is value-specific and distinct from the flight-history and price citations already in the row note.
 - **Round 926** (2026-11-18): Opened rc-806 to complete nine abbreviated Spacecost launch-comparator references with full titles and direct links.

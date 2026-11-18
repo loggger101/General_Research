@@ -655,3 +655,15 @@ Verdict: the release metadata does not meet the version-recording instruction in
 - **iau_2012_resolution_b2_astronomical_unit:** IAU 2012 Resolution B2, p. 1, defines the astronomical unit as “149 597 870 700 m exactly”; full text and extraction are hosted in General_Research.
 - **Verdict:** Open rc-781 for the complete source chain behind the 1329 km diameter constant. No formula or value change is inferred.
 - Extracted: extracted_data/r901_asteroidcatalog_diameter_constant_citation_chain.csv.
+
+## R929 — AsteroidCatalog bibliography and constant citations applied upstream (2026-11-18)
+
+AsteroidCatalog a626c81aff22d0e2342cfa48bf08db2d77506c1f (PR #34, package 0.13.3, data contract 1.11.0 unchanged). Comments, CITATIONS.md and the changelog only; with docstrings set aside, `physics.py`, `derive.py` and `enrich.py` parse to the same ASTs as a2c527c, so no output moved.
+
+- rc-665, rc-666, rc-781: full entries for `elkins_tanton_2020_psyche_preflight`, `tholen_1984_asteroid_taxonomy_dissertation`, `campins_1985_absolute_calibration_1_5um` and `iau_2012_resolution_b2_astronomical_unit`.
+- rc-797, rc-798, rc-799, rc-804: the twelve 0.13.2 comparators now carry titles, journal details and DOI or LPI links.
+- rc-681: `G_SI` is commented as CODATA 2022 (`nist_sp961_2022_codata_constants`).
+- rc-779, rc-780, rc-695: `santos_sanz_2012_tnos_cool_iv_sdo_do_albedo_h_correlation`, `buratti_veverka_1984_voyager_satellite_photometry`, `verbiscer_et_al_2007_enceladus_geometric_albedos` and `trilling_mueller_et_al_2010_exploreneos_i` are cited as comparators with the scope limits the candidates name.
+- rc-609, rc-610: `rubin_burbine_2026_no_exotic_matter_asteroids` backs the 8.0 gate; the 3.6 carbonaceous cap is labelled provisional beside `macke_2011_carbonaceous_chondrite_density_porosity`'s CO grain densities to 3.78.
+
+Verdict: all thirteen closed as applied. Extracted data: none new; the candidates' existing files apply.
