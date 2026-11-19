@@ -1231,3 +1231,9 @@ Verdict: rc-828, rc-832, rc-838, rc-839, rc-840, rc-843 closed as applied. Extra
 At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the Space Shuttle note defines its band as a mixed-boundary illustrative interval with a $972M geometric midpoint (rc-578); the SLS Block 1 note defines the boundary as vehicle production plus ground systems per launch, in report-year dollars (rc-619); and each estimated fairing volume carries the 0.27-0.63 calibration spread as an m3 range (rc-436). Values unchanged.
 
 Verdict: rc-436, rc-578, rc-619 closed as applied. Extracted data: none new.
+
+## R994 — Angara fairing dimension claim rechecked (2026-11-19)
+
+`spacecost_fairing_fill_ratio_main_2026`: Spacecost 0.18.7 still uses the 14S746 outer dimensions 17.705 m x 4.35 m for Angara A5 and exports 127.0 m3 as an estimate, citing RussianSpaceWeb. Rostec's 2024 release describes family fairings as “up to 17 metres” and “almost four and a half metres” (p. 1), but does not identify the 2025 14S746 variant. The records remain different in variant and date; no numeric replacement is inferred.
+
+**Verdict:** keep **rc-822** open for a variant-specific source or an explicit basis for the current secondary report. Existing extraction: `extracted_data/r962_angara_fairing_dimension_scope.csv`.

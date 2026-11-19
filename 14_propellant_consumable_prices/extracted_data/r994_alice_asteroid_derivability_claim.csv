@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_alice_isru_processing_energy_gate_current_2026,ALICE asteroid feedstock statement,metallic aluminium from silicate reduction; water from phyllosilicates,uncited claim,reference/propellants.csv:42 note; CITATIONS.md §2,Separate from rc-827: processing energy remains NaN/gated; row note does not cite support for either feedstock premise.
+cannon_gialich_acain_2023_asteroid_precious_structural_metals,asteroid structural-metal reduction prospect,"Fe, Mg, Al and Si can be chemically reduced for in-space manufacturing",statement,abstract p. 1; section 4.2,"General prospect only; does not establish ALICE process design, metallic-aluminium recovery yield, or energy."

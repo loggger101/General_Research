@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_083_main_water_silicate_scenario_review_2026,Spacevalue water-processing comment,electrolysis described as the only step from raw ice to a fuelled depot,scope claim,"spacevalue/catalog.py, IN_SPACE_UTILITY[""water""]",No architecture or source identified in the comment.
+spacecost_water_resistojet_reference_row_current_2026,Spacecost direct-water propulsion alternative,isru_feed_material=water; row note says water is used directly with no electrolysis,technology path,reference/propellants.csv:20,Model row identifies a direct-water alternative to electrolysis propulsion.
+asakawa_aquarius_onorbit_2024,AQUARIUS direct-water flight route,water resistojet operated on EQUULEUS; 91.7 +/- 1.0 s and 90.3 +/- 3.0 s at about 6 mN,flight measurements,"Table 3, printed p. 282",Supports direct-water resistojet use; not an extraction-energy result.
+nasa_ptd1_hydros_c_water_electrolysis_2021,HYDROS-C electrolysis route,"water electrolyzed into hydrogen and oxygen, then combusted",technology path,NASA PTD-1/HYDROS-C source record,"Supports electrolysis for this architecture, not as the only water-propellant path."

@@ -1,4 +1,6 @@
 # Research log
+- **Round 995** (2026-11-19): Opened rc-864 for Spacevalue's uncited claim that electrolysis is the only route from raw ice to a fuelled depot; current Spacecost and flight-source records show both direct-water and electrolysis propulsion paths. No values moved.
+- **Round 994** (2026-11-19): Rechecked rc-822, rc-827 and rc-852 to rc-854 against Spacecost 0.18.7 and left them open; opened rc-862 for AsteroidCatalog's stale sensitivity pointer and rc-863 for Spacecost's uncited ALICE asteroid-feedstock claims. No values moved.
 - **Round 993** (2026-11-19): Closed nine AsteroidCatalog screen and agreement-tolerance candidates (PR #39, 0.13.8), labelled policies with sensitivity measured on a four-source build; the albedo floor sits under a steep rise and the 25% albedo tolerance flags 61% of pairs.
 - **Round 992** (2026-11-19): Closed rc-296 and rc-823 after Spacevalue 0.8.3 labelled the silicate composite and destination water utility factors as scenarios and documented water-price sensitivity; no values moved.
 - **Round 991** (2026-11-19): Opened rc-860 and rc-861 for missing Spacecost bibliography entries covering CoolProp and its EOS papers, and the NASA-CR-186677 comparator; no values changed.
