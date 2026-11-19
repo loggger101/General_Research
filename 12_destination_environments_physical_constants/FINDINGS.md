@@ -350,3 +350,13 @@ economicspace 310d0197c8f6e78c487aef4e8ceff88d720a234e (PR #208, master 1.78.0; 
 - Measured with `verification_sheet.py --check`, before and after: inputs needing backing 85 to 84 (default 2018 DT page), 50 to 45 (`mars_orbit__raw__search-off`), 51 to 48 (`geo__raw__search-off`); all three pass.
 
 Verdict: all eight closed as applied. Extracted data: none new.
+
+## R937 — Spacecost environment and propellant citation candidates applied upstream (2026-11-18)
+
+spacecost 7bc46e959a7e73e9cb80c3798a38f0b4d5efac02 (PR #49, package 0.18.2, data contract 1.27.1 to 1.27.2). Compared column by column against a91a050: `environments.csv` differs only in `notes` (11 rows), `propellants.csv` only in `notes` (3 rows), and every table and the summary sample in `pipeline_version`.
+
+- rc-742 to rc-747, rc-751, rc-752: each eclipse fraction is now a cited value, a stated geometry or a labelled scenario, citing `nasa_nssdca_magellan_mission_plan`, `mcnutt_et_al_2012_messenger_early_orbital_operations`, `dra5_2009_human_exploration_of_mars`, `nasa_nssdca_moon_fact_sheet`, `stubbs_wang_2012_vesta_illumination_conditions`, `nasa_webb_faq_l2_eclipse_avoidance`, `esa_gaia_operations_l2_orbit`, `nasa_tm_2020_220481_ppe_reference_trajectory`, `rucker_2024_mars_surface_power_generation_challenges` and `nasa_nssdca_mars_fact_sheet`.
+- rc-748, rc-749, rc-750: the generic distance bands are labelled scenario bins (`elvis2011` as the NEA comparator).
+- rc-662, rc-663, rc-671, rc-674: `ganguly_saxena_1989_volatile_bearing_carbonaceous_chondrites`, `muscatello_etal_2013_mars_atmospheric_processing_module`, `cme_comex_nymex_futures`, `imo_msc420_2016_methane_liquid_density` and `nist_s7101_52_cryogen_safety_2023`.
+
+Verdict: all fifteen closed as applied. Extracted data: none new.
