@@ -1,3 +1,9 @@
+## R997 — Spacevalue CO2 ceiling labelled total use upstream (2026-11-19)
+
+At Spacevalue main f133db21ff77ca39b482765db9e68863a16b5387 (PR #22, 0.8.5), the owner chose the total-use boundary for the carbon-dioxide Earth market ceiling. It stays 2.3e11 kg/yr, and its comment now calls it total physical use per `iea_2019_putting_co2_to_use` (p. 3), not merchant sales, which `spglobal_2025_co2_commodity_market_demand` puts at about 30 Mt/yr (p. 7). CITATIONS.md gains both (rc-526). Value unchanged.
+
+Verdict: rc-526 closed as applied. Extracted data: none new.
+
 ## R996 — Spacevalue phase-density sources mapped upstream (2026-11-19)
 
 At Spacevalue main 10f05f683c14121cf4b5b7f580b4eaf5bac82d0d (PR #21, 0.8.4), CITATIONS.md maps the phase densities to the Mineral Data Publishing Handbook sheets, `remo_1993_asteroid_meteorite_analogs_density` (Table 2, p. 169) and `agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties` (Table 1, p. 20), keeping Agrawal's troilite printed as FeSi and unreconciled with the FeS row (rc-855, rc-856). Densities unchanged.
