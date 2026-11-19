@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_mass_agreement_tolerance_code_current_2026,cross-source estimated-mass ratio tolerance,0.25,ratio,asteroid_catalog/merge.py: MEASURED_FIELDS[estimated_mass_kg],Code applies the multiplicative tolerance when comparing source mass estimates.
+carry2012,bodies with mass and volume estimates compiled,287,bodies,"Abstract, p. 1",Population count; the compiled mass/volume set is broader than a pairwise comparison of the current merged-source records.
+carry2012,share of density estimates more precise than 20%,about one third,share,"Abstract, p. 1",Precision summary for density estimates; it does not measure pairwise source-mass disagreement.

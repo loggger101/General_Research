@@ -1,3 +1,8 @@
+## R955 — Ariane 6 A64 price provenance corrected upstream (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, the A64 row retains its estimated USD 123M centre and [115M, 132M] bounds. Its note identifies EUR 115M as a target in 2014 economic conditions, not a 2018 estimate (Assemblée nationale report no. 1438, printed p. 36); the same report's printed p. 62 price is a press-reported $130M transition figure. Both it and the July 2024 Euronews report are labeled comparators; the low endpoint's range method remains unstated. Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9 records the correction beside the frozen row in `campaign/stage3/PROVENANCE.md` (rc-700).
+
+Verdict: the estimate, dated target and comparators are distinguished; values are unchanged. Extracted data: none new.
 ## R939 — Spacecost launch price and payload scenario labels applied upstream (2026-11-18)
 
 spacecost ef0120748780a519187836c655d877e3daee1a3a (PR #50, package 0.18.3, data contract 1.27.2 to 1.27.3). Compared column by column against 7bc46e9: `launch_vehicles.csv` differs only in `notes` (19 rows) and `pipeline_version`; every other table and the summary sample only in `pipeline_version`.

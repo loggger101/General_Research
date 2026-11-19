@@ -1,3 +1,13 @@
+## R954 — Spacevalue route notes and transfer-scope corrections applied upstream (2026-11-19)
+
+At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996 and Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff:
+
+- rc-604: the GTO-to-GEO 1,836 m/s row retains 28.5° as a reference scenario; Cape Canaveral latitude and typical 28.5° LEO are comparators, not a trajectory-specific transfer plane (`nasa_nssdca_spacewarn_bulletin_613_launch_center_latitudes`; `askins_2021_sls_janaff_update`).
+- rc-769: the Mars 1-sol orbit remains 250 × 33,793 km from NASA DRA 5.0 (printed p. 22, `dra5_2009_human_exploration_of_mars`); 2,100 m/s is identified as a two-body comparator at Spacecost's Hohmann arrival, not a DRA value.
+- rc-771: 3,600 m/s to cislunar NRHO is identified as a cross-study benchmark (NASA-CR-195527 Table 2.1; Benson, Asher & Reese 2025 slide 5); the lunar-surface TLI, LOI and descent values cite NASA SP-4029.
+- rc-810: Whitley et al. 2017 (printed p. 2, `whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept`) reports 1,500 m/s for NRHO, 1,600 for L2 halo and 1,800 for DRO; LLO's 1,000 m/s is excluded from the remaining trade because the assumed Orion propellant capability cannot support it. The note limits the comparison to a crewed lunar-landing staging-orbit trade, not a depot-cost ranking.
+
+Verdict: the citation trail and comparison scope are recorded; route values are unchanged. Extracted data: none new.
 ## R951 — economicspace worksheet scope sentences and frozen-row provenance applied upstream (2026-11-19)
 
 economicspace fd3b3affdf2db206b13c89e49aebd89b573dd327 (PR #211, master 1.81.0; no stamp or number moves). `campaign/verification_sheet.py` citation text, three comments (`modules/calc.py` and `campaign/worked_calculation.py` parse to the same AST as before) and `campaign/stage3/PROVENANCE.md`. Measured with `--check`: default 2018 DT page NEED BACKING 84 to 83 (only I111, rc-635), `cislunar__raw__search-off` 35 unchanged; `--self-test` passes.

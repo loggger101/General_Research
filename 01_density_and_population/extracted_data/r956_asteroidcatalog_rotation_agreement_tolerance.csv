@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_rotation_agreement_tolerance_code_current_2026,rotation-period cross-source agreement tolerance,0.02,ratio spread,"AsteroidCatalog asteroid_catalog/merge.py, MEASURED_FIELDS rotation_period_h, current main snapshot",The code calls a 2% cutoff precise enough to catch half/double-period ambiguity; no paired-source residual calibration or sensitivity result is cited there.

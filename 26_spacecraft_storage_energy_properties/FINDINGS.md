@@ -1,3 +1,14 @@
+## R955 — Economicspace dark-time provenance scoped to Vesta (2026-11-19)
+
+At Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9, `campaign/stage3/PROVENANCE.md` records the 0.50 dark fraction as scenario geometry and scopes Stubbs & Wang 2012 §5.1, printed p. 275, to Vesta's tropical sites, where the solar disk is typically seen about half the time (`stubbs_wang_2012_vesta_illumination_conditions`; rc-811). The paper's Vesta-specific 0.363–0.566 site range does not establish the generic [0.35, 0.55] band, which is identified as a scenario. The stored values remain 0.50 [0.35, 0.55].
+
+Verdict: the comparator's body/site scope and the unsupported generic band are recorded. Extracted data: none new.
+
+## R954 — Spacecost cryocooler range identified as a scenario (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, the cryocooler specific-mass point remains 5.0 kg/W and the [2.0, 15.0] band is labeled a scenario. Nugent et al. 2022 Table 3, PDF p. 3, reports flight-like acceptance points from 4.7 to 35.5 kg/W (`nugent_2022_rtb_cryocooler_test`; rc-812); those test points do not establish the generic band endpoints.
+
+Verdict: the point and range are distinguished; neither value is changed. Extracted data: none new.
 # Domain 26 — Spacecraft storage & energy-system physical properties
 
 Backings: spacecost `reference/storage_systems.csv` — the propellant-storage cells (`Low-pressure liquid propellant tank`, `COPV burst performance factor`, `Multi-layer insulation (passive)`, `Zero-boil-off cryocooler (20 K)`, `Cryocooler specific mass (20 K)`, `Vapour-cooled shield`), the energy-storage cells (`Li-ion battery`, `Regenerative fuel cell`, `Flywheel energy storage`, `RTG specific power`, `Fission surface power (Kilopower class)`) and the depot cell (`Orbital propellant depot (cryogenic)`). Read from spacecost @77c6e11.

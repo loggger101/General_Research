@@ -1,3 +1,9 @@
+## R954 — AsteroidCatalog U definition and Spacevalue timing claim scoped upstream (2026-11-19)
+
+- rc-809: AsteroidCatalog main d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8 adds the MPC's “Uncertainty Parameter U and Orbit Quality Codes” documentation beside the JPL field reference. It defines U on a 0–9 scale and cautions that U does not predict future positional uncertainty for near-Earth objects (`mpc_uncertainty_parameter_u_documentation`).
+- rc-765: Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996 labels the Python-boundary speed row an informal timing: no harness, raw results, CPU, build profile, workload or repetition count is committed, so the reported speedups are indicative only (`spacevalue_cargo_rust_python_boundary_speed_claim_current_2026`).
+
+Verdict: the definition and limit are cited; the unbenchmarked timing is qualified. Catalog values and correctness tests are unchanged. Extracted data: none new.
 # Domain 13 — Astrodynamics methods, ephemerides & audited software
 
 Backings: economicspace `orbital.py` (`elements_to_state` alone since 8ce5c53, for the dashboard's orbit diagram; its CITATIONS.md section 3 credits skyfield), the textbook relations its verification worksheet cites, and the JPL ephemeris services. [starred-repos](https://github.com/loggger101/starred-repos), split out of economicspace `research/starred-repos/` on 2026-10-20, is outside the pipeline: sources only it uses were rejected in R239-R240.

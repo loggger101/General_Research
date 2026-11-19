@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+mainzer_2011_neowise_thermal_model_calibration,independent-diameter calibration sample used,50,objects,"Abstract, p. 1",Radar or in-situ diameter measurements used to characterize WISE/NEOWISE spherical-NEATM fit errors.
+mainzer_2011_neowise_thermal_model_calibration,minimum systematic flux error,5-10,percent,"Abstract, p. 1; §4, printed p. 9",Calibration result for WISE/NEOWISE thermal fits.
+mainzer_2011_neowise_thermal_model_calibration,minimum relative diameter error,about 10,percent,"Abstract, p. 1; §4, printed p. 9","Per-fit systematic error estimate, not a pairwise catalog residual distribution."
+mainzer_2011_neowise_thermal_model_calibration,minimum relative albedo error,about 20,percent,"Abstract, p. 1; §4, printed p. 9",Per-fit systematic error estimate for good signal-to-noise multi-band fits; paper discusses spherical-effective-diameter assumptions.
+asteroidcatalog_diameter_albedo_agreement_tolerances_code_current_2026,configured pairwise agreement cutoffs,0.10 diameter ratio; 0.25 albedo ratio,fraction,"AsteroidCatalog asteroid_catalog/merge.py, MEASURED_FIELDS; current source snapshot","Code defines consistency cutoffs; its comments say they are a reading of typical catalogue precision, not fitted. Mainzer calibration provides per-fit error estimates, not a pairwise residual distribution."

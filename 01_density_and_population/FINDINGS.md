@@ -1,3 +1,9 @@
+## R956 — AsteroidCatalog rotation-period agreement cutoff lacks calibration (2026-11-19)
+
+At AsteroidCatalog main d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8, `asteroid_catalog/merge.py` lines 149–152 says a rotation period is “precise enough that 2% catches the half/double-period ambiguity”; lines 198–200 set `rotation_period_h` to `kind=ratio`, `tolerance=0.02`, and `sigma=None` (`asteroidcatalog_rotation_agreement_tolerance_code_current_2026`). The merge code calls its agreement cutoffs a reading of typical catalogue precision, not fitted, but gives no paired-source residual basis or sensitivity for the rotation-period cutoff. SsODNet selects the first positive best-ranked spin solution; JPL maps `rot_per` to the same field.
+
+Verdict: open rc-819 to calibrate the cutoff against paired source periods or label it as a policy threshold; 0.02 remains unchanged. Extracted data: `extracted_data/r956_asteroidcatalog_rotation_agreement_tolerance.csv`.
+
 # Domain 1 Findings — density by spectral type, PGM factors, population statistics
 
 Backings: per-spectral-type density and PGM factors in AsteroidCatalog `reference/taxonomy_composition.csv` (`TAXONOMY_COMPOSITION`, loaded by economicspace `catalog.py`); diameter, albedo and taxonomy inputs; ranking quality of the whole pipeline.
@@ -676,3 +682,21 @@ Verdict: all thirteen closed as applied. Extracted data: none new; the candidate
 `pravec_2012_absolute_magnitudes_wise_albedos`: the preprint abstract, p. 3, reports catalog-H bias under 0.1 mag for large asteroids and a mean `(Hcatalog − H) = −0.4 to −0.5` near H≈14 (R155 extraction, `extracted_data/r155_queue_open_copies_key_numbers.csv`). Those mean offsets do not give the residual distribution between the catalogs being merged or the cutoff's rejection sensitivity by H range.
 
 **Verdict:** Open rc-814 to establish the cutoff against paired source-H residuals and uncertainty by magnitude range, or label 0.30 mag as a policy threshold and report its sensitivity. This is separate from rc-605's 0.75-mag H-to-diameter plausibility margin. No numeric replacement inferred. Extracted: `extracted_data/r948_asteroidcatalog_h_agreement_tolerance.csv`.
+
+
+## R952 — Cross-source mass-agreement tolerance (2026-11-19)
+
+`asteroidcatalog_mass_agreement_tolerance_code_current_2026`: AsteroidCatalog main `18fc306b335e785f59612ade12dcc7b3254ba214`, `merge.py` lines 187–198 sets `MEASURED_FIELDS["estimated_mass_kg"]` to a ratio tolerance of 0.25. The preceding comment says published masses scatter by “tens of percent” and cites Carry (2012).
+
+`carry2012`: Abstract p. 1 covers 287 bodies with mass and volume estimates and reports “about one third” of density estimates more precise than 20% (General_Research extraction, `extracted_data/unhosted_sources_key_numbers.csv`). That is density-estimate precision, not pairwise mass residuals between the merged catalogs, and does not calibrate the 0.25 threshold.
+
+**Verdict:** Open rc-817 to measure pairwise source-mass differences by source method and uncertainty, and report how the cutoff affects agreement results; alternatively label 0.25 as a policy threshold and provide sensitivity. This is separate from the density screens in rc-606/rc-608 and the H-agreement cutoff in rc-814. No numeric replacement inferred. Extracted: `extracted_data/r952_asteroidcatalog_mass_agreement_tolerance.csv`.
+
+
+## R953 — Cross-source diameter and albedo agreement tolerances (2026-11-19)
+
+`asteroidcatalog_diameter_albedo_agreement_tolerances_code_current_2026`: AsteroidCatalog main `18fc306b335e785f59612ade12dcc7b3254ba214`, `merge.py` lines 137–156 calls its tolerances a reading of typical catalogue precision, not fitted; lines 187–198 set diameter to a 0.10 ratio tolerance and albedo to 0.25. The same code warns that catalogs share upstream WISE/NEOWISE surveys, so agreement can repeat the same measurement.
+
+`mainzer_2011_neowise_thermal_model_calibration`: Abstract p. 1 says the study used 50 independently measured radar/in-situ diameter objects and reports “minimum relative diameter and albedo errors of ~10% and ~20%, respectively.” Section 4, printed p. 9, gives minimum systematic WISE/NEOWISE errors of 5–10% for diameter and 10–20% for albedo, under the stated thermal-model and observation conditions. These per-fit errors do not establish the pairwise residual distribution or rejection sensitivity of the catalogs AsteroidCatalog merges; the 25% albedo cutoff also exceeds the paper’s approximate 20% minimum.
+
+**Verdict:** Open rc-818 to calibrate the diameter and albedo cutoffs against paired source residuals by method and population, and report agreement/rejection sensitivity. If retained as policy thresholds, state the per-fit scope of Mainzer et al. and explain the 25% albedo margin. Keep both cutoffs pending that review; no numeric replacement inferred. Distinct from rc-605’s H-to-diameter plausibility window, rc-607’s albedo floor, rc-814’s H-agreement cutoff and rc-817’s mass-agreement cutoff. Extracted: `extracted_data/r953_asteroidcatalog_diameter_albedo_tolerance_calibration.csv`.
