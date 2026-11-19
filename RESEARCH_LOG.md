@@ -1,4 +1,5 @@
 # Research log
+- **Round 983** (2026-11-19): Opened rc-849 for Spacevalue’s missing Cowen et al. reference in its bibliography; the cited terms remain a caveat, not a model value.
 - **Round 982** (2026-11-19): Opened rc-847 for the Tempel 1 lower-uncertainty notation against Thomas et al. (2013) p. 455, and rc-848 for AsteroidCatalog’s incomplete bibliography entry; the 0.25 g/cm3 floor remains under rc-606 review.
 - **Round 981** (2026-11-19): Opened rc-846 for the incomplete and date-ambiguous Spacecost bibliography entry for NASA's Break The Ice Lunar Challenge report; no service-life value changed.
 - **Round 980** (2026-11-19): Opened rc-845 for missing full Spacecost bibliography entries for four IEPC proceedings already cited in propulsion notes; no values changed.
