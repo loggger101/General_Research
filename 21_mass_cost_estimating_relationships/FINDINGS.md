@@ -401,3 +401,11 @@ economicspace 75253b5a744f2155cce9b9a0abbd829578a44a6e (PR #209, master 1.79.0; 
 - `spacecost-0.14.0/propellants.csv`: rc-706, rc-775; top-level `launch_vehicles.csv`: rc-722.
 
 Verdict: all twenty-four closed as applied. Extracted data: none new.
+
+## R941 — economicspace worksheet quotes frozen rows' current counterparts (2026-11-18)
+
+economicspace e477b00ffa7810a6f2daad76290d428eee8b70b3 (PR #210, master 1.80.0; no stamp or number moves). `campaign/verification_sheet.py` now quotes, beside any row read from a frozen Stage 3 set, the installed spacecost release's row of the same name, in a span the backing ledger does not read; `campaign/stage3/PROVENANCE.md` gains the 0.5.0 and top-level 1.15.0 entries. Measured before and after with `--check`: backing counts unchanged (default 2018 DT page 40 sourced, 84 need backing; `mars_orbit__raw__search-off` 40 and 45), and 32 frozen rows on the default page now quote their counterpart.
+
+- rc-584, rc-624, rc-625, rc-629, rc-631, rc-645, rc-646, rc-684 (spacecost-0.5.0 rows) and rc-652 (top-level row 52).
+
+Verdict: all nine closed as applied. Extracted data: none new.
