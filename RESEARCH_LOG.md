@@ -1,4 +1,11 @@
 # Research log
+- **Round 949** (2026-11-18): Opened rc-815 for Spacevalue’s nickel-iron Fe/Ni/Co vector: the code calls it a typical IIIAB analogue but gives no table-level source for the 90/9/0.5% fractions; adjacent author-year citations are for PGM traces.
+- **Round 948** (2026-11-18): Opened rc-814 for AsteroidCatalog’s 0.30 mag cross-source H cutoff: Pravec’s cited mean H bias does not establish residual coverage or rejection sensitivity for that threshold.
+- **Round 947** (2026-11-18): Opened rc-813 for Spacecost’s active contingency comment: the 0.20 default is called typical and a 35-50% band is assigned to first-of-kind missions, while the registered evidence establishes reserve use and historical cost growth, not those benchmarks.
+- **Round 946** (2026-11-18): Opened rc-812 for Spacecost's cryocooler specific-mass band: Nugent's flight-like acceptance points include 4.7-35.5 kg/W, while the current 2-15 kg/W band is not derived from those test points and its low endpoint is below them.
+- **Round 945** (2026-11-18): Added rc-811 for Economicspace current I66: Stubbs & Wang supports a Vesta tropical 0.50 comparator, while the generic [0.35, 0.55] range remains unsupported.
+- **Round 944** (2026-11-18): Registered rc-810 for Spacecost's uncited NRHO-versus-LLO depot-cost claims, with an official NASA staging-orbit comparison and current-row snapshot.
+- **Round 943** (2026-11-18): Registered rc-809 for AsteroidCatalog's unlinked MPC definition of the condition_code U parameter, with the official MPC source and upstream snapshot.
 - **Round 942** (2026-11-18): Closed 10 spacevalue candidates (PR #17, 0.8.0, data contract 1.22.0, owner-approved): reference rows with no quote or a placeholder price now say so in ref_price_source; no price moved.
 - **Round 941** (2026-11-18): Closed 9 economicspace candidates (PR #210, master 1.80.0): the verification worksheet now quotes a frozen row's current spacecost counterpart for scope only, and the provenance file covers the 0.5.0 set; backing counts unchanged.
 - **Round 940** (2026-11-18): Closed 24 economicspace candidates on frozen Stage 3 tables (PR #209, master 1.79.0) by the owner's sidecar decision: corrections recorded in campaign/stage3/PROVENANCE.md, the frozen CSVs unchanged.

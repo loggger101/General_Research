@@ -860,3 +860,12 @@ Cannon, Gialich & Acain (2023), Table 2 p. 4, reports a 40.78 ppm median for six
 `spacevalue_co2_annual_market_code_current_2026`: Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, `catalog.py` blob 222c7aae9004cb1fbf48e58d075a84188cef511b, sets `ANNUAL_WORLD_PRODUCTION_KG["carbon dioxide"]` to 2.3e11 kg/yr and comments “~230 Mt merchant CO2”; `annual_market_kg` returns the terrestrial ceiling for `route="shipped to Earth"`. The current 230 Mt value is about 7.7 times S&P Global’s merchant-sales estimate.
 
 **Verdict:** If the cell means merchant sales, ~30 Mt/yr is a directly matched candidate estimate; if it means total global physical use/demand, the metric and comment need to say so. Keep **rc-526** open until the market boundary is selected; no Spacevalue value changed. Extracted: `extracted_data/r843_co2_market_boundary.csv`.
+
+
+## R949 — Provenance for nickel-iron bulk yields (2026-11-18)
+
+`spacevalue_fe_ni_major_yields_code_current_2026`: Spacevalue main `dd497f2e06f9604512f98c1facbffe3a33bab321`, `catalog.py` lines 1442–1446 sets `_NICKEL_IRON_YIELDS` to Fe 0.900, Ni 0.090 and Co 0.005. The nickel-iron row at lines 1877–1892 calls this a “Typical iron-meteorite analogue” and says “IIIAB octahedrite mean,” without naming a table or sample set for the bulk fractions. The adjacent “Lodders 2003, Walker 2012” citation follows the separate PGM-trace claim.
+
+`scott_wasson_1975_classification_properties_iron_meteorites` and `lodders_2003_solar_abundances_condensation_temperatures`: General_Research maps these sources to trace-metal or PGM abundances, not the bulk Fe/Ni/Co fractions. No Walker 2012 source row is registered. Current Spacevalue `CITATIONS.md` lines 130–134 lists Scott & Wasson (1975) for trace-metal means but does not give a table/page citation for the bulk vector.
+
+**Verdict:** Open rc-815 for full source records and table/page-level support for the Fe/Ni/Co vector, including its sample and averaging scope. If it is an analyst-selected analogue, label it accordingly. The vector is retained; no numeric replacement inferred. This is distinct from rc-433's phase-partition ratios and rc-456's Earth-sale route. Extracted: `extracted_data/r949_spacevalue_fe_ni_bulk_yields.csv`.

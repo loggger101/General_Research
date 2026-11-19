@@ -923,3 +923,13 @@ Verdict: Polk et al. provide a traceable lithium-MPD performance history that ca
 - **Upstream field**: Economicspace DV_NRHO_TO_LUNAR_SURFACE_KM_S descent component and its verification-sheet source note.
 - **Verdict**: rc-786 requests the complete Apollo SP-4029 bibliography entry in CITATIONS.md. The 2.050 km/s value is unchanged.
 - **Extracted data**: extracted_data/r906_economicspace_apollo_sp4029_bibliography_gap.csv.
+
+## R944 — Spacecost's NRHO depot-cost ranking needs a scoped comparison (2026-11-18)
+
+- **benson_asher_reese_2025_fast_transfer_nrho_presentation**: slide 5 reports 400–450 m/s from TLI to NRHO; it supports the insertion range, not a cross-orbit depot ranking (rc-683).
+- **whitley_martinez_2015_nro_staging_orbits**: Table 3, printed p. 4, and Table 6, printed p. 8, give NRO-to-LLO access; the paper provides no TLI-to-NRHO insertion or comparative depot-cost result (rc-683).
+- **whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept**: Figure 1 and the orbit insertion/transfer cost comparison on printed p. 2 report total ΔV of 1,800 m/s for DRO, 1,600 for L2 Halo, 1,500 for NRHO and 1,000 for LLO. Printed p. 3 says LLO was excluded from the remaining trade because its propellant load exceeded Orion capability, and calls NRHO the “preferred staging orbit” of the three cislunar orbits examined. NTRS record 20170004964 says “Public Use Permitted.”
+- **spacecost_nrho_cheapest_depot_claim_code_current_2026**: Spacecost main @ef0120748780a519187836c655d877e3daee1a3a, reference/delta_v_segments.csv line 15 says “NRHO is the cheapest usefully-stable cislunar depot orbit”; line 21 infers “NRHO ... the cheaper depot” from the TLI-to-LLO insertion row. CITATIONS.md §3 lists the transfer/access sources but no comparative depot-ranking study.
+- **Upstream rows:** TLI → NRHO insertion (450 m/s) and TLI → low lunar orbit (900 m/s).
+- **Verdict:** Open rc-810 to cite and scope the comparative claim to a stated orbit set and cost criterion, or label it as an engineering judgment. No Δv values change.
+- **Extracted data:** extracted_data/r944_nrho_depot_ranking_citation_scope.csv.

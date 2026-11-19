@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_contingency_default_code_current_2026,configured contingency fraction,0.20,fraction of subtotal,spacecost/config.py:126; spacecost/query.py:249-250,The active query applies the configured fraction to subtotal.
+spacecost_contingency_default_code_current_2026,commented well-characterised-programme point,20%,percent,spacecost/config.py:124-125,Comment calls this typical but gives no cohort or source.
+spacecost_contingency_default_code_current_2026,commented first-of-kind range,35-50%,percent,spacecost/config.py:125,Comment gives this range without a cohort-matched citation.
+spacecost_contingency_default_code_current_2026,matching reference-row value and range,"20.0 [15.0, 50.0]",percent,reference/operational_costs.csv:Contingency reserve,Row states that no registered source sets 20% as a standard.

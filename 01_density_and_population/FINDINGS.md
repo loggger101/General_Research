@@ -667,3 +667,12 @@ AsteroidCatalog a626c81aff22d0e2342cfa48bf08db2d77506c1f (PR #34, package 0.13.3
 - rc-609, rc-610: `rubin_burbine_2026_no_exotic_matter_asteroids` backs the 8.0 gate; the 3.6 carbonaceous cap is labelled provisional beside `macke_2011_carbonaceous_chondrite_density_porosity`'s CO grain densities to 3.78.
 
 Verdict: all thirteen closed as applied. Extracted data: none new; the candidates' existing files apply.
+
+
+## R948 — Cross-source absolute-magnitude tolerance (2026-11-18)
+
+`asteroidcatalog_h_agreement_tolerance_code_current_2026`: AsteroidCatalog main `18fc306b335e785f59612ade12dcc7b3254ba214`, `merge.py` lines 187–190 sets `MEASURED_FIELDS["absolute_magnitude_h"]` to `kind="diff"` and `tolerance=0.30`. The adjacent comments cite Pravec et al. (2012) for catalog-H bias and characterize 0.30 mag as the H agreement cutoff.
+
+`pravec_2012_absolute_magnitudes_wise_albedos`: the preprint abstract, p. 3, reports catalog-H bias under 0.1 mag for large asteroids and a mean `(Hcatalog − H) = −0.4 to −0.5` near H≈14 (R155 extraction, `extracted_data/r155_queue_open_copies_key_numbers.csv`). Those mean offsets do not give the residual distribution between the catalogs being merged or the cutoff's rejection sensitivity by H range.
+
+**Verdict:** Open rc-814 to establish the cutoff against paired source-H residuals and uncertainty by magnitude range, or label 0.30 mag as a policy threshold and report its sensitivity. This is separate from rc-605's 0.75-mag H-to-diameter plausibility margin. No numeric replacement inferred. Extracted: `extracted_data/r948_asteroidcatalog_h_agreement_tolerance.csv`.
