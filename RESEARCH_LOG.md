@@ -1,4 +1,6 @@
 # Research log
+- **Round 933** (2026-11-18): Closed 14 spacecost citation candidates applied upstream (PR #46, 0.17.3, data contract 1.26.2): component densities cited with their conditions and five flight-record notes corrected; only notes and the stamp moved.
+- **Round 932** (2026-11-18): Closed 8 economicspace citation candidates applied upstream (PR #208, master 1.78.0, no stamp): orbital constants cited in code and the verification worksheet, and two CITATIONS entries; no number moved.
 - **Round 931** (2026-11-18): Closed 10 spacecost citation candidates applied upstream (PR #45, 0.17.2, data contract 1.26.1 unchanged): constants cited where set, the downleg TPS fraction scoped as a scenario, and full bibliography entries; no value moved.
 - **Round 930** (2026-11-18): Closed 8 spacevalue citation candidates applied upstream (PR #15, 0.7.2, data contract 1.21.0 unchanged): the IN_SPACE_UTILITY comparators listed in full, and the Abney sulfur pinpoint corrected to PDF p. 2.
 - **Round 929** (2026-11-18): Closed 13 AsteroidCatalog citation candidates applied upstream (PR #34, 0.13.3, data contract 1.11.0 unchanged): full references, constant citations and two density-ceiling comparators; no output moved.

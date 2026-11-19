@@ -338,3 +338,15 @@ The current worksheet maps I70=10.222 h to `CalcConfig.default_rotation_period_h
 `nasa_nssdca_mars_fact_sheet`: The “Satellites of Mars” table gives Phobos sidereal orbital and rotation periods as 0.31891 days each (7.65384 h by conversion), supporting synchronous rotation and a cycle close to the stored value. It does not define the surface illumination fraction or whether it includes Mars occultations.
 
 **Verdict:** cite the fact sheet for Phobos’s synchronous period and state whether 0.50 represents the surface night alone or includes Mars eclipses; identify the geometry and averaging basis. Preserve the current values pending that scope; no numeric replacement inferred. **rc-752**. Extracted: `extracted_data/r874_phobos_surface_illumination_basis.csv`.
+
+## R932 — economicspace orbital-constant citations applied upstream (2026-11-18)
+
+economicspace 310d0197c8f6e78c487aef4e8ceff88d720a234e (PR #208, master 1.78.0; no module's `pipeline_version` moves). Comments, verification-worksheet text and CITATIONS.md; with docstrings set aside, `modules/calc.py` and `campaign/worked_calculation.py` parse to the same ASTs as f59e8b7.
+
+- rc-600, rc-601: `nasa_std_8719_14c_geostationary_altitude` and `iers_petit_luzum_2010_conventions_tn36` are named beside `R_GEO_KM` and the 23.44 deg tilt in both code copies and the worksheet.
+- rc-603, rc-654, rc-693: `jpl_tr_32_77_mean_planet_elements_1966`, `jpl_ssd_planetary_satellite_physical_parameters_phobos_gm` (MAR097), `dra5_2009_human_exploration_of_mars` and `nasa_nssdca_mars_fact_sheet` are named beside the Mars constants; the J2000 and DE440 alternatives are stated, not adopted.
+- rc-356: the worksheet's `r_LEO` names `iers_petit_luzum_2010_conventions_tn36` and `askins_2021_sls_janaff_update`.
+- rc-784, rc-786: `kleinhenz_paz_2017_isru_propellant_production_aiaa` and `sp4029_apollo_by_the_numbers` join CITATIONS.md.
+- Measured with `verification_sheet.py --check`, before and after: inputs needing backing 85 to 84 (default 2018 DT page), 50 to 45 (`mars_orbit__raw__search-off`), 51 to 48 (`geo__raw__search-off`); all three pass.
+
+Verdict: all eight closed as applied. Extracted data: none new.
