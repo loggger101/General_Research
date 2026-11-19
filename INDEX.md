@@ -510,6 +510,10 @@ _Backings: spacecost `delta_v_segments.csv` and the Isp rows of `propellants.csv
 | nasa_pds_nea_scout_lost_status_2022 | T3 | NASA PDS, NEA Scout spacecraft context | verified live, not hosted | CubeSat lost after Artemis I deployment; status as of Dec 2022 |
 | nasa_acs3_full_sail_deployment_2024 | T3 | NASA Small Satellite Missions, ACS3 (29 Aug 2024) | verified live, not hosted | full sail and composite-boom deployment confirmed |
 | spacecost_solar_sail_milestone_citation_snapshot_2026 | T4 | Spacecost solar-sail note and CITATIONS.md snapshot | verified live, not hosted | milestone prose and missing mission entries in §2 (rc-837) |
+| spacecost_water_resistojet_bibliography_gap_code_current_2026 | T4 | Spacecost Water-resistojet bibliography-gap snapshot | verified live, not hosted | Water row cites NASA TM-83489 p. 4; add the missing full entry in CITATIONS.md (rc-852) |
+| spacecost_nrho_staging_bibliography_gap_code_current_2026 | T4 | Spacecost TLI-to-NRHO bibliography-gap snapshot | verified live, not hosted | TLI-to-NRHO note cites Whitley et al. 2017; add the missing full entry in CITATIONS.md (rc-853) |
+| spacecost_nasa_cr_195527_bibliography_gap_code_current_2026 | T4 | Spacecost NASA-CR-195527 bibliography-gap snapshot | verified live, not hosted | NRHO composite cites Table 2.1 without full report identity in CITATIONS.md (rc-854) |
+
 ## Domain 4 — Launch cost per kg (history, projections)
 
 _Backings: price rows of spacecost `launch_vehicles.csv`; the Stage 4 cost cascade._
