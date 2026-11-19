@@ -725,3 +725,9 @@ Verdict: recheck rc-634 against the latest heads; it remains open for material-s
 At Economicspace main bed74f10d0d26069690780b87b3d82f36235dd40 (PR #213, master 1.83.0), CITATIONS.md gains `usgs_keszthelyi_etal_2017_asteroid_resource_assessment_feasibility`, scoped as method context beside `max_mining_fraction`'s 1.0 ceiling (rc-851). rc-491 stays open.
 
 Verdict: rc-851 closed as applied. Extracted data: none new.
+
+## R987 — Frozen and live Stage 2 refining inputs scoped upstream (2026-11-19)
+
+At Economicspace main e354cdda8d5471a04a78509de78def8f4ef2a6b9 (PR #214, master 1.84.0), the new `campaign/stage2/PROVENANCE.md`, mirroring the Stage 3 file, records refining_kwh_per_kg per kg of raw feed as engineering allowances and scenarios against Vogl et al., Liu et al. and Gull et al. (rc-634); in_space_processing_usd_per_kg as the c_ref formula whose power, plant and throughput components are spacecost estimates (rc-642); and the terrestrial prices, distinguishing a missing quote from a zero price and the plagioclase feldspar comparator (rc-643). The same values in the pinned prices-2026-11-12 lunar_surface release get the same entries. The verification worksheet prints the entry beside any Stage 2 input whose row carries the recorded value, in a span its backing check strips, so each input stays NEED BACKING. No frozen CSV byte or value moves.
+
+Verdict: rc-634, rc-642, rc-643 closed as applied. Extracted data: none new.

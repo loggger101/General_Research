@@ -1,3 +1,9 @@
+## R987 — Frozen Stage 2 phase densities scoped upstream (2026-11-19)
+
+At Economicspace main e354cdda8d5471a04a78509de78def8f4ef2a6b9 (PR #214, master 1.84.0), the new `campaign/stage2/PROVENANCE.md`, mirroring the Stage 3 file, records the phase densities against the sources this repo checked: nickel-iron 7.90 as kamacite's calculated density with no IIIAB bulk basis; cohenite 7.40 inside its measured range; schreibersite 7.40 above its measured range (rc-639); troilite 4.61 unreconciled with FeS; carbon 2.10 a graphite proxy; plagioclase 2.69 with no composition defined (rc-640). The verification worksheet prints the entry beside any Stage 2 input whose row carries the recorded value, in a span its backing check strips, so each input stays NEED BACKING. No frozen CSV byte or value moves.
+
+Verdict: rc-639, rc-640 closed as applied. Extracted data: none new.
+
 ## R985 — Spacevalue nickel-iron PGM split labelled analyst-selected upstream (2026-11-19)
 
 At Spacevalue main f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f (PR #19, 0.8.2), the nickel-iron PGM comment and CITATIONS.md call the per-element split (Pt 15, Pd 10, Ru 3, Ir 4, Os 2, Rh 1.5, Au 1 ppm) analyst-selected. `wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals` printed p. A1 says siderites contain "on the average, 30 ppm total platinum metals"; Table 15, p. A17, gives per-element siderite ranges. The six PGM yields sum to 35.5 ppm, not the ~37 the old comment gave. Nichiporuk & Brown, Lodders, Walker and Kargel get full entries scoped to what each supports (rc-835). Yields are unchanged.
