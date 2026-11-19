@@ -1653,7 +1653,7 @@ _Backings: spacevalue `cargo.py` `_mineral_implied_value` (100% of contained met
 
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
-| cowen_agnello_petit_2012_npsr_pge | T1 | Cowen, Agnello & Petit (Snowden), 'Evaluation of net smelter returns in the South African PGE industry by application of base metal concentrate commercial treatment terms' - SAImm Platinum 2012 pp. 577-592 | read, not hosted | d25 terms: payable PGE 90% / Ni-Cu 85%; TC $250/t; RC Pt/Pd $25/oz, Rh $75/oz; smelting recovery 92-95%, refining >99% |
+| cowen_agnello_petit_2012_npsr_pge | T1 | Cowen, Agnello & Petit (Snowden), 'Evaluation of net smelter returns in the South African PGE industry by application of base metal concentrate commercial treatment terms' - SAImm Platinum 2012 pp. 577-592 | read, not hosted | d25 terms: payable PGE 90% / Ni-Cu 85%; TC $250/t; RC Pt/Pd $25/oz, Rh $75/oz; smelting recovery 92-95%, refining >99%; Spacevalue bibliography candidate rc-849 |
 | gertsch_1993_asteroid_mining_jsc | T2 | Gertsch (Colorado School of Mines), 'Asteroid Mining' - JSC Space Resources Vol. 3: Materials chapter, NTRS 19930007695 | full text hosted | context for the terrestrial processing-route question: carbonyl retort during return trip; no load-bearing number |
 | usgs_mcs2026_nickel_chapter | T3 | USGS Mineral Commodity Summaries 2026, Nickel chapter (ver. 1.3 May-2026) | full text hosted | nickel ref_price anchor: LME cash $15,000/t = $15.0/kg vs our 16.50 (+10%); ferronickel as distinct product class; 'iron-nickel alloy' named resource type (rc-035 already open on this cell) |
 | usgs_mcs2026_platinum_group_chapter | T3 | USGS Mineral Commodity Summaries 2026, Platinum-Group Metals chapter (ver. 1.3 May-2026) | full text hosted | PGM ref prices context: Pd $1,100/oz Pt $1,200 Ir $4,400 Rh $5,800 Ru $690 (2025e); osmium STILL unpriced - standing gap persists; ~140,000 kg global Pd+Pt scrap recycling 2025 |
@@ -1664,6 +1664,7 @@ _Backings: spacevalue `cargo.py` `_mineral_implied_value` (100% of contained met
 | usgs_myb_vol1_2021_platinum_group_metals | T3 | USGS Minerals Yearbook Vol 1 (2021) PGM chapter - Table 5 world mine production by country: Ir 7,880 / Rh 24,400 / Ru 33,700 kg (2021); osmium NOT separately reported; latest per-element USGS world table | full text hosted | economicspace ANNUAL_WORLD_PRODUCTION_KG iridium/rhodium/ruthenium cells - first measured anchors (rc-058 opened) |
 | dowling_2022_capital_efficient_upgrading_of_pgm_concentrates | T2 | Dowling et al. 2022, capital-efficient upgrading of PGM concentrates (ISASMELT/Albion; SAIMM) | read, not hosted | PGM flowsheet recoveries: 98% Pt/Pd/Au/Rh, 97% Cu/Ni (design values, 2022 prices) |
 | usitc_hts_7502_20_00_00_nickel_alloys_duty_rates | T3 | USITC HTS 7502.20.00.00 Nickel alloys: general duty Free, other 6.6 cents/kg (live HTS endpoint) | open service | import duty on nickel alloys: general Free; footnote 9903.90.08 (additional duties) not read |
+| spacevalue_cowen_2012_citation_gap_code_current_2026 | T4 | Spacevalue Cowen offtake-citation code snapshot | verified live | Current bibliography omission for rc-849 |
 
 ## Domain 26 — Spacecraft storage & energy-system physical properties
 

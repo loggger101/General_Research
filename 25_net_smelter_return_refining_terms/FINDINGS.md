@@ -70,3 +70,9 @@ rc-121 (apply net-smelter-return terms, or state the refined-price assumption) a
 ## R182 - Osmium closed via domain 6 (2026-10-16)
 
 `ipa_sfa_2026_osmium_pgm_factsheet` (d06): "Annual global production of osmium is likely to therefore have been limited to about 500kg-550kg/annum over 2024 and 2025." (upstream 1.0e3, ~2x; **rc-125**); no exchange quote exists, the industrial price "fixed in the 300-400$/oz range since the 2000s" (upstream $13,000/kg = $404/oz; **rc-126**). Quotes in `06_commodity_market_pricing/extracted_data/r182_osmium_production_price_key_numbers.csv`. Only open item (1) remains: no source prices Fe-Ni alloy with ppm PGMs directly; Cowen's terms stay the benchmark.
+
+## R983 — Spacevalue Cowen bibliography entry (2026-11-19)
+
+- cowen_agnello_petit_2012_npsr_pge: Table IV, p. 585, reports PGE payability of 90% and Ni/Cu payability of 85%. Spacevalue catalog.py cites Cowen, Agnello & Petit (2012) for the concentrate-terms caveat in its mineral valuation docstring; current CITATIONS.md has no Cowen entry. The registered source gives the full title, SAIMM Platinum 2012 proceedings, pp. 577-592, and its official PDF link.
+
+**Verdict:** Open rc-849 to add a full bibliography entry and link, scoped to the explanatory concentrate-terms caveat. Applied rc-121 documents the valuation method; no model value changes. Extracted: extracted_data/r81_refining_terms_key_numbers.csv.
