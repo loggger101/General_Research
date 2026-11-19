@@ -485,3 +485,9 @@ Verdict: rc-686, rc-687, rc-688, rc-689, rc-690 closed as applied; rc-857, rc-85
 `cannon_gialich_acain_2023_asteroid_precious_structural_metals`: its abstract (p. 1) says base metals Fe, Mg, Al and Si “can be chemically reduced and used to support in-space manufacturing.” This supports a general structural-metal prospect in asteroid material, but not an ALICE-specific recovery route, yield, or energy; the row also needs a source for water bound in asteroid phyllosilicates and its recovery.
 
 **Verdict:** open **rc-863** to cite each feedstock premise in the row note and bibliography, or qualify them as prospective assumptions. Keep the metal-processing energy NaN/gated and the water placeholder pending supported process inputs. No numeric replacement inferred. Extracted: `extracted_data/r994_alice_asteroid_derivability_claim.csv`.
+
+## R996 — Spacecost EOS bibliography and ALICE feedstock scope applied upstream (2026-11-19)
+
+At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (PR #55, 0.18.8, data contract 1.27.8; notes and CITATIONS.md only), CITATIONS.md gains `bell_etal_2014_coolprop`, `tegeler_span_wagner_1999_argon_equation_of_state`, `lemmon_span_2006_short_eos_industrial_fluids` and `span_etal_2000_nitrogen_reference_equation_of_state` (rc-860), and the ALICE note calls both components a prospective asteroid feedstock, citing `cannon_gialich_acain_2023_asteroid_precious_structural_metals` for metal reduction only (rc-863). Values unchanged; rc-827 stays open.
+
+Verdict: rc-860, rc-863 closed as applied. Extracted data: none new.

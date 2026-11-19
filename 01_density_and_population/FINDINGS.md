@@ -748,3 +748,9 @@ Verdict: rc-605, rc-606, rc-607, rc-608, rc-814, rc-817, rc-818, rc-819, rc-820 
 - R991's log entry says it opened rc-860 and rc-861 for Spacecost bibliography gaps. R993's `extracted_data/r993_asteroidcatalog_screen_agreement_sensitivity.csv` contains the screen-sensitivity results; no value replacement is inferred.
 
 **Verdict:** Open rc-862 to correct the upstream round pointer to R993 or the exact extraction path. Thresholds and catalog values did not change. Extracted data: `extracted_data/r993_asteroidcatalog_screen_agreement_sensitivity.csv`.
+
+## R996 — AsteroidCatalog sensitivity pointer corrected upstream (2026-11-19)
+
+At AsteroidCatalog main 8bdd8dbdd326d8c6150106fa5bc96f51d2fe2698 (PR #40, 0.13.9), the screen and agreement sensitivity figures cite R993 and extracted_data/r993_asteroidcatalog_screen_agreement_sensitivity.csv instead of R991 (rc-862). Values unchanged.
+
+Verdict: rc-862 closed as applied. Extracted data: none new.

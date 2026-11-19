@@ -370,3 +370,9 @@ Verdict: all fifteen closed as applied. Extracted data: none new.
 At Economicspace main bed74f10d0d26069690780b87b3d82f36235dd40 (PR #213, master 1.83.0), CITATIONS.md gains `tiesinga_2021_codata_2018_constants`, Table XXX, for calc's `_G_SI` (rc-850). The constant is unchanged.
 
 Verdict: rc-850 closed as applied. Extracted data: none new.
+
+## R996 — Economicspace rotation-period fallback named a historical prior (2026-11-19)
+
+At Economicspace main 17650892376136bc91f2124525735a14363e7c3c (PR #215, master 1.84.1), `default_rotation_period_h` = 10.222 h is labelled a historical prior with no recorded release or filter, beside the pinned data-2026-11-13 release's 46,159 measured periods and 8.068 h median (no filter; rechecked here), and scoped to bodies whose period is missing (rc-579). Value unchanged.
+
+Verdict: rc-579 closed as applied. Extracted data: none new.

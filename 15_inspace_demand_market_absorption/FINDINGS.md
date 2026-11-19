@@ -625,3 +625,9 @@ Verdict: rc-823 applied by scenario labeling and explicit sensitivity; no numeri
 `spacecost_water_resistojet_reference_row_current_2026`: Spacecost main `a6901495d257cbcd018b31e238498c94f301c865`, water row 20 describes water as a propellant directly, without electrolysis. Sekine et al., Table 3 (printed p. 282), report on-orbit AQUARIUS water-resistojet operation on EQUULEUS. NASA's PTD-1 release describes the different HYDROS-C path: water electrolysis followed by combustion of hydrogen and oxygen. These sources establish distinct routes, not the extraction energy for water from asteroid ice.
 
 **Verdict:** open **rc-864** to scope the electrolysis statement to a specified chemical-propellant architecture, cite the relevant route, and distinguish water extraction/conditioning from propellant conversion. The utility factors remain unchanged; closed **rc-823** covers their scenario labels and sensitivity. Extracted: `extracted_data/r995_spacevalue_water_propellant_path_scope.csv`.
+
+## R996 — Spacevalue water processing routes named upstream (2026-11-19)
+
+At Spacevalue main 10f05f683c14121cf4b5b7f580b4eaf5bac82d0d (PR #21, 0.8.4), the water utility comment names the hydrolox electrolysis route (`nasa_ptd1_hydros_c_water_electrolysis_2021`) and the direct resistojet route (`asakawa_aquarius_onorbit_2024`) instead of calling electrolysis the only step, and CITATIONS.md gains both (rc-864). Utility factors unchanged.
+
+Verdict: rc-864 closed as applied. Extracted data: none new.

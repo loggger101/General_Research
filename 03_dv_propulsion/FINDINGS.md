@@ -1037,3 +1037,9 @@ Verdict: Polk et al. provide a traceable lithium-MPD performance history that ca
 - `babic_et_al_1993_extended_duration_lunar_lander`: `reference/delta_v_segments.csv:16` cites NASA-CR-195527 Table 2.1; `CITATIONS.md` section 3 has only an abbreviated NASA-CR-195527 locator without the report title, authors, year or NTRS link (rc-854).
 
 **Verdict:** Rechecked rc-852, rc-853 and rc-854 against current main; all remain open. Their linked sources are scoped comparators. No delta-v or propellant value changed. Extracted data: none new.
+
+## R996 — Spacecost propulsion and delta-v bibliography completed upstream (2026-11-19)
+
+At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (PR #55, 0.18.8, data contract 1.27.8; notes and CITATIONS.md only), CITATIONS.md gains `mirtich_1982_resistojet_large_spacecraft_systems` (rc-852), `whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept` scoped as a crewed staging trade (rc-853), `babic_et_al_1993_extended_duration_lunar_lander` (rc-854) and `nasa_ntrs_19900016723_lctv_return_delta_v` (rc-861). Values unchanged.
+
+Verdict: rc-852, rc-853, rc-854, rc-861 closed as applied. Extracted data: none new.
