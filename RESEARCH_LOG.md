@@ -1,4 +1,5 @@
 # Research log
+- **Round 939** (2026-11-18): Closed 21 spacecost launch-vehicle candidates applied upstream (PR #50, 0.18.3, data contract 1.27.3): price bands and targets with no like-for-like source labelled scenarios and unmatched payloads flagged; only notes moved.
 - **Round 938** (2026-11-18): Closed 12 AsteroidCatalog citation candidates applied upstream (PR #35, 0.13.4, data contract 1.11.0 unchanged): composition fractions, Z's density and accessory amounts labelled scenarios where they are set.
 - **Round 937** (2026-11-18): Closed 15 spacecost citation candidates applied upstream (PR #49, 0.18.2, data contract 1.27.2): eclipse fractions and distance bands given their geometry or scenario labels, and four propellant claims scoped; only notes moved.
 - **Round 936** (2026-11-18): Closed 17 spacecost launch-vehicle citation candidates applied upstream (PR #48, 0.18.1, data contract 1.27.1): payloads cited with their orbits and prices said as estimates, targets, proxies or scenarios; only notes moved.
