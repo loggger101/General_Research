@@ -1,3 +1,14 @@
+## R934 — Spacecost first_flight defined and three propellant years moved (2026-11-18)
+
+spacecost 3d140d7f7ffc7da6352b737fb3b7d32d61ac2d0a (PR #47, package 0.18.0, data contract 1.27.0), merged with the owner's approval. The owner chose the definition: `first_flight` is the first launch or flight of a vehicle using the propulsion, successful or not. Compared column by column against 9c7c6b2: only `first_flight` in three rows, `notes` in five and `pipeline_version` differ; no code reads `first_flight`.
+
+- rc-760: methalox 2023 to 2022, `landspace_2023_zhuque2_first_orbit` (Mission F1 first launch 2022; F2 first to orbit 2023).
+- rc-762: HTP monoprop 1949 to 1951, `science_museum_group_dehavilland_super_sprite_rocket_engine` (first fired 1949, flight trials 1951).
+- rc-764: water resistojet 2022 to 2019, `jaxa_kibo_aqt_d_water_resistojet_deployment_2019`; the note separates `nasa_ptd1_hydros_c_water_electrolysis_2021`, `momentus_2023_vigoride5_water_met_first_orbit_raise`, `pale_blue_2023_water_resistojet_inorbit`, `jaxa_raise3_kir_failed_launch_2022` and `jaxa_2022_artemis1_equuleus_launch_record`; AQUARIUS is credited to Sekine et al. (`asakawa_aquarius_onorbit_2024`).
+- rc-761, rc-763: 1969 (Black Arrow R0; `uksa_2020_black_arrow_history`, `wight_aviation_museum_black_arrow_history`) and 1993 (Telstar 401; `curren_byers_1994_nasa_hydrazine_arcjets_telstar401`, `hoskins_et_al_2013_aerojet_ep_flight_experience`, `lockheed_martin_2006_amc1_first_a2100_launch`) kept with the events named.
+
+Verdict: all five closed as applied. Extracted data: none new.
+
 ## R933 — Spacecost propellant-density and flight-record citations applied upstream (2026-11-18)
 
 spacecost 9c7c6b2b4e213e647089976227bc5e5dc6333721 (PR #46, package 0.17.3, data contract 1.26.1 to 1.26.2). Notes, comments and CITATIONS.md only. Compared here column by column against 7ea729f: in all six reference tables and the summary sample only `pipeline_version` and `notes` differ. Rebuilt on the recorded platform (Python 3.13, numpy 2.5.4, pandas 3.1.1).

@@ -1,4 +1,7 @@
 # Research log
+- **Round 936** (2026-11-18): Closed 17 spacecost launch-vehicle citation candidates applied upstream (PR #48, 0.18.1, data contract 1.27.1): payloads cited with their orbits and prices said as estimates, targets, proxies or scenarios; only notes moved.
+- **Round 935** (2026-11-18): Closed 5 spacevalue citation candidates applied upstream (PR #16, 0.7.3, data contract 1.21.0 unchanged): world-production ceilings and the earth-surface water price given their editions or scenario labels.
+- **Round 934** (2026-11-18): Closed rc-760 to rc-764 after spacecost PR #47 (0.18.0, data contract 1.27.0) defined first_flight as the first launch, on the owner's decision, moving three propellant years.
 - **Round 933** (2026-11-18): Closed 14 spacecost citation candidates applied upstream (PR #46, 0.17.3, data contract 1.26.2): component densities cited with their conditions and five flight-record notes corrected; only notes and the stamp moved.
 - **Round 932** (2026-11-18): Closed 8 economicspace citation candidates applied upstream (PR #208, master 1.78.0, no stamp): orbital constants cited in code and the verification worksheet, and two CITATIONS entries; no number moved.
 - **Round 931** (2026-11-18): Closed 10 spacecost citation candidates applied upstream (PR #45, 0.17.2, data contract 1.26.1 unchanged): constants cited where set, the downleg TPS fraction scoped as a scenario, and full bibliography entries; no value moved.
