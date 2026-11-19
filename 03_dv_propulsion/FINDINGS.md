@@ -1,3 +1,14 @@
+## R933 — Spacecost propellant-density and flight-record citations applied upstream (2026-11-18)
+
+spacecost 9c7c6b2b4e213e647089976227bc5e5dc6333721 (PR #46, package 0.17.3, data contract 1.26.1 to 1.26.2). Notes, comments and CITATIONS.md only. Compared here column by column against 7ea729f: in all six reference tables and the summary sample only `pipeline_version` and `notes` differ. Rebuilt on the recorded platform (Python 3.13, numpy 2.5.4, pandas 3.1.1).
+
+- rc-673, rc-675, rc-676, rc-677, rc-678, rc-808: component densities cited with their conditions to `imo_msc420_2016_methane_liquid_density`, `dodm_4145_26_2008_storable_propellant_density_table`, `nasa_ntrs_20030020732_98pct_h2o2_density`, `arnett_1969_nasa_tm_x53859_aerozine50_properties` and `who_2020_iodine_drinking_water_density`. UDMH's third decimal is stated as unsourced; Aerozine-50's 0.903 as the top of the specific-gravity range.
+- rc-807: iodine's 2,000 s is labelled a scenario on `nasa_tm_2015_218829`'s Busek target.
+- rc-757, rc-759, rc-755, rc-683: corrected notes cite `kerslake_1970_sert_ii_flight_performance`, `worlock_1975_ats6_cesium_engine_experiment`, `hamidian_dahlgren_1973_les6_ppt_report`, `zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing`, `nasa_science_eo1_mission_page`, `pourpoint_2012_alice_feasibility`, `risha_2014_alice_jpp` and `benson_asher_reese_2025_fast_transfer_nrho_presentation`.
+- rc-756, rc-698, rc-670: `mulkey_cardiff_2024_green_propulsion_assessment`; `berry_et_al_2021_contact_with_bennu_osirisrex_tag_sample_collection`, `esa_2024_philae_harpoon_failure_landing_review`, `nasa_2020_insight_hp3_mole_soil_friction_failure`, `kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams`; and `cme_comex_nymex_futures` with `iea_energy_prices_2022_product_specifications` for the heating-oil proxy.
+
+Verdict: all fourteen closed as applied. Extracted data: none new.
+
 ## R931 — Spacecost constant and bibliography citations applied upstream (2026-11-18)
 
 spacecost 7ea729fb33a3cf37daa86b8baa6aa51b94a8ac98 (PR #45, package 0.17.2, data contract 1.26.1 unchanged). CITATIONS.md and comments; `units.py` and `delivery.py` parse to the same ASTs as a401930 and `tools/refresh_reference.py --check` reports `reference/` up to date.
