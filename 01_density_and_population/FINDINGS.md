@@ -740,3 +740,17 @@ Verdict: rc-580, rc-581 closed as applied. Extracted data: none new.
 At AsteroidCatalog main d75487241acb328f2db8b147638dc9ec54144604 (PR #39, 0.13.8; comments, README and changelog only), the merge screens and cross-source agreement tolerances are labelled data-quality policies with their measured sensitivity. Screens were re-run one threshold at a time on a 2026-11-19 four-source build captured before `_resolve_measured` (1,582,348 merged rows): albedo floor 0.005/0.01/0.02/0.03 refuses 101/178/1,968/20,376 measured albedos (rc-607); the H-diameter window at 0.25-1.5 mag refuses 104-45 source diameters, 72 at 0.75 (rc-605); the density floor at 0.10-0.50 refuses 45-60 masses, 49 at 0.25 (rc-606); the 5.0 record ceiling at 4.5-8.0 refuses 57-40, 49 at 5.0, with Kalliope's 4.18 confirmed and 38 source masses over 5.0 on their own diameters, some with sub-1% stated sigma (rc-608); the sigma >= k x value rule refuses 165/55/49/46/46 masses at k = 0.5-2.0 (rc-820). On the published data-2026-11-13 spreads, the current tolerances flag 6.7% of H pairs (44% at H 10-14; rc-814), 3.3% of diameter and 61% of albedo pairs (rc-818), 42% of 431 mass pairs (rc-817) and 15.0% of rotation pairs, 7.2% at a factor of 2 (rc-819). Every threshold and output is unchanged.
 
 Verdict: rc-605, rc-606, rc-607, rc-608, rc-814, rc-817, rc-818, rc-819, rc-820 closed as applied. Extracted data: extracted_data/r993_asteroidcatalog_screen_agreement_sensitivity.csv.
+
+## R994 - AsteroidCatalog sensitivity round reference (2026-11-19)
+
+- `asteroidcatalog_density_ceiling_policy_code_current_2026`: AsteroidCatalog main `d75487241acb328f2db8b147638dc9ec54144604`, `physics.py:113-120` reports the density-screen sensitivity on a four-source 0.13.7 build and points to "General_Research R991".
+- `asteroidcatalog_mass_sigma_screen_code_current_2026`: `merge.py:189-191` repeats the R991 pointer for the sigma/value sensitivity counts. The current values and policy interpretation are recorded in the R993 Domain 01 extraction.
+- R991's log entry says it opened rc-860 and rc-861 for Spacecost bibliography gaps. R993's `extracted_data/r993_asteroidcatalog_screen_agreement_sensitivity.csv` contains the screen-sensitivity results; no value replacement is inferred.
+
+**Verdict:** Open rc-862 to correct the upstream round pointer to R993 or the exact extraction path. Thresholds and catalog values did not change. Extracted data: `extracted_data/r993_asteroidcatalog_screen_agreement_sensitivity.csv`.
+
+## R996 — AsteroidCatalog sensitivity pointer corrected upstream (2026-11-19)
+
+At AsteroidCatalog main 8bdd8dbdd326d8c6150106fa5bc96f51d2fe2698 (PR #40, 0.13.9), the screen and agreement sensitivity figures cite R993 and extracted_data/r993_asteroidcatalog_screen_agreement_sensitivity.csv instead of R991 (rc-862). Values unchanged.
+
+Verdict: rc-862 closed as applied. Extracted data: none new.

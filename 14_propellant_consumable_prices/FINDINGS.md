@@ -477,3 +477,17 @@ Verdict: rc-836, rc-842 closed as applied. Extracted data: none new.
 At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the krypton, nitrogen and xenon rows label their stored densities scenarios with the equation-of-state figure beside them, and the DFD and antimatter rows label 0.100 kg/L a scenario with a tank-fraction bracket (rc-686 to rc-690). `lemmon_span_2006_short_eos_industrial_fluids` (krypton, xenon) and `span_etal_2000_nitrogen_reference_equation_of_state` (nitrogen), as CoolProp 8.0.0 implements them, give at 293.15 K: krypton 0.8724 kg/L at 18 MPa (stored 0.550, +58.6%; the stored figure holds at 369.6 K), nitrogen 0.3024 kg/L at 30 MPa (stored 0.250, +21.0%; 349.6 K), xenon 1.8679 kg/L at 10 MPa (stored 2.000, -6.6%; 284.4 K). Opened value candidates rc-857, rc-858 and rc-859 for the moves, held for owner review.
 
 Verdict: rc-686, rc-687, rc-688, rc-689, rc-690 closed as applied; rc-857, rc-858, rc-859 opened. Extracted data: extracted_data/r990_bottled_gas_density_eos.csv.
+
+## R994 — ALICE asteroid feedstock claims need citations (2026-11-19)
+
+`spacecost_alice_isru_processing_energy_gate_current_2026`: At Spacecost main `a6901495d257cbcd018b31e238498c94f301c865`, the ALICE processing-energy mapping remains NaN and the exported field remains blank; the 0.5 water-feed value is still a placeholder (rc-827). The row note separately says both components are asteroid-derivable—metallic aluminium from silicate reduction and water from phyllosilicates—without a source attached to that assertion. `CITATIONS.md` §2 cites Pourpoint et al. and Risha et al. for combustion and Isp, not asteroid feedstock evidence.
+
+`cannon_gialich_acain_2023_asteroid_precious_structural_metals`: its abstract (p. 1) says base metals Fe, Mg, Al and Si “can be chemically reduced and used to support in-space manufacturing.” This supports a general structural-metal prospect in asteroid material, but not an ALICE-specific recovery route, yield, or energy; the row also needs a source for water bound in asteroid phyllosilicates and its recovery.
+
+**Verdict:** open **rc-863** to cite each feedstock premise in the row note and bibliography, or qualify them as prospective assumptions. Keep the metal-processing energy NaN/gated and the water placeholder pending supported process inputs. No numeric replacement inferred. Extracted: `extracted_data/r994_alice_asteroid_derivability_claim.csv`.
+
+## R996 — Spacecost EOS bibliography and ALICE feedstock scope applied upstream (2026-11-19)
+
+At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (PR #55, 0.18.8, data contract 1.27.8; notes and CITATIONS.md only), CITATIONS.md gains `bell_etal_2014_coolprop`, `tegeler_span_wagner_1999_argon_equation_of_state`, `lemmon_span_2006_short_eos_industrial_fluids` and `span_etal_2000_nitrogen_reference_equation_of_state` (rc-860), and the ALICE note calls both components a prospective asteroid feedstock, citing `cannon_gialich_acain_2023_asteroid_precious_structural_metals` for metal reduction only (rc-863). Values unchanged; rc-827 stays open.
+
+Verdict: rc-860, rc-863 closed as applied. Extracted data: none new.

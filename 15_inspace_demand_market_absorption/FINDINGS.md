@@ -617,3 +617,17 @@ Verdict: rc-636, rc-638, rc-653, rc-655 closed as applied. Extracted data: none 
 spacevalue_083_main_water_silicate_scenario_review_2026: at Spacevalue main 8d165b08e6702cc9245ef23437587e9a6ecfa013 (PR #20, package 0.8.3, data contract 1.22.1), catalog.py calls the base and destination water factors 1.00, 0.80, 0.60 and 0.25 “SCENARIOS,” states they lack a buyer/local-supply/market calibration, and gives the price sensitivity: every 0.10 factor change moves water's price by 0.10 times that destination's launch cost avoided. Values and generated prices are unchanged.
 
 Verdict: rc-823 applied by scenario labeling and explicit sensitivity; no numeric replacement inferred. Extracted: extracted_data/r992_spacevalue_water_utility_scenario_sensitivity.csv.
+
+## R995 — Spacevalue water-propellant pathway scope (2026-11-19)
+
+`spacevalue_083_main_water_silicate_scenario_review_2026`: Spacevalue main `8d165b08e6702cc9245ef23437587e9a6ecfa013` says water is propellant feedstock and that “electrolysis is the only processing step between raw ice and a fuelled depot.” The comment names no architecture or source for this universal pathway claim.
+
+`spacecost_water_resistojet_reference_row_current_2026`: Spacecost main `a6901495d257cbcd018b31e238498c94f301c865`, water row 20 describes water as a propellant directly, without electrolysis. Sekine et al., Table 3 (printed p. 282), report on-orbit AQUARIUS water-resistojet operation on EQUULEUS. NASA's PTD-1 release describes the different HYDROS-C path: water electrolysis followed by combustion of hydrogen and oxygen. These sources establish distinct routes, not the extraction energy for water from asteroid ice.
+
+**Verdict:** open **rc-864** to scope the electrolysis statement to a specified chemical-propellant architecture, cite the relevant route, and distinguish water extraction/conditioning from propellant conversion. The utility factors remain unchanged; closed **rc-823** covers their scenario labels and sensitivity. Extracted: `extracted_data/r995_spacevalue_water_propellant_path_scope.csv`.
+
+## R996 — Spacevalue water processing routes named upstream (2026-11-19)
+
+At Spacevalue main 10f05f683c14121cf4b5b7f580b4eaf5bac82d0d (PR #21, 0.8.4), the water utility comment names the hydrolox electrolysis route (`nasa_ptd1_hydros_c_water_electrolysis_2021`) and the direct resistojet route (`asakawa_aquarius_onorbit_2024`) instead of calling electrolysis the only step, and CITATIONS.md gains both (rc-864). Utility factors unchanged.
+
+Verdict: rc-864 closed as applied. Extracted data: none new.

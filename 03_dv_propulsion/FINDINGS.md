@@ -1029,3 +1029,17 @@ Verdict: Polk et al. provide a traceable lithium-MPD performance history that ca
 - `beaurain_et_al_2003_earth_to_orbit_rocket_propulsion_ntrs20030066115`: The NTRS record abstract gives an Earth-parking-orbit speed of about 9 km/s and identifies gravity and atmospheric drag; it does not establish the exact 9,400 m/s value.
 - **Verdict:** open **rc-831**; add the full Beaurain et al. title, 2003 record details, official NTRS link, and abstract locator. This bibliography gap is separate from rc-766; the stored scenario remains unchanged.
 - **Extracted data**: `extracted_data/r887_surface_to_leo_ascent_dv_citation_scope.csv`.
+
+## R994 - Spacecost bibliography candidates rechecked (2026-11-19)
+
+- `mirtich_1982_resistojet_large_spacecraft_systems`: At Spacecost main `a6901495d257cbcd018b31e238498c94f301c865`, `reference/propellants.csv:20` still cites Mirtich, NASA TM-83489 p. 4, for the water resistojet mass comparator; `CITATIONS.md` section 2 still has no Mirtich / TM-83489 entry (rc-852).
+- `whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept`: `reference/delta_v_segments.csv:15` cites NTRS 20170004964; `CITATIONS.md` section 3 still lists Whitley & Martinez 2015 but no Whitley et al. 2017 entry (rc-853).
+- `babic_et_al_1993_extended_duration_lunar_lander`: `reference/delta_v_segments.csv:16` cites NASA-CR-195527 Table 2.1; `CITATIONS.md` section 3 has only an abbreviated NASA-CR-195527 locator without the report title, authors, year or NTRS link (rc-854).
+
+**Verdict:** Rechecked rc-852, rc-853 and rc-854 against current main; all remain open. Their linked sources are scoped comparators. No delta-v or propellant value changed. Extracted data: none new.
+
+## R996 — Spacecost propulsion and delta-v bibliography completed upstream (2026-11-19)
+
+At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (PR #55, 0.18.8, data contract 1.27.8; notes and CITATIONS.md only), CITATIONS.md gains `mirtich_1982_resistojet_large_spacecraft_systems` (rc-852), `whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept` scoped as a crewed staging trade (rc-853), `babic_et_al_1993_extended_duration_lunar_lander` (rc-854) and `nasa_ntrs_19900016723_lctv_return_delta_v` (rc-861). Values unchanged.
+
+Verdict: rc-852, rc-853, rc-854, rc-861 closed as applied. Extracted data: none new.

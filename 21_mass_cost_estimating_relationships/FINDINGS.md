@@ -442,3 +442,9 @@ Verdict: rc-825, rc-833 closed as applied. Extracted data: none new.
 At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the surface lander note labels $200,000/kg [100,000, 500,000] a hardware-only scenario that the CLPS whole-service ratios neither set nor bound (rc-300). Value unchanged.
 
 Verdict: rc-300 closed as applied. Extracted data: none new.
+
+## R996 — Spacecost EP per-string anchor stated unsourced upstream (2026-11-19)
+
+At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (PR #55, 0.18.8, data contract 1.27.8; notes and CITATIONS.md only), the electric propulsion recurring-cost note adds NASA Glenn's $67M AEPS contract beside the $18.41M NEXT-C one, says neither divides into a recurring unit price, and labels the $10-15M per-string anchor an unsourced judgement and $1.5M/kW a scenario (rc-299). Value unchanged.
+
+Verdict: rc-299 closed as applied. Extracted data: none new.

@@ -1,3 +1,9 @@
+## R996 — Spacevalue phase-density sources mapped upstream (2026-11-19)
+
+At Spacevalue main 10f05f683c14121cf4b5b7f580b4eaf5bac82d0d (PR #21, 0.8.4), CITATIONS.md maps the phase densities to the Mineral Data Publishing Handbook sheets, `remo_1993_asteroid_meteorite_analogs_density` (Table 2, p. 169) and `agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties` (Table 1, p. 20), keeping Agrawal's troilite printed as FeSi and unreconciled with the FeS row (rc-855, rc-856). Densities unchanged.
+
+Verdict: rc-855, rc-856 closed as applied. Extracted data: none new.
+
 ## R990 — AsteroidCatalog accessory vectors and X split labelled upstream (2026-11-19)
 
 At AsteroidCatalog main 8ffd710f2f2e826ec716287be29c0380da15ba51 (PR #38, 0.13.7; comments and one docstring only), `mineralogy.py` labels the CI and CM accessory vectors (rc-566, rc-570), the ordinary-chondrite phosphate split (rc-568), M and Xk troilite (rc-571) and K and L spinel (rc-572) as body-mass scenarios beside their vol% comparators. `taxonomy.py` calls the X/Xc P/M/E split a prior and states its reach on density, metal and PGM (rc-481), and the unknown-type PGM default the 37 ppm metal baseline, not chondritic (rc-685). Values unchanged.
