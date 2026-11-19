@@ -1,3 +1,15 @@
+## R951 — economicspace worksheet scope sentences and frozen-row provenance applied upstream (2026-11-19)
+
+economicspace fd3b3affdf2db206b13c89e49aebd89b573dd327 (PR #211, master 1.81.0; no stamp or number moves). `campaign/verification_sheet.py` citation text, three comments (`modules/calc.py` and `campaign/worked_calculation.py` parse to the same AST as before) and `campaign/stage3/PROVENANCE.md`. Measured with `--check`: default 2018 DT page NEED BACKING 84 to 83 (only I111, rc-635), `cislunar__raw__search-off` 35 unchanged; `--self-test` passes.
+
+- Worksheet scope: rc-582 (tug Isp, dry fractions), rc-697 (lunar_surface TLI + LOI leg cited to both rows), rc-626 (frozen hydrolox row named), rc-386, 632 (M-class albedo and density), rc-637, 534 (cruise fit and half-year floor), rc-692, 633 (delta-v floors), rc-599 (deorbit), rc-696 (utility map route), rc-726 (absorption-ceiling allocations), rc-635 (Sibanye-Stillwater recognised), rc-782 (build commit in the footer).
+- Comments: rc-647 (N = 1), rc-597 (100 m3 fairing fallback).
+- PROVENANCE.md rows the same in every frozen set: rc-656, 657, 659, 660, 661 (spacecost half in bad5ba8), rc-630 (krypton price), rc-627 (power rows).
+- Already carried at this commit, closed with no change: rc-583 (25-year cap), rc-644 (NRE overlap).
+- Left open: rc-651 (FEEP indium price needs a dated procurement source; PROVENANCE names USGS as a comparator) and rc-777 (a commit column in Stage 4 outputs changes the output schema).
+
+Verdict: 25 closed as applied. Extracted data: none new.
+
 ## R934 — Spacecost first_flight defined and three propellant years moved (2026-11-18)
 
 spacecost 3d140d7f7ffc7da6352b737fb3b7d32d61ac2d0a (PR #47, package 0.18.0, data contract 1.27.0), merged with the owner's approval. The owner chose the definition: `first_flight` is the first launch or flight of a vehicle using the propulsion, successful or not. Compared column by column against 9c7c6b2: only `first_flight` in three rows, `notes` in five and `pipeline_version` differ; no code reads `first_flight`.

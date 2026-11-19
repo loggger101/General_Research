@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+tegeler_span_wagner_1999_argon_equation_of_state,"argon density at 293.15 K, 18 MPa",0.3134803,kg/L,"CoolProp 8.0.0 PropsSI('D','T',293.15,'P',18e6,'Argon') / 1000; CoolProp EOS key Tegeler-JPCRD-1999","computed here with CoolProp 8.0.0, which implements the Tegeler, Span & Wagner equation of state for argon"
+tegeler_span_wagner_1999_argon_equation_of_state,"argon compressibility factor at 293.15 K, 18 MPa",0.9410889,-,"CoolProp 8.0.0 PropsSI('Z','T',293.15,'P',18e6,'Argon')",computed here; spacecost's comment gives Peng-Robinson Z = 0.919 and a generalized-chart Z of about 0.99
+spacecost_supercritical_argon_density_code_current_2026,ArgonSC density_kg_per_L,0.300,kg/L,spacecost/propellants.py line 601 at bad5ba80884e6bd6825de83ff8e942619d962a1f,"stored value, carried into reference/propellants.csv row 8 Argon (Hall / ion)"
+,"difference, EOS over stored",4.49,%,(0.3134803 - 0.300) / 0.300,computed here
