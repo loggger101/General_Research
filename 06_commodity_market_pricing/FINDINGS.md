@@ -1,3 +1,11 @@
+## R942 — Spacevalue reference-price source labels applied upstream (2026-11-18)
+
+spacevalue dd497f2e06f9604512f98c1facbffe3a33bab321 (PR #17, package 0.8.0, data contract 1.21.0 to 1.22.0), merged with the owner's approval. `ref_price_source` is now set per reference row: the 20 rows with no reference price say they have no direct quote and are unpriced on the Earth route, any value being a gross contained-element proxy; the five bulk silicates' $0.05/kg is labelled an engineering placeholder; every other row keeps "USGS/LME/mineralogy reference". In the re-recorded `tests/data/prices-2026-10-07/` fixtures, compared column by column, only `ref_price_source` (25 rows per table) and `pipeline_version` differ.
+
+- rc-455 (bulk silicates); rc-456 (Fe-Ni alloys); rc-589 (schreibersite, troilite); rc-590 (pentlandite); rc-591 (pyrrhotite); rc-593 (magnetite); rc-595 (chromite, ilmenite); rc-621 (niningerite, oldhamite, daubreelite); rc-622 (perovskite); rc-623 (sperrylite, laurite, awaruite, native PGM).
+
+Verdict: all ten closed as applied. The label reaches economicspace only after a `prices-*` release on 0.8.0 and a Stage 2 repin. Extracted data: none new.
+
 ## R935 — Spacevalue world-production and water-price comments applied upstream (2026-11-18)
 
 spacevalue 513c4f090a8680f414b77b150a0cfd2dee1b78ee (PR #16, package 0.7.3, data contract 1.21.0 unchanged). Comments in `catalog.py` and CITATIONS.md; `catalog.py` parses to the same AST as c377668.
