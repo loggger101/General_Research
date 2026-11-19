@@ -1,3 +1,9 @@
+## R991 — Spacecost propellant EOS bibliography (2026-11-19)
+
+At Spacecost main a6901495d257cbcd018b31e238498c94f301c865, the Argon, Krypton, Cold gas (GN2), and Xenon notes identify CoolProp 8.0.0 and reference equations of state by Tegeler, Span & Wagner (1999), Lemmon & Span (2006), or Span et al. (2000). Their stored densities (Argon 0.300, Krypton 0.550, GN2 0.250, Xenon 2.000 kg/L) remain under separate open value reviews (rc-816, rc-857 to rc-859). Spacecost CITATIONS.md section 2 has no CoolProp/Bell reference or full bibliography entries for these EOS papers. coolprop_8_0_0_citation_page (Citation for CoolProp, Overview) says "please cite the freely available article" and gives the Bell et al. (2014) reference and CoolProp website.
+
+Verdict: rc-860 open, citation-only; no density replacement inferred. Extracted: extracted_data/r991_spacecost_propellant_eos_bibliography.csv.
+
 ## R975 — Moran 1991 hydrolox comparator citation and scenario scope (2026-11-19)
 
 `spacecost_hydrolox_moran_energy_comparator_code_current_2026`: Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `propellants.py` line 332 attributes 4.41 kWh/kg and “2 MW at 280 kg/hr of water” to Moran’s 1991 subsystem study. `CITATIONS.md` §2 has no Moran entry; the Morren & Curran 1991 reference there is a different 2-kW arcjet study.

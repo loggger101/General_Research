@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_083_main_water_silicate_scenario_review_2026,Base-profile water utility,1.00,fraction of launch-cost-avoided premium,"spacevalue/catalog.py, IN_SPACE_UTILITY",Spacevalue 0.8.3 labels this and its destination overrides as scenarios; no buyer/local-supply/market calibration is claimed (rc-823).
+spacevalue_083_main_water_silicate_scenario_review_2026,GEO water utility,0.80,fraction of launch-cost-avoided premium,"spacevalue/catalog.py, IN_SPACE_UTILITY_BY_DESTINATION",Scenario override; no numeric change.
+spacevalue_083_main_water_silicate_scenario_review_2026,Lunar-surface water utility,0.60,fraction of launch-cost-avoided premium,"spacevalue/catalog.py, IN_SPACE_UTILITY_BY_DESTINATION",Scenario override; no numeric change.
+spacevalue_083_main_water_silicate_scenario_review_2026,Mars-surface water utility,0.25,fraction of launch-cost-avoided premium,"spacevalue/catalog.py, IN_SPACE_UTILITY_BY_DESTINATION",Scenario override; no numeric change.
+spacevalue_083_main_water_silicate_scenario_review_2026,Water-price sensitivity,each 0.10 change in utility changes the price by 0.10 × destination launch cost avoided,USD/kg per destination,spacevalue/catalog.py comment above IN_SPACE_UTILITY,The package states the linear effect; destination factors and generated prices remain unchanged.

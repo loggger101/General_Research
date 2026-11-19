@@ -1,3 +1,9 @@
+## R991 — Spacecost NASA-CR-186677 bibliography entry (2026-11-19)
+
+spacecost_0187_main_citation_method_review_2026: at Spacecost main a6901495d257cbcd018b31e238498c94f301c865, delivery.py labels _LLO_TEI_DV_M_S = 850.0 a scenario and names NASA-CR-186677 / NTRS 19900016723, Table 4B, as its comparator. Spacecost CITATIONS.md section 3 has no named entry for that report. nasa_ntrs_19900016723_lctv_return_delta_v: NASA NTRS gives the title Preliminary subsystem designs for the Assured Crew Return Vehicle (ACRV), volume 1 and report number NASA-CR-186677-VOL-1; Table 4B, printed p. 25, gives 915 + 60 = 975 m/s to a 400-km Earth orbit. This is not a surface-return comparator.
+
+Verdict: rc-861 open, citation-only. rc-741 remains applied; 850 m/s is unchanged. Extracted: extracted_data/r991_spacecost_nasa_cr186677_bibliography_gap.csv; values: extracted_data/r865_lunar_llo_tei_return_comparator.csv.
+
 ## R990 — Spacecost lunar TEI labelled a scenario upstream (2026-11-19)
 
 At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), `delivery.py` labels the 850 m/s LLO trans-Earth injection a scenario with no stated altitude or Earth endpoint and cites `nasa_ntrs_19900016723_lctv_return_delta_v` (915 + 60 = 975 m/s to a 400-km Earth orbit) as the comparator (rc-741). Value unchanged.

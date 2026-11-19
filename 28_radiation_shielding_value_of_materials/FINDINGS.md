@@ -103,3 +103,9 @@ The comparison is a mixture-specific lunar simulation, not a pure water versus d
 - **Upstream field**: Spacevalue IN_SPACE_UTILITY silicate commentary and its reference bibliography.
 - **Verdict**: rc-787 requests the complete TP-3473 bibliography entry and the source’s shielding scope. The utility factor remains an engineering scenario; no value changes.
 - **Extracted data**: extracted_data/r907_spacevalue_tp3473_bibliography_gap.csv.
+
+## R992 — Spacevalue silicate utility scoped as a composite scenario (2026-11-19)
+
+spacevalue_083_main_water_silicate_scenario_review_2026: at Spacevalue main 8d165b08e6702cc9245ef23437587e9a6ecfa013 (PR #20, package 0.8.3), catalog.py says the 0.25 silicate utility is a “COMPOSITE” of shielding, printing/sintering feedstock and destination context, “not a shielding ratio to water”; it states no source quantifies the non-shielding part and labels 0.25 a scenario. The utility value is unchanged. This method recheck does not close rc-787, the separate missing NASA TP-3473 bibliography-entry candidate.
+
+Verdict: rc-296 applied by explicit composite scope and scenario labeling; no numeric replacement inferred. Extracted: extracted_data/r992_spacevalue_silicate_utility_composite.csv; shielding reads: extracted_data/r378_tp3473_regolith_water_shielding_fig15.csv.

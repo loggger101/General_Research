@@ -516,6 +516,7 @@ _Backings: spacecost `delta_v_segments.csv` and the Isp rows of `propellants.csv
 | spacecost_water_resistojet_bibliography_gap_code_current_2026 | T4 | Spacecost Water-resistojet bibliography-gap snapshot | verified live, not hosted | Water row cites NASA TM-83489 p. 4; add the missing full entry in CITATIONS.md (rc-852) |
 | spacecost_nrho_staging_bibliography_gap_code_current_2026 | T4 | Spacecost TLI-to-NRHO bibliography-gap snapshot | verified live, not hosted | TLI-to-NRHO note cites Whitley et al. 2017; add the missing full entry in CITATIONS.md (rc-853) |
 | spacecost_nasa_cr_195527_bibliography_gap_code_current_2026 | T4 | Spacecost NASA-CR-195527 bibliography-gap snapshot | verified live, not hosted | NRHO composite cites Table 2.1 without full report identity in CITATIONS.md (rc-854) |
+| spacecost_0187_main_citation_method_review_2026 | T4 | Spacecost 0.18.7 citation and method review snapshot | verified live, not hosted | R990 current notes and citation scope for LLO TEI / bibliography review (rc-741, rc-861) |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -1249,8 +1250,10 @@ _Backings: spacecost `propellants.csv` `ref_cost_usd_per_kg` and the component p
 | spacecost_hydrolox_moran_energy_comparator_code_current_2026 | T4 | Spacecost hydrolox Moran 1991 energy-comparator code snapshot | verified live, not hosted | Code attributes 4.41 kWh/kg and a 2 MW / 280 kg/h pair to Moran; scope review (rc-836) |
 | duplay_etal_2022_rapid_transit_mars_laser_thermal | T1 | Duplay et al., Design of a rapid transit to Mars mission using laser-thermal propulsion, Acta Astronautica 192:143-156 (2022) | verified live, not hosted | conceptual LTP design Isp (3000 s); source scope for Spacecost 900 s scenario (rc-842) |
 | spacecost_beamed_laser_thermal_isp_citation_gap_code_current_2026 | T4 | Spacecost Beamed laser-thermal Isp citation-scope snapshot | verified live, not hosted | rc-842: 900 s is attributed to unspecified Kare work and a 2022 Mars study |
-| lemmon_span_2006_short_eos_industrial_fluids | T1 | Lemmon & Span 2006, short EOS for 20 industrial fluids | not pulled; computed via CoolProp | Krypton and xenon densities at the stated pressures (rc-686, rc-688; rc-857, rc-859) |
-| span_etal_2000_nitrogen_reference_equation_of_state | T1 | Span et al. 2000, reference EOS for nitrogen | not pulled; computed via CoolProp | Nitrogen density at 30 MPa (rc-687; rc-858) |
+| lemmon_span_2006_short_eos_industrial_fluids | T1 | Lemmon & Span 2006, short EOS for 20 industrial fluids | verified live, not hosted | Krypton and xenon densities at the stated pressures (rc-686, rc-688; rc-857, rc-859) |
+| span_etal_2000_nitrogen_reference_equation_of_state | T1 | Span et al. 2000, reference EOS for nitrogen | verified live, not hosted | Nitrogen density at 30 MPa (rc-687; rc-858) |
+| coolprop_8_0_0_citation_page | T4 | CoolProp 8.0.0 citation page | verified live, not hosted | Recommended software reference for the noble-gas EOS calculations in the propellant notes (rc-816, rc-860) |
+| bell_etal_2014_coolprop | T1 | Bell et al., CoolProp library paper, Ind. Eng. Chem. Res. 53(6):2498–2508 (2014) | registered, not pulled | CoolProp software citation recommended for the EOS calculations (rc-860) |
 ## Domain 15 — In-space demand & market absorption
 
 _Backings: spacevalue `catalog.py` `IN_SPACE_UTILITY` (market side), `IN_SPACE_ANNUAL_DEMAND_KG`, `_DEMAND_SHARE_BY_CLASS`; `calc.py` `market_model`, `demand_elasticity`, `surplus_price_fraction`. Also relevant: `hein2020` (d22), `usgs_mineral_commodity_summaries_2026` (d06), `dra5_2009_human_exploration_of_mars` (d03)._
@@ -1315,6 +1318,7 @@ _Backings: spacevalue `catalog.py` `IN_SPACE_UTILITY` (market side), `IN_SPACE_A
 | sanders_kleinhenz_hilburger_2024_long_term_lunar_infrastructure | T2 | Sanders, Kleinhenz & Hilburger, lunar infrastructure (ASCEND 2024) | verified live, not hosted | 10–50 t/year mission-consumables production-capacity context; not total demand or class shares (rc-726) |
 | spacevalue_leo_dsev_citation_gap_code_current_2026 | T4 | Spacevalue LEO DSEV comparator/bibliography snapshot | verified live, not hosted | rc-788: catalog.py cites Howard 2021/NTRS 20210021084; CITATIONS.md omits the entry |
 | spacevalue_water_utility_factors_code_main_2026 | T4 | Spacevalue water utility coefficients (main) | verified live, not hosted | Water: 1.00 base, 0.80 GEO, 0.60 lunar surface, 0.25 Mars surface; no destination-matched calibration (rc-823) |
+| spacevalue_083_main_water_silicate_scenario_review_2026 | T4 | Spacevalue 0.8.3 water and silicate scenario review | verified live, not hosted | R992: water sensitivity and silicate composite interpretation (rc-296, rc-823) |
 ## Domain 16 — Reliability, learning curves & hardware service life
 
 _Backings: `operational_costs.csv` launch reliability, spacecraft MTBF, mining success and growth, rig life, trips and salvage rows; `calc.py` `learning_curve_rate`._
