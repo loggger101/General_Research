@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+rostec_angara_a5_fairing_dimensions_2024,Rostec family fairing height,up to 17,m,Rostec PDF p. 1,Press release states 2024 manufacture of five Angara-family fairing sets: two for Angara-A5 and three for Angara-1.2.
+rostec_angara_a5_fairing_dimensions_2024,Rostec family fairing diameter,nearly 4.5,m,Rostec PDF p. 1,Approximate family-level diameter; not identified as the 2025 14S746 configuration.
+russianspaceweb_angara_a5_14s746_fairing_zak,14S746 fairing length,17.705,m,russianspaceweb.com/angara5-flight5.html,Reported for Angara-5's fifth flight on 2025-06-19.
+russianspaceweb_angara_a5_14s746_fairing_zak,14S746 fairing diameter,4.35,m,russianspaceweb.com/angara5-flight5.html,Reported with fairing mass 2.28 t.
+spacecost_fairing_fill_ratio_main_2026,Angara A5 estimated fairing volume,127.0,m3,spacecost/reference/launch_vehicles.csv (name=Angara A5),fairing_basis=estimate; current row output.
+rostec_angara_a5_fairing_dimensions_2024;russianspaceweb_angara_a5_14s746_fairing_zak,height difference between family-level maximum and 14S746 report,0.705,m,computed comparison,"17.705 m - 17 m; statements differ in date, variant and approximate versus exact wording, so this is not a direct contradiction."

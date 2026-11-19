@@ -1,3 +1,37 @@
+## R976 - Spacecost H3 price-source bibliography (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, reference/launch_vehicles.csv rows 23-24 name a JAXA H3 briefing for the H3-24 relative-cost comparator and JAXA's H3 page for the H3-30 target. CITATIONS.md section 1 contains no full H3 price-source entry or direct link; its JAXA briefing row at line 76 is for Epsilon S, while line 120's H3 entry is for fairing dimensions.
+
+- jaxa_h3_launch_vehicle: the official page describes a target of about JPY 5 billion for the light configuration without solid boosters; it states no target date or USD conversion ("High cost-performance" section; source record R661).
+- sacj_2026_h3_f6_prelaunch_cost_briefing: the H3 project manager describes H3-24 as about 60% more costly than H3-30; the statement is relative cost, not an absolute price (transcript lines 79-83; source record R513).
+- spacecost_h3_price_citation_guide_snapshot_2026: the package bibliography does not give linked H3 price-source entries.
+
+Verdict: open rc-840 to add linked entries and preserve each source's scope. This is separate from rc-522's H3-30 target-year, FX and band review and rc-379's H3-24 estimate review. No new extraction or numeric change.
+
+## R975 — Spacecost Proton-M ExoMars launch-stack scope and citation (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `spacecost/vehicles.py` stores `payload_escape_kg=4300` for Proton-M and labels it “ExoMars TGO 2016, to Mars”; the notes call it “ExoMars TGO’s ~4.3 t Mars departure.” `CITATIONS.md` §1 has no ESA ExoMars entry.
+
+- `esa_2016_exomars_factsheet_tgo_launch_stack`: ESA says the 2016 mission launched on Proton-M/Breeze-M and gives “TGO mission: 4332 kg (including fuel) comprising the orbiter (3732 kg ...) and Schiaparelli (577 kg)” (ExoMars Factsheet, lines 203–213).
+- `spacecost_proton_m_exomars_escape_payload_snapshot_2026`: the 4,300 kg value is 32 kg below the full mission launch mass, computed here; it is not the orbiter-only mass.
+
+- `jaxa_2003_hii_no6_accident_page`, `mhi_2002_hii_maiden_flight_results_tech_report`, `space_review_2023_japan_space_policy_h3_first_flight`, `world_bank_official_fx_averages_jpn`: the F4 and program-level yen anchors, standard-type comparator and 2025 conversion are already extracted in `extracted_data/r188_hii_price_key_numbers.csv`; the current H-IIA price note names only JAXA, World Bank and The Space Review.
+- `spacecost_hii_a204_price_citation_guide_snapshot_2026`: CITATIONS.md §1 has no full H-IIA price-source entries; its H-IIA manual entry is for the fairing drawing.
+
+**Verdict:** open **rc-838** to add ESA’s locator and name the TGO-plus-Schiaparelli stack in the note; preserve 4,300 kg as a rounded comparison pending upstream review. Open **rc-839** to add full source entries and pinpoint roles for the H-IIA price anchors and FX series; preserve the applied $62M-$75M band. rc-838 is separate from applied rc-724’s Proton-M price citation; rc-839 is separate from applied rc-171’s price revision. Extracted: `extracted_data/r975_spacecost_proton_m_exomars_payload_scope.csv` and existing `extracted_data/r188_hii_price_key_numbers.csv`.
+
+## R962 — Angara A5 fairing dimension scope (2026-11-19)
+
+rostec_angara_a5_fairing_dimensions_2024: Rostec's 12 April 2024 press release, p. 1, says Angara-family fairings have a height “up to 17 metres” and a diameter “almost four and a half metres”; the same release describes five 2024 sets, two for Angara-A5 and three for Angara-1.2. russianspaceweb_angara_a5_14s746_fairing_zak: the registered report gives the 2025 14S746 fairing as 17.705 m x 4.35 m for Angara-5's fifth flight on 2025-06-19. spacecost_fairing_fill_ratio_main_2026: current Spacecost uses the 14S746 dimensions in OUTER_ONLY[Angara A5] and exports 127.0 m3 as an estimate.
+
+Verdict: the official 2024 statement is approximate and family-level; it does not establish the dimensions of the 2025 14S746 variant. Open rc-822 to source the later variant's dimensions and document the scope distinction; no numeric replacement inferred. The existing RussianSpaceWeb registry note's 2025-09-19 date was corrected to 2025-06-19. Extracted: extracted_data/r962_angara_fairing_dimension_scope.csv.
+
+## R961 — Fairing fill-ratio estimate rechecked at current Spacecost head (2026-11-19)
+
+spacecost_fairing_fill_ratio_main_2026: Spacecost fairings.py derives ten guide-based fill ratios; their median is 0.4824478647 and their range is 0.26785-0.63049. The same median is applied to six outer-only vehicles. Current launch_vehicles.csv values are Angara A5 127.0, H3 (24L) 168.0, H3 (30) 107.0, Long March 2D 29.7, Long March 5 126.0, and Long March 10B 128.0 m3; each row is marked estimate.
+
+Verdict: rc-436 remains open for cross-design calibration transferability; the guide rows establish the calculation basis but do not establish a matched usable-envelope ratio for the six outer-only designs. No numeric replacement inferred. Extracted: extracted_data/r961_fairing_fill_ratio_current_head.csv.
+
 ## R955 — Ariane 6 A64 price provenance corrected upstream (2026-11-19)
 
 At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, the A64 row retains its estimated USD 123M centre and [115M, 132M] bounds. Its note identifies EUR 115M as a target in 2014 economic conditions, not a 2018 estimate (Assemblée nationale report no. 1438, printed p. 36); the same report's printed p. 62 price is a press-reported $130M transition figure. Both it and the July 2024 Euronews report are labeled comparators; the low endpoint's range method remains unstated. Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9 records the correction beside the frozen row in `campaign/stage3/PROVENANCE.md` (rc-700).
@@ -1156,3 +1190,32 @@ spacecost_lm9_price_guess_code_current_2026: spacecost stores Long March 9 at $7
 - `spinlaunch_flight_test_10_press_release_2022`: SpinLaunch’s 2022-10-03 release calls Flight Test 10 the tenth successful Suborbital Accelerator flight. It says payloads were accelerated to 10,000 G in the 12 m lab accelerator before the flight and calls the Airbus sensor’s 10,000 G test the first step in qualifying subsystems for the orbital system; it does not report an orbital-system flight.
 - `meridian_space_spinlaunch_separation_2026`: Meridian Space’s 2026-09-29 announcement says SpinLaunch is separating into an independent company and quotes a “renewed focus on advancing and commercializing its kinetic launch technology.” Meridian says it will retain the broadband constellation business.
 - Verdict: cite the release-speed and 200 kg values as design claims; distinguish component loading and pre-flight lab qualification from suborbital flights and orbital-system performance. Establish which system the TRL-4 assessment covers and its dated basis, or qualify it. Refresh the time-bound company status. No payload or price replacement inferred; rc-556 separately reviews the $1.25M price target and cadence. Open **rc-795**. Extracted: `extracted_data/r915_spacecost_spinlaunch_test_scope_and_status.csv`.
+
+## R966 — Falcon Heavy reusable-side-core payload recheck (2026-11-19)
+
+**spacex_2026_eu_prospectus_falcon_heavy_payload**: the registered SpaceX June 2026 EU prospectus record describes a partially reusable configuration and a roughly 64 t LEO payload (printed pp. 59, 96); its match to the table's side-core-recovery profile and orbit basis remains unresolved.
+
+Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `reference/launch_vehicles.csv:4`, still stores 30,000 kg to LEO and derives $3,333/kg [$3,233, $3,433]. The row note attributes 30 t to Wikipedia and says SpaceX publishes no LEO figure for this configuration. **rc-408** remains open; no payload or price changed.
+
+- **Extracted data**: `extracted_data/r966_falcon_heavy_reusable_leo_row.csv`.
+
+## R968 — Spacecost launch bibliography does not identify IG-24-001 (2026-11-19)
+
+- `spacecost_ig24_001_launch_bibliography_current_2026`: Spacecost `CITATIONS.md` §1 calls this only the “Oct 2023 audit”; it does not give the report number, title, or URL. `reference/launch_vehicles.csv` row 5 cites IG-24-001 p.24 for the $178M Falcon Heavy Europa Clipper figure; row 55 attributes the Shuttle $1.45B operating-cost comparison to the same report without a page locator.
+- `nasa_oig_2023_ig-24-001_sls_epoc_transition`: the official report cover identifies *NASA’s Transition of the Space Launch System to a Commercial Services Contract*, October 12, 2023, IG-24-001. It says Shuttle operations costs increased “approximately 38 percent to $1.45 billion per launch” (PDF p.23; printed p.16), and that NASA contracted with SpaceX for Falcon Heavy “at a cost of $178 million” (PDF p.24; printed p.17).
+- **Verdict:** open **rc-828**; add the complete report identity, official URL, and clear page locators to the bibliography. The report bears on two launch rows; preserve the stored values. No numeric replacement inferred. Distinct from rc-578, which reviews the Shuttle band’s cost boundaries and dollar years. The PDF/printed-page distinction also corrects rc-578’s earlier ambiguous Shuttle page locator; rc-578 remains open.
+- **Extracted data**: `extracted_data/r70_nasa_oig_2023_ig-24-001_sls_epoc_transition.csv`.
+
+## R972 — Spacecost launch bibliography omits NASA OIG IG-24-015 (2026-11-19)
+
+- `spacecost_citations_report_reference_gaps_current_2026`: At Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `reference/launch_vehicles.csv` line 69 identifies NASA OIG IG-24-015 in the SLS Block 1B (Cargo) row note; `CITATIONS.md` §1 has no entry for the report.
+- `nasa_oig_2024_ig-24-015_sls_block_1b`: The registered report is *NASA’s Management of Space Launch System Block 1B Development*, IG-24-015 (2024).
+- **Verdict:** open **rc-832**; add its complete identity, official URL, and the applicable report locator to §1. Bibliography completeness only; preserve the current row.
+- **Extracted data**: `extracted_data/r103_oig_ig-24-015_sls_block1b_key_numbers.csv`.
+
+## R978 - Spacecost Vulcan maiden-flight payload note lacks a citation (2026-11-19)
+
+- `spacecost_vulcan_cert1_maiden_flight_citation_gap_code_current_2026`: Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `spacecost/vehicles.py` lines 296-326 records the Vulcan VC2 first-flight year as 2024 and says the maiden flight carried Peregrine. Current `CITATIONS.md` section 1 has Vulcan guide and price sources but no Cert-1 mission source.
+- `ula_vulcan_cert1_peregrine_2024_mission_page`: ULA's archived Cert-1 page identifies Peregrine Mission One among the flight-test payloads and gives the launch date as Jan. 8, 2024 (lines 41-43). Extracted: `extracted_data/r978_spacecost_vulcan_cert1_peregrine_event.csv`.
+
+**Verdict:** open `rc-843` to add the primary mission citation to the code note and bibliography; preserve the 2024 first-flight year and other values. No numeric replacement inferred.

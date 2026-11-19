@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+,Falcon Heavy (reusable side cores) LEO payload,"30,000 [30,000, 30,000]",kg to LEO,reference/launch_vehicles.csv:4,"Pipeline value rechecked at Spacecost main 868f; 30 t remains attributed to Wikipedia, with no SpaceX-published LEO figure named for this recovery profile (rc-408)."
+,Falcon Heavy reusable side-core LEO price per kg,"$3,333 [$3,233, $3,433]",USD/kg to LEO,reference/launch_vehicles.csv:4,"Derived pipeline output remains tied to the 30,000 kg LEO row and $97M-$103M price band (rc-408)."

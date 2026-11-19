@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_alice_isru_processing_energy_gate_current_2026,ALICE ISRU processing-energy mapping,NaN (deliberately gated),Wh/kg propellant,spacecost/propellants.py:340-346,"The mapping explicitly stores float(""nan""); its comment says the metal half has no refining source and is gated out."
+spacecost_alice_isru_processing_energy_gate_current_2026,ALICE exported isru_processing_wh_per_kg,blank,Wh/kg propellant,reference/propellants.csv:42,The row has a water feed placeholder but no supported metal-refining energy.
+spacecost_alice_isru_processing_energy_gate_current_2026,ALICE isru_feed_kg_per_kg,0.5,kg feed/kg propellant,reference/propellants.csv:42,The row note identifies this as a placeholder for the water half only; metallic aluminium recovery is not modeled.

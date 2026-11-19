@@ -1,3 +1,11 @@
+## R975 — Moran 1991 hydrolox comparator citation and scenario scope (2026-11-19)
+
+`spacecost_hydrolox_moran_energy_comparator_code_current_2026`: Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `propellants.py` line 332 attributes 4.41 kWh/kg and “2 MW at 280 kg/hr of water” to Moran’s 1991 subsystem study. `CITATIONS.md` §2 has no Moran entry; the Morren & Curran 1991 reference there is a different 2-kW arcjet study.
+
+`moran_1991_nasa_tm_103730_on_orbit_electrolysis`: NASA NTRS identifies Matthew E. Moran’s *Conceptual Study of On Orbit Production of Cryogenic Propellants by Water Electrolysis* (NASA-TM-103730, NTRS 19910010004; AIAA Paper 91-1844). Table II, printed p. 16, lists “4.41 kWh/kg-H2O” for electrolysis and 398 kW total lunar-processor power. The Mars Missions section, printed p. 6, gives 378.2 kg/h water; the scaled power is 2,790 kW on printed pp. 1 and 17. Their ratio is 7.376 kWh/kg, computed here. The report does not state the code’s exact 2 MW / 280 kg/hr pair.
+
+**Verdict:** open **rc-836** to add a complete report entry and align the comparator’s figures with the source scenario. Applied rc-166 covered the low-end energy-band comparison; the selected 15,200 Wh/kg input is unchanged. Extracted: `extracted_data/r975_spacecost_moran_1991_processor_figures.csv`.
+
 ## R950 — Spacecost notes and comments applied upstream; ArgonSC density value candidate (2026-11-19)
 
 spacecost bad5ba80884e6bd6825de83ff8e942619d962a1f (PR #51, package 0.18.4, data contract 1.27.3 to 1.27.4). Notes on 51 rows, comments, CITATIONS.md and README.md; compared column by column, every value column of the six reference tables and the summary sample is identical to 1.27.3.
@@ -438,3 +446,16 @@ The Direct fusion drive note identifies D-He3 / PFRC-2 and Isp context but does 
 - **economicspace_current_bestcase_verification_sheet_2026**: p. 29 maps I112 to Iodine (Hall / gridded) at $60/kg and I116 to the learning-curve factor, not Krypton price.
 - **economicspace_krypton_price_stage3_frozen_row_current_2026**: the frozen `spacecost-0.5.0` Krypton row retains $300/kg without a published price source in its note.
 - Verdict: the current sheet no longer selects Krypton price; the historical row remains a procurement-basis gap. Keep **rc-630** open; the current $794/kg midpoint does not supply a like-for-like replacement. Extracted: `extracted_data/r862_krypton_price_current_sheet_locator_check.csv`.
+
+## R967 — ALICE silicate-to-aluminium ISRU processing energy (2026-11-19; rc-827)
+
+Spacecost source `spacecost_alice_isru_processing_energy_gate_current_2026` at main 868f42890ac97ee40a50d79f7b33863046edb0ff sets the ALICE processing-energy mapping to NaN and comments “the metal half has no refining source; gated out” (`spacecost/propellants.py:346`). Its exported row has `isru_feed_kg_per_kg=0.5`, `isru_feed_material=water`, and a blank `isru_processing_wh_per_kg`; the row note calls the feed a placeholder for the water half because metal refining is not modeled (`reference/propellants.csv:42`). The processing-energy gate prevents an unsupported value from entering the default ISRU search. Existing ALICE records cover propulsion performance, component water price, and tank-mass scenarios, not the energy to recover metallic Al from silicate feed.
+
+**Verdict:** Keep NaN and the gate until a sourced or validated Al-recovery energy boundary is available; no numeric replacement inferred. **rc-827**. Extracted: `extracted_data/r967_alice_isru_processing_energy_gap.csv`.
+
+## R978 - Spacecost laser-thermal Isp note mis-scopes its 900 s source (2026-11-19)
+
+- `spacecost_beamed_laser_thermal_isp_citation_gap_code_current_2026`: Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `spacecost/propellants.py` lines 2118-2135 sets `isp_vac_s=900` for Beamed laser-thermal (H2) and says Kare's work and a 2022 Mars study put it near 900 s. The Kare work is not identified by title or year; current `CITATIONS.md` section 2 has no Kare or Duplay et al. 2022 entry.
+- `duplay_etal_2022_rapid_transit_mars_laser_thermal`: the article abstract (p. 1) states 3000 s; section 3.1 (p. 7) gives a 1000-3000 s performance range and assumes 3000 s for the conceptual design. These are design calculations, not a tested engine. Extracted: `extracted_data/r978_spacecost_laser_thermal_isp_citation_scope.csv`.
+
+**Verdict:** open `rc-842` to add the full Duplay et al. citation, identify the exact Kare source, and correct the source scope. Retain 900 s pending a matched source or an explicit scenario label; no numeric replacement inferred.

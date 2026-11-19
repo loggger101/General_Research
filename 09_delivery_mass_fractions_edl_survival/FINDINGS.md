@@ -72,3 +72,10 @@ From the hosted SP-4029 (`sp4029_apollo_by_the_numbers`, d03):
 - p305 'LM Descent Stage Propellant Status': A9 18,040 lb (fuel 6,977 + oxidizer 11,063) up to 19,564.2 lb for A17 = 8,183-8,874 kg.
 
 The comment's 2,134/(2,134+8,200) = 0.2065; 8,200 kg sits in the A9-A13 loaded band (8,183-8,362 kg). As-flown dry/(dry+propellant): A9 0.1912, A11 0.1978, A12 0.2092, A13 0.2014, so 0.2065 and the dial 0.20 both sit inside. No candidate. `extracted_data/r147_lm_descent_stage_mass_key_numbers.csv`.
+
+## R974 — Spacecost return-capsule bibliography omits the Hayabusa guide (2026-11-19)
+
+- `spacecost_citations_report_reference_gaps_current_2026`: At Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `spacecost/delivery.py` lines 420–426 call the generic 0.10 downleg capsule factor a scenario and cite the Hayabusa table as a non-substitute; `CITATIONS.md` §4 lists a Stardust press kit but omits NASA/SP-20220010761.
+- `parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4`: Printed p. 23 lists “Vehicle mass 18 kg,” “Payload mass 1.04 kg,” and a 43% TPS mass fraction including insulation.
+- **Verdict:** open **rc-834**; add Parcero et al.’s full NASA/SP-20220010761 entry, official NTRS link, and Hayabusa table locator to §4. The sample-return evidence does not replace the generic cargo factor; this bibliography gap is separate from rc-598.
+- **Extracted data**: `extracted_data/r731_hayabusa_and_downleg_capsule_mass_basis.csv`.

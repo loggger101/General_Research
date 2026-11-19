@@ -1,0 +1,19 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:Alpha,0.6304896647688449,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:Atlas V 551,0.26784999478204546,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:Ceres-1,0.33927083333333324,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:Electron,0.4197921496586111,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:Falcon 9 (reusable),0.5589942398127398,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:H-IIA 204,0.5287296193629316,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:Long March 2C,0.48442941182901444,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:Long March 3B/E,0.5299921965130125,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:Proton-M,0.4019963619631831,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,calibration_ratio:Vulcan Centaur VC2,0.48046631750254437,usable envelope / outer cylinder,spacecost/fairings.py:FILL_RATIOS,Guide-derived calibration ratio.
+spacecost_fairing_fill_ratio_main_2026,median_fill_ratio,0.4824478646657794,ratio,spacecost/fairings.py:488-496,Median of the ten guide-derived ratios.
+spacecost_fairing_fill_ratio_main_2026,fill_ratio_range,0.26784999478204546-0.6304896647688449,ratio range,spacecost/fairings.py:495-496,Minimum and maximum of the calibration ratios.
+spacecost_fairing_fill_ratio_main_2026,estimate:Angara A5,127.0,m3 usable fairing volume,reference/launch_vehicles.csv (name=Angara A5),fairing_basis=estimate; outer-cylinder volume multiplied by median ratio.
+spacecost_fairing_fill_ratio_main_2026,estimate:H3 (24L),168.0,m3 usable fairing volume,reference/launch_vehicles.csv (name=H3 (24L)),fairing_basis=estimate; outer-cylinder volume multiplied by median ratio.
+spacecost_fairing_fill_ratio_main_2026,estimate:H3 (30),107.0,m3 usable fairing volume,reference/launch_vehicles.csv (name=H3 (30)),fairing_basis=estimate; outer-cylinder volume multiplied by median ratio.
+spacecost_fairing_fill_ratio_main_2026,estimate:Long March 2D,29.7,m3 usable fairing volume,reference/launch_vehicles.csv (name=Long March 2D),fairing_basis=estimate; outer-cylinder volume multiplied by median ratio.
+spacecost_fairing_fill_ratio_main_2026,estimate:Long March 5,126.0,m3 usable fairing volume,reference/launch_vehicles.csv (name=Long March 5),fairing_basis=estimate; outer-cylinder volume multiplied by median ratio.
+spacecost_fairing_fill_ratio_main_2026,estimate:Long March 10B,128.0,m3 usable fairing volume,reference/launch_vehicles.csv (name=Long March 10B),fairing_basis=estimate; outer-cylinder volume multiplied by median ratio.

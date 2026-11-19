@@ -1,3 +1,25 @@
+## R980 — Spacecost bibliography entries for electric-propulsion proceedings (2026-11-19)
+
+- **squire_etal_2011_vx200_operation_200kw_iepc154**: IEPC-2011-154, printed p. 1, reports the VX-200 at 200 kW: “72 ± 9%” efficiency, “4900 ± 300 seconds” specific impulse, and “5.8 ± 0.4 N” thrust. Spacecost cites the paper in its VASIMR note beside 4,000 s, 0.50 efficiency, and 53 kg/N.
+- **squire_etal_2013_vasimr_system_mass_iepc149**: IEPC-2013-149, printed p. 1, describes a “complete VASIMR single-core spaceflight engine system” over a 50–250 kW model domain. Spacecost cites it as a system-mass comparator for the VASIMR row.
+- **chang_diaz_etal_2022_vasimr_recent_progress_iepc525**: IEPC-2022-525, printed p. 1, reports a “longest firing of 88 continuous hours at 80 kW.” Spacecost cites it for VX-200SS endurance in the VASIMR note.
+- **polk_et_al_2024_lithium_mpd_thruster_iepc_2024**: IEPC-2024-841, printed p. 1, reports performance “over 60% efficiency at specific impulses over 4000 s” at 500 kWe to 1 MWe. Spacecost cites it in the MPD note beside 4,000 s, 0.40 efficiency, and 40 kg/N.
+
+Spacecost `CITATIONS.md` section 2, line 145, lists only “Manufacturer data sheets, per device” for thruster kg/N, efficiency, and scaling; it has no full entry for any of these four proceedings.
+
+Verdict: open rc-845 for full bibliography entries with title, authors, conference, year, paper number, and stable links. This is distinct from applied rc-661 and rc-774, which address the cited values and source scope; no numeric replacement inferred. Extracted: `extracted_data/r791_vasimr_performance_mass_boundary_and_endurance_citation.csv`; `extracted_data/r895_mpd_propellant_citation_gap.csv`.
+
+## R975 — Spacecost solar-sail milestone citations and mission scope (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `spacecost/propellants.py` lines 1503 and 1519–1522 give IKAROS as the 2010 first flight and name LightSail 2, NEA Scout and ACS3 without source links. `CITATIONS.md` §2 has no entries for these mission milestones.
+
+- `jaxa_ikaros_first_solar_sail_demonstration_2010`: JAXA ISAS says IKAROS “became the first in the world to successfully demonstrate a solar sail and solar power sail” (mission page, lines 78–83); launched 2010-05-21.
+- `planetary_society_lightsail2_apogee_raise_2019`: The Planetary Society reports the spacecraft raised apogee by 7.2 km after sail deployment (23 Aug 2019, line 115).
+- `nasa_nea_scout_status_update_2022`: NASA records separation from SLS on 16 Nov 2022 and says it had “not yet confirmed an observation of the deployed sail” (9 Dec 2022, lines 254–257). `nasa_pds_nea_scout_lost_status_2022` says contact was never established and the spacecraft was considered lost as of Dec 2022 (lines 20–24). The note’s “deployed” needs to identify spacecraft separation, not confirmed sail deployment.
+- `nasa_acs3_full_sail_deployment_2024`: NASA confirmed full ACS3 sail deployment on 29 Aug 2024 (lines 252–259).
+
+**Verdict:** open **rc-837** to add linked, pinpoint references and clarify the NEA Scout event. The registered 2017 NEA Scout paper covers the planned low-thrust mission concept, not this flight outcome. No model values changed. Extracted: `extracted_data/r975_spacecost_solar_sail_milestones.csv`.
+
 ## R954 — Spacevalue route notes and transfer-scope corrections applied upstream (2026-11-19)
 
 At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996 and Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff:
@@ -955,3 +977,24 @@ Verdict: Polk et al. provide a traceable lithium-MPD performance history that ca
 - **Upstream rows:** TLI → NRHO insertion (450 m/s) and TLI → low lunar orbit (900 m/s).
 - **Verdict:** Open rc-810 to cite and scope the comparative claim to a stated orbit set and cost criterion, or label it as an engineering judgment. No Δv values change.
 - **Extracted data:** extracted_data/r944_nrho_depot_ranking_citation_scope.csv.
+
+## R969 — Spacecost Xenon bibliography omits the NEXT PM1 predecessor report (2026-11-19)
+
+- `spacecost_next_pm1_propellant_bibliography_current_2026`: Spacecost `CITATIONS.md` §2 lists Monheiser et al. (NTRS 20210018563) for NEXT-C ion Isp but has no Oleson & McGuire entry for NASA/TM-2011-216973. The current Xenon row note cites that report at pp. 37–38 for the NEXT PM1 mass/thrust proxy and labels it a predecessor rather than NEXT-C.
+- `oleson_mcguire_2011_compass_enceladus_sep_stage`: §4.6.5.1 says “Mass is 12.7 kg (13.5 kg with cable harnesses)” (printed p. 37); §4.6.5.2 identifies PM1 and reports “producing 236 mN thrust” (printed p. 38). Its NTRS record is 20110007141.
+- **Verdict:** add the report’s full title, NASA/TM and NTRS identifiers, official link, and NEXT PM1 scope to §2. No numeric replacement inferred. Distinct from applied rc-656, which corrected the inline value attribution and hardware comparison; rc-829 concerns the bibliography entry.
+- **Extracted data**: `extracted_data/r786_xenon_thruster_mass_per_thrust_citation.csv`.
+
+## R970 — Spacecost NEXT-C report missing from its bibliography (2026-11-19)
+
+- `spacecost_citations_report_reference_gaps_current_2026`: At Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `CITATIONS.md` §2 lists the NEXT-C ion-Isp report NTRS 20210018563 but omits NTRS 20205005689; `spacecost/propellants.py` lines 914–925 cite the omitted report for NEXT-C mass and thrust.
+- `nasa_nextc_flight_ion_system_status_2020`: Table 1 p. 4 lists 235 mN; p. 5 says the thruster “weighs approximately 14kg.” The report does not give a direct kg/N value.
+- **Verdict:** open **rc-830**; add the complete AIAA 2020-3604/NTRS 20205005689 identity, official link, and locators to §2. This is a bibliography gap separate from rc-656; no numeric replacement inferred.
+- **Extracted data**: `extracted_data/r786_xenon_thruster_mass_per_thrust_citation.csv`.
+
+## R971 — Spacecost ascent comparator absent from its bibliography (2026-11-19)
+
+- `spacecost_citations_report_reference_gaps_current_2026`: At Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `spacecost/deltav.py` lines 23–26 store a 9,400 m/s surface-to-LEO ascent scenario and cite NASA NTRS 20030066115 for the approximate gravity-plus-drag scale; `CITATIONS.md` §3 gives only a generic NTRS/JPL handbook pointer.
+- `beaurain_et_al_2003_earth_to_orbit_rocket_propulsion_ntrs20030066115`: The NTRS record abstract gives an Earth-parking-orbit speed of about 9 km/s and identifies gravity and atmospheric drag; it does not establish the exact 9,400 m/s value.
+- **Verdict:** open **rc-831**; add the full Beaurain et al. title, 2003 record details, official NTRS link, and abstract locator. This bibliography gap is separate from rc-766; the stored scenario remains unchanged.
+- **Extracted data**: `extracted_data/r887_surface_to_leo_ascent_dv_citation_scope.csv`.

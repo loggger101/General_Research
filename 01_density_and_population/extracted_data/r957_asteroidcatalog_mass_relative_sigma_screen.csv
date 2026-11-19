@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_mass_sigma_screen_code_current_2026,code rationale,a sigma as large as the value is no determination,comment,asteroid_catalog/merge.py lines 168–171,AsteroidCatalog main d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8
+asteroidcatalog_mass_sigma_screen_code_current_2026,implementation condition,no_sigma = has & (S >= V); refused = no_sigma | impossible,boolean rule,asteroid_catalog/merge.py lines 456–468,Applied to estimated_mass_kg before the group-density screen
+asteroidcatalog_mass_sigma_screen_code_current_2026,README rationale,A mass whose sigma is as large as itself is no determination and is refused too.,prose,README.md lines 299–300,No sensitivity range or source-specific rejection counts given here
+asteroidcatalog_mass_sigma_screen_code_current_2026,historical example mass,3.04e18,kg,CHANGELOG.md line 916,153 Hilda; paired sigma is 7.04e19 kg
+asteroidcatalog_mass_sigma_screen_code_current_2026,historical example sigma,7.04e19,kg,CHANGELOG.md line 916,153 Hilda; the CHANGELOG says the sigma is as large as the value and the mass is refused
+asteroidcatalog_mass_sigma_screen_code_current_2026,historical example relative sigma,23.157894736842106,sigma/value,computed from CHANGELOG.md line 916,Ratio computed here from the printed mass and sigma; not a threshold calibration

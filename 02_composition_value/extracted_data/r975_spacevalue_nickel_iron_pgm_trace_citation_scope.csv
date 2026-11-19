@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_nickel_iron_pgm_yield_citation_code_current_2026,platinum yield in nickel-iron analogue,15,ppm,spacevalue/catalog.py:1478,Pt is identified as the dominant PGM.
+spacevalue_nickel_iron_pgm_yield_citation_code_current_2026,palladium yield in nickel-iron analogue,10,ppm,spacevalue/catalog.py:1479,Current upstream code value.
+spacevalue_nickel_iron_pgm_yield_citation_code_current_2026,ruthenium yield in nickel-iron analogue,3,ppm,spacevalue/catalog.py:1480,Current upstream code value.
+spacevalue_nickel_iron_pgm_yield_citation_code_current_2026,iridium yield in nickel-iron analogue,4,ppm,spacevalue/catalog.py:1481,Comment says increased from 2 ppm; a range is cited but no paper/table locator.
+spacevalue_nickel_iron_pgm_yield_citation_code_current_2026,osmium yield in nickel-iron analogue,2,ppm,spacevalue/catalog.py:1482,Current upstream code value.
+spacevalue_nickel_iron_pgm_yield_citation_code_current_2026,rhodium yield in nickel-iron analogue,1.5,ppm,spacevalue/catalog.py:1483,Current upstream code value.
+spacevalue_nickel_iron_pgm_yield_citation_code_current_2026,gold yield in nickel-iron analogue,1,ppm,spacevalue/catalog.py:1484,Separate from the six PGMs.
+,sum of six listed PGM yields,35.5,ppm,Computed from spacevalue/catalog.py:1478-1483,Computed here: Pt+Pd+Ru+Ir+Os+Rh; Au excluded. The code comment rounds this distribution to approximately 37 ppm.
+spacevalue_nickel_iron_pgm_yield_citation_code_current_2026,CITATIONS.md coverage for nickel-iron trace yields,Scott & Wasson (1975) only,bibliography entry,CITATIONS.md:130-134,"This entry is scoped to Cu, Ga, Ge, Mo, W and Re; the code also names Wright & Fleischer, Nichiporuk & Brown, Lodders, Walker and Kargel for other values/comparisons."

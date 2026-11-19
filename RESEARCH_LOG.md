@@ -1,4 +1,30 @@
 # Research log
+- **Round 982** (2026-11-19): Opened rc-847 for the Tempel 1 lower-uncertainty notation against Thomas et al. (2013) p. 455, and rc-848 for AsteroidCatalog’s incomplete bibliography entry; the 0.25 g/cm3 floor remains under rc-606 review.
+- **Round 981** (2026-11-19): Opened rc-846 for the incomplete and date-ambiguous Spacecost bibliography entry for NASA's Break The Ice Lunar Challenge report; no service-life value changed.
+- **Round 980** (2026-11-19): Opened rc-845 for missing full Spacecost bibliography entries for four IEPC proceedings already cited in propulsion notes; no values changed.
+- **Round 979** (2026-11-19): Opened rc-844 for a missing full Spacecost bibliography entry for NASA SP-2009-4012; the source supports only the Shuttle tank anchor, and no numeric value changed.
+- **Round 978** (2026-11-19): Opened rc-842 for Spacecost laser-thermal Isp citation-scope mismatch and rc-843 for its missing Vulcan Cert-1 payload citation; no numeric values changed.
+- **Round 977** (2026-11-19): Opened rc-841 for AsteroidCatalog’s missing Thomas et al. (2000) Eros-diameter citation entry; no value changed.
+- **Round 976** (2026-11-19): Opened rc-840 for the Spacecost H3 price-source bibliography entries missing from CITATIONS.md; no values changed.
+- **Round 975** (2026-11-19): Opened rc-835 for Spacevalue’s nickel-iron PGM yield citations, rc-836 for the Spacecost Moran 1991 energy-comparator citation and source-scope mismatch, rc-837 for Spacecost’s solar-sail milestone citations and NEA Scout deployment wording, rc-838 for the Proton-M ExoMars launch-stack citation and scope, and rc-839 for the H-IIA 204 price-source bibliography; no upstream values changed.
+- **Round 974** (2026-11-19): Opened rc-834 because Spacecost’s delivery code cites the Hayabusa guide, which is absent from CITATIONS.md; no sizing value changed.
+- **Round 973** (2026-11-19): Opened rc-833 because Spacecost’s expendable upper-stage note cites NASA OIG IG-20-012, which is absent from CITATIONS.md; no rate changed.
+- **Round 972** (2026-11-19): Opened rc-832 because Spacecost’s SLS Block 1B row cites NASA OIG IG-24-015, which is absent from CITATIONS.md; no row value changed.
+- **Round 971** (2026-11-19): Opened rc-831 because Spacecost’s 9,400 m/s ascent scenario cites Beaurain et al. without a full bibliography entry; the scenario is unchanged.
+- **Round 970** (2026-11-19): Opened rc-830 because Spacecost’s Xenon note cites NEXT-C report NTRS 20205005689, which is absent from CITATIONS.md; no numeric replacement inferred.
+- **Round 969** (2026-11-19): Opened rc-829 after comparing Spacecost’s Xenon row with `CITATIONS.md` §2: it cites `oleson_mcguire_2011_compass_enceladus_sep_stage` for a NEXT PM1 predecessor proxy that has no bibliography entry; no value changed.
+- **Round 968** (2026-11-19): Opened rc-828 after reviewing `spacecost_ig24_001_launch_bibliography_current_2026` and `nasa_oig_2023_ig-24-001_sls_epoc_transition`: Spacecost’s generic “Oct 2023 audit” entry does not identify the report used by its Falcon Heavy and Shuttle rows; launch values remain unchanged.
+- **Round 967** (2026-11-19): Opened rc-827 for the unsupported aluminium-refining energy behind Spacecost’s ALICE metal/water ISRU propellant; the value remains NaN and the row gated pending a sourced or validated calculation.
+- **Round 966** (2026-11-19): Rechecked rc-355 and rc-408 at Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff; both values remain unchanged, and opened rc-826 for the IG-26-004 tanker citation missing from Spacecost's bibliography.
+- **Round 965** (2026-11-19): Opened rc-825 for the frozen Spacecost 0.5.0 tank-cost row used by Economicspace input I123; its Centaur III price and tank-only allocation remain uncited.
+- **Round 964** (2026-11-19): Opened rc-824 for Spacevalue’s 1e15 kg/year terrestrial-water ceiling, which equals its unlimited-market sentinel; Economicspace treats Earth-surface ceilings as nonbinding, but no water-specific market basis is recorded.
+- **Round 963** (2026-11-19): Opened rc-823 for Spacevalue water utility factors: its 1.00 base and destination overrides flow into derived in-space prices, but the code identifies no market calibration.
+- **Round 962** (2026-11-19): Opened rc-822 for the Angara A5 fairing’s 2025 14S746 dimensions: the secondary exact figures and an earlier official family-level description differ in date and scope.
+- **Round 961** (2026-11-19): Rechecked rc-436 against current Spacecost main; its ten-guide median remains applied to six outer-only fairings, with all six values still labeled estimates.
+- **Round 960** (2026-11-19): Rechecked open rc-685 at current AsteroidCatalog main; the 1.0 unknown-type fallback and first-character inheritance remain in use without a class-matched basis.
+- **Round 959** (2026-11-19): Rechecked open rc-634 at current Economicspace and Spacevalue heads; enstatite and plagioclase refining-energy values remain 1.0 kWh/kg, while the current map describes them as raw-feed scenarios without route calculations.
+- **Round 958** (2026-11-19): Opened rc-821 for Spacecost’s 0.15 kg/kg bulk-ore restraint estimate (0.08–0.30) and Economicspace’s direct use of that fraction in return mass; the matched hopper-mass basis and sensitivity remain unsubstantiated.
+- **Round 957** (2026-11-19): Opened rc-820 for AsteroidCatalog’s per-source 100% mass relative-uncertainty screen; its ‘no determination’ wording is not calibrated to rejection sensitivity.
 - **Round 956** (2026-11-19): Opened rc-819 for AsteroidCatalog’s 0.02 cross-source rotation-period agreement cutoff; its precision rationale has no paired-source calibration.
 - **Round 955** (2026-11-19): Rechecked the Ariane 6 price basis and eclipse dark-time scope against current Spacecost and Economicspace provenance.
 - **Round 954** (2026-11-19): Rechecked cross-repo citation candidates against current Spacecost, AsteroidCatalog and Spacevalue notes.

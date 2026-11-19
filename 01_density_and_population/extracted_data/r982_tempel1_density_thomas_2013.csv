@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+thomas_2013_tempel1_nucleus_two_flybys,Tempel 1 mean density with asymmetric uncertainty,470 +780/-230,kg/m^3,printed p. 455,Direct transcription of the updated density; the paper does not state a confidence level in this sentence.
+,Unit-converted density with asymmetric uncertainty,0.470 +0.780/-0.230,g/cm^3,computed from printed p. 455,Comparison computed here using 1000 kg/m^3 = 1 g/cm^3; lower endpoint is 0.240 g/cm^3.

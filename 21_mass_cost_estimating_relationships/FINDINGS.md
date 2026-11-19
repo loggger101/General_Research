@@ -414,3 +414,19 @@ economicspace e477b00ffa7810a6f2daad76290d428eee8b70b3 (PR #210, master 1.80.0; 
 - rc-584, rc-624, rc-625, rc-629, rc-631, rc-645, rc-646, rc-684 (spacecost-0.5.0 rows) and rc-652 (top-level row 52).
 
 Verdict: all nine closed as applied. Extracted data: none new.
+
+## R965 — Frozen Stage 3 tank-cost citation gap (2026-11-19)
+
+**economicspace_stage3_spacecost_0_5_0_propellant_tank_recurring_cost_row_2026**: Economicspace main `b6c962c4f06dc5b625fee39044d8d1699ac564c9`, `campaign/stage3/spacecost-0.5.0/operational_costs.csv:11`, stores $6,000/kg [$3,000, $25,000] of tank dry mass. Its note derives about $5,300/kg from 1,880 kg of structure, an approximately $30M Centaur III stage, and an assumed approximately $20M RL10; it names no source for those anchors or the tank-only allocation.
+
+**economicspace_verification_sheet_c_tank_mapping_current_2026**: The current default 2018 DT worksheet maps `c_tank` to input I123. `verification_sheet.py` builds the input from the selected operations row and removes the installed Spacecost counterpart span before backing classification; I123 remains NEED BACKING because the frozen row itself names no published source. The `spacecost-0.5.0` section of `campaign/stage3/PROVENANCE.md` does not list the tank row. Existing rc-421 targets current Spacecost; rc-730 targets frozen `spacecost-0.14.0`.
+
+- **Verdict**: Preserve the frozen value and range for reproducibility; qualify the tank-only rate as an estimate pending sources for the Centaur III price, RL10 subtraction, and tank allocation. No numeric replacement inferred. **rc-825**.
+- **Extracted data**: `extracted_data/r965_frozen_spacecost_0_5_0_tank_row_i123.csv`.
+
+## R973 — Spacecost operating-cost bibliography omits NASA OIG IG-20-012 (2026-11-19)
+
+- `spacecost_citations_report_reference_gaps_current_2026`: At Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `spacecost/operations.py` lines 170–179 cite NASA OIG IG-20-012 p. 23 for a second-ICPS hardware comparator; `CITATIONS.md` §4 has no report entry.
+- `nasa_oig_2020_ig-20-012_sls_program_costs_contracts`: NASA OIG reports an opportunity to buy “the hardware for a second ICPS for $29 million” (p. 23). This is a whole-stage comparator, not a tank-only allocation.
+- **Verdict:** open **rc-833**; add the full title, IG-20-012 identifier, date, official URL, and p. 23 locator. Bibliography completeness only; no recurring-rate replacement inferred. Distinct from rc-421 and rc-730.
+- **Extracted data**: `extracted_data/r555_nasa_oig_icps_price_vs_centaur_tank_cost_anchor.csv`.
