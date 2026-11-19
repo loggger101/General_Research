@@ -76,3 +76,9 @@ rc-121 (apply net-smelter-return terms, or state the refined-price assumption) a
 - cowen_agnello_petit_2012_npsr_pge: Table IV, p. 585, reports PGE payability of 90% and Ni/Cu payability of 85%. Spacevalue catalog.py cites Cowen, Agnello & Petit (2012) for the concentrate-terms caveat in its mineral valuation docstring; current CITATIONS.md has no Cowen entry. The registered source gives the full title, SAIMM Platinum 2012 proceedings, pp. 577-592, and its official PDF link.
 
 **Verdict:** Open rc-849 to add a full bibliography entry and link, scoped to the explanatory concentrate-terms caveat. Applied rc-121 documents the valuation method; no model value changes. Extracted: extracted_data/r81_refining_terms_key_numbers.csv.
+
+## R985 — Spacevalue Cowen et al. referenced upstream (2026-11-19)
+
+At Spacevalue main f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f (PR #19, 0.8.2), CITATIONS.md gains `cowen_agnello_petit_2012_npsr_pge`, Table IV p. 585, scoped to `implied_element_value()`'s concentrate-terms caveat (rc-849). No value uses it.
+
+Verdict: rc-849 closed as applied. Extracted data: none new.

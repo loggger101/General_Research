@@ -1,3 +1,9 @@
+## R985 — Spacecost propulsion bibliography and sail milestones applied upstream (2026-11-19)
+
+At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6, data contract 1.27.6; notes, comments and CITATIONS.md only), CITATIONS.md gains `oleson_mcguire_2011_compass_enceladus_sep_stage` (rc-829), `nasa_nextc_flight_ion_system_status_2020` (rc-830), `beaurain_et_al_2003_earth_to_orbit_rocket_propulsion_ntrs20030066115` (rc-831) and the four IEPC papers behind VASIMR and MPD (rc-845). The solar sail note says NEA Scout separated from SLS but its sail deployment was never confirmed, citing `nasa_nea_scout_status_update_2022` and `nasa_pds_nea_scout_lost_status_2022` beside the IKAROS, LightSail 2 and ACS3 records (rc-837). Every value column is unchanged.
+
+Verdict: rc-829, rc-830, rc-831, rc-837, rc-845 closed as applied. Extracted data: none new.
+
 ## R980 — Spacecost bibliography entries for electric-propulsion proceedings (2026-11-19)
 
 - **squire_etal_2011_vx200_operation_200kw_iepc154**: IEPC-2011-154, printed p. 1, reports the VX-200 at 200 kW: “72 ± 9%” efficiency, “4900 ± 300 seconds” specific impulse, and “5.8 ± 0.4 N” thrust. Spacecost cites the paper in its VASIMR note beside 4,000 s, 0.50 efficiency, and 53 kg/N.

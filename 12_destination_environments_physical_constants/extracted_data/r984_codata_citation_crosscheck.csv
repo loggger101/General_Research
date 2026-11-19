@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+tiesinga_2021_codata_2018_constants;economicspace_codata_2018_citation_gap_code_current_2026,CODATA recommended Newtonian constant of gravitation,6.67430(15) × 10^-11,m^3 kg^-1 s^-2,"Table XXX, printed p. 44",Table XXX identifies the value as based on the 2018 adjustment; Economicspace modules/calc.py calls _G_SI “CODATA 2018”. Bibliography-gap comparison only; no model value change is inferred.

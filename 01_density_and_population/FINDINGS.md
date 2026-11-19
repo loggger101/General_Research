@@ -722,3 +722,9 @@ CHANGELOG.md line 916 records a historical 153 Hilda example at `3.04e18 ± 7.04
 - AsteroidCatalog CITATIONS.md section 3 abbreviates the source as “Thomas, P. C., et al. (2013), Icarus”; NASA NTRS 20140010174 gives the title, Icarus 222(2), pages 453-466, and DOI 10.1016/j.icarus.2012.02.037.
 
 **Verdict:** Open rc-847 to clarify the lower-uncertainty notation and rc-848 for a full bibliography entry. Keep the 0.25 g/cm3 floor unchanged under separate open rc-606. Extracted: extracted_data/r982_tempel1_density_thomas_2013.csv.
+
+## R985 — AsteroidCatalog Tempel 1 and Eros references completed upstream (2026-11-19)
+
+At AsteroidCatalog main 0d50c85bb7de8a21b2ce4d5cce4ebe87e35f3277 (PR #37, 0.13.6), `physics.py` and CITATIONS.md give 9P/Tempel 1 as 0.47 +0.78/-0.23 g/cm3, as `thomas_2013_tempel1_nucleus_two_flybys` prints it (470 +780/-230 kg/m3, p. 455), with 0.24 as the lower end (rc-847). CITATIONS.md section 3 gives that paper in full (rc-848) and adds `thomas_2000_shape_eros_from_near_imaging` as the source ssoBFT names for its 17.6 km Eros diameter (rc-841). The 0.25 g/cm3 floor is unchanged.
+
+Verdict: rc-841, rc-847, rc-848 closed as applied. Extracted data: none new.

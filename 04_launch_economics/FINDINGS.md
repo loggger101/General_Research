@@ -1219,3 +1219,9 @@ Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `reference/launch_veh
 - `ula_vulcan_cert1_peregrine_2024_mission_page`: ULA's archived Cert-1 page identifies Peregrine Mission One among the flight-test payloads and gives the launch date as Jan. 8, 2024 (lines 41-43). Extracted: `extracted_data/r978_spacecost_vulcan_cert1_peregrine_event.csv`.
 
 **Verdict:** open `rc-843` to add the primary mission citation to the code note and bibliography; preserve the 2024 first-flight year and other values. No numeric replacement inferred.
+
+## R985 — Spacecost launch bibliography and Proton-M, Vulcan notes applied upstream (2026-11-19)
+
+At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 1 names `nasa_oig_2023_ig-24-001_sls_epoc_transition` with its page locators (rc-828) and gains `nasa_oig_2024_ig-24-015_sls_block_1b` (rc-832), the H-IIA price sources (rc-839) and the H3 target page and briefing transcript (rc-840). The Proton-M note identifies its 4,300 kg as the ExoMars 2016 TGO plus Schiaparelli stack, 4,332 kg including fuel (`esa_2016_exomars_factsheet_tgo_launch_stack`; rc-838), and the Vulcan VC2 note cites `ula_vulcan_cert1_peregrine_2024_mission_page` (rc-843). Every value column is unchanged.
+
+Verdict: rc-828, rc-832, rc-838, rc-839, rc-840, rc-843 closed as applied. Extracted data: none new.

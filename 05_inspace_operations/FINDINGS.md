@@ -553,3 +553,9 @@ Current economicspace main (v1.71.0, `e2ad48767b0e81489031b724417b1a03e6dfc1fb`)
 **leucht_prater_vetcha_2024_break_the_ice_lunar_challenge**: NASA's report, *Overview and Results from NASA's Break The Ice Lunar Challenge*, NTRS 20240015957, printed p. 2, sets a transportation metric of 1,500 km/year and a “system lifetime of 5 years” for lunar regolith/resource delivery. Spacecost `reference/operational_costs.csv` row 65 cites it for the mining-rig lifetime comparison; the row remains 15 years [5, 30]. `CITATIONS.md` line 288 identifies only “Leucht, Prater & Vetcha 2024” in a grouped comparator list. NASA NTRS identifies the document type as Conference Paper and lists the 46th International IEEE Aerospace Conference, March 1–8, 2025; the record was acquired December 12, 2024.
 
 Verdict: open rc-846 for a full bibliography entry with title, authors, NTRS number and URL, and for distinguishing the 2024 NTRS acquisition date from the 2025 conference date. This is distinct from open rc-347, which reviews whether the five-year lunar target transfers to asteroid mining-rig service life; no numeric replacement inferred. Extracted: `extracted_data/r481_lunar_mining_lifetime_comparator.csv`.
+
+## R985 — Spacecost depot-tanker and mining-life references applied upstream (2026-11-19)
+
+At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 4 gains `nasa_oig_2026_ig-26-004_hls_contracts_audit` with its p. 11 locator, scoped as a lunar-HLS comparator beside the 12 [8, 16] tanker scenario (rc-826), and `leucht_prater_vetcha_2024_break_the_ice_lunar_challenge` with its March 2025 conference date and December 2024 NTRS acquisition date distinguished; the mining-rig note gives both (rc-846). Values unchanged; rc-355 and rc-347 stay open.
+
+Verdict: rc-826, rc-846 closed as applied. Extracted data: none new.

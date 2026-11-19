@@ -307,3 +307,9 @@ Verdict: open rc-821 for a traceable, denominator-matched mass budget or design 
 **nasa_sp_2009_4012_external_tank_characteristics**: NASA Historical Data Book, Vol. VII, Table 2-86 identifies the Shuttle SLWT "inert weight" as 58,500 lb (26,535 kg) (printed p. 165) and lists separate LOX/LH2 tank volumes (printed pp. 165-166). `spacecost/propellants.py` cites NASA SP-2009-4012, Table 2-86, for the 0.0129 kg/L Shuttle anchor; `reference/storage_systems.csv` row 2 retains a 0.025 kg/L base [0.013, 0.035] scenario. Spacecost `CITATIONS.md` line 144 has the generic entry "Shuttle External Tank, Falcon 9 second stage, Centaur III" but omits the report title, number, author, date, and URL.
 
 Verdict: open rc-844 for a full bibliography entry scoped to the Shuttle tank anchor. This is distinct from applied rc-585's tankage-basis review; no numeric replacement inferred. Extracted: extracted_data/r717_low_pressure_tankage_basis.csv.
+
+## R985 — Spacecost Shuttle tank anchor referenced upstream (2026-11-19)
+
+At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 2 gains `nasa_sp_2009_4012_external_tank_characteristics`, Table 2-86, scoped to the Shuttle SLWT anchor only (rc-844). The 0.025 kg/L base is unchanged.
+
+Verdict: rc-844 closed as applied. Extracted data: none new.
