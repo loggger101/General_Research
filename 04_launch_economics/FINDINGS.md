@@ -1,3 +1,14 @@
+## R939 — Spacecost launch price and payload scenario labels applied upstream (2026-11-18)
+
+spacecost ef0120748780a519187836c655d877e3daee1a3a (PR #50, package 0.18.3, data contract 1.27.2 to 1.27.3). Compared column by column against 7bc46e9: `launch_vehicles.csv` differs only in `notes` (19 rows) and `pipeline_version`; every other table and the summary sample only in `pipeline_version`.
+
+- Price bands labelled scenarios: rc-543, rc-547, rc-548, rc-549, rc-550, rc-551, rc-552, rc-592, rc-616.
+- Targets labelled scenarios, the concepts' $/kg per kilogram of annual throughput: rc-556, rc-557, rc-558, rc-559, rc-560, rc-561.
+- Prices traced as far as their sources go: rc-553, rc-614.
+- Payloads flagged as unmatched: rc-611, rc-612, rc-613, rc-703.
+
+Verdict: all twenty-one closed as applied; each row's evidence carries the note text applied. Extracted data: none new.
+
 ## R936 — Spacecost launch-vehicle citation candidates applied upstream (2026-11-18)
 
 spacecost a91a0503d6ea54c98ccc929e26b4a41679cb0770 (PR #48, package 0.18.1, data contract 1.27.0 to 1.27.1). Compared column by column against 3d140d7: `launch_vehicles.csv` differs only in `notes` (16 rows) and `pipeline_version`; every other table and the summary sample only in `pipeline_version`. `price_basis` and `reference_year` are unchanged; where a candidate questioned them, the note now says what the figure is.
