@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+moran_1991_nasa_tm_103730_on_orbit_electrolysis,baseline lunar electrolyzer specific energy,4.41,kWh/kg H2O,"printed p. 9 and Table II, printed p. 16",The Table II row identifies the alkaline electrolyzer; it is not the total processor energy.
+moran_1991_nasa_tm_103730_on_orbit_electrolysis,baseline lunar system power,398,kW,"Table II, printed p. 16; abstract, printed p. 1 says nearly 400 kW",Baseline supports one crewed lunar mission per year.
+moran_1991_nasa_tm_103730_on_orbit_electrolysis,baseline lunar water feed,55.4,kg/h,"Figure 3, printed p. 15",Gross feed to the electrolyzer.
+moran_1991_nasa_tm_103730_on_orbit_electrolysis,baseline lunar net water consumption,54.0,kg/h,printed p. 15,Net after 1.4 kg/h recovered water.
+moran_1991_nasa_tm_103730_on_orbit_electrolysis,Mars-scaled processor water capacity,378.2,kg/h,"Mars Missions section, printed p. 6",Seven times the lunar baseline water-processing rate.
+moran_1991_nasa_tm_103730_on_orbit_electrolysis,Mars-scaled processor power,2790,kW,"abstract, printed p. 1; Discussion of Results, printed p. 17","This is the full scaled processor, not a 2 MW cryocooler-only subsystem."
+,Mars-scaled processor energy per gross water throughput,7.376,kWh/kg,"Computed from 2790 kW / 378.2 kg/h, printed pp. 1, 6",Comparison computed here; uses the report’s scaled total-power and gross water-throughput figures.
+spacecost_hydrolox_moran_energy_comparator_code_current_2026,current code comparator statement,2 MW at 280 kg/hr; ~7.1 kWh/kg with cryocooler,MW; kg/h; kWh/kg,spacecost/propellants.py:332,The pair is not stated in NASA-TM-103730; candidate asks for its exact source and matching boundary.

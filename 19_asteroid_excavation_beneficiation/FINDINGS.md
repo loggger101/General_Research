@@ -707,3 +707,11 @@ The upstream Spacecost row remains 500 [100, 2,000] Wh/kg refined product, with 
 - **economicspace_current_bestcase_verification_sheet_2026**: p. 23 maps beneficiation to I84=500 Wh/kg refined product [100,2,000], marked NEED BACKING, and calls the asteroid-material estimate unsourced. Its DOE comparator is 19.3 Wh/kg of ore; the basis is not refined product. Current I79 is Falcon Heavy fairing volume, 157 m3.
 - **economicspace_beneficiation_energy_stage3_frozen_row_current_2026**: the frozen `spacecost-0.5.0` row retains 500 [100,2,000] Wh/kg refined product and cites a classroom worksheet rejected by General_Research.
 - Verdict: correct the locator from I79 to I84; preserve the distinction between DOE's terrestrial feed comparator and the unsupported asteroid product-basis estimate. Keep **rc-684** open for the archive lineage and **rc-291** open for the live value/range. Extracted: `extracted_data/r862_beneficiation_current_sheet_locator_check.csv`.
+
+## R959 — Refining-energy worksheet inputs rechecked at current heads (2026-11-19)
+
+The supplied Economicspace verification worksheet, built 2026-11-16 from calc 1.46.0, shows I86 enstatite and I87 plagioclase refining energy at “1,000 Wh/kg” each and marks both “needs backing” (economicspace_current_bestcase_verification_sheet_2026, p. 24). Its final audit lists 114 rows marked needs backing, including 63 inputs and both tags (same source, p. 48). This is a dated worksheet snapshot.
+
+At Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9, Stage 2 1.15.0 lunar_surface rows still store enstatite and plagioclase refining_kwh_per_kg at 1.0 kWh/kg; the current worksheet code reads backing from the matching row notes (economicspace_lunar_surface_stage2_refining_energy_1_15_0_current_2026; economicspace_refining_energy_sheet_code_main_2026). At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, the map assigns 1.0 kWh/kg to both and describes its refining-energy values as order-of-magnitude engineering scenarios per kg of raw feed without route calculations (spacevalue_refining_energy_map_main_2026).
+
+Verdict: recheck rc-634 against the latest heads; it remains open for material-specific route basis and worksheet source lineage. The values are unchanged; no numeric replacement inferred. Extracted: extracted_data/r959_refining_energy_current_head_recheck.csv.

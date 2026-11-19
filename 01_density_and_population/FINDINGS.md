@@ -700,3 +700,25 @@ Verdict: all thirteen closed as applied. Extracted data: none new; the candidate
 `mainzer_2011_neowise_thermal_model_calibration`: Abstract p. 1 says the study used 50 independently measured radar/in-situ diameter objects and reports “minimum relative diameter and albedo errors of ~10% and ~20%, respectively.” Section 4, printed p. 9, gives minimum systematic WISE/NEOWISE errors of 5–10% for diameter and 10–20% for albedo, under the stated thermal-model and observation conditions. These per-fit errors do not establish the pairwise residual distribution or rejection sensitivity of the catalogs AsteroidCatalog merges; the 25% albedo cutoff also exceeds the paper’s approximate 20% minimum.
 
 **Verdict:** Open rc-818 to calibrate the diameter and albedo cutoffs against paired source residuals by method and population, and report agreement/rejection sensitivity. If retained as policy thresholds, state the per-fit scope of Mainzer et al. and explain the 25% albedo margin. Keep both cutoffs pending that review; no numeric replacement inferred. Distinct from rc-605’s H-to-diameter plausibility window, rc-607’s albedo floor, rc-814’s H-agreement cutoff and rc-817’s mass-agreement cutoff. Extracted: `extracted_data/r953_asteroidcatalog_diameter_albedo_tolerance_calibration.csv`.
+
+## R957 — AsteroidCatalog per-source mass-uncertainty screen (2026-11-19)
+
+`asteroidcatalog_mass_sigma_screen_code_current_2026`: AsteroidCatalog main `d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8`, `asteroid_catalog/merge.py` lines 168–171 describes a mass with sigma at least its value as “no determination”; lines 456–468 implement the `S >= V` rejection before testing density plausibility. README.md lines 299–300 repeats the rationale. The one-sigma lower endpoint is zero at equality and negative above it.
+
+CHANGELOG.md line 916 records a historical 153 Hilda example at `3.04e18 ± 7.04e19 kg`; that example demonstrates a rejected high-uncertainty mass but does not calibrate the threshold. No source-specific sensitivity or alternative-cutoff comparison is reported.
+
+**Verdict:** Open rc-820 to define this as a positive one-sigma lower-bound policy and report rejection sensitivity by source. Keep the current threshold; no numeric replacement inferred. Distinct from rc-257, rc-606/rc-608 and rc-817. Extracted: `extracted_data/r957_asteroidcatalog_mass_relative_sigma_screen.csv`.
+
+## R977 — AsteroidCatalog’s Thomas et al. (2000) Eros citation is missing (2026-11-19)
+
+- `asteroidcatalog_eros_thomas_2000_citation_gap_code_current_2026`: AsteroidCatalog main `d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8`, `asteroid_catalog/merge.py` lines 290–293 attributes the imported “17.6 km diameter” for 433 Eros to “Thomas et al. 2000.” Current `CITATIONS.md` §3 contains no Thomas et al. 2000 entry.
+- `thomas_2000_shape_eros_from_near_imaging`: the official SsODNet bibliography lists *The Shape of Eros from NEAR Imaging Data* as BibRef `2000Icar..145..348T` (PDF p. 179); the publisher DOI record identifies *Icarus* 145(2), 348–350, DOI `10.1006/icar.2000.6406`. The article itself was not read.
+
+**Verdict:** open `rc-841` to add the full citation, scoped to the imported diameter. This is separate from `rc-768`’s property-bibref export question and applied `rc-174`’s density convention correction; no numeric replacement inferred. Extracted data: none (bibliographic gap only).
+
+## R982 — AsteroidCatalog Tempel 1 density citation (2026-11-19)
+
+- thomas_2013_tempel1_nucleus_two_flybys: printed p. 455 says “The updated density is” 470 + 780−230 kg m⁻³. Converted using 1000 kg/m3 per g/cm3, this is 0.470 +0.780/-0.230 g/cm3, with a lower endpoint of 0.240 g/cm3. AsteroidCatalog physics.py gives 0.47 +0.78/-0.24 g/cm3 for its Tempel 1 comparator.
+- AsteroidCatalog CITATIONS.md section 3 abbreviates the source as “Thomas, P. C., et al. (2013), Icarus”; NASA NTRS 20140010174 gives the title, Icarus 222(2), pages 453-466, and DOI 10.1016/j.icarus.2012.02.037.
+
+**Verdict:** Open rc-847 to clarify the lower-uncertainty notation and rc-848 for a full bibliography entry. Keep the 0.25 g/cm3 floor unchanged under separate open rc-606. Extracted: extracted_data/r982_tempel1_density_thomas_2013.csv.

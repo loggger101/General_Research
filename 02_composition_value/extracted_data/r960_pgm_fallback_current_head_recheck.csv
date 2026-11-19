@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_pgm_enrichment_fallback_code_main_2026,missing_type_return,1.0,enrichment multiplier,asteroid_catalog/taxonomy.py:1093-1097,None or NaN input returns the default.
+asteroidcatalog_pgm_enrichment_fallback_code_main_2026,blank_type_return,1.0,enrichment multiplier,asteroid_catalog/taxonomy.py:1098-1102,Whitespace is stripped; a blank value returns the default.
+asteroidcatalog_pgm_enrichment_fallback_code_main_2026,unlisted_prefix_fallback,"PGM_ENRICHMENT_BY_TYPE.get(s[0], 1.0)",lookup rule,asteroid_catalog/taxonomy.py:1103-1109,"Mapped first character inherits its factor; the code example Mq maps to M, whose factor is 2.0."
+asteroidcatalog_pgm_enrichment_fallback_code_main_2026,downstream_output,comp_pgm_enrichment,AsteroidCatalog output field,asteroid_catalog/enrich.py:268-269,The output is assigned from pgm_enrichment_for_type.

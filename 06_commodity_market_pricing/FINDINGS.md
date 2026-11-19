@@ -1,3 +1,13 @@
+## R964 — Earth-surface water market ceiling (2026-11-19)
+
+spacevalue_terrestrial_water_market_ceiling_code_main_2026: At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, catalog.py describes ANNUAL_WORLD_PRODUCTION_KG as terrestrial annual primary production (lines 953-958), then places water=1.0e15 kg/year under “Effectively unlimited on Earth” (lines 999-1000); _UNLIMITED_MARKET_KG is also 1.0e15 (line 1005). annual_market_kg() returns the terrestrial value for earth_surface and Earth-bound sales (lines 1178-1202), and cargo.py capacity_allowance_kg() uses that value as a quantity ceiling (lines 1027-1085).
+
+economicspace_earth_surface_market_ceiling_path_code_main_2026: At Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9, modules/calc.py describes Earth-surface ceilings as terrestrial production of 1e12-1e15 kg/year and says none are expected to bind; its diagnostic says a run with no bound row reports the fleet ladder’s top, not a market-bounded optimum (lines 10478-10495). No water-specific market measure is named.
+
+Upstream fields and values: Spacevalue ANNUAL_WORLD_PRODUCTION_KG["water"] is 1.0e15 kg/year; annual_market_kg("water", "earth_surface") returns that value, and cargo.capacity_allowance_kg applies the annual amount to a delivery-window quantity ceiling. Economicspace comments describe earth_surface ceilings as 1e12-1e15 kg/year but name no water-specific measure or value.
+
+Verdict: open rc-824 to establish whether the water value is an unbounded sentinel or a finite market ceiling. If finite, identify the buyer, measured quantity, year and source; if a sentinel, keep the route explicitly scenario/unbounded and quantify finite-cap sensitivity. This is distinct from rc-602’s water price comparator and rc-823’s in-space utility factors. No numeric replacement inferred. Extracted: extracted_data/r964_earth_water_market_ceiling.csv.
+
 ## R942 — Spacevalue reference-price source labels applied upstream (2026-11-18)
 
 spacevalue dd497f2e06f9604512f98c1facbffe3a33bab321 (PR #17, package 0.8.0, data contract 1.21.0 to 1.22.0), merged with the owner's approval. `ref_price_source` is now set per reference row: the 20 rows with no reference price say they have no direct quote and are unpriced on the Earth route, any value being a gross contained-element proxy; the five bulk silicates' $0.05/kg is labelled an engineering placeholder; every other row keeps "USGS/LME/mineralogy reference". In the re-recorded `tests/data/prices-2026-10-07/` fixtures, compared column by column, only `ref_price_source` (25 rows per table) and `pipeline_version` differ.

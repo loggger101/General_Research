@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_bulk_ore_restraint_row_current_2026,Bulk ore restraint (bag / hopper),0.15,kg containment per kg ore,reference/storage_systems.csv row 12,ENGINEERING ESTIMATE; assumes dense ore in a body-mounted hopper; no registered ratio source named.
+spacecost_bulk_ore_restraint_row_current_2026,Bulk ore restraint low estimate,0.08,kg containment per kg ore,reference/storage_systems.csv row 12,Low endpoint of stored engineering range.
+spacecost_bulk_ore_restraint_row_current_2026,Bulk ore restraint high estimate,0.30,kg containment per kg ore,reference/storage_systems.csv row 12,High endpoint of stored engineering range.
+economicspace_return_structure_fraction_code_current_2026,return_structure_frac_of_payload,0.15,fraction of haul payload,modules/calc.py line 190,Current Economicspace configuration value.
+economicspace_return_structure_fraction_code_current_2026,Return dry mass equation,500 kg + f_str × payload,kg,modules/calc.py lines 147-150 and 7554,The value directly adds a payload-proportional mass to the 500 kg dry-mass floor.
+economicspace_return_structure_verification_sheet_code_current_2026,f_str input label and mapping,ore restraint per kg of payload; cfg.return_structure_frac_of_payload,dimensionless,campaign/verification_sheet.py lines 2872-2874,Worksheet code reads the same current configuration value.
+nasa_oig_2018_ig-18-016_commercial_resupply_services_audit,Cargo-capacity comparator mass basis,No spacecraft dry-mass ratio reported,text,p. 18 capacity table,Capacity figures do not provide the dry-mass denominator needed for a hopper-restraint ratio.
+motiwala_mathias_mattenberger_2014_conceptual_lv_spacecraft_design_risk,Typical structural mass fraction range,0.038–0.45,fraction of launch-vehicle stage,"NASA/TM-2014-218366, p. 11 footnote",Stage denominator differs from containment mass per kg of ore.
+orbital_sciences_2014_cygnus_configuration_mass,Standard Cygnus PCM dry mass / payload mass,1677 / 2000,kg / kg,"Commercial Cargo Operations for the ISS, slide 4",PCM-only mass; not whole-spacecraft or loose-regolith hopper mass.
+orbital_sciences_2014_cygnus_configuration_mass,Enhanced Cygnus PCM dry mass / payload mass,1995 / 2700,kg / kg,"Commercial Cargo Operations for the ISS, slide 4",PCM-only mass; not whole-spacecraft or loose-regolith hopper mass.

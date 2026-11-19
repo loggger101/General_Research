@@ -1,3 +1,17 @@
+## R975 — Spacevalue nickel-iron PGM trace-yield citation scope (2026-11-19)
+
+`spacevalue_nickel_iron_pgm_yield_citation_code_current_2026`: Spacevalue main `69549f772a43d155dc27d5ae5f01f90a7e4ce996`, `catalog.py` lines 1471-1487 sets Pt/Pd/Ru/Ir/Os/Rh/Au yields at 15/10/3/4/2/1.5/1 ppm; the comments attribute the siderite total to USGS Bulletin 1214 / Nichiporuk (1965) and call the distribution calibrated to IIIAB medium-octahedrite means. Lines 1902-1904 name Lodders (2003) and Walker (2012) for trace-PGM abundances; line 1528 names Kargel (1994) for the LL-chondrite comparison.
+
+`CITATIONS.md` lines 130-134 lists Scott & Wasson (1975) for Cu, Ga, Ge, Mo, W and Re, but not the other named PGM sources or value-level page/table locators. `walker_2012_evidence_homogeneous_osmium_protosolar_nebula` is registered from the University of Maryland author publication list; the paper’s specific support for the assigned ppm values remains to be checked. The supplied `verification_sheet.pdf`, printed p. 37 (I53), traces `comp_pgm_enrichment` to AsteroidCatalog’s class mineralogy and CITATIONS §1; it is a distinct class-enrichment input, not the source for these nickel-iron element yields. The sheet is a 2018 DT run built 2026-11-16 with Stage 2 mineral_value 1.21.0, preceding Spacevalue main’s 1.22.0 data contract.
+
+**Verdict:** open **rc-835** for full PGM citations and matched value scope. The Fe/Ni/Co vector question in applied rc-815 is separate; current PGM yields are unchanged. Extracted: `extracted_data/r975_spacevalue_nickel_iron_pgm_trace_citation_scope.csv`.
+
+## R960 — PGM fallback semantics rechecked at current AsteroidCatalog head (2026-11-19)
+
+asteroidcatalog_pgm_enrichment_fallback_code_main_2026: AsteroidCatalog taxonomy.py still describes the default as “1.0 (chondritic)” for unknown/unlisted types. pgm_enrichment_for_type returns 1.0 for missing or blank inputs; other unmatched labels inherit a mapped factor from their first character, with Mq mapping to M=2.0. enrich.py assigns the helper output to comp_pgm_enrichment.
+
+Verdict: rc-685 remains open for the basis and scope label of the unknown/unlisted fallback and prefix inheritance; no class-matched source or numeric replacement was identified. Extracted: extracted_data/r960_pgm_fallback_current_head_recheck.csv.
+
 ## R954 — Spacevalue IIIAB bulk fractions labeled analyst-selected (2026-11-19)
 
 At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, the nickel-iron row retains Fe/Ni/Co fractions 0.900/0.090/0.005 but calls the IIIAB analogue analyst-selected and says no table or sample set is cited for those fractions. Lodders 2003 and Walker 2012 are scoped to the trace-PGM terms, not the bulk vector (`spacevalue_fe_ni_major_yields_code_current_2026`; `scott_wasson_1975_classification_properties_iron_meteorites`; `lodders_2003_solar_abundances_condensation_temperatures`; rc-815).

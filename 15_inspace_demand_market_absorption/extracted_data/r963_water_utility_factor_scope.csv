@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_water_utility_factors_code_main_2026,Base water utility,1.00,fraction of launch-cost-avoided premium,spacevalue/catalog.py:527,Base profile; water is presented as the canonical in-space commodity.
+spacevalue_water_utility_factors_code_main_2026,GEO water utility,0.80,fraction of launch-cost-avoided premium,spacevalue/catalog.py:703-709,Overrides base 1.00; code rationale notes no crew life-support or coolant use.
+spacevalue_water_utility_factors_code_main_2026,Lunar-surface water utility,0.60,fraction of launch-cost-avoided premium,spacevalue/catalog.py:768-772,Overrides base 1.00; code rationale cites polar ice as local-supply context.
+spacevalue_water_utility_factors_code_main_2026,Mars-surface water utility,0.25,fraction of launch-cost-avoided premium,spacevalue/catalog.py:823-827,Overrides base 1.00; code rationale cites local accessible water.
+spacevalue_water_utility_factors_code_main_2026,Inherited base-profile destinations,LEO=1.00; cislunar=1.00; mars_orbit=1.00,fraction,spacevalue/catalog.py:691; 724; 787; 932-944,Empty destination maps inherit the base profile; GTO aliases the GEO map.
+spacevalue_water_utility_factors_code_main_2026,Lookup rule,"destination override, else base profile, else 0.0",rule,spacevalue/catalog.py:932-944,Return value populates the generated catalog in_space_utility field.
+spacevalue_water_utility_factors_code_main_2026,Price formula,terrestrial price + utility × launch cost avoided − processing cost,USD/kg,spacevalue/catalog.py:1421-1422,Applied to the in-space route before comparison against shipping to Earth.
+spacevalue_water_utility_factors_code_main_2026,Calibration statement,"engineering judgments, not measurements; no market exists to calibrate them",code statement,spacevalue/catalog.py:512-519,No coefficient derivation or destination-matched market calibration is included in the current comments.

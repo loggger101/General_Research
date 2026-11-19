@@ -538,3 +538,18 @@ Current economicspace main (v1.71.0, `e2ad48767b0e81489031b724417b1a03e6dfc1fb`)
 - **Upstream row**: Spacecost reference/storage_systems.csv, “In-space propellant transfer loss”; the source note is in spacecost/storage.py.
 - **Verdict**: rc-785 requests a complete bibliography entry with the arXiv identifier and DOI. The 3% midpoint and 8% upper endpoint remain unchanged.
 - **Extracted data**: extracted_data/r905_spacecost_zero_boil_off_bibliography_gap.csv.
+
+## R966 — Depot tanker row and bibliography coverage (2026-11-19)
+
+**spacecost_depot_tanker_launch_count_code_current_2026**: Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `reference/storage_systems.csv:27`, still stores 12 [8, 16] tanker launches per fully-fuelled departure. Its note cites NASA OIG IG-26-004, physical p. 11, for “more than 10” tankers and one flight every six days, but says the 16 upper end has no source. NASA OIG IG-26-010 p. 11 is identified as a lunar-HLS plan for a different architecture; **rc-355** remains open.
+
+**spacecost_depot_tanker_citations_current_2026**: Spacecost `CITATIONS.md:288` lists IG-26-010 among comparators but has no IG-26-004 entry, report title, or URL; line 294 says full references are listed for sources after 0.17.2. General_Research already registers the IG-26-004 report as **nasa_oig_2026_ig-26-004_hls_contracts_audit**. The related value-scope review rc-355 does not cover the missing bibliography entry.
+
+- **Verdict**: Keep rc-355 open with no numeric replacement; open **rc-826** to add the report's full bibliographic reference and mark its lunar-HLS scope. No numeric replacement inferred.
+- **Extracted data**: `extracted_data/r966_depot_tanker_bibliography_and_value.csv`.
+
+## R981 — Spacecost bibliography identity and date for the lunar mining challenge report (2026-11-19)
+
+**leucht_prater_vetcha_2024_break_the_ice_lunar_challenge**: NASA's report, *Overview and Results from NASA's Break The Ice Lunar Challenge*, NTRS 20240015957, printed p. 2, sets a transportation metric of 1,500 km/year and a “system lifetime of 5 years” for lunar regolith/resource delivery. Spacecost `reference/operational_costs.csv` row 65 cites it for the mining-rig lifetime comparison; the row remains 15 years [5, 30]. `CITATIONS.md` line 288 identifies only “Leucht, Prater & Vetcha 2024” in a grouped comparator list. NASA NTRS identifies the document type as Conference Paper and lists the 46th International IEEE Aerospace Conference, March 1–8, 2025; the record was acquired December 12, 2024.
+
+Verdict: open rc-846 for a full bibliography entry with title, authors, NTRS number and URL, and for distinguishing the 2024 NTRS acquisition date from the 2025 conference date. This is distinct from open rc-347, which reviews whether the five-year lunar target transfers to asteroid mining-rig service life; no numeric replacement inferred. Extracted: `extracted_data/r481_lunar_mining_lifetime_comparator.csv`.

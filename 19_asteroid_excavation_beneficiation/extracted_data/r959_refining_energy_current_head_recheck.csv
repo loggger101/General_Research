@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_current_bestcase_verification_sheet_2026,I86 enstatite refining energy,"1,000",Wh/kg raw feed,"supplied verification_sheet.pdf, p. 24",Marked NEED BACKING; sheet built 2026-11-16 from calc 1.46.0.
+economicspace_current_bestcase_verification_sheet_2026,I87 plagioclase refining energy,"1,000",Wh/kg raw feed,"supplied verification_sheet.pdf, p. 24",Marked NEED BACKING; sheet built 2026-11-16 from calc 1.46.0.
+economicspace_current_bestcase_verification_sheet_2026,Unbacked input audit,114 rows total; 63 inputs,count,"supplied verification_sheet.pdf, p. 48",The listed input tags include I86 and I87; this is a dated worksheet audit.
+economicspace_lunar_surface_stage2_refining_energy_1_15_0_current_2026,enstatite refining_kwh_per_kg,1.0,kWh/kg raw feed,"campaign/stage2/mineral_value-1.15.0/mineral_value_catalog.lunar_surface.csv, row enstatite",Current row has no energy-specific source note.
+economicspace_lunar_surface_stage2_refining_energy_1_15_0_current_2026,plagioclase refining_kwh_per_kg,1.0,kWh/kg raw feed,"campaign/stage2/mineral_value-1.15.0/mineral_value_catalog.lunar_surface.csv, row plagioclase",Current row has no energy-specific source note.
+economicspace_refining_energy_sheet_code_main_2026,worksheet backing lookup,"cite_column(C, row, refining_kwh_per_kg, ...)",code path,"campaign/verification_sheet.py, lines 3633-3636",Worksheet citation status follows the current Stage 2 row notes.
+spacevalue_refining_energy_map_main_2026,IN_SPACE_PROCESSING_KWH_PER_KG enstatite,1.0,kWh/kg raw feed,"spacevalue/catalog.py, lines 1275-1284",No material-specific route calculation identified in the map comments.
+spacevalue_refining_energy_map_main_2026,IN_SPACE_PROCESSING_KWH_PER_KG plagioclase,1.0,kWh/kg raw feed,"spacevalue/catalog.py, lines 1275-1284",No material-specific route calculation identified in the map comments.
+spacevalue_refining_energy_map_main_2026,process-energy scope note,order-of-magnitude engineering scenarios per kg raw feed; no route calculation,text,"spacevalue/catalog.py, lines 1308-1310",Applies to the map block containing enstatite and plagioclase.
