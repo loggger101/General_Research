@@ -1,3 +1,14 @@
+## R938 — AsteroidCatalog composition scenario labels applied upstream (2026-11-18)
+
+AsteroidCatalog 18fc306b335e785f59612ade12dcc7b3254ba214 (PR #35, package 0.13.4, data contract 1.11.0 unchanged). Comments, CITATIONS.md and the changelog only; `taxonomy.py` and `mineralogy.py` parse to the same ASTs as a626c81, so no output moved.
+
+- rc-555, rc-641, rc-648, rc-649: the zero ice fractions, T's metal and silicate, the X-complex carbon and all 27 silicate fractions are labelled scenarios where they are set.
+- rc-546: Z's 1.20 g/cm3 is labelled D's density as a proxy (`mahlke_2022_asteroid_taxonomy_spectra_albedo`; `simda2024` is a D figure).
+- rc-563, rc-564, rc-565, rc-567, rc-569: the A, R, O, Cgh, Sk and Sl accessory amounts are labelled scenario allowances (`dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites` for Sk/Sl).
+- rc-615, rc-650: E's split is a scenario beside `grady_pratesi_cecchi_2013_aubrite_modal_range`; T's silicates bucket an aggregate (`kwon_hasegawa_fornasier_ishiguro_agarwal_2022_large_t_type_surfaces`).
+
+Verdict: all twelve closed as applied. Extracted data: none new.
+
 ## R924 — AsteroidCatalog 0.13.2 comparator bibliography detail (2026-11-18)
 
 At AsteroidCatalog main commit `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `CITATIONS.md` §3 lines 412–420 lists Beck et al. (2021), Kwon et al. (2022), Jones et al. (1990), McAdam et al. (2024), Rivkin et al. (2000 and 1995), Dunn et al. (2010), and Martin et al. (2013) by abbreviated journal identifiers and topics, without article titles or DOI links. Kwon’s separate entry at line 298 is also abbreviated. Their registered source rows already contain full titles, publication details and DOI URLs.
