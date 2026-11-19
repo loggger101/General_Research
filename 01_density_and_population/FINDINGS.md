@@ -728,3 +728,9 @@ CHANGELOG.md line 916 records a historical 153 Hilda example at `3.04e18 ± 7.04
 At AsteroidCatalog main 0d50c85bb7de8a21b2ce4d5cce4ebe87e35f3277 (PR #37, 0.13.6), `physics.py` and CITATIONS.md give 9P/Tempel 1 as 0.47 +0.78/-0.23 g/cm3, as `thomas_2013_tempel1_nucleus_two_flybys` prints it (470 +780/-230 kg/m3, p. 455), with 0.24 as the lower end (rc-847). CITATIONS.md section 3 gives that paper in full (rc-848) and adds `thomas_2000_shape_eros_from_near_imaging` as the source ssoBFT names for its 17.6 km Eros diameter (rc-841). The 0.25 g/cm3 floor is unchanged.
 
 Verdict: rc-841, rc-847, rc-848 closed as applied. Extracted data: none new.
+
+## R990 — AsteroidCatalog distance rules named heuristics upstream (2026-11-19)
+
+At AsteroidCatalog main 8ffd710f2f2e826ec716287be29c0380da15ba51 (PR #38, 0.13.7; comments and one docstring only), `physics.py` calls the 4.6 AU D rule a heuristic, with 266 orbit-inferred D rows below the 5.05-5.35 AU Trojan span (rc-580), and the 5.5 AU icy override a heuristic about bulk composition reaching 8,382 rows, 31 of them sourced non-D labels (rc-581). Thresholds and outputs unchanged.
+
+Verdict: rc-580, rc-581 closed as applied. Extracted data: none new.

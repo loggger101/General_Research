@@ -465,3 +465,9 @@ Spacecost source `spacecost_alice_isru_processing_energy_gate_current_2026` at m
 At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 2 gains `moran_1991_nasa_tm_103730_on_orbit_electrolysis`, and the propellants.py comment gives its 4.41 kWh/kg (Table II) and Mars-scaled 2,790 kW at 378.2 kg/h, noting that the 2 MW at 280 kg/hr pair is not in the report (rc-836). The beamed laser-thermal note labels 900 s a scenario: `duplay_etal_2022_rapid_transit_mars_laser_thermal` assumes 3,000 s and no Kare publication is identified (rc-842). Values unchanged.
 
 Verdict: rc-836, rc-842 closed as applied. Extracted data: none new.
+
+## R990 — Spacecost bottled-gas densities checked against reference equations of state (2026-11-19)
+
+At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the krypton, nitrogen and xenon rows label their stored densities scenarios with the equation-of-state figure beside them, and the DFD and antimatter rows label 0.100 kg/L a scenario with a tank-fraction bracket (rc-686 to rc-690). `lemmon_span_2006_short_eos_industrial_fluids` (krypton, xenon) and `span_etal_2000_nitrogen_reference_equation_of_state` (nitrogen), as CoolProp 8.0.0 implements them, give at 293.15 K: krypton 0.8724 kg/L at 18 MPa (stored 0.550, +58.6%; the stored figure holds at 369.6 K), nitrogen 0.3024 kg/L at 30 MPa (stored 0.250, +21.0%; 349.6 K), xenon 1.8679 kg/L at 10 MPa (stored 2.000, -6.6%; 284.4 K). Opened value candidates rc-857, rc-858 and rc-859 for the moves, held for owner review.
+
+Verdict: rc-686, rc-687, rc-688, rc-689, rc-690 closed as applied; rc-857, rc-858, rc-859 opened. Extracted data: extracted_data/r990_bottled_gas_density_eos.csv.

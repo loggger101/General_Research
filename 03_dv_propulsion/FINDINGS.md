@@ -1,3 +1,9 @@
+## R990 — Spacecost lunar TEI labelled a scenario upstream (2026-11-19)
+
+At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), `delivery.py` labels the 850 m/s LLO trans-Earth injection a scenario with no stated altitude or Earth endpoint and cites `nasa_ntrs_19900016723_lctv_return_delta_v` (915 + 60 = 975 m/s to a 400-km Earth orbit) as the comparator (rc-741). Value unchanged.
+
+Verdict: rc-741 closed as applied. Extracted data: none new.
+
 ## R986 — Spacecost propulsion and NRHO bibliography gaps (2026-11-19)
 
 - **mirtich_1982_resistojet_large_spacecraft_systems**: NASA TM-83489, printed p. 4, gives a generic system-mass relation, “PPU = 88 percent efficient” and a “20 percent assumed allowance for structure, feed lines, etc.” Spacecost’s Water resistojet row cites it while retaining 10 kg/N and 0.75 efficiency; the paper is a comparator, not support for those water-specific values (rc-852).

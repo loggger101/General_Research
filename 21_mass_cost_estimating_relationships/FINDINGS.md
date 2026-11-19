@@ -436,3 +436,9 @@ Verdict: all nine closed as applied. Extracted data: none new.
 At Economicspace main bed74f10d0d26069690780b87b3d82f36235dd40 (PR #213, master 1.83.0), `campaign/stage3/PROVENANCE.md` records the propellant tank recurring cost in the top-level and 0.4.0 to 0.10.0 sets, $6,000/kg [3,000, 25,000], as an engineering estimate whose Centaur III and RL10 anchors and tank-only allocation have no source; the worksheet prints the same beside `c_tank` (I123), which stays NEED BACKING (rc-825). At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53), CITATIONS.md section 4 gains `nasa_oig_2020_ig-20-012_sls_program_costs_contracts` with its p. 23 locator as a whole-stage comparator (rc-833). Frozen bytes and values unchanged.
 
 Verdict: rc-825, rc-833 closed as applied. Extracted data: none new.
+
+## R990 — Spacecost lander rate scoped as hardware-only upstream (2026-11-19)
+
+At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the surface lander note labels $200,000/kg [100,000, 500,000] a hardware-only scenario that the CLPS whole-service ratios neither set nor bound (rc-300). Value unchanged.
+
+Verdict: rc-300 closed as applied. Extracted data: none new.

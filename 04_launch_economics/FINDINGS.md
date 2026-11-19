@@ -1225,3 +1225,9 @@ Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `reference/launch_veh
 At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 1 names `nasa_oig_2023_ig-24-001_sls_epoc_transition` with its page locators (rc-828) and gains `nasa_oig_2024_ig-24-015_sls_block_1b` (rc-832), the H-IIA price sources (rc-839) and the H3 target page and briefing transcript (rc-840). The Proton-M note identifies its 4,300 kg as the ExoMars 2016 TGO plus Schiaparelli stack, 4,332 kg including fuel (`esa_2016_exomars_factsheet_tgo_launch_stack`; rc-838), and the Vulcan VC2 note cites `ula_vulcan_cert1_peregrine_2024_mission_page` (rc-843). Every value column is unchanged.
 
 Verdict: rc-828, rc-832, rc-838, rc-839, rc-840, rc-843 closed as applied. Extracted data: none new.
+
+## R990 — Spacecost Shuttle, SLS and fairing-estimate bases stated upstream (2026-11-19)
+
+At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the Space Shuttle note defines its band as a mixed-boundary illustrative interval with a $972M geometric midpoint (rc-578); the SLS Block 1 note defines the boundary as vehicle production plus ground systems per launch, in report-year dollars (rc-619); and each estimated fairing volume carries the 0.27-0.63 calibration spread as an m3 range (rc-436). Values unchanged.
+
+Verdict: rc-436, rc-578, rc-619 closed as applied. Extracted data: none new.
