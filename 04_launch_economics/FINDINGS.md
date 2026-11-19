@@ -1,3 +1,13 @@
+## R936 — Spacecost launch-vehicle citation candidates applied upstream (2026-11-18)
+
+spacecost a91a0503d6ea54c98ccc929e26b4a41679cb0770 (PR #48, package 0.18.1, data contract 1.27.0 to 1.27.1). Compared column by column against 3d140d7: `launch_vehicles.csv` differs only in `notes` (16 rows) and `pipeline_version`; every other table and the summary sample only in `pipeline_version`. `price_basis` and `reference_year` are unchanged; where a candidate questioned them, the note now says what the figure is.
+
+- Payload sources and orbits: rc-193, rc-713, rc-714, rc-715, rc-716, rc-717, rc-719.
+- Price scope: rc-521, rc-554, rc-617, rc-620, rc-720, rc-724.
+- Concept rows: rc-790, rc-791, rc-792, rc-795.
+
+Verdict: all seventeen closed as applied; each row's evidence carries the note text applied. Extracted data: none new.
+
 ## R926 — Spacecost launch-comparator bibliography (2026-11-18)
 
 At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `CITATIONS.md` §1 line 54 labels the affected bibliography row “Comparators named in 0.17.1's notes”; its current value is a grouped shorthand list and it has no numeric cell.

@@ -1,3 +1,14 @@
+## R935 — Spacevalue world-production and water-price comments applied upstream (2026-11-18)
+
+spacevalue 513c4f090a8680f414b77b150a0cfd2dee1b78ee (PR #16, package 0.7.3, data contract 1.21.0 unchanged). Comments in `catalog.py` and CITATIONS.md; `catalog.py` parses to the same AST as c377668.
+
+- rc-523, rc-527: `usgs_mcs2026_silver_chapter` and `usgs_mcs2026_sulfur_chapter` pinned beside the silver and sulfur ceilings; sulfur's 83 Mt is placed against MCS 2025 (85 Mt) and MCS 2026 (83.9, 84.0 Mt).
+- rc-524: iridium, rhodium and ruthenium labelled scenarios; `jm_pgm_market_report_2026` primary supply given as a different-series comparator.
+- rc-529: `matos_etal_2021_jrc_elemental_phosphorus_energy` gives the 900-1,200 kt/yr range the 1 Mt scenario sits in.
+- rc-602: `mud_omaha_2026_large_volume_industrial_water_schedule` as one comparator; computed here 1.9657 / (748 × 3.785411784) = $0.000694/kg.
+
+Verdict: all five closed as applied. Extracted data: none new.
+
 ## R896 — Spacevalue standalone-build citation metadata
 
 - **spacevalue_single_destination_build_output_provenance_code_current_2026**: Spacevalue main `@80ec7549164fc1ed6c800ab0ef6205cde08ae9fd`. `cli.py` lines 6–11 document `build` as writing one destination table and `release` as writing every destination plus `manifest.json`; lines 110–113 route `build` directly to `build_mineral_value_catalog`. `catalog.py` lines 2831–2850 stamp `catalog_date`, `pipeline_version` and `delivery_destination`, then write the CSV. `CITATIONS.md` lines 153–154 says to cite the table tag (`prices-YYYY-MM-DD`), code tag (`vX.Y.Z`) and row data contract. In contrast, `release.py` lines 166–172 records `release_tag`, `package_version`, `source_commit` and `quote_snapshot` in its manifest.
