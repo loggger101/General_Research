@@ -1,4 +1,5 @@
 # Research log
+- **Round 997** (2026-11-19): Closed rc-526 after spacevalue #22 (0.8.5) relabelled the 230 Mt/yr CO2 Earth ceiling as total use rather than merchant sales, the owner's chosen boundary; no value moved.
 - **Round 996** (2026-11-19): Closed twelve citation and labelling candidates applied upstream (spacecost #55, 0.18.8; spacevalue #21, 0.8.4; AsteroidCatalog #40, 0.13.9; economicspace #215, master 1.84.1); no value moved.
 - **Round 995** (2026-11-19): Opened rc-864 for Spacevalue's uncited claim that electrolysis is the only route from raw ice to a fuelled depot; current Spacecost and flight-source records show both direct-water and electrolysis propulsion paths. No values moved.
 - **Round 994** (2026-11-19): Rechecked rc-822, rc-827 and rc-852 to rc-854 against Spacecost 0.18.7 and left them open; opened rc-862 for AsteroidCatalog's stale sensitivity pointer and rc-863 for Spacecost's uncited ALICE asteroid-feedstock claims. No values moved.
