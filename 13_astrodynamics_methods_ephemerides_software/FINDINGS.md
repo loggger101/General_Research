@@ -1056,3 +1056,12 @@ Verdict: the committed tests support the parity claims, but the reported latency
 - **Verdict:** Open rc-778 to carry the MPC acknowledgement and whether its designation map was used with each published release. This is identity provenance, separate from which providers supplied measured values; no catalog values are changed.
 - **Extracted data:** `extracted_data/r898_asteroidcatalog_mpc_release_attribution.csv`.
 
+
+## R943 — AsteroidCatalog's MPC U definition lacks a direct citation (2026-11-18)
+
+- **mpc_uncertainty_parameter_u_documentation**: the MPC page says U is an “integer in the range 0–9” and warns it “should not be used as a predictor for the uncertainty in the future motion of NEAs” (sections “Uncertainty Parameter U” and “Calculation Method”).
+- **jpl_sbdb_small_body_database**: the JPL SBDB Query API defines condition_code as the MPC “U” parameter and gives the 0–9 scale (Available SBDB Fields, condition_code).
+- **asteroidcatalog_condition_code_mpc_u_citation_gap_code_current_2026**: AsteroidCatalog main @18fc306b335e785f59612ade12dcc7b3254ba214, CITATIONS.md lines 57–62 identifies condition_code as MPC U, gives 0 to 9, and links JPL API endpoints without a direct MPC definition link; asteroid_catalog/jpl.py lines 78–79 and 93 repeats that interpretation.
+- **Upstream field:** JPL SBDB condition_code, exported as orbit_condition_code.
+- **Verdict:** Open rc-809 to add the official MPC definition citation and its stated future-motion limitation; no catalog values change.
+- **Extracted data:** extracted_data/r943_mpc_u_citation_gap.csv.

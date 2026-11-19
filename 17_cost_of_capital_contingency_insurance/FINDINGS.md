@@ -185,3 +185,11 @@ cover the plotted maximum. Aon does not provide vehicle-heritage or individual
 risk cohorts in this chart, so it does not set a replacement value. `rc-294`
 remains open for a cohort-matched point and range review. Extracted data:
 `extracted_data/r401_aon_launch_insurance_rate_chart.csv`.
+
+## R947 - Spacecost contingency configuration wording (2026-11-18)
+
+- **whitley_shinn_2012_economics_nasa_mission_cost_reserves**: “All twelve other missions spent as much or more than their reserves” (p. 6). The study documents reserve consumption; it does not state that 20% is a typical or standard reserve.
+- **nrc_2010_controlling_cost_growth_nasa_earth_and_space_science_missions**: prior studies calculated average cost growth “ranging from 23 percent to 77 percent,” with “a majority of cost growth” after CDR (Summary, printed p. 10). This is historical growth evidence, not a 20% contingency standard or a first-of-kind percentage band.
+- **spacecost_contingency_default_code_current_2026**: `spacecost/config.py` calls 20% “typical” for a well-characterised flight programme and says “35-50% for first-of-kind,” then sets `contingency_fraction=0.20`; `spacecost/query.py` applies that fraction to subtotal. The current `Contingency reserve` reference row is 20.0% [15.0, 50.0]% and says no registered source states that 20% is a standard.
+
+Verdict: `rc-813` requests that the active configuration comment match the evidence limits in the reference row, or that cohort-matched evidence be provided for the 20% typical point and the 35-50% first-of-kind guidance. Values remain unchanged; no numeric replacement inferred. Extracted: `extracted_data/r947_spacecost_contingency_default_code.csv`.

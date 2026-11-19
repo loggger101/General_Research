@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_fe_ni_major_yields_code_current_2026,iron yield fraction in nickel-iron analogue,0.900,kg/kg,spacevalue/catalog.py: _NICKEL_IRON_YIELDS[iron],Code comment describes approximately 90 wt% Fe; no bulk-composition table is identified.
+spacevalue_fe_ni_major_yields_code_current_2026,nickel yield fraction in nickel-iron analogue,0.090,kg/kg,spacevalue/catalog.py: _NICKEL_IRON_YIELDS[nickel],Code comment gives 7-10 wt% Ni in IIIAB octahedrites; no specific table or sample set is identified.
+spacevalue_fe_ni_major_yields_code_current_2026,cobalt yield fraction in nickel-iron analogue,0.005,kg/kg,spacevalue/catalog.py: _NICKEL_IRON_YIELDS[cobalt],No per-value bulk-composition citation is identified in the code row.
+spacevalue_fe_ni_major_yields_code_current_2026,adjacent trace-PGM citation names,Lodders 2003; Walker 2012,,spacevalue/catalog.py: MINERAL_REFERENCE[nickel-iron] note,These author-year names follow the PGM-trace clause; they are not identified as the source of the three bulk fractions.

@@ -1,0 +1,7 @@
+source_id,item,value,unit,location_in_source,notes
+mpc_uncertainty_parameter_u_documentation,U parameter range,integer in range 0–9,,Uncertainty Parameter U and Orbit Quality Codes / Uncertainty Parameter U,Official MPC definition.
+mpc_uncertainty_parameter_u_documentation,U scale endpoints,0 indicates very small uncertainty; 9 indicates extremely large uncertainty,,Uncertainty Parameter U and Orbit Quality Codes / Uncertainty Parameter U,The MPC page says U is rarely larger than 6 in practice.
+mpc_uncertainty_parameter_u_documentation,U calculation basis,derived from in-orbit longitude runoff (RUNOFF),,Uncertainty Parameter U and Orbit Quality Codes / Calculation Method,Page provides RUNOFF and conversion equations.
+mpc_uncertainty_parameter_u_documentation,NEA future-motion limitation,U should not be used as a predictor for uncertainty in the future motion of NEAs,,Uncertainty Parameter U and Orbit Quality Codes / Uncertainty Parameter U,MPC stated limitation.
+jpl_sbdb_small_body_database,condition_code field definition,MPC “U” parameter: orbit uncertainty estimate 0–9,,SBDB Query API / Available SBDB Fields / condition_code,JPL identifies the field carried by its API.
+asteroidcatalog_condition_code_mpc_u_citation_gap_code_current_2026,CITATIONS.md source note,condition_code is the MPC orbit uncertainty parameter U; definition belongs to MPC; 0 to 9,,AsteroidCatalog CITATIONS.md lines 57–62 at main 18fc306b335e785f59612ade12dcc7b3254ba214,The section links JPL endpoints but does not link the MPC definition page.

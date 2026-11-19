@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_h_agreement_tolerance_code_current_2026,cross-source absolute-magnitude-H comparison tolerance,0.30,mag,asteroid_catalog/merge.py: MEASURED_FIELDS[absolute_magnitude_h],kind=diff; the source code sets the threshold for comparing H values.
+pravec_2012_absolute_magnitudes_wise_albedos,mean catalog-H offset near H=14,-0.4 to -0.5,mag,preprint abstract p. 3,Mean systematic offset; not a cross-source residual distribution.
+pravec_2012_absolute_magnitudes_wise_albedos,catalog-H bias for large asteroids,under 0.1,mag,preprint abstract p. 3,Mean bias statement; does not determine pairwise residual coverage.

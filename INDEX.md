@@ -96,6 +96,7 @@ _Backings: per-spectral-type density and PGM factors in AsteroidCatalog `referen
 | asteroidcatalog_tno_albedo_h_citation_gap_code_current_2026 | T4 | AsteroidCatalog beyond-Jupiter albedo fallback and citation-guide snapshot | verified live, not hosted | derive.py cites “TNOs are Cool” for H-bin albedos; CITATIONS.md lacks the full reference and sample scope (rc-779) |
 | asteroidcatalog_albedo_ceiling_citation_gap_code_current_2026 | T4 | AsteroidCatalog geometric-albedo ceiling and citation-guide snapshot | verified live, not hosted | physics.py cites two demonstrations that pV can exceed 1; CITATIONS.md omits both full references (rc-780) |
 | asteroidcatalog_diameter_constant_bibliography_gap_code_current_2026 | T4 | AsteroidCatalog H-to-diameter constant and citation-guide snapshot | verified live, not hosted | code cites Campins 1985 and IAU Resolution B2; the guide has no complete citation chain (rc-781) |
+| asteroidcatalog_h_agreement_tolerance_code_current_2026 | T4 | AsteroidCatalog cross-source H-agreement threshold snapshot | verified live, not hosted | 0.30-mag H-difference cutoff lacks residual-coverage basis (rc-814) |
 
 ## Domain 2 — Composition → commodity value mapping
 _Backings: AsteroidCatalog material fractions and spacevalue `catalog.py` mineralogy and destination pricing._
@@ -288,6 +289,7 @@ _Backings: AsteroidCatalog material fractions and spacevalue `catalog.py` minera
 | asteroidcatalog_hed_modal_bibliography_entry_current_2026 | T4 | AsteroidCatalog HED bibliography snapshot | verified live, not hosted | CITATIONS.md gives author/year/topic only; full citation and DOI are missing (rc-798) |
 | asteroidcatalog_grouped_comparator_bibliography_current_2026 | T4 | AsteroidCatalog grouped comparator bibliography snapshot | verified live, not hosted | Howard and Zhang entries omit full titles and permanent links (rc-799) |
 | asteroidcatalog_0132_comparator_bibliography_current_2026 | T4 | AsteroidCatalog 0.13.2 comparator bibliography snapshot | verified live, not hosted | Eight registered comparators lack full titles and DOI links in grouped citations (rc-804) |
+| spacevalue_fe_ni_major_yields_code_current_2026 | T4 | Spacevalue nickel-iron Fe-Ni-Co yield-vector snapshot | verified live, not hosted | Fe/Ni/Co vector lacks table-level provenance; adjacent citations are for PGM traces (rc-815) |
 
 ## Domain 3 — Δv budgets and propulsion performance tables
 
@@ -490,6 +492,8 @@ _Backings: spacecost `delta_v_segments.csv` and the Isp rows of `propellants.csv
 | nasa_tm_2015_218829 | T2 | Nguyen & Steele, An Overview of SBIR Phase 2 In-Space Propulsion and Cryogenic Fluids Management (NASA/TM-2015-218829) | read, not hosted | Printed p. 19: Busek iodine Hall high-thrust Isp target ~2,000 s (rc-807) |
 | spacecost_iodine_density_row_current_2026 | T4 | Spacecost iodine density row snapshot | verified live, not hosted | 4.93 kg/L appears without a density source in the row note (rc-808) |
 | who_2020_iodine_drinking_water_density | T3 | WHO, Iodine in drinking-water, Table 1.1 | read, not hosted | Solid iodine density 4.93 g/cm3 at 25 °C (rc-808) |
+| whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept | T2 | Whitley et al., Global Exploration Roadmap Derived Concept for Human Exploration of the Moon | verified live, not hosted | Crew lunar staging-orbit comparison bounds NRHO depot wording (rc-810) |
+| spacecost_nrho_cheapest_depot_claim_code_current_2026 | T4 | Spacecost NRHO depot-cost claim and citation-guide snapshot | verified live, not hosted | Two insertion notes infer a broad depot ranking without comparative scope (rc-810) |
 
 ## Domain 4 — Launch cost per kg (history, projections)
 
@@ -1128,6 +1132,8 @@ _Backings: economicspace `orbital.py` (`elements_to_state`, for the dashboard's 
 | spacevalue_cargo_rust_python_boundary_speed_claim_current_2026 | T4 | Spacevalue Cargo Rust/Python boundary speed claims (README, 2026-11-15) | verified live, not hosted | rc-765: reported speedup lacks a reproducible timing method |
 | asteroidcatalog_ssodnet_property_bibrefs_code_current_2026 | T4 | AsteroidCatalog ssoBFT property-bibliography pipeline snapshot | verified live, not hosted | rc-768: values keep sso ids, but the output has no property bibrefs |
 | asteroidcatalog_mpc_identity_link_release_attribution_code_current_2026 | T4 | AsteroidCatalog MPC identity-link citation and release metadata | verified live, not hosted | MPC designation links are absent from merged source counts and generated release notes (rc-778) |
+| mpc_uncertainty_parameter_u_documentation | T3 | MPC, “Uncertainty Parameter U and Orbit Quality Codes” | verified live, not hosted | Defines U scale and calculation cited by AsteroidCatalog condition_code (rc-809) |
+| asteroidcatalog_condition_code_mpc_u_citation_gap_code_current_2026 | T4 | AsteroidCatalog condition_code citation-guide snapshot | verified live, not hosted | CITATIONS.md names MPC authority but lacks its U-definition link (rc-809) |
 
 ## Domain 14 — Propellant & consumable prices
 
@@ -1261,7 +1267,7 @@ _Backings: spacevalue `catalog.py` `IN_SPACE_UTILITY` (market side), `IN_SPACE_A
 | economicspace_utility_verification_sheet_code_current_2026 | T4 | economicspace cislunar utility worksheet source path | verified live | Worksheet omits the empty-override/base-profile fallback (rc-638) |
 | economicspace_frozen_stage2_mars_surface_market_ceiling_rows_current_2026 | T4 | Frozen Stage 2 Mars-surface annual-market rows | verified live | 1,000/5,000/3,000 kg/yr values in I66-I68 (rc-653) |
 | economicspace_frozen_stage2_mars_orbit_market_ceiling_rows_current_2026 | T4 | Frozen Stage 2 Mars-orbit annual-market rows | verified live | 3,000/15,000/9,000 kg/yr values in I65-I67; row notes do not cite the column (rc-655) |
-| economicspace_current_bestcase_verification_sheet_2026 | T4 | Economicspace current best-case verification sheet | verified live | 127-input map; current I84/I114/I117/I121/I125 locators and I91-I93 propulsion fields; archive checks rc-584, rc-624/625, rc-629/630/631, rc-652, rc-684, rc-735, rc-738 ; I62 maps iodine Isp but its note gives no Isp source (rc-807) ; I63 maps iodine tank mass fraction but the note gives no density source (rc-808) |
+| economicspace_current_bestcase_verification_sheet_2026 | T4 | Economicspace current best-case verification sheet | verified live | 127-input map; current I84/I114/I117/I121/I125 locators and I91-I93 propulsion fields; archive checks rc-584, rc-624/625, rc-629/630/631, rc-652, rc-684, rc-735, rc-738 ; I62 maps iodine Isp but its note gives no Isp source (rc-807) ; I63 maps iodine tank mass fraction but the note gives no density source (rc-808); current I66 dark-fraction scope and unsupported range (rc-811) |
 | spacevalue_lunar_surface_utility_map_current_2026 | T4 | Spacevalue lunar-surface utility map and fallback | verified live | Current surface utility factors; override vs base-profile provenance (R825) |
 | sanders_kleinhenz_hilburger_2024_long_term_lunar_infrastructure | T2 | Sanders, Kleinhenz & Hilburger, lunar infrastructure (ASCEND 2024) | verified live, not hosted | 10–50 t/year mission-consumables production-capacity context; not total demand or class shares (rc-726) |
 | spacevalue_leo_dsev_citation_gap_code_current_2026 | T4 | Spacevalue LEO DSEV comparator/bibliography snapshot | verified live, not hosted | rc-788: catalog.py cites Howard 2021/NTRS 20210021084; CITATIONS.md omits the entry |
@@ -1353,6 +1359,7 @@ _Backings: `operational_costs.csv` WACC, contingency, launch and third-party ins
 | gao_2012_commercial_space_launches_faa_liability_risk_assessment | T3 | GAO-12-899 Commercial Space Launches: FAA Should Update How It Assesses Federal Liability Risk (Jul 2012) | registered, not pulled | Third-party liability insurance premium rate (~1% of coverage x $99M avg MPL = ~$0.99M/launch implied) |
 | gao_2017_commercial_space_launch_insurance_faa_calculation_weakness | T3 | GAO-17-366 Commercial Space Launch Insurance: Weakness in FAA's Insurance Calculation (Mar 2017) | registered, not pulled | Same cell - later data point (~$51M avg MPL 2016 -> ~$0.5M/launch implied); $3M cost-of-casualty corroboration |
 | economicspace_terminal_salvage_timing_record_2026 | T4 | Terminal salvage timing, pinned record | read, not hosted | terminal credit earns launch-to-sale interest (rc-262) |
+| spacecost_contingency_default_code_current_2026 | T4 | Spacecost contingency config, query and reference row (main @ef012074) | verified live, not hosted | Config says 20% is typical and 35-50% for first-of-kind; reference row says no source establishes 20% as standard (rc-813) |
 
 ## Domain 18 — Licensing, planetary protection & space-resource law
 
@@ -1673,6 +1680,8 @@ _Backings: spacecost `storage_systems.csv` propellant-storage and energy-storage
 | economicspace_volatile_containment_verification_sheet_code_current_2026 | T4 | economicspace volatile-containment verification worksheet | verified live, not hosted | I70 flags frozen Stage 3 row NEED BACKING (rc-645) |
 | economicspace_volatile_containment_stage3_frozen_row_current_2026 | T4 | economicspace frozen Stage 3 volatile-containment row | verified live, not hosted | Frozen I70 row says an unnamed citation covers the estimate (rc-645) |
 | spacecost_volatile_cargo_containment_row_current_2026 | T4 | Spacecost current volatile-cargo containment row | verified live, not hosted | 0.05 [0.03,0.12] kg/kg is an engineering estimate with no direct source (rc-645) |
+| economicspace_stage3_eclipse_dark_fraction_current_row_2026 | T4 | Economicspace Stage 3 v1.15.0 eclipse/dark-fraction row (pinned main) | verified live, not hosted | I66=0.50 [0.35,0.55]; row explains geometry but does not cite the generic site range (rc-811) |
+| spacecost_cryocooler_specific_mass_row_current_2026 | T4 | Spacecost 20 K cryocooler specific-mass row (pinned main) | verified live, not hosted | 5.0 kg/W [2,15]; cited test and goal do not establish the band (rc-812) |
 ## Domain 27 — Orbital debris & collision risk
 
 _Backings: the debris environment behind launch-insurance premium drivers (d17), economicspace's satellite-lifetime and disposal assumptions, and depot mission durations (d26)._

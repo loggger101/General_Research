@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_cryocooler_specific_mass_row_current_2026,Current row midpoint,5.0,kg/W,Spacecost main reference/storage_systems.csv lines 9-10,The row note attributes the midpoint to the 5.5 kg/W flight-like projection and 4.4 kg/W project goal; applied rc-108 covered this point.
+spacecost_cryocooler_specific_mass_row_current_2026,Current lower band endpoint,2.0,kg/W,Spacecost main reference/storage_systems.csv lines 9-10,No endpoint derivation or operating/mass boundary appears in the row note.
+spacecost_cryocooler_specific_mass_row_current_2026,Current upper band endpoint,15.0,kg/W,Spacecost main reference/storage_systems.csv lines 9-10,No mapping from this endpoint to a source test or design envelope appears in the row note.
+nugent_2022_rtb_cryocooler_test,Flight-like projection specific mass,5.5,kg/W,"PDF p. 2, Table 1",Current row cites this projection; Table 1 also gives a 4.4 kg/W project goal and 18.7 kg/W previous state of the art at 1 W of lift.
+nugent_2022_rtb_cryocooler_test,Acceptance point 2 specific mass,4.7,kg/W,"PDF p. 3, Table 3, DP2","Lowest value among extracted acceptance points; Table 3 covers multiple test points, not a general design band."
+nugent_2022_rtb_cryocooler_test,Acceptance point 8 specific mass,15.2,kg/W,"PDF p. 3, Table 3, DP8",Near the row's upper endpoint but not identified by the row as the basis for that endpoint.
+nugent_2022_rtb_cryocooler_test,Acceptance point 9/11 specific mass,35.5,kg/W,"PDF p. 3, Table 3, DP9 and DP11",Highest extracted acceptance-point values; test points do not establish the row's 2.0-15.0 design band.

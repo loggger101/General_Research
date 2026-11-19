@@ -268,3 +268,17 @@ Verdict: carry the estimate status and comparator limits into I70 and remove the
 ## R825 — Current worksheet input numbers for storage and containment (2026-11-17)
 
 The current sheet's I61=20,000 m/s is the outbound delta-v ceiling, not the frozen power-storage I61=0.50 geometry factor. In the live sheet, `dark_0` is I69=0.58 h; frozen Stage 3 storage input I64 is the earlier 0.58 h row. Current I70=10.222 h is the rotation-period fallback, while frozen Stage 3 I70 is volatile cargo containment at 0.05 kg/kg. **rc-627** remains scoped to frozen I61-I64 plus current I69; **rc-645** remains scoped to the frozen containment row. Extracted: `extracted_data/r825_live_sheet_input_id_collisions.csv`.
+
+
+## R945 — Current Economicspace dark-fraction row and sheet (2026-11-18)
+
+At Economicspace main `e477b00ffa7810a6f2daad76290d428eee8b70b3`, `campaign/stage3/operational_costs.csv` row 35 (pipeline 1.15.0) stores `Eclipse / night-side dark fraction` at 0.50 [0.35, 0.55]. Its note explains rotating-body geometry and site variation but names no source. The supplied `verification_sheet.pdf` p. 21 maps the row to current I66 and marks it NEED BACKING. It displays Stubbs & Wang’s Vesta comparator: “typically seen about half the time in the tropics” (§5.1, printed p. 275), calls 0.50 scenario geometry, says no source sets the generic range, and points to rc-413. The paper’s 0.363–0.566 range is Vesta-specific and does not establish a generic asteroid-site band.
+
+Verdict: open **rc-811** for the current 1.15.0 Stage 3 row and I66 citation scope. Cite the comparator only for its Vesta tropical scope; identify [0.35, 0.55] as a model scenario unless matched evidence supports it. Preserve the values; no numeric replacement inferred. This is distinct from applied rc-413 (Spacecost current rows) and open rc-627 (Economicspace frozen 0.5.0 I61-I64 plus current I69). Extracted: `extracted_data/r945_economicspace_dark_fraction_current_sheet_scope.csv`.
+
+
+## R946 — Spacecost cryocooler specific-mass band (2026-11-18)
+
+At Spacecost main `ef0120748780a519187836c655d877e3daee1a3a`, `reference/storage_systems.csv` physical lines 9-10 store 5.0 kg/W [2.0, 15.0] at 20 K, development TRL 5. The row note cites Nugent, Grotenrath & Johnson, NTRS 20220009350, Table 1, for a 5.5 kg/W flight-like projection and 4.4 kg/W project goal; it says 5.0 sits between test and goal but gives no endpoint basis. Table 1 lists “18.7”, “5.5” and “4.4” kg/W (PDF p. 2). Table 3 acceptance-test values include “4.7”, “15.2” and “35.5” kg/W across test points (PDF p. 3); 2.0 is below the extracted minimum, and the row does not map 15.0 to a defined design envelope. The current `CITATIONS.md` entry identifies 5.5 kg/W specific mass, not the [2.0, 15.0] band.
+
+Verdict: open **rc-812** for the range endpoints and mass/lift scope. Applied rc-108 covered the midpoint citation and left the range untouched; open rc-701 concerns the separate W/W specific-power band. Preserve the values pending a traceable band basis; no numeric replacement inferred. Extracted: `extracted_data/r946_spacecost_cryocooler_specific_mass_band.csv`.
