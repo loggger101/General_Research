@@ -1,3 +1,9 @@
+## R990 — AsteroidCatalog accessory vectors and X split labelled upstream (2026-11-19)
+
+At AsteroidCatalog main 8ffd710f2f2e826ec716287be29c0380da15ba51 (PR #38, 0.13.7; comments and one docstring only), `mineralogy.py` labels the CI and CM accessory vectors (rc-566, rc-570), the ordinary-chondrite phosphate split (rc-568), M and Xk troilite (rc-571) and K and L spinel (rc-572) as body-mass scenarios beside their vol% comparators. `taxonomy.py` calls the X/Xc P/M/E split a prior and states its reach on density, metal and PGM (rc-481), and the unknown-type PGM default the 37 ppm metal baseline, not chondritic (rc-685). Values unchanged.
+
+Verdict: rc-481, rc-566, rc-568, rc-570, rc-571, rc-572, rc-685 closed as applied. Extracted data: none new.
+
 ## R989 — Phase-specific density references are not mapped in Spacevalue’s citation guide (2026-11-19)
 
 `spacevalue_mineral_density_citations_code_current_2026`: at Spacevalue main `f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f`, `spacevalue/catalog.py` lines 1912–1963, 2231–2237 and 2297–2304 give `MINERAL_REFERENCE` densities for nickel-iron (7.90), schreibersite (7.40), troilite (4.61), carbon (2.10) and plagioclase (2.69) without row-level density sources. `CITATIONS.md` § “Mineral composition and densities” (lines 120–123) names “standard mineralogy references,” Klein & Hurlbut, Mindat.org and Webmineral.com, without mapping them to these rows.

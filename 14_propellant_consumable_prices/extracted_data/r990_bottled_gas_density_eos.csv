@@ -1,0 +1,19 @@
+source_id,item,value,unit,location_in_source,notes
+lemmon_span_2006_short_eos_industrial_fluids,"krypton density at 293.15 K, 18 MPa",0.8724,kg/L,"CoolProp 8.0.0 PropsSI('D','T',293.15,'P',18e6,'Krypton') / 1000; EOS key Lemmon-JCED-2006",computed here with CoolProp 8.0.0
+lemmon_span_2006_short_eos_industrial_fluids,"krypton compressibility factor at 293.15 K, 18 MPa",0.7093,-,"CoolProp 8.0.0 PropsSI('Z','T',293.15,'P',18e6,'Krypton')",computed here
+lemmon_span_2006_short_eos_industrial_fluids,temperature at which the stored krypton density holds at 18 MPa,369.6,K,"CoolProp 8.0.0 PropsSI('T','D',550,'P',18e6,'Krypton')",computed here
+,krypton stored density_kg_per_L,0.55,kg/L,spacecost/propellants.py _COMPONENTS at a6901495d257cbcd018b31e238498c94f301c865,the pipeline's own value; no temperature stated
+,"krypton tank fraction, stored vs at the EOS density",0.1252; 0.0789,kg/kg,tank_kg_per_L / density_kg_per_L,computed here; tank_kg_per_L unchanged
+,krypton EOS over stored,58.6,%,(EOS - stored) / stored,computed here
+span_etal_2000_nitrogen_reference_equation_of_state,"nitrogen density at 293.15 K, 30 MPa",0.3024,kg/L,"CoolProp 8.0.0 PropsSI('D','T',293.15,'P',30e6,'Nitrogen') / 1000; EOS key Span-JPCRD-2000",computed here with CoolProp 8.0.0
+span_etal_2000_nitrogen_reference_equation_of_state,"nitrogen compressibility factor at 293.15 K, 30 MPa",1.1401,-,"CoolProp 8.0.0 PropsSI('Z','T',293.15,'P',30e6,'Nitrogen')",computed here
+span_etal_2000_nitrogen_reference_equation_of_state,temperature at which the stored nitrogen density holds at 30 MPa,349.6,K,"CoolProp 8.0.0 PropsSI('T','D',250,'P',30e6,'Nitrogen')",computed here
+,nitrogen stored density_kg_per_L,0.25,kg/L,spacecost/propellants.py _COMPONENTS at a6901495d257cbcd018b31e238498c94f301c865,the pipeline's own value; no temperature stated
+,"nitrogen tank fraction, stored vs at the EOS density",0.4592; 0.3796,kg/kg,tank_kg_per_L / density_kg_per_L,computed here; tank_kg_per_L unchanged
+,nitrogen EOS over stored,21.0,%,(EOS - stored) / stored,computed here
+lemmon_span_2006_short_eos_industrial_fluids,"xenon density at 293.15 K, 10 MPa",1.8679,kg/L,"CoolProp 8.0.0 PropsSI('D','T',293.15,'P',10e6,'Xenon') / 1000; EOS key Lemmon-JCED-2006",computed here with CoolProp 8.0.0
+lemmon_span_2006_short_eos_industrial_fluids,"xenon compressibility factor at 293.15 K, 10 MPa",0.2884,-,"CoolProp 8.0.0 PropsSI('Z','T',293.15,'P',10e6,'Xenon')",computed here
+lemmon_span_2006_short_eos_industrial_fluids,temperature at which the stored xenon density holds at 10 MPa,284.4,K,"CoolProp 8.0.0 PropsSI('T','D',2000,'P',10e6,'Xenon')",computed here
+,xenon stored density_kg_per_L,2.0,kg/L,spacecost/propellants.py _COMPONENTS at a6901495d257cbcd018b31e238498c94f301c865,the pipeline's own value; no temperature stated
+,"xenon tank fraction, stored vs at the EOS density",0.0191; 0.0205,kg/kg,tank_kg_per_L / density_kg_per_L,computed here; tank_kg_per_L unchanged
+,xenon EOS over stored,-6.6,%,(EOS - stored) / stored,computed here

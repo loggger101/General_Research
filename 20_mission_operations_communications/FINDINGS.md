@@ -176,3 +176,9 @@ Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`
 ## R864 — Spacecost recovery batch mass basis (2026-11-17)
 
 **spacecost_downleg_recovery_mass_ratio_record_2026** records the nominal batch and left its empirical basis open. At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `delivery.py` calls it the “nominal batch the recovery is spread over” and sets `DOWNLEG_BATCH_KG=10,000`; the function divides `DOWNLEG_RECOVERY_USD` by this value. **spacecost_sample_recovery_operations_row_current_2026** stores $15,000,000 per recovery [$5,000,000, $30,000,000], so the code’s point cost is $1,500/kg at the nominal batch. **economicspace_current_bestcase_verification_sheet_2026**'s current `campaign/verification_sheet.py` has no recovery-batch mass input. R324 measured the earlier multiplier’s price effects but did not source the batch size; applied **rc-254** explicitly left the nominal 10,000 kg pending separate evidence. Open **rc-718** addresses the per-recovery dollar amount and its cost basis, not the kilogram denominator. Verdict: support the 10,000 kg batch with a recovery-specific mass basis or keep it as an explicit scenario with sensitivity; do not alter the $15M/recovery amount under this candidate. **rc-740**. Extracted: `extracted_data/r864_spacecost_recovery_batch_mass_scope.csv`.
+
+## R990 — Spacecost relay rate and recovery batch labelled scenarios upstream (2026-11-19)
+
+At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the relay note labels $50/Mbit [10, 200] a scenario with no link rate, pass pattern or relay/direct split (rc-298), and `delivery.py` labels the 10,000 kg recovery batch a scenario with its sensitivity, $3,000/kg at 5,000 kg and $750/kg at 20,000 kg against $1,500 (rc-740). Values unchanged.
+
+Verdict: rc-298, rc-740 closed as applied. Extracted data: none new.

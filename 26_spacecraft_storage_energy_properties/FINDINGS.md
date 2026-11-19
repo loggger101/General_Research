@@ -313,3 +313,9 @@ Verdict: open rc-844 for a full bibliography entry scoped to the Shuttle tank an
 At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 2 gains `nasa_sp_2009_4012_external_tank_characteristics`, Table 2-86, scoped to the Shuttle SLWT anchor only (rc-844). The 0.025 kg/L base is unchanged.
 
 Verdict: rc-844 closed as applied. Extracted data: none new.
+
+## R990 — Spacecost ore-restraint band and sensitivity stated upstream (2026-11-19)
+
+At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the bulk ore restraint note labels its [0.08, 0.30] band a scenario, gives the 0.22 kg/kg dry-mass spread before the cascade, and scopes the stage-level and Cygnus comparators as non-matching (rc-821). Value unchanged.
+
+Verdict: rc-821 closed as applied. Extracted data: none new.

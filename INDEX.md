@@ -1249,6 +1249,8 @@ _Backings: spacecost `propellants.csv` `ref_cost_usd_per_kg` and the component p
 | spacecost_hydrolox_moran_energy_comparator_code_current_2026 | T4 | Spacecost hydrolox Moran 1991 energy-comparator code snapshot | verified live, not hosted | Code attributes 4.41 kWh/kg and a 2 MW / 280 kg/h pair to Moran; scope review (rc-836) |
 | duplay_etal_2022_rapid_transit_mars_laser_thermal | T1 | Duplay et al., Design of a rapid transit to Mars mission using laser-thermal propulsion, Acta Astronautica 192:143-156 (2022) | verified live, not hosted | conceptual LTP design Isp (3000 s); source scope for Spacecost 900 s scenario (rc-842) |
 | spacecost_beamed_laser_thermal_isp_citation_gap_code_current_2026 | T4 | Spacecost Beamed laser-thermal Isp citation-scope snapshot | verified live, not hosted | rc-842: 900 s is attributed to unspecified Kare work and a 2022 Mars study |
+| lemmon_span_2006_short_eos_industrial_fluids | T1 | Lemmon & Span 2006, short EOS for 20 industrial fluids | not pulled; computed via CoolProp | Krypton and xenon densities at the stated pressures (rc-686, rc-688; rc-857, rc-859) |
+| span_etal_2000_nitrogen_reference_equation_of_state | T1 | Span et al. 2000, reference EOS for nitrogen | not pulled; computed via CoolProp | Nitrogen density at 30 MPa (rc-687; rc-858) |
 ## Domain 15 — In-space demand & market absorption
 
 _Backings: spacevalue `catalog.py` `IN_SPACE_UTILITY` (market side), `IN_SPACE_ANNUAL_DEMAND_KG`, `_DEMAND_SHARE_BY_CLASS`; `calc.py` `market_model`, `demand_elasticity`, `surplus_price_fraction`. Also relevant: `hein2020` (d22), `usgs_mineral_commodity_summaries_2026` (d06), `dra5_2009_human_exploration_of_mars` (d03)._

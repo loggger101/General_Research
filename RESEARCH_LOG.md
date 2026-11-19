@@ -1,4 +1,5 @@
 # Research log
+- **Round 990** (2026-11-19): Closed 22 method candidates applied by labelling and bracketing (spacecost #54, 0.18.7; AsteroidCatalog #38, 0.13.7; no value moved) and opened rc-857 to rc-859: krypton, nitrogen and xenon bottle densities disagree with their reference equations of state at room temperature.
 - **Round 989** (2026-11-19): Opened rc-856 for phase-specific density references not mapped in Spacevalue’s citation guide; source scopes and density values remain unchanged.
 - **Round 988** (2026-11-19): Opened rc-855 for Spacevalue’s troilite density citation and FeS/FeSi source-scope gap; 4.61 g/cm³ remains unchanged pending phase reconciliation.
 - **Round 987** (2026-11-19): Closed nine Stage 2 worksheet candidates applied in economicspace #214 (master 1.84.0), which adds campaign/stage2/PROVENANCE.md and prints its limits beside matching worksheet inputs; no value or flag moved.
