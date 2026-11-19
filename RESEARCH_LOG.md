@@ -1,4 +1,5 @@
 # Research log
+- **Round 985** (2026-11-19): Closed 26 citation candidates applied upstream (spacecost #53, 0.18.6; spacevalue #19, 0.8.2; AsteroidCatalog #37, 0.13.6; economicspace #213, master 1.83.0); no value moved, and Tempel 1's lower uncertainty now reads -0.23 as printed.
 - **Round 984** (2026-11-19): Opened rc-850 for Economicspace’s missing CODATA reference and rc-851 for its missing USGS OFR 2017-1041 bibliography entry; both are citation corrections, with no numeric replacement inferred.
 - **Round 983** (2026-11-19): Opened rc-849 for Spacevalue’s missing Cowen et al. reference in its bibliography; the cited terms remain a caveat, not a model value.
 - **Round 982** (2026-11-19): Opened rc-847 for the Tempel 1 lower-uncertainty notation against Thomas et al. (2013) p. 455, and rc-848 for AsteroidCatalog’s incomplete bibliography entry; the 0.25 g/cm3 floor remains under rc-606 review.

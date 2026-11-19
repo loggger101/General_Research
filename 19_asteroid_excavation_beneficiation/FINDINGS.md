@@ -719,3 +719,9 @@ Verdict: recheck rc-634 against the latest heads; it remains open for material-s
 ## R984 — Economicspace USGS report bibliography gap (2026-11-19)
 
 **usgs_keszthelyi_etal_2017_asteroid_resource_assessment_feasibility**: the report’s abstract, printed p. 1, says it “does not include a complete and robust analysis of uncertainty” and describes testing Earth resource-assessment methods on asteroids. Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9 cites USGS OFR 2017-1041 in the `max_mining_fraction = 1.0` no-depletion-ceiling comment, but `CITATIONS.md` has no full report entry. Verdict: add the complete USGS bibliography entry for the method/feasibility context. rc-491 separately reviews the ceiling’s interpretation; this candidate does not change its value. **rc-851**. Extracted: `extracted_data/r984_usgs_citation_crosscheck.csv`.
+
+## R985 — Economicspace USGS OFR 2017-1041 referenced upstream (2026-11-19)
+
+At Economicspace main bed74f10d0d26069690780b87b3d82f36235dd40 (PR #213, master 1.83.0), CITATIONS.md gains `usgs_keszthelyi_etal_2017_asteroid_resource_assessment_feasibility`, scoped as method context beside `max_mining_fraction`'s 1.0 ceiling (rc-851). rc-491 stays open.
+
+Verdict: rc-851 closed as applied. Extracted data: none new.

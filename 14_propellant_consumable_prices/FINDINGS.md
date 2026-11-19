@@ -459,3 +459,9 @@ Spacecost source `spacecost_alice_isru_processing_energy_gate_current_2026` at m
 - `duplay_etal_2022_rapid_transit_mars_laser_thermal`: the article abstract (p. 1) states 3000 s; section 3.1 (p. 7) gives a 1000-3000 s performance range and assumes 3000 s for the conceptual design. These are design calculations, not a tested engine. Extracted: `extracted_data/r978_spacecost_laser_thermal_isp_citation_scope.csv`.
 
 **Verdict:** open `rc-842` to add the full Duplay et al. citation, identify the exact Kare source, and correct the source scope. Retain 900 s pending a matched source or an explicit scenario label; no numeric replacement inferred.
+
+## R985 — Spacecost Moran and laser-thermal citations corrected upstream (2026-11-19)
+
+At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 2 gains `moran_1991_nasa_tm_103730_on_orbit_electrolysis`, and the propellants.py comment gives its 4.41 kWh/kg (Table II) and Mars-scaled 2,790 kW at 378.2 kg/h, noting that the 2 MW at 280 kg/hr pair is not in the report (rc-836). The beamed laser-thermal note labels 900 s a scenario: `duplay_etal_2022_rapid_transit_mars_laser_thermal` assumes 3,000 s and no Kare publication is identified (rc-842). Values unchanged.
+
+Verdict: rc-836, rc-842 closed as applied. Extracted data: none new.

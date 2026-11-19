@@ -364,3 +364,9 @@ Verdict: all fifteen closed as applied. Extracted data: none new.
 ## R984 — Economicspace CODATA constant bibliography gap (2026-11-19)
 
 **tiesinga_2021_codata_2018_constants**: Table XXX, printed p. 44, lists the 2018 adjusted Newtonian constant as “6.674 30(15) × 10⁻¹¹” m³ kg⁻¹ s⁻². At Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9, `modules/calc.py` labels `_G_SI = 6.67430e-11` “CODATA 2018”; `CITATIONS.md`, the repository’s reference authority, has no Tiesinga/CODATA 2018 entry. Verdict: add the complete bibliography entry; no numeric change is inferred. This is separate from rc-681’s AsteroidCatalog citation gap. **rc-850**. Extracted: `extracted_data/r984_codata_citation_crosscheck.csv`.
+
+## R985 — Economicspace CODATA 2018 referenced upstream (2026-11-19)
+
+At Economicspace main bed74f10d0d26069690780b87b3d82f36235dd40 (PR #213, master 1.83.0), CITATIONS.md gains `tiesinga_2021_codata_2018_constants`, Table XXX, for calc's `_G_SI` (rc-850). The constant is unchanged.
+
+Verdict: rc-850 closed as applied. Extracted data: none new.

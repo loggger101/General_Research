@@ -79,3 +79,9 @@ The comment's 2,134/(2,134+8,200) = 0.2065; 8,200 kg sits in the A9-A13 loaded b
 - `parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4`: Printed p. 23 lists “Vehicle mass 18 kg,” “Payload mass 1.04 kg,” and a 43% TPS mass fraction including insulation.
 - **Verdict:** open **rc-834**; add Parcero et al.’s full NASA/SP-20220010761 entry, official NTRS link, and Hayabusa table locator to §4. The sample-return evidence does not replace the generic cargo factor; this bibliography gap is separate from rc-598.
 - **Extracted data**: `extracted_data/r731_hayabusa_and_downleg_capsule_mass_basis.csv`.
+
+## R985 — Spacecost Hayabusa capsule guide referenced upstream (2026-11-19)
+
+At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 4 gains `parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4` with its Hayabusa table locator, scoped as a sample-return comparator beside the generic 0.10 capsule factor (rc-834). Values unchanged.
+
+Verdict: rc-834 closed as applied. Extracted data: none new.

@@ -430,3 +430,9 @@ Verdict: all nine closed as applied. Extracted data: none new.
 - `nasa_oig_2020_ig-20-012_sls_program_costs_contracts`: NASA OIG reports an opportunity to buy “the hardware for a second ICPS for $29 million” (p. 23). This is a whole-stage comparator, not a tank-only allocation.
 - **Verdict:** open **rc-833**; add the full title, IG-20-012 identifier, date, official URL, and p. 23 locator. Bibliography completeness only; no recurring-rate replacement inferred. Distinct from rc-421 and rc-730.
 - **Extracted data**: `extracted_data/r555_nasa_oig_icps_price_vs_centaur_tank_cost_anchor.csv`.
+
+## R985 — Tank-cost scope recorded upstream; IG-20-012 referenced (2026-11-19)
+
+At Economicspace main bed74f10d0d26069690780b87b3d82f36235dd40 (PR #213, master 1.83.0), `campaign/stage3/PROVENANCE.md` records the propellant tank recurring cost in the top-level and 0.4.0 to 0.10.0 sets, $6,000/kg [3,000, 25,000], as an engineering estimate whose Centaur III and RL10 anchors and tank-only allocation have no source; the worksheet prints the same beside `c_tank` (I123), which stays NEED BACKING (rc-825). At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53), CITATIONS.md section 4 gains `nasa_oig_2020_ig-20-012_sls_program_costs_contracts` with its p. 23 locator as a whole-stage comparator (rc-833). Frozen bytes and values unchanged.
+
+Verdict: rc-825, rc-833 closed as applied. Extracted data: none new.

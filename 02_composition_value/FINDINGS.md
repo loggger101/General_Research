@@ -1,3 +1,9 @@
+## R985 — Spacevalue nickel-iron PGM split labelled analyst-selected upstream (2026-11-19)
+
+At Spacevalue main f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f (PR #19, 0.8.2), the nickel-iron PGM comment and CITATIONS.md call the per-element split (Pt 15, Pd 10, Ru 3, Ir 4, Os 2, Rh 1.5, Au 1 ppm) analyst-selected. `wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals` printed p. A1 says siderites contain "on the average, 30 ppm total platinum metals"; Table 15, p. A17, gives per-element siderite ranges. The six PGM yields sum to 35.5 ppm, not the ~37 the old comment gave. Nichiporuk & Brown, Lodders, Walker and Kargel get full entries scoped to what each supports (rc-835). Yields are unchanged.
+
+Verdict: rc-835 closed as applied. Extracted data: none new.
+
 ## R975 — Spacevalue nickel-iron PGM trace-yield citation scope (2026-11-19)
 
 `spacevalue_nickel_iron_pgm_yield_citation_code_current_2026`: Spacevalue main `69549f772a43d155dc27d5ae5f01f90a7e4ce996`, `catalog.py` lines 1471-1487 sets Pt/Pd/Ru/Ir/Os/Rh/Au yields at 15/10/3/4/2/1.5/1 ppm; the comments attribute the siderite total to USGS Bulletin 1214 / Nichiporuk (1965) and call the distribution calibrated to IIIAB medium-octahedrite means. Lines 1902-1904 name Lodders (2003) and Walker (2012) for trace-PGM abundances; line 1528 names Kargel (1994) for the LL-chondrite comparison.
