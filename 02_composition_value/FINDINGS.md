@@ -1,3 +1,28 @@
+## R989 — Phase-specific density references are not mapped in Spacevalue’s citation guide (2026-11-19)
+
+`spacevalue_mineral_density_citations_code_current_2026`: at Spacevalue main `f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f`, `spacevalue/catalog.py` lines 1912–1963, 2231–2237 and 2297–2304 give `MINERAL_REFERENCE` densities for nickel-iron (7.90), schreibersite (7.40), troilite (4.61), carbon (2.10) and plagioclase (2.69) without row-level density sources. `CITATIONS.md` § “Mineral composition and densities” (lines 120–123) names “standard mineralogy references,” Klein & Hurlbut, Mindat.org and Webmineral.com, without mapping them to these rows.
+
+`economicspace_stage2_density_provenance_bibliography_code_current_2026`: Economicspace `CITATIONS.md` lines 106–108 directs mineral-density references to Spacevalue’s `CITATIONS.md`; `campaign/stage2/PROVENANCE.md` § `density_gcm3` lines 65–87 identifies the phase-level references.
+
+- `remo_1993_asteroid_meteorite_analogs_density`: Table 2, printed p. 169, gives selected iron-nickel meteorites at 7.29–7.88 g/cm3.
+- `agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties`: NASA NTRS 20170001623, Table 1 p. 20, lists Troilite / FeSi / 4.61 and albite-composition feldspar at 2.62.
+- `mineral_data_publishing_kamacite_density_2001`: p. 1 gives D(calc.) 7.90 and no measured density.
+- `mineral_data_publishing_cohenite_density_2001`: p. 1 gives D(meas.) 7.20–7.65 and D(calc.) 7.68.
+- `mineral_data_publishing_schreibersite_density_2001`: p. 1 gives D(meas.) 7.0–7.3 and D(calc.) 7.12–7.44.
+- `mineral_data_publishing_troilite_density_2001`: p. 1 gives FeS D(meas.) 4.67–4.79 and D(calc.) 4.85.
+- `mineral_data_publishing_graphite_density_2001`: p. 1 gives D(meas.) 2.09–2.23 and D(calc.) 2.26.
+- `mineral_data_publishing_labradorite_density_2001`: p. 1 gives D(meas.) 2.68–2.72.
+
+Verdict: the bibliography gap belongs in Spacevalue’s designated citation guide. Re-scope **rc-856** to add the phase-specific bibliography and row mapping there; preserve the Troilite FeSi/FeS discrepancy and all density values. **rc-855** remains focused on reconciling that formula/source conflict. Extracted: `extracted_data/r768_mineral_phase_density_source_scope.csv`; `extracted_data/r769_mineral_phase_density_source_scope.csv`.
+
+## R988 — Spacevalue troilite density source is not phase-mapped (2026-11-19)
+
+`spacevalue_troilite_density_bibliography_gap_code_current_2026`: at Spacevalue main `f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f`, `catalog.py` line 1942 assigns the troilite entry formula `FeS` and density 4.61 g/cm³. `CITATIONS.md` § Mineral composition and densities (line 120) names Klein & Hurlbut, Mindat and Webmineral as general density references, but does not map a source to this phase or mention Agrawal, Carlozzi & Bryson.
+
+`agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties`: NASA NTRS 20170001623, Table 1 p. 20, lists “Troilite | FeSi | 4.61”; the existing Handbook comparison gives FeS density 4.67–4.79 measured and 4.85 calculated.
+
+Verdict: add the full Agrawal et al. reference only with its table/formula scope made explicit; reconcile the FeSi label before treating it as evidence for Spacevalue’s FeS row. Retain 4.61 pending source and phase reconciliation; no numeric replacement inferred. **rc-855**. Extracted: `extracted_data/r769_mineral_phase_density_source_scope.csv`.
+
 ## R987 — Frozen Stage 2 phase densities scoped upstream (2026-11-19)
 
 At Economicspace main e354cdda8d5471a04a78509de78def8f4ef2a6b9 (PR #214, master 1.84.0), the new `campaign/stage2/PROVENANCE.md`, mirroring the Stage 3 file, records the phase densities against the sources this repo checked: nickel-iron 7.90 as kamacite's calculated density with no IIIAB bulk basis; cohenite 7.40 inside its measured range; schreibersite 7.40 above its measured range (rc-639); troilite 4.61 unreconciled with FeS; carbon 2.10 a graphite proxy; plagioclase 2.69 with no composition defined (rc-640). The verification worksheet prints the entry beside any Stage 2 input whose row carries the recorded value, in a span its backing check strips, so each input stays NEED BACKING. No frozen CSV byte or value moves.

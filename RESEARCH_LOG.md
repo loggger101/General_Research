@@ -1,4 +1,6 @@
 # Research log
+- **Round 989** (2026-11-19): Opened rc-856 for phase-specific density references not mapped in Spacevalue’s citation guide; source scopes and density values remain unchanged.
+- **Round 988** (2026-11-19): Opened rc-855 for Spacevalue’s troilite density citation and FeS/FeSi source-scope gap; 4.61 g/cm³ remains unchanged pending phase reconciliation.
 - **Round 987** (2026-11-19): Closed nine Stage 2 worksheet candidates applied in economicspace #214 (master 1.84.0), which adds campaign/stage2/PROVENANCE.md and prints its limits beside matching worksheet inputs; no value or flag moved.
 - **Round 986** (2026-11-19): Opened rc-852–854 for missing full bibliography records in Spacecost’s Water resistojet and NRHO notes; the linked sources are scoped comparators and no numeric replacement is inferred.
 - **Round 985** (2026-11-19): Closed 26 citation candidates applied upstream (spacecost #53, 0.18.6; spacevalue #19, 0.8.2; AsteroidCatalog #37, 0.13.6; economicspace #213, master 1.83.0); no value moved, and Tempel 1's lower uncertainty now reads -0.23 as printed.
