@@ -389,3 +389,15 @@ Upstream: generated verification worksheet provenance. Verdict: a separate outpu
 - **Upstream row**: Spacecost reference/operational_costs.csv, “Heat shield / TPS for Earth return”; the source note is in spacecost/operations.py.
 - **Verdict**: rc-783 requests a complete bibliography entry in CITATIONS.md §4 scoped to material heritage/performance. No TPS cost value or range is changed.
 - **Extracted data**: extracted_data/r903_spacecost_tps_citation_bibliography_gap.csv.
+
+## R940 — economicspace frozen Stage 3 provenance file (2026-11-18)
+
+economicspace 75253b5a744f2155cce9b9a0abbd829578a44a6e (PR #209, master 1.79.0; no stamp moves). The owner decided that candidates asking to carry current notes into frozen `campaign/stage2/` or `campaign/stage3/` copies are applied without editing the frozen CSVs: `campaign/stage3/PROVENANCE.md` now records each flagged row's correction (unsourced anchor, scenario label, comparator scope or open review) beside the current spacecost treatment. `git diff --stat` of `campaign/stage3/` at that merge is the new file only, so every archived cell still reproduces.
+
+- `spacecost-0.4.0/operational_costs.csv`: rc-727, rc-728, rc-729.
+- `spacecost-0.10.0/`: rc-704, rc-705.
+- `spacecost-0.14.0/launch_vehicles.csv`: rc-707, rc-708, rc-709, rc-710, rc-711, rc-712, rc-721, rc-723, rc-725.
+- `spacecost-0.14.0/operational_costs.csv`: rc-730, rc-731, rc-732, rc-733, rc-734, rc-735, rc-738.
+- `spacecost-0.14.0/propellants.csv`: rc-706, rc-775; top-level `launch_vehicles.csv`: rc-722.
+
+Verdict: all twenty-four closed as applied. Extracted data: none new.
