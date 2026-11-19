@@ -611,3 +611,9 @@ Verdict: open rc-823 for a destination-matched derivation or calibration of the 
 At Economicspace main e354cdda8d5471a04a78509de78def8f4ef2a6b9 (PR #214, master 1.84.0), the new `campaign/stage2/PROVENANCE.md`, mirroring the Stage 3 file, records the frozen annual_market_kg rows as destination budgets times class shares, allocation scenarios: cislunar 100,000 kg/yr (rc-636), Mars surface 20,000 (rc-653) and Mars orbit 60,000 (rc-655), with Kornuta 2019, LunA-10 and NASA NTRS 20240002713 as context only; and cislunar utility as the base IN_SPACE_UTILITY profile, its override being empty (rc-638). The verification worksheet prints the entry beside any Stage 2 input whose row carries the recorded value, in a span its backing check strips, so each input stays NEED BACKING. No frozen CSV byte or value moves.
 
 Verdict: rc-636, rc-638, rc-653, rc-655 closed as applied. Extracted data: none new.
+
+## R992 — Spacevalue water utility factors labelled scenarios (2026-11-19)
+
+spacevalue_083_main_water_silicate_scenario_review_2026: at Spacevalue main 8d165b08e6702cc9245ef23437587e9a6ecfa013 (PR #20, package 0.8.3, data contract 1.22.1), catalog.py calls the base and destination water factors 1.00, 0.80, 0.60 and 0.25 “SCENARIOS,” states they lack a buyer/local-supply/market calibration, and gives the price sensitivity: every 0.10 factor change moves water's price by 0.10 times that destination's launch cost avoided. Values and generated prices are unchanged.
+
+Verdict: rc-823 applied by scenario labeling and explicit sensitivity; no numeric replacement inferred. Extracted: extracted_data/r992_spacevalue_water_utility_scenario_sensitivity.csv.

@@ -1,4 +1,7 @@
 # Research log
+- **Round 993** (2026-11-19): Closed nine AsteroidCatalog screen and agreement-tolerance candidates (PR #39, 0.13.8), labelled policies with sensitivity measured on a four-source build; the albedo floor sits under a steep rise and the 25% albedo tolerance flags 61% of pairs.
+- **Round 992** (2026-11-19): Closed rc-296 and rc-823 after Spacevalue 0.8.3 labelled the silicate composite and destination water utility factors as scenarios and documented water-price sensitivity; no values moved.
+- **Round 991** (2026-11-19): Opened rc-860 and rc-861 for missing Spacecost bibliography entries covering CoolProp and its EOS papers, and the NASA-CR-186677 comparator; no values changed.
 - **Round 990** (2026-11-19): Closed 22 method candidates applied by labelling and bracketing (spacecost #54, 0.18.7; AsteroidCatalog #38, 0.13.7; no value moved) and opened rc-857 to rc-859: krypton, nitrogen and xenon bottle densities disagree with their reference equations of state at room temperature.
 - **Round 989** (2026-11-19): Opened rc-856 for phase-specific density references not mapped in Spacevalue’s citation guide; source scopes and density values remain unchanged.
 - **Round 988** (2026-11-19): Opened rc-855 for Spacevalue’s troilite density citation and FeS/FeSi source-scope gap; 4.61 g/cm³ remains unchanged pending phase reconciliation.
