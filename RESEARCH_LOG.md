@@ -1,4 +1,6 @@
 # Research log
+- **Round 951** (2026-11-19): Closed 25 economicspace candidates (PR #211, master 1.81.0; worksheet text, comments and the frozen-table provenance file, no number moved); rc-651 and rc-777 stay open.
+- **Round 950** (2026-11-19): Closed 22 spacecost candidates (PR #51, 0.18.4, data contract 1.27.4; notes and comments only, no value moved) and opened rc-816: the reference argon equation of state puts supercritical argon at 0.3135 kg/L, 4.5% above the stored 0.300.
 - **Round 949** (2026-11-18): Opened rc-815 for Spacevalue’s nickel-iron Fe/Ni/Co vector: the code calls it a typical IIIAB analogue but gives no table-level source for the 90/9/0.5% fractions; adjacent author-year citations are for PGM traces.
 - **Round 948** (2026-11-18): Opened rc-814 for AsteroidCatalog’s 0.30 mag cross-source H cutoff: Pravec’s cited mean H bias does not establish residual coverage or rejection sensitivity for that threshold.
 - **Round 947** (2026-11-18): Opened rc-813 for Spacecost’s active contingency comment: the 0.20 default is called typical and a 35-50% band is assigned to first-of-kind missions, while the registered evidence establishes reserve use and historical cost growth, not those benchmarks.

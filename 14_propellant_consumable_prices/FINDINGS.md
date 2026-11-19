@@ -1,3 +1,13 @@
+## R950 — Spacecost notes and comments applied upstream; ArgonSC density value candidate (2026-11-19)
+
+spacecost bad5ba80884e6bd6825de83ff8e942619d962a1f (PR #51, package 0.18.4, data contract 1.27.3 to 1.27.4). Notes on 51 rows, comments, CITATIONS.md and README.md; compared column by column, every value column of the six reference tables and the summary sample is identical to 1.27.3.
+
+- Closed as applied: rc-361 (dv_penalty_factor 1.5 named on each row); rc-421, 422, 435, 544, 598, 680, 694, 701, 718, 766 (scenario labels with comparators); rc-525 (HTP / RP-1 320 s beside Krishnan 2010); rc-545 (Ryugu structural OH); rc-576, 577 (LH2 and water prices as scenarios); rc-585, 586 (tank base and class multipliers); rc-596 (Didymos estimates); rc-658 (krypton ratios as assumptions); rc-679 (ArgonSC comment); rc-767 (Berthier et al. 2023 for ssoBFT); rc-774 (MPD, no RIAME test).
+- spacecost's notes for rc-656, 657, 659, 660 and 661 are in the same release; those candidates close with their frozen-row half in economicspace.
+- New value candidate rc-816: `tegeler_span_wagner_1999_argon_equation_of_state`, as CoolProp 8.0.0 implements it (EOS key Tegeler-JPCRD-1999), gives 313.480 kg/m3 and Z = 0.94109 at 293.15 K / 18 MPa against the stored ArgonSC 0.300 kg/L, 4.49% higher. The value move is held for owner review.
+
+Verdict: 22 closed as applied; rc-816 opened. Extracted data: extracted_data/r950_argon_supercritical_density_tegeler.csv.
+
 ## R833 — Latest frozen Stage 3 HTP price provenance
 
 - **economicspace_latest_stage3_htp_price_rows_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.14.0/propellants.csv, pipeline 1.23.6, catalog date 2026-10-17, rows 13-14): HTP monopropellant stores $5.00/kg and labels it an unsourced estimate pending re-sourcing; the HTP/RP-1 row stores $4.6875/kg and says it rests on the same unsourced HTP input.
