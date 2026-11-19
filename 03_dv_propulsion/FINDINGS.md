@@ -1,3 +1,16 @@
+## R986 — Spacecost propulsion and NRHO bibliography gaps (2026-11-19)
+
+- **mirtich_1982_resistojet_large_spacecraft_systems**: NASA TM-83489, printed p. 4, gives a generic system-mass relation, “PPU = 88 percent efficient” and a “20 percent assumed allowance for structure, feed lines, etc.” Spacecost’s Water resistojet row cites it while retaining 10 kg/N and 0.75 efficiency; the paper is a comparator, not support for those water-specific values (rc-852).
+- **spacecost_water_resistojet_bibliography_gap_code_current_2026**: At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8, the Water row points to NASA TM-83489 p. 4, but CITATIONS.md §2 lacks its full entry.
+- **whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept**: Printed p. 2 compares total ΔV of 1,500 m/s for NRHO, 1,600 for L2 Halo, and 1,800 for DRO; printed p. 3 says LLO was excluded from the remaining trade because its propellant load exceeded Orion capability. These are crewed staging-orbit results, not a depot ranking or direct support for Spacecost’s 450 m/s TLI-to-NRHO row (rc-853).
+- **spacecost_nrho_staging_bibliography_gap_code_current_2026**: At the same Spacecost main, reference/delta_v_segments.csv line 15 cites Whitley et al. (2017), GLEX-2017-3.2A.1 / NTRS 20170004964; CITATIONS.md §3 lines 242–244 has no entry for the paper.
+- **babic_et_al_1993_extended_duration_lunar_lander**: Printed p. 3 §2.3.1/Table 2.1 gives 3,140 m/s for an 185 km, 33° parking orbit and a four-day lunar transfer. Spacecost’s 3,600 m/s LEO-to-cislunar-NRHO row uses it as a TLI comparator, not a matched NRHO trajectory (rc-854).
+- **spacecost_nasa_cr_195527_bibliography_gap_code_current_2026**: At the same Spacecost main, reference/delta_v_segments.csv line 16 cites NASA-CR-195527/Table 2.1; CITATIONS.md §3 line 242 lacks the report title and NTRS link.
+
+Upstream cells: Water resistojet mass-per-thrust and efficiency; TLI → NRHO insertion (450 m/s); LEO → cislunar NRHO composite (3,600 m/s).
+
+Verdict: Open rc-852–854 for the missing full bibliography entries and stable links. No numeric replacement inferred. Extracted data: existing `extracted_data/r790_water_resistojet_mass_and_efficiency_citation_gap.csv`, `extracted_data/r944_nrho_depot_ranking_citation_scope.csv`, and `extracted_data/r892_spacevalue_cislunar_lunar_note_citation_gap.csv`.
+
 ## R985 — Spacecost propulsion bibliography and sail milestones applied upstream (2026-11-19)
 
 At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6, data contract 1.27.6; notes, comments and CITATIONS.md only), CITATIONS.md gains `oleson_mcguire_2011_compass_enceladus_sep_stage` (rc-829), `nasa_nextc_flight_ion_system_status_2020` (rc-830), `beaurain_et_al_2003_earth_to_orbit_rocket_propulsion_ntrs20030066115` (rc-831) and the four IEPC papers behind VASIMR and MPD (rc-845). The solar sail note says NEA Scout separated from SLS but its sail deployment was never confirmed, citing `nasa_nea_scout_status_update_2022` and `nasa_pds_nea_scout_lost_status_2022` beside the IKAROS, LightSail 2 and ACS3 records (rc-837). Every value column is unchanged.

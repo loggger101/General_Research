@@ -1,4 +1,6 @@
 # Research log
+- **Round 987** (2026-11-19): Closed nine Stage 2 worksheet candidates applied in economicspace #214 (master 1.84.0), which adds campaign/stage2/PROVENANCE.md and prints its limits beside matching worksheet inputs; no value or flag moved.
+- **Round 986** (2026-11-19): Opened rc-852–854 for missing full bibliography records in Spacecost’s Water resistojet and NRHO notes; the linked sources are scoped comparators and no numeric replacement is inferred.
 - **Round 985** (2026-11-19): Closed 26 citation candidates applied upstream (spacecost #53, 0.18.6; spacevalue #19, 0.8.2; AsteroidCatalog #37, 0.13.6; economicspace #213, master 1.83.0); no value moved, and Tempel 1's lower uncertainty now reads -0.23 as printed.
 - **Round 984** (2026-11-19): Opened rc-850 for Economicspace’s missing CODATA reference and rc-851 for its missing USGS OFR 2017-1041 bibliography entry; both are citation corrections, with no numeric replacement inferred.
 - **Round 983** (2026-11-19): Opened rc-849 for Spacevalue’s missing Cowen et al. reference in its bibliography; the cited terms remain a caveat, not a model value.
