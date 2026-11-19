@@ -360,3 +360,7 @@ spacecost 7bc46e959a7e73e9cb80c3798a38f0b4d5efac02 (PR #49, package 0.18.2, data
 - rc-662, rc-663, rc-671, rc-674: `ganguly_saxena_1989_volatile_bearing_carbonaceous_chondrites`, `muscatello_etal_2013_mars_atmospheric_processing_module`, `cme_comex_nymex_futures`, `imo_msc420_2016_methane_liquid_density` and `nist_s7101_52_cryogen_safety_2023`.
 
 Verdict: all fifteen closed as applied. Extracted data: none new.
+
+## R984 — Economicspace CODATA constant bibliography gap (2026-11-19)
+
+**tiesinga_2021_codata_2018_constants**: Table XXX, printed p. 44, lists the 2018 adjusted Newtonian constant as “6.674 30(15) × 10⁻¹¹” m³ kg⁻¹ s⁻². At Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9, `modules/calc.py` labels `_G_SI = 6.67430e-11` “CODATA 2018”; `CITATIONS.md`, the repository’s reference authority, has no Tiesinga/CODATA 2018 entry. Verdict: add the complete bibliography entry; no numeric change is inferred. This is separate from rc-681’s AsteroidCatalog citation gap. **rc-850**. Extracted: `extracted_data/r984_codata_citation_crosscheck.csv`.

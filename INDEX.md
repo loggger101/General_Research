@@ -1064,7 +1064,7 @@ _Backings: spacecost `reference/environments.csv` (solar flux, array mass factor
 | id | tier | source (short) | access | backs / could replace |
 |---|---|---|---|---|
 | kopp_lean_2011_total_solar_irradiance | T1 | A new, lower value of total solar irradiance: Evidence and climate significance — Geophysical Research Letters 38:L01706 | registered, not pulled | environments.csv solar_flux_w_per_m2 and solar_array_mass_factor for every row (1 AU total solar irradiance) |
-|  tiesinga_2021_codata_2018_constants | T1 | CODATA recommended values of the fundamental physical constants: 2018 — Reviews of Modern Physics 93:025010 | verified live, not hosted (PMC9890581 full text read R121; PMC statement allows text mining / fair use only - no redistribution) | environments.csv surface_gravity and escape_velocity (Newtonian constant of gravitation) |
+|  tiesinga_2021_codata_2018_constants | T1 | CODATA recommended values of the fundamental physical constants: 2018 — Reviews of Modern Physics 93:025010 | verified live, not hosted (PMC9890581 full text read R121; PMC statement allows text mining / fair use only - no redistribution) | environments.csv surface_gravity and escape_velocity (Newtonian constant of gravitation); Economicspace _G_SI citation (rc-850) |
 | iau_2012_resolution_b2_astronomical_unit | T3 | IAU 2012 Resolution B2 on the re-definition of the astronomical unit of length — International Astronomical Union, XXVIII General Assembly | full text hosted | environments.csv one_way_light_time_min (AU as a defined length) |
 | bipm_si_brochure_9th_edition | T3 | The International System of Units (SI Brochure, 9th edition): defined speed of light — Bureau International des Poids et Mesures | full text hosted | environments.csv one_way_light_time_min (defined value of c) |
 | nasa_nssdca_moon_fact_sheet | T3 | Moon Fact Sheet — NASA Space Science Data Coordinated Archive (NSSDCA) | full text hosted | environments.csv lunar mass, mean radius and synodic day; Economicspace CITATIONS.md and verification-sheet citation for R_MOON (rc-682 withdrawn) |
@@ -1123,6 +1123,8 @@ _Backings: spacecost `reference/environments.csv` (solar flux, array mass factor
 | rucker_2024_mars_surface_power_generation_challenges | T2 | Mars Surface Power Generation Challenges and Considerations — NASA white paper | verified live, not hosted | Typical mid-latitude surface cycle and approximately 50% illuminated time (rc-751) |
 | spacecost_mars_surface_dark_period_code_current_2026 | T4 | Spacecost Mars surface dark-period inputs (pinned snapshot) | verified live, not hosted | 24.66 h cycle and 0.50 light fraction lack a mapped source (rc-751) |
 | spacecost_phobos_surface_illumination_code_current_2026 | T4 | Spacecost Phobos surface cycle and dark-period input (pinned snapshot) | verified live, not hosted | 7.653 h cycle and 0.50 dark fraction lack a stated surface/Mars-shadow basis (rc-752) |
+| economicspace_codata_2018_citation_gap_code_current_2026 | T4 | Economicspace CODATA gravitational-constant citation snapshot | verified live, not hosted | modules/calc.py _G_SI; CITATIONS.md lacks Tiesinga et al. entry (rc-850) |
+
 
 ## Domain 13 — Astrodynamics methods, ephemerides & audited software
 
@@ -1483,7 +1485,7 @@ _Backings: `calc.py` mining and beneficiation fields (mining rate, rig mass, dur
 | spacevalue_phosphate_grinding_energy_code_current_2026 | T4 | Spacevalue phosphate-phase processing-energy code record | verified live, not hosted | rc-453: 1.0 kWh/kg for phosphates and hibonite; phosphate comparator does not establish asteroid or hibonite process energy |
 | spacevalue_inspace_energy_lifetime_utilization_code_current_2026 | T4 | Spacevalue in-space energy-cost lifetime and utilization code record | verified live, not hosted | $800/W divided by 15 years of full output gives ≈$6.08/kWh; no availability factor (rc-482) |
 | economicspace_max_mining_fraction_current_2026 | T4 | Economicspace maximum mining fraction input | verified live, not hosted | rc-491: default 1.0 is a mission ceiling, not sourced recoverable reserves |
-| usgs_keszthelyi_etal_2017_asteroid_resource_assessment_feasibility | T2 | USGS asteroid mineral-resource feasibility study (OFR 2017-1041) | verified live, not hosted | resource assessment is incomplete; no universal one-mission extraction fraction (rc-491) |
+| usgs_keszthelyi_etal_2017_asteroid_resource_assessment_feasibility | T2 | USGS asteroid mineral-resource feasibility study (OFR 2017-1041) | verified live, not hosted | resource assessment is incomplete; no universal one-mission extraction fraction (rc-491); Economicspace bibliography (rc-851) |
 | weber_greer_1965_serpentine_heat_of_dehydration | T1 | Weber & Greer, “Dehydration of Serpentine: Heat of Reaction and Reaction Kinetics” (American Mineralogist 50, 450–464) | verified live, not hosted | Table 2: 87.6/98.9/135 cal/g for antigorite/chrysotile/lizardite; compare Spacecost’s 250 kJ/kg-rock term (rc-588) |
 | ethridge_2016_leag_rf_water_extraction_poster | T2 | Ethridge, “Experiments for Prospecting and Mining Water from Lunar Permafrost from Boreholes using RF” (LEAG 2016 poster #5024) | verified live, not hosted | Reports ice/borehole extraction rates; bound-water yield in carbonaceous simulant lacks a separate energy rate (rc-588) |
 | spacecost_water_liberation_energy_code_current_2026 | T4 | Spacecost water-liberation row and code at main commit a401930 | verified live, not hosted | Water liberation energy is 2,500 Wh/kg [1,000, 5,000]; note gives unreferenced terms and a 1–3 kWh/kg literature claim (rc-588) |
@@ -1504,6 +1506,8 @@ _Backings: `calc.py` mining and beneficiation fields (mining rate, rig mass, dur
 | economicspace_lunar_surface_stage2_refining_energy_1_15_0_current_2026 | T4 | Economicspace lunar-surface refining-energy rows (1.15.0) | verified live, not hosted | Enstatite and plagioclase remain 1.0 kWh/kg; route basis unresolved (rc-634) |
 | economicspace_refining_energy_sheet_code_main_2026 | T4 | Economicspace refinery worksheet citation path (current main) | verified live, not hosted | Refining input backing follows Stage 2 row notes (rc-634) |
 | spacevalue_refining_energy_map_main_2026 | T4 | Spacevalue current in-space processing-energy map | verified live, not hosted | Enstatite/plagioclase 1.0 are raw-feed scenarios without route calculation (rc-634) |
+| economicspace_usgs_ofr_2017_1041_citation_gap_code_current_2026 | T4 | Economicspace USGS resource-assessment citation snapshot | verified live, not hosted | max_mining_fraction comment cites OFR 2017-1041; CITATIONS.md lacks full entry (rc-851) |
+
 ## Domain 20 — Mission operations, communications & ground segment
 
 _Backings: `operational_costs.csv` mission operations, DSN time, downlink and depot berthing rows. Also relevant: `planetary_society_pebd_mission_costs` (d07)._

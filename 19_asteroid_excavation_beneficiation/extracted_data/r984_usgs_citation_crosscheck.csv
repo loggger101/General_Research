@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_keszthelyi_etal_2017_asteroid_resource_assessment_feasibility;economicspace_usgs_ofr_2017_1041_citation_gap_code_current_2026,Feasibility scope cited by max_mining_fraction comment,“does not include a complete and robust analysis of uncertainty”,report scope,"Abstract, printed p. 1",The report tests adapting Earth resource-assessment methods to asteroids. Economicspace cites OFR 2017-1041 for method/feasibility context; rc-491 separately covers interpretation of the 1.0 no-depletion ceiling.
