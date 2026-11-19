@@ -1,3 +1,8 @@
+## R954 — Spacecost package release travels with built tables (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `build.py` writes `build_manifest.json` beside the generated tables with `package_version`, `pipeline_version`, `catalog_date` and the output file list (`spacecost_package_release_output_provenance_code_current_2026`; rc-773). The CSV value columns are not changed by this manifest.
+
+Verdict: the package release identifier is available with the build. Extracted data: none new.
 # Domain 21 — Spacecraft mass & recurring-cost estimating relationships
 
 Backings: spacecost `reference/operational_costs.csv` recurring $/kg rows (mining payload, return capsule, berthing adapter, surface lander, heat shield / TPS, expendable upper stage, propellant tank) and economicspace `modules/calc.py` sizing fields `return_vehicle_dry_kg`, `return_structure_frac_of_payload`, `heat_shield_frac_of_payload` and `nre_recurring_overlap_fraction`.

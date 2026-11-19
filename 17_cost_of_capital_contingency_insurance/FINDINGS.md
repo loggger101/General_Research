@@ -1,3 +1,8 @@
+## R954 — Spacecost contingency default no longer described as a standard (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `SpacecostConfig.contingency_fraction = 0.20` remains the model default. Its comment no longer calls 20% an industry standard or 35–50% first-of-kind guidance; Whitley & Shinn 2012 and NRC 2010 are identified as comparators, not evidence for those contingency bands (`spacecost_contingency_default_code_current_2026`; `whitley_shinn_2012_economics_nasa_mission_cost_reserves`; `nrc_2010_controlling_cost_growth_nasa_earth_and_space_science_missions`; rc-813).
+
+Verdict: the unsupported standard claim is removed; the model default is unchanged. Extracted data: none new.
 # Domain 17 — Cost of capital, contingency & insurance
 
 Backings: spacecost `reference/operational_costs.csv` rows `Cost of capital (WACC)`, `Contingency reserve`, `Launch insurance` and `Third-party liability insurance`, and economicspace `modules/calc.py` `contingency_fraction`, `apply_wacc_compounding` and `charge_insurance`.

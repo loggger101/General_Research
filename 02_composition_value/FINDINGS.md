@@ -1,3 +1,8 @@
+## R954 — Spacevalue IIIAB bulk fractions labeled analyst-selected (2026-11-19)
+
+At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, the nickel-iron row retains Fe/Ni/Co fractions 0.900/0.090/0.005 but calls the IIIAB analogue analyst-selected and says no table or sample set is cited for those fractions. Lodders 2003 and Walker 2012 are scoped to the trace-PGM terms, not the bulk vector (`spacevalue_fe_ni_major_yields_code_current_2026`; `scott_wasson_1975_classification_properties_iron_meteorites`; `lodders_2003_solar_abundances_condensation_temperatures`; rc-815).
+
+Verdict: the vector's status and the scope of adjacent citations are explicit; values are unchanged. Extracted data: none new.
 ## R938 — AsteroidCatalog composition scenario labels applied upstream (2026-11-18)
 
 AsteroidCatalog 18fc306b335e785f59612ade12dcc7b3254ba214 (PR #35, package 0.13.4, data contract 1.11.0 unchanged). Comments, CITATIONS.md and the changelog only; `taxonomy.py` and `mineralogy.py` parse to the same ASTs as a626c81, so no output moved.

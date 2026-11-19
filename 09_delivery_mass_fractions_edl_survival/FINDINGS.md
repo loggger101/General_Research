@@ -1,3 +1,8 @@
+## R954 — Spacevalue Mars entry-survival comparator cited upstream (2026-11-19)
+
+At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, the Mars-surface note retains 0.30 and describes it as an approximate MSL / Perseverance entry-to-rover ratio: 899/3,153 kg = 28.5% and 1,026/3,369 kg = 30.5%. Entry masses are attributed to Edquist et al. 2022 Table 3, PDF p. 14; rover masses to the JPL MSL fact sheet and NASA Mars 2020 flight-mechanics paper (`edquist_2022_mars2020_aerothermal_entry_masses`; `jpl_msl_factsheet_curiosity_mass`; `nasa_mars2020_flight_mech_edl_simulation`; rc-770).
+
+Verdict: the two measured analogues and their limits are named; the 0.30 value is unchanged. Extracted data: none new.
 # Domain 9 — In-space delivery mass fractions & EDL survival (R54)
 
 ## R891 — Spacevalue Mars-surface entry-survival citation trail (2026-11-18)

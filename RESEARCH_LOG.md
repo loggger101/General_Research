@@ -1,4 +1,9 @@
 # Research log
+- **Round 956** (2026-11-19): Opened rc-819 for AsteroidCatalog’s 0.02 cross-source rotation-period agreement cutoff; its precision rationale has no paired-source calibration.
+- **Round 955** (2026-11-19): Rechecked the Ariane 6 price basis and eclipse dark-time scope against current Spacecost and Economicspace provenance.
+- **Round 954** (2026-11-19): Rechecked cross-repo citation candidates against current Spacecost, AsteroidCatalog and Spacevalue notes.
+- **Round 953** (2026-11-19): Opened rc-818 for AsteroidCatalog’s 0.10 diameter and 0.25 albedo agreement cutoffs: Mainzer’s per-fit NEOWISE errors do not establish pairwise catalog residuals, and its minimum albedo error is about 20%.
+- **Round 952** (2026-11-19): Opened rc-817 for AsteroidCatalog’s 0.25 cross-source mass cutoff: Carry’s cited density-precision summary does not calibrate pairwise source-mass disagreement.
 - **Round 951** (2026-11-19): Closed 25 economicspace candidates (PR #211, master 1.81.0; worksheet text, comments and the frozen-table provenance file, no number moved); rc-651 and rc-777 stay open.
 - **Round 950** (2026-11-19): Closed 22 spacecost candidates (PR #51, 0.18.4, data contract 1.27.4; notes and comments only, no value moved) and opened rc-816: the reference argon equation of state puts supercritical argon at 0.3135 kg/L, 4.5% above the stored 0.300.
 - **Round 949** (2026-11-18): Opened rc-815 for Spacevalue’s nickel-iron Fe/Ni/Co vector: the code calls it a typical IIIAB analogue but gives no table-level source for the 90/9/0.5% fractions; adjacent author-year citations are for PGM traces.
