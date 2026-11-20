@@ -448,3 +448,18 @@ Verdict: rc-300 closed as applied. Extracted data: none new.
 At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (PR #55, 0.18.8, data contract 1.27.8; notes and CITATIONS.md only), the electric propulsion recurring-cost note adds NASA Glenn's $67M AEPS contract beside the $18.41M NEXT-C one, says neither divides into a recurring unit price, and labels the $10-15M per-string anchor an unsourced judgement and $1.5M/kW a scenario (rc-299). Value unchanged.
 
 Verdict: rc-299 closed as applied. Extracted data: none new.
+
+## R998 — Electric thruster mass attribution rechecked (2026-11-19)
+
+`spacecost_electric_thruster_ppu_specific_mass_current_2026`: Spacecost 0.18.8 retains 8 [5, 15] kg/kW input electrical power in `operations.py` line 385 and `reference/operational_costs.csv` row 25. The operations note assigns 12.7 kg to NEXT-C and says the thruster mass has no registered source, while marking the combined row superseded for Module 4 v1.12.0 and retained for a stale catalog. `CITATIONS.md` identifies the 12.7 kg bare / 13.5 kg harnessed thruster as NEXT PM1 (Oleson & McGuire, printed pp. 37-38) and NEXT-C as “approximately 14 kg” (Fisher et al., Table 1 p. 4 and p. 5). The NEXT-C PPU paper gives 34.5 kg (Table 2 p. 4), but its Table 2 labels 7.4 kW maximum output while its text and Table 3 say 7.0 kW. Those component figures do not establish the row's broader gimbals, xenon/argon feed, tankage and thermal boundary or its [5, 15] range (`rc-865`).
+
+`spacecost_package_release_output_provenance_code_current_2026`: Spacecost 0.18.8 `build.py` still writes `build_manifest.json` with package version, data contract, catalog date and output filenames; `CITATIONS.md` §9 asks users to cite the package release and data contract (`rc-773`). The manifest continues to carry both identifiers.
+
+**Verdict:** keep **rc-865** open; **rc-773** remains applied at the current release. Retain the electric-mass row only as a superseded fallback pending a supported attribution and integrated basis; no numeric replacement inferred. Extracted: `extracted_data/r998_electric_thruster_system_mass_basis.csv`; `extracted_data/r998_spacecost_build_manifest_recheck.csv`.
+
+## R999 — Economicspace result and worksheet provenance recheck (2026-11-19)
+
+- economicspace_profitability_output_git_commit_provenance_code_current_2026: Economicspace main 17650892376136bc91f2124525735a14363e7c3c still states in CITATIONS.md section 8 that quoted results need pipeline_version, catalog_date and the Git commit. Stage 4 calc.py writes only the first two; the GUI run manifest records stage versions and configuration but no commit (rc-777).
+- economicspace_verification_sheet_commit_provenance_code_current_2026: Current campaign/verification_sheet.py at main 17650892376136bc91f2124525735a14363e7c3c emits the Git commit in its footer. The supplied verification_sheet.pdf p. 1 says it was built 2026-11-16 with calc 1.46.0 and lists the Stage 1, Stage 2 and Stage 3 releases. Its p. 48 footer says “Generated 2026-11-16 from lunar_surface__benef__search-on__calc-1.46.0.csv.gz” and prints no commit. The page-48 summary reports 114 rows marked “needs backing.” This is a 2026-11-16 output snapshot: current main's campaign/verification_sheet.py footer now includes the Git commit, so the applied rc-782 generator fix remains in place; the supplied PDF predates it.
+- Verdict: Keep rc-777 open; rc-782 remains applied in current generator code. No model values changed.
+- Extracted: extracted_data/r999_economicspace_stage4_and_sheet_provenance_recheck.csv.

@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_beneficiation_energy_row_current_2026,beneficiation energy point;range_low;range_high,500;100;2000,Wh/kg refined product,"Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a, reference/operational_costs.csv row 52",Current note calls the asteroid estimate unsourced; DOE comparator remains terrestrial and feed/ore-basis.
+economicspace_beneficiation_energy_verification_sheet_code_current_2026,verification_sheet beneficiation field,C[benef_wh],worksheet field,"Economicspace main 17650892376136bc91f2124525735a14363e7c3c, campaign/verification_sheet.py lines 3528-3530",Code labels the field beneficiation energy and calls cite_ops for the matching operational-cost row.

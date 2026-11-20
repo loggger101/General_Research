@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_package_release_output_provenance_code_current_2026,Current build manifest identifiers,package_version; pipeline_version; catalog_date; files,JSON fields,Spacecost 0.18.8 spacecost/build.py lines 132-139,CITATIONS.md §9 asks users to cite package version and data contract; current manifest supplies both

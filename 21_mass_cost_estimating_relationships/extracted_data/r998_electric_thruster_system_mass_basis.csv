@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_electric_thruster_ppu_specific_mass_current_2026,Electric thruster + PPU specific mass row,"8 [5, 15]",kg/kW input electrical power,Spacecost 0.18.8 spacecost/operations.py line 385 and reference/operational_costs.csv row 25,"Row note includes thruster, PPU, gimbals, feed system, tankage and thermal; marked superseded for Module 4 v1.12.0, retained as stale-catalog fallback"
+oleson_mcguire_2011_compass_enceladus_sep_stage,NEXT PM1 thruster mass,12.7 bare; 13.5 with harnesses,kg,"NASA/TM-2011-216973, printed pp. 37-38","NEXT PM1 predecessor hardware, not NEXT-C"
+nasa_nextc_flight_ion_system_status_2020,NEXT-C thruster mass,approximately 14,kg,"Fisher et al., NTRS 20205005689, Table 1 p. 4 and p. 5",NEXT-C hardware; distinct from 12.7 kg PM1 figure
+nextc_ppu_2020,NEXT-C PPU prototype mass,34.5,kg,"The NEXT-C Power Processing Unit, NTRS 20205004248, Table 2 p. 4",The paper's Table 2 labels 7.4 kW max output; its text and Table 3 say 7.0 kW
+,Computed mixed-component proxy,(12.7 + 34.5) / 7 = 6.74,kg/kW,Computed here from NEXT PM1 pp. 37-38 and NEXT-C PPU Table 2 p. 4,Mixes predecessor thruster with NEXT-C PPU; excludes row's other hardware and is not a full-system replacement

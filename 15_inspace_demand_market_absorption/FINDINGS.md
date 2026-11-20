@@ -631,3 +631,11 @@ Verdict: rc-823 applied by scenario labeling and explicit sensitivity; no numeri
 At Spacevalue main 10f05f683c14121cf4b5b7f580b4eaf5bac82d0d (PR #21, 0.8.4), the water utility comment names the hydrolox electrolysis route (`nasa_ptd1_hydros_c_water_electrolysis_2021`) and the direct resistojet route (`asakawa_aquarius_onorbit_2024`) instead of calling electrolysis the only step, and CITATIONS.md gains both (rc-864). Utility factors unchanged.
 
 Verdict: rc-864 closed as applied. Extracted data: none new.
+
+## R1000 — Verification-sheet I84 beneficiation locator (2026-11-19)
+
+**economicspace_current_bestcase_verification_sheet_2026**: page 42 of the supplied verification sheet maps I84 to beneficiation energy, 500 [100, 2,000] Wh/kg refined product, and marks it “NEED BACKING.” The p.48 footer dates the generated snapshot to 2026-11-16 and names `lunar_surface__benef__search-on__calc-1.46.0.csv.gz`; it is not a fresh worksheet run.
+
+**spacevalue_annual_demand_class_share_code_current_2026**: at Spacevalue main `21528385332d10ae81dfbcfe6e97ce6077bdc3d9` (0.8.6; data contract 1.22.1), `spacevalue/catalog.py` still stores LEO `annual_market_kg=500,000` and GEO `annual_market_kg=44,600`. The LEO note compares 500,000 kg/year with Howard's 1,404 t/year DSEV architecture and calls it “one architecture's modelled capacity, not a market.” The GEO note retains the 613-payload, approximately 72.7 kg/year basis and records alternatives of 585 CelesTrak whole-orbit GEO±300 km payloads (602 by mean altitude) and 524 in GCAT's same envelope; no filter/catalog rule is selected.
+
+Verdict: I84 remains NEED BACKING under **rc-291**; **rc-290** and **rc-381** remain open for the GEO fleet/filter and LEO market-capacity bases. No numeric replacement inferred. Extracted: `extracted_data/r1000_verification_sheet_i84_beneficiation.csv`; `extracted_data/r1000_spacevalue_annual_demand_rechecks.csv`.

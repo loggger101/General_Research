@@ -1,0 +1,2 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_power_system_specific_mass_code_current_2026,complete_power_system_specific_mass_point;range_low;range_high,60;30;150,W/kg at 1 AU,"Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a, reference/operational_costs.csv row 23","System boundary is PV wing, PMAD, battery and deployment structure; note gives no system-level calculation or BOL/EOL basis."

@@ -754,3 +754,10 @@ Verdict: rc-605, rc-606, rc-607, rc-608, rc-814, rc-817, rc-818, rc-819, rc-820 
 At AsteroidCatalog main 8bdd8dbdd326d8c6150106fa5bc96f51d2fe2698 (PR #40, 0.13.9), the screen and agreement sensitivity figures cite R993 and extracted_data/r993_asteroidcatalog_screen_agreement_sensitivity.csv instead of R991 (rc-862). Values unchanged.
 
 Verdict: rc-862 closed as applied. Extracted data: none new.
+
+## R999 — AsteroidCatalog MP3C version provenance (2026-11-19)
+
+- mp3c_minor_planet_physical_properties_catalogue: MP3C documentation directs users to query mp3c_main.version to record the database version.
+- asteroidcatalog_mp3c_version_capture_code_current_2026: At AsteroidCatalog main 8bdd8dbdd326d8c6150106fa5bc96f51d2fe2698 (0.13.9), fetch_mp3c() still requests mp3c_main.best joined to mp3c_main.body and the mp3c_main.name alias table only. The release manifest records source counts but no per-build MP3C version.
+- Verdict: Keep rc-772 open; the registry's standalone MP3C version observation is not release-specific. No catalog values changed.
+- Extracted: extracted_data/r999_asteroidcatalog_mp3c_version_provenance_recheck.csv.

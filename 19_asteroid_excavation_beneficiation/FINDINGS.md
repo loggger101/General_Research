@@ -731,3 +731,16 @@ Verdict: rc-851 closed as applied. Extracted data: none new.
 At Economicspace main e354cdda8d5471a04a78509de78def8f4ef2a6b9 (PR #214, master 1.84.0), the new `campaign/stage2/PROVENANCE.md`, mirroring the Stage 3 file, records refining_kwh_per_kg per kg of raw feed as engineering allowances and scenarios against Vogl et al., Liu et al. and Gull et al. (rc-634); in_space_processing_usd_per_kg as the c_ref formula whose power, plant and throughput components are spacecost estimates (rc-642); and the terrestrial prices, distinguishing a missing quote from a zero price and the plagioclase feldspar comparator (rc-643). The same values in the pinned prices-2026-11-12 lunar_surface release get the same entries. The verification worksheet prints the entry beside any Stage 2 input whose row carries the recorded value, in a span its backing check strips, so each input stays NEED BACKING. No frozen CSV byte or value moves.
 
 Verdict: rc-634, rc-642, rc-643 closed as applied. Extracted data: none new.
+
+## R998 — In-space processing throughput rechecked (2026-11-19)
+
+`spacecost_in_space_processing_plant_throughput_row_current_2026`: Spacecost 0.18.8 `reference/operational_costs.csv` row 68 remains 100 [20, 500] kg processed/year/kg plant. Its note says terrestrial smelters run 1,000x their own mass per year and adds “no source is given for this”; 100x is called a heavy derating. `han_2022_lustr_lunar_regolith_beneficiation_system` gives a lunar brassboard design target of “at least 3 kg/h” at under 35 kg system mass (NASA LuSTR overview chart, Development Objectives, p. 1), not an asteroid refinery duty-cycle basis (`rc-383`).
+
+**Verdict:** keep **rc-383** open; no numeric replacement inferred. Extracted: `extracted_data/r998_spacecost_throughput_recheck.csv`.
+
+## R1000 — Current Spacecost beneficiation row recheck (2026-11-19)
+
+- **spacecost_beneficiation_energy_row_current_2026**: at Spacecost main `ef3e214dccff73adf541ed70444df52575b5b97a` (0.18.8; data contract 1.27.8), `reference/operational_costs.csv` row 52 remains 500 [100, 2,000] Wh/kg refined product. Its note calls the asteroid estimate “unsourced for asteroid material”; the DOE comparison is a terrestrial ore/feed figure and does not give a matched asteroid product-energy value.
+- **economicspace_beneficiation_energy_verification_sheet_code_current_2026**: Economicspace main `17650892376136bc91f2124525735a14363e7c3c`, `campaign/verification_sheet.py` lines 3528-3530, labels `C["benef_wh"]` as beneficiation energy and calls `cite_ops` for the corresponding operational-cost row.
+
+Verdict: **rc-291** remains open for matched scale and refined-product purity evidence; no numeric replacement inferred. Extracted: `extracted_data/r1000_beneficiation_current_row_recheck.csv`.
