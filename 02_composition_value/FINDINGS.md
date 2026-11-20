@@ -1,3 +1,7 @@
+## R1003 — Current AsteroidCatalog main preserves Ni-Fe fallback data (2026-11-19)
+
+`asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026`: AsteroidCatalog 0.13.12 main `f360a3c02daabee87a7dd225a6cb76966e792ecf` retains the generic 0.89/0.11 kamacite/taenite fallback; its detailed-phase table blob `09da1fd7a1a791ea3ef0c6f9a699dff7589a8aa9` is unchanged. The intervening release-note commit adds conditional MP3C acknowledgment and does not modify `mineralogy.py` or the detailed-phase CSV. **rc-699 remains applied; no replacement values inferred.** Extracted data: `extracted_data/r1003_asteroidcatalog_ni_fe_fallback_current_head_check.csv`.
+
 ## R1001 — AsteroidCatalog Ni-Fe fallback sensitivity documented (2026-11-19; rc-699)
 
 - **asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026:** AsteroidCatalog 0.13.11 (`mineralogy.py` lines 551-564) calls `_ALLOY_OCTAHEDRITE` a “generic fallback, not a class measurement.” It keeps kamacite 0.89 / taenite 0.11 of the nickel-iron parent and reports contained-element values of $4.59/kg for all kamacite, $5.15/kg for the fallback, and $6.89/kg at a 0.45 taenite share; Earth-delivered metal value spans -11% to +34%, while each phase has the same $4,835/kg cislunar structural price. The R828 and current detailed-phase table blobs match; the changelog says comments and docs only and the mineralogy AST is identical.
