@@ -1,3 +1,11 @@
+## R1003 — Search-grid and fleet-cap checks remain open (2026-11-19)
+
+`economicspace_search_resolution_controls_2026`: Economicspace 1.84.2 main `aa5bd714b06d3ac2e0ed4c25498707e57a966721` retains `concentration_search_steps=7` with the comment “7 puts the optimum within a few percent” (`modules/calc.py:408-409`) and `programme_search_steps=8` (`:1137`). The current worksheet registers these dials at `campaign/verification_sheet.py:4602-4603` and `:4654-4655`; supplied 2026-11-16 verification_sheet.pdf p.48 flags I108=7 and I110=8 NEED BACKING. It gives no dense/adaptive-search error comparison. **rc-498 remains open.**
+
+`economicspace_fleet_search_cap_code_current_2026`: `max_fleet_ships=64` remains a search termination bound, not a physical limit (`modules/calc.py:1122-1130`); the output diagnostic counts results at the cap and warns when it binds (`:10498-10510`). The same PDF p.48 flags I109=64 NEED BACKING. Its 2018 DT winner at F=1 is not an all-catalog cap-sensitivity result. **rc-574 remains open.**
+
+Extracted data: `extracted_data/r1003_economicspace_search_controls_recheck.csv`.
+
 ## R954 — AsteroidCatalog U definition and Spacevalue timing claim scoped upstream (2026-11-19)
 
 - rc-809: AsteroidCatalog main d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8 adds the MPC's “Uncertainty Parameter U and Orbit Quality Codes” documentation beside the JPL field reference. It defines U on a 0–9 scale and cautions that U does not predict future positional uncertainty for near-Earth objects (`mpc_uncertainty_parameter_u_documentation`).

@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,kamacite parent-group share,0.89,fraction,asteroid_catalog/mineralogy.py:551-564,Generic fallback; no class-specific ratio or new value in 0.13.12.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,taenite parent-group share,0.11,fraction,asteroid_catalog/mineralogy.py:551-564,Generic fallback; detailed-phase CSV Git blob remains 09da1fd7a1a791ea3ef0c6f9a699dff7589a8aa9.
