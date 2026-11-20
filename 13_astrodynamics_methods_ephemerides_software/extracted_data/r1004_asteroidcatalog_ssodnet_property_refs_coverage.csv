@@ -1,0 +1,13 @@
+source_id,item,value,unit,location_in_source,notes
+imcce_ssodnet_orbital_metadata_api,bodies mapped (SsODNet mass or density),541,bodies,AsteroidCatalog 0.13.13 ssodnet_refs.property_refs on ssoBFT-latest_Asteroid.parquet (2026-11-19) and live ssoCards,scope of the map
+imcce_ssodnet_orbital_metadata_api,property rows,3068,rows,AsteroidCatalog 0.13.13 ssodnet_refs.property_refs on ssoBFT-latest_Asteroid.parquet (2026-11-19) and live ssoCards,
+imcce_ssodnet_orbital_metadata_api,rows resolved: absolute_magnitude_h,541,rows,AsteroidCatalog 0.13.13 ssodnet_refs.property_refs on ssoBFT-latest_Asteroid.parquet (2026-11-19) and live ssoCards,of 541; card value agrees with imported on all
+imcce_ssodnet_orbital_metadata_api,rows resolved: albedo,503,rows,AsteroidCatalog 0.13.13 ssodnet_refs.property_refs on ssoBFT-latest_Asteroid.parquet (2026-11-19) and live ssoCards,of 503; card value agrees with imported on all
+imcce_ssodnet_orbital_metadata_api,rows resolved: density_gcm3,512,rows,AsteroidCatalog 0.13.13 ssodnet_refs.property_refs on ssoBFT-latest_Asteroid.parquet (2026-11-19) and live ssoCards,of 512; card value agrees with imported on all
+imcce_ssodnet_orbital_metadata_api,rows resolved: diameter_km,503,rows,AsteroidCatalog 0.13.13 ssodnet_refs.property_refs on ssoBFT-latest_Asteroid.parquet (2026-11-19) and live ssoCards,of 503; card value agrees with imported on all
+imcce_ssodnet_orbital_metadata_api,rows resolved: estimated_mass_kg,532,rows,AsteroidCatalog 0.13.13 ssodnet_refs.property_refs on ssoBFT-latest_Asteroid.parquet (2026-11-19) and live ssoCards,of 532; card value agrees with imported on all
+imcce_ssodnet_orbital_metadata_api,rows resolved: spectral_type,477,rows,AsteroidCatalog 0.13.13 ssodnet_refs.property_refs on ssoBFT-latest_Asteroid.parquet (2026-11-19) and live ssoCards,of 477; card value agrees with imported on all
+imcce_ssodnet_orbital_metadata_api,bodies retried by number (ssoBFT id is U+FFFD-garbled),2,bodies,AsteroidCatalog 0.13.13 ssodnet_refs.property_refs on ssoBFT-latest_Asteroid.parquet (2026-11-19) and live ssoCards,"469705 and 229762, names with click consonants"
+imcce_ssodnet_orbital_metadata_api,ssoBFT bodies with a diameter (not mapped),149506,bodies,ssoBFT parquet diameter.value non-null,reference via ssoCard of ssodnet_id
+imcce_ssodnet_orbital_metadata_api,ssoBFT bodies with a taxonomy class (not mapped),171110,bodies,ssoBFT parquet taxonomy.class non-null,reference via ssoCard of ssodnet_id
+imcce_ssodnet_orbital_metadata_api,"ssoCard size, Ceres",23438,bytes,"ssocard/Ceres, 2026-11-19",why the full table is not mapped per build
