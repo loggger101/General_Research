@@ -289,7 +289,7 @@ _Backings: AsteroidCatalog material fractions and spacevalue `catalog.py` minera
 | asteroidcatalog_ttype_silicate_phase_mapping_code_current_2026 | T4 | AsteroidCatalog T-type silicate phase mapping | verified live, not hosted | T: all 0.40 coarse silicate remains generic “silicates”; no mineral split (rc-650) |
 | asteroidcatalog_pgm_enrichment_fallback_code_current_2026 | T4 | AsteroidCatalog PGM fallback and subtype lookup code | verified live, not hosted | Unknown/unlisted types default to 1.0; scope label review (rc-685) |
 | economicspace_lunar_surface_stage2_release_rows_current_2026 | T4 | Economicspace current lunar-surface Stage 2 price release | verified live | annual_market_kg outputs consumed at I103-I105; row notes do not source market absorption (rc-726) |
-| asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026 | T4 | AsteroidCatalog unresolved Ni-Fe phase fallback | verified live, not hosted | Class-level 0.89/0.11 detailed outputs for unsourced mappings (rc-699) |
+| asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026 | T4 | AsteroidCatalog generic Ni-Fe fallback and sensitivity | verified live, not hosted | Unmeasured class splits retained at 0.89/0.11; Earth/cislunar sensitivity documented (rc-699) |
 | asteroidcatalog_ci_sulfide_split_code_current_2026 | T4 | AsteroidCatalog current CI sulfide split in PHASE_DETAIL | verified live, not hosted | 70/30 CI split remains no-source assumption in B/C/Cb/F; rechecked under rc-172 (R837) |
 | spglobal_2025_co2_commodity_market_demand | T4 | S&P Global CO2 demand and merchant-market volume | verified live, not hosted | ~30 MMt/y merchant vs 270 MMt total demand; rc-526 |
 | asteroidcatalog_ltype_bibliography_entry_current_2026 | T4 | AsteroidCatalog L-type JWST bibliography snapshot | verified live, not hosted | CITATIONS.md gives author/year/topic only; title and DOI are missing (rc-797) |
@@ -945,7 +945,7 @@ _Backings: economicspace `mineral_value_catalog.csv` `ref_price_usd_per_kg` for 
 | economicspace_mineral_value_1_15_live_quote_rows_2026 | T4 | Economicspace Stage 2 1.15.0 lunar-surface futures-derived metal prices | verified live, not hosted | Converted live $/kg outputs and 2026-09-29 yfinance ticker/date labels (rc-702) |
 | economicspace_verification_sheet_live_quote_citation_check_2026 | T4 | Economicspace verification-sheet live quote citation check | verified live, not hosted | Ticker/date label counts as a source; raw close is not checked (rc-702) |
 | yahoo_finance_futures_history_2026 | T4 | Yahoo Finance historical prices for GC=F, HG=F, PA=F, PL=F and SI=F | verified live, not hosted | Current 2026-09-29 rows differ from reconstructed snapshot closes (rc-702) |
-| spacevalue_single_destination_build_output_provenance_code_current_2026 | T4 | Spacevalue standalone-build and release-manifest path | verified live, not hosted | `build` CSV lacks the release/package identifiers required by CITATIONS.md (rc-776) |
+| spacevalue_single_destination_build_output_provenance_code_current_2026 | T4 | Spacevalue standalone-build and release-manifest path | verified live, not hosted | Standalone build manifest names package, data contract and source snapshot for citation (rc-776 applied) |
 | spacevalue_terrestrial_water_market_ceiling_code_main_2026 | T4 | Spacevalue Earth-water annual-market ceiling (main) | verified live, not hosted | 1e15 kg/year equals unlimited-market sentinel; Earth-surface value path (rc-824) |
 | economicspace_earth_surface_market_ceiling_path_code_main_2026 | T4 | Economicspace Earth-surface market-ceiling path (main) | verified live, not hosted | Earth-surface production ceilings 1e12-1e15 kg/year; no water-specific basis (rc-824) |
 
@@ -1172,6 +1172,7 @@ _Backings: economicspace `orbital.py` (`elements_to_state`, for the dashboard's 
 | asteroidcatalog_mpc_identity_link_release_attribution_code_current_2026 | T4 | AsteroidCatalog MPC identity-link citation and release metadata | verified live, not hosted | MPC designation links are absent from merged source counts and generated release notes (rc-778) |
 | mpc_uncertainty_parameter_u_documentation | T3 | MPC, “Uncertainty Parameter U and Orbit Quality Codes” | verified live, not hosted | Defines U scale and calculation cited by AsteroidCatalog condition_code (rc-809) |
 | asteroidcatalog_condition_code_mpc_u_citation_gap_code_current_2026 | T4 | AsteroidCatalog condition_code citation-guide snapshot | verified live, not hosted | CITATIONS.md names MPC authority but lacks its U-definition link (rc-809) |
+| asteroidcatalog_mp3c_acknowledgment_release_notes_code_current_2026 | T4 | AsteroidCatalog MP3C acknowledgement and release-note code snapshot | verified live, not hosted | MP3C asks for by-name acknowledgement; generated notes mention SsODNet and NEOWISE only (rc-866) |
 
 ## Domain 14 — Propellant & consumable prices
 
@@ -1305,7 +1306,7 @@ _Backings: spacevalue `catalog.py` `IN_SPACE_UTILITY` (market side), `IN_SPACE_A
 | byers_1989_advanced_onboard_propulsion_tm103174 | T2 | Byers, NASA TM-103174 | verified live | 40–50% apogee propellant share of GTO injected mass |
 | economicspace_surplus_price_fraction_code_current_2026 | T4 | economicspace current surplus-price fraction (main 3ed7b36) | read, not hosted | rc-465: default 0.5 has no market-study basis; review as a scenario or supply matched evidence |
 | economicspace_surplus_price_fraction_verification_current_2026 | T4 | economicspace verification worksheet backing audit (main 3ed7b36) | read, not hosted | rc-465: input I110=0.5 is marked NEED BACKING |
-| spacevalue_annual_demand_class_share_code_current_2026 | T4 | Spacevalue in-space demand and class-share scenarios (code) | verified live | Current lunar_surface I103-I105 scenario formula (rc-726); cislunar/Mars allocation context (rc-636; rc-653; rc-655) |
+| spacevalue_annual_demand_class_share_code_current_2026 | T4 | Spacevalue in-space demand and class-share scenarios (code) | verified live | Current LEO/GEO annual-demand ceilings (rc-290; rc-381); lunar_surface scenario (rc-726) |
 | economicspace_frozen_stage2_market_ceiling_rows_current_2026 | T4 | Frozen Stage 2 cislunar annual-market rows | verified live | 5,000/15,000/25,000 kg/yr values in I101-I109 (rc-636) |
 | economicspace_market_ceiling_verification_sheet_code_current_2026 | T4 | economicspace annual-market worksheet inputs and backing check | verified live | Mars-orbit I65-I67, Mars-surface I66-I68, and cislunar I101-I109 flagged NEED BACKING (rc-655; rc-653; rc-636) |
 | spacevalue_cislunar_utility_lookup_current_2026 | T4 | Spacevalue cislunar utility lookup and base profile (pinned main) | verified live | Cislunar override is empty; helper falls back to base utility map (rc-638) |
@@ -1599,12 +1600,13 @@ _Backings: `operational_costs.csv` recurring $/kg rows by hardware class; `calc.
 | spacecost_surface_lander_recurring_cost_current_2026 | T4 | Spacecost surface-lander recurring-cost row (current main) | verified live, not hosted | $200,000/kg; current CLPS comparator is a full-service ratio, not hardware (rc-300; rc-733) |
 | economicspace_stage3_spacecost_0_14_0_surface_lander_row_2026 | T4 | Economicspace frozen Stage 3 surface-lander row (1.23.6) | verified live, not hosted | $200,000/kg row omits the current CLPS comparator’s price boundary (rc-733) |
 | economicspace_stage3_spacecost_0_14_0_faa_part450_compliance_row_2026 | T4 | Economicspace frozen Stage 3 FAA compliance row (1.23.6) | verified live, not hosted | $2.5M programme estimate lacks current workload-floor and no-dollar-source notes (rc-734) |
-| spacecost_package_release_output_provenance_code_current_2026 | T4 | Spacecost table-output package-release provenance snapshot | verified live, not hosted | Citation guide requires package vX.Y.Z; table outputs stamp only data contract and date (rc-773) |
+| spacecost_package_release_output_provenance_code_current_2026 | T4 | Spacecost package-release identifier in table-output provenance | verified live, not hosted | build_manifest.json carries package version, data contract, catalog date and files (rc-773 applied) |
 | economicspace_profitability_output_git_commit_provenance_code_current_2026 | T4 | Economicspace Stage 4 output and run-manifest provenance code | verified live, not hosted | CITATIONS.md §8 requires Git commit; CSV and GUI manifest do not record it (rc-777) |
-| economicspace_verification_sheet_commit_provenance_code_current_2026 | T4 | Economicspace verification worksheet provenance code | verified live, not hosted | CITATIONS.md §8 requires Git commit; worksheet output omits it (rc-782) |
+| economicspace_verification_sheet_commit_provenance_code_current_2026 | T4 | Economicspace verification worksheet provenance code | verified live, not hosted | Current generator prints commit; supplied 2026-11-16 PDF predates the fix (rc-782 applied) |
 | spacecost_tps_bibliography_gap_code_current_2026 | T4 | Spacecost TPS heritage citation and bibliography snapshot | verified live, not hosted | TPS note cites NTRS 20140005558 for material data; §4 omits Stackpoole entry (rc-783) |
 | economicspace_stage3_spacecost_0_5_0_propellant_tank_recurring_cost_row_2026 | T4 | Economicspace frozen Stage 3 tank cost row (1.17.0) | verified live, not hosted | $6,000/kg estimate; price anchor and tank allocation unsupported (rc-825) |
 | economicspace_verification_sheet_c_tank_mapping_current_2026 | T4 | Economicspace verification-sheet c_tank input code | verified live, not hosted | Current 2018 DT I123 reads frozen tank row; remains NEED BACKING (rc-825) |
+| spacecost_electric_thruster_ppu_specific_mass_current_2026 | T4 | Spacecost electric-thruster + PPU specific mass, current main | verified live, not hosted | 8 kg/kW [5,15] fallback; PM1 / NEXT-C mass attribution needs correction (rc-865) |
 
 ## Domain 22 — Prior-art techno-economic benchmarks
 

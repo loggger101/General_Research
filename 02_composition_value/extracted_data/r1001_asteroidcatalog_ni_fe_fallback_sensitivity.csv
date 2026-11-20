@@ -1,0 +1,22 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,_ALLOY_OCTAHEDRITE.kamacite,0.89,share of nickel-iron parent,asteroid_catalog/mineralogy.py:566,Generic fallback; not a class measurement.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,_ALLOY_OCTAHEDRITE.taenite,0.11,share of nickel-iron parent,asteroid_catalog/mineralogy.py:566,Generic fallback; not a class measurement.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,B:kamacite,0.0089,body mass fraction,reference/mineral_phases_detailed.csv:B,Detailed output row; data table unchanged since R828.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,B:taenite,0.0011,body mass fraction,reference/mineral_phases_detailed.csv:B,Detailed output row; data table unchanged since R828.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,A:kamacite,0.0445,body mass fraction,reference/mineral_phases_detailed.csv:A,Detailed output row; data table unchanged since R828.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,A:taenite,0.0055,body mass fraction,reference/mineral_phases_detailed.csv:A,Detailed output row; data table unchanged since R828.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,all_kamacite_contained_element_value,4.59,USD/kg alloy,asteroid_catalog/mineralogy.py:558,"Sensitivity comparator; yields times element prices, no recovery."
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,fallback_contained_element_value,5.15,USD/kg alloy,asteroid_catalog/mineralogy.py:558,Current generic 0.89/0.11 fallback.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,ordinary_chondrite_taenite_share,0.45,share of alloy,asteroid_catalog/mineralogy.py:559,"Sensitivity comparator, not a class-specific measurement."
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,ordinary_chondrite_taenite_share_contained_value,6.89,USD/kg alloy,asteroid_catalog/mineralogy.py:560,"Sensitivity comparator; yields times element prices, no recovery."
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,all_kamacite_earth_value_change,-11,percent vs fallback,asteroid_catalog/mineralogy.py:560,Metal delivered to Earth.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,taenite_0.45_earth_value_change,34,percent vs fallback,asteroid_catalog/mineralogy.py:560,Metal delivered to Earth.
+asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026,cislunar_structural_price,4835,USD/kg,asteroid_catalog/mineralogy.py:561,One shared structural price; changing phase split moves no value.
+economicspace_detailed_phase_carbon_consumer_current_2026,model_detailed_phases_default,True,boolean,economicspace/modules/calc.py:337,CalcConfig default.
+economicspace_detailed_phase_carbon_consumer_current_2026,detailed_phase_column_selected,True when enabled and present,condition,economicspace/modules/calc.py:1789-1790,Loader selects comp_phases_detailed.
+spacevalue_nickel_iron_sale_route_code_current_2026,kamacite_taenite_product_route,nickel-iron,product,spacevalue/cargo.py:280-305,Detailed Fe-Ni phases are blended as one product.
+spacevalue_metals_snapshots_2026,GC=F close,4007.89990234375,USD/troy_oz,spacevalue/quotes/metals-2026-10-26.csv:2,Source=yfinance; close date 2026-10-23; recorded date 2026-10-26.
+spacevalue_metals_snapshots_2026,HG=F close,6.47599983215332,USD/lb,spacevalue/quotes/metals-2026-10-26.csv:3,Source=yfinance; close date 2026-10-23; recorded date 2026-10-26.
+spacevalue_metals_snapshots_2026,PA=F close,1046.5999755859375,USD/troy_oz,spacevalue/quotes/metals-2026-10-26.csv:4,Source=yfinance; close date 2026-10-23; recorded date 2026-10-26.
+spacevalue_metals_snapshots_2026,PL=F close,1554.199951171875,USD/troy_oz,spacevalue/quotes/metals-2026-10-26.csv:5,Source=yfinance; close date 2026-10-23; recorded date 2026-10-26.
+spacevalue_metals_snapshots_2026,SI=F close,53.71099853515625,USD/troy_oz,spacevalue/quotes/metals-2026-10-26.csv:6,Source=yfinance; close date 2026-10-23; recorded date 2026-10-26.

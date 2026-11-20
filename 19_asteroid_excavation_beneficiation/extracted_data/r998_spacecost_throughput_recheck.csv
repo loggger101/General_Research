@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_in_space_processing_plant_throughput_row_current_2026,In-space processing plant throughput,"100 [20, 500]",kg processed/year/kg plant,Spacecost 0.18.8 reference/operational_costs.csv row 68 and spacecost/operations.py,"Note says terrestrial smelters run 1,000x their own mass/year and explicitly says no source is given; 100x is a heavy derating judgement"
+han_2022_lustr_lunar_regolith_beneficiation_system,LuSTR brassboard beneficiation design target,at least 3; under 35,kg/h; kg system mass,"NASA LuSTR overview chart, Development Objectives, p. 1",Lunar simulant beneficiation design target; does not establish asteroid refinery duty cycle or throughput

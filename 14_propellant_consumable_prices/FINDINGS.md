@@ -491,3 +491,17 @@ Verdict: rc-686, rc-687, rc-688, rc-689, rc-690 closed as applied; rc-857, rc-85
 At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (PR #55, 0.18.8, data contract 1.27.8; notes and CITATIONS.md only), CITATIONS.md gains `bell_etal_2014_coolprop`, `tegeler_span_wagner_1999_argon_equation_of_state`, `lemmon_span_2006_short_eos_industrial_fluids` and `span_etal_2000_nitrogen_reference_equation_of_state` (rc-860), and the ALICE note calls both components a prospective asteroid feedstock, citing `cannon_gialich_acain_2023_asteroid_precious_structural_metals` for metal reduction only (rc-863). Values unchanged; rc-827 stays open.
 
 Verdict: rc-860, rc-863 closed as applied. Extracted data: none new.
+
+## R998 — HTP and FEEP price bases rechecked (2026-11-19)
+
+`spacecost_htp_price_reference_row_current_2026`: Spacecost 0.18.8 `reference/propellants.csv` row 13 remains $5/kg and labels the value an unsourced estimate. Epic Aerospace lists 98% HTP at $65/kg, a 280 kg minimum and $3,500-$8,500 shipping (Capabilities, HIGH TEST PEROXIDE block, lines 53-57); quote date and delivered-cost basis remain unstated (`rc-319`).
+
+`economicspace_feep_price_stage3_frozen_row_current_2026`: Economicspace main 1.84.1 `campaign/stage3/PROVENANCE.md` says “No price source is recorded” for the frozen $250/kg FEEP row; the frozen row 25 and current Spacecost row 25 still mark $250/kg as a 2026 reference. USGS MCS 2026 reports refined-indium warehouse prices of $250/kg in 2022 and $370/kg for 2025e (printed pp. 99-100), a commodity comparator rather than a FEEP-grade procurement quote (`rc-651`).
+
+**Verdict:** keep **rc-319** and **rc-651** open; no numeric replacement inferred. Extracted: `extracted_data/r998_spacecost_propellant_price_rechecks.csv`.
+
+## R999 — Spacecost ALICE processing-energy recheck (2026-11-19)
+
+spacecost_alice_isru_processing_energy_gate_current_2026: At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (0.18.8), ALICE still maps processing energy to NaN and exports a blank value; isru_feed_kg_per_kg=0.5 remains a water-half placeholder. The applied note tracked by rc-863 continues to call both components prospective asteroid feedstocks and does not supply a validated aluminium-recovery process or energy boundary.
+
+Verdict: Keep rc-827 open and rc-863 applied; no numeric replacement inferred. Extracted: extracted_data/r999_spacecost_alice_isru_energy_recheck.csv.

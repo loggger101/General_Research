@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+mp3c_minor_planet_physical_properties_catalogue;asteroidcatalog_mp3c_version_capture_code_current_2026,Version request,SELECT * FROM mp3c_main.version,query,CITATIONS.md section 1; MP3C TAP documentation,Current CITATIONS asks users to record the version used.
+asteroidcatalog_mp3c_version_capture_code_current_2026,Per-build fetch requests,mp3c_main.best/body and mp3c_main.name,tables,asteroid_catalog/mp3c.py at AsteroidCatalog 8bdd8dbdd326d8c6150106fa5bc96f51d2fe2698,Neither request reads the version table.
+asteroidcatalog_mp3c_version_capture_code_current_2026,Release manifest,source counts; no MP3C database version,metadata fields,asteroid_catalog/release.py at AsteroidCatalog 8bdd8dbdd326d8c6150106fa5bc96f51d2fe2698,The existing registry version observation is not bound to this build.

@@ -1071,3 +1071,17 @@ Verdict: the committed tests support the parity claims, but the reported latency
 - **Upstream field:** JPL SBDB condition_code, exported as orbit_condition_code.
 - **Verdict:** Open rc-809 to add the official MPC definition citation and its stated future-motion limitation; no catalog values change.
 - **Extracted data:** extracted_data/r943_mpc_u_citation_gap.csv.
+
+## R999 — AsteroidCatalog release citation provenance (2026-11-19)
+
+- imcce_ssodnet_orbital_metadata_api and asteroidcatalog_ssodnet_property_bibrefs_code_current_2026: The ssoBFT documentation asks users, “Whenever possible, please publish the bibliographic references.” Current AsteroidCatalog main 8bdd8dbdd326d8c6150106fa5bc96f51d2fe2698 still omits property bibref values from the projected and published fields while retaining ssodnet_id for ssoCard lookup (rc-768).
+- mpc_mpcorb_extended_designation_links and asteroidcatalog_mpc_identity_link_release_attribution_code_current_2026: CITATIONS.md asks users to acknowledge MPC as the designation-link source; the build still uses the link map, while generated release notes identify only SsODNet and NEOWISE (rc-778).
+- mp3c_minor_planet_physical_properties_catalogue and asteroidcatalog_mp3c_acknowledgment_release_notes_code_current_2026: CITATIONS.md says “MP3C asks to be acknowledged by name.” MP3C appears in release source counts, but _notes() names only SsODNet and NEOWISE as sources that ask for citation. Open rc-866 for the missing MP3C acknowledgement; no catalog values changed.
+- Verdict: Keep rc-768 and rc-778 open; open rc-866 for conditional MP3C acknowledgement in generated release notes.
+- Extracted: extracted_data/r999_asteroidcatalog_citation_provenance_rechecks.csv.
+
+## R1002 — AsteroidCatalog release attribution for the MPC links and MP3C (2026-11-19)
+
+At AsteroidCatalog main f360a3c02daabee87a7dd225a6cb76966e792ecf (PRs #41 and #43, 0.13.10 and 0.13.12, data contract 1.11.0), manifest.json `build_info` records whether `mpc_mpcorb_extended_designation_links` were enabled and used and how many links were read, apart from the source counts, and the release notes print the MPC acknowledgement when they were used (rc-778) and MP3C's by-name acknowledgement when MP3C contributed (rc-866). Counts and values unchanged.
+
+Verdict: rc-778, rc-866 closed as applied. Extracted data: none new.

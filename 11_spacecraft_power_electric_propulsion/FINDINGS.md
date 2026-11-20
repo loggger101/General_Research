@@ -347,3 +347,9 @@ Open `rc-631` for the citation and cost-boundary note; retain the scenario value
 - **economicspace_current_bestcase_verification_sheet_2026**: p. 30 maps PV-battery cost to I117=$800/W EOL [500,1,500] and says “An estimate with no same-boundary source.” The Surampudi/JPL comparison is historical array-only cost “without batteries, in older dollars.” I121 is the distinct $837.7M spacecraft-development NRE input.
 - **economicspace_power_system_cost_stage3_frozen_row_current_2026** and **economicspace_power_system_cost_stage3_spacecost_0_14_0_frozen_row_current_2026**: their archived rows retain the generic burdened PV-battery note.
 - Verdict: current I117 carries the boundary caveat; the 0.5.0 and 1.23.6 archive rows remain separate note gaps. Keep **rc-631** and **rc-738** open; no matched numeric replacement inferred. Extracted: `extracted_data/r862_power_cost_current_sheet_locator_check.csv`.
+
+## R1000 — Current complete power-system specific-mass row recheck (2026-11-19)
+
+**spacecost_power_system_specific_mass_code_current_2026**: Spacecost main `ef3e214dccff73adf541ed70444df52575b5b97a` (0.18.8; data contract 1.27.8), `reference/operational_costs.csv` row 23, still stores 60 [30, 150] W/kg at 1 AU. The row defines a complete photovoltaic wing, PMAD, battery and deployment structure; its approximately 150 W/kg flexible-array comparator is array-level. It says the conversion to a system-level point is an engineering judgement with no source and supplies no full-system mass derivation or BOL/EOL basis.
+
+Verdict: **rc-536** remains open for the complete-system boundary and specific-power basis; no numeric replacement inferred. Extracted: `extracted_data/r1000_power_system_specific_mass_recheck.csv`.

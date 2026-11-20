@@ -1,3 +1,11 @@
+## R1001 — AsteroidCatalog Ni-Fe fallback sensitivity documented (2026-11-19; rc-699)
+
+- **asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026:** AsteroidCatalog 0.13.11 (`mineralogy.py` lines 551-564) calls `_ALLOY_OCTAHEDRITE` a “generic fallback, not a class measurement.” It keeps kamacite 0.89 / taenite 0.11 of the nickel-iron parent and reports contained-element values of $4.59/kg for all kamacite, $5.15/kg for the fallback, and $6.89/kg at a 0.45 taenite share; Earth-delivered metal value spans -11% to +34%, while each phase has the same $4,835/kg cislunar structural price. The R828 and current detailed-phase table blobs match; the changelog says comments and docs only and the mineralogy AST is identical.
+- **spacevalue_nickel_iron_sale_route_code_current_2026:** Spacevalue 0.8.6 `cargo.py` lines 280-305 treats kamacite and taenite as one nickel-iron product. **spacevalue_metals_snapshots_2026:** current `metals-2026-10-26.csv` matches the registered pinned-tag file blob; recorded closes are dated 2026-10-23.
+- **economicspace_detailed_phase_carbon_consumer_current_2026:** Economicspace 1.84.1 `CalcConfig` defaults `model_detailed_phases=True` (`calc.py` line 337); the loader selects `comp_phases_detailed` when enabled and present (lines 1788-1800).
+
+**Verdict:** the generic-fallback label and sensitivity satisfy rc-699's scenario path; the 0.89/0.11 values and detailed body-mass rows are unchanged, and no class-specific split was added. K remains outside this candidate's target; its prior rc-172 resolution is unchanged. **rc-699 applied.** Extracted: `extracted_data/r1001_asteroidcatalog_ni_fe_fallback_sensitivity.csv`.
+
 ## R997 — Spacevalue CO2 ceiling labelled total use upstream (2026-11-19)
 
 At Spacevalue main f133db21ff77ca39b482765db9e68863a16b5387 (PR #22, 0.8.5), the owner chose the total-use boundary for the carbon-dioxide Earth market ceiling. It stays 2.3e11 kg/yr, and its comment now calls it total physical use per `iea_2019_putting_co2_to_use` (p. 3), not merchant sales, which `spglobal_2025_co2_commodity_market_demand` puts at about 30 Mt/yr (p. 7). CITATIONS.md gains both (rc-526). Value unchanged.

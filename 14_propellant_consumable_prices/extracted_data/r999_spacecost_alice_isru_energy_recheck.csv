@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_alice_isru_processing_energy_gate_current_2026,ALICE processing-energy mapping,NaN,Wh/kg,spacecost/propellants.py at Spacecost ef3e214dccff73adf541ed70444df52575b5b97a,Aluminium refining remains gated pending a supported process energy.
+spacecost_alice_isru_processing_energy_gate_current_2026,Exported processing-energy field,blank,,"reference/propellants.csv, Metal / water row",No value is exported.
+spacecost_alice_isru_processing_energy_gate_current_2026,Water feed placeholder,0.5,kg/kg,"reference/propellants.csv, Metal / water row",Placeholder covers the water half; it is not Al-recovery energy.
+spacecost_alice_isru_processing_energy_gate_current_2026;cannon_gialich_acain_2023_asteroid_precious_structural_metals,Feedstock claim,prospective asteroid feedstock; general metal reduction cited; no ALICE energy or water recovery route established,scope,reference/propellants.csv note and CITATIONS.md section 2,Applied rc-863 does not close rc-827's energy gap.

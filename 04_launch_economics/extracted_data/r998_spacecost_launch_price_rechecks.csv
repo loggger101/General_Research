@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_lm2d_payload_row_current_2026,Long March 2D list price,30000000,USD,Spacecost 0.18.8 reference/launch_vehicles.csv row 31,price_basis=reported; row note still attributes the price to Wikipedia
+changguang_2023_lm2d_wide_batch_launch_costs,Long March 2D wide-format batch launch fees,RMB 81.0M; 82.5M; 85.9M,CNY per batch,"SSE-hosted Changguang IPO inquiry reply, p. 8-2-95","Customer batch fees for 2020-2022; separate service and transaction scope, not a list price"
+spacecost_lm12_price_code_current_2026,Long March 12 price estimate,"63200000 [50000000, 80000000]","USD, 2026",Spacecost 0.18.8 reference/launch_vehicles.csv row 38,"price_basis=estimate; note retains quote below RMB 20,000/kg with no orbit, payload-use or service-price basis"
+huacheng_2026_lm12_unit_quote,Long March 12 unit quote comparator,below 20000,RMB/kg,"Guangzhou Daily, Economic Weekly, 2026-07-10, section 火箭发射成本：每公斤正从2万元向1万元迈进, paragraph 2",Underlying source and payload/orbit basis are not stated; not a replacement price

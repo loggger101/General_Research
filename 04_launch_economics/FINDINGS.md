@@ -1237,3 +1237,15 @@ Verdict: rc-436, rc-578, rc-619 closed as applied. Extracted data: none new.
 `spacecost_fairing_fill_ratio_main_2026`: Spacecost 0.18.7 still uses the 14S746 outer dimensions 17.705 m x 4.35 m for Angara A5 and exports 127.0 m3 as an estimate, citing RussianSpaceWeb. Rostec's 2024 release describes family fairings as “up to 17 metres” and “almost four and a half metres” (p. 1), but does not identify the 2025 14S746 variant. The records remain different in variant and date; no numeric replacement is inferred.
 
 **Verdict:** keep **rc-822** open for a variant-specific source or an explicit basis for the current secondary report. Existing extraction: `extracted_data/r962_angara_fairing_dimension_scope.csv`.
+
+## R998 — Spacecost launch-price rows rechecked (2026-11-19)
+
+`spacecost_lm2d_payload_row_current_2026`: Spacecost 0.18.8 `reference/launch_vehicles.csv` row 31 stores $30M and begins the note “Source: Wikipedia — $30M.” Its Changguang customer-batch fees remain separate transaction comparators (`rc-315`). `spacecost_lm12_price_code_current_2026`: row 38 stores $63.2M [$50M, $80M] as a 2026 estimate and retains the below-RMB-20,000/kg quote without a stated orbit, utilization or service-price basis (`rc-318`).
+
+**Verdict:** keep **rc-315** and **rc-318** open; no numeric replacement inferred. Extracted: `extracted_data/r998_spacecost_launch_price_rechecks.csv`.
+
+## R999 — Spacecost Angara A5 fairing-dimension recheck (2026-11-19)
+
+spacecost_fairing_fill_ratio_main_2026: At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (0.18.8), OUTER_ONLY[Angara A5] retains 4.35 m diameter and 17.705 m length, attributed to RussianSpaceWeb's 14S746 report; the launch row keeps fairing volume 127.0 m3 marked as an estimate. rostec_angara_a5_fairing_dimensions_2024 gives approximate family-level dimensions of up to 17 m by nearly 4.5 m, without identifying the later 14S746 variant.
+
+Verdict: Keep rc-822 open; no replacement inferred. Extracted: extracted_data/r999_spacecost_angara_fairing_dimensions_recheck.csv.

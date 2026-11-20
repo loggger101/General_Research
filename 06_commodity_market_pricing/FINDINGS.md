@@ -631,3 +631,16 @@ campaign/worked_calculation.py parse to the same ASTs as master 1.73.0.
 - ipa_sfa_2026_osmium_pgm_factsheet, PDF p. 10: “Annual global production of osmium is likely to therefore have been limited to about 500kg-550kg/annum over 2024 and 2025.”
 - spacevalue_osmium_annual_production_code_current_2026: at spacevalue@5f84fbf36709e3c2b09356a65cb34c9890ff8904, spacevalue/catalog.py line 934 sets ANNUAL_WORLD_PRODUCTION_KG["osmium"] to 5.0e2 kg/yr and gives “~500-550 kg/yr over 2024-25 (IPA/SFA factsheet, 2026).” CITATIONS.md at that commit has no IPA/SFA factsheet reference for this production source.
 - Verdict: the source supports the stored 500 kg/yr as the lower end of its estimate. The code gives an abbreviated citation while the package bibliography omits the source. rc-664 requests citation metadata only; no value change is proposed. Extracted: extracted_data/r794_osmium_source_bibliography_gap.csv; source quote: extracted_data/r182_osmium_production_price_key_numbers.csv.
+
+## R998 — Spacevalue standalone-build citation metadata applied (2026-11-19)
+
+`spacevalue_single_destination_build_output_provenance_code_current_2026`: Spacevalue 0.8.6 writes `<table>.manifest.json` beside a non-empty standalone build. Its fields name package version, data contract, catalog date, destination, quote snapshot or live quotes, source commit and CSV name, row count and SHA-256. The manifest sets `release_tag` to null and explains that a standalone build is not a published release; current `CITATIONS.md` tells users to cite the manifest (`rc-776`). No table values moved.
+
+**Verdict:** **rc-776** applied and moved to the closed candidates file. Extracted: `extracted_data/r998_spacevalue_build_manifest_application.csv`.
+
+## R999 — Spacevalue Johnson Matthey PGM quote citation recheck (2026-11-19)
+
+- spacevalue_pgm_reference_prices_code_current_2026: Spacevalue main 21528385332d10ae81dfbcfe6e97ce6077bdc3d9 (0.8.6) retains the five Johnson Matthey New York PGM reference prices dated 2026-11-10; the rows and CITATIONS.md do not identify the exact quote record or setting time.
+- johnson_matthey_base_prices_faq_2026: The FAQ describes four weekday settings, possible changes between settings, and express written consent for reuse. The citation does not establish which setting supplied the five values or permission to reproduce them.
+- Verdict: Keep rc-672 open; no price replacement inferred.
+- Extracted: extracted_data/r999_spacevalue_pgm_quote_locator_recheck.csv.

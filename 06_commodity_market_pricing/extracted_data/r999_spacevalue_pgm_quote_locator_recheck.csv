@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_pgm_reference_prices_code_current_2026,JM PGM price date,2026-11-10,date,spacevalue/catalog.py and CITATIONS.md at Spacevalue 21528385332d10ae81dfbcfe6e97ce6077bdc3d9,The five rows still lack exact record locator and quote time.
+spacevalue_pgm_reference_prices_code_current_2026,Platinum reference,1562,USD/troy oz,catalog.py PGM row,Stored reference remains unchanged.
+spacevalue_pgm_reference_prices_code_current_2026,Palladium reference,1046,USD/troy oz,catalog.py PGM row,Stored reference remains unchanged.
+spacevalue_pgm_reference_prices_code_current_2026,Rhodium reference,9400,USD/troy oz,catalog.py PGM row,Stored reference remains unchanged.
+spacevalue_pgm_reference_prices_code_current_2026,Iridium reference,10100,USD/troy oz,catalog.py PGM row,Stored reference remains unchanged.
+spacevalue_pgm_reference_prices_code_current_2026,Ruthenium reference,1900,USD/troy oz,catalog.py PGM row,Stored reference remains unchanged.
+johnson_matthey_base_prices_faq_2026,Base price settings,four per weekday; New York schedule 09:30 EST; possible interim adjustment,settings/time,"Johnson Matthey PGM Management FAQ, Base Prices questions",FAQ does not identify which setting produced the five stored values.
+johnson_matthey_base_prices_faq_2026,Reuse terms,express written consent required,permission,"Johnson Matthey PGM Management FAQ, reuse question",No permission to reproduce the price series is recorded.

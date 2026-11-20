@@ -1,0 +1,4 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_fairing_fill_ratio_main_2026,Angara A5 outer dimensions,4.35 x 17.705,m diameter x length,spacecost/fairings.py at Spacecost ef3e214dccff73adf541ed70444df52575b5b97a,Code attributes these 14S746 dimensions to RussianSpaceWeb.
+spacecost_fairing_fill_ratio_main_2026,Angara A5 fairing volume,127.0,m3,"reference/launch_vehicles.csv, Angara A5 row",Still marked estimate; no replacement inferred.
+rostec_angara_a5_fairing_dimensions_2024,Angara family dimensions,up to 17; nearly 4.5,m high; m diameter,"Rostec 2024 statement, as registered",Family-level approximate dimensions do not resolve 14S746.
