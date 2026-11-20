@@ -463,3 +463,9 @@ Verdict: rc-299 closed as applied. Extracted data: none new.
 - economicspace_verification_sheet_commit_provenance_code_current_2026: Current campaign/verification_sheet.py at main 17650892376136bc91f2124525735a14363e7c3c emits the Git commit in its footer. The supplied verification_sheet.pdf p. 1 says it was built 2026-11-16 with calc 1.46.0 and lists the Stage 1, Stage 2 and Stage 3 releases. Its p. 48 footer says “Generated 2026-11-16 from lunar_surface__benef__search-on__calc-1.46.0.csv.gz” and prints no commit. The page-48 summary reports 114 rows marked “needs backing.” This is a 2026-11-16 output snapshot: current main's campaign/verification_sheet.py footer now includes the Git commit, so the applied rc-782 generator fix remains in place; the supplied PDF predates it.
 - Verdict: Keep rc-777 open; rc-782 remains applied in current generator code. No model values changed.
 - Extracted: extracted_data/r999_economicspace_stage4_and_sheet_provenance_recheck.csv.
+
+## R1002 — Stage 4 commit recorded; NEXT-class mass note attributed (2026-11-19)
+
+At Economicspace main aa5bd714b06d3ac2e0ed4c25498707e57a966721 (PR #216, master 1.84.2), Stage 4 writes `profitability_catalog.manifest.json` with both stamps, the git commit, a dirty flag and the CSV's sha256, and the UI run manifest records the commit (rc-777); the CSV is unchanged (verify.py raw cell identical). At Spacecost main 70a228dd408614b0f9a5450b9114e3b10bfe151c (PR #56, 0.18.9, data contract 1.27.9), the electric thruster + PPU note cites `oleson_mcguire_2011_compass_enceladus_sep_stage` (NEXT PM1 12.7 kg bare, 13.5 kg harnessed, pp. 37-38), `nasa_nextc_flight_ion_system_status_2020` (NEXT-C ~14 kg) and `nextc_ppu_2020` (34.5 kg, Table 2 p. 4, 7.4 / 7.0 kW labels) and calls 8 [5,15] kg/kW an estimate (rc-865). Values unchanged.
+
+Verdict: rc-777, rc-865 closed as applied. Extracted data: none new.

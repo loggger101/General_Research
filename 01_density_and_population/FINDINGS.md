@@ -761,3 +761,9 @@ Verdict: rc-862 closed as applied. Extracted data: none new.
 - asteroidcatalog_mp3c_version_capture_code_current_2026: At AsteroidCatalog main 8bdd8dbdd326d8c6150106fa5bc96f51d2fe2698 (0.13.9), fetch_mp3c() still requests mp3c_main.best joined to mp3c_main.body and the mp3c_main.name alias table only. The release manifest records source counts but no per-build MP3C version.
 - Verdict: Keep rc-772 open; the registry's standalone MP3C version observation is not release-specific. No catalog values changed.
 - Extracted: extracted_data/r999_asteroidcatalog_mp3c_version_provenance_recheck.csv.
+
+## R1002 — AsteroidCatalog records the MP3C database version per build (2026-11-19)
+
+At AsteroidCatalog main f360a3c02daabee87a7dd225a6cb76966e792ecf (PRs #41 and #43, 0.13.10 and 0.13.12, data contract 1.11.0), each build reads `mp3c_main.version` for `mp3c_minor_planet_physical_properties_catalogue` (live read here: version 3.2.0-beta.1, created 2024-02-13T09:44:37, revision 2acaa66e) and carries it through build_info.json into manifest.json `build_info` and the release notes, or records it unavailable (rc-772). Values unchanged.
+
+Verdict: rc-772 closed as applied. Extracted data: none new.

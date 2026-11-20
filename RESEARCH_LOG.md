@@ -1,4 +1,5 @@
 # Research log
+- **Round 1002** (2026-11-19): Closed rc-772, rc-777, rc-778, rc-865 and rc-866 as applied upstream (AsteroidCatalog #41 and #43, 0.13.10 and 0.13.12; economicspace #216, master 1.84.2; spacecost #56, 0.18.9); provenance and attribution only, no value moved.
 - **Round 1001** (2026-11-19): Rechecked rc-699 against AsteroidCatalog 0.13.11 and the current Economicspace and Spacevalue heads; the generic fallback and its Earth/cislunar pricing sensitivity are now documented upstream, so the candidate is closed as applied with values unchanged.
 - **Round 1000** (2026-11-19): Rechecked rc-290 and rc-381 against current Spacevalue main and rc-291 and rc-536 against current Spacecost main; the supplied verification sheet's I84 locator still maps to rc-291. The four candidate values remain unchanged, and no new untracked citation gap surfaced in the current-head files reviewed.
 - **Round 999** (2026-11-19): Rechecked rc-672, rc-768, rc-772, rc-777, rc-778, rc-822 and rc-827 against current project heads; rc-782 and rc-863 remain applied. Opened rc-866 for AsteroidCatalog's missing MP3C acknowledgement in generated release notes; no values moved.
