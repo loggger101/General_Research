@@ -1,3 +1,9 @@
+## R1005 — Angara A5 fairing dimension citation remains unresolved (2026-11-19)
+
+spacecost_fairing_fill_ratio_main_2026, russianspaceweb_angara_a5_14s746_fairing_zak and rostec_angara_a5_fairing_dimensions_2024: Spacecost 0.18.9 main 70a228dd408614b0f9a5450b9114e3b10bfe151c still lists Angara A5's 14S746 outer fairing as 17.705 m x 4.35 m, attributed to RussianSpaceWeb. The launch row exports 127.0 m3 with fairing_basis=estimate, using the cross-design fill-ratio median. Rostec's 2024 statement is approximate and applies to the Angara family; it does not establish the later 14S746 variant. rc-822 remains open. No volume replacement inferred.
+
+Extracted data: extracted_data/r1005_angara_a5_dimension_citation_recheck.csv.
+
 ## R976 - Spacecost H3 price-source bibliography (2026-11-19)
 
 At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, reference/launch_vehicles.csv rows 23-24 name a JAXA H3 briefing for the H3-24 relative-cost comparator and JAXA's H3 page for the H3-30 target. CITATIONS.md section 1 contains no full H3 price-source entry or direct link; its JAXA briefing row at line 76 is for Epsilon S, while line 120's H3 entry is for fairing dimensions.

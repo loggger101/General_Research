@@ -1,0 +1,3 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_fairing_fill_ratio_main_2026;russianspaceweb_angara_a5_14s746_fairing_zak;rostec_angara_a5_fairing_dimensions_2024,Angara A5 14S746 outer fairing,4.35 x 17.705,m diameter x m length,Spacecost fairings.py OUTER_ONLY[Angara A5]; current main 70a228dd408614b0f9a5450b9114e3b10bfe151c,"RussianSpaceWeb remains the stated source; Rostec's 2024 figures are approximate and family-level, not a matched citation for the 2025 14S746 variant (rc-822)."
+spacecost_fairing_fill_ratio_main_2026,Angara A5 exported fairing volume,127.0,m3,Spacecost reference/launch_vehicles.csv Angara A5 row,Still marked estimate using the cross-design median fill ratio; no replacement inferred (rc-822).
