@@ -559,3 +559,9 @@ Verdict: open rc-846 for a full bibliography entry with title, authors, NTRS num
 At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 4 gains `nasa_oig_2026_ig-26-004_hls_contracts_audit` with its p. 11 locator, scoped as a lunar-HLS comparator beside the 12 [8, 16] tanker scenario (rc-826), and `leucht_prater_vetcha_2024_break_the_ice_lunar_challenge` with its March 2025 conference date and December 2024 NTRS acquisition date distinguished; the mining-rig note gives both (rc-846). Values unchanged; rc-355 and rc-347 stay open.
 
 Verdict: rc-826, rc-846 closed as applied. Extracted data: none new.
+
+## R1006 — Spacecost excavation energy lowered and handling priced on its own (2026-11-19)
+
+At Spacecost main 64e51d5197fa5ebb8dd1d910565c000a2b0b86e9 (PR #57, 0.19.0, data contract 1.28.0), by the owner's decision, `operational_costs` "Drilling / excavation energy" is 5.7 [0.003, 7.4] Wh/kg, where it was 200 [50, 500]: terrestrial drilling + blasting + digging from DOE 2007 Exhibit 24, with `giel_2025_modular_bucket_drum_excavator_moonbot_luna` and the KSC bucket-drum and Kafi 2026 loose-simulant figures at the low end. A new row, "Regolith handling & transfer energy", 24.2 [0.86, 24.5] Wh/kg of regolith extracted, carries what the old figure held besides digging: DOE diesel materials handling, Giel 2025 Table III (0.86 Wh/kg batch cycle with unloading and driving) and Arumugam et al. 2026 Table 1 (24.5 Wh/kg excavated including rover mobility). Crushing and separation stay in the beneficiation row. At Economicspace main 2977c46da5b7802a79fb18d517a5dd6f832bd749 (PR #217, master 1.85.0 / calc 1.47.0), Stage 4 dig energy is excavation plus the handling row when the Stage 3 tables carry it; the pinned spacecost v0.17.1 has no such row, so nothing moves there until a repin (rc-027).
+
+Verdict: rc-027 closed as applied. Extracted data: none new.

@@ -512,3 +512,9 @@ Verdict: rc-860, rc-863 closed as applied. Extracted data: none new.
 spacecost_alice_isru_processing_energy_gate_current_2026: At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (0.18.8), ALICE still maps processing energy to NaN and exports a blank value; isru_feed_kg_per_kg=0.5 remains a water-half placeholder. The applied note tracked by rc-863 continues to call both components prospective asteroid feedstocks and does not supply a validated aluminium-recovery process or energy boundary.
 
 Verdict: Keep rc-827 open and rc-863 applied; no numeric replacement inferred. Extracted: extracted_data/r999_spacecost_alice_isru_energy_recheck.csv.
+
+## R1006 — Bottled-gas densities set to the reference equations of state (2026-11-19)
+
+At Spacecost main 64e51d5197fa5ebb8dd1d910565c000a2b0b86e9 (PR #57, 0.19.0, data contract 1.28.0), by the owner's decision, the bottled-gas densities in `spacecost/propellants.py` and `reference/propellants.csv` are the reference equations of state at 293.15 K: argon 0.300 -> 0.3135 kg/L at 18 MPa (`tegeler_span_wagner_1999_argon_equation_of_state`, rc-816), krypton 0.550 -> 0.872 at 18 MPa (`lemmon_span_2006_short_eos_industrial_fluids`, rc-857), nitrogen 0.250 -> 0.302 at 30 MPa (`span_etal_2000_nitrogen_reference_equation_of_state`, rc-858), xenon 2.000 -> 1.868 at 10 MPa (`lemmon_span_2006_short_eos_industrial_fluids`, rc-859). The COPV cost per litre is unchanged, so the tank fraction moves inversely (argon 22.9% -> 22.0%, krypton 12.5% -> 7.9%, nitrogen 45.9% -> 38.0%, xenon 1.91% -> 2.05%), and so does the cost per litre; only `density_kg_per_L`, `ref_cost_usd_per_L` and `cost_usd_per_L` move in the reference CSVs.
+
+Verdict: rc-816, rc-857, rc-858, rc-859 closed as applied. Extracted data: none new.

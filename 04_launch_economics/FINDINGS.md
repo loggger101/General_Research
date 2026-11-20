@@ -1255,3 +1255,9 @@ Verdict: rc-436, rc-578, rc-619 closed as applied. Extracted data: none new.
 spacecost_fairing_fill_ratio_main_2026: At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (0.18.8), OUTER_ONLY[Angara A5] retains 4.35 m diameter and 17.705 m length, attributed to RussianSpaceWeb's 14S746 report; the launch row keeps fairing volume 127.0 m3 marked as an estimate. rostec_angara_a5_fairing_dimensions_2024 gives approximate family-level dimensions of up to 17 m by nearly 4.5 m, without identifying the later 14S746 variant.
 
 Verdict: Keep rc-822 open; no replacement inferred. Extracted: extracted_data/r999_spacecost_angara_fairing_dimensions_recheck.csv.
+
+## R1006 — Spacecost Kuaizhou-11 price note re-sourced (2026-11-19)
+
+At Spacecost main 64e51d5197fa5ebb8dd1d910565c000a2b0b86e9 (PR #57, 0.19.0, data contract 1.28.0), by the owner's decision, Kuaizhou-11 keeps $12.2M, now stated as the geometric centre of $10M-$15M. Its note cites `cnsa_2018_kuaizhou_11_price_quote` (Xinhua 2018, "quoted below US$10,000" per kg) as the ceiling the headline is read under and `faa_ast_2017_compendium_kuaizhou_11_price` ($15M est, preflight) beside it, with later Beijing Business Daily 2023, Hubei Daily 2022 and Next Spaceflight claims bracketing it, and no longer cites `wikipedia_kuaizhou_family_article` for this row. Value unchanged. The Kuaizhou-1A row still cites Wikipedia, so that source is not proposed for rejection (rc-202).
+
+Verdict: rc-202 closed as applied. Extracted data: none new.

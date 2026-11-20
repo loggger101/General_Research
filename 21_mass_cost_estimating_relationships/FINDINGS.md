@@ -469,3 +469,9 @@ Verdict: rc-299 closed as applied. Extracted data: none new.
 At Economicspace main aa5bd714b06d3ac2e0ed4c25498707e57a966721 (PR #216, master 1.84.2), Stage 4 writes `profitability_catalog.manifest.json` with both stamps, the git commit, a dirty flag and the CSV's sha256, and the UI run manifest records the commit (rc-777); the CSV is unchanged (verify.py raw cell identical). At Spacecost main 70a228dd408614b0f9a5450b9114e3b10bfe151c (PR #56, 0.18.9, data contract 1.27.9), the electric thruster + PPU note cites `oleson_mcguire_2011_compass_enceladus_sep_stage` (NEXT PM1 12.7 kg bare, 13.5 kg harnessed, pp. 37-38), `nasa_nextc_flight_ion_system_status_2020` (NEXT-C ~14 kg) and `nextc_ppu_2020` (34.5 kg, Table 2 p. 4, 7.4 / 7.0 kW labels) and calls 8 [5,15] kg/kW an estimate (rc-865). Values unchanged.
 
 Verdict: rc-777, rc-865 closed as applied. Extracted data: none new.
+
+## R1006 — Economicspace heat-shield fraction scales with Earth entry speed (2026-11-19)
+
+At Economicspace main 2977c46da5b7802a79fb18d517a5dd6f832bd749 (PR #217, master 1.85.0 / calc 1.47.0), by the owner's decision, `scale_tps_with_entry_speed` (on) makes `heat_shield_frac_of_payload` = 0.15 the fraction at an 11 km/s entry; an Earth entry at v_e = sqrt(v_inf^2 + v_esc^2) (125 km interface) carries 0.15 x (v_e / 11)^1.107, from `dec_braun_2006_approximate_ablative_tps_sizing_tool` Table 2 (PICA 8.324 cm at 11 km/s, 10.873 cm at 14 km/s, mass with thickness at fixed geometry). Mars entries keep 0.15; rows report `tps_frac`. Upstream's sample (120 stride rows, `earth_surface`, pinned prices-2026-11-12): 107 rows evaluable, fraction 0.175-1.195 (median 0.194), cost per kg 0.72-1.57x (median 1.065x); 50 rows enter above 14 km/s, where the fit extrapolates (rc-134).
+
+Verdict: rc-134 closed as applied. Extracted data: none new.
