@@ -1,3 +1,9 @@
+## R1005 — Angara A5 fairing dimension citation remains unresolved (2026-11-19)
+
+spacecost_fairing_fill_ratio_main_2026, russianspaceweb_angara_a5_14s746_fairing_zak and rostec_angara_a5_fairing_dimensions_2024: Spacecost 0.18.9 main 70a228dd408614b0f9a5450b9114e3b10bfe151c still lists Angara A5's 14S746 outer fairing as 17.705 m x 4.35 m, attributed to RussianSpaceWeb. The launch row exports 127.0 m3 with fairing_basis=estimate, using the cross-design fill-ratio median. Rostec's 2024 statement is approximate and applies to the Angara family; it does not establish the later 14S746 variant. rc-822 remains open. No volume replacement inferred.
+
+Extracted data: extracted_data/r1005_angara_a5_dimension_citation_recheck.csv.
+
 ## R976 - Spacecost H3 price-source bibliography (2026-11-19)
 
 At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, reference/launch_vehicles.csv rows 23-24 name a JAXA H3 briefing for the H3-24 relative-cost comparator and JAXA's H3 page for the H3-30 target. CITATIONS.md section 1 contains no full H3 price-source entry or direct link; its JAXA briefing row at line 76 is for Epsilon S, while line 120's H3 entry is for fairing dimensions.
@@ -1249,3 +1255,9 @@ Verdict: rc-436, rc-578, rc-619 closed as applied. Extracted data: none new.
 spacecost_fairing_fill_ratio_main_2026: At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (0.18.8), OUTER_ONLY[Angara A5] retains 4.35 m diameter and 17.705 m length, attributed to RussianSpaceWeb's 14S746 report; the launch row keeps fairing volume 127.0 m3 marked as an estimate. rostec_angara_a5_fairing_dimensions_2024 gives approximate family-level dimensions of up to 17 m by nearly 4.5 m, without identifying the later 14S746 variant.
 
 Verdict: Keep rc-822 open; no replacement inferred. Extracted: extracted_data/r999_spacecost_angara_fairing_dimensions_recheck.csv.
+
+## R1006 — Spacecost Kuaizhou-11 price note re-sourced (2026-11-19)
+
+At Spacecost main 64e51d5197fa5ebb8dd1d910565c000a2b0b86e9 (PR #57, 0.19.0, data contract 1.28.0), by the owner's decision, Kuaizhou-11 keeps $12.2M, now stated as the geometric centre of $10M-$15M. Its note cites `cnsa_2018_kuaizhou_11_price_quote` (Xinhua 2018, "quoted below US$10,000" per kg) as the ceiling the headline is read under and `faa_ast_2017_compendium_kuaizhou_11_price` ($15M est, preflight) beside it, with later Beijing Business Daily 2023, Hubei Daily 2022 and Next Spaceflight claims bracketing it, and no longer cites `wikipedia_kuaizhou_family_article` for this row. Value unchanged. The Kuaizhou-1A row still cites Wikipedia, so that source is not proposed for rejection (rc-202).
+
+Verdict: rc-202 closed as applied. Extracted data: none new.

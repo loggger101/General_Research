@@ -353,3 +353,9 @@ Open `rc-631` for the citation and cost-boundary note; retain the scenario value
 **spacecost_power_system_specific_mass_code_current_2026**: Spacecost main `ef3e214dccff73adf541ed70444df52575b5b97a` (0.18.8; data contract 1.27.8), `reference/operational_costs.csv` row 23, still stores 60 [30, 150] W/kg at 1 AU. The row defines a complete photovoltaic wing, PMAD, battery and deployment structure; its approximately 150 W/kg flexible-array comparator is array-level. It says the conversion to a system-level point is an engineering judgement with no source and supplies no full-system mass derivation or BOL/EOL basis.
 
 Verdict: **rc-536** remains open for the complete-system boundary and specific-power basis; no numeric replacement inferred. Extracted: `extracted_data/r1000_power_system_specific_mass_recheck.csv`.
+
+## R1006 — Economicspace electric stage that burns on the return flies home (2026-11-19)
+
+At Economicspace main 2977c46da5b7802a79fb18d517a5dd6f832bd749 (PR #217, master 1.85.0 / calc 1.47.0), by the owner's decision, `separate_ep_units` (on, superseding `carry_ep_home`) makes each sizing pass fly the cheaper, in launch mass, of an outbound unit left at the body plus a return unit sharing `ep_target_thrust_yr` (t proportional to sqrt(w m)), or the one shared stage flown home; rows report `ep_return_unit_kg`. Upstream's cislunar sample (120 stride rows): 57 of 106 evaluable rows close, at a median 2.05x the one-way stage's cost per kg; on the 52 rows the shared stage flown home also closes, never worse (16 cheaper, the rest identical); two units alone measured a median 2.3x the shared stage. verify.py check raw: checks 2-8 pass, bounds 0 violations (rc-246).
+
+Verdict: rc-246 closed as applied. Extracted data: none new.
