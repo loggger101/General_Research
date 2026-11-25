@@ -373,6 +373,13 @@ CASES = [
     ('extracted-unnamed', 'error', [], lambda r, s: edit(r, '02_beta/FINDINGS.md', 'extracted_data/r1_beta_response.json', 'its raw response')),
     ('extracted-row-empty', 'error', [], lambda r, s: put(r, X_BETA, (r / X_BETA).read_text(encoding='utf-8') + ',,,,,\n')),
     ('source-uncited', 'error', [], lambda r, s: edit(r, X_ALPHA, '\nsrc_hosted,', '\n,')),
+    # check_findings: a block prepended above the title, one inserted out of round order, a round written twice.
+    ('findings-above-title', 'error', [], lambda r, s: edit(r, '01_alpha/FINDINGS.md', '# 01_alpha findings',
+                                                            '## R2 - prepended\n\n# 01_alpha findings')),
+    ('findings-round-order', 'error', [], lambda r, s: edit(r, '01_alpha/FINDINGS.md', '# 01_alpha findings\n',
+                                                            '# 01_alpha findings\n\n## R3 - a\n\n## R2 - b\n')),
+    ('findings-round-duplicate', 'error', [], lambda r, s: edit(r, '01_alpha/FINDINGS.md', '# 01_alpha findings\n',
+                                                                '# 01_alpha findings\n\n## R2 - a\n\n## R2 - b\n')),
     # check_references: a FINDINGS.md path, an INDEX.md domain section's bare path, a registry cell, a candidate cell
     ('path-ref-missing', 'error', [], lambda r, s: edit(r, '01_alpha/FINDINGS.md', 'extracted_data/r1_alpha.csv',
                                                         'extracted_data/r1_gone.csv')),
@@ -613,6 +620,9 @@ ACCEPTED = [
                 edit(r, MAP, 'rc-002', 'rc-1000'),
                 edit(r, '02_beta/FINDINGS.md', 'rc-002 applied, rc-005', 'rc-1000 applied, rc-1001'),
                 edit(r, 'INDEX.md', 'rc-005 deleted with it', 'rc-1001 deleted with it'))),
+    ('FINDINGS blocks in numeric round order, with a Maintenance block between them',
+     lambda r: edit(r, '01_alpha/FINDINGS.md', '# 01_alpha findings\n',
+                    '# 01_alpha findings\n\n## R9 - a\n\n## Maintenance (2026-09-26)\n\n## R10 - b\n\n## R1000 - c\n')),
     ('a year with a note after it', lambda r: domain_edit(r, ALPHA_CSV, ',2020,', ',2020 (online 2019),')),
     ('a __pycache__ file, the one thing .gitignore may hide', lambda r: put(r, 'tools/__pycache__/common.pyc', b'\0')),
     ("a merge in progress with the other side's entry on top", lambda r: start_merge(r, merged=[SIDE_B, SIDE_A])),

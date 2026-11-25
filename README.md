@@ -214,7 +214,8 @@ python tools/tests/debug_case.py CODE   # plant a code's cases and show each rep
 `validate.py` checks encoding and line ends; that the root and domain folders hold only what "Layout" lists; the
 registry files and `sources.csv`; INDEX tables against the registry; the research log (Round 0 to the latest, no
 gaps, real dates, and the committed log kept unchanged as its tail, also across merges); hosted files against the
-manifest and `.gitattributes`; extracted-data files (each named by a FINDINGS.md) and the citation of every read source; revision candidates (each
+manifest and `.gitattributes`; extracted-data files (each named by a FINDINGS.md) and the citation of every read source; FINDINGS.md block order
+(below the title, one per round, in round order); revision candidates (each
 in the file its status belongs to) and `upstream_commit_map.csv`; that every cited `extracted_data/` or
 `full_texts/` path and every cited candidate ID exists; and rejected ids. Candidate IDs use `rc-` followed by
 at least three digits. The validator

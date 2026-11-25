@@ -130,7 +130,6 @@ Carrying the stated August factor forward by 336.298 / 334.131 gives an approxim
 
 Verdict: `rc-297` proposes refreshing the rate note and point estimate to the latest published CPI-U month; no DSN base rate or uncertainty range changes. `extracted_data/r379_dsn_rate_cpi_refresh.csv`.
 
-
 ## R380 - Relay-cost method depends on transmitted-data time (2026-11-08)
 
 At `spacecost@19e1a31`, `Communications relay & data downlink` is $50 per Mbit returned [10, 200], with the note “Ka-band; relevant only for high-rate science / 3-D maps.” No data rate, pass pattern, or service-cost basis is stated.
@@ -138,6 +137,7 @@ At `spacecost@19e1a31`, `Communications relay & data downlink` is $50 per Mbit r
 The registered NASA/JPL `nasa_mocs_2014_dsn_aperture_fee_algorithm` §2.1.5 (PDF p.17) covers data from a landed object relayed through an orbiting spacecraft to a DSN station. It allocates a pro-rata share of DSN station cost using a one-hour minimum and excluding station configuration time; the guide calculates “the time required to return the total amount of relayed data.” This is a NASA DSN planning method for a specific relay architecture, not a commercial $/Mbit quote; it cannot set the upstream row’s numeric rate.
 
 Verdict: `rc-298` asks to separate relay and direct-downlink scope and state transfer-rate/pass assumptions before representing the estimate as a general $/Mbit cost. The value and range remain unchanged. `extracted_data/r380_nasa_mocs_relay_costing_method.csv`.
+
 ## R564 — DSN rate uses the latest published CPI-U month (2026-11-10)
 
 At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, the 34-m DSN hour is $2,095 using the September 2026 CPI-U factor; the 70-m comparator is about $6,286. `rc-297` applies the same-quantity price update; the source is the JPL Rev H hourly rate carried by the BLS CPI-U series.
@@ -153,7 +153,6 @@ The current economicspace verification-sheet check flags I129=$2,000,000 [500,00
 The current Spacecost row, updated under applied `rc-516`, says no commercial depot exists and no institutional document prices berthing or handover separately. It cites `nasa_oig_2018_ig-18-016_commercial_resupply_services_audit` for whole-mission CRS costs, identifies those as roughly 100 times the model value, and says the analogy to ISS visiting-vehicle berthing is not a component-level derivation of $2M [0.5M, 8M]. Those limits are not carried into the frozen-row worksheet input.
 
 Open `rc-629` for the worksheet citation and scenario boundary; no cost value or range is changed. Extracted: `extracted_data/r760_depot_handover_verification_sheet_gap.csv`.
-
 
 ## R858 — Frozen Stage 3 depot-handover cost derivation scope (2026-11-17)
 

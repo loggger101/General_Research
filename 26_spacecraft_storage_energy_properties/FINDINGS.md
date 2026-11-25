@@ -1,14 +1,3 @@
-## R955 — Economicspace dark-time provenance scoped to Vesta (2026-11-19)
-
-At Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9, `campaign/stage3/PROVENANCE.md` records the 0.50 dark fraction as scenario geometry and scopes Stubbs & Wang 2012 §5.1, printed p. 275, to Vesta's tropical sites, where the solar disk is typically seen about half the time (`stubbs_wang_2012_vesta_illumination_conditions`; rc-811). The paper's Vesta-specific 0.363–0.566 site range does not establish the generic [0.35, 0.55] band, which is identified as a scenario. The stored values remain 0.50 [0.35, 0.55].
-
-Verdict: the comparator's body/site scope and the unsupported generic band are recorded. Extracted data: none new.
-
-## R954 — Spacecost cryocooler range identified as a scenario (2026-11-19)
-
-At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, the cryocooler specific-mass point remains 5.0 kg/W and the [2.0, 15.0] band is labeled a scenario. Nugent et al. 2022 Table 3, PDF p. 3, reports flight-like acceptance points from 4.7 to 35.5 kg/W (`nugent_2022_rtb_cryocooler_test`; rc-812); those test points do not establish the generic band endpoints.
-
-Verdict: the point and range are distinguished; neither value is changed. Extracted data: none new.
 # Domain 26 — Spacecraft storage & energy-system physical properties
 
 Backings: spacecost `reference/storage_systems.csv` — the propellant-storage cells (`Low-pressure liquid propellant tank`, `COPV burst performance factor`, `Multi-layer insulation (passive)`, `Zero-boil-off cryocooler (20 K)`, `Cryocooler specific mass (20 K)`, `Vapour-cooled shield`), the energy-storage cells (`Li-ion battery`, `Regenerative fuel cell`, `Flywheel energy storage`, `RTG specific power`, `Fission surface power (Kilopower class)`) and the depot cell (`Orbital propellant depot (cryogenic)`). Read from spacecost @77c6e11.
@@ -176,57 +165,49 @@ metadata; all four live main comparisons are identical.
 `extracted_data/r353_outbound_propellant_volume.csv` contains full inputs,
 books, brackets, volume observers and the reproduction harness.
 
-
 ## R410 - Cryogenic MLI areal-density comparator (2026-11-09)
 
 NASA KSC author Wesley Johnson reports in Table 3 (PDF p. 6) that the 60-layer Ball MLI test blanket A141 had an areal density of 2.98 kg/m²; the 40-layer A139 measured 2.41 kg/m² and the 20-layer Quest IMLI A142 measured 1.00 kg/m². The paper states that A139’s seam construction made it slightly heavier, and describes mass over the calorimeter surface. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/storage_systems.csv` uses 1.2 kg/m² for “Multi-layer insulation (passive)” and describes a 60-layer aluminised-Mylar blanket. The 60-layer comparison is about 2.48 times the stored value. The test articles do not establish a like-for-like flight-tank areal mass because their blanket construction and seam configuration may differ. **rc-320 remains open** for configuration and mass-boundary reconciliation. Extracted: `extracted_data/r410_johnson_mli_areal_density.csv`.
-
 
 ## R463 — Current cargo and launch-volume options
 
 At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_cargo_volume` (line 725) and `model_launch_liquid_volume` (line 730) both default to `False`; the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). For `rc-285`, when enabled and phase data are present, the evaluator derives returned cargo volume from each selected phase's `phase_density_kg_per_L` after mix selection and refits a mix whose unpacked phase-volume sum exceeds the 0.25-fairing hold (lines 7390-7402; phase densities are loaded at 9054-9055). The initial mass cap still uses parent-body density (7051-7058), the check is default-off, and the source comment describes the phase volumes as unpacked; packing/state and a fully joint material-volume solve remain unrepresented. For `rc-288`, the opt-in branch sums outbound plus Earth-loaded return propellant liquid (excluding ISRU-made return fuel), compares that to the full fairing volume times the single propellant density, and refits payload when needed (lines 7322-7341). It does not include tank walls, ullage, return vessel, other stowed hardware, or geometric packing, and is also default-off. Both candidates remain open with their constraints distinguished. Extracted: `extracted_data/r463_current_cargo_and_launch_volume_flags.csv`.
 
-
 ## R507 - Shuttle water-tank mass comparator for volatile containment (2026-11-09)
 
 Harry W. Jones (NASA Ames) estimates 0.2 kg of tank per kg of water and cites a Shuttle water tank weighing 21.2 kg for 103 kg of water (ICES-2017-87, §IV.C, PDF p. 4). The cited Shuttle figures imply 0.206 kg tank/kg water. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/operational_costs.csv` assigns “Volatile cargo containment” 0.05 kg/kg, with a 0.03–0.12 range; its note defines this as incremental sealed/shaded-hold mass beyond the ore-restraint fraction. The Shuttle value is for a potable-water tank, not the incremental passive shading and sealing structure, so it benchmarks scale without validating the row's fraction. **rc-373 remains open** for a source or derived mass budget with the same boundary. Extracted: `extracted_data/r507_jones_water_tank_mass_comparator.csv`.
-
 
 ## R545 — ISS eclipse duration as the LEO power-system baseline (2026-11-10)
 
 `kascak_2001_iss_eclipse_nasa_tm_2001_211138` — Kascak et al.’s NASA technical memorandum says the ISS solar array cannot generate during the “35 minute eclipse period of the 92 minute ISS Earth orbit” (NASA/TM-2001-211138, p. 1). Converting 35 minutes gives 0.5833 hours, consistent with the 0.58 h baseline stored by spacecost. The memorandum supports an ISS eclipse comparator; it does not establish that 0.58 h is a standard design duration for conventional deep-space PV trains. Open **rc-410** to add the citation and qualify that broader wording while retaining the current value. Extracted: `extracted_data/r545_iss_eclipse_baseline.csv`.
 
-
 ## R546 — Chemical-battery dark-period cap comparator (2026-11-10)
 
 Fincannon’s NASA technical memorandum reports “73 to 117 hours required for energy storage (depending on power system type)” at the worst-case lunar day for the Shackleton rim site (NASA/TM-2007-215025, abstract, printed p. 1 / PDF p. 4); a linked-site case reports 68 hours. Its introduction says lunar surface systems use storage “either batteries or fuel cell type systems” (printed p. 2 / PDF p. 5), so these figures do not establish battery-only endurance. At economicspace main `db863923f7793676e9a78583b97462ddd614f29e`, `CalcConfig.max_dark_period_h` is 72.0 h and the comment describes that as the outside edge for a chemically powered battery. The lunar analysis is a system-dependent storage comparator, not an asteroid-mining battery limit; no numeric replacement is inferred. **rc-411** records the uncited scope claim for review. Extracted: `extracted_data/r546_fincannon_lunar_storage_hours.csv`.
-
 
 ## R548 — RFC system-level specific-energy comparator (2026-11-10)
 
 Jeffrey Csank’s NASA presentation reports that RFC systems range from approximately 100–600 Wh/kg depending on power level and duration (slide 12). Its system-level comparison table lists 400 Wh/kg and 300 kg for a 1 kW, 120-hour lunar-polar RFC case; the 1 kW lunar-equatorial case is 550 Wh/kg at 350 hours, while the Mars mid-latitude case is 200 Wh/kg at 13 hours. The table therefore supports 400 Wh/kg as a specific design comparator and shows mission dependence; it does not establish a generic asteroid RFC value or the full [250,700] range. At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, `reference/storage_systems.csv` labels 400 Wh/kg an estimate with no source, and `reference/operational_costs.csv` repeats it as the RFC comparator. **rc-414** records the citation and applicability review. Extracted: `extracted_data/r548_csank_rfc_specific_energy.csv`.
 
-
 ## R550 — G2 flywheel module specific-energy comparator (2026-11-10)
 
 `ntrs_2006_g2_flywheel_module_design` — NASA/CR-2006-213862 reports 525 Wh usable energy and 218 lb module mass (printed p. 2, Table 1; confirmed in the summary on printed p. 12), yielding 5.31 Wh/kg at the full-module boundary. Its rotor table gives 50 lb (printed p. 3, Table 2), yielding 23.1 Wh/kg if only rotor mass is counted. The report says the module was for laboratory use and that weight was not a significant factor; these values are scale comparators, not like-for-like replacements for an optimized spacecraft or asteroid system. The spacecost `Flywheel energy storage` row estimates 100 Wh/kg with a [40,180] range and says the value has no source. Open **rc-416** to review the value, range, and mass boundary. Extracted: `extracted_data/r550_g2_flywheel_specific_energy.csv`.
 
-
 ## R551 — NASA cryogenic COPV burst performance-factor comparator (2026-11-10)
 
 `ray_2008_cryogenic_copv_development_tests` — NASA’s test article table specifies a “minimum burst pressure” of 1.5×MOP (printed p. 4), and Tables 2–3 report a “Performance Efficiency Rating” of burst P_b V/W (printed pp. 6–7). Rechecking the six cryogenic tests reproduces each tabulated value from burst pressure, volume, and mass; conversion gives 326.5–416.6 kJ/kg. Spacecost’s COPV factor is 392 kJ/kg, within this interval, but the tests cover two liner materials in 1.8 ft³ cryogenic helium-pressurization vessels, not a generic supercritical-gas tank. The NASA data directly address the same parameter and replace the upstream note’s claim that no registered source gives PV/W; they do not establish the generic value or [250,600] range. Open **rc-417** for citation and applicability review. Extracted: `extracted_data/r551_nasa_copv_pressure_volume_weight_performance.csv`.
+
 ## R562 — storage duration comparator and scenario scope applied (2026-11-10)
 
 At economicspace@e2ad48767b0e81489031b724417b1a03e6dfc1fb, the 72 h dark-period note cites Fincannon’s lunar storage requirements and describes 72 h as a scenario cap rather than a battery limit (rc-411). Citation and scope request applied; value unchanged.
+
 ## R564 — Storage and tank comparators now carry scope limits (2026-11-10)
 
 At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Jones’s Shuttle water-tank mass is identified as pressurized-tank mass, not passive shade/seal mass (rc-373); Kascak et al.’s 35-minute eclipse is limited to a 92-minute ISS orbit (rc-410); NASA’s 400 Wh/kg RFC result is scoped to a 1 kW, 120 h lunar-polar design rather than a general system value (rc-414); and Ray’s six cryogenic COPV tests are distinguished from a generic vessel (rc-417). The storage and containment estimates remain unchanged.
 
-
 ## R626 — Vapor-cooled shield performance and maturity basis (2026-11-11)
 
 - **spacecost_vapour_cooled_shield_row_current_2026**: Spacecost’s reference row stores 0.40 [0.25,0.60] as the “fraction of passive boil-off removed,” and marks it operational, TRL 8; the note names no evidence or conditions. **johnson_et_al_2021_shiiver_vapor_cooling_tp**: NASA’s SHIIVER report describes a 4-m tank using boil-off vapor to intercept heat on a structural skirt. Its NTRS abstract reports that at 50% fill vapor cooling reduced boil-off by less than 3% without dome MLI and left it essentially unchanged with MLI (record lines 16–20); Table 46 (printed p. 175) reports separate fill-level and test-series reductions, including 14% at 80% fill in one baseline comparison and 33% at 80% in a preacoustic comparison. **johnson_stephens_2018_cfm_technology_roadmaps**: NASA’s 2018 technology roadmap lists vapor cooling at TRL 5 with a ground-test path to TRL 6 (p. 5). These sources show the result depends on system boundary and conditions; neither establishes the row’s generic passive whole-tank fraction or current TRL 8. Verdict: request the matched performance basis and maturity citation; no replacement inferred. **rc-489**. Extracted: `extracted_data/r626_vapor_cooled_shield_performance_scope.csv`.
-
 
 ## R627 - Cryogenic depot boil-off rate scope (2026-11-11)
 
@@ -260,7 +241,6 @@ The current Spacecost rows contain the source notes added under applied rc-342, 
 
 Open `rc-627` for the worksheet citation path and scope; no model value or range is changed. Extracted: `extracted_data/r760_power_storage_verification_sheet_citation_gap.csv`.
 
-
 ## R775 - Frozen volatile-containment worksheet attribution (2026-11-15)
 
 `economicspace_volatile_containment_verification_sheet_code_current_2026`: the current 2018 DT cislunar worksheet flags I70=0.05 kg/kg NEED BACKING. `economicspace_volatile_containment_stage3_frozen_row_current_2026`: the frozen Stage 3 row says "Charged on WATER only, which is what the citation covers" but names no citation.
@@ -280,19 +260,29 @@ Verdict: carry the estimate status and comparator limits into I70 and remove the
 
 The current sheet's I61=20,000 m/s is the outbound delta-v ceiling, not the frozen power-storage I61=0.50 geometry factor. In the live sheet, `dark_0` is I69=0.58 h; frozen Stage 3 storage input I64 is the earlier 0.58 h row. Current I70=10.222 h is the rotation-period fallback, while frozen Stage 3 I70 is volatile cargo containment at 0.05 kg/kg. **rc-627** remains scoped to frozen I61-I64 plus current I69; **rc-645** remains scoped to the frozen containment row. Extracted: `extracted_data/r825_live_sheet_input_id_collisions.csv`.
 
-
 ## R945 — Current Economicspace dark-fraction row and sheet (2026-11-18)
 
 At Economicspace main `e477b00ffa7810a6f2daad76290d428eee8b70b3`, `campaign/stage3/operational_costs.csv` row 35 (pipeline 1.15.0) stores `Eclipse / night-side dark fraction` at 0.50 [0.35, 0.55]. Its note explains rotating-body geometry and site variation but names no source. The supplied `verification_sheet.pdf` p. 21 maps the row to current I66 and marks it NEED BACKING. It displays Stubbs & Wang’s Vesta comparator: “typically seen about half the time in the tropics” (§5.1, printed p. 275), calls 0.50 scenario geometry, says no source sets the generic range, and points to rc-413. The paper’s 0.363–0.566 range is Vesta-specific and does not establish a generic asteroid-site band.
 
 Verdict: open **rc-811** for the current 1.15.0 Stage 3 row and I66 citation scope. Cite the comparator only for its Vesta tropical scope; identify [0.35, 0.55] as a model scenario unless matched evidence supports it. Preserve the values; no numeric replacement inferred. This is distinct from applied rc-413 (Spacecost current rows) and open rc-627 (Economicspace frozen 0.5.0 I61-I64 plus current I69). Extracted: `extracted_data/r945_economicspace_dark_fraction_current_sheet_scope.csv`.
 
-
 ## R946 — Spacecost cryocooler specific-mass band (2026-11-18)
 
 At Spacecost main `ef0120748780a519187836c655d877e3daee1a3a`, `reference/storage_systems.csv` physical lines 9-10 store 5.0 kg/W [2.0, 15.0] at 20 K, development TRL 5. The row note cites Nugent, Grotenrath & Johnson, NTRS 20220009350, Table 1, for a 5.5 kg/W flight-like projection and 4.4 kg/W project goal; it says 5.0 sits between test and goal but gives no endpoint basis. Table 1 lists “18.7”, “5.5” and “4.4” kg/W (PDF p. 2). Table 3 acceptance-test values include “4.7”, “15.2” and “35.5” kg/W across test points (PDF p. 3); 2.0 is below the extracted minimum, and the row does not map 15.0 to a defined design envelope. The current `CITATIONS.md` entry identifies 5.5 kg/W specific mass, not the [2.0, 15.0] band.
 
 Verdict: open **rc-812** for the range endpoints and mass/lift scope. Applied rc-108 covered the midpoint citation and left the range untouched; open rc-701 concerns the separate W/W specific-power band. Preserve the values pending a traceable band basis; no numeric replacement inferred. Extracted: `extracted_data/r946_spacecost_cryocooler_specific_mass_band.csv`.
+
+## R954 — Spacecost cryocooler range identified as a scenario (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, the cryocooler specific-mass point remains 5.0 kg/W and the [2.0, 15.0] band is labeled a scenario. Nugent et al. 2022 Table 3, PDF p. 3, reports flight-like acceptance points from 4.7 to 35.5 kg/W (`nugent_2022_rtb_cryocooler_test`; rc-812); those test points do not establish the generic band endpoints.
+
+Verdict: the point and range are distinguished; neither value is changed. Extracted data: none new.
+
+## R955 — Economicspace dark-time provenance scoped to Vesta (2026-11-19)
+
+At Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9, `campaign/stage3/PROVENANCE.md` records the 0.50 dark fraction as scenario geometry and scopes Stubbs & Wang 2012 §5.1, printed p. 275, to Vesta's tropical sites, where the solar disk is typically seen about half the time (`stubbs_wang_2012_vesta_illumination_conditions`; rc-811). The paper's Vesta-specific 0.363–0.566 site range does not establish the generic [0.35, 0.55] band, which is identified as a scenario. The stored values remain 0.50 [0.35, 0.55].
+
+Verdict: the comparator's body/site scope and the unsupported generic band are recorded. Extracted data: none new.
 
 ## R958 — Bulk ore-restraint fraction basis in Spacecost and Economicspace (2026-11-19)
 
@@ -335,14 +325,12 @@ Extracted data in `extracted_data/r1017_worksheet_dark_fraction_scenarios.csv`.
 
 Extracted data in `extracted_data/r1041_worksheet_return_cargo_refit.csv`.
 
-
 ## R1046 — Launch-liquid refit in the verification worksheet (2026-11-23)
 
 - economicspace_worksheet_launch_liquid_refit_code_2026 pins Economicspace 15c629b7b827d5a382c8c09f5f2702b839b99d71. The calculator's `model_launch_liquid_volume` branch compares Earth-loaded outbound and return fuel against fairing volume times propellant density and calls `_solved_under` when liquid exceeds the envelope (calc.py L7904–7920). The worksheet settles both propellant legs and checks that “the launch stack exceeds the vehicle's capacity to LEO” (worked_calculation.py L3950–3958 and L4006–4027). It then computes mission duration without replaying the liquid check.
 - The installed Electron row gives 1.19 m³ and 300 kg. The installed development LH2 row gives 0.0708 kg/L. At 140 kg cargo, a controlled fixture with fixed sizing gives 245.258 kg launch mass and 125.033 kg Earth-loaded liquid. The calculator branch requests a 68.356 kg payload cap against the 84.252 kg liquid limit. Reapplying the settled worksheet mass equations at that cap gives 84.252 kg liquid. Gate-off, 50 kg cargo, on-site return fuel and hydrolox controls request no refit. **rc-926** records the worksheet replay gap. The fixture executes the cap branch and fixed mass equations with a cap-only callback.
 
 Extracted data in extracted_data/r1046_worksheet_launch_liquid_refit.csv.
-
 
 ## R1072 — Carbon dioxide and ammonia cargo containment and volume (2026-11-24)
 
@@ -351,7 +339,6 @@ Extracted data in extracted_data/r1046_worksheet_launch_liquid_refit.csv.
 
 Extracted data in extracted_data/r1072_ammonia_and_co2_cargo_state_and_containment.csv.
 
-
 ## R1080 — Mining dust evidence and mitigation mass basis
 
 - `spacecost_economicspace_dust_mitigation_and_mass_code_2026` — Spacecost `storage_systems.csv` line 16 attributes ended Apollo EVAs and a jammed InSight mole to fines, claims hours of observed ejecta at Ryugu, and lists 0.08 [0.03, 0.20] kg/kg of mining hardware. The note says the figure is included in the rig recurring rate. Economicspace's `verification_sheet.py` lines 4884–4894 multiply the rig and plant masses by the `Mining payload recurring cost` input, a $300,000/kg scenario in Spacecost `operational_costs.csv` line 3. On a gross 2,000 kg rig basis, 0.08 implies 160 kg of mitigation hardware.
@@ -359,20 +346,17 @@ Extracted data in extracted_data/r1072_ammonia_and_co2_cargo_state_and_containme
 - `buhler_etal_2025_blue_ghost_dust_shield_demonstration` — Printed p. 2, Figure 4 reports 97% dust removal from the glass coupon and 82% from the radiator coupon on Blue Ghost. `mcbrayan_francis_sobey_2025_viper_mobility_dust_mitigation` describes seal selection for lunar mobility. Verdict: these demonstrations explain mitigation options, while Spacecost's rig-level mass and cost coverage needs a documented basis (rc-991).
 - Extracted data: `extracted_data/r1080_mining_dust_evidence_and_mass_basis.csv`.
 
-
 ## R1081 — Payload-wide return structure and ore restraint
 
 - `economicspace_return_structure_ore_restraint_scope_code_2026` — Economicspace `verification_sheet.py` lines 3055–3060 call 0.15 “ore restraint per kg of payload.” `calc.py` lines 164–190 include “tankage, primary structure, cargo restraint, the parachute or the berthing mechanism” in the allowance and apply it to total payload in lines 7762–7772. A 1,000 kg fixture adds 150 kg of base structure whether it carries 0 or 1,000 kg of water. The separate 0.05 kg/kg Spacecost water hold term adds 0–50 kg on top.
 - `brown_etal_1990_lunar_regolith_bagging_system` — Appendix H item 6 uses 1.50 lb per empty bag and reports 628 kg across 924 bags. Appendix D uses 29,702 in³ of regolith per bag at 1.2 g/cm³, about 584 kg of fill, yielding a calculated bag-only ratio of 0.00117 kg/kg in the lunar surface design. Appendix H item 26 reports 687 kg including the filling equipment. Verdict: component scope and payload denominator need to be explicit in the worksheet and its citation (rc-992).
 - Extracted data: `extracted_data/r1081_return_structure_and_ore_restraint_scope.csv`.
 
-
 ## R1082 — Launch fairing share assigned to the return hold
 
 - `economicspace_fairing_to_return_hold_allowance_code_2026` — Economicspace `calc.py` lines 7644–7668 introduce “say 25%” of the launch fairing as the return hold. The 0.25 also enters the search bound at lines 9247–9248. `verification_sheet.py` lines 3316–3332 cite the fairing input, then call the result “what the hold can physically carry.” At pinned Spacecost fairing volumes of 157 and 216 m³ the quarter rule gives 39.25 and 54 m³. The 100 m³ default gives 25 m³.
 - `spacex_falcon_payload_users_guide` — Printed p. 16, section 4.1.3 defines the “payload static envelope, or keep-in volume” for launch integration, accounting for adapter fit and relative deflections. `nasa_2026_commercial_crew_dragon_capsule_trunk_architecture` — In “Dragon Design and Development,” NASA describes the unpressurized trunk as the Falcon 9 ascent interface and says it is jettisoned before reentry. The pressurized cargo is in the capsule. Verdict: the worksheet needs an independent basis or explicit scenario label for converting an ascent envelope to internal return capacity (rc-993).
 - Extracted data: `extracted_data/r1082_fairing_to_return_hold_allowance.csv`.
-
 
 ## R1095 — Battery discharge depth and cycle life (2026-11-24)
 

@@ -97,12 +97,15 @@ At spacevalue@9470b988df6c3fa6de98849cf58721064fb5637a, ammonia utility is 0.60 
 - `nasa_nssdca_mars_fact_sheet` lists atmospheric carbon dioxide at “95.1%” by volume (Atmospheric composition table).
 
 At spacevalue@9470b988df6c3fa6de98849cf58721064fb5637a, the carbon-dioxide utility factor is 0.30 in the base profile and lunar-surface case, 0.05 at GEO and 0.02 at Mars surface. The sources establish use and Mars availability but do not quantify the fraction of launch cost avoided at each destination. **rc-426** opens to cite the evidence and label the factors as engineering scenarios; no value change is proposed. Extracted: `extracted_data/r161_volatiles_chemicals_catalysts_key_numbers.csv`; `extracted_data/r561_mars_co2_availability.csv`.
+
 ## R562 — Phosphorus utility factors remain unquantified (2026-11-10)
 
 Wade, NASA CR-4229 p.60, reports continued phosphorus supplementation in modeled CELSS diets; Zeitlin et al., NTRS 20160006646 pp. 3, 5, identify phosphorus recovery as relevant to plant-loop closure and give a 60% nutrient-recovery target. The evidence supports demand and recovery context, but not the 0.10 base/lunar, 0.05 GEO, and 0.10 Mars utility factors or the fraction of launch cost avoided. **rc-427** records the citation and scenario-labeling gap; no value change is proposed. Extracted: `extracted_data/r172_phosphorus_demand_key_numbers.csv`.
+
 ## R563 — Sulfur utility factors lack productive-use and demand backing (2026-11-10)
 
 `abney_et_al_2026_sabatier_freon_cs2_cos_mitigation_ices2026_601` reports sulfur and silicon among the most detrimental ISS Sabatier catalyst poisons and a 70% catalyst-activity reduction from contaminants (p. 4). `baumgartner_1974_sulfur_poisoning_hydrocarbon_oxidation_palladium_cr155192` reports sulfur-containing catalyst poisons in palladium tests (domain 30 R171). At spacevalue@9470b988df6c3fa6de98849cf58721064fb5637a, sulfur utility is 0.10 base/lunar-surface and 0.05 GEO/Mars-surface; evidence of poisoning does not establish beneficial sulfur demand or the fraction of launch cost avoided. **rc-428** records the citation and scenario-labeling gap; no value change is proposed. Extracted: `extracted_data/r171_sulfur_poisoning_key_numbers.csv`.
+
 ## R564 — Organic utility factors remain unquantified (2026-11-10)
 
 Lewis, NASA SP-509 (pp. 59–78), reports up to 6% organics in C1 chondrites; Morren et al., NASA TM-100113 p. 2, list methane among station-resistojet working fluids used for drag make-up. These establish asteroid organic inventory and a volatile methane propulsion use, not processed polymer/agriculture feedstock demand or the fraction of launch cost avoided. At spacevalue@9470b988df6c3fa6de98849cf58721064fb5637a, organics utility is 0.20 base/lunar-surface and 0.05 GEO/Mars-surface. **rc-429** records the citation and scenario-labeling gap; no factor change is proposed. Existing extraction: `extracted_data/r161_volatiles_chemicals_catalysts_key_numbers.csv`.
@@ -114,10 +117,10 @@ Moses and Bushnell, NASA/TM-2016-219182, §3.1.2 (printed p. 6), describe produc
 ## R566 — Carbonate utility factors lack a phase-specific use basis (2026-11-10)
 
 Lewis, NIAC Phase I Final Report NNX15AL85G, printed p. 30, models CO2 and water as feedstocks for DME/H2O2 propellants and gives a 352 t CO2 requirement per 1000 t propellant; printed p. 33 describes heating raw asteroid material in a solar calciner, with evolved gas mainly CO2 and water vapor. It does not identify the CO2 as carbonate-derived. At spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16, carbonates are assigned utility 0.25 base/cislunar, 0.05 GEO, 0.03 lunar_surface and 0.02 mars_surface, with comments describing them as a CO2 source and otherwise shielding rock. The source does not quantify carbonate processing, shielding substitution, destination demand, or launch-cost avoidance; it supports a possible asteroid-CO2 use, not these factors. **rc-431** records the citation and scenario-labeling gap; no numeric change is proposed. Extracted: `extracted_data/r566_asteroid_co2_propellant_feedstock.csv`.
+
 ## R610 — Phosphate-mineral utility inherits carbonate factors without a destination basis (2026-11-11)
 
 spacevalue_phosphate_mineral_utility_code_current_2026: spacevalue assigns oldhamite, merrillite and chlorapatite a base in-space utility of 0.25 each, with overrides of 0.05 at GEO/GTO, 0.03 at the lunar surface and 0.02 at the Mars surface. The v1.12.0 code comment groups them with carbonates as shielding rock and says carried S/P is priced if separated, but gives no mineral-specific usable-product, recovery or destination-demand basis. The verification-sheet rule marks in_space_utility inputs as needing backing where no factor source is listed. Verdict: request a mineral- and destination-matched basis or label the inherited factors as proxy scenarios; retain current values, with no replacement inferred. This is distinct from rc-427 (elemental phosphorus utility), rc-431 (carbonate utility) and rc-453 (processing energy). rc-473. Extracted: extracted_data/r610_phosphate_mineral_utility_context.csv.
-
 
 ## R621 — Surface catalyst demand cannot be blended with Earth sales (2026-11-11)
 
@@ -151,7 +154,6 @@ spacevalue c377668ab4c1291350c3d9a7b3523d253ed939f8 (PR #15, package 0.7.2, data
 
 Verdict: all eight closed as applied. Extracted data: none new.
 
-
 ## R1073 — Ammonia propulsion and cabin nitrogen, and the CO2 cabin claim (2026-11-24)
 
 - spacevalue_ammonia_co2_propulsion_and_cabin_uses_2026 records Spacevalue's GEO ammonia utility of 0.40 with “value as resistojet propellant.” Its bibliography names deininger_et_al_1990_30kw_ammonia_arcjet_jpl_pub90_4 for arcjet performance. shaw_pugmire_callens_1969_ats4_ammonia_resistojet, AIAA 69-296 author abstract, records ATS-4 operating “825 hr” and consuming 35% of its 3 lb ammonia load in a “decaying elliptical orbit.” Geosynchronous stationkeeping was the design purpose. **rc-976** records the resistojet reference and orbit scope.
@@ -159,7 +161,6 @@ Verdict: all eight closed as applied. Extracted data: none new.
 - spacevalue_ammonia_co2_propulsion_and_cabin_uses_2026 records “a life-support buffer gas” in the carbon dioxide material note, alongside the Sabatier use, with CO2 base utility 0.30. nasa_std_3001_v2_rev_f_cabin_atmosphere, V2 6002 and V2 6004, specifies at least 30% inert diluent with nitrogen assumed and a separate cabin CO2 limit of “no more than 3 mmHg” averaged over an hour. nasa_2026_orion_cabin_gas_crew_systems describes oxygen and nitrogen pressure stocks and a regenerable CO2 removal system. franco_2019_sabatier_catalyst_mars_isru_ices2019_077, p. 2, describes CO2 as a Sabatier feed. **rc-978** records the cabin gas description and process scope.
 
 Extracted data in extracted_data/r1073_ammonia_and_co2_utility_evidence.csv.
-
 
 ## R1074 — Mars atmospheric feed versus delivered carbon dioxide and nitrogen (2026-11-24)
 

@@ -64,7 +64,6 @@ The $588.5M 'Spacecraft development (NRE)' anchor is nominal FY2011-FY2016 oblig
 
 'Mission operations' $31.4M/yr comes from the "$283M over 9 yr" plan, nominal FY2017-FY2025 obligations (PEBD per-FY 26.2 ... 5.4, Totals 232.2). rc-047 fixed the note wording only; rc-092 is the matching wording item on the sample-recovery row. rc-169 proposes CPI-U Sep-2026/Dec-2019 x1.2992 (centre calendar 2019.95) -> ~$40.8M/yr (Dec-2018 base x1.3228, Dec-2020 x1.2834: ~$41.5M / ~$40.3M). FRED was down, so L(Sep-2026)=336.298 comes from rc-168's pull and L(Dec-2024)=317.604 from r78, bridged to Dec-2019 by the World Bank chain x1.226989 (the same convention reproduces r78's x1.4622 / x1.4570 and agrees with FRED within 0.15% over 2016-2024). Replace the bridge with a direct FRED pull when it answers.
 
-
 ## R377 - Mission-operations CPI sensitivity (2026-11-08)
 
 `fred_cpiuacsl_monthly_usd_series` is the BLS-source CPI-U seasonally adjusted series CPIAUCSL. The live FRED table reads 252.767 (Dec 2018), 258.630 (Dec 2019), 262.045 (Dec 2020), and 336.298 (Sep 2026).
@@ -72,10 +71,10 @@ The $588.5M 'Spacecraft development (NRE)' anchor is nominal FY2011-FY2016 oblig
 At `spacecost@19e1a31`, the `Mission operations` row is $40.8M per mission-year, based on $31.4M nominal and a Dec-2019-to-Sep-2026 CPI factor stated as 1.2992. The note also says a Dec 2018 base gives ~$41.5M (factor 1.3228) and a Dec 2020 base gives ~$40.3M (factor 1.2834). Using the same CPIAUCSL series consistently, Dec 2018 gives 1.330466 and $41.7766M (~$41.8M); Dec 2019 gives $40.8296M (~$40.8M); Dec 2020 gives $40.2975M (~$40.3M). Thus the discrepancy is isolated to the Dec-2018 alternative sensitivity; the central value and Dec-2020 comparison still round as written.
 
 Verdict: `rc-295` asks to correct the Dec-2018 alternative-base figure only. The $40.8M point estimate is unchanged. `extracted_data/r377_mission_ops_cpi_sensitivity.csv`.
+
 ## R564 — Mission-operations CPI sensitivity corrected (2026-11-10)
 
 The BLS CPI-U monthly series gives the December 2018 factor 336.298/252.767 = 1.330466; applied to the $31.4M/year base, the alternative is about $41.8M. The main $40.8M point estimate remains unchanged. `rc-295` is applied in spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c. Extracted: `extracted_data/r377_mission_ops_cpi_sensitivity.csv`.
-
 
 ## R859 — Frozen Economicspace Mission operations dollar-year basis (2026-11-17)
 
@@ -86,7 +85,6 @@ The BLS CPI-U monthly series gives the December 2018 factor 336.298/252.767 = 1.
 **spacecost_mission_operations_current_2026**: The current row identifies the $31.4M/year base as nominal FY2017-FY2025 obligations and carries it to $40.8M in Sep 2026 dollars by CPI-U Dec 2019-Sep 2026 x1.2992. It gives Dec 2018 and Dec 2020 alternatives of about $41.8M and $40.3M. **planetary_society_pebd_mission_costs** records final OSIRIS-REx operations obligations of $232.2M through FY2025, distinct from the $283M pre-return plan.
 
 Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row Mission operations. Verdict: disclose the nominal FY2017-FY2025 plan basis and CPI-U conversion for a 2026-dollar reading; the current comparable point is $40.8M/year. Keep the plan distinct from final obligations and do not infer a range adjustment. **rc-736**. Extracted: `extracted_data/r859_economicspace_mission_operations_cpi_basis.csv`.
-
 
 ## R860 - Frozen Stage 3 spacecraft-development dollar-year basis (2026-11-17)
 

@@ -1,228 +1,4 @@
-## R991 — Spacecost NASA-CR-186677 bibliography entry (2026-11-19)
-
-spacecost_0187_main_citation_method_review_2026: at Spacecost main a6901495d257cbcd018b31e238498c94f301c865, delivery.py labels _LLO_TEI_DV_M_S = 850.0 a scenario and names NASA-CR-186677 / NTRS 19900016723, Table 4B, as its comparator. Spacecost CITATIONS.md section 3 has no named entry for that report. nasa_ntrs_19900016723_lctv_return_delta_v: NASA NTRS gives the title Preliminary subsystem designs for the Assured Crew Return Vehicle (ACRV), volume 1 and report number NASA-CR-186677-VOL-1; Table 4B, printed p. 25, gives 915 + 60 = 975 m/s to a 400-km Earth orbit. This is not a surface-return comparator.
-
-Verdict: rc-861 open, citation-only. rc-741 remains applied; 850 m/s is unchanged. Extracted: extracted_data/r991_spacecost_nasa_cr186677_bibliography_gap.csv; values: extracted_data/r865_lunar_llo_tei_return_comparator.csv.
-
-## R990 — Spacecost lunar TEI labelled a scenario upstream (2026-11-19)
-
-At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), `delivery.py` labels the 850 m/s LLO trans-Earth injection a scenario with no stated altitude or Earth endpoint and cites `nasa_ntrs_19900016723_lctv_return_delta_v` (915 + 60 = 975 m/s to a 400-km Earth orbit) as the comparator (rc-741). Value unchanged.
-
-Verdict: rc-741 closed as applied. Extracted data: none new.
-
-## R986 — Spacecost propulsion and NRHO bibliography gaps (2026-11-19)
-
-- **mirtich_1982_resistojet_large_spacecraft_systems**: NASA TM-83489, printed p. 4, gives a generic system-mass relation, “PPU = 88 percent efficient” and a “20 percent assumed allowance for structure, feed lines, etc.” Spacecost’s Water resistojet row cites it while retaining 10 kg/N and 0.75 efficiency; the paper is a comparator, not support for those water-specific values (rc-852).
-- **spacecost_water_resistojet_bibliography_gap_code_current_2026**: At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8, the Water row points to NASA TM-83489 p. 4, but CITATIONS.md §2 lacks its full entry.
-- **whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept**: Printed p. 2 compares total ΔV of 1,500 m/s for NRHO, 1,600 for L2 Halo, and 1,800 for DRO; printed p. 3 says LLO was excluded from the remaining trade because its propellant load exceeded Orion capability. These are crewed staging-orbit results, not a depot ranking or direct support for Spacecost’s 450 m/s TLI-to-NRHO row (rc-853).
-- **spacecost_nrho_staging_bibliography_gap_code_current_2026**: At the same Spacecost main, reference/delta_v_segments.csv line 15 cites Whitley et al. (2017), GLEX-2017-3.2A.1 / NTRS 20170004964; CITATIONS.md §3 lines 242–244 has no entry for the paper.
-- **babic_et_al_1993_extended_duration_lunar_lander**: Printed p. 3 §2.3.1/Table 2.1 gives 3,140 m/s for an 185 km, 33° parking orbit and a four-day lunar transfer. Spacecost’s 3,600 m/s LEO-to-cislunar-NRHO row uses it as a TLI comparator, not a matched NRHO trajectory (rc-854).
-- **spacecost_nasa_cr_195527_bibliography_gap_code_current_2026**: At the same Spacecost main, reference/delta_v_segments.csv line 16 cites NASA-CR-195527/Table 2.1; CITATIONS.md §3 line 242 lacks the report title and NTRS link.
-
-Upstream cells: Water resistojet mass-per-thrust and efficiency; TLI → NRHO insertion (450 m/s); LEO → cislunar NRHO composite (3,600 m/s).
-
-Verdict: Open rc-852–854 for the missing full bibliography entries and stable links. No numeric replacement inferred. Extracted data: existing `extracted_data/r790_water_resistojet_mass_and_efficiency_citation_gap.csv`, `extracted_data/r944_nrho_depot_ranking_citation_scope.csv`, and `extracted_data/r892_spacevalue_cislunar_lunar_note_citation_gap.csv`.
-
-## R985 — Spacecost propulsion bibliography and sail milestones applied upstream (2026-11-19)
-
-At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6, data contract 1.27.6; notes, comments and CITATIONS.md only), CITATIONS.md gains `oleson_mcguire_2011_compass_enceladus_sep_stage` (rc-829), `nasa_nextc_flight_ion_system_status_2020` (rc-830), `beaurain_et_al_2003_earth_to_orbit_rocket_propulsion_ntrs20030066115` (rc-831) and the four IEPC papers behind VASIMR and MPD (rc-845). The solar sail note says NEA Scout separated from SLS but its sail deployment was never confirmed, citing `nasa_nea_scout_status_update_2022` and `nasa_pds_nea_scout_lost_status_2022` beside the IKAROS, LightSail 2 and ACS3 records (rc-837). Every value column is unchanged.
-
-Verdict: rc-829, rc-830, rc-831, rc-837, rc-845 closed as applied. Extracted data: none new.
-
-## R980 — Spacecost bibliography entries for electric-propulsion proceedings (2026-11-19)
-
-- **squire_etal_2011_vx200_operation_200kw_iepc154**: IEPC-2011-154, printed p. 1, reports the VX-200 at 200 kW: “72 ± 9%” efficiency, “4900 ± 300 seconds” specific impulse, and “5.8 ± 0.4 N” thrust. Spacecost cites the paper in its VASIMR note beside 4,000 s, 0.50 efficiency, and 53 kg/N.
-- **squire_etal_2013_vasimr_system_mass_iepc149**: IEPC-2013-149, printed p. 1, describes a “complete VASIMR single-core spaceflight engine system” over a 50–250 kW model domain. Spacecost cites it as a system-mass comparator for the VASIMR row.
-- **chang_diaz_etal_2022_vasimr_recent_progress_iepc525**: IEPC-2022-525, printed p. 1, reports a “longest firing of 88 continuous hours at 80 kW.” Spacecost cites it for VX-200SS endurance in the VASIMR note.
-- **polk_et_al_2024_lithium_mpd_thruster_iepc_2024**: IEPC-2024-841, printed p. 1, reports performance “over 60% efficiency at specific impulses over 4000 s” at 500 kWe to 1 MWe. Spacecost cites it in the MPD note beside 4,000 s, 0.40 efficiency, and 40 kg/N.
-
-Spacecost `CITATIONS.md` section 2, line 145, lists only “Manufacturer data sheets, per device” for thruster kg/N, efficiency, and scaling; it has no full entry for any of these four proceedings.
-
-Verdict: open rc-845 for full bibliography entries with title, authors, conference, year, paper number, and stable links. This is distinct from applied rc-661 and rc-774, which address the cited values and source scope; no numeric replacement inferred. Extracted: `extracted_data/r791_vasimr_performance_mass_boundary_and_endurance_citation.csv`; `extracted_data/r895_mpd_propellant_citation_gap.csv`.
-
-## R975 — Spacecost solar-sail milestone citations and mission scope (2026-11-19)
-
-At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `spacecost/propellants.py` lines 1503 and 1519–1522 give IKAROS as the 2010 first flight and name LightSail 2, NEA Scout and ACS3 without source links. `CITATIONS.md` §2 has no entries for these mission milestones.
-
-- `jaxa_ikaros_first_solar_sail_demonstration_2010`: JAXA ISAS says IKAROS “became the first in the world to successfully demonstrate a solar sail and solar power sail” (mission page, lines 78–83); launched 2010-05-21.
-- `planetary_society_lightsail2_apogee_raise_2019`: The Planetary Society reports the spacecraft raised apogee by 7.2 km after sail deployment (23 Aug 2019, line 115).
-- `nasa_nea_scout_status_update_2022`: NASA records separation from SLS on 16 Nov 2022 and says it had “not yet confirmed an observation of the deployed sail” (9 Dec 2022, lines 254–257). `nasa_pds_nea_scout_lost_status_2022` says contact was never established and the spacecraft was considered lost as of Dec 2022 (lines 20–24). The note’s “deployed” needs to identify spacecraft separation, not confirmed sail deployment.
-- `nasa_acs3_full_sail_deployment_2024`: NASA confirmed full ACS3 sail deployment on 29 Aug 2024 (lines 252–259).
-
-**Verdict:** open **rc-837** to add linked, pinpoint references and clarify the NEA Scout event. The registered 2017 NEA Scout paper covers the planned low-thrust mission concept, not this flight outcome. No model values changed. Extracted: `extracted_data/r975_spacecost_solar_sail_milestones.csv`.
-
-## R954 — Spacevalue route notes and transfer-scope corrections applied upstream (2026-11-19)
-
-At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996 and Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff:
-
-- rc-604: the GTO-to-GEO 1,836 m/s row retains 28.5° as a reference scenario; Cape Canaveral latitude and typical 28.5° LEO are comparators, not a trajectory-specific transfer plane (`nasa_nssdca_spacewarn_bulletin_613_launch_center_latitudes`; `askins_2021_sls_janaff_update`).
-- rc-769: the Mars 1-sol orbit remains 250 × 33,793 km from NASA DRA 5.0 (printed p. 22, `dra5_2009_human_exploration_of_mars`); 2,100 m/s is identified as a two-body comparator at Spacecost's Hohmann arrival, not a DRA value.
-- rc-771: 3,600 m/s to cislunar NRHO is identified as a cross-study benchmark (NASA-CR-195527 Table 2.1; Benson, Asher & Reese 2025 slide 5); the lunar-surface TLI, LOI and descent values cite NASA SP-4029.
-- rc-810: Whitley et al. 2017 (printed p. 2, `whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept`) reports 1,500 m/s for NRHO, 1,600 for L2 halo and 1,800 for DRO; LLO's 1,000 m/s is excluded from the remaining trade because the assumed Orion propellant capability cannot support it. The note limits the comparison to a crewed lunar-landing staging-orbit trade, not a depot-cost ranking.
-
-Verdict: the citation trail and comparison scope are recorded; route values are unchanged. Extracted data: none new.
-## R951 — economicspace worksheet scope sentences and frozen-row provenance applied upstream (2026-11-19)
-
-economicspace fd3b3affdf2db206b13c89e49aebd89b573dd327 (PR #211, master 1.81.0; no stamp or number moves). `campaign/verification_sheet.py` citation text, three comments (`modules/calc.py` and `campaign/worked_calculation.py` parse to the same AST as before) and `campaign/stage3/PROVENANCE.md`. Measured with `--check`: default 2018 DT page NEED BACKING 84 to 83 (only I111, rc-635), `cislunar__raw__search-off` 35 unchanged; `--self-test` passes.
-
-- Worksheet scope: rc-582 (tug Isp, dry fractions), rc-697 (lunar_surface TLI + LOI leg cited to both rows), rc-626 (frozen hydrolox row named), rc-386, 632 (M-class albedo and density), rc-637, 534 (cruise fit and half-year floor), rc-692, 633 (delta-v floors), rc-599 (deorbit), rc-696 (utility map route), rc-726 (absorption-ceiling allocations), rc-635 (Sibanye-Stillwater recognised), rc-782 (build commit in the footer).
-- Comments: rc-647 (N = 1), rc-597 (100 m3 fairing fallback).
-- PROVENANCE.md rows the same in every frozen set: rc-656, 657, 659, 660, 661 (spacecost half in bad5ba8), rc-630 (krypton price), rc-627 (power rows).
-- Already carried at this commit, closed with no change: rc-583 (25-year cap), rc-644 (NRE overlap).
-- Left open: rc-651 (FEEP indium price needs a dated procurement source; PROVENANCE names USGS as a comparator) and rc-777 (a commit column in Stage 4 outputs changes the output schema).
-
-Verdict: 25 closed as applied. Extracted data: none new.
-
-## R934 — Spacecost first_flight defined and three propellant years moved (2026-11-18)
-
-spacecost 3d140d7f7ffc7da6352b737fb3b7d32d61ac2d0a (PR #47, package 0.18.0, data contract 1.27.0), merged with the owner's approval. The owner chose the definition: `first_flight` is the first launch or flight of a vehicle using the propulsion, successful or not. Compared column by column against 9c7c6b2: only `first_flight` in three rows, `notes` in five and `pipeline_version` differ; no code reads `first_flight`.
-
-- rc-760: methalox 2023 to 2022, `landspace_2023_zhuque2_first_orbit` (Mission F1 first launch 2022; F2 first to orbit 2023).
-- rc-762: HTP monoprop 1949 to 1951, `science_museum_group_dehavilland_super_sprite_rocket_engine` (first fired 1949, flight trials 1951).
-- rc-764: water resistojet 2022 to 2019, `jaxa_kibo_aqt_d_water_resistojet_deployment_2019`; the note separates `nasa_ptd1_hydros_c_water_electrolysis_2021`, `momentus_2023_vigoride5_water_met_first_orbit_raise`, `pale_blue_2023_water_resistojet_inorbit`, `jaxa_raise3_kir_failed_launch_2022` and `jaxa_2022_artemis1_equuleus_launch_record`; AQUARIUS is credited to Sekine et al. (`asakawa_aquarius_onorbit_2024`).
-- rc-761, rc-763: 1969 (Black Arrow R0; `uksa_2020_black_arrow_history`, `wight_aviation_museum_black_arrow_history`) and 1993 (Telstar 401; `curren_byers_1994_nasa_hydrazine_arcjets_telstar401`, `hoskins_et_al_2013_aerojet_ep_flight_experience`, `lockheed_martin_2006_amc1_first_a2100_launch`) kept with the events named.
-
-Verdict: all five closed as applied. Extracted data: none new.
-
-## R933 — Spacecost propellant-density and flight-record citations applied upstream (2026-11-18)
-
-spacecost 9c7c6b2b4e213e647089976227bc5e5dc6333721 (PR #46, package 0.17.3, data contract 1.26.1 to 1.26.2). Notes, comments and CITATIONS.md only. Compared here column by column against 7ea729f: in all six reference tables and the summary sample only `pipeline_version` and `notes` differ. Rebuilt on the recorded platform (Python 3.13, numpy 2.5.4, pandas 3.1.1).
-
-- rc-673, rc-675, rc-676, rc-677, rc-678, rc-808: component densities cited with their conditions to `imo_msc420_2016_methane_liquid_density`, `dodm_4145_26_2008_storable_propellant_density_table`, `nasa_ntrs_20030020732_98pct_h2o2_density`, `arnett_1969_nasa_tm_x53859_aerozine50_properties` and `who_2020_iodine_drinking_water_density`. UDMH's third decimal is stated as unsourced; Aerozine-50's 0.903 as the top of the specific-gravity range.
-- rc-807: iodine's 2,000 s is labelled a scenario on `nasa_tm_2015_218829`'s Busek target.
-- rc-757, rc-759, rc-755, rc-683: corrected notes cite `kerslake_1970_sert_ii_flight_performance`, `worlock_1975_ats6_cesium_engine_experiment`, `hamidian_dahlgren_1973_les6_ppt_report`, `zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing`, `nasa_science_eo1_mission_page`, `pourpoint_2012_alice_feasibility`, `risha_2014_alice_jpp` and `benson_asher_reese_2025_fast_transfer_nrho_presentation`.
-- rc-756, rc-698, rc-670: `mulkey_cardiff_2024_green_propulsion_assessment`; `berry_et_al_2021_contact_with_bennu_osirisrex_tag_sample_collection`, `esa_2024_philae_harpoon_failure_landing_review`, `nasa_2020_insight_hp3_mole_soil_friction_failure`, `kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams`; and `cme_comex_nymex_futures` with `iea_energy_prices_2022_product_specifications` for the heating-oil proxy.
-
-Verdict: all fourteen closed as applied. Extracted data: none new.
-
-## R931 — Spacecost constant and bibliography citations applied upstream (2026-11-18)
-
-spacecost 7ea729fb33a3cf37daa86b8baa6aa51b94a8ac98 (PR #45, package 0.17.2, data contract 1.26.1 unchanged). CITATIONS.md and comments; `units.py` and `delivery.py` parse to the same ASTs as a401930 and `tools/refresh_reference.py --check` reports `reference/` up to date.
-
-- rc-667, rc-668, rc-669: `bipm_1901_3rd_cgpm_standard_acceleration_gravity`, `nist_hb133_2026_appendix_e_volume_conversion`, `thompson_taylor_2008_nist_sp811_si` and `nist_sp959_2018_codata_constants` are cited where the constants are set. Computed here: 42 × 3.785411784 in IEEE double is 158.98729492799998, one ulp below the stored 158.987294928, so the barrel stays the written-out exact decimal.
-- rc-739: `dec_braun_2006_approximate_ablative_tps_sizing_tool` is listed; `DOWNLEG_TPS_FRAC` is called a scenario with its cargo-plus-capsule denominator and Table 2's thickness sensitivity.
-- rc-753, rc-754, rc-783, rc-785: full entries for `navard_1993_modelling_early_failures_space_station_freedom`, `jacklin_2019_small_satellite_mission_failure_rates`, `boyce_aj10_oral_history`, `cuffe_jacobs_1970`, `stackpoole_2013_pica_pica_x_postflight_eval` and `zero_bo_off_2025`, each with the scope its candidate names.
-- rc-805, rc-806: the two 0.17.1 comparator groups are one row per source with titles and links.
-
-Verdict: all ten closed as applied. Extracted data: none new.
-
-## R928 — Spacecost iodine density source (2026-11-18)
-
-`spacecost_iodine_density_row_current_2026` — At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/propellants.csv` line 19 stores `density_kg_per_L=4.93`. Its note says iodine is stored as a solid at ambient pressure and repeats `ρ 4.93 kg/L`; its listed citations address flight history and price, not density. `CITATIONS.md` §2 line 106 lists the flight-history and market references.
-
-`economicspace_current_bestcase_verification_sheet_2026` — Supplied `verification_sheet.pdf`, p. 39, maps I63 to iodine `tank_mass_frac` and repeats the density note without a named density source.
-
-`who_2020_iodine_drinking_water_density` — Table 1.1, printed p. 2, reports solid iodine density as “4.93 g/cm3 at 25 °C.” This supports solid material density, not a loose-packed reservoir density.
-
-**Verdict:** Open `rc-808` to cite the material-density value with its reference condition and clarify that the model uses solid iodine density. Retain 4.93 kg/L; no replacement inferred. Extracted data: `extracted_data/r928_spacecost_iodine_density_scope.csv`.
-
-## R927 — Spacecost iodine Isp citation scope (2026-11-18)
-
-`spacecost_iodine_isp_row_current_2026` — At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/propellants.csv` line 19 stores `isp_vac_s=2,000 s`. The row note cites Rafalskyi et al. for iodine electric propulsion’s first in-orbit flight and explains that the US$60 figure is a total propellant cost without a stated mass; it does not cite the Isp.
-
-`economicspace_current_bestcase_verification_sheet_2026` — Supplied `verification_sheet.pdf`, p. 39, maps I62 to Isp for the Iodine (Hall / gridded) row and repeats the row note as the basis. I62 is not separately marked NEED BACKING.
-
-`nasa_tm_2015_218829` — Printed p. 19 identifies the Busek iodine Hall full-scale system’s “high thrust (Isp ~2,000 s)” target. This is a target for that Hall system, not a measured value or a general gridded-thruster result.
-
-**Verdict:** Open `rc-807` to add this value-specific citation and label 2,000 s as a high-thrust scenario target; retain the number pending a matched operating-point basis. Keep Rafalskyi for flight history and the total-cost caveat. No replacement inferred. Extracted data: `extracted_data/r927_spacecost_iodine_isp_citation_scope.csv`.
-
-## R892 — Spacevalue cislunar and lunar-surface destination-note citations (2026-11-18)
-
-`spacevalue_cislunar_lunar_destination_notes_current_2026` — At `spacevalue/catalog.py` lines 393–400, the cislunar note prints 3,600 m/s as “TLI + NRHO insertion”; the lunar-surface note prints a 4,050 m/s TLI + LOI leg and 2,050 m/s powered descent. Neither note identifies a source or source figure. `spacevalue/CITATIONS.md` lines 3–6 says the notes identify each value’s source and figure; the file has no Apollo SP-4029, NASA-CR-195527, or Benson et al. 2025 citation.
-
-`spacecost_cislunar_nrho_depot_row_current_2026` — Spacecost’s LEO-to-cislunar-NRHO row stores 3,600 m/s and describes an approximate cross-study sum: NASA-CR-195527 gives 3,140 m/s for a 185 km, 33-degree parking orbit and four-day lunar transfer (printed p. 3, section 2.3.1 and Table 2.1); Benson, Asher & Reese (2025) gives “400–450 m/s from TLI to NRHO” (slide 5). Their 3,540–3,590 m/s sum is context from different trajectories, not a matched transfer.
-
-`spacecost_lunar_surface_delivery_chain_current_2026` — The lunar-surface chain composes 3,150 m/s TLI and 900 m/s LOI for 4,050 m/s, then a 2,050 m/s descent. `sp4029_apollo_by_the_numbers` records TLI cutoffs of about 3,040–3,200 m/s (printed pp. 55, 113, 135), LOI cutoffs of 889–922 m/s (printed pp. 56, 94, 114, 185, 213, 267), and Apollo 15/16/17 descent cutoffs of 2,076.9, 2,043.0 and 2,041.5 m/s (printed pp. 213, 241, 267).
-
-**Verdict:** The source trail exists in Spacecost and General_Research, but the Spacevalue destination notes omit it under their citation convention. Open `rc-771` for these downstream notes. Applied `rc-357` covers the Spacecost cross-study composite; open `rc-683` covers the separate TLI-to-NRHO component-row attribution. Neither targets the Spacevalue note. No replacement values inferred. Extracted data: `extracted_data/r892_spacevalue_cislunar_lunar_note_citation_gap.csv`.
-
-## R734 — GEO plane-change angle uses an uncited obliquity input (2026-11-14)
-
-- **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 (printed p. 17) lists the initial value at J2000.0 as epsilon_0 = 84,381.406 arcsec, uncertainty 0.001 arcsec, with description “Obliquity of the ecliptic at J2000.0.” This converts to 23.4392794 degrees, which rounds to 23.44 degrees.
-- **economicspace_ecliptic_tilt_code_current_2026**: at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, modules/calc.py lines 2815-2818 describe an asteroid arrival near the ecliptic and GEO's equatorial plane, then compute the capture geometry with 23.44 degrees; campaign/worked_calculation.py lines 151-155 repeats the same constant. Neither names a source or epoch.
-- **economicspace_ecliptic_tilt_verification_sheet_code_current_2026**: campaign/verification_sheet.py lines 2240-2243 registers worksheet input tilt = 23.44 degrees and gives the geometry rationale through cite_here, but no external source. input_backing lines 5794-5805 classifies an own-source constant with no named reference as needs.
-- Verdict: the registered J2000 obliquity rounds to the model's 23.44-degree input. Cite the IERS value and epoch in the model and worksheet, and label the arrival-plane geometry as a nominal near-ecliptic assumption rather than each asteroid's measured inclination. Keep the rounded value; no numeric replacement inferred. **rc-601**. Extracted: extracted_data/r734_ecliptic_tilt_basis.csv.
-
-## R733 — GEO radius matches nominal altitude plus Earth radius but lacks attribution (2026-11-14)
-
-- **nasa_std_8719_14c_geostationary_altitude**: NASA-STD-8719.14C Revision C (2021-11-05) defines a circular GEO at 0° inclination as geostationary and states “The nominal altitude of a circular GEO is 35,786 km” (§3.2, printed p. 13).
-- **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 gives Earth’s equatorial radius as 6,378,136.6 m (6,378.1366 km); this existing source is registered in Domain 12.
-- **economicspace_geostationary_radius_code_current_2026**: at economicspace commit e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, modules/calc.py line 2814 sets R_GEO_KM = 42_164.14 and campaign/worked_calculation.py line 154 repeats R_GEO = 42_164.14, with no named source.
-- **economicspace_geostationary_radius_verification_sheet_code_current_2026**: campaign/verification_sheet.py lines 2200–2203 and 2234–2238 register R_GEO through cite_here("R_GEO") in ret_gto_prop and circularise_prep, without naming external references.
-- Verdict: adding the IERS equatorial radius to NASA’s nominal GEO altitude gives 42,164.1366 km, which rounds to 42,164.14 km. This supports the stored value as a nominal geocentric-radius reconstruction; it does not establish a more precise dynamical GEO radius. Cite both inputs beside the model constants and in the worksheet; retain the value. Distinct from closed rc-177, which concerns GTO burn rounding rather than the GEO-radius source. **rc-600**. Extracted: extracted_data/r733_geostationary_radius_provenance.csv.
-
-## R732 — Earth-return LEO deorbit allowance needs a documented entry target (2026-11-14)
-
-- **iaa_2006_space_debris_mitigation_sp1301**: ESA SP-1301 says “a perigee altitude of about 60 km ascertains a safe atmospheric capture” for a non-lifting body (printed p. 36). Figure 3.2 gives about 40 m/s for a controlled direct deorbit from a near-circular 200 km orbit to that perigee. The text says perigee selection depends on mass-to-area ratio and drag/lift; a heavy compact or high-lift-to-drag object may require a lower perigee.
-- **hopkins_2009_xenia_deorbit_analysis**: NASA/TM-2009-216270 Figure 2 (printed p. 9) plots required deorbit Δv against initial circular altitude and target reentry flight-path angle. For the Xenia design, Table 5 (p. 8) sets a 122 km reentry interface and “Target reentry flight path angle, γ” of −1.75° from a 500–600 km orbit; Table 6 (p. 10) gives 161.3 m/s impulsive plus 1.7 m/s gravity loss, 163 m/s total. This is a mission-specific case, not the 200 km return case.
-- **economicspace_leo_deorbit_code_current_2026**: at `economicspace@e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `modules/calc.py` sets `DV_LEO_DEORBIT_KM_S = 0.100` and calls it a “Standard figure” for lowering perigee from a 200 km circular orbit to about 50 km, without naming a source or entry corridor.
-- **economicspace_leo_deorbit_verification_sheet_code_current_2026**: the Earth-surface propulsive return worksheet registers this constant as its deorbit burn. `DV_LEO_DEORBIT` is absent from `DERIVATION_ROWS`, so `cite_constant` falls back to the local `cite_here` citation rather than an external delta-v row.
-- **spacecost_leo_deorbit_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/delivery.py` assigns 120 m/s for deorbiting from a 200 km circular orbit onto an entry trajectory and identifies it as a hand figure with no table row.
-- Verdict: a two-body impulsive burn from the model’s 200 km circular reference orbit to a 50 km perigee is 45.018 m/s; to 60 km it is 41.976 m/s. These are geometry-only checks, not capsule entry solutions. The 100 m/s and 120 m/s values use differently worded targets, with no shared entry condition stated for comparison. Document the intended trajectory and source or derivation, and reconcile the two project assumptions. No numeric replacement inferred. **rc-599**. Extracted: `extracted_data/r732_leo_deorbit_target_comparators.csv`.
-
-## R705 — Direct-fusion D-He3 price has an unresolved unit and mixture basis (2026-11-12)
-
-- **galea_etal_2023_pfrc_fusion_fuel_cost**: Galea et al. state a terrestrial He-3 price assumption of “$2000 per liter, or $15M per kg,” and about $14,000/kg for deuterium (Journal p. 10). Figure 7 uses a 1:1 fuel ratio in its PFRC example (p. 5); the text says the ³He:D ratio can be adjusted up to 3:1 (p. 6). These are reactor-economics assumptions, not a propulsion-fuel quote.
-- **spacecost_direct_fusion_drive_cost_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` stores $1,000,000/kg for the Direct fusion drive row. Its note calls this an order-of-magnitude D-He3 blend estimate, gives an uncited $1,400–2,000/g He-3 figure and does not define the mixture ratio or gas reference conditions.
-- Verdict: reconcile the price unit, gas basis and mixture boundary before changing the value. Galea et al.’s reactor assumptions challenge the undocumented basis but do not establish a like-for-like propulsion-fuel replacement. No numeric replacement inferred. **rc-575**. Extracted: `extracted_data/r705_dhe3_fuel_cost_basis.csv`.
-
-## R703 — Iodine thruster mass scaling remains a cargo-scale scenario (2026-11-12)
-
-- **rafalskyi_2021_iodine_ep_in_orbit**: the integrated NPT30-I2 propulsion system has “total mass (including propellant)” of 1.2 kg (Nature p. 412); its maximum thrust is “about 1.3 mN” at total power below 65 W (p. 413). The system includes propellant storage, delivery/control, thruster, neutralizers, power processing and thermal management (p. 412).
-- **spacecost_iodine_thruster_mass_to_thrust_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` assigns 60 kg/N to `_THRUSTER_SYSTEMS["Iodine  (Hall / gridded)"]`. The block defines this field as thruster-head mass per demonstrated thrust and labels iodine's value a Hall-class scale-up judgement. The 1.2 kg / 1.3 mN CubeSat figure is about 923 kg/N for the complete integrated system, including propellant.
-- Verdict: the flight article is not a like-for-like thruster-head or cargo-scale comparator. Keep 60 kg/N only as an explicit scenario pending cargo-scale iodine Hall/gridded thruster-head mass/thrust evidence; no numeric replacement inferred. **rc-573**. Extracted: `extracted_data/r703_iodine_thruster_mass_to_thrust.csv`.
-
-## R682 — LEO-radius source remains absent from the verification worksheet (2026-11-12)
-
-- **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 gives the equatorial radius as 6,378,136.6 m; this rounds to the 6,378.14 km component of the model’s reference-orbit radius.
-- **askins_2021_sls_janaff_update**: the SLS capability-table footnote defines LEO as a “typical 200 km circular orbit at 28.5 degrees inclination”; it supports a reference-orbit convention, not a universal mission orbit.
-- **economicspace_leo_radius_verification_sheet_code_current_2026**: at economicspace main `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` lines 2803–2806 name both sources, while `campaign/verification_sheet.py` lines 1928–1930 gives the 6,378.14 km plus 200 km construction without naming either. The refreshed `--check` passed; direct backing extraction marks worksheet input I4 (6,578.14 km) NEED BACKING.
-- Verdict: the worksheet attribution requested by **rc-356** is still missing, so rc-356 is open again. The reference-orbit value is unchanged. Extracted: `extracted_data/r490_leo_radius_provenance.csv`.
-
-## R680 — Asteroid station-keeping allocation remains an estimate without a mission budget (2026-11-12)
-
-`spacecost_asteroid_stationkeeping_delta_v_code_current_2026`: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` stores an “Asteroid station-keeping” segment with `dv_m_per_s=200` and `duration_yr=0.5`. The current note labels the 200 m/s an engineering estimate and says no document gives it; the half-year duration is not given a mission-design source.
-
-`antreasian_et_al_2021_osirisrex_proxops_nav_performance`: the Bennu proximity-operations paper reports a desaturation weighted mean and standard deviation of “0.21 ± 0.20 mm/s” (printed p. 29); it reports 2.5 years in close proximity, 114 maneuvers with 140 burn components, and a smallest maneuver of 0.09 mm/s (printed p. 30). These are mission-specific elapsed time and event-level/navigation statistics, not a summed propulsion budget for station-keeping, proximity operations, sample collection and departure. They neither derive nor directly contradict the model’s 200 m/s and 0.5-year inputs.
-
-Verdict: review the segment against a mission-class maneuver budget and a defined stay-duration scenario, or keep both values explicitly as scenario inputs. No numeric replacement inferred. This is distinct from rc-231, which applied a note correction while leaving the 200 m/s and 0.5-year cells untouched; no direct downstream consumer for this segment was found by an exact-name search across the checked project worktrees, so the data row’s current operational use remains to be verified. **rc-539**. Extracted: `extracted_data/r680_osirisrex_stationkeeping_dv_comparator.csv`.
-
-## R542 — Mars ascent Δv additional configuration comparator (2026-11-10)
-
-- **palaszewski_2022_mars_landing_ascent_delta_v** (NASA NTRS 20210026187; Bryan Palaszewski, *Mars Research*, IntechOpen): §2.5 Table 3 gives 4,200 m/s for ascent from the Martian surface to a 100 km circular low Mars orbit and states a 20% gravity-loss allowance; §3.0 repeats the 4,200 m/s ascent value. Table 3 separately gives 244.8 m/s for transfer to 500 km circular orbit, 4,444.8 m/s combined.
-- The current spacecost row remains 4,100 m/s and is described as an unsourced estimate including gravity and drag losses. The new LMO-only case is 100 m/s (2.4%) higher; it supports the scale of the estimate but is a human Mars landing vehicle case, not a generic mission requirement. Combined with the already registered 3,950 m/s Lewis et al. two-stage 100 × 100 km / 30° case, the comparisons bracket 4,100 m/s but do not establish a universal replacement. **rc-377** remains open.
-- Extracted: extracted_data/r542_palaszewski_mars_ascent_dv.csv.
-
 # Domain 3 Findings — Δv budgets and propulsion performance tables
-
-## R664 — HTP/RP-1 vacuum-Isp basis is not identified in Spacecost (2026-11-12)
-
-- **krishnan_2010_h2o2_rp1_upper_stage**: Table 3 (PDF p. 9) reports an H2O2 (~97%)/RP-1 RD-161P development engine at O/F 5.9 with 3,128 N-s/kg (~319 s), and the flown Gamma-2 at O/F 8.23 with 2,599 N-s/kg (~265 s). Table 2 (p. 8) gives theoretical 98% H2O2/RP-1 frozen Isp of 3,268 N-s/kg (~333 s) at the maximum-frozen point.
-- **pietrobon_1999_h2o2_kero_shuttle_boosters**: Table 2 (PDF p. 4) gives 3,016 m/s (~308 s) for a hypothetical 98% H2O2/kerosene RD-170 derivative at O/F 7.30.
-- **spacecost_htp_rp1_specific_impulse_code_current_2026**: at `spacecost@aaed2720ee44610c5cf90fc204db160deb5669bb`, `spacecost/propellants.py` lines 1068–1084 stores 320 s at nominal O/F 7 and mentions Black Arrow heritage without identifying the performance basis.
-
-The references support distinct development, flown, and theoretical performance cases; the flown Black Arrow Gamma-2 comparator is ~265 s, not 320 s. Verdict: cite the basis for 320 s and distinguish it from Black Arrow’s flight performance; retain the numeric value pending a like-for-like basis. **rc-525**. Extracted: `extracted_data/r664_htp_rp1_isp_basis.csv`.
-
-## R600 — Chemical cruise-time fit provenance (2026-11-11)
-
-- **economicspace_cruise_time_fit_code_current_2026**: `campaign/worked_calculation.py` defines `TAU_CRUISE_FIT_YR_PER_M_S = 0.00023` and calls it calibrated on chemical transfers, but names no calibration cases, dataset, fitting procedure, residual, uncertainty, or transfer range. `mass_and_clock` applies `max(0.5, coefficient × Δv)` separately to chemical outbound and return legs; electric missions use a separate thrust-time floor.
-- **economicspace_verification_sheet_cruise_time_input_current_2026**: the current `verification_sheet.py --check` run identifies input I5 as 0.00023 yr/(m/s) and marks it NEED BACKING. The worksheet reports 85 inputs needing backing overall. Its selected calculation is 2018 DT using archived Stage 2 and Stage 3 tables, so it is used here to locate the code input and its provenance status, not as a current calibration dataset.
-- The code’s “calibrated” description needs an identified sample, method, fit error and scope; if no calibration exists, the coefficient should be described as a scenario proxy. Preserve the value pending that basis; no replacement is inferred. **rc-463** records the citation gap.
-- Extracted: `extracted_data/r600_chemical_cruise_time_fit_provenance.csv`.
-
-## R512 — Water resistojet specific-impulse range (2026-11-10)
-
-- **morren_1992_nasa_tm_105877_water_resistojet** (NASA TM-105877; AIAA 92-3533): the abstract (p. 1) reports a maximum measured 234 s for a water-vaporizer / engineering-model resistojet assembly at 6.8 MJ/kg combined specific power. Table II (p. 10) identifies 234 s in its final specific-impulse test point, with 1,043 W total power and 6.86 MJ/kg total specific power.
-- Current spacecost reference/propellants.csv gives the water electrothermal/resistojet row a 150–220 s estimated range and 190 s center for higher-power designs. The lab measurement is 14 s above the range ceiling; it was a narrow test of an engineering model, not a flight result. **rc-378** records the range-bound question without proposing a new center value.
-- Extracted: extracted_data/r512_morren_water_resistojet_isp.csv.
-
-## R511 — Mars surface-to-orbit ascent Δv comparator (2026-11-09)
-
-- **lewis_etal_2020_mars_ascent_vehicle_synergy** (NTRS 20205007701; NASA Langley, ASCEND 2020): Table 2 p. 3 reports 3,950 m/s from Mars surface to LMO. Table 1 p. 3 defines LMO as 100 × 100 km at 30° inclination. The paper says the value is for a two-stage vehicle, rounded to 50 m/s, and includes main-propulsion burns without reserves or residuals.
-- Current spacecost reference/delta_v_segments.csv still has 4,100 m/s for “Mars surface → low Mars orbit”; its note calls the value an unsourced estimate including gravity and drag losses. The source is a bounded configuration comparator, 150 m/s below the stored value; it does not establish a universal replacement. **rc-377** remains open.
-- Extracted: extracted_data/r511_mars_ascent_delta_v.csv.
-
-Backings: spacecost `reference/delta_v_segments.csv`, `reference/propellants.csv` (Isp, density, cost, EP sizing columns), `delivery.py` stage-mass fractions; economicspace `calc.py` `ep_target_thrust_yr`.
 
 ## R1 - NEA Δv anchors (both un-hosted 2026-09-26, arXiv default licence) (2026-09-17)
 
@@ -597,11 +373,9 @@ runtime/method blobs match pinned metadata; four live main comparisons are
 identical. `extracted_data/r354_target_surface_escape.csv` retains full
 inputs/books, energy observers and the reproduction harness.
 
-
 ## R464 — Current surface-escape necessary-condition gate
 
 At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.gate_surface_escape` defaults to `False` (modules/calc.py:721), and the module consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). When enabled, `surface_escape_shortfall_m_s` computes spherical escape speed from `estimated_mass_kg` and mean radius (`diameter_km`), subtracts equatorial rotation from the measured period (or the configured default when missing), and returns zero when mass or diameter is unavailable (lines 2362-2386). `_asteroid_dv_options` then retains only offers with `dv_ret_m_s >= shortfall` (lines 3504-3506). The code comment calls this a necessary test and says passing is not a surface-launch design. The option can screen offers that fail this lower bound, but it does not add a local departure/arrival trajectory, site/vector geometry, gravity/steering losses, hover/orbit transfer, or reserve for later burns. It is default-off, so `rc-289` remains open for the default path and complete transport architecture. Extracted: `extracted_data/r464_current_surface_escape_gate.csv`.
-
 
 ## R488 — NHATS trajectory time varies with the ΔV objective (2026-11-09)
 
@@ -625,24 +399,44 @@ R491 — The current spacecost `reference/delta_v_segments.csv` row `LEO → cis
 
 - **nasa_s3vi_2026_small_spacecraft_inspace_propulsion**: NASA’s current Small Spacecraft Systems Virtual Institute chapter lists Astra ASE Krypton at 18 mN, 1,300 s, 1.0 kg; ExoTerra Halo Krypton at 12 mN, 900 s, 0.83 kg; and Halo12 Krypton at 55 mN, 1,575 s, 3.4 kg (Table 4-10). Derived listed mass/thrust is 55.6, 69.2 and 61.8 kg/N, respectively. The upstream generic Krypton (Hall) row uses 2,000 s, 0.45 efficiency and 35 kg/N; the published small-spacecraft comparators place 2,000 s above the listed Kr points and 35 kg/N below the listed mass/thrust values. NASA limits Table 4-1’s Hall range (200–1,920 s) to small-spacecraft devices and says the chapter primarily compiles manufacturer data, which should not be assumed independently verified. These are class/scale comparators, not like-for-like asteroid mission replacements; the chapter gives no numeric efficiency for these Kr devices. Extracted: extracted_data/r498_nasa_kr_hall_thruster_comparators.csv.
 
-
 ## R506 — Proximity-operations duration comparator for the stay floor (2026-11-09)
 
 At economicspace `modules/calc.py` `MiningConfig.station_keeping_floor_yr` is 0.25 years; the comment includes approach, characterization, proximity operations and departure phasing, but names no source. Antreasian et al. report that OSIRIS-REx close-proximity operations at Bennu began in December 2018 and ended in May 2021; the abstract describes “over 2 years” of navigation refinement (NASA NTRS 20210025471, abstract and §I, p. 1). The paper describes navigation, site-selection and sample-acquisition campaigns (Figure 1 and §I, p. 1). This sample-return mission is a duration comparator, not a mining stay and not evidence for a universal quarter-year minimum. `rc-372` records the scope gap; no numeric change is inferred. Extracted: `extracted_data/r506_osiris_rex_proximity_operations_duration.csv`.
+
+## R511 — Mars surface-to-orbit ascent Δv comparator (2026-11-09)
+
+- **lewis_etal_2020_mars_ascent_vehicle_synergy** (NTRS 20205007701; NASA Langley, ASCEND 2020): Table 2 p. 3 reports 3,950 m/s from Mars surface to LMO. Table 1 p. 3 defines LMO as 100 × 100 km at 30° inclination. The paper says the value is for a two-stage vehicle, rounded to 50 m/s, and includes main-propulsion burns without reserves or residuals.
+- Current spacecost reference/delta_v_segments.csv still has 4,100 m/s for “Mars surface → low Mars orbit”; its note calls the value an unsourced estimate including gravity and drag losses. The source is a bounded configuration comparator, 150 m/s below the stored value; it does not establish a universal replacement. **rc-377** remains open.
+- Extracted: extracted_data/r511_mars_ascent_delta_v.csv.
+
+Backings: spacecost `reference/delta_v_segments.csv`, `reference/propellants.csv` (Isp, density, cost, EP sizing columns), `delivery.py` stage-mass fractions; economicspace `calc.py` `ep_target_thrust_yr`.
+
+## R512 — Water resistojet specific-impulse range (2026-11-10)
+
+- **morren_1992_nasa_tm_105877_water_resistojet** (NASA TM-105877; AIAA 92-3533): the abstract (p. 1) reports a maximum measured 234 s for a water-vaporizer / engineering-model resistojet assembly at 6.8 MJ/kg combined specific power. Table II (p. 10) identifies 234 s in its final specific-impulse test point, with 1,043 W total power and 6.86 MJ/kg total specific power.
+- Current spacecost reference/propellants.csv gives the water electrothermal/resistojet row a 150–220 s estimated range and 190 s center for higher-power designs. The lab measurement is 14 s above the range ceiling; it was a narrow test of an engineering model, not a flight result. **rc-378** records the range-bound question without proposing a new center value.
+- Extracted: extracted_data/r512_morren_water_resistojet_isp.csv.
+
 ## R521 — Uncited asteroid-transfer ΔV floors (2026-11-10)
 
 The current economicspace `modules/calc.py` `asteroid_dv_options_km_s` path floors the outbound transfer estimate at 3,000 m/s and the selected return-leg estimate at 300 m/s before applying the configured 20,000 m/s ceiling. The economicspace verification sheet marks both constants as needing backing; the current code comment gives no source or physical interpretation for them.
 
 The registered source `jpl_nhats_nea_dv_oracle` reports NASA/JPL NHATS results for complete human round-trip missions. Its 2000 SG344 record gives a minimum-ΔV total of 3.549 km/s over 370 days (including an 8-day stay). The API labels this a total mission quantity and its trajectory records separate Earth departure, asteroid arrival/departure and Earth return terms; it does not establish either of economicspace’s universal per-leg floors. This is context for the missing attribution, not a trajectory-matched basis for either value. The return floor’s surface-launch limitation is separately covered by `rc-289`. `rc-387` records the citation gap; no value change is inferred. Extracted: `extracted_data/r521_economicspace_delta_v_floor_comparator.csv`.
 
+## R542 — Mars ascent Δv additional configuration comparator (2026-11-10)
 
+- **palaszewski_2022_mars_landing_ascent_delta_v** (NASA NTRS 20210026187; Bryan Palaszewski, *Mars Research*, IntechOpen): §2.5 Table 3 gives 4,200 m/s for ascent from the Martian surface to a 100 km circular low Mars orbit and states a 20% gravity-loss allowance; §3.0 repeats the 4,200 m/s ascent value. Table 3 separately gives 244.8 m/s for transfer to 500 km circular orbit, 4,444.8 m/s combined.
+- The current spacecost row remains 4,100 m/s and is described as an unsourced estimate including gravity and drag losses. The new LMO-only case is 100 m/s (2.4%) higher; it supports the scale of the estimate but is a human Mars landing vehicle case, not a generic mission requirement. Combined with the already registered 3,950 m/s Lewis et al. two-stage 100 × 100 km / 30° case, the comparisons bracket 4,100 m/s but do not establish a universal replacement. **rc-377** remains open.
+- Extracted: extracted_data/r542_palaszewski_mars_ascent_dv.csv.
 
 ## R546 — Total mission-duration cutoff comparator
 
 Cohen et al.’s NASA RAP Phase I report requires a spacecraft “capable of operating for mission durations lasting between one and five years” (§5.1, report p. 65); it does not specify the asteroid stay or a maximum feasible mining mission. The NASA/JPL NHATS crewed-NEA filter uses a 450-day round-trip search constraint, a different mission class. At economicspace main `db863923f7793676e9a78583b97462ddd614f29e`, `CalcConfig.max_mission_duration_yr` remains 25.0; its comment gives no basis for the 25-year cutoff. Neither comparator establishes a universal limit. **rc-412** records the citation and scope gap; no value change is inferred. Existing extracts: `19_asteroid_excavation_beneficiation/extracted_data/r505_rap_mission_duration_requirement.csv`; `03_dv_propulsion/extracted_data/r488_nhats_delta_v_duration_trade.csv`.
+
 ## R562 — economicspace citation comments applied to four propulsion/duration candidates (2026-11-10)
 
 At economicspace@e2ad48767b0e81489031b724417b1a03e6dfc1fb, code comments now cite IERS/NASA LEO inputs and identify the orbit as a reference convention (rc-356); distinguish OSIRIS-REx proximity duration from a universal 0.25-year floor (rc-372); label the ΔV floors as model safeguards alongside NHATS (rc-387); and describe 25 years as an eligibility cap rather than a physical limit (rc-412). The requested citations and scope labels are applied; values remain unchanged.
+
 ## R564 — Spacecost propulsion rows now cite and scope their comparators (2026-11-10)
 
 At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, `babic_et_al_1993_extended_duration_lunar_lander` and `benson_asher_reese_2025_fast_transfer_nrho_presentation` are identified as components of an approximate cross-study NRHO benchmark (rc-357); `woodcock_2000_in_space_transportation_propulsion_architecture_assessment` is cited for the 1.5 low-thrust scenario proxy (rc-361); and SpaceX’s generation-specific krypton/argon statement and the NASA S3VI device-level krypton data are scoped to their evidence (rc-363, rc-364). The 4,100 m/s Mars surface-to-LMO value is retained as a margin scenario (rc-377). Morren’s engineering-model water resistojet result raises the range ceiling to 234 s; the 190 s center remains (rc-378).
@@ -650,13 +444,21 @@ At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, `babic_et_al_1993_extende
 ## R565 — Mars and resistojet candidates rechecked against the applied release (2026-11-10)
 
 At spacecost main commit `aaed2720ee44610c5cf90fc204db160deb5669bb` (0.17.0 / data contract 1.26.0), the 4,100 m/s Mars surface-to-LMO value remains and its note now calls it a margin scenario; the water resistojet ceiling is 234 s from Morren (1992) lab data while the 190 s center remains. The current rows agree with rc-377 and rc-378; both candidates were rechecked against the release commit and remain applied.
+
 ## R594 — Krypton Hall efficiency comparator
 
 - **nasa_2003_tm_212700_krypton_457m_performance** (Appendix, printed p. 8; NASA/TM-2003-212700): NASA’s NASA-457M krypton test reports a discharge efficiency of 0.50 at 2,039 s and 300 V. The paper describes this as a 50 kW class thruster and defines the reported discharge efficiency using anode flow and discharge power (§Results and Discussion, printed p. 4). This is a relevant experimental comparator for spacecost’s generic Krypton (Hall) `thruster_efficiency=0.45`, but it is discharge efficiency from a high-power device, not evidence that 0.45 is a generic total-efficiency value. rc-458 records the remaining definition and hardware-scope gap; no replacement is inferred. `extracted_data/r594_krypton_457m_discharge_efficiency.csv`.
+
 ## R596 — economicspace delta-v ceiling
 
 - **economicspace_dv_sanity_ceiling_current_2026**: At economicspace main `3ed7b36f756899a0c78a22876555490281e74f51`, `CalcConfig.max_dv_outbound_m_s` is 20,000 m/s. Its comment calls it a “Sanity ceiling” for values “mangled” upstream and points to the 10.5 km/s LEO-to-main-belt reference segment. The per-asteroid path applies `min(max(raw_leg, floor), ceiling)` to outbound and return Δv, so a raw leg above 20 km/s becomes 20 km/s before the low-thrust penalty is applied. The cap is about 1.90 times the cited reference segment; that comparison does not establish a physical maximum mission Δv or show whether valid catalogue cases reach the clamp. **rc-459** asks to distinguish a defensive data guard from a mission-validity bound and review its effect on candidates. Extracted: `extracted_data/r596_economicspace_dv_ceiling.csv`.
 
+## R600 — Chemical cruise-time fit provenance (2026-11-11)
+
+- **economicspace_cruise_time_fit_code_current_2026**: `campaign/worked_calculation.py` defines `TAU_CRUISE_FIT_YR_PER_M_S = 0.00023` and calls it calibrated on chemical transfers, but names no calibration cases, dataset, fitting procedure, residual, uncertainty, or transfer range. `mass_and_clock` applies `max(0.5, coefficient × Δv)` separately to chemical outbound and return legs; electric missions use a separate thrust-time floor.
+- **economicspace_verification_sheet_cruise_time_input_current_2026**: the current `verification_sheet.py --check` run identifies input I5 as 0.00023 yr/(m/s) and marks it NEED BACKING. The worksheet reports 85 inputs needing backing overall. Its selected calculation is 2018 DT using archived Stage 2 and Stage 3 tables, so it is used here to locate the code input and its provenance status, not as a current calibration dataset.
+- The code’s “calibrated” description needs an identified sample, method, fit error and scope; if no calibration exists, the coefficient should be described as a scenario proxy. Preserve the value pending that basis; no replacement is inferred. **rc-463** records the citation gap.
+- Extracted: `extracted_data/r600_chemical_cruise_time_fit_provenance.csv`.
 
 ## R622 — Li/F2/H2 row confuses the theoretical ceiling with measured performance (2026-11-11)
 
@@ -664,37 +466,47 @@ At spacecost main `aaed2720ee44610c5cf90fc204db160deb5669bb`, `reference/propell
 
 The primary records separate the figures. Arbit et al. (NASA-CR-72325, NTRS abstract) describe the 542 lbf-s/lbm maximum as theoretical performance. NASA-CR-110530 §3.3.4, printed p. 3-2, gives “theoretical vacuum specific impulse of 5,300 N/kg/s (540 lbf/lbm/s)” and says Rocketdyne “achieved ... 4,990 N/kg/s (509 lbf/lbm/s) in experimental tests.” Verdict: cite the theoretical ceiling and correct the row’s measured-performance wording; retain 542 s as a theoretical ceiling, separate it from the approximately 508–509 s experimental result, and do not infer a replacement for the model’s ceiling value. **rc-485**. Extracted: `extracted_data/r622_li_f2_h2_isp_theory_vs_test.csv`.
 
-
 ## R650 — Propulsive NEA return Δv basis (2026-11-11)
 
 `cohen_2013_niac_rap_phase1_final_report`: At spacecost main `aaed2720ee44610c5cf90fc204db160deb5669bb`, `reference/delta_v_segments.csv` stores 5,500 m/s and 1.5 years for “NEA → Earth return (propulsive),” with the note “Symmetric to outbound; powered Earth-return with no aerobraking.” Cohen et al., *Robotic Asteroid Prospector* NIAC Phase I Final Report, §4.2.2, printed p. 49, give 6.0 km/s for “post-departure maneuvers, including propulsive capture back at LEO” in one 10,000 kg, C3=12 km³/s² round-trip sizing case. Table 4.1, printed p. 52, lists asteroid arrival 1.25, asteroid departure 1.35, and Earth arrival 2.50 km/s (5.10 km/s subtotal computed here, excluding Earth departure). The report says specific-mission budgets require case-by-case calculation; these are not a matched generic inbound leg or a source for the 1.5-year duration. Verdict: retain the current values pending a trajectory-matched basis; infer no replacement. **rc-514**. Extracted: `extracted_data/r650_nea_propulsive_return_dv_comparator.csv`.
-
 
 ## R651 — Main-belt return Δv citation scope (2026-11-11)
 
 `taylor2018`: At spacecost main `aaed2720ee44610c5cf90fc204db160deb5669bb`, `reference/delta_v_segments.csv` stores 7,500 m/s and 4.0 years for “Main belt → Earth return,” citing Taylor 2018 and describing a long cruise. Taylor et al., “A Delta-V map of the known Main Belt Asteroids,” pp. 73–74, describe two methods from 100-km LEO ending at successful main-belt asteroid rendezvous. Section 7.1 calls its example transit “LEO to asteroid rendezvous”; Table 3 lists outbound transfer times of 282–535 days for 19 low-Δv targets (median 462 days), while §6/Table 2 count 96 asteroids with outbound Δv below 7.5 km/s. These results provide no generic return-leg Δv, four-year duration, or return endpoint. Verdict: the citation does not substantiate the row as a return estimate; retain its values pending return-trajectory evidence or an explicit scenario label. No replacement inferred. **rc-515**. Extracted: `extracted_data/r651_taylor2018_main_belt_return_scope.csv`.
 
-
 ## R655 — Aerocapture fallback when orbital elements are unusable (2026-11-11)
 
 `economicspace_aerocapture_no_elements_fallback_code_current_2026` — economicspace sets the fallback aerocapture saving to 4,000 m/s. When a row has unusable orbital elements, `_dv_fallback_m_s` subtracts it from the 5,500 m/s default propulsive return and floors the result at 500 m/s, yielding 1,500 m/s. NASA ISPT’s 2010 chart (p. 12) gives a broad 4–5 km/s all-propulsive circular-insertion marker for NEO return but no aerocapture residual; spacecost’s matching 1,500 m/s aerocapture row calls that point a placeholder (`rc-293`). **Verdict:** the fallback’s 4,000 m/s saving has no trajectory, endpoint, or aerocapture-residual derivation; it is distinct from the per-asteroid calculation for valid elements. Open `rc-519`; no replacement inferred. Extracted: `extracted_data/r655_aerocapture_missing_elements_fallback.csv`.
-
 
 ## R656 — economicspace fallback return reference linkage (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831`, `CalcConfig.default_dv_return_m_s` is 5,500 m/s and `_dv_fallback_m_s` uses that value for propulsive return when orbital elements are unusable. This is the same 5,500 m/s value in spacecost’s “NEA → Earth return (propulsive)” row, whose trajectory and endpoint basis gap is already recorded in **rc-514**. The 6,500 m/s outbound fallback maps to the cited “LEO → average NEA” segment; the 4,000 m/s aerocapture saving remains separately tracked in **rc-519**. Rechecked rc-514 against both current repository commits; no new candidate or numeric replacement inferred. Extracted: `extracted_data/r656_economicspace_dv_fallback_reference_link.csv`.
 
-
 ## R658 — economicspace Δv controls rechecked (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `CalcConfig.max_dv_outbound_m_s` remains 20,000 m/s; the newly default-on surface-escape gate is a separate necessary-condition screen and does not establish that clamp as a mission-validity limit (**rc-459**). `campaign/worked_calculation.py` retains `TAU_CRUISE_FIT_YR_PER_M_S=0.00023`, applied as `max(0.5, tau × Δv)` to chemical transfer time; no calibration cases, fit method, or error range were added (**rc-463**). Both candidates remain open. Existing extracts: `extracted_data/r596_economicspace_dv_ceiling.csv`; `extracted_data/r600_chemical_cruise_time_fit_provenance.csv`.
 
+## R664 — HTP/RP-1 vacuum-Isp basis is not identified in Spacecost (2026-11-12)
+
+- **krishnan_2010_h2o2_rp1_upper_stage**: Table 3 (PDF p. 9) reports an H2O2 (~97%)/RP-1 RD-161P development engine at O/F 5.9 with 3,128 N-s/kg (~319 s), and the flown Gamma-2 at O/F 8.23 with 2,599 N-s/kg (~265 s). Table 2 (p. 8) gives theoretical 98% H2O2/RP-1 frozen Isp of 3,268 N-s/kg (~333 s) at the maximum-frozen point.
+- **pietrobon_1999_h2o2_kero_shuttle_boosters**: Table 2 (PDF p. 4) gives 3,016 m/s (~308 s) for a hypothetical 98% H2O2/kerosene RD-170 derivative at O/F 7.30.
+- **spacecost_htp_rp1_specific_impulse_code_current_2026**: at `spacecost@aaed2720ee44610c5cf90fc204db160deb5669bb`, `spacecost/propellants.py` lines 1068–1084 stores 320 s at nominal O/F 7 and mentions Black Arrow heritage without identifying the performance basis.
+
+The references support distinct development, flown, and theoretical performance cases; the flown Black Arrow Gamma-2 comparator is ~265 s, not 320 s. Verdict: cite the basis for 320 s and distinguish it from Black Arrow’s flight performance; retain the numeric value pending a like-for-like basis. **rc-525**. Extracted: `extracted_data/r664_htp_rp1_isp_basis.csv`.
 
 ## R672 — Chemical cruise-leg minimum duration basis (2026-11-12)
 
 - **economicspace_chemical_cruise_leg_floor_code_current_2026**: at economicspace commit `46e0315d12f3fc876b022fdb5270016c7c539080`, `campaign/worked_calculation.py` says the 0.5-year floor per leg is a “separate judgement, not part of the fit” (lines 213-214). `mass_and_clock` applies `max(0.5, τ × ΔV)` independently to outbound and return legs (lines 3807-3808).
 - With τ = 0.00023 yr/(m/s), the minimum binds below 2,173.913 m/s per leg (computed here). The code identifies no mission-design basis for the floor. This is distinct from rc-463’s coefficient provenance, the fixed-stay fallback and the total mission minimum. Verdict: retain 0.5 years pending a matched basis or explicit scenario sensitivity; no replacement inferred. **rc-534**.
 - Extracted: `extracted_data/r672_chemical_cruise_leg_floor.csv`.
+
+## R680 — Asteroid station-keeping allocation remains an estimate without a mission budget (2026-11-12)
+
+`spacecost_asteroid_stationkeeping_delta_v_code_current_2026`: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` stores an “Asteroid station-keeping” segment with `dv_m_per_s=200` and `duration_yr=0.5`. The current note labels the 200 m/s an engineering estimate and says no document gives it; the half-year duration is not given a mission-design source.
+
+`antreasian_et_al_2021_osirisrex_proxops_nav_performance`: the Bennu proximity-operations paper reports a desaturation weighted mean and standard deviation of “0.21 ± 0.20 mm/s” (printed p. 29); it reports 2.5 years in close proximity, 114 maneuvers with 140 burn components, and a smallest maneuver of 0.09 mm/s (printed p. 30). These are mission-specific elapsed time and event-level/navigation statistics, not a summed propulsion budget for station-keeping, proximity operations, sample collection and departure. They neither derive nor directly contradict the model’s 200 m/s and 0.5-year inputs.
+
+Verdict: review the segment against a mission-class maneuver budget and a defined stay-duration scenario, or keep both values explicitly as scenario inputs. No numeric replacement inferred. This is distinct from rc-231, which applied a note correction while leaving the 200 m/s and 0.5-year cells untouched; no direct downstream consumer for this segment was found by an exact-name search across the checked project worktrees, so the data row’s current operational use remains to be verified. **rc-539**. Extracted: `extracted_data/r680_osirisrex_stationkeeping_dv_comparator.csv`.
 
 ## R681 — Antimatter propellant cost basis and note disagree (2026-11-12)
 
@@ -704,17 +516,34 @@ At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), 
 
 Verdict: retain the cell only as a historical production-cost proxy pending a matched product and cost boundary; reconcile its attribution and the note’s per-kilogram scale. No numeric replacement inferred. **rc-540**. Extracted: `03_dv_propulsion/extracted_data/r681_antimatter_cost_basis.csv`.
 
+## R682 — LEO-radius source remains absent from the verification worksheet (2026-11-12)
+
+- **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 gives the equatorial radius as 6,378,136.6 m; this rounds to the 6,378.14 km component of the model’s reference-orbit radius.
+- **askins_2021_sls_janaff_update**: the SLS capability-table footnote defines LEO as a “typical 200 km circular orbit at 28.5 degrees inclination”; it supports a reference-orbit convention, not a universal mission orbit.
+- **economicspace_leo_radius_verification_sheet_code_current_2026**: at economicspace main `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` lines 2803–2806 name both sources, while `campaign/verification_sheet.py` lines 1928–1930 gives the 6,378.14 km plus 200 km construction without naming either. The refreshed `--check` passed; direct backing extraction marks worksheet input I4 (6,578.14 km) NEED BACKING.
+- Verdict: the worksheet attribution requested by **rc-356** is still missing, so rc-356 is open again. The reference-orbit value is unchanged. Extracted: `extracted_data/r490_leo_radius_provenance.csv`.
+
 ## R686 — NEA-to-NRHO duration field has no stated basis (rc-544) (2026-11-12)
 
 - **spacecost_nea_nrho_transfer_duration_code_current_2026**: the `NEA → cislunar NRHO (Oberth capture)` row stores `duration_yr=1.6`; its note describes the 494 m/s low-perigee capture and 450 m/s NRHO insertion but gives no duration basis or route boundary.
 - **kess_2012_asteroid_retrieval_feasibility_study**: the KISS study’s 40-kW SEP example gives a 6.0-year 2008 HU4 transfer to the Earth–Moon system and 10.2 years total (printed p. 28); the report’s overall mission range is 6–10 years (printed p. 27). Its captured-asteroid SEP architecture differs from this row, so it is a comparator only.
 - **Verdict**: request a matched trajectory or calculation and define the duration’s start/end events and propulsion assumptions; otherwise label 1.6 years as a scenario. No replacement inferred. Extracted: `extracted_data/r686_nea_nrho_duration_basis.csv`.
 
+## R703 — Iodine thruster mass scaling remains a cargo-scale scenario (2026-11-12)
+
+- **rafalskyi_2021_iodine_ep_in_orbit**: the integrated NPT30-I2 propulsion system has “total mass (including propellant)” of 1.2 kg (Nature p. 412); its maximum thrust is “about 1.3 mN” at total power below 65 W (p. 413). The system includes propellant storage, delivery/control, thruster, neutralizers, power processing and thermal management (p. 412).
+- **spacecost_iodine_thruster_mass_to_thrust_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` assigns 60 kg/N to `_THRUSTER_SYSTEMS["Iodine  (Hall / gridded)"]`. The block defines this field as thruster-head mass per demonstrated thrust and labels iodine's value a Hall-class scale-up judgement. The 1.2 kg / 1.3 mN CubeSat figure is about 923 kg/N for the complete integrated system, including propellant.
+- Verdict: the flight article is not a like-for-like thruster-head or cargo-scale comparator. Keep 60 kg/N only as an explicit scenario pending cargo-scale iodine Hall/gridded thruster-head mass/thrust evidence; no numeric replacement inferred. **rc-573**. Extracted: `extracted_data/r703_iodine_thruster_mass_to_thrust.csv`.
+
+## R705 — Direct-fusion D-He3 price has an unresolved unit and mixture basis (2026-11-12)
+
+- **galea_etal_2023_pfrc_fusion_fuel_cost**: Galea et al. state a terrestrial He-3 price assumption of “$2000 per liter, or $15M per kg,” and about $14,000/kg for deuterium (Journal p. 10). Figure 7 uses a 1:1 fuel ratio in its PFRC example (p. 5); the text says the ³He:D ratio can be adjusted up to 3:1 (p. 6). These are reactor-economics assumptions, not a propulsion-fuel quote.
+- **spacecost_direct_fusion_drive_cost_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` stores $1,000,000/kg for the Direct fusion drive row. Its note calls this an order-of-magnitude D-He3 blend estimate, gives an uncited $1,400–2,000/g He-3 figure and does not define the mixture ratio or gas reference conditions.
+- Verdict: reconcile the price unit, gas basis and mixture boundary before changing the value. Galea et al.’s reactor assumptions challenge the undocumented basis but do not establish a like-for-like propulsion-fuel replacement. No numeric replacement inferred. **rc-575**. Extracted: `extracted_data/r705_dhe3_fuel_cost_basis.csv`.
 
 ## R712 — LEO-radius attribution still missing from verification worksheet (2026-11-12)
 
 At economicspace `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` lines 2803–2806 cite the IERS equatorial radius (6,378,136.6 m; Table 1.1) and NASA’s typical 200 km circular LEO definition. `campaign/verification_sheet.py` lines 1928–1930 still describes `r_LEO` as “6,378.14 km of Earth radius plus a 200 km parking orbit” without naming either source. The current `verification_sheet.py --check` run reports 85 NEED BACKING inputs. **rc-356** remains open for the missing worksheet attribution; the 6,578.14 km reference-orbit value is unchanged. Existing extraction: `extracted_data/r490_leo_radius_provenance.csv`.
-
 
 ## R714 — Low-thrust Δv factor missing from exported row notes (2026-11-12)
 
@@ -728,6 +557,29 @@ At economicspace `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` l
 
 **economicspace_krypton_hall_verification_sheet_code_current_2026** (T4): current main’s best-case worksheet build for 2018 DT uses frozen Stage 3 `spacecost-0.5.0`; it marks I91=0.45 total-efficiency and I92=35 kg/N NEED BACKING. The frozen Krypton row does not cite those fields. **spacecost_krypton_hall_thruster_row_current_2026** (T4): current Spacecost calls them a generic mission-model selection and efficiency scenario. **nasa_s3vi_2026_small_spacecraft_inspace_propulsion** (T2), Table 4-10, lists krypton Hall comparators at 55.6, 69.2 and 61.8 kg/N; it reports no efficiency and these are small-spacecraft devices. **nasa_2003_tm_212700_krypton_457m_performance** (T2), Appendix p. 8, reports 0.50 discharge efficiency at 2,039 s and 300 V; its boundary and 50 kW device differ from the generic total-efficiency value. Verdict: **rc-584** tracks carrying the comparator scope and scenario status into the verification sheet after rc-364 and rc-458’s Spacecost-row updates; neither comparator supplies a direct replacement. Extracted: `extracted_data/r716_krypton_thruster_worksheet_citation_scope.csv`.
 
+## R732 — Earth-return LEO deorbit allowance needs a documented entry target (2026-11-14)
+
+- **iaa_2006_space_debris_mitigation_sp1301**: ESA SP-1301 says “a perigee altitude of about 60 km ascertains a safe atmospheric capture” for a non-lifting body (printed p. 36). Figure 3.2 gives about 40 m/s for a controlled direct deorbit from a near-circular 200 km orbit to that perigee. The text says perigee selection depends on mass-to-area ratio and drag/lift; a heavy compact or high-lift-to-drag object may require a lower perigee.
+- **hopkins_2009_xenia_deorbit_analysis**: NASA/TM-2009-216270 Figure 2 (printed p. 9) plots required deorbit Δv against initial circular altitude and target reentry flight-path angle. For the Xenia design, Table 5 (p. 8) sets a 122 km reentry interface and “Target reentry flight path angle, γ” of −1.75° from a 500–600 km orbit; Table 6 (p. 10) gives 161.3 m/s impulsive plus 1.7 m/s gravity loss, 163 m/s total. This is a mission-specific case, not the 200 km return case.
+- **economicspace_leo_deorbit_code_current_2026**: at `economicspace@e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `modules/calc.py` sets `DV_LEO_DEORBIT_KM_S = 0.100` and calls it a “Standard figure” for lowering perigee from a 200 km circular orbit to about 50 km, without naming a source or entry corridor.
+- **economicspace_leo_deorbit_verification_sheet_code_current_2026**: the Earth-surface propulsive return worksheet registers this constant as its deorbit burn. `DV_LEO_DEORBIT` is absent from `DERIVATION_ROWS`, so `cite_constant` falls back to the local `cite_here` citation rather than an external delta-v row.
+- **spacecost_leo_deorbit_code_current_2026**: at `spacecost@a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/delivery.py` assigns 120 m/s for deorbiting from a 200 km circular orbit onto an entry trajectory and identifies it as a hand figure with no table row.
+- Verdict: a two-body impulsive burn from the model’s 200 km circular reference orbit to a 50 km perigee is 45.018 m/s; to 60 km it is 41.976 m/s. These are geometry-only checks, not capsule entry solutions. The 100 m/s and 120 m/s values use differently worded targets, with no shared entry condition stated for comparison. Document the intended trajectory and source or derivation, and reconcile the two project assumptions. No numeric replacement inferred. **rc-599**. Extracted: `extracted_data/r732_leo_deorbit_target_comparators.csv`.
+
+## R733 — GEO radius matches nominal altitude plus Earth radius but lacks attribution (2026-11-14)
+
+- **nasa_std_8719_14c_geostationary_altitude**: NASA-STD-8719.14C Revision C (2021-11-05) defines a circular GEO at 0° inclination as geostationary and states “The nominal altitude of a circular GEO is 35,786 km” (§3.2, printed p. 13).
+- **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 gives Earth’s equatorial radius as 6,378,136.6 m (6,378.1366 km); this existing source is registered in Domain 12.
+- **economicspace_geostationary_radius_code_current_2026**: at economicspace commit e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, modules/calc.py line 2814 sets R_GEO_KM = 42_164.14 and campaign/worked_calculation.py line 154 repeats R_GEO = 42_164.14, with no named source.
+- **economicspace_geostationary_radius_verification_sheet_code_current_2026**: campaign/verification_sheet.py lines 2200–2203 and 2234–2238 register R_GEO through cite_here("R_GEO") in ret_gto_prop and circularise_prep, without naming external references.
+- Verdict: adding the IERS equatorial radius to NASA’s nominal GEO altitude gives 42,164.1366 km, which rounds to 42,164.14 km. This supports the stored value as a nominal geocentric-radius reconstruction; it does not establish a more precise dynamical GEO radius. Cite both inputs beside the model constants and in the worksheet; retain the value. Distinct from closed rc-177, which concerns GTO burn rounding rather than the GEO-radius source. **rc-600**. Extracted: extracted_data/r733_geostationary_radius_provenance.csv.
+
+## R734 — GEO plane-change angle uses an uncited obliquity input (2026-11-14)
+
+- **iers_petit_luzum_2010_conventions_tn36**: Table 1.1 (printed p. 17) lists the initial value at J2000.0 as epsilon_0 = 84,381.406 arcsec, uncertainty 0.001 arcsec, with description “Obliquity of the ecliptic at J2000.0.” This converts to 23.4392794 degrees, which rounds to 23.44 degrees.
+- **economicspace_ecliptic_tilt_code_current_2026**: at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, modules/calc.py lines 2815-2818 describe an asteroid arrival near the ecliptic and GEO's equatorial plane, then compute the capture geometry with 23.44 degrees; campaign/worked_calculation.py lines 151-155 repeats the same constant. Neither names a source or epoch.
+- **economicspace_ecliptic_tilt_verification_sheet_code_current_2026**: campaign/verification_sheet.py lines 2240-2243 registers worksheet input tilt = 23.44 degrees and gives the geometry rationale through cite_here, but no external source. input_backing lines 5794-5805 classifies an own-source constant with no named reference as needs.
+- Verdict: the registered J2000 obliquity rounds to the model's 23.44-degree input. Cite the IERS value and epoch in the model and worksheet, and label the arrival-plane geometry as a nominal near-ecliptic assumption rather than each asteroid's measured inclination. Keep the rounded value; no numeric replacement inferred. **rc-601**. Extracted: extracted_data/r734_ecliptic_tilt_basis.csv.
 
 ## R737 — 28.5-degree GTO-to-GEO plane-change input lacks a stated trajectory basis (2026-11-14)
 
@@ -756,7 +608,6 @@ Open `rc-633` to document the safeguard’s scope and sensitivity; the 300 m/s f
 
 **economicspace_cruise_time_fit_verification_sheet_code_current_2026**: lines 1935–1943 still describe I5 as a “linear fit” calibrated on the delta-v table’s `duration_yr` values and say nothing sources those durations. A fresh `verification_sheet.py --check` passes and reports 85 inputs NEED BACKING; the current worksheet flags I5=0.00023 yr per m/s. Existing **rc-463** is applied for the code-comment change; open **rc-534** concerns the separate floor’s basis. Verdict: carry the scenario points, off-line case, absent residual and separate floor into I5’s explanation while retaining NEED BACKING unless an external calibration source is found. Keep the coefficient unchanged; no replacement inferred. Extracted: `extracted_data/r766_cruise_fit_worksheet_scope_gap.csv`.
 
-
 ## R786 — Xenon thruster specific-mass provenance (2026-11-15)
 
 nasa_nextc_flight_ion_system_status_2020 (NTRS 20205005689), Table 1 p. 4, lists 235 mN at the highest throttle point; p. 5 says “weighs approximately 14kg.” The approximate mass/thrust ratio is 59.6 kg/N; that calculation is illustrative because the source gives an approximate mass, not a matched specific-mass value. oleson_mcguire_2011_compass_enceladus_sep_stage (NASA/TM-2011-216973), §4.6.5.1 p. 37, says “Mass is 12.7 kg (13.5 kg with cable harnesses)”; §4.6.5.2 p. 38 identifies the tested unit as PM1 and reports “producing 236 mN thrust” at full power. That mass/thrust ratio is 53.8 kg/N by calculation, but it is the predecessor NEXT PM1, not NEXT-C flight hardware.
@@ -764,7 +615,6 @@ nasa_nextc_flight_ion_system_status_2020 (NTRS 20205005689), Table 1 p. 4, lists
 spacecost_xenon_thruster_specific_mass_current_2026 records the current Spacecost Xenon row: thruster_kg_per_n=54.0; its adjacent code comment pairs 12.7 kg and 236 mN and attributes them to NEXT-C. The reference row does not cite this kg/N field. economicspace_xenon_stage3_specific_mass_row_current_2026 records the frozen Stage 3 value, 54.0 kg/N. economicspace_xenon_specific_mass_verification_sheet_current_2026 maps the field to Mars-orbit input I56; the worksheet check flags I56=54 NEED BACKING.
 
 Verdict: open rc-656 to document the hardware generation and mass boundary for 54 kg/N in Spacecost and the frozen worksheet. If the value is a NEXT PM1 proxy, label that transfer; if it is intended as NEXT-C, cite its matched mass basis. Retain 54 pending direct matched evidence; no numeric replacement inferred. Extracted: extracted_data/r786_xenon_thruster_mass_per_thrust_citation.csv.
-
 
 ## R787 — Argon Hall performance-input citation gap (2026-11-15)
 
@@ -774,21 +624,11 @@ Verdict: open rc-656 to document the hardware generation and mass boundary for 5
 - **economicspace_argon_stage3_performance_row_current_2026**: the frozen Stage 3 row at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `campaign/stage3/spacecost-0.5.0/propellants.csv` row 8, carries 1,500 s, 0.40, 40.0 kg/N and continuous scaling without a source for these performance inputs.
 - Verdict: cite a matched Argon Hall device and state the efficiency and hardware-mass boundaries, or label the values as generic model scenarios; carry the scope into the frozen row. Retain the current values pending matched evidence, with no numeric replacement inferred. Distinct from rc-310 (Argon price) and rc-584/rc-625 (Krypton performance fields). **rc-657**. Extracted: extracted_data/r787_argon_hall_performance_citation_gap.csv.
 
-
 ## R788 — Krypton Hall code comparison lacks a matched source (2026-11-15)
 
 - **kim_et_al_2019_spt140pm_krypton_iepc465**: IEPC-2019-465 (printed p. 4) reports a modified SPT-140PM krypton operating point at about 10 kW and 400 V with “thrust around 500 mN, thrust efficiency over 60% and specific impulse over 2600s.” The paper says the efficiency at that voltage was at least 15% higher than xenon for that modified model.
 - **spacecost_krypton_hall_thruster_row_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, `spacecost/propellants.py` line 228 describes the Krypton Hall anchor as an SPT-140 body with about 85% of xenon thrust and about 10 percentage points less efficiency, with no citation or test point. The current data row calls 2,000 s, 0.45 and 35 kg/N generic mission-model selections, not demonstrated Krypton Hall performance.
 - Verdict: the modified SPT-140PM result is not a direct source for the code comment's unqualified comparison; identify the matching test/configuration and efficiency boundary or label the ratios as assumptions. Preserve the comment values pending matched evidence, with no numeric replacement inferred. Distinct from rc-584 and rc-625, which target frozen worksheet inputs. **rc-658**. Extracted: extracted_data/r788_krypton_spt140_comparative_comment_scope.csv.
-
-
-## R790 — Water resistojet model mass and efficiency (2026-11-15)
-
-- **mirtich_1982_resistojet_large_spacecraft_systems**: NASA TM-83489, printed p. 4, gives a generic resistojet system-mass relation including thruster, PPU, and thermal-rejection mass. It states “PPU = 88 percent efficient” and “S = 20 percent assumed allowance for structure, feed lines, etc.” The power-based comparator is not a water-specific 10 kg/N or 0.75 total-thrust-efficiency result.
-- **spacecost_water_resistojet_model_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, `spacecost/propellants.py` line 233 maps Water electrothermal/resistojet to 10.0 kg/N, 0.75 efficiency, and continuous scaling. The comment says “high thrust density, low Isp” without a performance citation.
-- **spacecost_water_resistojet_reference_row_current_2026**: `reference/propellants.csv` row 20 stores the same three inputs; its notes discuss the Isp range and water use but give no source for these fields.
-- **economicspace_water_resistojet_stage3_row_current_2026**: at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `campaign/stage3/spacecost-0.5.0/propellants.csv` row 20 freezes the same values without a matched device citation.
-- Verdict: cite a device-matched water-resistojet mass and efficiency basis with clear head/system and power boundaries, or label the fields as model assumptions. Mirtich’s generic model is a scope comparator, not the basis for these inputs; no numeric replacement inferred. Distinct from rc-378 (water-resistojet Isp), rc-659 (water-ion inputs) and rc-577 (water price). **rc-660**. Extracted: extracted_data/r790_water_resistojet_mass_and_efficiency_citation_gap.csv.
 
 ## R789 — Water ion performance and flight attribution (2026-11-15)
 
@@ -798,6 +638,14 @@ Verdict: open rc-656 to document the hardware generation and mass boundary for 5
 - **spacecost_water_ion_performance_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, `spacecost/propellants.py` line 232 maps Water gridded ion/ECR to 80 kg/N and 0.35 efficiency; `reference/propellants.csv` row 22 stores Isp=900 s and describes 800–1,000 s. It names Pale Blue, ESA and JAXA but gives no source for the performance fields or the qualification claim.
 - **economicspace_water_ion_stage3_row_current_2026**: the frozen Stage 3 row at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `campaign/stage3/spacecost-0.5.0/propellants.csv` row 21, preserves the same performance values and 2023 Pale Blue ion-flight statement.
 - Verdict: the measured miniature ECR ion result does not establish the model's cargo-scale efficiency or mass per thrust. Separate the 2023 Pale Blue resistojet flight from its 2025 water-ion operation; cite named ESA/JAXA programs and their maturity if retained. Preserve numeric inputs pending matched evidence; no numeric replacement inferred. Distinct from rc-244, rc-378 and rc-577. **rc-659**. Extracted: extracted_data/r789_water_ion_performance_and_flight_attribution.csv.
+
+## R790 — Water resistojet model mass and efficiency (2026-11-15)
+
+- **mirtich_1982_resistojet_large_spacecraft_systems**: NASA TM-83489, printed p. 4, gives a generic resistojet system-mass relation including thruster, PPU, and thermal-rejection mass. It states “PPU = 88 percent efficient” and “S = 20 percent assumed allowance for structure, feed lines, etc.” The power-based comparator is not a water-specific 10 kg/N or 0.75 total-thrust-efficiency result.
+- **spacecost_water_resistojet_model_current_2026**: at Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, `spacecost/propellants.py` line 233 maps Water electrothermal/resistojet to 10.0 kg/N, 0.75 efficiency, and continuous scaling. The comment says “high thrust density, low Isp” without a performance citation.
+- **spacecost_water_resistojet_reference_row_current_2026**: `reference/propellants.csv` row 20 stores the same three inputs; its notes discuss the Isp range and water use but give no source for these fields.
+- **economicspace_water_resistojet_stage3_row_current_2026**: at economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `campaign/stage3/spacecost-0.5.0/propellants.csv` row 20 freezes the same values without a matched device citation.
+- Verdict: cite a device-matched water-resistojet mass and efficiency basis with clear head/system and power boundaries, or label the fields as model assumptions. Mirtich’s generic model is a scope comparator, not the basis for these inputs; no numeric replacement inferred. Distinct from rc-378 (water-resistojet Isp), rc-659 (water-ion inputs) and rc-577 (water price). **rc-660**. Extracted: extracted_data/r790_water_resistojet_mass_and_efficiency_citation_gap.csv.
 
 ## R791 — VASIMR model point, mass boundary and endurance citation (2026-11-15)
 
@@ -830,7 +678,6 @@ Verdict: open rc-656 to document the hardware generation and mass boundary for 5
 - Verdict: the conventional standard value matches Spacecost’s stored constant, but Spacecost does not cite it in code or its citation list. `rc-667` requests citation metadata only; the value is unchanged.
 - Extracted: `extracted_data/r797_standard_gravity_constant_citation.csv`.
 
-
 ## R808 — Delta-v candidate cross-reference corrected (2026-11-16)
 
 - **economicspace_return_dv_floor_verification_sheet_code_current_2026**: the R762 evidence record is for the worksheet’s 300 m/s return-floor input I55.
@@ -844,7 +691,6 @@ Verdict: open rc-656 to document the hardware generation and mass boundary for 5
 - **benson_asher_reese_2025_fast_transfer_nrho_presentation**: NASA NTRS 20250000718, slide 5, states “400 – 450 m/s from TLI to NRHO” under easy access to and from Earth. This directly supports the row’s 450 m/s upper-end selection for fast Gateway access.
 - Spacecost `CITATIONS.md` already lists Benson, Asher & Reese (2025) among the cross-study components for the aggregate LEO-to-NRHO row (rc-357); the separate TLI-to-NRHO row note still attributes its value to Whitley & Martinez.
 - Verdict: cite Benson et al. slide 5 for the TLI-to-NRHO range, define 450 m/s as the selected upper end for this model row, and reserve Whitley & Martinez for the NRO-to-LLO access context. Preserve 450 m/s. No numeric replacement inferred. **rc-683**. Extracted: `extracted_data/r810_spacecost_tli_nrho_insertion_citation_scope.csv`.
-
 
 ## R817 - NRHO-to-LLO duration basis (2026-11-16; rc-691)
 
@@ -892,16 +738,13 @@ The registered Whitley & Martinez source `whitley_martinez_2015_nro_staging_orbi
 
 At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the Aerozine-50/NTO row stores isp_vac_s=314.5 s and attributes the AJ10-137 rating to Boyce and injector measurements to Cuffe & Jacobs. **boyce_aj10_oral_history** (p. 3) says “specific impulse (Isp) of 314.5” and gives an area ratio of 62.5:1. **cuffe_jacobs_1970** (p. 32) reports “mean value of Isp of 312.8 sec with one thrust chamber and 311.4 sec with another”; the report allocates 0.2 s of AEDC measurement uncertainty. Spacecost CITATIONS.md §2 contains neither full reference. Boyce supports the rated 314.5 s figure; Cuffe & Jacobs supply injector-level measurements as a comparator. Applied rc-156 corrected the prior 320 s entry; open rc-676 and rc-678 cover component densities, not this bibliography gap. Verdict: add both full references and identify their separate scopes; retain 314.5 s, with no numeric replacement inferred. **rc-754**. Extracted: `extracted_data/r876_spacecost_aerozine50_bibliography_gap.csv`.
 
-
 ## R877 — ALICE flight-performance citation scope (2026-11-18)
 
 At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the Metal / water (ALICE) row stores Isp=210 s and groups the ideal and static-test values with a Risha et al. (2014) citation. Spacecost CITATIONS.md §2 has no full entries for Risha et al. or Pourpoint et al. (2012). **pourpoint_2012_alice_feasibility**, §7, states: “the peak Isp of 210 s calculated from the ground test data is a good estimate for the flight Isp”; §7 identifies the demonstration flight as August 7, 2009. **risha_2014_alice_jpp**, Sec. I p. 2 and Table 7 p. 8, supports the ideal 207/230 s values and static-test values of 56/83/133 s. The 210 s is a ground-test-derived flight estimate, not a direct in-flight Isp measurement. Verdict: add both full bibliography entries and separate their source-to-claim scope; clarify the 210 s estimate while retaining the stored value. No numeric replacement inferred. **rc-755**. Extracted: `extracted_data/r877_spacecost_alice_citation_scope.csv`.
 
-
 ## R878 — PRISMA/LMP-103S flight-citation scope (2026-11-18)
 
 At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the Green monopropellant note says “the Swedish LMP-103S equivalent flew earlier on PRISMA (2010)” but supplies no source marker. Spacecost CITATIONS.md §2 has no PRISMA or LMP-103S entry. **mulkey_cardiff_2024_green_propulsion_assessment**, PDF p. 10, calls PRISMA a 2010 launch and says its HPGP system “was a secondary mission objective”; PDF p. 11 labels LMP-103S in the PRISMA propulsion schematic. The report supports the historical comparison only; it does not bear on the separate 235 s ASCENT / AF-M315E entry, already attributed to Spores et al. Verdict: add the full NASA GSFC assessment entry and cite it on the PRISMA clause; retain all propulsion values. **rc-756**. Extracted: `extracted_data/r878_spacecost_prisma_lmp103s_citation.csv`.
-
 
 ## R879 — Mercury-ion flight attribution and performance basis (2026-11-18)
 
@@ -938,7 +781,6 @@ At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propell
 
 **Verdict:** Add a source and define what `first_flight` means for this row. If 1949 refers to the Sprite, it is the first firing date; the record places flight trials in 1951. Keep 1949 only if a different, sourced event establishes that year, or label it as a firing/development date. No numeric replacement inferred while the row's intended historical event is unspecified. **rc-762**. Extracted: `extracted_data/r883_spacecost_htp_monoprop_first_flight.csv`.
 
-
 ## R884 — Spacecost hydrazine arcjet chronology and citation gap (2026-11-18)
 
 - **spacecost_hydrazine_arcjet_flight_history_code_current_2026** and **spacecost_hydrazine_arcjet_flight_history_data_current_2026**: at Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propellants.py` line 1298 pairs `first_flight=1993` with “Telstar 401 / A2100 MR-510”; lines 1315-1316 say the MR-510 class flew on A2100 communications satellites since 1993. `reference/propellants.csv` line 23 repeats the date and pairing.
@@ -974,7 +816,6 @@ At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/propell
 
 At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/delta_v_segments.csv` row 6 stores 6,500 m/s for “LEO → average NEA” and compares the NEA median in SsODNet ssoBFT (8.88 km/s); row 7 stores 8,500 m/s for “LEO → hard NEA” and cites the ssoBFT main-belt fifth percentile (8.49 km/s) and NEA median (8.88 km/s). `CITATIONS.md` §1 says the listed catalog sources “none ... feeds any table here,” and §3 Delta-v segments omits Berthier et al. (2023). The README “Citations and licence” section repeats that no table source imposes a citation condition and says none of the three sources “is here.” The official IMCCE ssoBFT documentation, “Usage and citation,” asks for citation of Berthier et al. (2023) for any use of the table; the official citation record gives DOI 10.1051/0004-6361/202244878. The article is already registered as `berthier_2023_ssodnet`; the official service documentation is registered as `imcce_ssodnet_orbital_metadata_api`. Applied **rc-015** corrected the average-NEA attribution and called 6.65 km/s a peak; applied **rc-230** corrected the hard-NEA accessibility label. Neither changes the bibliography omission or repeated policy statements. **Verdict:** add the requested article citation and reconcile both policy statements with the two NEA notes; no delta-v replacement inferred. Open **rc-767**. Extracted: `extracted_data/r888_spacecost_ssobft_citation_policy_gap.csv`.
 
-
 ## R890 — Spacevalue Mars-orbit destination-note citation trail (2026-11-18)
 
 - `dra5_2009_human_exploration_of_mars`: NASA/SP-2009-566, PDF p. 36 (printed p. 22), states “At Mars, the vehicles are inserted into a 1-sol orbit (250 km × 33,793 km).” The same source is extracted in `extracted_data/r115_dra5_vs_spacecost_mars_rows.csv`.
@@ -982,6 +823,16 @@ At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/delta_v
 - `spacecost_mars_moi_200km_comparator_current_2026`: at Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/delta_v_segments.csv` row 30 gives a two-body Hohmann arrival `v_inf = 2.65 km/s` and compares 2.10 km/s to circularize into a 200-km orbit; row 29 says the 2,100 m/s TEI row is not a DRA 5.0 figure. Spacevalue’s generated note does not point to this calculation.
 - Verdict: the DRA altitude pair is source-backed, but Spacevalue lacks the pinpoint bibliography and attribution path for its Mars-orbit context note. This is distinct from `rc-693` (economicspace worksheet inputs), applied `rc-073` (Spacecost TEI row), open `rc-604` (GTO plane basis), and applied `rc-177` (GEO coplanar burn). Preserve constants and destination prices; no numeric replacement inferred. `rc-769`.
 - Extracted: `extracted_data/r890_spacevalue_mars_orbit_note_citation_gap.csv`.
+
+## R892 — Spacevalue cislunar and lunar-surface destination-note citations (2026-11-18)
+
+`spacevalue_cislunar_lunar_destination_notes_current_2026` — At `spacevalue/catalog.py` lines 393–400, the cislunar note prints 3,600 m/s as “TLI + NRHO insertion”; the lunar-surface note prints a 4,050 m/s TLI + LOI leg and 2,050 m/s powered descent. Neither note identifies a source or source figure. `spacevalue/CITATIONS.md` lines 3–6 says the notes identify each value’s source and figure; the file has no Apollo SP-4029, NASA-CR-195527, or Benson et al. 2025 citation.
+
+`spacecost_cislunar_nrho_depot_row_current_2026` — Spacecost’s LEO-to-cislunar-NRHO row stores 3,600 m/s and describes an approximate cross-study sum: NASA-CR-195527 gives 3,140 m/s for a 185 km, 33-degree parking orbit and four-day lunar transfer (printed p. 3, section 2.3.1 and Table 2.1); Benson, Asher & Reese (2025) gives “400–450 m/s from TLI to NRHO” (slide 5). Their 3,540–3,590 m/s sum is context from different trajectories, not a matched transfer.
+
+`spacecost_lunar_surface_delivery_chain_current_2026` — The lunar-surface chain composes 3,150 m/s TLI and 900 m/s LOI for 4,050 m/s, then a 2,050 m/s descent. `sp4029_apollo_by_the_numbers` records TLI cutoffs of about 3,040–3,200 m/s (printed pp. 55, 113, 135), LOI cutoffs of 889–922 m/s (printed pp. 56, 94, 114, 185, 213, 267), and Apollo 15/16/17 descent cutoffs of 2,076.9, 2,043.0 and 2,041.5 m/s (printed pp. 213, 241, 267).
+
+**Verdict:** The source trail exists in Spacecost and General_Research, but the Spacevalue destination notes omit it under their citation convention. Open `rc-771` for these downstream notes. Applied `rc-357` covers the Spacecost cross-study composite; open `rc-683` covers the separate TLI-to-NRHO component-row attribution. Neither targets the Spacevalue note. No replacement values inferred. Extracted data: `extracted_data/r892_spacevalue_cislunar_lunar_note_citation_gap.csv`.
 
 ## R895 — MPD propellant performance claims lack source attribution (2026-11-18)
 
@@ -999,6 +850,59 @@ Verdict: Polk et al. provide a traceable lithium-MPD performance history that ca
 - **Verdict**: rc-786 requests the complete Apollo SP-4029 bibliography entry in CITATIONS.md. The 2.050 km/s value is unchanged.
 - **Extracted data**: extracted_data/r906_economicspace_apollo_sp4029_bibliography_gap.csv.
 
+## R927 — Spacecost iodine Isp citation scope (2026-11-18)
+
+`spacecost_iodine_isp_row_current_2026` — At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/propellants.csv` line 19 stores `isp_vac_s=2,000 s`. The row note cites Rafalskyi et al. for iodine electric propulsion’s first in-orbit flight and explains that the US$60 figure is a total propellant cost without a stated mass; it does not cite the Isp.
+
+`economicspace_current_bestcase_verification_sheet_2026` — Supplied `verification_sheet.pdf`, p. 39, maps I62 to Isp for the Iodine (Hall / gridded) row and repeats the row note as the basis. I62 is not separately marked NEED BACKING.
+
+`nasa_tm_2015_218829` — Printed p. 19 identifies the Busek iodine Hall full-scale system’s “high thrust (Isp ~2,000 s)” target. This is a target for that Hall system, not a measured value or a general gridded-thruster result.
+
+**Verdict:** Open `rc-807` to add this value-specific citation and label 2,000 s as a high-thrust scenario target; retain the number pending a matched operating-point basis. Keep Rafalskyi for flight history and the total-cost caveat. No replacement inferred. Extracted data: `extracted_data/r927_spacecost_iodine_isp_citation_scope.csv`.
+
+## R928 — Spacecost iodine density source (2026-11-18)
+
+`spacecost_iodine_density_row_current_2026` — At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/propellants.csv` line 19 stores `density_kg_per_L=4.93`. Its note says iodine is stored as a solid at ambient pressure and repeats `ρ 4.93 kg/L`; its listed citations address flight history and price, not density. `CITATIONS.md` §2 line 106 lists the flight-history and market references.
+
+`economicspace_current_bestcase_verification_sheet_2026` — Supplied `verification_sheet.pdf`, p. 39, maps I63 to iodine `tank_mass_frac` and repeats the density note without a named density source.
+
+`who_2020_iodine_drinking_water_density` — Table 1.1, printed p. 2, reports solid iodine density as “4.93 g/cm3 at 25 °C.” This supports solid material density, not a loose-packed reservoir density.
+
+**Verdict:** Open `rc-808` to cite the material-density value with its reference condition and clarify that the model uses solid iodine density. Retain 4.93 kg/L; no replacement inferred. Extracted data: `extracted_data/r928_spacecost_iodine_density_scope.csv`.
+
+## R931 — Spacecost constant and bibliography citations applied upstream (2026-11-18)
+
+spacecost 7ea729fb33a3cf37daa86b8baa6aa51b94a8ac98 (PR #45, package 0.17.2, data contract 1.26.1 unchanged). CITATIONS.md and comments; `units.py` and `delivery.py` parse to the same ASTs as a401930 and `tools/refresh_reference.py --check` reports `reference/` up to date.
+
+- rc-667, rc-668, rc-669: `bipm_1901_3rd_cgpm_standard_acceleration_gravity`, `nist_hb133_2026_appendix_e_volume_conversion`, `thompson_taylor_2008_nist_sp811_si` and `nist_sp959_2018_codata_constants` are cited where the constants are set. Computed here: 42 × 3.785411784 in IEEE double is 158.98729492799998, one ulp below the stored 158.987294928, so the barrel stays the written-out exact decimal.
+- rc-739: `dec_braun_2006_approximate_ablative_tps_sizing_tool` is listed; `DOWNLEG_TPS_FRAC` is called a scenario with its cargo-plus-capsule denominator and Table 2's thickness sensitivity.
+- rc-753, rc-754, rc-783, rc-785: full entries for `navard_1993_modelling_early_failures_space_station_freedom`, `jacklin_2019_small_satellite_mission_failure_rates`, `boyce_aj10_oral_history`, `cuffe_jacobs_1970`, `stackpoole_2013_pica_pica_x_postflight_eval` and `zero_bo_off_2025`, each with the scope its candidate names.
+- rc-805, rc-806: the two 0.17.1 comparator groups are one row per source with titles and links.
+
+Verdict: all ten closed as applied. Extracted data: none new.
+
+## R933 — Spacecost propellant-density and flight-record citations applied upstream (2026-11-18)
+
+spacecost 9c7c6b2b4e213e647089976227bc5e5dc6333721 (PR #46, package 0.17.3, data contract 1.26.1 to 1.26.2). Notes, comments and CITATIONS.md only. Compared here column by column against 7ea729f: in all six reference tables and the summary sample only `pipeline_version` and `notes` differ. Rebuilt on the recorded platform (Python 3.13, numpy 2.5.4, pandas 3.1.1).
+
+- rc-673, rc-675, rc-676, rc-677, rc-678, rc-808: component densities cited with their conditions to `imo_msc420_2016_methane_liquid_density`, `dodm_4145_26_2008_storable_propellant_density_table`, `nasa_ntrs_20030020732_98pct_h2o2_density`, `arnett_1969_nasa_tm_x53859_aerozine50_properties` and `who_2020_iodine_drinking_water_density`. UDMH's third decimal is stated as unsourced; Aerozine-50's 0.903 as the top of the specific-gravity range.
+- rc-807: iodine's 2,000 s is labelled a scenario on `nasa_tm_2015_218829`'s Busek target.
+- rc-757, rc-759, rc-755, rc-683: corrected notes cite `kerslake_1970_sert_ii_flight_performance`, `worlock_1975_ats6_cesium_engine_experiment`, `hamidian_dahlgren_1973_les6_ppt_report`, `zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing`, `nasa_science_eo1_mission_page`, `pourpoint_2012_alice_feasibility`, `risha_2014_alice_jpp` and `benson_asher_reese_2025_fast_transfer_nrho_presentation`.
+- rc-756, rc-698, rc-670: `mulkey_cardiff_2024_green_propulsion_assessment`; `berry_et_al_2021_contact_with_bennu_osirisrex_tag_sample_collection`, `esa_2024_philae_harpoon_failure_landing_review`, `nasa_2020_insight_hp3_mole_soil_friction_failure`, `kinnett_green_klein_lin_2022_drill_feed_msl_in_flight_failure_ams`; and `cme_comex_nymex_futures` with `iea_energy_prices_2022_product_specifications` for the heating-oil proxy.
+
+Verdict: all fourteen closed as applied. Extracted data: none new.
+
+## R934 — Spacecost first_flight defined and three propellant years moved (2026-11-18)
+
+spacecost 3d140d7f7ffc7da6352b737fb3b7d32d61ac2d0a (PR #47, package 0.18.0, data contract 1.27.0), merged with the owner's approval. The owner chose the definition: `first_flight` is the first launch or flight of a vehicle using the propulsion, successful or not. Compared column by column against 9c7c6b2: only `first_flight` in three rows, `notes` in five and `pipeline_version` differ; no code reads `first_flight`.
+
+- rc-760: methalox 2023 to 2022, `landspace_2023_zhuque2_first_orbit` (Mission F1 first launch 2022; F2 first to orbit 2023).
+- rc-762: HTP monoprop 1949 to 1951, `science_museum_group_dehavilland_super_sprite_rocket_engine` (first fired 1949, flight trials 1951).
+- rc-764: water resistojet 2022 to 2019, `jaxa_kibo_aqt_d_water_resistojet_deployment_2019`; the note separates `nasa_ptd1_hydros_c_water_electrolysis_2021`, `momentus_2023_vigoride5_water_met_first_orbit_raise`, `pale_blue_2023_water_resistojet_inorbit`, `jaxa_raise3_kir_failed_launch_2022` and `jaxa_2022_artemis1_equuleus_launch_record`; AQUARIUS is credited to Sekine et al. (`asakawa_aquarius_onorbit_2024`).
+- rc-761, rc-763: 1969 (Black Arrow R0; `uksa_2020_black_arrow_history`, `wight_aviation_museum_black_arrow_history`) and 1993 (Telstar 401; `curren_byers_1994_nasa_hydrazine_arcjets_telstar401`, `hoskins_et_al_2013_aerojet_ep_flight_experience`, `lockheed_martin_2006_amc1_first_a2100_launch`) kept with the events named.
+
+Verdict: all five closed as applied. Extracted data: none new.
+
 ## R944 — Spacecost's NRHO depot-cost ranking needs a scoped comparison (2026-11-18)
 
 - **benson_asher_reese_2025_fast_transfer_nrho_presentation**: slide 5 reports 400–450 m/s from TLI to NRHO; it supports the insertion range, not a cross-orbit depot ranking (rc-683).
@@ -1008,6 +912,29 @@ Verdict: Polk et al. provide a traceable lithium-MPD performance history that ca
 - **Upstream rows:** TLI → NRHO insertion (450 m/s) and TLI → low lunar orbit (900 m/s).
 - **Verdict:** Open rc-810 to cite and scope the comparative claim to a stated orbit set and cost criterion, or label it as an engineering judgment. No Δv values change.
 - **Extracted data:** extracted_data/r944_nrho_depot_ranking_citation_scope.csv.
+
+## R951 — economicspace worksheet scope sentences and frozen-row provenance applied upstream (2026-11-19)
+
+economicspace fd3b3affdf2db206b13c89e49aebd89b573dd327 (PR #211, master 1.81.0; no stamp or number moves). `campaign/verification_sheet.py` citation text, three comments (`modules/calc.py` and `campaign/worked_calculation.py` parse to the same AST as before) and `campaign/stage3/PROVENANCE.md`. Measured with `--check`: default 2018 DT page NEED BACKING 84 to 83 (only I111, rc-635), `cislunar__raw__search-off` 35 unchanged; `--self-test` passes.
+
+- Worksheet scope: rc-582 (tug Isp, dry fractions), rc-697 (lunar_surface TLI + LOI leg cited to both rows), rc-626 (frozen hydrolox row named), rc-386, 632 (M-class albedo and density), rc-637, 534 (cruise fit and half-year floor), rc-692, 633 (delta-v floors), rc-599 (deorbit), rc-696 (utility map route), rc-726 (absorption-ceiling allocations), rc-635 (Sibanye-Stillwater recognised), rc-782 (build commit in the footer).
+- Comments: rc-647 (N = 1), rc-597 (100 m3 fairing fallback).
+- PROVENANCE.md rows the same in every frozen set: rc-656, 657, 659, 660, 661 (spacecost half in bad5ba8), rc-630 (krypton price), rc-627 (power rows).
+- Already carried at this commit, closed with no change: rc-583 (25-year cap), rc-644 (NRE overlap).
+- Left open: rc-651 (FEEP indium price needs a dated procurement source; PROVENANCE names USGS as a comparator) and rc-777 (a commit column in Stage 4 outputs changes the output schema).
+
+Verdict: 25 closed as applied. Extracted data: none new.
+
+## R954 — Spacevalue route notes and transfer-scope corrections applied upstream (2026-11-19)
+
+At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996 and Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff:
+
+- rc-604: the GTO-to-GEO 1,836 m/s row retains 28.5° as a reference scenario; Cape Canaveral latitude and typical 28.5° LEO are comparators, not a trajectory-specific transfer plane (`nasa_nssdca_spacewarn_bulletin_613_launch_center_latitudes`; `askins_2021_sls_janaff_update`).
+- rc-769: the Mars 1-sol orbit remains 250 × 33,793 km from NASA DRA 5.0 (printed p. 22, `dra5_2009_human_exploration_of_mars`); 2,100 m/s is identified as a two-body comparator at Spacecost's Hohmann arrival, not a DRA value.
+- rc-771: 3,600 m/s to cislunar NRHO is identified as a cross-study benchmark (NASA-CR-195527 Table 2.1; Benson, Asher & Reese 2025 slide 5); the lunar-surface TLI, LOI and descent values cite NASA SP-4029.
+- rc-810: Whitley et al. 2017 (printed p. 2, `whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept`) reports 1,500 m/s for NRHO, 1,600 for L2 halo and 1,800 for DRO; LLO's 1,000 m/s is excluded from the remaining trade because the assumed Orion propellant capability cannot support it. The note limits the comparison to a crewed lunar-landing staging-orbit trade, not a depot-cost ranking.
+
+Verdict: the citation trail and comparison scope are recorded; route values are unchanged. Extracted data: none new.
 
 ## R969 — Spacecost Xenon bibliography omits the NEXT PM1 predecessor report (2026-11-19)
 
@@ -1030,6 +957,59 @@ Verdict: Polk et al. provide a traceable lithium-MPD performance history that ca
 - **Verdict:** open **rc-831**; add the full Beaurain et al. title, 2003 record details, official NTRS link, and abstract locator. This bibliography gap is separate from rc-766; the stored scenario remains unchanged.
 - **Extracted data**: `extracted_data/r887_surface_to_leo_ascent_dv_citation_scope.csv`.
 
+## R975 — Spacecost solar-sail milestone citations and mission scope (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `spacecost/propellants.py` lines 1503 and 1519–1522 give IKAROS as the 2010 first flight and name LightSail 2, NEA Scout and ACS3 without source links. `CITATIONS.md` §2 has no entries for these mission milestones.
+
+- `jaxa_ikaros_first_solar_sail_demonstration_2010`: JAXA ISAS says IKAROS “became the first in the world to successfully demonstrate a solar sail and solar power sail” (mission page, lines 78–83); launched 2010-05-21.
+- `planetary_society_lightsail2_apogee_raise_2019`: The Planetary Society reports the spacecraft raised apogee by 7.2 km after sail deployment (23 Aug 2019, line 115).
+- `nasa_nea_scout_status_update_2022`: NASA records separation from SLS on 16 Nov 2022 and says it had “not yet confirmed an observation of the deployed sail” (9 Dec 2022, lines 254–257). `nasa_pds_nea_scout_lost_status_2022` says contact was never established and the spacecraft was considered lost as of Dec 2022 (lines 20–24). The note’s “deployed” needs to identify spacecraft separation, not confirmed sail deployment.
+- `nasa_acs3_full_sail_deployment_2024`: NASA confirmed full ACS3 sail deployment on 29 Aug 2024 (lines 252–259).
+
+**Verdict:** open **rc-837** to add linked, pinpoint references and clarify the NEA Scout event. The registered 2017 NEA Scout paper covers the planned low-thrust mission concept, not this flight outcome. No model values changed. Extracted: `extracted_data/r975_spacecost_solar_sail_milestones.csv`.
+
+## R980 — Spacecost bibliography entries for electric-propulsion proceedings (2026-11-19)
+
+- **squire_etal_2011_vx200_operation_200kw_iepc154**: IEPC-2011-154, printed p. 1, reports the VX-200 at 200 kW: “72 ± 9%” efficiency, “4900 ± 300 seconds” specific impulse, and “5.8 ± 0.4 N” thrust. Spacecost cites the paper in its VASIMR note beside 4,000 s, 0.50 efficiency, and 53 kg/N.
+- **squire_etal_2013_vasimr_system_mass_iepc149**: IEPC-2013-149, printed p. 1, describes a “complete VASIMR single-core spaceflight engine system” over a 50–250 kW model domain. Spacecost cites it as a system-mass comparator for the VASIMR row.
+- **chang_diaz_etal_2022_vasimr_recent_progress_iepc525**: IEPC-2022-525, printed p. 1, reports a “longest firing of 88 continuous hours at 80 kW.” Spacecost cites it for VX-200SS endurance in the VASIMR note.
+- **polk_et_al_2024_lithium_mpd_thruster_iepc_2024**: IEPC-2024-841, printed p. 1, reports performance “over 60% efficiency at specific impulses over 4000 s” at 500 kWe to 1 MWe. Spacecost cites it in the MPD note beside 4,000 s, 0.40 efficiency, and 40 kg/N.
+
+Spacecost `CITATIONS.md` section 2, line 145, lists only “Manufacturer data sheets, per device” for thruster kg/N, efficiency, and scaling; it has no full entry for any of these four proceedings.
+
+Verdict: open rc-845 for full bibliography entries with title, authors, conference, year, paper number, and stable links. This is distinct from applied rc-661 and rc-774, which address the cited values and source scope; no numeric replacement inferred. Extracted: `extracted_data/r791_vasimr_performance_mass_boundary_and_endurance_citation.csv`; `extracted_data/r895_mpd_propellant_citation_gap.csv`.
+
+## R985 — Spacecost propulsion bibliography and sail milestones applied upstream (2026-11-19)
+
+At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6, data contract 1.27.6; notes, comments and CITATIONS.md only), CITATIONS.md gains `oleson_mcguire_2011_compass_enceladus_sep_stage` (rc-829), `nasa_nextc_flight_ion_system_status_2020` (rc-830), `beaurain_et_al_2003_earth_to_orbit_rocket_propulsion_ntrs20030066115` (rc-831) and the four IEPC papers behind VASIMR and MPD (rc-845). The solar sail note says NEA Scout separated from SLS but its sail deployment was never confirmed, citing `nasa_nea_scout_status_update_2022` and `nasa_pds_nea_scout_lost_status_2022` beside the IKAROS, LightSail 2 and ACS3 records (rc-837). Every value column is unchanged.
+
+Verdict: rc-829, rc-830, rc-831, rc-837, rc-845 closed as applied. Extracted data: none new.
+
+## R986 — Spacecost propulsion and NRHO bibliography gaps (2026-11-19)
+
+- **mirtich_1982_resistojet_large_spacecraft_systems**: NASA TM-83489, printed p. 4, gives a generic system-mass relation, “PPU = 88 percent efficient” and a “20 percent assumed allowance for structure, feed lines, etc.” Spacecost’s Water resistojet row cites it while retaining 10 kg/N and 0.75 efficiency; the paper is a comparator, not support for those water-specific values (rc-852).
+- **spacecost_water_resistojet_bibliography_gap_code_current_2026**: At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8, the Water row points to NASA TM-83489 p. 4, but CITATIONS.md §2 lacks its full entry.
+- **whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept**: Printed p. 2 compares total ΔV of 1,500 m/s for NRHO, 1,600 for L2 Halo, and 1,800 for DRO; printed p. 3 says LLO was excluded from the remaining trade because its propellant load exceeded Orion capability. These are crewed staging-orbit results, not a depot ranking or direct support for Spacecost’s 450 m/s TLI-to-NRHO row (rc-853).
+- **spacecost_nrho_staging_bibliography_gap_code_current_2026**: At the same Spacecost main, reference/delta_v_segments.csv line 15 cites Whitley et al. (2017), GLEX-2017-3.2A.1 / NTRS 20170004964; CITATIONS.md §3 lines 242–244 has no entry for the paper.
+- **babic_et_al_1993_extended_duration_lunar_lander**: Printed p. 3 §2.3.1/Table 2.1 gives 3,140 m/s for an 185 km, 33° parking orbit and a four-day lunar transfer. Spacecost’s 3,600 m/s LEO-to-cislunar-NRHO row uses it as a TLI comparator, not a matched NRHO trajectory (rc-854).
+- **spacecost_nasa_cr_195527_bibliography_gap_code_current_2026**: At the same Spacecost main, reference/delta_v_segments.csv line 16 cites NASA-CR-195527/Table 2.1; CITATIONS.md §3 line 242 lacks the report title and NTRS link.
+
+Upstream cells: Water resistojet mass-per-thrust and efficiency; TLI → NRHO insertion (450 m/s); LEO → cislunar NRHO composite (3,600 m/s).
+
+Verdict: Open rc-852–854 for the missing full bibliography entries and stable links. No numeric replacement inferred. Extracted data: existing `extracted_data/r790_water_resistojet_mass_and_efficiency_citation_gap.csv`, `extracted_data/r944_nrho_depot_ranking_citation_scope.csv`, and `extracted_data/r892_spacevalue_cislunar_lunar_note_citation_gap.csv`.
+
+## R990 — Spacecost lunar TEI labelled a scenario upstream (2026-11-19)
+
+At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), `delivery.py` labels the 850 m/s LLO trans-Earth injection a scenario with no stated altitude or Earth endpoint and cites `nasa_ntrs_19900016723_lctv_return_delta_v` (915 + 60 = 975 m/s to a 400-km Earth orbit) as the comparator (rc-741). Value unchanged.
+
+Verdict: rc-741 closed as applied. Extracted data: none new.
+
+## R991 — Spacecost NASA-CR-186677 bibliography entry (2026-11-19)
+
+spacecost_0187_main_citation_method_review_2026: at Spacecost main a6901495d257cbcd018b31e238498c94f301c865, delivery.py labels _LLO_TEI_DV_M_S = 850.0 a scenario and names NASA-CR-186677 / NTRS 19900016723, Table 4B, as its comparator. Spacecost CITATIONS.md section 3 has no named entry for that report. nasa_ntrs_19900016723_lctv_return_delta_v: NASA NTRS gives the title Preliminary subsystem designs for the Assured Crew Return Vehicle (ACRV), volume 1 and report number NASA-CR-186677-VOL-1; Table 4B, printed p. 25, gives 915 + 60 = 975 m/s to a 400-km Earth orbit. This is not a surface-return comparator.
+
+Verdict: rc-861 open, citation-only. rc-741 remains applied; 850 m/s is unchanged. Extracted: extracted_data/r991_spacecost_nasa_cr186677_bibliography_gap.csv; values: extracted_data/r865_lunar_llo_tei_return_comparator.csv.
+
 ## R994 - Spacecost bibliography candidates rechecked (2026-11-19)
 
 - `mirtich_1982_resistojet_large_spacecraft_systems`: At Spacecost main `a6901495d257cbcd018b31e238498c94f301c865`, `reference/propellants.csv:20` still cites Mirtich, NASA TM-83489 p. 4, for the water resistojet mass comparator; `CITATIONS.md` section 2 still has no Mirtich / TM-83489 entry (rc-852).
@@ -1044,14 +1024,12 @@ At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (PR #55, 0.18.8, data
 
 Verdict: rc-852, rc-853, rc-854, rc-861 closed as applied. Extracted data: none new.
 
-
 ## R1062 — EO-1 pulsed plasma thruster mass boundary (2026-11-23)
 
 - zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing, rendered p. 2 Table 1, gives “90 – 860 µNsec,” 1 Hz, 4.95 kg “Total Mass,” 8% overall efficiency and an estimated 460 N·s total impulse. The >96,000 pulses in the p. 1 abstract are the flight experiment count. R189's extract now records the printed micro prefix and separates the two scopes. At 1 Hz the upper impulse bit gives 860 µN mean thrust, so the total-unit ratio is 5,756 kg/N.
 - benson_arrington_hoskins_meckel_2000_eo1_ppt_development, printed p. 5, describes energy storage, power-processing electronics and mechanical thruster elements “integrated into a single unit,” with two opposed heads. Printed p. 11 Table I gives 8% overall efficiency at maximum energy and 70 W of input at 1 pulse/s. spacecost_eo1_ppt_mass_and_economicspace_sizing_2026 records 5,000 kg/N in Spacecost and Economicspace. Economicspace models it as a thruster term plus a separate PPU. At 860 µN the installed 1,000 s and 8% inputs give 4.30 kg on thrust and 0.248 kg on PPU before the array term. **rc-951** records the citation and scope of the hardware mass.
 
 Extracted data in extracted_data/r1062_eo1_ppt_mass_boundary.csv.
-
 
 ## R1063 — IFM Nano mass, power and flight heritage (2026-11-23)
 
@@ -1061,7 +1039,6 @@ Extracted data in extracted_data/r1062_eo1_ppt_mass_boundary.csv.
 
 Extracted data in extracted_data/r1063_feep_mass_efficiency_and_heritage.csv.
 
-
 ## R1064 — Electrospray module mass, bus power and ST7 heritage (2026-11-23)
 
 - spacecost_electrospray_tile_st7_and_economicspace_sizing_2026 records 10,000 kg/N and the “TILE-3 ~100 µN/kg-class” comment. accion_tile3_2020_product_datasheet, p. 1, gives 2 kg “Wet Mass” and 0.45 mN “Max Thrust (Axial),” yielding 4,444 kg/N and 225 µN/kg. nasa_2021_smallsat_soa_tile3_st7_ratings, Table 4-8 p. 102, gives 2.25 kg wet and 450 µN for 5,000 kg/N. The record describes an integrated unit. anderson_etal_2018_st7_pathfinder_experimental_results, preprint p. 4 Section II.A, records a 14.8 kg ST7 assembly with four heads, feeds and PPUs. Economicspace's 450 µN fixture assigns 4.5 kg to thrust and adds a separate PPU. **rc-955** records the different hardware mass boundaries.
@@ -1070,14 +1047,12 @@ Extracted data in extracted_data/r1063_feep_mass_efficiency_and_heritage.csv.
 
 Extracted data in extracted_data/r1064_electrospray_hardware_mass_power_and_heritage.csv.
 
-
 ## R1065 — Hydrazine arcjet subtype and shared power conversion (2026-11-23)
 
 - spacecost_arcjet_mass_and_economicspace_power_conversion_2026 records “MR-509 1.5 kg / 258 mN” beside the installed 6.0 kg/N coefficient. aerojet_rocketdyne_mr509_mr510_propulsion_datasheets, MR-509 and MR-510 sheets, gives thruster-plus-cable masses of 1.4 and 1.6 kg and demonstrated thrust bands of 213–254 and 222–258 mN, respectively. At their upper thrust endpoints the resulting ratios are 5.51 and 6.20 kg/N. The configured 600 s lies in the MR-510 sheet's 585–615 s band. **rc-958** records the subtype and cable boundary.
 - aerojet_rocketdyne_mr509_mr510_propulsion_datasheets, MR-510 sheet, gives 2,000 W “input to the arcjet” and 2,200 W “input to the PCU.” zube_goodfellow_hearn_2017_mr510_arcjet_pcu, abstract and p. 7 Table 1, gives one 15.8 kg PCU in the 70 V MR-510 shipset with four installed arcjets and two simultaneous operating channels. The MR-510E column gives a 19.1 kg 100 V PCU. spacecost_arcjet_mass_and_economicspace_power_conversion_2026 records Economicspace's generic 4.7 kg/kW PPU term. Its installed 600 s and 0.35 yield 2,168.67 W at 258 mN in the fixture. The model gives 10.19 kg of PPU at that load and 20.39 kg for two such loads. The cited 70 V PCU spans 4.4 kW with both arcjets operating. **rc-959** records hardware sharing and the bus-power boundary.
 
 Extracted data in extracted_data/r1065_mr509_mr510_arcjet_and_power_conversion.csv.
-
 
 ## R1069 — Lithium MPD test attribution, conceptual mass and tank phase (2026-11-24)
 

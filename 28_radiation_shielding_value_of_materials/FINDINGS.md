@@ -81,7 +81,6 @@ Why shielding utility tracks dose equivalent, not flux; no value pinned. `extrac
 
 **Still open in this domain:** a text-stated or digitised per-kg ratio of silicate regolith to water; asteroid-specific compositions (CI/CM rock with bound water should shield better than dry silicate).
 
-
 ## R378 - TP-3473 Figure 15: water and regolith shielding comparison (2026-11-08)
 
 `kim_wilson_1994_gcr_shield_materials_performance_tp3473`, NASA TP-3473, Figure 15 (printed p.28, PDF p.30), labels the ordinate as the cell-transformation ratio relative to aluminum and the abscissa as areal density. Approximate reads from the left panel are water 1.38 and dry regolith 1.15 at 10 g/cm2, and water 1.58 and dry regolith 1.28 at 30 g/cm2. Water/regolith ratios within this plotted measure are about 1.20 and 1.23. Visual uncertainty is roughly ±0.05 for each ordinate read. Figure 13 separately compares dose equivalent and transformations for 1-year exposure behind multiple materials; it remains undigitized.

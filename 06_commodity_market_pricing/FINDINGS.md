@@ -1,104 +1,3 @@
-## R964 — Earth-surface water market ceiling (2026-11-19)
-
-spacevalue_terrestrial_water_market_ceiling_code_main_2026: At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, catalog.py describes ANNUAL_WORLD_PRODUCTION_KG as terrestrial annual primary production (lines 953-958), then places water=1.0e15 kg/year under “Effectively unlimited on Earth” (lines 999-1000); _UNLIMITED_MARKET_KG is also 1.0e15 (line 1005). annual_market_kg() returns the terrestrial value for earth_surface and Earth-bound sales (lines 1178-1202), and cargo.py capacity_allowance_kg() uses that value as a quantity ceiling (lines 1027-1085).
-
-economicspace_earth_surface_market_ceiling_path_code_main_2026: At Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9, modules/calc.py describes Earth-surface ceilings as terrestrial production of 1e12-1e15 kg/year and says none are expected to bind; its diagnostic says a run with no bound row reports the fleet ladder’s top, not a market-bounded optimum (lines 10478-10495). No water-specific market measure is named.
-
-Upstream fields and values: Spacevalue ANNUAL_WORLD_PRODUCTION_KG["water"] is 1.0e15 kg/year; annual_market_kg("water", "earth_surface") returns that value, and cargo.capacity_allowance_kg applies the annual amount to a delivery-window quantity ceiling. Economicspace comments describe earth_surface ceilings as 1e12-1e15 kg/year but name no water-specific measure or value.
-
-Verdict: open rc-824 to establish whether the water value is an unbounded sentinel or a finite market ceiling. If finite, identify the buyer, measured quantity, year and source; if a sentinel, keep the route explicitly scenario/unbounded and quantify finite-cap sensitivity. This is distinct from rc-602’s water price comparator and rc-823’s in-space utility factors. No numeric replacement inferred. Extracted: extracted_data/r964_earth_water_market_ceiling.csv.
-
-## R942 — Spacevalue reference-price source labels applied upstream (2026-11-18)
-
-spacevalue dd497f2e06f9604512f98c1facbffe3a33bab321 (PR #17, package 0.8.0, data contract 1.21.0 to 1.22.0), merged with the owner's approval. `ref_price_source` is now set per reference row: the 20 rows with no reference price say they have no direct quote and are unpriced on the Earth route, any value being a gross contained-element proxy; the five bulk silicates' $0.05/kg is labelled an engineering placeholder; every other row keeps "USGS/LME/mineralogy reference". In the re-recorded `tests/data/prices-2026-10-07/` fixtures, compared column by column, only `ref_price_source` (25 rows per table) and `pipeline_version` differ.
-
-- rc-455 (bulk silicates); rc-456 (Fe-Ni alloys); rc-589 (schreibersite, troilite); rc-590 (pentlandite); rc-591 (pyrrhotite); rc-593 (magnetite); rc-595 (chromite, ilmenite); rc-621 (niningerite, oldhamite, daubreelite); rc-622 (perovskite); rc-623 (sperrylite, laurite, awaruite, native PGM).
-
-Verdict: all ten closed as applied. The label reaches economicspace only after a `prices-*` release on 0.8.0 and a Stage 2 repin. Extracted data: none new.
-
-## R935 — Spacevalue world-production and water-price comments applied upstream (2026-11-18)
-
-spacevalue 513c4f090a8680f414b77b150a0cfd2dee1b78ee (PR #16, package 0.7.3, data contract 1.21.0 unchanged). Comments in `catalog.py` and CITATIONS.md; `catalog.py` parses to the same AST as c377668.
-
-- rc-523, rc-527: `usgs_mcs2026_silver_chapter` and `usgs_mcs2026_sulfur_chapter` pinned beside the silver and sulfur ceilings; sulfur's 83 Mt is placed against MCS 2025 (85 Mt) and MCS 2026 (83.9, 84.0 Mt).
-- rc-524: iridium, rhodium and ruthenium labelled scenarios; `jm_pgm_market_report_2026` primary supply given as a different-series comparator.
-- rc-529: `matos_etal_2021_jrc_elemental_phosphorus_energy` gives the 900-1,200 kt/yr range the 1 Mt scenario sits in.
-- rc-602: `mud_omaha_2026_large_volume_industrial_water_schedule` as one comparator; computed here 1.9657 / (748 × 3.785411784) = $0.000694/kg.
-
-Verdict: all five closed as applied. Extracted data: none new.
-
-## R896 — Spacevalue standalone-build citation metadata
-
-- **spacevalue_single_destination_build_output_provenance_code_current_2026**: Spacevalue main `@80ec7549164fc1ed6c800ab0ef6205cde08ae9fd`. `cli.py` lines 6–11 document `build` as writing one destination table and `release` as writing every destination plus `manifest.json`; lines 110–113 route `build` directly to `build_mineral_value_catalog`. `catalog.py` lines 2831–2850 stamp `catalog_date`, `pipeline_version` and `delivery_destination`, then write the CSV. `CITATIONS.md` lines 153–154 says to cite the table tag (`prices-YYYY-MM-DD`), code tag (`vX.Y.Z`) and row data contract. In contrast, `release.py` lines 166–172 records `release_tag`, `package_version`, `source_commit` and `quote_snapshot` in its manifest.
-- **Upstream fields:** Spacevalue standalone `build <destination>` CSV output and the package's release citation instructions.
-- **Verdict:** Open rc-776 for release/package metadata in standalone build outputs. The full release path records these identifiers; the single-destination path does not. No table values are changed.
-- **Extracted data:** `extracted_data/r896_spacevalue_single_build_output_provenance.csv`.
-
-## R830 — Reconstructed 2026-09-29 metals closes versus current Yahoo history
-
-- **spacevalue_metals_snapshots_2026** (`spacevalue/quotes/metals-2026-10-07.csv`): five rows label `source=yfinance`, `close_date=2026-09-29`, and `recorded_date=2026-10-07`; the `note` says each close was recovered from Economicspace Stage 2 converted $/kg values. The snapshot SHA-256 is `62A1D20FF25B714D27908B48EFB3323D789CF6E3666201ACDB5A7702175BFE8B`.
-- **economicspace_mineral_value_1_15_live_quote_rows_2026** (frozen lunar_surface Stage 2 export): gold, copper, palladium, platinum and silver carry `live_price_date=2026-09-29` and `live_price_source=yfinance:<ticker>`, with converted prices of $134,239.00586592773, $14.65633066298999, $38,982.7802137, $55,087.08995454154 and $1,969.5546807917196/kg, respectively. The rows do not retain raw closes.
-- **yahoo_finance_futures_history_2026** (Historical Prices, each ticker’s 2026-09-29 row, Close column): current Yahoo history displays GC=F 4,179.70, HG=F 6.543, PA=F 1,201.60, PL=F 1,680.10 and SI=F 60.668. Each differs from its matching reconstructed snapshot close. The current pages do not preserve the original dated response or its contract/roll mapping.
-- **economicspace_verification_sheet_live_quote_citation_check_2026** (`campaign/verification_sheet.py` lines 5747–5759 and 6117–6119): the planted `live quote from yfinance:PL=F on 2026-09-29` example is classified as source-bearing; the check does not validate the numeric close against Yahoo history.
-- **Upstream fields:** Spacevalue `spacevalue/quotes/metals-2026-10-07.csv` close, source, close_date and recorded_date; Economicspace frozen Stage 2 `live_price_usd_per_kg`, `live_price_date` and `live_price_source` rows.
-- **Verdict:** Open rc-702 for the observed-close attribution and raw-close provenance. Current Yahoo historical rows conflict with all five reconstructed values, but the pages do not establish whether the difference reflects a changed continuous-futures history or a reconstruction error. No numeric replacement inferred.
-- **Extracted data:** `extracted_data/r830_metals_snapshot_historical_close_conflicts.csv`.
-
-## R801 — Johnson Matthey PGM base-price quote traceability
-
-- **johnson_matthey_base_prices_faq_2026** (Johnson Matthey PGM Management FAQ, questions on setting cadence, sponge form, and reuse): JM says Base Prices are set “4 times a day from Monday to Friday”; its FAQ gives the US scheduled setting as 09:30 Eastern Standard Time, allows interim adjustments, identifies sponge as the price form, and says Base Prices require express written consent for reproduction.
-- **spacevalue_pgm_reference_prices_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1680–1729; CITATIONS.md lines 38–42): platinum $1,562/oz, palladium $1,046/oz, rhodium $9,400/oz, iridium $10,100/oz, and ruthenium $1,900/oz, all dated 2026-11-10 and labeled New York. The citation list names JM base prices but supplies no exact daily quote-record locator or time.
-- **Upstream cells:** Spacevalue MINERAL_REFERENCE ref_price_usd_per_kg, ref_price_date, and notes for Pt/Pd/Rh/Ir/Ru.
-- **Verdict:** Open rc-672 to review the exact price record, quote time/time zone, product form, and reproduction permission. The date-only record cannot identify which scheduled US setting or interim adjustment the five figures represent. No numeric replacement inferred.
-- **Extracted data:** extracted_data/r801_jm_base_price_quote_traceability.csv.
-
-## R753 — E-type accessory sulfide Earth-sale basis
-
-- **spacevalue_eh_sulfide_reference_price_code_current_2026** (Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `catalog.py` lines 1999–2013): `niningerite`, `oldhamite`, and `daubreelite` pass `None` as the direct mineral price. Their listed yields are Fe 0.243/S 0.465; S 0.444; and Cr 0.361/Fe 0.194/S 0.445, respectively. The shared constructor defines `None` as no market price of the mineral itself, only its yields.
-- **spacevalue_mineral_yield_value_route_code_current_2026** (`cargo.py` lines 157–199): `_mineral_implied_value` multiplies each listed yield by the corresponding element price and sums the results. Its docstring says the calculation has no payable fraction, treatment charge, or refining charge.
-- **asteroidcatalog_eh_sulfide_split_code_current_2026** (AsteroidCatalog 0.13.2, `mineralogy.py`): the Xe row assigns 8 wt% accessory sulfide and splits it into 5 wt% troilite, 2 wt% niningerite, 0.7 wt% oldhamite, and 0.3 wt% daubreelite. The split's abundance basis remains under rc-537.
-- **Upstream cells:** Spacevalue `MINERAL_REFERENCE` direct price/date fields for the three phases; the Earth-sale yield-value route. The current code does not document a matched mineral product price or netback for these phases.
-- **Verdict:** Open rc-621 to review the saleable product, yield/recovery, and netback basis or label the constituent-value route as a scenario. This does not re-evaluate Xe abundance in rc-537. No numeric replacement inferred.
-- **Extracted data:** `extracted_data/r753_eh_sulfide_earth_sale_basis.csv`.
-
-## R724 - Pyrrhotite terrestrial sale-price route
-
-- **spacevalue_pyrrhotite_reference_price_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1989-1994): pyrrhotite (Fe7S8) has ref_price_usd_per_kg=None and ref_price_date=None; the yield map is Fe 0.604 and S 0.396. The row describes a sulfide found in CI, CM and Tagish Lake meteorites but gives no terrestrial sale product or price basis.
-- **economicspace_unquoted_mineral_zero_price_rule_current_2026** (economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/verification_sheet.py lines 1418-1430): the phase worksheet path assigns 0.0 USD/kg when a mineral row has no terrestrial quote.
-- **turnagain_2020_nickel_concentrate_terms** (NI 43-101 report, section 13.4 p.84; section 13.5 p.85): for the Turnagain deposit, the report says pyrrhotite recovery is "not economic" and describes its rejection as necessary to produce a saleable nickel concentrate. This is deposit-specific process evidence, not a price for raw asteroid pyrrhotite or a separated Fe/S product.
-- **rc-591**: open; no matched terrestrial pyrrhotite product price or supported netback is established. Distinct from rc-380, rc-438, rc-589 and rc-590. No numeric replacement inferred. Extracted: extracted_data/r724_pyrrhotite_earth_sale_boundary.csv.
-
-## R723 - Pentlandite terrestrial sale-price basis
-
-- **spacevalue_pentlandite_reference_price_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1994-1997): pentlandite (Fe,Ni)9S8 has ref_price_usd_per_kg=None and ref_price_date=None; the yield map is Fe 0.326, Ni 0.342 and S 0.332. The row note calls it "the terrestrial Ni ore mineral." The _new_mineral constructor at lines 1544-1563 preserves None as the price and date.
-- **economicspace_unquoted_mineral_zero_price_rule_current_2026** (economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/verification_sheet.py lines 1418-1430): the phase worksheet path assigns 0.0 USD/kg when a mineral row has no terrestrial quote.
-- **usgs_mcs2026_nickel_chapter** (USGS MCS 2026 Nickel chapter, p. 1): Eagle Mine produced 10,000 metric tons of nickel in concentrate in 2025 and exported it to smelters; the annual average LME nickel cash price was $15,000 per metric ton. These market-form and metal-price data do not directly price unprocessed pentlandite.
-- **turnagain_2020_nickel_concentrate_terms** (NI 43-101 report, section 13.4 p. 83; section 19.3.2 p. 190): the report says "the only economically recoverable nickel is hosted in pentlandite" and that there are "no global benchmark treatment and refining charges" for nickel concentrates; terms are negotiated individually and privately. Its concentrate payability discussion is project-market context, not a transfer value for the modeled phase.
-- **lifezone_2025_kabanga_nickel_concentrate_terms** (Kabanga Feasibility Study Technical Report Summary, section 16.5 p. 310): project-model concentrate payabilities use "confidential commercial terms" after customer proposals are normalized for payability, metal prices, and treatment/refining charges. No numeric pentlandite price follows from those terms.
-- **rc-590**: open; these sources establish no product- and grade-matched price or concentrate netback for asteroid pentlandite. No numeric replacement inferred. Extracted: extracted_data/r723_pentlandite_nickel_concentrate_boundary.csv.
-
-## R722 — Unquoted schreibersite and troilite Earth-sale rows
-
-- **spacevalue_schreibersite_troilite_reference_prices_current_2026** (Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `catalog.py` lines 1888–1913): `troilite` (FeS) stores no `ref_price_usd_per_kg` or `ref_price_date` and yields Fe 0.635/S 0.365; `schreibersite` stores neither price nor date and yields Fe 0.555/Ni 0.291/P 0.154.
-- **economicspace_schreibersite_troilite_zero_quote_verification_current_2026** (economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `verification_sheet.py` lines 1418–1430): the sheet marks I29 (schreibersite) and I44 (troilite) NEED BACKING and displays $0/kg because “prices a missing terrestrial price as zero.”
-- **usgs_mcs2026_sulfur_chapter** (Sulfur chapter PDF p. 1): USGS reports the 2025 average unit value of elemental sulfur as $180 per metric ton. This is a processed elemental-sulfur price, not a direct troilite or schreibersite quote.
-- **Verdict:** `rc-589` records the missing Earth-sale product and price basis for the two null entries, including whether any constituent netback has an explicit recovery and cost boundary. The elemental-sulfur comparator does not support a numeric replacement.
-- **Extracted:** `extracted_data/r722_schreibersite_troilite_earth_price_boundary.csv`.
-
-## R684 — Germanium annual production ceiling
-
-- **Sources:** `world_mining_data_2026_germanium` reports a 2024 table total of 150 metric tons (printed p. 121), including 140 t for China alone; its production definition and estimate/source codes are on p. 13. `usgs_mineral_commodity_summaries_2026` says “global production data were limited” and estimates “were difficult to verify” (Germanium chapter, printed p. 96); it gives no world total.
-- **Upstream cell:** Spacevalue `ANNUAL_WORLD_PRODUCTION_KG["germanium"]` is 1.4e5 kg/year (~140 t refinery), under a block comment attributing the grouped rows to USGS MCS 2025 world production for 2024. The MCS 2025 Germanium extraction records no world production total (existing `extracted_data/r83_mcs2025_world_production_key_numbers.csv`, p. 84).
-- **Verdict:** The WMD 2026 150 t total is a current comparator, but WMD’s estimates and refinery boundary require review before numerical substitution. Open `rc-542` for provenance, year, scope, and the 10 t difference; no upstream edit made.
-- **Extracted data:** `extracted_data/r684_germanium_world_production.csv`.
-
-## R683 — Chromium annual production ceiling
-
-- **Source:** `usgs_mcs2026_chromium_chapter`. The “World Mine Production and Reserves” table gives a world total of “51,000” thousand metric tons for 2025e (printed p. 66); footnote 12 states mine production is reported in gross weight.
-- **Upstream cell:** Spacevalue `ANNUAL_WORLD_PRODUCTION_KG["chromium"]` is 4.7e10 kg (~47 Mt shipping-grade chromite ore), under a block comment identifying MCS 2025 world production for 2024.
-- **Verdict:** The current MCS 2026 comparator is 5.1e10 kg gross-weight chromite ore, 8.5% above the stored figure. Open `rc-541` for review; no upstream edit made.
-- **Extracted data:** `extracted_data/r683_chromium_annual_production.csv`.
-
 # Domain 6 — Commodity / mineral market pricing (value side of the pipeline)
 
 Backings: spacevalue `spacevalue/catalog.py` `ref_price_usd_per_kg` for every tradable element and mineral (multiplied by per-asteroid yields into every row of `profitability_catalog.csv`) and `ANNUAL_WORLD_PRODUCTION_KG`. Until R39 the prices carried only "USGS/LME/mineralogy reference", with no registered source.
@@ -268,7 +167,6 @@ unkeyed and recorded-release behaviour remain effective controls. No current
 market-price level, live-service staleness, or published-release corruption is
 claimed. `extracted_data/r336_metals_dev_timestamp_provenance.csv`.
 
-
 ## R341 - Henry Hub contract heating-basis link (2026-11-03)
 
 `cme_comex_nymex_futures`, NYMEX Chapter 220 PDF p1, 220101,
@@ -431,13 +329,11 @@ No candidate changes status; 23 stay `open`.
 - **economicspace c21a5e9** (PR #197, master 1.67.0, calc 1.40.0): rc-245 and rc-281
   re-stamped. Both flags stay off by default, so both rows stay open.
 
-
 ## R385 — Silver static fallback after the May fixing
 
 The current `spacevalue/catalog.py` silver entry at `spacevalue@a13e378efece102d3724ada18d3810a62f29432f` carries `ref_price_usd_per_kg = 2,436.5` and states that this equals the LBMA silver fixing of $75.78/troy oz on 2026-05-29. The registered LBMA series extraction records $2,436.5/kg on that date and $2,110.2/kg on 2026-09-22, a 13.4% decline from the May fallback. Source: `lbma_precious_metals_fixings`.
 
 Verdict: the static offline/API-down fallback may materially lag the registered benchmark series; review whether to refresh its value and date. The September fixing is evidence of drift, not a November fixing, and the catalog has a separate live COMEX futures path. `rc-302` asks to verify the latest LBMA fixing before updating the fallback, while preserving quote basis and date. Extracted: `extracted_data/r385_silver_static_fallback_staleness.csv`.
-
 
 ## R386 — Nickel fallback after the October Pink Sheet
 
@@ -445,18 +341,15 @@ The current `spacevalue/catalog.py` nickel entry at `spacevalue@a13e378efece102d
 
 Verdict: the static nickel fallback for offline/API-down builds is stale against the same World Bank monthly series; review refreshing the value and date to the October 2026 average, or explain why the fallback remains intentionally fixed at May. Keep the separate live Metals.Dev path distinct. Extracted: `extracted_data/r386_nickel_reference_refresh.csv`.
 
-
 ## R387 — Platinum fallback after the October Pink Sheet
 
 The current `spacevalue/catalog.py` platinum entry at `spacevalue@a13e378efece102d3724ada18d3810a62f29432f` stores $61,472.2/kg, equivalent to the LBMA $1,912/troy oz fixing on 2026-05-29. The World Bank May 2026 monthly average was $1,998/troy oz, within 4.5% of that point; the November 2026 Pink Sheet (published November 3), p.2, Platinum row, reports an October 2026 monthly average of $1,621/troy oz ($52,116.4/kg). October is 15.2% below the May 29 point, and the World Bank monthly series fell 18.9% from May to October. Sources: `lbma_precious_metals_fixings`; `worldbank_cmo_pink_sheet`.
 
 Verdict: review whether to refresh the static offline/API-down fallback and its date. October’s monthly average is not a November daily LBMA fixing, and the catalog separately carries a live NYMEX quote path; verify the latest benchmark and preserve the quote basis before changing the fallback. `rc-304` records that review. Extracted: `extracted_data/r387_platinum_reference_refresh.csv`.
 
-
 ## R388 — LME cobalt cash benchmark check (2026-11-08)
 
 The LME Official Prices page describes its daily prices as global references for physically delivered metals, determined from the final bid and offer in the second Ring session. Its 2026-11-06 table reports cobalt cash bid $32,595/mt and ask $33,095/mt. Their $32,845/mt midpoint is $32.845/kg, about 0.47% below spacevalue's $33.00/kg cobalt fallback. The fallback note derives that value from the USGS 2025 U.S. cathode average; this annual U.S. cathode price and a dated LME physical cash quote have different periods and bases. The check shows no material divergence and does not support a new revision candidate. Extracted: `extracted_data/r388_lme_cobalt_cash_reference.csv`.
-
 
 ## R389 — Umicore daily precious-metal indications and dated fallbacks
 
@@ -482,20 +375,17 @@ The World Bank November 2026 Pink Sheet, p. 2, Copper row, lists the October mon
 
 Open `rc-313` to review the offline fallback date/value against the newer monthly benchmark and retain the separate live COMEX-futures path. No upstream value is changed. Extracted: `extracted_data/r397_copper_worldbank_october_price_refresh.csv`.
 
-
 ## R414 — SteelBenchmarker iron price basis check (2026-11-09)
 
 SteelBenchmarker’s Price History report dated 2026-10-28, p. 2, lists U.S. East of Mississippi “#1 Heavy melting scrap” at “$374 [380]” under its metric-tonne (gross-ton equivalent in brackets) heading; p. 16 specifies the grade as demolition scrap at least 1/4 inch thick and no larger than 60 x 24 inches. The upstream spacevalue iron fallback at spacevalue@a13e378efece102d3724ada18d3810a62f29432f is $0.319/kg ($319/metric tonne), based on the 2025 USGS national annual average, while its reference date is 2026-05-29. The SteelBenchmarker point is 17.24% higher, but it is regional and dated versus a national annual average, so this is a freshness and basis review signal only.
 
 Open `rc-324` to reconcile the current benchmark, geographic coverage, period and tonne basis before any fallback change. The static reference and live-price behavior remain unchanged. Extracted: `extracted_data/r414_steelbenchmarker_iron_price.csv`.
 
-
 ## R415 — SMM tungsten APT benchmark and dated fallback (2026-11-09)
 
 SMM’s tungsten price page lists “CIF Rotterdam 88.5% APT” at $2,500–3,100/mtu, midpoint $2,800/mtu, dated 2026-11-05. One mtu of WO3 contains about 7.93 kg tungsten, making the midpoint about $353/kg of contained W before conversion costs, payables, or product-form adjustments. USGS MCS 2026, Tungsten chapter, reports Rotterdam APT increased from $331 to $675/mtu during 2025. Spacevalue’s tungsten fallback at spacevalue@a13e378efece102d3724ada18d3810a62f29432f is $45/kg and its note identifies the start-of-2025 $331/mtu APT level; the fallback date is 2025-01-31. The current SMM contained-W equivalent is about 7.85 times the fallback, but this is a dated cross-benchmark signal, not a direct refined-metal quote.
 
 Open `rc-325` to reconcile the fallback’s date and APT-to-element basis against current market assessments before any change. No upstream value is changed. SMM’s page prohibits copying or reproducing its content without written consent; it is not hosted. Extracted: `extracted_data/r415_smm_tungsten_apt_price.csv`.
-
 
 ## R440 — November U.S. HMS negotiation signal (2026-11-09)
 
@@ -515,11 +405,9 @@ extracted_data/r440_smu_november_hms_negotiation_signal.csv.
 
 `elmet_dla_tungsten_offtake_agreement_2026` — the SEC-filed DLA–Elmet agreement covers tungsten ores and concentrates and sodium tungstate. It sets a $150 million guaranteed minimum and a $2 billion IDIQ ceiling, but says material unit prices will be determined when delivery orders are issued; the sample CLIN tables list 1 kg at “TBD” (printed pp. 3, 5). The contract therefore confirms a procurement channel and future demand, but supplies no current tungsten USD/kg observation. It cannot resolve the $45/kg static tungsten fallback or replace the dated APT comparison in rc-325. Extracted: `extracted_data/r441_elmet_dla_tungsten_unit_price_status.csv`.
 
-
 ## R452 — Johnson Matthey-attributed iridium quarter-end price (2026-11-09)
 
 `podium_2026_q3_jm_iridium_price` — Podium Minerals’ September 2026 Quarterly Activities Report, published 2026-10-14, reports that iridium rose 12% and “closing at its quarterly high” of US$8,150/oz (p. 6); the report attributes the price data to Johnson Matthey. This is about US$262,028.58/kg, 1.875% above the $8,000/oz Johnson Matthey Q1 2026 high used for the spacevalue fallback in rc-307. It provides a dated quarterly benchmark comparison, not a November spot quote, and does not establish that the static fallback should use the quarter-end value. The candidate remains open for benchmark-date and basis review. Extracted: `extracted_data/r452_podium_jm_iridium_quarterly_price.csv`.
-
 
 ## R457 - Correct spacevalue catalog target paths (2026-11-09)
 
@@ -620,17 +508,118 @@ campaign/worked_calculation.py parse to the same ASTs as master 1.73.0.
 - rc-519: the aerocapture_dv_savings_m_s comment calls 4,000 m/s a generic
   fallback scenario with no trajectory behind it.
 
+## R683 — Chromium annual production ceiling
+
+- **Source:** `usgs_mcs2026_chromium_chapter`. The “World Mine Production and Reserves” table gives a world total of “51,000” thousand metric tons for 2025e (printed p. 66); footnote 12 states mine production is reported in gross weight.
+- **Upstream cell:** Spacevalue `ANNUAL_WORLD_PRODUCTION_KG["chromium"]` is 4.7e10 kg (~47 Mt shipping-grade chromite ore), under a block comment identifying MCS 2025 world production for 2024.
+- **Verdict:** The current MCS 2026 comparator is 5.1e10 kg gross-weight chromite ore, 8.5% above the stored figure. Open `rc-541` for review; no upstream edit made.
+- **Extracted data:** `extracted_data/r683_chromium_annual_production.csv`.
+
+## R684 — Germanium annual production ceiling
+
+- **Sources:** `world_mining_data_2026_germanium` reports a 2024 table total of 150 metric tons (printed p. 121), including 140 t for China alone; its production definition and estimate/source codes are on p. 13. `usgs_mineral_commodity_summaries_2026` says “global production data were limited” and estimates “were difficult to verify” (Germanium chapter, printed p. 96); it gives no world total.
+- **Upstream cell:** Spacevalue `ANNUAL_WORLD_PRODUCTION_KG["germanium"]` is 1.4e5 kg/year (~140 t refinery), under a block comment attributing the grouped rows to USGS MCS 2025 world production for 2024. The MCS 2025 Germanium extraction records no world production total (existing `extracted_data/r83_mcs2025_world_production_key_numbers.csv`, p. 84).
+- **Verdict:** The WMD 2026 150 t total is a current comparator, but WMD’s estimates and refinery boundary require review before numerical substitution. Open `rc-542` for provenance, year, scope, and the 10 t difference; no upstream edit made.
+- **Extracted data:** `extracted_data/r684_germanium_world_production.csv`.
+
+## R722 — Unquoted schreibersite and troilite Earth-sale rows
+
+- **spacevalue_schreibersite_troilite_reference_prices_current_2026** (Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `catalog.py` lines 1888–1913): `troilite` (FeS) stores no `ref_price_usd_per_kg` or `ref_price_date` and yields Fe 0.635/S 0.365; `schreibersite` stores neither price nor date and yields Fe 0.555/Ni 0.291/P 0.154.
+- **economicspace_schreibersite_troilite_zero_quote_verification_current_2026** (economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `verification_sheet.py` lines 1418–1430): the sheet marks I29 (schreibersite) and I44 (troilite) NEED BACKING and displays $0/kg because “prices a missing terrestrial price as zero.”
+- **usgs_mcs2026_sulfur_chapter** (Sulfur chapter PDF p. 1): USGS reports the 2025 average unit value of elemental sulfur as $180 per metric ton. This is a processed elemental-sulfur price, not a direct troilite or schreibersite quote.
+- **Verdict:** `rc-589` records the missing Earth-sale product and price basis for the two null entries, including whether any constituent netback has an explicit recovery and cost boundary. The elemental-sulfur comparator does not support a numeric replacement.
+- **Extracted:** `extracted_data/r722_schreibersite_troilite_earth_price_boundary.csv`.
+
+## R723 - Pentlandite terrestrial sale-price basis
+
+- **spacevalue_pentlandite_reference_price_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1994-1997): pentlandite (Fe,Ni)9S8 has ref_price_usd_per_kg=None and ref_price_date=None; the yield map is Fe 0.326, Ni 0.342 and S 0.332. The row note calls it "the terrestrial Ni ore mineral." The _new_mineral constructor at lines 1544-1563 preserves None as the price and date.
+- **economicspace_unquoted_mineral_zero_price_rule_current_2026** (economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/verification_sheet.py lines 1418-1430): the phase worksheet path assigns 0.0 USD/kg when a mineral row has no terrestrial quote.
+- **usgs_mcs2026_nickel_chapter** (USGS MCS 2026 Nickel chapter, p. 1): Eagle Mine produced 10,000 metric tons of nickel in concentrate in 2025 and exported it to smelters; the annual average LME nickel cash price was $15,000 per metric ton. These market-form and metal-price data do not directly price unprocessed pentlandite.
+- **turnagain_2020_nickel_concentrate_terms** (NI 43-101 report, section 13.4 p. 83; section 19.3.2 p. 190): the report says "the only economically recoverable nickel is hosted in pentlandite" and that there are "no global benchmark treatment and refining charges" for nickel concentrates; terms are negotiated individually and privately. Its concentrate payability discussion is project-market context, not a transfer value for the modeled phase.
+- **lifezone_2025_kabanga_nickel_concentrate_terms** (Kabanga Feasibility Study Technical Report Summary, section 16.5 p. 310): project-model concentrate payabilities use "confidential commercial terms" after customer proposals are normalized for payability, metal prices, and treatment/refining charges. No numeric pentlandite price follows from those terms.
+- **rc-590**: open; these sources establish no product- and grade-matched price or concentrate netback for asteroid pentlandite. No numeric replacement inferred. Extracted: extracted_data/r723_pentlandite_nickel_concentrate_boundary.csv.
+
+## R724 - Pyrrhotite terrestrial sale-price route
+
+- **spacevalue_pyrrhotite_reference_price_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1989-1994): pyrrhotite (Fe7S8) has ref_price_usd_per_kg=None and ref_price_date=None; the yield map is Fe 0.604 and S 0.396. The row describes a sulfide found in CI, CM and Tagish Lake meteorites but gives no terrestrial sale product or price basis.
+- **economicspace_unquoted_mineral_zero_price_rule_current_2026** (economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/verification_sheet.py lines 1418-1430): the phase worksheet path assigns 0.0 USD/kg when a mineral row has no terrestrial quote.
+- **turnagain_2020_nickel_concentrate_terms** (NI 43-101 report, section 13.4 p.84; section 13.5 p.85): for the Turnagain deposit, the report says pyrrhotite recovery is "not economic" and describes its rejection as necessary to produce a saleable nickel concentrate. This is deposit-specific process evidence, not a price for raw asteroid pyrrhotite or a separated Fe/S product.
+- **rc-591**: open; no matched terrestrial pyrrhotite product price or supported netback is established. Distinct from rc-380, rc-438, rc-589 and rc-590. No numeric replacement inferred. Extracted: extracted_data/r724_pyrrhotite_earth_sale_boundary.csv.
+
 ## R735 — Earth-surface water reference-price basis (2026-11-14)
 
 - spacevalue_water_reference_price_code_current_2026: spacevalue catalog.py lines 332-336 sets _EARTH_SURFACE_WATER_USD_PER_KG to $0.001/kg and states a $0.0005-0.002/kg municipal/industrial range without naming a price source.
 - mud_omaha_2026_large_volume_industrial_water_schedule: Schedule W-3 p.1 lists “Over 5,000 CCF (per 100 cubic feet) $1.9657” and defines 1 CCF as 748 gallons. At the published marginal rate, 1.9657 / (748 × 3.785411784) = $0.000694/kg; the schedule also sets a $11,456 monthly minimum plus service charge (p.1) and a 2% in-city addition (p.2). This is one industrial utility tariff, not an asteroid-water netback or a national rate range.
 - The tariff does not establish an Earth-return sale price; rc-602 records the missing sale-point basis and no numeric replacement. Extracted: extracted_data/r735_mud_water_tariff_comparator.csv.
 
+## R753 — E-type accessory sulfide Earth-sale basis
+
+- **spacevalue_eh_sulfide_reference_price_code_current_2026** (Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `catalog.py` lines 1999–2013): `niningerite`, `oldhamite`, and `daubreelite` pass `None` as the direct mineral price. Their listed yields are Fe 0.243/S 0.465; S 0.444; and Cr 0.361/Fe 0.194/S 0.445, respectively. The shared constructor defines `None` as no market price of the mineral itself, only its yields.
+- **spacevalue_mineral_yield_value_route_code_current_2026** (`cargo.py` lines 157–199): `_mineral_implied_value` multiplies each listed yield by the corresponding element price and sums the results. Its docstring says the calculation has no payable fraction, treatment charge, or refining charge.
+- **asteroidcatalog_eh_sulfide_split_code_current_2026** (AsteroidCatalog 0.13.2, `mineralogy.py`): the Xe row assigns 8 wt% accessory sulfide and splits it into 5 wt% troilite, 2 wt% niningerite, 0.7 wt% oldhamite, and 0.3 wt% daubreelite. The split's abundance basis remains under rc-537.
+- **Upstream cells:** Spacevalue `MINERAL_REFERENCE` direct price/date fields for the three phases; the Earth-sale yield-value route. The current code does not document a matched mineral product price or netback for these phases.
+- **Verdict:** Open rc-621 to review the saleable product, yield/recovery, and netback basis or label the constituent-value route as a scenario. This does not re-evaluate Xe abundance in rc-537. No numeric replacement inferred.
+- **Extracted data:** `extracted_data/r753_eh_sulfide_earth_sale_basis.csv`.
+
 ## R794 — Osmium production citation metadata (2026-11-16)
 
 - ipa_sfa_2026_osmium_pgm_factsheet, PDF p. 10: “Annual global production of osmium is likely to therefore have been limited to about 500kg-550kg/annum over 2024 and 2025.”
 - spacevalue_osmium_annual_production_code_current_2026: at spacevalue@5f84fbf36709e3c2b09356a65cb34c9890ff8904, spacevalue/catalog.py line 934 sets ANNUAL_WORLD_PRODUCTION_KG["osmium"] to 5.0e2 kg/yr and gives “~500-550 kg/yr over 2024-25 (IPA/SFA factsheet, 2026).” CITATIONS.md at that commit has no IPA/SFA factsheet reference for this production source.
 - Verdict: the source supports the stored 500 kg/yr as the lower end of its estimate. The code gives an abbreviated citation while the package bibliography omits the source. rc-664 requests citation metadata only; no value change is proposed. Extracted: extracted_data/r794_osmium_source_bibliography_gap.csv; source quote: extracted_data/r182_osmium_production_price_key_numbers.csv.
+
+## R801 — Johnson Matthey PGM base-price quote traceability
+
+- **johnson_matthey_base_prices_faq_2026** (Johnson Matthey PGM Management FAQ, questions on setting cadence, sponge form, and reuse): JM says Base Prices are set “4 times a day from Monday to Friday”; its FAQ gives the US scheduled setting as 09:30 Eastern Standard Time, allows interim adjustments, identifies sponge as the price form, and says Base Prices require express written consent for reproduction.
+- **spacevalue_pgm_reference_prices_code_current_2026** (Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, catalog.py lines 1680–1729; CITATIONS.md lines 38–42): platinum $1,562/oz, palladium $1,046/oz, rhodium $9,400/oz, iridium $10,100/oz, and ruthenium $1,900/oz, all dated 2026-11-10 and labeled New York. The citation list names JM base prices but supplies no exact daily quote-record locator or time.
+- **Upstream cells:** Spacevalue MINERAL_REFERENCE ref_price_usd_per_kg, ref_price_date, and notes for Pt/Pd/Rh/Ir/Ru.
+- **Verdict:** Open rc-672 to review the exact price record, quote time/time zone, product form, and reproduction permission. The date-only record cannot identify which scheduled US setting or interim adjustment the five figures represent. No numeric replacement inferred.
+- **Extracted data:** extracted_data/r801_jm_base_price_quote_traceability.csv.
+
+## R830 — Reconstructed 2026-09-29 metals closes versus current Yahoo history
+
+- **spacevalue_metals_snapshots_2026** (`spacevalue/quotes/metals-2026-10-07.csv`): five rows label `source=yfinance`, `close_date=2026-09-29`, and `recorded_date=2026-10-07`; the `note` says each close was recovered from Economicspace Stage 2 converted $/kg values. The snapshot SHA-256 is `62A1D20FF25B714D27908B48EFB3323D789CF6E3666201ACDB5A7702175BFE8B`.
+- **economicspace_mineral_value_1_15_live_quote_rows_2026** (frozen lunar_surface Stage 2 export): gold, copper, palladium, platinum and silver carry `live_price_date=2026-09-29` and `live_price_source=yfinance:<ticker>`, with converted prices of $134,239.00586592773, $14.65633066298999, $38,982.7802137, $55,087.08995454154 and $1,969.5546807917196/kg, respectively. The rows do not retain raw closes.
+- **yahoo_finance_futures_history_2026** (Historical Prices, each ticker’s 2026-09-29 row, Close column): current Yahoo history displays GC=F 4,179.70, HG=F 6.543, PA=F 1,201.60, PL=F 1,680.10 and SI=F 60.668. Each differs from its matching reconstructed snapshot close. The current pages do not preserve the original dated response or its contract/roll mapping.
+- **economicspace_verification_sheet_live_quote_citation_check_2026** (`campaign/verification_sheet.py` lines 5747–5759 and 6117–6119): the planted `live quote from yfinance:PL=F on 2026-09-29` example is classified as source-bearing; the check does not validate the numeric close against Yahoo history.
+- **Upstream fields:** Spacevalue `spacevalue/quotes/metals-2026-10-07.csv` close, source, close_date and recorded_date; Economicspace frozen Stage 2 `live_price_usd_per_kg`, `live_price_date` and `live_price_source` rows.
+- **Verdict:** Open rc-702 for the observed-close attribution and raw-close provenance. Current Yahoo historical rows conflict with all five reconstructed values, but the pages do not establish whether the difference reflects a changed continuous-futures history or a reconstruction error. No numeric replacement inferred.
+- **Extracted data:** `extracted_data/r830_metals_snapshot_historical_close_conflicts.csv`.
+
+## R896 — Spacevalue standalone-build citation metadata
+
+- **spacevalue_single_destination_build_output_provenance_code_current_2026**: Spacevalue main `@80ec7549164fc1ed6c800ab0ef6205cde08ae9fd`. `cli.py` lines 6–11 document `build` as writing one destination table and `release` as writing every destination plus `manifest.json`; lines 110–113 route `build` directly to `build_mineral_value_catalog`. `catalog.py` lines 2831–2850 stamp `catalog_date`, `pipeline_version` and `delivery_destination`, then write the CSV. `CITATIONS.md` lines 153–154 says to cite the table tag (`prices-YYYY-MM-DD`), code tag (`vX.Y.Z`) and row data contract. In contrast, `release.py` lines 166–172 records `release_tag`, `package_version`, `source_commit` and `quote_snapshot` in its manifest.
+- **Upstream fields:** Spacevalue standalone `build <destination>` CSV output and the package's release citation instructions.
+- **Verdict:** Open rc-776 for release/package metadata in standalone build outputs. The full release path records these identifiers; the single-destination path does not. No table values are changed.
+- **Extracted data:** `extracted_data/r896_spacevalue_single_build_output_provenance.csv`.
+
+## R935 — Spacevalue world-production and water-price comments applied upstream (2026-11-18)
+
+spacevalue 513c4f090a8680f414b77b150a0cfd2dee1b78ee (PR #16, package 0.7.3, data contract 1.21.0 unchanged). Comments in `catalog.py` and CITATIONS.md; `catalog.py` parses to the same AST as c377668.
+
+- rc-523, rc-527: `usgs_mcs2026_silver_chapter` and `usgs_mcs2026_sulfur_chapter` pinned beside the silver and sulfur ceilings; sulfur's 83 Mt is placed against MCS 2025 (85 Mt) and MCS 2026 (83.9, 84.0 Mt).
+- rc-524: iridium, rhodium and ruthenium labelled scenarios; `jm_pgm_market_report_2026` primary supply given as a different-series comparator.
+- rc-529: `matos_etal_2021_jrc_elemental_phosphorus_energy` gives the 900-1,200 kt/yr range the 1 Mt scenario sits in.
+- rc-602: `mud_omaha_2026_large_volume_industrial_water_schedule` as one comparator; computed here 1.9657 / (748 × 3.785411784) = $0.000694/kg.
+
+Verdict: all five closed as applied. Extracted data: none new.
+
+## R942 — Spacevalue reference-price source labels applied upstream (2026-11-18)
+
+spacevalue dd497f2e06f9604512f98c1facbffe3a33bab321 (PR #17, package 0.8.0, data contract 1.21.0 to 1.22.0), merged with the owner's approval. `ref_price_source` is now set per reference row: the 20 rows with no reference price say they have no direct quote and are unpriced on the Earth route, any value being a gross contained-element proxy; the five bulk silicates' $0.05/kg is labelled an engineering placeholder; every other row keeps "USGS/LME/mineralogy reference". In the re-recorded `tests/data/prices-2026-10-07/` fixtures, compared column by column, only `ref_price_source` (25 rows per table) and `pipeline_version` differ.
+
+- rc-455 (bulk silicates); rc-456 (Fe-Ni alloys); rc-589 (schreibersite, troilite); rc-590 (pentlandite); rc-591 (pyrrhotite); rc-593 (magnetite); rc-595 (chromite, ilmenite); rc-621 (niningerite, oldhamite, daubreelite); rc-622 (perovskite); rc-623 (sperrylite, laurite, awaruite, native PGM).
+
+Verdict: all ten closed as applied. The label reaches economicspace only after a `prices-*` release on 0.8.0 and a Stage 2 repin. Extracted data: none new.
+
+## R964 — Earth-surface water market ceiling (2026-11-19)
+
+spacevalue_terrestrial_water_market_ceiling_code_main_2026: At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, catalog.py describes ANNUAL_WORLD_PRODUCTION_KG as terrestrial annual primary production (lines 953-958), then places water=1.0e15 kg/year under “Effectively unlimited on Earth” (lines 999-1000); _UNLIMITED_MARKET_KG is also 1.0e15 (line 1005). annual_market_kg() returns the terrestrial value for earth_surface and Earth-bound sales (lines 1178-1202), and cargo.py capacity_allowance_kg() uses that value as a quantity ceiling (lines 1027-1085).
+
+economicspace_earth_surface_market_ceiling_path_code_main_2026: At Economicspace main b6c962c4f06dc5b625fee39044d8d1699ac564c9, modules/calc.py describes Earth-surface ceilings as terrestrial production of 1e12-1e15 kg/year and says none are expected to bind; its diagnostic says a run with no bound row reports the fleet ladder’s top, not a market-bounded optimum (lines 10478-10495). No water-specific market measure is named.
+
+Upstream fields and values: Spacevalue ANNUAL_WORLD_PRODUCTION_KG["water"] is 1.0e15 kg/year; annual_market_kg("water", "earth_surface") returns that value, and cargo.capacity_allowance_kg applies the annual amount to a delivery-window quantity ceiling. Economicspace comments describe earth_surface ceilings as 1e12-1e15 kg/year but name no water-specific measure or value.
+
+Verdict: open rc-824 to establish whether the water value is an unbounded sentinel or a finite market ceiling. If finite, identify the buyer, measured quantity, year and source; if a sentinel, keep the route explicitly scenario/unbounded and quantify finite-cap sensitivity. This is distinct from rc-602’s water price comparator and rc-823’s in-space utility factors. No numeric replacement inferred. Extracted: extracted_data/r964_earth_water_market_ceiling.csv.
 
 ## R998 — Spacevalue standalone-build citation metadata applied (2026-11-19)
 
@@ -702,7 +691,6 @@ Extracted data in `extracted_data/r1036_phosphorus_price_basis.csv`.
 
 Extracted data in `extracted_data/r1040_co2_delivered_and_reference_price.csv`.
 
-
 ## R1044 — Titanium sponge and ammonia price vintages (2026-11-23)
 
 - spacevalue_titanium_ammonia_price_vintage_code_2026 and spacevalue_installed_prices_release_manifests_2026 give USD 13/kg for titanium and USD 0.485/kg for ammonia in the installed Earth-surface table. All eight destination files match the prices-2026-11-20 manifest and carry both references with date 2025-01-31 and label “USGS/LME/mineralogy reference.”
@@ -710,7 +698,6 @@ Extracted data in `extracted_data/r1040_co2_delivered_and_reference_price.csv`.
 - usgs_mineral_commodity_summaries_2025, printed pp. 128–129, gives USD 440 per short ton for 2024e in the row “Price, average, free on board Gulf Coast.” usgs_mineral_commodity_summaries_2026, printed pp. 136–137, gives USD 440 for 2024 and USD 450 for 2025e. Footnote 3 identifies Green Markets. nist_hb133_2026_appendix_e_volume_conversion, Appendix E p. 249, gives 907.18474 kg per short ton. The converted values are USD 0.485017/kg and 0.496040/kg respectively. **rc-921** records the annual series and its units.
 
 Extracted data in extracted_data/r1044_titanium_ammonia_price_vintages.csv.
-
 
 ## R1048 — Terrestrial carbon market ceiling (2026-11-23)
 
@@ -720,7 +707,6 @@ Extracted data in extracted_data/r1044_titanium_ammonia_price_vintages.csv.
 
 Extracted data in extracted_data/r1048_earth_carbon_market_ceiling.csv.
 
-
 ## R1056 — Terrestrial iron price, annual ceiling and alloy routing (2026-11-23)
 
 - spacevalue_earth_iron_scrap_and_alloy_caps_2026 and the installed Earth-surface table price iron at USD 0.319/kg using “No. 1 heavy melting composite” and export 1.3e12 kg/year as the iron ceiling. usgs_mineral_commodity_summaries_2026, printed pp. 103–104, reports 1,300 million metric tonnes of 2025e world pig iron production, USD 319 per metric tonne for estimated 2025 U.S. delivered No. 1 heavy melting scrap, and 57 million metric tonnes of U.S. apparent iron and steel scrap consumption.
@@ -728,7 +714,6 @@ Extracted data in extracted_data/r1048_earth_carbon_market_ceiling.csv.
 - The installed nickel-iron row uses gross elemental valuations and its own 1.0e15 kg/year phase ceiling. A synthetic one-year 2.0e12 kg pure-iron offer leaves 7.0e11 kg unsold under the hard cap. An equal alloy offer leaves zero unsold while carrying 1.8e12 kg of modeled contained iron. **rc-942** records the sale-product and market-key distinction.
 
 Extracted data in extracted_data/r1056_iron_market_basis_and_alloy_routing.csv.
-
 
 ## R1089 — Terrestrial meteoritic phosphate price basis (2026-11-24)
 
@@ -739,7 +724,6 @@ Extracted data in extracted_data/r1056_iron_market_basis_and_alloy_routing.csv.
 
 Extracted data in extracted_data/r1089_meteoritic_phosphate_rock_price_basis.csv.
 
-
 ## R1092 — Hibonite terrestrial sale and product grade (2026-11-24)
 
 - spacevalue_asteroidcatalog_hibonite_price_and_sale_route_2026 prices hibonite “as rock, as spinel is.” spacevalue_installed_prices_release_manifests_2026, prices-2026-11-20 Earth-surface table, gives hibonite USD 0.05/kg, the generic “USGS/LME/mineralogy reference,” date 2025-01-31 and an empty elemental-yield map. The detailed cargo function lists hibonite separately. In the pinned 1,000 kg K and L feed fixtures at 100% recovery, the phase contributes USD 0.15 and USD 0.25 respectively.
@@ -747,7 +731,6 @@ Extracted data in extracted_data/r1089_meteoritic_phosphate_rock_price_basis.csv
 - schnabel_etal_2011_calcium_hexaluminate_refractory_aggregate, printed p. 87, gives “about 90 % CA₆” for the synthetic aggregates and describes a “controlled sintering process” for Bonite. zhang_etal_2020_co_chondrite_hibonite_petrology, Fig. 3(e, f), shows a roughly 50 µm inclusion with hibonite laths, spinel, diopside and mesostasis in MIL 090010. **rc-1005** records the generic rock proxy and absent refractory-grade sale basis.
 
 Extracted data in extracted_data/r1092_hibonite_commodity_and_refractory_basis.csv.
-
 
 ## R1100 — Earth plagioclase grade and market depth (2026-11-24)
 

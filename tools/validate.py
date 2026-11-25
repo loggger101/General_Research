@@ -852,7 +852,7 @@ def check_references(rep, ctx):
     rep.start('file references')
     files = set(ctx['files'])
     sources = [(f'{d}/FINDINGS.md', d) for d in ctx['domains']] + [(n, None) for n in REF_ROOT_FILES]
-    findings = []
+    findings = ctx['findings'] = {}  # the readable FINDINGS.md texts, by path, for check_findings
     for name, domain in sources:
         if name not in files:
             continue  # check_layout reports a missing FINDINGS.md or required root file; DOWNLOADS.md is optional
@@ -862,7 +862,7 @@ def check_references(rep, ctx):
             rep.error(e.code, f'{e} — its file references were not checked')
             continue
         if domain is not None:
-            findings.append(text)
+            findings[name] = text
         for start, end, scope_domain in reference_scopes(name, text, domain, ctx['domains']):
             check_text_references(rep, files, text, start, end, scope_domain,
                                   lambda pos: f'{name} line {text.count(chr(10), 0, pos) + 1}')
@@ -882,13 +882,46 @@ def check_references(rep, ctx):
     # by nothing at all. A FINDINGS.md that is missing or unreadable (reported above) may name any file, so the check
     # needs them all. A shared file may be named from another domain's block.
     if len(findings) == len(ctx['domains']):
-        written = '\n'.join(findings)
+        written = '\n'.join(findings.values())
         for name in sorted(files):
             parts = name.split('/')
             if (len(parts) == 3 and parts[1] == 'extracted_data' and parts[0] in ctx['domains']
                     and any(parts[2].endswith(s) for s in EXTRACTED_SUFFIXES) and parts[2] not in written):
                 rep.error('extracted-unnamed', f'{name}: no FINDINGS.md names this file, so nothing says what its '
                                                f'numbers are for; name it in the block of the round that wrote it')
+
+
+FINDINGS_ROUND_RE = re.compile(r'## R(\d+)')
+
+
+def check_findings(rep, ctx):
+    """Each FINDINGS.md opens with its `# ` title, then one block per round in round order (AGENTS.md); a block with
+    no round number, such as the 2026-09-26 Maintenance blocks, may sit anywhere after the title. By 2026-11-25
+    sessions had prepended 137 blocks above the title of 13 files, inserted others mid-file, and written R269 twice
+    in domain 4. The texts are those check_references read; it reports a missing or unreadable file.
+    """
+    rep.start('FINDINGS.md')
+    for name, text in ctx['findings'].items():
+        rep.count('FINDINGS.md files')
+        titled, last, rounds = False, 0, set()
+        for n, line in enumerate(text.split('\n'), 1):
+            if line.startswith('# '):
+                titled = True
+            elif line.startswith('## ') and not titled:
+                rep.error('findings-above-title', f'{name} line {n}: block above the "# " title; blocks go below it')
+            m = FINDINGS_ROUND_RE.match(line)
+            if not m:
+                continue
+            r = int(m.group(1))
+            if r in rounds:
+                rep.error('findings-round-duplicate', f'{name} line {n}: a second R{r} block; a round writes one '
+                                                      f'block per domain, so merge the two')
+            elif r < last:
+                rep.error('findings-round-order', f'{name} line {n}: R{r} follows R{last}; append each block at the '
+                                                  f'end, in round order')
+            rounds.add(r)
+            last = max(last, r)
+    rep.expect('FINDINGS.md files')
 
 
 # ---------------------------------------------------------------------------------------------- candidates
@@ -1203,7 +1236,7 @@ def check_readme(rep, ctx):
 # upstream_map) by subscript, so a reordering crashes as check-crashed instead of checking against nothing.
 CHECKS = [check_files, check_layout, check_registry, check_index, check_log, check_log_history, check_rejected,
           check_to_replace, check_manifest, check_extracted, check_candidates, check_candidate_refs, check_upstream_map, check_references,
-          check_readme]
+          check_findings, check_readme]
 
 
 def run(argv=None):
