@@ -376,3 +376,57 @@ Verdict: rc-850 closed as applied. Extracted data: none new.
 At Economicspace main 17650892376136bc91f2124525735a14363e7c3c (PR #215, master 1.84.1), `default_rotation_period_h` = 10.222 h is labelled a historical prior with no recorded release or filter, beside the pinned data-2026-11-13 release's 46,159 measured periods and 8.068 h median (no filter; rechecked here), and scoped to bodies whose period is missing (rc-579). Value unchanged.
 
 Verdict: rc-579 closed as applied. Extracted data: none new.
+
+## R1013 — Ceres physical citations and GEO eclipse design basis (2026-11-22)
+
+- `spacecost_ceres_geo_environment_rows_2026` stores Ceres at 9.3835 × 10²⁰ kg and 469.73 km and credits `russell_2016_dawn_arrives_at_ceres`, which prints 9.384 ± 0.001 × 10²⁰ kg and 469.7 km (printed p. 1008). `pds_sbn_ceres_target_context_v1_2` prints “(9.3835±0.0001)×10²⁰ kg” under Physical Characteristics. `raymond_roatsch_2018_dawn_ceres_coordinate_system` gives “469.73 ± 0.15” km for the equivalent spherical radius (Table 1, Dawn Final). **rc-875** asks Spacecost to cite the archive records for the stored figures and retain Russell et al. as the earlier comparison.
+- `spacecost_ceres_geo_environment_rows_2026` gives 23.934 h, an annual-average eclipse fraction of 0.012, and a derived `dark_period_hr` of 0.287208 h (17.23248 min) for GEO. The README describes that duration column as “the hours you multiply by watts.” `ecss_e_hb_31_01_part15a_existing_satellites` gives a 72-minute OTS maximum (p. 35), and `noaa_nasa_2019_goes_r_series_data_book` sizes the GOES-R battery on a “72 minute eclipse” (pp. 11-7 and 18-9). The 72-minute event requires 4.1782 times the eclipse energy of the average-duration input at equal load. **rc-876** asks Spacecost to label the annual-average input and provide a separate sourced duration for GEO battery sizing.
+
+Extracted data in `extracted_data/r1013_ceres_geometry_and_geo_eclipse.csv`.
+
+## R1020 — Didymos mass and radius scope and the Hera mission note (2026-11-22)
+
+- `spacecost_didymos_environment_current_2026` stores 5.28e11 kg and 390 m as estimates of the primary with no recorded source. The installed Economicspace Stage 3 table has the same row. `patterson_2019_ntrs_didymos_target_parameters`, on the Didymos target slide, gives “Total System Mass” (5.278 ± 0.54) × 10¹¹ kg and “Primary Diameter” 780 m ± 10%. Those values reproduce the stored central values after rounding and halving. `richardson_etal_2024_didymos_dynamical_state`, Table 2 p. 3, gives a DART-era primary volume-equivalent diameter of 730 ± 17 m and a total system mass of (5.3 ± 0.2) × 10¹¹ kg. At the stored mass, using 365 m alone raises the spherical gravity from 2.31692e-04 to 2.64517e-04 m/s². **rc-883** asks for a cited, scope-matched primary estimate.
+- `spacecost_didymos_environment_current_2026` says Hera “arrives in 2026.” `esa_2026_hera_didymos_stereo_observations`, issued November 19, dates the stereoscopic image pair to November 6 at 29.7 km. **rc-884** records the confirmed observation for the mission note.
+
+Extracted data in `extracted_data/r1020_didymos_mass_radius_and_hera.csv`.
+
+## R1025 — Eros spherical benchmarks and local surface conditions (2026-11-22)
+
+- `yeomans_2000_near_eros_radio_science`, Table 1, reports 2503 ± 25 km³ and (6.687 ± 0.003) × 10¹⁵ kg. The volume implies a spherical radius of 8422.82 m. `asteroidcatalog_release_data_2026_11_13` uses the same volume in its 16.8456359 km shape-model diameter. `spacecost_eros_spherical_environment_current_2026` and the installed Economicspace Stage 3 row use 8420 m and derive 6.295 mm/s² and 10.296 m/s by spherical formulas.
+- `thomas_etal_2002_eros_shape_topography_surface_gravity`, Table I p. 21, reports “Mean radius” 8.46 ± 0.02 km and “Surface gravity” of 0.24–0.55 cm/s² with area average 0.46 cm/s². This is the effective acceleration of the rotating shape. The stored spherical gravity exceeds the upper end by 14.5%. `yeomans_2000_near_eros_radio_science`, p. 2087, gives local-normal escape speeds of 3.1–17.2 m/s. **rc-890** asks to cite the volume conversion and identify the model behind each surface quantity.
+
+Extracted data in `extracted_data/r1025_eros_radius_and_surface_gravity.csv`.
+
+## R1030 — Cislunar Earth range and delayed rover operation (2026-11-23)
+
+- spacecost_cislunar_light_time_and_teleoperation_code_2026 exports 0.00257 AU as the maximum Earth range for Gateway NRHO, 100 km low lunar orbit and both lunar surface rows. The installed Economicspace Stage 3 tables match. nasa_nssdca_moon_fact_sheet lists “Semimajor axis” 384,400 km and “Apogee” 405,500 km. nasa_tm_2020_220481_ppe_reference_trajectory, printed p. 18, Table 6-2, gives 418,742 km in “Earth Range” at departure from the reference NRHO, 8.92% above the 384,467 km table input. That event gives 1.397 s one-way propagation versus 1.282 s in the row. **rc-898** records the nominal-distance and maximum-range distinction.
+- spacecost_cislunar_light_time_and_teleoperation_code_2026 says “Past about a light-second a human cannot close a control loop” (environments.py lines 99–106) in its rationale for autonomy. litaker_etal_2024_lunar_rover_teleoperation_latencies, printed pp. 29–30, gives 3.24 km/h at 0 s and 2.56 km/h at 4 s for simulated human rover driving with stops. The calculator allocates the autonomy NRE by mission count (calc.py lines 6381–6385). **rc-899** records the task and communications-delay scope of the teleoperation comparison.
+
+Extracted data in extracted_data/r1030_cislunar_range_and_teleoperation.csv.
+
+
+## R1050 — Didymos orbital distances and solar environment (2026-11-23)
+
+- spacecost_didymos_environment_current_2026, reference/environments.csv line 13, and the installed Economicspace Stage 3 Didymos row carry q/a/Q of 1.0128/1.6443/2.2758 AU. Spacecost environments.py lines 126–147 evaluates irradiance at a, giving 503.380 W/m². The stored aphelion-sum Earth-range envelope is 3.2925 AU, corresponding to 27.3829 minutes one-way propagation.
+- novakovic_fenucci_2024_didymos_asteria_orbits, Table 2 “Orbital parameters,” gives a = 1.644268882 AU and e = 0.383882802 for JPL solution 181 at JD 2457380.5, implying q = 1.013062 AU and Q = 2.275475 AU. The same table gives a = 1.642665058 AU and e = 0.383264789 for solution 204 at JD 2460200.5. esa_neocc_didymos_orbit_mjd61200_2026, “Orbit properties,” gives q/a/Q = 1.013349/1.642710/2.272070 AU at MJD 61200. Applying Spacecost’s formulas to the ESA distances gives 504.355 W/m² at a, 263.642 W/m² at Q, and a 27.3519-minute propagation envelope. **rc-931** records the orbit-solution and epoch citation and the scope of the derived fields.
+
+Extracted data in extracted_data/r1050_didymos_heliocentric_environment.csv.
+
+
+## R1051 — Bennu and Ryugu input orbit citations (2026-11-23)
+
+- spacecost_bennu_ryugu_distance_rows_2026, reference/environments.csv lines 10–11, and Economicspace's installed Stage 3 rows give perihelion/semimajor axis/aphelion of 0.8969/1.1264/1.3559 AU for Bennu and 0.9633/1.1896/1.4159 AU for Ryugu. Solar irradiance at the semimajor axis is 1,072.687 and 961.737 W/m² respectively. The range fields add 1.0167 AU to the respective aphelia, giving geometric envelopes of 2.3726 and 2.4326 AU.
+- lauretta_etal_2015_bennu_solution_85, Table 2 “Bennu's orbital parameters,” gives 0.896894360/1.126391025996/1.355887692 AU for JPL solution 85, epoch 2011 January 1.0 TDB. All three round to the stored values. **rc-932** records the solution and epoch citation.
+- wada_etal_2018_ryugu_preencounter_orbit, p. 3 Table 1, gives 0.963308109/1.1896008220/1.4158935346 AU. Its “Orbital properties” subsection identifies the JPL Horizons data as from 16 May 2017. All three round to the stored values. **rc-933** records the exact source table.
+
+Extracted data in extracted_data/r1051_bennu_ryugu_distance_provenance.csv.
+
+
+## R1093 — Mars surface irradiance and Opportunity storm citations (2026-11-24)
+
+- spacecost_mars_surface_solar_flux_and_dust_note_2026 gives the Mars surface and staging orbit the same 586.218 W/m² and the same 2.32166 array mass factor from heliocentric distance. The installed Economicspace Stage 3 values match. The Mars surface note says surface flux at the panel “runs 40-60% of the orbital figure.”
+- appelbaum_flood_1989_tm102299_solar_radiation_mars, Table IV, PDF p. 20, gives Viking 1 horizontal global irradiance of 250, 292 and 308 W/m² at optical depths 0.65, 0.4 and 0.5. Dividing the listed daily energies by their daylight hours reproduces those means. Averaging over a full sol gives 139.17, 160.83 and 161.75 W/m² for the same cases. Eq. (17) depends on zenith angle and optical depth. **rc-1006** records the top-of-atmosphere field definition and the surface averaging basis.
+- jpl_2007_opportunity_direct_beam_and_array_output reports “99 percent of direct sunlight” blocked in July 2007 and separately reports roughly 700 Wh/sol before the storms and 128 Wh on the low day. nasa_2018_opportunity_energy_and_opacity_chart gives 21 Wh for June 10, 2018, sol 5111. nasa_2019_opportunity_end_of_mission_announcement dates the mission declaration to February 13, 2019. **rc-1007** records the distinction between the 2007 beam observation and 2018 rover energy.
+
+Extracted data in extracted_data/r1093_mars_surface_irradiance_and_opportunity_dust.csv.

@@ -1,0 +1,32 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_release_data_2026_11_13,1620 Geographos diameter_km,2.441,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 1620 Geographos",Selected diameter and mass providers are SsODNet.
+asteroidcatalog_release_data_2026_11_13,1620 Geographos diameter_sigma_km,0.044,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 1620 Geographos",
+asteroidcatalog_release_data_2026_11_13,1620 Geographos diameter_sources_agree,False,boolean,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 1620 Geographos",
+asteroidcatalog_release_data_2026_11_13,1620 Geographos estimated_mass_kg,15992680288323.482,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 1620 Geographos",Selected diameter and mass providers are SsODNet.
+asteroidcatalog_release_data_2026_11_13,1620 Geographos estimated_mass_sigma_kg,4096055471126.1777,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 1620 Geographos",
+asteroidcatalog_release_data_2026_11_13,1620 Geographos density_gcm3,2.1000000000000005,g/cm3,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 1620 Geographos",
+asteroidcatalog_release_data_2026_11_13,1620 Geographos mass_measured,True,boolean,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 1620 Geographos",
+asteroidcatalog_release_data_2026_11_13,1620 Geographos density_measured,True,boolean,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 1620 Geographos",
+,1620 Geographos mass reproduced with literature density,15992680288323.48,kg,(pi/6) × installed diameter cubed × literature density,Arithmetic consistency only.
+asteroidcatalog_release_data_2026_11_13,4179 Toutatis diameter_km,2.725,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 4179 Toutatis",Selected diameter and mass providers are SsODNet.
+asteroidcatalog_release_data_2026_11_13,4179 Toutatis diameter_sigma_km,0.194,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 4179 Toutatis",
+asteroidcatalog_release_data_2026_11_13,4179 Toutatis diameter_sources_agree,False,boolean,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 4179 Toutatis",
+asteroidcatalog_release_data_2026_11_13,4179 Toutatis estimated_mass_kg,7702515004713.101,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 4179 Toutatis",Selected diameter and mass providers are SsODNet.
+asteroidcatalog_release_data_2026_11_13,4179 Toutatis estimated_mass_sigma_kg,3043468840943.326,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 4179 Toutatis",
+asteroidcatalog_release_data_2026_11_13,4179 Toutatis density_gcm3,0.7270000000000001,g/cm3,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 4179 Toutatis",
+asteroidcatalog_release_data_2026_11_13,4179 Toutatis mass_measured,True,boolean,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 4179 Toutatis",
+asteroidcatalog_release_data_2026_11_13,4179 Toutatis density_measured,True,boolean,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 4179 Toutatis",
+,4179 Toutatis mass reproduced with literature density,7702515004713.101,kg,(pi/6) × installed diameter cubed × literature density,Arithmetic consistency only.
+rozitis_green_2014_geographos_yarkovsky_mass,Geographos effective diameter,2.46 ± 0.03,km,"A&A 568 A43 p. 4, Table 3, light-curve fixed",Same column as equatorial diameter below.
+rozitis_green_2014_geographos_yarkovsky_mass,Geographos maximum equatorial diameter,5.04 ± 0.07,km,"A&A 568 A43 p. 4, Table 3, light-curve fixed",Radar constraint on the model's scale.
+rozitis_green_2014_geographos_yarkovsky_mass,Geographos fitted mass,1.62 +0.39/-0.33,10^13 kg,"A&A 568 A43 p. 8, Table 4, light-curve fixed",Table footnote identifies median and 1σ spread.
+rozitis_green_2014_geographos_yarkovsky_mass,Geographos fitted bulk density,2100 +550/-450,kg/m3,"A&A 568 A43 p. 8, Table 4, light-curve fixed",Median and 1σ spread. Yarkovsky fit.
+dziadura2023,Toutatis Yarkovsky drift,-2.78 ± 0.27,10^-4 au/Myr,"A&A 680 A77 p. 10, Table A.1, 4179",Measured semimajor axis drift.
+dziadura2023,Toutatis Yarkovsky fitted bulk density,727 +226/-245,kg/m3,"A&A 680 A77 p. 10, Table A.1, 4179",Fit uses the reported diameter input.
+dziadura2023,Toutatis Yarkovsky fit diameter input,2.73 ± 0.19,km,"A&A 680 A77 p. 10, Table A.1, 4179",Diameter reference 18 is Huang et al. 2013.
+huang_etal_2013_toutatis_change2_flyby,Toutatis maximum extents,4.60 × 2.29 × 1.92,km,"Scientific Reports 3:3411 p. 2, Table 1 and text above","The first set of major axes, each quoted ±0.10 km."
+hudson_etal_2003_toutatis_radar_shape,Toutatis equal-volume ellipsoid diameters,1.70 × 2.03 × 4.26,km,"Icarus 161 p. 346, abstract",Axis lengths each quoted ±0.08 km.
+,Toutatis sphere diameter if maximum extents are treated as ellipsoid diameters,2.7245713210580345,km,Cube root of product of Huang first-set maximum extents,Close match to 2.725 km. Geometric comparison only.
+,Toutatis sphere diameter with radar shape volume,2.449729804994056,km,Cube root of product of Hudson equal-volume ellipsoid axes,Uses actual modeled volume through the equal-volume ellipsoid.
+,"Toutatis volume ratio, installed sphere to radar model",1.3764009428443553,ratio,Installed spherical volume divided by Hudson equal-volume ellipsoid volume,Geometry alone. A revised mass would need a paired density fit.
+economicspace_verification_sheet_density_label_2026_11_24,Stage 1 verification-sheet bulk-density citation label,measured,label,campaign/verification_sheet.py lines 1430–1434,When density_measured evaluates true.

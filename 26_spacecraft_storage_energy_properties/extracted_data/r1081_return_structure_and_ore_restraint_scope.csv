@@ -1,0 +1,20 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_return_structure_ore_restraint_scope_code_2026,Base payload-scaling return structure,0.15,kg/kg payload,Economicspace calc.py lines 164–190,Applied to all returned payload.
+economicspace_return_structure_ore_restraint_scope_code_2026,Return vehicle dry mass floor,500,kg,Economicspace calc.py line 154,Excludes the payload-scaling term.
+economicspace_return_structure_ore_restraint_scope_code_2026,Volatile cargo containment midpoint,0.05,kg/kg water,Spacecost operational_costs.csv line 48,Scenario; adds to the base structure at the relevant setting.
+economicspace_return_structure_ore_restraint_scope_code_2026,Bulk ore restraint midpoint,0.15,kg/kg ore,Spacecost storage_systems.csv line 12,"Scope includes tankage, primary structure and cargo restraint."
+brown_etal_1990_lunar_regolith_bagging_system,Design dry mass per bag,1.5,lb/bag,"Appendix H, item 6",Design calculation; not a launch-qualified article.
+brown_etal_1990_lunar_regolith_bagging_system,Design regolith-only volume,29702,in^3/bag,"Appendix D, regolith load calculation",Use the regolith-only volume rather than the gross filled bag volume.
+brown_etal_1990_lunar_regolith_bagging_system,Design fill density,1.2,g/cm^3,"Appendix D, regolith mass calculation",Design assumption.
+brown_etal_1990_lunar_regolith_bagging_system,Number of bags,924,bags,"Appendix H, item 5",Lunar habitat shielding application.
+brown_etal_1990_lunar_regolith_bagging_system,Total empty bag mass,628,kg,"Appendix H, item 6",Rounded total.
+brown_etal_1990_lunar_regolith_bagging_system,Bag plus filling equipment shipping mass,687,kg,"Appendix H, item 26",Includes handling machinery that stays on the lunar surface.
+,Design dry bag mass,0.6803885550000001,kg/bag,"Appendix H item 6, unit conversion",Rounded in discussion.
+,Design regolith fill mass,584.0742899136,kg/bag,"Appendix D density times fill volume, converted to SI",Design fill assumption.
+,Bag mass divided by fill mass,0.001164900709977574,kg/kg regolith,Calculated from Appendix D and H,Bag-only comparator for lunar surface use.
+,Dry return mass for 1000 kg total containing 0 kg water,650.0,kg,Pinned settled return-mass expression,TPS and separately computed propellant tank mass are outside this expression.
+,Incremental water seal mass for 1000 kg total containing 0 kg water,0.0,kg,Pinned settled return-mass expression,The base payload-scaling term is 150 kg in every fixture.
+,Dry return mass for 1000 kg total containing 500 kg water,675.0,kg,Pinned settled return-mass expression,TPS and separately computed propellant tank mass are outside this expression.
+,Incremental water seal mass for 1000 kg total containing 500 kg water,25.0,kg,Pinned settled return-mass expression,The base payload-scaling term is 150 kg in every fixture.
+,Dry return mass for 1000 kg total containing 1000 kg water,700.0,kg,Pinned settled return-mass expression,TPS and separately computed propellant tank mass are outside this expression.
+,Incremental water seal mass for 1000 kg total containing 1000 kg water,50.0,kg,Pinned settled return-mass expression,The base payload-scaling term is 150 kg in every fixture.

@@ -399,6 +399,7 @@ CASES = [
     # check_candidate_refs: an id no row has; a row lost on its way to the closed file (the map row citing it is
     # then unused too); a deleted id whose Rejected-sources row no longer records the deletion.
     ('cand-ref-unknown', 'error', [], lambda r, s: edit(r, '02_beta/FINDINGS.md', 'rc-002 applied', 'rc-009 applied')),
+    ('cand-ref-unknown', 'error', [], lambda r, s: edit(r, '02_beta/FINDINGS.md', 'rc-002 applied', 'rc-1000 applied')),
     ('cand-ref-unknown', 'error', [], lambda r, s: drop_line(r, CLOSED, 'rc-002,'), {'map-unused'}),
     ('cand-ref-unknown', 'error', [], lambda r, s: edit(r, 'INDEX.md', ' (rc-005 deleted with it)', '')),
     ('cand-field-empty', 'error', [], lambda r, s: edit(r, CLOSED, 'upstream applied it', '')),
@@ -607,6 +608,11 @@ ACCEPTED = [
                                                                       + ',our rate,3,kg/h,calc,\n')),
     ('a candidate id capitalised at the start of a sentence',
      lambda r: edit(r, '02_beta/FINDINGS.md', 'rc-002 applied', 'applied. Rc-002 closed')),
+    ('four-digit candidate ids, including a closed candidate and a recorded deletion',
+     lambda r: (edit(r, CLOSED, 'rc-002', 'rc-1000'),
+                edit(r, MAP, 'rc-002', 'rc-1000'),
+                edit(r, '02_beta/FINDINGS.md', 'rc-002 applied, rc-005', 'rc-1000 applied, rc-1001'),
+                edit(r, 'INDEX.md', 'rc-005 deleted with it', 'rc-1001 deleted with it'))),
     ('a year with a note after it', lambda r: domain_edit(r, ALPHA_CSV, ',2020,', ',2020 (online 2019),')),
     ('a __pycache__ file, the one thing .gitignore may hide', lambda r: put(r, 'tools/__pycache__/common.pyc', b'\0')),
     ("a merge in progress with the other side's entry on top", lambda r: start_merge(r, merged=[SIDE_B, SIDE_A])),

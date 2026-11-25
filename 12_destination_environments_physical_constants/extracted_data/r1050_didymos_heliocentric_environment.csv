@@ -1,0 +1,31 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_didymos_environment_current_2026,au_min,1.0128,AU,Spacecost reference/environments.csv line 13 and installed Economicspace Stage 3 Didymos row,Same stored value in both rows.
+spacecost_didymos_environment_current_2026,au_mean,1.6443,AU,Spacecost reference/environments.csv line 13 and installed Economicspace Stage 3 Didymos row,Same stored value in both rows.
+spacecost_didymos_environment_current_2026,au_max,2.2758,AU,Spacecost reference/environments.csv line 13 and installed Economicspace Stage 3 Didymos row,Same stored value in both rows.
+spacecost_didymos_environment_current_2026,solar_flux_w_per_m2,503.38006397986493,W/m2,Spacecost reference/environments.csv line 13 and installed Economicspace Stage 3 Didymos row,Same stored value in both rows.
+spacecost_didymos_environment_current_2026,solar_array_mass_factor,2.7037224900000005,ratio,Spacecost reference/environments.csv line 13 and installed Economicspace Stage 3 Didymos row,Same stored value in both rows.
+spacecost_didymos_environment_current_2026,max_earth_range_au,3.2925,AU,Spacecost reference/environments.csv line 13 and installed Economicspace Stage 3 Didymos row,Same stored value in both rows.
+spacecost_didymos_environment_current_2026,one_way_light_time_min,27.382887521999997,min,Spacecost reference/environments.csv line 13 and installed Economicspace Stage 3 Didymos row,Same stored value in both rows.
+novakovic_fenucci_2024_didymos_asteria_orbits,Solution 181 epoch,2457380.5,JD,"Icarus 421, Table 2, JPL solution 181",
+novakovic_fenucci_2024_didymos_asteria_orbits,Solution 181 semimajor axis,1.644268882,AU,"Icarus 421, Table 2, JPL solution 181",
+novakovic_fenucci_2024_didymos_asteria_orbits,Solution 181 eccentricity,0.383882802,ratio,"Icarus 421, Table 2, JPL solution 181",
+,Solution 181 derived perihelion,1.0130623363364326,AU,"Icarus 421, Table 2, JPL solution 181",a × (1 − e)
+,Solution 181 derived aphelion,2.2754754276635674,AU,"Icarus 421, Table 2, JPL solution 181",a × (1 + e)
+novakovic_fenucci_2024_didymos_asteria_orbits,Solution 204 epoch,2460200.5,JD,"Icarus 421, Table 2, JPL solution 204",
+novakovic_fenucci_2024_didymos_asteria_orbits,Solution 204 semimajor axis,1.642665058,AU,"Icarus 421, Table 2, JPL solution 204",
+novakovic_fenucci_2024_didymos_asteria_orbits,Solution 204 eccentricity,0.383264789,ratio,"Icarus 421, Table 2, JPL solution 204",
+,Solution 204 derived perihelion,1.013089381147957,AU,"Icarus 421, Table 2, JPL solution 204",a × (1 − e)
+,Solution 204 derived aphelion,2.272240734852043,AU,"Icarus 421, Table 2, JPL solution 204",a × (1 + e)
+esa_neocc_didymos_orbit_mjd61200_2026,ESA epoch,61200,MJD,"Orbital Properties, near-present element set",Computed 2026-07-30 09:40 UTC.
+esa_neocc_didymos_orbit_mjd61200_2026,ESA semimajor axis,1.64271,AU,"Orbital Properties, near-present element set",Computed 2026-07-30 09:40 UTC.
+esa_neocc_didymos_orbit_mjd61200_2026,ESA eccentricity,0.383123,ratio,"Orbital Properties, near-present element set",Computed 2026-07-30 09:40 UTC.
+esa_neocc_didymos_orbit_mjd61200_2026,ESA perihelion,1.013349,AU,"Orbital Properties, near-present element set",Computed 2026-07-30 09:40 UTC.
+esa_neocc_didymos_orbit_mjd61200_2026,ESA aphelion,2.27207,AU,"Orbital Properties, near-present element set",Computed 2026-07-30 09:40 UTC.
+,Installed flux at perihelion,1326.8161217303198,W/m2,Spacecost inverse-square convention with respective distance set,Irradiance at the named distance.
+,Installed flux at semimajor axis,503.38006397986493,W/m2,Spacecost inverse-square convention with respective distance set,Irradiance at the named distance.
+,Installed flux at aphelion,262.7785664224012,W/m2,Spacecost inverse-square convention with respective distance set,Irradiance at the named distance.
+,Installed one-way propagation upper bound,27.382887521999994,min,Spacecost Earth-aphelion sum and AU light-time constant,Geometric distance envelope. No ephemeris interval.
+,ESA flux at perihelion,1325.3788582939849,W/m2,Spacecost inverse-square convention with respective distance set,Irradiance at the named distance.
+,ESA flux at semimajor axis,504.3549915665786,W/m2,Spacecost inverse-square convention with respective distance set,Irradiance at the named distance.
+,ESA flux at aphelion,263.64206852229654,W/m2,Spacecost inverse-square convention with respective distance set,Irradiance at the named distance.
+,ESA one-way propagation upper bound,27.351866057927996,min,Spacecost Earth-aphelion sum and AU light-time constant,Geometric distance envelope. No ephemeris interval.

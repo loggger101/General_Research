@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+galactic_energy_ceres1_launch_vehicle_user_manual_2023,outer fairing diameter,1.6,m,"§05, PDF p. 5",Calibration input.
+galactic_energy_ceres1_launch_vehicle_user_manual_2023,approximate outer fairing length,5,m,"§05, PDF p. 5",Calibration input.
+galactic_energy_ceres1_launch_vehicle_user_manual_2023,dedicated cylinder diameter,1400,mm,"§09, PDF p. 11, single-satellite diagram",Cylinder caption.
+galactic_energy_ceres1_launch_vehicle_user_manual_2023,dedicated cylinder length,1400,mm,"§09, PDF p. 11, single-satellite diagram",Cylinder caption.
+galactic_energy_ceres1_launch_vehicle_user_manual_2023,dedicated frustum large diameter,1400,mm,"§09, PDF p. 11, single-satellite diagram",Frustum caption.
+galactic_energy_ceres1_launch_vehicle_user_manual_2023,dedicated frustum small diameter,1000,mm,"§09, PDF p. 11, single-satellite diagram",Frustum caption.
+galactic_energy_ceres1_launch_vehicle_user_manual_2023,dedicated frustum axial height,1100,mm,"§09, PDF p. 11, single-satellite diagram",The adjacent dual-satellite layout gives 1300 mm for its own frustum.
+,dedicated envelope volume derived here,3.410722424,m3,§09 inputs integrated as cylinder plus frustum,Rounded to 3.41 m3 at export precision.
+spacecost_ceres1_fairing_code_current_2026,exported Ceres-1 fairing volume,3.41,m3,reference/launch_vehicles.csv row 42 fairing_volume_m3,fairing_basis=guide.

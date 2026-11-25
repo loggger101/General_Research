@@ -1,0 +1,21 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_fairing_to_return_hold_allowance_code_2026,Fraction of fairing assigned to return hold,0.25,m^3/m^3,Economicspace calc.py lines 7667 and 9247–9248; verification_sheet.py lines 3328–3332,Shared logic by convention; repeated literal.
+economicspace_fairing_to_return_hold_allowance_code_2026,Default launch fairing volume if missing,100.0,m^3,Economicspace calc.py 4050–4074,Input to the same fraction.
+economicspace_fairing_to_return_hold_allowance_code_2026,Spacecost Falcon 9 reusable fairing volume,157.0,m^3,Spacecost launch_vehicles.csv line 2,"Pinned Spacecost example, independent of older frozen values."
+economicspace_fairing_to_return_hold_allowance_code_2026,Spacecost SLS Block 1 fairing volume,216.0,m^3,Spacecost launch_vehicles.csv line 6,Cargo configuration in source row.
+spacex_falcon_payload_users_guide,Standard Falcon fairing outer diameter,5.2,m,"2025 User's Guide, printed p. 16, section 4.1.3","Outer dimension, not a keep-in-volume diameter."
+spacex_falcon_payload_users_guide,Standard Falcon fairing overall height,13.2,m,"2025 User's Guide, printed p. 16, section 4.1.3","Overall dimension, not a keep-in-volume height."
+nasa_2026_commercial_crew_dragon_capsule_trunk_architecture,Dragon Falcon 9 ascent interface,unpressurized trunk,component,Dragon Design and Development,Trunk supports ascent and is jettisoned before reentry.
+nasa_2026_commercial_crew_dragon_capsule_trunk_architecture,Dragon reentering load enclosure,capsule,component,Dragon Design and Development,Capsule carries pressurized cargo.
+,Falcon 9 (reusable) adopted return hold,39.25,m^3,Pinned calc.py return cap and search bound,Volumetric allowance.
+,Falcon 9 (reusable) volume-only payload ceiling at 1 kg/L,39250.0,kg,Pinned calc.py expressions,"Test density, before other mission constraints."
+,Falcon 9 (reusable) return hold at hypothetical share 0.15,23.55,m^3,Sensitivity arithmetic,Hypothetical fraction; no change proposed to the value.
+,Falcon 9 (reusable) return hold at hypothetical share 0.35,54.95,m^3,Sensitivity arithmetic,Hypothetical fraction; no change proposed to the value.
+,SLS Block 1 adopted return hold,54.0,m^3,Pinned calc.py return cap and search bound,Volumetric allowance.
+,SLS Block 1 volume-only payload ceiling at 1 kg/L,54000.0,kg,Pinned calc.py expressions,"Test density, before other mission constraints."
+,SLS Block 1 return hold at hypothetical share 0.15,32.4,m^3,Sensitivity arithmetic,Hypothetical fraction; no change proposed to the value.
+,SLS Block 1 return hold at hypothetical share 0.35,75.6,m^3,Sensitivity arithmetic,Hypothetical fraction; no change proposed to the value.
+,missing fairing fallback adopted return hold,25.0,m^3,Pinned calc.py return cap and search bound,Volumetric allowance.
+,missing fairing fallback volume-only payload ceiling at 1 kg/L,25000.0,kg,Pinned calc.py expressions,"Test density, before other mission constraints."
+,missing fairing fallback return hold at hypothetical share 0.15,15.0,m^3,Sensitivity arithmetic,Hypothetical fraction; no change proposed to the value.
+,missing fairing fallback return hold at hypothetical share 0.35,35.0,m^3,Sensitivity arithmetic,Hypothetical fraction; no change proposed to the value.

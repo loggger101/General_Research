@@ -1,0 +1,23 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_economicspace_battery_depth_and_cycle_scope_2026,Nominal storage specific energy,130,Wh/kg,"Spacecost operations.py, usable storage row; storage.py, Li-ion battery",System-level analogy.
+spacecost_economicspace_battery_depth_and_cycle_scope_2026,Assumed depth of discharge,0.8,fraction,Spacecost Energy storage usable specific energy note,Folded into usable storage input.
+spacecost_economicspace_battery_depth_and_cycle_scope_2026,Installed usable storage input,104,Wh/kg,"Economicspace Stage 3, operational_costs.csv; archived worksheet I63",130 × 0.80.
+spacecost_economicspace_battery_depth_and_cycle_scope_2026,Archived fallback rotation period,10.222,h,2018 DT worksheet I65,Section labels the catalog median used as fallback.
+spacecost_economicspace_battery_depth_and_cycle_scope_2026,Archived dark period,5.111,h,2018 DT worksheet S95,Half the fallback rotation.
+spacecost_economicspace_battery_depth_and_cycle_scope_2026,Archived credited baseline dark period,0.58,h,2018 DT worksheet I64 and S97,Held fixed in the sensitivity.
+spacecost_economicspace_battery_depth_and_cycle_scope_2026,Archived operating dig duration,3,yr,2018 DT worksheet S117,Active dig interval assumed continuous for cycle calculation.
+spacecost_economicspace_battery_depth_and_cycle_scope_2026,Archived asteroid stay including wait,4.93769648454,yr,2018 DT worksheet S156,Upper cycling scenario if storage operates throughout the stay.
+,Night opportunities over active dig interval,2572.686,rotations,S117 × 365.25 × 24 / I65,"At one cycle per rotation, not guaranteed pack cycles."
+,Night opportunities over full asteroid stay,4234.381,rotations,S156 × 365.25 × 24 / I65,Conditional on remaining active during the wait.
+schmitz_2023_rps_vs_solar_array_comparison,Generic Li-ion storage specific energy,175,Wh/kg,"Schmitz 2023, p. 8 Table 3, Battery Performance",Model performance parameter.
+schmitz_2023_rps_vs_solar_array_comparison,Generic Li-ion depth of discharge,80,percent,"Schmitz 2023, p. 8 Table 3, Battery Performance",No associated cycle count appears in the table.
+herman_smart_2021_opportunity_battery_cycle_life,Opportunity battery reported typical discharge depth,44–50,percent,"Herman and Smart, 2021, slide 10","Observed rover duty profile, not an asteroid design requirement."
+herman_smart_2021_opportunity_battery_cycle_life,Opportunity battery reported total cycles,>5000,cycles,"Herman and Smart, 2021, slide 10",Wet life includes the acceptance-test period.
+west_smart_herman_2021_perseverance_battery_requirements,Perseverance rover design cycle life,>2010,cycles,"West et al. 2021, Mars Perseverance Rover Battery: Driving Requirements",Over three Earth years; design requirement.
+west_smart_herman_2021_perseverance_battery_requirements,Perseverance rover design maximum depth of discharge,60,percent,"West et al. 2021, Mars Perseverance Rover Battery: Driving Requirements","Design ceiling, not a measured typical depth."
+,Usable energy at 80% DoD,104.0,Wh/kg,130 Wh/kg × depth of discharge,Sensitivity only; no alternative selected by the evidence.
+,Added storage at 80% DoD,43.567308,kg/kW continuous load,(5.111 − 0.58) h × 1000 W / usable energy,"1 kW fixture, fixed baseline and efficiencies."
+,Total effective plant mass at 80% DoD,95.949607,kg/kW continuous load,Pinned eclipse_effective_w_per_kg,"Same solar, eclipse and baseline values for both scenarios."
+,Usable energy at 50% DoD,65.0,Wh/kg,130 Wh/kg × depth of discharge,Sensitivity only; no alternative selected by the evidence.
+,Added storage at 50% DoD,69.707692,kg/kW continuous load,(5.111 − 0.58) h × 1000 W / usable energy,"1 kW fixture, fixed baseline and efficiencies."
+,Total effective plant mass at 50% DoD,122.089992,kg/kW continuous load,Pinned eclipse_effective_w_per_kg,"Same solar, eclipse and baseline values for both scenarios."

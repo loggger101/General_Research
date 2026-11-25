@@ -1,0 +1,19 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_cislunar_light_time_and_teleoperation_code_2026,Installed Gateway NRHO maximum Earth range input,0.00257,AU,reference/environments.csv row Cislunar NRHO (Gateway),Stage 3 export matches.
+spacecost_cislunar_light_time_and_teleoperation_code_2026,Installed low lunar orbit maximum Earth range input,0.00257,AU,reference/environments.csv row Low lunar orbit (100 km),Stage 3 export matches.
+spacecost_cislunar_light_time_and_teleoperation_code_2026,Installed lunar equatorial maximum Earth range input,0.00257,AU,reference/environments.csv row Lunar surface (equatorial),Stage 3 export matches.
+spacecost_cislunar_light_time_and_teleoperation_code_2026,Installed lunar polar ridge maximum Earth range input,0.00257,AU,reference/environments.csv row Lunar surface (polar ridge),Stage 3 export matches.
+spacecost_cislunar_light_time_and_teleoperation_code_2026,Installed one-way propagation interval for all four rows,0.021374038247999997,min,reference/environments.csv four cislunar rows,Verified using pinned one_way_light_time_min.
+nasa_nssdca_moon_fact_sheet,Lunar geocentric semi-major axis,384400,km,"Orbital parameters, Semimajor axis",Reproduces 0.00257 AU to precision of table.
+nasa_nssdca_moon_fact_sheet,Representative lunar geocentric apogee,405500,km,"Orbital parameters, Apogee","Typical orbital apogee, not a site-to-station maximum."
+nasa_tm_2020_220481_ppe_reference_trajectory,Gateway NRHO departure Earth range,418742,km,"Printed p. 18, Table 6-2, Departure, Earth Range",MET 0.0 at the start of the transfer from Gateway NRHO to the disposal DRO.
+nasa_tm_2020_220481_ppe_reference_trajectory,Gateway NRHO departure Moon range,71375,km,"Printed p. 18, Table 6-2, Departure, Moon Range",Separate range column on the same event.
+,Installed cislunar range input converted,384466.527699,km,0.00257 × 149597870.7,Nominal Earth–Moon distance.
+,Installed cislunar one-way propagation interval,1.282442294459,s,0.021374038247999997 min × 60,Four rows share the same result.
+,Gateway NRHO departure one-way propagation interval,1.396772963515,s,418742 / 299792.458,Single event; geometric free-space propagation only.
+,Gateway NRHO departure round-trip propagation interval,2.793545927029,s,2 × 418742 / 299792.458,Single event; geometric free-space propagation only.
+,Gateway departure range increase relative to table cap,8.915073181048,percent,(418742 / 384466.527699 − 1) × 100,One event already exceeds the tabulated maximum.
+litaker_etal_2024_lunar_rover_teleoperation_latencies,"Average rover driving speed with stops, 0 s added delay",3.24,km/h,"Printed pp. 29–30, Speed results comparison",Human-in-the-loop simulated lunar traverse.
+litaker_etal_2024_lunar_rover_teleoperation_latencies,"Average rover driving speed with stops, 4 s added delay",2.56,km/h,"Printed pp. 29–30, Table 9 and comparison",Human-in-the-loop simulated lunar traverse.
+,Driving speed change from zero to four seconds,-20.987654321,percent,(2.56 / 3.24 − 1) × 100,"Computed directly from the reported means, including stops."
+spacecost_cislunar_light_time_and_teleoperation_code_2026,Autonomy NRE input,200000000,USD/program,Spacecost reference/operational_costs.csv line 55; Economicspace modules/calc.py lines 6381–6385,Amortisation uses mission count. The light-time conversion does not trigger this line.

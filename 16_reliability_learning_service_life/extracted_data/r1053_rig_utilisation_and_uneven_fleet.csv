@@ -1,0 +1,25 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_rig_utilisation_and_uneven_fleet_worksheet_2026,Installed rig calendar service life,15,years,Stage 3 operational_costs.csv line 67,
+economicspace_rig_utilisation_and_uneven_fleet_worksheet_2026,Installed rig duty limit,5,campaigns,Stage 3 operational_costs.csv line 68,Only active when model_rig_trip_limit is enabled.
+economicspace_rig_utilisation_and_uneven_fleet_worksheet_2026,Installed rig salvage fraction,0.5,fraction,Stage 3 operational_costs.csv line 69,Applied to remaining book value.
+,Synthetic fixture rig build cost,600000000,USD,Installed rig recurring cost times configured mining hardware mass,Same for all cases.
+,Synthetic fixture stay,0.7,years,Both cost functions,Pure input.
+,Synthetic fixture cadence,1.2,years,Both cost functions,Pure input.
+,"calendar ageing, trip cap off, correctly replayed utilisation",0.20666666666666664,fraction,worked_calculation.py 4369–4379,Three campaigns on one rig.
+,"calendar ageing, trip cap off, worksheet substitution result",0.6,fraction,verification_sheet.py 4911–4929,Exact displayed numeric expression evaluated.
+,"calendar ageing, trip cap off, terminal credit in calculator and replay",238000000,USD/rig,Both cost functions,Same result despite inconsistent display.
+,"active-stay clock, trip cap off, correctly replayed utilisation",0.13999999999999999,fraction,worked_calculation.py 4369–4379,Three campaigns on one rig.
+,"active-stay clock, trip cap off, worksheet substitution result",0.14285714285714285,fraction,verification_sheet.py 4911–4929,Exact displayed numeric expression evaluated.
+,"active-stay clock, trip cap off, terminal credit in calculator and replay",258000000,USD/rig,Both cost functions,Same result despite inconsistent display.
+,"seven missions, two rigs, calculator terminal",90000000.0,USD/rig,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"seven missions, two rigs, worksheet terminal",60000000.0,USD/rig,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"seven missions, two rigs, calculator net rig",145714285.71428573,USD/mission,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"seven missions, two rigs, worksheet net rig",135000000.0,USD/mission,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"seven missions, two rigs, calculator total",499307057.1428572,USD/mission,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"seven missions, two rigs, worksheet total",486449914.2857143,USD/mission,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"eight missions, two rigs, calculator terminal",60000000.0,USD/rig,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"eight missions, two rigs, worksheet terminal",60000000.0,USD/rig,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"eight missions, two rigs, calculator net rig",135000000.0,USD/mission,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"eight missions, two rigs, worksheet net rig",135000000.0,USD/mission,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"eight missions, two rigs, calculator total",469598700.0,USD/mission,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."
+,"eight missions, two rigs, worksheet total",469598700.0,USD/mission,Fixed programme cost fixture,"Trip cap and calendar model on, WACC off, 20% contingency."

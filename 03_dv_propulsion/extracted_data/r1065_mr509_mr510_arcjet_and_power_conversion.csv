@@ -1,0 +1,29 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_arcjet_mass_and_economicspace_power_conversion_2026,Installed arcjet thrust mass rate,6,kg/N,Spacecost propellants.py l. 238 and both exports,"Comment names MR-509, 1.5 kg / 258 mN."
+spacecost_arcjet_mass_and_economicspace_power_conversion_2026,Installed hydrazine arcjet specific impulse,600,s,Spacecost and Economicspace arcjet rows,Notes identify MR-510 class.
+spacecost_arcjet_mass_and_economicspace_power_conversion_2026,Installed hydrazine arcjet power sizing efficiency,0.35,fraction,Spacecost and Economicspace arcjet rows,Effective power sizing parameter for modeled bus draw.
+spacecost_arcjet_mass_and_economicspace_power_conversion_2026,Installed generic PPU rate,4.7,kg/kW input,Economicspace operational_costs.csv; Spacecost operations.py ll. 419–430,Generic NEXT-C-derived sizing rate.
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-509 head-plus-cable mass,1.4,kg,"MR-509 Low Power Arcjet System, Design Characteristics, Mass","Cable included, named PCU separate."
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-509 demonstrated thrust lower endpoint,213,mN,"MR-509 Low Power Arcjet System, Demonstrated Performance",Feed-pressure blowdown.
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-509 demonstrated thrust upper endpoint,254,mN,"MR-509 Low Power Arcjet System, Demonstrated Performance",Feed-pressure blowdown.
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-510 head-plus-cable mass,1.6,kg,"MR-510 Arcjet Thruster and Cable Assembly, Design Characteristics, Mass",Cable included.
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-510 demonstrated thrust lower endpoint,222,mN,"MR-510 Arcjet Thruster and Cable Assembly, Demonstrated Performance",Feed-pressure blowdown.
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-510 demonstrated thrust upper endpoint,258,mN,"MR-510 Arcjet Thruster and Cable Assembly, Demonstrated Performance",Feed-pressure blowdown.
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-510 demonstrated Isp lower endpoint,585,s,"MR-510 Arcjet Thruster and Cable Assembly, Demonstrated Performance",Range listed separately from thrust.
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-510 demonstrated Isp upper endpoint,615,s,"MR-510 Arcjet Thruster and Cable Assembly, Demonstrated Performance",Range listed separately from thrust.
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-510 delivered arcjet input,2000,W per operating arcjet,"MR-510 Arcjet Thruster and Cable Assembly, Demonstrated Performance",Downstream of the PCU.
+aerojet_rocketdyne_mr509_mr510_propulsion_datasheets,MR-510 electrical draw to PCU,2200,W per operating arcjet,"MR-510 Arcjet Thruster and Cable Assembly, Demonstrated Performance",Bus-side power.
+zube_goodfellow_hearn_2017_mr510_arcjet_pcu,MR-510 mission-average Isp,600,s,"Printed p. 2, Section 1","Mission average, not point-paired with 258 mN."
+zube_goodfellow_hearn_2017_mr510_arcjet_pcu,MR-510 bus input power per arcjet,2.2,kW,"Printed p. 2, Section 1",MR-510 system.
+zube_goodfellow_hearn_2017_mr510_arcjet_pcu,MR-510 standard shipset PCU mass,15.8,kg,"Printed p. 7, Table 1, MR-510 column",70 V PCU.
+zube_goodfellow_hearn_2017_mr510_arcjet_pcu,MR-510 standard shipset installed arcjets,4,thrusters,"Abstract, Table 1 p. 7",One PCU for this shipset.
+zube_goodfellow_hearn_2017_mr510_arcjet_pcu,MR-510 simultaneously operating arcjets,2,thrusters,"Abstract, standard shipset",Three-for-two redundant converters.
+zube_goodfellow_hearn_2017_mr510_arcjet_pcu,MR-510E 100 V PCU mass,19.1,kg,"Printed p. 7, Table 1, MR-510E column","Different configuration, not used in the 70 V comparison."
+,MR-509 head-plus-cable ratio at upper thrust,5.511811023622047,kg/N,Manufacturer mass divided by upper thrust,Head and cable only.
+,MR-510 head-plus-cable ratio at upper thrust,6.2015503875969,kg/N,Manufacturer mass divided by upper thrust,Head and cable only.
+,Modeled bus input at 258 mN,2168.6706000000004,W,Economicspace ep_power_required_w; 600 s and 0.35,Fixed-thrust fixture.
+,Modeled thruster mass at 258 mN,1.548,kg,Economicspace _ep_stage_kg,Installed head coefficient.
+,Modeled generic PPU mass at 258 mN,10.192751820000002,kg,Economicspace _ep_stage_kg,Single fixture case.
+,Modeled generic PPU mass at 516 mN,20.385503640000003,kg,Economicspace _ep_stage_kg,Two equal loads; model scales continuously.
+,70 V shipset PCU divided by one active arcjet bus load,7.181818181818182,kg/kW input,IEPC Table 1 and Section 1,Entire shared PCU with one active channel; utilization comparison.
+,70 V shipset PCU divided by two active arcjet bus loads,3.590909090909091,kg/kW input,IEPC Table 1 and Section 1,Entire shared PCU at the cited two-active operating capacity.

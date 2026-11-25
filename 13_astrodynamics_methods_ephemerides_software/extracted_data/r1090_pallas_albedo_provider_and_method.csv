@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+imcce_pallas_ssocard_computed_albedo_2026,Pallas card version and timestamp,1.2.3 / 2026-07-13T14:30:01+00:00,,"ssoCard #2, ssocard",Timestamp from card metadata.
+imcce_pallas_ssocard_computed_albedo_2026,SsODNet Pallas computed geometric albedo,0.1512,dimensionless,parameters.physical.albedo,Computed; Berthier+2023; selection ID 263368.
+imcce_pallas_ssocard_computed_albedo_2026,SsODNet Pallas diameter,512.588,km,parameters.physical.diameter,"ADAM and KOALA; selection IDs 130888,130889,130891,130894; Vernazza+2021; Carry+2010a; Marsset+2020; Hanuš+2017b."
+imcce_pallas_ssocard_computed_albedo_2026,SsODNet Pallas absolute magnitude,4.12,mag,parameters.physical.absolute_magnitude.H,Moskovitz+2022; selection ID 222222.
+berthier_2023_ssodnet,SsODNet geometric-albedo coefficient,1329,km,"preprint p. 6, sec. 4.2.6, eq. 5",D is in kilometres; SsODNet recomputes albedo from diameter and H except for space or polarimetric determinations.
+,Geometric albedo recomputed from the card diameter and H,0.1511865275,dimensionless,(1329 / 512.588)^2 × 10^(-0.4 × 4.12),Rounds to 0.1512.
+asteroidcatalog_ssodnet_property_bibrefs_code_current_2026,Companion status with same imported and card albedo,resolved,,ssodnet_refs.py lines 106–143; pinned function replay,"Keeps Berthier+2023, drops method and selection link. Tested with matched provider values as fixture."
+asteroidcatalog_release_data_2026_11_13,Pallas published geometric albedo used by installed catalog,0.155,dimensionless,"data-2026-11-13, designation 2, albedo",albedo_provider=JPL SBDB; diameter_provider=SsODNet; mass_provider=SsODNet.
+jpl_sbdb_pallas_physical_albedo_reference_2026,Pallas geometric albedo,0.155,dimensionless,phys_par[name=albedo],"ref=Vernazza et al., A&A 654, A56 (2021)."
+vernazza_etal_2021_vlt_sphere_main_belt_survey,Pallas geometric albedo,0.155,dimensionless,"A&A 654 A56, Table 1, 2 Pallas row, p_V; albedo method on manuscript p. 6",Paper derives albedo using diameter and absolute magnitude.
+asteroidcatalog_jpl_physical_field_citation_code_2026,JPL bulk albedo source reference projected,0,boolean,jpl.py bulk field list and local column selection,"Provider field survives the merge, while phys_par.ref is not requested."

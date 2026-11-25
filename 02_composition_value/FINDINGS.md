@@ -955,3 +955,95 @@ Cannon, Gialich & Acain (2023), Table 2 p. 4, reports a 40.78 ppm median for six
 `scott_wasson_1975_classification_properties_iron_meteorites` and `lodders_2003_solar_abundances_condensation_temperatures`: General_Research maps these sources to trace-metal or PGM abundances, not the bulk Fe/Ni/Co fractions. No Walker 2012 source row is registered. Current Spacevalue `CITATIONS.md` lines 130–134 lists Scott & Wasson (1975) for trace-metal means but does not give a table/page citation for the bulk vector.
 
 **Verdict:** Open rc-815 for full source records and table/page-level support for the Fe/Ni/Co vector, including its sample and averaging scope. If it is an analyst-selected analogue, label it accordingly. The vector is retained; no numeric replacement inferred. This is distinct from rc-433's phase-partition ratios and rc-456's Earth-sale route. Extracted: `extracted_data/r949_spacevalue_fe_ni_bulk_yields.csv`.
+
+## R1014 — IIIAB trace-metal citation and averaging basis (2026-11-22)
+
+`spacevalue_iiiab_trace_yields_code_2026` describes its nickel-iron alloy as a IIIAB analogue but calls its Cu, Ga, Ge, Mo, W and Re assumptions “order-of-magnitude means over the common iron groups.” It stores 150, 20, 40, 7, 1 and 0.30 ppm, respectively. `chabot_zhang_2022_iiiab_trapped_melt_compositions` reports 257 IIIAB and related sample rows (Methods and Table 1). The IIIAB block has 246 rows. Excluding the three samples the authors omit for heavy weathering leaves 243. The sample-row medians are 159 ppm Cu, 19.8 ppm Ga, 37.90–40.95 ppm Ge and 0.88 ppm W. For Re, 72 of the 243 entries are upper limits. Treating each limit as an interval from zero to its reported value gives a median of 0.126–0.135 ppm and a mean of 0.384–0.395 ppm. Table 1 has no Mo column.
+
+**rc-877** asks Spacevalue to cite the IIIAB composition table for the five covered elements and state the chosen summary statistic or scenario basis, especially for Re. Sample rows are unweighted and retain the paper's table granularity. Extracted data in `extracted_data/r1014_iiiab_trace_composition_statistics.csv`.
+
+## R1015 — Cape York molybdenum comparator (2026-11-22)
+
+`hidaka_shirai_etal_2019_cape_york_trace_elements` gives Cape York (IIIAB) Mo at “7.66 ± 0.35” ppm (Table 2, Mo row, Cape York concentration and uncertainty). The footnote defines this as three replicated analyses and their sample standard deviation. The same Cape York column group lists 5.96 and 7.10 ppm from earlier studies. `spacevalue_iiiab_trace_yields_code_2026` stores 7 ppm in `_NICKEL_IRON_YIELDS["molybdenum"]`. These measurements support the scale of the scenario for one named IIIAB meteorite. **rc-877** gains the sample-level citation for Mo alongside the class statistics for the other elements. Extracted data in `extracted_data/r1015_iiiab_molybdenum_comparator.csv`.
+
+
+## R1049 — Soluble organic phases and terrestrial sale products (2026-11-23)
+
+- asteroidcatalog_spacevalue_organic_phase_sale_mapping_2026 defines AsteroidCatalog's organics as “soluble organic matter” and carbon as “insoluble macromolecular organic matter, graphite” in mineralogy.py lines 165–166. The exported B-type rows are 0.012 organics and 0.028 carbon by body mass. With the installed Earth-surface catalog, Spacevalue prices those fractions by exact name at USD 0.50/kg for “Complex organic macromolecules (kerogen-like)” and USD 0.20/kg for amorphous / graphitic carbon, respectively. The organics row carries a separate 1.0e12 kg/year ceiling. Economicspace's verification worksheet cites annual_market_kg and describes the Earth-bound ceiling as world annual production.
+- bennu_volatiles_2025, p. 199 abstract, identifies “amino acids,” “amines” and other compounds in the returned Bennu soluble inventory. sandford_gainsforth_2025_bennu_polymeric_organics, p. 1806 and Extended Data Fig. 6, reports Particle 64 as unchanged after contact with water. The observations distinguish soluble compounds and a polymeric grain in the returned material. **rc-930** records the mismatch in phase and product definitions at the valuation join.
+
+Extracted data in extracted_data/r1049_organic_phase_sale_mapping.csv.
+
+
+## R1059 — Olivine iron fraction and density basis (2026-11-23)
+
+- spacevalue_olivine_density_iron_and_sale_code_2026 records Spacevalue catalog.py lines 2209–2217 and Economicspace prices-2026-11-20. The Spacevalue row says “Fo90 mean Fe content” beside 0.10 kg Fe/kg olivine. prohaska_etal_2022_iupac_olivine_atomic_weights, Table 1 abridged column, gives O 15.999, Mg 24.305, Si 28.085 and Fe 55.845. Ideal Mg1.8Fe0.2SiO4 gives 0.07598 kg Fe/kg. nakamura_etal_2014_itokawa_olivine_fayalite, p. 219 Table 1 “Olivine (Fa#),” gives 28.4 ± 1.2 mol% over 352 analyses of 33 olivines. Its 25.75 wt% FeO gives 20.02 wt% elemental Fe, consistent with 20.00 wt% from the ideal Fa28.4 formula. The measurement describes Itokawa grains and the Spacevalue value applies to generic olivine, including AsteroidCatalog’s ordinary-chondrite silicate scenario. With the pinned prices, the pre-refinery phase evaluator uses the same 0.05 USD/kg as-is Earth value at both 0.10 and ideal Fo90. Lunar output from the elemental route is 2,147.20 and 1,631.45 USD/kg respectively. **rc-947** records the molar-to-mass basis and downstream use.
+- spacevalue_olivine_density_iron_and_sale_code_2026 records 3.32 g/cm³ with the annotation “forsterite-fayalite midpoint.” lee_2003_olivine_endmember_densities, Table 4 “STP Density,” lists forsterite 3.222 g/cm³ (Isak et al.) and fayalite 4.380 g/cm³ (Graham et al.), arithmetic midpoint 3.801 g/cm³. **rc-948** records the density description and missing composition basis.
+
+Extracted data in extracted_data/r1059_olivine_iron_fraction_and_density.csv.
+
+
+## R1060 — Pyroxene phase chemistry and sale route (2026-11-23)
+
+- spacevalue_pyroxene_iron_routes_and_pinned_exports_2026 records Spacevalue catalog.py lines 2219–2236 and Economicspace prices-2026-11-20 Earth and lunar tables. Both pyroxene rows carry 0.07 kg Fe/kg mineral. AsteroidCatalog mineralogy.py lines 159–160 map “low-Ca pyroxene” to orthopyroxene and “high-Ca / clinopyroxene, pigeonite” to pyroxene.
+- nakamura_etal_2014_itokawa_olivine_fayalite, p. 219 Table 1 “FeO,” gives low-Ca and high-Ca Itokawa means of 15.10 ± 1.32 and 5.52 ± 0.98 wt%, respectively. Using Fe and O from prohaska_etal_2022_iupac_olivine_atomic_weights, Table 1, they give elemental Fe mass fractions of 11.74% and 4.29%. The Kilabo LL6 host in Table 3, p. 222, gives low-Ca Fs25.2 and high-Ca Fs10.4 in their separate pyroxenes. These are phase compositions for the measured samples.
+- The pinned lunar table gives 1,240.77 USD/kg as-is for each and 21,472.00 USD/kg for elemental iron. The installed 7% makes both elemental routes win at 1,503.04 USD/kg on net price. The Itokawa sample fractions give elemental net values of 2,520.25 and 921.31 USD/kg, so high-Ca switches to as-is. With the refinery flown, high-Ca phase energy falls from 1,350 to 1,000 Wh/kg and gross phase value falls from 1,519.17 to 1,446.86 USD/kg in the same fixture. Earth remains as-is for both. **rc-949** records the two phase yields and their valuation effect.
+
+Extracted data in extracted_data/r1060_pyroxene_iron_contents_and_sale_routes.csv.
+
+
+## R1061 — Carbonate composition and CO2 yield basis (2026-11-23)
+
+- spacevalue_carbonate_co2_yield_and_routes_2026 records 0.44 kg CO2/kg in Spacevalue catalog.py lines 2010–2021 and in Economicspace prices-2026-11-20. The comment says “the calcite figure” for a row covering calcite, dolomite and breunnerite. AsteroidCatalog assigns those minerals to one carbonate phase. Using prohaska_etal_2022_iupac_olivine_atomic_weights, Table 1, ideal calcite gives 0.43971 kg CO2-equivalent/kg and ideal dolomite 0.47732. These are stoichiometric equivalents for pure endmembers.
+- mahlke_etal_2026_ryugu_bennu_carbonate_speciation, p. 5 Section 3.1 and Figures 4–5, reports 709 unique detections in the Ryugu samples and 90 in Bennu. By identified grain count, dolomite is 63% and 67%, Mg- and Fe-breunnerite together 29% and 29%, and calcite 7% and 4%, respectively. Section 3.4, p. 7, describes the second comparison as “in terms of pixel area.” Neither statistic weights by mineral mass. **rc-950** records the calcite proxy, the material mass basis and the gas-recovery boundary.
+- At pinned lunar prices the as-is net value is 1,240.74 USD/kg and the CO2 route wins at both the installed 0.44 and the ideal dolomite fraction. In the flown-refinery fixture the gross phase value moves from 6,365.99 to 6,906.00 USD/kg and modeled energy from 1,220 to 1,238.66 Wh/kg. At the pinned cislunar prices the as-is route wins in both cases.
+
+Extracted data in extracted_data/r1061_carbonate_co2_stoichiometry_and_sale_routes.csv.
+
+
+## R1078 — Transfer of the Tagish Lake assemblage to D, Z and P
+
+- `asteroidcatalog_tagish_lake_accessory_analogue_transfer_code_2026` — AsteroidCatalog `CITATIONS.md` lines 496–497 cite Hiroi et al. for “which accessories D, Z and P carry.” The three classes share `_ACC_TL` in `asteroid_catalog/mineralogy.py` lines 233 and 354, with 0.05 magnetite, 0.03 troilite and 0.03 carbonates by body mass. The code identifies the amounts as unsourced.
+- `gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation` — Table 4 places reflectance from specimen TL10a in D, TL4 in X, TL5b in C and TL11h in Xc or C. Table 1 gives 11.2 wt% siderite for TL10a and 2.2 wt% for TL4. The XRD results section warns that preparation and amorphous peak fitting introduce substantial uncertainty beyond the statistical fit.
+- `vernazza_etal_2013_tagish_lake_analogue_paucity` — The abstract (p. 517) identifies “only one asteroid, 368 Haidea” matching both the meteorite spectrum and reflectance in the main-belt comparison and estimates that fewer than 0.02% of Jupiter Trojans are Tagish Lake-like. Verdict: the D-type analogue has an individual spectral match, while assigning its accessory assemblage across D, Z and P requires an explicit transfer assumption (rc-987).
+- Extracted data: `extracted_data/r1078_tagish_lake_asteroid_analogue_transfer.csv`.
+
+
+## R1079 — Elemental composition behind Spacevalue sulfide yields
+
+- `spacevalue_pyrrhotite_pentlandite_element_yields_code_2026` — Spacevalue `catalog.py` lines 2059–2068 use ideal Fe7S8 for pyrrhotite (0.604 Fe and 0.396 S kg/kg) and equimolar Fe–Ni pentlandite (0.326 Fe, 0.342 Ni and 0.332 S kg/kg). In an isolated execution of `cargo.py` lines 438–479, pyrrhotite's gross value is unchanged by a one-unit nickel quote change, and pentlandite's is unchanged by a one-unit cobalt quote change.
+- `harrison_etal_2025_ryugu_ci_sulfide_mineralogy` — Table 2 lists 1.09±0.19 and 1.05±0.21 wt% Ni in Orgueil and Ivuna pyrrhotite, and 1.52±0.64 and 1.03±0.05 wt% in two Ryugu particles. Orgueil and Ivuna pentlandite contain 35.0 and 31.0 wt% Ni and 1.35 and 2.00 wt% Co, respectively, at one analysis each.
+- `holt_herd_2022_tagish_lake_iron_nickel_sulfides` — The sulfide composition results give 1.63±1.32 wt% mean Ni in Tagish Lake pyrrhotite and 28.17–36.37 wt% Ni in measured pentlandite. Verdict: valuation using ideal formulas leaves pyrrhotite Ni unrepresented (rc-988) and requires a stated Fe–Ni and Co basis for pentlandite (rc-989). The measurements give contained elemental mass.
+- Extracted data: `extracted_data/r1079_sulfide_element_yields.csv`.
+
+
+## R1083 — Trace-metal enrichment on explicit PGM minerals
+
+- `spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026` — AsteroidCatalog `taxonomy.py` lines 15–18 scopes the modifier to the “platinum-group fraction of a metal phase.” Spacevalue `cargo.py` lines 157–200 and 438–479 apply it to listed precious-element fractions regardless of host. Economicspace `verification_sheet.py` lines 1945–1966 applies the same multiplier in the price calculation. With M's 2.0 factor and equal element quotes, isolated executions imply price weights of 2.000 kg-equivalent/kg native-pgm, 1.132 for sperrylite and 1.228 for laurite.
+- `prohaska_etal_2022_iupac_olivine_atomic_weights` — IUPAC Table 1 gives Pt and As atomic weights of 195.084 and 74.921595, yielding 0.5656 kg Pt/kg ideal PtAs2. `cabri_harris_weiser_1996_pgm_placer_compositions` — printed p. 83 reports native platinum, platinum alloys and sperrylite as separate Liard River grain phases. Verdict: the valuation needs a stated eligibility boundary when using a trace modifier with fixed named-mineral profiles (rc-994).
+- Extracted data: `extracted_data/r1083_pgm_enrichment_explicit_mineral_scope.csv`.
+
+
+## R1094 — K-type whole-body metal, oxide and sulfide assumptions (2026-11-24)
+
+- asteroidcatalog_k_metal_magnetite_sulfide_and_cargo_code_2026 assigns the K class 8 wt% metallic alloy, 3 wt% magnetite and 2 wt% total sulfide. asteroidcatalog_release_data_2026_11_13 gives those same values for 221 Eos, 661 Cloelia and 742 Edisona, including 1 wt% each pentlandite and pyrrhotite in the detailed rows. With spacevalue_installed_prices_release_manifests_2026 Earth prices, the one-tonne cargo replay at 100% recovery prices 80 kg nickel-iron, 30 kg magnetite and 20 kg sulfides for USD 528.74 gross in each fixture.
+- bland_cressey_menzies_2004_allende_modal_mineralogy, p. 9 and Table 1 p. 10, reports “magnetite (0.3%); Fe-Ni metal (0.2%); and pentlandite (11.1%)” by weight in an Allende sample. howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235, PDF p. 1, gives 0.3–6.1 vol% magnetite, 0.2–1.1 vol% Fe-Ni metal and 2.9–8.1 vol% sulfides across four oxidized CV3 specimens. bonato_2020_co_chondrites_psd_xrd_modal_mineralogy, §3.3.2, gives about 3–9.3 vol% magnetite, 0.1–1.1 vol% kamacite and about 0.2–4.4 vol% sulfides in the low-type CO specimens.
+- tanbakouei_etal_2021_cv_ck_eos_spectral_comparisons, Figs. 8–9, compares the three Eos-family spectra with CV and CK specimens. It identifies similar slopes and differences in the olivine features. **rc-1008** records the missing derivation of the joint whole-body mass fractions from these analogue classes.
+
+Extracted data in extracted_data/r1094_k_type_metal_oxide_and_sulfide_modes.csv.
+
+
+## R1103 — Cgh meteorite analogue and carried phases (2026-11-24)
+
+- vernazza_etal_2016_ch_cgh_cm_spectral_survey, abstract, compares 70 “main-belt Ch/Cgh-type asteroids” with laboratory CM spectra. sanderson_etal_2026_cm_cgh_meteorite_asteroid_matches, Table 1 and printed p. 7 Table 2, lists CM1 NWA 4765 and MIL 05137 at 88 and 89 vol% phyllosilicates, with the lowest-RMS asteroid fits (13) Egeria and (19) Fortuna, respectively. The two fits fall in its Cgh comparison. The modal fractions describe the meteorite samples.
+- asteroidcatalog_cgh_analogue_and_phase_volume_path_2026, taxonomy Cgh and METEORITE_ANALOGUE_GCM3, labels the Cgh row “CH/CK analog” and uses CK bulk density 2.85 g/cm3. asteroidcatalog_release_data_2026_11_13 assigns Ch to Egeria and Fortuna and Cgh to (2322) Kitt Peak. Kitt Peak has 0.20 phyllosilicates, 0.16 olivine, 0.04 pyroxene and 0.10 water as body mass fractions. Using the existing Ch within-silicate shares on that same 0.40 silicate fraction, with all other phases fixed, changes modeled three-phase volume from 0.137 to 0.149 m3 per tonne of feed with the densities in spacevalue_installed_prices_release_manifests_2026. The uncapped cislunar phase-blend value is equal across the fixture. **rc-1019** records the CM evidence and the scope of the CK/CH assumption.
+
+Extracted data in extracted_data/r1103_cgh_cm_analogue_and_carried_phases.csv.
+
+
+## R1104 — Meteoritic accessory liberation and phosphide grade (2026-11-24)
+
+- henderson_1965_iron_meteorite_nodule_microstructure, Mineralogy §§3–4, describes schreibersite laminae and grains and cohenite “intergrown with rim schreibersite.” miler_gosar_2011_javorje_phosphide_microstructure, Accessory Minerals and Fig. 2, gives 8–22 µm for interface schreibersite and 11–121 µm for scarce massive grains. spacevalue_meteoritic_phosphide_liberation_and_yield_2026, cargo grouping and payload selection, allows phosphide and carbide to load independently of nickel-iron. At the installed asteroidcatalog_release_data_2026_11_13 2018 DT composition and spacevalue_installed_prices_release_manifests_2026 Earth prices, a 1,000 kg feed and 5 kg hold at 90% recovery gives USD 43.06 for 5 kg of nickel-iron. A fixed-proportions metal blend gives USD 42.41 and carries 11.55 g of assigned phosphorus. **rc-1020** covers the separable product and liberation basis.
+- henderson_1965_iron_meteorite_nodule_microstructure, Mineralogy §3, reports 15–25 wt% Ni in schreibersite. miler_gosar_2011_javorje_phosphide_microstructure, Table 1, gives 42.4 wt% Ni in massive and 50.6 wt% in taenite-border schreibersite. Their semi-quantitative Fe+Ni+P means sum to 109.3% and 108.0%. The installed row uses Fe2NiP at 29.1 wt% Ni and USD 5.13/kg gross contained value. Proportional normalization of the four Javorje phosphide means gives USD 6.64–7.86/kg at the same elemental prices. **rc-1021** covers the model grade and assay basis.
+
+Extracted data in extracted_data/r1104_meteoritic_accessory_liberation_and_phosphide_yield.csv.

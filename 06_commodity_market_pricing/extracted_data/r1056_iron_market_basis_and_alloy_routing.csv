@@ -1,0 +1,18 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_earth_iron_scrap_and_alloy_caps_2026,Installed iron reference price,0.319,USD/kg,Installed Earth-surface catalog line 22,Delivered U.S. No. 1 heavy melting steel scrap composite.
+spacevalue_earth_iron_scrap_and_alloy_caps_2026,Installed iron market ceiling,1300000000000.0,kg/year,Installed Earth-surface catalog line 22 and catalog.py line 991,World pig iron production.
+usgs_mineral_commodity_summaries_2026,2025e world pig iron production,1300,million metric tonnes,"Iron and Steel, printed p. 103, World Production","Pig iron production, first pair of columns."
+usgs_mineral_commodity_summaries_2026,2025e U.S. No. 1 HMS average delivered price,319,USD/metric tonne,"Iron and Steel Scrap, printed p. 104, Salient Statistics",Annual estimate.
+usgs_mineral_commodity_summaries_2026,2025e United States iron and steel scrap apparent consumption,57,million metric tonnes,"Iron and Steel Scrap, printed p. 104, Salient Statistics",All iron and steel scrap.
+bir_2026_global_recycled_steel_use,Approximate annual recycled steel used in global steelmaking,630,million metric tonnes,"Statistics announcement of the 17th edition, discussion before imports","BIR/worldsteel estimate for each year, not a 2025 measured total or HMS-specific purchases."
+worldsteel_2026_ferrous_scrap_trade,2025 ferrous scrap world imports,93.7,million metric tonnes,"Trade in ferrous scrap 2024 and 2025, World row",Imports. Recorded international trade scope.
+worldsteel_2026_ferrous_scrap_trade,2025 ferrous scrap world exports,95.3,million metric tonnes,"Trade in ferrous scrap 2024 and 2025, World row",Exports. Recorded international trade scope.
+,Installed iron ceiling divided by BIR annual scrap use,2.0634920634920637,ratio,Installed iron row and BIR 2026 release,Scale comparison across different measures.
+spacevalue_earth_iron_scrap_and_alloy_caps_2026,Installed nickel-iron market ceiling,1000000000000000.0,kg/year,Installed Earth-surface catalog line 41,No direct quote. Value computed from constituent price references.
+spacevalue_earth_iron_scrap_and_alloy_caps_2026,Installed nickel-iron contained iron share,0.9,kg/kg alloy,"Installed Earth-surface catalog line 41, yields_json",Gross modeled yield fraction.
+spacevalue_earth_iron_scrap_and_alloy_caps_2026,Installed iron market identifier,iron,,Installed Earth-surface catalog line 22,Separate key from nickel-iron.
+spacevalue_earth_iron_scrap_and_alloy_caps_2026,Installed nickel-iron market identifier,nickel-iron,,Installed Earth-surface catalog line 41,Separate key from constituent elements.
+,Synthetic one-year offered mass per case,2000000000000.0,kg,Single-phase synthetic hold and capacity-cap function,Iron and alloy swapped between separate cases; zero surplus price.
+,Synthetic alloy contained iron at offered size,1800000000000.0,kg,0.90 × offered alloy mass,"Mass fraction computation, no recovery assumption."
+,Synthetic one-year pure iron mass unsold,700000000000.0,kg,Pinned phase lookup and capped-sale function,"Capacity cap with zero surplus price, iron market key."
+,Synthetic one-year nickel-iron mass unsold,0,kg,Pinned phase lookup and capped-sale function,"Capacity cap with zero surplus price, nickel-iron market key."

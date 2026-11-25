@@ -1,0 +1,14 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_oig_2016_ig16025_docking_adapter_development,NASA development cost for lost adapter,32400000,nominal USD,"Printed p. 8, SPX-7 Cargo",Development amount; audit does not break out recurring manufacture.
+nasa_2015_crs7_docking_adapter_payload_mass,IDA-1 manifested mass,526,kg,"CRS-7 Cargo manifest, Unpressurized Cargo, IDA #1",Station-side docking adapter carried in Dragon trunk.
+esa_iss_common_berthing_mechanism_roles,Active berthing half owner,ISS side,,"Common Berthing Mechanism factsheet, port roles",Permanent station hardware in this example.
+esa_iss_common_berthing_mechanism_roles,Passive berthing half owner,incoming structure,,"Common Berthing Mechanism factsheet, port roles","Receiving interface, distinct from the cargo carrier's full dry mass."
+spacecost_economicspace_berthing_carrier_cost_scope_2026,Recurring dry-vehicle price,60000.0,USD/kg,"Spacecost and Stage 3, Berthing adapter recurring cost","Range USD 30,000–150,000/kg."
+spacecost_economicspace_berthing_carrier_cost_scope_2026,Separate depot handover operations row,2000000.0,USD/delivery,"Installed Stage 3, Depot berthing & handover operations","Separate service scenario, outside recurring dry-vehicle price."
+spacecost_economicspace_berthing_carrier_cost_scope_2026,Dry vehicle fixed mass in fixture,500,kg,Economicspace CalcConfig.return_vehicle_dry_kg,Pinned default.
+spacecost_economicspace_berthing_carrier_cost_scope_2026,Structure per payload mass in fixture,0.15,fraction,Economicspace CalcConfig.return_structure_frac_of_payload,"Fixture fixes effective structure at this default, with no extra containment."
+,IDA development spend divided by IDA-1 manifest mass,61596.96,nominal USD/kg,Cross-source arithmetic,"Scope illustration only, without inflation adjustment or inference of unit production price."
+,Carrier dry mass at 1000 kg payload,650.0,kg,Pinned dry-return expression,Base plus 15% of payload.
+,Unlearned carrier recurring cost at 1000 kg payload,39000000.0,USD,"Pinned capsule_base, berthing rate selected","Formula fixture with a fixed payload; no learning, contingency or handling."
+,Carrier dry mass at 10000 kg payload,2000.0,kg,Pinned dry-return expression,Base plus 15% of payload.
+,Unlearned carrier recurring cost at 10000 kg payload,120000000.0,USD,"Pinned capsule_base, berthing rate selected","Formula fixture with a fixed payload; no learning, contingency or handling."

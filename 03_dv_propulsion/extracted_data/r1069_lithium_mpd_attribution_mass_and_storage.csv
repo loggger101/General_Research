@@ -1,0 +1,37 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Spacecost lithium MPD storage_class,storable_liquid,class,reference/propellants.csv row 41,Data contract 1.28.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Spacecost lithium MPD density_kg_per_L,0.534,kg/L,reference/propellants.csv row 41,Data contract 1.28.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Spacecost lithium MPD tank_kg_per_L,0.025,kg/L,reference/propellants.csv row 41,Data contract 1.28.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Spacecost lithium MPD isp_vac_s,4000.0,s,reference/propellants.csv row 41,Data contract 1.28.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Spacecost lithium MPD thruster_kg_per_n,40.0,kg/N,reference/propellants.csv row 41,Data contract 1.28.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Spacecost lithium MPD thruster_efficiency,0.4,fraction,reference/propellants.csv row 41,Data contract 1.28.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Economicspace lithium MPD storage_class,storable_liquid,class,campaign/stage3/propellants.csv row 41,Data contract 1.15.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Economicspace lithium MPD density_kg_per_L,0.534,kg/L,campaign/stage3/propellants.csv row 41,Data contract 1.15.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Economicspace lithium MPD tank_kg_per_L,0.025,kg/L,campaign/stage3/propellants.csv row 41,Data contract 1.15.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Economicspace lithium MPD isp_vac_s,4000.0,s,campaign/stage3/propellants.csv row 41,Data contract 1.15.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Economicspace lithium MPD thruster_kg_per_n,40.0,kg/N,campaign/stage3/propellants.csv row 41,Data contract 1.15.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Economicspace lithium MPD thruster_efficiency,0.4,fraction,campaign/stage3/propellants.csv row 41,Data contract 1.15.0
+spacecost_economicspace_mpd_attribution_and_tankage_2026,Spacecost bibliography test attribution,Princeton,institution,CITATIONS.md line 225,Attributed to the 150 and 200 kW points.
+polk_et_al_2024_lithium_mpd_thruster_iepc_2024,Princeton facility capability,100,kWe,IEPC-2024-841 p. 2,Facility capability.
+polk_et_al_2024_lithium_mpd_thruster_iepc_2024,Princeton/Thermacore early demonstrated power,30,kW,IEPC-2024-841 p. 6 section II.C,100-kW-class hardware operated at 30 kW.
+polk_et_al_2024_lithium_mpd_thruster_iepc_2024,MAI thruster point 1 power,150,kW,IEPC-2024-841 p. 6 section II.C,Measured performance of MAI thrusters.
+polk_et_al_2024_lithium_mpd_thruster_iepc_2024,MAI thruster point 1 efficiency,44,%,IEPC-2024-841 p. 6 section II.C,"Corresponds to 3,724 s at 150 kW."
+polk_et_al_2024_lithium_mpd_thruster_iepc_2024,MAI thruster point 1 Isp,3724,s,IEPC-2024-841 p. 6 section II.C,Corresponds to 44% at 150 kW.
+polk_et_al_2024_lithium_mpd_thruster_iepc_2024,MAI thruster point 2 power,200,kW,IEPC-2024-841 p. 6 section II.C,Measured performance of MAI thrusters.
+polk_et_al_2024_lithium_mpd_thruster_iepc_2024,MAI thruster point 2 efficiency,50,%,IEPC-2024-841 p. 6 section II.C,"Corresponds to 4,240 s at 200 kW."
+polk_et_al_2024_lithium_mpd_thruster_iepc_2024,MAI thruster point 2 Isp,4240,s,IEPC-2024-841 p. 6 section II.C,Corresponds to 50% at 200 kW.
+tikhonov_etal_1997_riame_lithium_mpd_test,RIAME MAI test upper power,130,kW,IEPC-97-117 printed p. 728,Independent contemporaneous account of a jointly researched 100-kW-class test article at MAI.
+nasa_jpl_2026_lithium_mpd_120kw_test,JPL CoMeT maximum reported prototype test power,120,kW,"NASA April 28 2026 release, test account",February 2026 ground test. The announcement gives no thrust or thruster mass.
+polzin_et_al_2026_nep_technology_maturation_plan,Conceptual single-thruster power,1,MWe,"SNP-PLAN-0043 Rev. 1.1 printed pp. 247–248, Fig. 6.21",Design estimate.
+polzin_et_al_2026_nep_technology_maturation_plan,Conceptual single-thruster mass,200,kg,SNP-PLAN-0043 Rev. 1.1 printed p. 247,The plan addresses PPU separately.
+polzin_et_al_2026_nep_technology_maturation_plan,Expected lithium MPD Isp range,4000–7000,s,SNP-PLAN-0043 Rev. 1.1 printed p. 247,"Expected range, not a paired thrust test."
+polzin_et_al_2026_nep_technology_maturation_plan,Expected lithium MPD thruster efficiency,0.60,fraction,SNP-PLAN-0043 Rev. 1.1 printed p. 247,Approximate. PPU efficiency is a separate boundary.
+polzin_et_al_2026_nep_technology_maturation_plan,Lithium storage phase in the study,"solid at launch, molten in flight",phase,SNP-PLAN-0043 Rev. 1.1 printed pp. 247–248,Low-pressure liquid tank during flight.
+luscher_mellish_1977_liquid_lithium_density,Liquid lithium density at freezing,513.1,kg/m3,"NASA-CR-135141 printed p. 148 Table LI lithium column, asterisk",Freezing-point value. The footnote overrides generic row temperature.
+luscher_mellish_1977_liquid_lithium_density,Lithium melting point used in liquid correlation,180.54,°C,"NASA-CR-135141 printed p. 149, equation (16) introduction",Start of liquid correlation range.
+,Liquid density from independent equation check,0.5131493040979859,kg/L,NASA-CR-135141 equation (16) evaluated at 180.54 °C,Rounds to Table LI freezing-point density.
+,Installed tank fraction,0.04681647940074907,kg/kg,Economicspace _tank_frac_per_kg on archived top-level row,0.025 kg/L divided by 0.534 kg/L.
+,Tank fraction if using freezing-point liquid density,0.04872344572208147,kg/kg,Economicspace _tank_frac_per_kg with 0.5131 kg/L,Volume sensitivity with generic coefficient held fixed.
+,Change in tank fraction if using liquid density,4.073280062366003,%,Relative change between conditional and installed tank fractions,"Does not capture heating, fill or tank hardware."
+,Concept mass-to-thrust at 4000 s,6.537766666666666,kg/N,200 kg divided by 2 × 0.60 × 1 MWe / (g0 × Isp),Calculated comparator assuming the estimated thruster uses the plan's expected efficiency at that endpoint.
+,Concept mass-to-thrust at 7000 s,11.441091666666667,kg/N,200 kg divided by 2 × 0.60 × 1 MWe / (g0 × Isp),Calculated comparator assuming the estimated thruster uses the plan's expected efficiency at that endpoint.

@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_current_release_readme_2026,README current release tag,data-2026-10-21b,,README.md lines 16–22,Links the October release and calls it current.
+asteroidcatalog_current_release_readme_2026,README current release count,1575889,bodies,README.md line 18,Accompanies contract 1.10.0 and asteroid_catalog 0.12.0.
+asteroidcatalog_release_data_2026_11_13,Latest data tag at the surveyed head,data-2026-11-13,,AsteroidCatalog data-* tags; installed catalog_manifest.json release_tag; economicspace modules/catalog.py line 121,"Data release, separate from package-only v0.13.13. Tag commit a2c527c09eb39618d7fd26b2b180f730ea906b8b."
+asteroidcatalog_release_data_2026_11_13,Published data release row count,1580325,bodies,catalog_manifest.json rows,Manifest data contract 1.11.0 and package version 0.13.2.
+,Difference between published release counts,4436,bodies,1580325 − 1575889,"Comparison between release manifests, not a count of revisions to shared bodies."

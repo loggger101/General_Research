@@ -1,0 +1,5 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_iiiab_trace_yields_code_2026,Molybdenum in Spacevalue nickel-iron,7,ppm by mass,spacevalue/catalog.py line 1516,Nominal mass fraction 7.0e-6.
+hidaka_shirai_etal_2019_cape_york_trace_elements,Cape York Mo measured by Hidaka et al.,7.66 ± 0.35,ppm by mass,"Table 2, Mo row, Cape York conc. and ±",Cape York is IIIAB per Methods; triplicate average and one sample standard deviation per Table 2 footnote.
+hidaka_shirai_etal_2019_cape_york_trace_elements,Cape York Mo literature column (3),5.96,ppm by mass,"Table 2, Mo row, Cape York (3)",Table attributes the comparator to Petaev and Jacobsen (2004); reported here via Hidaka et al.
+hidaka_shirai_etal_2019_cape_york_trace_elements,Cape York Mo literature column (2),7.10,ppm by mass,"Table 2, Mo row, Cape York (2)",Table attributes the comparator to Shirai et al. (2015); reported here via Hidaka et al.

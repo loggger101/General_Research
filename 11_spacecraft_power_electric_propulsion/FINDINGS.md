@@ -359,3 +359,35 @@ Verdict: **rc-536** remains open for the complete-system boundary and specific-p
 At Economicspace main 2977c46da5b7802a79fb18d517a5dd6f832bd749 (PR #217, master 1.85.0 / calc 1.47.0), by the owner's decision, `separate_ep_units` (on, superseding `carry_ep_home`) makes each sizing pass fly the cheaper, in launch mass, of an outbound unit left at the body plus a return unit sharing `ep_target_thrust_yr` (t proportional to sqrt(w m)), or the one shared stage flown home; rows report `ep_return_unit_kg`. Upstream's cislunar sample (120 stride rows): 57 of 106 evaluable rows close, at a median 2.05x the one-way stage's cost per kg; on the 52 rows the shared stage flown home also closes, never worse (16 cheaper, the rest identical); two units alone measured a median 2.3x the shared stage. verify.py check raw: checks 2-8 pass, bounds 0 violations (rc-246).
 
 Verdict: rc-246 closed as applied. Extracted data: none new.
+
+## R1033 — Rated solar watts omitted by worksheet cost replay (2026-11-23)
+
+- hoffman_2000, PDF p. 9, specifies “EOL Power Required 7.5 kW (1.5 AU)” and USD 14.1M for the four-junction GaAs array case (PDF pp. 9 and 14).
+- economicspace_rated_array_cost_worksheet_code_2026 shows the calculator passing 1-AU rated/delivered multipliers into both solar cost lines when enabled (calc.py lines 8141–8161), while the worksheet and worked derivation multiply delivered watts by the installed USD 800/W rate. In a 1.5 AU fixture with 10 kW solar processing load and 20 kW electric propulsion, the calculator gives USD 38M and USD 66M, while the worksheet gives USD 8M and USD 46M. The numeric check flags both. With the switch off, both costs match. With a radioisotope processing plant the plant cost matches and the solar EP line still differs. **rc-905** records rated-watt cost replay and attribution.
+
+Extracted data in extracted_data/r1033_worksheet_rated_solar_array_costs.csv.
+
+
+## R1057 — Outer solar scaling and system specific power (2026-11-23)
+
+- spacecost_economicspace_outer_solar_power_scaling_2026 gives the installed Trojan mean distance 5.2044 AU and geometric mass factor 27.08577936. Spacecost environments.py lines 74–86 cites Juno's area and 486 W in its rationale. bolton_jun_2010_juno_solar_power_design, slide 6, labels 15 kW at 1 AU theoretical, 486 W “Power at JOI,” and 428 W at end of mission. jpl_2016_juno_orbit_insertion_power_facts, printed p. 11, gives more than 60 m² of array surface and approximately 14 kW at Earth distance and 500 W at Jupiter distance. Geometry-only scaling of the two 1 AU figures gives 553.80 and 516.88 W at the nominal Trojan distance. nasa_jpl_2017_solar_power_technologies_planetary_missions, §4.2.2, describes cell shunts and partial compensation from rising voltage at low temperature. **rc-943** records the Juno design-point and loss-factor provenance.
+- Economicspace verification_sheet.py lines 2949–2956 calls the input “array specific power, rated at 1 AU.” The installed operational_costs.csv line 23 gives 60 W/kg of power system and includes the photovoltaic wing, power management, batteries and deployment structure. calc.py lines 2339–2354 scales that system value to 2.215185 W/kg at 5.2044 AU before the eclipse adjustment. **rc-944** records the worksheet's mass-boundary wording.
+
+Extracted data in extracted_data/r1057_juno_solar_scaling_and_worksheet_boundary.csv.
+
+
+## R1058 — RTG power epoch and eclipse-dependent crossover (2026-11-23)
+
+- spacecost_rtg_rating_and_economicspace_crossover_2026 gives 5.0 We/kg as the installed RTG specific-power value. jpl_2017_rtg_study_legacy_gphs_rating, Appendix N Table N-1, gives 290 We “Beginning Of Mission” and 57 kg, or 5.09 We/kg. nasa_2022_next_gen_rtg_mod1_power_life, p. 2, gives 245 We at beginning of life and 177 We at end of design life for 55.7 kg, or about 4.40 and 3.18 We/kg. nasa_new_horizons_rtg_launch_pluto_power, In Depth, gives roughly 250 We at launch and 200 We at Pluto. **rc-945** records the generator mass and power epoch.
+- The Spacecost RTG notes give a roughly 3 AU onset and a 3.46 AU crossover. The Economicspace mass screen uses the eclipse-adjusted rating and retains solar for later comparison. At 2.8 AU the fixture gives 7.653 W/kg before eclipse and 3.141 W/kg with five hours of darkness over half the cycle. With installed ratings and a 1 kW load, the mass screen admits RTG with eclipse and returns solar with eclipse disabled. **rc-946** records the conditional screening basis.
+
+Extracted data in extracted_data/r1058_rtg_rating_and_eclipse_crossover.csv.
+
+
+## R1091 — Electric propulsion firing time and thruster qualification (2026-11-24)
+
+- economicspace_ep_sizing_and_frozen_thrust_time_worksheet_2026 shows the archived 2018 DT worksheet at I90 and S132–S135 sizing on 3.0 years and 19,216.24 kg of krypton. The pinned Python shared-stage kernel reproduces 3.9810 N from those inputs, for 26,298 firing hours and 376.894 MN s integrated impulse. The current Python and Rust sizing paths use aggregate power and thrust for hardware mass and choose between shared and split units without a thruster-life qualification input.
+- sjauw_mcguire_freeh_2016_hat_emc_cargo_mars_sep, printed p. 7 Fig. 3, gives “E-M trip= 975 days” for the representative Earth–Mars transfer. This is elapsed transfer time. The verification worksheet quotes it beside its active firing-time input.
+- jameson_silva_etal_2017_spt140_psyche_life_test, printed p. 8, reports a completed single SPT-140 life test with “10,371 hours,” 500 kg xenon and 8.79 MN s. maxwell_etal_2025_psyche_hall_thruster_verification, propulsion subsystem and Fig. 4, says Psyche carries four SPT-140s and “only runs one thruster at a time.” **rc-1004** records the missing firing-time, throughput and impulse qualification for the electric sizing model.
+
+Extracted data in extracted_data/r1091_ep_firing_time_throughput_and_qualification.csv.

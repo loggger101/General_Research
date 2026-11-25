@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+st_johns_county_ifb_2918_co2_delivery_2026,Airgas unit rate,0.138,USD/lb,"CON07 PDF p. 33, Attachment A pricing sheet; p. 9, §4.1.1","Dollar figure and arithmetic resolve the draft's written cents wording. Delivery, freight and related costs included."
+st_johns_county_ifb_2918_co2_delivery_2026,estimated annual usage,3897810,lb/yr,"CON07 PDF p. 33, Attachment A pricing sheet","Bid evaluation quantity, not guaranteed."
+st_johns_county_ifb_2918_co2_delivery_2026,extended annual bid,537897.78,USD/yr,"CON07 PDF pp. 31 and 33, bid tabulation and Attachment A","Excludes tax. Exactly 3,897,810 lb times USD 0.138/lb."
+st_johns_county_ifb_2918_co2_delivery_2026,CO2 purity specification,99.5,percent,"CON07 PDF p. 26, Exhibit A CGA food-grade table",Solicitation also specifies NSF Standard 60 and FOB delivery to county facilities.
+,converted delivered bid rate,0.30423792,USD/kg,USD/lb divided by 0.45359237 kg/lb,Exact avoirdupois-pound conversion.
+spglobal_2025_co2_commodity_market_demand,large-volume US bulk purchase range low,30,USD/ton as written,"Yes, CO2 is a Commodity, p. 8, Pricing a ton of CO2",Examples include EOR and metals fabrication. This is a segment estimate.
+spglobal_2025_co2_commodity_market_demand,large-volume US bulk purchase range high,100,USD/ton as written,"Yes, CO2 is a Commodity, p. 8, Pricing a ton of CO2","March 2025 report, varies with purchaser scale and application."
+spacevalue_carbon_dioxide_price_source_main_2026,CO2 stored terrestrial reference,0.1,USD/kg,catalog.py lines 1907–1910,Note gives 50–150 USD/t industrial liquid CO2 with no series.
+spacevalue_installed_prices_release_manifests_2026,CO2 installed Earth-surface sale price,0.1,USD/kg,prices-2026-11-20 mineral_value_catalog.earth_surface.csv,Generic USGS/LME/mineralogy reference; 2025-01-31.

@@ -1,0 +1,30 @@
+source_id,item,value,unit,location_in_source,notes
+vulcan_launch_systems_users_guide_oct2023,TLI orbital energy,-2,km^2/s^2,"Table 2.2.5-1, conditions below the table",Representative injection from CCSFS.
+vulcan_launch_systems_users_guide_oct2023,Interplanetary / Mars orbital energy,20,km^2/s^2,"Table 2.2.5-1, conditions below the table",Representative injection from CCSFS.
+ula_vulcan_leo1_vc6l_schedule_2026,Vulcan Leo 1 solid rocket boosters,6,boosters,"ULA Vulcan Leo 1 mission page, Mission Overview","Configuration VC6L, long payload fairing and LEO-optimized Centaur V."
+ula_vulcan_leo1_vc6l_schedule_2026,Vulcan Leo 1 intended satellite payload,40,satellites,"ULA Vulcan Leo 1 mission page, Mission Overview",Intended payload count.
+ula_2026_vulcan_leo1_vc6l_flight_anomaly,Launch date,2026-11-15,date,"Vulcan Leo 1 updates, November 15 and 17 entries",SLC-41.
+ula_2026_vulcan_leo1_vc6l_flight_anomaly,Mission outcome,failed to deliver to orbit,outcome,"Vulcan Leo 1 updates, November 15 entry",First VC6L was flown; insertion unsuccessful.
+ula_2026_vulcan_leo1_vc6l_flight_anomaly,Approximate time into flight at anomaly report,10,min,"Vulcan Leo 1 updates, November 15 entry","November 17 says telemetry and mission believed lost around then, with low booster performance beginning earlier."
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,Spacecost VC6 first_flight_year,blank,year,Spacecost launch_vehicles.csv line 10,Notes say unflown and scheduled.
+vulcan_launch_systems_users_guide_oct2023,VC2S Mars payload,3600,kg,"Table 2.2.5-1, VC2S Interplanetary / Mars kg column",At +20 km^2/s^2.
+vulcan_launch_systems_users_guide_oct2023,VC2S TLI payload,6200,kg,"Table 2.2.5-1, VC2S TLI kg column",At -2 km^2/s^2.
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,VC2 exported escape headline,4720.0,kg,Spacecost launch_vehicles.csv VC2 row,Rounded geometric centre.
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,VC2 exported escape rate,23305.0,USD/kg,Spacecost launch_vehicles.csv VC2 row,Uses the headline payload denominator.
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,VC2 exported headline price,110000000.0,USD,Spacecost launch_vehicles.csv VC2 row,Held constant only for sensitivity arithmetic.
+,VC2 row price divided by TLI capacity,17741.935483870966,USD/kg,Stored headline price / ULA TLI capacity,Isolates payload denominator; not a mission quote.
+,VC2 row price divided by Mars capacity,30555.555555555555,USD/kg,Stored headline price / ULA Mars capacity,Isolates payload denominator; not a mission quote.
+vulcan_launch_systems_users_guide_oct2023,VC4S Mars payload,6000,kg,"Table 2.2.5-1, VC4S Interplanetary / Mars kg column",At +20 km^2/s^2.
+vulcan_launch_systems_users_guide_oct2023,VC4S TLI payload,9100,kg,"Table 2.2.5-1, VC4S TLI kg column",At -2 km^2/s^2.
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,VC4 exported escape headline,7390.0,kg,Spacecost launch_vehicles.csv VC4 row,Rounded geometric centre.
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,VC4 exported escape rate,16238.0,USD/kg,Spacecost launch_vehicles.csv VC4 row,Uses the headline payload denominator.
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,VC4 exported headline price,120000000.0,USD,Spacecost launch_vehicles.csv VC4 row,Held constant only for sensitivity arithmetic.
+,VC4 row price divided by TLI capacity,13186.813186813188,USD/kg,Stored headline price / ULA TLI capacity,Isolates payload denominator; not a mission quote.
+,VC4 row price divided by Mars capacity,20000.0,USD/kg,Stored headline price / ULA Mars capacity,Isolates payload denominator; not a mission quote.
+vulcan_launch_systems_users_guide_oct2023,VC6S Mars payload,7600,kg,"Table 2.2.5-1, VC6S Interplanetary / Mars kg column",At +20 km^2/s^2.
+vulcan_launch_systems_users_guide_oct2023,VC6S TLI payload,11300,kg,"Table 2.2.5-1, VC6S TLI kg column",At -2 km^2/s^2.
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,VC6 exported escape headline,9270.0,kg,Spacecost launch_vehicles.csv VC6 row,Rounded geometric centre.
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,VC6 exported escape rate,13808.0,USD/kg,Spacecost launch_vehicles.csv VC6 row,Uses the headline payload denominator.
+spacecost_vulcan_departure_energy_and_vc6_flight_code_2026,VC6 exported headline price,128000000.0,USD,Spacecost launch_vehicles.csv VC6 row,Held constant only for sensitivity arithmetic.
+,VC6 row price divided by TLI capacity,11327.433628318584,USD/kg,Stored headline price / ULA TLI capacity,Isolates payload denominator; not a mission quote.
+,VC6 row price divided by Mars capacity,16842.105263157893,USD/kg,Stored headline price / ULA Mars capacity,Isolates payload denominator; not a mission quote.

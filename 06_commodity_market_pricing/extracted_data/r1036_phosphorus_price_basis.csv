@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+chengxing_2024_annual_yellow_phosphorus_market,2024 China yellow-phosphorus market average,22993,CNY/metric t,"p. 10, management discussion, yellow phosphorus",Baiinfo figure reported by the issuer.
+federal_reserve_g5a_2024_cny_average,2024 annual average yuan per US dollar,7.1957,CNY/USD,"January 6, 2025 release, CHINA, P.R. row, 2024 column",Annual average of daily noon buying rates.
+,China yellow-phosphorus market average converted,3.19538057,USD/kg,CNY/t divided by CNY/USD and 1000,2024 data cited in a report published in 2025.
+un_comtrade_wits_us_phosphorus_exports_2024,"2024 US gross exports to world, HS 280470",74239.15,thousand USD,"USA, Export, 2024, partner World, trade value",HS 1988/92 (H0) commodity label Phosphorus.
+un_comtrade_wits_us_phosphorus_exports_2024,"2024 US gross export mass to world, HS 280470",14671600,kg,"USA, Export, 2024, partner World, quantity","Aggregate phosphorus, grade and allotrope unspecified."
+,US gross phosphorus export unit value,5.06005821,USD/kg,"2024 World partner row, dollar value divided by kg","HS 280470 aggregate, not a matched yellow-phosphorus quotation."
+spacevalue_phosphorus_price_source_main_2026,P4 reference input,3.00,USD/kg,"catalog.py lines 1875–1877, phosphorus row",Generic label and default 2025-01-31 date are assigned separately.
+spacevalue_installed_prices_release_manifests_2026,P reference input and Earth-surface sale price,3.00,USD/kg,"prices-2026-11-20, mineral_value_catalog.earth_surface.csv, phosphorus",Reference price source is USGS/LME/mineralogy reference.

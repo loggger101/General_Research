@@ -127,3 +127,12 @@ change the flat Part 450 programme-compliance estimates, and it does not by
 itself establish which modeled events fall under FAA jurisdiction or who bears
 the cost. Keep rc-337 open for those mission-specific decisions. Extracted:
 extracted_data/r439_faa_order_8800_4_fee_assessment_scope.csv.
+
+
+## R1052 — FAA per-event fee in the verification cost replay (2026-11-23)
+
+- uscode_51_usc_50924_launch_reentry_user_fees, §50924(a)(1)–(3), applies to each covered launch or reentry “during 2026 or a subsequent year” and gives USD 0.25/lb and a USD 30,000 cap per event in 2026. faa_order_8800_4_launch_reentry_user_fees_2026, §§4(a)–(d), describes assessment after a covered event is carried out.
+- economicspace_faa_event_fee_worksheet_replay_2026, calc.py lines 6077–6092, adds the opt-in event amounts to licensing. worked_calculation.py lines 2940–2945 and 4458–4461 replay the fixed Part 450 cost, and verification_sheet.py lines 5115–5117 cites only the corresponding table row. The calculator config comment dates the start to 2025.
+- In a synthetic US non-NASA case with a 40,000 kg launch stack and 2,000 kg return payload, the fee-on calculator adds USD 23,148.54 for Earth surface and USD 22,046.23 for cislunar. The respective replay values stay at USD 2.5 million and USD 1.2 million. With the fee off, both paths agree. **rc-934** records the replay and citation gap.
+
+Extracted data in extracted_data/r1052_faa_fee_worksheet_replay.csv.

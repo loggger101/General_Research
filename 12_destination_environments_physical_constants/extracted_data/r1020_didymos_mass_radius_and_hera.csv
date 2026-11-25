@@ -1,0 +1,13 @@
+source_id,item,value,unit,location_in_source,notes
+patterson_2019_ntrs_didymos_target_parameters,Historical binary system mass,(5.278 ± 0.54)e11,kg,"Didymos target slide, Total System Mass",Central value rounds to 5.28e11.
+patterson_2019_ntrs_didymos_target_parameters,Historical primary diameter,780 ± 10%,m,"Didymos target slide, Primary Diameter",Diameter corresponds to 390 m radius.
+richardson_etal_2024_didymos_dynamical_state,DART-era primary volume-equivalent diameter,730 ± 17,m,"Table 2 p. 3, preimpact column","Barnouin et al. (2024), 1 sigma; postimpact assumed unchanged."
+richardson_etal_2024_didymos_dynamical_state,DART-era total binary mass,(5.3 ± 0.2)e11,kg,"Table 2 p. 3, preimpact column","Naidu et al. (2024), 1 sigma; postimpact assumed unchanged."
+spacecost_didymos_environment_current_2026,Current mass input,5.28e+11,kg,reference/environments.csv line 13; installed Stage 3,Notes identify it as an estimate of the primary.
+spacecost_didymos_environment_current_2026,Current radius input,390.0,m,reference/environments.csv line 13; installed Stage 3,Both copies have the same value.
+spacecost_didymos_environment_current_2026,Current spherical gravity,0.00023169167652859957,m/s²,reference/environments.csv line 13; installed Stage 3,GM/r².
+spacecost_didymos_environment_current_2026,Current spherical escape speed,0.4251111709803774,m/s,reference/environments.csv line 13; installed Stage 3,Nonrotating spherical formula.
+,Radius-only scenario gravity,0.0002645172002,m/s²,365 m with the current stored mass,Spherical point-mass approximation.
+,Radius-only scenario escape speed,0.4394286702,m/s,365 m with the current stored mass,Spherical point-mass approximation.
+esa_2026_hera_didymos_stereo_observations,Hera stereo acquisition date,2026-11-06,,Stereo view caption on 19 November mission update,Didymos primary.
+esa_2026_hera_didymos_stereo_observations,Hera stereo observation distance,29.7,km,Same caption,Distance from the system for the image pair.

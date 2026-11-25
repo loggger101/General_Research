@@ -1,0 +1,29 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_release_data_2026_11_13,243 Ida selected diameter,31.4,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 243 Ida",SsODNet; diameter_sources_agree=False
+asteroidcatalog_release_data_2026_11_13,243 Ida selected diameter uncertainty,1.2,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 243 Ida",diameter_sigma_km.
+asteroidcatalog_release_data_2026_11_13,243 Ida selected mass,4.2e+16,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 243 Ida",SsODNet; mass_sources_agree=True
+asteroidcatalog_release_data_2026_11_13,243 Ida selected mass uncertainty,6000000000000000.0,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 243 Ida",estimated_mass_sigma_kg.
+asteroidcatalog_release_data_2026_11_13,243 Ida stored density,2.5909660589554817,g/cm3,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 243 Ida",density_measured is True on derived density for measured diameter and mass.
+,243 Ida reproduced bulk density,2.590966058955482,g/cm3,m/(pi/6 × D^3 × 10^12),Matches the released density.
+asteroidcatalog_release_data_2026_11_13,2 Pallas selected diameter,512.588,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 2 Pallas",SsODNet; diameter_sources_agree=True
+asteroidcatalog_release_data_2026_11_13,2 Pallas selected diameter uncertainty,5.336,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 2 Pallas",diameter_sigma_km.
+asteroidcatalog_release_data_2026_11_13,2 Pallas selected mass,2.0525551885287237e+20,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 2 Pallas",SsODNet; mass_sources_agree=True
+asteroidcatalog_release_data_2026_11_13,2 Pallas selected mass uncertainty,4.858738127068403e+17,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 2 Pallas",estimated_mass_sigma_kg.
+asteroidcatalog_release_data_2026_11_13,2 Pallas stored density,2.910656237674312,g/cm3,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 2 Pallas",density_measured is True on derived density for measured diameter and mass.
+,2 Pallas reproduced bulk density,2.9106562376743117,g/cm3,m/(pi/6 × D^3 × 10^12),Matches the released density.
+thomas_etal_1996_ida_galileo_shape,Ida Galileo mean radius,15.7 ± 0.6,km,"Icarus printed p. 20, abstract",Quoted convention is mean radius.
+thomas_etal_1996_ida_galileo_shape,Ida Galileo model volume,16100 ± 1900,km3,"Icarus printed p. 20, abstract",Volume of irregular shape model.
+belton_etal_1996_ida_galileo_encounter_mass,Ida mass constrained by Dactyl orbit,(4.2 ± 0.6) × 10^19,g,"Icarus printed p. 1, abstract",Ida's mass from the satellite orbit constraints.
+belton_etal_1996_ida_galileo_encounter_mass,Ida Galileo bulk density,2.6 ± 0.5,g/cm3,"Icarus printed p. 1, abstract",The authors combine the orbital mass constraint and shape volume.
+,Ida twice published mean radius,31.4 ± 1.2,km,2 × Thomas et al. radius,Matches selected value and quoted uncertainty.
+,Ida Galileo volume-equivalent diameter from rounded published volume,31.328703168056258,km,(6V/pi)^(1/3) using 16100 km3,Consistent with the doubled rounded radius.
+,Ida density using rounded Galileo reported mass and volume,2.608695652173913,g/cm3,4.2e16 kg / 16100 km3,Matches the paper's 2.6 to reported precision.
+marsset_etal_2020_pallas_sphere_shape_density,Pallas SPHERE/ADAM volume-equivalent diameter,513 ± 6,km,"Nature Astronomy p. 570, main text around Figs. 1–2","Shape model based on SPHERE, Keck and light curves."
+marsset_etal_2020_pallas_sphere_shape_density,Pallas averaged mass,(2.04 ± 0.03) × 10^20,kg,"Nature Astronomy p. 570, mass and density paragraph",Average of available selected estimates.
+marsset_etal_2020_pallas_sphere_shape_density,Pallas bulk density,2.89 ± 0.08,g/cm3,"Nature Astronomy p. 570, mass and density paragraph",1 sigma.
+vernazza_etal_2021_vlt_sphere_main_belt_survey,Pallas volume-equivalent diameter,511 ± 4,km,"A&A 654 A56, Table 1, 2 Pallas row",Diameter column.
+vernazza_etal_2021_vlt_sphere_main_belt_survey,Pallas adopted mass,204.2 ± 2.7,10^18 kg,"A&A 654 A56, Table 1, 2 Pallas row","Mass column, verified against heading."
+vernazza_etal_2021_vlt_sphere_main_belt_survey,Pallas survey bulk density,2.92 ± 0.08,g/cm3,"A&A 654 A56, Table 1, 2 Pallas row","Density column, checked via tabulated mass and D."
+,Pallas Marsset density from reported rounded mass and diameter,2.8858878502657546,g/cm3,Marsset et al. inputs,Checks source association.
+,Pallas Vernazza density from reported rounded mass and diameter,2.9227684793136133,g/cm3,"Vernazza et al. Table 1, same row",Checks column association.
+,Vernazza Pallas reported mass uncertainty over installed sigma,5.556998400383204,ratio,Published survey uncertainty divided by selected catalog field,"Different aggregation, does not determine a replacement uncertainty."

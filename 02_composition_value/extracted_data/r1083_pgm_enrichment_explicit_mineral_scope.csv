@@ -1,0 +1,36 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,AsteroidCatalog M class multiplier,2,ratio,AsteroidCatalog pgm_enrichment.csv row M,Class valuation scenario.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,AsteroidCatalog S class multiplier,1.55,ratio,AsteroidCatalog pgm_enrichment.csv row S,Class valuation scenario.
+prohaska_etal_2022_iupac_olivine_atomic_weights,Standard atomic weight of platinum,195.084,relative atomic mass,"IUPAC 2021 Table 1, standard column Pt",Central value.
+prohaska_etal_2022_iupac_olivine_atomic_weights,Standard atomic weight of arsenic,74.921595,relative atomic mass,"IUPAC 2021 Table 1, standard column As",Central value.
+,Ideal PtAs2 platinum mass share,0.5655802315845266,kg/kg sperrylite,Pt / (Pt + 2 × As),Calculated with standard atomic weights.
+cabri_harris_weiser_1996_pgm_placer_compositions,Liard River native platinum grains,3,grains,"Printed p. 83, Liard River description",Phase identity by grain; not a recovery factor.
+cabri_harris_weiser_1996_pgm_placer_compositions,Liard River sperrylite grains,1,grains,"Printed p. 83, Liard River description",Separate identified phase.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,laurite ruthenium listed fraction,0.612,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,laurite iridium listed fraction,0.001,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,laurite osmium listed fraction,0.001,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+,laurite gross quote at multiplier 1.0,61.4,USD/kg mineral,Isolated pinned Spacevalue yield functions,Synthetic common $100/kg price for each listed element.
+,laurite summed price-equivalent weights at multiplier 1.0,0.614,kg equivalent/kg mineral,Divide synthetic gross by common element quote,Price weights only. No product mass is exported by either function.
+,laurite gross quote at multiplier 1.55,95.17,USD/kg mineral,Isolated pinned Spacevalue yield functions,Synthetic common $100/kg price for each listed element.
+,laurite summed price-equivalent weights at multiplier 1.55,0.9517,kg equivalent/kg mineral,Divide synthetic gross by common element quote,Price weights only. No product mass is exported by either function.
+,laurite gross quote at multiplier 2.0,122.8,USD/kg mineral,Isolated pinned Spacevalue yield functions,Synthetic common $100/kg price for each listed element.
+,laurite summed price-equivalent weights at multiplier 2.0,1.228,kg equivalent/kg mineral,Divide synthetic gross by common element quote,Price weights only. No product mass is exported by either function.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,native-pgm platinum listed fraction,0.7,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,native-pgm palladium listed fraction,0.15,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,native-pgm iridium listed fraction,0.08,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,native-pgm osmium listed fraction,0.05,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,native-pgm ruthenium listed fraction,0.01,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,native-pgm rhodium listed fraction,0.01,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+,native-pgm gross quote at multiplier 1.0,100.0,USD/kg mineral,Isolated pinned Spacevalue yield functions,Synthetic common $100/kg price for each listed element.
+,native-pgm summed price-equivalent weights at multiplier 1.0,1.0,kg equivalent/kg mineral,Divide synthetic gross by common element quote,Price weights only. No product mass is exported by either function.
+,native-pgm gross quote at multiplier 1.55,155.0,USD/kg mineral,Isolated pinned Spacevalue yield functions,Synthetic common $100/kg price for each listed element.
+,native-pgm summed price-equivalent weights at multiplier 1.55,1.55,kg equivalent/kg mineral,Divide synthetic gross by common element quote,Price weights only. No product mass is exported by either function.
+,native-pgm gross quote at multiplier 2.0,200.0,USD/kg mineral,Isolated pinned Spacevalue yield functions,Synthetic common $100/kg price for each listed element.
+,native-pgm summed price-equivalent weights at multiplier 2.0,2.0,kg equivalent/kg mineral,Divide synthetic gross by common element quote,Price weights only. No product mass is exported by either function.
+spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026,sperrylite platinum listed fraction,0.566,kg/kg mineral,Spacevalue catalog.py MINERAL_REFERENCE,Before taxonomic multiplier.
+,sperrylite gross quote at multiplier 1.0,56.6,USD/kg mineral,Isolated pinned Spacevalue yield functions,Synthetic common $100/kg price for each listed element.
+,sperrylite summed price-equivalent weights at multiplier 1.0,0.566,kg equivalent/kg mineral,Divide synthetic gross by common element quote,Price weights only. No product mass is exported by either function.
+,sperrylite gross quote at multiplier 1.55,87.73,USD/kg mineral,Isolated pinned Spacevalue yield functions,Synthetic common $100/kg price for each listed element.
+,sperrylite summed price-equivalent weights at multiplier 1.55,0.8773,kg equivalent/kg mineral,Divide synthetic gross by common element quote,Price weights only. No product mass is exported by either function.
+,sperrylite gross quote at multiplier 2.0,113.2,USD/kg mineral,Isolated pinned Spacevalue yield functions,Synthetic common $100/kg price for each listed element.
+,sperrylite summed price-equivalent weights at multiplier 2.0,1.132,kg equivalent/kg mineral,Divide synthetic gross by common element quote,Price weights only. No product mass is exported by either function.

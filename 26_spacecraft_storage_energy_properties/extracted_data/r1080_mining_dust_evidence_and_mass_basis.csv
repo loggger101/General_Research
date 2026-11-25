@@ -1,0 +1,18 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_economicspace_dust_mitigation_and_mass_code_2026,Dust mitigation mass share midpoint,0.08,kg/kg mining hardware,Spacecost storage_systems.csv line 16,"Development, TRL 5."
+spacecost_economicspace_dust_mitigation_and_mass_code_2026,Dust mitigation mass share low,0.03,kg/kg mining hardware,Spacecost storage_systems.csv line 16,Band endpoint.
+spacecost_economicspace_dust_mitigation_and_mass_code_2026,Dust mitigation mass share high,0.2,kg/kg mining hardware,Spacecost storage_systems.csv line 16,Band endpoint.
+spacecost_economicspace_dust_mitigation_and_mass_code_2026,Mining equipment recurring rate midpoint,300000,USD/kg mining hardware,Spacecost operational_costs.csv line 3,Separate scenario input.
+spacecost_economicspace_dust_mitigation_and_mass_code_2026,Default mining rig mass,2000,kg,Economicspace calc.py line 145,Aggregate hardware input.
+,Midpoint implied share of a gross 2000 kg rig,160,kg,0.08 × 2000,Interpretation if the ratio uses the gross rig denominator; model does not compute this quantity.
+,Low implied share of a gross 2000 kg rig,60,kg,0.03 × 2000,Interpretation only.
+,High implied share of a gross 2000 kg rig,400,kg,0.20 × 2000,Interpretation only.
+nasa_tm_2005_rev1_effects_lunar_dust_eva_systems_apollo,Apollo 12 Conrad suit leak rate after EVA 1,0.15,psi/min,"Printed p. 6, Seal Failures",NASA account of dust in fittings.
+nasa_tm_2005_rev1_effects_lunar_dust_eva_systems_apollo,Apollo 12 Conrad suit leak rate after EVA 2,0.25,psi/min,"Printed p. 6, Seal Failures",A third EVA is discussed hypothetically.
+nasa_tm_2005_rev1_effects_lunar_dust_eva_systems_apollo,Apollo 12 suit safety limit,0.3,psi/min,"Printed p. 6, Seal Failures",Safety threshold used in the comparison.
+spohn_etal_2022_insight_hp3_mole_penetration_lessons,Tip depth at start of penetration problem,31,cm,"Section 6, printed p. 3154",Hammer recoil with insufficient hull-to-soil friction; also encountered higher penetration resistance.
+kikuchi_etal_2026_ryugu_sci_ejecta_and_reimpact,First analyzed DCAM3 image,4,s after impact,Fig. 8 analysis and Conclusions,Window of acquired images analyzed.
+kikuchi_etal_2026_ryugu_sci_ejecta_and_reimpact,Last analyzed DCAM3 image,497,s after impact,Fig. 8 analysis and Conclusions,"Window endpoint, not a bound on later particle flight."
+kikuchi_etal_2026_ryugu_sci_ejecta_and_reimpact,DCAM3 images analyzed,14,images,Conclusions,Ejecta curtain experiment.
+buhler_etal_2025_blue_ghost_dust_shield_demonstration,Dust removed from Blue Ghost glass test coupon,97,percent,"p. 2, Figure 4",Active electrodynamic removal from coupon.
+buhler_etal_2025_blue_ghost_dust_shield_demonstration,Dust removed from Blue Ghost thermal-radiator test coupon,82,percent,"p. 2, Figure 4",Active electrodynamic removal from coupon.

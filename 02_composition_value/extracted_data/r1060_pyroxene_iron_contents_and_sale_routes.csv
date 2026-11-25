@@ -1,0 +1,54 @@
+source_id,item,value,unit,location_in_source,notes
+prohaska_etal_2022_iupac_olivine_atomic_weights,Calcium abridged atomic weight,40.078,relative atomic mass,"Table 1, Ca, abridged column","Fe, O, Mg and Si weights are in the R1059 extract."
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,orthopyroxene installed iron fraction,0.07,kg Fe/kg mineral,Spacevalue catalog.py; Economicspace Earth and lunar pinned tables,Generic modeled fraction.
+nakamura_etal_2014_itokawa_olivine_fayalite,Low-Ca pyroxene FeO mean,15.1,wt%,"p. 219, Table 1, Low-Ca pyroxene, FeO",Itokawa MUSES-C Region samples.
+nakamura_etal_2014_itokawa_olivine_fayalite,Low-Ca pyroxene FeO one-sigma variation,1.32,wt%,"p. 219, Table 1, Low-Ca pyroxene, FeO",Across reported analyses.
+nakamura_etal_2014_itokawa_olivine_fayalite,Low-Ca pyroxene number of particles,18,particles,"p. 219, Table 1, Low-Ca pyroxene, No. of particles",
+nakamura_etal_2014_itokawa_olivine_fayalite,Low-Ca pyroxene number of analyses,163,analyses,"p. 219, Table 1, Low-Ca pyroxene, No. of analysis",
+,Low-Ca pyroxene Itokawa elemental Fe fraction,0.11737368465007517,kg Fe/kg mineral,Table 1 FeO multiplied by Fe/(Fe+O),"Phase chemistry, not metallurgical recovery."
+nakamura_etal_2014_itokawa_olivine_fayalite,Low-Ca pyroxene Kilabo LL6 host En,73.1,mol%,"p. 222, Table 3, LL6 lithology, En#","Host column, excludes shock vein."
+nakamura_etal_2014_itokawa_olivine_fayalite,Low-Ca pyroxene Kilabo LL6 host Fs,25.2,mol%,"p. 222, Table 3, LL6 lithology, Fs#","Host column, excludes shock vein."
+nakamura_etal_2014_itokawa_olivine_fayalite,Low-Ca pyroxene Kilabo LL6 host Wo,1.7000000000000002,mol%,"p. 222, Table 3, LL6 lithology, Wo#","Host column, excludes shock vein."
+,Low-Ca pyroxene Kilabo ideal ternary elemental Fe fraction,0.12958123958404513,kg Fe/kg mineral,"Table 3 ideal (Mg,Fe,Ca)SiO3 and IUPAC Table 1",Host mineral composition estimate from endmember proportions.
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,earth_surface orthopyroxene as-is net price,0.05,USD/kg mineral,Earth or lunar pinned Stage 2 price; pre-refinery comparison,
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,earth_surface iron net price,0.319,USD/kg Fe,Earth or lunar pinned Stage 2 price; pre-refinery comparison,
+,earth_surface orthopyroxene installed apart net value,0.022330000000000003,USD/kg mineral,Spacevalue cargo.py _yield_terms,
+,earth_surface orthopyroxene installed selected net value,0.05,USD/kg mineral,Spacevalue cargo.py _phase_value or _phase_terms,As-is.
+,earth_surface orthopyroxene Itokawa comparator apart net value,0.03744220540337398,USD/kg mineral,Spacevalue cargo.py _yield_terms,
+,earth_surface orthopyroxene Itokawa comparator selected net value,0.05,USD/kg mineral,Spacevalue cargo.py _phase_value or _phase_terms,As-is.
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,lunar_surface orthopyroxene as-is net price,1240.7727809697237,USD/kg mineral,Earth or lunar pinned Stage 2 price; pre-refinery comparison,
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,lunar_surface iron net price,21472.00184314879,USD/kg Fe,Earth or lunar pinned Stage 2 price; pre-refinery comparison,
+,lunar_surface orthopyroxene installed apart net value,1503.0401290204156,USD/kg mineral,Spacevalue cargo.py _yield_terms,
+,lunar_surface orthopyroxene installed selected net value,1503.0401290204156,USD/kg mineral,Spacevalue cargo.py _phase_value or _phase_terms,Taken apart.
+,lunar_surface orthopyroxene installed flown gross value,1519.1695685215184,USD/kg mineral,Economicspace calc.py refinery column switch and Spacevalue _phase_terms,Before mission-specific cost.
+,lunar_surface orthopyroxene installed flown energy,1350.0,Wh/kg mineral,Spacevalue cargo.py _phase_terms,Per-phase input to mission refinery accounting.
+,lunar_surface orthopyroxene Itokawa comparator apart net value,2520.247973143579,USD/kg mineral,Spacevalue cargo.py _yield_terms,
+,lunar_surface orthopyroxene Itokawa comparator selected net value,2520.247973143579,USD/kg mineral,Spacevalue cargo.py _phase_value or _phase_terms,Taken apart.
+,lunar_surface orthopyroxene Itokawa comparator flown gross value,2547.293283794792,USD/kg mineral,Economicspace calc.py refinery column switch and Spacevalue _phase_terms,Before mission-specific cost.
+,lunar_surface orthopyroxene Itokawa comparator flown energy,1586.8684232503758,Wh/kg mineral,Spacevalue cargo.py _phase_terms,Per-phase input to mission refinery accounting.
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,pyroxene installed iron fraction,0.07,kg Fe/kg mineral,Spacevalue catalog.py; Economicspace Earth and lunar pinned tables,Generic modeled fraction.
+nakamura_etal_2014_itokawa_olivine_fayalite,High-Ca pyroxene FeO mean,5.52,wt%,"p. 219, Table 1, High-Ca pyroxene, FeO",Itokawa MUSES-C Region samples.
+nakamura_etal_2014_itokawa_olivine_fayalite,High-Ca pyroxene FeO one-sigma variation,0.98,wt%,"p. 219, Table 1, High-Ca pyroxene, FeO",Across reported analyses.
+nakamura_etal_2014_itokawa_olivine_fayalite,High-Ca pyroxene number of particles,16,particles,"p. 219, Table 1, High-Ca pyroxene, No. of particles",
+nakamura_etal_2014_itokawa_olivine_fayalite,High-Ca pyroxene number of analyses,74,analyses,"p. 219, Table 1, High-Ca pyroxene, No. of analysis",
+,High-Ca pyroxene Itokawa elemental Fe fraction,0.042907466176716216,kg Fe/kg mineral,Table 1 FeO multiplied by Fe/(Fe+O),"Phase chemistry, not metallurgical recovery."
+nakamura_etal_2014_itokawa_olivine_fayalite,High-Ca pyroxene Kilabo LL6 host En,45.5,mol%,"p. 222, Table 3, LL6 lithology, En#","Host column, excludes shock vein."
+nakamura_etal_2014_itokawa_olivine_fayalite,High-Ca pyroxene Kilabo LL6 host Fs,10.4,mol%,"p. 222, Table 3, LL6 lithology, Fs#","Host column, excludes shock vein."
+nakamura_etal_2014_itokawa_olivine_fayalite,High-Ca pyroxene Kilabo LL6 host Wo,44.1,mol%,"p. 222, Table 3, LL6 lithology, Wo#","Host column, excludes shock vein."
+,High-Ca pyroxene Kilabo ideal ternary elemental Fe fraction,0.05250153419649339,kg Fe/kg mineral,"Table 3 ideal (Mg,Fe,Ca)SiO3 and IUPAC Table 1",Host mineral composition estimate from endmember proportions.
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,earth_surface pyroxene as-is net price,0.05,USD/kg mineral,Earth or lunar pinned Stage 2 price; pre-refinery comparison,
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,earth_surface iron net price,0.319,USD/kg Fe,Earth or lunar pinned Stage 2 price; pre-refinery comparison,
+,earth_surface pyroxene installed apart net value,0.022330000000000003,USD/kg mineral,Spacevalue cargo.py _yield_terms,
+,earth_surface pyroxene installed selected net value,0.05,USD/kg mineral,Spacevalue cargo.py _phase_value or _phase_terms,As-is.
+,earth_surface pyroxene Itokawa comparator apart net value,0.013687481710372474,USD/kg mineral,Spacevalue cargo.py _yield_terms,
+,earth_surface pyroxene Itokawa comparator selected net value,0.05,USD/kg mineral,Spacevalue cargo.py _phase_value or _phase_terms,As-is.
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,lunar_surface pyroxene as-is net price,1240.7727809697237,USD/kg mineral,Earth or lunar pinned Stage 2 price; pre-refinery comparison,
+spacevalue_pyroxene_iron_routes_and_pinned_exports_2026,lunar_surface iron net price,21472.00184314879,USD/kg Fe,Earth or lunar pinned Stage 2 price; pre-refinery comparison,
+,lunar_surface pyroxene installed apart net value,1503.0401290204156,USD/kg mineral,Spacevalue cargo.py _yield_terms,
+,lunar_surface pyroxene installed selected net value,1503.0401290204156,USD/kg mineral,Spacevalue cargo.py _phase_value or _phase_terms,Taken apart.
+,lunar_surface pyroxene installed flown gross value,1519.1695685215184,USD/kg mineral,Economicspace calc.py refinery column switch and Spacevalue _phase_terms,Before mission-specific cost.
+,lunar_surface pyroxene installed flown energy,1350.0,Wh/kg mineral,Spacevalue cargo.py _phase_terms,Per-phase input to mission refinery accounting.
+,lunar_surface pyroxene Itokawa comparator apart net value,921.309192831295,USD/kg mineral,Spacevalue cargo.py _yield_terms,
+,lunar_surface pyroxene Itokawa comparator selected net value,1240.7727809697237,USD/kg mineral,Spacevalue cargo.py _phase_value or _phase_terms,As-is.
+,lunar_surface pyroxene Itokawa comparator flown gross value,1446.8568938300173,USD/kg mineral,Economicspace calc.py refinery column switch and Spacevalue _phase_terms,Before mission-specific cost.
+,lunar_surface pyroxene Itokawa comparator flown energy,1000.0,Wh/kg mineral,Spacevalue cargo.py _phase_terms,Per-phase input to mission refinery accounting.

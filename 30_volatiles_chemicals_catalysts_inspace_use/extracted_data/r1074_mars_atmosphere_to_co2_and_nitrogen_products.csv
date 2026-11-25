@@ -1,0 +1,28 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_mars_atmosphere_utility_and_archived_rows_2026,carbon Mars surface utility,0.02,fraction,Spacevalue catalog.py Mars surface overrides and Economicspace mineral_value-1.15.0 Mars surface table,Scenario multiplier on delivery cost avoided.
+spacevalue_mars_atmosphere_utility_and_archived_rows_2026,carbon dioxide Mars surface utility,0.02,fraction,Spacevalue catalog.py Mars surface overrides and Economicspace mineral_value-1.15.0 Mars surface table,Scenario multiplier on delivery cost avoided.
+spacevalue_mars_atmosphere_utility_and_archived_rows_2026,carbonates Mars surface utility,0.02,fraction,Spacevalue catalog.py Mars surface overrides and Economicspace mineral_value-1.15.0 Mars surface table,Scenario multiplier on delivery cost avoided.
+spacevalue_mars_atmosphere_utility_and_archived_rows_2026,organics Mars surface utility,0.05,fraction,Spacevalue catalog.py Mars surface overrides and Economicspace mineral_value-1.15.0 Mars surface table,Scenario multiplier on delivery cost avoided.
+spacevalue_mars_atmosphere_utility_and_archived_rows_2026,ammonia Mars surface utility,0.3,fraction,Spacevalue catalog.py Mars surface overrides and Economicspace mineral_value-1.15.0 Mars surface table,Scenario multiplier on delivery cost avoided.
+trainer_etal_2019_gale_atmosphere_sam_mixing_ratios,Gale annual mean carbon dioxide,0.951 ± 0.003,mole fraction,JGR Planets 124 Table 3,"Volume mixing ratio. Uncertainty on mean, see footnote b."
+trainer_etal_2019_gale_atmosphere_sam_mixing_ratios,Gale annual mean molecular nitrogen,0.0259 ± 0.0006,mole fraction,JGR Planets 124 Table 3,"Volume mixing ratio. Uncertainty on mean, see footnote b."
+trainer_etal_2019_gale_atmosphere_sam_mixing_ratios,Gale annual mean argon,0.0194 ± 0.0004,mole fraction,JGR Planets 124 Table 3,"Volume mixing ratio. Uncertainty on mean, see footnote b."
+trainer_etal_2019_gale_atmosphere_sam_mixing_ratios,Gale annual mean oxygen,0.00161 ± 9e-05,mole fraction,JGR Planets 124 Table 3,"Volume mixing ratio. Uncertainty on mean, see footnote b."
+trainer_etal_2019_gale_atmosphere_sam_mixing_ratios,Gale annual mean carbon monoxide,0.00058 ± 8e-05,mole fraction,JGR Planets 124 Table 3,"Volume mixing ratio. Uncertainty on mean, see footnote b."
+trainer_etal_2019_gale_atmosphere_sam_mixing_ratios,Gale annual mean pressure used in Table 3 correction,846,Pa,JGR Planets 124 Table 3 note a,Source gives 8.46 mbar.
+trainer_etal_2019_gale_atmosphere_sam_mixing_ratios,Gale seasonal departure from mean N2 mixing ratio,10,%,"JGR Planets 124 Table 3, N2",Seasonal variation column.
+nasa_nssdca_mars_fact_sheet,Mars mean-radius pressure reference,636,Pa,"NASA NSSDCA Mars Fact Sheet, Mars Atmosphere",6.36 mbar at mean radius.
+inglezakis_2026_mars_multigas_separation_concept,Mars mean temperature illustrative intake condition,210,K,"CERD 232 p. 334, abstract","Reference condition for the volume sensitivity, not a collocated Gale measurement."
+,Five-species renormalized mean molar mass,43.48700205910925,g/mol,"Sum over Table 3 values times molar mass, then divide by printed fraction sum",Approximation from five reported components and standard molar masses.
+,Theoretical minimum Mars air mass per kg CO2,1.0374716482266058,kg/kg,"Five-species Table 3 mixture, 100% CO2 capture",No processing energy or equipment included.
+,Theoretical minimum Mars air mass per kg N2,59.84634089207114,kg/kg,"Five-species Table 3 mixture, 100% N2 capture",No processing energy or equipment included.
+,Ideal Mars intake volume per kg N2 at 636 Pa,3783.822693005879,m3/kg,R × 210 K / (636 Pa × 0.0259 × 0.0280134 kg/mol),"Reference pressure held constant at mean-radius value, 100% recovery."
+,Ideal Mars intake volume per kg N2 at 846 Pa,2844.575925238463,m3/kg,R × 210 K / (846 Pa × 0.0259 × 0.0280134 kg/mol),"Pressure-only sensitivity holding temperature fixed, 100% recovery."
+reeves_2016_ksc_marco_polo_co2_module_demonstration,MARCO POLO demonstrated carbon dioxide supply,88,g/hour,"2016 KSC Annual Report success-story attachment, Mars Atmospheric Processing Module",The report says the freezers met this design goal on simulated Mars atmosphere.
+reeves_2016_ksc_marco_polo_co2_module_demonstration,MARCO POLO demonstrated CO2 supply pressure,50,psia,"2016 KSC Annual Report success-story attachment, Mars Atmospheric Processing Module",Same design goal. Absolute pressure.
+reeves_2016_ksc_marco_polo_co2_module_demonstration,MARCO POLO demonstrated methane production,32,g/hour,"2016 KSC Annual Report success-story attachment, Mars Atmospheric Processing Module",Improved Sabatier reactor. Hydrogen comes from a separate electrolyzer in the architecture.
+reeves_2016_ksc_marco_polo_co2_module_demonstration,MARCO POLO integrated tests count,4,tests,"2016 KSC Annual Report success-story attachment, Mars Atmospheric Processing Module",Seven hours per integrated test.
+reeves_2016_ksc_marco_polo_co2_module_demonstration,MARCO POLO integrated test duration,7,h per test,"2016 KSC Annual Report success-story attachment, Mars Atmospheric Processing Module","Ground analog, no Mars field data."
+inglezakis_2026_mars_multigas_separation_concept,Modeled enriched gas nitrogen fraction,57,mol%,"CERD 232 p. 341, Adsorption-Cooling concept",Product stream before a separate N2/Ar step.
+inglezakis_2026_mars_multigas_separation_concept,Modeled enriched gas argon fraction,43,mol%,"CERD 232 p. 341, Adsorption-Cooling concept",Product stream before a separate N2/Ar step.
+inglezakis_2026_mars_multigas_separation_concept,Modeled N2/Ar distillation pressure,>5.4,bar,"CERD 232 p. 341, Adsorption-Cooling concept; Fig. 2c",For T above 100 K in the concept. No operating plant result.

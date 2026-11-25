@@ -1,0 +1,14 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_titanium_ammonia_price_vintage_code_2026,Spacevalue titanium reference,13,USD/kg,catalog.py line 1881,Reference date 2025-01-31; exported source USGS/LME/mineralogy reference.
+spacevalue_installed_prices_release_manifests_2026,Installed Earth-surface titanium sale price,13,USD/kg,prices-2026-11-20/mineral_value_catalog.earth_surface.csv line 18,All eight destination files matched manifest; each carries this reference price.
+spacevalue_titanium_ammonia_price_vintage_code_2026,Spacevalue ammonia reference,0.485,USD/kg,catalog.py line 1911,Reference date 2025-01-31; exported source USGS/LME/mineralogy reference.
+spacevalue_installed_prices_release_manifests_2026,Installed Earth-surface ammonia sale price,0.485,USD/kg,prices-2026-11-20/mineral_value_catalog.earth_surface.csv line 21,All eight destination files matched manifest; each carries this reference price.
+usgs_mineral_commodity_summaries_2025,Titanium sponge 2024e,13,USD/kg,"Printed pp. 186–187, PDF pp. 190–191, Salient Statistics and footnote 4",Landed duty-paid value of U.S. imports for consumption.
+usgs_mineral_commodity_summaries_2026,Titanium sponge revised 2024,13.30,USD/kg,"Printed pp. 196–197, PDF pp. 200–201, Salient Statistics and footnote 4",Same import basis.
+usgs_mineral_commodity_summaries_2026,Titanium sponge 2025e,12,USD/kg,"Printed pp. 196–197, PDF pp. 200–201, Salient Statistics and footnote 4",Same import basis.
+usgs_mineral_commodity_summaries_2025,Anhydrous ammonia 2024e,440,USD/short ton,"Printed pp. 128–129, PDF pp. 132–133, Salient Statistics and footnote 3",Gulf Coast FOB annual average; Green Markets.
+usgs_mineral_commodity_summaries_2026,Anhydrous ammonia 2024,440,USD/short ton,"Printed pp. 136–137, PDF pp. 140–141, Salient Statistics and footnote 3",Gulf Coast FOB annual average; Green Markets.
+usgs_mineral_commodity_summaries_2026,Anhydrous ammonia 2025e,450,USD/short ton,"Printed pp. 136–137, PDF pp. 140–141, Salient Statistics and footnote 3",Gulf Coast FOB annual average; Green Markets.
+nist_hb133_2026_appendix_e_volume_conversion,Short ton mass,907.18474,kg/short ton,Handbook 133 (2026) Appendix E p. 249,Exact conversion.
+,Anhydrous ammonia 2024 converted,0.485017,USD/kg,440 / 907.18474,Rounds to installed USD 0.485/kg.
+,Anhydrous ammonia 2025e converted,0.496040,USD/kg,450 / 907.18474,Rounds to USD 0.496/kg.

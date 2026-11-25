@@ -1,0 +1,33 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_olivine_density_iron_and_sale_code_2026,Installed olivine elemental iron yield,0.1,kg Fe/kg olivine,Spacevalue catalog.py 2213; Economicspace prices-2026-11-20 yields_json,Comment: Fo90 mean Fe content.
+spacevalue_olivine_density_iron_and_sale_code_2026,Installed olivine density,3.32,g/cm3,Spacevalue catalog.py 2212; Economicspace prices-2026-11-20 density_gcm3,Comment: forsterite-fayalite midpoint.
+spacevalue_olivine_density_iron_and_sale_code_2026,Conditional ordinary-chondrite silicate share labeled olivine,0.58,fraction,"AsteroidCatalog mineralogy.py 199, _SIL_OC","Modal share scenario, separate from olivine chemistry."
+prohaska_etal_2022_iupac_olivine_atomic_weights,Iron abridged atomic weight,55.845,relative atomic mass,"Table 1, abridged column, Fe",
+prohaska_etal_2022_iupac_olivine_atomic_weights,Magnesium abridged atomic weight,24.305,relative atomic mass,"Table 1, abridged column, Mg",
+prohaska_etal_2022_iupac_olivine_atomic_weights,Silicon abridged atomic weight,28.085,relative atomic mass,"Table 1, abridged column, Si",
+prohaska_etal_2022_iupac_olivine_atomic_weights,Oxygen abridged atomic weight,15.999,relative atomic mass,"Table 1, abridged column, O",
+nakamura_etal_2014_itokawa_olivine_fayalite,Itokawa olivine fayalite mean,28.4,mol%,"p. 219, Table 1, Olivine (Fa#)",352 analyses; 33 olivines.
+nakamura_etal_2014_itokawa_olivine_fayalite,Itokawa olivine fayalite one-sigma variation,1.2,mol%,"p. 219, Table 1, Olivine (Fa#)",One sigma variation of the analyses.
+nakamura_etal_2014_itokawa_olivine_fayalite,Itokawa olivine FeO mean,25.75,wt%,"p. 219, Table 1, Olivine column, FeO",Cross-check on Fe mass fraction.
+,Ideal Fo90 elemental iron yield,0.0759801087082225,kg Fe/kg olivine,IUPAC Table 1; Mg1.8Fe0.2SiO4,"2xM_Fe / (2(1-x)M_Mg + 2xM_Fe + M_Si + 4M_O), x=0.10."
+,Ideal elemental iron yield at Itokawa mean Fa,0.1999925349476677,kg Fe/kg olivine,"Same formula, x=0.284",Illustrates one S-type sample; no universal substitution.
+,Elemental Fe from measured Itokawa mean FeO,20.01571112410222,wt%,FeO mean multiplied by Fe/(Fe+O) using IUPAC masses,Independent oxide-mass check on the ideal formula result.
+lee_2003_olivine_endmember_densities,Forsterite density at STP,3.222,g/cm3,"Table 4, Forsterite, Isak et al. (1989) row",
+lee_2003_olivine_endmember_densities,Fayalite density at STP,4.38,g/cm3,"Table 4, Fayalite, Graham et al. (1988) row",
+,Arithmetic midpoint of extracted STP endmembers,3.801,g/cm3,Lee Table 4 densities,"Comment check, not a recommended density."
+spacevalue_olivine_density_iron_and_sale_code_2026,earth_surface olivine as-is price,0.05,USD/kg olivine,mineral_value_catalog.earth_surface.csv,Economicspace pinned release prices-2026-11-20.
+spacevalue_olivine_density_iron_and_sale_code_2026,earth_surface elemental iron price,0.319,USD/kg Fe,mineral_value_catalog.earth_surface.csv,Economicspace pinned release prices-2026-11-20.
+,earth_surface installed elemental-yield value,0.031900000000000005,USD/kg olivine,Spacevalue cargo.py _mineral_implied_value,Phase-scale implied value before mission refinery or sales limits.
+,earth_surface installed pre-refinery phase value,0.05,USD/kg olivine,Spacevalue cargo.py _phase_value,Pre-refinery better-of direct and elemental value.
+,earth_surface ideal Fo90 elemental-yield value,0.02423765467792298,USD/kg olivine,Spacevalue cargo.py _mineral_implied_value,Phase-scale implied value before mission refinery or sales limits.
+,earth_surface ideal Fo90 pre-refinery phase value,0.05,USD/kg olivine,Spacevalue cargo.py _phase_value,Pre-refinery better-of direct and elemental value.
+,earth_surface Itokawa comparator elemental-yield value,0.06379761864830599,USD/kg olivine,Spacevalue cargo.py _mineral_implied_value,Phase-scale implied value before mission refinery or sales limits.
+,earth_surface Itokawa comparator pre-refinery phase value,0.06379761864830599,USD/kg olivine,Spacevalue cargo.py _phase_value,Pre-refinery better-of direct and elemental value.
+spacevalue_olivine_density_iron_and_sale_code_2026,lunar_surface olivine as-is price,1240.7727809697237,USD/kg olivine,mineral_value_catalog.lunar_surface.csv,Economicspace pinned release prices-2026-11-20.
+spacevalue_olivine_density_iron_and_sale_code_2026,lunar_surface elemental iron price,21472.00184314879,USD/kg Fe,mineral_value_catalog.lunar_surface.csv,Economicspace pinned release prices-2026-11-20.
+,lunar_surface installed elemental-yield value,2147.200184314879,USD/kg olivine,Spacevalue cargo.py _mineral_implied_value,Phase-scale implied value before mission refinery or sales limits.
+,lunar_surface installed pre-refinery phase value,2147.200184314879,USD/kg olivine,Spacevalue cargo.py _phase_value,Pre-refinery better-of direct and elemental value.
+,lunar_surface ideal Fo90 elemental-yield value,1631.445034225599,USD/kg olivine,Spacevalue cargo.py _mineral_implied_value,Phase-scale implied value before mission refinery or sales limits.
+,lunar_surface ideal Fo90 pre-refinery phase value,1631.445034225599,USD/kg olivine,Spacevalue cargo.py _phase_value,Pre-refinery better-of direct and elemental value.
+,lunar_surface Itokawa comparator elemental-yield value,4294.24007901232,USD/kg olivine,Spacevalue cargo.py _mineral_implied_value,Phase-scale implied value before mission refinery or sales limits.
+,lunar_surface Itokawa comparator pre-refinery phase value,4294.24007901232,USD/kg olivine,Spacevalue cargo.py _phase_value,Pre-refinery better-of direct and elemental value.

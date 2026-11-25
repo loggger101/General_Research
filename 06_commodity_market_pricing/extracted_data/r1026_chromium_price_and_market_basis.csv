@@ -1,0 +1,19 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_chromium_price_and_market_basis_code_2026,Catalog chromium terrestrial price,11.00,USD/kg chromium metal,catalog.py lines 1878–1880,"Row note says aluminothermic metal, about USD 10–12/kg, and names MCS 2025."
+spacevalue_chromium_price_and_market_basis_code_2026,Shared reference price date,2025-01-31,date,catalog.py lines 1449–1473,Metadata on new-element reference inputs.
+spacevalue_chromium_price_and_market_basis_code_2026,Terrestrial chromium market proxy,47000000000,kg gross chromite ore/yr,catalog.py line 999 and lines 1196–1220,Passed through for Earth surface and the shipped-to-Earth route.
+spacevalue_installed_prices_release_manifests_2026,Installed Earth-surface chromium price,11.0,USD/kg chromium metal,"prices-2026-11-20/mineral_value_catalog.earth_surface.csv, chromium row",Formula Cr; price_basis=reference; ref_price_date=2025-01-31.
+spacevalue_installed_prices_release_manifests_2026,Installed Earth-surface chromium ceiling,47000000000.0,kg/yr,"prices-2026-11-20/mineral_value_catalog.earth_surface.csv, chromium row",annual_market_kg.
+spacevalue_installed_prices_release_manifests_2026,Installed cislunar chromium ceiling,25000,kg/yr,"prices-2026-11-20/mineral_value_catalog.cislunar.csv, chromium row",annual_market_kg; value_route=used in space.
+,Earth-surface chromium allowance for one one-year delivery,47000000000,kg of chromium,"cargo.py market_table, phase_market_kg and capacity_allowance_kg, installed Earth-surface CSV","Model calculation for one mission and one ship, duration and cadence 1 yr."
+,Cislunar chromium allowance for one one-year delivery,25000,kg of chromium,"cargo.py market_table, phase_market_kg and capacity_allowance_kg, installed cislunar CSV",Same model calculation using the in-space table.
+usgs_mineral_commodity_summaries_2025,2024e annual chromium metal price,5.60,USD/lb gross metal,"Chromium, printed p. 58, PDF p. 62, Salient Statistics",Annual chromium metal series.
+usgs_mineral_commodity_summaries_2026,2024 revised annual chromium metal price,5.30,USD/lb gross metal,"Chromium, printed p. 66, PDF p. 70, Salient Statistics",Row labeled Chromium metal (gross weight).
+usgs_mineral_commodity_summaries_2026,2025e annual chromium metal price,5.90,USD/lb gross metal,"Chromium, printed p. 66, PDF p. 70, Salient Statistics",Footnote 5 credits Argus Non-Ferrous Markets.
+,2024e annual chromium metal price converted,12.345887,USD/kg gross metal,USD 5.60/lb divided by 0.45359237 kg/lb,MCS 2025 vintage.
+,2024 revised annual chromium metal price converted,11.684500,USD/kg gross metal,USD 5.30/lb divided by 0.45359237 kg/lb,MCS 2026 vintage.
+,2025e annual chromium metal price converted,13.007273,USD/kg gross metal,USD 5.90/lb divided by 0.45359237 kg/lb,MCS 2026 vintage.
+usgs_mis_chromium_december_2025,December 2025 U.S. chromium metal assessment,5.70,USD/lb of 99% metal,"PDF p. 2, price paragraph and Figure 2",Monthly assessed average; Argus Non-Ferrous Markets.
+usgs_mis_chromium_december_2025,December 2025 U.S. high-carbon ferrochromium assessment,1.75,USD/lb contained chromium,"PDF p. 2, price paragraph and Figure 2",Minimum 62% chromium in the ferroalloy.
+usgs_mineral_commodity_summaries_2026,2024 revised world chromite mine production,49600,thousand metric tons gross ore,"Chromium, printed p. 66, PDF p. 70, World Mine Production and Reserves, World total",Gross weight per footnote 12.
+usgs_mineral_commodity_summaries_2026,2025e world chromite mine production,51000,thousand metric tons gross ore,"Chromium, printed p. 66, PDF p. 70, World Mine Production and Reserves, World total",Gross weight per footnote 12.

@@ -1,0 +1,20 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_release_data_2026_11_13,253 Mathilde diameter and sigma,53.0 ± 2.6,km,"Installed AsteroidCatalog data-2026-11-13, designation 253",Provider SsODNet; measured.
+asteroidcatalog_release_data_2026_11_13,253 Mathilde mass and sigma,(1.030 ± 0.0438)e17,kg,Installed row 253,Provider SsODNet; measured.
+asteroidcatalog_release_data_2026_11_13,253 Mathilde density,1.321329081467135,g/cm3,Installed row 253,Derived from released diameter and mass.
+thomas_etal_1999_mathilde_shape_near,253 Mathilde NEAR mean radius,26.5 ± 1.3,km,Thomas et al. Table I p. 19,NEAR imagery and shape reconstruction.
+thomas_etal_1999_mathilde_shape_near,253 Mathilde NEAR nominal volume,78000,km3,Thomas et al. Table I p. 19,Lower and upper offsets −10000 and +11000 km3.
+thomas_etal_1999_mathilde_shape_near,253 Mathilde NEAR nominal density,1.3 ± 0.2,g/cm3,Thomas et al. Table I p. 19,Paired NEAR solution.
+yeomans_etal_1997_mathilde_near_tracking_mass,253 Mathilde NEAR tracking mass,(1.033 ± 0.044)e17,kg,Yeomans et al. p. 2106 abstract,Original grams multiplied by 0.001.
+,253 Mathilde volume-equivalent diameter from NEAR volume,53.01091821273771,km,Volume-to-sphere calculation,Uses nominal printed 78000 km3.
+,253 Mathilde density recomputed from NEAR pair,1.3243589743589743,g/cm3,Mass over volume calculation,Uses the published nominal values.
+asteroidcatalog_release_data_2026_11_13,21 Lutetia diameter and sigma,98 ± 2,km,Installed row 21,Provider JPL SBDB; measured.
+asteroidcatalog_release_data_2026_11_13,21 Lutetia mass and sigma,(1.700 ± 0.014)e18,kg,Installed row 21,Provider SsODNet; measured.
+asteroidcatalog_release_data_2026_11_13,21 Lutetia density,3.4496264726800328,g/cm3,Installed row 21,Derived from released diameter and mass.
+sierks_etal_2011_lutetia_rosetta_shape,21 Lutetia Rosetta volume-equivalent diameter,98 ± 2,km,Sierks et al. p. 487,Published diameter.
+sierks_etal_2011_lutetia_rosetta_shape,21 Lutetia Rosetta volume,(5.0 ± 0.4)e5,km3,Sierks et al. p. 487,Rounded separately from the diameter.
+sierks_etal_2011_lutetia_rosetta_shape,21 Lutetia Rosetta density,3.4 ± 0.3,g/cm3,Sierks et al. p. 487,Rosetta shape and radio science.
+patzold_etal_2011_lutetia_rosetta_tracking_mass,21 Lutetia Rosetta Doppler mass,(1.700 ± 0.017)e18,kg,Pätzold et al. p. 491,The paper separately reports how its uncertainty was calculated.
+,21 Lutetia released mass sigma divided by spacecraft mass sigma,0.8235294117647058,ratio,Installed row 21 versus Pätzold et al.,"Relative uncertainty magnitudes, common central mass."
+carry2012,253 Mathilde compilation flyby mass and uncertainty,1.03E+17 ± 4.38E+15,kg,"arXiv PDF p. 34, Table A.1, M14",Exact match to the installed central mass and uncertainty.
+carry2012,21 Lutetia compilation flyby mass and uncertainty,1.70E+18 ± 1.40E+16,kg,"arXiv PDF p. 30, Table A.1, M104",Exact match to the installed central mass and uncertainty.

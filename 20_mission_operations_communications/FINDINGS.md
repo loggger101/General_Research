@@ -182,3 +182,11 @@ Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`
 At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the relay note labels $50/Mbit [10, 200] a scenario with no link rate, pass pattern or relay/direct split (rc-298), and `delivery.py` labels the 10,000 kg recovery batch a scenario with its sensitivity, $3,000/kg at 5,000 kg and $750/kg at 20,000 kg against $1,500 (rc-740). Values unchanged.
 
 Verdict: rc-298, rc-740 closed as applied. Extracted data: none new.
+
+## R1039 — DSN aperture-hour and contact-hour scope (2026-11-23)
+
+- spacecost_dsn_aperture_hour_price_code_2026 pins Spacecost main `64e51d5197fa5ebb8dd1d910565c000a2b0b86e9`. Its Deep Space Network time row and Economicspace’s installed Stage 3 copy carry USD 2,095 for one 34 m antenna, using the June 2022 USD 1,792 base escalated by CPI-U to September 2026.
+- nasa_scan_mocs_rev4_2021_dsn_pass_costing, printed pp. 5-2–5-3, Table 5-1 adds “45 minutes of set up time and 15 minutes of tear-down time” to nominal DSN contact, and Table 5-2 gives USD 1,792 per hour for “Single Spacecraft Tracking” on one 34 m station. At the stored rate, one nominal one-hour contact uses two aperture hours (USD 4,190). Two separate one-hour contacts use four aperture hours (USD 8,380), against three (USD 6,285) for one two-hour contact.
+- jpl_dsn_services_catalog_820_100, printed p. 6-3, §6.3.3, calls the fee “for full cost accounting purposes” in its NASA-sponsored mission description. Sections 6.3.1–6.3.4 specify service weights and allow a half weight for qualifying MSPA downlink-only service. **rc-913** records the aperture-hour denominator, the nominal pass scope and the accounting basis of the CPI-adjusted rate.
+
+Extracted data in `extracted_data/r1039_dsn_aperture_hour_and_pass_cost.csv`.

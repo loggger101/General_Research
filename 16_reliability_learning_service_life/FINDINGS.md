@@ -498,3 +498,49 @@ At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the “Spacecraft me
 **navard_1993_modelling_early_failures_space_station_freedom**: the NASA/ASEE report’s fitted electronics-survival model “does not model the early failures very well” (NTRS 19940020890, p. 8). **jacklin_2019_small_satellite_mission_failure_rates** reports small-satellite mission failure rates for 2000–2016, including 41.3% total or partial mission failures (NASA/TM-2018-220034, p. 17) and annual success rates for 2000–2008 and 2009–2016 (p. 15). These are distinct populations and evidence types.
 
 **spacecost_mtbf_citations_section_current_2026**: CITATIONS.md §4 lists Grile & Bettinger (2024) among the reliability comparators, but has no entry for Navard (1993) or Jacklin (2019), although both are named in the current row note. Verdict: add their full bibliographic entries and distinguish their scopes; retain 30 [15, 60] years as the stated scenario. No numeric replacement inferred. **rc-753**. Extracted: extracted_data/r875_spacecost_mtbf_bibliography_gap.csv.
+
+## R1024 — Launch-window switch omitted from worksheet campaign cadence (2026-11-22)
+
+- `economicspace_launch_window_cadence_worksheet_code_2026`: `campaign_cadence_yr` returns the stay with windows off (calc.py lines 5236–5239). `derive_periods` sets the window wait to zero while keeping the synodic period (worked_calculation.py lines 4098–4126), and `mass_and_clock` uses the latter unconditionally in `max(stay, DV["synodic"])` (lines 4044–4053). The worksheet prints “max(t_stay, S_syn)” and, when synodic binds, “the window paces it” (verification_sheet.py lines 4118–4123).
+- Executing those pinned paths with the 2026-11-18 2018 DT worksheet’s three-year dig and 3.875393-year synodic period (S117 and S154) and a 15-year rig with a 5-campaign cap gives 3 years and 5 campaigns in the calculator with windows off. The worksheet gives 3.875393 years and 4 campaigns. With windows on both give 4.937696 years and 3 campaigns. **rc-889** asks the worksheet to apply and cite the switch in the cadence and downstream rig count.
+
+Extracted data in `extracted_data/r1024_launch_window_cadence_worksheet.csv`.
+
+## R1029 — Learning-curve worksheet citation and original run rate (2026-11-22)
+
+- wright_1936_factors_affecting_cost_airplanes, printed pp. 124–125 and Figure 3, defines its 80% slope on “the average labor cost” at twice the production. delionback_1975_guidelines_learning_cost_improvement_curves, printed pp. 6–7 and Appendix B p. 31, distinguishes Wright cumulative-average cost from Crawford individual-unit cost. economicspace_learning_curve_worksheet_and_run_rate_code_2026 labels a mean of individual-unit terms “Wright’s-law exponent” and maps it to Wright 1936. The calculator and worksheet both give 0.437539 at N = 100 and rate 0.85. A Wright cumulative-average formula at the same rate gives 0.339680. **rc-896** records the worksheet citation and model-label gap.
+- economicspace_learning_curve_worksheet_and_run_rate_code_2026 determines whether the learning factor affected a row from its stored factor and reads the rate from the live config (worked_calculation.py lines 721–726, 2587 and 4354–4358). The ordinary Stage 4 manifest lists code and CSV identifiers. At N = 10 a fixture produced at 0.90 has factor 0.799448. The derivation at 0.85 gives 0.711606 and the factor comparison flags a 10.99% difference. The comparison passes at 0.90. **rc-897** records the missing original rate in worksheet replay.
+
+Extracted data in extracted_data/r1029_learning_curve_worksheet_model_and_rate.csv.
+
+## R1037 — Mining reliability growth in verification worksheets (2026-11-23)
+
+- economicspace_mining_reliability_worksheet_replay_code_2026 pins Economicspace main `15c629b7b827d5a382c8c09f5f2702b839b99d71`. Calculator lines 5007–5049 and 8249–8257 use a common heritage index for a launch wave and use the first-of-kind success rate when `model_reliability_growth` is off. The worked calculation at lines 4308–4334 and 4529–4537 averages serial mission indices on every risk-on run. Worksheet lines 4758–4777 show those serial terms.
+- The pinned Stage 3 rows give launch probability 0.97, MTBF 30 yr, first-of-kind mining success 0.85, growth exponent 0.30 and mature success 0.95. At 25 simultaneous launches, the worksheet gives mining success 0.922702279 and the calculator gives 0.850000000. With a fixed 3 yr mission and USD 100M capped gross revenue, expected revenue is USD 80.985M and USD 74.604M respectively. Five waves of five give 0.912768970 in the calculator and 0.922702279 in the worksheet. The serial 25-mission case also differs when growth is disabled. The single-mission, serial growth-on and risk-off controls match.
+- mil_hdbk_189c_reliability_growth_management, printed p. 8, §4.9.1, describes an “iterative design process” that includes “Feedback of problems identified” and “Approval and implementation of proposed corrective action.” **rc-910** records replay of the calculator's fleet-wave logic and archived growth switch.
+
+Extracted data in `extracted_data/r1037_worksheet_mining_reliability_replay.csv`.
+
+
+## R1053 — Rig utilisation and terminal credit in verification (2026-11-23)
+
+- economicspace_rig_utilisation_and_uneven_fleet_worksheet_2026, verification_sheet.py lines 4911–4929, displays the duty-cycle term even when the resolved trip cap is off. With three campaigns, a 0.7-year stay, 1.2-year cadence and the installed 15-year rig life, calendar-aged utilisation is 0.206667. The displayed expression gives 0.60 using the installed 5-campaign cap. Under the active-stay clock the corresponding values are 0.14 and 0.142857. The calculator and replay give the same terminal credits in both cases. **rc-935** records the display and citation mismatch.
+- For a fixed seven-mission programme with trips capped at five, calc.py lines 5598–5609 returns two rigs with a maximum of four campaigns per rig. Lines 6354–6379 price the four- and three-campaign cohorts separately. The calculator gives USD 90 million average terminal credit and USD 145.714 million net rig cost per mission. worked_calculation.py lines 4362–4383 and 4502–4525 yield USD 60 million and USD 135 million. At 20% contingency and zero WACC the calculator total is USD 12.857 million higher per mission. An eight-mission two-rig control gives equal results. **rc-936** records the unequal-cohort replay gap.
+
+Extracted data in extracted_data/r1053_rig_utilisation_and_uneven_fleet.csv.
+
+
+## R1098 — Cumulative reliability growth and configuration failure probability (2026-11-24)
+
+- mil_hdbk_189c_reliability_growth_management, printed p. 31 §5.2.6.1, defines C(t) as the “average failure rate” over cumulative test time. Printed pp. 88–90 §§6.2.4.5–6.2.4.6 use cumulative expected failures proportional to T^β and derive the “probability of failure on a configuration basis” from the increment between adjacent configurations divided by the configuration’s trial count. The single-trial equation uses adjacent cumulative counts with one trial per configuration.
+- economicspace_mining_growth_configuration_probability_basis_2026, calc.py lines 5044–5088 and MODEL.md reliability-growth section, applies the power law directly to each wave's failure probability. The calculator and discrete-law comparison give mean mining success of 0.902431 and 0.924822 for ten serial missions, and 0.905588 and 0.892117 for three waves of ten. Both use the pinned 0.85 first-wave success, 0.30 exponent and 0.95 cap, with configuration changes between waves in the comparison. One first wave gives 0.85 in both. The source distinguishes the cumulative and configuration measures. **rc-1013** records that distinction for the formula and its citation.
+
+Extracted data in extracted_data/r1098_mining_reliability_cumulative_and_configuration_basis.csv.
+
+
+## R1102 — Synodic scheduling cap and repeat dispatch cadence (2026-11-24)
+
+- economicspace_synodic_cap_and_repeat_window_clock_2026, calc.py lines 2712–2730 and worksheet S_syn, caps the computed period at 10 years and uses half the result for mean initial wait. The MODEL.md 1.05 AU case is about 14.2 years before the cap. asteroidcatalog_release_data_2026_11_13, installed Stage 1, gives 0.977483 AU for 2000 SG344, or 28.776 years by the same uncapped two-body relation with Earth. Both cases use 5 years of expected wait in the model. A Stage 1 pass yields 2,753 cap-binding rows among 43,043 near-Earth rows in the function’s semimajor-axis domain. jpl_nhats_nea_dv_oracle obtains trajectories across departure dates, flight times and stay times under delta-v and entry constraints. **rc-1017** records the separation of physical period and effective scheduling input.
+- economicspace_synodic_cap_and_repeat_window_clock_2026, calc.py lines 5181–5277, uses max(stay, synodic period) for campaign cadence and that cadence for the rig life bound. With a 3-year dig and 2.8-year recurrence, the current 4.4-year cadence fits three campaigns within the 15-year life. With the first dispatch fixed at 4.4 years and one narrow usable departure epoch per period, a serial dig dispatches every 5.6 years and fits two campaigns. The third dispatch dates are 13.2 and 15.6 years. nasa_jpl_2015_insight_missed_2016_launch_window, mission release and statistics, records the March 4–30, 2016 launch period and the actual May 5, 2018 launch. wibben_etal_2022_osiris_rex_bennu_departure_trajectory, Post-TAG trajectory design, identifies May 2021 as the “Δv-optimal asteroid departure date” month. **rc-1018** records the recurring-window schedule assumption.
+
+Extracted data in extracted_data/r1102_synodic_cap_and_repeat_window_cadence.csv.

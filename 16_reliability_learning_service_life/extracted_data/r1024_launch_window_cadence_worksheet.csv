@@ -1,0 +1,20 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_launch_window_cadence_worksheet_code_2026,2018 DT dig duration,3,yr,"2026-11-18 verification_sheet.html, S117",Control input reused in both cases.
+economicspace_launch_window_cadence_worksheet_code_2026,2018 DT synodic period,3.875392969079,yr,"2026-11-18 verification_sheet.html, S154",Orbital periods 1.3477785508811033 yr and 1 yr.
+economicspace_launch_window_cadence_worksheet_code_2026,Rig service life,15,yr,campaign/stage3/operational_costs.csv line 62,Stage 3 base input.
+economicspace_launch_window_cadence_worksheet_code_2026,Rig maximum trips,5,campaigns,campaign/stage3/operational_costs.csv line 63,Stage 3 base input.
+economicspace_launch_window_cadence_worksheet_code_2026,Worksheet cadence formula,"max(t_stay, S_syn)",,verification_sheet.py lines 4118–4123,Dependencies: stay and synodic.
+,Windows on: window wait,1.937696484539,yr,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows on: calculator cadence,4.937696484539,yr,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows on: worksheet cadence,4.937696484539,yr,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows on: calculator calendar cap,3,campaigns,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows on: worksheet calendar cap,3,campaigns,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows on: calculator final rig count,3,campaigns,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows on: worksheet final rig count,3,campaigns,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows off: window wait,0.000000000000,yr,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows off: calculator cadence,3.000000000000,yr,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows off: worksheet cadence,3.875392969079,yr,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows off: calculator calendar cap,5,campaigns,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows off: worksheet calendar cap,4,campaigns,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows off: calculator final rig count,5,campaigns,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.
+,Windows off: worksheet final rig count,4,campaigns,Pinned cadence/calendar functions and worksheet emitter,Used same three-year dig and rig limits in both paths.

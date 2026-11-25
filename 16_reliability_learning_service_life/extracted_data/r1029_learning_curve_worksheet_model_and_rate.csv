@@ -1,0 +1,13 @@
+source_id,item,value,unit,location_in_source,notes
+wright_1936_factors_affecting_cost_airplanes,Wright aircraft labor cost curve slope,0.80,ratio per production doubling,Printed pp. 124–125 and Figure 3,Ratio of average labor costs at N and 2N.
+delionback_1975_guidelines_learning_cost_improvement_curves,Wright model dependent variable,cumulative average cost,definition,"Printed pp. 6–7, Section IV.A",Appendix B p. 31 compares the two ordinates.
+delionback_1975_guidelines_learning_cost_improvement_curves,Crawford model dependent variable,nth-unit cost,definition,"Printed pp. 6–7, Section IV.B",The same numerical slope describes an individual-unit trajectory.
+economicspace_learning_curve_worksheet_and_run_rate_code_2026,Worksheet exponent step title,Wright's-law exponent,label,campaign/verification_sheet.py line 4964,Citation map at lines 6049–6050 points to Wright 1936.
+economicspace_learning_curve_worksheet_and_run_rate_code_2026,Current configured learning rate default,0.85,ratio,modules/calc.py lines 478–491,Learning is disabled by default.
+economicspace_learning_curve_worksheet_and_run_rate_code_2026,"Stored calculator factor, 2 units",0.925,ratio,"modules/calc.py learning_curve_factor(2, 0.85)",Verification worksheet substitution matches.
+economicspace_learning_curve_worksheet_and_run_rate_code_2026,"Stored calculator factor, 100 units",0.437538671392,ratio,"modules/calc.py learning_curve_factor(100, 0.85)",Verification worksheet substitution matches on the grouped branch.
+,"Wright cumulative-average comparison, 100 units",0.339679621368,ratio,100 ^ log2(0.85),Same numerical slope; differing model.
+economicspace_learning_curve_worksheet_and_run_rate_code_2026,Stage 4 factor for a 10-unit scenario at run rate 0.90,0.799447855044,ratio,"modules/calc.py learning_curve_factor(10, 0.9)",Synthetic reproducibility fixture.
+economicspace_learning_curve_worksheet_and_run_rate_code_2026,Worksheet replay of the 0.90 scenario at live rate 0.85,0.711606272668,ratio,campaign/worked_calculation.py cost and check,Term inferred active from the archived factor. Factor comparison fails.
+,Worksheet replay relative error at live rate 0.85,10.9877813571,percent,abs(0.7116062726675125 - 0.7994478550439265) / 0.7994478550439265,Error on learning factor only.
+economicspace_learning_curve_worksheet_and_run_rate_code_2026,Worksheet replay of the scenario at matching live rate 0.90,0.799447855044,ratio,campaign/worked_calculation.py cost and check,Factor comparison passes.

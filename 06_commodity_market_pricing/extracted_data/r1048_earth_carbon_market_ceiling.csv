@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_terrestrial_carbon_market_ceiling_code_2026,Spacevalue terrestrial carbon ceiling,1000000000000,kg/year,catalog.py lines 1017–1019 and 1196–1216,Effectively unlimited on Earth heading. Returned as a finite quantity.
+spacevalue_installed_prices_release_manifests_2026,Installed Earth-surface carbon annual market,1000000000000,kg/year,prices-2026-11-20 Earth-surface catalog line 28,Market id carbon. Amorphous / graphitic carbon. Size and SHA-256 match manifest.
+usgs_mineral_commodity_summaries_2026,World natural graphite mine production 2024,1550000,metric tonnes/year,"Graphite (Natural), printed p. 93, World total (rounded), 2024",Natural graphite mine output.
+usgs_mineral_commodity_summaries_2026,World natural graphite mine production 2025e,1800000,metric tonnes/year,"Graphite (Natural), printed p. 93, World total (rounded), 2025e",Natural graphite mine output.
+,Installed ceiling divided by world natural graphite mine production 2025e,555.5555555555555,ratio,Installed carbon row and MCS 2026 v1.3 p. 93,Scale comparison across distinct measures and product definitions.
+,Synthetic one-year raw carbon offer,1100000000000,kg,cargo.py capacity_allowance_kg and _capped_sale_value,"One mission, one ship, one-year market window, zero surplus price fraction."
+,Synthetic one-year raw carbon left unsold,100000000000,kg,Execution of pinned cargo functions with installed Earth-surface carbon row,Finite capacity under the hard ceiling.

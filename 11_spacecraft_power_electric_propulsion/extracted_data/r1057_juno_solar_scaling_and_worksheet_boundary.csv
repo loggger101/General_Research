@@ -1,0 +1,14 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_economicspace_outer_solar_power_scaling_2026,Trojan scenario heliocentric distance,5.2044,AU,Spacecost and installed Economicspace environments.csv line 22,Equal exports.
+spacecost_economicspace_outer_solar_power_scaling_2026,Trojan scenario geometric array mass factor,27.085779359999997,ratio,Spacecost and installed Economicspace environments.csv line 22,Inverse-square scaling only.
+spacecost_economicspace_outer_solar_power_scaling_2026,Installed PV system specific power at 1 AU,60,W/kg,Installed Economicspace operational_costs.csv line 23,"Complete system mass boundary, including wing, PMAD, battery and deployment."
+,Bare system specific power at the Trojan distance,2.2151845513667365,W/kg,Economicspace solar_specific_power_w_per_kg,Before any target-specific eclipse adjustment.
+bolton_jun_2010_juno_solar_power_design,Juno theoretical power at 1 AU,15000,W,"Slide 6, Juno Flight System",Prelaunch design presentation.
+bolton_jun_2010_juno_solar_power_design,Juno design power at Jupiter orbit insertion,486,W,"Slide 6, Juno Flight System",Design value.
+bolton_jun_2010_juno_solar_power_design,Juno design power at end of mission,428,W,"Slide 6, Juno Flight System",Design value.
+jpl_2016_juno_orbit_insertion_power_facts,Juno array surface area lower figure,60,m2,"Printed p. 11, Quick Facts",Source says more than 60 square metres.
+jpl_2016_juno_orbit_insertion_power_facts,Juno total power at Earth distance,14000,W,"Printed p. 11, Quick Facts",Approximate.
+jpl_2016_juno_orbit_insertion_power_facts,Juno total power at Jupiter distance,500,W,"Printed p. 11, Quick Facts",Approximate.
+,Geometry-only screening at nominal Trojan distance from the 15 kW design value,553.7961378416841,W,15 kW divided by the installed Trojan distance squared,Illustrative nominal distance. No mission-specific loss attribution.
+,Geometry-only screening at nominal Trojan distance from the 14 kW press-kit value,516.8763953189051,W,14 kW divided by the installed Trojan distance squared,Illustrative nominal distance. No mission-specific loss attribution.
+nasa_jpl_2017_solar_power_technologies_planetary_missions,Low-intensity and low-temperature loss factors,Cell shunts and lower-temperature voltage compensation,,JPL D-101316 §4.2.2,Juno cell screening is technology-specific.

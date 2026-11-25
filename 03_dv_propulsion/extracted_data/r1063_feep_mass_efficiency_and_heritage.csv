@@ -1,0 +1,36 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_feep_nano_mass_efficiency_and_heritage_2026,Installed thruster mass coefficient,2500,kg/N,Spacecost and Economicspace FEEP rows,The calculator adds a PPU mass separately.
+spacecost_feep_nano_mass_efficiency_and_heritage_2026,Installed efficiency,0.6,fraction,"Same rows, thruster_efficiency",Used in the denominator of bus-power sizing.
+spacecost_feep_nano_mass_efficiency_and_heritage_2026,Installed specific impulse,6000,s,"Same rows, isp_vac_s",
+spacecost_feep_nano_mass_efficiency_and_heritage_2026,Installed first-flight year,2016,year,Spacecost and Economicspace first_flight; Spacecost code line 1415,The source comment names LISA Pathfinder and GOCE.
+spacecost_feep_nano_mass_efficiency_and_heritage_2026,Separate model PPU coefficient,4.7,kg/kW input,Installed Power processing unit specific mass,Generic coefficient.
+enpulsion_ifm_nano_datasheet_enp2018_001_f1,IFM Nano nominal thrust,350,µN,"F.1 p. 2, technical specifications",
+enpulsion_ifm_nano_datasheet_enp2018_001_f1,IFM Nano nominal input power,40,W,"F.1 p. 2, technical specifications",Includes neutralizer.
+enpulsion_ifm_nano_datasheet_enp2018_001_f1,IFM Nano integrated dry mass,0.67,kg,"F.1 p. 2, Mass (dry/wet)",Includes power electronics and reservoir.
+enpulsion_ifm_nano_datasheet_enp2018_001_f1,IFM Nano integrated wet mass,0.9,kg,"F.1 p. 2, Mass (dry/wet)",Includes 230 g propellant.
+enpulsion_ifm_nano_datasheet_enp2018_001_f1,Up-to ionized share of evaporated propellant,0.6,fraction,"F.1 p. 1, Controllable Specific Impulse",Ionized share and bus-to-effective-jet efficiency have distinct denominators.
+enpulsion_nano_datasheet_enp2018_001_i1,NANO nominal thrust,330,µN,"I.1 p. 2, Nominal Thrust",Different revision from F.1.
+enpulsion_nano_datasheet_enp2018_001_i1,NANO maximum listed specific impulse,5000,s,"I.1 p. 2, Specific Impulse",Upper envelope bound.
+enpulsion_nano_datasheet_enp2018_001_i1,NANO integrated dry mass,0.68,kg,"I.1 p. 2, Mass (dry/wet)",
+enpulsion_nano_datasheet_enp2018_001_i1,NANO integrated wet mass,0.9,kg,"I.1 p. 2, Mass (dry/wet)",
+krejci_etal_2018_ifm_nano_feep_flight,IFM Nano in-orbit demonstration launch,2018,year,"Section 3.1, Satellite description and early commissioning phase",12 January 2018.
+nasa_2019_lisa_pathfinder_colloid_microthrusters,LISA Pathfinder launch,2015,year,"NASA Science, Colloid Microthrusters Demonstrated on LISA Pathfinder",Mission demonstrated cold gas and colloid microthrusters.
+esa_2009_goce_xenon_ion_commissioning,GOCE xenon load,40,kg,"ESA commissioning report, paragraph beginning Instead",Source names xenon and electric discharge.
+,F.1 integrated dry mass at nominal thrust,1914.2857142857144,kg/N,F.1 technical specifications,Different boundary from modeled head.
+,F.1 integrated wet mass at nominal thrust,2571.4285714285716,kg/N,F.1 technical specifications,Arithmetic basis near 2500 kg/N.
+,I.1 integrated dry mass at nominal thrust,2060.606060606061,kg/N,I.1 technical specifications,Different product revision.
+,F.1 nominal matched-thrust model input with installed 6000 s,17.1616375,W,Economicspace _ep_stage_kg fixed-thrust sensitivity,Installed Isp applied at this thrust for a model fixture.
+,F.1 nominal matched-thrust model head mass,0.875,kg,Economicspace _ep_stage_kg fixed-thrust sensitivity,Separate PPU follows.
+,F.1 nominal matched-thrust model PPU mass,0.08065969625000001,kg,Economicspace _ep_stage_kg fixed-thrust sensitivity,Separate from the head term.
+krejci_etal_2018_ifm_nano_feep_flight,higher thrust example thrust,0.00042,N,"p. 3, Section 2.2, Figure 2 example",Approximate example within characterized envelope.
+krejci_etal_2018_ifm_nano_feep_flight,higher thrust example specific impulse,3200,s,"p. 3, Section 2.2, Figure 2 example",Paired with the example thrust and total input.
+krejci_etal_2018_ifm_nano_feep_flight,higher thrust example bus input,40,W,"p. 3, Section 2.2, Figure 2 example","Includes housekeeping, heater and neutralizer."
+,higher thrust example implied bus-to-effective-jet efficiency,0.16475172,fraction,F × Isp × g0 / (2 × input W),Economicspace equation solved for efficiency.
+,higher thrust example model bus input with 0.60 efficiency,10.983448000000001,W,Economicspace ep_power_required_w at same thrust and Isp,Sensitivity fixture.
+,higher thrust example listed/model bus input ratio,3.641843617778315,ratio,Same-thrust and same-Isp comparison,
+krejci_etal_2018_ifm_nano_feep_flight,higher Isp example thrust,0.00025,N,"p. 3, Section 2.2, Figure 2 example",Approximate example within characterized envelope.
+krejci_etal_2018_ifm_nano_feep_flight,higher Isp example specific impulse,5000,s,"p. 3, Section 2.2, Figure 2 example",Paired with the example thrust and total input.
+krejci_etal_2018_ifm_nano_feep_flight,higher Isp example bus input,30,W,"p. 3, Section 2.2, Figure 2 example","Includes housekeeping, heater and neutralizer."
+,higher Isp example implied bus-to-effective-jet efficiency,0.20430520833333332,fraction,F × Isp × g0 / (2 × input W),Economicspace equation solved for efficiency.
+,higher Isp example model bus input with 0.60 efficiency,10.215260416666666,W,Economicspace ep_power_required_w at same thrust and Isp,Sensitivity fixture.
+,higher Isp example listed/model bus input ratio,2.9367826933764336,ratio,Same-thrust and same-Isp comparison,

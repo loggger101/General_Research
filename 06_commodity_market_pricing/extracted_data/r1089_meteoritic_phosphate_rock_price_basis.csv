@@ -1,0 +1,17 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mineral_commodity_summaries_2025,"U.S. marketable phosphate rock average mine value, 2024 estimate",100,USD/metric tonne,"Phosphate Rock, Salient Statistics - United States, price row, 2024e",Free on board mine. Beneficiated product suitable for phosphoric acid or elemental phosphorus.
+usgs_mineral_commodity_summaries_2026,"U.S. marketable phosphate rock average mine value, 2024 revised",96,USD/metric tonne,"Phosphate Rock chapter, first page, Salient Statistics - United States, price row, 2024",Free on board mine.
+usgs_mineral_commodity_summaries_2026,"U.S. marketable phosphate rock average mine value, 2025 estimate",100,USD/metric tonne,"Phosphate Rock chapter, first page, Salient Statistics - United States, price row, 2025e",Free on board mine.
+ibm_2017_yearbook_phosphate_rock_feed_specifications,Type I elemental phosphorus feed minimum phosphate,30,wt% P2O5,"p. 1-10, Specifications, row 1, Type I",Historic Indian standard reproduced in yearbook.
+ibm_2017_yearbook_phosphate_rock_feed_specifications,Type II phosphoric acid feed minimum phosphate,32,wt% P2O5,"p. 1-10, Specifications, row 1, Type II",Historic Indian standard reproduced in yearbook.
+ibm_2017_yearbook_phosphate_rock_feed_specifications,Type I elemental phosphorus feed maximum chloride,0.015,wt% Cl,"p. 1-10, Specifications, row 8, Type I",Historic Indian standard reproduced in yearbook.
+ibm_2017_yearbook_phosphate_rock_feed_specifications,Type II phosphoric acid feed maximum chloride,0.05,wt% Cl,"p. 1-10, Specifications, row 8, Type II",Historic Indian standard reproduced in yearbook.
+lewis_jones_2016_l_chondrite_phosphate_chemistry,Equilibrated L chondrite apatite mean chlorine,5.2,wt% Cl,"Accepted manuscript p. 16, Discussion, Table 3 reference",Sampled apatite grains; comparison with feed limits does not establish concentrate quality.
+,Mean apatite chlorine divided by historic Type II chloride limit,104,ratio,5.2 / 0.05,Grain versus whole feed comparator.
+spacevalue_terrestrial_phosphate_phase_price_code_2026,Pinned phosphorus reference price,3,USD/kg,spacevalue/catalog.py line 1875,Elemental quote; rc-909 addresses its own provenance.
+spacevalue_terrestrial_phosphate_phase_price_code_2026,merrillite terrestrial direct reference,0.1,USD/kg,spacevalue/catalog.py line 2084; fetch_reference_table lines 2591-2618,USGS/LME/mineralogy reference; 2025-01-31
+spacevalue_terrestrial_phosphate_phase_price_code_2026,merrillite phosphorus yield,0.202,kg P/kg phase,spacevalue/catalog.py line 2084; fetch_reference_table lines 2591-2618,Catalog mass fraction.
+,merrillite gross elemental value selected by phase function,0.606,USD/kg,spacevalue/cargo.py lines 157-200 and 368-390,Static Earth prices and refinery flag false; gross yield proxy without refining deductions.
+spacevalue_terrestrial_phosphate_phase_price_code_2026,chlorapatite terrestrial direct reference,0.1,USD/kg,spacevalue/catalog.py line 2089; fetch_reference_table lines 2591-2618,USGS/LME/mineralogy reference; 2025-01-31
+spacevalue_terrestrial_phosphate_phase_price_code_2026,chlorapatite phosphorus yield,0.178,kg P/kg phase,spacevalue/catalog.py line 2089; fetch_reference_table lines 2591-2618,Catalog mass fraction.
+,chlorapatite gross elemental value selected by phase function,0.534,USD/kg,spacevalue/cargo.py lines 157-200 and 368-390,Static Earth prices and refinery flag false; gross yield proxy without refining deductions.

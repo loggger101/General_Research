@@ -1,0 +1,11 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_h3_30s_sso_and_flight_basis_code_2026,H3 (30) exported payload_leo_kg,4000,kg,Spacecost launch_vehicles.csv line 24,Notes identify it as a 500 km SSO benchmark.
+spacecost_h3_30s_sso_and_flight_basis_code_2026,H3 (30) exported fairing envelope,107,m^3,Spacecost launch_vehicles.csv line 24; fairings.py H3 (30),Estimate for short fairing.
+spacecost_h3_30s_sso_and_flight_basis_code_2026,H3 (30) exported USD per kg LEO,9075,USD/kg,Spacecost launch_vehicles.csv line 24,"Price headline divided by the 4,000 kg SSO proxy."
+spacecost_h3_30s_sso_and_flight_basis_code_2026,H3 (30) exported first flight year,2026,year,Spacecost launch_vehicles.csv line 24,Notes say first operational flight.
+jaxa_2018_h3_30s_500km_sso_design_target,H3-30S design launch capability,>=4000,kg,"JAXA November 2018 briefing, slide 2, H3-30S design capacity",Applies to documented 500 km SSO.
+jaxa_2018_h3_30s_500km_sso_design_target,H3-30S design reference SSO altitude,500,km,"JAXA November 2018 briefing, slide 2",Orbit-specific design basis.
+jaxa_2026_h3_f6_30_test_flight_result,Type 30 test flight launch date,2026-06-12,date,JAXA June 12 release and June president's briefing,Successful orbital injection during a test flight.
+jaxa_2026_h3_f6_30_test_flight_result,Type 30 test flight launched secondary payloads,6,payloads,"JAXA president's June briefing, Flight No. 6 section",Separation confirmed in the follow-up.
+jaxa_2026_h3_type22_launch_service_transition,MHI transition configuration,Type 22 with LE-9 Type1A,configuration,"JAXA 20 November release, first two paragraphs",Specified transition scope.
+jaxa_2026_h3_type22_launch_service_transition,VEP-5 test launch service provider,JAXA,organization,"JAXA 20 November release, footnote 3",No MHI launch transportation service for the Type 30 test.

@@ -1,0 +1,22 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_release_data_2026_11_13,185851 installed diameter,0.96,km,asteroid_catalog.csv designation 185851,"SsODNet, sigma 0.043 km. Four sources and diameter_sources_agree=False."
+asteroidcatalog_release_data_2026_11_13,185851 installed mass,462258793159.08356,kg,asteroid_catalog.csv designation 185851,"SsODNet, sigma 47176508551.14553 kg."
+asteroidcatalog_release_data_2026_11_13,185851 installed density,0.9978674576682152,g/cm3,asteroid_catalog.csv designation 185851,"density_measured=True, derived from the selected mass and spherical volume."
+asteroidcatalog_release_data_2026_11_13,185851 installed rotation period,2.7754,h,asteroid_catalog.csv designation 185851,JPL SBDB. Held fixed in the calculator comparison.
+naidu_etal_2015_2000_dp107_radar_shape,185851 primary radar volume,0.337,km3,"arXiv:1503.01743 PDF p. 7, Table 3, Primary",Uncertainty ±15%.
+naidu_etal_2015_2000_dp107_radar_shape,185851 primary volume-equivalent radar diameter,0.863,km,"arXiv:1503.01743 PDF p. 7, Table 3, Primary","Uncertainty ±5%. The principal-axis extents are 0.992, 0.938 and 0.964 km."
+naidu_etal_2015_2000_dp107_radar_shape,185851 radar primary mass,4.656e11,kg,"arXiv:1503.01743 PDF pp. 1 and 9, abstract and section 3.5",Uncertainty ±0.43e11 kg.
+naidu_etal_2015_2000_dp107_radar_shape,185851 radar primary density,1.381,g/cm3,"arXiv:1503.01743 PDF pp. 1 and 9, abstract and section 3.5",Uncertainty ±0.244 g/cm3.
+,185851 density with catalog mass and radar diameter,1.373580673716,g/cm3,Catalog mass / spherical volume at 0.863 km,One-input comparison holding the selected mass fixed.
+asteroidcatalog_binary_mass_diameter_basis_code_2026,185851 spin-lift threshold with installed density,3.304408809102,h,Economicspace modules/calc.py spin_lift_period_h,Optional gate flags the 2.7754 h catalog period.
+asteroidcatalog_binary_mass_diameter_basis_code_2026,185851 spin-lift threshold with radar diameter and installed mass,2.816456936475,h,Economicspace modules/calc.py spin_lift_period_h,Optional gate still flags the 2.7754 h catalog period.
+asteroidcatalog_release_data_2026_11_13,617 installed diameter,106,km,asteroid_catalog.csv designation 617,"SsODNet, sigma 11 km."
+asteroidcatalog_release_data_2026_11_13,617 installed mass,1.4184072101597706e18,kg,asteroid_catalog.csv designation 617,"SsODNet, sigma 2.0415731257681276e16 kg."
+asteroidcatalog_release_data_2026_11_13,617 installed density,2.2744935632849166,g/cm3,asteroid_catalog.csv designation 617,"density_measured=True, derived from selected mass and spherical volume."
+mueller_etal_2010_patroclus_menoetius_spitzer,Patroclus thermal diameter,106,km,"arXiv:0908.4198 PDF pp. 4 and 39, component diameters",Uncertainty ±11 km. Matches the installed 617 diameter and sigma.
+mueller_etal_2010_patroclus_menoetius_spitzer,Menoetius thermal diameter,98,km,"arXiv:0908.4198 PDF pp. 4 and 39, component diameters",Uncertainty ±10 km.
+mueller_etal_2010_patroclus_menoetius_spitzer,Patroclus–Menoetius system area-equivalent thermal diameter,145,km,"arXiv:0908.4198 PDF p. 38, system area-equivalent diameter",Uncertainty ±15 km. The area-equivalent diameter is unsuitable for combined volume.
+mueller_etal_2010_patroclus_menoetius_spitzer,Patroclus–Menoetius paper bulk density,1.08,g/cm3,"arXiv:0908.4198 PDF pp. 4 and 39, abstract and results discussion",Uncertainty ±0.33 g/cm3. Uses the paper’s historical system mass.
+grundy_etal_2018_patroclus_menoetius_mutual_orbit,Patroclus–Menoetius system mass,1.410e18,kg,"arXiv:1903.03729 PDF p. 4, Table 2, System mass, Circular orbit",Uncertainty ±0.029e18 kg. The unrestricted fit gives 1.409e18 kg.
+,Patroclus–Menoetius combined-volume diameter,128.709278604,km,Cube root of 106 cubed plus 98 cubed,Sphere-equivalent sum of the thermal volumes.
+,Patroclus–Menoetius combined-volume density at installed mass,1.270494354101,g/cm3,Installed 1.4184072101597706e18 kg / sum of thermal component volumes,Illustrative bulk density for the binary system.

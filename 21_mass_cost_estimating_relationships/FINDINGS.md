@@ -475,3 +475,11 @@ Verdict: rc-777, rc-865 closed as applied. Extracted data: none new.
 At Economicspace main 2977c46da5b7802a79fb18d517a5dd6f832bd749 (PR #217, master 1.85.0 / calc 1.47.0), by the owner's decision, `scale_tps_with_entry_speed` (on) makes `heat_shield_frac_of_payload` = 0.15 the fraction at an 11 km/s entry; an Earth entry at v_e = sqrt(v_inf^2 + v_esc^2) (125 km interface) carries 0.15 x (v_e / 11)^1.107, from `dec_braun_2006_approximate_ablative_tps_sizing_tool` Table 2 (PICA 8.324 cm at 11 km/s, 10.873 cm at 14 km/s, mass with thickness at fixed geometry). Mars entries keep 0.15; rows report `tps_frac`. Upstream's sample (120 stride rows, `earth_surface`, pinned prices-2026-11-12): 107 rows evaluable, fraction 0.175-1.195 (median 0.194), cost per kg 0.72-1.57x (median 1.065x); 50 rows enter above 14 km/s, where the fit extrapolates (rc-134).
 
 Verdict: rc-134 closed as applied. Extracted data: none new.
+
+
+## R1101 — Berthing adapter recurring cost and cargo-carrier scope (2026-11-24)
+
+- nasa_oig_2016_ig16025_docking_adapter_development, printed p. 8, reports “$32.4 million to develop” the lost ISS docking adapter. nasa_2015_crs7_docking_adapter_payload_mass, CRS-7 Cargo manifest, identifies International Docking Adapter #1 at 526 kg. The quotient is about USD 61,597/kg in historical dollars, for development spend divided by manifest hardware mass. esa_iss_common_berthing_mechanism_roles, port roles, assigns the “Active CBM” to the station and the “Passive CBM” to the incoming structure. orbital_sciences_2014_cygnus_configuration_mass, slides 3–4, gives mass for the pressurized cargo module.
+- spacecost_economicspace_berthing_carrier_cost_scope_2026, Spacecost v0.19.0 and the installed and frozen Stage 3 berthing rows, gives USD 60,000 per dry delivery-vehicle kg [30,000, 150,000]. Economicspace’s dry-mass expression and cost prologue use the whole carrier, including payload-scaled structure. At a fixed 15% fraction and 500 kg base, the model prices a 650 kg carrier for 1 t of cargo at USD 39M and a 2,000 kg carrier for 10 t at USD 120M before learning. **rc-1016** covers the carrier’s recurring-price basis and the heritage scope.
+
+Extracted data in extracted_data/r1101_berthing_adapter_hardware_scope.csv.

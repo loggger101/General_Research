@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_molybdenum_annual_market_code_2026,ANNUAL_WORLD_PRODUCTION_KG molybdenum,260000000,kg/yr,spacevalue/catalog.py lines 992–998,Comment identifies MCS 2025 world output for 2024; Earth market proxy.
+usgs_mineral_commodity_summaries_2025,"World mine production, 2024 estimate as originally published",260000,metric t/yr,"Molybdenum, World Mine Production and Reserves, world total (rounded), printed p. 123 (PDF p. 127)",MCS 2025 ver. 1.2; confirms the historical citation.
+usgs_mineral_commodity_summaries_2026,"World mine production, revised 2024",256000,metric t/yr,"Molybdenum, World Mine Production and Reserves, world total (rounded), printed p. 131 (PDF p. 135)",Revised observation year is the same as the current code comment.
+usgs_mineral_commodity_summaries_2026,"World mine production, 2025 estimate",260000,metric t/yr,"Molybdenum, World Mine Production and Reserves, world total (rounded), printed p. 131 (PDF p. 135)",Matches the current number on the newer observation year.
+,Revision to the 2024 estimate,-1.53846,%,(256000 − 260000) / 260000 × 100,Rounded published totals; mine output is a proxy for sales capacity.

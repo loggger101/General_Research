@@ -1,0 +1,45 @@
+source_id,item,value,unit,location_in_source,notes
+galactic_energy_pallas1_user_manual_2023,two-stage nominal LEO capacity,5000,kg,"PDF p. 2, Table 1 and vehicle overview",Overview gives the 3.35 m fairing as the Table 1 example. No altitude is assigned to the nominal 5 t here.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 200 km, 20°",5487,kg,"PDF p. 3, Table 2, 200 km × 20°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 200 km, 40°",5170,kg,"PDF p. 3, Table 2, 200 km × 40°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 200 km, 60°",4720,kg,"PDF p. 3, Table 2, 200 km × 60°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 200 km, SSO",3755,kg,"PDF p. 3, Table 2, 200 km × SSO",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 500 km, 20°",4181,kg,"PDF p. 3, Table 2, 500 km × 20°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 500 km, 40°",3866,kg,"PDF p. 3, Table 2, 500 km × 40°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 500 km, 60°",3417,kg,"PDF p. 3, Table 2, 500 km × 60°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 500 km, SSO",2449,kg,"PDF p. 3, Table 2, 500 km × SSO",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 700 km, 20°",3342,kg,"PDF p. 3, Table 2, 700 km × 20°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 700 km, 40°",3040,kg,"PDF p. 3, Table 2, 700 km × 40°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 700 km, 60°",2604,kg,"PDF p. 3, Table 2, 700 km × 60°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 700 km, SSO",1610,kg,"PDF p. 3, Table 2, 700 km × SSO",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 1000 km, 20°",2194,kg,"PDF p. 3, Table 2, 1000 km × 20°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 1000 km, 40°",1833,kg,"PDF p. 3, Table 2, 1000 km × 40°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 1000 km, 60°",1471,kg,"PDF p. 3, Table 2, 1000 km × 60°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Wenchang model capacity at 1000 km, SSO",462,kg,"PDF p. 3, Table 2, 1000 km × SSO",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 200 km, 40°",5323,kg,"PDF p. 4, Table 3, 200 km × 40°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 200 km, 60°",4870,kg,"PDF p. 4, Table 3, 200 km × 60°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 200 km, SSO",3909,kg,"PDF p. 4, Table 3, 200 km × SSO",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 500 km, 40°",4020,kg,"PDF p. 4, Table 3, 500 km × 40°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 500 km, 60°",3567,kg,"PDF p. 4, Table 3, 500 km × 60°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 500 km, SSO",2706,kg,"PDF p. 4, Table 3, 500 km × SSO",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 700 km, 40°",3207,kg,"PDF p. 4, Table 3, 700 km × 40°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 700 km, 60°",2754,kg,"PDF p. 4, Table 3, 700 km × 60°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 700 km, SSO",1961,kg,"PDF p. 4, Table 3, 700 km × SSO",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 1000 km, 40°",2074,kg,"PDF p. 4, Table 3, 1000 km × 40°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 1000 km, 60°",1621,kg,"PDF p. 4, Table 3, 1000 km × 60°",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,"Jiuquan model capacity at 1000 km, SSO",942,kg,"PDF p. 4, Table 3, 1000 km × SSO",2023 guide reference design.
+galactic_energy_pallas1_user_manual_2023,outer fairing option,3350,mm,"PDF p. 4, Fig. 6(a)",Diameter from figure label.
+galactic_energy_pallas1_user_manual_2023,3350 mm fairing usable envelope cylinder diameter,2900,mm,"PDF p. 4, Fig. 6(a)",Hatched payload envelope.
+galactic_energy_pallas1_user_manual_2023,3350 mm fairing usable envelope cylinder height,4000,mm,"PDF p. 4, Fig. 6(a)",Hatched payload envelope.
+galactic_energy_pallas1_user_manual_2023,3350 mm fairing usable envelope upper end diameter,1430,mm,"PDF p. 4, Fig. 6(a)",Hatched payload envelope.
+galactic_energy_pallas1_user_manual_2023,3350 mm fairing usable envelope taper axial height,2184,mm,"PDF p. 4, Fig. 6(a)",Hatched payload envelope.
+,3350 mm fairing cylinder-plus-frustum derived volume,34.769720579,m3,"PDF p. 4, Fig. 6(a)",Chord approximation.
+galactic_energy_pallas1_user_manual_2023,outer fairing option,4200,mm,"PDF p. 4, Fig. 6(b)",Diameter from figure label.
+galactic_energy_pallas1_user_manual_2023,4200 mm fairing usable envelope cylinder diameter,3800,mm,"PDF p. 4, Fig. 6(b)",Hatched payload envelope.
+galactic_energy_pallas1_user_manual_2023,4200 mm fairing usable envelope cylinder height,4913,mm,"PDF p. 4, Fig. 6(b)",Hatched payload envelope.
+galactic_energy_pallas1_user_manual_2023,4200 mm fairing usable envelope upper end diameter,2000,mm,"PDF p. 4, Fig. 6(b)",Hatched payload envelope.
+galactic_energy_pallas1_user_manual_2023,4200 mm fairing usable envelope taper axial height,2887,mm,"PDF p. 4, Fig. 6(b)",Hatched payload envelope.
+,4200 mm fairing cylinder-plus-frustum derived volume,75.400485633,m3,"PDF p. 4, Fig. 6(b)",Chord approximation.
+spacecost_pallas1_fairing_and_payload_main_2026,exported nominal LEO payload,5000,kg,reference/launch_vehicles.csv row 49 payload_leo_kg,Low and high also 5000 kg. Note says 400 km.
+spacecost_pallas1_fairing_and_payload_main_2026,exported notes claim for 700 km SSO,3000,kg,reference/launch_vehicles.csv row 49 notes,Attributed to Wikipedia.
+spacecost_pallas1_fairing_and_payload_main_2026,exported payload envelope volume,75.4,m3,reference/launch_vehicles.csv row 49 fairing_volume_m3,fairing_basis=guide. The row names the 4.2 m option.
