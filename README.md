@@ -234,6 +234,10 @@ rejects swallowed exceptions and fallback idioms in the tools. Standard library 
 Rounds are logged in `RESEARCH_LOG.md`, newest first. Extraction was interactive and is not committed as scripts;
 every extracted number records the page or table it came from so it can be re-checked.
 
+The 20 files un-hosted on 2026-09-26 were later purged from git history, which gave every commit a new id. Commit
+ids that FINDINGS, extracted data, registry rows and candidates cite (such as "restored from git 5dd58d5") are the
+ids from before the purge; the owner keeps the old-to-new map with an offline backup.
+
 ## License
 
 MIT, see [`LICENSE`](LICENSE), for this repository's own work (index, registry and tracking CSVs, FINDINGS,
