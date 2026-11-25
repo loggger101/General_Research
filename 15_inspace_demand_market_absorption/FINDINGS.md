@@ -47,10 +47,6 @@ Four NTRS papers hosted, one companion registered:
 
 **rc-056** opened as a note recording these. `extracted_data/r84_cislunar_demand_forecasts_key_numbers.csv`.
 
-## R567 — Demand-class shares lack a mass-allocation basis (2026-11-10)
-
-Kornuta et al., “Commercial Lunar Propellant Architecture,” p. 3, reports near-term lunar-derived propellant demand of 450 MT/yr and customer-input demand of nearly 1,640 MT/yr. Northrop Grumman’s LunA-10 study, p. 5, gives 100 MT of projected construction mass and 500–2,500 MT/yr of propellant transport under its Starship price assumptions. At spacevalue main `f836611f15dbb0ef511fe134bd5ac8192e3bea16`, `_DEMAND_SHARE_BY_CLASS` assigns 0.55 to propellant, 0.25 to structural, 0.15 to shielding, 0.05 to chemical, and an additive 0.0005 to trace; the code calls these judgments and says the four bulk shares partition the import budget. The cited forecasts do not provide those destination-level class shares or the trace fraction. **rc-432** records the citation and scenario-allocation gap; no share change is inferred. Existing extraction: `extracted_data/r84_cislunar_demand_forecasts_key_numbers.csv`.
-
 ## R92 - Per-satellite GEO station-keeping mass (2026-10-01)
 
 - **rawlin_majcher_1991_nssk_mass_comparisons_ep_systems** (TM-105153, hosted): 46 m/s/yr NSSK over 15 years, 1640 kg dry: chemical 459.3043 kg (30.62 kg/yr, Isp 310 s; Tsiolkovsky check within +0.18%), ion 69.28853 kg (4.62 kg/yr, Isp 2,467 s) at ~+210.8 kg dry mass.
@@ -429,7 +425,6 @@ separate status sources; this does not remeasure per-payload demand. rc-290
 now carries a concrete alternate fleet basis while remaining open on the exact
 altitude-classification rule. `extracted_data/r365_geocount_matched_300km.csv`.
 
-
 ## R366 - CelesTrak active-status definition for GEO count (rc-290; 2026-11-08)
 
 `celestrak_satcat_operational_status_2026`, Operational Status page, updated
@@ -440,7 +435,6 @@ records (585 total), so its status split is compatible with CelesTrak's
 `ACTIVE=1` definition. This defines the CelesTrak side only; it does not
 establish that CelesTrak and GCAT use the same active-status rules.
 `extracted_data/r366_celestrak_active_status_definition.csv`.
-
 
 ## R367 - GCAT current-orbit GEO active count (rc-290; 2026-11-08)
 
@@ -468,21 +462,17 @@ catalog/status and orbit-selection rules remain unresolved. No per-payload
 demand change is inferred, and `rc-290` stays open.
 `extracted_data/r367_gcat_current_geocount.csv`.
 
-
 ## R461 — Current programme market-clock option
 
 At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_market_wave_clock` defaults to `False` (modules/calc.py:688), and the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). The default branch continues to call `_delivery_window_yr(n_missions, fleet, mission_duration_yr, cadence_yr)` (line 7727). With the flag enabled, the market window becomes `(mission_duration_yr + (waves - 1) * cadence_yr) / n_missions`, where `waves` is the campaigns-per-ship count or its ceiling (lines 7722-7726); for rectangular `N=F*W`, multiplying this window by N matches the cost calendar's reported span `T+(W-1)*cadence`. The change is opt-in and only alters the market-window calculation, leaving rc-287's default discrepancy and its broader shared treatment of programme timing unresolved. `rc-287` remains open. Extracted: `extracted_data/r461_current_market_clock_flag.csv`.
-
 
 ## R467 — Current engineered-hold capped-market option
 
 At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.price_engineered_hold` defaults to `False` (modules/calc.py:753), and the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). In the capped-market branch, the default concentration path re-runs `optimal_payload_mix` with market caps after physical sizing (lines 7750-7789), so the sold mix can differ from the engineered `payload_mix`. With `price_engineered_hold=True`, the branch instead applies `_capped_sale_value` to `sale_terms` from the engineered hold (lines 7790-7797); it constrains pricing to the hold already flown but does not market-redesign the hold. The v1.66.0/calc v1.39.0 release notes say six of nine R322 cases with a recorded engineered-hold sale match this path; examples include the 1,000 kg solar case falling from $80,250 to $50,625 and the hard-ceiling case from $80,250 to $1,250. Across 53 sampled evaluable rows, two changed cost/kg (1.001x and 1.019x) with no evaluability change; three market-aware diagnostics were not replayed. The correction is opt-in, so `rc-252` remains open for default-path resolution and the remaining market-aware interaction checks. Extracted: `extracted_data/r467_current_engineered_hold_market_flag.csv`.
 
-
 ## R515 — LEO annual propellant-demand comparator
 
 Howard’s NASA DSEV concept assumes 90 t of Starship’s predicted 100 t payload can be transferred as propellant and says 12 Xenon plus 27 LOX/CH4 tanker flights are needed to fuel one Mars mission (Section IV.B, p. 4); Section VIII.A (p. 13) repeats the 39-flight total. Table 1 (p. 4) lists four Mars departures in the 2028–2037 analysis window. Applying the assumed 90 t to all 39 flights gives 3,510 t per mission; evenly spread over four departures and ten years, that is 1,404 t/yr. Spacevalue’s `IN_SPACE_ANNUAL_DEMAND_KG["leo"]` is 500,000 kg/yr. This NASA concept’s schedule-based transfer capacity is 2.81 times the stored ceiling, but it is a single architecture and not a general or observed market forecast. `rc-381` records the annualization and scope review; no replacement value is established. Extracted: `extracted_data/r515_leo_mars_dsev_propellant_demand_comparator.csv`.
-
 
 ## R525 — Mars-orbit annual-demand scale comparator (2026-11-10)
 
@@ -490,13 +480,11 @@ Howard’s NASA DSEV concept assumes 90 t of Starship’s predicted 100 t payloa
 
 Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["mars_orbit"]` = 60,000 kg/yr. Its comment frames this as one crewed mission’s in-space propellant per approximately 2.14-year synodic period. Verdict: the NASA transportation scale is larger, but is a notional production vision, not a Mars-orbit depot demand forecast; retain the mission-cycle value as a conservative scenario pending a like-for-like market basis. `rc-391`. Extracted: `extracted_data/r113_isru_production_targets.csv`.
 
-
 ## R526 — Mars-surface demand scale citation (2026-11-10)
 
 `sanders_kleinhenz_2024_isru_space_mining_unoosa`: the NASA JSC presentation gives “10’s of metric tons of commodities per year for initial commercial usage” (NTRS 20240002713, PDF p. 3) and labels the slide a notional future direction, with depicted activities “not currently funded or approved.”
 
 Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["mars_surface"]` = 20,000 kg/yr; the module labels the in-space demand table judgment, not measurement. Verdict: the NASA goal supports the order of magnitude as a scenario citation, but it is not a Mars-specific market forecast or measured absorption rate. Retain 20 t/yr as a judgment-based surface-base ceiling. `rc-392`. Extracted: `extracted_data/r113_isru_production_targets.csv`.
-
 
 ## R527 — GTO launch-based demand ceiling scope (2026-11-10)
 
@@ -504,6 +492,9 @@ Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["mars_su
 
 Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["gto"]` = 81,600 kg/yr, calculated as 34 × 6,000 × 0.40. Verdict: the cited sources support the launch count, a typical chemical GEO-platform mass, and the apogee-propellant fraction separately; they do not establish that every GTO Transfer launch carried one chemical GEO communications platform. Keep the arithmetic only as an idealized scenario pending a payload-cohort and mass-basis check; no replacement annual value is established. `rc-393`. Extracted: `extracted_data/r527_gto_launch_mass_propellant_comparator.csv`.
 
+## R567 — Demand-class shares lack a mass-allocation basis (2026-11-10)
+
+Kornuta et al., “Commercial Lunar Propellant Architecture,” p. 3, reports near-term lunar-derived propellant demand of 450 MT/yr and customer-input demand of nearly 1,640 MT/yr. Northrop Grumman’s LunA-10 study, p. 5, gives 100 MT of projected construction mass and 500–2,500 MT/yr of propellant transport under its Starship price assumptions. At spacevalue main `f836611f15dbb0ef511fe134bd5ac8192e3bea16`, `_DEMAND_SHARE_BY_CLASS` assigns 0.55 to propellant, 0.25 to structural, 0.15 to shielding, 0.05 to chemical, and an additive 0.0005 to trace; the code calls these judgments and says the four bulk shares partition the import budget. The cited forecasts do not provide those destination-level class shares or the trace fraction. **rc-432** records the citation and scenario-allocation gap; no share change is inferred. Existing extraction: `extracted_data/r84_cislunar_demand_forecasts_key_numbers.csv`.
 
 ## R602 — Surplus-price fraction lacks market basis (2026-11-11)
 
@@ -511,18 +502,15 @@ Upstream: spacevalue `spacevalue/catalog.py` `IN_SPACE_ANNUAL_DEMAND_KG["gto"]` 
 
 `economicspace_surplus_price_fraction_verification_current_2026`: the current verification-sheet extraction marks input I110, 0.5, NEED BACKING. Its archived Stage 2/3 tables are not current market evidence. Verdict: ask for price-response or market-clearing evidence with commodity and destination scope, or identify 0.5 explicitly as a scenario dial and show sensitivity bounds. Preserve the value; no replacement inferred. This is distinct from rc-240’s fleet-optimum wording issue. **rc-465** records the missing basis. Extracted: `extracted_data/r602_surplus_price_fraction_basis.csv`.
 
-
 ## R643 — Spacevalue elasticity comment retains unsupported PGM claim
 
 `bogmans_2024_power_of_prices_commodity_supply_demand_elasticities`: the registered IMF study reports demand-elasticity estimates for copper, zinc, lead and tin, not PGMs. `vertier_2025_banque_de_france_eco_notepad_419_price_elasticity_critical_mineral_supply`: its approximately 0.5 estimate is a mine-output supply response, not demand elasticity.
 
 Upstream: `spacevalue/cargo.py` `saturation_price_multiplier` retains the statement “Precious-metal demand is inelastic, ε ≈ 0.5” above the constant-elasticity formula; the helper receives `elasticity` as an argument. The file says the elasticity path remains the v1.14.0 curve in the no-caps compatibility path. The independent economicspace copy was corrected under rc-123; this spacevalue copy still has the prior claim. Verdict: the registered sources do not establish PGM demand elasticity. Treat 0.5 as a scenario if used; retain the formula and caller input pending PGM-specific evidence, with no replacement inferred. **rc-507**. Existing extraction: `extracted_data/r114_gr_links_key_numbers.csv`.
 
-
 ## R658 — economicspace surplus-price fraction rechecked (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `surplus_price_fraction` remains 0.5 while `sell_surplus_at_discount` is enabled. The new default market-wave clock changes programme timing, but no empirical price-response basis for the half-price assumption was added. **rc-465** remains open. Existing extract: `extracted_data/r602_surplus_price_fraction_basis.csv`.
-
 
 ## R765 - Frozen cislunar annual-market ceiling worksheet lineage (2026-11-15)
 
@@ -560,7 +548,6 @@ Upstream: economicspace worksheet inputs I66 carbon=1,000 kg/yr, I67 nickel-iron
 
 Upstream: economicspace inputs I65 carbon=3,000 kg/yr, I66 nickel-iron=15,000 kg/yr and I67 silicates=9,000 kg/yr. Verdict: retain the frozen values for reproducibility and carry the 60,000 kg/yr one-mission scenario and class-allocation provenance into the worksheet; NASA's human-Mars transportation scale does not establish depot-market absorption. Distinct from rc-391's current Mars-orbit total review, rc-392's Mars-surface total, rc-432's current class-share note, rc-636's frozen cislunar rows and rc-653's frozen Mars-surface rows. No numeric replacement inferred. **rc-655**. Extracted: 15_inspace_demand_market_absorption/extracted_data/r785_mars_orbit_market_ceiling_worksheet_lineage.csv.
 
-
 ## R818 — Frozen Mars market worksheet rechecks (2026-11-16)
 
 At fetched economicspace origin/main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, the frozen Mars-surface rows retain annual-market ceilings of 1,000 kg/yr carbon, 5,000 nickel-iron and 3,000 silicates; the Mars-orbit rows retain 3,000 carbon, 15,000 nickel-iron and 9,000 silicates. Their notes still describe the materials without citing the `annual_market_kg` field, so **rc-653** and **rc-655** remain open; the current code’s 20,000 kg/yr Mars-surface and 60,000 kg/yr Mars-orbit totals and class shares remain scenario allocations. Existing extractions: `extracted_data/r783_mars_surface_market_ceiling_worksheet_lineage.csv` and `extracted_data/r785_mars_orbit_market_ceiling_worksheet_lineage.csv`.
@@ -590,7 +577,6 @@ Verdict: the current worksheet confirms the empirical-backing gap while the code
 **economicspace_current_bestcase_verification_sheet_2026**: The supplied verification sheet, generated 2026-11-16, lists I103/I104/I105 as 2,500/7,500/12,500 kg/yr on p. 27 and marks each NEED BACKING. On p. 45 it says “the row’s notes name no published source for this column.” Page 48 reports 63 inputs and 51 steps marked NEED BACKING. These three outputs are 50,000 kg/yr multiplied by 5%/15%/25%, respectively.
 
 Upstream: current Economicspace worksheet inputs I103 chemical=2,500 kg/yr, I104 shielding=7,500 kg/yr and I105 structural=12,500 kg/yr. Verdict: carry the code-level scenario provenance into these current output rows and worksheet inputs; preserve the values, with no numeric replacement inferred. Applied rc-056 and rc-432 cover the Spacevalue code comments; open rc-636 covers frozen cislunar worksheet rows, not this current lunar-surface output. **rc-726**. Extracted: `extracted_data/r850_lunar_surface_market_ceiling_lineage.csv`.
-
 
 ## R908 — Spacevalue LEO demand comparator bibliography (2026-11-18)
 
@@ -639,7 +625,6 @@ Verdict: rc-864 closed as applied. Extracted data: none new.
 **spacevalue_annual_demand_class_share_code_current_2026**: at Spacevalue main `21528385332d10ae81dfbcfe6e97ce6077bdc3d9` (0.8.6; data contract 1.22.1), `spacevalue/catalog.py` still stores LEO `annual_market_kg=500,000` and GEO `annual_market_kg=44,600`. The LEO note compares 500,000 kg/year with Howard's 1,404 t/year DSEV architecture and calls it “one architecture's modelled capacity, not a market.” The GEO note retains the 613-payload, approximately 72.7 kg/year basis and records alternatives of 585 CelesTrak whole-orbit GEO±300 km payloads (602 by mean altitude) and 524 in GCAT's same envelope; no filter/catalog rule is selected.
 
 Verdict: I84 remains NEED BACKING under **rc-291**; **rc-290** and **rc-381** remain open for the GEO fleet/filter and LEO market-capacity bases. No numeric replacement inferred. Extracted: `extracted_data/r1000_verification_sheet_i84_beneficiation.csv`; `extracted_data/r1000_spacevalue_annual_demand_rechecks.csv`.
-
 
 ## R1096 — GTO propellant demand and product compatibility (2026-11-24)
 

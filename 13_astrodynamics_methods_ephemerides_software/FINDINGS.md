@@ -1,23 +1,3 @@
-## R1004 — AsteroidCatalog publishes SsODNet property references for the bodies it weighs (2026-11-19)
-
-At AsteroidCatalog main 059b5c7d7c70f73fc66b74ddae7dfe3dd73ab87a (PR #44, 0.13.13, data contract 1.11.0), `asteroidcatalog_ssodnet_property_bibrefs_code_current_2026` changed: every build reads the ssoCard `bibref` of each property from `imcce_ssodnet_orbital_metadata_api` for the 541 bodies with an SsODNet mass or density and writes `ssodnet_property_refs.csv`, shipped with each release. On the 2026-11-19 ssoBFT table all 3,068 property rows resolved, each card value equal to the imported one; ssoBFT's `id` for 469705 and 229762 arrives as U+FFFD characters and is found by number. The ~150,000 diameters and albedos and ~171,000 taxonomies outside that scope are stated as not mapped, with the ssoCard route (a Ceres card is 23,438 bytes). No value changed (rc-768).
-
-Verdict: rc-768 closed as applied. Extracted data: `extracted_data/r1004_asteroidcatalog_ssodnet_property_refs_coverage.csv`.
-
-## R1003 — Search-grid and fleet-cap checks remain open (2026-11-19)
-
-`economicspace_search_resolution_controls_2026`: Economicspace 1.84.2 main `aa5bd714b06d3ac2e0ed4c25498707e57a966721` retains `concentration_search_steps=7` with the comment “7 puts the optimum within a few percent” (`modules/calc.py:408-409`) and `programme_search_steps=8` (`:1137`). The current worksheet registers these dials at `campaign/verification_sheet.py:4602-4603` and `:4654-4655`; supplied 2026-11-16 verification_sheet.pdf p.48 flags I108=7 and I110=8 NEED BACKING. It gives no dense/adaptive-search error comparison. **rc-498 remains open.**
-
-`economicspace_fleet_search_cap_code_current_2026`: `max_fleet_ships=64` remains a search termination bound, not a physical limit (`modules/calc.py:1122-1130`); the output diagnostic counts results at the cap and warns when it binds (`:10498-10510`). The same PDF p.48 flags I109=64 NEED BACKING. Its 2018 DT winner at F=1 is not an all-catalog cap-sensitivity result. **rc-574 remains open.**
-
-Extracted data: `extracted_data/r1003_economicspace_search_controls_recheck.csv`.
-
-## R954 — AsteroidCatalog U definition and Spacevalue timing claim scoped upstream (2026-11-19)
-
-- rc-809: AsteroidCatalog main d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8 adds the MPC's “Uncertainty Parameter U and Orbit Quality Codes” documentation beside the JPL field reference. It defines U on a 0–9 scale and cautions that U does not predict future positional uncertainty for near-Earth objects (`mpc_uncertainty_parameter_u_documentation`).
-- rc-765: Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996 labels the Python-boundary speed row an informal timing: no harness, raw results, CPU, build profile, workload or repetition count is committed, so the reported speedups are indicative only (`spacevalue_cargo_rust_python_boundary_speed_claim_current_2026`).
-
-Verdict: the definition and limit are cited; the unbenchmarked timing is qualified. Catalog values and correctness tests are unchanged. Extracted data: none new.
 # Domain 13 — Astrodynamics methods, ephemerides & audited software
 
 Backings: economicspace `orbital.py` (`elements_to_state` alone since 8ce5c53, for the dashboard's orbit diagram; its CITATIONS.md section 3 credits skyfield), the textbook relations its verification worksheet cites, and the JPL ephemeris services. [starred-repos](https://github.com/loggger101/starred-repos), split out of economicspace `research/starred-repos/` on 2026-10-20, is outside the pipeline: sources only it uses were rejected in R239-R240.
@@ -664,7 +644,6 @@ number. No actual-provider incidence, published-catalog corruption, real
 rotation value or downstream ranking effect was measured.
 `extracted_data/r337_designation_case_identity.csv`.
 
-
 ## R338 - Orbital epochs and source-record coherence (2026-11-02)
 
 `imcce_ssodnet_orbital_metadata_api` lists
@@ -733,7 +712,6 @@ gaps. Neither diagnostic is a production patch. The live complete Ceres
 responses establish distinct source metadata, not a currently missing
 provider field, released-catalog corruption, launch-window error or ranking
 effect. `extracted_data/r338_orbital_epoch_and_bundle_pairing.csv`.
-
 
 ## R339 - Final-size eligibility and missing spectral classes (2026-11-02)
 
@@ -808,7 +786,6 @@ strict filtering and Tholen fallback. The source frames are synthetic and
 do not establish provider frequency, released-catalog errors or ranking
 effects. `extracted_data/r339_catalog_quality_gate_order_and_class_markers.csv`.
 
-
 ## R340 - Composite-summary consumer dependency (2026-11-03)
 
 `spacecost_summary_consumer_contract_record_2026` reads spacecost
@@ -847,7 +824,6 @@ that the current Stage-4 ranking uses an unpenalized summary or is changed
 by its total-cost correction. The associated cost-field audit is
 `spacecost_summary_propellant_uplift_record_2026`. All four live main comparisons remain identical to
 the commits read. `extracted_data/r340_summary_consumer_dependency.csv`.
-
 
 ## R342 - Release quote attestation (2026-11-03)
 
@@ -907,7 +883,6 @@ compares committed fixtures where the tag has them (publish-prices.yml
 L75-85); its later summary indexes unit and close_date directly (L94), so
 missing-key cases need not finish that workflow despite passing this gate.
 `extracted_data/r342_release_quote_attestation.csv`.
-
 
 ## R343 - Cached-release data contracts (2026-11-03)
 
@@ -1022,23 +997,19 @@ trajectory, population effect or global optimum is claimed. Thirty-one
 source/input blobs match fresh pinned metadata and all four live main
 comparisons are identical. `extracted_data/r346_unconverged_sizing_iteration.csv`.
 
-
 ## R456 - Apsis-choice option in current upstream (2026-11-09)
 
 `economicspace_apsis_choice_flag_2026`, economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, defines `CalcConfig.offer_both_apsides` with default `False` (modules/calc.py, line 674). The apsis selector sorts offers by the sum of outbound and return delta-v, then retains only the first offer while the flag is off; with it on, every available apsis is offered to the mission search (lines 3495-3501).
 
 This provides an opt-in route matching `rc-266`'s proposed full mission comparison, but the default still preselects by delta-v sum. Keep the candidate open to review the default and consuming configuration; the presence of the flag alone does not establish that normal evaluations compare both apsides. Extracted: `extracted_data/r456_apsis_choice_flag_audit.csv`.
 
-
 ## R469 — Current oscillating-sizing relaxation option
 
 At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.relax_oscillating_sizing` defaults to `False` (modules/calc.py:716), and the module consumer constructs `CONFIG = CalcConfig()` (line 1468). When enabled, an unconverged native result is re-solved in native and half-step-relaxed modes; the better result is selected with the configured `selection_key`, which treats a failed solve as the lowest key (lines 7017-7024; 8165-8198). The upstream release note reports 23 controlled cases: 22 replay the native answer to six places, gains are within 0.36% of the closed-form result, and body-limit, volume-limit and profit-objective controls do not move; one of 53 sampled rows changes. This option addresses the recorded oscillation witness when enabled, but it leaves the default path accepting an unconverged, never-backed-off last iterate and the sampled comparisons do not establish convergence bounds across other regimes. `rc-282` remains open. Extracted: `extracted_data/r469_oscillating_sizing_relaxation_flag.csv`.
 
-
 ## R636 — Coarse optimizer search resolution (2026-11-11)
 
 `economicspace_search_resolution_controls_2026` — economicspace main sets `concentration_search_steps=7` and says “7 puts the optimum within a few percent” (modules/calc.py:396-403). It sets `programme_search_steps=8` for a geometric fleet sweep followed by refinement (lines 1102-1106), but records no convergence bound. The current best-case verification worksheet flags its corresponding inputs I112 and I114 as needing backing; its checks reproduce calculations and trace inputs, not grid convergence. **Verdict:** these are algorithmic settings, so an external physical citation would not validate them; require a documented dense-search comparison and qualify or substantiate the accuracy claim. Open `rc-498`. Extracted data: `extracted_data/r636_economicspace_search_resolution_controls.csv`.
-
 
 ## R658 — economicspace search-resolution candidate rechecked (2026-11-12)
 
@@ -1060,7 +1031,6 @@ The current best-case sheet flags I108=7 concentration-search steps, I110=8 prog
 
 Verdict: the committed tests support the parity claims, but the reported latency ratios and per-call savings cannot be reproduced from the pinned repository. **rc-765** requests a runnable benchmark procedure and recorded timings, or qualification/removal of the speed claim; no replacement speed value inferred. Extracted: `extracted_data/r886_spacevalue_cargo_rust_boundary_benchmark_gap.csv`.
 
-
 ## R889 — SsODNet property-level bibliography in AsteroidCatalog (2026-11-18)
 
 - `imcce_ssodnet_orbital_metadata_api`: the ssoBFT “Usage and citation” documentation asks users, “Whenever possible, please publish the bibliographic references,” and directs them to property `bibref` entries in each target’s ssoCard (lines 313-317). The ssoCard schema says each property has bibliographic references (line 125); the API accepts multiple targets and notes a large response volume (lines 40-48).
@@ -1076,7 +1046,6 @@ Verdict: the committed tests support the parity claims, but the reported latency
 - **Verdict:** Open rc-778 to carry the MPC acknowledgement and whether its designation map was used with each published release. This is identity provenance, separate from which providers supplied measured values; no catalog values are changed.
 - **Extracted data:** `extracted_data/r898_asteroidcatalog_mpc_release_attribution.csv`.
 
-
 ## R943 — AsteroidCatalog's MPC U definition lacks a direct citation (2026-11-18)
 
 - **mpc_uncertainty_parameter_u_documentation**: the MPC page says U is an “integer in the range 0–9” and warns it “should not be used as a predictor for the uncertainty in the future motion of NEAs” (sections “Uncertainty Parameter U” and “Calculation Method”).
@@ -1085,6 +1054,13 @@ Verdict: the committed tests support the parity claims, but the reported latency
 - **Upstream field:** JPL SBDB condition_code, exported as orbit_condition_code.
 - **Verdict:** Open rc-809 to add the official MPC definition citation and its stated future-motion limitation; no catalog values change.
 - **Extracted data:** extracted_data/r943_mpc_u_citation_gap.csv.
+
+## R954 — AsteroidCatalog U definition and Spacevalue timing claim scoped upstream (2026-11-19)
+
+- rc-809: AsteroidCatalog main d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8 adds the MPC's “Uncertainty Parameter U and Orbit Quality Codes” documentation beside the JPL field reference. It defines U on a 0–9 scale and cautions that U does not predict future positional uncertainty for near-Earth objects (`mpc_uncertainty_parameter_u_documentation`).
+- rc-765: Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996 labels the Python-boundary speed row an informal timing: no harness, raw results, CPU, build profile, workload or repetition count is committed, so the reported speedups are indicative only (`spacevalue_cargo_rust_python_boundary_speed_claim_current_2026`).
+
+Verdict: the definition and limit are cited; the unbenchmarked timing is qualified. Catalog values and correctness tests are unchanged. Extracted data: none new.
 
 ## R999 — AsteroidCatalog release citation provenance (2026-11-19)
 
@@ -1100,13 +1076,26 @@ At AsteroidCatalog main f360a3c02daabee87a7dd225a6cb76966e792ecf (PRs #41 and #4
 
 Verdict: rc-778, rc-866 closed as applied. Extracted data: none new.
 
+## R1003 — Search-grid and fleet-cap checks remain open (2026-11-19)
+
+`economicspace_search_resolution_controls_2026`: Economicspace 1.84.2 main `aa5bd714b06d3ac2e0ed4c25498707e57a966721` retains `concentration_search_steps=7` with the comment “7 puts the optimum within a few percent” (`modules/calc.py:408-409`) and `programme_search_steps=8` (`:1137`). The current worksheet registers these dials at `campaign/verification_sheet.py:4602-4603` and `:4654-4655`; supplied 2026-11-16 verification_sheet.pdf p.48 flags I108=7 and I110=8 NEED BACKING. It gives no dense/adaptive-search error comparison. **rc-498 remains open.**
+
+`economicspace_fleet_search_cap_code_current_2026`: `max_fleet_ships=64` remains a search termination bound, not a physical limit (`modules/calc.py:1122-1130`); the output diagnostic counts results at the cap and warns when it binds (`:10498-10510`). The same PDF p.48 flags I109=64 NEED BACKING. Its 2018 DT winner at F=1 is not an all-catalog cap-sensitivity result. **rc-574 remains open.**
+
+Extracted data: `extracted_data/r1003_economicspace_search_controls_recheck.csv`.
+
+## R1004 — AsteroidCatalog publishes SsODNet property references for the bodies it weighs (2026-11-19)
+
+At AsteroidCatalog main 059b5c7d7c70f73fc66b74ddae7dfe3dd73ab87a (PR #44, 0.13.13, data contract 1.11.0), `asteroidcatalog_ssodnet_property_bibrefs_code_current_2026` changed: every build reads the ssoCard `bibref` of each property from `imcce_ssodnet_orbital_metadata_api` for the 541 bodies with an SsODNet mass or density and writes `ssodnet_property_refs.csv`, shipped with each release. On the 2026-11-19 ssoBFT table all 3,068 property rows resolved, each card value equal to the imported one; ssoBFT's `id` for 469705 and 229762 arrives as U+FFFD characters and is found by number. The ~150,000 diameters and albedos and ~171,000 taxonomies outside that scope are stated as not mapped, with the ssoCard route (a Ceres card is 23,438 bytes). No value changed (rc-768).
+
+Verdict: rc-768 closed as applied. Extracted data: `extracted_data/r1004_asteroidcatalog_ssodnet_property_refs_coverage.csv`.
+
 ## R1010 — Stage 1 property and orbit citations (2026-11-22)
 
 - `asteroidcatalog_ssodnet_spin_import_code_2026` imports the first positive ranked `spins.period.value` as `rotation_period_h` (ssodnet.py lines 243–260, 361–368). `asteroidcatalog_ssodnet_property_bibrefs_code_current_2026` emits six property types for mass/density-selected bodies. A Ceres-shaped fixture selected by `bodies_to_map` emits its resolved mass and no spin-reference row. `imcce_ssodnet_orbital_metadata_api` exposes Ceres's sidereal period as 9.07417 h with `Russell+2016` under the first spin's `bibref`; `russell_2016_dawn_arrives_at_ceres` reports “9.074170 ± 0.000001 hours” (printed p. 1008). `asteroidcatalog_release_data_2026_11_13` gives 9.07417 h as the JPL-selected period and SsODNet as the mass provider. **rc-871** asks to map the SsODNet spin citation for the already-fetched cohort with the existing card-versus-imported-value status.
 - `asteroidcatalog_release_data_2026_11_13` gives 2018 DT an orbit from `JPL SBDB` at epoch JD 2461200.5 TDB. `economicspace_worksheet_orbit_provider_code_2026` labels its three orbit fields as sourced, but returns the same release-wide list of four surveys for each. The 2026-11-18 HTML snapshot prints this generic backing for I50–I52. **rc-872** asks the worksheet to print the supplied orbit provider and epoch metadata where they are known for the run.
 
 Extracted data in `extracted_data/r1010_asteroid_property_citation_paths.csv`.
-
 
 ## R1090 — Pallas albedo citations by provider (2026-11-24)
 

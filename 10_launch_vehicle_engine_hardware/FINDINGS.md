@@ -54,7 +54,6 @@ NASA MSFC ECI RDRE report: best hot fire ~5,300 lbf at ~740 psia, Isp 246 s (p32
 
 `meyer_2012_lox_lch4_reaction_control_thruster_altitude_combustion_stand` (NASA/TM-2012-217643) hosted as full_texts/meyer_arrington_kleinhenz_marshall_2012_lox_lch4_rcs_altitude_combustion_stand_ntrs20120009210.pdf: Glenn's Altitude Combustion Stand (activated 2009, up to 2000 lbf / 8.9 kN) ran the LOX/LCH4 RCS programme 2009-2010 and "delivered up to 24 hot fire tests in a single test day". Context only.
 
-
 ## R419 — Raptor 2 RVAC modeled performance comparison (2026-11-09)
 
 Herberhold et al. (2026), Table 2, reports DLR RPA-calculated Raptor 2 RVAC vacuum Isp of 368.5 s at O/F 3.4 and 365.9 s at O/F 3.6. Section 2.1.1 says precise Raptor 2 performance is unpublished and describes assumptions including 300 bar chamber pressure and an approximately 100 expansion ratio. The upstream methalox row uses 380 s from a 2013 Raptor upper-stage development figure. The modeled values are 3.0% and 3.7% lower, respectively, but differ in engine generation and evidence basis; they do not establish that the stored family-level value is wrong. rc-329 records a scoped reconciliation review. `extracted_data/r419_raptor2_rvac_isp.csv`.
@@ -72,10 +71,10 @@ R492 — NASA Glenn’s ‘Propulsion Options: RL10B-2…’ slide (slide 7) giv
 ## R494 - Apollo LM lander dry fraction
 
 - **nasa_1969_apollo10_press_kit_lm4_mass** (printed p. 44): NASA lists LM-4’s descent stage at 4,703 lb dry and its loaded descent propulsion system at 18,134 lb. The derived dry/(dry+propellant) fraction is 0.20599, close to `spacecost`’s `LANDER_DRY_MASS_FRAC=0.20` and its approximate Apollo LM benchmark. This is an Apollo lunar LM configuration; the same generic constant is used in other powered-descent chains. rc-360 records the source and scope gap; no numeric replacement inferred. `extracted_data/r494_apollo10_lm4_lander_dry_fraction.csv`.
+
 ## R564 — Tug and lander mass proxies now name their bases (2026-11-10)
 
 At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, the 465 s tug Isp is identified as an RL10B-2 representative proxy distinct from the 452 s hydrolox row (rc-358); the 0.10 tug dry fraction cites the ICPS/DCSS analogue and removes the unsupported Centaur V comparison (rc-359); and the 0.20 generic lander proxy cites Apollo 10 LM-4 masses and narrows its scope (rc-360). Numeric values remain unchanged.
-
 
 ## R713 — Delivery-chain worksheet inputs omit existing source citations (2026-11-12)
 

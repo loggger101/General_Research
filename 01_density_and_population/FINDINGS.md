@@ -1,26 +1,6 @@
-## R956 — AsteroidCatalog rotation-period agreement cutoff lacks calibration (2026-11-19)
-
-At AsteroidCatalog main d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8, `asteroid_catalog/merge.py` lines 149–152 says a rotation period is “precise enough that 2% catches the half/double-period ambiguity”; lines 198–200 set `rotation_period_h` to `kind=ratio`, `tolerance=0.02`, and `sigma=None` (`asteroidcatalog_rotation_agreement_tolerance_code_current_2026`). The merge code calls its agreement cutoffs a reading of typical catalogue precision, not fitted, but gives no paired-source residual basis or sensitivity for the rotation-period cutoff. SsODNet selects the first positive best-ranked spin solution; JPL maps `rot_per` to the same field.
-
-Verdict: open rc-819 to calibrate the cutoff against paired source periods or label it as a policy threshold; 0.02 remains unchanged. Extracted data: `extracted_data/r956_asteroidcatalog_rotation_agreement_tolerance.csv`.
-
 # Domain 1 Findings — density by spectral type, PGM factors, population statistics
 
 Backings: per-spectral-type density and PGM factors in AsteroidCatalog `reference/taxonomy_composition.csv` (`TAXONOMY_COMPOSITION`, loaded by economicspace `catalog.py`); diameter, albedo and taxonomy inputs; ranking quality of the whole pipeline.
-
-## R694 - Cb density estimate (2026-11-12)
-
-- **simda2024** [T3]: the committed per-class extract reports Cb median 1.790 g/cm3 (N=13; mean 1.721).
-- **carry2012** [T1]: Table 3 p.26 reports Cb density 1.43 +/- 0.74 at the 50% tier (N=6), and 1.25 +/- 0.21 at the 20% tier (N=3).
-
-AsteroidCatalog@a2c527c09eb39618d7fd26b2b180f730ea906b8b sets TAXONOMY_COMPOSITION[Cb].density_est_gcm3 to 1.40. SiMDA's median is 0.39 g/cm3 higher, while Carry's higher-precision subsets are closer to the current value. rc-562 asks for the class anchor and sample-selection difference to be reconciled; neither summary alone establishes a replacement. Extracted: extracted_data/simda2024_density_by_class.csv; extracted_data/carry2012_density_by_type.csv.
-
-## R688 - Z-type density proxy (2026-11-12)
-
-- **mahlke_2022_asteroid_taxonomy_spectra_albedo** [T1]: §4.2.2 p. 15 describes Z as a “low-number diffuse cluster” with larger spectral slopes than D and a distinct orbital distribution; the paper establishes taxonomy, not density.
-- **simda2024** [T3]: the extracted class summary gives D N=3 and median density 1.270 g/cm³, agreeing with the D row's 1.20; it has no Z density row.
-
-AsteroidCatalog@a2c527c09eb39618d7fd26b2b180f730ea906b8b assigns Z 1.20 g/cm³ and says its composition is taken as D, without stating that the density is also inherited from D. The D-class statistic does not measure Z; `rc-546` asks for the proxy transfer and its scope to be documented, with no replacement inferred. Extracted: `extracted_data/r688_z_density_proxy.csv`.
 
 ## R1 - First sources (2026-09-17)
 
@@ -529,15 +509,28 @@ are identical. `extracted_data/r347_geometric_albedo_ceiling.csv`.
 ## R520 — Tholen-M albedo fallback comparator (2026-11-10)
 
 Mainzer et al.’s Table 1 reports “Tholen M | 33 | 0.125” for the NEOWISE geometric-albedo median (p. 22), with standard deviation 0.037. AsteroidCatalog `derive.py` sets `ALBEDO_BY_SPECTRAL_TYPE['M']` to 0.1330 from 139 labeled catalogue bodies; economicspace’s 2026-10-26 verification worksheet uses 0.133 for 2018 DT when deriving its diameter. The comparator differs by 0.008 (6.4%), within the paper’s sample dispersion. Mainzer et al. warn that “lower albedo objects are less likely to have been observed” in visible-selected taxonomic samples (p. 16), biasing class albedos upward. The benchmark supports the order of the current class fallback while leaving its sample/population basis open. **rc-386** records the citation and selection-bias review; no numeric change is inferred. Extracted: `extracted_data/r520_tholen_m_type_albedo_comparator.csv`.
+
 ## R563 — Taxonomy-albedo gap remains open (2026-11-10)
 
 The current AsteroidCatalog main (800a4ca377823edc3ea205b9069b29db147f2b63) retains its M-class fallback albedo of 0.1330 from 139 bodies. economicspace `verification_sheet.py --check` still labels 2018 DT’s I10 value as an unmeasured taxonomy estimate needing backing. Mainzer et al.’s Tholen-M median remains a comparator rather than a population-matched replacement. **rc-386** remains open; no albedo value changes.
-
 
 ## R633 - M-class density fallback has no population uncertainty (2026-11-11)
 
 - **asteroidcatalog_m_class_density_fallback_current_2026**: AsteroidCatalog's M-class row stores `density_est_gcm3=3.9` and cites published estimates for 16 Psyche. The economicspace verification worksheet applies 3.9 g/cm³ to 2018 DT, marks its density unmeasured, and labels the cell a taxonomy estimate. **zhang_etal_2023_m_type_density_variation**: Table 5 compiles published estimates for several individual M-type bodies: Psyche 3.70±0.60 to 4.20±0.60, Kalliope 3.35±0.33 to 4.36±0.50, and Klotho 4.16±0.62 g/cm³ (printed p. 11). Section 4.2 describes compositional variation among M-type asteroids and distinguishes possible metal-rich and metal-poor bodies (printed pp. 10-11). These measurements show individual-body spread and heterogeneous source estimates; they do not constitute a class-level probability distribution or establish a replacement point for 2018 DT. Verdict: derive or cite a population-matched class estimate and uncertainty, or expose 3.9 as a scenario/prior when a body's density is unmeasured. Keep the current point pending better population evidence. This is distinct from rc-386, which concerns M-class albedo and diameter inference. **rc-496**. Extracted: `extracted_data/r633_m_type_density_fallback_basis.csv`.
 
+## R688 - Z-type density proxy (2026-11-12)
+
+- **mahlke_2022_asteroid_taxonomy_spectra_albedo** [T1]: §4.2.2 p. 15 describes Z as a “low-number diffuse cluster” with larger spectral slopes than D and a distinct orbital distribution; the paper establishes taxonomy, not density.
+- **simda2024** [T3]: the extracted class summary gives D N=3 and median density 1.270 g/cm³, agreeing with the D row's 1.20; it has no Z density row.
+
+AsteroidCatalog@a2c527c09eb39618d7fd26b2b180f730ea906b8b assigns Z 1.20 g/cm³ and says its composition is taken as D, without stating that the density is also inherited from D. The D-class statistic does not measure Z; `rc-546` asks for the proxy transfer and its scope to be documented, with no replacement inferred. Extracted: `extracted_data/r688_z_density_proxy.csv`.
+
+## R694 - Cb density estimate (2026-11-12)
+
+- **simda2024** [T3]: the committed per-class extract reports Cb median 1.790 g/cm3 (N=13; mean 1.721).
+- **carry2012** [T1]: Table 3 p.26 reports Cb density 1.43 +/- 0.74 at the 50% tier (N=6), and 1.25 +/- 0.21 at the 20% tier (N=3).
+
+AsteroidCatalog@a2c527c09eb39618d7fd26b2b180f730ea906b8b sets TAXONOMY_COMPOSITION[Cb].density_est_gcm3 to 1.40. SiMDA's median is 0.39 g/cm3 higher, while Carry's higher-precision subsets are closer to the current value. rc-562 asks for the class anchor and sample-selection difference to be reconciled; neither summary alone establishes a replacement. Extracted: extracted_data/simda2024_density_by_class.csv; extracted_data/carry2012_density_by_type.csv.
 
 ## R710 — Orbit-only outer-body class inference (2026-11-12)
 
@@ -545,13 +538,11 @@ At AsteroidCatalog 0.13.2 (`a2c527c`), `physics.py` sets `OUTER_SOLAR_SYSTEM_AU=
 
 The installed `data-2026-10-21b` catalog has 1,575,889 rows. In the current Stage 1 input, 23,363 rows carry `spectral_type_source=orbit`; 266 of those have 4.6<a<5.05 AU, including 61 at 4.6–4.8 and 205 at 4.8–5.05. The semimajor-axis-only threshold therefore assigns D in a boundary region outside the paper’s Hilda definition and short of the commonly used 5.05–5.35 AU Trojan span; the local count is not a dynamical-membership test. **rc-580** asks for a cited dynamical basis or explicit heuristic scope and sensitivity; no class replacement is inferred. Extracted: `extracted_data/r710_outer_solar_system_taxonomy_threshold.csv`.
 
-
 ## R711 — 5.5 AU composition override scope (2026-11-12)
 
 AsteroidCatalog 0.13.2 sets `ICY_COMPOSITION_AU=5.5` and states that past Jupiter’s aphelion taxonomy stops describing composition; `enrich._row_keys` substitutes D for every stored spectral label when semimajor axis exceeds the threshold. Fernández-Valenzuela et al. studied photometric **surface** composition in 100 trans-Neptunian objects. The abstract reports “86% of our sample” as consistent with some water ice and a 73% surface mixture of water ice, amorphous silicates and complex organics (p. 1). This TNO surface sample does not establish bulk composition for every body above 5.5 AU.
 
 In the installed AsteroidCatalog `data-2026-10-21b` Stage 1 input, 8,382 rows have `a>5.5 AU` and `comp_class=D`; 8,340 have `spectral_type_source=orbit`. Thirty-one rows with a source-labeled non-D class are also overridden: S (15), C (10), and one each Cb, Z, K, L, Bk and Ld. These are installed-catalog counts, not population incidence estimates. **rc-581** asks for a population-matched basis and explicit scope for the composition/density fallback; no replacement threshold or class is inferred. This is distinct from **rc-580**, which concerns the 4.6 AU orbit-only spectral-type inference. Extracted: `extracted_data/r711_icy_composition_cutoff_scope.csv`.
-
 
 ## R738 — H-to-diameter plausibility screen has no stated residual-coverage basis (2026-11-14)
 
@@ -560,14 +551,12 @@ In the installed AsteroidCatalog `data-2026-10-21b` Stage 1 input, 8,382 rows ha
 - **Verdict**: document the paired-data basis and intended coverage of the 0.75-mag screen, or label it as a fit-quality policy and quantify how source-diameter rejections vary across a justified tolerance range. Retain the current margin pending that evidence; no numeric replacement inferred. **rc-605**.
 - Extracted: `extracted_data/r738_h_diameter_plausibility_tolerance.csv`.
 
-
 ## R739 — universal 0.25 g/cm3 density floor has a cross-taxonomic scope gap (2026-11-14)
 
 - **asteroidcatalog_density_floor_policy_code_current_2026**: AsteroidCatalog `physics.py` says “The floor is the same for everyone” (lines 85-87), sets `DENSITY_FLOOR_GCM3=0.25` for every named group and `Unknown` (lines 95-116), and says “0.25 leaves margin under all of them” (lines 91-92). `merge.py` uses these limits in its density screen for source mass/density candidates (lines 455-480).
 - **patzold_2016_67p_homogeneous_nucleus_gravity**, **thomas_2013_tempel1_nucleus_two_flybys**, and **carry2012**: the code rationale cites comet-nucleus comparators of 67P at 0.533 +/- 0.006, 9P/Tempel 1 at 0.47 +0.78/-0.24, and a mean comet density of 0.54 +/- 0.09 g/cm3. The quoted lower extent for 9P is 0.23 by arithmetic; the code does not state the interval's confidence interpretation. These citations provide comet context, while the same floor applies across asteroid taxonomy groups.
 - **Verdict**: clarify whether 0.25 g/cm3 is a universal physical limit or a conservative data-quality screen. If universal, document a physical basis that covers the taxonomic groups and its uncertainty treatment; if a screen, label the policy and report its rejection sensitivity. Retain the current floor pending that review; no numeric replacement inferred. **rc-606**.
 - Extracted: `extracted_data/r739_density_floor_scope.csv`.
-
 
 ## R740 — 0.01 geometric-albedo floor is applied to measured values (2026-11-14)
 
@@ -576,7 +565,6 @@ In the installed AsteroidCatalog `data-2026-10-21b` Stage 1 input, 8,382 rows ha
 - **Verdict**: document whether 0.01 is a quality screen or a physical lower bound, including its measured-population scope and uncertainty basis; reconcile the invented-albedo rationale with rejection of measured values and quantify sensitivity among the 43 reported below-floor values. Retain the current floor pending that review; no numeric replacement inferred. This measured-albedo screen is distinct from the H-diameter tolerance coverage in **rc-605**. **rc-607**.
 - Extracted: `extracted_data/r740_albedo_floor_scope.csv`.
 
-
 ## R741 — 5.0 g/cm3 density ceiling is a realism screen (2026-11-14)
 
 - **asteroidcatalog_density_ceiling_policy_code_current_2026**: `physics.py` calls the 5.0 g/cm3 ceiling for most non-carbonaceous groups “REALISM, not physics”; it separately sets the global physical iron ceiling to 8.0 g/cm3. The rationale cites 22 Kalliope at 4.40 +/- 0.46 g/cm3, says the 77 bodies with mass known to 5% in data-2026-09-26 top out at Kalliope 4.18 and Psyche 4.14 g/cm3, and attributes all data-2026-09-23 values over 5 to 12-56% mass uncertainty or radiometric diameters. `merge.py` applies class density ceilings during source-mass screening.
@@ -584,14 +572,12 @@ In the installed AsteroidCatalog `data-2026-10-21b` Stage 1 input, 8,382 rows ha
 - **Verdict**: document 5.0 g/cm3 as a data-quality screen with its population, uncertainty and class scope; verify the Kalliope comparator and reassess the older-release over-5 values against current source records. Quantify rejection sensitivity under a justified policy. Retain the current cutoff pending that review; no numeric replacement inferred. **rc-608**.
 - Extracted: `extracted_data/r741_density_ceiling_scope.csv`.
 
-
 ## R742 — Global density bound has a direct Fe-Ni comparator (2026-11-14)
 
 - **rubin_burbine_2026_no_exotic_matter_asteroids**: Rubin & Burbine, “No exotic matter in asteroids,” *European Physical Journal Plus* 141:175 (2026), printed p. 175 (PDF p. 2, §2.2), calls the asteroid upper limit “~8 g cm−3” for a non-porous, unfractured core fragment with approximately 90 wt% Fe and 10 wt% Ni; it says higher reported asteroid densities are unrealistic.
 - **asteroidcatalog_global_density_bound_code_current_2026**: AsteroidCatalog `physics.py` sets `_IRON_CEILING=8.0` and `DENSITY_LIMITS_ANY_GCM3=(DENSITY_FLOOR_GCM3, _IRON_CEILING)`; `density_limits()` uses that upper bound for unmapped groups. `release.py` checks recorded densities and implied mass/diameter densities against the same global 8.0 g/cm3 limit. Named groups use their separate lower class ceilings.
 - **Verdict**: the T1 comparator supports the existing approximate global 8.0 g/cm3 bound, but the code snapshot does not name it and the article frames it as an approximate Fe-Ni composition limit. Review the citation and clarify its scope relative to the stricter class-level screens; no numeric replacement inferred. **rc-609**.
 - Extracted: `extracted_data/r742_global_density_ceiling.csv`.
-
 
 ## R743 — CO grain-density measurements exceed the 3.6 carbonaceous ceiling (2026-11-14)
 
@@ -636,14 +622,12 @@ Open `rc-632` for the worksheet citation path and class-scope limitation; the 3.
 
 Verdict: the release metadata does not meet the version-recording instruction in the package's citation guide. Open `rc-772` for per-build version provenance; no catalog value change is inferred. Extracted: `extracted_data/r893_mp3c_database_version_manifest.csv`.
 
-
 ## R899 — Citation scope for the beyond-Jupiter albedo-by-H fallback (2026-11-18)
 
 - **asteroidcatalog_tno_albedo_h_citation_gap_code_current_2026:** At AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `derive.py` lines 206–221 calls the H-binned albedos release medians and cites a “TNOs are Cool” size/albedo trend without a specific paper. Lines 307–313 apply these values when outer objects lack an albedo or usable taxonomy. `CITATIONS.md` lines 135–138 explains that the albedo tables are release medians and recomputable, but its bibliography does not identify the survey.
 - **santos_sanz_2012_tnos_cool_iv_sdo_do_albedo_h_correlation:** Santos-Sanz et al. (2012), *Astronomy & Astrophysics* 541, A92, DOI 10.1051/0004-6361/201118541. Table 6 p. 12 reports pV versus H for 15 scattered-disk and detached objects (ρ = −0.88, p = 0.000027, confidence >99.9%). On p. 3 the authors note a “bias towards brighter (low H values) objects.” This is sample-specific context; it does not supply the catalog’s empirical H-bin medians or validate all TNO/Centaur populations.
 - **Verdict:** Open rc-779 for a complete citation and explicit population/sampling scope. Keep the catalog medians release-derived; no numeric replacement is inferred.
 - Extracted: extracted_data/r899_asteroidcatalog_tno_albedo_citation_gap.csv.
-
 
 ## R900 — Missing bibliography entries for geometric-albedo ceiling evidence (2026-11-18)
 
@@ -652,7 +636,6 @@ Verdict: the release metadata does not meet the version-recording instruction in
 - **verbiscer_et_al_2007_enceladus_geometric_albedos:** The abstract reports mean E-ring satellite geometric albedos “approximate or exceed unity” (*Science* 315(5813) (2007), p. 815); registered and extracted in R347.
 - **Verdict:** Open rc-780 to add the two complete references to `CITATIONS.md`. Applied rc-283 addressed the ceiling’s fit-quality-policy interpretation; this bibliography gap remains. No cutoff or data value is changed.
 - Extracted: extracted_data/r900_asteroidcatalog_albedo_ceiling_bibliography_gap.csv.
-
 
 ## R901 — Incomplete references for the H-to-diameter constant (2026-11-18)
 
@@ -674,7 +657,6 @@ AsteroidCatalog a626c81aff22d0e2342cfa48bf08db2d77506c1f (PR #34, package 0.13.3
 
 Verdict: all thirteen closed as applied. Extracted data: none new; the candidates' existing files apply.
 
-
 ## R948 — Cross-source absolute-magnitude tolerance (2026-11-18)
 
 `asteroidcatalog_h_agreement_tolerance_code_current_2026`: AsteroidCatalog main `18fc306b335e785f59612ade12dcc7b3254ba214`, `merge.py` lines 187–190 sets `MEASURED_FIELDS["absolute_magnitude_h"]` to `kind="diff"` and `tolerance=0.30`. The adjacent comments cite Pravec et al. (2012) for catalog-H bias and characterize 0.30 mag as the H agreement cutoff.
@@ -682,7 +664,6 @@ Verdict: all thirteen closed as applied. Extracted data: none new; the candidate
 `pravec_2012_absolute_magnitudes_wise_albedos`: the preprint abstract, p. 3, reports catalog-H bias under 0.1 mag for large asteroids and a mean `(Hcatalog − H) = −0.4 to −0.5` near H≈14 (R155 extraction, `extracted_data/r155_queue_open_copies_key_numbers.csv`). Those mean offsets do not give the residual distribution between the catalogs being merged or the cutoff's rejection sensitivity by H range.
 
 **Verdict:** Open rc-814 to establish the cutoff against paired source-H residuals and uncertainty by magnitude range, or label 0.30 mag as a policy threshold and report its sensitivity. This is separate from rc-605's 0.75-mag H-to-diameter plausibility margin. No numeric replacement inferred. Extracted: `extracted_data/r948_asteroidcatalog_h_agreement_tolerance.csv`.
-
 
 ## R952 — Cross-source mass-agreement tolerance (2026-11-19)
 
@@ -692,7 +673,6 @@ Verdict: all thirteen closed as applied. Extracted data: none new; the candidate
 
 **Verdict:** Open rc-817 to measure pairwise source-mass differences by source method and uncertainty, and report how the cutoff affects agreement results; alternatively label 0.25 as a policy threshold and provide sensitivity. This is separate from the density screens in rc-606/rc-608 and the H-agreement cutoff in rc-814. No numeric replacement inferred. Extracted: `extracted_data/r952_asteroidcatalog_mass_agreement_tolerance.csv`.
 
-
 ## R953 — Cross-source diameter and albedo agreement tolerances (2026-11-19)
 
 `asteroidcatalog_diameter_albedo_agreement_tolerances_code_current_2026`: AsteroidCatalog main `18fc306b335e785f59612ade12dcc7b3254ba214`, `merge.py` lines 137–156 calls its tolerances a reading of typical catalogue precision, not fitted; lines 187–198 set diameter to a 0.10 ratio tolerance and albedo to 0.25. The same code warns that catalogs share upstream WISE/NEOWISE surveys, so agreement can repeat the same measurement.
@@ -700,6 +680,12 @@ Verdict: all thirteen closed as applied. Extracted data: none new; the candidate
 `mainzer_2011_neowise_thermal_model_calibration`: Abstract p. 1 says the study used 50 independently measured radar/in-situ diameter objects and reports “minimum relative diameter and albedo errors of ~10% and ~20%, respectively.” Section 4, printed p. 9, gives minimum systematic WISE/NEOWISE errors of 5–10% for diameter and 10–20% for albedo, under the stated thermal-model and observation conditions. These per-fit errors do not establish the pairwise residual distribution or rejection sensitivity of the catalogs AsteroidCatalog merges; the 25% albedo cutoff also exceeds the paper’s approximate 20% minimum.
 
 **Verdict:** Open rc-818 to calibrate the diameter and albedo cutoffs against paired source residuals by method and population, and report agreement/rejection sensitivity. If retained as policy thresholds, state the per-fit scope of Mainzer et al. and explain the 25% albedo margin. Keep both cutoffs pending that review; no numeric replacement inferred. Distinct from rc-605’s H-to-diameter plausibility window, rc-607’s albedo floor, rc-814’s H-agreement cutoff and rc-817’s mass-agreement cutoff. Extracted: `extracted_data/r953_asteroidcatalog_diameter_albedo_tolerance_calibration.csv`.
+
+## R956 — AsteroidCatalog rotation-period agreement cutoff lacks calibration (2026-11-19)
+
+At AsteroidCatalog main d41fec8cfd04b244815dbc43b64a6fa6ca1e39a8, `asteroid_catalog/merge.py` lines 149–152 says a rotation period is “precise enough that 2% catches the half/double-period ambiguity”; lines 198–200 set `rotation_period_h` to `kind=ratio`, `tolerance=0.02`, and `sigma=None` (`asteroidcatalog_rotation_agreement_tolerance_code_current_2026`). The merge code calls its agreement cutoffs a reading of typical catalogue precision, not fitted, but gives no paired-source residual basis or sensitivity for the rotation-period cutoff. SsODNet selects the first positive best-ranked spin solution; JPL maps `rot_per` to the same field.
+
+Verdict: open rc-819 to calibrate the cutoff against paired source periods or label it as a policy threshold; 0.02 remains unchanged. Extracted data: `extracted_data/r956_asteroidcatalog_rotation_agreement_tolerance.csv`.
 
 ## R957 — AsteroidCatalog per-source mass-uncertainty screen (2026-11-19)
 
@@ -817,7 +803,6 @@ Extracted data in extracted_data/r1032_antiope_hermes_binary_measurement_scope.c
 
 Extracted data in `extracted_data/r1038_camilla_kleopatra_density_evidence.csv`.
 
-
 ## R1043 — Eugenia and Elektra in the taxonomy density evidence (2026-11-23)
 
 - asteroidcatalog_eugenia_elektra_taxonomy_evidence_2026 pins AsteroidCatalog main 059b5c7d7c70f73fc66b74ddae7dfe3dd73ab87a. Its C example gives 45 Eugenia 1.34 ± 0.29 g/cm³ and its Ch example gives 130 Elektra 1.84 ± 0.22 g/cm³. Both match the individual entries in carry2012 Table 1 (PDF pp. 20–21) and appear in the installed taxonomy JSON. Both installed artifact hashes match the asteroidcatalog_release_data_2026_11_13 manifest.
@@ -826,14 +811,12 @@ Extracted data in `extracted_data/r1038_camilla_kleopatra_density_evidence.csv`.
 
 Extracted data in extracted_data/r1043_eugenia_elektra_density_citations.csv.
 
-
 ## R1047 — Sylvia and Eurybates density provenance (2026-11-23)
 
 - asteroidcatalog_sylvia_eurybates_density_basis_2026 pins AsteroidCatalog main 059b5c7d7c70f73fc66b74ddae7dfe3dd73ab87a. Sylvia's X example, 1.31 ± 0.15 g/cm³, matches carry2012 PDF p. 21 Table 1. Its P example, 1.39 ± 0.08 g/cm³, matches adam_2017 PDF p. 13 Table 4. carry_etal_2021_sylvia_shape_and_moon_dynamics, p. 4 §4, gives a “volume-equivalent diameter” of 271 ± 5 km, a mass of (1.44 ± 0.01) × 10¹⁹ kg and density 1.378 ± 0.045 g/cm³. The hash-verified asteroidcatalog_release_data_2026_11_13 row gives 272.925 km, 1.45873 × 10¹⁹ kg and 1.37040 g/cm³. **rc-927** records the individual estimates and their volume and mass sources.
 - The same release gives Eurybates 69.3 ± 1.4 km, 1.4992 × 10¹⁷ kg and 0.860322 g/cm³. Both inputs are tagged SsODNet. mottola_etal_2023_eurybates_orus_shape_models, abstract and p. 10 Table 3, gives the same “surface-equivalent spherical” diameter and a separate 167,000 km³ convex volume. The installed diameter gives 174,260 km³ under the spherical calculation. At fixed installed mass the published convex volume gives 0.8977 g/cm³. brown_etal_2021_eurybates_queta_orbit_density, arXiv PDF pp. 6–7 §3, gives a satellite-orbit mass of (1.51 ± 0.03) × 10¹⁷ kg and 1.1 ± 0.3 g/cm³ with the earlier WISE volume assumption. Mottola et al. §4.4 assigns class C from the phase curve. The release reports spectral_type P and a blank Tholen field. **rc-928** records the diameter-equivalence and classification provenance.
 
 Extracted data in extracted_data/r1047_sylvia_eurybates_density_citations.csv.
-
 
 ## R1054 — Mission size and mass provenance for Mathilde and Lutetia (2026-11-23)
 
@@ -842,14 +825,12 @@ Extracted data in extracted_data/r1047_sylvia_eurybates_density_citations.csv.
 
 Extracted data in extracted_data/r1054_mathilde_lutetia_mission_mass_shape.csv.
 
-
 ## R1055 — Gaspra and Šteins diameter conventions (2026-11-23)
 
 - asteroidcatalog_release_data_2026_11_13, as installed in Economicspace, gives 12.2 km for 951 Gaspra from JPL SBDB, with a blank diameter_sigma_km and disagreement among four sources. veverka_etal_1994_gaspra_galileo_size, p. 2 abstract, gives “average radius” 6.1 ± 0.4 km and principal diameters of 18.2, 10.5 and 8.9 km. The average radius doubles to 12.2 ± 0.8 km. **rc-939** records the matching Galileo scale and its uncertainty.
 - The same release gives 5.160 ± 0.167 km for 2867 Šteins from JPL SBDB. pds_2013_rosetta_steins_plate_shape, “Shape Model Characteristics,” gives a mean radius of 2.70 ± 0.2 km and a volume-equivalent radius of 2.63 ± 0.2 km. The latter doubles to 5.26 ± 0.40 km. At fixed assumed density, 5.26 km would raise the inferred mass by 5.93%. **rc-940** records the shape comparison and the citation gap for the selected fit.
 
 Extracted data in extracted_data/r1055_gaspra_steins_mission_diameters.csv.
-
 
 ## R1066 — Measurement provenance for Ida and Pallas (2026-11-23)
 
@@ -858,14 +839,12 @@ Extracted data in extracted_data/r1055_gaspra_steins_mission_diameters.csv.
 
 Extracted data in extracted_data/r1066_ida_pallas_size_mass_and_density.csv.
 
-
 ## R1067 — Hygiea and Interamnia measurement provenance (2026-11-24)
 
 - asteroidcatalog_release_data_2026_11_13, as installed in Economicspace, selects 428.923 ± 11.522 km and (8.217293 ± 0.049693) × 10^19 kg for 10 Hygiea, both from SsODNet. The release derives 1.988805 g/cm³ and reports mass_sources_agree=False. vernazza_etal_2020_hygiea_sphere_shape_mass, pp. 136–137, gives “volume-equivalent radius” 217 ± 7 km, mass (8.32 ± 0.80) × 10^19 kg and density 1.944 ± 0.250 g/cm³. vernazza_etal_2021_vlt_sphere_main_belt_survey, Table 1, gives 433 ± 8 km and (8.74 ± 0.69) × 10^19 kg. The installed mass uncertainty is about one-sixteenth of the 2020 estimate's. **rc-962** records the uncertainty basis and underlying references.
 - asteroidcatalog_release_data_2026_11_13 selects 332.0 ± 5.41 km and (3.227403 ± 0.045817) × 10^19 kg for 704 Interamnia, both from SsODNet. The release derives 1.684381 g/cm³ and names JPL SBDB in mass_screened_out. hanus_etal_2020_interamnia_adam_shape_mass, Table 2, gives 332 ± 6 km and (3.79 ± 1.28) × 10^19 kg. fienga_etal_2009_inpop08_asteroid_masses, p. 1683 Table 3, gives 1.623 ± 0.010 in 10^-11 solar masses, restated in Hanuš Table A.4 as (3.23 ± 0.02) × 10^19 kg. **rc-963** records the near match to the INPOP08 central estimate and the separate uncertainty and screening provenance. The published data-2026-11-13 release has no ssodnet_property_refs.csv asset.
 
 Extracted data in extracted_data/r1067_hygiea_interamnia_size_mass_and_provenance.csv.
-
 
 ## R1068 — Geographos and Toutatis density methods and diameter geometry (2026-11-24)
 
@@ -875,13 +854,11 @@ Extracted data in extracted_data/r1067_hygiea_interamnia_size_mass_and_provenanc
 
 Extracted data in extracted_data/r1068_geographos_toutatis_yarkovsky_and_shape.csv.
 
-
 ## R1084 — Albedo uncertainty across X and Xc composition cutoffs
 
 - `asteroidcatalog_x_complex_albedo_boundary_uncertainty_code_2026` — AsteroidCatalog `taxonomy.py` lines 1066–1096 use measured albedo cutoffs of 0.10 and 0.30. `enrich.py` lines 199–213 pass albedo without its uncertainty and retain the pre-split measurement group. The class used for composition is a point estimate.
 - `mainzer_etal_2011_neowise_spectrophotometric_taxonomic_albedos` — The preprint's “New Tholen EMP Category” column (Table 2, pp. 27–28) gives 11785 (Xc) as M at 0.101 ± 0.021 and 3367 (X) as E at 0.303 ± 0.059. The pinned composition exporter changes these from M to P and E to M at the lower endpoints. Their modeled metal fractions change from 0.50 to 0.02 and from 0.10 to 0.50, respectively. Two other threshold-crossing fixtures and two same-class controls are recorded. Verdict: the measured branch lacks an uncertainty flag for the inferred composition (rc-995).
 - Extracted data: `extracted_data/r1084_x_complex_albedo_boundary_uncertainty.csv`.
-
 
 ## R1099 — Rotation lower bounds and selected point periods (2026-11-24)
 

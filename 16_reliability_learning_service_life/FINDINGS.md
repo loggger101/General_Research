@@ -1,9 +1,3 @@
-## R925 — Spacecost 0.17.1 grouped comparator bibliography detail (2026-11-18)
-
-At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `CITATIONS.md` §4 line 228 groups nine works from the 0.17.1 operational-cost notes: Evans et al. (NTRS 20120013705), Schuler et al. on IPEx (NTRS 20240008162), Grile and Bettinger (2024), SpaceX’s June 2026 EU prospectus, the Stardust press kit, NASA’s SHIIVER report (NTRS 20205008233), Johnson and Stephens (NTRS 20190000305), and NASA’s vacuum and microwave sintering work (NTRS 20230008596 and 20205010871). The group gives abbreviated names, report numbers or document shorthand rather than complete titles and direct links.
-
-The registered source records identify each work and its existing comparator scope. Verdict: open **rc-805** to complete the bibliography. This is distinct from rc-489, rc-492, rc-493 and rc-494, which review the comparator evidence and scenario values. No numeric replacement proposed. Extracted: `extracted_data/r925_spacecost_0171_comparator_bibliography.csv`.
-
 # Domain 16 — Reliability, learning curves & hardware service life
 
 Backings: spacecost `reference/operational_costs.csv` rows `Launch vehicle reliability`, `Spacecraft mean time between failures`, the three `Mining system` / `Mining reliability` rows, `Mining rig service life`, `Mining rig maximum trips` and `Rig salvage fraction`, and economicspace `modules/calc.py` `learning_curve_rate`.
@@ -311,7 +305,6 @@ pinned metadata; all four live main comparisons are identical.
 `extracted_data/r351_parallel_reliability_growth.csv` includes complete
 inputs, books, fingerprints and the self-contained reproduction harness.
 
-
 ## R470 — Current rig calendar-cadence option
 
 At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_rig_calendar_cadence` defaults to `False` (modules/calc.py:678). With it enabled, `rig_trips_per_ship` replaces the stay-only calendar bound with `1 + floor((life - stay) / cadence)` only when a cadence is present and `stay_yr <= life_yr`; if one stay exceeds life, it retains the legacy `max(1, floor(life / stay))` bound, permitting one campaign whose stay itself outlives the stated calendar life (lines 4841-4858). Cost calculation receives the flag and cadence (5796-5799). The release note reports the intended idle-time correction: at stay 2.5 yr/cadence 4 yr the cap falls 6 to 4, eight of 40 over-life programme options are removed, and 18 of 24 sampled rows in the narrow 1.02-1.35 AU/capital-cost sample move. `rc-239` remains open: the normal consumer leaves the cadence correction off, and the enabled helper preserves a one-campaign exception for stay greater than life; the release-note sample does not establish full consumer coverage outside its stated cases. Extracted: `extracted_data/r470_rig_calendar_cadence_flag_current.csv`.
@@ -319,7 +312,6 @@ At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcCo
 ## R499 — Terrestrial mining-equipment rebuild intervals (2026-11-09)
 
 - **sandvik_2019_mining_equipment_rebuild_intervention_intervals**: Sandvik describes major-rebuild intervention timing as equipment-specific (printed p. 6): boom surface drills 14,000–18,000 operation hours; underground drills 18,000–25,000 operation hours; mass-mining loaders and trucks 12,000–18,000 operation hours; narrow-vein/low-profile loaders and trucks 10,000–16,000 operation hours; pedestal surface drills 6,000–12,000 drilling hours. The brochure describes rebuilds as mid-life services that extend operational life (pp. 2, 6); it does not give a universal 15,000–25,000 hour band, a count of rebuilds before frame retirement, or asteroid campaign life. Thus it supports citing the terrestrial maintenance analogue with machine-type scope, but does not directly establish the model’s 5-trip point or [2,12] band. Extracted: extracted_data/r499_sandvik_mining_rebuild_intervals.csv.
-
 
 ## R509 — Rig salvage fraction evidence boundary (2026-11-09)
 
@@ -329,13 +321,11 @@ Mas’s study reports that construction equipment produced during the Caterpilla
 
 Terzi and Nicoli report that average launch costs within rocket families declined “roughly 6% for each doubling of cumulative payload,” rising to 8% after the Cold War (Results, PNAS Nexus e-page pgag217). Their unit-flyaway cost basis includes direct and indirect manufacturing, recurring engineering, sustaining tooling and quality control, but excludes vehicle design R&D (Materials and methods, e-page pgag217). economicspace `CalcConfig.learning_curve_rate` remains 0.85 for the optional Crawford nth-unit production curve, with `model_learning_curve=False` by default. The study’s average dollars per kilogram against cumulative payload is not the same measure as nth-unit spacecraft cost against unit count, and does not establish a mining-rig rate. **rc-385** records the evidence as a scope comparator; no numeric replacement is inferred. Extracted: `extracted_data/r519_space_launch_learning_curve_comparator.csv`.
 
-
 ## R530 — Hayabusa2 mechanism outcomes in the first-of-kind tally (2026-11-10)
 
 `nakamura_2025_sample_return_missions_rosetta_stones_small_bodies`: the review says the Hayabusa2 SCI impactor produced an artificial crater “with a diameter >10 m” (§4.3, p. 12), and that “the sample collection of Hayabusa2 was performed twice without problems” (§4.4, p. 13). It reports 5.4 g of returned samples (p. 13).
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its tally includes the Hayabusa2 sampler and SCI impactor as successes, while the note says the other mission entries remain uncited. Verdict: the review directly supports those two Hayabusa2 outcome entries, but does not source the other outcomes or establish the 0.85 probability. `rc-396`. Extracted: `extracted_data/r530_hayabusa2_mechanism_outcomes.csv`.
-
 
 ## R531 — OSIRIS-REx TAGSAM outcome citation (2026-11-10)
 
@@ -343,13 +333,11 @@ Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its OSIRIS-REx TAGSAM success entry states 121.6 g against a 60 g requirement without citing the article. Verdict: the article supports this sample-collection outcome only; it does not establish the 0.85 probability or source the other mission outcomes. `rc-397`. Extracted: `extracted_data/r531_osirisrex_tag_sample_mass_outcome.csv`.
 
-
 ## R532 — Stardust sample-return outcome citation (2026-11-10)
 
 `nakamura_2025_sample_return_missions_rosetta_stones_small_bodies`: Table 1 gives Stardust’s Earth-return date as 2006/1/15, reports “many small particles” recovered, and lists “aerogel capture” as the sampling method (printed p. 44).
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Stardust aerogel success entry has no cited source in the row note. Verdict: the table supports this sample-return outcome only; it does not establish the 0.85 probability or source the other mission outcomes. `rc-398`. Extracted: `extracted_data/r532_stardust_sample_return_outcome.csv`.
-
 
 ## R533 — Perseverance coring outcome citation (2026-11-10)
 
@@ -357,13 +345,11 @@ Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Perseverance coring-drill success entry has no cited source in the row note. Verdict: the release supports this coring outcome only; it does not establish the 0.85 probability or source the other mission outcomes. `rc-399`. Extracted: `extracted_data/r533_perseverance_first_core_outcome.csv`.
 
-
 ## R534 — Apollo drill-core outcome citation (2026-11-10)
 
 `carrier_1974_apollo_drill_core_depth_relationships`: the NTRS record abstract identifies “Apollo 15, 16, and 17 drill core samples” and reports original core bulk densities of 1.76, 1.59, and 1.87 g/cm³, respectively (abstract; no page in record).
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; the note counts Apollo 15–17 drills and scoops as successful without a source. Verdict: the record supports the three drill-core outcomes only; it does not document the scoop outcomes, other missions, or the 0.85 probability. `rc-400`. Extracted: `extracted_data/r534_apollo_drill_core_outcomes.csv`.
-
 
 ## R535 — Chang’e 5 and 6 sampling-outcome citations (2026-11-10)
 
@@ -371,13 +357,11 @@ Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Chang’e 5 and 6 drill-and-scoop success entries have no cited sources in the row note. Verdict: the papers support those two mission outcomes only; they do not establish the 0.85 probability or source other mission outcomes. `rc-401`. Extracted: `extracted_data/r535_change5_change6_sampling_outcomes.csv`.
 
-
 ## R536 — Luna drill-core outcome citations (2026-11-10)
 
 `shearer_etal_2023_luna_sample_return_drill_cores_jgr_planets`: §2 states the Luna sample-return program “collected drill cores” from Luna 16, 20, and 24, with approximately 101 g, 50 g, and 170 g returned, respectively (§2, ¶1–2).
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Luna 16/20/24 drill successes have no cited sources in the row note. Verdict: the paper supports the three Luna drill-core outcomes only; it does not establish the 0.85 probability or source other mission outcomes. `rc-402`. Extracted: `extracted_data/r536_luna_drill_core_returns.csv`.
-
 
 ## R537 — Phoenix robotic-arm outcome citation (2026-11-10)
 
@@ -385,13 +369,11 @@ Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its Phoenix robotic-arm success entry notes sticky soil but has no cited source. Verdict: the paper supports successful arm sampling and delivery despite sticky-soil difficulty; it does not establish the 0.85 probability or source other mission outcomes. `rc-403`. Extracted: `extracted_data/r537_phoenix_arm_sample_delivery.csv`.
 
-
 ## R538 — Apollo scoop outcome citation (2026-11-10)
 
 `graf_1993_nasa_rp1265_apollo_soil_scoop_procedures`: Apollo 15 soil was collected with the adjustable scoop; Apollo 16 used “the same tools and procedures” as Apollo 15, and Apollo 17 used the same soil-collection methods as Apollo 15 and 16 (p. 3).
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; Apollo 15–17 drills and scoops are counted successful without a cited source. Verdict: NASA RP-1265 supports the scoop outcomes only; drill-core evidence is covered separately, and this report does not establish the 0.85 probability or source other mission outcomes. `rc-404`. Extracted: `extracted_data/r538_apollo_scoop_outcomes.csv`.
-
 
 ## R539 — Hayabusa partial sample-collection outcome citation (2026-11-10)
 
@@ -399,16 +381,15 @@ Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its note classifies Hayabusa as partial because the projectile did not fire but contact dust was collected and returned. Verdict: the article supports this partial flight outcome only; it does not establish the 0.85 probability or other mission outcomes. `rc-405`. Extracted: `extracted_data/r539_hayabusa_partial_sample_collection.csv`.
 
-
 ## R540 — Philae and InSight failed-mechanism outcome citations (2026-11-10)
 
 `esa_2024_philae_harpoon_failure_landing_review`: ESA reports Philae’s “harpoons hadn’t fired” after touchdown, after which the lander took flight again (“Welcome to a comet”). This supports the harpoon failure outcome only (`rc-406`). `nasa_2020_insight_hp3_mole_soil_friction_failure`: the InSight team says the mole “has been unable to dig because the soil doesn’t provide enough friction,” and explains that the soil must counter recoil from the hammer (“Why can’t you pick up the mole?”; “What do you suspect is preventing the mole from digging further?”). This supports the HP3 failure mechanism only (`rc-407`).
 
 Upstream: spacecost `reference/operational_costs.csv` “Mining system first-of-kind success probability” = 0.85; its failed tally names Philae harpoon pyrotechnics and the InSight HP3 mole, with no citations in that note. Verdict: these mission sources document the two failure outcomes and the stated HP3 soil-friction mechanism; neither source establishes the 0.85 probability or other mission outcomes. Extracted: `extracted_data/r540_philae_hp3_failed_mechanisms.csv`.
+
 ## R564 — Rig-life and sample-outcome notes are now individually sourced (2026-11-10)
 
 At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Sandvik’s equipment-specific intervention intervals are separated by machine and measure while the five-trip rig value remains a scenario (rc-365); Mas’s resale-market evidence is explicitly distinguished from an asteroid rig’s residual-value fraction (rc-375). The success-tally notes now cite each outcome separately: Hayabusa2 SCI and sampling, OSIRIS-REx TAGSAM, Stardust, Perseverance coring, Apollo drill and scoop operations, Chang’e 5/6, Luna 16/20/24, Phoenix, Hayabusa’s partial collection, Philae’s harpoon failure, and InSight HP3’s soil-friction failure (rc-396–407). These outcome citations do not establish the 0.85 first-of-kind probability.
-
 
 ## R587 — First-of-kind mining probability tally scope (2026-11-11)
 
@@ -418,26 +399,21 @@ The spacecost note groups 13 mission/mechanism categories as 10 successful, one 
 
 - **spacecost_mining_mature_success_probability_current_2026**: The current spacecost row stores 0.95 with range 0.85-0.99 as an asymptotic ceiling on rig success probability. The row note calls the 97-99% figure an estimate without a source and distinguishes it from Shapiro et al.'s per-satellite deployment-anomaly statistic. **evans_gallo_kaminskiy_2012_bayesian_spacecraft_deployment_reliability**: NASA's Bayesian deployment paper models deployable subsystems as one-shot events and estimates failure probability from historical event counts with a beta prior and credibility limits (PDF pp. 2-5). Its JWST prior example reports 19 anomalies among 123 NASA GSFC missions (PDF pp. 8-9); anomalies include mission-ending, mission-degrading, and contingency outcomes. This is a useful denominator and uncertainty-method comparator, not a mining-rig success sample. At current economicspace main, `modules/calc.py` reads the spacecost value as `p_mature` and caps the Duane growth curve; the fleet-average mission-success output depends on that cap. rc-095 (closed/applied) changed the note attribution while explicitly leaving the numeric value untouched. Verdict: request a derivation or define 0.95 [0.85,0.99] as scenario assumptions with an event denominator and sensitivity; existing deployment records do not justify a numeric replacement. **rc-493**. Extracted: `extracted_data/r630_mining_mature_success_probability_basis.csv`.
 
-
 ## R631 - Spacecraft MTBF scale and interval lack a fitted basis (2026-11-11)
 
 - **spacecost_spacecraft_mtbf_current_2026**: The current Spacecost row 37 stores 30 years [15,60] and uses exponential survival, while the note supports the value with selected mission examples and supplies no fitted population or numeric derivation. **grile_bettinger_2024_deep_space_satellite_reliability**: The article abstract describes Kaplan-Meier survival estimation followed by Weibull parameterization for deep-space satellites launched and operated in 1991-2020, including general, deployable, and design-life-normalized cohorts. It reports infant mortality in the general cohort and short-period reliability for deployables; the abstract provides no fitted estimates or intervals. The paper is a close-population lifetime-analysis comparator, but its abstract does not establish a 30-year exponential MTBF or the [15,60] range. This is distinct from rc-090, which questioned the constant-hazard form and explicitly left the 30-year scale untested. Verdict: request the derivation or evaluate the deep-space cohort with failure definitions, exposure time, censoring, and fitted uncertainty; retain 30 [15,60] only as a labeled scenario if no matched estimate is available. No replacement inferred. **rc-494**. Extracted: `extracted_data/r631_spacecraft_mtbf_basis.csv`.
-
 
 ## R632 - Operational launch reliability point and range remain scenario-like (2026-11-11)
 
 - **spacecost_launch_vehicle_reliability_current_2026**: Spacecost row 55 stores launch success probability 0.97 [0.90,0.99]. Its note cites Cross & Vesely for a first-flight estimate and describes 0.97 as fleet-representative for an operational booster on a high-value payload, but does not derive that point or specify whether the range is a confidence interval, vehicle-family spread, or scenario envelope. The previously read Cross & Vesely figures support a new-vehicle/heritage case only; closed/applied rc-093 updated that attribution and left the numeric point and range untouched. **spacex_2026_eu_prospectus_falcon_heavy_payload**: SpaceX's June 2026 prospectus states “approximately 620 orbital space launches” and an “over 99% mission success rate” for Falcon 9 (printed p. 58). This is a current first-party fleet comparator, but the statement provides no launch-level numerator, confidence interval, definition of success, or estimate conditioned on high-value payloads; it does not independently establish the generic 0.97 point or [0.90,0.99] range. In economicspace, the row value is read as `p_launch` and multiplies cruise and mining reliability in the mission-success calculation. Verdict: document an estimator and cohort for 0.97 and define the range, or label both as scenario assumptions and expose sensitivity by launch-vehicle maturity and mission class. Do not substitute SpaceX's fleet rate as a universal launch probability. **rc-495**. Extracted: `extracted_data/r632_launch_reliability_fleet_basis.csv`.
 
-
 ## R634 — IPEx actuator life test as mining-success context (2026-11-11)
 
 `nasa_2024_ipex_trl5_actuator_life_test` describes NASA’s 30 kg-class IPEx lunar excavator and a notional 11-day mission profile targeting 10,000 kg of regolith (PDF p. 2). For its wheel actuator, the paper says the ConOps requires 5.7 million input revolutions; the accelerated test recorded 6,547,036 before axial rotor movement caused a bearing failure, and the authors state that further testing and design changes are required (PDF p. 8, §III.B). These are component-level qualification results from one actuator, not a mature whole-mining-rig success rate. They do not replace the 0.95 [0.85, 0.99] ceiling and range in spacecost’s `Mining system mature success probability` row. Keep `rc-493` open; the source supplies an operationally relevant failure-mode comparator, not a probability estimate. Extracted: `extracted_data/r634_ipex_actuator_life_test.csv`.
 
-
 ## R658 — economicspace learning-rate candidate rechecked (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `CalcConfig.learning_curve_rate` remains 0.85 and `model_learning_curve` remains `False`; the default change did not enable the feature or add a mining-hardware learning-rate basis. **rc-385** remains open. Existing comparator: `extracted_data/r519_space_launch_learning_curve_comparator.csv`.
-
 
 ## R757 — Rig-salvage source scope missing from the verification sheet (2026-11-15)
 
@@ -459,13 +435,11 @@ Open `rc-628` for the frozen-row citation carry-through; the 5 [2, 12] campaign 
 
 The frozen Stage 3 copy is the source of worksheet I65, I66 and I68. Verdict: carry current source attribution and scope into the frozen rows and verification sheet; preserve all three values and ranges. Applied `rc-494`, `rc-451` and `rc-493` updated current Spacecost row notes but did not cover the frozen economicspace copy. Open `rc-646`; no numeric replacement inferred. Extracted: `extracted_data/r776_mining_reliability_worksheet_citation_scope.csv`.
 
-
 ## R782 — Launch-reliability citation scope missing from frozen worksheet (2026-11-15; rc-652)
 
 The economicspace `cislunar__raw__search-off` verification check flags I64=0.97 launch-success probability NEED BACKING. The worksheet reads frozen `campaign/stage3/operational_costs.csv` row 52 (Spacecost 1.15.0): 0.97 [0.90,0.99], with an older note saying “a first-flight or low-cadence vehicle sits near 0.90.”
 
 Current Spacecost row 55 cites Cross & Vesely’s new-vehicle estimates (0.866 first-flight success; 0.910 with heritage credit, printed pp. 8 and 10) and SpaceX’s reported “over 99% mission success” across about 620 Falcon 9 launches (prospectus, printed p. 58). Cross & Vesely state that “new launch vehicles have historically had a significantly higher average failure probability than mature launch vehicles” (p. 11). The current row says 0.97 is not fitted to a cohort and [0.90,0.99] is a scenario envelope, not a confidence interval; neither comparator derives the 0.97 operational-fleet point. **Verdict:** carry the source scope and scenario limits into the historical worksheet; retain the value and range, with no numeric replacement inferred. `rc-652`. Extracted: `extracted_data/r782_launch_reliability_frozen_worksheet_citation_gap.csv`.
-
 
 ## R818 — Frozen launch-reliability worksheet recheck (2026-11-16)
 
@@ -474,7 +448,6 @@ At fetched economicspace origin/main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`,
 ## R825 — Current mining-rig trip-limit worksheet row (2026-11-17)
 
 The current worksheet reads the live Spacecost mining-rig maximum-trips row at I98=5 campaigns per rig [2,12] and flags it NEED BACKING. Its note cites Sandvik's underground mining rebuild intervals as a comparator, distinguishes rebuilds from total life, and calls five campaigns an engineering judgment because no asteroid-mining flight heritage exists. This supplies the current source-and-scope passage previously missing from the frozen Stage 3 I97 row; **rc-628** is applied for that worksheet-propagation issue, with the numeric limit still an explicit scenario. Current I66 is the eclipse/night-side dark fraction, not the earlier frozen reliability input I66=0.85 in **rc-646**. Extracted: `extracted_data/r825_live_sheet_rig_limit_and_input_id_scope.csv`.
-
 
 ## R827 - Flight-history citations in the mining-rig trip-limit note (2026-11-17)
 
@@ -490,7 +463,6 @@ The current Spacecost “Mining rig maximum trips” row retains 5 campaigns [2,
 - **economicspace_rig_salvage_stage3_frozen_row_2026**: the frozen `spacecost-0.5.0` row still has only the generic haircut note. **economicspace_launch_reliability_stage3_frozen_row_current_2026**: frozen Spacecost 1.15.0 row 52 remains 0.97 [0.90,0.99] without an estimator for that point or envelope.
 - Verdict: current salvage is I114, not I118; the old I64 reliability locator is not a current p_launch input. Keep **rc-624** and **rc-652** open for their archived rows. Extracted: `extracted_data/r862_salvage_reliability_current_sheet_locator_check.csv`.
 
-
 ## R875 — Spacecost MTBF bibliography and source scope (2026-11-18)
 
 At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the “Spacecraft mean time between failures” row stores 30 years [15, 60]. Its note says the value is “not fitted to a cohort,” calls constant hazard an assumption, and cites Navard (1993) and Jacklin (2019) for early-life failure evidence.
@@ -498,6 +470,12 @@ At Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841, the “Spacecraft me
 **navard_1993_modelling_early_failures_space_station_freedom**: the NASA/ASEE report’s fitted electronics-survival model “does not model the early failures very well” (NTRS 19940020890, p. 8). **jacklin_2019_small_satellite_mission_failure_rates** reports small-satellite mission failure rates for 2000–2016, including 41.3% total or partial mission failures (NASA/TM-2018-220034, p. 17) and annual success rates for 2000–2008 and 2009–2016 (p. 15). These are distinct populations and evidence types.
 
 **spacecost_mtbf_citations_section_current_2026**: CITATIONS.md §4 lists Grile & Bettinger (2024) among the reliability comparators, but has no entry for Navard (1993) or Jacklin (2019), although both are named in the current row note. Verdict: add their full bibliographic entries and distinguish their scopes; retain 30 [15, 60] years as the stated scenario. No numeric replacement inferred. **rc-753**. Extracted: extracted_data/r875_spacecost_mtbf_bibliography_gap.csv.
+
+## R925 — Spacecost 0.17.1 grouped comparator bibliography detail (2026-11-18)
+
+At Spacecost main commit `a401930efe30aaad01aafd2b3cb332ad0438c841`, `CITATIONS.md` §4 line 228 groups nine works from the 0.17.1 operational-cost notes: Evans et al. (NTRS 20120013705), Schuler et al. on IPEx (NTRS 20240008162), Grile and Bettinger (2024), SpaceX’s June 2026 EU prospectus, the Stardust press kit, NASA’s SHIIVER report (NTRS 20205008233), Johnson and Stephens (NTRS 20190000305), and NASA’s vacuum and microwave sintering work (NTRS 20230008596 and 20205010871). The group gives abbreviated names, report numbers or document shorthand rather than complete titles and direct links.
+
+The registered source records identify each work and its existing comparator scope. Verdict: open **rc-805** to complete the bibliography. This is distinct from rc-489, rc-492, rc-493 and rc-494, which review the comparator evidence and scenario values. No numeric replacement proposed. Extracted: `extracted_data/r925_spacecost_0171_comparator_bibliography.csv`.
 
 ## R1024 — Launch-window switch omitted from worksheet campaign cadence (2026-11-22)
 
@@ -521,7 +499,6 @@ Extracted data in extracted_data/r1029_learning_curve_worksheet_model_and_rate.c
 
 Extracted data in `extracted_data/r1037_worksheet_mining_reliability_replay.csv`.
 
-
 ## R1053 — Rig utilisation and terminal credit in verification (2026-11-23)
 
 - economicspace_rig_utilisation_and_uneven_fleet_worksheet_2026, verification_sheet.py lines 4911–4929, displays the duty-cycle term even when the resolved trip cap is off. With three campaigns, a 0.7-year stay, 1.2-year cadence and the installed 15-year rig life, calendar-aged utilisation is 0.206667. The displayed expression gives 0.60 using the installed 5-campaign cap. Under the active-stay clock the corresponding values are 0.14 and 0.142857. The calculator and replay give the same terminal credits in both cases. **rc-935** records the display and citation mismatch.
@@ -529,14 +506,12 @@ Extracted data in `extracted_data/r1037_worksheet_mining_reliability_replay.csv`
 
 Extracted data in extracted_data/r1053_rig_utilisation_and_uneven_fleet.csv.
 
-
 ## R1098 — Cumulative reliability growth and configuration failure probability (2026-11-24)
 
 - mil_hdbk_189c_reliability_growth_management, printed p. 31 §5.2.6.1, defines C(t) as the “average failure rate” over cumulative test time. Printed pp. 88–90 §§6.2.4.5–6.2.4.6 use cumulative expected failures proportional to T^β and derive the “probability of failure on a configuration basis” from the increment between adjacent configurations divided by the configuration’s trial count. The single-trial equation uses adjacent cumulative counts with one trial per configuration.
 - economicspace_mining_growth_configuration_probability_basis_2026, calc.py lines 5044–5088 and MODEL.md reliability-growth section, applies the power law directly to each wave's failure probability. The calculator and discrete-law comparison give mean mining success of 0.902431 and 0.924822 for ten serial missions, and 0.905588 and 0.892117 for three waves of ten. Both use the pinned 0.85 first-wave success, 0.30 exponent and 0.95 cap, with configuration changes between waves in the comparison. One first wave gives 0.85 in both. The source distinguishes the cumulative and configuration measures. **rc-1013** records that distinction for the formula and its citation.
 
 Extracted data in extracted_data/r1098_mining_reliability_cumulative_and_configuration_basis.csv.
-
 
 ## R1102 — Synodic scheduling cap and repeat dispatch cadence (2026-11-24)
 

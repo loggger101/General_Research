@@ -59,6 +59,7 @@ Hosted as full_texts/girija_2023_aerocapture_design_reference_missions_arxiv2308
 ## R375 - NASA NEO-return chart does not support the row's stated 4 km/s saving (2026-11-08)
 
 `nasa_ispt_2010_aerocapture_discovery_mission_briefing`, PDF p. 12, chart “Examples for Circular Orbit Insertion,” places the Mars Return / NEO Return marker at approximately 4–5 km/s on the propulsive ΔV x-axis; its y-axis is initial/final mass ratio, and the aerocapture line near 1–2 is that ratio, not ΔV. At spacecost@19e1a31, `reference/delta_v_segments.csv`, row `NEA → Earth return (aerocap)`, stores 1,500 m/s and says aerocapture reduces propulsive ΔV by about 4 km/s, implying a 5,500 m/s baseline if combined arithmetically. NASA's chart is a broad circular-insertion class marker, not a trajectory-matched budget for this row, and gives no aerocapture ΔV residual. Verdict: `rc-293` proposes qualifying or removing the unsourced savings figure until the target orbit and return trajectory are specified; the 1,500 m/s value remains unchallenged. Extracted: `extracted_data/r375_nasa_2010_neoreturn_aerocapture_chart.csv`.
+
 ## R564 — Aerocapture saving claim removed pending a defined return trajectory (2026-11-10)
 
 NASA ISPT 2010, chart “Examples for Circular Orbit Insertion” (p. 12), gives an approximately 4–5 km/s all-propulsive Mars/NEO return marker, not an aerocapture ΔV residual. Spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c removes the unsourced ~4 km/s saving from the 1,500 m/s aerocapture row note; the value remains unchanged. `rc-293` is applied. Extracted: `extracted_data/r375_nasa_2010_neoreturn_aerocapture_chart.csv`.
@@ -67,14 +68,12 @@ NASA ISPT 2010, chart “Examples for Circular Orbit Insertion” (p. 12), gives
 
 At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, the `NEA → Earth return (aerocap)` row stores 1,500 m/s and says the residual is unsourced and the endpoint orbit is undefined. **nasa_ispt_2010_aerocapture_discovery_mission_briefing** places Mars/NEO return at approximately 4–5 km/s on its all-propulsive circular-insertion chart (PDF p. 12); it gives no aerocapture residual. **dutta_et_al_2026_aerocapture_earth_demonstration_design_scitech** says fully-propulsive insertion “requires ΔV of 1–2 km/s” (p. 3), a program comparator rather than the NEA row’s post-aerocapture value. Verdict: open **rc-694** for the distinct 1,500 m/s value/endpoint citation gap. Existing **rc-293** corrected the note, and **rc-519** tracks Economicspace’s separate fallback; no numeric replacement inferred. Extracted: `extracted_data/r822_nea_earth_aerocapture_residual_basis.csv`.
 
-
 ## R1076 — Mars depot capture heritage and periapsis-raise budget (2026-11-24)
 
 - economicspace_mars_orbit_aerocapture_heritage_and_trim_code_2026 records the Economicspace Mars depot comment “Odyssey and MRO flew exactly this” for direct aerocapture into a one-sol orbit. jpl_2001_odyssey_orbit_insertion_status, 23 October 2001 flight status, records Odyssey “fired its main engine” for capture. taylor_lee_shambayati_2006_mro_telecommunications, section 1.3.3, records MRO's main-thruster burn of about 27 minutes and about 35 hours for the initial orbit. long_2007_mro_aerobraking_daily_ops, p. 2 Table 1, gives subsequent aerobraking campaigns of 76.1 days for Odyssey and 154 days for MRO. **rc-983** records the flight-sequence attribution.
 - economicspace_mars_orbit_aerocapture_heritage_and_trim_code_2026 records 100 m/s for the Mars-orbit worksheet input labelled “periapsis raise after aerocapture,” with an Earth aerobrake reference. polsgrove_etal_2016_mars_lander_aerocapture_periapsis_raise, aerocapture sequence, gives a “change in velocity of 15 m/s” to raise periapsis to about 250 km at 33,800 km apoapsis altitude. cerimele_etal_2017_mars_aerocapture_onesol_cleanup, p. 9 section 2, targets 250 × 33,793 km and gives a “40 m/s” post-aerocapture cleanup budget from its Monte Carlo assessment. Holding apoapsis fixed, ideal 50, 100 and 150 km initial periapses give 11.53, 8.61 and 5.71 m/s to reach 250 km. The pinned transfer function drops 60 m/s in a 40 m/s sensitivity. **rc-984** records the Mars-specific orbit and cleanup boundary.
 
 Extracted data in extracted_data/r1076_mars_orbit_aerocapture_heritage_and_trim.csv.
-
 
 ## R1077 — Mars option arrival excess and heat-shield basis
 

@@ -1,41 +1,4 @@
-## R954 — Spacevalue Mars entry-survival comparator cited upstream (2026-11-19)
-
-At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, the Mars-surface note retains 0.30 and describes it as an approximate MSL / Perseverance entry-to-rover ratio: 899/3,153 kg = 28.5% and 1,026/3,369 kg = 30.5%. Entry masses are attributed to Edquist et al. 2022 Table 3, PDF p. 14; rover masses to the JPL MSL fact sheet and NASA Mars 2020 flight-mechanics paper (`edquist_2022_mars2020_aerothermal_entry_masses`; `jpl_msl_factsheet_curiosity_mass`; `nasa_mars2020_flight_mech_edl_simulation`; rc-770).
-
-Verdict: the two measured analogues and their limits are named; the 0.30 value is unchanged. Extracted data: none new.
 # Domain 9 — In-space delivery mass fractions & EDL survival (R54)
-
-## R891 — Spacevalue Mars-surface entry-survival citation trail (2026-11-18)
-
-`spacevalue_mars_surface_entry_survival_note_current_2026` — At `spacevalue/catalog.py` lines 412–417, the Mars-surface note interpolates the EDL leg as 30% and says “MSL / Perseverance measured”; it names no study or source figure. `spacevalue/CITATIONS.md` lines 3–6 says the `catalog.py` note beside a value identifies its source and figure.
-
-`spacecost_mars_landed_fraction_basis_current_2026` — At `spacecost/delivery.py` lines 298–307, the 0.30 fraction is paired with MSL entry 3,153 kg → rover 899 kg (28.5%) and Perseverance entry 3,369 kg → rover 1,026 kg (30.5%); the comment attributes the entry masses to Edquist et al. 2022. `spacecost/CITATIONS.md` §8 points readers to that comment.
-
-`edquist_2022_mars2020_aerothermal_entry_masses` — Table 3 (PDF p. 14) lists MSL BET entry mass 3,153 kg and Mars 2020 BET entry mass 3,369 kg. `jpl_msl_factsheet_curiosity_mass` gives Curiosity as 899 kg; `nasa_mars2020_flight_mech_edl_simulation` states “At 1026 kg, Perseverance is the largest” (PDF p. 1). The paired ratios are 28.51% and 30.45%; 0.30 lies between them.
-
-**Verdict:** The 30% destination-note figure has supporting measurements in the registry and a source trail in Spacecost, but the Spacevalue note does not identify those sources or figures under its own citation convention. Open `rc-770` for the downstream attribution gap; applied `rc-039` corrected the Spacecost comment figures and does not cover the Spacevalue note. No replacement value inferred. Extracted data: `extracted_data/r891_spacevalue_mars_surface_citation_gap.csv`.
-
-## R731 — Downleg capsule dry-mass factor (2026-11-14)
-
-`parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4` — NASA’s Hayabusa entry-vehicle table lists “Vehicle mass 18 kg,” “Payload mass 1.04 kg,” and “TPS mass fraction, inc. insul. 43%” (PDF p. 23). This is a small sample-return entry vehicle, not a bulk-cargo container, and supplies no generic cargo-container scaling.
-
-`spacecost_downleg_capsule_dry_fraction_record_2026` — at spacecost `a401930efe30aaad01aafd2b3cb332ad0438c841`, `delivery.py` sets `DOWNLEG_CAPSULE_DRY_FRAC = 0.10` as “capsule dry mass per kg of cargo” (line 420); `downleg_cost_usd_per_kg` uses it directly for `capsule_kg` in the hardware cost term (lines 703–705). The declaration gives no geometry, component scope, source, or sensitivity for the 0.10 value.
-
-**Verdict:** Hayabusa provides a non-like-for-like context comparator, not a replacement. No bulk-cargo capsule sizing source or uncertainty is stated for the 0.10 factor. Open `rc-598`; distinct from rc-497’s capsule recurring cost, rc-135’s TPS fraction, and rc-134’s TPS mass scaling. Extracted data: `extracted_data/r731_hayabusa_and_downleg_capsule_mass_basis.csv`.
-
-Backings: spacecost `delivery.py` typed constants with no table row: `MARS_LANDED_MASS_FRACTION = 0.30` (sets the published mars_surface price; the comment calls it "Measured, not assumed" from MSL and Perseverance), `LANDER_DRY_MASS_FRAC = 0.20` and `TUG_DRY_MASS_FRAC = 0.10`.
-
-**Sources (R54):**
-
-- `edquist_2022_mars2020_aerothermal_entry_masses` (NTRS 20210024709, hosted): Table 3 (p14) entry masses: MSL BET 3153 kg; Mars 2020 TPS design cases 3436/3436 kg; Mars 2020 BET 3369 kg.
-- `nasa_mars2020_flight_mech_edl_simulation` (NTRS 20210024480, hosted), p1: "At 1026 kg, Perseverance is the largest, most sophisticated rover ever delivered to another planet."
-- `jpl_msl_factsheet_curiosity_mass` (live): Curiosity "899 kg in Earth gravity" (1,982 lbs).
-
-**Audit:** MSL 899/3153 = 28.51%; Perseverance 1026/3369 = 30.45% (29.86% on the design case). Band [28.51%, 30.45%]; 0.30 sits inside at the optimistic edge (+5.22% vs MSL, -1.49% vs Perseverance), as the code's "takes the better of the two" says. `extracted_data/r54_mars_edl_landed_mass_fractions.csv`.
-
-**Note-level discrepancy (constant unaffected):** the comment cites MSL entry 3257 kg where the BET is 3153 kg (+3.30%), and rover 1025 kg vs 1026. It shifts the quoted per-mission percentages (27.6%/29.8%), not the constant.
-
-The other two constants were later anchored from SP-4029 (d03): TUG in R56 (S-IVB dry weights, p294), LANDER in R147 (below).
 
 ## R56 - As-flown TPS thicknesses and parachute numbers (no new sources)
 
@@ -73,6 +36,44 @@ From the hosted SP-4029 (`sp4029_apollo_by_the_numbers`, d03):
 
 The comment's 2,134/(2,134+8,200) = 0.2065; 8,200 kg sits in the A9-A13 loaded band (8,183-8,362 kg). As-flown dry/(dry+propellant): A9 0.1912, A11 0.1978, A12 0.2092, A13 0.2014, so 0.2065 and the dial 0.20 both sit inside. No candidate. `extracted_data/r147_lm_descent_stage_mass_key_numbers.csv`.
 
+## R731 — Downleg capsule dry-mass factor (2026-11-14)
+
+`parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4` — NASA’s Hayabusa entry-vehicle table lists “Vehicle mass 18 kg,” “Payload mass 1.04 kg,” and “TPS mass fraction, inc. insul. 43%” (PDF p. 23). This is a small sample-return entry vehicle, not a bulk-cargo container, and supplies no generic cargo-container scaling.
+
+`spacecost_downleg_capsule_dry_fraction_record_2026` — at spacecost `a401930efe30aaad01aafd2b3cb332ad0438c841`, `delivery.py` sets `DOWNLEG_CAPSULE_DRY_FRAC = 0.10` as “capsule dry mass per kg of cargo” (line 420); `downleg_cost_usd_per_kg` uses it directly for `capsule_kg` in the hardware cost term (lines 703–705). The declaration gives no geometry, component scope, source, or sensitivity for the 0.10 value.
+
+**Verdict:** Hayabusa provides a non-like-for-like context comparator, not a replacement. No bulk-cargo capsule sizing source or uncertainty is stated for the 0.10 factor. Open `rc-598`; distinct from rc-497’s capsule recurring cost, rc-135’s TPS fraction, and rc-134’s TPS mass scaling. Extracted data: `extracted_data/r731_hayabusa_and_downleg_capsule_mass_basis.csv`.
+
+Backings: spacecost `delivery.py` typed constants with no table row: `MARS_LANDED_MASS_FRACTION = 0.30` (sets the published mars_surface price; the comment calls it "Measured, not assumed" from MSL and Perseverance), `LANDER_DRY_MASS_FRAC = 0.20` and `TUG_DRY_MASS_FRAC = 0.10`.
+
+**Sources (R54):**
+
+- `edquist_2022_mars2020_aerothermal_entry_masses` (NTRS 20210024709, hosted): Table 3 (p14) entry masses: MSL BET 3153 kg; Mars 2020 TPS design cases 3436/3436 kg; Mars 2020 BET 3369 kg.
+- `nasa_mars2020_flight_mech_edl_simulation` (NTRS 20210024480, hosted), p1: "At 1026 kg, Perseverance is the largest, most sophisticated rover ever delivered to another planet."
+- `jpl_msl_factsheet_curiosity_mass` (live): Curiosity "899 kg in Earth gravity" (1,982 lbs).
+
+**Audit:** MSL 899/3153 = 28.51%; Perseverance 1026/3369 = 30.45% (29.86% on the design case). Band [28.51%, 30.45%]; 0.30 sits inside at the optimistic edge (+5.22% vs MSL, -1.49% vs Perseverance), as the code's "takes the better of the two" says. `extracted_data/r54_mars_edl_landed_mass_fractions.csv`.
+
+**Note-level discrepancy (constant unaffected):** the comment cites MSL entry 3257 kg where the BET is 3153 kg (+3.30%), and rover 1025 kg vs 1026. It shifts the quoted per-mission percentages (27.6%/29.8%), not the constant.
+
+The other two constants were later anchored from SP-4029 (d03): TUG in R56 (S-IVB dry weights, p294), LANDER in R147 (below).
+
+## R891 — Spacevalue Mars-surface entry-survival citation trail (2026-11-18)
+
+`spacevalue_mars_surface_entry_survival_note_current_2026` — At `spacevalue/catalog.py` lines 412–417, the Mars-surface note interpolates the EDL leg as 30% and says “MSL / Perseverance measured”; it names no study or source figure. `spacevalue/CITATIONS.md` lines 3–6 says the `catalog.py` note beside a value identifies its source and figure.
+
+`spacecost_mars_landed_fraction_basis_current_2026` — At `spacecost/delivery.py` lines 298–307, the 0.30 fraction is paired with MSL entry 3,153 kg → rover 899 kg (28.5%) and Perseverance entry 3,369 kg → rover 1,026 kg (30.5%); the comment attributes the entry masses to Edquist et al. 2022. `spacecost/CITATIONS.md` §8 points readers to that comment.
+
+`edquist_2022_mars2020_aerothermal_entry_masses` — Table 3 (PDF p. 14) lists MSL BET entry mass 3,153 kg and Mars 2020 BET entry mass 3,369 kg. `jpl_msl_factsheet_curiosity_mass` gives Curiosity as 899 kg; `nasa_mars2020_flight_mech_edl_simulation` states “At 1026 kg, Perseverance is the largest” (PDF p. 1). The paired ratios are 28.51% and 30.45%; 0.30 lies between them.
+
+**Verdict:** The 30% destination-note figure has supporting measurements in the registry and a source trail in Spacecost, but the Spacevalue note does not identify those sources or figures under its own citation convention. Open `rc-770` for the downstream attribution gap; applied `rc-039` corrected the Spacecost comment figures and does not cover the Spacevalue note. No replacement value inferred. Extracted data: `extracted_data/r891_spacevalue_mars_surface_citation_gap.csv`.
+
+## R954 — Spacevalue Mars entry-survival comparator cited upstream (2026-11-19)
+
+At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, the Mars-surface note retains 0.30 and describes it as an approximate MSL / Perseverance entry-to-rover ratio: 899/3,153 kg = 28.5% and 1,026/3,369 kg = 30.5%. Entry masses are attributed to Edquist et al. 2022 Table 3, PDF p. 14; rover masses to the JPL MSL fact sheet and NASA Mars 2020 flight-mechanics paper (`edquist_2022_mars2020_aerothermal_entry_masses`; `jpl_msl_factsheet_curiosity_mass`; `nasa_mars2020_flight_mech_edl_simulation`; rc-770).
+
+Verdict: the two measured analogues and their limits are named; the 0.30 value is unchanged. Extracted data: none new.
+
 ## R974 — Spacecost return-capsule bibliography omits the Hayabusa guide (2026-11-19)
 
 - `spacecost_citations_report_reference_gaps_current_2026`: At Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `spacecost/delivery.py` lines 420–426 call the generic 0.10 downleg capsule factor a scenario and cite the Hayabusa table as a non-substitute; `CITATIONS.md` §4 lists a Stardust press kit but omits NASA/SP-20220010761.
@@ -85,7 +86,6 @@ The comment's 2,134/(2,134+8,200) = 0.2065; 8,200 kg sits in the A9-A13 loaded b
 At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 4 gains `parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4` with its Hayabusa table locator, scoped as a sample-return comparator beside the generic 0.10 capsule factor (rc-834). Values unchanged.
 
 Verdict: rc-834 closed as applied. Extracted data: none new.
-
 
 ## R1075 — Mars powered-descent mass boundary and TPS pricing (2026-11-24)
 

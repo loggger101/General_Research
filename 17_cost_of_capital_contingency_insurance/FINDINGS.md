@@ -1,8 +1,3 @@
-## R954 — Spacecost contingency default no longer described as a standard (2026-11-19)
-
-At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `SpacecostConfig.contingency_fraction = 0.20` remains the model default. Its comment no longer calls 20% an industry standard or 35–50% first-of-kind guidance; Whitley & Shinn 2012 and NRC 2010 are identified as comparators, not evidence for those contingency bands (`spacecost_contingency_default_code_current_2026`; `whitley_shinn_2012_economics_nasa_mission_cost_reserves`; `nrc_2010_controlling_cost_growth_nasa_earth_and_space_science_missions`; rc-813).
-
-Verdict: the unsupported standard claim is removed; the model default is unchanged. Extracted data: none new.
 # Domain 17 — Cost of capital, contingency & insurance
 
 Backings: spacecost `reference/operational_costs.csv` rows `Cost of capital (WACC)`, `Contingency reserve`, `Launch insurance` and `Third-party liability insurance`, and economicspace `modules/calc.py` `contingency_fraction`, `apply_wacc_compounding` and `charge_insurance`.
@@ -167,7 +162,6 @@ rate, contingency and current averaging convention. It does not replace
 that convention with NPV, redesign the mission or measure catalogue/ranking
 effects. `extracted_data/r331_terminal_salvage_timing.csv`.
 
-
 ## R376 - Q3 2026 launch-insurance market outlook (2026-11-08)
 
 Gallagher Specialty, *Space Insurance Market Update Q3 2026* (published 2026-10-07), reports that depressed 2026 premium income has led underwriters to increase appetite for heritage launch-vehicle risks, and says competition may create more favourable buyer pricing for well-presented risks. The outlook is conditional and gives no premium-rate percentage.
@@ -199,6 +193,11 @@ remains open for a cohort-matched point and range review. Extracted data:
 
 Verdict: `rc-813` requests that the active configuration comment match the evidence limits in the reference row, or that cohort-matched evidence be provided for the 20% typical point and the 35-50% first-of-kind guidance. Values remain unchanged; no numeric replacement inferred. Extracted: `extracted_data/r947_spacecost_contingency_default_code.csv`.
 
+## R954 — Spacecost contingency default no longer described as a standard (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `SpacecostConfig.contingency_fraction = 0.20` remains the model default. Its comment no longer calls 20% an industry standard or 35–50% first-of-kind guidance; Whitley & Shinn 2012 and NRC 2010 are identified as comparators, not evidence for those contingency bands (`spacecost_contingency_default_code_current_2026`; `whitley_shinn_2012_economics_nasa_mission_cost_reserves`; `nrc_2010_controlling_cost_growth_nasa_earth_and_space_science_missions`; rc-813).
+
+Verdict: the unsupported standard claim is removed; the model default is unchanged. Extracted data: none new.
 
 ## R1042 — Launch premium manifest and archived market citation (2026-11-23)
 

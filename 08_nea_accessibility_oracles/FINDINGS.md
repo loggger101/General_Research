@@ -44,7 +44,6 @@ Ladder: 666 (Sep-2010) -> 765/590 (Feb-2011) -> 1,317 (Dec-2014) -> 4,658 (~Dec-
 
 economicspace PR#159 (876cd44) moved `research/starred-repos/`, `probe_nhats.py` and SECOND-PASS.md F6 included, to [starred-repos](https://github.com/loggger101/starred-repos); at economicspace be86297 no `probe_nhats.py` exists. R219 updated domain 13's backings and not this domain's, which still named economicspace as the probe's home. The backings line here, in INDEX.md and in README.md, and jpl_nhats_nea_dv_oracle's mapping, now name starred-repos. The R53, R73 and R138 blocks and their extracted-data notes keep the path as read. No value or verdict moves.
 
-
 ## R399 — JPL NHATS current snapshot (2026-11-08)
 
 `jpl_nhats_nea_dv_oracle` returned signature version `1.3`, source `NASA/JPL NHATS Data API`, and `count=7197` for the explicit R73 filter values: total delta-v <=12 km/s, duration <=450 days, stay >=8 days, launches 2020-2045. Across `data[*].min_dv.dv`, the linear-interpolated median is 9.369 km/s (p10 5.996, p90 11.546; range 3.345-11.999). The five minimum-delta-v bins (<4, 4-<5, 5-<8, 8-<10, >=10 km/s) total 7,197.

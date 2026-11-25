@@ -1,8 +1,3 @@
-## R954 — Spacecost package release travels with built tables (2026-11-19)
-
-At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `build.py` writes `build_manifest.json` beside the generated tables with `package_version`, `pipeline_version`, `catalog_date` and the output file list (`spacecost_package_release_output_provenance_code_current_2026`; rc-773). The CSV value columns are not changed by this manifest.
-
-Verdict: the package release identifier is available with the build. Extracted data: none new.
 # Domain 21 — Spacecraft mass & recurring-cost estimating relationships
 
 Backings: spacecost `reference/operational_costs.csv` recurring $/kg rows (mining payload, return capsule, berthing adapter, surface lander, heat shield / TPS, expendable upper stage, propellant tank) and economicspace `modules/calc.py` sizing fields `return_vehicle_dry_kg`, `return_structure_frac_of_payload`, `heat_shield_frac_of_payload` and `nre_recurring_overlap_fraction`.
@@ -158,9 +153,11 @@ in per-launch mass flow. `rc-248`: distinguish first-use and repeat manifests,
 or account consistently for a new rig on every mission. Current-population
 incidence and ranking effects were not measured.
 `extracted_data/r318_stationary_rig_repeat_launch.csv`.
+
 ## R381 - NEXT-C bundled procurement benchmark (2026-11-08)
 
 Source `nasa_2015_nextc_contract_award_price`: NASA Glenn says it awarded Aerojet Rocketdyne a five-year cost-share contract with a total value of $18,410,242 to design, fabricate and test two NEXT-C thrusters and two PPUs for flight; the same release says the contractor team would also design, fabricate and test a prototype PPU before production (release 15-011, Apr. 1, 2015). The current spacecost `Electric propulsion system recurring cost` anchor is an inferred $10-15M per 7-kW flight string, and its note says no registered NASA record prices a string. The contract is a relevant government procurement benchmark, but bundles two flight systems, a prototype PPU and development/testing, with no allocation or recurring production price. Verdict: re-evaluate the $10-15M per-string anchor against this bundle and state the scope distinction; do not divide the contract by two as a recurring unit price. `rc-299` (method). Extracted data: `extracted_data/r381_nasa_nextc_contract_bundle.csv`.
+
 ## R382 - CLPS surface-lander price comparator (2026-11-08)
 
 Read upstream at `spacecost@19e1a31`. Sources `nasa_oig_2024_ig_24_013_clps_delivery_costs` and `kuettel_et_al_2024_im1_nova_c_dry_mass`. NASA OIG describes CLPS orders as firm-fixed-price contracts “for the full scope of payload delivery—from payload handover to delivery and operation” (IG-24-013, p.3). For Intuitive Machines TO2-IM/20C/OP, it reports $81.7M initial and $122.0M current value, a 49% increase (p.12); the footnote says 20C and OP added activities to the TO2-IM flight. Kuettel et al. report the IM-1 Nova-C lander “dry mass of 677 kg” (AAS 24-282, p.2). Dividing the current full-service task-order value by that dry mass gives ~$180,207 per dry kg; the initial value gives ~$120,679/kg. The spacecost `Surface lander recurring cost` estimate is $200,000/kg [100,000, 500,000] and is described as a recurring hardware rate. The comparator includes end-to-end delivery, launch, development and operations, and price is not the contractor’s cost; this does not directly refute the hardware estimate. Verdict: test and explain why the recurring hardware point sits above the observed whole-service $/dry-kg comparator, or retain it with a scope-specific justification; do not substitute the package ratio as a hardware price. `rc-300` (method). Extracted data: `extracted_data/r382_clps_lander_cost_comparator.csv`.
@@ -175,17 +172,13 @@ NASA Glenn release 16-044 (2016-04-19) says the AEPS contract was a 36-month cos
 
 This is a current commercial lander delivery award, not a recurring hardware cost or mass-normalized unit price. It adds a distinct provider/scope example to `rc-300`; it cannot be converted to dollars per lander kilogram. `rc-300` remains open and no upstream value is changed. Extracted: `extracted_data/r434_nasa_blue_origin_promise_delivery_award.csv`.
 
-
-
 ## R451 — Lunar ISRU development and production cost factors (2026-11-09)
 
 Johnson, Sowers & Abbud-Madrid, *The value of lunar-derived oxygen and water for an early habitation customer*, define lifecycle cost as DDT&E, production, delivery and operations (Eq. 3, PDF p. 9); DDT&E is initial non-recurring system development. Their industry-factor method uses $63,000/kg for initial ISRU system development and $25,200/kg for flight-unit production in FY2026 dollars (§ Industry cost factors, PDF p. 12), adjusted from Sowers (2021) and Kornuta et al. (2019). The paper applies a complexity factor of 1.0 to ISRU systems. These are heuristic lunar pilot-system factors, not measured asteroid-mining costs. **Verdict:** this sharpens the cost-category comparison for `rc-330` but does not supply a replacement value for the asteroid concept estimate or prove the upstream NRE omission. Extracted: `extracted_data/r451_lunar_isru_development_production_cost_factors.csv`.
 
-
 ## R453 — Earth-return speed and separate Mars EDL TPS sizing (2026-11-09)
 
 `xing_2026_mars_sample_return_tps_sizing` — Xing (2026), published in *Frontiers in Astronomy and Space Sciences* 13:1821180 on 2026-05-21, reports baseline Earth atmospheric entry at 12.0–12.8 km/s and says this is within the 12.9 km/s Stardust sample-return heritage and PICA-class capability (§3.5.1, p. 9). The paper’s separate Mars EDL Monte Carlo case uses a 5.8 km/s entry velocity (Table 6, p. 10). Its Mars EDL TPS estimate is 350–500 kg for a 15 m² wetted area (§4.3.4, p. 11); Table 8 (p. 12) lists 280 kg PICA forebody, 80 kg SLA-561V backshell, and 90 kg structure/bondline, totaling 450 kg. The table labels 90 kg as 15% of TPS mass, although it is 20% of the 450 kg listed total; no reconciliation is given. These are Mars EDL sizing values, not an Earth-return TPS mass, which the paper does not state. The CC BY study therefore sharpens rc-134’s entry-event and sizing-method distinction but supplies no replacement for the upstream 15%-of-returned-payload assumption. Extracted: `extracted_data/r453_xing_2026_tps_mass_and_entry_speed.csv`.
-
 
 ## R456 - Repeat-manifest option in current upstream (2026-11-09)
 
@@ -197,49 +190,39 @@ This adds an opt-in partial path for `rc-248`, but the default still charges a r
 
 `alpert_et_al_2024_high_velocity_earth_entry_tps` — Alpert et al. evaluate Stardust and Mars Sample Return Earth Entry System geometries at 12.8 and 16.5 km/s; the paper calls 16.5 km/s relevant to destinations such as near-Earth asteroids (Trade Study Parameters, p. 1). Their entry-mass sweep covers 30–60 kg for Stardust and 75–135 kg for MSR-EES (p. 1). The sizing method reports thickness from a three-branch root-sum-square procedure with a 1.25 factor of safety (TPS Sizing, p. 2); it does not give heatshield mass or a ratio to returned payload. The NTRS record states “Work of the US Gov. Public Use Permitted.” **Verdict:** this supports sizing TPS by entry conditions and vehicle mass, but supplies no replacement for economicspace’s 15%-of-returned-payload dial. Keep `rc-134` open. Extracted data: `extracted_data/r475_alpert_high_velocity_tps_sizing.csv`.
 
-
-
 ## R555 — ICPS whole-stage price comparator for tank-cost derivation (2026-11-10)
 
 `nasa_oig_2020_ig-20-012_sls_program_costs_contracts`: NASA OIG reports an opportunity to buy “the hardware for a second ICPS for $29 million” (PDF p. 23). ICPS is a modified Delta Cryogenic Second Stage; the figure is for a whole-stage hardware purchase, not a Centaur III stage or its tank alone. Spacecost’s `Propellant tank recurring cost` note derives about $5,300/kg from an unsupported ~$30M Centaur III stage price less an assumed ~$20M RL10, then adopts $6,000/kg [3,000,25,000]. The OIG figure gives a close stage-level comparator but does not verify the Centaur price or allocate cost among engine, tanks and structure. `rc-421` records the citation and component-allocation gap; no replacement rate is inferred. Extracted: `extracted_data/r555_nasa_oig_icps_price_vs_centaur_tank_cost_anchor.csv`.
-
 
 ## R556 — HEEET cost basis by heat-shield size (2026-11-10)
 
 `nasa_discovery_2014_ao_qa_heeet_cost` — NASA’s Discovery 2014 Announcement of Opportunity Q&A, updated February 6, 2015, asks for projected HEEET TPS cost per kilogram. The response says generic cost-per-kilogram “is not the ideal way” to specify HEEET cost, then gives current best estimates of $3M, $6M and $11M for 1 m, 2 m and 3 m diameter heat shields (T-21, PDF p. 9). Spacecost’s `Heat shield / TPS for Earth return` row uses $50,000/kg [20,000,150,000] for PICA-X/AVCOAT-class material plus manufacturing and already notes the lack of published PICA-X per-kg cost. HEEET is a different material and the Q&A gives no shield mass, so the figures provide a cost-basis comparator but cannot be converted into a replacement rate. **Verdict:** review the per-kg representation and applicability; retain the value as an estimate pending like-for-like evidence. `rc-422`. Extracted: `extracted_data/r556_nasa_discovery_heeet_cost_by_shield_size.csv`.
 
-
 ## R557 — Cygnus cargo-module mass by configuration (2026-11-10)
 
 `orbital_sciences_2014_cygnus_configuration_mass` — Orbital Sciences’ *Commercial Cargo Operations for the ISS* presentation labels Standard Cygnus PCM dry mass as 1,677 kg with 2,000 kg payload, and Enhanced Cygnus PCM dry mass as 1,995 kg with 2,700 kg payload (slide 4, PDF p. 4). The corresponding module-only ratios are 0.8385 and 0.7389 kg/kg. The diagram also labels each service module at 1,700 kg but does not say whether that mass is dry or wet; these values therefore do not establish total spacecraft dry mass. Current economicspace `return_structure_frac_of_payload` comment still says Cygnus’s ~1,500 kg dry mass and 0.40 ratio lack a source, while the model value remains 0.15. **Verdict:** cite and scope the configuration-specific PCM data; do not use it as a whole-vehicle or unpressurized ore-hopper ratio, and retain 0.15 as an engineering estimate pending like-for-like evidence. `rc-423`. Extracted: `extracted_data/r557_orbital_cygnus_pcm_mass_by_configuration.csv`.
-
 
 ## R635 — Stardust capsule mass and cost scope (2026-11-11)
 
 `jpl_2006_stardust_return_capsule_mass_cost_scope` — NASA/JPL’s Stardust press kit reports a “46-kilogram (101-pound) return capsule” and $128.4 million in spacecraft development within a $168.4 million program total excluding launch (Quick Facts, printed p. 6). The source gives no capsule cost allocation or recurring production rate. Spacecost’s `Return capsule recurring cost` row stores $150,000/kg [$50,000, $400,000], described as half the mining-rig rate with Stardust and OSIRIS-REx SRC heritage, but provides no cost derivation. **Verdict:** the source supplies mass and program-cost scope only; no replacement rate can be inferred. Open `rc-497`. Extracted data: `extracted_data/r635_stardust_capsule_mass_program_cost_scope.csv`.
 
-
 ## R653 — Mining-payload recurring cost basis (2026-11-11)
 
 `spacecost_mining_payload_recurring_cost_current_2026` — spacecost’s `Mining payload recurring cost` row stores $300,000/kg [$100,000, $1,000,000] for burdened deep-space mining equipment. Its note says the bracket “has no registered source”; it says the prior SSCM and NICM anchors were removed because they could not be checked, and that NICM is an instrument model rather than a structures or mechanisms model. The SSCM and NICM registry records remain `registered_not_pulled`. **Verdict:** the estimate has no checked CER or cost basis matched to mining hardware; no replacement rate is inferred. Open `rc-517`. Extracted: `extracted_data/r653_mining_payload_recurring_cost_code_audit.csv`.
-
 
 ## R654 — NRE overlap fraction in the cost model (2026-11-11)
 
 `economicspace_nre_recurring_overlap_fraction_code_current_2026` — economicspace sets `nre_recurring_overlap_fraction` to 0.30, described as a “mid-range de-duplication.” The code says the recurring-cost brackets are regressions on total program cost and therefore include development; its cost formula charges the spacecraft NRE at `1 − overlap_fraction` per mission. The related spacecost mining-payload row now says its $100,000–$1,000,000/kg bracket has no registered source, and the SSCM/NICM records remain `registered_not_pulled`. **Verdict:** the 0.30 share has no checked derivation from a cost model or matched hardware class. Open `rc-518`; no replacement fraction inferred. Extracted: `extracted_data/r654_nre_recurring_overlap_fraction_code_audit.csv`.
 
-
 ## R658 — economicspace return-structure candidates rechecked (2026-11-12)
 
 At economicspace main `c1a6333e6e50e0e3658d05e47128a94ce4f07831` (calc 1.45.0), `heat_shield_frac_of_payload` remains 0.15 as a flat returned-payload fraction, with no entry-speed scaling basis (**rc-134**). The current comment still states that Cygnus’s approximately 1,500 kg dry mass has no source; `return_structure_frac_of_payload` remains 0.15 and the configuration-specific PCM mass basis remains unresolved (**rc-423**). Both candidates remain open. Existing extracts: `extracted_data/r453_xing_2026_tps_mass_and_entry_speed.csv`; `extracted_data/r475_alpert_high_velocity_tps_sizing.csv`; `extracted_data/r557_orbital_cygnus_pcm_mass_by_configuration.csv`.
-
 
 ## R677 — Upper-stage and tank recurring-cost anchors rechecked (2026-11-12)
 
 - **spacecost_stage_and_tank_recurring_cost_code_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` retains an expendable upper-stage rate of $4,800/kg [$1,750,$13,400]. Its note derives the point as the geometric centre of ~$10M (Musk 2018) or an unnamed ~$7M 2026 third-party estimate for a ~4,000 kg Falcon 9 upper stage, and ~$30M for a ~2,250 kg Centaur III; it states no institutional document prices either stage. The tank-only row remains $6,000/kg [$3,000,$25,000], based on ~$30M Centaur III less an assumed ~$20M RL10, divided by ~1,880 kg of structure, then rounded upward; the high end is called plausible rather than sourced.
 - **nasa_oig_2020_ig-20-012_sls_program_costs_contracts**: NASA OIG p. 23 reports an opportunity to buy “the hardware for a second ICPS for $29 million.” This is a whole-stage comparator for a different configuration, not a Centaur III price or a tank-component allocation.
 - Verdict: keep both numeric rates pending separate matched bases for whole-stage and tank-only costs; no replacement inferred. **rc-421** remains open. Existing extraction: `extracted_data/r555_nasa_oig_icps_price_vs_centaur_tank_cost_anchor.csv`; new extraction: `extracted_data/r677_stage_tank_cost_basis.csv`.
-
 
 ## R773 - NRE overlap disclosure in the verification worksheet (2026-11-15)
 
@@ -269,7 +252,6 @@ Verdict: identify I63=1 as the fixed scenario used by this archived row and carr
 **spacecost_stage_and_tank_recurring_cost_code_current_2026**: the current row derives its lower bound from an approximately $30M Centaur III stage anchor less an assumed approximately $20M RL10 cost; the sheet notes that the stage-cost anchor has no institutional source.
 
 Verdict: rc-421 remains open for the tank-only cost basis; the current sheet adds a live input mapping but no replacement value. Extracted: extracted_data/r826_live_sheet_propellant_tank_cost_i119.csv.
-
 
 ## R849 — Titan IV Centaur unit-cost comparator (2026-11-17)
 
@@ -305,7 +287,6 @@ Upstream: Economicspace's timestamped Stage 3 `spacecost-0.4.0/operational_costs
 
 Upstream: Economicspace's timestamped Stage 3 `spacecost-0.4.0/operational_costs.csv`, rows Electric propulsion system recurring cost and Energy storage usable specific energy, remains a possible input to archived runs selected by table date. Verdict: carry forward the current per-string price limitation and the D-RATS battery analogy's provenance and scope into the frozen rows. Preserve historical values and ranges; no numeric replacement inferred. Extracted: `extracted_data/r852_frozen_stage3_operational_cost_note_gaps.csv`.
 
-
 ## R853 — Latest frozen Stage 3 stage and tank cost anchors (2026-11-17)
 
 **economicspace_stage3_spacecost_0_14_0_expendable_upper_stage_row_2026**: The `spacecost-0.14.0` row stores $4,800/kg [$1,750, $13,400] of stage dry mass. Its note takes a geometric centre from ~$10M (Musk 2018) or an unnamed ~$7M Falcon 9 upper-stage estimate and ~$30M for Centaur III, then says no institutional document prices either anchor.
@@ -316,7 +297,6 @@ The archived table selector chooses the newest date-compatible frozen Stage 3 se
 
 Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, rows Expendable upper stage recurring cost and Propellant tank recurring cost. Verdict: retain the historical values as estimates; no numeric replacement inferred. **rc-730**. Extracted: `extracted_data/r853_stage3_upper_stage_and_tank_cost_rows.csv`.
 
-
 ## R854 — Frozen return-capsule recurring-cost basis (2026-11-17)
 
 **spacecost_return_capsule_recurring_cost_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` retains $150,000/kg [$50,000, $400,000] and says “no capsule unit cost is published”; the point and range are an engineering scenario, not a derived recurring rate. The note limits JPL’s Stardust press-kit evidence to capsule mass and whole-spacecraft/program costs (Quick Facts, printed p. 6; **rc-497**).
@@ -324,7 +304,6 @@ Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`
 **economicspace_stage3_spacecost_0_14_0_return_capsule_recurring_cost_row_2026**: The frozen 1.23.6 row stores the same $150,000/kg [$50,000, $400,000], describes the value as half the mining-payload rate and names Stardust/OSIRIS-REx SRC heritage, but omits the current no-published-unit-cost and scenario qualification. The row is selected for compatible archived runs by the Stage 3 table selector.
 
 Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row Return capsule recurring cost. Verdict: preserve the historical rate, carry forward the current scenario and source-scope note, and infer no numeric replacement. **rc-731**. Extracted: `extracted_data/r854_frozen_stage3_return_capsule_cost_note.csv`.
-
 
 ## R855 — Frozen Stage 3 mining-payload cost qualification (2026-11-17)
 
@@ -337,7 +316,6 @@ Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`
 **spacecost_mining_payload_recurring_cost_current_2026**: The current row retains the same value and range; it says no published cost-estimating relationship or recurring unit cost matches mining hardware, labels the value a scenario input, and says generic spacecraft or instrument CERs are not applied without showing they fit (rc-517).
 
 Upstream: Economicspace `campaign/stage3/spacecost-0.14.0/operational_costs.csv`, row Mining payload recurring cost. Verdict: preserve the historical value and range while carrying the current source and fit limits into the frozen row; no numeric replacement inferred. **rc-732**. Extracted: `extracted_data/r855_frozen_stage3_mining_cost_source_caveat.csv`.
-
 
 ## R856 — Frozen Stage 3 surface-lander cost comparator scope (2026-11-17)
 
@@ -415,6 +393,12 @@ economicspace e477b00ffa7810a6f2daad76290d428eee8b70b3 (PR #210, master 1.80.0; 
 
 Verdict: all nine closed as applied. Extracted data: none new.
 
+## R954 — Spacecost package release travels with built tables (2026-11-19)
+
+At Spacecost main 868f42890ac97ee40a50d79f7b33863046edb0ff, `build.py` writes `build_manifest.json` beside the generated tables with `package_version`, `pipeline_version`, `catalog_date` and the output file list (`spacecost_package_release_output_provenance_code_current_2026`; rc-773). The CSV value columns are not changed by this manifest.
+
+Verdict: the package release identifier is available with the build. Extracted data: none new.
+
 ## R965 — Frozen Stage 3 tank-cost citation gap (2026-11-19)
 
 **economicspace_stage3_spacecost_0_5_0_propellant_tank_recurring_cost_row_2026**: Economicspace main `b6c962c4f06dc5b625fee39044d8d1699ac564c9`, `campaign/stage3/spacecost-0.5.0/operational_costs.csv:11`, stores $6,000/kg [$3,000, $25,000] of tank dry mass. Its note derives about $5,300/kg from 1,880 kg of structure, an approximately $30M Centaur III stage, and an assumed approximately $20M RL10; it names no source for those anchors or the tank-only allocation.
@@ -475,7 +459,6 @@ Verdict: rc-777, rc-865 closed as applied. Extracted data: none new.
 At Economicspace main 2977c46da5b7802a79fb18d517a5dd6f832bd749 (PR #217, master 1.85.0 / calc 1.47.0), by the owner's decision, `scale_tps_with_entry_speed` (on) makes `heat_shield_frac_of_payload` = 0.15 the fraction at an 11 km/s entry; an Earth entry at v_e = sqrt(v_inf^2 + v_esc^2) (125 km interface) carries 0.15 x (v_e / 11)^1.107, from `dec_braun_2006_approximate_ablative_tps_sizing_tool` Table 2 (PICA 8.324 cm at 11 km/s, 10.873 cm at 14 km/s, mass with thickness at fixed geometry). Mars entries keep 0.15; rows report `tps_frac`. Upstream's sample (120 stride rows, `earth_surface`, pinned prices-2026-11-12): 107 rows evaluable, fraction 0.175-1.195 (median 0.194), cost per kg 0.72-1.57x (median 1.065x); 50 rows enter above 14 km/s, where the fit extrapolates (rc-134).
 
 Verdict: rc-134 closed as applied. Extracted data: none new.
-
 
 ## R1101 — Berthing adapter recurring cost and cargo-carrier scope (2026-11-24)
 

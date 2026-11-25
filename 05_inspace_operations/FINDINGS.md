@@ -471,16 +471,13 @@ point must be distinguished from a printed rating and the DART test range.
 Three local upstream blobs match fresh pinned metadata; four live main
 comparisons are identical. `extracted_data/r349_nextc_ppu_power_basis.csv`.
 
-
 ## R460 — Current ISRU feed-budget option
 
 At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_isru_feed_budget` defaults to `False` (modules/calc.py:699), and the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). With the flag off, trial ISRU propellant omits `k_ret` and rejects only when generated feed exceeds throughput; the settled feed check likewise compares against throughput alone (lines 6839-6849 and 7203-7211). When enabled, trial propellant is multiplied by `k_ret`, an over-budget mission is refit, and the settled check compares cargo plus ISRU feed with `min(throughput_cap_kg, mineable_kg)` (lines 6839-6849, 7077-7084, 7203-7209). The single-mission correction is therefore available but inactive in the default consumer; it does not turn on the separate programme-wide cumulative resource budget in `rc-245`. `rc-241` remains open for default-path correction. Extracted: `extracted_data/r460_current_isru_feed_budget_flag.csv`.
 
-
 ## R465 — Current return-coast capture-fuel boiloff option
 
 At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.model_return_coast_boiloff` defaults to `False` (modules/calc.py:734), and the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). When enabled alongside propellant boiloff, a nonzero later-capture burn, and positive loss rate, the solver separates the capture mass ratio from the return-leg ratio, applies a storage factor over `cruise_yr = max(0.5, 0.00023 * dv_ret_m_s)`, and converts the result to `dv_ret_stored` (lines 6661-6673). The sizing loop then applies the ordinary outbound-plus-stay boiloff factor to that storage-equivalent return term and uses the resulting `dv_ret_eff` in the cascade (lines 6767-6783); settled repair paths carry the same `dv_capture_m_s` input (7296-7315). Comments state that the physical return Δv and travel clock remain on `dv_ret_m_s`. This opt-in path addresses the capture-fuel coast interval for the modeled case but uses an estimated cruise duration and does not resolve production-window storage. The default path remains as described in `rc-284`; the candidate remains open for default activation and full storage-interval/burn closure. Extracted: `extracted_data/r465_current_return_capture_boiloff_flag.csv`.
-
 
 ## R471 — Current volume-capped cryogenic reclosure option
 
@@ -490,18 +487,15 @@ R481 — NASA’s Break The Ice Lunar Challenge report identifies a technology s
 
 R489 — NASA OIG IG-26-010, printed p. 11 n. 23, says SpaceX “will need to launch at least 15 Starships” to deliver propellant to an LEO depot for the lunar Human Landing System. Spacecost’s current `reference/storage_systems.csv` row `Depot refuelling flights to escape` at `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` stores 12 [8, 16] “tanker launches per fully-fuelled departure” for a high-energy departure. The NASA count is a lunar-HLS architecture estimate, not a measured value or a direct contradiction for an asteroid escape departure; it shows the stored count is architecture-specific and should not be generalized to lunar HLS. `rc-355` records the scope distinction; no replacement value inferred. Extracted: `extracted_data/r489_hls_tanker_count_scope.csv`.
 
-
 ## R570 — Spacecost standalone ISRU flat-fee provenance (2026-11-10)
 
 `spacecost_legacy_isru_fee_current_record_2026`: at spacecost 0.17.0 / data contract 1.26.0, `spacecost/config.py` retains `isru_processing_usd_per_kg=50.0` with the comment “rough lit estimate.” `reference/storage_systems.csv` repeats $50/kg [20, 200] as a concept row without a source or derivation. `spacecost/query.py` applies the amount to return propellant when `isru_return_propellant` is enabled.
 
 Current economicspace main (v1.71.0, `e2ad48767b0e81489031b724417b1a03e6dfc1fb`) defaults the flat fee to zero and enables a separate process model that charges energy and plant; its README says the unsourced $50/kg was retired at calc v1.32.0. Verdict: an unresolved standalone spacecost citation and scope gap. The fee is charged on self-produced propellant, so a third-party depot price would be a different basis. Provide a source/calculation and define the cost boundary, or mark the standalone field as legacy consistently; no numeric replacement inferred. **rc-435**. Extracted: `extracted_data/r570_spacecost_isru_flat_fee_current_state.csv`.
 
-
 ## R652 — Depot berthing and handover estimate basis (2026-11-11)
 
 `spacecost_depot_handover_cost_current_2026`: spacecost main `aaed2720ee44610c5cf90fc204db160deb5669bb` stores $2,000,000 per delivery [$500,000, $8,000,000] for depot berthing and handover. Its note calls this an estimate, names RPO support, depot crew or robotic-arm time, cargo survey and handover, and says no institutional document prices the component alone. The live economicspace worksheet check flags I129 as needing backing, but its Stage 2/3 inputs are frozen historical exports. `nasa_oig_2018_ig-18-016_commercial_resupply_services_audit`: CRS-1 and CRS-2 provide complete cargo-mission costs, not a separate handover price. Verdict: no numeric replacement inferred; `**rc-516**` records the missing component-cost basis. Extracted: `extracted_data/r652_depot_handover_cost_basis.csv`; existing comparator: `20_mission_operations_communications/extracted_data/r142_crss_berthing_key_numbers.csv`.
-
 
 ## R674 — Depot tanker-count upper-end scope recheck (2026-11-12)
 
@@ -509,13 +503,11 @@ Current economicspace main (v1.71.0, `e2ad48767b0e81489031b724417b1a03e6dfc1fb`)
 - **gao_b419783_spacex_hls_launch_count**: U.S. GAO B-419783 et al., printed p. 27 footnote 13 (repeated p. 71), describes “sixteen total launches” for a lunar HLS concept, including “14 launches of its Tanker Starships,” one launch redacted and one HLS Lander launch. NASA OIG IG-26-010 p. 11 separately reports at least 15 tanker Starships for lunar HLS propellant aggregation. These are architecture-specific lunar-HLS plans, not a like-for-like asteroid high-energy departure count; GAO’s 16 is the total campaign count, not its tanker subtotal.
 - Verdict: do not use the lunar HLS campaign total as evidence for 16 tanker flights. Keep rc-355 open for a separate tanker-flight basis or an explicit scenario bound; no numeric replacement inferred. Existing extraction: `extracted_data/r489_hls_tanker_count_scope.csv`; new extraction: `extracted_data/r674_gao_hls_tanker_count.csv`.
 
-
 ## R807 — Spacecost transfer-loss midpoint and upper bound need a basis (2026-11-16)
 
 - **spacecost_depot_transfer_loss_code_current_2026**: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `spacecost/storage.py` lines 504–521 and `reference/storage_systems.csv`, sets “In-space propellant transfer loss” to 0.03 fraction per transfer [0.01, 0.08], status `development`. Its note says the cited study is consistent with the 1% low end and says transfer losses are not modeled by Module 4.
 - **zero_bo_off_2025** (Krog & Berstad, arXiv:2512.04609, PDF p. 1 abstract; Table 4, p. 5): the study models a 160,000 m³ / 11,248 t ground LH₂ export-terminal transfer. It reports “0 wt% to 0.24 wt%” for the variable-speed-pump strategy and “0.76 wt% to 1.06 wt%” for fixed-speed pumping. These results do not establish the model’s 3% midpoint or 8% upper endpoint or a stage-scale space-transfer loss. Existing full-text extraction: `extracted_data/r70_zero_bo_off_2025.csv`.
 - Verdict: open **rc-680** for the central and upper endpoint basis or a clear scenario designation with sensitivity. This is distinct from applied rc-028, which covers the lower-end comparator. No numeric replacement inferred. Extracted: `extracted_data/r807_transfer_loss_range_basis.csv`.
-
 
 ## R829 — 20 K cryocooler specific-power range basis (2026-11-17)
 

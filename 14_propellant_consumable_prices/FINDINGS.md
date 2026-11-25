@@ -1,52 +1,3 @@
-## R1005 — Propellant citation bases remain unresolved (2026-11-19)
-
-- rc-651: economicspace_feep_price_stage3_frozen_row_current_2026 confirms Economicspace main aa5bd714b06d3ac2e0ed4c25498707e57a966721 retains the frozen FEEP reference price at $250/kg, reference year 2026, price basis reference, without a procurement citation. spacecost_feep_indium_component_cost_code_current_2026 and spacecost_feep_indium_reference_row_current_2026 show Spacecost 0.18.9 main 70a228dd408614b0f9a5450b9114e3b10bfe151c still sets indium to $250/kg and exports the same FEEP reference value; its component comment and row notes do not identify a procurement source. The supplied economicspace_2018_dt_verification_sheet_pdf_2026 p. 1 is a lunar_surface worksheet using Iodine (Hall / gridded); it labels I73 as return_vehicle_dry_kg=500 kg and says “A FLOOR, not the whole return dry mass.” It contains no FEEP or indium price row; this corrects the earlier I73/FEEP attribution. usgs_mineral_commodity_summaries_2026_indium refined-indium averages remain comparators, not FEEP procurement evidence. rc-651 remains open; no numeric replacement inferred. Extracted data: extracted_data/r1005_propellant_citation_gaps_recheck.csv.
-- rc-827: spacecost_alice_isru_processing_energy_gate_current_2026 shows Spacecost main 70a228dd408614b0f9a5450b9114e3b10bfe151c still sets Metal / water (ALICE, Al + H2O) processing energy to NaN and exports a blank isru_processing_wh_per_kg. The row's 0.5 kg/kg feed is explicitly a water-side placeholder; the note that both components are prospective feedstocks gives no aluminium-refining energy basis. rc-827 remains open; no energy replacement inferred.
-
-Extracted data: extracted_data/r1005_propellant_citation_gaps_recheck.csv.
-
-## R991 — Spacecost propellant EOS bibliography (2026-11-19)
-
-At Spacecost main a6901495d257cbcd018b31e238498c94f301c865, the Argon, Krypton, Cold gas (GN2), and Xenon notes identify CoolProp 8.0.0 and reference equations of state by Tegeler, Span & Wagner (1999), Lemmon & Span (2006), or Span et al. (2000). Their stored densities (Argon 0.300, Krypton 0.550, GN2 0.250, Xenon 2.000 kg/L) remain under separate open value reviews (rc-816, rc-857 to rc-859). Spacecost CITATIONS.md section 2 has no CoolProp/Bell reference or full bibliography entries for these EOS papers. coolprop_8_0_0_citation_page (Citation for CoolProp, Overview) says "please cite the freely available article" and gives the Bell et al. (2014) reference and CoolProp website.
-
-Verdict: rc-860 open, citation-only; no density replacement inferred. Extracted: extracted_data/r991_spacecost_propellant_eos_bibliography.csv.
-
-## R975 — Moran 1991 hydrolox comparator citation and scenario scope (2026-11-19)
-
-`spacecost_hydrolox_moran_energy_comparator_code_current_2026`: Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `propellants.py` line 332 attributes 4.41 kWh/kg and “2 MW at 280 kg/hr of water” to Moran’s 1991 subsystem study. `CITATIONS.md` §2 has no Moran entry; the Morren & Curran 1991 reference there is a different 2-kW arcjet study.
-
-`moran_1991_nasa_tm_103730_on_orbit_electrolysis`: NASA NTRS identifies Matthew E. Moran’s *Conceptual Study of On Orbit Production of Cryogenic Propellants by Water Electrolysis* (NASA-TM-103730, NTRS 19910010004; AIAA Paper 91-1844). Table II, printed p. 16, lists “4.41 kWh/kg-H2O” for electrolysis and 398 kW total lunar-processor power. The Mars Missions section, printed p. 6, gives 378.2 kg/h water; the scaled power is 2,790 kW on printed pp. 1 and 17. Their ratio is 7.376 kWh/kg, computed here. The report does not state the code’s exact 2 MW / 280 kg/hr pair.
-
-**Verdict:** open **rc-836** to add a complete report entry and align the comparator’s figures with the source scenario. Applied rc-166 covered the low-end energy-band comparison; the selected 15,200 Wh/kg input is unchanged. Extracted: `extracted_data/r975_spacecost_moran_1991_processor_figures.csv`.
-
-## R950 — Spacecost notes and comments applied upstream; ArgonSC density value candidate (2026-11-19)
-
-spacecost bad5ba80884e6bd6825de83ff8e942619d962a1f (PR #51, package 0.18.4, data contract 1.27.3 to 1.27.4). Notes on 51 rows, comments, CITATIONS.md and README.md; compared column by column, every value column of the six reference tables and the summary sample is identical to 1.27.3.
-
-- Closed as applied: rc-361 (dv_penalty_factor 1.5 named on each row); rc-421, 422, 435, 544, 598, 680, 694, 701, 718, 766 (scenario labels with comparators); rc-525 (HTP / RP-1 320 s beside Krishnan 2010); rc-545 (Ryugu structural OH); rc-576, 577 (LH2 and water prices as scenarios); rc-585, 586 (tank base and class multipliers); rc-596 (Didymos estimates); rc-658 (krypton ratios as assumptions); rc-679 (ArgonSC comment); rc-767 (Berthier et al. 2023 for ssoBFT); rc-774 (MPD, no RIAME test).
-- spacecost's notes for rc-656, 657, 659, 660 and 661 are in the same release; those candidates close with their frozen-row half in economicspace.
-- New value candidate rc-816: `tegeler_span_wagner_1999_argon_equation_of_state`, as CoolProp 8.0.0 implements it (EOS key Tegeler-JPCRD-1999), gives 313.480 kg/m3 and Z = 0.94109 at 293.15 K / 18 MPa against the stored ArgonSC 0.300 kg/L, 4.49% higher. The value move is held for owner review.
-
-Verdict: 22 closed as applied; rc-816 opened. Extracted data: extracted_data/r950_argon_supercritical_density_tegeler.csv.
-
-## R833 — Latest frozen Stage 3 HTP price provenance
-
-- **economicspace_latest_stage3_htp_price_rows_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.14.0/propellants.csv, pipeline 1.23.6, catalog date 2026-10-17, rows 13-14): HTP monopropellant stores $5.00/kg and labels it an unsourced estimate pending re-sourcing; the HTP/RP-1 row stores $4.6875/kg and says it rests on the same unsourced HTP input.
-- **spacecost_htp_price_reference_row_current_2026** (Spacecost origin/main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/propellants.csv, rows 13-14): current component row still labels $5/kg unsourced and links the price comparator to rc-319; the HTP/RP-1 price derives from that component.
-- **epic_aerospace_htp_product_price** (official Epic Aerospace capabilities page, lines 53-57): lists 98% HTP at $65/kg, a 280 kg minimum order, and estimated shipping of $3,500-$8,500; no price effective date or bulk/delivered basis is stated.
-- **Upstream rows:** Economicspace campaign/stage3/spacecost-0.14.0/propellants.csv; current Spacecost reference/propellants.csv.
-- **Verdict:** Open rc-706 for the latest frozen Economicspace snapshot (pipeline 1.23.6). Distinct from rc-705 (earlier frozen 1.22.0 snapshot), rc-319 (current Spacecost price review), and rc-525 (impulse basis). No numeric replacement inferred.
-- **Extracted data:** extracted_data/r833_economicspace_latest_htp_price_gap.csv.
-
-## R832 — Frozen Stage 3 HTP price provenance
-
-- **economicspace_frozen_stage3_htp_price_rows_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.10.0/propellants.csv, pipeline 1.22.0, rows 13-14): HTP monopropellant stores $5.00/kg and calls it “an unsourced estimate pending re-sourcing”; the HTP/RP-1 row stores $4.6875/kg and says it rests on the HTP row's unsourced $5/kg.
-- **spacecost_htp_price_reference_row_current_2026** (Spacecost origin/main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/propellants.csv, rows 13-14): the current HTP row still labels $5/kg unsourced and links the supplier comparison to open rc-319; the derived HTP/RP-1 row inherits that component.
-- **epic_aerospace_htp_product_price** (official Epic Aerospace capabilities page, lines 53-57): lists “98% HTP - Price per Kg | 65 USD,” a 280 kg minimum order, and estimated shipping of $3,500-$8,500. The page gives no price effective date or bulk/delivered basis.
-- **Upstream rows:** Economicspace campaign/stage3/spacecost-0.10.0/propellants.csv; current Spacecost reference/propellants.csv.
-- **Verdict:** Open rc-705 for the frozen Economicspace HTP input and derived blend row. The Epic offer is a comparator, not a matched replacement. Distinct from open rc-319 (current Spacecost HTP price review) and rc-525 (HTP/RP-1 impulse basis). No numeric replacement inferred.
-- **Extracted data:** extracted_data/r832_economicspace_frozen_htp_price_gap.csv.
-
 # Domain 14 — Propellant & consumable prices
 
 Backings: spacecost `reference/propellants.csv` `ref_cost_usd_per_kg` and the component prices in the comment block above the combined rows in `spacecost/propellants.py`.
@@ -187,7 +138,6 @@ spacevalue CITATIONS.md at pinned tag v0.2.0 states that its quote file metals-2
 
 All five forward-recorded Oct-23 closes in metals-2026-10-26.csv (GC=F 4007.89990234375 troy_oz, HG=F 6.47599983215332 lb, PA=F 1046.5999755859375, PL=F 1554.199951171875, SI=F 53.71099853515625 troy_oz) match the live Yahoo chart-API bars bit-for-bit on re-pull, values in extracted_data/r305_metals_snapshot_bit_exact_key_numbers.csv. Combined with the R301 fuel-side result (Oct-23 HO=F and NG=F closes matched exactly six days after recording), the forward-recording mechanism is now proven sound across two packages and eight tickers: snapshots never drift once written, and recorded observations reproduce. The single anomaly anywhere remains that fuel-2026-10-17.csv stamps back-solved Sep-28 values onto close_date 2026-09-28 where the same feed now prints different closes for that date - a divergence specific to derived values, consistent with either front-month roll re-splicing of continuous history or an actual older-date feed revision; adjudication still requires archived feed state (rc-200 untouched per standing rule). Schema asymmetry recorded as fact: spacevalue snapshots separate close_date from recorded_date in two columns while the fuel snapshot schema carries a single date column, so back-solved values there sit in the field that elsewhere means observed observation-date. Also verified this round at pinned tag v0.2.0: README per-destination table reproduces exactly from the delivery chain of spacecost v0.14.0 (all seven destinations to display rounding), SHA256SUMS bidirectionally clean, release assets resolve; post-pin commits on spacevalue main are tests-only tooling and no tag newer than v0.2.0 exists, so the economicspace pin is current.
 
-
 ## R341 - Henry Hub quote heating-value basis (2026-11-03)
 
 `cme_comex_nymex_futures`, NYMEX Chapter 220 PDF p1, 220101,
@@ -248,10 +198,6 @@ Contract extract: `06_commodity_market_pricing/extracted_data/r341_henry_hub_con
 
 `usgs_mineral_commodity_summaries_2026_iodine`, PDF p. 2, says “spot prices for iodine crystal averaged about $73 per kilogram during the first 10 months of 2025”; it attributes the price to industry publications. PDF p. 1 gives a distinct 2025 estimated crude-iodine import unit value of $68/kg CIF. At spacecost@19e1a31, `reference/propellants.csv`, row `Iodine  (Hall / gridded)`, stores `ref_cost_usd_per_kg=60` and `reference_year=2026`; its note labels the value an estimate, and says Rafalskyi et al.'s US$60 is a total propellant cost with no mass stated. The crystal benchmark is 21.7% above the stored value, but the report does not establish propellant-grade purity or a procurement quote. Verdict: `rc-292` proposes considering ~$73/kg (2025 crystal spot) as the market reference, or retaining $60 only with a stated grade, year and discount basis; no value is changed here. Extracted: `extracted_data/r374_usgs_iodine_reference_price.csv`.
 
-## R428 — Producer iodine sales price cross-check (2026-11-09)
-
-SQM's 2025 Annual Report, p. 111, states average iodine prices reached approximately US$71.7/kg in 2025, 7.4% above 2024. On p. 114 it reports an average annual iodine price of US$72/kg, consistent after rounding, and describes iodine sales as spot orders or supply contracts with periodic price adjustment to prevailing market conditions. Reported 2025 iodine-and-derivatives revenue was US$1,042.8M on 14.5 kt sales; because the segment includes derivatives, its revenue/volume ratio is not treated as a pure iodine transaction price. The approximately $71.7/kg producer benchmark is 19.5% above spacecost@19e1a31's $60/kg iodine propellant reference. SQM is a primary producer source and independently corroborates the USGS $73/kg 2025 crystal-spot benchmark, but its general iodine sales mix does not establish propellant-grade purity, procurement scale, delivery or qualification premiums. rc-292 remains open for a grade and procurement-basis decision; no upstream value is changed. Extracted: `extracted_data/r428_sqm_iodine_producer_price.csv`.
-
 ## R392 — DLA technical-argon standard price comparator (2026-11-08)
 
 The DLA FY2026 Aerospace Energy price letter (effective 1 October 2025) lists “ARGON,TECHNICAL” at $1.14/lb (attachment schedule, p. 2), or about $2.51/kg. Spacecost’s Argon (Hall / ion) row at spacecost@19e1a31 uses $10/kg, the midpoint of SETS Space’s quoted $7–15/kg bulk-industrial range. The DLA benchmark is 74.9% below the midpoint and 64.1% below that range’s low end; the schedule also lists liquid argon at $0.65/lb under a separate item.
@@ -276,11 +222,9 @@ DLA’s standard is a forecasted DoD price, and the $2–3/kg comment draws on a
 
 At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/propellants.csv` uses $10,000/kg for Xenon (Hall / ion), citing SETS’s $5,000–$12,000/kg aerospace-grade range and INL’s Q1-2023 $60/L survey. Open `rc-314` to review this dated but non-like-for-like composite against the existing aerospace reference; resolve grade and procurement basis before any update. No price is changed. Extracted: `extracted_data/r398_xenon_composite_price_tracker.csv`.
 
-
 ## R409 - HTP supplier price comparator (2026-11-09)
 
 Epic Aerospace’s official Capabilities page, under “HIGH TEST PEROXIDE,” lists: “98% HTP - Price per Kg | 65 USD” (product-properties block, lines 53–55). The same block gives a 280 kg minimum order and estimated shipping of $3,500–$8,500 (lines 56–57); the price effective date and shipping route/quantity basis are not stated. At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, `reference/propellants.csv` stores `HTP  (98% peroxide monoprop)` `ref_cost_usd_per_kg=5.0`, with the row note identifying it as an unsourced estimate. The supplier’s $65/kg material quote is 13x that reference, a direct but scope-sensitive review signal; it does not establish delivered cost. **rc-319 remains open** for price-date, order-size and freight reconciliation. Extracted: `extracted_data/r409_epic_htp_supplier_price.csv`.
-
 
 ## R416 — DLA FY2026 MMH/NTO component-price comparison (2026-11-09)
 
@@ -288,19 +232,21 @@ The DLA FY2026 Aerospace Energy schedule, effective 2025-10-01, lists MMH at $21
 
 Open `rc-326` to reconcile the FY2020 fallback basis with the FY2026 DLA standards, including procurement scope and price-year basis, before any change. No upstream value is changed. Extracted: `extracted_data/r416_dla_mmh_nto_price_review.csv`.
 
-
 ## R417 - DLA technical nitrogen comparator for GN2 cold gas (2026-11-09)
 
 The DLA FY2026 Aerospace Energy schedule, effective 2025-10-01, lists "NITROGEN,TECHNICAL" at $0.16/lb (attachment, p. 2). This converts to about $0.353/kg using 0.45359237 kg/lb. At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, `reference/propellants.csv`, row `Cold gas (GN2)`, stores $1.00/kg with reference_year 2026. The DLA standard is 64.7% below that point, but its grade, packaging and delivery form are not shown to match high-pressure nitrogen used as propulsion mass.
 
 Open `rc-327` to review the $1/kg reference against the DLA comparator and reconcile procurement, purity and packaging basis before any change. No upstream value is changed. Extracted: `extracted_data/r417_dla_technical_nitrogen_comparator.csv`.
 
-
 ## R426 - DLA FY2026 hydrazine HPH comparator refresh (2026-11-09)
 
 The DLA FY2026 Aerospace Energy schedule lists “PROPELLANT,HYDRAZINE. HPH” at $121.54/lb for NSN 9135012321852 and H70 hydrazine at the same price (attachment, p. 2). The corresponding FY2025 HPH standard was $165.75/lb. Converted at 0.45359237 kg/lb, the DoD comparator moves from $365.42/kg to $267.95/kg, a 26.7% nominal decrease.
 
 At `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9`, the hydrazine row keeps a $75/kg commercial reference from Space Insider and labels DLA pricing as a separate DoD comparison. The FY2026 schedule is for forecasted DoD requirements and does not establish a new commercial quote. Open `rc-336` to decide whether to refresh the note’s government comparator; no price value is changed. Extracted: `extracted_data/r426_hydrazine_dla_fy2026_price_check.csv`.
+
+## R428 — Producer iodine sales price cross-check (2026-11-09)
+
+SQM's 2025 Annual Report, p. 111, states average iodine prices reached approximately US$71.7/kg in 2025, 7.4% above 2024. On p. 114 it reports an average annual iodine price of US$72/kg, consistent after rounding, and describes iodine sales as spot orders or supply contracts with periodic price adjustment to prevailing market conditions. Reported 2025 iodine-and-derivatives revenue was US$1,042.8M on 14.5 kt sales; because the segment includes derivatives, its revenue/volume ratio is not treated as a pure iodine transaction price. The approximately $71.7/kg producer benchmark is 19.5% above spacecost@19e1a31's $60/kg iodine propellant reference. SQM is a primary producer source and independently corroborates the USGS $73/kg 2025 crystal-spot benchmark, but its general iodine sales mix does not establish propellant-grade purity, procurement scale, delivery or qualification premiums. rc-292 remains open for a grade and procurement-basis decision; no upstream value is changed. Extracted: `extracted_data/r428_sqm_iodine_producer_price.csv`.
 
 ## R435 - SQM Q2 2026 iodine average price update (2026-11-09)
 
@@ -314,12 +260,9 @@ At `spacecost@19e1a31`, `reference/propellants.csv`, row `Iodine  (Hall / gridde
 
 This procurement is a relevant aerospace-propulsion-grade purchasing example for the $10,000/kg xenon row, but its award total bundles gas, cylinders and shipping, and the accessible award record does not identify the selected quantity. Therefore no unit price is derived. The record adds a high-purity public procurement comparator to `rc-314` but does not settle the $/kg reference or its commercial basis. No upstream value is changed. Extracted: `extracted_data/r436_nasa_xenon_purchase_award_scope.csv`.
 
-
-
 ## R454 - DLA aerospace schedule currency check (2026-11-09)
 
 DLA Energy’s Standard Prices page lists the current aerospace products standard-price PDF as effective October 1, 2025. The page says it is updated when standard prices are officially changed during a fiscal year; it lists no later aerospace schedule. The FY2026 MMH, MON-3 and technical-nitrogen prices recorded in R416 and R417 therefore remain the latest published DLA aerospace standard-price comparators found for rc-326 and rc-327. This confirms comparator currency, but supplies no FY2027 or commercial price and does not resolve grade, delivery or procurement-scope differences. No upstream value is changed. Extracted: `extracted_data/r454_dla_aerospace_schedule_currency.csv`.
-
 
 ## R706 — Liquid-hydrogen component price basis (2026-11-12)
 
@@ -332,7 +275,6 @@ At `spacecost/propellants.py`, `_COMPONENTS["LH2"].cost_usd_per_kg` is 10.00; it
 `spacecost_water_component_price_code_current_2026` records `_COMPONENTS["Water"].cost_usd_per_kg = 2.00` in `spacecost/propellants.py` (line 571). The value feeds the Water electrothermal/resistojet and gridded-ion/ECR `ref_cost_usd_per_kg` rows and the water component of the ALICE blend. The two spacecraft water-propulsion reference rows state `ref_cost_usd_per_kg = 2.0` and `reference_year = 2026`, but their notes cite propulsion performance and applications rather than a water procurement price.
 
 The existing candidates `rc-118` and `rc-378` concern Water resistojet specific impulse; `rc-435` concerns asteroid-water ISRU processing fees. None supports this terrestrial water component price. No propellant-grade water quote or matched delivered-price evidence was identified in this review. `rc-577` requests the source and basis for the $2/kg input; no replacement value is inferred. Extracted: `extracted_data/r707_water_component_price.csv`.
-
 
 ## R759 — Hydrolox tug-propellant worksheet citation gap (2026-11-15)
 
@@ -350,7 +292,6 @@ Spacecost’s current `reference/propellants.csv` row stores $794/kg and describ
 
 Open `rc-630` for the frozen-row citation and version boundary; no numeric replacement is inferred. Extracted: `extracted_data/r761_krypton_hall_historical_price_worksheet_gap.csv`.
 
-
 ## R781 — FEEP indium price basis and worksheet citation gap (2026-11-15; rc-651)
 
 The earlier R781 claim that the verification sheet maps I73 to the FEEP price is corrected in Round 1005: the supplied worksheet identifies I73 as the 500 kg return-vehicle dry-mass floor, not a propellant price. The frozen row labels the price reference-year 2026 and price-basis `reference`; Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` repeats $250/kg in `_COMPONENTS["Indium"]` and the FEEP reference row, while the nearby code comment and row notes name no price source.
@@ -363,7 +304,6 @@ Spacecost main at a401930efe30aaad01aafd2b3cb332ad0438c841 defines LITRES_PER_GA
 
 nist_hb133_2026_appendix_e_volume_conversion (Appendix E, p. 248) reports 3.785 411 784 liters per gallon. thompson_taylor_2008_nist_sp811_si (Appendix B.9, Volume table) defines a petroleum barrel as 42 gallons (U.S.). The derived value 42 × 3.785411784 = 158.987294928 L/bbl matches the stored barrel factor. Verdict: both stored factors match the identified units; add the citations beside the constants and in CITATIONS.md. No numeric replacement is inferred. Extracted: extracted_data/r798_unit_conversion_factors.csv.
 
-
 ## R800 — Spacecost live quote density basis (2026-11-16; rc-670, rc-671)
 
 `spacecost_volume_conversion_citation_gap_code_current_2026` records Spacecost main at `a401930efe30aaad01aafd2b3cb332ad0438c841`; its `units.py`, `prices.py` and `CITATIONS.md` snapshot defines `COMMODITY_DENSITY_KG_PER_L` and contains no source mapping for that dictionary. `heating_oil` is 0.845 kg/L; `prices.py` maps `HO=F` per-gallon quotes to that density, converts them to USD/kg, and applies the result to the kerolox fuel blend.
@@ -371,7 +311,6 @@ nist_hb133_2026_appendix_e_volume_conversion (Appendix E, p. 248) reports 3.785 
 `iea_energy_prices_2022_product_specifications` (p. 146, Product specifications > Oil products) lists “Fuel oil domestique” at 0.845 kg/L in the France household light-fuel-oil column. The table does not state a measurement temperature. `cme_comex_nymex_futures` (NYMEX Rulebook Chapter 150, p. 1, §§150101 and 150102.B–C) identifies HO as NY Harbor ULSD meeting Colonial Pipeline Fungible Grade 62; the contract volume is determined at 60°F and the price is quoted per gallon. The matching number does not establish that the IEA product or temperature basis applies to the Spacecost HO proxy. **Verdict:** open `rc-670` for the matched product and reference-temperature citation; no numeric replacement inferred.
 
 The same dictionary stores `crude_oil=0.870 kg/L` with comment “WTI ~32° API.” Spacecost maps `CL=F` to that density, while `prices.py` calls CL=F a cross-check that “prices nothing.” CME’s NYMEX Light Sweet Crude Oil futures FAQ, contract quality specifications (Gravity item), gives the deliverable WTI range as “Not less than 37 degrees API, nor more than 42 degrees API.” The code names neither a density source nor a reference temperature. **Verdict:** open `rc-671` to cite a temperature-matched WTI density and reconcile the API comment with the contract range; this is diagnostic-only and no propellant-price replacement is inferred. Extracted: `extracted_data/r800_spacecost_quote_density_basis.csv`.
-
 
 ## R802 — Spacecost cryogenic component-density citations (2026-11-16; rc-673, rc-674)
 
@@ -391,7 +330,6 @@ DoD Manual 4145.26, Appendix 2 Table AP2.T18, printed p. 214, gives RP-1 as 0.81
 
 The same table reports “Monomethyl hydrazine” at 0.87, nitrogen tetroxide at 1.45, hydrazine at 1.01, and UDMH at 0.79 kg/L, each at 20.0°C. Spacecost stores MMH 0.870, N2O4 1.450, hydrazine 1.010, and UDMH 0.793 kg/L; the first three match at table precision, while the table does not establish the third decimal of UDMH. These inputs feed MMH/NTO, UDMH/NTO, Aerozine-50/NTO, hydrazine monopropellant, and hydrazine arcjet density rows. The current citation guide lists DoD price references for hypergolic components but no density source. Verdict: open rc-676 to cite the ambient storable-liquid density basis and reconcile UDMH precision before changing any value. No numeric replacement inferred. Extracted: extracted_data/r803_spacecost_storable_propellant_density_citation.csv.
 
-
 ## R804 — Spacecost HTP-98 density citation and reference condition (2026-11-16; rc-677)
 
 Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841 sets _COMPONENTS["HTP-98"].density_kg_per_L=1.431 in spacecost/propellants.py:567 without a density citation. The input feeds the HTP monopropellant row and the HTP/RP-1 blend; reference/propellants.csv publishes densities of 1.431 kg/L and 1.3058555133079848 kg/L, respectively. CITATIONS.md cites Hitt et al. for HTP impulse but not density.
@@ -399,7 +337,6 @@ Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841 sets _COMPONENTS["HTP-98
 nasa_ntrs_20030020732_98pct_h2o2_density (Appendix A section 6.2, Table 6.1, printed p. 165) gives “Density of 98 % hydrogen peroxide at different temperatures” and 1,430.9 kg/m3 at 25°C. The surrounding text says the 98% H2O2 property data at 1 atm and ambient temperature are from an FMC Chemicals technical bulletin. The report’s bibliography identifies [29] as C. W. Raleigh, Technical Bulletin 67, Hydrogen Peroxide Physical Properties (FMC Chemicals, 1969; printed p. 213). Converting 1,430.9 kg/m3 gives 1.4309 kg/L, which rounds to Spacecost’s 1.431 kg/L. The report supports a 25°C table match but does not show that Spacecost intended that temperature.
 
 Verdict: open rc-677 to cite the HTP-98 component density and record its reference temperature. The table is secondhand from the FMC bulletin, and the separate RP-1 density condition remains covered by rc-675; neither source independently establishes the HTP/RP-1 mixture basis. Keep the current input pending a matched condition. No numeric replacement inferred. Extracted: extracted_data/r804_htp98_density_reference_conditions.csv.
-
 
 ## R805 — Spacecost Aerozine-50 density citation and selected basis (2026-11-16; rc-678)
 
@@ -409,7 +346,6 @@ arnett_1969_nasa_tm_x53859_aerozine50_properties (NASA TM-X-53859, Table 1, prin
 
 Verdict: open rc-678 to cite the component and document which density point and temperature the model uses. The Aerozine-50/NTO row also depends on N2O4, whose density basis is tracked separately in rc-676. Keep the current input pending the basis check. No numeric replacement inferred. Extracted: extracted_data/r805_aerozine50_density_source_basis.csv.
 
-
 ## R806 — Spacecost supercritical-argon density method and source (2026-11-16; rc-679)
 
 Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841 sets ArgonSC density to 0.300 kg/L at 18 MPa. Its code comment says a Peng-Robinson calculation at 293.15 K / 18 MPa gives Z=0.919 and 0.321 kg/L, while a generalized-compressibility reading at Tr=1.945 and Pr=3.70 gives Z≈0.99 and 0.298 kg/L; it calls 0.300 “the round figure between them.” The operational Argon Hall row exports 0.300 kg/L, and CITATIONS.md does not name sources for either density method.
@@ -417,7 +353,6 @@ Spacecost main a401930efe30aaad01aafd2b3cb332ad0438c841 sets ArgonSC density to 
 tegeler_span_wagner_1999_argon_equation_of_state (Journal of Physical and Chemical Reference Data 28(3), abstract printed p. 779) presents a reference equation of state for argon. The abstract states the density uncertainty is “less than ±0.03%” for pressures up to 30 MPa and temperatures from 235 to 520 K, which includes the code’s 293.15 K / 18 MPa state. The equation-of-state article provides a reference for checking the input but has not yet been used here to calculate a replacement density.
 
 Verdict: open rc-679 to source the methods and document how their results produce the stored round value, or compare the input with the reference EOS at the modeled state. Keep 0.300 kg/L pending that check. No numeric replacement inferred. Extracted: extracted_data/r806_supercritical_argon_density_eos_basis.csv.
-
 
 ## R813 - Krypton supercritical density basis (2026-11-16; rc-686)
 
@@ -427,7 +362,6 @@ The source `economicspace_propellant_tank_fraction_sheet_code_current_2026` reco
 
 **Verdict:** cite the equation-of-state/property basis and state the temperature/pressure condition for 0.550 kg/L, or identify it as an engineering scenario and bracket the dependent tank fraction. Preserve current output pending a matched basis; no replacement inferred. **rc-686**. Extracted: `extracted_data/r813_krypton_supercritical_density_scope.csv`.
 
-
 ## R814 - GN2 supercritical density basis (2026-11-16; rc-687)
 
 Spacecost code source `spacecost_gn2_supercritical_density_code_current_2026` sets `_COMPONENTS["GN2"]` density to 0.250 kg/L at 30.0 MPa (`spacecost/propellants.py:568`); it states no temperature or density source. The `Cold gas (GN2)` row uses the supercritical-gas tank model at 30 MPa, exports tank_kg_per_L=0.11479591836734694 kg/L, and reports a 46% COPV mass fraction without citing the density basis. The implied fraction from the row values is 0.459183673469 kg tank per kg propellant.
@@ -435,7 +369,6 @@ Spacecost code source `spacecost_gn2_supercritical_density_code_current_2026` se
 Open rc-327 targets the nitrogen price and reference year; rc-586 covers the storage-class tank mass per litre; rc-679 covers ArgonSC density; rc-686 covers Krypton density. None addresses the GN2 density state or its reference temperature.
 
 **Verdict:** cite the equation-of-state/property basis for 0.250 kg/L at 30 MPa and state the temperature, or identify it as an engineering scenario and bracket the dependent tank fraction. Preserve current output pending a matched basis; no replacement inferred. **rc-687**. Extracted: `extracted_data/r814_gn2_supercritical_density_scope.csv`.
-
 
 ## R815 - Xenon supercritical density basis (2026-11-16; rc-688)
 
@@ -445,7 +378,6 @@ The row note cites `inl_rpt_23_75203_krypton_xenon_recovery_cost_benefit` for a 
 
 **Verdict:** cite an equation-of-state/property source for 2.000 kg/L at 10 MPa and define the ambient reference temperature, or identify the density as an engineering scenario and bracket its effect on tank fraction. Preserve current output pending a matched basis; no replacement inferred. **rc-688**. Extracted: `extracted_data/r815_xenon_supercritical_density_scope.csv`.
 
-
 ## R816 - Conceptual propellant density and storage-state gaps (2026-11-16; rc-689, rc-690)
 
 The `Direct fusion drive` and `Antimatter-catalysed` rows in Spacecost source `spacecost_concept_propellant_density_code_current_2026` each set `density_kg_per_L=0.100` and use `storage_class="supercritical_gas"` with the 10.0 MPa COPV tank model. The exported rows each carry `tank_kg_per_L=0.038265306122448974` kg/L; divided by the density, this implies 0.382653 kg tank per kg row propellant. Neither density has a cited property source or numeric reference temperature.
@@ -454,17 +386,53 @@ The Direct fusion drive note identifies D-He3 / PFRC-2 and Isp context but does 
 
 **Verdict:** define the composition or mass boundary and storage state for each row, then cite a matched property basis or label the density as a scenario and bracket its effect on tank mass. Preserve current values pending a defined basis; no replacement inferred. **rc-689** (D-He3 density/state); **rc-690** (antimatter propellant boundary/density). Extracted: `extracted_data/r816_concept_propellant_density_scope.csv`.
 
+## R832 — Frozen Stage 3 HTP price provenance
+
+- **economicspace_frozen_stage3_htp_price_rows_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.10.0/propellants.csv, pipeline 1.22.0, rows 13-14): HTP monopropellant stores $5.00/kg and calls it “an unsourced estimate pending re-sourcing”; the HTP/RP-1 row stores $4.6875/kg and says it rests on the HTP row's unsourced $5/kg.
+- **spacecost_htp_price_reference_row_current_2026** (Spacecost origin/main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/propellants.csv, rows 13-14): the current HTP row still labels $5/kg unsourced and links the supplier comparison to open rc-319; the derived HTP/RP-1 row inherits that component.
+- **epic_aerospace_htp_product_price** (official Epic Aerospace capabilities page, lines 53-57): lists “98% HTP - Price per Kg | 65 USD,” a 280 kg minimum order, and estimated shipping of $3,500-$8,500. The page gives no price effective date or bulk/delivered basis.
+- **Upstream rows:** Economicspace campaign/stage3/spacecost-0.10.0/propellants.csv; current Spacecost reference/propellants.csv.
+- **Verdict:** Open rc-705 for the frozen Economicspace HTP input and derived blend row. The Epic offer is a comparator, not a matched replacement. Distinct from open rc-319 (current Spacecost HTP price review) and rc-525 (HTP/RP-1 impulse basis). No numeric replacement inferred.
+- **Extracted data:** extracted_data/r832_economicspace_frozen_htp_price_gap.csv.
+
+## R833 — Latest frozen Stage 3 HTP price provenance
+
+- **economicspace_latest_stage3_htp_price_rows_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, campaign/stage3/spacecost-0.14.0/propellants.csv, pipeline 1.23.6, catalog date 2026-10-17, rows 13-14): HTP monopropellant stores $5.00/kg and labels it an unsourced estimate pending re-sourcing; the HTP/RP-1 row stores $4.6875/kg and says it rests on the same unsourced HTP input.
+- **spacecost_htp_price_reference_row_current_2026** (Spacecost origin/main a401930efe30aaad01aafd2b3cb332ad0438c841, reference/propellants.csv, rows 13-14): current component row still labels $5/kg unsourced and links the price comparator to rc-319; the HTP/RP-1 price derives from that component.
+- **epic_aerospace_htp_product_price** (official Epic Aerospace capabilities page, lines 53-57): lists 98% HTP at $65/kg, a 280 kg minimum order, and estimated shipping of $3,500-$8,500; no price effective date or bulk/delivered basis is stated.
+- **Upstream rows:** Economicspace campaign/stage3/spacecost-0.14.0/propellants.csv; current Spacecost reference/propellants.csv.
+- **Verdict:** Open rc-706 for the latest frozen Economicspace snapshot (pipeline 1.23.6). Distinct from rc-705 (earlier frozen 1.22.0 snapshot), rc-319 (current Spacecost price review), and rc-525 (impulse basis). No numeric replacement inferred.
+- **Extracted data:** extracted_data/r833_economicspace_latest_htp_price_gap.csv.
+
 ## R862 — Krypton price worksheet locator check (2026-11-17)
 
 - **economicspace_current_bestcase_verification_sheet_2026**: p. 29 maps I112 to Iodine (Hall / gridded) at $60/kg and I116 to the learning-curve factor, not Krypton price.
 - **economicspace_krypton_price_stage3_frozen_row_current_2026**: the frozen `spacecost-0.5.0` Krypton row retains $300/kg without a published price source in its note.
 - Verdict: the current sheet no longer selects Krypton price; the historical row remains a procurement-basis gap. Keep **rc-630** open; the current $794/kg midpoint does not supply a like-for-like replacement. Extracted: `extracted_data/r862_krypton_price_current_sheet_locator_check.csv`.
 
+## R950 — Spacecost notes and comments applied upstream; ArgonSC density value candidate (2026-11-19)
+
+spacecost bad5ba80884e6bd6825de83ff8e942619d962a1f (PR #51, package 0.18.4, data contract 1.27.3 to 1.27.4). Notes on 51 rows, comments, CITATIONS.md and README.md; compared column by column, every value column of the six reference tables and the summary sample is identical to 1.27.3.
+
+- Closed as applied: rc-361 (dv_penalty_factor 1.5 named on each row); rc-421, 422, 435, 544, 598, 680, 694, 701, 718, 766 (scenario labels with comparators); rc-525 (HTP / RP-1 320 s beside Krishnan 2010); rc-545 (Ryugu structural OH); rc-576, 577 (LH2 and water prices as scenarios); rc-585, 586 (tank base and class multipliers); rc-596 (Didymos estimates); rc-658 (krypton ratios as assumptions); rc-679 (ArgonSC comment); rc-767 (Berthier et al. 2023 for ssoBFT); rc-774 (MPD, no RIAME test).
+- spacecost's notes for rc-656, 657, 659, 660 and 661 are in the same release; those candidates close with their frozen-row half in economicspace.
+- New value candidate rc-816: `tegeler_span_wagner_1999_argon_equation_of_state`, as CoolProp 8.0.0 implements it (EOS key Tegeler-JPCRD-1999), gives 313.480 kg/m3 and Z = 0.94109 at 293.15 K / 18 MPa against the stored ArgonSC 0.300 kg/L, 4.49% higher. The value move is held for owner review.
+
+Verdict: 22 closed as applied; rc-816 opened. Extracted data: extracted_data/r950_argon_supercritical_density_tegeler.csv.
+
 ## R967 — ALICE silicate-to-aluminium ISRU processing energy (2026-11-19; rc-827)
 
 Spacecost source `spacecost_alice_isru_processing_energy_gate_current_2026` at main 868f42890ac97ee40a50d79f7b33863046edb0ff sets the ALICE processing-energy mapping to NaN and comments “the metal half has no refining source; gated out” (`spacecost/propellants.py:346`). Its exported row has `isru_feed_kg_per_kg=0.5`, `isru_feed_material=water`, and a blank `isru_processing_wh_per_kg`; the row note calls the feed a placeholder for the water half because metal refining is not modeled (`reference/propellants.csv:42`). The processing-energy gate prevents an unsupported value from entering the default ISRU search. Existing ALICE records cover propulsion performance, component water price, and tank-mass scenarios, not the energy to recover metallic Al from silicate feed.
 
 **Verdict:** Keep NaN and the gate until a sourced or validated Al-recovery energy boundary is available; no numeric replacement inferred. **rc-827**. Extracted: `extracted_data/r967_alice_isru_processing_energy_gap.csv`.
+
+## R975 — Moran 1991 hydrolox comparator citation and scenario scope (2026-11-19)
+
+`spacecost_hydrolox_moran_energy_comparator_code_current_2026`: Spacecost main `868f42890ac97ee40a50d79f7b33863046edb0ff`, `propellants.py` line 332 attributes 4.41 kWh/kg and “2 MW at 280 kg/hr of water” to Moran’s 1991 subsystem study. `CITATIONS.md` §2 has no Moran entry; the Morren & Curran 1991 reference there is a different 2-kW arcjet study.
+
+`moran_1991_nasa_tm_103730_on_orbit_electrolysis`: NASA NTRS identifies Matthew E. Moran’s *Conceptual Study of On Orbit Production of Cryogenic Propellants by Water Electrolysis* (NASA-TM-103730, NTRS 19910010004; AIAA Paper 91-1844). Table II, printed p. 16, lists “4.41 kWh/kg-H2O” for electrolysis and 398 kW total lunar-processor power. The Mars Missions section, printed p. 6, gives 378.2 kg/h water; the scaled power is 2,790 kW on printed pp. 1 and 17. Their ratio is 7.376 kWh/kg, computed here. The report does not state the code’s exact 2 MW / 280 kg/hr pair.
+
+**Verdict:** open **rc-836** to add a complete report entry and align the comparator’s figures with the source scenario. Applied rc-166 covered the low-end energy-band comparison; the selected 15,200 Wh/kg input is unchanged. Extracted: `extracted_data/r975_spacecost_moran_1991_processor_figures.csv`.
 
 ## R978 - Spacecost laser-thermal Isp note mis-scopes its 900 s source (2026-11-19)
 
@@ -484,6 +452,12 @@ Verdict: rc-836, rc-842 closed as applied. Extracted data: none new.
 At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the krypton, nitrogen and xenon rows label their stored densities scenarios with the equation-of-state figure beside them, and the DFD and antimatter rows label 0.100 kg/L a scenario with a tank-fraction bracket (rc-686 to rc-690). `lemmon_span_2006_short_eos_industrial_fluids` (krypton, xenon) and `span_etal_2000_nitrogen_reference_equation_of_state` (nitrogen), as CoolProp 8.0.0 implements them, give at 293.15 K: krypton 0.8724 kg/L at 18 MPa (stored 0.550, +58.6%; the stored figure holds at 369.6 K), nitrogen 0.3024 kg/L at 30 MPa (stored 0.250, +21.0%; 349.6 K), xenon 1.8679 kg/L at 10 MPa (stored 2.000, -6.6%; 284.4 K). Opened value candidates rc-857, rc-858 and rc-859 for the moves, held for owner review.
 
 Verdict: rc-686, rc-687, rc-688, rc-689, rc-690 closed as applied; rc-857, rc-858, rc-859 opened. Extracted data: extracted_data/r990_bottled_gas_density_eos.csv.
+
+## R991 — Spacecost propellant EOS bibliography (2026-11-19)
+
+At Spacecost main a6901495d257cbcd018b31e238498c94f301c865, the Argon, Krypton, Cold gas (GN2), and Xenon notes identify CoolProp 8.0.0 and reference equations of state by Tegeler, Span & Wagner (1999), Lemmon & Span (2006), or Span et al. (2000). Their stored densities (Argon 0.300, Krypton 0.550, GN2 0.250, Xenon 2.000 kg/L) remain under separate open value reviews (rc-816, rc-857 to rc-859). Spacecost CITATIONS.md section 2 has no CoolProp/Bell reference or full bibliography entries for these EOS papers. coolprop_8_0_0_citation_page (Citation for CoolProp, Overview) says "please cite the freely available article" and gives the Bell et al. (2014) reference and CoolProp website.
+
+Verdict: rc-860 open, citation-only; no density replacement inferred. Extracted: extracted_data/r991_spacecost_propellant_eos_bibliography.csv.
 
 ## R994 — ALICE asteroid feedstock claims need citations (2026-11-19)
 
@@ -512,6 +486,13 @@ Verdict: rc-860, rc-863 closed as applied. Extracted data: none new.
 spacecost_alice_isru_processing_energy_gate_current_2026: At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (0.18.8), ALICE still maps processing energy to NaN and exports a blank value; isru_feed_kg_per_kg=0.5 remains a water-half placeholder. The applied note tracked by rc-863 continues to call both components prospective asteroid feedstocks and does not supply a validated aluminium-recovery process or energy boundary.
 
 Verdict: Keep rc-827 open and rc-863 applied; no numeric replacement inferred. Extracted: extracted_data/r999_spacecost_alice_isru_energy_recheck.csv.
+
+## R1005 — Propellant citation bases remain unresolved (2026-11-19)
+
+- rc-651: economicspace_feep_price_stage3_frozen_row_current_2026 confirms Economicspace main aa5bd714b06d3ac2e0ed4c25498707e57a966721 retains the frozen FEEP reference price at $250/kg, reference year 2026, price basis reference, without a procurement citation. spacecost_feep_indium_component_cost_code_current_2026 and spacecost_feep_indium_reference_row_current_2026 show Spacecost 0.18.9 main 70a228dd408614b0f9a5450b9114e3b10bfe151c still sets indium to $250/kg and exports the same FEEP reference value; its component comment and row notes do not identify a procurement source. The supplied economicspace_2018_dt_verification_sheet_pdf_2026 p. 1 is a lunar_surface worksheet using Iodine (Hall / gridded); it labels I73 as return_vehicle_dry_kg=500 kg and says “A FLOOR, not the whole return dry mass.” It contains no FEEP or indium price row; this corrects the earlier I73/FEEP attribution. usgs_mineral_commodity_summaries_2026_indium refined-indium averages remain comparators, not FEEP procurement evidence. rc-651 remains open; no numeric replacement inferred. Extracted data: extracted_data/r1005_propellant_citation_gaps_recheck.csv.
+- rc-827: spacecost_alice_isru_processing_energy_gate_current_2026 shows Spacecost main 70a228dd408614b0f9a5450b9114e3b10bfe151c still sets Metal / water (ALICE, Al + H2O) processing energy to NaN and exports a blank isru_processing_wh_per_kg. The row's 0.5 kg/kg feed is explicitly a water-side placeholder; the note that both components are prospective feedstocks gives no aluminium-refining energy basis. rc-827 remains open; no energy replacement inferred.
+
+Extracted data: extracted_data/r1005_propellant_citation_gaps_recheck.csv.
 
 ## R1006 — Bottled-gas densities set to the reference equations of state (2026-11-19)
 

@@ -28,7 +28,9 @@ new check fails on the data, decide whether the data or the check is wrong.
 
 ## Writing it down
 
-- **FINDINGS.md: one block per round, facts only.** Give the source id, what it
+- **FINDINGS.md: one block per round, appended at the end, facts only.** Unlike
+  the research log, blocks run oldest first below the `# Domain` title, headed
+  `## R<N> — <title> (YYYY-MM-DD)`. Give the source id, what it
   says (short verbatim quotes with page), the upstream cell and value it bears
   on, the verdict, any `rc-NNN`, and the extracted-data file. Leave out access
   narration (which routes failed, retries, user agents), round status

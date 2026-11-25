@@ -1,11 +1,3 @@
-## R679 — FAA Part 450 licensing-compliance estimate has no cost build-up (2026-11-12)
-
-`spacecost_faa_part450_compliance_cost_code_current_2026`: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` (0.17.1) stores $2,500,000 per programme with a $1,000,000–$5,000,000 range for combined launch and re-entry licensing compliance. Its note now labels the amount an engineering estimate, but names no cost build-up; it says the low-end rationale starts from FAA paperwork hours before additional safety-case engineering.
-
-`faa_pra_notice_2019_streamlined_license_burden_hours`: the FAA’s 2019 notice estimates “Each initial application is estimated to take 2,903 hours” (Federal Register printed p. 4913). This is a paperwork-burden estimate for an initial application, not a dollar cost, a completed application’s observed labor, or a breakdown of the engineering, legal and safety-case work in the upstream programme estimate. Dividing the current point and bounds by those hours gives approximately $861, $344 and $1,722 per paperwork hour, respectively; these are diagnostic quotients only and not valid wage estimates because the cost boundary includes additional work. The notice does not establish the programme estimate or its range.
-
-Verdict: require a documented cost build-up matched to the licensing work and programme boundary, or retain the figures explicitly as scenario estimates with a stated basis for the bounds. No numeric replacement inferred. This is separate from rc-232, which applied a wording/citation-label correction and left the numeric estimate unchanged. **rc-538**. Extracted: `extracted_data/r679_faa_part450_compliance_cost_basis.csv`.
-
 # Domain 18 — Licensing, planetary protection & space-resource law
 
 Backings: spacecost `reference/operational_costs.csv` rows `FAA Part 450 licensing compliance` and `FAA Part 450 licensing (launch only)`, the MPL requirement behind `Third-party liability insurance`, and the licence split by `delivery_destination` in economicspace `modules/calc.py`.
@@ -101,13 +93,11 @@ spacecost programme-level $2.5M and $1.2M licensing estimates, so it does not
 contradict those values or their notes. No revision candidate. Extracted data:
 `extracted_data/r400_faa_2026_user_fee_schedule.csv`.
 
-
 ## R427 - Statutory launch/reentry fee absent from inspected mission-cost aggregation (2026-11-09)
 
 51 U.S.C. § 50924(a)(1)-(3), current through Pub. L. 119-121 (2026-10-09), requires a fee on each launch or reentry under a § 50904 license or permit. For 2026 the fee is the lesser of $0.25 per pound of payload or $30,000 per event; the statute lists new rates and caps for later years. The FAA policy statement (91 FR 21591, section II) confirms payload weight is the assessment basis for each event. At 1,500 kg the 2026 charge is $826.73; at 17,400 kg it is $9,589.51; at 70,000 kg it is capped at $30,000.
 
 In `economicspace@0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `modules/calc.py` loads flat Part 450 licensing program costs, selects one based on Earth return versus depot delivery, and includes the selected `licensing_cost` in `upfront_lines`. The inspected path has no separate payload-weight/event-count user-fee term. This does not contradict the flat licensing estimates; it flags a possible omitted per-event cost. Open `rc-337` to review FAA jurisdiction, event count, payload basis, fee-year schedule and cost pass-through before adding a conditional charge. Extracted: `extracted_data/r427_faa_per_event_user_fee_model_check.csv`.
-
 
 ## R439 — FAA order clarifies per-event user-fee assessment (2026-11-09)
 
@@ -128,6 +118,13 @@ itself establish which modeled events fall under FAA jurisdiction or who bears
 the cost. Keep rc-337 open for those mission-specific decisions. Extracted:
 extracted_data/r439_faa_order_8800_4_fee_assessment_scope.csv.
 
+## R679 — FAA Part 450 licensing-compliance estimate has no cost build-up (2026-11-12)
+
+`spacecost_faa_part450_compliance_cost_code_current_2026`: Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841` (0.17.1) stores $2,500,000 per programme with a $1,000,000–$5,000,000 range for combined launch and re-entry licensing compliance. Its note now labels the amount an engineering estimate, but names no cost build-up; it says the low-end rationale starts from FAA paperwork hours before additional safety-case engineering.
+
+`faa_pra_notice_2019_streamlined_license_burden_hours`: the FAA’s 2019 notice estimates “Each initial application is estimated to take 2,903 hours” (Federal Register printed p. 4913). This is a paperwork-burden estimate for an initial application, not a dollar cost, a completed application’s observed labor, or a breakdown of the engineering, legal and safety-case work in the upstream programme estimate. Dividing the current point and bounds by those hours gives approximately $861, $344 and $1,722 per paperwork hour, respectively; these are diagnostic quotients only and not valid wage estimates because the cost boundary includes additional work. The notice does not establish the programme estimate or its range.
+
+Verdict: require a documented cost build-up matched to the licensing work and programme boundary, or retain the figures explicitly as scenario estimates with a stated basis for the bounds. No numeric replacement inferred. This is separate from rc-232, which applied a wording/citation-label correction and left the numeric estimate unchanged. **rc-538**. Extracted: `extracted_data/r679_faa_part450_compliance_cost_basis.csv`.
 
 ## R1052 — FAA per-event fee in the verification cost replay (2026-11-23)
 

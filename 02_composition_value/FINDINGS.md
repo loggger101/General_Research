@@ -1,353 +1,6 @@
-## R1003 — Current AsteroidCatalog main preserves Ni-Fe fallback data (2026-11-19)
-
-`asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026`: AsteroidCatalog 0.13.12 main `f360a3c02daabee87a7dd225a6cb76966e792ecf` retains the generic 0.89/0.11 kamacite/taenite fallback; its detailed-phase table blob `09da1fd7a1a791ea3ef0c6f9a699dff7589a8aa9` is unchanged. The intervening release-note commit adds conditional MP3C acknowledgment and does not modify `mineralogy.py` or the detailed-phase CSV. **rc-699 remains applied; no replacement values inferred.** Extracted data: `extracted_data/r1003_asteroidcatalog_ni_fe_fallback_current_head_check.csv`.
-
-## R1001 — AsteroidCatalog Ni-Fe fallback sensitivity documented (2026-11-19; rc-699)
-
-- **asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026:** AsteroidCatalog 0.13.11 (`mineralogy.py` lines 551-564) calls `_ALLOY_OCTAHEDRITE` a “generic fallback, not a class measurement.” It keeps kamacite 0.89 / taenite 0.11 of the nickel-iron parent and reports contained-element values of $4.59/kg for all kamacite, $5.15/kg for the fallback, and $6.89/kg at a 0.45 taenite share; Earth-delivered metal value spans -11% to +34%, while each phase has the same $4,835/kg cislunar structural price. The R828 and current detailed-phase table blobs match; the changelog says comments and docs only and the mineralogy AST is identical.
-- **spacevalue_nickel_iron_sale_route_code_current_2026:** Spacevalue 0.8.6 `cargo.py` lines 280-305 treats kamacite and taenite as one nickel-iron product. **spacevalue_metals_snapshots_2026:** current `metals-2026-10-26.csv` matches the registered pinned-tag file blob; recorded closes are dated 2026-10-23.
-- **economicspace_detailed_phase_carbon_consumer_current_2026:** Economicspace 1.84.1 `CalcConfig` defaults `model_detailed_phases=True` (`calc.py` line 337); the loader selects `comp_phases_detailed` when enabled and present (lines 1788-1800).
-
-**Verdict:** the generic-fallback label and sensitivity satisfy rc-699's scenario path; the 0.89/0.11 values and detailed body-mass rows are unchanged, and no class-specific split was added. K remains outside this candidate's target; its prior rc-172 resolution is unchanged. **rc-699 applied.** Extracted: `extracted_data/r1001_asteroidcatalog_ni_fe_fallback_sensitivity.csv`.
-
-## R997 — Spacevalue CO2 ceiling labelled total use upstream (2026-11-19)
-
-At Spacevalue main f133db21ff77ca39b482765db9e68863a16b5387 (PR #22, 0.8.5), the owner chose the total-use boundary for the carbon-dioxide Earth market ceiling. It stays 2.3e11 kg/yr, and its comment now calls it total physical use per `iea_2019_putting_co2_to_use` (p. 3), not merchant sales, which `spglobal_2025_co2_commodity_market_demand` puts at about 30 Mt/yr (p. 7). CITATIONS.md gains both (rc-526). Value unchanged.
-
-Verdict: rc-526 closed as applied. Extracted data: none new.
-
-## R996 — Spacevalue phase-density sources mapped upstream (2026-11-19)
-
-At Spacevalue main 10f05f683c14121cf4b5b7f580b4eaf5bac82d0d (PR #21, 0.8.4), CITATIONS.md maps the phase densities to the Mineral Data Publishing Handbook sheets, `remo_1993_asteroid_meteorite_analogs_density` (Table 2, p. 169) and `agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties` (Table 1, p. 20), keeping Agrawal's troilite printed as FeSi and unreconciled with the FeS row (rc-855, rc-856). Densities unchanged.
-
-Verdict: rc-855, rc-856 closed as applied. Extracted data: none new.
-
-## R990 — AsteroidCatalog accessory vectors and X split labelled upstream (2026-11-19)
-
-At AsteroidCatalog main 8ffd710f2f2e826ec716287be29c0380da15ba51 (PR #38, 0.13.7; comments and one docstring only), `mineralogy.py` labels the CI and CM accessory vectors (rc-566, rc-570), the ordinary-chondrite phosphate split (rc-568), M and Xk troilite (rc-571) and K and L spinel (rc-572) as body-mass scenarios beside their vol% comparators. `taxonomy.py` calls the X/Xc P/M/E split a prior and states its reach on density, metal and PGM (rc-481), and the unknown-type PGM default the 37 ppm metal baseline, not chondritic (rc-685). Values unchanged.
-
-Verdict: rc-481, rc-566, rc-568, rc-570, rc-571, rc-572, rc-685 closed as applied. Extracted data: none new.
-
-## R989 — Phase-specific density references are not mapped in Spacevalue’s citation guide (2026-11-19)
-
-`spacevalue_mineral_density_citations_code_current_2026`: at Spacevalue main `f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f`, `spacevalue/catalog.py` lines 1912–1963, 2231–2237 and 2297–2304 give `MINERAL_REFERENCE` densities for nickel-iron (7.90), schreibersite (7.40), troilite (4.61), carbon (2.10) and plagioclase (2.69) without row-level density sources. `CITATIONS.md` § “Mineral composition and densities” (lines 120–123) names “standard mineralogy references,” Klein & Hurlbut, Mindat.org and Webmineral.com, without mapping them to these rows.
-
-`economicspace_stage2_density_provenance_bibliography_code_current_2026`: Economicspace `CITATIONS.md` lines 106–108 directs mineral-density references to Spacevalue’s `CITATIONS.md`; `campaign/stage2/PROVENANCE.md` § `density_gcm3` lines 65–87 identifies the phase-level references.
-
-- `remo_1993_asteroid_meteorite_analogs_density`: Table 2, printed p. 169, gives selected iron-nickel meteorites at 7.29–7.88 g/cm3.
-- `agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties`: NASA NTRS 20170001623, Table 1 p. 20, lists Troilite / FeSi / 4.61 and albite-composition feldspar at 2.62.
-- `mineral_data_publishing_kamacite_density_2001`: p. 1 gives D(calc.) 7.90 and no measured density.
-- `mineral_data_publishing_cohenite_density_2001`: p. 1 gives D(meas.) 7.20–7.65 and D(calc.) 7.68.
-- `mineral_data_publishing_schreibersite_density_2001`: p. 1 gives D(meas.) 7.0–7.3 and D(calc.) 7.12–7.44.
-- `mineral_data_publishing_troilite_density_2001`: p. 1 gives FeS D(meas.) 4.67–4.79 and D(calc.) 4.85.
-- `mineral_data_publishing_graphite_density_2001`: p. 1 gives D(meas.) 2.09–2.23 and D(calc.) 2.26.
-- `mineral_data_publishing_labradorite_density_2001`: p. 1 gives D(meas.) 2.68–2.72.
-
-Verdict: the bibliography gap belongs in Spacevalue’s designated citation guide. Re-scope **rc-856** to add the phase-specific bibliography and row mapping there; preserve the Troilite FeSi/FeS discrepancy and all density values. **rc-855** remains focused on reconciling that formula/source conflict. Extracted: `extracted_data/r768_mineral_phase_density_source_scope.csv`; `extracted_data/r769_mineral_phase_density_source_scope.csv`.
-
-## R988 — Spacevalue troilite density source is not phase-mapped (2026-11-19)
-
-`spacevalue_troilite_density_bibliography_gap_code_current_2026`: at Spacevalue main `f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f`, `catalog.py` line 1942 assigns the troilite entry formula `FeS` and density 4.61 g/cm³. `CITATIONS.md` § Mineral composition and densities (line 120) names Klein & Hurlbut, Mindat and Webmineral as general density references, but does not map a source to this phase or mention Agrawal, Carlozzi & Bryson.
-
-`agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties`: NASA NTRS 20170001623, Table 1 p. 20, lists “Troilite | FeSi | 4.61”; the existing Handbook comparison gives FeS density 4.67–4.79 measured and 4.85 calculated.
-
-Verdict: add the full Agrawal et al. reference only with its table/formula scope made explicit; reconcile the FeSi label before treating it as evidence for Spacevalue’s FeS row. Retain 4.61 pending source and phase reconciliation; no numeric replacement inferred. **rc-855**. Extracted: `extracted_data/r769_mineral_phase_density_source_scope.csv`.
-
-## R987 — Frozen Stage 2 phase densities scoped upstream (2026-11-19)
-
-At Economicspace main e354cdda8d5471a04a78509de78def8f4ef2a6b9 (PR #214, master 1.84.0), the new `campaign/stage2/PROVENANCE.md`, mirroring the Stage 3 file, records the phase densities against the sources this repo checked: nickel-iron 7.90 as kamacite's calculated density with no IIIAB bulk basis; cohenite 7.40 inside its measured range; schreibersite 7.40 above its measured range (rc-639); troilite 4.61 unreconciled with FeS; carbon 2.10 a graphite proxy; plagioclase 2.69 with no composition defined (rc-640). The verification worksheet prints the entry beside any Stage 2 input whose row carries the recorded value, in a span its backing check strips, so each input stays NEED BACKING. No frozen CSV byte or value moves.
-
-Verdict: rc-639, rc-640 closed as applied. Extracted data: none new.
-
-## R985 — Spacevalue nickel-iron PGM split labelled analyst-selected upstream (2026-11-19)
-
-At Spacevalue main f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f (PR #19, 0.8.2), the nickel-iron PGM comment and CITATIONS.md call the per-element split (Pt 15, Pd 10, Ru 3, Ir 4, Os 2, Rh 1.5, Au 1 ppm) analyst-selected. `wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals` printed p. A1 says siderites contain "on the average, 30 ppm total platinum metals"; Table 15, p. A17, gives per-element siderite ranges. The six PGM yields sum to 35.5 ppm, not the ~37 the old comment gave. Nichiporuk & Brown, Lodders, Walker and Kargel get full entries scoped to what each supports (rc-835). Yields are unchanged.
-
-Verdict: rc-835 closed as applied. Extracted data: none new.
-
-## R975 — Spacevalue nickel-iron PGM trace-yield citation scope (2026-11-19)
-
-`spacevalue_nickel_iron_pgm_yield_citation_code_current_2026`: Spacevalue main `69549f772a43d155dc27d5ae5f01f90a7e4ce996`, `catalog.py` lines 1471-1487 sets Pt/Pd/Ru/Ir/Os/Rh/Au yields at 15/10/3/4/2/1.5/1 ppm; the comments attribute the siderite total to USGS Bulletin 1214 / Nichiporuk (1965) and call the distribution calibrated to IIIAB medium-octahedrite means. Lines 1902-1904 name Lodders (2003) and Walker (2012) for trace-PGM abundances; line 1528 names Kargel (1994) for the LL-chondrite comparison.
-
-`CITATIONS.md` lines 130-134 lists Scott & Wasson (1975) for Cu, Ga, Ge, Mo, W and Re, but not the other named PGM sources or value-level page/table locators. `walker_2012_evidence_homogeneous_osmium_protosolar_nebula` is registered from the University of Maryland author publication list; the paper’s specific support for the assigned ppm values remains to be checked. The supplied `verification_sheet.pdf`, printed p. 37 (I53), traces `comp_pgm_enrichment` to AsteroidCatalog’s class mineralogy and CITATIONS §1; it is a distinct class-enrichment input, not the source for these nickel-iron element yields. The sheet is a 2018 DT run built 2026-11-16 with Stage 2 mineral_value 1.21.0, preceding Spacevalue main’s 1.22.0 data contract.
-
-**Verdict:** open **rc-835** for full PGM citations and matched value scope. The Fe/Ni/Co vector question in applied rc-815 is separate; current PGM yields are unchanged. Extracted: `extracted_data/r975_spacevalue_nickel_iron_pgm_trace_citation_scope.csv`.
-
-## R960 — PGM fallback semantics rechecked at current AsteroidCatalog head (2026-11-19)
-
-asteroidcatalog_pgm_enrichment_fallback_code_main_2026: AsteroidCatalog taxonomy.py still describes the default as “1.0 (chondritic)” for unknown/unlisted types. pgm_enrichment_for_type returns 1.0 for missing or blank inputs; other unmatched labels inherit a mapped factor from their first character, with Mq mapping to M=2.0. enrich.py assigns the helper output to comp_pgm_enrichment.
-
-Verdict: rc-685 remains open for the basis and scope label of the unknown/unlisted fallback and prefix inheritance; no class-matched source or numeric replacement was identified. Extracted: extracted_data/r960_pgm_fallback_current_head_recheck.csv.
-
-## R954 — Spacevalue IIIAB bulk fractions labeled analyst-selected (2026-11-19)
-
-At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, the nickel-iron row retains Fe/Ni/Co fractions 0.900/0.090/0.005 but calls the IIIAB analogue analyst-selected and says no table or sample set is cited for those fractions. Lodders 2003 and Walker 2012 are scoped to the trace-PGM terms, not the bulk vector (`spacevalue_fe_ni_major_yields_code_current_2026`; `scott_wasson_1975_classification_properties_iron_meteorites`; `lodders_2003_solar_abundances_condensation_temperatures`; rc-815).
-
-Verdict: the vector's status and the scope of adjacent citations are explicit; values are unchanged. Extracted data: none new.
-## R938 — AsteroidCatalog composition scenario labels applied upstream (2026-11-18)
-
-AsteroidCatalog 18fc306b335e785f59612ade12dcc7b3254ba214 (PR #35, package 0.13.4, data contract 1.11.0 unchanged). Comments, CITATIONS.md and the changelog only; `taxonomy.py` and `mineralogy.py` parse to the same ASTs as a626c81, so no output moved.
-
-- rc-555, rc-641, rc-648, rc-649: the zero ice fractions, T's metal and silicate, the X-complex carbon and all 27 silicate fractions are labelled scenarios where they are set.
-- rc-546: Z's 1.20 g/cm3 is labelled D's density as a proxy (`mahlke_2022_asteroid_taxonomy_spectra_albedo`; `simda2024` is a D figure).
-- rc-563, rc-564, rc-565, rc-567, rc-569: the A, R, O, Cgh, Sk and Sl accessory amounts are labelled scenario allowances (`dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites` for Sk/Sl).
-- rc-615, rc-650: E's split is a scenario beside `grady_pratesi_cecchi_2013_aubrite_modal_range`; T's silicates bucket an aggregate (`kwon_hasegawa_fornasier_ishiguro_agarwal_2022_large_t_type_surfaces`).
-
-Verdict: all twelve closed as applied. Extracted data: none new.
-
-## R924 — AsteroidCatalog 0.13.2 comparator bibliography detail (2026-11-18)
-
-At AsteroidCatalog main commit `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `CITATIONS.md` §3 lines 412–420 lists Beck et al. (2021), Kwon et al. (2022), Jones et al. (1990), McAdam et al. (2024), Rivkin et al. (2000 and 1995), Dunn et al. (2010), and Martin et al. (2013) by abbreviated journal identifiers and topics, without article titles or DOI links. Kwon’s separate entry at line 298 is also abbreviated. Their registered source rows already contain full titles, publication details and DOI URLs.
-
-The sources are comparators for surface hydration, T-type spectra, outer-belt ice hypotheses and meteorite sample modes. Preserve their existing sample and surface boundaries; none of these bibliography entries establishes class-level bulk water or mineral fractions. Verdict: open **rc-804** to add complete references and permanent links. This bibliography gap is distinct from the evidence-to-value reviews rc-445, rc-446, rc-448, rc-449 and rc-569. No numeric replacement proposed. Extracted: `extracted_data/r924_asteroidcatalog_0132_comparator_bibliography.csv`.
-
-## R919 — AsteroidCatalog grouped comparator bibliography omits two titles and links (2026-11-18)
-
-`asteroidcatalog_grouped_comparator_bibliography_current_2026`: AsteroidCatalog `CITATIONS.md` §3 lists Howard et al. (2009) as “LPSC 40, 1235 (CV3 sulfide)” and Zhang et al. (2023) as “A&A 671, A77, Table 5 (M-type densities)” (lines 420–422), without the publication titles or permanent links.
-
-`howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235`: the LPI abstract title page (p. 1) gives “Modal Mineralogy of CV3 Chondrites by PSD-XRD: Mineralogic Insights into a Complex Evolutionary History,” by Howard, Benedix, Bland & Cressey, Abstract 1235. `zhang_etal_2023_m_type_asteroid_meteorite_analogues`: the A&A paper first page identifies “Compositional indication of E- and M-type asteroids by VIS-NIR reflectance spectra of meteorites,” *Astronomy & Astrophysics* 671:A77 (2023), DOI 10.1051/0004-6361/202245207.
-
-Verdict: add complete references and permanent retrieval links. Keep the CV3 sulfide and M-type density scopes attached to their respective sources. This is bibliography completeness only, distinct from rc-460 and rc-571; no numeric replacement inferred. **rc-799**. Extracted: `extracted_data/r919_grouped_comparator_bibliography.csv`.
-
-## R918 — AsteroidCatalog bibliography abbreviates the HED modal-mineralogy paper (2026-11-18)
-
-`asteroidcatalog_hed_modal_bibliography_entry_current_2026`: AsteroidCatalog `CITATIONS.md` §3 lists only “Li, S., and Milliken, R. E. (2015) (HED modes)” in its grouped comparator entry (lines 419–420). It is the bibliography reference associated with the V-type modal-mineralogy comparator; the entry does not supply full publication details.
-
-`li_milliken_2015_hed_modal_mineralogy_spectral_models`: Wiley’s publisher record identifies “Estimating the modal mineralogy of eucrite and diogenite meteorites using visible–near infrared reflectance spectroscopy,” *Meteoritics & Planetary Science* 50(11):1821–1850 (2015), DOI 10.1111/maps.12513. The existing source record and extraction characterize its results as sample-level modal ranges, not a derivation of the class-wide V-type mass vector.
-
-Verdict: add the complete reference and permanent DOI link to AsteroidCatalog CITATIONS.md. This bibliography-completeness issue is distinct from applied **rc-467**, which concerns the V-type vector’s source-to-model derivation. No numeric replacement inferred. **rc-798**. Extracted: `extracted_data/r918_li_milliken_bibliography_entry.csv`.
-
-## R917 — AsteroidCatalog bibliography abbreviates the L-type JWST study (2026-11-18)
-
-`asteroidcatalog_ltype_bibliography_entry_current_2026`: AsteroidCatalog `CITATIONS.md` §3 lists only “de Kleer, K., et al. (2026) (L-type JWST spectra)” in its grouped comparator entry (lines 419–420). The upstream item is the L-type JWST mineralogy comparator noted in `asteroid_catalog/mineralogy.py`; this bibliography row does not establish a numerical phase share.
-
-`de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: the title page gives “The Surface Mineralogy of the Spinel-rich Asteroids from Mid-infrared Spectroscopy with JWST” (printed p. 1); the publisher record identifies *The Planetary Science Journal* 7:36 (2026), DOI 10.3847/PSJ/ae374e. Its abstract describes five L-type targets and supplies no quantitative bulk CAI/spinel abundance.
-
-Verdict: add the complete reference and permanent DOI link to the AsteroidCatalog bibliography. This is a citation-completeness review, distinct from **rc-572**, which concerns whether the study supports the modeled bulk spinel mass fractions. No numeric replacement inferred. **rc-797**. Extracted: `extracted_data/r917_de_kleer_bibliography_entry.csv`.
-
-## R837 — Recheck of the CI sulfide split source status (2026-11-17)
-
-- **asteroidcatalog_ci_sulfide_split_code_current_2026** (AsteroidCatalog origin/main a2c527c09eb39618d7fd26b2b180f730ea906b8b, `asteroid_catalog/mineralogy.py`): `_SULFIDE_CI` remains pyrrhotite 0.70 / pentlandite 0.30 with the comment “estimate: no source gives a ratio”; PHASE_DETAIL applies it to B, C, Cb, and F.
-- **economicspace_detailed_phase_carbon_consumer_current_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `modules/calc.py`): detailed-phase modeling defaults on and the loader reads `comp_phases_detailed` when present.
-- **Verdict:** Rechecked the CI-sulfide portion of **rc-172**. The existing no-source/scenario treatment remains in current code; no subtype-matched ratio source or numeric change was found. Status remains applied; no new candidate added.
-- **Extracted data:** `extracted_data/r837_ci_sulfide_split_citation_gap.csv`.
-
-
-## R780 — T-type silicate phase mapping remains generic and unsourced (2026-11-15)
-
-`asteroidcatalog_ttype_silicate_phase_mapping_code_current_2026`: AsteroidCatalog `mineralogy.py` lists “every split for A, R, O and T” under “WHAT HAS NO SOURCE” (lines 116–118). `PHASE_SHARES["T"]["silicate"]` assigns `{"silicates": 1.0}`; with the T row’s `silicate_fraction=0.40`, `reference/mineral_phases.csv` records 0.40 body mass as generic `silicates`. `PHASE_DETAIL["T"]` has no silicate subphase and `detailed_fractions` passes phases without a detail entry through, so `reference/mineral_phases_detailed.csv` retains `silicates=0.40`. `economicspace_detailed_phase_carbon_consumer_current_2026`: economicspace defaults to `model_detailed_phases=True` and reads `comp_phases_detailed` when present.
-
-`kwon_hasegawa_fornasier_ishiguro_agarwal_2022_large_t_type_surfaces`: Kwon et al. call T type “relatively ill-constrained as an independent group” (A&A 666:A173, printed p. 1) and report surface spectra of two large T-type asteroids; they do not give class-level bulk silicate mineral shares.
-
-Verdict: provide T-type-matched evidence and document transfer to the class-level conditional silicate composition; if none supports mineral-specific shares, identify the generic `silicates` bucket as an intentional aggregate and preserve it as a scenario. Keep the current 0.40 output and infer no mineral-specific allocations. Distinct from rc-641 (bulk metal/silicate amount), rc-384 (primitive carbon split), rc-480 (T accessories), and rc-594 (X-complex conditional silicate vectors). **rc-650**. Extracted: `extracted_data/r780_ttype_silicate_phase_mapping_scope.csv`.
-
-## R779 — Bulk silicate fractions are marked unsourced (2026-11-15)
-
-`asteroidcatalog_taxonomy_silicate_fraction_code_current_2026`: AsteroidCatalog `taxonomy.py` labels “the silicate fractions” as having no source (lines 93-97). `asteroidcatalog_taxonomy_silicate_fraction_rows_current_2026`: `reference/taxonomy_composition.csv` assigns 27 bulk `silicate_fraction` values to B,C,Cb,Cg,Cgh,Ch,S,Sa,Sk,Sl,Sq,Sr,Sv,A,D,Z,K,L,O,Q,R,V,M,E,P,F,G; the row notes describe taxonomy and analogue context but do not derive these fractions. `asteroidcatalog_silicate_fraction_phase_mapping_current_2026`: `GROUP_FIELDS` maps silicate to `silicate_fraction`, and `phase_fractions` multiplies the bulk share by the class phase vector to form body-mass phase fractions. `economicspace_detailed_phase_carbon_consumer_current_2026`: economicspace defaults to reading `comp_phases_detailed` when present.
-
-Verdict: provide a class-matched basis and document analogue transfer and mass/volume conversion for each bulk fraction; where no matched basis exists, label it as a scenario and expose sensitivity. Preserve current values and infer no replacements. **rc-649**. Distinct from rc-346 (X-complex bulk fractions), rc-641 (T bulk fractions) and rc-615 (E within-silicate vector). Extracted: `extracted_data/r779_taxonomy_silicate_fraction_source_scope.csv`.
-
-## R756 — Rare PGM override phases lack a matched Earth-sale basis (2026-11-15)
-
-`spacevalue_rare_pgm_sale_value_code_current_2026`: Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904` states that these phases are absent from Module 1 `TAXONOMY_COMPOSITION` and available for user overrides or future spectral identification. Direct price/date are `None` for sperrylite (Pt 0.566), laurite (Ru 0.612, Ir and Os 0.001 each), awaruite (Ni 0.759, Fe 0.241 plus the trace-PGE vector), and native-pgm (Pt 0.70, Pd 0.15, Ir 0.08, Os 0.05, Ru and Rh 0.01 each). The generated reference label remains “USGS/LME/mineralogy reference.” `cargo.py` sums listed yields at elemental reference prices and describes the result as refined metal at refined prices, with no payable fraction, treatment charge or refining charge.
-
-`economicspace_rare_pgm_stage2_route_current_2026`: Frozen Stage 2 1.15.0 Earth-surface rows mark all four phases `unpriced`. Cislunar sperrylite, laurite and native-pgm export 0.0 USD/kg on a `shipped to Earth` route; awaruite exports 4,835.016935 USD/kg as `derived-in-space` / `used in space`.
-
-`cowen_agnello_petit_2012_npsr_pge`: Table IV, p. 585, reports 90% PGE concentrate payability, a $250/t treatment charge, and refining charges for PGE metals. These commercial concentrate terms are a comparator and do not establish direct prices or netbacks for the four meteorite mineral phases.
-
-Verdict: open **rc-623** for a phase-specific Earth-sale product and netback basis. Keep Earth sale unpriced if no matched product basis is available, or label Spacevalue’s yield sum as a gross contained-metal scenario and document the saleable phase/product, grade, recovery, arsenic/sulfur handling, payable terms and charges. No numeric replacement inferred. Distinct from rc-512 (native-PGM composition vector), rc-513 (awaruite trace-yield vector), and rc-121 (generic gross-yield valuation boundary). Extracted: `extracted_data/r756_rare_pgm_price_route_basis.csv`.
-
-## R755 — K/L perovskite has no direct terrestrial sale-price basis (2026-11-15)
-
-`spacevalue_perovskite_sale_route_code_current_2026`: At Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `MINERAL_REFERENCE["perovskite"]` sets its direct reference price and date to `None`, lists only a titanium yield of 0.352, and says its calcium is not priced. The generated reference-source label remains `USGS/LME/mineralogy reference`.
-
-`asteroidcatalog_kl_perovskite_accessory_code_current_2026`: AsteroidCatalog `DETAIL_ACCESSORIES` includes perovskite for K at 0.002 and L at 0.003. These are default detailed-phase rows, distinct from the abundance and processing-energy questions tracked under **rc-172** and **rc-440**.
-
-`economicspace_perovskite_stage2_route_current_2026`: In the frozen Stage 2 1.15.0 exports, the Earth-surface row has blank price fields and `price_basis=unpriced`; the cislunar row reports 2,651.946924 USD/kg as `derived-in-space` / `used in space`, with 7.0 kWh/kg of processing. `spacevalue_mineral_yield_value_route_code_current_2026` documents that yield-based mineral value uses refined-element prices without payable, treatment or refining charges. The in-space output is a model-derived titanium-content route, not a direct perovskite market quote.
-
-Verdict: open **rc-622** for the terrestrial product/value boundary. Keep Earth sale explicitly unpriced if no perovskite product quote is intended; otherwise identify a saleable product and support its grade, price date/delivery basis, recovery, processing, payable terms and netback. If the titanium-yield route is retained, label it as a contained-metal proxy and explain what happens to calcium. No numeric replacement inferred. Distinct from rc-172 (K/L phase amounts), rc-440 (processing energy), rc-450 (utility factors) and rc-595 (chromite/ilmenite price routes). Extracted: `extracted_data/r755_perovskite_terrestrial_value_route.csv`.
-
-## R754 — Fe-Ni alloy direct-price gap extends to the default yield route (2026-11-15)
-
-`spacevalue_nickel_iron_sale_route_code_current_2026`: At Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `MINERAL_REFERENCE["nickel-iron"]` has no direct reference price or date and carries an iron-meteorite yield vector. `FRACTION_TO_MINERAL` maps the broad metal fraction to `nickel-iron`; `_INSEPARABLE` groups kamacite, taenite and tetrataenite into one physical nickel-iron product. The phase rows also have no direct reference prices.
-
-`spacevalue_mineral_yield_value_route_code_current_2026`: `cargo.py` computes mineral value from constituent yields and refined-element reference prices, and its method states there is no payable fraction, treatment charge or refining charge. `economicspace_fe_ni_verification_sheet_logic_current_2026`: the verification sheet defines `P_alloy` as the yield-weighted sum of element-price contributions for the broad nickel-iron route. Those calculations provide a contained-element value proxy; they do not cite a matched terrestrial Fe-Ni product price or netback.
-
-Verdict: extend open **rc-456** to cover the default bulk nickel-iron route and its merged detailed phases. State whether the direct Earth-sale route is unavailable by design, or define the saleable product and support its grade, price date/delivery basis, recovery, payable terms and netback. Label the yield sum as a proxy if retained, and qualify the generic source label. The registered iron-scrap and nickel prices are constituent comparators, not a raw Fe-Ni product quote; no numeric replacement inferred. Extracted: `extracted_data/r754_nickel_iron_sale_route.csv`.
-
-## R747 — E-type asteroid silicate shares lack a mass-basis source (2026-11-14)
-
-- **asteroidcatalog_e_type_silicate_shares_code_current_2026**: At AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `mineralogy.py` sets the Tholen E conditional silicate shares to enstatite 0.95, plagioclase 0.03 and olivine 0.02. `reference/mineral_phases.csv` publishes body fractions 0.8075, 0.0255 and 0.017, consistent with the E row's 0.85 coarse silicate fraction.
-- **grady_pratesi_cecchi_2013_aubrite_modal_range**: Grady, Pratesi and Moggi Cecchi's *Atlas of Meteorites* chapter 11 summary describes enstatite as the most abundant aubrite phase at “75–98 vol.%”; it also gives broad whole-rock volume ranges for forsterite, diopside and plagioclase.
-- **Verdict**: the reference supports an enstatite-rich aubrite analogue, but its whole-rock volume range does not establish a 95% conditional silicate mass share or show that one aubrite composition represents Tholen E-type asteroids. Document the source and volume-to-mass/class-transfer basis, or label the 95/3/2 vector as a scenario. No replacement inferred (**rc-615**).
-- Extracted: extracted_data/r747_e_type_silicate_share_basis.csv.
-
-## R728 — Chromite and ilmenite lack direct Earth-sale price bases (2026-11-13)
-
-`spacevalue_chromite_ilmenite_price_route_code_current_2026`: At Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `MINERAL_REFERENCE` sets chromite and ilmenite `ref_price_usd_per_kg` and `ref_price_date` to `None`. Chromite yields are chromium 0.465 and iron 0.250; ilmenite yields are titanium 0.316 and iron 0.368 (`catalog.py` lines 1915–1936). `fetch_reference_table` assigns the generic source label “USGS/LME/mineralogy reference” to reference rows (lines 2485–2510). `cargo.py` `_mineral_implied_value` values refined metal at refined prices “with no payable fraction, treatment charge or refining charge” (lines 157–176); that is a yield-derived contained-element value, not a direct chromite/ilmenite ore or concentrate quote. Verdict: state which value route is intended and its output product; if an ore/concentrate sale is intended, cite a matched product, grade, date and delivery basis and record beneficiation, recovery and netback assumptions. Qualify the generic source label. Do not infer numeric replacements from elemental yields. Distinct from rc-510 (generic oxide placeholders), rc-440/450 (in-space processing and utility factors) and rc-593 (magnetite’s separate direct-quote/contained-Fe route). **rc-595**. Extracted: `extracted_data/r728_chromite_ilmenite_earth_price_basis.csv`.
-
-## R727 — X-complex conditional silicate shares have no numeric source (2026-11-13)
-
-`asteroidcatalog_xcomplex_silicate_split_code_current_2026`: AsteroidCatalog 0.13.2 `mineralogy.py` lists as “WHAT HAS NO SOURCE” the X-complex members’ silicate split beyond “enstatite dominates” (lines 116–118). `PHASE_SHARES` assigns M and Xk enstatite 0.70, plagioclase 0.20 and olivine 0.10; Xe is enstatite 0.90 and plagioclase 0.10 (lines 270–277). The generated `reference/mineral_phases.csv` reproduces the shares; checking its phase rows gives body fractions summing to the coarse silicate fractions of 0.45 for M/Xk and 0.65 for Xe. Verdict: provide a matched mineralogical basis and the mapping into conditional mass shares, or label these values as scenarios with their basis and uncertainty; no replacement inferred. Distinct from rc-346 (coarse silicate fractions), rc-481 (X/Xc population weighting), rc-537 (Xe sulfide vector) and rc-571 (M/Xk troilite amount). **rc-594**. Extracted: `extracted_data/r727_xcomplex_silicate_split_basis.csv`.
-
-## R726 — Magnetite direct quote and derived Fe-content value are distinct routes (2026-11-13)
-
-spacevalue_magnetite_terrestrial_price_code_current_2026: At Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, MINERAL_REFERENCE["magnetite"] has ref_price_usd_per_kg=None, an iron yield of 0.724, and the note "Iron-oxide ore; priced as Fe content." cargo.py _mineral_implied_value computes mineral value from elemental yields and says it values "refined metal at refined prices, with no payable fraction, treatment charge or refining charge." This is a derived contained-Fe value, not a direct magnetite price.
-
-economicspace_magnetite_stage2_price_export_current_2026: At economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, the Stage 2 Earth-surface row has blank ref_price_usd_per_kg and price_usd_per_kg, price_basis=unpriced, and the generic ref_price_source label "USGS/LME/mineralogy reference". The cislunar row instead reports 4,081.3847 USD/kg as derived-in-space under "terrestrial + 0.40 x launch cost avoided"; it does not provide an Earth-sale quote.
-
-economicspace_magnetite_verification_sheet_logic_current_2026: the worksheet maps a missing finite terrestrial quote to 0.0 USD/kg and prints "No quote: Stage 2 prices a missing terrestrial price as zero."
-
-usgs_mineral_commodity_summaries_2026: the Iron Ore chapter, printed p. 108, table row "Price, average unit value reported by mines, dollars per metric ton" gives $89 for 2025e. The same page reports $99.07/ton for imported fines at "62% iron content," CIF Tianjin, during the first nine months of 2025. These are product-specific market comparators, not a magnetite quote.
-
-Verdict: distinguish the absent direct magnetite/ore quote from cargo.py’s yield-derived gross Fe-content value. State the assumed output product and price anchor, and qualify the generic source label; if raw magnetite sale is intended, cite a matched product and document beneficiation, recovery, and netback terms. Do not infer a numeric replacement from the iron yield or the USGS comparators. Distinct from rc-121 (general contained-metal valuation assumption), rc-510 (generic-oxide reference-price scenarios), and rc-440/450 (in-space processing and utility factors). rc-593. Extracted: extracted_data/r726_magnetite_terrestrial_price_basis.csv.
-
-## R702 — K/L spinel shares lack a bulk-mass derivation (2026-11-12)
-
-`asteroidcatalog_l_spinel_accessory_code_current_2026`: AsteroidCatalog 0.13.2 assigns spinel fractions of 0.03 to K and 0.05 to L as absolute body-mass shares; the code says L needs the most CAI of any spectrum and cites Sunshine et al. (2008), without a numeric derivation for either fraction.
-
-`de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: the five-target JWST study reports L-type spectra resembling oxidized CV3 Allende (possibly CO3) and says CAI enhancement above CV3 is not required (abstract, printed p. 1); it also says the data cannot quantitatively constrain CAI abundance. The introduction describes spinel as tens of percent of CAIs and CAIs as at most a few percent of meteorite composition (printed p. 2). These surface-spectral and chondrite-population comparisons do not directly establish or contradict asteroid bulk spinel mass fractions. Verdict: document a class-matched bulk basis and conversion from spectral evidence, or retain the 3%/5% values as explicit scenarios; no numeric replacement inferred. **rc-572**. Distinct from rc-172 (detailed perovskite/hibonite allocations) and rc-464 (conditional L silicate shares). Extracted: `extracted_data/r702_k_l_spinel_bulk_fraction_basis.csv`.
-
-## R701 — M/Xk troilite shares lack a body-mass basis (2026-11-12)
-
-`asteroidcatalog_m_xk_troilite_code_current_2026`: AsteroidCatalog 0.13.2 assigns `troilite=0.02` as an absolute fraction of body mass to both M and Xk; `reference/mineral_phases.csv` repeats those values.
-
-`zhang_etal_2023_m_type_asteroid_meteorite_analogues`: the abstract says M-types are linked to enstatite chondrites and iron meteorites (A&A 671 A77, p. 1). For 14 M-types, the discussion interprets five as likely metal-rich (IM/EH) and nine as likely EH/EL (p. 11, Fig. 6 and Table 5). These are qualitative population/analogue comparators; neither derives one 2% troilite body-mass fraction for M and Xk or converts a modal measurement to mass. Verdict: provide a class-matched basis or label the values as scenarios; no replacement inferred. Distinct from rc-172 (within-phase splits), rc-420/rc-537 (aubrite/EH sulfide composition) and rc-569 (Sk/Sl added accessories). **rc-571**. Extracted: `extracted_data/r701_m_xk_troilite_analogue_basis.csv`.
-
-## R700 — CM accessory modes are reported by subtype and volume, while the model fixes one body-mass vector (2026-11-12)
-
-`asteroidcatalog_cm_accessory_phase_code_current_2026`: AsteroidCatalog 0.13.2 sets `_ACC_CM` to troilite 0.03, magnetite 0.02 and carbonates 0.01, then applies that vector to Cg, Ch and G. Accessory entries are defined as absolute fractions of body mass; `reference/mineral_phases.csv` publishes the same values.
-
-`king_schofield_russell_2017_type1_aqueous_alteration_cm`: the abstract reports CM1 “magnetite (2–3 vol%), Fe-sulfide (<5 vol%), and calcite (<2 vol%)” (printed p. 1197); CM1/2 ranges are magnetite 2–3 vol%, Fe-sulfide 1–2 vol% and calcite about 1 vol% (same page). The paper also describes minor-phase variation across 35 CM samples by alteration/subtype (Figure 4; “Abundances of Minor Phases”). The modes broadly contextualize the model values but do not establish the fixed 3/2/1 body-mass vector, convert Fe-sulfide to modeled troilite, or justify transferring one vector across Cg/Ch/G. Verdict: document a subtype-matched mass basis or label the vector as a scenario with basis and uncertainty; no replacement inferred. Distinct from rc-345 (CM silicate split) and rc-566 (CI accessory mass mapping). **rc-570**. Extracted: `extracted_data/r700_cm_accessory_volume_to_mass_basis.csv`.
-
-## R699 — Sk/Sl accessory amounts extend the ordinary-chondrite vector without a phase-specific basis (2026-11-12)
-
-`asteroidcatalog_sk_sl_accessory_phase_code_current_2026`: AsteroidCatalog 0.13.2 applies the shared `_ACC_OC` accessory vector (troilite 0.055, chromite 0.005) to Sk and Sl, then adds magnetite 0.02 of body mass to Sk and spinel 0.03 to Sl. The module defines accessory values as absolute body fractions; `reference/mineral_phases.csv` publishes the same values. The code gives no quantitative derivation for either addition.
-
-`dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites`: Table 5 reports ordinary-chondrite whole-rock XRD modes for olivine, low- and high-Ca pyroxene, plagioclase and troilite; it does not provide the added Sk magnetite or Sl spinel amounts. Verdict: supply a class/subtype-matched modal basis and body-mass mapping or label each addition as a scenario with basis and uncertainty; no replacement inferred. **rc-569**. Extracted: `extracted_data/r699_sk_sl_accessory_phase_rows.csv`.
-
-## R698 — Ordinary-chondrite phosphate shares use one LL-derived vector across S-complex and Q classes (2026-11-12)
-
-`asteroidcatalog_oc_phosphate_accessory_code_current_2026`: AsteroidCatalog `mineralogy.py` attributes merrillite ~0.4 and chlorapatite ~0.2 wt% to Jones et al. (2014) LL chondrites. `_PHOSPHATE_OC` assigns 0.004 and 0.002 body-mass fractions and `DETAIL_ACCESSORIES` applies the vector to S, Sa, Sk, Sl, Sq, Sr, Sv and Q.
-
-`jones_mccubbin_guan_2016_h_chondrite_phosphate_abundances`: Jones, McCubbin & Guan, *American Mineralogist* 101(11):2452–2467, Discussion (printed pp. 2460–2461), report type 4–6 H/L/LL phosphate modes “0.4–0.5 vol.%”; apatite/merrillite ratios range 0.4–1.5 (H), 0.25–1.0 (L) and 0.1–0.5 (LL), with type 4 total abundance lower than types 5–6. The source gives group-level sample modes, not class-wide body-mass fractions.
-
-The cited Jones et al. (2014) source record is specifically LL chondrites and its full article has not been read; the available electronic appendix contains mineral-distribution maps, not bulk weight percentages. Verdict: document the source-to-class transfer and mass/volume basis, or identify the shared vector as a scenario with uncertainty. The broader study does not contradict the current value or supply a replacement. Distinct from rc-466, which covers the S-complex/Q silicate vector. **rc-568**. Extracted: `extracted_data/r698_oc_phosphate_class_transfer.csv`.
-
-## R697 — Cgh accessory amounts have only a qualitative CK note (2026-11-12)
-
-- **asteroidcatalog_cgh_accessory_phase_code_current_2026** [T4]: AsteroidCatalog mineralogy.py line 312 assigns Cgh magnetite 0.05 and troilite 0.02 as body-mass fractions. The inline note says only “CK: magnetite-rich”; generated mineral_phases.csv carries the same values.
-
-The existing Cgh silicate comparator and sulfide-species split do not provide these absolute accessory amounts. Verdict: cite a CK/Cgh-matched modal basis and body-mass mapping or identify the values as scenarios with basis and uncertainty; no replacement inferred. **rc-567**. Extracted: extracted_data/r697_cgh_accessory_phase_rows.csv.
-
-## R696 — CI accessory modes are vol% in the source and body-mass fractions in the model (2026-11-12)
-
-- **king_schofield_2015_ci_modal_mineralogy_xrd** [T1]: the abstract reports “magnetite (6–10%), sulphides (4–7%) and carbonates (<3%)” for the CI meteorites (printed p. 148). Table 1 labels its modal abundance columns vol% (printed p. 154); the Orgueil mean is 6.7 vol% magnetite, 5.7 vol% sulphide and 3.3 vol% carbonate.
-- **asteroidcatalog_ci_accessory_mass_mapping_code_current_2026** [T4]: AsteroidCatalog assigns _ACC_CI = magnetite 0.07, troilite 0.05 and carbonates 0.03 to B, C, Cb and F as body fractions.
-
-The generated mineral phase table carries these as mass fractions, but the code records no volume-to-mass conversion or separate transfer from CI meteorites to all four asteroid classes. This is distinct from rc-344, which addresses the conditional CI silicate split. Verdict: document the conversion and class mapping or identify 7/5/3% as volume-derived scenario values; no replacement inferred. **rc-566**. Extracted: extracted_data/r696_ci_accessory_volume_to_mass_basis.csv.
-
-## R695 — A/R/O accessory percentages have no numeric derivation (2026-11-12)
-
-- **asteroidcatalog_mantle_accessory_phase_code_current_2026** [T4]: AsteroidCatalog mineralogy.py (lines 327–329) assigns A-type chromite 0.01 and troilite 0.01; R-type troilite 0.01 and chromite 0.005; and O-type troilite 0.02. The module defines these accessory values as absolute fractions of body mass; generated mineral_phases.csv publishes the same values.
-
-The class rows and mineral lists identify composition but the module gives no quantitative source or calculation for these three accessory percentages. Verdict: provide a class-matched modal/mass-fraction derivation or state the percentages as scenario allowances with basis and uncertainty; no replacement inferred. **rc-563–rc-565**. Extracted: extracted_data/r695_aro_accessory_phase_rows.csv.
-
-## R692 — Eight zero ice fractions lack a class-specific basis (2026-11-12)
-
-`asteroidcatalog_other_zero_ice_fraction_code_current_2026`: AsteroidCatalog `taxonomy.py` sets `ice_fraction=0.00` for A, K, L, O, R, V, Xe and Xk. Its `CITATIONS.md` says “every ice fraction” is an estimate “with no publication behind” it (lines 101–103); the module says “No meteorite constrains ice at all” (line 94). The class rows do not state what the zero excludes or provide a class-specific basis.
-
-Verdict: identify a class-specific basis and define the modeled zero-water boundary, or label the values as scenarios; no replacement inferred. **rc-555**. Extracted: `extracted_data/r692_other_zero_ice_fraction_rows.csv`.
-
-## R678 — EH/Xe sulfide vector compared with compiled EH3/4 modes (2026-11-12)
-
-`asteroidcatalog_eh_sulfide_split_code_current_2026`: AsteroidCatalog 0.13.2 `asteroid_catalog/mineralogy.py` assigns Xe `_SULFIDE_EH` shares of troilite 0.625, niningerite 0.25, oldhamite 0.0875 and daubreelite 0.0375; the Xe coarse accessory row assigns troilite 0.08 of body mass, so the refined body vector is 5, 2, 0.7 and 0.3 wt%.
-
-`lodders_1996_oldhamite_enstatite_achondrites`: Table 1 (printed p. 128) gives compiled EH3/4 abundance ranges (wt%) of troilite 5.8–13, niningerite 0.2–11.2, oldhamite <0.1–2 and daubreelite 0–0.2. The table note says “Data are compiled from KEIL (1968), WATTERS and PRINZ (1979) as well as many other sources” (p. 128). The Xe estimate lies below the troilite range and above the daubreelite range; the other two estimates lie within their ranges. These are compiled EH3/4 intervals, not an EH class mean or a directly matched Xe body composition, so no replacement vector is inferred. Verdict: review the fixed Xe sulfide amounts and the current claim that numerical sulfide splits lack a source; document a representative composition or retain the vector explicitly as a scenario. **rc-537**. Extracted: `extracted_data/r678_lodders_eh_sulfide_ranges.csv`.
-
-## R669 — Titanium sponge annual-market source and vintage (2026-11-12)
-
-- `spacevalue_titanium_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["titanium"] = 3.2e8` kg/year (~320,000 metric tons sponge), attributed to MCS 2025 for 2024 and described as excluding the U.S.
-- `usgs_mcs2026_titanium_chapter`: the World Sponge Metal Production table (“World total (rounded)” row, printed p. 197) reports 380,000 metric tons for revised 2024 and 370,000 for 2025e. Footnote 3 excludes Utah production; the U.S. row is zero in 2025.
-- Verdict: re-pin the ceiling to a named year and update the exclusion wording. The latest estimate of 370,000 metric tons is 50,000 metric tons (15.6%) above the current value. **rc-531**. Extracted: `extracted_data/r669_titanium_annual_market_basis.csv`.
-- `spacevalue_rhenium_annual_market_code_current_2026`: `catalog.py` sets 62,000 kg/year (~62 t), attributed to MCS 2025 for 2024. `usgs_mcs2026_rhenium_chapter` reports 79,800 kg for revised 2024 and 81,000 kg for 2025e in its world mine-production table (printed p. 157); footnote 7 excludes secondary rhenium.
-- Verdict: re-pin to the selected year; 81,000 kg is 19,000 kg (30.6%) above the current value. **rc-532**. Extracted: `extracted_data/r669_rhenium_annual_market_basis.csv`.
-- `spacevalue_gallium_annual_market_code_current_2026`: `catalog.py` sets 760,000 kg/year of primary gallium, matching MCS 2025 for 2024. `usgs_mcs2026_gallium_chapter` reports 848,000 kg for revised 2024 and 900,000 kg for 2025e in its world low-purity primary-production table (printed p. 83).
-- Verdict: re-pin to the selected year and preserve the low-purity primary measure; 900,000 kg is 140,000 kg (18.4%) above the current value. **rc-533**. Extracted: `extracted_data/r669_gallium_annual_market_basis.csv`.
-
-## R668 — Elemental phosphorus annual-production basis (2026-11-12)
-
-- `spacevalue_phosphorus_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["phosphorus"] = 1.0e9` kg/year (~1 Mt elemental P₄). A table-level note attributes terrestrial figures broadly to USGS MCS annual primary production.
-- `matos_etal_2021_jrc_elemental_phosphorus_energy`: the European Commission JRC report says “The precise world production of elemental phosphorus is not known” and estimates 900–1,200 kt/year (§7.2, printed p. 31).
-- `usgs_mcs2026_phosphate_rock_chapter`: the World Mine Production and Reserves table (“World total (rounded)” row, printed p. 143) reports 239,000 thousand metric tons of marketable phosphate rock for 2024 and 250,000 for 2025e; this is a different product measure and does not establish global elemental-P₄ production.
-- Verdict: 1 Mt/year is within the JRC range, so no numeric replacement is supported. Identify the elemental-P₄ source and estimate vintage or label the current value as an approximate scenario. **rc-529**. Extracted: `extracted_data/r668_phosphorus_annual_market_basis.csv`.
-- `usgs_mcs2026_tungsten_chapter`: the “World total (rounded)” row reports 82,000 metric tons tungsten content for 2024 and 85,000 for 2025e (printed p. 201). `spacevalue_tungsten_annual_market_code_current_2026` records the current 81,000 t/year ceiling, which the code attributes to MCS 2025 for 2024.
-- Verdict: use 85,000 t/year and label 2025e if the model intends the latest MCS estimate; this is 4,000 t (computed here), or 4.7%, above the current rounded value. **rc-530**. Extracted: `extracted_data/r668_tungsten_annual_market_basis.csv`.
-
-## R667 — Ammonia annual-market estimate re-pin (2026-11-12)
-
-- `usgs_mcs2026_ammonia_chapter`: *Mineral Commodity Summaries 2026*, Nitrogen (fixed)—ammonia, printed p. 136, defines data in thousand metric tons of nitrogen content. The World Ammonia Production and Reserves table reports 156,000 for 2024 and 160,000 for 2025e; the text notes “Significant revisions were made to the 2024 production” for Egypt and Germany.
-- `spacevalue_ammonia_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["ammonia"] = 1.5e11` kg N/yr (~150 Mt N), with no source edition or production year on the row. The source row in registry history is MCS 2025 world plant production for 2024e; rc-055 applied the same 150 Mt N re-pin in economicspace.
-- Verdict: MCS 2026 revises 2024 production to 156 Mt N and estimates 160 Mt N for 2025. Re-pin the Spacevalue ceiling to a named year and current edition; both values use nitrogen content and world plant production. **rc-528**. Extracted: `extracted_data/r667_ammonia_annual_market_basis.csv`.
-
-## R666 — Sulfur annual-market source and year (2026-11-12)
-
-- `usgs_mcs2026_sulfur_chapter`: the World Production and Reserves table (chapter PDF p. 2) reports 83,900 thousand metric tons for 2024 and 84,000 for 2025e; the text says “World sulfur production in 2025 was an estimated 84 million tons compared with 83.9 million tons in 2024.” The previously registered MCS 2025 sulfur chapter reports 85 million tons for 2024 (printed p. 173).
-- `spacevalue_sulfur_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["sulfur"] = 8.3e10` (~83 Mt/yr) without a source edition or production year on the row. The table-level note attributes terrestrial figures broadly to MCS annual primary production; INDEX maps this inherited sulfur row to MCS 2025.
-- Verdict: the current value is close to the 2026 USGS estimates but does not match the rounded 2024 or 2025 MCS 2026 world totals. Identify its source vintage and whether 83 Mt is a scenario or a stale annual production figure; no numeric replacement inferred. **rc-527**. Extracted: `extracted_data/r666_sulfur_annual_market_basis.csv`.
-
-## R665 — Carbon dioxide terrestrial annual-market basis (2026-11-12)
-
-- `iea_2019_putting_co2_to_use`: IEA, *Putting CO2 to Use* (2019), Executive summary p. 3, estimates “some 230 million tonnes (Mt)” of CO2 are used annually, including 130 Mt for urea and 70–80 Mt for enhanced oil recovery. Printed pp. 5–6 identify IHS Markit (2018) among the inputs and describe the 2015 demand breakdown as mainly EOR and on-site urea production.
-- `spacevalue_co2_annual_market_code_current_2026`: Spacevalue `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["carbon dioxide"] = 2.3e11` (~230 Mt/yr), comments “merchant CO2,” and uses this terrestrial ceiling for `shipped to Earth` in `annual_market_kg`. The table-level note describes terrestrial figures as USGS MCS annual primary production, which does not establish this CO2 row’s basis.
-- Verdict: the IEA value is a close numerical match but represents total use, not merchant-only production; the report attributes most of it to on-site urea use and EOR. Record the missing source year and market boundary, and establish whether total use is an intentional sales-cap scenario or whether a merchant-specific measure is intended. No numeric replacement inferred. **rc-526**. Extracted: `extracted_data/r665_co2_annual_market_basis.csv`.
-
 # Domain 2 Findings — composition → commodity value mapping
 
 Backings: AsteroidCatalog `taxonomy_composition.csv` material fractions (metal, silicate, carbon, ice), `mineralogy.py` phase splits (`comp_phases_detailed`), `PGM_ENRICHMENT_BY_TYPE`, and spacevalue `catalog.py` mineralogy and nickel-iron yields.
-
-## R663 — Minor-PGM annual market values lack row-level source years and measures (2026-11-12)
-
-- **jm_pgm_market_report_2026**: the tables label the metric “Total primary supply” and report 2025 values of 7.1 t iridium (PDF p. 34), 21.8 t rhodium (p. 32), and 30.2 t ruthenium (p. 33).
-- **spacevalue_pgm_annual_production_code_current_2026**: at `spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16`, `catalog.py` lines 897–899 stores 7.5, 23, and 30 tonnes per year, respectively. The table-level comment attributes terrestrial figures to USGS MCS annual primary production; these rows give no edition, year, or specific production measure.
-
-The JM values are close comparators but use a separately named primary-supply series, and are not established as the code values’ source or as like-for-like mine-production replacements. Verdict: retain the numeric cells; identify the source, year, and measure for each row. **rc-524**. Extracted: `extracted_data/r663_pgm_annual_market_basis.csv`.
-
-## R662 — Spacevalue silver market ceiling lacks its specific USGS edition and year (2026-11-12)
-
-- **usgs_mcs2026_silver_chapter**: USGS MCS 2026, Silver chapter, printed pp. 172–173, “World Mine Production and Reserves” table, reports a rounded world total of 25,300 metric tons in 2024 and 26,000 in 2025e; its prose says “World silver mine production increased slightly in 2025 to an estimated 26,000 tons.”
-- **spacevalue_silver_annual_market_code_current_2026**: at `spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16`, `spacevalue/catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["silver"] = 2.6e7` (~26,000 metric tons) without identifying the USGS edition or production year on the row. The table-level comment names the USGS MCS series generally. Existing rc-302 concerns silver’s reference price and does not cover this annual market-ceiling field. Verdict: cite MCS 2026 and label the value as estimated 2025 world mine production; the published value matches, so no replacement inferred. **rc-523**. Extracted: `extracted_data/r662_silver_annual_market_basis.csv`.
-
-## R601 — L-type conditional silicate split (2026-11-11)
-
-- `asteroidcatalog_l_silicate_split_code_current_2026`: AsteroidCatalog assigns L-type silicates shares of 0.60 olivine, 0.30 pyroxene and 0.10 plagioclase; the adjacent code comments provide no numeric derivation.
-- `de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: the registered abstract reports JWST MIRI surface spectra for five spinel-rich L-types, with Mg-rich olivine and a component interpreted as spinel or amorphous olivine; the spectra resemble oxidized CV3 Allende. It gives no conditional bulk silicate mass shares. The paper’s CAI conclusion concerns accessory phases, not the modeled 60/30/10 split.
-- Verdict: request a documented L-type source-to-model mapping or identify the current shares as a scenario. These selected surface spectra do not establish a class-wide bulk mass distribution; no replacement is inferred. **rc-464** records the gap, scoped separately from rc-172’s CAI/accessory-phase question.
-- Extracted: `extracted_data/r601_l_type_silicate_split_context.csv`.
-
-## R599 — K/CV conditional silicate split (2026-11-11)
-
-`asteroidcatalog_k_silicate_split_code_current_2026`: AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 assigns K the shared `_SIL_CV` split of olivine 0.75, pyroxene 0.20 and plagioclase 0.05; the nearby code comment identifies K with CV/CO chondrites and gives no numerical derivation. Martin et al., “REE and Hf distribution among mineral phases in the CV–CK clan,” *Geochimica et Cosmochimica Acta* 120 (2013), Table 2 (printed p. 500), report for the mapped CV3 sample NWA 5772 olivine 17.0%, low-Ca pyroxene 25.4%, matrix 47.3% and mesostasis 8.7%; the text describes the matrix as “rich in phyllosilicates.” This single CV3 sample is not a CV/CO class-wide conditional mass split, and its matrix/mesostasis categories do not map one-to-one to the model's silicate groups. The study cautions that mapped areas “may not be entirely representative for the whole rock” (printed p. 511). Verdict: request a documented CV/CO source-to-model mapping or label the 75/20/5 shares as a scenario; no replacement inferred. `rc-462`. Extracted: `extracted_data/r599_k_cv_silicate_modal_comparator.csv`.
-
-## R598 — CK/Cgh conditional silicate split (2026-11-11)
-
-`asteroidcatalog_ck_cgh_silicate_split_code_current_2026`: AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 assigns Cgh the modeled silicate-group shares phyllosilicates 0.50, olivine 0.40 and pyroxene 0.10; its adjacent comment says CK chondrites are olivine-rich but gives no numerical derivation. Martin et al., “REE and Hf distribution among mineral phases in the CV–CK clan,” *Geochimica et Cosmochimica Acta* 120 (2013), Table 2 (printed p. 500), report for the mapped CK4 sample NWA 5798 olivine 54.1%, low-Ca pyroxene 14.6%, high-Ca pyroxene 5.3%, plagioclase 4.2% and matrix 9.4%; the text says the matrix is nearly all recrystallized into olivine. This sample-level modal map is not a class-wide conditional mass split, and its phases do not map one-to-one to the model's three categories. The authors caution that mapped areas “may not be entirely representative for the whole rock” (printed p. 511). Verdict: request a documented CK/Cgh source-to-model mapping or label the 50/40/10 shares as a scenario; no replacement inferred. `rc-461`. Extracted: `extracted_data/r598_ck_cgh_silicate_modal_comparator.csv`.
-
-## R597 — Oxidized-CV sulfide species split (2026-11-11)
-
-`asteroidcatalog_detailed_sulfide_split_code_current_2026`: AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 assigns `_SULFIDE_NI` as pentlandite 0.50 / pyrrhotite 0.50 and applies it to Cgh (CK) and K (oxidized CV) detailed-phase rows. The module's own source audit says every sulfide split is unsourced as a number. Howard, Benedix, Bland & Cressey, “Modal Mineralogy of CV3 Chondrites by PSD-XRD,” LPSC 40 (2009), abstract 1235, reports total sulfide modes of 2.4–5.1 vol% for reduced CV3 and 2.9–8.1 vol% for oxidized CV3 (p. 1), and notes that CV3 subgroups are distinguished partly by “the Ni content of sulphide” (p. 1). These aggregate modal abundances and the classification criterion do not report a pyrrhotite/pentlandite ratio or establish the model's conditional mass split. Verdict: review the 50/50 split as an explicit scenario or supply a subtype-matched, species-resolved mass basis; no replacement inferred. `rc-460`. Extracted: `extracted_data/r597_cv3_sulfide_split_context.csv`.
-
-## R592 — Terrestrial price boundary for Fe-Ni alloy phases (2026-11-11)
-
-`spacevalue_unpriced_fe_ni_alloy_code_current_2026`: `spacevalue/catalog.py` states that the three derived Fe-Ni alloy phases have no market price of their own and passes `None` as the reference price for kamacite and taenite. Both rows still carry Fe/Ni and trace-element yield vectors. The archived economicspace Stage 2 1.12.0 Earth-surface table exports both as `unpriced`, with blank terrestrial prices; the verification sheet flags I20 and I23 and states that a missing terrestrial quote is priced as zero. Its generated `USGS/LME/mineralogy reference` label is assigned even when the quote is blank. The registered USGS iron-scrap and World Bank nickel prices are constituent-market benchmarks, not quotes for raw meteoritic kamacite or taenite. Verdict: make the Earth-sale boundary explicit (unpriced by design, or a defined Fe-Ni/trace-metal product with a matched netback source); do not present zero as a quoted market value or infer a replacement from constituent yields. `rc-456`. Extracted: `extracted_data/r592_unpriced_alloy_phase_earth_route.csv`.
-
-## R591 — Generic terrestrial price for silicate phases (2026-11-11)
-
-`spacevalue_silicate_reference_price_code_current_2026`: current `spacevalue/catalog.py` assigns a terrestrial reference price of 0.05 USD/kg to olivine, pyroxene, orthopyroxene, enstatite, and the catch-all silicates row. `fetch_reference_table` writes the same generic `USGS/LME/mineralogy reference` label for every row. Only olivine is described as industrial olivine sand; the rows do not identify a matching grade, sale product, delivery point, or source for the price. The economicspace verification worksheet flags its olivine, enstatite, and silicate price inputs as needing backing in the archived run. The Indian Bureau of Mines December 2025 Table 6(a) lists prices for selected minerals and grades, but no olivine or silicate-phase price; it is context only and does not validate the 0.05 USD/kg values. Verdict: cite a matching product/grade and price date for each row, or label these shared prices as engineering scenarios; no replacement inferred. `rc-455`. Extracted: `extracted_data/r591_silicate_terrestrial_price_basis.csv`.
-
-## R568 — Ordinary-chondrite PGE phase-partition comparator (2026-11-10)
-
-`gilmour_herd_2020_ordinary_chondrite_pge_partition` — Gilmour & Herd, Table 4 (journal pp. 679–702), report taenite/kamacite PGE partition coefficients by chondrite group: H has Ru 3.3, Pd 5.4, Os 2.1, Ir 1.9 and Pt 3.0; L has Ru 1.9, Rh 1.5, Pd 3.3, Os 2.4, Ir 2.2 and Pt 2.2; LL has Ru 3.5, Rh 3.0, Pd 4.5, Os 1.9, Ir 1.9 and Pt 2.2. The study reports higher PGE concentrations in taenite, with within- and between-grain variation. At spacevalue `catalog.py` (`spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16`), `_TAENITE_OVER_KAMACITE` uses Co=0.4, Cu=3.0, Pt=2.0, Pd=3.0, Au=3.0, Rh=1.5 and defaults other elements to 1.0 in deriving alloy-phase yields. The measured PGE coefficients differ from several settings and vary across H/L/LL groups; ordinary-chondrite data do not establish representative coefficients for asteroid metal classes. Verdict: comparator supports review of the generic multipliers, but no universal replacement is inferred; open `rc-433`. Extracted: `extracted_data/r568_gilmour_herd_pge_partition_coefficients.csv`.
 
 ## R1 - First sources (2026-09-17)
 
@@ -663,11 +316,9 @@ checks the model's declared rock-floor assumption, not the true composition
 of an unknown asteroid. Population incidence and ranking effects were not
 measured. `extracted_data/r332_full_residual_valuation.csv`.
 
-
 ## R424 — Bennu B-type bound-water fraction review (2026-11-09)
 
 `lauretta_2024_bennu_in_the_laboratory` identifies Bennu as a B-type asteroid and reports the sample as “hydrated (0.84–0.95 wt% H)” (Conclusions, p. 2481); Table 4 reports 0.90 ± 0.04 wt% H for fines, 0.93 ± 0.05 for intermediates, and 0.93 ± 0.01 for an aggregate (p. 2471). If all measured hydrogen were in H2O, the range corresponds to 7.51–8.49 wt% H2O-equivalent. AsteroidCatalog’s B row assigns ice_fraction=0.20 and mineralogy.py maps that entire group to water, which the downstream cargo valuation prices as water. The measured sample H therefore motivates review of the 20% B-row water proxy; hydrogen is not a direct water/ice assay, and returned regolith does not determine the asteroid interior or all B types. Verdict: bounded review candidate rc-334; no replacement value inferred. `extracted_data/r424_bennu_bound_water_vs_b_type_fraction.csv`.
-
 
 ## R437 — Bennu OH/H2O spectral distinction and sample context (2026-11-09)
 
@@ -675,13 +326,11 @@ Kaplan et al. (first published 2026-10-14), in “New Evidence from the Sample,�
 
 This adds sample-versus-surface evidence to `rc-334`: Bennu’s hydration signatures do not establish a 20 wt% bulk water/ice fraction, and hydroxyl-bearing minerals must not be equated with free water. The paper does not quantify bulk H2O/ice abundance or establish Bennu’s interior or the B-type population. No replacement fraction is inferred. Extracted: `extracted_data/r437_bennu_water_hydroxyl_spectral_evidence.csv`.
 
-
 ## R438 — Bennu interlayer water evidence (2026-11-09)
 
 King et al. (2026), “Hydration State of Bennu,” p. 1088, report pristine-sample smectite basal spacing of 12.6–12.4 Å, interpret it as monohydrated, and estimate “up to ~2 wt% water in the interlayer space” for saponite. They state that their XRD characteristics are consistent with a 1.25 wt% interlayer-water result reported by Yurimoto et al. (2026); that underlying study was not independently read in this round. On p. 1089, King et al. note OSIRIS-REx excavated material from as deep as ~50 cm and that this subsurface provenance could enhance apparent water relative to Bennu’s bulk surface.
 
 These are local, bound-water and sample-specific results, not a whole-asteroid or B-class ice fraction. They strengthen the evidentiary review in `rc-334` but do not supply a replacement for `ice_fraction=0.20`. Extracted: `extracted_data/r438_bennu_xrd_interlayer_water.csv`.
-
 
 ## R477 — Tagish Lake accessory modes are sample-dependent (2026-11-09)
 
@@ -689,13 +338,11 @@ Izawa et al. (2010), Table 3, reports XRD/Rietveld modal abundances for seven Ta
 
 `rc-343` asks for the upstream provenance and scope of these three absolute accessory fractions to be resolved; this paper supplies a relevant, quantitative comparator but no direct replacement for the modeled asteroid classes. The previously open `rc-085` was applied as a source-attribution correction and remains historical; this is new evidence. Extracted: `extracted_data/r477_izawa_tagish_lake_modal_ranges.csv`.
 
-
 ## R478 — CI meteorite modal data bear on an unsourced silicate split (2026-11-09)
 
 King et al. (2015) used PSD-XRD on bulk samples of Alais, Orgueil and Ivuna. The abstract reports a “mixed serpentine/saponite phyllosilicate (81–84 vol%)” assemblage (printed p. 148). Table 1 (printed p. 154) gives Orgueil averages of 83.0 vol% phyllosilicate and 1.0 vol% olivine, and Ivuna averages of 82.5 and 2.0 vol%, respectively. The paper reports modal volume percentages for individual CI meteorite samples; AsteroidCatalog’s `_SIL_CI` is 95% phyllosilicates and 5% olivine as mass shares conditional on the silicate group, applied across CI-analogue classes. Those bases are not interchangeable without phase-density conversion and an explicit mapping of the modeled silicate subtotal.
 
 `rc-344` records a citation/basis review of `_SIL_CI`; the paper supports phyllosilicate dominance but does not directly establish the exact 95/5 model mass split. Keep the values unchanged pending a documented conversion or a source that reports the needed mass-share basis. The PDF states CC BY on printed p. 149. Extracted: `extracted_data/r478_king_ci_modal_mineralogy.csv`.
-
 
 ## R479 — A Murchison comparator for the unsourced CM silicate split (2026-11-09)
 
@@ -735,16 +382,13 @@ R503 — Taxonomic PGM factors lack a published calibration (2026-11-09)
 
 AsteroidCatalog `asteroid_catalog/taxonomy.py` assigns fixed PGM factors of 2.0 to M/Xk/X/Xc, 1.5 to Xe/E, 0.5 to A/R/O, and 0.2 to V; its comment says none of the table’s own numbers has a source. Cannon, Gialich & Acain report broad iron-meteorite PGM-grade percentiles (Table 2, p. 4) and state that there is “no known way to remotely identify where an asteroid falls along the wide distributions” (p. 6). Their analysis supplies distributional context but no mapping from asteroid spectral classes to these factors. `rc-369` records the calibration gap; retain the factors only as explicit model scenarios pending a class-matched published basis. Extracted: `extracted_data/r503_cannon_pgm_remote_inference_limit.csv`.
 
-
 ## R514 — CM sulfide split compared with ALH 83100 XRD modes (2026-11-10)
 
 `lindgren_lee_et_al_2020_alh83100_cm_sulfide_modal_xrd` — Lindgren et al., Table 2 (printed p. 74), report XRD modal mineralogy for unheated ALH 83100: pyrrhotite 0.9 vol%, pentlandite 1.2 vol%, and total Fe(Ni) sulphide 2.1 vol%. The paper labels ALH 83100 as petrologic type 1.2 and says the measurements are typically accurate to less than 5 vol% (pp. 74–75). The present-study modal values imply a 42.9/57.1 pyrrhotite/pentlandite split by volume within the reported sulphide modes; the paper notes the earlier Howard et al. (2011) analysis did not individually quantify the three sulphide minerals. AsteroidCatalog's `_SULFIDE_CM` applies a 65/35 split across CM-related taxonomy rows; the sample's volume modes differ, but they do not establish class-wide mass shares. Open **rc-380** to review the fixed split or label it as an assumed distribution; no replacement is inferred. Extracted: `extracted_data/r514_alh83100_cm_sulfide_modal_xrd.csv`.
 
-
 ## R518 — Tagish Lake soluble-organic share comparator (2026-11-10)
 
 Grady et al. (2002), abstract (p. 713), report that a small pristine Tagish Lake chip contained 5.81 wt% total carbon, about 2.6 wt% organic carbon, and that “around 2% of the organic material is thermally labile and solvent soluble.” The abstract cautions that the chip’s carbon abundance may be artificially high because carbonate decomposition dominated its carbon inventory. AsteroidCatalog `asteroid_catalog/mineralogy.py` assigns `_CARBON_PRIMITIVE` shares of 0.60 to `organics` (soluble organic matter) and 0.40 to `carbon` (insoluble macromolecular organic matter) for P, D, Z and T; the 0.60 share is 30 times the Tagish Lake sample comparator. This single, heterogeneous meteorite sample does not establish a class-wide D/Z/P/T split or prove the measurement definitions match the model phases. rc-384 records the unsourced split for review; no replacement is inferred. `extracted_data/r518_tagish_lake_organic_matter_split.csv`.
-
 
 ## R541 — Tagish Lake accessory-mode comparator (2026-11-10)
 
@@ -752,25 +396,25 @@ Grady et al. (2002), abstract (p. 713), report that a small pristine Tagish Lake
 
 Upstream: AsteroidCatalog `asteroid_catalog/mineralogy.py` at `AsteroidCatalog@99781b65fb792a844140c49cdadfa123ebc9b505` keeps `_ACC_TL` at 0.05 magnetite, 0.03 troilite and 0.03 carbonates for D/Z/P; the module defines these as absolute body mass fractions. Verdict: this peer-reviewed study adds a direct, quantitative Tagish Lake sample comparator and strengthens the open basis review in `rc-343`; it reports volume modes for one carbonate-rich sample, with pyrrhotite/pentlandite rather than troilite, and does not establish representative D/Z/P mass fractions. No conversion or replacement value is inferred. Extracted: `extracted_data/r541_schrader_tagish_lake_modal_comparator.csv`.
 
-
 ## R552 — CI sulfide species-split citation gap (2026-11-10)
 
 `harrison_etal_2025_ryugu_ci_sulfide_mineralogy` — Harrison et al. report 0.3–0.4 area% total Fe-sulfide in Orgueil and Ivuna; their Results describe Fe-sulfides as “predominantly pyrrhotite” and say “Pentlandite is rare” (printed p. 510). The article identifies rare cubanite as well, but gives no quantitative pyrrhotite/pentlandite ratio. At AsteroidCatalog@99781b65fb792a844140c49cdadfa123ebc9b505, `_SULFIDE_CI` assigns pyrrhotite 0.70 and pentlandite 0.30 to detailed-phase rows B, C, Cb and F. The measurements are sample-level, coarse-grain observations and do not set a class-wide mass ratio. Open **rc-418** to document the split’s basis or label it an estimate; no replacement is inferred. Extracted: `extracted_data/r552_harrison_ci_sulfide_species.csv`.
-
 
 ## R553 — S-complex subtype phase-share basis (2026-11-10)
 
 DeMeo & Carry (2015), Table 1 (printed p. 17), maps the Gaffey seven-class mineralogical scheme to Bus and Bus-DeMeo S-complex taxonomy and describes the Gaffey system as primarily separating olivine-to-orthopyroxene ratio. The chapter distinguishes detailed mineralogical characterization from taxonomy (p. 14). AsteroidCatalog `asteroid_catalog/mineralogy.py` assigns conditional silicate mass shares of 75/12/3/10 to Sa, 45/35/8/12 to Sr, and 30/30/20/20 to Sv (olivine/orthopyroxene/pyroxene/plagioclase). The source supports mineralogical diversity but does not report these Bus-DeMeo subtype bulk mass fractions or the conversion basis. `rc-419` records the review gap; no replacement values are inferred. Extracted: `extracted_data/r553_s_complex_subtype_taxonomy_vs_phase_splits.csv`.
 
-
 ## R554 — Aubrite sulfide-share sample comparison (2026-11-10)
 
 Wilbur et al. (2022), Table 2, report modal sulfide abundances for 16 aubrite meteorite samples in vol.% with stated uncertainty of ±2.3–7.2 vol.%; total sulfides range from 0.1 to 61 vol.%. Modes include alabandite in addition to troilite, daubréelite and oldhamite. Bishopville A reports 0.6 vol.% troilite and 1.9 vol.% oldhamite; Norton County 983 reports 3.7 troilite, 5.6 alabandite, 0.5 daubréelite and 51 oldhamite vol.%. AsteroidCatalog `PHASE_DETAIL[E]` applies 0.60/0.30/0.10 conditional mass shares to troilite/oldhamite/daubréelite and omits alabandite. These sample-specific volume modes show heterogeneity and do not set representative mass shares for E-type bodies. `rc-420` records the scope and conversion review; no replacement is inferred. Extracted: `extracted_data/r554_wilbur_aubrite_sulfide_modal_modes.csv`.
 
-
 ## R558 — CV/CO CAI population comparator (2026-11-10)
 
 Dunham et al. (2023), Table 3, compile 3,027 CAIs from 12 CV chondrites (mean 5.4 area%, range 0.7–13.1) and 1,332 CAIs from 15 CO chondrites (mean 1.5 area%, range 0.5–3.6); hibonite-rich CAIs are classed as rare in CV and common in CO. At AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63, `asteroid_catalog/mineralogy.py` maps K to CV/CO and L to a CV3 possibility; `DETAIL_ACCESSORIES` assigns perovskite/hibonite absolute body mass fractions of 0.002/0.003 for K and 0.003/0.005 for L. Total CAI area abundance and qualitative hibonite-rich frequency do not quantify those individual phases or convert area to body mass. Verdict: population context only; no contradiction or replacement value is established, so no new revision candidate is opened; the unsourced CAI oxide fractions remain within the prior scope of rc-172. Extracted: `extracted_data/r558_dunham_2023_cai_population_cv_co.csv`.
+
+## R568 — Ordinary-chondrite PGE phase-partition comparator (2026-11-10)
+
+`gilmour_herd_2020_ordinary_chondrite_pge_partition` — Gilmour & Herd, Table 4 (journal pp. 679–702), report taenite/kamacite PGE partition coefficients by chondrite group: H has Ru 3.3, Pd 5.4, Os 2.1, Ir 1.9 and Pt 3.0; L has Ru 1.9, Rh 1.5, Pd 3.3, Os 2.4, Ir 2.2 and Pt 2.2; LL has Ru 3.5, Rh 3.0, Pd 4.5, Os 1.9, Ir 1.9 and Pt 2.2. The study reports higher PGE concentrations in taenite, with within- and between-grain variation. At spacevalue `catalog.py` (`spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16`), `_TAENITE_OVER_KAMACITE` uses Co=0.4, Cu=3.0, Pt=2.0, Pd=3.0, Au=3.0, Rh=1.5 and defaults other elements to 1.0 in deriving alloy-phase yields. The measured PGE coefficients differ from several settings and vary across H/L/LL groups; ordinary-chondrite data do not establish representative coefficients for asteroid metal classes. Verdict: comparator supports review of the generic multipliers, but no universal replacement is inferred; open `rc-433`. Extracted: `extracted_data/r568_gilmour_herd_pge_partition_coefficients.csv`.
 
 ## R581 — T-type ice-fraction basis (2026-11-11)
 
@@ -784,26 +428,48 @@ Dunham et al. (2023), Table 3, compile 3,027 CAIs from 12 CV chondrites (mean 5.
 
 `asteroidcatalog_s_complex_zero_water_code_current_2026`: AsteroidCatalog assigns `ice_fraction=0.00` to S, Sa, Sk, Sl, Sq, Sr and Sv, and `mineralogy.py` maps this group to water. McAdam et al. (2024), *The Planetary Science Journal* 5:254, report 27 of 33 observations with detectable 3 μm features at ≥1% band depth within error (Abstract, printed p. 1); the discussion identifies OH/H2O signatures on 23 nominally anhydrous S-type asteroids (§4.3, printed p. 13). The article says the 3 μm region cannot distinguish OH from H2O and lists endogenic hydrated minerals, solar-wind OH and exogenic hydrated minerals as possible origins (§2, printed p. 201). These surface detections challenge an unqualified zero-water interpretation but establish no bulk or class-level extractable-water amount. Verdict: define what the zero excludes and retain it only for that stated boundary until matched evidence is available; no replacement inferred. **rc-446**. Extracted: `extracted_data/r583_s_complex_hydration_context.csv`.
 
-
 ## R585 — P/D/Z interior ice fraction basis (2026-11-11)
 
 `asteroidcatalog_dz_ice_fraction_code_current_2026` and `asteroidcatalog_p_ice_fraction_code_current_2026`: AsteroidCatalog assigns D and Z `ice_fraction=0.25` and P `ice_fraction=0.15`; its module describes the fractions as approximate defaults where direct measurements are absent. Jones et al. (1990) report that only 1 of 10 sampled P/D spectra shows even a weak H₂O absorption (summary, printed p. 190), yet infer that D asteroids, especially Trojans, “may have had a substantial (≈ 50%) ice component” by comparison with Galilean-satellite ice/rock ratios (printed p. 187). They say the P/D objects may retain interior ice, but this is a formation and thermal-evolution hypothesis, not a measured present-day D/Z bulk or accessible-water fraction. Verdict: request class-specific bases for D/Z and P that distinguish accreted ice from present interior and mineable water; retain 0.25 and 0.15 only as unverified scenarios. No replacement inferred. **rc-448** reviews D/Z; **rc-449** reviews P. Extracted: `extracted_data/r585_dz_interior_ice_fraction_context.csv`.
 
+## R591 — Generic terrestrial price for silicate phases (2026-11-11)
+
+`spacevalue_silicate_reference_price_code_current_2026`: current `spacevalue/catalog.py` assigns a terrestrial reference price of 0.05 USD/kg to olivine, pyroxene, orthopyroxene, enstatite, and the catch-all silicates row. `fetch_reference_table` writes the same generic `USGS/LME/mineralogy reference` label for every row. Only olivine is described as industrial olivine sand; the rows do not identify a matching grade, sale product, delivery point, or source for the price. The economicspace verification worksheet flags its olivine, enstatite, and silicate price inputs as needing backing in the archived run. The Indian Bureau of Mines December 2025 Table 6(a) lists prices for selected minerals and grades, but no olivine or silicate-phase price; it is context only and does not validate the 0.05 USD/kg values. Verdict: cite a matching product/grade and price date for each row, or label these shared prices as engineering scenarios; no replacement inferred. `rc-455`. Extracted: `extracted_data/r591_silicate_terrestrial_price_basis.csv`.
+
+## R592 — Terrestrial price boundary for Fe-Ni alloy phases (2026-11-11)
+
+`spacevalue_unpriced_fe_ni_alloy_code_current_2026`: `spacevalue/catalog.py` states that the three derived Fe-Ni alloy phases have no market price of their own and passes `None` as the reference price for kamacite and taenite. Both rows still carry Fe/Ni and trace-element yield vectors. The archived economicspace Stage 2 1.12.0 Earth-surface table exports both as `unpriced`, with blank terrestrial prices; the verification sheet flags I20 and I23 and states that a missing terrestrial quote is priced as zero. Its generated `USGS/LME/mineralogy reference` label is assigned even when the quote is blank. The registered USGS iron-scrap and World Bank nickel prices are constituent-market benchmarks, not quotes for raw meteoritic kamacite or taenite. Verdict: make the Earth-sale boundary explicit (unpriced by design, or a defined Fe-Ni/trace-metal product with a matched netback source); do not present zero as a quoted market value or infer a replacement from constituent yields. `rc-456`. Extracted: `extracted_data/r592_unpriced_alloy_phase_earth_route.csv`.
+
+## R597 — Oxidized-CV sulfide species split (2026-11-11)
+
+`asteroidcatalog_detailed_sulfide_split_code_current_2026`: AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 assigns `_SULFIDE_NI` as pentlandite 0.50 / pyrrhotite 0.50 and applies it to Cgh (CK) and K (oxidized CV) detailed-phase rows. The module's own source audit says every sulfide split is unsourced as a number. Howard, Benedix, Bland & Cressey, “Modal Mineralogy of CV3 Chondrites by PSD-XRD,” LPSC 40 (2009), abstract 1235, reports total sulfide modes of 2.4–5.1 vol% for reduced CV3 and 2.9–8.1 vol% for oxidized CV3 (p. 1), and notes that CV3 subgroups are distinguished partly by “the Ni content of sulphide” (p. 1). These aggregate modal abundances and the classification criterion do not report a pyrrhotite/pentlandite ratio or establish the model's conditional mass split. Verdict: review the 50/50 split as an explicit scenario or supply a subtype-matched, species-resolved mass basis; no replacement inferred. `rc-460`. Extracted: `extracted_data/r597_cv3_sulfide_split_context.csv`.
+
+## R598 — CK/Cgh conditional silicate split (2026-11-11)
+
+`asteroidcatalog_ck_cgh_silicate_split_code_current_2026`: AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 assigns Cgh the modeled silicate-group shares phyllosilicates 0.50, olivine 0.40 and pyroxene 0.10; its adjacent comment says CK chondrites are olivine-rich but gives no numerical derivation. Martin et al., “REE and Hf distribution among mineral phases in the CV–CK clan,” *Geochimica et Cosmochimica Acta* 120 (2013), Table 2 (printed p. 500), report for the mapped CK4 sample NWA 5798 olivine 54.1%, low-Ca pyroxene 14.6%, high-Ca pyroxene 5.3%, plagioclase 4.2% and matrix 9.4%; the text says the matrix is nearly all recrystallized into olivine. This sample-level modal map is not a class-wide conditional mass split, and its phases do not map one-to-one to the model's three categories. The authors caution that mapped areas “may not be entirely representative for the whole rock” (printed p. 511). Verdict: request a documented CK/Cgh source-to-model mapping or label the 50/40/10 shares as a scenario; no replacement inferred. `rc-461`. Extracted: `extracted_data/r598_ck_cgh_silicate_modal_comparator.csv`.
+
+## R599 — K/CV conditional silicate split (2026-11-11)
+
+`asteroidcatalog_k_silicate_split_code_current_2026`: AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 assigns K the shared `_SIL_CV` split of olivine 0.75, pyroxene 0.20 and plagioclase 0.05; the nearby code comment identifies K with CV/CO chondrites and gives no numerical derivation. Martin et al., “REE and Hf distribution among mineral phases in the CV–CK clan,” *Geochimica et Cosmochimica Acta* 120 (2013), Table 2 (printed p. 500), report for the mapped CV3 sample NWA 5772 olivine 17.0%, low-Ca pyroxene 25.4%, matrix 47.3% and mesostasis 8.7%; the text describes the matrix as “rich in phyllosilicates.” This single CV3 sample is not a CV/CO class-wide conditional mass split, and its matrix/mesostasis categories do not map one-to-one to the model's silicate groups. The study cautions that mapped areas “may not be entirely representative for the whole rock” (printed p. 511). Verdict: request a documented CV/CO source-to-model mapping or label the 75/20/5 shares as a scenario; no replacement inferred. `rc-462`. Extracted: `extracted_data/r599_k_cv_silicate_modal_comparator.csv`.
+
+## R601 — L-type conditional silicate split (2026-11-11)
+
+- `asteroidcatalog_l_silicate_split_code_current_2026`: AsteroidCatalog assigns L-type silicates shares of 0.60 olivine, 0.30 pyroxene and 0.10 plagioclase; the adjacent code comments provide no numeric derivation.
+- `de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: the registered abstract reports JWST MIRI surface spectra for five spinel-rich L-types, with Mg-rich olivine and a component interpreted as spinel or amorphous olivine; the spectra resemble oxidized CV3 Allende. It gives no conditional bulk silicate mass shares. The paper’s CAI conclusion concerns accessory phases, not the modeled 60/30/10 split.
+- Verdict: request a documented L-type source-to-model mapping or identify the current shares as a scenario. These selected surface spectra do not establish a class-wide bulk mass distribution; no replacement is inferred. **rc-464** records the gap, scoped separately from rc-172’s CAI/accessory-phase question.
+- Extracted: `extracted_data/r601_l_type_silicate_split_context.csv`.
 
 ## R603 — Ordinary-chondrite modal comparator for S-complex silicate shares (2026-11-11)
 
 Dunn et al. (2010), Table 5 (printed p. 131), report XRD whole-rock modal means and 1σ for 48 equilibrated type 4–6 H, L and LL meteorites. The table lists olivine, low- and high-Ca pyroxene, plagioclase and troilite as separate phases; its conclusion says olivine plus low-Ca pyroxene comprise 50–75 wt% of ordinary chondrites (printed p. 133). AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 assigns `_SIL_OC` shares 0.58/0.24/0.06/0.12 to S, Sq, Q, Sk and Sl. The meteorite group means are whole-rock values and do not document the mapping to those taxonomy classes or the conditional four-phase vector. Verdict: comparator only; no contradiction or replacement value inferred. **rc-466**. Extracted: `extracted_data/r603_ordinary_chondrite_modal_averages.csv`.
 
-
 ## R604 — HED sample modal ranges and the V-type silicate vector (2026-11-11)
 
 Li and Milliken (2015), in the study description and Tables 1–2, report modal mineral ranges across 14 eucrites and 13 diogenites: clinopyroxene 0.3–36.5%, orthopyroxene 5–97.8%, olivine 0–91%, and plagioclase 0–61%. AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 assigns V-type conditional silicate shares of 0.45 pyroxene, 0.15 orthopyroxene, 0.37 plagioclase and 0.03 olivine. The sample ranges show lithologic variation and do not state the mixture weights or volume-to-mass conversion for a representative V-type body. Verdict: comparator only; no contradiction or replacement value inferred. **rc-467**. Extracted: `extracted_data/r604_hed_modal_mineral_ranges.csv`.
 
-
 ## R605 — X-complex mixture and ice-fraction basis (2026-11-11)
 
 AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 `taxonomy.py` assigns X and Xc ice fractions of 0.05 and 0.04. The same module describes X as a P/M/E mixture of 58%/37%/4% by object count and Xc as 54%/36%/9%; component ice fractions are P 0.15 and M/E 0.00. Its module note says every ice fraction lacks a source. The code gives no meaning or mass-basis rule that derives the X/Xc values from those components, and number shares do not themselves define a bulk mass fraction. Verdict: document a matched aggregation basis or label the values as scenarios; no replacement inferred. **rc-468**. Extracted: `extracted_data/r605_x_complex_ice_fraction_mixture.csv`.
-
 
 ## R606 — Q-class zero-water boundary and C-class recheck (2026-11-11)
 
@@ -811,11 +477,9 @@ AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 `taxonomy.py` assigns X
 
 `asteroidcatalog_q_zero_ice_fraction_code_current_2026`: AsteroidCatalog assigns Q `ice_fraction=0.00` and describes Q as a fresh/unweathered ordinary-chondrite analog; the taxonomy module says “every ice fraction” has no source. `mineralogy.py` gives Q metal, silicate and carbon groups but no ice group. Verdict: request a Q-specific basis and state what the hard zero excludes; no numerical replacement inferred. This is distinct from `rc-446` (S-complex zeros) and the applied C-class `rc-367`. **rc-469**. Extracted: `extracted_data/r606_q_zero_water_fraction.csv`; `extracted_data/r606_c_class_water_fraction_context.csv`.
 
-
 ## R607 — M-class zero-water scope (2026-11-11)
 
 `asteroidcatalog_m_class_zero_ice_fraction_code_current_2026`: AsteroidCatalog assigns M `ice_fraction=0.00`; its taxonomy module says every ice fraction lacks a source. Rivkin et al. (2000), *Icarus* 145, abstract printed p. 351, report “over 35% of them have absorption features at 3 μm diagnostic of water of hydration” in a combined 27-object M-class sample; detections are size-dependent (75% above 65 km, 10% below). These are surface hydration observations, not a bulk or accessible-water mass fraction. Verdict: request a defined water boundary and source qualification; retain zero only as a scoped model assumption pending matched evidence. No numeric replacement inferred. **rc-470**. Extracted: `extracted_data/r607_m_class_hydration_zero_water_scope.csv`.
-
 
 ## R608 — Tholen E-class zero-water scope (2026-11-11)
 
@@ -829,13 +493,11 @@ AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 `taxonomy.py` assigns X
 
 `asteroidcatalog_x_complex_albedo_mix_code_current_2026`: AsteroidCatalog builds no-albedo X and Xc rows from the P/M/E proportions among bodies with measured albedo in `data-2026-09-26b` inside 5.5 AU: X 4,741/3,022/350 and Xc 40/27/7. Density is number-weighted; fractions, PGM factor and mineral phase/accessory mixtures are mass-weighted from those counts. The code itself warns that the measured sample “over-represents dark bodies” and that bodies without albedo “may lean more M” (`taxonomy.py`, lines 1022–1028; see also `derive.py`, lines 55–63). Verdict: establish whether those measured-albedo shares represent the no-albedo population, or retain them as a stated prior/scenario with sensitivity for the affected density and material-mixture fields; no replacement weights inferred. This is distinct from rc-468’s ice-fraction derivation and rc-346’s silicate-fraction attribution. **rc-481**. Extracted: `extracted_data/r618_x_complex_albedo_split_representativeness.csv`.
 
-
 ## R644 — Carbon terrestrial reference price lacks a matched basis
 
 `spacevalue_carbon_reference_price_code_current_2026`: `MINERAL_REFERENCE["carbon"]` assigns 0.20 USD/kg, calls the material “bulk industrial carbon black,” and gives the catalog review date 2026-05-29 without a price source or quote date.
 
 `usgs_mcs2025_natural_graphite_amorphous_price`: USGS MCS 2025, Graphite (Natural), printed p. 83, lists the 2024 U.S. amorphous natural-graphite import average unit value as $640/metric ton at foreign ports ($0.64/kg). `sp_global_2025_us_n330_carbon_black_spot_price`: Platts reports N330 carbon black at $0.83/lb ex-works US Gulf Coast on May 30, 2025 (~$1.83/kg). These comparators have different product and delivery bases and do not establish an asteroid-carbon price. Verdict: request a matched product, grade, date, and delivery basis; preserve $0.20/kg as an explicit scenario pending that basis, with no replacement inferred. **rc-508**. Extracted: `extracted_data/r644_carbon_reference_price_comparators.csv`.
-
 
 ## R645 — Organics terrestrial reference price has no product basis
 
@@ -843,20 +505,17 @@ AsteroidCatalog@800a4ca377823edc3ea205b9069b29db147f2b63 `taxonomy.py` assigns X
 
 Verdict: request a matched terrestrial product and price basis, or identify 0.50 USD/kg as a scenario with sensitivity bounds. The existing candidates rc-384, rc-429, and rc-437 address asteroid composition shares, in-space utility, and processing energy; they do not establish this terrestrial reference price. Retain the value pending that basis; no replacement inferred. **rc-509**. Extracted: `extracted_data/r645_organics_reference_price_basis.csv`.
 
-
 ## R646 — Three mineral reference prices lack product-matched bases
 
 `spacevalue_other_mineral_reference_price_code_current_2026`: `MINERAL_REFERENCE` sets spinel to 0.50 USD/kg (“Mg-Al oxide; high-T refractory”), phyllosilicates to 0.05 USD/kg (“hydrated clays, priced as dehydrated rock”), and generic oxides to 0.10 USD/kg (“Generic metal-oxide bulk”). Each row carries the catalog review date but names no price source, grade, or quote basis.
 
 Verdict: these are distinct products, so identify and cite each matching terrestrial product and price basis; otherwise retain each value only as an explicit scenario with sensitivity bounds. rc-455 covers five other silicate rows and rc-145 covers plagioclase; neither covers these rows. No replacement values inferred. **rc-510**. Extracted: `extracted_data/r646_other_mineral_reference_price_basis.csv`.
 
+## R647 — Cohenite terrestrial value omits its formula carbon
 
-## R649 — Awaruite trace yields lack a host-population basis
+`spacevalue_cohenite_product_value_code_current_2026`: `catalog.py` describes cohenite as `(Fe,Ni)3C`, says “The carbon is not a yield” (lines 1907–1912), and supplies only iron=0.904 and nickel=0.029 yields, with no direct price. `cargo.py` computes mineral value by summing only the listed yield components against their elemental prices (lines 157–200). The yield fractions total 0.933, leaving 0.067 outside the price sum; the formula’s stoichiometric carbon fraction is 0.0668, computed from the code’s atomic masses.
 
-- `spacevalue_awaruite_trace_yields_code_current_2026`: Spacevalue `catalog.py` at main commit `f836611f15dbb0ef511fe134bd5ac8192e3bea16` assigns awaruite Pt 75, Pd 50, Ir 20, Ru 15, Os 10, Rh 7.5 and Au 5 ppm by mass; these sum to 182.5 ppm. The code calls the PGM levels “~5× the nickel-iron baseline” and describes terrestrial ophiolite PGM enrichment as 10–100× chondritic, without identifying the population or showing how either statement yields these numbers.
-- `kutyrev_et_al_2023_awaruite_pge_behavior`: Kutyrev et al., “Behavior of platinum-group elements during hydrous metamorphism: constraints from awaruite (Ni3Fe) mineralization,” *Lithosphere* 2023(1):126, abstract: three studied ophiolite awaruite populations had “no significant PGE concentrations measured,” despite associated, separate PGM inclusion groups. The abstract reports rare Galmoenan awaruite analyses up to 3 ppm Pd and notes the new data differ from earlier reports of up to the first 10 ppm PGE. This is a locality-specific comparator and does not establish an asteroid awaruite composition.
-- Upstream cell: `spacevalue.catalog.MINERAL_DB["awaruite"]["yields"]`. Verdict: identify whether the yields describe trace elements dissolved in the Ni3Fe host or separate included PGM, provide the population and derivation for the 5× vector, or label it as a scenario with sensitivity. The terrestrial studies are not direct asteroid composition measurements; no replacement inferred. Distinct from rc-368 (bulk PGM enrichment), rc-433 (kamacite/taenite trace partition), and rc-512 (native-PGM alloy composition). **rc-513**.
-- Extracted: `extracted_data/r649_awaruite_trace_yield_scope.csv`.
+Upstream cell: `MINERAL_REFERENCE["cohenite"]` (`ref_price_usd_per_kg=None`) and `cargo._mineral_implied_value`. Verdict: define whether Earth return sells cohenite as carbide or separates Fe/Ni, and account for or explicitly exclude the carbon under that product boundary. No matched cohenite price or netback is given in the code; no numeric replacement inferred. Distinct from rc-456 (kamacite/taenite Earth-sale route), rc-452 (cohenite processing energy), and rc-508 (carbon reference price). **rc-511**. Extracted: `extracted_data/r647_cohenite_earth_sale_value_basis.csv`.
 
 ## R648 — Native-PGM alloy yield vector lacks a traceable population basis
 
@@ -865,12 +524,179 @@ Verdict: these are distinct products, so identify and cite each matching terrest
 - Upstream cell: `spacevalue.catalog.MINERAL_DB["native-pgm"]["yields"]`, consumed in the per-mineral value path. Verdict: identify the cited population and averaging method for the midpoint, or label the vector as an explicit scenario and show sensitivity for override use. The cited placer survey does not establish this vector as a universal native-PGM composition; no replacement inferred. Distinct from rc-368 (bulk PGM enrichment), rc-433 (Fe-Ni trace partition), and rc-511 (cohenite yield boundary). **rc-512**.
 - Extracted: `extracted_data/r648_native_pgm_composition_scope.csv`.
 
-## R647 — Cohenite terrestrial value omits its formula carbon
+## R649 — Awaruite trace yields lack a host-population basis
 
-`spacevalue_cohenite_product_value_code_current_2026`: `catalog.py` describes cohenite as `(Fe,Ni)3C`, says “The carbon is not a yield” (lines 1907–1912), and supplies only iron=0.904 and nickel=0.029 yields, with no direct price. `cargo.py` computes mineral value by summing only the listed yield components against their elemental prices (lines 157–200). The yield fractions total 0.933, leaving 0.067 outside the price sum; the formula’s stoichiometric carbon fraction is 0.0668, computed from the code’s atomic masses.
+- `spacevalue_awaruite_trace_yields_code_current_2026`: Spacevalue `catalog.py` at main commit `f836611f15dbb0ef511fe134bd5ac8192e3bea16` assigns awaruite Pt 75, Pd 50, Ir 20, Ru 15, Os 10, Rh 7.5 and Au 5 ppm by mass; these sum to 182.5 ppm. The code calls the PGM levels “~5× the nickel-iron baseline” and describes terrestrial ophiolite PGM enrichment as 10–100× chondritic, without identifying the population or showing how either statement yields these numbers.
+- `kutyrev_et_al_2023_awaruite_pge_behavior`: Kutyrev et al., “Behavior of platinum-group elements during hydrous metamorphism: constraints from awaruite (Ni3Fe) mineralization,” *Lithosphere* 2023(1):126, abstract: three studied ophiolite awaruite populations had “no significant PGE concentrations measured,” despite associated, separate PGM inclusion groups. The abstract reports rare Galmoenan awaruite analyses up to 3 ppm Pd and notes the new data differ from earlier reports of up to the first 10 ppm PGE. This is a locality-specific comparator and does not establish an asteroid awaruite composition.
+- Upstream cell: `spacevalue.catalog.MINERAL_DB["awaruite"]["yields"]`. Verdict: identify whether the yields describe trace elements dissolved in the Ni3Fe host or separate included PGM, provide the population and derivation for the 5× vector, or label it as a scenario with sensitivity. The terrestrial studies are not direct asteroid composition measurements; no replacement inferred. Distinct from rc-368 (bulk PGM enrichment), rc-433 (kamacite/taenite trace partition), and rc-512 (native-PGM alloy composition). **rc-513**.
+- Extracted: `extracted_data/r649_awaruite_trace_yield_scope.csv`.
 
-Upstream cell: `MINERAL_REFERENCE["cohenite"]` (`ref_price_usd_per_kg=None`) and `cargo._mineral_implied_value`. Verdict: define whether Earth return sells cohenite as carbide or separates Fe/Ni, and account for or explicitly exclude the carbon under that product boundary. No matched cohenite price or netback is given in the code; no numeric replacement inferred. Distinct from rc-456 (kamacite/taenite Earth-sale route), rc-452 (cohenite processing energy), and rc-508 (carbon reference price). **rc-511**. Extracted: `extracted_data/r647_cohenite_earth_sale_value_basis.csv`.
+## R662 — Spacevalue silver market ceiling lacks its specific USGS edition and year (2026-11-12)
 
+- **usgs_mcs2026_silver_chapter**: USGS MCS 2026, Silver chapter, printed pp. 172–173, “World Mine Production and Reserves” table, reports a rounded world total of 25,300 metric tons in 2024 and 26,000 in 2025e; its prose says “World silver mine production increased slightly in 2025 to an estimated 26,000 tons.”
+- **spacevalue_silver_annual_market_code_current_2026**: at `spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16`, `spacevalue/catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["silver"] = 2.6e7` (~26,000 metric tons) without identifying the USGS edition or production year on the row. The table-level comment names the USGS MCS series generally. Existing rc-302 concerns silver’s reference price and does not cover this annual market-ceiling field. Verdict: cite MCS 2026 and label the value as estimated 2025 world mine production; the published value matches, so no replacement inferred. **rc-523**. Extracted: `extracted_data/r662_silver_annual_market_basis.csv`.
+
+## R663 — Minor-PGM annual market values lack row-level source years and measures (2026-11-12)
+
+- **jm_pgm_market_report_2026**: the tables label the metric “Total primary supply” and report 2025 values of 7.1 t iridium (PDF p. 34), 21.8 t rhodium (p. 32), and 30.2 t ruthenium (p. 33).
+- **spacevalue_pgm_annual_production_code_current_2026**: at `spacevalue@f836611f15dbb0ef511fe134bd5ac8192e3bea16`, `catalog.py` lines 897–899 stores 7.5, 23, and 30 tonnes per year, respectively. The table-level comment attributes terrestrial figures to USGS MCS annual primary production; these rows give no edition, year, or specific production measure.
+
+The JM values are close comparators but use a separately named primary-supply series, and are not established as the code values’ source or as like-for-like mine-production replacements. Verdict: retain the numeric cells; identify the source, year, and measure for each row. **rc-524**. Extracted: `extracted_data/r663_pgm_annual_market_basis.csv`.
+
+## R665 — Carbon dioxide terrestrial annual-market basis (2026-11-12)
+
+- `iea_2019_putting_co2_to_use`: IEA, *Putting CO2 to Use* (2019), Executive summary p. 3, estimates “some 230 million tonnes (Mt)” of CO2 are used annually, including 130 Mt for urea and 70–80 Mt for enhanced oil recovery. Printed pp. 5–6 identify IHS Markit (2018) among the inputs and describe the 2015 demand breakdown as mainly EOR and on-site urea production.
+- `spacevalue_co2_annual_market_code_current_2026`: Spacevalue `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["carbon dioxide"] = 2.3e11` (~230 Mt/yr), comments “merchant CO2,” and uses this terrestrial ceiling for `shipped to Earth` in `annual_market_kg`. The table-level note describes terrestrial figures as USGS MCS annual primary production, which does not establish this CO2 row’s basis.
+- Verdict: the IEA value is a close numerical match but represents total use, not merchant-only production; the report attributes most of it to on-site urea use and EOR. Record the missing source year and market boundary, and establish whether total use is an intentional sales-cap scenario or whether a merchant-specific measure is intended. No numeric replacement inferred. **rc-526**. Extracted: `extracted_data/r665_co2_annual_market_basis.csv`.
+
+## R666 — Sulfur annual-market source and year (2026-11-12)
+
+- `usgs_mcs2026_sulfur_chapter`: the World Production and Reserves table (chapter PDF p. 2) reports 83,900 thousand metric tons for 2024 and 84,000 for 2025e; the text says “World sulfur production in 2025 was an estimated 84 million tons compared with 83.9 million tons in 2024.” The previously registered MCS 2025 sulfur chapter reports 85 million tons for 2024 (printed p. 173).
+- `spacevalue_sulfur_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["sulfur"] = 8.3e10` (~83 Mt/yr) without a source edition or production year on the row. The table-level note attributes terrestrial figures broadly to MCS annual primary production; INDEX maps this inherited sulfur row to MCS 2025.
+- Verdict: the current value is close to the 2026 USGS estimates but does not match the rounded 2024 or 2025 MCS 2026 world totals. Identify its source vintage and whether 83 Mt is a scenario or a stale annual production figure; no numeric replacement inferred. **rc-527**. Extracted: `extracted_data/r666_sulfur_annual_market_basis.csv`.
+
+## R667 — Ammonia annual-market estimate re-pin (2026-11-12)
+
+- `usgs_mcs2026_ammonia_chapter`: *Mineral Commodity Summaries 2026*, Nitrogen (fixed)—ammonia, printed p. 136, defines data in thousand metric tons of nitrogen content. The World Ammonia Production and Reserves table reports 156,000 for 2024 and 160,000 for 2025e; the text notes “Significant revisions were made to the 2024 production” for Egypt and Germany.
+- `spacevalue_ammonia_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["ammonia"] = 1.5e11` kg N/yr (~150 Mt N), with no source edition or production year on the row. The source row in registry history is MCS 2025 world plant production for 2024e; rc-055 applied the same 150 Mt N re-pin in economicspace.
+- Verdict: MCS 2026 revises 2024 production to 156 Mt N and estimates 160 Mt N for 2025. Re-pin the Spacevalue ceiling to a named year and current edition; both values use nitrogen content and world plant production. **rc-528**. Extracted: `extracted_data/r667_ammonia_annual_market_basis.csv`.
+
+## R668 — Elemental phosphorus annual-production basis (2026-11-12)
+
+- `spacevalue_phosphorus_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["phosphorus"] = 1.0e9` kg/year (~1 Mt elemental P₄). A table-level note attributes terrestrial figures broadly to USGS MCS annual primary production.
+- `matos_etal_2021_jrc_elemental_phosphorus_energy`: the European Commission JRC report says “The precise world production of elemental phosphorus is not known” and estimates 900–1,200 kt/year (§7.2, printed p. 31).
+- `usgs_mcs2026_phosphate_rock_chapter`: the World Mine Production and Reserves table (“World total (rounded)” row, printed p. 143) reports 239,000 thousand metric tons of marketable phosphate rock for 2024 and 250,000 for 2025e; this is a different product measure and does not establish global elemental-P₄ production.
+- Verdict: 1 Mt/year is within the JRC range, so no numeric replacement is supported. Identify the elemental-P₄ source and estimate vintage or label the current value as an approximate scenario. **rc-529**. Extracted: `extracted_data/r668_phosphorus_annual_market_basis.csv`.
+- `usgs_mcs2026_tungsten_chapter`: the “World total (rounded)” row reports 82,000 metric tons tungsten content for 2024 and 85,000 for 2025e (printed p. 201). `spacevalue_tungsten_annual_market_code_current_2026` records the current 81,000 t/year ceiling, which the code attributes to MCS 2025 for 2024.
+- Verdict: use 85,000 t/year and label 2025e if the model intends the latest MCS estimate; this is 4,000 t (computed here), or 4.7%, above the current rounded value. **rc-530**. Extracted: `extracted_data/r668_tungsten_annual_market_basis.csv`.
+
+## R669 — Titanium sponge annual-market source and vintage (2026-11-12)
+
+- `spacevalue_titanium_annual_market_code_current_2026`: `catalog.py` sets `ANNUAL_WORLD_PRODUCTION_KG["titanium"] = 3.2e8` kg/year (~320,000 metric tons sponge), attributed to MCS 2025 for 2024 and described as excluding the U.S.
+- `usgs_mcs2026_titanium_chapter`: the World Sponge Metal Production table (“World total (rounded)” row, printed p. 197) reports 380,000 metric tons for revised 2024 and 370,000 for 2025e. Footnote 3 excludes Utah production; the U.S. row is zero in 2025.
+- Verdict: re-pin the ceiling to a named year and update the exclusion wording. The latest estimate of 370,000 metric tons is 50,000 metric tons (15.6%) above the current value. **rc-531**. Extracted: `extracted_data/r669_titanium_annual_market_basis.csv`.
+- `spacevalue_rhenium_annual_market_code_current_2026`: `catalog.py` sets 62,000 kg/year (~62 t), attributed to MCS 2025 for 2024. `usgs_mcs2026_rhenium_chapter` reports 79,800 kg for revised 2024 and 81,000 kg for 2025e in its world mine-production table (printed p. 157); footnote 7 excludes secondary rhenium.
+- Verdict: re-pin to the selected year; 81,000 kg is 19,000 kg (30.6%) above the current value. **rc-532**. Extracted: `extracted_data/r669_rhenium_annual_market_basis.csv`.
+- `spacevalue_gallium_annual_market_code_current_2026`: `catalog.py` sets 760,000 kg/year of primary gallium, matching MCS 2025 for 2024. `usgs_mcs2026_gallium_chapter` reports 848,000 kg for revised 2024 and 900,000 kg for 2025e in its world low-purity primary-production table (printed p. 83).
+- Verdict: re-pin to the selected year and preserve the low-purity primary measure; 900,000 kg is 140,000 kg (18.4%) above the current value. **rc-533**. Extracted: `extracted_data/r669_gallium_annual_market_basis.csv`.
+
+## R678 — EH/Xe sulfide vector compared with compiled EH3/4 modes (2026-11-12)
+
+`asteroidcatalog_eh_sulfide_split_code_current_2026`: AsteroidCatalog 0.13.2 `asteroid_catalog/mineralogy.py` assigns Xe `_SULFIDE_EH` shares of troilite 0.625, niningerite 0.25, oldhamite 0.0875 and daubreelite 0.0375; the Xe coarse accessory row assigns troilite 0.08 of body mass, so the refined body vector is 5, 2, 0.7 and 0.3 wt%.
+
+`lodders_1996_oldhamite_enstatite_achondrites`: Table 1 (printed p. 128) gives compiled EH3/4 abundance ranges (wt%) of troilite 5.8–13, niningerite 0.2–11.2, oldhamite <0.1–2 and daubreelite 0–0.2. The table note says “Data are compiled from KEIL (1968), WATTERS and PRINZ (1979) as well as many other sources” (p. 128). The Xe estimate lies below the troilite range and above the daubreelite range; the other two estimates lie within their ranges. These are compiled EH3/4 intervals, not an EH class mean or a directly matched Xe body composition, so no replacement vector is inferred. Verdict: review the fixed Xe sulfide amounts and the current claim that numerical sulfide splits lack a source; document a representative composition or retain the vector explicitly as a scenario. **rc-537**. Extracted: `extracted_data/r678_lodders_eh_sulfide_ranges.csv`.
+
+## R692 — Eight zero ice fractions lack a class-specific basis (2026-11-12)
+
+`asteroidcatalog_other_zero_ice_fraction_code_current_2026`: AsteroidCatalog `taxonomy.py` sets `ice_fraction=0.00` for A, K, L, O, R, V, Xe and Xk. Its `CITATIONS.md` says “every ice fraction” is an estimate “with no publication behind” it (lines 101–103); the module says “No meteorite constrains ice at all” (line 94). The class rows do not state what the zero excludes or provide a class-specific basis.
+
+Verdict: identify a class-specific basis and define the modeled zero-water boundary, or label the values as scenarios; no replacement inferred. **rc-555**. Extracted: `extracted_data/r692_other_zero_ice_fraction_rows.csv`.
+
+## R695 — A/R/O accessory percentages have no numeric derivation (2026-11-12)
+
+- **asteroidcatalog_mantle_accessory_phase_code_current_2026** [T4]: AsteroidCatalog mineralogy.py (lines 327–329) assigns A-type chromite 0.01 and troilite 0.01; R-type troilite 0.01 and chromite 0.005; and O-type troilite 0.02. The module defines these accessory values as absolute fractions of body mass; generated mineral_phases.csv publishes the same values.
+
+The class rows and mineral lists identify composition but the module gives no quantitative source or calculation for these three accessory percentages. Verdict: provide a class-matched modal/mass-fraction derivation or state the percentages as scenario allowances with basis and uncertainty; no replacement inferred. **rc-563–rc-565**. Extracted: extracted_data/r695_aro_accessory_phase_rows.csv.
+
+## R696 — CI accessory modes are vol% in the source and body-mass fractions in the model (2026-11-12)
+
+- **king_schofield_2015_ci_modal_mineralogy_xrd** [T1]: the abstract reports “magnetite (6–10%), sulphides (4–7%) and carbonates (<3%)” for the CI meteorites (printed p. 148). Table 1 labels its modal abundance columns vol% (printed p. 154); the Orgueil mean is 6.7 vol% magnetite, 5.7 vol% sulphide and 3.3 vol% carbonate.
+- **asteroidcatalog_ci_accessory_mass_mapping_code_current_2026** [T4]: AsteroidCatalog assigns _ACC_CI = magnetite 0.07, troilite 0.05 and carbonates 0.03 to B, C, Cb and F as body fractions.
+
+The generated mineral phase table carries these as mass fractions, but the code records no volume-to-mass conversion or separate transfer from CI meteorites to all four asteroid classes. This is distinct from rc-344, which addresses the conditional CI silicate split. Verdict: document the conversion and class mapping or identify 7/5/3% as volume-derived scenario values; no replacement inferred. **rc-566**. Extracted: extracted_data/r696_ci_accessory_volume_to_mass_basis.csv.
+
+## R697 — Cgh accessory amounts have only a qualitative CK note (2026-11-12)
+
+- **asteroidcatalog_cgh_accessory_phase_code_current_2026** [T4]: AsteroidCatalog mineralogy.py line 312 assigns Cgh magnetite 0.05 and troilite 0.02 as body-mass fractions. The inline note says only “CK: magnetite-rich”; generated mineral_phases.csv carries the same values.
+
+The existing Cgh silicate comparator and sulfide-species split do not provide these absolute accessory amounts. Verdict: cite a CK/Cgh-matched modal basis and body-mass mapping or identify the values as scenarios with basis and uncertainty; no replacement inferred. **rc-567**. Extracted: extracted_data/r697_cgh_accessory_phase_rows.csv.
+
+## R698 — Ordinary-chondrite phosphate shares use one LL-derived vector across S-complex and Q classes (2026-11-12)
+
+`asteroidcatalog_oc_phosphate_accessory_code_current_2026`: AsteroidCatalog `mineralogy.py` attributes merrillite ~0.4 and chlorapatite ~0.2 wt% to Jones et al. (2014) LL chondrites. `_PHOSPHATE_OC` assigns 0.004 and 0.002 body-mass fractions and `DETAIL_ACCESSORIES` applies the vector to S, Sa, Sk, Sl, Sq, Sr, Sv and Q.
+
+`jones_mccubbin_guan_2016_h_chondrite_phosphate_abundances`: Jones, McCubbin & Guan, *American Mineralogist* 101(11):2452–2467, Discussion (printed pp. 2460–2461), report type 4–6 H/L/LL phosphate modes “0.4–0.5 vol.%”; apatite/merrillite ratios range 0.4–1.5 (H), 0.25–1.0 (L) and 0.1–0.5 (LL), with type 4 total abundance lower than types 5–6. The source gives group-level sample modes, not class-wide body-mass fractions.
+
+The cited Jones et al. (2014) source record is specifically LL chondrites and its full article has not been read; the available electronic appendix contains mineral-distribution maps, not bulk weight percentages. Verdict: document the source-to-class transfer and mass/volume basis, or identify the shared vector as a scenario with uncertainty. The broader study does not contradict the current value or supply a replacement. Distinct from rc-466, which covers the S-complex/Q silicate vector. **rc-568**. Extracted: `extracted_data/r698_oc_phosphate_class_transfer.csv`.
+
+## R699 — Sk/Sl accessory amounts extend the ordinary-chondrite vector without a phase-specific basis (2026-11-12)
+
+`asteroidcatalog_sk_sl_accessory_phase_code_current_2026`: AsteroidCatalog 0.13.2 applies the shared `_ACC_OC` accessory vector (troilite 0.055, chromite 0.005) to Sk and Sl, then adds magnetite 0.02 of body mass to Sk and spinel 0.03 to Sl. The module defines accessory values as absolute body fractions; `reference/mineral_phases.csv` publishes the same values. The code gives no quantitative derivation for either addition.
+
+`dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites`: Table 5 reports ordinary-chondrite whole-rock XRD modes for olivine, low- and high-Ca pyroxene, plagioclase and troilite; it does not provide the added Sk magnetite or Sl spinel amounts. Verdict: supply a class/subtype-matched modal basis and body-mass mapping or label each addition as a scenario with basis and uncertainty; no replacement inferred. **rc-569**. Extracted: `extracted_data/r699_sk_sl_accessory_phase_rows.csv`.
+
+## R700 — CM accessory modes are reported by subtype and volume, while the model fixes one body-mass vector (2026-11-12)
+
+`asteroidcatalog_cm_accessory_phase_code_current_2026`: AsteroidCatalog 0.13.2 sets `_ACC_CM` to troilite 0.03, magnetite 0.02 and carbonates 0.01, then applies that vector to Cg, Ch and G. Accessory entries are defined as absolute fractions of body mass; `reference/mineral_phases.csv` publishes the same values.
+
+`king_schofield_russell_2017_type1_aqueous_alteration_cm`: the abstract reports CM1 “magnetite (2–3 vol%), Fe-sulfide (<5 vol%), and calcite (<2 vol%)” (printed p. 1197); CM1/2 ranges are magnetite 2–3 vol%, Fe-sulfide 1–2 vol% and calcite about 1 vol% (same page). The paper also describes minor-phase variation across 35 CM samples by alteration/subtype (Figure 4; “Abundances of Minor Phases”). The modes broadly contextualize the model values but do not establish the fixed 3/2/1 body-mass vector, convert Fe-sulfide to modeled troilite, or justify transferring one vector across Cg/Ch/G. Verdict: document a subtype-matched mass basis or label the vector as a scenario with basis and uncertainty; no replacement inferred. Distinct from rc-345 (CM silicate split) and rc-566 (CI accessory mass mapping). **rc-570**. Extracted: `extracted_data/r700_cm_accessory_volume_to_mass_basis.csv`.
+
+## R701 — M/Xk troilite shares lack a body-mass basis (2026-11-12)
+
+`asteroidcatalog_m_xk_troilite_code_current_2026`: AsteroidCatalog 0.13.2 assigns `troilite=0.02` as an absolute fraction of body mass to both M and Xk; `reference/mineral_phases.csv` repeats those values.
+
+`zhang_etal_2023_m_type_asteroid_meteorite_analogues`: the abstract says M-types are linked to enstatite chondrites and iron meteorites (A&A 671 A77, p. 1). For 14 M-types, the discussion interprets five as likely metal-rich (IM/EH) and nine as likely EH/EL (p. 11, Fig. 6 and Table 5). These are qualitative population/analogue comparators; neither derives one 2% troilite body-mass fraction for M and Xk or converts a modal measurement to mass. Verdict: provide a class-matched basis or label the values as scenarios; no replacement inferred. Distinct from rc-172 (within-phase splits), rc-420/rc-537 (aubrite/EH sulfide composition) and rc-569 (Sk/Sl added accessories). **rc-571**. Extracted: `extracted_data/r701_m_xk_troilite_analogue_basis.csv`.
+
+## R702 — K/L spinel shares lack a bulk-mass derivation (2026-11-12)
+
+`asteroidcatalog_l_spinel_accessory_code_current_2026`: AsteroidCatalog 0.13.2 assigns spinel fractions of 0.03 to K and 0.05 to L as absolute body-mass shares; the code says L needs the most CAI of any spectrum and cites Sunshine et al. (2008), without a numeric derivation for either fraction.
+
+`de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: the five-target JWST study reports L-type spectra resembling oxidized CV3 Allende (possibly CO3) and says CAI enhancement above CV3 is not required (abstract, printed p. 1); it also says the data cannot quantitatively constrain CAI abundance. The introduction describes spinel as tens of percent of CAIs and CAIs as at most a few percent of meteorite composition (printed p. 2). These surface-spectral and chondrite-population comparisons do not directly establish or contradict asteroid bulk spinel mass fractions. Verdict: document a class-matched bulk basis and conversion from spectral evidence, or retain the 3%/5% values as explicit scenarios; no numeric replacement inferred. **rc-572**. Distinct from rc-172 (detailed perovskite/hibonite allocations) and rc-464 (conditional L silicate shares). Extracted: `extracted_data/r702_k_l_spinel_bulk_fraction_basis.csv`.
+
+## R726 — Magnetite direct quote and derived Fe-content value are distinct routes (2026-11-13)
+
+spacevalue_magnetite_terrestrial_price_code_current_2026: At Spacevalue main 5f84fbf36709e3c2b09356a65cb34c9890ff8904, MINERAL_REFERENCE["magnetite"] has ref_price_usd_per_kg=None, an iron yield of 0.724, and the note "Iron-oxide ore; priced as Fe content." cargo.py _mineral_implied_value computes mineral value from elemental yields and says it values "refined metal at refined prices, with no payable fraction, treatment charge or refining charge." This is a derived contained-Fe value, not a direct magnetite price.
+
+economicspace_magnetite_stage2_price_export_current_2026: At economicspace main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, the Stage 2 Earth-surface row has blank ref_price_usd_per_kg and price_usd_per_kg, price_basis=unpriced, and the generic ref_price_source label "USGS/LME/mineralogy reference". The cislunar row instead reports 4,081.3847 USD/kg as derived-in-space under "terrestrial + 0.40 x launch cost avoided"; it does not provide an Earth-sale quote.
+
+economicspace_magnetite_verification_sheet_logic_current_2026: the worksheet maps a missing finite terrestrial quote to 0.0 USD/kg and prints "No quote: Stage 2 prices a missing terrestrial price as zero."
+
+usgs_mineral_commodity_summaries_2026: the Iron Ore chapter, printed p. 108, table row "Price, average unit value reported by mines, dollars per metric ton" gives $89 for 2025e. The same page reports $99.07/ton for imported fines at "62% iron content," CIF Tianjin, during the first nine months of 2025. These are product-specific market comparators, not a magnetite quote.
+
+Verdict: distinguish the absent direct magnetite/ore quote from cargo.py’s yield-derived gross Fe-content value. State the assumed output product and price anchor, and qualify the generic source label; if raw magnetite sale is intended, cite a matched product and document beneficiation, recovery, and netback terms. Do not infer a numeric replacement from the iron yield or the USGS comparators. Distinct from rc-121 (general contained-metal valuation assumption), rc-510 (generic-oxide reference-price scenarios), and rc-440/450 (in-space processing and utility factors). rc-593. Extracted: extracted_data/r726_magnetite_terrestrial_price_basis.csv.
+
+## R727 — X-complex conditional silicate shares have no numeric source (2026-11-13)
+
+`asteroidcatalog_xcomplex_silicate_split_code_current_2026`: AsteroidCatalog 0.13.2 `mineralogy.py` lists as “WHAT HAS NO SOURCE” the X-complex members’ silicate split beyond “enstatite dominates” (lines 116–118). `PHASE_SHARES` assigns M and Xk enstatite 0.70, plagioclase 0.20 and olivine 0.10; Xe is enstatite 0.90 and plagioclase 0.10 (lines 270–277). The generated `reference/mineral_phases.csv` reproduces the shares; checking its phase rows gives body fractions summing to the coarse silicate fractions of 0.45 for M/Xk and 0.65 for Xe. Verdict: provide a matched mineralogical basis and the mapping into conditional mass shares, or label these values as scenarios with their basis and uncertainty; no replacement inferred. Distinct from rc-346 (coarse silicate fractions), rc-481 (X/Xc population weighting), rc-537 (Xe sulfide vector) and rc-571 (M/Xk troilite amount). **rc-594**. Extracted: `extracted_data/r727_xcomplex_silicate_split_basis.csv`.
+
+## R728 — Chromite and ilmenite lack direct Earth-sale price bases (2026-11-13)
+
+`spacevalue_chromite_ilmenite_price_route_code_current_2026`: At Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `MINERAL_REFERENCE` sets chromite and ilmenite `ref_price_usd_per_kg` and `ref_price_date` to `None`. Chromite yields are chromium 0.465 and iron 0.250; ilmenite yields are titanium 0.316 and iron 0.368 (`catalog.py` lines 1915–1936). `fetch_reference_table` assigns the generic source label “USGS/LME/mineralogy reference” to reference rows (lines 2485–2510). `cargo.py` `_mineral_implied_value` values refined metal at refined prices “with no payable fraction, treatment charge or refining charge” (lines 157–176); that is a yield-derived contained-element value, not a direct chromite/ilmenite ore or concentrate quote. Verdict: state which value route is intended and its output product; if an ore/concentrate sale is intended, cite a matched product, grade, date and delivery basis and record beneficiation, recovery and netback assumptions. Qualify the generic source label. Do not infer numeric replacements from elemental yields. Distinct from rc-510 (generic oxide placeholders), rc-440/450 (in-space processing and utility factors) and rc-593 (magnetite’s separate direct-quote/contained-Fe route). **rc-595**. Extracted: `extracted_data/r728_chromite_ilmenite_earth_price_basis.csv`.
+
+## R747 — E-type asteroid silicate shares lack a mass-basis source (2026-11-14)
+
+- **asteroidcatalog_e_type_silicate_shares_code_current_2026**: At AsteroidCatalog main `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `mineralogy.py` sets the Tholen E conditional silicate shares to enstatite 0.95, plagioclase 0.03 and olivine 0.02. `reference/mineral_phases.csv` publishes body fractions 0.8075, 0.0255 and 0.017, consistent with the E row's 0.85 coarse silicate fraction.
+- **grady_pratesi_cecchi_2013_aubrite_modal_range**: Grady, Pratesi and Moggi Cecchi's *Atlas of Meteorites* chapter 11 summary describes enstatite as the most abundant aubrite phase at “75–98 vol.%”; it also gives broad whole-rock volume ranges for forsterite, diopside and plagioclase.
+- **Verdict**: the reference supports an enstatite-rich aubrite analogue, but its whole-rock volume range does not establish a 95% conditional silicate mass share or show that one aubrite composition represents Tholen E-type asteroids. Document the source and volume-to-mass/class-transfer basis, or label the 95/3/2 vector as a scenario. No replacement inferred (**rc-615**).
+- Extracted: extracted_data/r747_e_type_silicate_share_basis.csv.
+
+## R754 — Fe-Ni alloy direct-price gap extends to the default yield route (2026-11-15)
+
+`spacevalue_nickel_iron_sale_route_code_current_2026`: At Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `MINERAL_REFERENCE["nickel-iron"]` has no direct reference price or date and carries an iron-meteorite yield vector. `FRACTION_TO_MINERAL` maps the broad metal fraction to `nickel-iron`; `_INSEPARABLE` groups kamacite, taenite and tetrataenite into one physical nickel-iron product. The phase rows also have no direct reference prices.
+
+`spacevalue_mineral_yield_value_route_code_current_2026`: `cargo.py` computes mineral value from constituent yields and refined-element reference prices, and its method states there is no payable fraction, treatment charge or refining charge. `economicspace_fe_ni_verification_sheet_logic_current_2026`: the verification sheet defines `P_alloy` as the yield-weighted sum of element-price contributions for the broad nickel-iron route. Those calculations provide a contained-element value proxy; they do not cite a matched terrestrial Fe-Ni product price or netback.
+
+Verdict: extend open **rc-456** to cover the default bulk nickel-iron route and its merged detailed phases. State whether the direct Earth-sale route is unavailable by design, or define the saleable product and support its grade, price date/delivery basis, recovery, payable terms and netback. Label the yield sum as a proxy if retained, and qualify the generic source label. The registered iron-scrap and nickel prices are constituent comparators, not a raw Fe-Ni product quote; no numeric replacement inferred. Extracted: `extracted_data/r754_nickel_iron_sale_route.csv`.
+
+## R755 — K/L perovskite has no direct terrestrial sale-price basis (2026-11-15)
+
+`spacevalue_perovskite_sale_route_code_current_2026`: At Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904`, `MINERAL_REFERENCE["perovskite"]` sets its direct reference price and date to `None`, lists only a titanium yield of 0.352, and says its calcium is not priced. The generated reference-source label remains `USGS/LME/mineralogy reference`.
+
+`asteroidcatalog_kl_perovskite_accessory_code_current_2026`: AsteroidCatalog `DETAIL_ACCESSORIES` includes perovskite for K at 0.002 and L at 0.003. These are default detailed-phase rows, distinct from the abundance and processing-energy questions tracked under **rc-172** and **rc-440**.
+
+`economicspace_perovskite_stage2_route_current_2026`: In the frozen Stage 2 1.15.0 exports, the Earth-surface row has blank price fields and `price_basis=unpriced`; the cislunar row reports 2,651.946924 USD/kg as `derived-in-space` / `used in space`, with 7.0 kWh/kg of processing. `spacevalue_mineral_yield_value_route_code_current_2026` documents that yield-based mineral value uses refined-element prices without payable, treatment or refining charges. The in-space output is a model-derived titanium-content route, not a direct perovskite market quote.
+
+Verdict: open **rc-622** for the terrestrial product/value boundary. Keep Earth sale explicitly unpriced if no perovskite product quote is intended; otherwise identify a saleable product and support its grade, price date/delivery basis, recovery, processing, payable terms and netback. If the titanium-yield route is retained, label it as a contained-metal proxy and explain what happens to calcium. No numeric replacement inferred. Distinct from rc-172 (K/L phase amounts), rc-440 (processing energy), rc-450 (utility factors) and rc-595 (chromite/ilmenite price routes). Extracted: `extracted_data/r755_perovskite_terrestrial_value_route.csv`.
+
+## R756 — Rare PGM override phases lack a matched Earth-sale basis (2026-11-15)
+
+`spacevalue_rare_pgm_sale_value_code_current_2026`: Spacevalue main `5f84fbf36709e3c2b09356a65cb34c9890ff8904` states that these phases are absent from Module 1 `TAXONOMY_COMPOSITION` and available for user overrides or future spectral identification. Direct price/date are `None` for sperrylite (Pt 0.566), laurite (Ru 0.612, Ir and Os 0.001 each), awaruite (Ni 0.759, Fe 0.241 plus the trace-PGE vector), and native-pgm (Pt 0.70, Pd 0.15, Ir 0.08, Os 0.05, Ru and Rh 0.01 each). The generated reference label remains “USGS/LME/mineralogy reference.” `cargo.py` sums listed yields at elemental reference prices and describes the result as refined metal at refined prices, with no payable fraction, treatment charge or refining charge.
+
+`economicspace_rare_pgm_stage2_route_current_2026`: Frozen Stage 2 1.15.0 Earth-surface rows mark all four phases `unpriced`. Cislunar sperrylite, laurite and native-pgm export 0.0 USD/kg on a `shipped to Earth` route; awaruite exports 4,835.016935 USD/kg as `derived-in-space` / `used in space`.
+
+`cowen_agnello_petit_2012_npsr_pge`: Table IV, p. 585, reports 90% PGE concentrate payability, a $250/t treatment charge, and refining charges for PGE metals. These commercial concentrate terms are a comparator and do not establish direct prices or netbacks for the four meteorite mineral phases.
+
+Verdict: open **rc-623** for a phase-specific Earth-sale product and netback basis. Keep Earth sale unpriced if no matched product basis is available, or label Spacevalue’s yield sum as a gross contained-metal scenario and document the saleable phase/product, grade, recovery, arsenic/sulfur handling, payable terms and charges. No numeric replacement inferred. Distinct from rc-512 (native-PGM composition vector), rc-513 (awaruite trace-yield vector), and rc-121 (generic gross-yield valuation boundary). Extracted: `extracted_data/r756_rare_pgm_price_route_basis.csv`.
 
 ## R768 — Mineral-phase density citations in verification inputs
 
@@ -898,7 +724,6 @@ Upstream cells: economicspace verification inputs I101-I103 (troilite 4.61, carb
 
 Extracted: `extracted_data/r769_mineral_phase_density_source_scope.csv`.
 
-
 ## R770 — T-type metal and silicate fractions lack a numeric basis (2026-11-15)
 
 `asteroidcatalog_ttype_metal_silicate_fraction_code_current_2026`: AsteroidCatalog assigns T-type `metal_fraction` 0.05 and `silicate_fraction` 0.40 in `taxonomy.py` lines 502-503 and repeats them in the T row of `taxonomy_composition.csv`. The row describes “Primitive: organics, troilite, Fe-silicates”; its note says T has no meteorite analogue of its own, and the adjacent code comments give a carbon provenance but no numeric derivation for metal or silicate.
@@ -911,6 +736,19 @@ Extracted: `extracted_data/r769_mineral_phase_density_source_scope.csv`.
 
 `asteroidcatalog_carbon_fraction_phase_mapping_current_2026`: `GROUP_FIELDS` maps carbon to carbon_fraction and `phase_fractions` uses that field to build exported detailed phase shares. `economicspace_detailed_phase_carbon_consumer_current_2026`: economicspace defaults to reading `comp_phases_detailed` when present. Verdict: find a class-matched bulk-carbon basis or label the four values as scenarios with sensitivity; preserve the values and infer no replacements. This is distinct from rc-481's X/Xc population-weighting question and rc-346's silicate-fraction question. Open `rc-648`. Extracted: `extracted_data/r778_x_complex_carbon_fraction_scope.csv`.
 
+## R779 — Bulk silicate fractions are marked unsourced (2026-11-15)
+
+`asteroidcatalog_taxonomy_silicate_fraction_code_current_2026`: AsteroidCatalog `taxonomy.py` labels “the silicate fractions” as having no source (lines 93-97). `asteroidcatalog_taxonomy_silicate_fraction_rows_current_2026`: `reference/taxonomy_composition.csv` assigns 27 bulk `silicate_fraction` values to B,C,Cb,Cg,Cgh,Ch,S,Sa,Sk,Sl,Sq,Sr,Sv,A,D,Z,K,L,O,Q,R,V,M,E,P,F,G; the row notes describe taxonomy and analogue context but do not derive these fractions. `asteroidcatalog_silicate_fraction_phase_mapping_current_2026`: `GROUP_FIELDS` maps silicate to `silicate_fraction`, and `phase_fractions` multiplies the bulk share by the class phase vector to form body-mass phase fractions. `economicspace_detailed_phase_carbon_consumer_current_2026`: economicspace defaults to reading `comp_phases_detailed` when present.
+
+Verdict: provide a class-matched basis and document analogue transfer and mass/volume conversion for each bulk fraction; where no matched basis exists, label it as a scenario and expose sensitivity. Preserve current values and infer no replacements. **rc-649**. Distinct from rc-346 (X-complex bulk fractions), rc-641 (T bulk fractions) and rc-615 (E within-silicate vector). Extracted: `extracted_data/r779_taxonomy_silicate_fraction_source_scope.csv`.
+
+## R780 — T-type silicate phase mapping remains generic and unsourced (2026-11-15)
+
+`asteroidcatalog_ttype_silicate_phase_mapping_code_current_2026`: AsteroidCatalog `mineralogy.py` lists “every split for A, R, O and T” under “WHAT HAS NO SOURCE” (lines 116–118). `PHASE_SHARES["T"]["silicate"]` assigns `{"silicates": 1.0}`; with the T row’s `silicate_fraction=0.40`, `reference/mineral_phases.csv` records 0.40 body mass as generic `silicates`. `PHASE_DETAIL["T"]` has no silicate subphase and `detailed_fractions` passes phases without a detail entry through, so `reference/mineral_phases_detailed.csv` retains `silicates=0.40`. `economicspace_detailed_phase_carbon_consumer_current_2026`: economicspace defaults to `model_detailed_phases=True` and reads `comp_phases_detailed` when present.
+
+`kwon_hasegawa_fornasier_ishiguro_agarwal_2022_large_t_type_surfaces`: Kwon et al. call T type “relatively ill-constrained as an independent group” (A&A 666:A173, printed p. 1) and report surface spectra of two large T-type asteroids; they do not give class-level bulk silicate mineral shares.
+
+Verdict: provide T-type-matched evidence and document transfer to the class-level conditional silicate composition; if none supports mineral-specific shares, identify the generic `silicates` bucket as an intentional aggregate and preserve it as a scenario. Keep the current 0.40 output and infer no mineral-specific allocations. Distinct from rc-641 (bulk metal/silicate amount), rc-384 (primitive carbon split), rc-480 (T accessories), and rc-594 (X-complex conditional silicate vectors). **rc-650**. Extracted: `extracted_data/r780_ttype_silicate_phase_mapping_scope.csv`.
 
 ## R812 — PGM enrichment fallback scope (2026-11-16; rc-685)
 
@@ -929,13 +767,18 @@ Cannon, Gialich & Acain (2023), Table 2 p. 4, reports a 40.78 ppm median for six
 - The frozen cislunar density inputs I101-I103 in **rc-640** are not the current worksheet I101-I103: current I103 is the in-space chemical annual-market ceiling, not plagioclase density. No density value was transferred between these worksheet vintages.
 - Extracted: `extracted_data/r825_live_sheet_mineral_values.csv`.
 
-
 ## R828 — Class-level Ni-Fe fallback in detailed phases (2026-11-17; rc-699)
 
 `asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026`: AsteroidCatalog `mineralogy.py` says “WHAT HAS NO SOURCE” for the metal split of the C complex, P, D, Z, T, A, R, O, K and L (lines 495-498). `_ALLOY_OCTAHEDRITE` is kamacite=0.89 and taenite=0.11 of the nickel-iron parent (line 519), and `PHASE_DETAIL` assigns that fallback to B, C, Cb, F, Cg, Ch, G, Cgh, P, D, Z, T, A, R, O and L (lines 551-578). The exported table carries body-mass values; B is 0.0089 kamacite plus 0.0011 taenite, while A is 0.0445 plus 0.0055. The code calls this “~9 wt% Ni: no change,” but gives no class-specific metal split source. Economicspace’s current `CalcConfig` defaults detailed phases on and `calc.py` reads `comp_phases_detailed` (main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, lines 323-337). Applied rc-172 reverted K’s former 0.60/0.40 split; it does not cover the other direct class mappings.
 
 **Verdict:** find class-matched phase proportions and their mass/volume basis, or retain the shared fallback as an explicit scenario with sensitivity; preserve the coarse nickel-iron fractions and infer no numeric replacement. Open **rc-699**. Extracted: `extracted_data/r828_asteroidcatalog_unsourced_metal_alloy_fallback.csv`.
 
+## R837 — Recheck of the CI sulfide split source status (2026-11-17)
+
+- **asteroidcatalog_ci_sulfide_split_code_current_2026** (AsteroidCatalog origin/main a2c527c09eb39618d7fd26b2b180f730ea906b8b, `asteroid_catalog/mineralogy.py`): `_SULFIDE_CI` remains pyrrhotite 0.70 / pentlandite 0.30 with the comment “estimate: no source gives a ratio”; PHASE_DETAIL applies it to B, C, Cb, and F.
+- **economicspace_detailed_phase_carbon_consumer_current_2026** (Economicspace origin/main e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7, `modules/calc.py`): detailed-phase modeling defaults on and the loader reads `comp_phases_detailed` when present.
+- **Verdict:** Rechecked the CI-sulfide portion of **rc-172**. The existing no-source/scenario treatment remains in current code; no subtype-matched ratio source or numeric change was found. Status remains applied; no new candidate added.
+- **Extracted data:** `extracted_data/r837_ci_sulfide_split_citation_gap.csv`.
 
 ## R843 — CO2 annual-market cap mixes total demand and merchant sales (2026-11-17; rc-526)
 
@@ -947,6 +790,46 @@ Cannon, Gialich & Acain (2023), Table 2 p. 4, reports a 40.78 ppm median for six
 
 **Verdict:** If the cell means merchant sales, ~30 Mt/yr is a directly matched candidate estimate; if it means total global physical use/demand, the metric and comment need to say so. Keep **rc-526** open until the market boundary is selected; no Spacevalue value changed. Extracted: `extracted_data/r843_co2_market_boundary.csv`.
 
+## R917 — AsteroidCatalog bibliography abbreviates the L-type JWST study (2026-11-18)
+
+`asteroidcatalog_ltype_bibliography_entry_current_2026`: AsteroidCatalog `CITATIONS.md` §3 lists only “de Kleer, K., et al. (2026) (L-type JWST spectra)” in its grouped comparator entry (lines 419–420). The upstream item is the L-type JWST mineralogy comparator noted in `asteroid_catalog/mineralogy.py`; this bibliography row does not establish a numerical phase share.
+
+`de_kleer_2026_jwst_spinel_rich_l_type_mineralogy`: the title page gives “The Surface Mineralogy of the Spinel-rich Asteroids from Mid-infrared Spectroscopy with JWST” (printed p. 1); the publisher record identifies *The Planetary Science Journal* 7:36 (2026), DOI 10.3847/PSJ/ae374e. Its abstract describes five L-type targets and supplies no quantitative bulk CAI/spinel abundance.
+
+Verdict: add the complete reference and permanent DOI link to the AsteroidCatalog bibliography. This is a citation-completeness review, distinct from **rc-572**, which concerns whether the study supports the modeled bulk spinel mass fractions. No numeric replacement inferred. **rc-797**. Extracted: `extracted_data/r917_de_kleer_bibliography_entry.csv`.
+
+## R918 — AsteroidCatalog bibliography abbreviates the HED modal-mineralogy paper (2026-11-18)
+
+`asteroidcatalog_hed_modal_bibliography_entry_current_2026`: AsteroidCatalog `CITATIONS.md` §3 lists only “Li, S., and Milliken, R. E. (2015) (HED modes)” in its grouped comparator entry (lines 419–420). It is the bibliography reference associated with the V-type modal-mineralogy comparator; the entry does not supply full publication details.
+
+`li_milliken_2015_hed_modal_mineralogy_spectral_models`: Wiley’s publisher record identifies “Estimating the modal mineralogy of eucrite and diogenite meteorites using visible–near infrared reflectance spectroscopy,” *Meteoritics & Planetary Science* 50(11):1821–1850 (2015), DOI 10.1111/maps.12513. The existing source record and extraction characterize its results as sample-level modal ranges, not a derivation of the class-wide V-type mass vector.
+
+Verdict: add the complete reference and permanent DOI link to AsteroidCatalog CITATIONS.md. This bibliography-completeness issue is distinct from applied **rc-467**, which concerns the V-type vector’s source-to-model derivation. No numeric replacement inferred. **rc-798**. Extracted: `extracted_data/r918_li_milliken_bibliography_entry.csv`.
+
+## R919 — AsteroidCatalog grouped comparator bibliography omits two titles and links (2026-11-18)
+
+`asteroidcatalog_grouped_comparator_bibliography_current_2026`: AsteroidCatalog `CITATIONS.md` §3 lists Howard et al. (2009) as “LPSC 40, 1235 (CV3 sulfide)” and Zhang et al. (2023) as “A&A 671, A77, Table 5 (M-type densities)” (lines 420–422), without the publication titles or permanent links.
+
+`howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235`: the LPI abstract title page (p. 1) gives “Modal Mineralogy of CV3 Chondrites by PSD-XRD: Mineralogic Insights into a Complex Evolutionary History,” by Howard, Benedix, Bland & Cressey, Abstract 1235. `zhang_etal_2023_m_type_asteroid_meteorite_analogues`: the A&A paper first page identifies “Compositional indication of E- and M-type asteroids by VIS-NIR reflectance spectra of meteorites,” *Astronomy & Astrophysics* 671:A77 (2023), DOI 10.1051/0004-6361/202245207.
+
+Verdict: add complete references and permanent retrieval links. Keep the CV3 sulfide and M-type density scopes attached to their respective sources. This is bibliography completeness only, distinct from rc-460 and rc-571; no numeric replacement inferred. **rc-799**. Extracted: `extracted_data/r919_grouped_comparator_bibliography.csv`.
+
+## R924 — AsteroidCatalog 0.13.2 comparator bibliography detail (2026-11-18)
+
+At AsteroidCatalog main commit `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, `CITATIONS.md` §3 lines 412–420 lists Beck et al. (2021), Kwon et al. (2022), Jones et al. (1990), McAdam et al. (2024), Rivkin et al. (2000 and 1995), Dunn et al. (2010), and Martin et al. (2013) by abbreviated journal identifiers and topics, without article titles or DOI links. Kwon’s separate entry at line 298 is also abbreviated. Their registered source rows already contain full titles, publication details and DOI URLs.
+
+The sources are comparators for surface hydration, T-type spectra, outer-belt ice hypotheses and meteorite sample modes. Preserve their existing sample and surface boundaries; none of these bibliography entries establishes class-level bulk water or mineral fractions. Verdict: open **rc-804** to add complete references and permanent links. This bibliography gap is distinct from the evidence-to-value reviews rc-445, rc-446, rc-448, rc-449 and rc-569. No numeric replacement proposed. Extracted: `extracted_data/r924_asteroidcatalog_0132_comparator_bibliography.csv`.
+
+## R938 — AsteroidCatalog composition scenario labels applied upstream (2026-11-18)
+
+AsteroidCatalog 18fc306b335e785f59612ade12dcc7b3254ba214 (PR #35, package 0.13.4, data contract 1.11.0 unchanged). Comments, CITATIONS.md and the changelog only; `taxonomy.py` and `mineralogy.py` parse to the same ASTs as a626c81, so no output moved.
+
+- rc-555, rc-641, rc-648, rc-649: the zero ice fractions, T's metal and silicate, the X-complex carbon and all 27 silicate fractions are labelled scenarios where they are set.
+- rc-546: Z's 1.20 g/cm3 is labelled D's density as a proxy (`mahlke_2022_asteroid_taxonomy_spectra_albedo`; `simda2024` is a D figure).
+- rc-563, rc-564, rc-565, rc-567, rc-569: the A, R, O, Cgh, Sk and Sl accessory amounts are labelled scenario allowances (`dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites` for Sk/Sl).
+- rc-615, rc-650: E's split is a scenario beside `grady_pratesi_cecchi_2013_aubrite_modal_range`; T's silicates bucket an aggregate (`kwon_hasegawa_fornasier_ishiguro_agarwal_2022_large_t_type_surfaces`).
+
+Verdict: all twelve closed as applied. Extracted data: none new.
 
 ## R949 — Provenance for nickel-iron bulk yields (2026-11-18)
 
@@ -955,6 +838,93 @@ Cannon, Gialich & Acain (2023), Table 2 p. 4, reports a 40.78 ppm median for six
 `scott_wasson_1975_classification_properties_iron_meteorites` and `lodders_2003_solar_abundances_condensation_temperatures`: General_Research maps these sources to trace-metal or PGM abundances, not the bulk Fe/Ni/Co fractions. No Walker 2012 source row is registered. Current Spacevalue `CITATIONS.md` lines 130–134 lists Scott & Wasson (1975) for trace-metal means but does not give a table/page citation for the bulk vector.
 
 **Verdict:** Open rc-815 for full source records and table/page-level support for the Fe/Ni/Co vector, including its sample and averaging scope. If it is an analyst-selected analogue, label it accordingly. The vector is retained; no numeric replacement inferred. This is distinct from rc-433's phase-partition ratios and rc-456's Earth-sale route. Extracted: `extracted_data/r949_spacevalue_fe_ni_bulk_yields.csv`.
+
+## R954 — Spacevalue IIIAB bulk fractions labeled analyst-selected (2026-11-19)
+
+At Spacevalue main 69549f772a43d155dc27d5ae5f01f90a7e4ce996, the nickel-iron row retains Fe/Ni/Co fractions 0.900/0.090/0.005 but calls the IIIAB analogue analyst-selected and says no table or sample set is cited for those fractions. Lodders 2003 and Walker 2012 are scoped to the trace-PGM terms, not the bulk vector (`spacevalue_fe_ni_major_yields_code_current_2026`; `scott_wasson_1975_classification_properties_iron_meteorites`; `lodders_2003_solar_abundances_condensation_temperatures`; rc-815).
+
+Verdict: the vector's status and the scope of adjacent citations are explicit; values are unchanged. Extracted data: none new.
+
+## R960 — PGM fallback semantics rechecked at current AsteroidCatalog head (2026-11-19)
+
+asteroidcatalog_pgm_enrichment_fallback_code_main_2026: AsteroidCatalog taxonomy.py still describes the default as “1.0 (chondritic)” for unknown/unlisted types. pgm_enrichment_for_type returns 1.0 for missing or blank inputs; other unmatched labels inherit a mapped factor from their first character, with Mq mapping to M=2.0. enrich.py assigns the helper output to comp_pgm_enrichment.
+
+Verdict: rc-685 remains open for the basis and scope label of the unknown/unlisted fallback and prefix inheritance; no class-matched source or numeric replacement was identified. Extracted: extracted_data/r960_pgm_fallback_current_head_recheck.csv.
+
+## R975 — Spacevalue nickel-iron PGM trace-yield citation scope (2026-11-19)
+
+`spacevalue_nickel_iron_pgm_yield_citation_code_current_2026`: Spacevalue main `69549f772a43d155dc27d5ae5f01f90a7e4ce996`, `catalog.py` lines 1471-1487 sets Pt/Pd/Ru/Ir/Os/Rh/Au yields at 15/10/3/4/2/1.5/1 ppm; the comments attribute the siderite total to USGS Bulletin 1214 / Nichiporuk (1965) and call the distribution calibrated to IIIAB medium-octahedrite means. Lines 1902-1904 name Lodders (2003) and Walker (2012) for trace-PGM abundances; line 1528 names Kargel (1994) for the LL-chondrite comparison.
+
+`CITATIONS.md` lines 130-134 lists Scott & Wasson (1975) for Cu, Ga, Ge, Mo, W and Re, but not the other named PGM sources or value-level page/table locators. `walker_2012_evidence_homogeneous_osmium_protosolar_nebula` is registered from the University of Maryland author publication list; the paper’s specific support for the assigned ppm values remains to be checked. The supplied `verification_sheet.pdf`, printed p. 37 (I53), traces `comp_pgm_enrichment` to AsteroidCatalog’s class mineralogy and CITATIONS §1; it is a distinct class-enrichment input, not the source for these nickel-iron element yields. The sheet is a 2018 DT run built 2026-11-16 with Stage 2 mineral_value 1.21.0, preceding Spacevalue main’s 1.22.0 data contract.
+
+**Verdict:** open **rc-835** for full PGM citations and matched value scope. The Fe/Ni/Co vector question in applied rc-815 is separate; current PGM yields are unchanged. Extracted: `extracted_data/r975_spacevalue_nickel_iron_pgm_trace_citation_scope.csv`.
+
+## R985 — Spacevalue nickel-iron PGM split labelled analyst-selected upstream (2026-11-19)
+
+At Spacevalue main f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f (PR #19, 0.8.2), the nickel-iron PGM comment and CITATIONS.md call the per-element split (Pt 15, Pd 10, Ru 3, Ir 4, Os 2, Rh 1.5, Au 1 ppm) analyst-selected. `wright_fleischer_1965_usgs_b1214a_geochemistry_platinum_metals` printed p. A1 says siderites contain "on the average, 30 ppm total platinum metals"; Table 15, p. A17, gives per-element siderite ranges. The six PGM yields sum to 35.5 ppm, not the ~37 the old comment gave. Nichiporuk & Brown, Lodders, Walker and Kargel get full entries scoped to what each supports (rc-835). Yields are unchanged.
+
+Verdict: rc-835 closed as applied. Extracted data: none new.
+
+## R987 — Frozen Stage 2 phase densities scoped upstream (2026-11-19)
+
+At Economicspace main e354cdda8d5471a04a78509de78def8f4ef2a6b9 (PR #214, master 1.84.0), the new `campaign/stage2/PROVENANCE.md`, mirroring the Stage 3 file, records the phase densities against the sources this repo checked: nickel-iron 7.90 as kamacite's calculated density with no IIIAB bulk basis; cohenite 7.40 inside its measured range; schreibersite 7.40 above its measured range (rc-639); troilite 4.61 unreconciled with FeS; carbon 2.10 a graphite proxy; plagioclase 2.69 with no composition defined (rc-640). The verification worksheet prints the entry beside any Stage 2 input whose row carries the recorded value, in a span its backing check strips, so each input stays NEED BACKING. No frozen CSV byte or value moves.
+
+Verdict: rc-639, rc-640 closed as applied. Extracted data: none new.
+
+## R988 — Spacevalue troilite density source is not phase-mapped (2026-11-19)
+
+`spacevalue_troilite_density_bibliography_gap_code_current_2026`: at Spacevalue main `f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f`, `catalog.py` line 1942 assigns the troilite entry formula `FeS` and density 4.61 g/cm³. `CITATIONS.md` § Mineral composition and densities (line 120) names Klein & Hurlbut, Mindat and Webmineral as general density references, but does not map a source to this phase or mention Agrawal, Carlozzi & Bryson.
+
+`agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties`: NASA NTRS 20170001623, Table 1 p. 20, lists “Troilite | FeSi | 4.61”; the existing Handbook comparison gives FeS density 4.67–4.79 measured and 4.85 calculated.
+
+Verdict: add the full Agrawal et al. reference only with its table/formula scope made explicit; reconcile the FeSi label before treating it as evidence for Spacevalue’s FeS row. Retain 4.61 pending source and phase reconciliation; no numeric replacement inferred. **rc-855**. Extracted: `extracted_data/r769_mineral_phase_density_source_scope.csv`.
+
+## R989 — Phase-specific density references are not mapped in Spacevalue’s citation guide (2026-11-19)
+
+`spacevalue_mineral_density_citations_code_current_2026`: at Spacevalue main `f5bfb8a07a34a9535d0ad5800b8f2ce5920a373f`, `spacevalue/catalog.py` lines 1912–1963, 2231–2237 and 2297–2304 give `MINERAL_REFERENCE` densities for nickel-iron (7.90), schreibersite (7.40), troilite (4.61), carbon (2.10) and plagioclase (2.69) without row-level density sources. `CITATIONS.md` § “Mineral composition and densities” (lines 120–123) names “standard mineralogy references,” Klein & Hurlbut, Mindat.org and Webmineral.com, without mapping them to these rows.
+
+`economicspace_stage2_density_provenance_bibliography_code_current_2026`: Economicspace `CITATIONS.md` lines 106–108 directs mineral-density references to Spacevalue’s `CITATIONS.md`; `campaign/stage2/PROVENANCE.md` § `density_gcm3` lines 65–87 identifies the phase-level references.
+
+- `remo_1993_asteroid_meteorite_analogs_density`: Table 2, printed p. 169, gives selected iron-nickel meteorites at 7.29–7.88 g/cm3.
+- `agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties`: NASA NTRS 20170001623, Table 1 p. 20, lists Troilite / FeSi / 4.61 and albite-composition feldspar at 2.62.
+- `mineral_data_publishing_kamacite_density_2001`: p. 1 gives D(calc.) 7.90 and no measured density.
+- `mineral_data_publishing_cohenite_density_2001`: p. 1 gives D(meas.) 7.20–7.65 and D(calc.) 7.68.
+- `mineral_data_publishing_schreibersite_density_2001`: p. 1 gives D(meas.) 7.0–7.3 and D(calc.) 7.12–7.44.
+- `mineral_data_publishing_troilite_density_2001`: p. 1 gives FeS D(meas.) 4.67–4.79 and D(calc.) 4.85.
+- `mineral_data_publishing_graphite_density_2001`: p. 1 gives D(meas.) 2.09–2.23 and D(calc.) 2.26.
+- `mineral_data_publishing_labradorite_density_2001`: p. 1 gives D(meas.) 2.68–2.72.
+
+Verdict: the bibliography gap belongs in Spacevalue’s designated citation guide. Re-scope **rc-856** to add the phase-specific bibliography and row mapping there; preserve the Troilite FeSi/FeS discrepancy and all density values. **rc-855** remains focused on reconciling that formula/source conflict. Extracted: `extracted_data/r768_mineral_phase_density_source_scope.csv`; `extracted_data/r769_mineral_phase_density_source_scope.csv`.
+
+## R990 — AsteroidCatalog accessory vectors and X split labelled upstream (2026-11-19)
+
+At AsteroidCatalog main 8ffd710f2f2e826ec716287be29c0380da15ba51 (PR #38, 0.13.7; comments and one docstring only), `mineralogy.py` labels the CI and CM accessory vectors (rc-566, rc-570), the ordinary-chondrite phosphate split (rc-568), M and Xk troilite (rc-571) and K and L spinel (rc-572) as body-mass scenarios beside their vol% comparators. `taxonomy.py` calls the X/Xc P/M/E split a prior and states its reach on density, metal and PGM (rc-481), and the unknown-type PGM default the 37 ppm metal baseline, not chondritic (rc-685). Values unchanged.
+
+Verdict: rc-481, rc-566, rc-568, rc-570, rc-571, rc-572, rc-685 closed as applied. Extracted data: none new.
+
+## R996 — Spacevalue phase-density sources mapped upstream (2026-11-19)
+
+At Spacevalue main 10f05f683c14121cf4b5b7f580b4eaf5bac82d0d (PR #21, 0.8.4), CITATIONS.md maps the phase densities to the Mineral Data Publishing Handbook sheets, `remo_1993_asteroid_meteorite_analogs_density` (Table 2, p. 169) and `agrawal_carlozzi_bryson_2016_effective_stony_meteorite_material_properties` (Table 1, p. 20), keeping Agrawal's troilite printed as FeSi and unreconciled with the FeS row (rc-855, rc-856). Densities unchanged.
+
+Verdict: rc-855, rc-856 closed as applied. Extracted data: none new.
+
+## R997 — Spacevalue CO2 ceiling labelled total use upstream (2026-11-19)
+
+At Spacevalue main f133db21ff77ca39b482765db9e68863a16b5387 (PR #22, 0.8.5), the owner chose the total-use boundary for the carbon-dioxide Earth market ceiling. It stays 2.3e11 kg/yr, and its comment now calls it total physical use per `iea_2019_putting_co2_to_use` (p. 3), not merchant sales, which `spglobal_2025_co2_commodity_market_demand` puts at about 30 Mt/yr (p. 7). CITATIONS.md gains both (rc-526). Value unchanged.
+
+Verdict: rc-526 closed as applied. Extracted data: none new.
+
+## R1001 — AsteroidCatalog Ni-Fe fallback sensitivity documented (2026-11-19; rc-699)
+
+- **asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026:** AsteroidCatalog 0.13.11 (`mineralogy.py` lines 551-564) calls `_ALLOY_OCTAHEDRITE` a “generic fallback, not a class measurement.” It keeps kamacite 0.89 / taenite 0.11 of the nickel-iron parent and reports contained-element values of $4.59/kg for all kamacite, $5.15/kg for the fallback, and $6.89/kg at a 0.45 taenite share; Earth-delivered metal value spans -11% to +34%, while each phase has the same $4,835/kg cislunar structural price. The R828 and current detailed-phase table blobs match; the changelog says comments and docs only and the mineralogy AST is identical.
+- **spacevalue_nickel_iron_sale_route_code_current_2026:** Spacevalue 0.8.6 `cargo.py` lines 280-305 treats kamacite and taenite as one nickel-iron product. **spacevalue_metals_snapshots_2026:** current `metals-2026-10-26.csv` matches the registered pinned-tag file blob; recorded closes are dated 2026-10-23.
+- **economicspace_detailed_phase_carbon_consumer_current_2026:** Economicspace 1.84.1 `CalcConfig` defaults `model_detailed_phases=True` (`calc.py` line 337); the loader selects `comp_phases_detailed` when enabled and present (lines 1788-1800).
+
+**Verdict:** the generic-fallback label and sensitivity satisfy rc-699's scenario path; the 0.89/0.11 values and detailed body-mass rows are unchanged, and no class-specific split was added. K remains outside this candidate's target; its prior rc-172 resolution is unchanged. **rc-699 applied.** Extracted: `extracted_data/r1001_asteroidcatalog_ni_fe_fallback_sensitivity.csv`.
+
+## R1003 — Current AsteroidCatalog main preserves Ni-Fe fallback data (2026-11-19)
+
+`asteroidcatalog_unsourced_metal_alloy_fallback_code_current_2026`: AsteroidCatalog 0.13.12 main `f360a3c02daabee87a7dd225a6cb76966e792ecf` retains the generic 0.89/0.11 kamacite/taenite fallback; its detailed-phase table blob `09da1fd7a1a791ea3ef0c6f9a699dff7589a8aa9` is unchanged. The intervening release-note commit adds conditional MP3C acknowledgment and does not modify `mineralogy.py` or the detailed-phase CSV. **rc-699 remains applied; no replacement values inferred.** Extracted data: `extracted_data/r1003_asteroidcatalog_ni_fe_fallback_current_head_check.csv`.
 
 ## R1014 — IIIAB trace-metal citation and averaging basis (2026-11-22)
 
@@ -966,7 +936,6 @@ Cannon, Gialich & Acain (2023), Table 2 p. 4, reports a 40.78 ppm median for six
 
 `hidaka_shirai_etal_2019_cape_york_trace_elements` gives Cape York (IIIAB) Mo at “7.66 ± 0.35” ppm (Table 2, Mo row, Cape York concentration and uncertainty). The footnote defines this as three replicated analyses and their sample standard deviation. The same Cape York column group lists 5.96 and 7.10 ppm from earlier studies. `spacevalue_iiiab_trace_yields_code_2026` stores 7 ppm in `_NICKEL_IRON_YIELDS["molybdenum"]`. These measurements support the scale of the scenario for one named IIIAB meteorite. **rc-877** gains the sample-level citation for Mo alongside the class statistics for the other elements. Extracted data in `extracted_data/r1015_iiiab_molybdenum_comparator.csv`.
 
-
 ## R1049 — Soluble organic phases and terrestrial sale products (2026-11-23)
 
 - asteroidcatalog_spacevalue_organic_phase_sale_mapping_2026 defines AsteroidCatalog's organics as “soluble organic matter” and carbon as “insoluble macromolecular organic matter, graphite” in mineralogy.py lines 165–166. The exported B-type rows are 0.012 organics and 0.028 carbon by body mass. With the installed Earth-surface catalog, Spacevalue prices those fractions by exact name at USD 0.50/kg for “Complex organic macromolecules (kerogen-like)” and USD 0.20/kg for amorphous / graphitic carbon, respectively. The organics row carries a separate 1.0e12 kg/year ceiling. Economicspace's verification worksheet cites annual_market_kg and describes the Earth-bound ceiling as world annual production.
@@ -974,14 +943,12 @@ Cannon, Gialich & Acain (2023), Table 2 p. 4, reports a 40.78 ppm median for six
 
 Extracted data in extracted_data/r1049_organic_phase_sale_mapping.csv.
 
-
 ## R1059 — Olivine iron fraction and density basis (2026-11-23)
 
 - spacevalue_olivine_density_iron_and_sale_code_2026 records Spacevalue catalog.py lines 2209–2217 and Economicspace prices-2026-11-20. The Spacevalue row says “Fo90 mean Fe content” beside 0.10 kg Fe/kg olivine. prohaska_etal_2022_iupac_olivine_atomic_weights, Table 1 abridged column, gives O 15.999, Mg 24.305, Si 28.085 and Fe 55.845. Ideal Mg1.8Fe0.2SiO4 gives 0.07598 kg Fe/kg. nakamura_etal_2014_itokawa_olivine_fayalite, p. 219 Table 1 “Olivine (Fa#),” gives 28.4 ± 1.2 mol% over 352 analyses of 33 olivines. Its 25.75 wt% FeO gives 20.02 wt% elemental Fe, consistent with 20.00 wt% from the ideal Fa28.4 formula. The measurement describes Itokawa grains and the Spacevalue value applies to generic olivine, including AsteroidCatalog’s ordinary-chondrite silicate scenario. With the pinned prices, the pre-refinery phase evaluator uses the same 0.05 USD/kg as-is Earth value at both 0.10 and ideal Fo90. Lunar output from the elemental route is 2,147.20 and 1,631.45 USD/kg respectively. **rc-947** records the molar-to-mass basis and downstream use.
 - spacevalue_olivine_density_iron_and_sale_code_2026 records 3.32 g/cm³ with the annotation “forsterite-fayalite midpoint.” lee_2003_olivine_endmember_densities, Table 4 “STP Density,” lists forsterite 3.222 g/cm³ (Isak et al.) and fayalite 4.380 g/cm³ (Graham et al.), arithmetic midpoint 3.801 g/cm³. **rc-948** records the density description and missing composition basis.
 
 Extracted data in extracted_data/r1059_olivine_iron_fraction_and_density.csv.
-
 
 ## R1060 — Pyroxene phase chemistry and sale route (2026-11-23)
 
@@ -991,7 +958,6 @@ Extracted data in extracted_data/r1059_olivine_iron_fraction_and_density.csv.
 
 Extracted data in extracted_data/r1060_pyroxene_iron_contents_and_sale_routes.csv.
 
-
 ## R1061 — Carbonate composition and CO2 yield basis (2026-11-23)
 
 - spacevalue_carbonate_co2_yield_and_routes_2026 records 0.44 kg CO2/kg in Spacevalue catalog.py lines 2010–2021 and in Economicspace prices-2026-11-20. The comment says “the calcite figure” for a row covering calcite, dolomite and breunnerite. AsteroidCatalog assigns those minerals to one carbonate phase. Using prohaska_etal_2022_iupac_olivine_atomic_weights, Table 1, ideal calcite gives 0.43971 kg CO2-equivalent/kg and ideal dolomite 0.47732. These are stoichiometric equivalents for pure endmembers.
@@ -1000,14 +966,12 @@ Extracted data in extracted_data/r1060_pyroxene_iron_contents_and_sale_routes.cs
 
 Extracted data in extracted_data/r1061_carbonate_co2_stoichiometry_and_sale_routes.csv.
 
-
 ## R1078 — Transfer of the Tagish Lake assemblage to D, Z and P
 
 - `asteroidcatalog_tagish_lake_accessory_analogue_transfer_code_2026` — AsteroidCatalog `CITATIONS.md` lines 496–497 cite Hiroi et al. for “which accessories D, Z and P carry.” The three classes share `_ACC_TL` in `asteroid_catalog/mineralogy.py` lines 233 and 354, with 0.05 magnetite, 0.03 troilite and 0.03 carbonates by body mass. The code identifies the amounts as unsourced.
 - `gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation` — Table 4 places reflectance from specimen TL10a in D, TL4 in X, TL5b in C and TL11h in Xc or C. Table 1 gives 11.2 wt% siderite for TL10a and 2.2 wt% for TL4. The XRD results section warns that preparation and amorphous peak fitting introduce substantial uncertainty beyond the statistical fit.
 - `vernazza_etal_2013_tagish_lake_analogue_paucity` — The abstract (p. 517) identifies “only one asteroid, 368 Haidea” matching both the meteorite spectrum and reflectance in the main-belt comparison and estimates that fewer than 0.02% of Jupiter Trojans are Tagish Lake-like. Verdict: the D-type analogue has an individual spectral match, while assigning its accessory assemblage across D, Z and P requires an explicit transfer assumption (rc-987).
 - Extracted data: `extracted_data/r1078_tagish_lake_asteroid_analogue_transfer.csv`.
-
 
 ## R1079 — Elemental composition behind Spacevalue sulfide yields
 
@@ -1016,13 +980,11 @@ Extracted data in extracted_data/r1061_carbonate_co2_stoichiometry_and_sale_rout
 - `holt_herd_2022_tagish_lake_iron_nickel_sulfides` — The sulfide composition results give 1.63±1.32 wt% mean Ni in Tagish Lake pyrrhotite and 28.17–36.37 wt% Ni in measured pentlandite. Verdict: valuation using ideal formulas leaves pyrrhotite Ni unrepresented (rc-988) and requires a stated Fe–Ni and Co basis for pentlandite (rc-989). The measurements give contained elemental mass.
 - Extracted data: `extracted_data/r1079_sulfide_element_yields.csv`.
 
-
 ## R1083 — Trace-metal enrichment on explicit PGM minerals
 
 - `spacevalue_cross_repo_pgm_enrichment_explicit_phase_scope_2026` — AsteroidCatalog `taxonomy.py` lines 15–18 scopes the modifier to the “platinum-group fraction of a metal phase.” Spacevalue `cargo.py` lines 157–200 and 438–479 apply it to listed precious-element fractions regardless of host. Economicspace `verification_sheet.py` lines 1945–1966 applies the same multiplier in the price calculation. With M's 2.0 factor and equal element quotes, isolated executions imply price weights of 2.000 kg-equivalent/kg native-pgm, 1.132 for sperrylite and 1.228 for laurite.
 - `prohaska_etal_2022_iupac_olivine_atomic_weights` — IUPAC Table 1 gives Pt and As atomic weights of 195.084 and 74.921595, yielding 0.5656 kg Pt/kg ideal PtAs2. `cabri_harris_weiser_1996_pgm_placer_compositions` — printed p. 83 reports native platinum, platinum alloys and sperrylite as separate Liard River grain phases. Verdict: the valuation needs a stated eligibility boundary when using a trace modifier with fixed named-mineral profiles (rc-994).
 - Extracted data: `extracted_data/r1083_pgm_enrichment_explicit_mineral_scope.csv`.
-
 
 ## R1094 — K-type whole-body metal, oxide and sulfide assumptions (2026-11-24)
 
@@ -1032,14 +994,12 @@ Extracted data in extracted_data/r1061_carbonate_co2_stoichiometry_and_sale_rout
 
 Extracted data in extracted_data/r1094_k_type_metal_oxide_and_sulfide_modes.csv.
 
-
 ## R1103 — Cgh meteorite analogue and carried phases (2026-11-24)
 
 - vernazza_etal_2016_ch_cgh_cm_spectral_survey, abstract, compares 70 “main-belt Ch/Cgh-type asteroids” with laboratory CM spectra. sanderson_etal_2026_cm_cgh_meteorite_asteroid_matches, Table 1 and printed p. 7 Table 2, lists CM1 NWA 4765 and MIL 05137 at 88 and 89 vol% phyllosilicates, with the lowest-RMS asteroid fits (13) Egeria and (19) Fortuna, respectively. The two fits fall in its Cgh comparison. The modal fractions describe the meteorite samples.
 - asteroidcatalog_cgh_analogue_and_phase_volume_path_2026, taxonomy Cgh and METEORITE_ANALOGUE_GCM3, labels the Cgh row “CH/CK analog” and uses CK bulk density 2.85 g/cm3. asteroidcatalog_release_data_2026_11_13 assigns Ch to Egeria and Fortuna and Cgh to (2322) Kitt Peak. Kitt Peak has 0.20 phyllosilicates, 0.16 olivine, 0.04 pyroxene and 0.10 water as body mass fractions. Using the existing Ch within-silicate shares on that same 0.40 silicate fraction, with all other phases fixed, changes modeled three-phase volume from 0.137 to 0.149 m3 per tonne of feed with the densities in spacevalue_installed_prices_release_manifests_2026. The uncapped cislunar phase-blend value is equal across the fixture. **rc-1019** records the CM evidence and the scope of the CK/CH assumption.
 
 Extracted data in extracted_data/r1103_cgh_cm_analogue_and_carried_phases.csv.
-
 
 ## R1104 — Meteoritic accessory liberation and phosphide grade (2026-11-24)
 

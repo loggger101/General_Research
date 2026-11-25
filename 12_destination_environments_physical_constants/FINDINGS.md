@@ -101,42 +101,38 @@ The one_way_light_time_min column is formulaic and display-only. Heliocentric ro
 
 Consumption check: git grep for one_way_light_time and solar_array_mass_factor at HEAD of spacecost and economicspace returns zero hits outside the CSV itself - both columns are data-only pass-throughs. Do not re-sweep the derived physics of this table unless its input columns move.
 
-
 ## R421 — Phobos GM-derived mass comparison (2026-11-09)
 
 Guo et al., “Phobos’ degree-1 ellipsoidal harmonic gravity field recovery from two Mars Express flybys,” MNRAS 548(2), stag578 (2026), reprocesses Doppler tracking from the 2010 and 2013 Mars Express flybys. The abstract reports “An improved estimate of the Phobos GM” and Table 3 gives (7.09962 ± 0.001970812) × 10^5 m³/s² (3σ). Using G=6.67430×10⁻¹¹ m³ kg⁻¹ s⁻² gives 1.063725×10¹⁶ kg, about 0.2045% below the explicitly estimated 1.0659×10¹⁶ kg in the upstream Phobos row; the GM-based 3σ uncertainty is about 0.0278%. This article updates mass evidence only; it does not update the row’s mean radius. rc-331 records a review of the mass and dependent gravity/escape-velocity fields. `extracted_data/r421_phobos_gm_mass_update.csv`.
-
-## R429 — JPL Phobos parameter-table version cross-check (2026-11-09)
-
-NASA/JPL Solar System Dynamics' Planetary Satellite Physical Parameters table lists Phobos GM as 0.0007087 ± 0.0000006 km³/s² and mean radius as 11.08 ± 0.04 km; the GM row explicitly references MAR097 (table row). The same page separately identifies MAR099 as the current planetary-satellite ephemeris and cites Brozović, Jacobson & Park (2025) for the revised Martian-satellite ephemerides (page lines 87–92). Converting the table GM at G=6.67430×10⁻¹¹ gives 1.061834×10¹⁶ kg, 0.3814% below the upstream estimated mass and 0.1778% below Guo et al. (2026)'s GM-derived central mass. The table therefore adds an official but older-reference comparator; it does not supersede either the specific Guo flyby reanalysis or the upstream estimate by itself. rc-331 remains open for a source/version and dependent-field review. Extracted: `extracted_data/r429_jpl_phobos_parameter_comparison.csv`.
-
 
 ## R422 — Psyche high-precision mass estimate (2026-11-09)
 
 Farnocchia et al., “Mass, density, and radius of asteroid (16) Psyche from high-precision astrometry,” *The Astronomical Journal* 168(1):21 (2024), reports baseline GM = 1.601 ± 0.017 km³/s² and corresponding mass (2.399 ± 0.025) × 10¹⁹ kg (1σ; Table 2, p. 4). The official AAS DPS abstract says the result is “robust against variations in the orbit determination setup and specific data set used” and gives an equivalent radius of 111 (+2, −0.5) km. Current `spacecost/reference/environments.csv` stores 2.29 × 10¹⁹ kg, 4.76% below the newer central estimate; its 111 km radius is consistent. If the mass is adopted, recompute formula-derived surface gravity and escape velocity (0.1299541 m/s² and 169.8523 m/s at the stored radius). rc-332 tracks review of the mass and dependent fields. `extracted_data/r422_psyche_mass_update.csv`.
 
-
 ## R423 — Bennu OLA mean-radius comparison (2026-11-09)
 
 `daly_2020_bennu_hemispherical_shape_ola`, Table 1 (p. 2), gives an average radius of 244 ± 0.09 m for the previous GDTM and 242.22 ± 0.15 m for the OLA GDTM. The article calls the OLA model higher fidelity, says its accuracy is better than ±20 cm, and describes it as a geometric baseline for size and geopotential quantities (p. 2). The upstream `spacecost/reference/environments.csv` row stores 244.5 m and attributes it to Lauretta et al. 2019; the OLA Table 1 value is 2.28 m (0.93%) lower. The same article says OLA is “41 ± 20 cm smaller” than the SPC model, while its Table 1 values differ by 1.78 m. Verdict: model/version and radius definition require reconciliation before any replacement; if the OLA value is adopted, recompute gravity and escape velocity. rc-333 records review. `extracted_data/r423_bennu_ola_radius_comparison.csv`.
-
 
 ## R425 — Lunar polar-ridge illumination review (2026-11-09)
 
 Barker et al. (2021), *Planetary and Space Science* 203:105119, identify Site 1 as the connecting ridge between Shackleton and de Gerlache (p. 3). Their 5 m/pixel LOLA analysis reports for seven Site 1 regions of interest (Table 2, p. 8) 1st-percentile average illumination of 67.36–71.15% at 1 m height and 82.79–89.26% at 5 m; 99th-percentile longest continuous shadow is 12.74–22.23 days and 4.00–8.41 days, respectively. The paper calls the height effect “dramatic” (p. 13) and models 100 terrain realizations to represent topographic uncertainty. The upstream polar-ridge row stores `eclipse_fraction=0.14` and `dark_period_hr=99.218` (~4.13 days), traced in R133 to Mazarico et al.’s Shackleton S point at 86.7% illumination. Barker’s regional ROIs, 2024–2026 interval, height offsets, and uncertainty percentiles do not directly reproduce that point over an 18.6-year cycle; resolve site and asset height before changing either cell. Verdict: bounded review candidate rc-335; no replacement value inferred. `extracted_data/r425_lunar_polar_illumination_review.csv`.
 
+## R429 — JPL Phobos parameter-table version cross-check (2026-11-09)
+
+NASA/JPL Solar System Dynamics' Planetary Satellite Physical Parameters table lists Phobos GM as 0.0007087 ± 0.0000006 km³/s² and mean radius as 11.08 ± 0.04 km; the GM row explicitly references MAR097 (table row). The same page separately identifies MAR099 as the current planetary-satellite ephemeris and cites Brozović, Jacobson & Park (2025) for the revised Martian-satellite ephemerides (page lines 87–92). Converting the table GM at G=6.67430×10⁻¹¹ gives 1.061834×10¹⁶ kg, 0.3814% below the upstream estimated mass and 0.1778% below Guo et al. (2026)'s GM-derived central mass. The table therefore adds an official but older-reference comparator; it does not supersede either the specific Guo flyby reanalysis or the upstream estimate by itself. rc-331 remains open for a source/version and dependent-field review. Extracted: `extracted_data/r429_jpl_phobos_parameter_comparison.csv`.
 
 ## R516 — Asteroid rotation-period fallback comparison (2026-11-10)
 
 Marciniak et al. (2015), “Against the biases in spins and shapes of asteroids,” Table 1 (p. 257), reports a median rotation period of 10.986 h for 1,230 asteroids selected from Warner et al.’s LCDB with period quality code ≥2−. The abstract (p. 256) and discussion (p. 257) describe selection effects, including underrepresentation of long-period asteroids; the analyzed sample is bright (H≤11) main-belt asteroids. economicspace `modules/calc.py` sets `CalcConfig.default_rotation_period_h = 10.222` h for objects without a measured period, 0.764 h (7.47%) below this filtered-sample median. The populations are not established as equivalent, so this is a scope and citation review, not a replacement value. rc-382 records the comparison. `extracted_data/r516_asteroid_rotation_period_median_comparator.csv`.
 
-
 ## R547 — Surface solar dark-fraction comparator (2026-11-10)
 
 Stubbs and Wang’s Vesta illumination model reports that the Sun is typically visible about half the time in the tropics, as expected for diurnal variation (§5.1, printed p. 275). Their annual mean solar-visibility values range from 0.363 to 0.566 across Vesta, with departures tied to latitude, axial tilt, shape, and topography. This supports 0.50 as a scoped equatorial/tropical comparator; it does not establish the same fraction or the [0.35, 0.55] range as a generic asteroid-site value. At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, `reference/operational_costs.csv` stores `Eclipse / night-side dark fraction` = 0.50 [0.35, 0.55], and `reference/storage_systems.csv` duplicates it as `Eclipse / night-side power fraction`; both notes describe the geometry without naming a source for the baseline or range. rc-413 records the attribution and scope review. Extracted: `extracted_data/r547_vesta_surface_solar_visibility.csv`.
+
 ## R562 — rotation-period citation and population scope applied (2026-11-10)
 
 At economicspace@e2ad48767b0e81489031b724417b1a03e6dfc1fb, the fallback rotation-period comment cites Marciniak et al.’s 10.986 h median and flags the population mismatch against the model’s generic value (rc-382). Citation and scope request applied; no numeric replacement inferred.
+
 ## R564 — Phobos and Psyche masses refreshed; illumination scope qualified (2026-11-10)
 
 At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Guo et al.’s Mars Express Phobos GM gives a mass of 1.063725×10¹⁶ kg and the dependent gravity/escape values are recomputed (rc-331); Farnocchia et al.’s Psyche GM gives 2.399×10¹⁹ kg and dependent values are recomputed at the existing radius (rc-332). `stubbs_wang_2012_vesta_illumination_conditions` is cited as a Vesta comparator and 0.50 is described as a scenario baseline rather than a generic asteroid-site fraction (rc-413).
@@ -144,7 +140,6 @@ At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Guo et al.’s Mars Expre
 ## R565 — Phobos and Psyche mass candidates rechecked (2026-11-10)
 
 Spacecost 0.17.0 / data contract 1.26.0, at main commit `aaed2720ee44610c5cf90fc204db160deb5669bb`, carries the Guo et al. (2026) Phobos GM mass of 1.063725×10¹⁶ kg and the Farnocchia et al. (2024) Psyche GM mass of 2.399×10¹⁹ kg, with dependent gravity and escape values updated. The current rows agree with rc-331 and rc-332; candidate records rechecked against the release commit and remain applied.
-
 
 ## R687 - Ryugu physical constants and returned-sample note citation (2026-11-12)
 
@@ -155,7 +150,6 @@ In the current spacecost Ryugu row, the Watanabe citation accompanies physical p
 
 Yeomans et al. (2000), Table 1 p. 4, reports Eros mass (6.687 ± 0.003) × 10^18 g and volume 2503 ± 25 km³. The volume-equivalent radius calculated from the volume is 8.42 km, consistent with upstream mean_radius_m=8420 m after rounding. The paper reports local escape speeds 3.1–17.2 m/s (p. 2), bracketing the row’s 10.296 m/s spherical estimate. The retrieved author-version PDF footer limits use to personal, non-commercial use; no copy is hosted. This check found no candidate. Extracted: `extracted_data/r687_yeomans_2000_eros_physical_parameters.csv`.
 
-
 ## R709 — Rotation-period fallback statistic and catalog vintage (2026-11-12)
 
 economicspace main `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py` lines 676–684, sets `default_rotation_period_h=10.222` and describes it as the median of 29,288 catalog bodies with a measured period on 2026-08-08; the code does not name that catalog release or give the selection calculation. The installed AsteroidCatalog Stage 1 release is `data-2026-10-21b` (1,575,889 rows). Reading its `rotation_period_h` field with no class or size filter gives 46,159 non-null values and a median of 8.068 h. Current `verification_sheet.py --check` marks input I65 as NEED BACKING among 85 inputs for the archived 2018 DT sheet; the worksheet uses frozen Stage 2 `mineral_value 1.12.0` and Stage 3 `spacecost 0.5.0` exports.
@@ -163,7 +157,6 @@ economicspace main `46e0315d12f3fc876b022fdb5270016c7c539080`, `modules/calc.py`
 - **rc-579**: pin the 10.222 h statistic to its data release and population/filter, and assess whether the fallback should remain a historical prior against the later catalog distribution. No replacement inferred.
 
 Extracted: `extracted_data/r709_rotation_period_fallback_population.csv`.
-
 
 ## R719 — Phobos mean-radius convention (2026-11-13)
 
@@ -175,7 +168,6 @@ ernst_et_al_2023_phobos_deimos_spc_shape_models (Ernst et al. 2023, Earth, Plane
 
 At economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `modules/calc.py` lines 676–684 still sets `default_rotation_period_h=10.222` and describes a median of 29,288 measured-period catalog bodies dated 2026-08-08; the file SHA-256 is unchanged from the registered code snapshot. `modules/catalog.py` line 121 pins Stage 1 to `data-2026-11-13`. The registered source `asteroidcatalog_release_data_2026_11_13` points to the installed manifest, which reports pipeline 1.11.0, package 0.13.2, AsteroidCatalog source commit `a2c527c09eb39618d7fd26b2b180f730ea906b8b`, and 1,580,325 rows. The unfiltered `rotation_period_h` field has 46,159 non-null values and median 8.068 h, unchanged from `data-2026-10-21b`; the gap from the fallback remains 2.154 h (21.1%). The archived 2018 DT verification sheet still marks I65 NEED BACKING and reports 85 NEED BACKING inputs; its Stage 2 and 3 tables are frozen historical exports. rc-579 remains open; no replacement inferred. Extracted: `extracted_data/r720_rotation_period_release_recheck.csv`.
 
-
 ## R729 — Didymos mass and radius still lack a row-specific source (2026-11-13)
 
 `spacecost_didymos_mass_radius_code_current_2026`: At Spacecost main `a401930efe30aaad01aafd2b3cb332ad0438c841`, `reference/environments.csv` row 65803 records mass 5.28e11 kg and mean radius 390.0 m. Its note says neither figure is in Daly et al. (2023) and the source is not recorded; `CITATIONS.md` likewise calls the mass and radius unsourced.
@@ -183,7 +175,6 @@ At economicspace main `e1fee40f41c6778b5e4f8de91acf28ef4c17e6c7`, `modules/calc.
 `daly_2023_dart_kinetic_impact`: Table 1, PDF p. 3, gives “Mass of the Didymos system” as (5.6 ± 0.5) × 10^11 kg and “Diameter of volume-equivalent sphere for Didymos” as 761 ± 26 m. Those system and shape comparators place the stored values within the reported 1σ bands but do not document their exact source or primary/system basis. The current mass and radius yield the row’s surface gravity 2.3169e-4 m/s² and escape velocity 0.4251 m/s.
 
 Verdict: identify a primary-body-specific source and radius convention for the stored mass and radius, or label them as estimates with an uncertainty and method; keep Daly’s system-level quantities separate. Recompute dependent gravity and escape velocity if either input changes. No numeric replacement inferred. Distinct from rc-067, which corrected the Daly attribution but left the row values’ source unresolved. **rc-596**. Extracted: `extracted_data/r729_didymos_mass_radius_citation_gap.csv`.
-
 
 ## R736 — Mars semimajor-axis provenance (2026-11-14)
 
@@ -227,7 +218,6 @@ Verdict: cite the Newtonian constant used by the spin-limit calculation; the cur
 - Economicspace main `bc11908b8683836e25d572cbb5b54249f8cecb6d`, `modules/calc.py` line 2857 sets `R_MOON_ORBIT_KM=384_400.0`; `_cislunar_capture_dv_km_s` uses it at line 2941 to form the capture ellipse.
 - Economicspace `CITATIONS.md` lines 299-303 names the NASA NSSDCA Moon Fact Sheet as the source for `R_MOON`. `campaign/verification_sheet.py` lines 1945-1946 maps the worksheet input through `cite_here` and states that the fact sheet gives 0.3844 million km.
 - Verdict: the current value matches the registered source at its printed precision, and both Economicspace documentation and the verification sheet cite it. Draft rc-682 was withdrawn as a false positive; the registry mapping and INDEX now record this existing use.
-
 
 ## R818 — Mars GM attribution and lunar-radius citation rechecks (2026-11-16)
 
@@ -405,14 +395,12 @@ Extracted data in `extracted_data/r1025_eros_radius_and_surface_gravity.csv`.
 
 Extracted data in extracted_data/r1030_cislunar_range_and_teleoperation.csv.
 
-
 ## R1050 — Didymos orbital distances and solar environment (2026-11-23)
 
 - spacecost_didymos_environment_current_2026, reference/environments.csv line 13, and the installed Economicspace Stage 3 Didymos row carry q/a/Q of 1.0128/1.6443/2.2758 AU. Spacecost environments.py lines 126–147 evaluates irradiance at a, giving 503.380 W/m². The stored aphelion-sum Earth-range envelope is 3.2925 AU, corresponding to 27.3829 minutes one-way propagation.
 - novakovic_fenucci_2024_didymos_asteria_orbits, Table 2 “Orbital parameters,” gives a = 1.644268882 AU and e = 0.383882802 for JPL solution 181 at JD 2457380.5, implying q = 1.013062 AU and Q = 2.275475 AU. The same table gives a = 1.642665058 AU and e = 0.383264789 for solution 204 at JD 2460200.5. esa_neocc_didymos_orbit_mjd61200_2026, “Orbit properties,” gives q/a/Q = 1.013349/1.642710/2.272070 AU at MJD 61200. Applying Spacecost’s formulas to the ESA distances gives 504.355 W/m² at a, 263.642 W/m² at Q, and a 27.3519-minute propagation envelope. **rc-931** records the orbit-solution and epoch citation and the scope of the derived fields.
 
 Extracted data in extracted_data/r1050_didymos_heliocentric_environment.csv.
-
 
 ## R1051 — Bennu and Ryugu input orbit citations (2026-11-23)
 
@@ -421,7 +409,6 @@ Extracted data in extracted_data/r1050_didymos_heliocentric_environment.csv.
 - wada_etal_2018_ryugu_preencounter_orbit, p. 3 Table 1, gives 0.963308109/1.1896008220/1.4158935346 AU. Its “Orbital properties” subsection identifies the JPL Horizons data as from 16 May 2017. All three round to the stored values. **rc-933** records the exact source table.
 
 Extracted data in extracted_data/r1051_bennu_ryugu_distance_provenance.csv.
-
 
 ## R1093 — Mars surface irradiance and Opportunity storm citations (2026-11-24)
 

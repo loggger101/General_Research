@@ -29,7 +29,7 @@ Remove an item when it is done.
 - [ ] **myhrvold_2022_four_band_wise_asteroids** (d01) - https://doi.org/10.3847/PSJ/ac3232 - as above.
 - [ ] **murray_2023_neural_network_main_belt_albedos** (d01) - https://doi.org/10.3847/PSJ/acd381 - as above.
 - [ ] **wong_2024_jwst_lucy_trojans_oh_organics_co2** (d02) - https://doi.org/10.3847/PSJ/ad2fc3 - as above.
-- [ ] **de_kleer_2026_jwst_spinel_rich_l_type_mineralogy** (d02) - https://doi.org/10.3847/PSJ/ae374e - abstract only so far; CC BY, may host.
+- [ ] **de_kleer_2026_jwst_spinel_rich_l_type_mineralogy** (d02) - https://doi.org/10.3847/PSJ/ae374e - read via ResearchGate (R702); the PDF states CC BY 4.0, may host.
 - [ ] **mahlke_carry_denneau_2021_atlas_phase_curves** (d01) - https://doi.org/10.1016/j.icarus.2020.114094 - read from arXiv; Icarus version CC BY-NC-ND, may host under it.
 - [ ] **ferrais_2022_kalliope_tiny_mercury** (d01) - https://www.aanda.org/articles/aa/pdf/2022/06/aa43200-22.pdf or oro.open.ac.uk/83943 - CC BY; may host.
 - [ ] **pentikainen_2026_gaia_dr3_asteroid_characterization** (d01) - https://doi.org/10.1051/0004-6361/202556127 - CC BY; may host.
@@ -41,7 +41,6 @@ Remove an item when it is done.
 - [ ] **keil_1968_mineralogical_chemical_enstatite_chondrites** (d02) - https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/JB073i022p06945 - extract only.
 - [ ] **kessler_cour_palais_1978_collision_frequency_debris_belt** (d27) - https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/JA083iA06P02637 - extract only.
 - [ ] **pearson_2006_carbon_nitrogen_carbonaceous_chondrites** (d02) - https://journals.uair.arizona.edu/index.php/maps/article/download/15367/15355 - extract only.
-- [ ] **dunn_cressey_2010_xrd_modal_mineral_abundances_ordinary_chondrites** (d02) - https://repository.si.edu/handle/10088/20464 - extract only.
 - [ ] **sunshine_connolly_2008_ancient_asteroids_refractory_inclusions** (d02) - https://repository.si.edu/items/e39dedbe-b83e-4add-98c6-9d0d9ac7fafd/full - find the file link in a browser; extract only.
 - [ ] **consolmagno_2008_meteorite_density_porosity** (d01) - https://stars.library.ucf.edu/facultybib2000/234 - find the full-text link; extract only.
 - [ ] **fujiwara_2006_itokawa_rubble_pile** (d01) - https://ieeemilestones.ethw.org/w/images/8/82/Reference_E_3_2006Fujiwara_Rubble-Pile_Asteroid_Itokawa_Science.pdf - extract only.
@@ -58,7 +57,6 @@ Remove an item when it is done.
 
 ## B. Library access or purchase
 
-- [ ] **taylor2018** (d03) - https://doi.org/10.1016/j.actaastro.2018.02.014 - closed, no preprint; high value for the main-belt delta-v rows.
 - [ ] **schoenman_1992** (d03) - AIAA-92-3800 from arc.aiaa.org; optional.
 - [ ] **ueda_et_al_2013_methane_fueled_engine_altitude_hot_fire_jpc** (d10) - DOI 10.2514/6.2013-4056 - altitude thrust/Isp table.
 - [ ] **judd_et_al_2006_lox_methane_combustion_performance_stability_durability** (d10) - DOI 10.2514/6.2006-1533.
@@ -76,14 +74,12 @@ Remove an item when it is done.
 - [ ] **kutter_sowers_2016_cislunar1000_self_sustaining_space_economy** (d15) - DOI 10.2514/6.2016-5491
 - [ ] **tang_et_al_2023_asteroid_rock_mechanical_properties** (d19) - https://doi.org/10.1016/j.enggeo.2023.107154 - not yet read.
 - [ ] **liu_et_al_2026_asteroid_laser_mining_cryogenic_vacuum** (d19) - https://doi.org/10.1016/j.cherd.2026.08.007 - not yet read.
-- [ ] **broslav_2025_optical_mining_carbonaceous_chondrite_simulants** (d19) - Colorado School of Mines repository item abed9ab3-8bf3-4cac-aafa-b81d379ee4d2 (files need a login).
 - [ ] **paulson_balchanos_mavris_2026_isru_economic_environmental_tradeoffs** (d22) - https://doi.org/10.2514/6.2026-2788
 - [ ] **hayhurst_2016_historical_mass_power_schedule_cost_growth_nasa_spacecraft** (d21) - IEEE Aerospace 2016, DOI 10.1109/aero.2016.7500553 (NTRS has no file).
 - [ ] **brophy_2011_dawn_ips** (d03) - DOI 10.1007/s11214-011-9848-y (publisher abstract read R349; full paper still needed)
 - [ ] **rayman_mase_2014_dawn_cruise_acta** (d03) - DOI 10.1016/j.actaastro.2014.06.042
 - [ ] **garner_rayman_2013_jpc_cruise_yr1**, **garner_rayman_2015_jpc_orbit_ops**, **garner_rayman_2016_jpc_lamo**, **garner_rayman_2018_jpc_final_orb** (d03) - AIAA JPC papers 6.2013-4112, 6.2015-3717, 6.2016-4539, 6.2018-4641. The 2013 NTRS abstract was read R349; full papers still needed.
 - [ ] **calt_lm2c_users_manual_issue_1999**, **cgwic_lm3a_series_launch_vehicle_users_manual_issue_2011**, **cgwic_lm2d_technical_data_fairing_dimensions** (d04) - customer-only Chinese manuals; fairing envelope figures.
-- [ ] **galactic_energy_ceres1_launch_vehicle_user_manual_2023**, **galactic_energy_pallas1_user_manual_2023** (d04) - request through the company; fairing envelopes.
 
 ## C. Locate first (the upstream citation gives no URL)
 

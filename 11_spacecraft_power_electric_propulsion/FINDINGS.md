@@ -101,7 +101,6 @@ The upstream note prints 44 kg for MMRTG because applied rc-041 (R67) corrected 
 
 Do not re-sweep storage_systems.csv physics unless value/band columns move at a future spacecost tip.
 
-
 ## R314 - Electric ISRU stages are sized from a placeholder propellant book (2026-11-01)
 
 `economicspace_electric_stage_placeholder_propellant_record_2026`: at
@@ -279,18 +278,15 @@ all 22 imported local modules, match fresh pinned GitHub metadata; all four
 live main comparisons are identical.
 `extracted_data/r345_rtg_power_constrained_payload.csv`.
 
-
 ## R455 - Rated-array power cost option in current upstream (2026-11-09)
 
 `economicspace_rated_array_cost_option_2026`, economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, defines `CalcConfig.model_rated_array_cost` with default `False` (modules/calc.py, line 670). The code comment says the off mode prices the plant at watts delivered at the body, while the on mode prices the array at its 1-AU rating. When enabled, the caller passes the ratio of base to effective solar specific power, multiplied by `array_oversize_factor` for the solar plant (lines 7560-7563); the cost prologue applies that multiplier to the plant array and EP array terms (lines 5634-5651).
 
 This adds an explicit sensitivity path for the installed-array basis in `rc-091`, but its default remains off, so the candidate's baseline cost/mass asymmetry is still present unless a consuming configuration enables it. Keep `rc-091` open to review the default/consumer configuration and ensure any correction uses the same installed-power basis as mass sizing; do not treat the optional path alone as a default-model resolution. Extracted: `extracted_data/r455_rated_array_cost_option_audit.csv`.
 
-
 ## R459 — Current RTG ceiling-refit option
 
 At economicspace main commit `0c9e1bb49fe5d6c48b76e94c7bc135ca70d91939`, `CalcConfig.refit_rtg_ceiling` defaults to `False` (modules/calc.py:706), and the module-level consumer constructs `CONFIG = CalcConfig()` without an override (line 1468). When an RTG trial exceeds `rtg_max_power_w`, the sizing loop calls `_refit_to_plant_ceiling` only when the flag is enabled; otherwise it returns `None` (lines 6965-6971). The settled-power check applies the same opt-in rule (lines 7264-7271). Thus the smaller-payload recovery path is available for experiments but not active in the default consumer; `rc-281` remains open. Extracted: `extracted_data/r459_rtg_ceiling_refit_flag.csv`.
-
 
 ## R466 — Current electric-stage sizing and return-mass options
 
@@ -307,19 +303,17 @@ R483 — NASA’s preliminary 1–10 kWe Kilopower scaling study reports 1,544 k
 
 - **nasa_jpl_2017_solar_power_technologies_planetary_missions** (JPL D-101316): Table 3-3 gives “Flexible roll-out array | 25 kW | 150 W/kg | 338 W/m² | 7” (printed p. 25; PDF p. 33). The report says the figures are approximate public-domain state-of-practice values; flexible roll-out maximum power is estimated from ground measurements and the specific-power comparison assumes current-production triple-junction cells. This is an array-level benchmark, not a flight measurement of ROSA/iROSA or a complete power-system mass. It supplies a registered citation for the ~150 W/kg scale while leaving spacecost’s 60 W/kg system-level estimate and the asserted battery/PMAD/structure reduction unsupported. Extracted data: extracted_data/r496_jpl_rollout_array_specific_power.csv.
 
-
 ## R508 — JPL solar-array recurring-cost comparator (2026-11-09)
 
 Surampudi et al.’s JPL D-24454 report derives cost data from eight GSFC solar panels and states that these costs include the photovoltaic stack and associated electrical hardware and qualification tests, but exclude substrates, deployment mechanisms and drives (§2.6, printed p. 22). It gives a year-2001 estimate of $1,100 per test-condition watt and about $1,650 including deployment gear; the average of four typical 1990s panels is $2,544 per end-of-life watt. The current `spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9` row `Power system (solar + battery)` is $800 per end-of-life watt [500, 1,500] and describes a burdened PV+battery train. JPL’s array-only historical costs are a scope and scale comparator; they exclude batteries and are in an older dollar basis. **rc-374 remains open** for a current, same-boundary cost basis; no numeric replacement is supported. Extracted: `extracted_data/r508_jpl_solar_array_cost_comparator.csv`.
 
-
 ## R548 — Duplicate system-level lithium-ion row (2026-11-10)
 
 Bennett and Baldwin’s five protected D-RATS packs measured 124–133 Wh/kg (mean 129.6; Table 5, printed p. 5 / PDF p. 8). At spacecost@19e1a31ae280301c6fd5c3a7b57b73f44122e1d9, the 130 Wh/kg estimate appears both in `reference/storage_systems.csv` (“Li-ion battery (system level),” [90,200] Wh/kg) and as the input to `reference/operational_costs.csv` (“Energy storage usable specific energy,” 104 Wh/kg usable). The storage row itself says its 130 Wh/kg figure has no source; the same table-boundary caveat applies because the D-RATS equipment was a protected spacesuit pack, not spacecraft bus storage. **rc-342 remains open** for a cited, scope-qualified analogy; the 0.80 DoD, 104 usable value, and bands remain unsupported by this comparison. Extracted: `extracted_data/r476_nasa_drats_liion_pack_specific_energy.csv`.
+
 ## R564 — Power estimates now distinguish measured comparators from model values (2026-11-10)
 
 At spacecost@d3e594fe0968eeaee4f2c02dd2c76334eab8bb2c, Bennett & Baldwin’s five D-RATS battery packs (124–133 Wh/kg, Table 5) are identified as a system-level comparator, not a spacecraft storage test (rc-342); NASA/TM-2015-218460’s 1,544 kg 10-kWe Kilopower entry is labeled a preliminary design estimate (rc-349); JPL D-101316’s approximately 150 W/kg is scoped as a class estimate, not a ROSA flight result (rc-362); and Surampudi’s array-only cost data are distinguished from the current solar-plus-battery estimate (rc-374). Values remain unchanged.
-
 
 ## R676 — Complete power-system specific mass basis (2026-11-12)
 
@@ -367,7 +361,6 @@ Verdict: rc-246 closed as applied. Extracted data: none new.
 
 Extracted data in extracted_data/r1033_worksheet_rated_solar_array_costs.csv.
 
-
 ## R1057 — Outer solar scaling and system specific power (2026-11-23)
 
 - spacecost_economicspace_outer_solar_power_scaling_2026 gives the installed Trojan mean distance 5.2044 AU and geometric mass factor 27.08577936. Spacecost environments.py lines 74–86 cites Juno's area and 486 W in its rationale. bolton_jun_2010_juno_solar_power_design, slide 6, labels 15 kW at 1 AU theoretical, 486 W “Power at JOI,” and 428 W at end of mission. jpl_2016_juno_orbit_insertion_power_facts, printed p. 11, gives more than 60 m² of array surface and approximately 14 kW at Earth distance and 500 W at Jupiter distance. Geometry-only scaling of the two 1 AU figures gives 553.80 and 516.88 W at the nominal Trojan distance. nasa_jpl_2017_solar_power_technologies_planetary_missions, §4.2.2, describes cell shunts and partial compensation from rising voltage at low temperature. **rc-943** records the Juno design-point and loss-factor provenance.
@@ -375,14 +368,12 @@ Extracted data in extracted_data/r1033_worksheet_rated_solar_array_costs.csv.
 
 Extracted data in extracted_data/r1057_juno_solar_scaling_and_worksheet_boundary.csv.
 
-
 ## R1058 — RTG power epoch and eclipse-dependent crossover (2026-11-23)
 
 - spacecost_rtg_rating_and_economicspace_crossover_2026 gives 5.0 We/kg as the installed RTG specific-power value. jpl_2017_rtg_study_legacy_gphs_rating, Appendix N Table N-1, gives 290 We “Beginning Of Mission” and 57 kg, or 5.09 We/kg. nasa_2022_next_gen_rtg_mod1_power_life, p. 2, gives 245 We at beginning of life and 177 We at end of design life for 55.7 kg, or about 4.40 and 3.18 We/kg. nasa_new_horizons_rtg_launch_pluto_power, In Depth, gives roughly 250 We at launch and 200 We at Pluto. **rc-945** records the generator mass and power epoch.
 - The Spacecost RTG notes give a roughly 3 AU onset and a 3.46 AU crossover. The Economicspace mass screen uses the eclipse-adjusted rating and retains solar for later comparison. At 2.8 AU the fixture gives 7.653 W/kg before eclipse and 3.141 W/kg with five hours of darkness over half the cycle. With installed ratings and a 1 kW load, the mass screen admits RTG with eclipse and returns solar with eclipse disabled. **rc-946** records the conditional screening basis.
 
 Extracted data in extracted_data/r1058_rtg_rating_and_eclipse_crossover.csv.
-
 
 ## R1091 — Electric propulsion firing time and thruster qualification (2026-11-24)
 
