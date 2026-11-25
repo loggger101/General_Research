@@ -1261,3 +1261,72 @@ Verdict: Keep rc-822 open; no replacement inferred. Extracted: extracted_data/r9
 At Spacecost main 64e51d5197fa5ebb8dd1d910565c000a2b0b86e9 (PR #57, 0.19.0, data contract 1.28.0), by the owner's decision, Kuaizhou-11 keeps $12.2M, now stated as the geometric centre of $10M-$15M. Its note cites `cnsa_2018_kuaizhou_11_price_quote` (Xinhua 2018, "quoted below US$10,000" per kg) as the ceiling the headline is read under and `faa_ast_2017_compendium_kuaizhou_11_price` ($15M est, preflight) beside it, with later Beijing Business Daily 2023, Hubei Daily 2022 and Next Spaceflight claims bracketing it, and no longer cites `wikipedia_kuaizhou_family_article` for this row. Value unchanged. The Kuaizhou-1A row still cites Wikipedia, so that source is not proposed for rejection (rc-202).
 
 Verdict: rc-202 closed as applied. Extracted data: none new.
+
+## R1019 — Long March 10B payload ratings and recovery configuration (2026-11-22)
+
+- `spacecost_lm10b_payload_attribution_current_2026` stores 16,000 kg as the LEO point and both bounds. Its note attributes 16 t at 200 km and 11 t at 900 km, 50°, to Wikipedia. Economicspace’s installed Spacecost 0.19.0 transport export repeats the values and source note.
+- `cnsa_lm10b_maiden_flight_and_leo_rating_2026` (2026-07-10, vehicle description) says “200公里近地轨道运载能力约16吨” in reusable configuration, or approximately 16 t at 200 km. Its opening paragraph reports that the maiden flight reached its planned orbit and recovered the first stage. In `chen_muye_cctv_lm10b_payload_ratings_2026`, Chen Muye specifies “900公里、50度倾角轨道的运载能力为11吨” and gives 16 t at 200 km, both in recovery configuration. **rc-882** records those sources for the two payload ratings and their configuration.
+
+Extracted data in `extracted_data/r1019_long_march_10b_payload_ratings.csv`.
+
+## R1034 — Ceres-1 dedicated payload envelope citation (2026-11-23)
+
+- galactic_energy_ceres1_launch_vehicle_user_manual_2023, V2023.2, §09 (PDF p. 11), labels the dedicated layout “单星独立发射” and gives “圆柱：φ1400×1400” and “锥台：φ1000×φ1400 ×1100”. The adjacent dual-satellite layout specifies a 1,300 mm frustum and a 1,050 mm diameter by 1,000 mm cylinder. Section 05 (PDF p. 5) gives the outer fairing as 1.6 m in diameter and approximately 5 m long.
+- spacecost_ceres1_fairing_code_current_2026 pins Spacecost main `64e51d5197fa5ebb8dd1d910565c000a2b0b86e9`. The Ceres-1 profile integrates to 3.410722424 m³ and exports 3.41 m³ with `fairing_basis=guide`. Its note names §05. Economicspace’s installed Spacecost 0.19.0 transport CSV repeats that value and note, and the verification worksheet uses the launch row to cite `V_fair` when a volume is present.
+- **rc-906** records the exact §09 dedicated configuration and guide locator for the 3.41 m³. Section 05 supports the outer dimensions used in `_CALIBRATION`.
+
+Extracted data in `extracted_data/r1034_ceres1_fairing_envelope.csv`.
+
+## R1035 — Pallas-1 manufacturer orbital ratings and optional fairings (2026-11-23)
+
+- galactic_energy_pallas1_user_manual_2023, V2023.1 PDF p. 2, gives “采用两级总体方案” (two-stage design) and “LEO 运载能力 5t.” Its overview uses a 3.35 m fairing for the Table 1 example. Tables 2 and 3 (PDF pp. 3–4) project 1,610 kg to 700 km SSO from Wenchang and 1,961 kg from Jiuquan. The tabulated altitude rows are 200, 500, 700 and 1,000 km.
+- spacecost_pallas1_fairing_and_payload_main_2026 pins Spacecost main `64e51d5197fa5ebb8dd1d910565c000a2b0b86e9`. The Pallas-1 row carries 5,000 kg LEO and cites Wikipedia for 5 t at 400 km and 3 t at 700 km SSO. **rc-907** records the two-stage nominal basis and the discrepant preflight SSO projections with their launch sites. The guide describes a 49.627 m design. The 2026 flight release, galactic_energy_pallas1_first_flight_release_2026, describes a 52 m vehicle.
+- galactic_energy_pallas1_user_manual_2023, Figure 6 (PDF p. 4), labels configurations “(a)3350mm 整流罩” and “(b)4200mm 整流罩”. The hatched 4.2 m option has a 3.800 m cylinder diameter, 4.913 m cylinder height, and a 2.887 m taper ending at 2.000 m diameter. The 3.35 m option gives 2.900, 4.000, 2.184 and 1.430 m respectively. Using a cylinder and frustum gives 75.4005 m³ and 34.7697 m³. Spacecost and the installed Economicspace transport table carry 75.4 m³ for the 4.2 m option. **rc-908** records the direct manufacturer PDF and option scope.
+
+Extracted data in `extracted_data/r1035_pallas1_orbital_ratings_and_fairings.csv`.
+
+
+## R1045 — Eclipse and Tianlong-3 manufacturer specifications (2026-11-23)
+
+- spacecost_eclipse_tianlong3_performance_main_2026 pins Spacecost main 64e51d5197fa5ebb8dd1d910565c000a2b0b86e9 and compares the corresponding installed Economicspace Stage 3 rows. Eclipse carries `core_propellant=methalox`. firefly_eclipse_vehicle_page, Propulsion, says “LOX / RP–1.” northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet, p. 2, says “Liquid Oxygen / RP-1” in the propulsion table alongside the Miranda first stage. **rc-922** records the propellant correction.
+- Eclipse exports 2,140 kg [2,000, 2,300] as escape payload and USD 37,383/kg at a USD 80M scenario price. northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet, p. 2, and firefly_eclipse_vehicle_page, Performance, give “2,300 kg” to TLI. The joint data sheet also labels the 16,300 kg LEO rating “200 KM.” The original Spacecost query admits the Eclipse row in escape mode when development rows are included and rejects it at minimum 2,150 kg. The 2,000 kg lower endpoint lacks a cited source in the row. **rc-923** records the TLI basis and range provenance.
+- The installed Eclipse fairing volume is blank, so Economicspace uses 100 m³ when the vehicle is evaluated. northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet, p. 2, lists a 5.4 m “outer diameter,” a 4.572 m envelope diameter and 11.938 m envelope height. The drawing identifies MLV static and NSSL Cat B overlays and labels 6.706 m below the shoulder, 5.232 m above it and a 0.831 m upper diameter. The dimensioned circular cylinder gives 110.1 m³ and a straight-taper approximation gives 144.9 m³ with the cylinder included. **rc-924** records the source and geometry for a scoped volume estimate.
+- The Tianlong-3 export uses a fixed 17,000 kg LEO capacity and cites 14 t SSO via Wikipedia. suzhou_2024_tianlong3_preflight_payload_report, configuration paragraph, gives that historical pair. space_pioneer_2025_tianlong3_sea_static_fire, configuration paragraph, gives 17–22 t LEO and 10–17 t SSO for the 72 m configuration. space_pioneer_tianlong3_product_page_current_2026, capability fields, gives “17~22” t LEO and “10~17” t at 500 km SSO. At the same scenario price, 17 t and 22 t imply USD 1,971/kg and USD 1,523/kg. **rc-925** records the direct rating and its conditions.
+
+Extracted data in extracted_data/r1045_eclipse_tianlong3_vehicle_citations.csv.
+
+
+## R1085 — Vulcan injection energy and first VC6L flight
+
+- `vulcan_launch_systems_users_guide_oct2023` — Table 2.2.5-1 reports VC2S/VC4S/VC6S “TLI” payloads of 6,200/9,100/11,300 kg at −2 km²/s² and “Interplanetary / Mars” payloads of 3,600/6,000/7,600 kg at +20 km²/s². `spacecost_vulcan_departure_energy_and_vc6_flight_code_2026` — Spacecost `launch_vehicles.csv` lines 8–10 summarize the pairs as 4,720/7,390/9,270 kg escape. The respective derived rates are $23,305/$16,238/$13,808 per kg. Verdict: the summary requires the endpoint energies and configurations to be cited and distinguished from a capacity at any particular energy (rc-996).
+- `ula_vulcan_leo1_vc6l_schedule_2026` — ULA's Mission Overview describes VC6L, the LEO-optimized Centaur V, six solid boosters and a long fairing. `ula_2026_vulcan_leo1_vc6l_flight_anomaly` — ULA's November 15–18 updates confirm launch on November 15, 2026, and that it “failed to deliver the Amazon mission to orbit.” Spacecost's VC6 first-flight year is blank and line 10 says the variant is unflown, with a November 13 schedule. Verdict: replace the schedule with the flight date and outcome (rc-997).
+- Extracted data: `extracted_data/r1085_vulcan_departure_energy_and_first_vc6l_flight.csv`.
+
+
+## R1086 — Vulcan ISS payload and fairing configuration
+
+- `spacecost_vulcan_iss_fairing_configuration_code_2026` — Spacecost `fairings.py` lines 121–126 and 166–168 assign the standard Vulcan profile to VC2, VC4 and VC6. All three exports are 171 m³. The LEO provenance for VC4 and the low endpoint for VC6 refer to the ISS orbit. Economicspace pins the checked Spacecost version and uses 0.25 of its fairing volume for the return-hold assumption.
+- `vulcan_launch_systems_users_guide_oct2023` — Table 2.2.1-1 assigns ISS capacities to VC2S (16,300 kg), VC4L (21,400 kg) and VC6L (25,600 kg). Figures 4.3.1-1 and 4.3.1-2 on pp. 4-8 and 4-9 distinguish the 15.5 m and 21.3 m fairing envelopes. `ula_vulcan_leo1_vc6l_schedule_2026` lists a “longer-length payload fairing” separately from the LEO-optimized Centaur V for VC6L. Integrating the nominal profiles by Spacecost's frustum method gives 170.56 and 273.25 m³. Verdict: identify which fairing accompanies each performance rating (rc-998).
+- Extracted data: `extracted_data/r1086_vulcan_iss_payload_and_fairing_configuration.csv`.
+
+
+## R1087 — H3-30S design payload and Type 30 test flight
+
+- `spacecost_h3_30s_sso_and_flight_basis_code_2026` — Spacecost `launch_vehicles.csv` line 24 uses 4,000 kg in `payload_leo_kg`, a 107 m³ short-fairing estimate, and a derived $9,075/kg. The notes say “First operational flight Jun 2026.” Economicspace `calc.py` line 4075 reads the payload figure as its LEO mass capacity.
+- `jaxa_2018_h3_30s_500km_sso_design_target` — Slide 2 identifies H3-30S capacity as “4トン以上” (at least 4 t) for 500 km sun-synchronous orbit. `jaxa_2026_h3_f6_30_test_flight_result` — The June release and briefing identify Flight No. 6 as a “30 configuration Test Vehicle” and confirm second-stage orbital insertion and six secondary payload separations. `jaxa_2026_h3_type22_launch_service_transition` — The November 20 release scopes the service transition to Type 22 with LE-9 Type1A. Footnote 3 says JAXA conducted the Type 30 test and used no MHI launch transportation service. Verdict: cite the SSO design basis and distinguish the demonstration from an operational service flight (rc-999).
+- Extracted data: `extracted_data/r1087_h3_30s_capacity_and_demo_flight.csv`.
+
+
+## R1088 — H3 fleet launch count and F8 variant
+
+- `spacecost_h3_24l_fleet_reliability_note_code_2026` — Spacecost `launch_vehicles.csv` line 23 says “H3 has 2 failures in 9 flights” in its H3 (24L) row.
+- `mhi_h3_past_missions_through_f10_2026` — The H3 mission table lists TF1, TF2 and F3–F10, ten distinct H3 launches through October 20, 2026. `jaxa_h3_launch_records_tf1_through_f9_2026` marks TF1 and F8 as launch failures. `jaxa_2026_h3_f10_mmx_launch_outcome` confirms MMX separated and was injected into orbit on October 20. `jaxa_2026_h3_f8_failure_investigation_final` §2.1 identifies F8 as “H3-22S,” and §5.2 examines delamination of the payload support structure. Verdict: the fleet count through F10 is two failures in ten launches, with F8 belonging to a different configuration from the row (rc-1000).
+- Extracted data: `extracted_data/r1088_h3_fleet_flight_count_and_variant_scope.csv`.
+
+
+## R1097 — Ariane 6 transfer ratings and fleet count (2026-11-24)
+
+- ariane6_users_manual_issue2_rev0_feb2021, printed p. 2-11 §2.4.6, gives 3,500 kg for A62 at 200 × 400,000 km and 6°, and 8,600 kg for A64 at 230 × 400,000 km and 7° under “Lunar Transfer Orbit.” Section 2.4.5 lists 2,600 and 6,900 kg for “Escape Mission 1” at v-infinity 2.5 km/s and free declination. Page 2-10 §2.4.4 gives 8,000 kg for A64 under “HEO Mission 1 (L2).” Spacecost v0.19.0 exports 3,000–3,500 and 8,000–8,600 kg in its A62 and A64 escape fields. The manual corroborates the upper endpoints for the specified lunar orbits. The A64 lower endpoint matches a distinct HEO orbit numerically. **rc-1011** covers the missing mission and band provenance.
+- esa_europes_spaceport_launch_inventory_through_va270_2026, mission rows VA262–VA270, confirms the nine fleet flights through August in the Spacecost A62 note. arianespace_2026_va271_tenth_ariane6_flight, 24 November release, calls VA271 “Ariane 6’s tenth flight” and records 36 satellites deployed by an A64 with P160C boosters. arianespace_2024_va262_post_launch_update, final technology demonstration section, reports that VA262 deployed satellites but the “third boost could not take place” and two reentry capsules were withheld. **rc-1012** updates the fleet cutoff and documents the qualification outcome.
+
+Extracted data in extracted_data/r1097_ariane6_transfer_ratings_and_flight_count.csv.

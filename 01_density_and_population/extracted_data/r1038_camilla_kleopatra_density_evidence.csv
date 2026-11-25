@@ -1,0 +1,17 @@
+source_id,item,value,unit,location_in_source,notes
+carry2012,Camilla historical compilation density,2.28,g/cm3,"PDF p. 21, Table 1, 107",Reported uncertainty 0.29; weighted diameter 210.68 km.
+carry2012,Kleopatra historical compilation density,4.27,g/cm3,"PDF p. 22, Table 1, 216",Reported uncertainty 0.86; weighted diameter 127.47 km.
+berthier_etal_2018_camilla_shape_and_satellite_dynamics,Camilla primary volume-equivalent diameter,254,km,"arXiv PDF p. 1, abstract",36 km at 3 sigma.
+berthier_etal_2018_camilla_shape_and_satellite_dynamics,Camilla mass from satellite dynamics,1.12e19,kg,"arXiv PDF p. 1, abstract",0.01e19 kg at 3 sigma.
+berthier_etal_2018_camilla_shape_and_satellite_dynamics,Camilla primary bulk density,1.28,g/cm3,"arXiv PDF pp. 1 and 9, abstract and §6.1","0.13 g/cm3 at 3 sigma, reported uncertainty."
+marchis_etal_2021_kleopatra_shape_and_density,Kleopatra primary volume-equivalent diameter,118.75,km,"ESO PDF p. 1, abstract",Reported uncertainty 1.40 km.
+marchis_etal_2021_kleopatra_shape_and_density,Kleopatra primary bulk density,3.38,g/cm3,"ESO PDF p. 1, abstract",Reported uncertainty 0.50 g/cm3.
+broz_etal_2021_kleopatra_multipole_orbits,Kleopatra primary from multipole orbit mass,2.97e18,kg,"ESO PDF p. 1, abstract, m1",Marchis et al. give 0.32e18 kg uncertainty.
+asteroidcatalog_camilla_kleopatra_taxonomy_evidence_2026,Camilla taxonomy evidence density,2.28,g/cm3,taxonomy.py line 734; shipped taxonomy.json DENSITY_EVIDENCE.X.bodies,"Historical Carry entry, uncertainty 0.29."
+asteroidcatalog_camilla_kleopatra_taxonomy_evidence_2026,Kleopatra taxonomy evidence density,4.27,g/cm3,taxonomy.py line 750; shipped taxonomy.json DENSITY_EVIDENCE.Xe.bodies,"Historical Carry entry, uncertainty 0.86."
+asteroidcatalog_release_data_2026_11_13,Camilla measured row diameter_km,254.0,km,asteroid_catalog.csv designation 107,mass_measured=True and density_measured=True.
+asteroidcatalog_release_data_2026_11_13,Camilla measured row estimated_mass_kg,1.12e+19,kg,asteroid_catalog.csv designation 107,mass_measured=True and density_measured=True.
+asteroidcatalog_release_data_2026_11_13,Camilla measured row density_gcm3,1.3053237817067618,g/cm3,asteroid_catalog.csv designation 107,mass_measured=True and density_measured=True.
+asteroidcatalog_release_data_2026_11_13,Kleopatra measured row diameter_km,118.717,km,asteroid_catalog.csv designation 216,mass_measured=True and density_measured=True.
+asteroidcatalog_release_data_2026_11_13,Kleopatra measured row estimated_mass_kg,2.96361e+18,kg,asteroid_catalog.csv designation 216,mass_measured=True and density_measured=True.
+asteroidcatalog_release_data_2026_11_13,Kleopatra measured row density_gcm3,3.382857384858656,g/cm3,asteroid_catalog.csv designation 216,mass_measured=True and density_measured=True.

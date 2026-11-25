@@ -421,7 +421,7 @@ rc-111 (hydrazine: cite JPL 1968), rc-112 (HTP: cite Hitt 2001), rc-113 (arcjet:
 The EP sizing columns (`thruster_kg_per_n`, `thrust_scaling`, 16 devices) had no coverage beyond the NEXT-C files cited by rc-102 and rc-104.
 
 - Xenon 54 kg/N: at NEXT-C's 235 mN, a ~12.7 kg head; consistent.
-- PPT 5000 kg/N: **zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing** [T2, hosted]: EO-1 PPT 4.95 kg at ~860 µN mean thrust ≈ 5756 kg/N (+13%). The paper prints impulse bits in pico units but its total impulse shows micro (kept with a flag). `extracted_data/r189_eo1_ppt_kg_per_newton_key_numbers.csv`.
+- PPT 5000 kg/N: **zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing** [T2, hosted]: EO-1 PPT 4.95 kg at 860 µN mean thrust gives approximately 5756 kg/N for the complete unit. The rendered table gives µN·s per pulse. See R1062 and `extracted_data/r189_eo1_ppt_kg_per_newton_key_numbers.csv`.
 - FEEP, MPD, electrospray and exotic rows: no measurements found; their notes name no source.
 
 No candidate.
@@ -1043,3 +1043,46 @@ Verdict: Polk et al. provide a traceable lithium-MPD performance history that ca
 At Spacecost main ef3e214dccff73adf541ed70444df52575b5b97a (PR #55, 0.18.8, data contract 1.27.8; notes and CITATIONS.md only), CITATIONS.md gains `mirtich_1982_resistojet_large_spacecraft_systems` (rc-852), `whitley_et_al_2017_global_exploration_roadmap_derived_moon_concept` scoped as a crewed staging trade (rc-853), `babic_et_al_1993_extended_duration_lunar_lander` (rc-854) and `nasa_ntrs_19900016723_lctv_return_delta_v` (rc-861). Values unchanged.
 
 Verdict: rc-852, rc-853, rc-854, rc-861 closed as applied. Extracted data: none new.
+
+
+## R1062 — EO-1 pulsed plasma thruster mass boundary (2026-11-23)
+
+- zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing, rendered p. 2 Table 1, gives “90 – 860 µNsec,” 1 Hz, 4.95 kg “Total Mass,” 8% overall efficiency and an estimated 460 N·s total impulse. The >96,000 pulses in the p. 1 abstract are the flight experiment count. R189's extract now records the printed micro prefix and separates the two scopes. At 1 Hz the upper impulse bit gives 860 µN mean thrust, so the total-unit ratio is 5,756 kg/N.
+- benson_arrington_hoskins_meckel_2000_eo1_ppt_development, printed p. 5, describes energy storage, power-processing electronics and mechanical thruster elements “integrated into a single unit,” with two opposed heads. Printed p. 11 Table I gives 8% overall efficiency at maximum energy and 70 W of input at 1 pulse/s. spacecost_eo1_ppt_mass_and_economicspace_sizing_2026 records 5,000 kg/N in Spacecost and Economicspace. Economicspace models it as a thruster term plus a separate PPU. At 860 µN the installed 1,000 s and 8% inputs give 4.30 kg on thrust and 0.248 kg on PPU before the array term. **rc-951** records the citation and scope of the hardware mass.
+
+Extracted data in extracted_data/r1062_eo1_ppt_mass_boundary.csv.
+
+
+## R1063 — IFM Nano mass, power and flight heritage (2026-11-23)
+
+- spacecost_feep_nano_mass_efficiency_and_heritage_2026 records 2,500 kg/N in the Spacecost FEEP row and the installed Economicspace copy. The source comment divides 0.9 kg by 0.35 mN. enpulsion_ifm_nano_datasheet_enp2018_001_f1, p. 2, labels 0.670/0.900 kg “MASS (DRY / WET)” at 350 µN nominal. krejci_etal_2018_ifm_nano_feep_flight, p. 3 Section 2.2, describes the reservoir, neutralizer and integrated PPU. The dry and wet integrated ratios are 1,914 and 2,571 kg/N. enpulsion_nano_datasheet_enp2018_001_i1, p. 2, gives 680/900 g and 330 µN nominal. Economicspace adds a separate PPU mass to the thrust-based 2,500 kg/N term. **rc-952** records the mass boundary.
+- enpulsion_ifm_nano_datasheet_enp2018_001_f1, p. 1, describes ionizing “up to 60% of the evaporated indium atoms.” krejci_etal_2018_ifm_nano_feep_flight, p. 3, pairs about 0.42 mN and 3,200 s with 40 W, and about 0.25 mN and 5,000 s with 30 W. The Economicspace relation gives 16.5% and 20.4% effective jet power per bus watt for those points. With its installed 60% efficiency, the same thrust and Isp pairs require 10.98 W and 10.22 W in the model. The F.1 and I.1 data sheets give respective Isp envelopes of 2,000–6,000 and 1,500–5,000 s, and the installed Spacecost row uses 6,000 s. **rc-953** records the operating-point citation and power basis.
+- spacecost_feep_nano_mass_efficiency_and_heritage_2026 records 2016 as first_flight with LISA Pathfinder and GOCE named in the comment. nasa_2019_lisa_pathfinder_colloid_microthrusters identifies “cold gas” and “colloid microthrusters” on Pathfinder. esa_2009_goce_xenon_ion_commissioning identifies xenon propellant and an electric discharge. krejci_etal_2018_ifm_nano_feep_flight, Section 3.1, gives 12 January 2018 for the IFM Nano demonstration launch. **rc-954** records the mission attribution and first-flight scope.
+
+Extracted data in extracted_data/r1063_feep_mass_efficiency_and_heritage.csv.
+
+
+## R1064 — Electrospray module mass, bus power and ST7 heritage (2026-11-23)
+
+- spacecost_electrospray_tile_st7_and_economicspace_sizing_2026 records 10,000 kg/N and the “TILE-3 ~100 µN/kg-class” comment. accion_tile3_2020_product_datasheet, p. 1, gives 2 kg “Wet Mass” and 0.45 mN “Max Thrust (Axial),” yielding 4,444 kg/N and 225 µN/kg. nasa_2021_smallsat_soa_tile3_st7_ratings, Table 4-8 p. 102, gives 2.25 kg wet and 450 µN for 5,000 kg/N. The record describes an integrated unit. anderson_etal_2018_st7_pathfinder_experimental_results, preprint p. 4 Section II.A, records a 14.8 kg ST7 assembly with four heads, feeds and PPUs. Economicspace's 450 µN fixture assigns 4.5 kg to thrust and adds a separate PPU. **rc-955** records the different hardware mass boundaries.
+- accion_tile3_2020_product_datasheet, p. 1, gives “Max Power (at Max Thrust)” of 20 W. nasa_2021_smallsat_soa_tile3_st7_ratings, Table 4-8 p. 102, lists 450 µN, 1,650 s and 20 W for TILE-3. The rating tuple gives an effective efficiency of 0.182 using Economicspace's relation. Using the installed 0.65 at that thrust and Isp gives 5.60 W. Using the installed 2,500 s at the same thrust gives 8.49 W. **rc-956** records the operating point and power basis.
+- spacecost_electrospray_tile_st7_and_economicspace_sizing_2026 couples an EMI-BF4 row and “no neutraliser discharge” with a reference to LISA Pathfinder ST7-DRS. anderson_etal_2018_st7_pathfinder_experimental_results, preprint p. 4 Section II.A, identifies the ST7 propellant as “EMI-Im” and describes a “field emission cathode neutralizer.” It gives about 240 s specific impulse. nasa_2021_smallsat_soa_tile3_st7_ratings, Table 4-8 p. 102, identifies EMI-BF4 with TILE-3 and EMI-Im with Busek CMNT. **rc-957** records the hardware and propellant scope of the flight heritage.
+
+Extracted data in extracted_data/r1064_electrospray_hardware_mass_power_and_heritage.csv.
+
+
+## R1065 — Hydrazine arcjet subtype and shared power conversion (2026-11-23)
+
+- spacecost_arcjet_mass_and_economicspace_power_conversion_2026 records “MR-509 1.5 kg / 258 mN” beside the installed 6.0 kg/N coefficient. aerojet_rocketdyne_mr509_mr510_propulsion_datasheets, MR-509 and MR-510 sheets, gives thruster-plus-cable masses of 1.4 and 1.6 kg and demonstrated thrust bands of 213–254 and 222–258 mN, respectively. At their upper thrust endpoints the resulting ratios are 5.51 and 6.20 kg/N. The configured 600 s lies in the MR-510 sheet's 585–615 s band. **rc-958** records the subtype and cable boundary.
+- aerojet_rocketdyne_mr509_mr510_propulsion_datasheets, MR-510 sheet, gives 2,000 W “input to the arcjet” and 2,200 W “input to the PCU.” zube_goodfellow_hearn_2017_mr510_arcjet_pcu, abstract and p. 7 Table 1, gives one 15.8 kg PCU in the 70 V MR-510 shipset with four installed arcjets and two simultaneous operating channels. The MR-510E column gives a 19.1 kg 100 V PCU. spacecost_arcjet_mass_and_economicspace_power_conversion_2026 records Economicspace's generic 4.7 kg/kW PPU term. Its installed 600 s and 0.35 yield 2,168.67 W at 258 mN in the fixture. The model gives 10.19 kg of PPU at that load and 20.39 kg for two such loads. The cited 70 V PCU spans 4.4 kW with both arcjets operating. **rc-959** records hardware sharing and the bus-power boundary.
+
+Extracted data in extracted_data/r1065_mr509_mr510_arcjet_and_power_conversion.csv.
+
+
+## R1069 — Lithium MPD test attribution, conceptual mass and tank phase (2026-11-24)
+
+- spacecost_economicspace_mpd_attribution_and_tankage_2026 records Spacecost CITATIONS.md §2, line 225, attributing the 150 and 200 kW points to Princeton. polk_et_al_2024_lithium_mpd_thruster_iepc_2024, p. 6, says “measured performance of the 3 MAI thrusters” and reports 44% at 3,724 s and 50% at 4,240 s for those powers. tikhonov_etal_1997_riame_lithium_mpd_test, printed p. 728, reports testing “in MAI with JPL participation” and states up to 130 kW under its RIAME MAI contract. **rc-967** records the bibliography attribution.
+- spacecost_economicspace_mpd_attribution_and_tankage_2026 records the Spacecost lithium MPD scenario at 4,000 s, 0.40 and 40 kg/N. polzin_et_al_2026_nep_technology_maturation_plan, printed pp. 247–248 and Figure 6.21, gives an “estimated” 200 kg for a single 1 MWe thruster and expects 4,000–7,000 s at about 60% thruster efficiency. Applying those assumptions yields 6.54–11.44 kg/N. nasa_jpl_2026_lithium_mpd_120kw_test, in its 28 April 2026 test account, reports “up to 120 kilowatts” for the February JPL ground test. It gives no thrust or mass for that prototype. **rc-968** records the conceptual mass comparator and measured power milestone.
+- spacecost_economicspace_mpd_attribution_and_tankage_2026 records both Spacecost and Economicspace Stage 3 row 41 at 0.534 kg/L and 0.025 kg/L tank scaling under storable_liquid. polzin_et_al_2026_nep_technology_maturation_plan, pp. 247–248, says lithium would be “stored as a solid during launch” and melted for low-pressure liquid storage in flight. luscher_mellish_1977_liquid_lithium_density, p. 148 Table LI, gives 513.1 kg/m³ with the note “Values at the freezing point.” At fixed 0.025 kg/L, Economicspace's tank fraction goes from 4.682% to 4.872% if sized on that liquid density. **rc-969** records the phase and temperature basis.
+
+Extracted data in extracted_data/r1069_lithium_mpd_attribution_mass_and_storage.csv.

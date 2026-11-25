@@ -1,0 +1,27 @@
+source_id,item,value,unit,location_in_source,notes
+warner_harris_pravec_2021_ephemerides_lightcurve_parameters,8812 rotation period qualifier and value,>1.90,h,"EMP 2021 Minor Planet Lightcurve Parameters, pp. 8069–8271, numbered row 8812, Period column",SWF entry; strict lower bound.
+asteroidcatalog_release_data_2026_11_13,8812 released diameter,10.746,km,"Stage 1 cache, designation 8812",measured
+asteroidcatalog_release_data_2026_11_13,8812 released period source count,2,source values,"Stage 1 cache, designation 8812","Counts source values, which may share an observation record."
+asteroidcatalog_release_data_2026_11_13,8812 selected rotation period,1.9,h,"Stage 1 cache, designation 8812",Provider JPL SBDB; no screened source recorded.
+asteroidcatalog_release_data_2026_11_13,8812 model density,1.3,g/cm3,"Stage 1 cache, designation 8812",Density field consumed by spin check.
+,8812 modeled equatorial lift period,2.895066373,h,Pinned spin_lift_period_h; installed density,Selected scalar trips spin_limited; an unknown point does not.
+,8812 modeled dark period from selected point,0.950000,h,"Pinned dark_period_hours, 0.50 dark fraction",Point-input scenario.
+warner_harris_pravec_2021_ephemerides_lightcurve_parameters,38535 rotation period qualifier and value,>1.02,h,"EMP 2021 Minor Planet Lightcurve Parameters, pp. 8069–8271, numbered row 38535, Period column",SWF entry; strict lower bound.
+asteroidcatalog_release_data_2026_11_13,38535 released diameter,10.86375561618579,km,"Stage 1 cache, designation 38535",derived_h_taxonomy_albedo
+asteroidcatalog_release_data_2026_11_13,38535 released period source count,2,source values,"Stage 1 cache, designation 38535","Counts source values, which may share an observation record."
+asteroidcatalog_release_data_2026_11_13,38535 selected rotation period,1.02,h,"Stage 1 cache, designation 38535",Provider JPL SBDB; no screened source recorded.
+asteroidcatalog_release_data_2026_11_13,38535 model density,2.29,g/cm3,"Stage 1 cache, designation 38535",Density field consumed by spin check.
+,38535 modeled equatorial lift period,2.181285236,h,Pinned spin_lift_period_h; installed density,Selected scalar trips spin_limited; an unknown point does not.
+,38535 modeled dark period from selected point,0.510000,h,"Pinned dark_period_hours, 0.50 dark fraction",Point-input scenario.
+warner_harris_pravec_2021_ephemerides_lightcurve_parameters,66167 rotation period qualifier and value,>1.73,h,"EMP 2021 Minor Planet Lightcurve Parameters, pp. 8069–8271, numbered row 66167, Period column",SWF entry; strict lower bound.
+asteroidcatalog_release_data_2026_11_13,66167 released diameter,11.416,km,"Stage 1 cache, designation 66167",measured
+asteroidcatalog_release_data_2026_11_13,66167 released period source count,1,source values,"Stage 1 cache, designation 66167","Counts source values, which may share an observation record."
+asteroidcatalog_release_data_2026_11_13,66167 selected rotation period,1.73,h,"Stage 1 cache, designation 66167",Provider JPL SBDB; no screened source recorded.
+asteroidcatalog_release_data_2026_11_13,66167 model density,1.5,g/cm3,"Stage 1 cache, designation 66167",Density field consumed by spin check.
+,66167 modeled equatorial lift period,2.695160119,h,Pinned spin_lift_period_h; installed density,Selected scalar trips spin_limited; an unknown point does not.
+,66167 modeled dark period from selected point,0.865000,h,"Pinned dark_period_hours, 0.50 dark fraction",Point-input scenario.
+warner_harris_pravec_2021_ephemerides_lightcurve_parameters,50684 rotation period qualifier and value,>1.30,h,"EMP 2021 Minor Planet Lightcurve Parameters, pp. 8069–8271, numbered row 50684, Period column",SWF entry; strict lower bound.
+asteroidcatalog_release_data_2026_11_13,50684 released diameter,11.959,km,"Stage 1 cache, designation 50684",measured
+asteroidcatalog_release_data_2026_11_13,50684 released period source count,1,source values,"Stage 1 cache, designation 50684","Counts source values, which may share an observation record."
+asteroidcatalog_release_data_2026_11_13,50684 released period screen result,JPL SBDB refused; point blank,,"Stage 1 cache, designation 50684",No matching raw provider field inspected.
+asteroidcatalog_rotation_bound_selection_and_economicspace_inputs_2026,Unknown point-period dark-period fallback,5.111,h,"Pinned dark_period_hours and CalcConfig, 0.50 dark fraction",Caller behavior with no point period.

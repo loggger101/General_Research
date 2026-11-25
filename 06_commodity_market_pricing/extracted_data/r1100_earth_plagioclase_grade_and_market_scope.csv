@@ -1,0 +1,17 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mineral_commodity_summaries_2026,"U.S. feldspar price, 2025e",110,USD/metric ton,"Printed p. 78, U.S. Salient Statistics, Feldspar only, marketable production",Average unit value; not grade-specific.
+usgs_mineral_commodity_summaries_2026,"U.S. feldspar apparent consumption, 2025e",540000,metric ton/yr,"Printed p. 78, U.S. Salient Statistics, Consumption apparent, Feldspar",Feldspar only; combined series is separate.
+usgs_mineral_commodity_summaries_2026,"World feldspar mine production, 2024e",31100000,metric ton/yr,"Printed p. 79, World total (rounded), 2024",Footnote 5: feldspar only.
+usgs_mineral_commodity_summaries_2026,"World feldspar mine production, 2025e",31000000,metric ton/yr,"Printed p. 79, World total (rounded), 2025",Mine production rather than realizable demand for asteroid-derived material.
+sibelco_2025_na_feldspar_pgw13n_technical_data,Sibelco PGW13N sodium oxide,10.46,wt%,"P. 1, Chemical Analysis, XRF",Typical production.
+sibelco_2025_na_feldspar_pgw13n_technical_data,Sibelco PGW13N calcium oxide,0.77,wt%,"P. 1, Chemical Analysis, XRF",Typical production.
+sibelco_2025_na_feldspar_pgw13n_technical_data,Sibelco PGW13N iron oxide,0.04,wt%,"P. 1, Chemical Analysis, XRF",Fe2O3; typical production.
+sibelco_2025_na_feldspar_pgw13n_technical_data,Sibelco PGW13N median particle size,18.0,µm,"P. 1, Particle Size Distribution, D50",Product grade example.
+dhaliwal_day_tait_2023_eucrite_plagioclase_compositions,Plagioclase anorthite content across four basaltic eucrites,91–96,mol% An,"Basaltic Eucrites, Mineralogy and Mineral Chemistry, paragraph following Fig. 2","CMS 04049, PCA 91245, NWA 1000, EET 90020."
+dhaliwal_day_tait_2023_eucrite_plagioclase_compositions,"Plagioclase anorthite content, NWA 1923",84,mol% An,"Basaltic Eucrites, Mineralogy and Mineral Chemistry, paragraph following Fig. 2",Reported lower-anorthite example.
+spacevalue_installed_prices_release_manifests_2026,Installed Earth plagioclase price,0.1,USD/kg,"Earth-surface Stage 2 table, plagioclase",Direct reference price and no elemental yields.
+spacevalue_installed_prices_release_manifests_2026,Installed Earth plagioclase ceiling,1000000000000000.0,kg/yr,"Earth-surface Stage 2 table, plagioclase",Market id plagioclase; Spacevalue unbounded-market default.
+spacevalue_earth_plagioclase_sale_and_market_fallback_2026,V-class detailed plagioclase mass fraction,0.333,fraction,"AsteroidCatalog reference/mineral_phases_detailed.csv, V",Taxonomic model assumption.
+,Export ceiling divided by world production,32258.06,ratio,Installed Earth export and USGS 2025e world mine production,Scale comparison rather than demand estimate.
+,Plagioclase in one-tonne V-class fixture,333.0,kg,"Pinned V-class fraction, full recovery",Hypothetical cargo mass.
+,Gross plagioclase sale value in fixture,33.30,USD,"Pinned Spacevalue sale function, one-year hard ceiling","No discount, price and grade assumed; no other phases or transport costs."

@@ -319,3 +319,65 @@ Verdict: rc-844 closed as applied. Extracted data: none new.
 At Spacecost main a6901495d257cbcd018b31e238498c94f301c865 (PR #54, 0.18.7, data contract 1.27.7; notes and comments only), the bulk ore restraint note labels its [0.08, 0.30] band a scenario, gives the 0.22 kg/kg dry-mass spread before the cascade, and scopes the stage-level and Cygnus comparators as non-matching (rc-821). Value unchanged.
 
 Verdict: rc-821 closed as applied. Extracted data: none new.
+
+## R1017 — Shadow fraction omitted from the solar night calculation in the worksheet (2026-11-22)
+
+- `economicspace_stage3_eclipse_dark_fraction_current_row_2026` gives the Stage 3 “Eclipse / night-side dark fraction” base 0.50 with endpoints 0.35 and 0.55 (operational_costs.csv, line 35, at the pinned Economicspace revision). `economicspace_worksheet_dark_fraction_formula_code_2026` passes that fraction into the calculator’s `dark_period_hours` (modules/calc.py lines 2533–2557, 6641–6655). The worked calculation uses half a rotation (worked_calculation.py lines 2641–2672). The worksheet shows “min(P_rot / 2, dark_max)” and lists the rotation and cap as its only dependencies (verification_sheet.py lines 2990–2995).
+- With 2018 DT’s 10.222 h prior, the 72 h cap and Stage 3 solar inputs, the calculator gives 3.5777, 5.1110 and 5.6221 h at the three fractions. The worksheet gives 5.1110 h for all three. At 0.35 the resulting effective rating is 14.6024 W/kg in the calculator and 12.0156 W/kg in the worksheet. **rc-880** asks the worked calculation and worksheet to use and cite the selected fraction in the night step.
+
+Extracted data in `extracted_data/r1017_worksheet_dark_fraction_scenarios.csv`.
+
+## R1041 — Phase-density return-cargo refit in the verification worksheet (2026-11-23)
+
+- economicspace_worksheet_return_cargo_refit_code_2026 pins Economicspace `15c629b7b827d5a382c8c09f5f2702b839b99d71`. The worked calculation caps initial mass at 0.25 × fairing volume × body density (lines 3915–3943), then reports the concentrate’s phase volume (lines 4055–4059). Calculator lines 7972–7984 apply that phase-volume sum and call `_solved_under` when it exceeds the usable hold. The verification sheet reports the phase volume at lines 4221–4249.
+- With the SLS Block 1 fairing at 216 m³ and water at 1.0 kg/L from spacevalue_installed_prices_release_manifests_2026, the controlled fixture’s 54 m³ allowance leaves the worksheet at 57,746.6 kg and 57.7466 m³. The calculator branch asks for a 53,999.999946 kg cap. A cap-only callback yields 53.999999946 m³. The raw, phase-volume-off, smaller water hold and denser iron hold controls match without refit.
+- economicspace_return_cargo_volume_record_2026 records the original calculator comparison behind rc-285. **rc-915** records the absent worksheet re-settlement and the source inputs needed to show the binding hold limit.
+
+Extracted data in `extracted_data/r1041_worksheet_return_cargo_refit.csv`.
+
+
+## R1046 — Launch-liquid refit in the verification worksheet (2026-11-23)
+
+- economicspace_worksheet_launch_liquid_refit_code_2026 pins Economicspace 15c629b7b827d5a382c8c09f5f2702b839b99d71. The calculator's `model_launch_liquid_volume` branch compares Earth-loaded outbound and return fuel against fairing volume times propellant density and calls `_solved_under` when liquid exceeds the envelope (calc.py L7904–7920). The worksheet settles both propellant legs and checks that “the launch stack exceeds the vehicle's capacity to LEO” (worked_calculation.py L3950–3958 and L4006–4027). It then computes mission duration without replaying the liquid check.
+- The installed Electron row gives 1.19 m³ and 300 kg. The installed development LH2 row gives 0.0708 kg/L. At 140 kg cargo, a controlled fixture with fixed sizing gives 245.258 kg launch mass and 125.033 kg Earth-loaded liquid. The calculator branch requests a 68.356 kg payload cap against the 84.252 kg liquid limit. Reapplying the settled worksheet mass equations at that cap gives 84.252 kg liquid. Gate-off, 50 kg cargo, on-site return fuel and hydrolox controls request no refit. **rc-926** records the worksheet replay gap. The fixture executes the cap branch and fixed mass equations with a cap-only callback.
+
+Extracted data in extracted_data/r1046_worksheet_launch_liquid_refit.csv.
+
+
+## R1072 — Carbon dioxide and ammonia cargo containment and volume (2026-11-24)
+
+- economicspace_spacevalue_nonwater_volatile_cargo_paths_2026 records the Economicspace charge of 0.05 kg containment per kg of water. The settlement calculation gives zero increment for a 200 kg CO2/NH3 hold and 10 kg for a 200 kg water hold. nasa_sts129_press_kit_2009_ammonia_tank_assembly, p. 34, records an ammonia tank assembly at “approximately 1,702 pounds” with 600 lb NH3, or 1.84 kg of full non-ammonia assembly per kg NH3. macatangay_2009_iss_liquid_ammonia_inventory, p. 3, reports “liquid NH₃ as refrigerant” at about 2 MPa. clark_trevathan_2001_mars_co2_collection, abstract, describes CO2 thawed in a “closed pressure vessel” after freezing. These are pressurized hardware and process examples. **rc-974** records the cargo state and containment boundary.
+- economicspace_spacevalue_nonwater_volatile_cargo_paths_2026 records Spacevalue's “Solid density” values 1.56 kg/L for CO2 and 0.82 kg/L for NH3. Economicspace uses these in the concentrate phase-volume sum. span_wagner_1996_carbon_dioxide_eos, p. 1561 Table 34, gives saturated liquid CO2 at 290 K as 804.67 kg/m³ and 5.3177 MPa. macatangay_2009_iss_liquid_ammonia_inventory, p. 3, gives 272 kg in 394 L at 1.7–3.9 °C for the liquid ammonia per loop. A hold of 100 kg of each species moves from 0.1861 m³ at the solid densities to 0.2691 m³ at the separate liquid comparator states. Both figures are material volumes. **rc-975** records the state-specific density citations.
+
+Extracted data in extracted_data/r1072_ammonia_and_co2_cargo_state_and_containment.csv.
+
+
+## R1080 — Mining dust evidence and mitigation mass basis
+
+- `spacecost_economicspace_dust_mitigation_and_mass_code_2026` — Spacecost `storage_systems.csv` line 16 attributes ended Apollo EVAs and a jammed InSight mole to fines, claims hours of observed ejecta at Ryugu, and lists 0.08 [0.03, 0.20] kg/kg of mining hardware. The note says the figure is included in the rig recurring rate. Economicspace's `verification_sheet.py` lines 4884–4894 multiply the rig and plant masses by the `Mining payload recurring cost` input, a $300,000/kg scenario in Spacecost `operational_costs.csv` line 3. On a gross 2,000 kg rig basis, 0.08 implies 160 kg of mitigation hardware.
+- `nasa_tm_2005_rev1_effects_lunar_dust_eva_systems_apollo` — Printed p. 6 gives 0.15 and 0.25 psi/min after Conrad's first and second EVAs, respectively, against 0.30 psi/min limit. A third EVA is discussed as “had it been scheduled.” `spohn_etal_2022_insight_hp3_mole_penetration_lessons` section 6 attributes failed penetration to inadequate hull-to-soil friction to balance hammer recoil and to high penetration resistance. `kikuchi_etal_2026_ryugu_sci_ejecta_and_reimpact` analyzes 14 DCAM3 images from 4–497 seconds after impact and models re-impact and deposition. Verdict: the notes conflate seal degradation, soil mechanics and ballistic ejecta (rc-990).
+- `buhler_etal_2025_blue_ghost_dust_shield_demonstration` — Printed p. 2, Figure 4 reports 97% dust removal from the glass coupon and 82% from the radiator coupon on Blue Ghost. `mcbrayan_francis_sobey_2025_viper_mobility_dust_mitigation` describes seal selection for lunar mobility. Verdict: these demonstrations explain mitigation options, while Spacecost's rig-level mass and cost coverage needs a documented basis (rc-991).
+- Extracted data: `extracted_data/r1080_mining_dust_evidence_and_mass_basis.csv`.
+
+
+## R1081 — Payload-wide return structure and ore restraint
+
+- `economicspace_return_structure_ore_restraint_scope_code_2026` — Economicspace `verification_sheet.py` lines 3055–3060 call 0.15 “ore restraint per kg of payload.” `calc.py` lines 164–190 include “tankage, primary structure, cargo restraint, the parachute or the berthing mechanism” in the allowance and apply it to total payload in lines 7762–7772. A 1,000 kg fixture adds 150 kg of base structure whether it carries 0 or 1,000 kg of water. The separate 0.05 kg/kg Spacecost water hold term adds 0–50 kg on top.
+- `brown_etal_1990_lunar_regolith_bagging_system` — Appendix H item 6 uses 1.50 lb per empty bag and reports 628 kg across 924 bags. Appendix D uses 29,702 in³ of regolith per bag at 1.2 g/cm³, about 584 kg of fill, yielding a calculated bag-only ratio of 0.00117 kg/kg in the lunar surface design. Appendix H item 26 reports 687 kg including the filling equipment. Verdict: component scope and payload denominator need to be explicit in the worksheet and its citation (rc-992).
+- Extracted data: `extracted_data/r1081_return_structure_and_ore_restraint_scope.csv`.
+
+
+## R1082 — Launch fairing share assigned to the return hold
+
+- `economicspace_fairing_to_return_hold_allowance_code_2026` — Economicspace `calc.py` lines 7644–7668 introduce “say 25%” of the launch fairing as the return hold. The 0.25 also enters the search bound at lines 9247–9248. `verification_sheet.py` lines 3316–3332 cite the fairing input, then call the result “what the hold can physically carry.” At pinned Spacecost fairing volumes of 157 and 216 m³ the quarter rule gives 39.25 and 54 m³. The 100 m³ default gives 25 m³.
+- `spacex_falcon_payload_users_guide` — Printed p. 16, section 4.1.3 defines the “payload static envelope, or keep-in volume” for launch integration, accounting for adapter fit and relative deflections. `nasa_2026_commercial_crew_dragon_capsule_trunk_architecture` — In “Dragon Design and Development,” NASA describes the unpressurized trunk as the Falcon 9 ascent interface and says it is jettisoned before reentry. The pressurized cargo is in the capsule. Verdict: the worksheet needs an independent basis or explicit scenario label for converting an ascent envelope to internal return capacity (rc-993).
+- Extracted data: `extracted_data/r1082_fairing_to_return_hold_allowance.csv`.
+
+
+## R1095 — Battery discharge depth and cycle life (2026-11-24)
+
+- spacecost_economicspace_battery_depth_and_cycle_scope_2026 gives 104 Wh/kg usable energy from 130 Wh/kg at 80% depth of discharge. The pinned eclipse equation uses that value to size the increment for one night. The archived 2018 DT worksheet gives a 10.222 h rotation, 3 yr digging and 4.937696 yr on the body. One cycle per rotation implies about 2,573 cycles during digging and 4,234 if storage remains active throughout the wait.
+- schmitz_2023_rps_vs_solar_array_comparison, p. 8 Table 3, lists 175 Wh/kg and 80% depth with no associated cycle count. herman_smart_2021_opportunity_battery_cycle_life, slide 10, gives “approximately a 44-50% DOD duty cycle” and “over 5,000 cycles” across Opportunity’s battery wet life. west_smart_herman_2021_perseverance_battery_requirements, rover battery driving requirements, calls for over 2,010 cycles in three years at a maximum 60% depth.
+- In the pinned kernel, a 50% discharge sensitivity at the archived 5.111 h night and 0.58 h baseline increases incremental storage from 43.57 to 69.71 kg per kW of continuous load. **rc-1009** records the missing pack-life and end-of-life energy basis.
+
+Extracted data in extracted_data/r1095_battery_depth_of_discharge_and_cycle_life.csv.

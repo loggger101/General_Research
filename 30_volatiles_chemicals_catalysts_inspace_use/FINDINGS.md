@@ -150,3 +150,20 @@ spacevalue c377668ab4c1291350c3d9a7b3523d253ed939f8 (PR #15, package 0.7.2, data
 - rc-664, rc-788: `ipa_sfa_2026_osmium_pgm_factsheet` and `howard_2021_common_habitat_dsev_leo_propellant_demand` are listed.
 
 Verdict: all eight closed as applied. Extracted data: none new.
+
+
+## R1073 — Ammonia propulsion and cabin nitrogen, and the CO2 cabin claim (2026-11-24)
+
+- spacevalue_ammonia_co2_propulsion_and_cabin_uses_2026 records Spacevalue's GEO ammonia utility of 0.40 with “value as resistojet propellant.” Its bibliography names deininger_et_al_1990_30kw_ammonia_arcjet_jpl_pub90_4 for arcjet performance. shaw_pugmire_callens_1969_ats4_ammonia_resistojet, AIAA 69-296 author abstract, records ATS-4 operating “825 hr” and consuming 35% of its 3 lb ammonia load in a “decaying elliptical orbit.” Geosynchronous stationkeeping was the design purpose. **rc-976** records the resistojet reference and orbit scope.
+- spacevalue_ammonia_co2_propulsion_and_cabin_uses_2026 records “nitrogen for atmospheres” in Spacevalue's ammonia row and a base utility of 0.60. masangkay_sweterlitsch_frahlman_2026_supplying_nitrogen_moon_mars_ices2026_238, Table 4, reports 19–3,623 kg N2 per lunar surface mission and 119–4,620 kg N2 per Mars surface mission across its cases. nist_webbook_ammonia_molecular_weight and ciaaw_abridged_atomic_weight_nitrogen give 17.0305 for NH3 and 14.007 for N, implying 1.21586 kg NH3 per kg N2 before losses. The two mission ranges correspond to about 23–4,405 and 145–5,617 kg of theoretical NH3 feed. clifford_sexton_1973_nitrogen_hydrogen_separator, abstract, studies a gas separator after “catalytic dissociation of ammonia or hydrazine.” **rc-977** records the feed-to-product conversion boundary.
+- spacevalue_ammonia_co2_propulsion_and_cabin_uses_2026 records “a life-support buffer gas” in the carbon dioxide material note, alongside the Sabatier use, with CO2 base utility 0.30. nasa_std_3001_v2_rev_f_cabin_atmosphere, V2 6002 and V2 6004, specifies at least 30% inert diluent with nitrogen assumed and a separate cabin CO2 limit of “no more than 3 mmHg” averaged over an hour. nasa_2026_orion_cabin_gas_crew_systems describes oxygen and nitrogen pressure stocks and a regenerable CO2 removal system. franco_2019_sabatier_catalyst_mars_isru_ices2019_077, p. 2, describes CO2 as a Sabatier feed. **rc-978** records the cabin gas description and process scope.
+
+Extracted data in extracted_data/r1073_ammonia_and_co2_utility_evidence.csv.
+
+
+## R1074 — Mars atmospheric feed versus delivered carbon dioxide and nitrogen (2026-11-24)
+
+- spacevalue_mars_atmosphere_utility_and_archived_rows_2026 records Spacevalue's Mars surface carbon and CO2 factors at 0.02 and organics at 0.05. The rationale says “Carbon is free,” citing 95.1% CO2 and a 636 Pa mean-radius pressure. trainer_etal_2019_gale_atmosphere_sam_mixing_ratios, Table 3, gives annual mean CO2 of 0.951 ± 0.003 at Gale and separately gives 846 Pa annual mean pressure in its footnote. nasa_nssdca_mars_fact_sheet gives 636 Pa at mean radius. reeves_2016_ksc_marco_polo_co2_module_demonstration, Mars Atmospheric Processing Module entry, reports “88 grams of pure carbon dioxide/hour” at 50 psia and four 7-hour integrated ground tests. **rc-979** records the site and delivered-resource citation.
+- spacevalue_mars_atmosphere_utility_and_archived_rows_2026 records the Mars surface ammonia factor at 0.30 with 2.59% atmospheric N2 as competing supply. trainer_etal_2019_gale_atmosphere_sam_mixing_ratios, Table 3, gives N2 0.0259 ± 0.0006 and 10% seasonal variation from the mean. A five-species balance gives 59.85 kg of air per kg of recovered N2 at complete recovery, or about 3,784 m³ at the illustrative 636 Pa and 210 K conditions. inglezakis_2026_mars_multigas_separation_concept, p. 341, models “57% N2 and 43% Ar” by mole before a separate N2/Ar step. masangkay_sweterlitsch_frahlman_2026_supplying_nitrogen_moon_mars_ices2026_238, Table 4, states mission N2 quantities. **rc-980** records the boundary of the local supply competing with imported NH3.
+
+Extracted data in extracted_data/r1074_mars_atmosphere_to_co2_and_nitrogen_products.csv.

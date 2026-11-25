@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+usgs_mineral_commodity_summaries_2025,"2024e rhenium pellet price, 99.99%",1370,USD/kg,"Rhenium printed p. 146, PDF p. 150, Salient Statistics",2025 edition annual estimate.
+usgs_mineral_commodity_summaries_2026,"Revised 2024 rhenium pellet price, 99.99%",1360,USD/kg,"Rhenium printed p. 156, PDF p. 160, Salient Statistics",Same product and market series as the earlier edition.
+usgs_mineral_commodity_summaries_2026,"2025e rhenium pellet price, 99.99%",2600,USD/kg,"Rhenium printed p. 156, PDF p. 160, Salient Statistics","Also confirmed in Events, Trends, and Issues."
+smm_2026_11_20_rhenium_pellets_exworks_china,"China ex-works rhenium pellet assessment, 99.99% Re minimum",5835.85,USD/kg,"Product 202601050006, 2026-11-20 11:30 GMT+8",USD display excludes VAT.
+spacevalue_rhenium_reference_price_code_2026,Rhenium terrestrial reference,1500,USD/kg,spacevalue/catalog.py lines 1892–1894,Reference date 2025-01-31 inherited from _new_element.
+spacevalue_installed_prices_release_manifests_2026,Installed Earth-surface sale-price input for rhenium,1500,USD/kg,"prices-2026-11-20, mineral_value_catalog.earth_surface.csv",price_basis=reference; SHA-256 47c02e6e8d61c7d91babab107bb89acc2aa4e25bf3d31af0db25da7c815114dd
+,2025e USGS relative to Spacevalue reference,73.333333,percent,"USGS 2025e value divided by stored reference, minus 1",Compares annual price estimates at different vintages.

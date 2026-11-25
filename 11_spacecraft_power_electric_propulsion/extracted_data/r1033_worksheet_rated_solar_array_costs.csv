@@ -1,0 +1,18 @@
+source_id,item,value,unit,location_in_source,notes
+hoffman_2000,MBAT design end-of-life array output at 1.5 AU,7500,W,"PDF p. 9, Analysis Cases, MBAT EOL Power Required",NASA array design comparator.
+hoffman_2000,MBAT four-junction GaAs array cost example,14100000,USD,"PDF pp. 9 and 14, Results and Fig. 8","Historical array estimate, not current PV+battery rate."
+economicspace_rated_array_cost_worksheet_code_2026,Solar PV and battery rate,800,USD/W EOL,"Installed operational_costs.csv, Power system (solar + battery)",Matches Spacecost 0.19.0 reference row.
+economicspace_rated_array_cost_worksheet_code_2026,Electric drive rate,1500000,USD/kW electric input,"Installed operational_costs.csv, Electric propulsion system recurring cost",Thruster and PPU; separately charged from the array.
+economicspace_rated_array_cost_worksheet_code_2026,Radioisotope plant rate,500000,USD/W electric,"Installed operational_costs.csv, RTG (radioisotope power)",Control scenario rate.
+economicspace_rated_array_cost_worksheet_code_2026,Effective EP array rated/delivered multiplier,2.25,ratio,calc.py lines 8141–8145,"1.5 AU, enabled."
+economicspace_rated_array_cost_worksheet_code_2026,"Effective processing plant rated/delivered multiplier, solar",4.75,ratio,calc.py lines 8141–8145,"1.5 AU, 0.50 dark fraction and 0.90 round-trip storage efficiency, enabled."
+economicspace_rated_array_cost_worksheet_code_2026,Solar-rated calculator plant cost,38000000,USD,calc.py _mission_cost_prologue power_base,"Fixture at 1.5 AU, 10 kW processing, 20 kW EP, rated-array switch on, no learning."
+economicspace_rated_array_cost_worksheet_code_2026,Solar-rated worked plant cost,8000000,USD,worked_calculation.py cost; worksheet L_plant,Same fixed inputs.
+economicspace_rated_array_cost_worksheet_code_2026,Solar-rated calculator electric stage cost,66000000,USD,calc.py _mission_cost_prologue ep_base,Same fixed inputs. Stage includes array and drive.
+economicspace_rated_array_cost_worksheet_code_2026,Solar-rated worked electric stage cost,46000000,USD,worked_calculation.py cost; worksheet L_ep,Same fixed inputs.
+,Solar-rated fixture combined cost difference,50000000,USD,"38,000,000 + 66,000,000 − 8,000,000 − 46,000,000","Difference on these two lines before insurance, contingency and compounding."
+economicspace_rated_array_cost_worksheet_code_2026,"Rated-off control costs, calculator and worksheet",8000000;46000000,USD plant; USD EP stage,"Pinned cost branches, same 1.5 AU fixture",Both numerical comparisons pass.
+economicspace_rated_array_cost_worksheet_code_2026,"One-AU full sunlight control costs, calculator and worksheet",8000000;46000000,USD plant; USD EP stage,"Pinned cost branches, 1 AU, zero shadow, rated array switch on",Both multipliers equal 1 and both comparisons pass.
+economicspace_rated_array_cost_worksheet_code_2026,"RTG-rated control plant cost, calculator and worksheet",50000000,USD,"Pinned cost branches, 1.5 AU, 100 W RTG processing",No solar multiplier for the RTG plant.
+economicspace_rated_array_cost_worksheet_code_2026,"RTG-rated control EP cost, calculator and worksheet",66000000;46000000,USD calculator; USD worksheet,"Pinned cost branches, same 20 kW solar EP",The EP array difference persists despite the RTG plant.
+economicspace_rated_array_cost_worksheet_code_2026,"Solar chemical control plant cost, calculator and worksheet",38000000;8000000,USD calculator; USD worksheet,"Pinned cost branches, zero EP draw, rated switch on",The processing array mismatch persists.

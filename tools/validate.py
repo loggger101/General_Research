@@ -925,12 +925,15 @@ def check_candidates(rep, ctx):
         ctx['candidates'] = candidates
 
 
+CAND_ID_DIGITS = r'\d{3,}'
+
+
 def check_candidate_row(rep, ctx, r, path, seen, today):
     """One candidate row from `path`; `seen` collects the ids of both files."""
     reg = ctx['reg']
     cid = r['id']
-    if not re.fullmatch(r'rc-\d{3}', cid) or cid in seen:
-        rep.error('cand-id', f'id {cid!r} must be unique across both candidates files and look like rc-001')
+    if not re.fullmatch(rf'rc-{CAND_ID_DIGITS}', cid) or cid in seen:
+        rep.error('cand-id', f'id {cid!r} must be unique across both candidates files and use rc- followed by at least three digits')
     seen.add(cid)
     live = r['status'] in LIVE_CANDIDATE_STATUSES
     if r['status'] in CANDIDATE_STATUSES and live != (path == CANDIDATES):
@@ -984,11 +987,11 @@ def check_candidate_row(rep, ctx, r, path, seen, today):
 
 
 # A candidate id as write-ups cite it; "Rc-012" opens a sentence.
-CAND_REF_RE = re.compile(r'(?<![A-Za-z0-9_-])rc-(\d{3})(?![A-Za-z0-9_])', re.I)
+CAND_REF_RE = re.compile(rf'(?<![A-Za-z0-9_-])rc-({CAND_ID_DIGITS})(?![A-Za-z0-9_])', re.I)
 
 
 def check_candidate_refs(rep, ctx):
-    """Every rc-NNN that a write-up, registry row, data file or candidate names is a row of one of the two candidates
+    """Every candidate id that a write-up, registry row, data file or candidate names is a row of one of the two candidates
     files, or one a rejection deleted (README "Rejecting a source"), which the source's "Rejected sources" row names.
     A row lost on its way to revision_candidates_closed.csv would otherwise leave every citation of it pointing at
     nothing. RESEARCH_LOG.md is history and is not scanned, as for file references; sources.csv repeats the

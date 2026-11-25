@@ -1,0 +1,15 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_sylvia_eurybates_density_basis_2026,Sylvia X example,1.31,g/cm³,taxonomy.py L734 and installed taxonomy JSON,±0.15 from Carry 2012 PDF p. 21 Table 1; 278.14 ± 10.75 km.
+adam_2017,Sylvia P example,1.39,g/cm³,"R71 ADAM Table 4 extraction, arXiv PDF p. 13","±0.08; 273 ± 5 km, adopted mass 1.48e19 kg."
+carry_etal_2021_sylvia_shape_and_moon_dynamics,Sylvia MPCD volume-equivalent diameter,271,km,A129 p. 4 §4,±5 km.
+carry_etal_2021_sylvia_shape_and_moon_dynamics,Sylvia two-moon orbit mass,1.44e19,kg,A129 p. 4 §4,±0.01e19 kg.
+carry_etal_2021_sylvia_shape_and_moon_dynamics,Sylvia bulk density,1.378,g/cm³,A129 p. 4 §4,±0.045 g/cm³.
+asteroidcatalog_release_data_2026_11_13,Sylvia installed density,1.3704004099254588,g/cm³,Installed catalog Sylvia row,"272.925 km and 1.45873384399479e19 kg from SsODNet; spectral_type X, spectral_type_tholen P."
+brown_etal_2021_eurybates_queta_orbit_density,Eurybates orbit mass,1.51e17,kg,arXiv PDF p. 6 §3,±0.03e17 kg; Queta mass contribution negligible.
+brown_etal_2021_eurybates_queta_orbit_density,Eurybates WISE-based density,1.1,g/cm³,arXiv PDF p. 7 §3,±0.3 with WISE effective diameter 63.9 km and 10% assigned diameter uncertainty.
+mottola_etal_2023_eurybates_orus_shape_models,Eurybates surface-equivalent diameter,69.3,km,Abstract and §4.5 p. 10,±1.4 km; occultation re-scaled convex model.
+mottola_etal_2023_eurybates_orus_shape_models,Eurybates convex-model volume,167000,km³,"p. 10 Table 3, Eurybates column",Separate from surface-equivalent diameter.
+asteroidcatalog_release_data_2026_11_13,Eurybates installed density,0.8603224331467859,g/cm³,Installed catalog Eurybates row,69.3 ± 1.4 km and 1.4992e17 kg from SsODNet; P with blank spectral_type_tholen.
+,Volume of sphere with installed diameter,174260.247,km³,π/6 × 69.3³,The enrichment applies spherical volume.
+,Convex model volume-equivalent diameter,68.3239,km,Cube root of 6 × 167000/π,Comparison from rounded shape model volume.
+,Convex shape density using fixed installed mass,0.897725,g/cm³,1.4992e17 kg / 167000 km³,Isolates volume basis at constant mass.

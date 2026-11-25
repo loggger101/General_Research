@@ -1,0 +1,30 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_tagish_lake_accessory_analogue_transfer_code_2026,Classes assigned _ACC_TL,D; Z; P,classes,mineralogy.py line 354 and CITATIONS.md lines 496–497,Same accessory recipe for all three.
+asteroidcatalog_tagish_lake_accessory_analogue_transfer_code_2026,_ACC_TL magnetite,0.05,kg/kg body,mineralogy.py line 233,Scenario values already identified as unsourced.
+asteroidcatalog_tagish_lake_accessory_analogue_transfer_code_2026,_ACC_TL troilite,0.03,kg/kg body,mineralogy.py line 233,Scenario values already identified as unsourced.
+asteroidcatalog_tagish_lake_accessory_analogue_transfer_code_2026,_ACC_TL carbonates,0.03,kg/kg body,mineralogy.py line 233,Scenario values already identified as unsourced.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 Forsterite,37.1,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 Magnetite,22.1,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 Pyrrhotite,7.6,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 Enstatite,11.6,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 Dolomite,n/d,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 Siderite,2.2,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 Calcite,1.6,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 Aragonite,1.3,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 Clays + amorphous,16.4,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a Forsterite,29.2,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a Magnetite,26.2,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a Pyrrhotite,7.3,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a Enstatite,2.3,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a Dolomite,n/d,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a Siderite,11.2,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a Calcite,1.4,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a Aragonite,2.6,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a Clays + amorphous,19.7,wt%,"Table 1, specimen wt% subcolumn",Rietveld estimate; n/d denotes not detected.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL5b spectral match,C,Bus–DeMeo class,Table 4,Meteorite specimen reflectance classified as an asteroid spectrum.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL11h spectral match,Xc or C,Bus–DeMeo class,Table 4,Meteorite specimen reflectance classified as an asteroid spectrum.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL4 spectral match,X,Bus–DeMeo class,Table 4,Meteorite specimen reflectance classified as an asteroid spectrum.
+gilmour_herd_beck_2019_tagish_lake_modal_spectral_variation,TL10a spectral match,D,Bus–DeMeo class,Table 4,Meteorite specimen reflectance classified as an asteroid spectrum.
+vernazza_etal_2013_tagish_lake_analogue_paucity,Asteroid matching spectrum and reflectance,368 Haidea,asteroid,"p. 517, Abstract",Sole match in the authors' main-belt comparison.
+vernazza_etal_2013_tagish_lake_analogue_paucity,Estimated fraction of Tagish Lake-like Jupiter Trojans,<0.02,percent,"p. 517, Abstract",Authors' estimate from reflectance compared with asteroid albedo.
+vernazza_etal_2013_tagish_lake_analogue_paucity,Estimated fraction of Tagish Lake-like main-belt asteroids,<4.5,percent,"p. 517, Abstract",Authors' estimate from reflectance compared with asteroid albedo.

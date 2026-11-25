@@ -1,0 +1,22 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_ammonia_co2_propulsion_and_cabin_uses_2026,Ammonia base utility,0.6,fraction,Spacevalue catalog.py line 609,Engineering scenario.
+spacevalue_ammonia_co2_propulsion_and_cabin_uses_2026,Ammonia GEO utility,0.4,fraction,Spacevalue catalog.py line 750,Comment names a resistojet use.
+spacevalue_ammonia_co2_propulsion_and_cabin_uses_2026,Carbon dioxide base utility,0.3,fraction,Spacevalue catalog.py line 610,Engineering scenario. Commodity note calls it a life-support buffer gas.
+shaw_pugmire_callens_1969_ats4_ammonia_resistojet,ATS-4 ammonia resistojet operating time,825,h,"AIAA 69-296 author's abstract, NASA STAR entry A69-21212",Operated during a decaying elliptical orbit. GEO was the intended orbit.
+shaw_pugmire_callens_1969_ats4_ammonia_resistojet,ATS-4 propellant consumed in orbit,35,% of onboard fuel,"AIAA 69-296 author's abstract, NASA STAR entry A69-21212","Reported portion of onboard ammonia consumed, not a fleet supply rate."
+shaw_pugmire_callens_1969_ats4_ammonia_resistojet,ATS-4 ammonia load,3,lb,"AIAA 69-296 author's abstract, NASA STAR entry A69-21212",Initial flight system load.
+clifford_sexton_1973_nitrogen_hydrogen_separator,Candidate process after stored ammonia dissociation,nitrogen/hydrogen gas separation,process,"NASA-CR-137484, NTRS abstract",Separator component study for ammonia or hydrazine dissociation gas.
+nist_webbook_ammonia_molecular_weight,Ammonia molecular weight,17.0305,relative molecular mass,NIST WebBook ammonia substance record,NH3.
+ciaaw_abridged_atomic_weight_nitrogen,Nitrogen atomic weight,14.007,relative atomic mass,CIAAW abridged standard atomic weights,N.
+,Complete-return NH3 feed mass per unit of N2 product,1.215856357535518,kg/kg,17.0305 / 14.007,"Stoichiometric limit. Product recovery, cleanup and plant costs are outside the ratio."
+,Complete-return N2 per 100 kg NH3,82.24655764657527,kg,100 × 14.007 / 17.0305,Stoichiometric maximum before losses.
+nasa_std_3001_v2_rev_f_cabin_atmosphere,Nominal cabin atmosphere diluent minimum,30,%,"NASA-STD-3001 Volume 2 Rev F, section 6.2.1.1 V2 6002",Rationale assumes nitrogen.
+nasa_std_3001_v2_rev_f_cabin_atmosphere,Nominal habitable-volume CO2 partial-pressure limit,3,mmHg,"NASA-STD-3001 Volume 2 Rev F, section 6.2.1.3 V2 6004",One-hour average.
+,CO2 fraction at one atmosphere from the partial-pressure limit,0.39473684210526316,% by volume,3 mmHg / 760 mmHg × 100,Illustration at one atmosphere total pressure.
+nasa_2026_orion_cabin_gas_crew_systems,Orion pressure-control gas stocks,oxygen and nitrogen,species,"NASA Crew Systems, Environmental Control and Life Support discussion",Cabin CO2 is captured and vented by the regenerable system.
+masangkay_sweterlitsch_frahlman_2026_supplying_nitrogen_moon_mars_ices2026_238,transit estimated nitrogen usage,9–295,kg N2/mission,ICES-2026-238 Table 4,Study scenarios for nitrogen product.
+,transit theoretical ammonia feed equivalent,10.94–358.68,kg NH3/mission,Table 4 N2 usage × molecular-weight ratio,Hypothetical zero-loss conversion.
+masangkay_sweterlitsch_frahlman_2026_supplying_nitrogen_moon_mars_ices2026_238,lunar surface estimated nitrogen usage,19–3623,kg N2/mission,ICES-2026-238 Table 4,Study scenarios for nitrogen product.
+,lunar surface theoretical ammonia feed equivalent,23.10–4405.05,kg NH3/mission,Table 4 N2 usage × molecular-weight ratio,Hypothetical zero-loss conversion.
+masangkay_sweterlitsch_frahlman_2026_supplying_nitrogen_moon_mars_ices2026_238,Mars surface estimated nitrogen usage,119–4620,kg N2/mission,ICES-2026-238 Table 4,Study scenarios for nitrogen product.
+,Mars surface theoretical ammonia feed equivalent,144.69–5617.26,kg NH3/mission,Table 4 N2 usage × molecular-weight ratio,Hypothetical zero-loss conversion.

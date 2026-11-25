@@ -1,0 +1,20 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_spacevalue_nonwater_volatile_cargo_paths_2026,Volatile cargo containment center,0.05,kg/kg of water,Spacecost operational_costs.csv and Economicspace worksheet c_seal,The current Spacecost note explicitly limits the row to water.
+economicspace_spacevalue_nonwater_volatile_cargo_paths_2026,Spacevalue CO2 density,1.56,kg/L,Spacevalue catalog.py line 1907 and archived cislunar row 16,Solid density.
+economicspace_spacevalue_nonwater_volatile_cargo_paths_2026,Spacevalue NH3 density,0.82,kg/L,Spacevalue catalog.py line 1911 and archived cislunar row 15,Solid density.
+,Water-only containment charge for 200 kg CO2 and NH3 mix,0.0,kg,Economicspace _cargo_water_kg and settlement expression,Controlled profitable-phase availability; no water in the mix.
+,Containment charge for 200 kg water hold,10.0,kg,Economicspace _cargo_water_kg and settlement expression,"Other inputs fixed, enough feed."
+nasa_sts129_press_kit_2009_ammonia_tank_assembly,ISS ATA ammonia inventory,600,lb,"STS-129 press kit p. 34, Ammonia Tank Assembly",Payload included in full-unit mass.
+nasa_sts129_press_kit_2009_ammonia_tank_assembly,ISS ATA total as flown,1702,lb,"STS-129 press kit p. 34, Ammonia Tank Assembly","Approximate full-unit mass including valves, heaters and instrumentation."
+,ISS ATA full non-ammonia hardware ratio,1.8366666666666667,kg/kg of ammonia,(1702 − 600) / 600,Includes full tank and associated hardware. No cargo-design replacement.
+macatangay_2009_iss_liquid_ammonia_inventory,ISS thermal control loop NH3 mass,272,kg,"JSC-18073 p. 3, Main Sources of Ammonia on ISS",Rounded inventory per loop.
+macatangay_2009_iss_liquid_ammonia_inventory,ISS thermal control loop NH3 volume,394,L,"JSC-18073 p. 3, Main Sources of Ammonia on ISS",Liquid volume per loop; not an ATA geometric volume.
+macatangay_2009_iss_liquid_ammonia_inventory,ISS external thermal control pressure,~2,MPa,"JSC-18073 p. 3, EATCS",Operating pressure.
+macatangay_2009_iss_liquid_ammonia_inventory,ISS loop liquid ammonia temperature,1.7–3.9,°C,"JSC-18073 p. 3, EATCS",Operating temperature.
+clark_trevathan_2001_mars_co2_collection,NASA Mars CO2 processing/storage state example,freeze then thaw in a closed pressure vessel,process,NTRS 20150017438 abstract,"Mars atmospheric feed, not asteroid freight."
+span_wagner_1996_carbon_dioxide_eos,CO2 saturated liquid density at 290 K,804.67,kg/m3,"J. Phys. Chem. Ref. Data 25 p. 1561, Table 34, saturated liquid",Pressure 5.3177 MPa.
+span_wagner_1996_carbon_dioxide_eos,CO2 liquid saturation pressure at 290 K,5.3177,MPa,"J. Phys. Chem. Ref. Data 25 p. 1561, Table 34",Same tabulated state.
+,ISS loop implied liquid NH3 density,0.6903553299492385,kg/L,272 kg / 394 L,Approximate physical comparator from rounded system figures.
+,Solid-state product volume for 100 kg of each volatile,0.18605378361475922,m3,Economicspace phase-volume sum,Material volume only.
+,Liquid-state product volume for 100 kg of each volatile,0.269127488506432,m3,Economicspace phase-volume sum with phase-specific comparator densities,Separate liquid design states. Material volume only.
+,Phase-volume sensitivity,44.65037113337302,%,Liquid volume divided by solid volume less one,No tank envelope or fill margin included.

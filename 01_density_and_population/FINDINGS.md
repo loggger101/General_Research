@@ -767,3 +767,125 @@ Verdict: rc-862 closed as applied. Extracted data: none new.
 At AsteroidCatalog main f360a3c02daabee87a7dd225a6cb76966e792ecf (PRs #41 and #43, 0.13.10 and 0.13.12, data contract 1.11.0), each build reads `mp3c_main.version` for `mp3c_minor_planet_physical_properties_catalogue` (live read here: version 3.2.0-beta.1, created 2024-02-13T09:44:37, revision 2acaa66e) and carries it through build_info.json into manifest.json `build_info` and the release notes, or records it unavailable (rc-772). Values unchanged.
 
 Verdict: rc-772 closed as applied. Extracted data: none new.
+
+## R1009 — AsteroidCatalog current data-release citation (2026-11-22)
+
+`asteroidcatalog_current_release_readme_2026` calls `data-2026-10-21b` “The current release” (README.md lines 16–19) and gives 1,575,889 bodies, contract 1.10.0 and build package 0.12.0. `asteroidcatalog_release_data_2026_11_13` is the newer data tag and the Economicspace Stage 1 pin. Its installed manifest gives 1,580,325 bodies, contract 1.11.0 and build package 0.13.2. **rc-870** asks the README to cite the November release and its manifest facts where it describes the current catalog.
+
+Extracted data in `extracted_data/r1009_asteroidcatalog_current_release_attribution.csv`.
+
+## R1016 — 2018 DT spectrum and radar spin constraint (2026-11-22)
+
+- `devogele_etal_2019_manos_visible_spectroscopy`, Appendix A Table 6 (arXiv PDF p. 23), assigns “Q” to the visible spectrum of 2018 DT taken with DCT on 2018-02-25. `virkki_etal_2022_arecibo_nea_radar_2017_2019`, Table 1 p. 4, prints “Q” and cites Devogèle et al. in note 6. `asteroidcatalog_release_data_2026_11_13` gives the same body (SPK 50799735) `spectral_type=M`, `spectral_type_source=source` and a blank `spectral_type_tholen` at H=27.1. `asteroidcatalog_2018_dt_taxonomy_precedence_code_2026` shows that the merge fills spectral-type gaps in source order and enrichment labels a populated input “source.” The M-selected row has a 13.855 m derived diameter, 3.90 g/cm³ estimated density and 0.50 metal fraction. The current Q inputs at the same H imply 10.065 m, 2.70 g/cm³ and 0.06. **rc-878** calls for tracing M and citing and reconciling the MANOS observation.
+- `virkki_etal_2022_arecibo_nea_radar_2017_2019`, Table 2 p. 31, gives 2018 DT bandwidths of “6.0” Hz on February 26 and “5.5” Hz on March 7. Section 3 equation (1) relates bandwidth, projected diameter, spin and subradar latitude. The release has zero spin determinations and `economicspace_2018_dt_rotation_inputs_2026` uses 10.222 h at worksheet I65, giving 5.111 h at S95. Taking the 13.855 m spherical diameter estimate as an upper bound on projected breadth gives a 3.838 min upper bound on period at 6.0 Hz. A 10.222 h period requires at least 2,214 m projected breadth at that bandwidth. **rc-879** calls for citing the echoes and testing their effect on the solar-power example under explicit size and spin assumptions.
+
+Extracted data in `extracted_data/r1016_2018_dt_taxonomy_and_radar.csv`.
+
+## R1021 — Rotation precision for fast near-Earth asteroids (2026-11-22)
+
+- `alarcon_etal_2026_ttt_fast_nea_rotation`, arXiv v1 Table 2, lists 126 confirmed principal-axis rotators, including 2025 WR7 “5.44 ± 0.22” s and 2025 KS1 “8.012 ± 0.019” s. All 126 designations join to `asteroidcatalog_release_data_2026_11_13`, the installed release whose CSV matches its manifest SHA-256. Each reports one rotation source and provider SsODNet. Both named bodies carry 0.002 h, or 7.2 s, in the release.
+- In the full join, 29 values differ by more than the paper’s stated plus-or-minus interval and 14 differ by more than 2% of its central value. All 16 paper periods under 60 s match the release after rounding to 0.001 h, a 3.6 s step. `asteroidcatalog_ssodnet_spin_import_code_2026` takes the first positive ranked value, returning it as a float. **rc-885** asks for the upstream observation and precision to be traced across the selected solution and export.
+
+Extracted data in `extracted_data/r1021_ttt_principal_axis_rotation_precision.csv`.
+
+## R1022 — Euclid spin fits and unresolved period alternatives (2026-11-22)
+
+- `irureta_goyena_etal_2026_euclid_ecliptic_asteroid_periods`, arXiv PDF Table A.2 p. 16 and Table A.3 p. 17, shows three fitted-period preview rows and 16 “Candidate super-fast rotators.” The three likelihood-ranked periods are alternate solutions. Section 5.2 reports aliases in 76% of the 889 fits, and recommends follow-up for the roughly 3 km bodies 1992 RC4, 1999 XN26 and 2000 GP60.
+- All 19 designations join to `asteroidcatalog_release_data_2026_11_13`. The three preview bodies and 15 of the candidate fast rotators have a blank `rotation_period_h` and zero sources. Medkeff has 2.59 h from JPL SBDB with two sources overall. Its Euclid solutions are 1.922 ± 0.008 h, 3.90 ± 0.03 h and 2.58 ± 0.01 h. Four of the 16 candidates have an alternative central period at or above 2.2 h. `asteroidcatalog_ssodnet_spin_import_code_2026` selects the first positive ranked SsODNet period. **rc-886** asks for the Euclid evidence to retain the alternatives and fit indicators when evaluating the blank or single-period catalog rows.
+
+Extracted data in `extracted_data/r1022_euclid_rotation_candidates.csv`.
+
+## R1028 — Binary asteroid diameter and mass scope (2026-11-22)
+
+- asteroidcatalog_release_data_2026_11_13 gives 185851 (2000 DP107) a diameter of 0.960 ± 0.043 km, mass 4.623 × 10¹¹ kg and density 0.998 g/cm³. naidu_etal_2015_2000_dp107_radar_shape, arXiv PDF p. 7, Table 3, gives “Equivalent diameter” 0.863 km ±5% with volume 0.337 km³ for the primary. Section 3.5 (arXiv PDF p. 9) gives primary mass (4.656 ± 0.43) × 10¹¹ kg and density 1.381 ± 0.244 g/cm³. Holding the catalog mass fixed and using 0.863 km gives 1.374 g/cm³. Under asteroidcatalog_binary_mass_diameter_basis_code_2026, the optional spherical spin threshold moves from 3.304 to 2.816 h, both above the installed 2.7754 h period. **rc-894** records the radar volume and primary mass citation.
+- asteroidcatalog_release_data_2026_11_13 gives 617 Patroclus a diameter of 106 ± 11 km, mass 1.4184 × 10¹⁸ kg and density 2.274 g/cm³. mueller_etal_2010_patroclus_menoetius_spitzer, arXiv PDF pp. 38–39, assigns 106 ± 11 km to Patroclus and 98 ± 10 km to Menoetius. It gives 145 ± 15 km as the pair’s area-equivalent diameter. grundy_etal_2018_patroclus_menoetius_mutual_orbit, arXiv PDF p. 4, Table 2, gives “System mass” (1.410 ± 0.029) × 10¹⁸ kg in the circular orbit fit. The combined thermal volumes imply 128.71 km of volume-equivalent diameter and 1.270 g/cm³ at the catalog mass. **rc-895** records the component-size and system-mass mismatch.
+
+Extracted data in extracted_data/r1028_dp107_patroclus_mass_diameter_basis.csv.
+
+## R1032 — Antiope and Hermes binary mass and diameter scope (2026-11-23)
+
+- asteroidcatalog_release_data_2026_11_13 gives 90 Antiope 97.64 ± 3.08 km, 8.312 × 10¹⁷ kg and 1.705 g/cm³. descamps_etal_2009_antiope_binary_shape, printed p. 103 Table 1, gives “Mass” (8.3 ± 0.2) × 10¹⁷ kg for the binary solution. Its Table 3 on p. 107 gives two Roche ellipsoids and 1.28 ± 0.04 g/cm³ after the modeled crater correction. The uncorrected ellipsoids imply 108.17 km combined volume-equivalent diameter. bartczak_etal_2014_antiope_sage_model, arXiv PDF p. 6 Table 2, gives “Equivalent radii” of 40.4 and 40.2 km and system mass (9.14 ± 0.62) × 10¹⁷ kg. Those radii imply a 101.55 km combined diameter and 1.516 g/cm³ at the installed mass. **rc-903** records the need for a matched system volume and orbit mass.
+- asteroidcatalog_release_data_2026_11_13 gives 69230 Hermes 0.80 ± 0.037 km, 4.852 × 10¹¹ kg and 1.81 g/cm³ with mass and density flagged as measured. marchis_etal_2012_spitzer_multiple_asteroid_systems, arXiv PDF p. 27 §6.4.10, gives “an effective diameter” of 0.8 ± 0.1 km for the system and 566 ± 71 m for the components. Two 566 m spheres give a 0.8004 km area-equivalent diameter and a 0.7131 km volume-equivalent diameter. asteroidcatalog_antiope_hermes_measurement_scope_code_2026 treats a surviving source mass as measured and computes density using one sphere. **rc-904** records the diameter basis and need to identify how the source mass was obtained.
+
+Extracted data in extracted_data/r1032_antiope_hermes_binary_measurement_scope.csv.
+
+## R1038 — Camilla and Kleopatra in the taxonomy density evidence (2026-11-23)
+
+- asteroidcatalog_camilla_kleopatra_taxonomy_evidence_2026 gives Camilla 2.28 ± 0.29 g/cm³ under `DENSITY_EVIDENCE["X"]` and Kleopatra 4.27 ± 0.86 g/cm³ under `DENSITY_EVIDENCE["Xe"]`. Both match the individual entries in carry2012 Table 1 on PDF pp. 21–22, with 210.68 km and 127.47 km diameters respectively. Both tuples appear in the installed taxonomy JSON, which matches the release manifest hash.
+- berthier_etal_2018_camilla_shape_and_satellite_dynamics, arXiv PDF p. 1 and §6.1 on p. 9, gives a “spherical-volume-equivalent diameter” of 254 km, a satellite-dynamics mass of 1.12 × 10¹⁹ kg and density 1.28 ± 0.13 g/cm³ at 3σ. The hash-verified asteroidcatalog_release_data_2026_11_13 catalog row gives 254.0 km, 1.12 × 10¹⁹ kg and 1.3053 g/cm³. **rc-911** records the newer individual density and its uncertainty convention.
+- marchis_etal_2021_kleopatra_shape_and_density, ESO PDF p. 1, gives the “volume equivalent diameter” 118.75 ± 1.40 km and density 3.38 ± 0.50 g/cm³. broz_etal_2021_kleopatra_multipole_orbits, ESO PDF p. 1, identifies 2.97 × 10¹⁸ kg as Kleopatra’s primary mass from the two moon orbits. The installed row gives 118.717 km, 2.96361 × 10¹⁸ kg and 3.3829 g/cm³. **rc-912** records the paired shape and orbit evidence for the individual taxonomy example.
+
+Extracted data in `extracted_data/r1038_camilla_kleopatra_density_evidence.csv`.
+
+
+## R1043 — Eugenia and Elektra in the taxonomy density evidence (2026-11-23)
+
+- asteroidcatalog_eugenia_elektra_taxonomy_evidence_2026 pins AsteroidCatalog main 059b5c7d7c70f73fc66b74ddae7dfe3dd73ab87a. Its C example gives 45 Eugenia 1.34 ± 0.29 g/cm³ and its Ch example gives 130 Elektra 1.84 ± 0.22 g/cm³. Both match the individual entries in carry2012 Table 1 (PDF pp. 20–21) and appear in the installed taxonomy JSON. Both installed artifact hashes match the asteroidcatalog_release_data_2026_11_13 manifest.
+- vernazza_etal_2021_vlt_sphere_main_belt_survey, Table 1 p. 6, gives a “volume-equivalent diameter” of 188 ± 2 km for Eugenia, a mass of (5.8 ± 0.1) × 10¹⁸ kg and density 1.66 ± 0.07 g/cm³ at 1σ. adam_2017 §4.1 gives 186 ± 4 km and 1.69 ± 0.11 g/cm³ using an adopted satellite-orbit mass. The release selects 187.6 km and 5.63210 × 10¹⁸ kg from SsODNet, yielding 1.62920 g/cm³. **rc-918** records the shape and mass evidence for the C-type example.
+- fuksa_etal_2023_elektra_quadruple_orbits_and_shape, pp. 1 and 6–7, gives a “volume-equivalent diameter” of 201 ± 2 km for Elektra, a mass of (6.606 +0.007/−0.013) × 10¹⁸ kg from the three-moon solution, and bulk density 1.536 ± 0.038 g/cm³. vernazza_etal_2021_vlt_sphere_main_belt_survey Table 1 gives 199 ± 2 km and 1.55 ± 0.07 g/cm³. The release selects 199.0 km and 6.52804 × 10¹⁸ kg from SsODNet, yielding 1.58207 g/cm³. **rc-919** records the joint shape and orbit evidence for the Ch-type example.
+
+Extracted data in extracted_data/r1043_eugenia_elektra_density_citations.csv.
+
+
+## R1047 — Sylvia and Eurybates density provenance (2026-11-23)
+
+- asteroidcatalog_sylvia_eurybates_density_basis_2026 pins AsteroidCatalog main 059b5c7d7c70f73fc66b74ddae7dfe3dd73ab87a. Sylvia's X example, 1.31 ± 0.15 g/cm³, matches carry2012 PDF p. 21 Table 1. Its P example, 1.39 ± 0.08 g/cm³, matches adam_2017 PDF p. 13 Table 4. carry_etal_2021_sylvia_shape_and_moon_dynamics, p. 4 §4, gives a “volume-equivalent diameter” of 271 ± 5 km, a mass of (1.44 ± 0.01) × 10¹⁹ kg and density 1.378 ± 0.045 g/cm³. The hash-verified asteroidcatalog_release_data_2026_11_13 row gives 272.925 km, 1.45873 × 10¹⁹ kg and 1.37040 g/cm³. **rc-927** records the individual estimates and their volume and mass sources.
+- The same release gives Eurybates 69.3 ± 1.4 km, 1.4992 × 10¹⁷ kg and 0.860322 g/cm³. Both inputs are tagged SsODNet. mottola_etal_2023_eurybates_orus_shape_models, abstract and p. 10 Table 3, gives the same “surface-equivalent spherical” diameter and a separate 167,000 km³ convex volume. The installed diameter gives 174,260 km³ under the spherical calculation. At fixed installed mass the published convex volume gives 0.8977 g/cm³. brown_etal_2021_eurybates_queta_orbit_density, arXiv PDF pp. 6–7 §3, gives a satellite-orbit mass of (1.51 ± 0.03) × 10¹⁷ kg and 1.1 ± 0.3 g/cm³ with the earlier WISE volume assumption. Mottola et al. §4.4 assigns class C from the phase curve. The release reports spectral_type P and a blank Tholen field. **rc-928** records the diameter-equivalence and classification provenance.
+
+Extracted data in extracted_data/r1047_sylvia_eurybates_density_citations.csv.
+
+
+## R1054 — Mission size and mass provenance for Mathilde and Lutetia (2026-11-23)
+
+- asteroidcatalog_release_data_2026_11_13, as installed by Economicspace, gives 53.0 ± 2.6 km and (1.030 ± 0.0438) × 10¹⁷ kg for 253 Mathilde from SsODNet, yielding 1.321329 g/cm³. thomas_etal_1999_mathilde_shape_near, p. 19 Table I, gives “Mean radius” 26.5 ± 1.3 km and “Volume” 7.8 × 10⁴ km³ nominal. yeomans_etal_1997_mathilde_near_tracking_mass, p. 2106 abstract, gives (1.033 ± 0.044) × 10²⁰ g. The nominal NEAR mass and volume give 1.32436 g/cm³. carry2012, arXiv PDF p. 34, Table A.1 entry M14, gives the installed mass and uncertainty. **rc-937** records the direct size and mass citations.
+- The same release gives 98 ± 2 km (JPL SBDB) and (1.700 ± 0.014) × 10¹⁸ kg (SsODNet) for 21 Lutetia, yielding 3.449626 g/cm³. sierks_etal_2011_lutetia_rosetta_shape, p. 487, gives “volume-equivalent diameter” 98 ± 2 km and an imaging volume of (5.0 ± 0.4) × 10⁵ km³. patzold_etal_2011_lutetia_rosetta_tracking_mass, p. 491, gives a flyby Doppler mass of (1.700 ± 0.017) × 10¹⁸ kg. The installed mass uncertainty matches carry2012, arXiv PDF p. 30, Table A.1 entry M104, which cites Pätzold et al. and gives a 17.6% smaller uncertainty than the original paper. **rc-938** records the spacecraft references and the separate uncertainty provenance.
+
+Extracted data in extracted_data/r1054_mathilde_lutetia_mission_mass_shape.csv.
+
+
+## R1055 — Gaspra and Šteins diameter conventions (2026-11-23)
+
+- asteroidcatalog_release_data_2026_11_13, as installed in Economicspace, gives 12.2 km for 951 Gaspra from JPL SBDB, with a blank diameter_sigma_km and disagreement among four sources. veverka_etal_1994_gaspra_galileo_size, p. 2 abstract, gives “average radius” 6.1 ± 0.4 km and principal diameters of 18.2, 10.5 and 8.9 km. The average radius doubles to 12.2 ± 0.8 km. **rc-939** records the matching Galileo scale and its uncertainty.
+- The same release gives 5.160 ± 0.167 km for 2867 Šteins from JPL SBDB. pds_2013_rosetta_steins_plate_shape, “Shape Model Characteristics,” gives a mean radius of 2.70 ± 0.2 km and a volume-equivalent radius of 2.63 ± 0.2 km. The latter doubles to 5.26 ± 0.40 km. At fixed assumed density, 5.26 km would raise the inferred mass by 5.93%. **rc-940** records the shape comparison and the citation gap for the selected fit.
+
+Extracted data in extracted_data/r1055_gaspra_steins_mission_diameters.csv.
+
+
+## R1066 — Measurement provenance for Ida and Pallas (2026-11-23)
+
+- asteroidcatalog_release_data_2026_11_13, as installed in Economicspace, selects 31.4 ± 1.2 km and (4.2 ± 0.6) × 10^16 kg from SsODNet for 243 Ida. thomas_etal_1996_ida_galileo_shape, p. 20 abstract, gives “mean radius of 15.7 ± 0.6 km” and model volume 16,100 ± 1,900 km³. belton_etal_1996_ida_galileo_encounter_mass, p. 1 abstract, gives the matching mass in grams from Dactyl orbit constraints and a bulk density of 2.6 ± 0.5 g/cm³. The release density 2.590966 g/cm³ is reproduced by dividing its mass by the volume of a 31.4 km sphere. **rc-960** records the Galileo source attribution and derived density.
+- asteroidcatalog_release_data_2026_11_13 selects 512.588 ± 5.336 km and (2.052555 ± 0.004859) × 10^20 kg from SsODNet for 2 Pallas. marsset_etal_2020_pallas_sphere_shape_density, p. 570, gives a “volume-equivalent diameter” of 513 ± 6 km, average mass (2.04 ± 0.03) × 10^20 kg and density 2.89 ± 0.08 g/cm³. vernazza_etal_2021_vlt_sphere_main_belt_survey, Table 1, gives 511 ± 4 km, (2.042 ± 0.027) × 10^20 kg and 2.92 ± 0.08 g/cm³. The release density 2.910656 g/cm³ falls in both intervals. Its quoted mass uncertainty is about one-fifth of either published uncertainty. **rc-961** records the selected estimates and their uncertainty provenance.
+
+Extracted data in extracted_data/r1066_ida_pallas_size_mass_and_density.csv.
+
+
+## R1067 — Hygiea and Interamnia measurement provenance (2026-11-24)
+
+- asteroidcatalog_release_data_2026_11_13, as installed in Economicspace, selects 428.923 ± 11.522 km and (8.217293 ± 0.049693) × 10^19 kg for 10 Hygiea, both from SsODNet. The release derives 1.988805 g/cm³ and reports mass_sources_agree=False. vernazza_etal_2020_hygiea_sphere_shape_mass, pp. 136–137, gives “volume-equivalent radius” 217 ± 7 km, mass (8.32 ± 0.80) × 10^19 kg and density 1.944 ± 0.250 g/cm³. vernazza_etal_2021_vlt_sphere_main_belt_survey, Table 1, gives 433 ± 8 km and (8.74 ± 0.69) × 10^19 kg. The installed mass uncertainty is about one-sixteenth of the 2020 estimate's. **rc-962** records the uncertainty basis and underlying references.
+- asteroidcatalog_release_data_2026_11_13 selects 332.0 ± 5.41 km and (3.227403 ± 0.045817) × 10^19 kg for 704 Interamnia, both from SsODNet. The release derives 1.684381 g/cm³ and names JPL SBDB in mass_screened_out. hanus_etal_2020_interamnia_adam_shape_mass, Table 2, gives 332 ± 6 km and (3.79 ± 1.28) × 10^19 kg. fienga_etal_2009_inpop08_asteroid_masses, p. 1683 Table 3, gives 1.623 ± 0.010 in 10^-11 solar masses, restated in Hanuš Table A.4 as (3.23 ± 0.02) × 10^19 kg. **rc-963** records the near match to the INPOP08 central estimate and the separate uncertainty and screening provenance. The published data-2026-11-13 release has no ssodnet_property_refs.csv asset.
+
+Extracted data in extracted_data/r1067_hygiea_interamnia_size_mass_and_provenance.csv.
+
+
+## R1068 — Geographos and Toutatis density methods and diameter geometry (2026-11-24)
+
+- asteroidcatalog_release_data_2026_11_13, as installed in Economicspace, selects 2.441 ± 0.044 km and (1.599268 ± 0.409606) × 10^13 kg for 1620 Geographos, both SsODNet. rozitis_green_2014_geographos_yarkovsky_mass, pp. 4 and 8 Tables 3–4, gives “Effective diameter” 2.46 ± 0.03 km for the fixed light-curve model with 5.04 ± 0.07 km maximum equatorial diameter. It fits 2100 +550/−450 kg/m³ and (1.62 +0.39/−0.33) × 10^13 kg in the same model. The density central value applied to the installed diameter reproduces the installed mass. **rc-964** records the property references and mass method.
+- asteroidcatalog_release_data_2026_11_13 selects 2.725 ± 0.194 km and (7.702515 ± 3.043469) × 10^12 kg for 4179 Toutatis, both SsODNet. dziadura2023, p. 10 Table A.1, uses 2.73 ± 0.19 km and fits 727 +226/−245 kg/m³. Its diameter reference is huang_etal_2013_toutatis_change2_flyby, p. 2 Table 1, “Size (diameter) Major axes.” The geometric mean of the first set, 4.60 × 2.29 × 1.92 km, is 2.72457 km. hudson_etal_2003_toutatis_radar_shape, p. 346, gives an “equal volume ellipsoid” with axes 1.70 × 2.03 × 4.26 km, equivalent to a 2.44973 km sphere. The installed sphere gives 1.376 times that volume. The Yarkovsky density central value applied to the installed diameter reproduces the installed mass. **rc-965** records the disputed diameter geometry and paired mass lineage.
+- economicspace_verification_sheet_density_label_2026_11_24, lines 1430–1434, emits “measured” for bulk density when the installed row carries density_measured=True. Both rows do, with 2.100 and 0.727 g/cm³. The study matches support checking the underlying method on both properties. The release lacks the per-property reference sidecar. **rc-966** records the worksheet method citation.
+
+Extracted data in extracted_data/r1068_geographos_toutatis_yarkovsky_and_shape.csv.
+
+
+## R1084 — Albedo uncertainty across X and Xc composition cutoffs
+
+- `asteroidcatalog_x_complex_albedo_boundary_uncertainty_code_2026` — AsteroidCatalog `taxonomy.py` lines 1066–1096 use measured albedo cutoffs of 0.10 and 0.30. `enrich.py` lines 199–213 pass albedo without its uncertainty and retain the pre-split measurement group. The class used for composition is a point estimate.
+- `mainzer_etal_2011_neowise_spectrophotometric_taxonomic_albedos` — The preprint's “New Tholen EMP Category” column (Table 2, pp. 27–28) gives 11785 (Xc) as M at 0.101 ± 0.021 and 3367 (X) as E at 0.303 ± 0.059. The pinned composition exporter changes these from M to P and E to M at the lower endpoints. Their modeled metal fractions change from 0.50 to 0.02 and from 0.10 to 0.50, respectively. Two other threshold-crossing fixtures and two same-class controls are recorded. Verdict: the measured branch lacks an uncertainty flag for the inferred composition (rc-995).
+- Extracted data: `extracted_data/r1084_x_complex_albedo_boundary_uncertainty.csv`.
+
+
+## R1099 — Rotation lower bounds and selected point periods (2026-11-24)
+
+- warner_harris_pravec_2021_ephemerides_lightcurve_parameters, *Minor Planet Lightcurve Parameters*, pp. 8069–8271, Period column, gives “>1.90” h for 8812 Kravtsov, “>1.02” h for 38535 (1999 UO42), and “>1.73” h for 66167 (1998 VG28). asteroidcatalog_release_data_2026_11_13, the Economicspace Stage 1 cache, selects JPL SBDB values of 1.90, 1.02 and 1.73 h respectively, with no source-screen flag for those values. The two records agree numerically and differ in the period relation. The published table also gives “>1.30” h for 50684, whose catalog period is blank and JPL source is marked screened.
+- asteroidcatalog_rotation_bound_selection_and_economicspace_inputs_2026, JPL scalar mapping and merge selection, exports a point rotation period. Economicspace’s pinned spin and eclipse helpers treat the three selected periods as below equatorial lift at the catalog densities and return 0.95, 0.51 and 0.865 h darkness at a 50% dark fraction. With no point period, the spin test is false and the dark-period assumption is 5.111 h in the same fixture. **rc-1014** records the qualifier and citation gap.
+
+Extracted data in extracted_data/r1099_rotation_lower_bounds_in_selected_periods.csv.

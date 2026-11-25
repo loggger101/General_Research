@@ -1,0 +1,21 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_rtg_rating_and_economicspace_crossover_2026,Installed RTG specific power,5,We/kg,"Spacecost and Economicspace operational_costs.csv, RTG specific power",No lifetime adjustment in source screening.
+spacecost_rtg_rating_and_economicspace_crossover_2026,Installed PV system specific power at 1 AU,60,W/kg,Installed Power system specific mass,
+jpl_2017_rtg_study_legacy_gphs_rating,Legacy GPHS-RTG tabulated reference output,290,We,JPL D-99657 Appendix N Table N-1,Comments column says Beginning Of Mission.
+jpl_2017_rtg_study_legacy_gphs_rating,Legacy GPHS-RTG tabulated mass,57,kg,JPL D-99657 Appendix N Table N-1,Reference unit rather than hardware-specific New Horizons mass.
+,Legacy tabulated reference specific power,5.087719298245614,We/kg,"JPL D-99657 Table N-1, electric power divided by mass",Approximately 5.09 W/kg.
+nasa_2022_next_gen_rtg_mod1_power_life,Mod 1 beginning-of-life output,245,We,"NASA Next Gen fact sheet p. 2, System Performance",2022 fact-sheet design estimate.
+nasa_2022_next_gen_rtg_mod1_power_life,Mod 1 end-of-design-life output at 17 years,177,We,"NASA Next Gen fact sheet p. 2, System Performance",Includes three years of prelaunch storage.
+nasa_2022_next_gen_rtg_mod1_power_life,Mod 1 generator mass,55.7,kg,"NASA Next Gen fact sheet p. 2, System Performance",
+,Mod 1 end-of-design-life specific power,3.177737881508079,We/kg,Derived from NASA 2022 fact sheet output and mass,Same design and mass denominator as the beginning-of-life figure.
+nasa_new_horizons_rtg_launch_pluto_power,New Horizons electric power at launch,250,We,"NASA Science mission profile, In Depth",Approximate spacecraft mission history.
+nasa_new_horizons_rtg_launch_pluto_power,New Horizons electric power at the Pluto encounter,200,We,"NASA Science mission profile, In Depth",Approximate spacecraft mission history.
+,No-eclipse crossover at installed PV and RTG rating,3.4641016151377544,AU,Inverse-square baseline and mass equality,Required demand within model cap.
+,No-eclipse crossover using 2022 Mod 1 beginning-of-life rating,3.692744729379982,AU,Same model with 4.4 W/kg scenario,Illustrative only.
+,"2.8 AU, bare solar specific power",7.653061224489797,W/kg,Executed Economicspace solar_specific_power_w_per_kg,
+,"2.8 AU, solar specific power with five-hour darkness",3.141178523646094,W/kg,Executed Economicspace eclipse_effective_w_per_kg,Half-dark duty; installed storage inputs.
+,"2.8 AU, 1 kW, RTG passed mass screen with eclipse on",rtg,,Executed Economicspace power_source_for_target,At the installed 5 We/kg and 5 kW cap.
+,"2.8 AU, 1 kW, mass screen without eclipse",solar,,Executed Economicspace power_source_for_target,
+,"2.8 AU, 5001 W with eclipse, mass screen",solar,,Executed Economicspace power_source_for_target,Above the scenario power cap.
+,"3.6 AU, 1 kW, no eclipse, 5 We/kg",rtg,,Executed Economicspace power_source_for_target,Bare solar 4.62963 W/kg.
+,"3.6 AU, 1 kW, no eclipse, 4.4 We/kg",solar,,Executed Economicspace power_source_for_target,Uses the 2022 Mod 1 only in a sensitivity check.

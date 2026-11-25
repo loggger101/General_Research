@@ -1099,3 +1099,19 @@ Verdict: the committed tests support the parity claims, but the reported latency
 At AsteroidCatalog main f360a3c02daabee87a7dd225a6cb76966e792ecf (PRs #41 and #43, 0.13.10 and 0.13.12, data contract 1.11.0), manifest.json `build_info` records whether `mpc_mpcorb_extended_designation_links` were enabled and used and how many links were read, apart from the source counts, and the release notes print the MPC acknowledgement when they were used (rc-778) and MP3C's by-name acknowledgement when MP3C contributed (rc-866). Counts and values unchanged.
 
 Verdict: rc-778, rc-866 closed as applied. Extracted data: none new.
+
+## R1010 — Stage 1 property and orbit citations (2026-11-22)
+
+- `asteroidcatalog_ssodnet_spin_import_code_2026` imports the first positive ranked `spins.period.value` as `rotation_period_h` (ssodnet.py lines 243–260, 361–368). `asteroidcatalog_ssodnet_property_bibrefs_code_current_2026` emits six property types for mass/density-selected bodies. A Ceres-shaped fixture selected by `bodies_to_map` emits its resolved mass and no spin-reference row. `imcce_ssodnet_orbital_metadata_api` exposes Ceres's sidereal period as 9.07417 h with `Russell+2016` under the first spin's `bibref`; `russell_2016_dawn_arrives_at_ceres` reports “9.074170 ± 0.000001 hours” (printed p. 1008). `asteroidcatalog_release_data_2026_11_13` gives 9.07417 h as the JPL-selected period and SsODNet as the mass provider. **rc-871** asks to map the SsODNet spin citation for the already-fetched cohort with the existing card-versus-imported-value status.
+- `asteroidcatalog_release_data_2026_11_13` gives 2018 DT an orbit from `JPL SBDB` at epoch JD 2461200.5 TDB. `economicspace_worksheet_orbit_provider_code_2026` labels its three orbit fields as sourced, but returns the same release-wide list of four surveys for each. The 2026-11-18 HTML snapshot prints this generic backing for I50–I52. **rc-872** asks the worksheet to print the supplied orbit provider and epoch metadata where they are known for the run.
+
+Extracted data in `extracted_data/r1010_asteroid_property_citation_paths.csv`.
+
+
+## R1090 — Pallas albedo citations by provider (2026-11-24)
+
+- imcce_pallas_ssocard_computed_albedo_2026, Pallas card v1.2.3 dated 2026-07-13, labels p_V=0.1512 “Computed” and cites Berthier+2023. Its diameter is 512.588 km from ADAM and KOALA inputs. Its H=4.12 cites Moskovitz+2022. The two inputs carry distinct selection links. berthier_2023_ssodnet, preprint p. 6, §4.2.6 eq. (5), gives the albedo formula, which yields 0.1511865275 from those inputs.
+- asteroidcatalog_ssodnet_property_bibrefs_code_current_2026 emits status “resolved” and shortbib Berthier+2023 for an equal-value albedo fixture from that card. The emitter omits the method and selection links and reads the SsODNet input frame without consulting the final catalog's selected provider. **rc-1002** records the missing computed-albedo lineage and scope of that status.
+- asteroidcatalog_release_data_2026_11_13 reports the final Pallas p_V=0.155 with JPL SBDB as albedo provider. jpl_sbdb_pallas_physical_albedo_reference_2026, phys_par albedo, gives 0.155 and cites Vernazza et al., A&A 654, A56 (2021). vernazza_etal_2021_vlt_sphere_main_belt_survey, Table 1, gives the same value in the p_V column and describes how it “computed the geometric albedo of our targets” from diameter and absolute magnitude. asteroidcatalog_jpl_physical_field_citation_code_2026 imports the bulk albedo field and the companion receives only the SsODNet frame. **rc-1003** records the missing citation for the selected JPL value.
+
+Extracted data in extracted_data/r1090_pallas_albedo_provider_and_method.csv.

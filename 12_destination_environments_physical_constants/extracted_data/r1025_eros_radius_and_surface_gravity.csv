@@ -1,0 +1,14 @@
+source_id,item,value,unit,location_in_source,notes
+yeomans_2000_near_eros_radio_science,NEAR shape-model volume,2503 ± 25,km³,"Table 1, p. 2087",Inputs to both projects’ volume-equivalent shape proxy.
+yeomans_2000_near_eros_radio_science,Local-normal escape speed,3.1–17.2,m/s,"p. 2087, paragraph above Table 1 and Table 1",Modeled range over rotating surface.
+thomas_etal_2002_eros_shape_topography_surface_gravity,Shape-model volume,2535 ± 20,km³,Table I p. 21,Independent later shape estimate.
+thomas_etal_2002_eros_shape_topography_surface_gravity,Shape-model mean radius,8.46 ± 0.02,km,Table I p. 21,Thomas shape model.
+thomas_etal_2002_eros_shape_topography_surface_gravity,Local effective surface gravity,2.4–5.5,mm/s²,Table I p. 21; local net surface acceleration definition under Results,Converted from 0.24–0.55 cm/s².
+thomas_etal_2002_eros_shape_topography_surface_gravity,Area-weighted effective surface gravity,4.6,mm/s²,Table I p. 21,Converted from area average 0.46 cm/s².
+asteroidcatalog_release_data_2026_11_13,Catalog Eros shape-model diameter,16.84563587838037,km,"data-2026-11-13 installed CSV, designation 433",diameter_provider=shape model.
+spacecost_eros_spherical_environment_current_2026,Stored radius,8420,m,reference/environments.csv line 12 and installed Stage 3,Rounded volume-equivalent radius.
+spacecost_eros_spherical_environment_current_2026,Stored spherical gravity,6.295248292,mm/s²,reference/environments.csv line 12,"GM/r², converted to mm/s²."
+spacecost_eros_spherical_environment_current_2026,Stored spherical escape speed,10.29621198476189,m/s,reference/environments.csv line 12,sqrt(2GM/r).
+,Volume-equivalent radius from 2503 km³,8422.817939190,m,(3V / 4π)^(1/3),Matches half of the AsteroidCatalog diameter.
+,Spherical gravity above Thomas local maximum,14.45905985,percent,100 × (spherical g / local upper end − 1),Compares model outputs with different geometry.
+,Radius-only comparison at 8460 m,6.235859489,mm/s²,GM/r² at stored mass and Thomas model mean radius,Spherical comparison remains above the reported local maximum.

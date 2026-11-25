@@ -1,0 +1,31 @@
+source_id,item,value,unit,location_in_source,notes
+ariane6_users_manual_issue2_rev0_feb2021,A62 lunar transfer payload,3500,kg,Printed p. 2-11 §2.4.6,Lunar Transfer Orbit on A62
+ariane6_users_manual_issue2_rev0_feb2021,A62 lunar transfer perigee altitude,200,km,Printed p. 2-11 §2.4.6,Altitude above Earth
+ariane6_users_manual_issue2_rev0_feb2021,A62 lunar transfer apogee altitude,400000,km,Printed p. 2-11 §2.4.6,Altitude above Earth
+ariane6_users_manual_issue2_rev0_feb2021,A62 lunar transfer inclination,6,deg,Printed p. 2-11 §2.4.6,Vehicle-specific lunar transfer
+ariane6_users_manual_issue2_rev0_feb2021,A62 Earth escape payload,2600,kg,Printed p. 2-11 §2.4.5,"Escape Mission 1, v-infinity 2.5 km/s and free declination"
+ariane6_users_manual_issue2_rev0_feb2021,A62 Earth escape v-infinity,2.5,km/s,Printed p. 2-11 §2.4.5,Free declination
+,A62 payload_escape_kg_low,3000,kg,"Spacecost v0.19.0 launch_vehicles.csv, A62",Pinned export baseline
+,A62 payload_escape_kg,3240,kg,"Spacecost v0.19.0 launch_vehicles.csv, A62",Pinned export baseline
+,A62 payload_escape_kg_high,3500,kg,"Spacecost v0.19.0 launch_vehicles.csv, A62",Pinned export baseline
+,A62 usd_per_kg_to_escape,29599,USD/kg,"Spacecost v0.19.0 launch_vehicles.csv, A62",Pinned export baseline
+ariane6_users_manual_issue2_rev0_feb2021,A64 lunar transfer payload,8600,kg,Printed p. 2-11 §2.4.6,Lunar Transfer Orbit on A64
+ariane6_users_manual_issue2_rev0_feb2021,A64 lunar transfer perigee altitude,230,km,Printed p. 2-11 §2.4.6,Altitude above Earth
+ariane6_users_manual_issue2_rev0_feb2021,A64 lunar transfer apogee altitude,400000,km,Printed p. 2-11 §2.4.6,Altitude above Earth
+ariane6_users_manual_issue2_rev0_feb2021,A64 lunar transfer inclination,7,deg,Printed p. 2-11 §2.4.6,Vehicle-specific lunar transfer
+ariane6_users_manual_issue2_rev0_feb2021,A64 Earth escape payload,6900,kg,Printed p. 2-11 §2.4.5,"Escape Mission 1, v-infinity 2.5 km/s and free declination"
+ariane6_users_manual_issue2_rev0_feb2021,A64 Earth escape v-infinity,2.5,km/s,Printed p. 2-11 §2.4.5,Free declination
+,A64 payload_escape_kg_low,8000,kg,"Spacecost v0.19.0 launch_vehicles.csv, A64",Pinned export baseline
+,A64 payload_escape_kg,8290,kg,"Spacecost v0.19.0 launch_vehicles.csv, A64",Pinned export baseline
+,A64 payload_escape_kg_high,8600,kg,"Spacecost v0.19.0 launch_vehicles.csv, A64",Pinned export baseline
+,A64 usd_per_kg_to_escape,14837,USD/kg,"Spacecost v0.19.0 launch_vehicles.csv, A64",Pinned export baseline
+ariane6_users_manual_issue2_rev0_feb2021,A64 HEO L2 payload,8000,kg,"Printed p. 2-10 §2.4.4, HEO Mission 1 (L2)","1,500,000 km apogee and 180 km perigee altitude at 6 degrees"
+ariane6_users_manual_issue2_rev0_feb2021,A62 HEO L2 payload,3300,kg,"Printed p. 2-10 §2.4.4, HEO Mission 1 (L2)",Same orbit as A64 comparator
+,Fleet count on A62 note,9,flights,"Spacecost v0.19.0 launch_vehicles.csv, A62 notes",Through August 2026
+esa_europes_spaceport_launch_inventory_through_va270_2026,Ariane 6 launches through VA270,9,flights,"Inventory, VA262–VA270",Count excluding Vega and Vega-C entries
+esa_europes_spaceport_launch_inventory_through_va270_2026,Four-booster flights through VA270,3,flights,"Inventory, VA267–VA269","VA267 and VA268 P120C, VA269 P160C"
+arianespace_2026_va271_tenth_ariane6_flight,Ariane 6 launches including VA271,10,flights,"Launch-day release, fleet milestones",24 November 2026
+arianespace_2026_va271_tenth_ariane6_flight,VA271 deployed payloads,36,satellites,"Launch-day release, VA271 at a glance",Amazon Leo
+arianespace_2026_va271_tenth_ariane6_flight,Ariane 64 P160C flights including VA271,2,flights,"Launch-day release, VA271 at a glance",Fleet count is distinct from the configuration subset
+esa_europes_spaceport_launch_inventory_through_va270_2026;arianespace_2026_va271_tenth_ariane6_flight,Ariane 64 launches including VA271,4,flights,Inventory VA267–VA269 and launch-day report VA271,Two P120C and two P160C
+arianespace_2024_va262_post_launch_update,VA262 withheld reentry capsules,2,capsules,31 July technical demonstration section,Primary satellite deployments took place earlier. Vinci third burn and stage deorbit were not executed.

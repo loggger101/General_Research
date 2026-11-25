@@ -1,0 +1,6 @@
+source_id,item,value,unit,location_in_source,notes
+cnsa_lm10b_maiden_flight_and_leo_rating_2026,Reusable LEO payload rating at 200 km,16000,kg,"2026-07-10 mission report, paragraph 3",Approximately 16 metric tonnes.
+cnsa_lm10b_maiden_flight_and_leo_rating_2026,Maiden flight result,planned orbit reached; first stage recovered,,"2026-07-10 mission report, opening paragraph",Mission outcome.
+chen_muye_cctv_lm10b_payload_ratings_2026,Recovery-mode payload rating at 200 km,16000,kg,"Chen Muye quote near end of transcript, 2026-07-10",Developer-stated capacity.
+chen_muye_cctv_lm10b_payload_ratings_2026,Recovery-mode payload rating at 900 km and 50° inclination,11000,kg,"Same Chen Muye quote, 2026-07-10",Developer-stated capacity.
+spacecost_lm10b_payload_attribution_current_2026,Current LEO payload point and both bounds,16000,kg,Spacecost reference/launch_vehicles.csv line 39; installed Economicspace Stage 3 transportation/launch_vehicles.csv line 39,Both copies cite Wikipedia.

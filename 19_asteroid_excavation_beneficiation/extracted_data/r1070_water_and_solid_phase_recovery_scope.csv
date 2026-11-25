@@ -1,0 +1,24 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_spacevalue_separation_recovery_paths_2026,Separation recovery dial,0.9,fraction,Economicspace verification_sheet.html I75 and modules/calc.py line 397,I75 repeats terrestrial flotation and refining citations.
+economicspace_spacevalue_separation_recovery_paths_2026,Resistojet water feed ratio,1.0,kg water/kg propellant,"Economicspace campaign/stage3/propellants.csv, Water (electrothermal / resistojet)",Archived water-feed input.
+kiewiet_etal_2026_luwex_water_recovery,LUWEX experiment 4 starting ice,653,g,"Article-in-press PDF p. 15 Table 7, experiment 4",Approximately 13 kg of lunar regolith simulant with 5 wt% water. Single load.
+kiewiet_etal_2026_luwex_water_recovery,LUWEX experiment 4 residual ice,119,g,"Article-in-press PDF p. 15 Table 7, experiment 4",Completes the extraction mass balance.
+kiewiet_etal_2026_luwex_water_recovery,LUWEX experiment 4 water extracted,534,g,"Article-in-press PDF p. 15 Table 7, experiment 4",Water removed from the feed.
+kiewiet_etal_2026_luwex_water_recovery,LUWEX experiment 4 water recovered,474,g,"Article-in-press PDF p. 15 Table 7, experiment 4",End-to-end collected water.
+kiewiet_etal_2026_luwex_water_recovery,LUWEX experiment 4 loss mass,60,g,"Article-in-press PDF p. 15 Table 7, experiment 4",Extracted minus recovered.
+,LUWEX extraction fraction from raw masses,0.8177641653905053,fraction,534 / 653,Paper rounds to 82%.
+,LUWEX capture fraction from extracted water,0.8876404494382022,fraction,474 / 534,Paper rounds to 89%.
+,LUWEX overall feed water recovery,0.7258805513016845,fraction,474 / 653,Paper rounds to 73%. Lunar simulant bench comparator.
+broslav_2025_optical_mining_carbonaceous_chondrite_simulants,"Nectar A spalls, water loss efficiency at 107.1 W/cm²",75.4–89.9,%,"Acta Astronautica 235 Section 4.4 Table 5, row 107.1",Post-test sample TGA-MS area ratio from equation (3).
+broslav_2025_optical_mining_carbonaceous_chondrite_simulants,"Nectar B melt, water loss efficiency at 107.1 W/cm²",55.2–91.9,%,"Acta Astronautica 235 Section 4.4 Table 6, row 107.1",Post-test sample TGA-MS area ratio from equation (3).
+broslav_2025_optical_mining_carbonaceous_chondrite_simulants,"Nectar B sintered sample, water loss efficiency at 107.1 W/cm²",28.5–63.4,%,"Acta Astronautica 235 Section 4.4 Table 6, row 107.1 (Sintered)",Ranges reflect RGA baseline/gain treatment.
+,"Feed per kg water propellant, default",22.222222222222218,kg/kg,1 / (0.05 × 0.90),Controlled 5 wt% water feed; resistojet uses 1 kg water/kg propellant.
+,"Feed per kg water propellant, using LUWEX end-to-end fraction",27.552742616033754,kg/kg,1 / (0.05 × 474/653),"Only the recovery input changes, a comparator sensitivity."
+,Feed increase using LUWEX fraction,23.987341772151915,%,Ratio of the two feed results,Other inputs held fixed.
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,LMS-1 selected ilmenite recovery,31.93 ± 6.69,%,"Frontiers in Space Technologies 4:1328341 p. 9 Table 5, LMS-1",Standard error. Denominator is ilmenite in feed.
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,TMIA4 selected ilmenite recovery,37.02 ± 14.46,%,"Frontiers in Space Technologies 4:1328341 p. 9 Table 5, TMIA4",Standard error. Same optimized settings as for LMS-1.
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,LMS-1 selected concentrate ilmenite grade,11.95 ± 0.82,wt%,"Frontiers in Space Technologies 4:1328341 p. 9 Table 5, LMS-1",Concentrate mass denominator.
+kulkarni_2024_lunar_regolith_beneficiation_testbed_energy,TMIA4 selected concentrate ilmenite grade,8.53 ± 0.31,wt%,"Frontiers in Space Technologies 4:1328341 p. 9 Table 5, TMIA4",Concentrate mass denominator.
+,Ilmenite loaded with 0.9000 recovery,36.0,kg,"Spacevalue optimal_payload_mix, single phase fixture","1,000 kg feed at 4 wt% ilmenite and 50 kg hold. This test isolates phase availability."
+,Ilmenite loaded with 0.3193 recovery,12.771999999999998,kg,"Spacevalue optimal_payload_mix, single phase fixture","1,000 kg feed at 4 wt% ilmenite and 50 kg hold. This test isolates phase availability."
+,Ilmenite loaded with 0.3702 recovery,14.808,kg,"Spacevalue optimal_payload_mix, single phase fixture","1,000 kg feed at 4 wt% ilmenite and 50 kg hold. This test isolates phase availability."

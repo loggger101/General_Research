@@ -518,3 +518,9 @@ Verdict: Keep rc-827 open and rc-863 applied; no numeric replacement inferred. E
 At Spacecost main 64e51d5197fa5ebb8dd1d910565c000a2b0b86e9 (PR #57, 0.19.0, data contract 1.28.0), by the owner's decision, the bottled-gas densities in `spacecost/propellants.py` and `reference/propellants.csv` are the reference equations of state at 293.15 K: argon 0.300 -> 0.3135 kg/L at 18 MPa (`tegeler_span_wagner_1999_argon_equation_of_state`, rc-816), krypton 0.550 -> 0.872 at 18 MPa (`lemmon_span_2006_short_eos_industrial_fluids`, rc-857), nitrogen 0.250 -> 0.302 at 30 MPa (`span_etal_2000_nitrogen_reference_equation_of_state`, rc-858), xenon 2.000 -> 1.868 at 10 MPa (`lemmon_span_2006_short_eos_industrial_fluids`, rc-859). The COPV cost per litre is unchanged, so the tank fraction moves inversely (argon 22.9% -> 22.0%, krypton 12.5% -> 7.9%, nitrogen 45.9% -> 38.0%, xenon 1.91% -> 2.05%), and so does the cost per litre; only `density_kg_per_L`, `ref_cost_usd_per_L` and `cost_usd_per_L` move in the reference CSVs.
 
 Verdict: rc-816, rc-857, rc-858, rc-859 closed as applied. Extracted data: none new.
+
+## R1012 — Fuel-price input missing from build manifest (2026-11-22)
+
+`spacecost_build_fuel_quote_provenance_code_2026` selects reference prices, a recorded quote snapshot, or live yfinance. It writes package version, data contract, catalog date and file names to `build_manifest.json` (build.py lines 74–87, 126–140). A reference-only build stamped 2026-10-17 and a recorded `fuel-2026-10-17` build produce identical manifests and different propellant CSVs. `economicspace_stage3_fuel_snapshot_pin_code_2026` pins `fuel-2026-10-17`; its Stage 3 propellant CSV matches the snapshot build and records kerolox at $0.6898571861/kg with `yfinance:HO=F`, close date 2026-09-28. The reference kerolox price is $1.0154545455/kg. **rc-874** asks the build manifest to identify the quote input.
+
+Extracted data in `extracted_data/r1012_fuel_quote_build_provenance.csv`.

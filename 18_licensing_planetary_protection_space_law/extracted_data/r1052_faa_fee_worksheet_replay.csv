@@ -1,0 +1,25 @@
+source_id,item,value,unit,location_in_source,notes
+uscode_51_usc_50924_launch_reentry_user_fees,First statutory fee year,2026,year,51 U.S.C. 50924(a)(1),Covered licensed or permitted launch or reentry.
+uscode_51_usc_50924_launch_reentry_user_fees,2026 statutory event fee rate,0.25,USD/lb payload,51 U.S.C. 50924(a)(2)(A),
+uscode_51_usc_50924_launch_reentry_user_fees,2026 statutory event fee cap,30000,USD/event,51 U.S.C. 50924(a)(3)(A),
+faa_order_8800_4_launch_reentry_user_fees_2026,Event assessment basis,Completed covered event; payload weight,,FAA Order 8800.4 sections 4(a)–(d),Fee invoiced after the launch or reentry.
+,Synthetic launch stack,40000,kg,Reproduction input,Modeled U.S. non-NASA operator.
+,Synthetic returned payload,2000,kg,Reproduction input,Earth return fee only on the Earth-surface branch.
+economicspace_faa_event_fee_worksheet_replay_2026,Earth-surface base compliance,2500000,USD,Installed Stage 3 operational_costs.csv line 17,Flat Part 450 compliance estimate.
+economicspace_faa_event_fee_worksheet_replay_2026,Cislunar base compliance,1200000,USD,Installed Stage 3 operational_costs.csv line 18,Flat launch-only compliance estimate.
+,"Earth surface, flag off, calculator licensing",2500000.0,USD,modules/calc.py 6077–6092,Synthetic replay. 20% contingency and WACC disabled.
+,"Earth surface, flag off, worked licensing",2500000.0,USD,campaign/worked_calculation.py 4458–4461,Synthetic replay. 20% contingency and WACC disabled.
+,"Earth surface, flag off, calculator mission cost",1924468200.0,USD,modules/calc.py mission_cost_usd,Synthetic replay. 20% contingency and WACC disabled.
+,"Earth surface, flag off, worked mission cost",1924468200.0,USD,campaign/worked_calculation.py cost,Synthetic replay. 20% contingency and WACC disabled.
+,"Earth surface, flag on, calculator licensing",2523148.537529412,USD,modules/calc.py 6077–6092,Synthetic replay. 20% contingency and WACC disabled.
+,"Earth surface, flag on, worked licensing",2500000.0,USD,campaign/worked_calculation.py 4458–4461,Synthetic replay. 20% contingency and WACC disabled.
+,"Earth surface, flag on, calculator mission cost",1924495978.2450354,USD,modules/calc.py mission_cost_usd,Synthetic replay. 20% contingency and WACC disabled.
+,"Earth surface, flag on, worked mission cost",1924468200.0,USD,campaign/worked_calculation.py cost,Synthetic replay. 20% contingency and WACC disabled.
+,"Cislunar, flag off, calculator licensing",1200000.0,USD,modules/calc.py 6077–6092,Synthetic replay. 20% contingency and WACC disabled.
+,"Cislunar, flag off, worked licensing",1200000.0,USD,campaign/worked_calculation.py 4458–4461,Synthetic replay. 20% contingency and WACC disabled.
+,"Cislunar, flag off, calculator mission cost",1853308200.0,USD,modules/calc.py mission_cost_usd,Synthetic replay. 20% contingency and WACC disabled.
+,"Cislunar, flag off, worked mission cost",1853308200.0,USD,campaign/worked_calculation.py cost,Synthetic replay. 20% contingency and WACC disabled.
+,"Cislunar, flag on, calculator licensing",1222046.2262184878,USD,modules/calc.py 6077–6092,Synthetic replay. 20% contingency and WACC disabled.
+,"Cislunar, flag on, worked licensing",1200000.0,USD,campaign/worked_calculation.py 4458–4461,Synthetic replay. 20% contingency and WACC disabled.
+,"Cislunar, flag on, calculator mission cost",1853334655.471462,USD,modules/calc.py mission_cost_usd,Synthetic replay. 20% contingency and WACC disabled.
+,"Cislunar, flag on, worked mission cost",1853308200.0,USD,campaign/worked_calculation.py cost,Synthetic replay. 20% contingency and WACC disabled.

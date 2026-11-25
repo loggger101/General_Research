@@ -1,0 +1,34 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_mars_delivery_stage_loss_pricing_2026,Mars surface TMI,3600,m/s,Spacecost delivery.py Mars surface chain,First leg.
+spacecost_mars_delivery_stage_loss_pricing_2026,Mars entry survival scalar,0.3,fraction,Spacecost delivery.py MARS_LANDED_MASS_FRACTION,Between TMI and a separate terminal burn.
+spacecost_mars_delivery_stage_loss_pricing_2026,Mars surface terminal burn,800,m/s,Spacecost delivery.py Mars surface chain,Uses 465 s and a 0.20 lander dry fraction.
+spacecost_mars_delivery_stage_loss_pricing_2026,Earth-return TPS rate applied to EDL discard,50000.0,USD/kg rated mass,Spacecost operational_costs.csv row 8; Economicspace verification_sheet.py h_edl input,Cost row denominator is kg of TPS mass.
+spacecost_mars_delivery_stage_loss_pricing_2026,LEO launch cost used by delivery helper,2555.0,USD/kg in LEO,"Spacecost delivery.py, invoked with defaults",Current route replay.
+edquist_2022_mars2020_aerothermal_entry_masses,Curiosity best-estimated atmospheric entry mass,3153,kg,"NASA NTRS 20210024709, PDF p. 14 Table 3, MSL BET",Read row via word coordinates and rendered page.
+edquist_2022_mars2020_aerothermal_entry_masses,Perseverance best-estimated atmospheric entry mass,3369,kg,"NASA NTRS 20210024709, PDF p. 14 Table 3, Mars 2020 BET",Read row via word coordinates and rendered page.
+jpl_msl_factsheet_curiosity_mass,Curiosity rover mass,899,kg,JPL Mars Science Laboratory fact sheet,Surface rover.
+nasa_mars2020_flight_mech_edl_simulation,Perseverance rover mass,1026,kg,"Assessment of the Mars 2020 EDL Simulation, p. 1",Surface rover mass as reported by NASA.
+sell_etal_2013_msl_as_flown_powered_descent,Start of MSL powered flight,backshell separation,event,NTRS 20150007794 abstract,"Ends at landing, including rocket-engine deceleration and the sky crane."
+dra5_2009_human_exploration_of_mars,DRA 5.0 terminal descent Δv,595,m/s,"NASA-SP-2009-566, Table 4-3","Conceptual heavy-lander design point, distinct from rover EDL."
+,Curiosity entry-to-rover fraction,0.2851252775134792,fraction,899 / 3153,Includes terminal descent losses.
+,Perseverance entry-to-rover fraction,0.3045414069456812,fraction,1026 / 3369,Includes terminal descent losses.
+,Spacecost wet terminal stage and cargo per landed kg,1.2517761596493395,kg/kg,"stage_mass_ratio(800, 465, 0.20)",Generic terminal-burn starting mass.
+,Spacecost atmospheric entry mass per landed kg,4.172587198831132,kg/kg,Starting mass for terminal stage divided by 0.30,After TMI. Default path.
+,Spacecost effective atmospheric entry to delivered fraction,0.23965946122830706,fraction,"1 / (stage_mass_ratio(800, 465, 0.20) / 0.30)",Full chain from atmospheric entry.
+,Spacecost pre-terminal modeled discard mass,2.9208110391817925,kg per kg landed,Entry mass less wet terminal stage and cargo,This entire modeled loss takes the TPS rate.
+,Spacecost default EDL hardware component,146040.55195908961,USD/kg landed,"50,000 × modeled discard mass",Pre-terminal model cost.
+,Spacecost default EDL hardware share of delivered cost,0.7838702386428782,fraction,EDL hardware component divided by delivered cost,Uses current default helper.
+,Default Mars surface mass ratio,10.605546972696178,kg in LEO/kg landed,Spacecost delivery_mass_ratio defaults,Replayed on pinned source.
+,Default Mars surface delivered cost,186307.0502739471,USD/kg landed,Spacecost delivered_cost_usd_per_kg defaults,Includes staged hardware and propellant.
+,"Single aggregate entry loss comparison, Mars surface mass ratio",8.472398911692897,kg in LEO/kg landed,"Spacecost delivery_mass_ratio with (3600, 0) burns","Sensitivity only, holds the 0.30 scalar and other inputs fixed."
+,"Single aggregate entry loss comparison, Mars surface delivered cost",140788.47156983044,USD/kg landed,"Spacecost delivered_cost_usd_per_kg with (3600, 0) burns",Sensitivity only. Still uses the stock generic loss cost.
+dwyer_cianciolo_etal_2020_edlas_phase3_mass_tps,EDLAS FR=2.25 entry mass,58786,kg,"NASA NTRS 20200002905 Table 5 p. 10, FR=2.25",20 t useful payload point design.
+dwyer_cianciolo_etal_2020_edlas_phase3_mass_tps,EDLAS FR=2.25 TPS mass,3454,kg,"NASA NTRS 20200002905 Table 5 p. 10, FR=2.25",Total TPS separately listed from structure.
+dwyer_cianciolo_etal_2020_edlas_phase3_mass_tps,EDLAS FR=2.25 powered descent onset,1.9,Mach,"NASA NTRS 20200002905 Table 5 p. 10, FR=2.25",Conceptual supersonic descent.
+,EDLAS FR=2.25 useful payload per entry kg,0.34021705848331235,fraction,"20,000 kg useful payload / Table 5 entry mass","Design result, no flight confirmation."
+,EDLAS FR=2.25 TPS mass per useful payload kg,0.1727,kg/kg,"Table 5 TPS mass / 20,000 kg useful payload",Mass comparison alone.
+dwyer_cianciolo_etal_2020_edlas_phase3_mass_tps,EDLAS FR=1.78 entry mass,54910,kg,"NASA NTRS 20200002905 Table 5 p. 10, FR=1.78",20 t useful payload point design.
+dwyer_cianciolo_etal_2020_edlas_phase3_mass_tps,EDLAS FR=1.78 TPS mass,3634,kg,"NASA NTRS 20200002905 Table 5 p. 10, FR=1.78",Total TPS separately listed from structure.
+dwyer_cianciolo_etal_2020_edlas_phase3_mass_tps,EDLAS FR=1.78 powered descent onset,2.3,Mach,"NASA NTRS 20200002905 Table 5 p. 10, FR=1.78",Conceptual supersonic descent.
+,EDLAS FR=1.78 useful payload per entry kg,0.364232380258605,fraction,"20,000 kg useful payload / Table 5 entry mass","Design result, no flight confirmation."
+,EDLAS FR=1.78 TPS mass per useful payload kg,0.1817,kg/kg,"Table 5 TPS mass / 20,000 kg useful payload",Mass comparison alone.

@@ -639,3 +639,11 @@ Verdict: rc-864 closed as applied. Extracted data: none new.
 **spacevalue_annual_demand_class_share_code_current_2026**: at Spacevalue main `21528385332d10ae81dfbcfe6e97ce6077bdc3d9` (0.8.6; data contract 1.22.1), `spacevalue/catalog.py` still stores LEO `annual_market_kg=500,000` and GEO `annual_market_kg=44,600`. The LEO note compares 500,000 kg/year with Howard's 1,404 t/year DSEV architecture and calls it “one architecture's modelled capacity, not a market.” The GEO note retains the 613-payload, approximately 72.7 kg/year basis and records alternatives of 585 CelesTrak whole-orbit GEO±300 km payloads (602 by mean altitude) and 524 in GCAT's same envelope; no filter/catalog rule is selected.
 
 Verdict: I84 remains NEED BACKING under **rc-291**; **rc-290** and **rc-381** remain open for the GEO fleet/filter and LEO market-capacity bases. No numeric replacement inferred. Extracted: `extracted_data/r1000_verification_sheet_i84_beneficiation.csv`; `extracted_data/r1000_spacevalue_annual_demand_rechecks.csv`.
+
+
+## R1096 — GTO propellant demand and product compatibility (2026-11-24)
+
+- spacevalue_gto_propellant_pool_and_stage2_export_2026 derives the 81,600 kg/yr GTO budget from apogee propellant and applies the generic 0.55 class share. spacevalue_installed_prices_release_manifests_2026, GTO water and ammonia rows, gives both a 44,880 kg/yr ceiling and the same “in-space propellant” market ID. The raw sale replay at a one-year window and zero surplus price offers 40,800 kg each, sells 44,880 kg in total, and leaves 36,720 kg unsold.
+- isro_lpsc_insat_apogee_propellant_system, Satellite Propulsion Systems, identifies “MON-3 and MMH propellant combination” in independent tanks for the INSAT chemical apogee engine. eutelsat_2015_115_west_b_xenon_orbit_raising, March 2015 release, says EUTELSAT 115 West B “uses xenon as its sole propellant” for electric ascent from supersynchronous transfer orbit. space42_2025_thuraya4_electric_orbit_raising, January 2025 release, reports that Thuraya-4 used its “built-in electrical thrusters for Electrical Orbit Raising.” **rc-1010** records the missing budget and compatible product basis for the GTO allocation.
+
+Extracted data in extracted_data/r1096_gto_propellant_product_and_ceiling.csv.

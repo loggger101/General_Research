@@ -1,0 +1,23 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_release_data_2026_11_13,Antiope installed diameter,97.64,km,asteroid_catalog.csv designation 90,"SsODNet, sigma 3.08 km; diameter_sources_agree=False."
+asteroidcatalog_release_data_2026_11_13,Antiope installed mass,8.312112110709005e17,kg,asteroid_catalog.csv designation 90,"SsODNet, sigma 2.7451471330927444e16 kg."
+asteroidcatalog_release_data_2026_11_13,Antiope installed density,1.7054125619691909,g/cm3,asteroid_catalog.csv designation 90,Spherical mass-over-volume calculation.
+descamps_etal_2009_antiope_binary_shape,Antiope orbit system mass,8.3e17,kg,"Printed p. 103, Table 1",Uncertainty ±0.2e17 kg.
+descamps_etal_2009_antiope_binary_shape,Antiope Roche semiaxes A,46.5;43.5;41.8,km,"Printed p. 107, Table 3, Component A",Pure Roche model.
+descamps_etal_2009_antiope_binary_shape,Antiope Roche semiaxes B,44.7;41.4;39.8,km,"Printed p. 107, Table 3, Component B",Pure Roche model.
+descamps_etal_2009_antiope_binary_shape,Antiope modeled system density with crater,1.28,g/cm3,"Printed p. 107, Table 3 caption and text",Uncertainty ±0.04 g/cm3.
+bartczak_etal_2014_antiope_sage_model,Antiope SAGE component radii,40.4;40.2,km,"arXiv PDF p. 6, Table 2, Equivalent radii",Volume-equivalent; each ±0.9 km.
+bartczak_etal_2014_antiope_sage_model,Antiope SAGE orbit system mass,9.14e17,kg,"arXiv PDF p. 6, Table 2, Total mass",Uncertainty ±0.62e17 kg.
+bartczak_etal_2014_antiope_sage_model,Antiope SAGE modeled system density,1.67,g/cm3,"arXiv PDF p. 6, Table 2, Bulk density",Uncertainty ±0.23 g/cm3.
+,Antiope equal-volume diameter of both Roche ellipsoids,108.168925,km,Sum 4πabc/3 across two components and convert to equivalent sphere,Pure ellipsoids; before crater correction.
+,Antiope equal-volume diameter of both SAGE components,101.550262,km,Cube root of 80.8 cubed plus 80.4 cubed,Uses the paper’s rounded component radii.
+,Antiope density at installed mass and SAGE combined volume,1.515897,g/cm3,Installed mass divided by summed spherical volumes for 40.4 and 40.2 km radii,For comparison. The published SAGE density uses its own higher orbit mass.
+asteroidcatalog_release_data_2026_11_13,Hermes installed diameter,0.80,km,asteroid_catalog.csv designation 69230,"SsODNet, sigma 0.037 km."
+asteroidcatalog_release_data_2026_11_13,Hermes installed mass,485229457322.4555,kg,asteroid_catalog.csv designation 69230,"SsODNet, no mass sigma, mass_measured=True."
+asteroidcatalog_release_data_2026_11_13,Hermes installed density,1.81,g/cm3,asteroid_catalog.csv designation 69230,density_measured=True.
+marchis_etal_2012_spitzer_multiple_asteroid_systems,Hermes system thermal effective diameter,0.8,km,"arXiv PDF p. 27, §6.4.10",Uncertainty ±0.1 km.
+marchis_etal_2012_spitzer_multiple_asteroid_systems,Hermes thermal component diameter,0.566,km,"arXiv PDF p. 27, §6.4.10",Two similar components; each quoted at 566 ± 71 m.
+,Hermes combined area-equivalent diameter for two equal thermal spheres,0.800444876,km,sqrt(2 × 0.566^2),Matches the paper’s rounded system effective diameter.
+,Hermes combined volume-equivalent diameter for two equal thermal spheres,0.713115314,km,cuberoot(2 × 0.566^3),Volume-equivalent diagnostic from the thermal fit.
+,Hermes synthetic mass at installed density and combined volumes,3.43681762129e11,kg,1.81 g/cm3 × summed volumes for two 0.566 km spheres,"Illustrative, with no independent orbit mass inferred."
+asteroidcatalog_antiope_hermes_measurement_scope_code_2026,Meaning of mass_measured after reconciliation,returned source mass is nonmissing,flag predicate,enrich.py lines 353–361,Predicate alone does not establish a measurement technique or independent estimate.

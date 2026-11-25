@@ -1,0 +1,13 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_eugenia_elektra_taxonomy_evidence_2026,45 Eugenia historical density,1.34,g/cm³,taxonomy.py L720 and installed DENSITY_EVIDENCE C,±0.29
+asteroidcatalog_eugenia_elektra_taxonomy_evidence_2026,130 Elektra historical density,1.84,g/cm³,taxonomy.py L726 and installed DENSITY_EVIDENCE Ch,±0.22
+carry2012,45 Eugenia historical diameter,201.81,km,PDF p. 20 Table 1,±14.77; mass (5.79 ± 0.14)e18 kg; density 1.34 ± 0.29 g/cm³
+carry2012,130 Elektra historical diameter,189.62,km,PDF p. 21 Table 1,±6.81; mass (6.60 ± 0.40)e18 kg; density 1.84 ± 0.22 g/cm³
+adam_2017,45 Eugenia ADAM diameter,186,km,§4.1 and Table 4,±4; adopted satellite-orbit mass (5.69 ± 0.12)e18 kg; density 1.69 ± 0.11 g/cm³
+vernazza_etal_2021_vlt_sphere_main_belt_survey,45 Eugenia volume-equivalent diameter,188,km,PDF p. 6 Table 1,±2 at 1σ; mass (5.8 ± 0.1)e18 kg; density 1.66 ± 0.07 g/cm³
+vernazza_etal_2021_vlt_sphere_main_belt_survey,130 Elektra volume-equivalent diameter,199,km,PDF p. 6 Table 1,±2 at 1σ; mass (6.4 ± 0.2)e18 kg; density 1.55 ± 0.07 g/cm³
+fuksa_etal_2023_elektra_quadruple_orbits_and_shape,130 Elektra volume-equivalent diameter,201,km,PDF p. 1 abstract,±2; unrounded shape volume used to derive density
+fuksa_etal_2023_elektra_quadruple_orbits_and_shape,130 Elektra orbit-fit mass,6.606e18,kg,PDF pp. 1 and 6,Asymmetric +0.007/-0.013 e18 kg
+fuksa_etal_2023_elektra_quadruple_orbits_and_shape,130 Elektra revised bulk density,1.536,g/cm³,PDF pp. 1 and 6,"±0.038; model volume (4.3 ± 0.1)e6 km³, rounded"
+asteroidcatalog_release_data_2026_11_13,45 Eugenia derived density,1.6291959450889748,g/cm³,data-2026-11-13 CSV row Eugenia,SsODNet D 187.6 ± 2.4 km and M 5.632101137039539e18 kg (sigma 3.012207182188184e17 kg); density_measured=True
+asteroidcatalog_release_data_2026_11_13,130 Elektra derived density,1.5820664183860524,g/cm³,data-2026-11-13 CSV row Elektra,SsODNet D 199.0 ± 2.377 km and M 6.528036344362839e18 kg (sigma 1.194605233281688e16 kg); density_measured=True

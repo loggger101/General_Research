@@ -1,0 +1,9 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_spacevalue_organic_phase_sale_mapping_2026,AsteroidCatalog B-type organics mass fraction,0.012,kg/kg body,reference/mineral_phases_detailed.csv line 7; mineralogy.py lines 165–166,The phase is defined as soluble organic matter.
+asteroidcatalog_spacevalue_organic_phase_sale_mapping_2026,AsteroidCatalog B-type carbon mass fraction,0.028,kg/kg body,reference/mineral_phases_detailed.csv line 6; mineralogy.py line 165,The phase includes insoluble macromolecular organic matter and graphite.
+asteroidcatalog_spacevalue_organic_phase_sale_mapping_2026,Spacevalue organics price used on the soluble fraction,0.5,USD/kg phase,prices-2026-11-20 Earth-surface catalog line 27,"Kerogen-like organics scenario, applied by exact phase name."
+asteroidcatalog_spacevalue_organic_phase_sale_mapping_2026,Spacevalue carbon price used on the insoluble/graphitic fraction,0.2,USD/kg phase,prices-2026-11-20 Earth-surface catalog line 28,Row describes amorphous / graphitic carbon.
+asteroidcatalog_spacevalue_organic_phase_sale_mapping_2026,Installed organics market ceiling,1000000000000,kg/year,prices-2026-11-20 Earth-surface catalog line 27; catalog.py lines 1017–1021,Finite model quantity with market id organics.
+,Priced organics contribution for the B-type example,0.006,USD/kg body,Exported class fractions passed to Spacevalue asteroid_phase_table using installed catalog,Model contribution at the scenario price before sales constraints.
+bennu_volatiles_2025,Reported soluble organic inventory,"Amino acids, amines, carboxylic acids and N-heterocycles among multiple compound classes",,"p. 199, Abstract",Returned aggregate samples from Bennu. Inventory evidence.
+sandford_gainsforth_2025_bennu_polymeric_organics,Response of Particle 64 to contact with water,Grain was unchanged after evaporation,,"p. 1806, Water solubility; Extended Data Fig. 6",Single grain from angular lithology OREX-800055-123.

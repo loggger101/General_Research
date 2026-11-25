@@ -1,0 +1,18 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_regolith_handling_energy_row_2026,Drilling / excavation energy,5.7,Wh/kg regolith extracted,operational_costs.csv lines 51–52,Spacecost 0.19.0; contract 1.28.0. Band 0.003–7.4 Wh/kg.
+spacecost_regolith_handling_energy_row_2026,Regolith handling & transfer energy,24.2,Wh/kg regolith extracted,operational_costs.csv line 53,Spacecost 0.19.0; contract 1.28.0. Band 0.86–24.5 Wh/kg.
+spacecost_regolith_handling_energy_row_2026,Regolith handling low endpoint,0.86,Wh/kg regolith extracted,operational_costs.csv line 53,"Uses Giel whole batch, including excavation."
+spacecost_regolith_handling_energy_row_2026,Regolith handling high endpoint,24.5,Wh/kg regolith extracted,operational_costs.csv line 53,Uses Arumugam excavation intensity including mobility.
+doe_2007_mining_industry_energy_bandwidth_study,US metal mining diesel materials handling,74900,Btu/short ton of material,"Exhibit 24, printed p. 32 (PDF p. 36)",Current practice; terrestrial on-site diesel energy. Conversion uses short ton; see R152.
+giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru,MoonBot excavation phase,46.08 s × 146.74 W,,"Table III, PDF p. 5",Estimated phase duration and power for the batch calculation.
+giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru,MoonBot unloading phase,23.30 s × 144.13 W,,"Table III, PDF p. 5",Estimated phase duration and power for the batch calculation.
+giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru,MoonBot driving and repositioning phase,138.89 s × 150 W,,"Table III, PDF p. 5",Estimated phase duration and power; assumed 10 m separation one way (PDF pp. 4–5).
+giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru,Batch fill mass at first material loss,9.95,kg,"Results and Analysis, PDF p. 3; batch assumptions pp. 4–5",Matches 172.02 kg/h at the sum of the table phase times to reported precision.
+giel_2025_modular_bucket_drum_excavator_moonbot_lunar_isru,MoonBot batch energy as reported,0.86,Wh/kg excavated,"Results and Analysis, PDF p. 5; Tables III–IV",Calculated from manual-test results; the paper states that power was not recorded during Dragon tests.
+,MoonBot batch energy recomputed,0.86414,Wh/kg excavated,"Giel Table III, PDF p. 5, divided by 9.95 kg fill mass","Sum of excavation, unloading and driving phase energies. Rounds to the published 0.86 Wh/kg."
+,MoonBot unloading plus driving energy recomputed,0.67537,Wh/kg excavated,"Giel Table III, PDF p. 5, divided by 9.95 kg fill mass",(23.30 × 144.13 + 138.89 × 150)/(3600 × 9.95). 1 g scenario comparator; no asteroid endpoint inferred.
+arumugam_2026_integrated_lunar_feedstock_preparation_energy,Integrated trial excavation energy intensity,24.5,Wh/kg excavated,"Table 1, PDF p. 3",37-cycle 1 g lunar analogue including rover mobility; no handling-only number assigned here.
+economicspace_dig_energy_worked_calculation_code_2026,dig_wh operational cost lookup,excavation + handling if present,,worked_calculation.py lines 2901–2906,Legacy tables use the excavation row alone. Calculator sum also at modules/calc.py lines 5664–5665.
+economicspace_dig_energy_worksheet_code_2026,e_dig title and source row,excavation energy → Drilling / excavation energy,,verification_sheet.py lines 3522–3527,P_dig spends e_dig (lines 3540–3555); its citation omits the separate handling row.
+,Replayed worksheet e_dig with contract 1.28.0,29.9,Wh/kg dug,Execution of pinned dig_wh expression and worksheet e_dig call,"5.7 + 24.2; captured citation target Drilling / excavation energy, whose value is 5.7."
+,Replayed worksheet e_dig with legacy excavation-only input,200,Wh/kg dug,Same expressions with 200 Wh/kg and no handling row,Captured excavation-only citation matches the supplied legacy value.

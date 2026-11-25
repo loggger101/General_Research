@@ -1,0 +1,20 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_mars_orbit_aerocapture_heritage_and_trim_code_2026,Mars orbit post-capture trim,100,m/s,Economicspace calc.py lines 3356–3363 and verification_sheet.py lines 2496–2500,Reused Earth aerobrake trim.
+economicspace_mars_orbit_aerocapture_heritage_and_trim_code_2026,Source Earth trim,100,m/s,Spacecost reference/delta_v_segments.csv NEA → LEO delivery (aerobraked) row,Different planet and orbit.
+economicspace_mars_orbit_aerocapture_heritage_and_trim_code_2026,Mars 1-sol periapsis altitude,250,km,Economicspace calc.py lines 2964–2965,"Paired with 33,793 km apoapsis altitude."
+economicspace_mars_orbit_aerocapture_heritage_and_trim_code_2026,Mars 1-sol apoapsis altitude,33793,km,Economicspace calc.py lines 2964–2965,"Apoapsis radius is 37,189.2 km."
+jpl_2001_odyssey_orbit_insertion_status,Odyssey initial insertion method,main-engine firing,method,"JPL Mars Odyssey Mission Status, 23 October 2001",Initial bound capture occurs before the aerobraking campaign.
+taylor_lee_shambayati_2006_mro_telecommunications,MRO initial orbit-insertion burn,about 27,min,JPL Mars Reconnaissance Orbiter Telecommunications section 1.3.3,Main thrusters.
+taylor_lee_shambayati_2006_mro_telecommunications,MRO initial bound orbit period,about 35,h,JPL Mars Reconnaissance Orbiter Telecommunications section 1.3.3,Before the aerobraking campaign.
+long_2007_mro_aerobraking_daily_ops,Odyssey aerobraking campaign duration,76.1,d,"Long et al. Table 1, all phases",Bound-orbit campaign.
+long_2007_mro_aerobraking_daily_ops,MRO aerobraking campaign duration,154,d,"Long et al. Table 1, all phases",Bound-orbit campaign.
+polsgrove_etal_2016_mars_lander_aerocapture_periapsis_raise,Evolvable Mars Campaign nominal apoapsis burn to raise periapsis,15,m/s,"NTRS 20160004402, printed p. 3, aerocapture sequence","At 33,800 km apoapsis altitude to about 250 km periapsis."
+polsgrove_etal_2016_mars_lander_aerocapture_periapsis_raise,Evolvable Mars Campaign target apoapsis altitude,33800,km,"NTRS 20160004402, same paragraph",Vehicle concept.
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,Rigid mid-L/D Mars atmospheric arrival speed,6.2,km/s,NTRS 20160014035 p. 9 section 2 Aerocapture Trajectory,"Study assumption, not hyperbolic excess."
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,Rigid mid-L/D target apoapsis altitude,33793,km,NTRS 20160014035 p. 9 section 2,Paired periapsis altitude 250 km.
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,Rigid mid-L/D post-aerocapture cleanup allowance,40,m/s,NTRS 20160014035 p. 9 section 2,Monte Carlo budget. Separate from the later 20 m/s deorbit allowance.
+,Model Mars-orbit aero return with 100 m/s trim,2543.8798334036646,m/s,Pinned _asteroid_to_mars_dv_km_s evaluated for a circular 2.5 AU coplanar asteroid,"Isolated transfer, before search-specific filters."
+,Model Mars-orbit aero return with 40 m/s trim,2483.8798334036646,m/s,Same code with a comparator cleanup budget,Sensitivity only.
+,Ideal impulsive apoapsis raise from 50 km initial periapsis altitude,11.529273271968343,m/s,"Vis-viva at fixed apoapsis, subtract before speed from after speed","Hypothetical osculating periapsis. Excludes trajectory cleanup, dispersions and margin."
+,Ideal impulsive apoapsis raise from 100 km initial periapsis altitude,8.608248041605703,m/s,"Vis-viva at fixed apoapsis, subtract before speed from after speed","Hypothetical osculating periapsis. Excludes trajectory cleanup, dispersions and margin."
+,Ideal impulsive apoapsis raise from 150 km initial periapsis altitude,5.713377753390869,m/s,"Vis-viva at fixed apoapsis, subtract before speed from after speed","Hypothetical osculating periapsis. Excludes trajectory cleanup, dispersions and margin."

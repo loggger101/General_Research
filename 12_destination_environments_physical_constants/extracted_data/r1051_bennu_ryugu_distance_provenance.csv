@@ -1,0 +1,25 @@
+source_id,item,value,unit,location_in_source,notes
+lauretta_etal_2015_bennu_solution_85,101955 Bennu published perihelion,0.89689436,AU,"Lauretta et al. Table 2, JPL solution 85, epoch 2011 January 1.0 TDB",Published orbital distance.
+lauretta_etal_2015_bennu_solution_85,101955 Bennu published semimajor axis,1.126391025996,AU,"Lauretta et al. Table 2, JPL solution 85, epoch 2011 January 1.0 TDB",Published orbital distance.
+lauretta_etal_2015_bennu_solution_85,101955 Bennu published aphelion,1.355887692,AU,"Lauretta et al. Table 2, JPL solution 85, epoch 2011 January 1.0 TDB",Published orbital distance.
+spacecost_bennu_ryugu_distance_rows_2026,101955 Bennu au_min,0.8969,AU,Spacecost reference/environments.csv line 10; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,101955 Bennu au_mean,1.1264,AU,Spacecost reference/environments.csv line 10; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,101955 Bennu au_max,1.3559,AU,Spacecost reference/environments.csv line 10; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,101955 Bennu solar_flux_w_per_m2,1072.6865658090135,W/m2,Spacecost reference/environments.csv line 10; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,101955 Bennu solar_array_mass_factor,1.26877696,ratio,Spacecost reference/environments.csv line 10; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,101955 Bennu max_earth_range_au,2.3726,AU,Spacecost reference/environments.csv line 10; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,101955 Bennu one_way_light_time_min,19.732312508639996,min,Spacecost reference/environments.csv line 10; installed Economicspace Stage 3 row,Values match across both exports.
+,101955 Bennu irradiance at perihelion,1691.8820280620948,W/m2,Spacecost inverse-square convention using the stored distance,Irradiance at the named distance.
+,101955 Bennu irradiance at aphelion,740.291569681989,W/m2,Spacecost inverse-square convention using the stored distance,Irradiance at the named distance.
+wada_etal_2018_ryugu_preencounter_orbit,162173 Ryugu published perihelion,0.963308109,AU,"Wada et al. Table 1 p. 3, JPL Horizons data identified as from 2017-05-16",Published orbital distance.
+wada_etal_2018_ryugu_preencounter_orbit,162173 Ryugu published semimajor axis,1.189600822,AU,"Wada et al. Table 1 p. 3, JPL Horizons data identified as from 2017-05-16",Published orbital distance.
+wada_etal_2018_ryugu_preencounter_orbit,162173 Ryugu published aphelion,1.4158935346,AU,"Wada et al. Table 1 p. 3, JPL Horizons data identified as from 2017-05-16",Published orbital distance.
+spacecost_bennu_ryugu_distance_rows_2026,162173 Ryugu au_min,0.9633,AU,Spacecost reference/environments.csv line 11; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,162173 Ryugu au_mean,1.1896,AU,Spacecost reference/environments.csv line 11; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,162173 Ryugu au_max,1.4159,AU,Spacecost reference/environments.csv line 11; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,162173 Ryugu solar_flux_w_per_m2,961.7367555351943,W/m2,Spacecost reference/environments.csv line 11; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,162173 Ryugu solar_array_mass_factor,1.41514816,ratio,Spacecost reference/environments.csv line 11; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,162173 Ryugu max_earth_range_au,2.4326,AU,Spacecost reference/environments.csv line 11; installed Economicspace Stage 3 row,Values match across both exports.
+spacecost_bennu_ryugu_distance_rows_2026,162173 Ryugu one_way_light_time_min,20.231317292639996,min,Spacecost reference/environments.csv line 11; installed Economicspace Stage 3 row,Values match across both exports.
+,162173 Ryugu irradiance at perihelion,1466.6787664970782,W/m2,Spacecost inverse-square convention using the stored distance,Irradiance at the named distance.
+,162173 Ryugu irradiance at aphelion,678.8799175703107,W/m2,Spacecost inverse-square convention using the stored distance,Irradiance at the named distance.

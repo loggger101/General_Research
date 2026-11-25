@@ -1,0 +1,28 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_electrospray_tile_st7_and_economicspace_sizing_2026,Installed electrospray thrust mass coefficient,10000,kg/N,Spacecost _THRUSTER_SYSTEMS; Spacecost and Economicspace reference rows,Applied as thruster mass apart from PPU.
+spacecost_electrospray_tile_st7_and_economicspace_sizing_2026,Installed electrospray specific impulse,2500,s,Spacecost and Economicspace propellants.csv,Generic value.
+spacecost_electrospray_tile_st7_and_economicspace_sizing_2026,Installed electrospray efficiency,0.65,fraction,Spacecost and Economicspace propellants.csv,Used for total electrical input sizing.
+spacecost_electrospray_tile_st7_and_economicspace_sizing_2026,Installed separate PPU coefficient,4.7,kg/kW electrical input,Power processing unit specific mass,Separate from thrust-scaled mass.
+accion_tile3_2020_product_datasheet,TILE-3 maximum axial thrust,450,µN,"p. 1, Technical Specifications, Max Thrust (Axial)",Module rating.
+accion_tile3_2020_product_datasheet,TILE-3 max power at max thrust,20,W,"p. 1, Technical Specifications, Max Power (at Max Thrust)",Published hardware rating.
+accion_tile3_2020_product_datasheet,TILE-3 wet module mass,2,kg,"p. 1, Technical Specifications, Wet Mass",Integrated hardware boundary.
+nasa_2021_smallsat_soa_tile3_st7_ratings,TILE-3 tabled nominal thrust,450,µN,"Table 4-8 p. 102, TILE-3, Thrust",Table notes describe nominal reference figures.
+nasa_2021_smallsat_soa_tile3_st7_ratings,TILE-3 tabled nominal specific impulse,1650,s,"Table 4-8 p. 102, TILE-3, Specific Impulse",Rating comparator.
+nasa_2021_smallsat_soa_tile3_st7_ratings,TILE-3 tabled wet mass,2.25,kg,"Table 4-8 p. 102, TILE-3, Mass and dagger note",Documented discrepancy with manufacturer sheet; configuration reconciliation absent.
+nasa_2021_smallsat_soa_tile3_st7_ratings,TILE-3 tabled power,20,W,"Table 4-8 p. 102, TILE-3, Power",Published rating.
+nasa_2021_smallsat_soa_tile3_st7_ratings,TILE-3 tabled propellant,EMI-BF4,identity,"Table 4-8 p. 102, TILE-3, Propellant",Distinct from the Busek row.
+anderson_etal_2018_st7_pathfinder_experimental_results,ST7 cluster propellant,EMI-Im,identity,"arXiv:1809.08969v1, Section II.A, p. 4",Ionic liquid used by the cited flight.
+anderson_etal_2018_st7_pathfinder_experimental_results,ST7 cluster neutralizer,propellantless field emission cathode,identity,"arXiv:1809.08969v1, Section II.A, p. 4","One per cluster, tested in the extended mission."
+anderson_etal_2018_st7_pathfinder_experimental_results,ST7 cluster heads,4,heads,"arXiv:1809.08969v1, Section II.A, p. 4",Four feeds and four PPUs.
+anderson_etal_2018_st7_pathfinder_experimental_results,ST7 cluster total reported mass,14.8,kg,"arXiv:1809.08969v1, Section II.A, p. 4",Includes integrated subsystems.
+anderson_etal_2018_st7_pathfinder_experimental_results,ST7 range upper endpoint per head,30,µN,"arXiv:1809.08969v1, Section II, p. 4",Normal performance envelope; larger thrusts in diagnostic mode.
+anderson_etal_2018_st7_pathfinder_experimental_results,ST7 approximate specific impulse,240,s,"arXiv:1809.08969v1, Section II.A, p. 4",Flight-team description.
+,Manufacturer-rated TILE-3 wet mass divided by axial thrust,4444.444444444444,kg/N,2 kg / 450 µN,Integrated wet comparison.
+,NASA-listed TILE-3 wet mass divided by thrust,5000.0,kg/N,2.25 kg / 450 µN,Integrated wet comparison.
+,Manufacturer-rated TILE-3 axial thrust divided by wet mass,225.0,µN/kg,450 µN / 2 kg,Specific thrust for this sheet.
+,ST7 cluster mass divided by sum of four per-head maxima,123333.33333333334,kg/N,ST7 Section II.A integrated cluster mass and per-head range,"Scalar sum upper bound, not net cluster vector thrust or head mass."
+,TILE-3 effective efficiency implied by nominal ratings,0.18203594062499998,fraction,T × Isp × g0 / (2 × P_input),"Rating consistency check, not an independently measured efficiency curve."
+,Economicspace input power at same thrust and TILE-3 Isp,5.601105865384614,W,Economicspace ep_power_required_w with installed .65,Matching-thrust and Isp sensitivity.
+,Economicspace input power at same thrust and installed Isp,8.486524038461539,W,Economicspace ep_power_required_w with installed 2500 s and .65,Fixed thrust fixture.
+,Economicspace thruster term at 450 µN,4.5,kg,Economicspace _ep_stage_kg,Reference installed thrust coefficient.
+,Economicspace PPU term at 450 µN with installed Isp,0.03988666298076924,kg,Economicspace _ep_stage_kg,Separate rate times modeled input power.

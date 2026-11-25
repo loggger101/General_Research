@@ -1,0 +1,63 @@
+source_id,item,value,unit,location_in_source,notes
+prohaska_etal_2022_iupac_olivine_atomic_weights,Carbon abridged atomic weight,12.011,relative atomic mass,"Table 1, C, abridged column","Ca, Fe, Mg and O are already extracted in R1059–1060."
+spacevalue_carbonate_co2_yield_and_routes_2026,Installed carbonate CO2 yield,0.44,kg CO2/kg carbonate,Spacevalue catalog.py 2011–2020; Economicspace prices-2026-11-20,Comment gives the calcite figure for a grouped carbonate row.
+spacevalue_carbonate_co2_yield_and_routes_2026,B and C scenario carbonate contribution,0.03,kg carbonate/kg body,AsteroidCatalog mineralogy.py _ACC_CI,Body-mass scenario separate from carbonate composition.
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Ryugu distinct detections,709,grains,"p. 5, Section 3 Results",Cross-identified repeated detections.
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Ryugu calcite,7,% of detected grains,"p. 5, Section 3.1 and Figures 4–5","Rounded count shares, not mass shares."
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Ryugu dolomite,63,% of detected grains,"p. 5, Section 3.1 and Figures 4–5","Rounded count shares, not mass shares."
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Ryugu Mg- and Fe-breunnerite,29,% of detected grains,"p. 5, Section 3.1 and Figures 4–5","Rounded count shares, not mass shares."
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Bennu distinct detections,90,grains,"p. 5, Section 3 Results",Cross-identified repeated detections.
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Bennu calcite,4,% of detected grains,"p. 5, Section 3.1 and Figures 4–5","Rounded count shares, not mass shares."
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Bennu dolomite,67,% of detected grains,"p. 5, Section 3.1 and Figures 4–5","Rounded count shares, not mass shares."
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Bennu Mg- and Fe-breunnerite,29,% of detected grains,"p. 5, Section 3.1 and Figures 4–5","Rounded count shares, not mass shares."
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Ryugu Mg-siderite candidates,1,% of detected grains,"p. 5, Section 3.1",Tentative spectral assignments.
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Figure 8 size cutoff,256,"pixels per grain, exclusive upper limit","p. 7, Section 3.4",Pixel-area comparison excludes two largest size bins.
+mahlke_etal_2026_ryugu_bennu_carbonate_speciation,Ryugu dolomite-to-breunnerite relative area ratio,1,"ratio, approximate","p. 7, Section 3.4","Aggregate measured pixel area, size-filtered. Bennu described as similar."
+,ideal calcite stoichiometric CO2 equivalent,0.43971184781088263,kg CO2 equivalent/kg carbonate,IUPAC Table 1 weights; CaCO3,One CO2 equivalent per carbonate group. Pure-endmember sensitivity; no process recovery inferred.
+,ideal dolomite stoichiometric CO2 equivalent,0.4773236297376884,kg CO2 equivalent/kg carbonate,IUPAC Table 1 weights; CaMg(CO3)2,One CO2 equivalent per carbonate group. Pure-endmember sensitivity; no process recovery inferred.
+,ideal magnesite stoichiometric CO2 equivalent,0.5219717006867269,kg CO2 equivalent/kg carbonate,IUPAC Table 1 weights; MgCO3,One CO2 equivalent per carbonate group. Pure-endmember sensitivity; no process recovery inferred.
+,ideal siderite stoichiometric CO2 equivalent,0.379869317151908,kg CO2 equivalent/kg carbonate,IUPAC Table 1 weights; FeCO3,One CO2 equivalent per carbonate group. Pure-endmember sensitivity; no process recovery inferred.
+spacevalue_carbonate_co2_yield_and_routes_2026,lunar_surface carbonate as-is net price,1240.7427809697238,USD/kg carbonate,mineral_value_catalog.lunar_surface.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,lunar_surface CO2 net price,14265.126881870026,USD/kg CO2,mineral_value_catalog.lunar_surface.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,lunar_surface carbonate as-is gross price,1446.8268938300173,USD/kg carbonate,mineral_value_catalog.lunar_surface.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,lunar_surface CO2 gross price,14468.168938300174,USD/kg CO2,mineral_value_catalog.lunar_surface.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,lunar_surface carbonate processing energy input,1000.0,Wh/kg carbonate,mineral_value_catalog.lunar_surface.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,lunar_surface CO2 processing energy input,500.0,Wh/kg CO2,mineral_value_catalog.lunar_surface.csv,
+,lunar_surface break-even CO2 fraction,0.08697733930054423,kg CO2/kg carbonate,"Spacevalue _phase_terms, net route comparison",As-is wins ties.
+,lunar_surface installed elemental-route net value,6276.655828022812,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,lunar_surface installed selected flown gross value,6365.994332852077,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,CO2 route.
+,lunar_surface installed modeled flown energy,1220.0,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.
+,lunar_surface ideal calcite elemental-route net value,6272.545300483764,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,lunar_surface ideal calcite selected flown gross value,6361.825298299986,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,CO2 route.
+,lunar_surface ideal calcite modeled flown energy,1219.8559239054414,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.
+,lunar_surface ideal dolomite elemental-route net value,6809.082141922873,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,lunar_surface ideal dolomite selected flown gross value,6905.998913287516,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,CO2 route.
+,lunar_surface ideal dolomite modeled flown energy,1238.6618148688442,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.
+,lunar_surface ideal magnesite elemental-route net value,7445.992539041644,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,lunar_surface ideal magnesite selected flown gross value,7551.974746547418,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,CO2 route.
+,lunar_surface ideal magnesite modeled flown energy,1260.9858503433634,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.
+,lunar_surface ideal siderite elemental-route net value,5418.884007701294,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,lunar_surface ideal siderite selected flown gross value,5496.013455030533,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,CO2 route.
+,lunar_surface ideal siderite modeled flown energy,1189.934658575954,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.
+spacevalue_carbonate_co2_yield_and_routes_2026,cislunar carbonate as-is net price,1603.0712548769893,USD/kg carbonate,mineral_value_catalog.cislunar.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,cislunar CO2 net price,1968.0203848545925,USD/kg CO2,mineral_value_catalog.cislunar.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,cislunar carbonate as-is gross price,1809.1553677372829,USD/kg carbonate,mineral_value_catalog.cislunar.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,cislunar CO2 gross price,2171.062441284739,USD/kg CO2,mineral_value_catalog.cislunar.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,cislunar carbonate processing energy input,1000.0,Wh/kg carbonate,mineral_value_catalog.cislunar.csv,
+spacevalue_carbonate_co2_yield_and_routes_2026,cislunar CO2 processing energy input,500.0,Wh/kg CO2,mineral_value_catalog.cislunar.csv,
+,cislunar break-even CO2 fraction,0.8145602897276049,kg CO2/kg carbonate,"Spacevalue _phase_terms, net route comparison",As-is wins ties.
+,cislunar installed elemental-route net value,865.9289693360207,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,cislunar installed selected flown gross value,1809.1553677372829,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,As-is route.
+,cislunar installed modeled flown energy,1000.0,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.
+,cislunar ideal calcite elemental-route net value,865.3618799538973,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,cislunar ideal calcite selected flown gross value,1809.1553677372829,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,As-is route.
+,cislunar ideal calcite modeled flown energy,1000.0,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.
+,cislunar ideal dolomite elemental-route net value,939.3826334965565,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,cislunar ideal dolomite selected flown gross value,1809.1553677372829,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,As-is route.
+,cislunar ideal dolomite modeled flown energy,1000.0,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.
+,cislunar ideal magnesite elemental-route net value,1027.2509472686986,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,cislunar ideal magnesite selected flown gross value,1809.1553677372829,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,As-is route.
+,cislunar ideal magnesite modeled flown energy,1000.0,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.
+,cislunar ideal siderite elemental-route net value,747.5905597357493,USD/kg carbonate,Spacevalue _yield_terms,CO2 is priced as a product even though the code uses the element-yield field.
+,cislunar ideal siderite selected flown gross value,1809.1553677372829,USD/kg carbonate,Economicspace load_all_catalogs and Spacevalue _phase_terms,As-is route.
+,cislunar ideal siderite modeled flown energy,1000.0,Wh/kg carbonate,Spacevalue _phase_terms,Stage 2 engineering assumptions; no change in phase-processing parameters.

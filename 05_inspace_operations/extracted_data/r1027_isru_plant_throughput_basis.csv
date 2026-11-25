@@ -1,0 +1,19 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_isru_plant_throughput_basis_code_2026,Spacecost base and lower value,7.28,kg propellant/yr per kg plant,reference/operational_costs.csv line 71; operations.py lines 1097–1101,"Same row and values in the installed Economicspace Stage 3 export, contract 1.28.0."
+spacecost_isru_plant_throughput_basis_code_2026,Spacecost range high,13.3,kg propellant/yr per kg plant,reference/operational_costs.csv line 71,The row calls it a whole Mars CH4/O2 system.
+kleinhenz_paz_2021_lunar_water_isru_ptmss_srr,Lunar engine oxygen requirement,10,metric t O2,"PDF pp. 14, 16; Baseline Case Key Inputs",At O/F 6.
+kleinhenz_paz_2021_lunar_water_isru_ptmss_srr,Lunar engine hydrogen requirement,1.67,metric t H2,PDF p. 14; Summary,Paired with the 10 t oxygen target.
+kleinhenz_paz_2021_lunar_water_isru_ptmss_srr,Lunar modeled oxygen output,13,metric t O2,"PDF p. 16; Baseline Case Key Inputs, Actual production",Study output includes excess oxygen.
+kleinhenz_paz_2021_lunar_water_isru_ptmss_srr,Lunar modeled hydrogen output,1.7,metric t H2,"PDF p. 16; Baseline Case Key Inputs, Actual production",Rounded value on the slide.
+kleinhenz_paz_2021_lunar_water_isru_ptmss_srr,Lunar production interval,225,days,PDF p. 3; Ground Rules and Assumptions,PDF p. 7 discusses the notional illumination assumption.
+kleinhenz_paz_2021_lunar_water_isru_ptmss_srr,Lunar ridge hardware,2.6,metric t,"PDF pp. 8, 16; Ridge System",Includes water and product storage. Power system and system-level thermal management omitted per p. 3. Water cleanup omitted per p. 15.
+kleinhenz_paz_2021_lunar_water_isru_ptmss_srr,Lunar mine hardware,0.49,metric t,"PDF pp. 8, 16; Mine System",Excavation and extraction outside the ridge system.
+kleinhenz_paz_2021_lunar_water_isru_ptmss_srr,Lunar water tankers,1.8,metric t,"PDF pp. 8, 16; 2 water Tankers",Water haulage outside the ridge system.
+kleinhenz_paz_2017_isru_propellant_production_aiaa,Mars methane requirement,6978,kg CH4,PDF p. 4; Requirement row,Needed for Mars Ascent Vehicle.
+kleinhenz_paz_2017_isru_propellant_production_aiaa,Mars ascent oxygen allocation,22728,kg O2,"PDF p. 4; Results in O2 row, propellant","Oxygen gross output is 27,912 kg, including 5,184 kg leftover."
+kleinhenz_paz_2017_isru_propellant_production_aiaa,Mars production interval,480,days,PDF p. 5; Assumptions,24-hour operation.
+kleinhenz_paz_2017_isru_propellant_production_aiaa,Mars Case 2 hardware,1.7,metric t,"PDF pp. 14–15; Mass Results, Case 2",Includes excavation and regolith processing. PDF p. 5 assigns tanks and zero boil-off hardware to the ascent vehicle and omits the power source and radiators.
+,Lunar throughput using required mixture,7.286269,kg propellant/yr per kg plant,(10 + 1.67) × 365.25 / (225 × 2.6),"Required propellant at O/F 6, relative to ridge hardware."
+,Lunar throughput using gross modeled output,9.178077,kg propellant/yr per kg plant,(13 + 1.7) × 365.25 / (225 × 2.6),Includes excess oxygen.
+,Mars throughput using ascent propellant allocation,13.296711,kg propellant/yr per kg plant,(6978 + 22728) × 365.25 / (480 × 1700),Whole Case 2 hardware basis.
+,Example hydrolox plant mass at stored rate,1373.626374,kg plant,10000 / (1 × 7.28),One-year sizing example using the pinned Spacevalue helper and Economicspace worksheet section.

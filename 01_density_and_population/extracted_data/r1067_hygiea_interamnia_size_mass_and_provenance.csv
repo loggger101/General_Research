@@ -1,0 +1,31 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_release_data_2026_11_13,10 Hygiea selected diameter,428.923,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 10 Hygiea",SsODNet; diameter_sources_agree=False
+asteroidcatalog_release_data_2026_11_13,10 Hygiea selected diameter uncertainty,11.522,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 10 Hygiea",diameter_sigma_km.
+asteroidcatalog_release_data_2026_11_13,10 Hygiea selected mass,8.21729333528917e+19,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 10 Hygiea",SsODNet; mass_sources_agree=False
+asteroidcatalog_release_data_2026_11_13,10 Hygiea selected mass uncertainty,4.9692570781955674e+17,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 10 Hygiea",estimated_mass_sigma_kg.
+asteroidcatalog_release_data_2026_11_13,10 Hygiea selected mass flagged source spread,0.2763316121353543,fraction,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 10 Hygiea",Published spread field.
+asteroidcatalog_release_data_2026_11_13,10 Hygiea stored density,1.9888048179636824,g/cm3,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 10 Hygiea",Computed using measured diameter and mass.
+,10 Hygiea reproduced density,1.9888048179636821,g/cm3,m/(pi/6 × D^3 × 10^12),Matches release.
+asteroidcatalog_release_data_2026_11_13,704 Interamnia selected diameter,332.0,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 704 Interamnia",SsODNet; diameter_sources_agree=True
+asteroidcatalog_release_data_2026_11_13,704 Interamnia selected diameter uncertainty,5.41,km,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 704 Interamnia",diameter_sigma_km.
+asteroidcatalog_release_data_2026_11_13,704 Interamnia selected mass,3.2274034151416713e+19,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 704 Interamnia",SsODNet; mass_sources_agree=False
+asteroidcatalog_release_data_2026_11_13,704 Interamnia selected mass uncertainty,4.58167100906234e+17,kg,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 704 Interamnia",estimated_mass_sigma_kg.
+asteroidcatalog_release_data_2026_11_13,704 Interamnia selected mass flagged source spread,1.3211917934693957,fraction,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 704 Interamnia",Published spread field.
+asteroidcatalog_release_data_2026_11_13,704 Interamnia stored density,1.684381181950604,g/cm3,"AsteroidCatalog data-2026-11-13 as installed in Economicspace, row 704 Interamnia",Computed using measured diameter and mass.
+,704 Interamnia reproduced density,1.6843811819506045,g/cm3,m/(pi/6 × D^3 × 10^12),Matches release.
+asteroidcatalog_release_data_2026_11_13,Interamnia screened mass provider,JPL SBDB,identifier,"Installed 704 Interamnia, mass_screened_out","The catalog names a provider, without its discarded value."
+vernazza_etal_2020_hygiea_sphere_shape_mass,Hygiea volume-equivalent radius,217 ± 7,km,Nature Astronomy p. 136 abstract,SPHERE shape study.
+vernazza_etal_2020_hygiea_sphere_shape_mass,Hygiea study best mass estimate,(8.32 ± 0.80) × 10^19,kg,"Nature Astronomy p. 137, paragraph following Figure 1","Selected literature mass average, see Supplementary Figure 2 and Table 3."
+vernazza_etal_2020_hygiea_sphere_shape_mass,Hygiea article density,1944 ± 250,kg/m3,Nature Astronomy p. 136 abstract and p. 137 main text,Main paper's uncertainty. Supplementary Figure 2 caption gives 1.94 ± 0.19 g/cm3.
+,Hygiea radius doubled,434 ± 14,km,2 × published volume-equivalent radius,Compares like geometry with catalog diameter.
+,Hygiea shape paper mass-uncertainty ratio versus installed,16.098985973382067,ratio,Shape paper mass uncertainty divided by installed field,Different estimates; no replacement inferred.
+vernazza_etal_2021_vlt_sphere_main_belt_survey,Hygiea survey diameter,433 ± 8,km,"A&A 654 A56 Table 1, Hygiea row",Volume-equivalent diameter column.
+vernazza_etal_2021_vlt_sphere_main_belt_survey,Hygiea survey mass,87.4 ± 6.9,10^18 kg,"A&A 654 A56 Table 1, Hygiea row","Same row, mass column."
+vernazza_etal_2021_vlt_sphere_main_belt_survey,Hygiea survey density,2.06 ± 0.20,g/cm3,"A&A 654 A56 Table 1, Hygiea row","Same row, density column."
+hanus_etal_2020_interamnia_adam_shape_mass,Interamnia ADAM diameter,332 ± 6,km,"A&A 633 A65 p. 6 Table 2, This work, ADAM",Volume-equivalent diameter.
+hanus_etal_2020_interamnia_adam_shape_mass,Interamnia mass estimate in shape study,(3.79 ± 1.28) × 10^19,kg,"A&A 633 A65 p. 6 Table 2, This work, ADAM","Combined mass estimate, individual literature values in Table A.4."
+hanus_etal_2020_interamnia_adam_shape_mass,Interamnia density in shape study,1.98 ± 0.68,g/cm3,"A&A 633 A65 p. 6 Table 2, This work, ADAM",Paired with the authors' selected mass aggregate.
+hanus_etal_2020_interamnia_adam_shape_mass,Interamnia INPOP08 estimate expressed in kg,(3.23 ± 0.02) × 10^19,kg,"A&A 633 A65 p. 17, Table A.4, row 9",Hanuš et al. transcribe Fienga et al. 2009.
+fienga_etal_2009_inpop08_asteroid_masses,Interamnia INPOP08 estimate in solar mass units,1.623 ± 0.010,10^-11 solar masses,"A&A 507 p. 1683, Table 3, 704 Interamnia, INPOP08 column",Fit-specific error.
+,Interamnia density from Hanuš mass and diameter,1.9780002244660713,g/cm3,"Hanuš Table 2, rounded values",Checks correct row and mass unit.
+,Interamnia density from rounded INPOP08 mass and ADAM diameter,1.6857363390568365,g/cm3,Fienga estimate as transcribed in Hanuš Table A.4; ADAM Table 2,Numerically close to the installed 1.684381; matching central value alone does not identify the selected source.

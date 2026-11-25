@@ -1,0 +1,19 @@
+source_id,item,value,unit,location_in_source,notes
+zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing,EO-1 upper impulse bit,860,µN·s/pulse,"PDF p. 2, Table 1, upper endpoint",Rendered glyph is µ.
+zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing,EO-1 pulse frequency,1,Hz,"PDF p. 2, Table 1, Pulse Frequency",Fixed ACS control rate.
+zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing,EO-1 total unit mass,4.95,kg,"PDF p. 2, Table 1, Total Mass",Integrated flight system.
+zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing,EO-1 overall efficiency,0.08,fraction,"PDF p. 2, Table 1, Overall Thrust/Power Efficiency",8%.
+zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing,EO-1 total impulse capability estimate,460,N·s,"PDF p. 2, Table 1, Total Impulse (estimated)",Separate from the experiment's pulse log.
+zalawski_benson_smernan_hoskins_2002_eo1_ppt_on_orbit_testing,EO-1 experiment pulse count lower bound,96000,pulses,"PDF p. 1, Abstract","Over this count, for pitch control."
+benson_arrington_hoskins_meckel_2000_eo1_ppt_development,EO-1 protoflight opposed heads,2,heads,"Printed p. 5, EO-1 PPT Design Features and Figure 6",Energized through a shared unit with storage and electronics.
+benson_arrington_hoskins_meckel_2000_eo1_ppt_development,EO-1 maximum-energy input electrical power,70,W,"Printed p. 11, Table I and NTRS abstract",1 pulse/s.
+benson_arrington_hoskins_meckel_2000_eo1_ppt_development,EO-1 maximum-energy high-end specific impulse,1400,s,"Printed p. 11, Table I and NTRS abstract",Ground-listed upper point.
+benson_arrington_hoskins_meckel_2000_eo1_ppt_development,EO-1 overall efficiency at maximum energy,0.08,fraction,"Printed p. 11, Table I, Overall efficiency",Estimated based on breadboard thruster data per note a.
+,Derived mean thrust at table upper endpoint,0.00086,N,Flight Table 1: 860 micro N·s times 1 Hz,One selected direction.
+,Integrated EO-1 total mass per thrust at upper endpoint,5755.813953488372,kg/N,Flight Table 1: total mass divided by derived mean thrust,Integrated mass comparator.
+spacecost_eo1_ppt_mass_and_economicspace_sizing_2026,Installed PPT model thrust mass ratio,5000,kg/N,Spacecost propellants.py line 256 and installed propellants.csv,Model consumes as thruster mass.
+spacecost_eo1_ppt_mass_and_economicspace_sizing_2026,Installed PPT specific impulse,1000,s,Spacecost and Economicspace PPT rows,Generic model value.
+spacecost_eo1_ppt_mass_and_economicspace_sizing_2026,Separate model PPU mass rate,4.7,kg/kW input,Installed Power processing unit specific mass,NEXT-C-derived generic PPU term.
+,Matched-thrust modeled input power,52.71074375,W,"Economicspace ep_power_required_w, installed Isp and efficiency","Fixed-thrust fixture, not an EO-1 measurement."
+,Matched-thrust modeled thruster mass,4.3,kg,Economicspace _ep_stage_kg,Array and PPU excluded from this term.
+,Matched-thrust modeled separate PPU mass,0.247740495625,kg,Economicspace _ep_stage_kg,Calc adds this separately from the kg/N term.

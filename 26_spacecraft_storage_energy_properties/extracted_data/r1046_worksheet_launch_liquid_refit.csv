@@ -1,0 +1,15 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_worksheet_launch_liquid_refit_code_2026,Electron adopted envelope,1.19,m³,"Installed Stage 3 launch_vehicles.csv, row Electron",Fixture LEO cap 300 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Nuclear-thermal liquid hydrogen density,0.0708,kg/L,"Installed Stage 3 propellants.csv, Nuclear thermal (LH2, NTP)",Development propellant row. Tank coefficient 0.0375 kg/L.
+economicspace_worksheet_launch_liquid_refit_code_2026,Hydrolox mixture density,0.36114420743389963,kg/L,"Installed Stage 3 propellants.csv, hydrolox (LH2 / LOX)",Higher density control.
+economicspace_worksheet_launch_liquid_refit_code_2026,Worksheet Earth-loaded liquid,125.03322,kg,"worked_calculation.py L3950–3958, L4006–4011",LH2 gate on; initial payload 140 kg; launch mass 245.258443 kg; liquid limit 84.252 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Calculator branch payload cap,68.356003,kg if capped,calc.py L7904–7920,LH2 gate on; initial payload 140 kg; launch mass 245.258443 kg; liquid limit 84.252 kg.
+,Earth-loaded liquid after applying cap,84.251999961,kg,Fixed-sizing replay of worksheet mass equations,LH2 gate on; initial payload 140 kg; launch mass 245.258443 kg; liquid limit 84.252 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Worksheet Earth-loaded liquid,125.03322,kg,"worked_calculation.py L3950–3958, L4006–4011",LH2 gate off; initial payload 140 kg; launch mass 245.258443 kg; liquid limit 84.252 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Calculator branch payload cap,no refit,kg if capped,calc.py L7904–7920,LH2 gate off; initial payload 140 kg; launch mass 245.258443 kg; liquid limit 84.252 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Worksheet Earth-loaded liquid,73.80339,kg,"worked_calculation.py L3950–3958, L4006–4011",LH2 small payload; initial payload 50 kg; launch mass 157.894168 kg; liquid limit 84.252 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Calculator branch payload cap,no refit,kg if capped,calc.py L7904–7920,LH2 small payload; initial payload 50 kg; launch mass 157.894168 kg; liquid limit 84.252 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Worksheet Earth-loaded liquid,58.79322,kg,"worked_calculation.py L3950–3958, L4006–4011",LH2 ISRU; initial payload 140 kg; launch mass 163.425223 kg; liquid limit 84.252 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Calculator branch payload cap,no refit,kg if capped,calc.py L7904–7920,LH2 ISRU; initial payload 140 kg; launch mass 163.425223 kg; liquid limit 84.252 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Worksheet Earth-loaded liquid,112.303436,kg,"worked_calculation.py L3950–3958, L4006–4011",hydrolox; initial payload 140 kg; launch mass 177.226456 kg; liquid limit 429.761607 kg.
+economicspace_worksheet_launch_liquid_refit_code_2026,Calculator branch payload cap,no refit,kg if capped,calc.py L7904–7920,hydrolox; initial payload 140 kg; launch mass 177.226456 kg; liquid limit 429.761607 kg.

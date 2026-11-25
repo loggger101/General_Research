@@ -1,0 +1,26 @@
+source_id,item,value,unit,location_in_source,notes
+devogele_etal_2019_manos_visible_spectroscopy,2018 DT visible spectral type,Q,class,"Appendix A Table 6, arXiv PDF p. 23, 2018 DT row, Tax.",DCT observation 2018-02-25. Listed H=27.2; catalog comparison fixes H=27.1.
+virkki_etal_2022_arecibo_nea_radar_2017_2019,2018 DT listed taxonomic type,Q,class,"Table 1 p. 4, Taxonomic Type, note 6",This is the MANOS result from Devogèle et al. (2019).
+asteroidcatalog_release_data_2026_11_13,2018 DT spectral_type,M,class,"data-2026-11-13, 2018 DT row, SPK 50799735",spectral_type_source=source; spectral_type_tholen blank; row sources JPL SBDB; SsODNet; MP3C.
+asteroidcatalog_release_data_2026_11_13,2018 DT H,27.1,mag,"2018 DT row, absolute_magnitude_h",h_provider=JPL SBDB.
+asteroidcatalog_release_data_2026_11_13,2018 DT derived diameter,13.8547648927992,m,"2018 DT row, diameter_km × 1000",diameter_source=derived_h_taxonomy_albedo; diameter_n_sources=0; albedo_assumed_for_diameter=0.133.
+asteroidcatalog_release_data_2026_11_13,2018 DT density estimate,3.9,g/cm³,"2018 DT row, density_gcm3",density_measured=False.
+asteroidcatalog_release_data_2026_11_13,2018 DT metal mass fraction estimate,0.50,fraction,"2018 DT row, comp_metal_fraction",M-class composition.
+asteroidcatalog_release_data_2026_11_13,2018 DT rotation source count,0,sources,"2018 DT row, rotation_period_n_sources",rotation_period_h is blank.
+asteroidcatalog_2018_dt_taxonomy_precedence_code_2026,Taxonomy source marking,source,,merge.py lines 692–702; enrich.py lines 114–134,Pre-existing type gains generic label source. Ordinary fields are filled in input order.
+asteroidcatalog_2018_dt_taxonomy_precedence_code_2026,Q-class fallback geometric albedo,0.252,fraction,"derive.py line 120, ALBEDO_BY_SPECTRAL_TYPE",Current class assumption.
+asteroidcatalog_2018_dt_taxonomy_precedence_code_2026,Q-class bulk density estimate,2.70,g/cm³,"taxonomy.py line 493, TAXONOMY_COMPOSITION",Current class assumption.
+asteroidcatalog_2018_dt_taxonomy_precedence_code_2026,Q-class metal fraction estimate,0.06,fraction,"taxonomy.py line 494, TAXONOMY_COMPOSITION",Current class assumption.
+,2018 DT diameter under Q scenario at fixed H,10.065253,m,"Fowler–Chillemi H–diameter relation, H=27.1, p_V=0.252",Same H and derivation as the released row.
+virkki_etal_2022_arecibo_nea_radar_2017_2019,"2018 DT radar Doppler bandwidth, first epoch",6.0,Hz,"Table 2 p. 31, 2018-02-26 04:07 UT, B column",Distance 0.011 au; OC cross section 17.0 ± 4.3 m²; OC S/N 34.
+virkki_etal_2022_arecibo_nea_radar_2017_2019,"2018 DT radar Doppler bandwidth, second epoch",5.5,Hz,"Table 2 p. 31, 2018-03-07 07:44 UT, B column",Distance 0.016 au; OC cross section 13.7 ± 3.7 m²; OC S/N 10.
+virkki_etal_2022_arecibo_nea_radar_2017_2019,Arecibo CW radar wavelength,0.126,m,"Section 2, S-band 2380 MHz",12.6 cm.
+virkki_etal_2022_arecibo_nea_radar_2017_2019,Radar bandwidth equation,B = 4πD cos δ/(λP),,Section 3 equation (1),D is the projected diameter at observation; δ is the subradar latitude.
+economicspace_2018_dt_rotation_inputs_2026,2018 DT worksheet rotation period,10.222,h,2026-11-18 HTML I65; current modules/calc.py line 692,"Configured historical prior, described as such in current verification_sheet.py lines 2980–2987."
+economicspace_2018_dt_rotation_inputs_2026,2018 DT worksheet dark fraction,0.5,fraction,2026-11-18 HTML I61,Worksheet solar power example.
+economicspace_2018_dt_rotation_inputs_2026,2018 DT worksheet modelled night,5.111,h,2026-11-18 HTML S95; current verification_sheet.py lines 2988–2995,"min(10.222 h / 2, 72 h)."
+economicspace_2018_dt_rotation_inputs_2026,2018 DT worksheet storage baseline,0.58,h,2026-11-18 HTML I64,Dark time already included in the 1 AU power-system rating.
+,"Conditional maximum rotation period, M-diameter proxy",3.838274,min,"Equation (1) with D≤13.855 m, B=6.0 Hz, λ=0.126 m and cos δ≤1",Conditional on this diameter bounding the instantaneous projected breadth.
+,"Conditional maximum rotation period, Q-diameter proxy",2.788441,min,"Equation (1) with D≤10.065 m, B=6.0 Hz, λ=0.126 m and cos δ≤1",Uses the Q-derived spherical diameter under the same brightness.
+,Minimum breadth at 10.222 h,2213.860792,m,"Equation (1) with P=10.222 h, λ=0.126 m, B=6.0 Hz and cos δ≤1",Minimum occurs at equator-on viewing.
+,"Conditional maximum modeled night, M-diameter proxy",1.919137,min,Worksheet S95 with the conditional rotation bound and 0.5 shadow fraction,Below 0.58 h; the archived worksheet storage increment of 4.531 h would be zero in this scenario.

@@ -1,0 +1,14 @@
+source_id,item,value,unit,location_in_source,notes
+sjauw_mcguire_freeh_2016_hat_emc_cargo_mars_sep,Representative Earth-Mars transfer duration,975,days,"printed p. 7, Figure 3 caption","Elapsed transfer; starts after Earth escape, ends at Mars approach; not a thruster life measurement."
+economicspace_ep_sizing_and_frozen_thrust_time_worksheet_2026,Shared-stage thrust-time budget,3.0,yr,modules/calc.py line 437; archived 2018 DT worksheet I90,365.25 days per year.
+economicspace_ep_sizing_and_frozen_thrust_time_worksheet_2026,Archived 2018 DT outbound propellant for shared stage,10745.0857161,kg,"2026-11-18 verification_sheet.html, S131","Archived Krypton Hall case, calc version predates separate_ep_units."
+economicspace_ep_sizing_and_frozen_thrust_time_worksheet_2026,Archived 2018 DT return propellant for shared stage,8471.15196976,kg,"2026-11-18 verification_sheet.html, S129",Converging pass load.
+economicspace_ep_sizing_and_frozen_thrust_time_worksheet_2026,Archived 2018 DT aggregate propellant,19216.2376859,kg,"2026-11-18 verification_sheet.html, S132",Shared-stage sizing.
+economicspace_ep_sizing_and_frozen_thrust_time_worksheet_2026,Archived 2018 DT aggregate thrust,3.98101497584,N,"2026-11-18 verification_sheet.html, S135",Continuous-equivalent aggregate thrust.
+,Shared-stage integrated firing duration,26298.0,h,Archived I90 × 365.25 × 24,Kernel operates on aggregate thrust time.
+,Shared-stage aggregate impulse,376.893835,MN s,Pinned Python replay; thrust × seconds,Replays archived shared-stage inputs; not a result from the current winner search.
+jameson_silva_etal_2017_spt140_psyche_life_test,Completed SPT-140 test operation,10371,h,"IEPC-2017-181, Life Test Extension, printed p. 8","Test completion, rather than an asserted physical lifetime ceiling."
+jameson_silva_etal_2017_spt140_psyche_life_test,Completed SPT-140 test xenon throughput,500,kg,"IEPC-2017-181, Life Test Extension, printed p. 8",Rounded test total; xenon flight-hardware analogue only.
+jameson_silva_etal_2017_spt140_psyche_life_test,Completed SPT-140 test total impulse,8.79,MN s,"IEPC-2017-181, Life Test Extension, printed p. 8",Single test article. End performance met the Psyche nominal requirements.
+maxwell_etal_2025_psyche_hall_thruster_verification,Psyche installed SPT-140s,4,thrusters,Propulsion subsystem and Fig. 4,"SPT-140 xenon propulsion, with two PPUs."
+maxwell_etal_2025_psyche_hall_thruster_verification,Maximum simultaneous SPT-140 firing in Psyche mission operations,1,thruster,Propulsion subsystem and Fig. 4,Mission thermal and power constraint.

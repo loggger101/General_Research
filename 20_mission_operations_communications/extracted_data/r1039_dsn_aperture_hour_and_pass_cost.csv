@@ -1,0 +1,13 @@
+source_id,item,value,unit,location_in_source,notes
+nasa_scan_mocs_rev4_2021_dsn_pass_costing,nominal DSN setup,45,min,"printed p. 5-2, PDF p. 28, Table 5-1, DSN nominal",Add to contact duration for initial costing.
+nasa_scan_mocs_rev4_2021_dsn_pass_costing,nominal DSN teardown,15,min,"printed p. 5-2, PDF p. 28, Table 5-1, DSN nominal",Add to contact duration for initial costing.
+nasa_scan_mocs_rev4_2021_dsn_pass_costing,single 34 m single-spacecraft tracking rate,1792,USD/aperture h,"printed p. 5-3, PDF p. 29, Table 5-2, DSN",Dated NASA planning rate.
+nasa_scan_mocs_rev4_2021_dsn_pass_costing,single 70 m single-spacecraft tracking rate,5375,USD/aperture h,"printed p. 5-3, PDF p. 29, Table 5-2, DSN","Source publishes 5375, not 3 times its rounded 1792."
+jpl_dsn_services_catalog_820_100,single 34 m aperture weight,1,dimensionless,"printed p. 6-2, §6.3.1, equation 6-1",Standard single station.
+jpl_dsn_services_catalog_820_100,single 70 m aperture weight,3,dimensionless,"printed p. 6-2, §6.3.1, equation 6-1",The following prose gives weight 4 for a 70 m plus a 34 m station.
+jpl_dsn_services_catalog_820_100,qualified downlink-only MSPA weight,0.5,dimensionless,"printed pp. 6-2 and 6-4, §§6.3.1 and 6.3.4",Conditional on joint tracking and the other MSPA criteria.
+spacecost_dsn_aperture_hour_price_code_2026,CPI-adjusted single 34 m aperture-hour estimate,2095.0,USD/aperture h,"reference/operational_costs.csv row 16, also installed Stage 3","September 2026 CPI estimate, full aperture weight."
+,"1 nominal 1 h contact pass(es), CPI-scenario estimate",4190.00,USD,Table 5-1 overhead plus stored aperture-hour estimate,2 aperture hours with 1 contact hours. Planning illustration.
+,"1 nominal 2 h contact pass(es), CPI-scenario estimate",6285.00,USD,Table 5-1 overhead plus stored aperture-hour estimate,3 aperture hours with 2 contact hours. Planning illustration.
+,"2 nominal 1 h contact pass(es), CPI-scenario estimate",8380.00,USD,Table 5-1 overhead plus stored aperture-hour estimate,4 aperture hours with 2 contact hours. Planning illustration.
+,"1 nominal 8 h contact pass(es), CPI-scenario estimate",18855.00,USD,Table 5-1 overhead plus stored aperture-hour estimate,9 aperture hours with 8 contact hours. Planning illustration.

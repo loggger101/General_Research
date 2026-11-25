@@ -1,0 +1,10 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_build_fuel_quote_provenance_code_2026,Build manifest fields,package_version; pipeline_version; catalog_date; files,,spacecost/build.py lines 126–140,"No mode, quote snapshot identifier or digest."
+spacecost_build_fuel_quote_provenance_code_2026,Fuel source modes,reference; recorded snapshot; live yfinance,,spacecost/build.py lines 74–87,Reference and snapshot modes ran without network. Both were stamped 2026-10-17.
+,Reference build manifest SHA-256,71647346a78220207f2508aa27009df8921a0a9eb41ea7657a09f786a4a5175f,,"Reference-only control, stamped 2026-10-17",Package 0.19.0 and contract 1.28.0.
+,Snapshot build manifest SHA-256,71647346a78220207f2508aa27009df8921a0a9eb41ea7657a09f786a4a5175f,,fuel-2026-10-17 build,"Identical bytes to reference-only control, including catalog_date."
+,Reference build propellants.csv SHA-256,6ae10ecba40b3315fa5293c7a431849654caf3ff800e76b556701e25caa75e2b,,"Reference-only control, stamped 2026-10-17",Distinct from snapshot export.
+,Snapshot build propellants.csv SHA-256,a06abfd21fbfb42ab43068a0e3f83553dcd7d8c10529e1555d4410ec11011105,,fuel-2026-10-17 build,Matches propellants.csv in installed Economicspace Stage 3.
+economicspace_stage3_fuel_snapshot_pin_code_2026,Stage 3 configured snapshot,fuel-2026-10-17,,modules/transportation.py lines 103–109,The manifest alone does not name this input.
+economicspace_stage3_fuel_snapshot_pin_code_2026,Effective kerolox snapshot price,0.6898571861010787,USD/kg,"installed transportation/propellants.csv, kerolox row",price_basis=live; live_price_source=yfinance:HO=F; live_price_date=2026-09-28.
+spacecost_build_fuel_quote_provenance_code_2026,Kerolox reference price,1.0154545454545454,USD/kg,"reference/propellants.csv, kerolox row",Reference price used by reference-only build.

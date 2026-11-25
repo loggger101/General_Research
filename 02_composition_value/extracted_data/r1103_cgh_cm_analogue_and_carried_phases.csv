@@ -1,0 +1,26 @@
+source_id,item,value,unit,location_in_source,notes
+sanderson_etal_2026_cm_cgh_meteorite_asteroid_matches,NWA 4765 phyllosilicates,88,vol%,"Table 1, NWA 4765 row",CM1 sample; modal volume.
+sanderson_etal_2026_cm_cgh_meteorite_asteroid_matches,MIL 05137 phyllosilicates,89,vol%,"Table 1, MIL 05137 row",CM1 sample; modal volume.
+sanderson_etal_2026_cm_cgh_meteorite_asteroid_matches,NWA 4765 lowest RMS spectral fit,(13) Egeria,,"Printed p. 7, Table 2",Spectral type Cgh in study.
+sanderson_etal_2026_cm_cgh_meteorite_asteroid_matches,MIL 05137 lowest RMS spectral fit,(19) Fortuna,,"Printed p. 7, Table 2",Spectral type Cgh in study.
+vernazza_etal_2016_ch_cgh_cm_spectral_survey,Objects in Ch/Cgh spectral sample,70,asteroids,Author abstract,Pooled main-belt sample; compared with laboratory CM spectra.
+asteroidcatalog_cgh_analogue_and_phase_volume_path_2026,Cgh assigned CK meteorite bulk density,2.85,g/cm3,"METEORITE_ANALOGUE_GCM3, Cgh","Reference density, separate from asteroid bulk density."
+asteroidcatalog_cgh_analogue_and_phase_volume_path_2026,Ch assigned CM meteorite bulk density,2.25,g/cm3,"METEORITE_ANALOGUE_GCM3, Ch","Comparator, not a replacement."
+asteroidcatalog_release_data_2026_11_13,13 composition class,Ch,,"Installed Stage 1, comp_class",Egeria
+asteroidcatalog_release_data_2026_11_13,13 assigned water phase,0.1,body mass fraction,"Installed Stage 1, comp_phases_detailed",Model assignment.
+asteroidcatalog_release_data_2026_11_13,19 composition class,Ch,,"Installed Stage 1, comp_class",Fortuna
+asteroidcatalog_release_data_2026_11_13,19 assigned water phase,0.1,body mass fraction,"Installed Stage 1, comp_phases_detailed",Model assignment.
+asteroidcatalog_release_data_2026_11_13,2322 composition class,Cgh,,"Installed Stage 1, comp_class",Kitt Peak
+asteroidcatalog_release_data_2026_11_13,2322 assigned water phase,0.1,body mass fraction,"Installed Stage 1, comp_phases_detailed",Model assignment.
+asteroidcatalog_release_data_2026_11_13,2322 phyllosilicates assigned body fraction,0.2,fraction,"Installed Stage 1, comp_phases_detailed",Current Cgh row.
+spacevalue_installed_prices_release_manifests_2026,Cislunar phyllosilicates phase density,2.6,kg/L,Installed Stage 2 cislunar table,Density used by phase-volume calculation.
+,2322 illustrative CM-style phyllosilicates body fraction,0.34,fraction,"Research sensitivity, Ch within-silicate shares applied to current 0.40",Water and all other named fractions held fixed.
+asteroidcatalog_release_data_2026_11_13,2322 olivine assigned body fraction,0.16000000000000003,fraction,"Installed Stage 1, comp_phases_detailed",Current Cgh row.
+spacevalue_installed_prices_release_manifests_2026,Cislunar olivine phase density,3.32,kg/L,Installed Stage 2 cislunar table,Density used by phase-volume calculation.
+,2322 illustrative CM-style olivine body fraction,0.04,fraction,"Research sensitivity, Ch within-silicate shares applied to current 0.40",Water and all other named fractions held fixed.
+asteroidcatalog_release_data_2026_11_13,2322 pyroxene assigned body fraction,0.04000000000000001,fraction,"Installed Stage 1, comp_phases_detailed",Current Cgh row.
+spacevalue_installed_prices_release_manifests_2026,Cislunar pyroxene phase density,3.4,kg/L,Installed Stage 2 cislunar table,Density used by phase-volume calculation.
+,2322 illustrative CM-style pyroxene body fraction,0.02,fraction,"Research sensitivity, Ch within-silicate shares applied to current 0.40",Water and all other named fractions held fixed.
+,Current three-silicate phase volume,0.136880554,m3 per tonne of feed,"Installed phase sizes and densities, summed","Only these three phases, zero packing allowance; not a recovered cargo manifest."
+,CM-style three-silicate phase volume,0.148699776,m3 per tonne of feed,Fixture using identical total silicate mass,Published vol% sample measurements were not substituted.
+,Change in uncapped cislunar phase-blend value,0,USD/kg,Pinned Spacevalue phase-table fixture,"The three Phase 2 prices match, with no change in total silicate or water."

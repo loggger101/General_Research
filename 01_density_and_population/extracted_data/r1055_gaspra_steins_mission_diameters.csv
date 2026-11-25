@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_release_data_2026_11_13,951 Gaspra selected diameter,12.2,km,Installed AsteroidCatalog release row 951,JPL SBDB. diameter_sigma_km empty.
+asteroidcatalog_release_data_2026_11_13,951 Gaspra diameter provider spread,0.19681147540983623,fraction,Installed row 951,Four diameter inputs and diameter_sources_agree=False.
+veverka_etal_1994_gaspra_galileo_size,951 Gaspra average radius,6.1 ± 0.4,km,Veverka et al. p. 2 abstract,Derived from Galileo observations.
+veverka_etal_1994_gaspra_galileo_size,951 Gaspra principal diameters,"18.2, 10.5, 8.9",km,Veverka et al. p. 2 abstract,Individual extents of the irregular shape.
+,951 Gaspra diameter from doubled Galileo average radius,12.2 ± 0.8,km,2 × the reported Galileo average radius,Conversion retains the paper's average-radius convention.
+asteroidcatalog_release_data_2026_11_13,2867 Šteins selected diameter and uncertainty,5.160 ± 0.167,km,Installed row 2867,JPL SBDB.
+pds_2013_rosetta_steins_plate_shape,2867 Šteins mean radius,2.70 ± 0.2,km,PDS Shape Model Characteristics,Separate field from equal-volume radius.
+pds_2013_rosetta_steins_plate_shape,2867 Šteins volume-equivalent radius,2.63 ± 0.2,km,PDS Shape Model Characteristics,Rosetta OSIRIS shape with light-curve constraints for unseen regions.
+pds_2013_rosetta_steins_plate_shape,2867 Šteins shape volume,76 ± 11,km3,PDS Shape Model Characteristics,Published plate-model volume.
+,2867 Šteins diameter from doubled equal-volume radius,5.26 ± 0.40,km,2 × the PDS volume-equivalent radius,Distinct from the JPL SBDB value.
+,2867 Šteins percentage increase in inferred mass at 5.26 km,5.927354870686918,percent,Volume scaling at unchanged assumed density,Sensitivity of estimated mass to the shape diameter.

@@ -1,0 +1,12 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_gto_propellant_pool_and_stage2_export_2026,GTO all-classes annual budget scenario,81600.0,kg/yr,catalog.py IN_SPACE_ANNUAL_DEMAND_KG gto,34 × 6000 × 0.40; cited concept concerns apogee propellant.
+spacevalue_gto_propellant_pool_and_stage2_export_2026,Global propellant share,0.55,fraction,catalog.py _DEMAND_SHARE_BY_CLASS,Scenario applied to GTO.
+spacevalue_installed_prices_release_manifests_2026,Water annual ceiling,44880,kg/yr,"prices-2026-11-20 GTO table, water",market_id=in-space propellant; value_route=used in space.
+spacevalue_installed_prices_release_manifests_2026,Ammonia annual ceiling,44880,kg/yr,"prices-2026-11-20 GTO table, ammonia",Same market ID and value route as water.
+isro_lpsc_insat_apogee_propellant_system,INSAT apogee propellant pair,MON-3 / MMH,,"LPSC Propulsion Systems, INSAT",Pressure-fed from independent tanks; orbit raising after GTO.
+eutelsat_2015_115_west_b_xenon_orbit_raising,EUTELSAT 115 West B sole propellant,xenon,,"12 March 2015 operator release, first two paragraphs",Electric orbit raising from supersynchronous transfer orbit.
+space42_2025_thuraya4_electric_orbit_raising,Thuraya-4 orbit-raising method,electric,,"January 2025 operator release, deployment paragraph",Operator identifies built-in electrical thrusters.
+,Water offered to one-year hard-cap fixture,40800,kg,"Pinned raw-sale function, one-year window","Synthetic offer, not an observed delivery."
+,Ammonia offered to one-year hard-cap fixture,40800,kg,"Pinned raw-sale function, one-year window","Synthetic offer, not an observed delivery."
+,Total mass sold in hard-cap fixture,44880.0,kg,"Pinned _capped_sale_value, zero surplus price","One shared modeled allowance; 40,800 kg water and 4,080 kg ammonia at installed prices."
+,Total unsold in hard-cap fixture,36720.0,kg,"Pinned _capped_sale_value, zero surplus price",Fixture has no discount sales.

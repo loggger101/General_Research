@@ -1,0 +1,20 @@
+source_id,item,value,unit,location_in_source,notes
+economicspace_mars_arrival_excess_and_tps_basis_code_2026,Shared Mars aerocapture fraction,0.15,kg/kg,calc.py lines 1039–1054 and 3689–3692; verification_sheet.py lines 3136–3144,Applied to both Mars surface and Mars orbit.
+economicspace_mars_arrival_excess_and_tps_basis_code_2026,Heat shield denominator,m_payload + m_dry_return + carried_ep_kg,expression,calc.py line 7774,Returned stack before adding TPS.
+,mars_surface exported option arrival excess at 1.1 AU,0.700895894758743,km/s,"Pinned calculator, isolated circular coplanar fixture",Both aero and propulsive options carry equal excess metadata for this fixture.
+,mars_surface Mars transfer excess at 1.1 AU,2.0339191948671513,km/s,"Pinned calculator, isolated circular coplanar fixture",Both aero and propulsive options carry equal excess metadata for this fixture.
+,mars_orbit exported option arrival excess at 1.1 AU,0.700895894758743,km/s,"Pinned calculator, isolated circular coplanar fixture",Both aero and propulsive options carry equal excess metadata for this fixture.
+,mars_orbit Mars transfer excess at 1.1 AU,2.0339191948671513,km/s,"Pinned calculator, isolated circular coplanar fixture",Both aero and propulsive options carry equal excess metadata for this fixture.
+,mars_surface exported option arrival excess at 2.5 AU,5.814688900415577,km/s,"Pinned calculator, isolated circular coplanar fixture",Both aero and propulsive options carry equal excess metadata for this fixture.
+,mars_surface Mars transfer excess at 2.5 AU,2.768526828355427,km/s,"Pinned calculator, isolated circular coplanar fixture",Both aero and propulsive options carry equal excess metadata for this fixture.
+,mars_orbit exported option arrival excess at 2.5 AU,5.814688900415577,km/s,"Pinned calculator, isolated circular coplanar fixture",Both aero and propulsive options carry equal excess metadata for this fixture.
+,mars_orbit Mars transfer excess at 2.5 AU,2.768526828355427,km/s,"Pinned calculator, isolated circular coplanar fixture",Both aero and propulsive options carry equal excess metadata for this fixture.
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,CobraMRV TPS,3032,kg,"NTRS 20160014035 printed p. 20 Table 4, 6.1 TPS",Part of dry mass.
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,CobraMRV dry mass,26052,kg,"NTRS 20160014035 printed p. 20 Table 4, Dry Mass",Includes TPS.
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,CobraMRV cargo,20000,kg,"NTRS 20160014035 printed p. 20 Table 4, 7.0 Cargo",Included in inert mass.
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,CobraMRV non-propellant,684,kg,"NTRS 20160014035 printed p. 20 Table 4, 8.0 Non-Propellant",Included in inert mass.
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,CobraMRV inert mass,46736,kg,"NTRS 20160014035 printed p. 20 Table 4, Inert Mass",Dry mass plus cargo plus non-propellant.
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,CobraMRV usable propellant,14363,kg,"NTRS 20160014035 printed p. 20 Table 4, 9.0 Usable Propellant",Excluded from inert mass.
+cerimele_etal_2017_mars_aerocapture_onesol_cleanup,CobraMRV gross mass,61099,kg,"NTRS 20160014035 printed p. 20 Table 4, Gross Mass",Inert plus usable propellant.
+,CobraMRV inert mass excluding TPS,43704,kg,Table 4 inert mass less 6.1 TPS,Comparator denominator only.
+,CobraMRV TPS divided by inert mass excluding TPS,0.06937580084202818,kg/kg,Table 4 calculation,This design includes aerocapture and subsequent Mars entry.

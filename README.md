@@ -184,7 +184,7 @@ table's form, that each id is registered, the weakness code and the round.
 Only the owner rejects a source. Its row in INDEX.md "Rejected sources" (`id`, `source`, `link`, `reason`) becomes
 its only record and its id stays reserved. Then delete its registry and INDEX rows, hosted files and manifest rows,
 extracted-data files and rows (`a;b` rows included), FINDINGS write-ups and mentions, DOWNLOADS entry, and every
-revision candidate resting on it alone (for shared ones, drop the id and rewrite the evidence; deleted `rc-NNN`
+revision candidate resting on it alone (for shared ones, drop the id and rewrite the evidence; deleted candidate
 numbers are not reused, and the `reason` cell names them, as rc-048's does). Past log entries stay; add one naming
 the id, reason and deleted candidates. `validate.py` fails if the id is registered or named anywhere but the
 research log.
@@ -216,7 +216,8 @@ registry files and `sources.csv`; INDEX tables against the registry; the researc
 gaps, real dates, and the committed log kept unchanged as its tail, also across merges); hosted files against the
 manifest and `.gitattributes`; extracted-data files (each named by a FINDINGS.md) and the citation of every read source; revision candidates (each
 in the file its status belongs to) and `upstream_commit_map.csv`; that every cited `extracted_data/` or
-`full_texts/` path and every cited `rc-NNN` exists; and rejected ids. It
+`full_texts/` path and every cited candidate ID exists; and rejected ids. Candidate IDs use `rc-` followed by
+at least three digits. The validator
 only warns where the decision is the owner's (licence, file size, an `access_status` sha256 matching no hosted
 file). `--upstream` checks cited commits and files in the sibling clones of the four upstream repos (fetch them
 first).

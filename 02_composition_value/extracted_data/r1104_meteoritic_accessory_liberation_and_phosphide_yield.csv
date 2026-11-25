@@ -1,0 +1,35 @@
+source_id,item,value,unit,location_in_source,notes
+henderson_1965_iron_meteorite_nodule_microstructure,Schreibersite Ni across examined nodule specimens,15–25,wt%,"Mineralogy §3, Schreibersite",Sample-specific range.
+henderson_1965_iron_meteorite_nodule_microstructure,Cohenite position,nodule rim and intergrowth with schreibersite,,"Mineralogy §4, Cohenite and Fig. 3",Also occurs between kamacite and schreibersite or troilite.
+miler_gosar_2011_javorje_phosphide_microstructure,Taenite-border schreibersite size,8–22,µm,"Accessory Minerals, Fig. 2a discussion",At kamacite–taenite interfaces.
+miler_gosar_2011_javorje_phosphide_microstructure,Massive schreibersite grain size,11–121,µm,"Accessory Minerals, Fig. 2e discussion",Scarce subhedral grains mainly in kamacite.
+miler_gosar_2011_javorje_phosphide_microstructure,Microrhabdite width,2–3,µm,"Accessory Minerals, Fig. 2c discussion",Needles occur in kamacite.
+spacevalue_meteoritic_phosphide_liberation_and_yield_2026,Default separation recovery,0.9,fraction,Economicspace CalcConfig.beneficiation_recovery,Independently applied to each separately selectable product.
+asteroidcatalog_release_data_2026_11_13,2018 DT cohenite mass fraction,0.004925,fraction,Installed M-class detailed phase row,Taxonomic assignment.
+asteroidcatalog_release_data_2026_11_13,2018 DT schreibersite mass fraction,0.0075,fraction,Installed M-class detailed phase row,Taxonomic assignment.
+spacevalue_installed_prices_release_manifests_2026,Installed schreibersite nickel yield,0.291,mass fraction,"Earth Stage 2, schreibersite yields_json",Idealized Fe2NiP scenario.
+spacevalue_installed_prices_release_manifests_2026,Installed schreibersite phosphorus yield,0.154,mass fraction,"Earth Stage 2, schreibersite yields_json",Idealized Fe2NiP scenario.
+,Independent-product gross value,43.05966822,USD,"1,000 kg feed, 5 kg hold, 90% recovery",Only the nickel-iron product loads.
+,Fixed-blend gross value,42.41070353,USD,"Same feed, hold, recovery and phase unit prices","Controlled sensitivity, no mineral locked fraction inferred."
+,Phosphorus in fixed-blend hold,11.55000,g,5 kg × 0.0075 / 0.50 × 0.154,Only phosphorus assigned by the phosphide phase.
+,Gross value of current schreibersite yields,5.13092100,USD/kg,Pinned _mineral_implied_value and Earth Stage 2,Gross contained-element proxy.
+miler_gosar_2011_javorje_phosphide_microstructure,Rhabdite Fe,41.7,wt% reported,"Table 1, Rhabdite",Mean of 3 analyses; semi-quantitative SEM/EDS.
+miler_gosar_2011_javorje_phosphide_microstructure,Rhabdite Ni,40.9,wt% reported,"Table 1, Rhabdite",Mean of 3 analyses; semi-quantitative SEM/EDS.
+miler_gosar_2011_javorje_phosphide_microstructure,Rhabdite P,17.3,wt% reported,"Table 1, Rhabdite",Mean of 3 analyses; semi-quantitative SEM/EDS.
+,Rhabdite Fe+Ni+P sum,99.9,wt% reported,"Table 1, Rhabdite",Sum checked before illustrative normalization.
+,Rhabdite normalized gross contained value,6.97231932,USD/kg,Installed Earth elemental prices and normalized Table 1 Rhabdite means,"Normalize three reported means to unit mass as a sensitivity, not an adopted grade."
+miler_gosar_2011_javorje_phosphide_microstructure,Taenite border schreibersite Fe,39.1,wt% reported,"Table 1, Taenite border schreibersite",Mean of 5 analyses; semi-quantitative SEM/EDS.
+miler_gosar_2011_javorje_phosphide_microstructure,Taenite border schreibersite Ni,50.6,wt% reported,"Table 1, Taenite border schreibersite",Mean of 5 analyses; semi-quantitative SEM/EDS.
+miler_gosar_2011_javorje_phosphide_microstructure,Taenite border schreibersite P,18.3,wt% reported,"Table 1, Taenite border schreibersite",Mean of 5 analyses; semi-quantitative SEM/EDS.
+,Taenite border schreibersite Fe+Ni+P sum,108.0,wt% reported,"Table 1, Taenite border schreibersite",Sum checked before illustrative normalization.
+,Taenite border schreibersite normalized gross contained value,7.85587500,USD/kg,Installed Earth elemental prices and normalized Table 1 Taenite border schreibersite means,"Normalize three reported means to unit mass as a sensitivity, not an adopted grade."
+miler_gosar_2011_javorje_phosphide_microstructure,Grain boundary schreibersite Fe,40.6,wt% reported,"Table 1, Grain boundary schreibersite",Mean of 6 analyses; semi-quantitative SEM/EDS.
+miler_gosar_2011_javorje_phosphide_microstructure,Grain boundary schreibersite Ni,43.5,wt% reported,"Table 1, Grain boundary schreibersite",Mean of 6 analyses; semi-quantitative SEM/EDS.
+miler_gosar_2011_javorje_phosphide_microstructure,Grain boundary schreibersite P,17.2,wt% reported,"Table 1, Grain boundary schreibersite",Mean of 6 analyses; semi-quantitative SEM/EDS.
+,Grain boundary schreibersite Fe+Ni+P sum,101.3,wt% reported,"Table 1, Grain boundary schreibersite",Sum checked before illustrative normalization.
+,Grain boundary schreibersite normalized gross contained value,7.26571964,USD/kg,Installed Earth elemental prices and normalized Table 1 Grain boundary schreibersite means,"Normalize three reported means to unit mass as a sensitivity, not an adopted grade."
+miler_gosar_2011_javorje_phosphide_microstructure,Massive schreibersite Fe,48.1,wt% reported,"Table 1, Massive schreibersite",Mean of 3 analyses; semi-quantitative SEM/EDS.
+miler_gosar_2011_javorje_phosphide_microstructure,Massive schreibersite Ni,42.4,wt% reported,"Table 1, Massive schreibersite",Mean of 3 analyses; semi-quantitative SEM/EDS.
+miler_gosar_2011_javorje_phosphide_microstructure,Massive schreibersite P,18.8,wt% reported,"Table 1, Massive schreibersite",Mean of 3 analyses; semi-quantitative SEM/EDS.
+,Massive schreibersite Fe+Ni+P sum,109.3,wt% reported,"Table 1, Massive schreibersite",Sum checked before illustrative normalization.
+,Massive schreibersite normalized gross contained value,6.64437603,USD/kg,Installed Earth elemental prices and normalized Table 1 Massive schreibersite means,"Normalize three reported means to unit mass as a sensitivity, not an adopted grade."

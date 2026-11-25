@@ -1,0 +1,39 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_k_metal_magnetite_sulfide_and_cargo_code_2026,K coarse Fe-Ni alloy,0.08,kg/kg body,AsteroidCatalog taxonomy.py K row; mineralogy.py phase_fractions,Becomes 0.08 nickel-iron product from detailed kamacite and taenite.
+asteroidcatalog_k_metal_magnetite_sulfide_and_cargo_code_2026,K coarse sulfide group,0.02,kg/kg body,"AsteroidCatalog mineralogy.py ACCESSORY_PHASES, K","Coarse troilite key, split in comp_phases_detailed."
+asteroidcatalog_k_metal_magnetite_sulfide_and_cargo_code_2026,K magnetite,0.03,kg/kg body,"AsteroidCatalog mineralogy.py ACCESSORY_PHASES, K",Absolute allowance.
+bland_cressey_menzies_2004_allende_modal_mineralogy,Allende sample magnetite,0.3,wt%,"Bland et al., pp. 9–10, Allende paragraph and Table 1",Same-sample table volume is 0.2 vol%; abstract describes <0.5 wt%.
+bland_cressey_menzies_2004_allende_modal_mineralogy,Allende sample pentlandite,11.1,wt%,"Bland et al., pp. 9–10, Allende paragraph and Table 1",Same-sample table volume is 8.0 vol%; abundance fitted using background fluorescence.
+bland_cressey_menzies_2004_allende_modal_mineralogy,Allende sample Fe-Ni metal,0.2,wt%,"Bland et al., pp. 9–10, Allende paragraph and Table 1",Table uses Fe-metal; text identifies Fe-Ni metal.
+howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235,Oxidized CV3 magnetite across four samples,0.3–6.1,vol%,"LPSC abstract 1235, PDF p. 1, Results","Whole-sample modal range, not an asteroid mass fraction."
+howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235,Oxidized CV3 aggregate sulfide across four samples,2.9–8.1,vol%,"LPSC abstract 1235, PDF p. 1, Results","Reported total, with no pentlandite/pyrrhotite breakdown."
+howard_benedix_2009_cv3_modal_mineralogy_lpsc_1235,Oxidized CV3 Fe-Ni metal across four samples,0.2–1.1,vol%,"LPSC abstract 1235, PDF p. 1, Results",Whole-sample modal range.
+bonato_2020_co_chondrites_psd_xrd_modal_mineralogy,Low-type CO3 magnetite across four samples,about 3–9.3,vol%,"Thesis §3.3.2, CO3.00 to CO3.1",Colony and MIL 090010 are the named lower and upper cases.
+bonato_2020_co_chondrites_psd_xrd_modal_mineralogy,Low-type CO3 aggregate sulfides across four samples,about 0.2–4.4,vol%,"Thesis §3.3.2, CO3.00 to CO3.1",Troilite and pyrrhotite grouping.
+bonato_2020_co_chondrites_psd_xrd_modal_mineralogy,Low-type CO3 kamacite across four samples,0.1–1.1,vol%,"Thesis §3.3.2, CO3.00 to CO3.1","Identified alloy phase, rather than total Fe or Ni."
+tanbakouei_etal_2021_cv_ck_eos_spectral_comparisons,Observed Eos-family spectra compared to CV and CK samples,3,asteroids,"Tanbakouei et al., Figs. 8–9 and accompanying text","Eos, Cloelia and Edisona. Similar slopes with differences in particular bands."
+asteroidcatalog_release_data_2026_11_13,221 Eos model kamacite fraction,0.0712,kg/kg body,"data-2026-11-13, 221 Eos, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,221 Eos model taenite fraction,0.0088,kg/kg body,"data-2026-11-13, 221 Eos, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,221 Eos model magnetite fraction,0.03,kg/kg body,"data-2026-11-13, 221 Eos, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,221 Eos model pentlandite fraction,0.01,kg/kg body,"data-2026-11-13, 221 Eos, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,221 Eos model pyrrhotite fraction,0.01,kg/kg body,"data-2026-11-13, 221 Eos, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,661 Cloelia model kamacite fraction,0.0712,kg/kg body,"data-2026-11-13, 661 Cloelia, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,661 Cloelia model taenite fraction,0.0088,kg/kg body,"data-2026-11-13, 661 Cloelia, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,661 Cloelia model magnetite fraction,0.03,kg/kg body,"data-2026-11-13, 661 Cloelia, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,661 Cloelia model pentlandite fraction,0.01,kg/kg body,"data-2026-11-13, 661 Cloelia, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,661 Cloelia model pyrrhotite fraction,0.01,kg/kg body,"data-2026-11-13, 661 Cloelia, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,742 Edisona model kamacite fraction,0.0712,kg/kg body,"data-2026-11-13, 742 Edisona, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,742 Edisona model taenite fraction,0.0088,kg/kg body,"data-2026-11-13, 742 Edisona, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,742 Edisona model magnetite fraction,0.03,kg/kg body,"data-2026-11-13, 742 Edisona, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,742 Edisona model pentlandite fraction,0.01,kg/kg body,"data-2026-11-13, 742 Edisona, comp_phases_detailed","Class assignment, rather than a body assay."
+asteroidcatalog_release_data_2026_11_13,742 Edisona model pyrrhotite fraction,0.01,kg/kg body,"data-2026-11-13, 742 Edisona, comp_phases_detailed","Class assignment, rather than a body assay."
+,Loaded nickel-iron in Earth cargo replay,80.0,kg,"Pinned optimal_payload_mix, one tonne feed and hold, 100% recovery",Same result for each of three installed K rows.
+,Gross nickel-iron contribution in Earth cargo replay,465.323142,USD,Replay loaded mass × phase value from manifest-verified Earth prices,Gross contained-element model.
+,Loaded magnetite in Earth cargo replay,30.0,kg,"Pinned optimal_payload_mix, one tonne feed and hold, 100% recovery",Same result for each of three installed K rows.
+,Gross magnetite contribution in Earth cargo replay,6.928680,USD,Replay loaded mass × phase value from manifest-verified Earth prices,Gross contained-element model.
+,Loaded pyrrhotite in Earth cargo replay,10.0,kg,"Pinned optimal_payload_mix, one tonne feed and hold, 100% recovery",Same result for each of three installed K rows.
+,Gross pyrrhotite contribution in Earth cargo replay,2.322760,USD,Replay loaded mass × phase value from manifest-verified Earth prices,Gross contained-element model.
+,Loaded pentlandite in Earth cargo replay,10.0,kg,"Pinned optimal_payload_mix, one tonne feed and hold, 100% recovery",Same result for each of three installed K rows.
+,Gross pentlandite contribution in Earth cargo replay,54.163060,USD,Replay loaded mass × phase value from manifest-verified Earth prices,Gross contained-element model.
+spacevalue_installed_prices_release_manifests_2026,Earth prices used by cargo replay,prices-2026-11-20,release tag,"Installed Spacevalue Earth CSV, manifest file record",Verified hash; cargo derives phase values from the installed prices and yield dictionaries.
+,"Gross contribution from K alloy, magnetite and sulfide phases",528.737642,USD,Sum of four replay product values per tonne of feed,Gross valuation with 100% recovery; no estimated realized revenue.

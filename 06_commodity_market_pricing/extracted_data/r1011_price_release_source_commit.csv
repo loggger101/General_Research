@@ -1,0 +1,8 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_installed_prices_release_manifests_2026,prices-2026-11-20 source_commit,"""""",,installed manifest.json; SHA-256 ddccd8e4e20d1c72410c11899e2abbdd9ba98345a9c7e3be0688ab6adfabbaa0,8/8 CSV sizes and hashes match.
+spacevalue_installed_prices_release_manifests_2026,prices-2026-11-12 source_commit,"""""",,installed manifest.json; SHA-256 07e67183c5faab651bdc5247165b182121f82bfff979b48afe0f5cab60e9fae8,8/8 CSV sizes and hashes match.
+spacevalue_installed_prices_release_manifests_2026,prices-2026-10-07 source_commit,"""""",,installed manifest.json; SHA-256 c91a727746d61c817d8b2cb57c1f51cd1ee393def81ae856924e6f575a327bf3,8/8 CSV sizes and hashes match.
+spacevalue_installed_prices_release_manifests_2026,prices-2026-11-20 tag resolved commit,2c3d2143d99afab9ffc6e9b9b29e23af3b6c2bda,,Spacevalue Git prices-2026-11-20^{commit},The public tag is an external citation anchor.
+spacevalue_published_prices_source_commit_code_2026,Build commit lookup,git rev-parse HEAD,,release.py lines 65–73 and 165–176,Runs from package location; empty string outside a checkout.
+spacevalue_published_prices_source_commit_code_2026,Workflow tag target,GITHUB_SHA,,".github/workflows/publish-prices.yml lines 59–72, 122–123",Package is installed before building. GitHub SHA is used as the release tag target.
+,Current release validation,0,issues,Spacevalue 0.8.7 check_release against the local prices-2026-11-20 cache,Gate passed with the manifest source_commit empty.

@@ -85,3 +85,11 @@ The comment's 2,134/(2,134+8,200) = 0.2065; 8,200 kg sits in the A9-A13 loaded b
 At Spacecost main 5ae7f70855d24c71dc54fc3a916624f325c034e8 (PR #53, 0.18.6), CITATIONS.md section 4 gains `parcero_etal_2022_planetary_entry_vehicles_quick_reference_guide_v4` with its Hayabusa table locator, scoped as a sample-return comparator beside the generic 0.10 capsule factor (rc-834). Values unchanged.
 
 Verdict: rc-834 closed as applied. Extracted data: none new.
+
+
+## R1075 — Mars powered-descent mass boundary and TPS pricing (2026-11-24)
+
+- spacecost_mars_delivery_stage_loss_pricing_2026 records Spacecost's Mars surface chain with 0.30 “survives to be useful payload” followed by an 800 m/s terminal burn. edquist_2022_mars2020_aerothermal_entry_masses, p. 14 Table 3, gives 3,153 and 3,369 kg at atmospheric entry. jpl_msl_factsheet_curiosity_mass and nasa_mars2020_flight_mech_edl_simulation, the latter p. 1, give delivered rover masses of 899 and 1,026 kg. sell_etal_2013_msl_as_flown_powered_descent, abstract, states powered flight “extends from backshell separation through landing.” The pinned chain implies 23.97% delivery from atmospheric entry. With only the terminal burn set to zero for sensitivity, LEO mass per delivered kg moves from 10.606 to 8.472 and delivered cost from $186,307 to $140,788/kg. dwyer_cianciolo_etal_2020_edlas_phase3_mass_tps, p. 10 Table 5, gives 58,786 and 54,910 kg entry masses for two 20 t useful payload concepts. **rc-981** records the stages and the flight-ratio boundary.
+- spacecost_mars_delivery_stage_loss_pricing_2026 records “USD per kg of TPS mass” for the $50,000/kg Earth-return TPS rate. The Mars chain applies it to 2.9208 kg of modeled EDL discard per kg landed, yielding $146,041/kg landed or 78.4% of total delivery cost. dwyer_cianciolo_etal_2020_edlas_phase3_mass_tps, p. 10 Table 5, separately lists “Total TPS Mass” of 3,454 and 3,634 kg and vehicle structure masses of 12,168 and 8,796 kg for its two cases. **rc-982** records the mass denominator and hardware-cost citation.
+
+Extracted data in extracted_data/r1075_mars_edl_stage_and_tps_cost_boundaries.csv.

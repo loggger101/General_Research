@@ -1,0 +1,23 @@
+source_id,item,value,unit,location_in_source,notes
+vulcan_launch_systems_users_guide_oct2023,Standard fairing overall length,15.5,m,"Section 4.3, p. 4-8","External fairing length, not payload height."
+vulcan_launch_systems_users_guide_oct2023,Long fairing overall length,21.3,m,"Section 4.3, p. 4-8","External fairing length, not payload height."
+vulcan_launch_systems_users_guide_oct2023,VC2S ISS payload,16300,kg,"Table 2.2.1-1, VC2S row",407 km circular at 51.6 degrees.
+vulcan_launch_systems_users_guide_oct2023,VC4L ISS payload,21400,kg,"Table 2.2.1-1, VC4L row",407 km circular at 51.6 degrees.
+vulcan_launch_systems_users_guide_oct2023,VC6L ISS payload,25600,kg,"Table 2.2.1-1, VC6L row",407 km circular at 51.6 degrees.
+ula_vulcan_leo1_vc6l_schedule_2026,Vulcan Leo 1 configuration with longer fairing,VC6L,configuration,"ULA mission page, Mission Overview",Separate long fairing and LEO-optimized Centaur V details.
+vulcan_launch_systems_users_guide_oct2023,standard payload-envelope diameter at LV STA 2596.66,4877,mm,"Printed p. 4-8, Figure 4.3.1-1",Station is in inches; reference at 1575 PAF interface; negotiable zones excluded from calculation.
+vulcan_launch_systems_users_guide_oct2023,standard payload-envelope diameter at LV STA 2856.66,4648,mm,"Printed p. 4-8, Figure 4.3.1-1",Station is in inches; reference at 1575 PAF interface; negotiable zones excluded from calculation.
+vulcan_launch_systems_users_guide_oct2023,standard payload-envelope diameter at LV STA 2966.66,3632,mm,"Printed p. 4-8, Figure 4.3.1-1",Station is in inches; reference at 1575 PAF interface; negotiable zones excluded from calculation.
+vulcan_launch_systems_users_guide_oct2023,standard payload-envelope diameter at LV STA 3100.66,838,mm,"Printed p. 4-8, Figure 4.3.1-1",Station is in inches; reference at 1575 PAF interface; negotiable zones excluded from calculation.
+vulcan_launch_systems_users_guide_oct2023,long payload-envelope diameter at LV STA 2596.66,4877,mm,"Printed p. 4-9, Figure 4.3.1-2",Station is in inches; reference at 1575 PAF interface; negotiable zones excluded from calculation.
+vulcan_launch_systems_users_guide_oct2023,long payload-envelope diameter at LV STA 2846.66,4826,mm,"Printed p. 4-9, Figure 4.3.1-2",Station is in inches; reference at 1575 PAF interface; negotiable zones excluded from calculation.
+vulcan_launch_systems_users_guide_oct2023,long payload-envelope diameter at LV STA 3066.66,4661,mm,"Printed p. 4-9, Figure 4.3.1-2",Station is in inches; reference at 1575 PAF interface; negotiable zones excluded from calculation.
+vulcan_launch_systems_users_guide_oct2023,long payload-envelope diameter at LV STA 3186.66,3632,mm,"Printed p. 4-9, Figure 4.3.1-2",Station is in inches; reference at 1575 PAF interface; negotiable zones excluded from calculation.
+vulcan_launch_systems_users_guide_oct2023,long payload-envelope diameter at LV STA 3336.66,609,mm,"Printed p. 4-9, Figure 4.3.1-2",Station is in inches; reference at 1575 PAF interface; negotiable zones excluded from calculation.
+spacecost_vulcan_iss_fairing_configuration_code_2026,VC2 exported fairing volume,171.0,m^3,Spacecost launch_vehicles.csv and fairings.py ENVELOPES,Standard envelope reused.
+spacecost_vulcan_iss_fairing_configuration_code_2026,VC4 exported fairing volume,171.0,m^3,Spacecost launch_vehicles.csv and fairings.py ENVELOPES,Standard envelope reused.
+spacecost_vulcan_iss_fairing_configuration_code_2026,VC6 exported fairing volume,171.0,m^3,Spacecost launch_vehicles.csv and fairings.py ENVELOPES,Standard envelope reused.
+,Standard envelope by frustum integration,170.55798108278995,m^3,Spacecost envelope_m3 with Figure 4.3.1-1 station profile,Reproduces the rounded export.
+,Long envelope by frustum integration,273.2530639019443,m^3,Spacecost envelope_m3 with Figure 4.3.1-2 station profile,"Axisymmetric approximation between figure stations, same integration convention."
+,Economicspace return-volume cap with exported 171 m³,42.75,m^3,0.25 × 171,Isolated volume expression before other caps or fitting.
+,Economicspace return-volume cap with long comparator,68.31326597548608,m^3,0.25 × geometric estimate,"Sensitivity using the current 25% assumption, not a derived return-vessel envelope."

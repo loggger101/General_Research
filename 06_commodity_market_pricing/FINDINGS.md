@@ -644,3 +644,114 @@ campaign/worked_calculation.py parse to the same ASTs as master 1.73.0.
 - johnson_matthey_base_prices_faq_2026: The FAQ describes four weekday settings, possible changes between settings, and express written consent for reuse. The citation does not establish which setting supplied the five values or permission to reproduce them.
 - Verdict: Keep rc-672 open; no price replacement inferred.
 - Extracted: extracted_data/r999_spacevalue_pgm_quote_locator_recheck.csv.
+
+## R1008 — Molybdenum mine-production vintage (2026-11-22)
+
+`spacevalue_molybdenum_annual_market_code_2026` stores 260,000,000 kg/yr and attributes the group to “USGS MCS 2025 world production for 2024.” `usgs_mineral_commodity_summaries_2025` gives the “World total (rounded)” at 260,000 metric tons for 2024e (Molybdenum, printed p. 123, PDF p. 127). `usgs_mineral_commodity_summaries_2026` gives 256,000 metric tons for revised 2024 and 260,000 for 2025e in the same row (printed p. 131, PDF p. 135). **rc-869** proposes citing the newer 2025e world mine-production proxy at the existing value, or using 256,000,000 kg/yr if 2024 is retained.
+
+Extracted data in `extracted_data/r1008_molybdenum_mine_production_vintage.csv`.
+
+## R1011 — Price release build-commit provenance (2026-11-22)
+
+`spacevalue_installed_prices_release_manifests_2026` has an empty `source_commit` in the installed manifests for `prices-2026-11-20`, `prices-2026-11-12` and `prices-2026-10-07`. All eight CSVs per release match their manifest sizes and SHA-256 digests. The current data tag resolves to `2c3d2143d99afab9ffc6e9b9b29e23af3b6c2bda`. `spacevalue_published_prices_source_commit_code_2026` calls `git rev-parse HEAD` from the package directory and returns an empty string outside a checkout (release.py lines 65–73, 165–176). The publication workflow builds from an installed package and names `GITHUB_SHA` when creating the release tag. The current release passes `check_release` with the empty field. **rc-873** asks future published manifests to carry and verify the build revision in the asset itself.
+
+Extracted data in `extracted_data/r1011_price_release_source_commit.csv`.
+
+## R1018 — Rhenium metal pellet price basis and vintage (2026-11-22)
+
+- `spacevalue_rhenium_reference_price_code_2026` sets the rhenium reference to USD 1,500/kg with reference date 2025-01-31 and describes it as a 2024 range from MCS 2025. All eight CSVs identified by `spacevalue_installed_prices_release_manifests_2026` for `prices-2026-11-20` match their release hashes and carry that reference. The Earth-surface CSV uses it as the sale-price input.
+- `usgs_mineral_commodity_summaries_2025`, Rhenium p. 146, “Metal pellets, 99.99% pure,” gives USD 1,370/kg for 2024e. `usgs_mineral_commodity_summaries_2026`, Rhenium p. 156, “Metal, 99.99% pure,” gives revised 2024 USD 1,360/kg and 2025e USD 2,600/kg. `smm_2026_11_20_rhenium_pellets_exworks_china` lists USD 5,835.85/kg ex-VAT for pellets with minimum 99.99% Re, “Ex-works, China,” on 2026-11-20. **rc-881** asks for the precise annual price series and edition in the Spacevalue row, with the SMM market and date on its comparison.
+
+Extracted data in `extracted_data/r1018_rhenium_pellet_price_basis.csv`.
+
+## R1023 — Gallium and germanium reference-price series (2026-11-22)
+
+- `spacevalue_gallium_germanium_price_code_2026` gives 500 USD/kg for gallium and 2500 USD/kg for germanium with reference date 2025-01-31. All eight installed tables identified by `spacevalue_installed_prices_release_manifests_2026` match their release hashes and carry those reference inputs. Earth-surface prices use them directly.
+- `usgs_mineral_commodity_summaries_2025`, Gallium printed p. 74, gives “High-purity, refined” at 500 USD/kg for 2024e. Footnote 1 on p. 75 identifies the U.S. import grades as 99.999% and 99.99999%. `usgs_mineral_commodity_summaries_2026`, Gallium p. 82, gives 439 USD/kg for 2024 and 580 for 2025e. Footnote 2 on p. 83 defines the later series as the average customs value of gallium metal imports under HTS 8112.92.1000. **rc-887** gives the precise locator for the high-purity price and the basis of the newer series.
+- `usgs_mineral_commodity_summaries_2025`, Germanium p. 80, gives the 2024e “Price, annual average” for metal as 2100 USD/kg. Page 81 gives separate January and September observations of 1550 and 2950 USD/kg. `usgs_mineral_commodity_summaries_2026`, Germanium p. 88, gives revised 2024 at 1991 USD/kg and 2025e at 4100 USD/kg. Footnote 4 on p. 89 defines the annual series as European prices for minimum 99.999% purity. **rc-888** records the annual figures and requests the observation year and basis in the Spacevalue row.
+
+Extracted data in `extracted_data/r1023_gallium_germanium_price_series.csv`.
+
+## R1026 — Chromium metal price and terrestrial market ceiling (2026-11-22)
+
+- spacevalue_chromium_price_and_market_basis_code_2026 sets the chromium row to USD 11/kg with reference date 2025-01-31 and calls it “Aluminothermic chromium metal” (catalog.py lines 1449–1473, 1878–1880). spacevalue_installed_prices_release_manifests_2026 carries that price as the Earth-surface sale input. usgs_mineral_commodity_summaries_2025, Chromium p. 58, lists “Chromium metal (gross weight), dollars per pound” at USD 5.60/lb for 2024e (USD 12.35/kg). usgs_mineral_commodity_summaries_2026, Chromium p. 66, gives USD 5.30/lb for revised 2024 and USD 5.90/lb for 2025e (USD 11.68 and 13.01/kg). The annual row gives the metal mass basis. usgs_mis_chromium_december_2025, PDF p. 2, names “chromium metal (99% chromium)” at USD 5.70/lb and “high-carbon ferrochromium (minimum 62% chromium)” at USD 1.75/lb of contained chromium for December 2025. **rc-891** records the exact annual price series and the missing process-specific citation.
+- spacevalue_chromium_price_and_market_basis_code_2026 sets terrestrial chromium to 47 billion kg/yr of “shipping-grade chromite ore” (catalog.py line 999). usgs_mineral_commodity_summaries_2026, p. 66, gives 51.0 Mt of “World total (rounded)” mine production for 2025e. Footnote 12 specifies gross ore weight. The installed Earth-surface Cr row carries the 47 billion kg/yr into the cargo market lookup. With one delivery and a one-year window, the pinned cargo functions return a 47 billion kg Cr allowance. **rc-892** records the ore-to-metal mass basis mismatch.
+
+Extracted data in extracted_data/r1026_chromium_price_and_market_basis.csv.
+
+## R1031 — Sulfur and molybdenum prices and ammonia market mass (2026-11-23)
+
+- spacevalue_sulfur_molybdenum_ammonia_earth_basis_code_2026 and spacevalue_installed_prices_release_manifests_2026 give the Earth-surface sulfur price as USD 0.10/kg. usgs_mineral_commodity_summaries_2025, printed pp. 172–173, gives the annual “average unit value, free on board” mine or plant at USD 50 per metric ton for 2024e and Tampa contract observations of USD 69 to 116 per long ton. usgs_mineral_commodity_summaries_2026, printed pp. 182–183, gives revised 2024 at USD 46.42 per metric ton and 2025e at USD 180 per metric ton in the annual series. **rc-900** records the two series and their units.
+- spacevalue_sulfur_molybdenum_ammonia_earth_basis_code_2026 and spacevalue_installed_prices_release_manifests_2026 give the Earth-surface molybdenum price as USD 44/kg. usgs_mineral_commodity_summaries_2025, printed pp. 122–123, gives USD 47/kg for 2024e. usgs_mineral_commodity_summaries_2026, printed pp. 130–131, gives revised 2024 USD 47.72/kg and 2025e USD 51/kg for U.S. molybdic oxide indicated as “57% molybdenum content.” usgs_mis_molybdenum_december_2025, PDF p. 1, reports December’s USD 51.578 “per kilogram” of molybdenum content. **rc-901** records the annual figures and the contained-metal basis.
+- spacevalue_sulfur_molybdenum_ammonia_earth_basis_code_2026 and spacevalue_installed_prices_release_manifests_2026 give the Earth-surface NH3 row a cap of 150 billion kg/yr. For one delivery over one year, the pinned cargo functions use it directly as kg of NH3. usgs_mineral_commodity_summaries_2025, printed pp. 128–129, reports 150 Mt in “nitrogen content” for 2024e. usgs_mineral_commodity_summaries_2026, printed pp. 136–137, reports 156 and 160 Mt of nitrogen for revised 2024 and 2025e. nist_webbook_ammonia_molecular_weight and ciaaw_abridged_atomic_weight_nitrogen give weights 17.0305 and 14.007, so the original 150 Mt N corresponds to 182.38 Mt NH3. **rc-902** records the cargo and production mass mismatch.
+
+Extracted data in extracted_data/r1031_sulfur_molybdenum_ammonia_earth_basis.csv.
+
+## R1036 — Elemental phosphorus reference-price attribution (2026-11-23)
+
+- spacevalue_phosphorus_price_source_main_2026 sets the phosphorus price to USD 3.00/kg and describes it as “Elemental (P4) trade price” without naming a series. All eight spacevalue_installed_prices_release_manifests_2026 destination tables for `prices-2026-11-20` match their hashes and give that reference the label “USGS/LME/mineralogy reference” and date 2025-01-31. The Earth-surface table uses USD 3.00/kg as the sale-price input.
+- chengxing_2024_annual_yellow_phosphorus_market, annual report p. 10, reports “黄磷市场均价为 22,993 元/吨” for China's 2024 market and names Baiinfo as data source. federal_reserve_g5a_2024_cny_average gives 7.1957 CNY/USD for 2024, yielding USD 3.1954/kg. un_comtrade_wits_us_phosphorus_exports_2024, 2024 USA exports to World, HS 280470, gives USD 74,239.15 thousand and 14,671,600 kg, yielding USD 5.0601/kg for the broad phosphorus heading. **rc-909** records the market and date of the yellow-phosphorus comparator and the broader scope of the customs unit value.
+
+Extracted data in `extracted_data/r1036_phosphorus_price_basis.csv`.
+
+## R1040 — Terrestrial CO₂ price by grade and delivery terms (2026-11-23)
+
+- spacevalue_carbon_dioxide_price_source_main_2026 sets USD 0.10/kg and describes “Industrial liquid CO2, ~$50-150/t” without a named series. All eight spacevalue_installed_prices_release_manifests_2026 destination tables for `prices-2026-11-20` match manifest hashes and carry the generic USGS/LME/mineralogy label and 2025-01-31 date. The Earth-surface table uses USD 0.10/kg as its sale price.
+- st_johns_county_ifb_2918_co2_delivery_2026, PDF p. 33, gives USD 0.138/lb × 3,897,810 lb = USD 537,897.78 before tax. That works out to USD 0.30424/kg with supply and delivery. Exhibit A on PDF p. 26 specifies “Food Grade” with 99.5% CO₂, NSF Standard 60 and freight prepaid to county facilities. The figure and extended total confirm the decimal dollar amount despite the written cents wording in §4.1.1 on PDF p. 9.
+- spglobal_2025_co2_commodity_market_demand, p. 8, estimates roughly USD 30–100 per ton for large-volume purchases and names EOR and metals fabrication. **rc-914** records the scope of the distinct bulk estimate and drinking-water delivery bid and asks for the Spacevalue row’s price provenance.
+
+Extracted data in `extracted_data/r1040_co2_delivered_and_reference_price.csv`.
+
+
+## R1044 — Titanium sponge and ammonia price vintages (2026-11-23)
+
+- spacevalue_titanium_ammonia_price_vintage_code_2026 and spacevalue_installed_prices_release_manifests_2026 give USD 13/kg for titanium and USD 0.485/kg for ammonia in the installed Earth-surface table. All eight destination files match the prices-2026-11-20 manifest and carry both references with date 2025-01-31 and label “USGS/LME/mineralogy reference.”
+- usgs_mineral_commodity_summaries_2025, printed pp. 186–187, gives USD 13/kg of titanium sponge for 2024e. usgs_mineral_commodity_summaries_2026, printed pp. 196–197, gives USD 13.30/kg for revised 2024 and USD 12/kg for 2025e. Footnote 4 in both editions specifies “Landed duty-paid value based on U.S. imports for consumption.” **rc-920** records the exact import series and revised annual values.
+- usgs_mineral_commodity_summaries_2025, printed pp. 128–129, gives USD 440 per short ton for 2024e in the row “Price, average, free on board Gulf Coast.” usgs_mineral_commodity_summaries_2026, printed pp. 136–137, gives USD 440 for 2024 and USD 450 for 2025e. Footnote 3 identifies Green Markets. nist_hb133_2026_appendix_e_volume_conversion, Appendix E p. 249, gives 907.18474 kg per short ton. The converted values are USD 0.485017/kg and 0.496040/kg respectively. **rc-921** records the annual series and its units.
+
+Extracted data in extracted_data/r1044_titanium_ammonia_price_vintages.csv.
+
+
+## R1048 — Terrestrial carbon market ceiling (2026-11-23)
+
+- spacevalue_terrestrial_carbon_market_ceiling_code_2026 lists carbon at 1.0e12 kg/year under “Effectively unlimited on Earth.” The spacevalue_installed_prices_release_manifests_2026 Earth-surface catalog, line 28, exports the same value in annual_market_kg for market_id=carbon and describes the material as “Amorphous / graphitic carbon.” The file matches its release manifest.
+- usgs_mineral_commodity_summaries_2026, “Graphite (Natural),” printed pp. 92–93, gives 1,550,000 metric tonnes for 2024 and 1,800,000 metric tonnes for 2025e on the “World total (rounded)” mine production row. The installed ceiling is about 556 times 2025e natural graphite mine output.
+- With a one-year window and zero surplus price, the pinned raw cargo sale function leaves 1.0e11 kg unsold from a synthetic offer of 1.1e12 kg at the installed ceiling. **rc-929** records the scenario ceiling and the scope of the available production comparator.
+
+Extracted data in extracted_data/r1048_earth_carbon_market_ceiling.csv.
+
+
+## R1056 — Terrestrial iron price, annual ceiling and alloy routing (2026-11-23)
+
+- spacevalue_earth_iron_scrap_and_alloy_caps_2026 and the installed Earth-surface table price iron at USD 0.319/kg using “No. 1 heavy melting composite” and export 1.3e12 kg/year as the iron ceiling. usgs_mineral_commodity_summaries_2026, printed pp. 103–104, reports 1,300 million metric tonnes of 2025e world pig iron production, USD 319 per metric tonne for estimated 2025 U.S. delivered No. 1 heavy melting scrap, and 57 million metric tonnes of U.S. apparent iron and steel scrap consumption.
+- bir_2026_global_recycled_steel_use, in the statistical release for its 17th edition, estimates about 630 million tonnes of recycled steel “used in global steelmaking” each year. worldsteel_2026_ferrous_scrap_trade, “Trade in ferrous scrap,” gives 93.7 million tonnes of world imports and 95.3 million tonnes of world exports in 2025. **rc-941** records the product and volume scope behind the iron price and ceiling.
+- The installed nickel-iron row uses gross elemental valuations and its own 1.0e15 kg/year phase ceiling. A synthetic one-year 2.0e12 kg pure-iron offer leaves 7.0e11 kg unsold under the hard cap. An equal alloy offer leaves zero unsold while carrying 1.8e12 kg of modeled contained iron. **rc-942** records the sale-product and market-key distinction.
+
+Extracted data in extracted_data/r1056_iron_market_basis_and_alloy_routing.csv.
+
+
+## R1089 — Terrestrial meteoritic phosphate price basis (2026-11-24)
+
+- spacevalue_terrestrial_phosphate_phase_price_code_2026 gives merrillite and chlorapatite direct Earth reference prices of USD 0.10/kg each. The pinned static export gives both the date 2025-01-31 and source “USGS/LME/mineralogy reference.” Economicspace requirements.txt line 28 pins the same Spacevalue v0.8.7 release.
+- usgs_mineral_commodity_summaries_2025, Phosphate Rock, first page, defines marketable product as “beneficiated phosphate rock” suitable for phosphoric acid or elemental phosphorus and reports a 2024 estimated U.S. f.o.b. mine value of USD 100 per metric tonne. usgs_mineral_commodity_summaries_2026, same chapter and row, gives USD 96/t for 2024 and USD 100/t for 2025e.
+- ibm_2017_yearbook_phosphate_rock_feed_specifications, p. 1-10, reproduces historical BIS feed requirements of 30 and 32 wt% minimum phosphate as P₂O₅ and 0.015 and 0.05 wt% maximum chloride for elemental phosphorus and phosphoric acid respectively. lewis_jones_2016_l_chondrite_phosphate_chemistry, accepted manuscript p. 16, reports “average Cl and F abundances of 5.2 wt% and 0.5 wt% respectively (Table 3)” in equilibrated L-chondrite apatite. The grain-average chlorine is 104 times the historical Type II whole-feed comparator. **rc-1001** records the proxy citation and the unresolved concentrate eligibility.
+- With static Earth prices and the refinery flag false, the pinned phase function selects gross contained-phosphorus values of USD 0.606/kg for merrillite and USD 0.534/kg for chlorapatite. Both exceed the direct USD 0.10/kg proxy.
+
+Extracted data in extracted_data/r1089_meteoritic_phosphate_rock_price_basis.csv.
+
+
+## R1092 — Hibonite terrestrial sale and product grade (2026-11-24)
+
+- spacevalue_asteroidcatalog_hibonite_price_and_sale_route_2026 prices hibonite “as rock, as spinel is.” spacevalue_installed_prices_release_manifests_2026, prices-2026-11-20 Earth-surface table, gives hibonite USD 0.05/kg, the generic “USGS/LME/mineralogy reference,” date 2025-01-31 and an empty elemental-yield map. The detailed cargo function lists hibonite separately. In the pinned 1,000 kg K and L feed fixtures at 100% recovery, the phase contributes USD 0.15 and USD 0.25 respectively.
+- usgs_mineral_commodity_summaries_2026, Stone (Crushed), first page, reports USD 18.50/t as the 2025 estimated U.S. average unit value. Construction aggregate is 72% of domestic use. The modeled USD 50/t for hibonite is 2.70 times that generic stone figure.
+- schnabel_etal_2011_calcium_hexaluminate_refractory_aggregate, printed p. 87, gives “about 90 % CA₆” for the synthetic aggregates and describes a “controlled sintering process” for Bonite. zhang_etal_2020_co_chondrite_hibonite_petrology, Fig. 3(e, f), shows a roughly 50 µm inclusion with hibonite laths, spinel, diopside and mesostasis in MIL 090010. **rc-1005** records the generic rock proxy and absent refractory-grade sale basis.
+
+Extracted data in extracted_data/r1092_hibonite_commodity_and_refractory_basis.csv.
+
+
+## R1100 — Earth plagioclase grade and market depth (2026-11-24)
+
+- usgs_mineral_commodity_summaries_2026, printed pp. 78–79, reports USD 110 per metric ton for “Feldspar only, marketable production” in the 2025 U.S. statistics and a 2025 world total of 31.0 million metric tons of feldspar mine production. spacevalue_installed_prices_release_manifests_2026, Earth-surface plagioclase row, gives USD 0.10/kg and a 10¹⁵ kg/yr ceiling. spacevalue_earth_plagioclase_sale_and_market_fallback_2026, annual_market_kg and Earth market ID, supplies that ceiling from the default. The ceiling is about 32,258 times reported world mine output. The one-tonne V-class full-recovery fixture sells 333 kg of plagioclase at USD 33.30 gross.
+- sibelco_2025_na_feldspar_pgw13n_technical_data, p. 1, gives typical chemistry of 10.46 wt% Na2O, 0.77 wt% CaO and 0.04 wt% Fe2O3, and a median particle size of 18 µm. dhaliwal_day_tait_2023_eucrite_plagioclase_compositions, mineral chemistry following Fig. 2, reports An91–96 for plagioclase in four basaltic eucrites. The records identify the commercial specification and the calcic meteorite phase separately. **rc-1015** covers the assumed saleable grade and annual market depth.
+
+Extracted data in extracted_data/r1100_earth_plagioclase_grade_and_market_scope.csv.

@@ -1,0 +1,41 @@
+source_id,item,value,unit,location_in_source,notes
+asteroidcatalog_release_data_2026_11_13,Ryugu composition class,Cb,class,data-2026-11-13 installed row 162173 Ryugu,Pipeline taxonomy mapping.
+asteroidcatalog_release_data_2026_11_13,Ryugu coarse ice fraction,0.18,fraction,data-2026-11-13 installed row 162173 Ryugu,Includes modeled water or mixed volatiles.
+asteroidcatalog_release_data_2026_11_13,Ryugu water body fraction,0.18,fraction,data-2026-11-13 installed row 162173 Ryugu,"Exported comp_phases, a modeled class fraction."
+,Ryugu raw hold equivalent water,180.0,kg,"Pinned _cargo_water_kg on a 1,000 kg raw hold",Scenario uses explicit installed water phase and no ISRU.
+,Ryugu raw hold water liberation energy,450.0,kWh,Pinned settlement uses water_wh × (isru_water_kg + cargo_water_kg),"Fixture has zero ISRU. Implied energy, independent of duration."
+asteroidcatalog_release_data_2026_11_13,Hektor composition class,D,class,data-2026-11-13 installed row 624 Hektor,Pipeline taxonomy mapping.
+asteroidcatalog_release_data_2026_11_13,Hektor coarse ice fraction,0.25,fraction,data-2026-11-13 installed row 624 Hektor,Includes modeled water or mixed volatiles.
+asteroidcatalog_release_data_2026_11_13,Hektor water body fraction,0.223,fraction,data-2026-11-13 installed row 624 Hektor,"Exported comp_phases, a modeled class fraction."
+asteroidcatalog_release_data_2026_11_13,Hektor carbon dioxide body fraction,0.0255,fraction,data-2026-11-13 installed row 624 Hektor,"Exported comp_phases, a modeled class fraction."
+asteroidcatalog_release_data_2026_11_13,Hektor ammonia body fraction,0.0015,fraction,data-2026-11-13 installed row 624 Hektor,"Exported comp_phases, a modeled class fraction."
+,Hektor raw hold equivalent water,223.0,kg,"Pinned _cargo_water_kg on a 1,000 kg raw hold",Scenario uses explicit installed water phase and no ISRU.
+,Hektor raw hold water liberation energy,557.5,kWh,Pinned settlement uses water_wh × (isru_water_kg + cargo_water_kg),"Fixture has zero ISRU. Implied energy, independent of duration."
+asteroidcatalog_release_data_2026_11_13,Aegle composition class,T,class,data-2026-11-13 installed row 96 Aegle,Pipeline taxonomy mapping.
+asteroidcatalog_release_data_2026_11_13,Aegle coarse ice fraction,0.1,fraction,data-2026-11-13 installed row 96 Aegle,Includes modeled water or mixed volatiles.
+asteroidcatalog_release_data_2026_11_13,Aegle water body fraction,0.0892,fraction,data-2026-11-13 installed row 96 Aegle,"Exported comp_phases, a modeled class fraction."
+asteroidcatalog_release_data_2026_11_13,Aegle carbon dioxide body fraction,0.0102,fraction,data-2026-11-13 installed row 96 Aegle,"Exported comp_phases, a modeled class fraction."
+asteroidcatalog_release_data_2026_11_13,Aegle ammonia body fraction,0.0006000000000000001,fraction,data-2026-11-13 installed row 96 Aegle,"Exported comp_phases, a modeled class fraction."
+,Aegle raw hold equivalent water,89.2,kg,"Pinned _cargo_water_kg on a 1,000 kg raw hold",Scenario uses explicit installed water phase and no ISRU.
+,Aegle raw hold water liberation energy,223.0,kWh,Pinned settlement uses water_wh × (isru_water_kg + cargo_water_kg),"Fixture has zero ISRU. Implied energy, independent of duration."
+asteroidcatalog_release_data_2026_11_13,Kythera composition class,T,class,data-2026-11-13 installed row 570 Kythera,Pipeline taxonomy mapping.
+asteroidcatalog_release_data_2026_11_13,Kythera coarse ice fraction,0.1,fraction,data-2026-11-13 installed row 570 Kythera,Includes modeled water or mixed volatiles.
+asteroidcatalog_release_data_2026_11_13,Kythera water body fraction,0.0892,fraction,data-2026-11-13 installed row 570 Kythera,"Exported comp_phases, a modeled class fraction."
+asteroidcatalog_release_data_2026_11_13,Kythera carbon dioxide body fraction,0.0102,fraction,data-2026-11-13 installed row 570 Kythera,"Exported comp_phases, a modeled class fraction."
+asteroidcatalog_release_data_2026_11_13,Kythera ammonia body fraction,0.0006000000000000001,fraction,data-2026-11-13 installed row 570 Kythera,"Exported comp_phases, a modeled class fraction."
+,Kythera raw hold equivalent water,89.2,kg,"Pinned _cargo_water_kg on a 1,000 kg raw hold",Scenario uses explicit installed water phase and no ISRU.
+,Kythera raw hold water liberation energy,223.0,kWh,Pinned settlement uses water_wh × (isru_water_kg + cargo_water_kg),"Fixture has zero ISRU. Implied energy, independent of duration."
+asteroidcatalog_economicspace_water_state_and_liberation_2026,Economicspace archived liberation coefficient,2500.0,Wh/kg water extracted,Economicspace campaign/stage3/operational_costs.csv row 29,Same center as Spacecost's current row 32.
+yokoyama_2023_ryugu_c_type_sample_water_content,Ryugu returned-sample total H2O,6.84 ± 0.34,wt%,"Science 379 eabn7850 p. 8, water abundance discussion",Analyzed sample.
+yokoyama_2023_ryugu_c_type_sample_water_content,Ryugu structural OH or H2O,6.54 ± 0.32,wt%,"Science 379 eabn7850 p. 8, water abundance discussion",Subset of total H2O.
+yokoyama_2023_ryugu_c_type_sample_water_content,Ryugu interlayer H2O,0.30 ± 0.01,wt%,"Science 379 eabn7850 p. 8, water abundance discussion",Subset of total H2O.
+kiewiet_etal_2026_luwex_water_recovery,LUWEX ice feed treatment,sublimation and cold-trap capture,process,"DLR article-in-press pp. 1, 14–15",Thermal vacuum with icy lunar simulant.
+rubin_2019_67p_abundances,67P carbon dioxide relative to water,4.7 ± 1.4,molecules per 100 H2O molecules,"MNRAS 489 Table 2, arXiv PDF p. 13",Cometary volatile abundance.
+rubin_2019_67p_abundances,67P ammonia relative to water,0.67 ± 0.20,molecules per 100 H2O molecules,"MNRAS 489 Table 2, arXiv PDF p. 13",Cometary volatile abundance.
+kwon_hasegawa_fornasier_ishiguro_agarwal_2022_large_t_type_surfaces,Aegle and Kythera OH band centre,<2.8,µm,A&A 666 A173 p. 1 Abstract,Surface spectroscopy finds no diagnostic water-ice or other volatile bands above noise.
+kelley_etal_2023_238p_jwst_water_vapor,238P/Read water vapor production,(9.9 ± 1.0) × 10^24,molecules/s,"Nature 619 pp. 720–721, NIRSpec findings",Model fitted to water emission.
+kelley_etal_2023_238p_jwst_water_vapor,238P/Read CO2/H2O coma upper limit,<0.7,% by number,"Nature 619 p. 721, CO2 non-detection and Fig. 2 discussion",99.7% limit for CO2 production. Coma only.
+hsieh_etal_2025_358p_jwst_volatile_limits,358P/PANSTARRS CO2/H2O coma upper limit,<0.2,% by number,"PSJ DOI ad9199, Section 4.1 and the discussion",Rounded 3σ comparison at assumed rotational temperature of 80 K. Coma only.
+,Normalized retained 67P proxy water,0.8919407162975621,mass fraction,"Number abundance × molar mass, normalize the selected three species",Reproduces the rounded shares in AsteroidCatalog.
+,Normalized retained 67P proxy carbon dioxide,0.10240969704281723,mass fraction,"Number abundance × molar mass, normalize the selected three species",Reproduces the rounded shares in AsteroidCatalog.
+,Normalized retained 67P proxy ammonia,0.0056495866596207225,mass fraction,"Number abundance × molar mass, normalize the selected three species",Reproduces the rounded shares in AsteroidCatalog.

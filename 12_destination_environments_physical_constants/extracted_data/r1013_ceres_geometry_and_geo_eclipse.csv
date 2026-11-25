@@ -1,0 +1,16 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_ceres_geo_environment_rows_2026,Spacecost 1 Ceres mass,9.3835e20,kg,reference/environments.csv line 19; environments.py lines 375–380,Data contract 1.28.0. Row note attributes mass and radius to Russell et al. (2016).
+spacecost_ceres_geo_environment_rows_2026,Spacecost 1 Ceres mean radius,469730,m,reference/environments.csv line 19; environments.py lines 375–380,Value used in the gravity and escape-speed calculations.
+russell_2016_dawn_arrives_at_ceres,Ceres mass as printed,9.384e20 ± 1e17,kg,"Science 353, printed p. 1008",Earlier Dawn result at the paper's precision.
+russell_2016_dawn_arrives_at_ceres,Ceres geometric mean radius,469.7,km,"Science 353, printed p. 1008","Paper reports axes 483.1 × 481.0 × 445.9 km, each with ±0.2 km uncertainty."
+pds_sbn_ceres_target_context_v1_2,Ceres mass as printed,9.3835e20 ± 1e16,kg,"PDS target context v1.2, Physical Characteristics",Exact central-value match to the Spacecost input.
+raymond_roatsch_2018_dawn_ceres_coordinate_system,Ceres equivalent spherical radius R,469.73 ± 0.15,km,"Table 1, Dawn Final (dawn_ceres_v06.tpc)","The same row gives A=482.10 ± 0.15 km, B=445.94 ± 0.15 km."
+,Volume-equivalent radius from archived axes,469.73209,km,Cube root of A²B in Dawn Final Table 1,Rounds to the archived R=469.73 km.
+spacecost_ceres_geo_environment_rows_2026,Geostationary orbit period,23.934,h,reference/environments.csv line 3,Used to convert the annual average fraction to a cycle-equivalent duration.
+spacecost_ceres_geo_environment_rows_2026,GEO annual-average eclipse share,0.012,fraction,reference/environments.csv line 3 notes,Notes describe this as averaged over the year.
+spacecost_ceres_geo_environment_rows_2026,GEO cycle-equivalent dark duration,0.287208,h,reference/environments.csv line 3; environments.py lines 134–141,23.934 h × 0.012. README line 202 directs readers to multiply the dark-period value by watts.
+ecss_e_hb_31_01_part15a_existing_satellites,OTS maximum eclipse,72,min,"ECSS-E-HB-31-01 Part 15A, printed p. 35",Maximum single event in the OTS example.
+noaa_nasa_2019_goes_r_series_data_book,GOES-R design eclipse,72,min,"GOES-R Series Data Book, printed pp. 11-7 and 18-9",Battery energy-balance case and full-operations limit.
+,Eclipse energy at 100 W for Spacecost average,28.7208,Wh,100 W × 0.287208 h,Illustrative constant load.
+,Eclipse energy at 100 W for the 72-minute design event,120,Wh,100 W × 72 min ÷ 60,Illustrative constant load.
+,Design-to-average eclipse energy factor,4.1782,ratio,1.2 h ÷ 0.287208 h,"Same load and no other losses. This is a GEO design comparator, not a total battery-system sizing rule."

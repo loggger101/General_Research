@@ -1,0 +1,52 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_pyrrhotite_pentlandite_element_yields_code_2026,pyrrhotite iron modeled yield,0.604,kg/kg mineral,catalog.py lines 2059–2068,Zero denotes a missing dictionary key.
+spacevalue_pyrrhotite_pentlandite_element_yields_code_2026,pyrrhotite sulfur modeled yield,0.396,kg/kg mineral,catalog.py lines 2059–2068,Zero denotes a missing dictionary key.
+spacevalue_pyrrhotite_pentlandite_element_yields_code_2026,pyrrhotite nickel modeled yield,0,kg/kg mineral,catalog.py lines 2059–2068,Zero denotes a missing dictionary key.
+spacevalue_pyrrhotite_pentlandite_element_yields_code_2026,pyrrhotite cobalt modeled yield,0,kg/kg mineral,catalog.py lines 2059–2068,Zero denotes a missing dictionary key.
+spacevalue_pyrrhotite_pentlandite_element_yields_code_2026,pentlandite iron modeled yield,0.326,kg/kg mineral,catalog.py lines 2059–2068,Zero denotes a missing dictionary key.
+spacevalue_pyrrhotite_pentlandite_element_yields_code_2026,pentlandite sulfur modeled yield,0.332,kg/kg mineral,catalog.py lines 2059–2068,Zero denotes a missing dictionary key.
+spacevalue_pyrrhotite_pentlandite_element_yields_code_2026,pentlandite nickel modeled yield,0.342,kg/kg mineral,catalog.py lines 2059–2068,Zero denotes a missing dictionary key.
+spacevalue_pyrrhotite_pentlandite_element_yields_code_2026,pentlandite cobalt modeled yield,0,kg/kg mineral,catalog.py lines 2059–2068,Zero denotes a missing dictionary key.
+,pyrrhotite gross value response to nickel quote,0.0,USD/kg mineral per USD/kg element,Isolated pinned cargo.py _yield_terms,One-unit synthetic quote change with the other quotes fixed.
+,pentlandite gross value response to nickel quote,0.342,USD/kg mineral per USD/kg element,Isolated pinned cargo.py _yield_terms,One-unit synthetic quote change with the other quotes fixed.
+,pentlandite gross value response to cobalt quote,0.0,USD/kg mineral per USD/kg element,Isolated pinned cargo.py _yield_terms,One-unit synthetic quote change with the other quotes fixed.
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0025-01 pyrrhotite Fe,57.7 ± 0.9,wt%,"Table 2, sample and phase rows","5 grains, 8 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0025-01 pyrrhotite Ni,1.52 ± 0.64,wt%,"Table 2, sample and phase rows","5 grains, 8 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0025-01 pyrrhotite S,40.7 ± 1.0,wt%,"Table 2, sample and phase rows","5 grains, 8 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0025-01 pyrrhotite Co,0.03 ± 0.04,wt%,"Table 2, sample and phase rows","5 grains, 8 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0103-02 pyrrhotite Fe,58.7 ± 0.3,wt%,"Table 2, sample and phase rows","6 grains, 30 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0103-02 pyrrhotite Ni,1.03 ± 0.05,wt%,"Table 2, sample and phase rows","6 grains, 30 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0103-02 pyrrhotite S,41.2 ± 0.3,wt%,"Table 2, sample and phase rows","6 grains, 30 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0103-02 pyrrhotite Co,0.10 ± 0.01,wt%,"Table 2, sample and phase rows","6 grains, 30 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Orgueil pyrrhotite Fe,58.6 ± 0.3,wt%,"Table 2, sample and phase rows","10 grains, 35 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Orgueil pyrrhotite Ni,1.09 ± 0.19,wt%,"Table 2, sample and phase rows","10 grains, 35 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Orgueil pyrrhotite S,38.8 ± 0.2,wt%,"Table 2, sample and phase rows","10 grains, 35 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Orgueil pyrrhotite Co,bdl,wt%,"Table 2, sample and phase rows","10 grains, 35 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ivuna pyrrhotite Fe,59.5 ± 0.3,wt%,"Table 2, sample and phase rows","10 grains, 38 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ivuna pyrrhotite Ni,1.05 ± 0.21,wt%,"Table 2, sample and phase rows","10 grains, 38 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ivuna pyrrhotite S,39.4 ± 0.4,wt%,"Table 2, sample and phase rows","10 grains, 38 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ivuna pyrrhotite Co,bdl,wt%,"Table 2, sample and phase rows","10 grains, 38 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Orgueil pentlandite Fe,29.6,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Orgueil pentlandite Ni,35.0,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Orgueil pentlandite S,33.1,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Orgueil pentlandite Co,1.35,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ivuna pentlandite Fe,32.0,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ivuna pentlandite Ni,31.0,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ivuna pentlandite S,33.5,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ivuna pentlandite Co,2.0,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0025-01 isolated pentlandite Fe,28.2,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0025-01 isolated pentlandite Ni,34.2,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0025-01 isolated pentlandite S,33.5,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0025-01 isolated pentlandite Co,1.88,wt%,"Table 2, sample and phase rows","1 grain, 1 analysis"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0103-02 pentlandite inclusion Fe,29.1 ± 0.4,wt%,"Table 2, sample and phase rows","1 grain, 2 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0103-02 pentlandite inclusion Ni,34.3 ± 0.2,wt%,"Table 2, sample and phase rows","1 grain, 2 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0103-02 pentlandite inclusion S,35.1 ± 0.2,wt%,"Table 2, sample and phase rows","1 grain, 2 analyses"
+harrison_etal_2025_ryugu_ci_sulfide_mineralogy,Ryugu C0103-02 pentlandite inclusion Co,1.90 ± 0.01,wt%,"Table 2, sample and phase rows","1 grain, 2 analyses"
+holt_herd_2022_tagish_lake_iron_nickel_sulfides,Tagish Lake pyrrhotite Fe,58.38 ± 1.44,wt%,"Results, Sulfide Compositions",Microprobe measurements across the studied samples.
+holt_herd_2022_tagish_lake_iron_nickel_sulfides,Tagish Lake pyrrhotite Ni,1.63 ± 1.32,wt%,"Results, Sulfide Compositions",Microprobe measurements across the studied samples.
+holt_herd_2022_tagish_lake_iron_nickel_sulfides,Tagish Lake pyrrhotite S,39.14 ± 0.56,wt%,"Results, Sulfide Compositions",Microprobe measurements across the studied samples.
+holt_herd_2022_tagish_lake_iron_nickel_sulfides,Tagish Lake pentlandite Fe,30.70 ± 1.92,wt%,"Results, Sulfide Compositions",Microprobe measurements across the studied samples.
+holt_herd_2022_tagish_lake_iron_nickel_sulfides,Tagish Lake pentlandite Ni,34.05 ± 2.16,wt%,"Results, Sulfide Compositions",Microprobe measurements across the studied samples.
+holt_herd_2022_tagish_lake_iron_nickel_sulfides,Tagish Lake pentlandite S,33.47 ± 0.90,wt%,"Results, Sulfide Compositions",Microprobe measurements across the studied samples.
+holt_herd_2022_tagish_lake_iron_nickel_sulfides,Tagish Lake pyrrhotite Ni range,0.24–9.97,wt%,"Results, Sulfide Compositions",Microprobe measurements across the studied samples.
+holt_herd_2022_tagish_lake_iron_nickel_sulfides,Tagish Lake pentlandite Ni range,28.17–36.37,wt%,"Results, Sulfide Compositions",Microprobe measurements across the studied samples.

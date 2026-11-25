@@ -1,0 +1,23 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_eclipse_tianlong3_performance_main_2026,Eclipse exported core propellant,methalox,category,"Spacecost export and Economicspace installed Stage 3, row Eclipse (MLV)",Same in both.
+spacecost_eclipse_tianlong3_performance_main_2026,Eclipse exported high-energy headline,2140,kg,"Spacecost export and Economicspace installed Stage 3, row Eclipse (MLV)","Band 2,000–2,300 kg; USD 37,383/kg at USD 80M scenario price."
+spacecost_eclipse_tianlong3_performance_main_2026,Eclipse exported fairing volume,,m³,"Spacecost export and Economicspace installed Stage 3, row Eclipse (MLV)",Blank; basis none; Economicspace calc._vehicle_consts uses 100 m³.
+firefly_eclipse_vehicle_page,Eclipse propellant,LOX / RP-1,category,"Eclipse page, Propulsion",Operator description.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse propellant,Liquid Oxygen / RP-1,category,"Data sheet p. 2, Propulsion",Joint operator table.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse payload to 200 km LEO,16300,kg,"Data sheet p. 2, Payload Performance",Published design point.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse payload to GTO,3200,kg,"Data sheet p. 2, Payload Performance",Published design point.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse payload to TLI,2300,kg,"Data sheet p. 2, Payload Performance",Published design point. Same on Firefly Eclipse page.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse fairing outer diameter,5.4,m,"Data sheet p. 2, Payload Accommodations",Shell diameter.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse envelope diameter,4.572,m,"Data sheet p. 2, Payload Accommodations",Dimension at shoulder.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse envelope height,11.938,m,"Data sheet p. 2, Payload Accommodations",From SIP to upper dimension line.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse lower height,6.706,m,"Data sheet p. 2, Payload Accommodations drawing",SIP to shoulder.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse upper height,5.232,m,"Data sheet p. 2, Payload Accommodations drawing",Shoulder to upper dimension line.
+northrop_firefly_2026_eclipse_medium_launch_vehicle_datasheet,Eclipse upper diameter annotation,0.831,m,"Data sheet p. 2, Payload Accommodations drawing",Compare static and NSSL Cat B overlays before assigning a contour.
+,Eclipse cylindrical portion approximation,110.095,m³,π × (4.572/2)² × 6.706,Assumes circular section.
+,Eclipse cylinder and straight-taper sensitivity,144.876,m³,Cylinder plus circular frustum between 4.572 m and 0.831 m over 5.232 m,Geometric comparison only.
+spacecost_eclipse_tianlong3_performance_main_2026,Tianlong-3 exported payload to LEO,17000,kg,"Spacecost export and Economicspace installed Stage 3, row Tianlong-3","Zero-width model band; USD 1,971/kg at USD 33.5M."
+suzhou_2024_tianlong3_preflight_payload_report,Tianlong-3 historical LEO and SSO pair,17 / 14,metric t,"12 June 2024 shipment report, configuration paragraph",No reference orbit altitude given there.
+space_pioneer_2025_tianlong3_sea_static_fire,Tianlong-3 72 m LEO and SSO ranges,17–22 / 10–17,metric t,"15 September 2025 sea static-fire announcement, configuration paragraph",Design ranges.
+space_pioneer_tianlong3_product_page_current_2026,Current Tianlong-3 LEO design range,17–22,metric t,"TL-3 product page, LEO capability",No LEO altitude printed.
+space_pioneer_tianlong3_product_page_current_2026,Current Tianlong-3 SSO design range,10–17,metric t,"TL-3 product page, SSO capability",500 km.
+,Tianlong-3 LEO high-end cost sensitivity,1523,USD/kg,"USD 33.5M / 22,000 kg",Rounded as in Spacecost. Design endpoint held against fixed scenario price.

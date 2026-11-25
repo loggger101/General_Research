@@ -1,0 +1,24 @@
+source_id,item,value,unit,location_in_source,notes
+spacevalue_installed_prices_release_manifests_2026,Sulfur Earth-surface reference and applied price,0.10,USD/kg,prices-2026-11-20 Earth-surface row sulfur,Reference basis; dated 2025-01-31.
+usgs_mineral_commodity_summaries_2025,Sulfur U.S. annual average unit value 2024e,50.00,USD/metric t,"Sulfur printed p. 172, PDF p. 176, Salient Statistics",FOB mine and/or plant.
+usgs_mineral_commodity_summaries_2026,Sulfur U.S. annual average unit value revised 2024,46.42,USD/metric t,"Sulfur printed p. 182, PDF p. 186, Salient Statistics",Same series and location basis.
+usgs_mineral_commodity_summaries_2026,Sulfur U.S. annual average unit value 2025e,180,USD/metric t,"Sulfur printed p. 182, PDF p. 186, Salient Statistics",Same series and location basis.
+usgs_mineral_commodity_summaries_2025,Sulfur Tampa contract price at start of 2024,69,USD/long ton,"Sulfur printed p. 173, PDF p. 177, Events, Trends, and Issues",Contract series distinct from annual average.
+usgs_mineral_commodity_summaries_2025,Sulfur Tampa contract price fourth quarter 2024,116,USD/long ton,"Sulfur printed p. 173, PDF p. 177, Events, Trends, and Issues",Contract series distinct from annual average.
+usgs_mineral_commodity_summaries_2026,Sulfur Tampa contract price early October 2025,310,USD/long ton,"Sulfur printed p. 183, PDF p. 187, Events, Trends, and Issues",Contract observation distinct from 2025e U.S. annual average.
+spacevalue_installed_prices_release_manifests_2026,Molybdenum Earth-surface reference and applied price,44,USD/kg,prices-2026-11-20 Earth-surface row molybdenum,Reference basis; dated 2025-01-31.
+usgs_mineral_commodity_summaries_2025,Molybdic oxide U.S. annual price 2024e,47,USD/kg contained Mo,"Molybdenum printed p. 122, PDF p. 126, Salient Statistics",Footnote 3 on p. 123 identifies 57% Mo oxide and Argus.
+usgs_mineral_commodity_summaries_2026,Molybdic oxide U.S. annual price revised 2024,47.72,USD/kg contained Mo,"Molybdenum printed p. 130, PDF p. 134, Salient Statistics",Footnote 4 on p. 131 identifies 57% Mo oxide and Argus.
+usgs_mineral_commodity_summaries_2026,Molybdic oxide U.S. annual price 2025e,51,USD/kg contained Mo,"Molybdenum printed p. 130, PDF p. 134, Salient Statistics",Same annual series and footnote.
+usgs_mis_molybdenum_december_2025,Molybdic oxide U.S. December 2025 monthly average,51.578,USD/kg contained Mo,"PDF p. 1, price paragraph and Figure 1",USD 23.395 per lb contained Mo.
+spacevalue_installed_prices_release_manifests_2026,Ammonia Earth-surface reference and applied price,0.485,USD/kg NH3,prices-2026-11-20 Earth-surface row ammonia,The code cites US Gulf FOB 440 USD per short ton of anhydrous ammonia.
+spacevalue_installed_prices_release_manifests_2026,Ammonia installed Earth-surface market limit,150000000000,kg/yr,prices-2026-11-20 Earth-surface row ammonia,"Label and formula ammonia, NH3."
+spacevalue_sulfur_molybdenum_ammonia_earth_basis_code_2026,Ammonia model allowance for one Earth delivery in one year,150000000000,kg NH3,"cargo.py market_table, phase_market_kg, capacity_allowance_kg",Pinned computation treats the table limit directly as product mass.
+usgs_mineral_commodity_summaries_2025,World ammonia plant production 2024e,150000000000,kg N/yr,"Nitrogen printed pp. 128–129, PDF pp. 132–133, World Ammonia Production and Reserves",Table units are nitrogen content.
+usgs_mineral_commodity_summaries_2026,World ammonia plant production revised 2024,156000000000,kg N/yr,"Nitrogen printed pp. 136–137, PDF pp. 140–141, World Ammonia Production and Reserves",Table units are nitrogen content.
+usgs_mineral_commodity_summaries_2026,World ammonia plant production 2025e,160000000000,kg N/yr,"Nitrogen printed pp. 136–137, PDF pp. 140–141, World Ammonia Production and Reserves",Table units are nitrogen content.
+nist_webbook_ammonia_molecular_weight,Ammonia molecular weight,17.0305,relative molecular mass,Ammonia substance record,Formula NH3.
+ciaaw_abridged_atomic_weight_nitrogen,Nitrogen abridged standard weight,14.007,relative atomic mass,"Atomic number 7, N",Abridged uncertainty ±0.001.
+,NH3 product mass corresponding to 2024e N production,182.378454,million metric t NH3/yr,150 × 17.0305 / 14.007,Same MCS 2025 production vintage.
+,NH3 product mass corresponding to revised 2024 N production,189.673592,million metric t NH3/yr,156 × 17.0305 / 14.007,MCS 2026 revised 2024.
+,NH3 product mass corresponding to 2025e N production,194.537017,million metric t NH3/yr,160 × 17.0305 / 14.007,MCS 2026 estimated 2025.

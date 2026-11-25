@@ -1,0 +1,20 @@
+source_id,item,value,unit,location_in_source,notes
+spacecost_h3_24l_fleet_reliability_note_code_2026,H3 family flights stated in H3 (24L) row,9,launches,Spacecost launch_vehicles.csv line 23,As-of date absent.
+spacecost_h3_24l_fleet_reliability_note_code_2026,H3 family failures stated in H3 (24L) row,2,failures,Spacecost launch_vehicles.csv line 23,TF1 and F8.
+mhi_h3_past_missions_through_f10_2026,H3 TF1 launch date,2023-03-07,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+mhi_h3_past_missions_through_f10_2026,H3 TF2 launch date,2024-02-17,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+mhi_h3_past_missions_through_f10_2026,H3 F3 launch date,2024-07-01,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+mhi_h3_past_missions_through_f10_2026,H3 F4 launch date,2024-11-04,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+mhi_h3_past_missions_through_f10_2026,H3 F5 launch date,2025-02-02,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+mhi_h3_past_missions_through_f10_2026,H3 F7 launch date,2025-10-26,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+mhi_h3_past_missions_through_f10_2026,H3 F8 launch date,2025-12-22,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+mhi_h3_past_missions_through_f10_2026,H3 F6 launch date,2026-06-12,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+mhi_h3_past_missions_through_f10_2026,H3 F9 launch date,2026-08-11,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+mhi_h3_past_missions_through_f10_2026,H3 F10 launch date,2026-10-20,date (JST),"MHI Past Missions, H3 table, corresponding vehicle column",Counted once by flight designation.
+jaxa_h3_launch_records_tf1_through_f9_2026,H3 TF1 outcome,launch failure,outcome,"JAXA Launch Records, corresponding failure entry",Family-wide count.
+jaxa_h3_launch_records_tf1_through_f9_2026,H3 F8 outcome,launch failure,outcome,"JAXA Launch Records, corresponding failure entry",Family-wide count.
+jaxa_2026_h3_f8_failure_investigation_final,H3 F8 launch vehicle configuration,H3-22S,configuration,"Report 65-1 attachment, section 2.1",Two boosters and short fairing.
+jaxa_2026_h3_f8_failure_investigation_final,H3 F8 failure mechanism,payload support structure failure,mechanism,"Report 65-1 attachment, section 5.2",Investigation examined structural delamination.
+jaxa_2026_h3_f10_mmx_launch_outcome,H3 F10 MMX launch result,successful injection,outcome,JAXA 20 October release,Successful separation and orbital injection.
+,Dated H3 flight count through F10,10,launches,Count of unique H3 flight designations through 20 October 2026,Both development flights and operational flights included.
+,Dated H3 failure count through F10,2,failures,JAXA records and MMX release,Family-wide through 20 October 2026.
